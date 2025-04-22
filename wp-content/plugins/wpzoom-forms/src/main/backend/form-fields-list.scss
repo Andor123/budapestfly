@@ -1,0 +1,78 @@
+// Form field list styles
+.wpzoom-forms-block-patterns {
+  margin-bottom: 16px;
+
+  h3 {
+    margin: 0 0 12px 0;
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #1e1e1e;
+  }
+
+  .wpzoom-forms-block-patterns-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    padding: 4px;
+  }
+
+  .wpzoom-forms-block-pattern-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 10px;
+    background: #ffffff;
+    border-radius: 4px;
+    cursor: grab;
+    transition: all 0.15s ease;
+    font-size: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border: 1px solid #e0e0e0;
+    height: 45px;
+    position: relative;
+
+    &:hover {
+      background: #f6f6f6;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+      border-color: #d0d0d0;
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+      fill: rgb(30, 30, 30);
+      stroke: #1e1e1e;
+      flex-shrink: 0;
+    }
+
+    span {
+      text-align: left;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+
+    &.disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+      background: #f0f0f0;
+
+      &:hover {
+        background: #f0f0f0;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        border-color: #e0e0e0;
+      }
+    }
+
+    .dashicons-info {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      font-size: 14px;
+      color: #888;
+      background-color: rgba(255,255,255,0.7);
+      border-radius: 50%;
+      padding: 2px;
+    }
+  }
+} 
