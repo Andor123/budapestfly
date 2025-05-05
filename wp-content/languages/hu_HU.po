@@ -14,7 +14,7 @@ msgstr ""
 #. translators: Use this to specify the proper Google Font name and variants to
 #. load that is supported by your language. Do not translate. Set to 'off' to
 #. disable loading.
-#: wp-includes/script-loader.php:1656
+#: wp-includes/script-loader.php:1678
 #, gp-priority: high
 msgctxt "Google Font Name and Variants"
 msgid "Noto Serif:400,400i,700,700i"
@@ -52,7 +52,7 @@ msgstr "off"
 #: wp-includes/js/dist/block-library.js:43971
 #: wp-includes/js/dist/block-library.js:46218
 #: wp-includes/js/dist/editor.js:27461 wp-includes/js/dist/editor.js:27505
-#: wp-includes/js/dist/editor.js:32495
+#: wp-includes/js/dist/editor.js:32494
 #, gp-priority: high
 msgctxt "Word count type. Do not translate!"
 msgid "words"
@@ -69,7 +69,7 @@ msgstr "https://hu.wordpress.org/"
 #. translators: If there are characters in your language that are not supported
 #. by Open Sans, translate this to 'off'. Do not translate into your own
 #. language.
-#: wp-includes/script-loader.php:1565
+#: wp-includes/script-loader.php:1587
 #, gp-priority: high
 msgctxt "Open Sans font: on or off"
 msgid "on"
@@ -280,7 +280,7 @@ msgstr "január"
 #: wp-includes/js/dist/block-editor.js:48938
 #: wp-includes/js/dist/block-editor.js:48943
 #: wp-includes/js/dist/block-editor.js:50082
-#: wp-includes/js/dist/block-editor.js:74013
+#: wp-includes/js/dist/block-editor.js:74008
 #: wp-includes/js/dist/edit-site.js:27267 wp-admin/includes/upgrade.php:182
 #, gp-priority: high
 msgid "Uncategorized"
@@ -319,8 +319,8 @@ msgstr "Feltöltés"
 
 #. translators: Hidden accessibility text.
 #: wp-includes/js/dist/block-editor.js:24700
-#: wp-includes/js/dist/block-editor.js:68823
-#: wp-includes/js/dist/block-editor.js:68841
+#: wp-includes/js/dist/block-editor.js:68826
+#: wp-includes/js/dist/block-editor.js:68844
 #: wp-includes/js/dist/block-library.js:65522
 #: wp-includes/js/dist/editor.js:24986
 #: wp-admin/includes/class-custom-background.php:357
@@ -339,11 +339,11 @@ msgstr "Az e-mailek ellenőrzése %s-ként egyszer."
 msgid "This function should not be called before the theme directory is registered."
 msgstr "Ezt a funkciót nem szabad meghívni azelőtt, hogy a sablon könyvtár regisztrálása megtörténne."
 
-#: wp-includes/script-loader.php:986
+#: wp-includes/script-loader.php:1008
 msgid "This file cannot be processed by the web server."
 msgstr "Ezt a fájlt a kiszolgáló nem tudja feldolgozni."
 
-#: wp-includes/script-loader.php:813 wp-admin/js/tags.js:62
+#: wp-includes/script-loader.php:835 wp-admin/js/tags.js:62
 msgid "An error occurred while processing your request. Please try again later."
 msgstr "Hiba történt a kérés feldolgozása közben. Próbáljuk meg később."
 
@@ -363,8 +363,8 @@ msgstr "A sablonfájlokon alapuló sablonrészek nem rendelkezhetnek előzménye
 msgid "Whether to ignore sticky posts or not."
 msgstr "Hagyjuk-e figyelmen kívül a ragadós bejegyzéseket, vagy ne."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:162
-#: wp-includes/script-loader.php:1010
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:170
+#: wp-includes/script-loader.php:1032
 msgid "The web server cannot generate responsive image sizes for this image. Convert it to JPEG or PNG before uploading."
 msgstr "A webszerver nem tud reszponzív képméreteket generálni ehhez a képhez. Feltöltés előtt alakítsuk át JPEG vagy PNG formátumra."
 
@@ -791,7 +791,7 @@ msgid "Disable"
 msgstr "Kikapcsolás"
 
 #. translators: Hidden accessibility text.
-#: wp-includes/js/dist/editor.js:20571 wp-includes/js/dist/editor.js:32977
+#: wp-includes/js/dist/editor.js:20571 wp-includes/js/dist/editor.js:32976
 #: wp-admin/edit-form-comment.php:133
 msgid "Comment status"
 msgstr "Hozzászólás állapota"
@@ -1100,7 +1100,7 @@ msgid "Add or remove pattern categories"
 msgstr "Mintakategóriák hozzáadása vagy eltávolítása"
 
 #. translators: %s: wp_remove_surrounding_empty_script_tags()
-#: wp-includes/script-loader.php:3419
+#: wp-includes/script-loader.php:3441
 msgid "Function %s used incorrectly in PHP."
 msgstr "A %s függvényt helytelenül használják a PHP-ban."
 
@@ -1352,7 +1352,7 @@ msgid "Public facing script module IDs."
 msgstr "Nyilvános szkriptmodul-azonosítók."
 
 #. translators: %s: attachment mime type
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:414
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:422
 msgid "This site does not support post thumbnails on attachments with MIME type %s."
 msgstr "Ez a webhely nem támogatja %s MIME-típusú mellékleteknél a bejegyzés bélyegképeket."
 
@@ -1676,7 +1676,7 @@ msgctxt "taxonomy general name"
 msgid "Pattern Categories"
 msgstr "Minta kategóriák"
 
-#: wp-includes/script-loader.php:3412
+#: wp-includes/script-loader.php:3434
 msgid "Expected string to start with script tag (without attributes) and end with script tag, with optional whitespace."
 msgstr "A várt karakterlánc script címkével kezdődik (attribútumok nélkül), és script címkével végződik, nem kötelező szóközzel."
 
@@ -1863,7 +1863,8 @@ msgstr "WordPress megismerése"
 
 #: wp-includes/update.php:1132
 #: wp-admin/includes/class-wp-automatic-updater.php:506
-#: wp-admin/includes/class-wp-upgrader.php:189 wp-admin/includes/file.php:1613
+#: wp-admin/includes/class-wp-upgrader.php:189
+#: wp-admin/includes/class-wp-upgrader.php:1020 wp-admin/includes/file.php:1613
 #: wp-admin/includes/plugin.php:948 wp-admin/includes/theme.php:62
 msgid "Could not access filesystem."
 msgstr "Nem sikerült elérni a fájlrendszert."
@@ -2224,14 +2225,14 @@ msgctxt "block category"
 msgid "Patterns"
 msgstr "Minták"
 
-#: wp-includes/admin-bar.php:1127
+#: wp-includes/admin-bar.php:1136
 #: wp-admin/includes/class-custom-image-header.php:77
 #: wp-admin/includes/class-custom-image-header.php:78 wp-admin/menu.php:237
 msgctxt "custom image header"
 msgid "Header"
 msgstr "Fejrész"
 
-#: wp-includes/admin-bar.php:1113
+#: wp-includes/admin-bar.php:1122
 #: wp-admin/includes/class-custom-background.php:70
 #: wp-admin/includes/class-custom-background.php:71 wp-admin/menu.php:242
 msgctxt "custom background"
@@ -2359,8 +2360,8 @@ msgid "Style Variations"
 msgstr "Stílus variációk"
 
 #: wp-includes/js/dist/block-editor.js:35084
-#: wp-includes/js/dist/block-editor.js:71832
-#: wp-includes/js/dist/block-editor.js:71837 wp-admin/widgets-form.php:300
+#: wp-includes/js/dist/block-editor.js:71827
+#: wp-includes/js/dist/block-editor.js:71832 wp-admin/widgets-form.php:300
 msgid "Position"
 msgstr "Pozíció"
 
@@ -2375,7 +2376,7 @@ msgstr "Ragadós"
 msgid "https://wordpress.org/documentation/article/reset-your-password/"
 msgstr "https://wordpress.org/documentation/article/reset-your-password/"
 
-#: wp-includes/script-loader.php:1343
+#: wp-includes/script-loader.php:1365
 msgid "https://wordpress.org/documentation/article/site-editor/"
 msgstr "https://wordpress.org/documentation/article/site-editor/"
 
@@ -3349,13 +3350,13 @@ msgctxt "Block pattern category"
 msgid "Featured"
 msgstr "Kiemelt"
 
-#: wp-includes/script-loader.php:1347
+#: wp-includes/script-loader.php:1369
 msgid "Use Site Editor"
 msgstr "Webhelyszerkesztő használata"
 
 #. translators: 1: Link to Site Editor documentation on HelpHub, 2: HTML
 #. button.
-#: wp-includes/script-loader.php:1342
+#: wp-includes/script-loader.php:1364
 msgid "Hurray! Your theme supports site editing with blocks. <a href=\"%1$s\">Tell me more</a>. %2$s"
 msgstr "Hurrá! A használt sablon támogatja a blokkokkal történő teljes webhelyszerkesztést. <a href=\"%1$s\">Bővebb információ</a>. %2$s"
 
@@ -3573,7 +3574,7 @@ msgstr "Sablonrész terület"
 msgid "Template Part Areas"
 msgstr "Sablonrész területek"
 
-#: wp-includes/script-loader.php:994
+#: wp-includes/script-loader.php:1016
 msgid "The server cannot process the image. This can happen if the server is busy or does not have enough resources to complete the task. Uploading a smaller image may help. Suggested maximum size is 2560 pixels."
 msgstr "A szerver nem tudja feldolgozni a képet. Ez akkor fordulhat elő, ha a kiszolgáló foglalt, vagy nem rendelkezik elegendő erőforrással a feladat végrehajtásához. Kisebb kép feltöltése segíthet. A javasolt maximális méret 2560 pixel."
 
@@ -5076,7 +5077,7 @@ msgid "Show on front"
 msgstr "Megjelenés elől"
 
 #: wp-includes/post.php:299 wp-includes/js/dist/block-editor.js:57598
-#: wp-includes/js/dist/block-editor.js:65316
+#: wp-includes/js/dist/block-editor.js:65319
 msgid "Patterns list"
 msgstr "Minták lista"
 
@@ -5669,7 +5670,7 @@ msgstr "Új mintasablon"
 #: wp-includes/js/dist/edit-site.js:10664
 #: wp-includes/js/dist/edit-site.js:38117
 #: wp-includes/js/dist/edit-site.js:40241 wp-includes/js/dist/editor.js:9949
-#: wp-includes/js/dist/editor.js:19845 wp-includes/js/dist/editor.js:33187
+#: wp-includes/js/dist/editor.js:19845 wp-includes/js/dist/editor.js:33186
 msgid "Templates"
 msgstr "Mintasablonok"
 
@@ -5692,7 +5693,7 @@ msgstr "(Főoldal link, új lapon nyílik meg)"
 
 #. translators: 1: Block type, 2: Typography supports key, e.g: fontSize,
 #. lineHeight, etc. 3: block.json, 4: Old metadata key, 5: New metadata key.
-#: wp-includes/blocks.php:2534
+#: wp-includes/blocks.php:2551
 msgid "Block \"%1$s\" is declaring %2$s support in %3$s file under %4$s. %2$s support is now declared under %5$s."
 msgstr "A \"%1$s\" blokk a %2$s támogatását deklarálja a %3$s fájlban a %4$s alatt. A %2$s támogatása mostantól a %5$s alatt deklarált."
 
@@ -5777,7 +5778,7 @@ msgstr "Szöveg"
 #. translators: Hidden accessibility text. %s: Total number of updates
 #. available.
 #. translators: %s: Total number of updates available.
-#: wp-includes/admin-bar.php:1154 wp-admin/js/updates.js:370
+#: wp-includes/admin-bar.php:1163 wp-admin/js/updates.js:370
 msgid "%s update available"
 msgid_plural "%s updates available"
 msgstr[0] "%s elérhető frissítés"
@@ -6086,71 +6087,71 @@ msgstr "Egy bővítmény megakadályozta az esemény ütemezését."
 msgid "Event timestamp must be a valid Unix timestamp."
 msgstr "Az esemény időbélyegének érvényes Unix időbélyegynek kell lennie."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1562
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1570
 msgid "As a percentage of the image, the height to crop the image to. DEPRECATED: Use `modifiers` instead."
 msgstr "A kivágás magassága a kép százalékában. ELAVULT: Használja inkább a 'módosításokat'!"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1556
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1564
 msgid "As a percentage of the image, the width to crop the image to. DEPRECATED: Use `modifiers` instead."
 msgstr " A kivágás szélessége a kép százalékában. ELAVULT: Használja inkább a 'módosításokat'!"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1550
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1558
 msgid "As a percentage of the image, the y position to start the crop from. DEPRECATED: Use `modifiers` instead."
 msgstr "A kivágás y poziciójának kezdete a kép százalékában. ELAVULT: Használja inkább a 'módositásokat'!"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1544
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1552
 msgid "As a percentage of the image, the x position to start the crop from. DEPRECATED: Use `modifiers` instead."
 msgstr "A kivágás kezdetének poziciója a kép százalékában. ELAVULT: Használja inkább a 'módosításokat'."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1536
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1544
 msgid "The amount to rotate the image clockwise in degrees. DEPRECATED: Use `modifiers` instead."
 msgstr "Képforgatás jobbra (fok).  ELAVULT: használja inkább a 'módosításokat',"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1525
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1533
 msgid "Height of the crop as a percentage of the image height."
 msgstr "A kivágás magassága a képmagasság százalékában. "
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1521
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1529
 msgid "Width of the crop as a percentage of the image width."
 msgstr "A kivágás szélessége a képszélesség százalékában."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1517
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1525
 msgid "Vertical position from the top to begin the crop as a percentage of the image height."
 msgstr "Vertikális pozíció a kivágás tetejétől a képmagasság százalékában."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1513
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1521
 msgid "Horizontal position from the left to begin the crop as a percentage of the image width."
 msgstr "Horizontális pozició balra a kivágástól a képszélesség százalékában."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1503
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1511
 msgid "Crop arguments."
 msgstr "Kivágás paraméterei."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1498
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1506
 msgid "Crop type."
 msgstr "Kivágás típusa."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1487
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1495
 msgid "Angle to rotate clockwise in degrees."
 msgstr "Jobbra forgatás szöge (fok)."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1480
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1488
 msgid "Rotation arguments."
 msgstr "Forgatás paraméterei."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1475
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1483
 msgid "Rotation type."
 msgstr "Kivágás típusa."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1472
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1480
 msgid "Rotation"
 msgstr "Forgatás"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1464
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1472
 msgid "Image edit."
 msgstr "Kép szerkesztés."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1460
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1468
 msgid "Array of image edits."
 msgstr "Képszerkesztések tömbje."
 
@@ -6270,8 +6271,8 @@ msgstr "&#8592; Irány a médiatárba"
 
 #: wp-includes/js/dist/block-editor.js:28914
 #: wp-includes/js/dist/block-editor.js:29746
-#: wp-includes/js/dist/edit-site.js:36751 wp-includes/js/dist/editor.js:33963
-#: wp-includes/js/dist/editor.js:33965 wp-admin/menu.php:194
+#: wp-includes/js/dist/edit-site.js:36751 wp-includes/js/dist/editor.js:33962
+#: wp-includes/js/dist/editor.js:33964 wp-admin/menu.php:194
 msgid "Appearance"
 msgstr "Megjelenés"
 
@@ -6674,7 +6675,7 @@ msgstr "Menü elem"
 msgid "Comment"
 msgstr "Hozzászólás"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1495
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1503
 #: wp-includes/js/dist/block-library.js:27153
 #: wp-includes/js/dist/block-library.js:55443
 #: wp-admin/includes/image-edit.php:63
@@ -6685,7 +6686,7 @@ msgstr "Körbevágás"
 msgid "Notifications"
 msgstr "Értesítések"
 
-#: wp-includes/script-loader.php:1011 wp-includes/js/media-views.js:6541
+#: wp-includes/script-loader.php:1033 wp-includes/js/media-views.js:6541
 #: wp-admin/js/media.js:247 wp-admin/js/post.js:1300
 msgid "The file URL has been copied to your clipboard"
 msgstr "A fájl URL a vágólapra került."
@@ -6970,31 +6971,31 @@ msgstr "Ezt a figyelmeztetést a %s kezelő váltotta ki."
 msgid "Please consider writing more inclusive code."
 msgstr "Fontoljuk meg több elemre illeszkedő kód írását."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1454
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1462
 msgid "URL to the edited image file."
 msgstr "A szerkesztett két fájl URL címe."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:664
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:672
 msgid "Unable to crop this image."
 msgstr "Ezt a képet nem sikerült körbevágni."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:642
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:650
 msgid "Unable to rotate this image."
 msgstr "Ezt a képet nem sikerült elforgatni."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:624
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:632
 msgid "Unable to edit this image."
 msgstr "Ezt a képet nem sikerült szerkeszteni."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:603
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:611
 msgid "The image was not edited. Edit the image before applying the changes."
 msgstr "A kép nem lett szerkesztve. Szerkesszük a képet mielőtt alkalmaznánk a módosításokat."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:568
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:576
 msgid "This type of file cannot be edited."
 msgstr "Az ilyen típusú fájlokat nem lehet szerkeszteni."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:558
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:566
 msgid "Unable to get meta information for file."
 msgstr "Nem sikerült a fájlból meta információkat kinyerni."
 
@@ -7464,7 +7465,7 @@ msgctxt "theme"
 msgid "<strong>Error:</strong> Current WordPress and PHP versions do not meet minimum requirements for %s."
 msgstr "<strong>Hiba:</strong> A jelenlegi WordPress és PHP verzió nem éri el ennek a sablonnak a minimálisan elvárását: %s."
 
-#: wp-includes/script-loader.php:1009
+#: wp-includes/script-loader.php:1031
 msgid "This image cannot be displayed in a web browser. For best results convert it to JPEG before uploading."
 msgstr "Ezt a képet nem lehet böngészőben megjeleníteni. A legjobb eredmény érdekében alakítsuk át a képet JPEG formátumúra feltöltés előtt."
 
@@ -7784,7 +7785,7 @@ msgstr "Sajnáljuk, a bejegyzést nem sikerült létrehozni."
 
 #. translators: Minimum input length in characters to start searching posts in
 #. the "Insert/edit link" modal.
-#: wp-includes/script-loader.php:1252
+#: wp-includes/script-loader.php:1274
 msgctxt "minimum input length for searching post links"
 msgid "3"
 msgstr "3"
@@ -7813,7 +7814,7 @@ msgctxt "file type group"
 msgid "Archives"
 msgstr "Archívum"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1071
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1079
 msgid "List of the missing image sizes of the attachment."
 msgstr "A melléklet hiányzó képméreteinek felsorolása."
 
@@ -7830,14 +7831,14 @@ msgid "Filter media"
 msgstr "Média szűrése"
 
 #. translators: Hidden accessibility text.
-#: wp-includes/media-template.php:335 wp-includes/js/dist/block-editor.js:65221
+#: wp-includes/media-template.php:335 wp-includes/js/dist/block-editor.js:65224
 #: wp-admin/includes/class-wp-media-list-table.php:44
 msgid "Grid view"
 msgstr "Rács nézet"
 
 #. translators: Hidden accessibility text.
-#: wp-includes/media-template.php:327 wp-includes/js/dist/block-editor.js:64671
-#: wp-includes/js/dist/block-editor.js:64705
+#: wp-includes/media-template.php:327 wp-includes/js/dist/block-editor.js:64674
+#: wp-includes/js/dist/block-editor.js:64708
 #: wp-admin/includes/class-wp-media-list-table.php:43
 msgid "List view"
 msgstr "Lista nézet"
@@ -8030,7 +8031,7 @@ msgstr "Hozzászólások hírcsatorna"
 msgid "Entries feed"
 msgstr "Bejegyzések hírcsatorna"
 
-#: wp-includes/script-loader.php:993
+#: wp-includes/script-loader.php:1015
 msgid "Unexpected response from the server. The file may have been uploaded successfully. Check in the Media Library or reload the page."
 msgstr "Váratlan válasz a kiszolgálótól. A fájlt lehet, hogy sikerült feltölteni. Ellenőrizzük a Médiatárban vagy töltsük újra az oldalt."
 
@@ -8466,13 +8467,13 @@ msgstr "További képek hozzáadva a galériához: %s"
 msgid "The current image has no alternative text. The file name is: %s"
 msgstr "Az aktuális képnek nincs alternatív szövege. A fájl neve: %s"
 
-#: wp-includes/admin-bar.php:1225
+#: wp-includes/admin-bar.php:1234
 msgid "Exit Recovery Mode"
 msgstr "Kilépés a helyreállítási módból"
 
 #. translators: Hidden accessibility text. %s: Number of comments.
 #. translators: %s: Number of comments.
-#: wp-includes/admin-bar.php:1039 wp-admin/includes/ajax-actions.php:500
+#: wp-includes/admin-bar.php:1048 wp-admin/includes/ajax-actions.php:500
 #: wp-admin/includes/ajax-actions.php:571
 #: wp-admin/includes/ajax-actions.php:1443 wp-admin/includes/dashboard.php:342
 #: wp-admin/menu.php:97
@@ -8630,7 +8631,7 @@ msgstr[1] "%s másodperc"
 #. translators: %s: the number of minutes to read the post.
 #: wp-includes/formatting.php:3882 wp-includes/functions.php:562
 #: wp-includes/js/dist/block-library.js:46221
-#: wp-includes/js/dist/editor.js:32505
+#: wp-includes/js/dist/editor.js:32504
 msgid "%s minute"
 msgid_plural "%s minutes"
 msgstr[0] "%s perc"
@@ -8756,8 +8757,8 @@ msgid "Embeds"
 msgstr "Beágyazások"
 
 #: wp-includes/js/dist/editor.js:9787 wp-includes/js/dist/editor.js:20658
-#: wp-includes/js/dist/editor.js:20758 wp-includes/js/dist/editor.js:32947
-#: wp-includes/js/dist/editor.js:32968 wp-includes/js/dist/editor.js:33944
+#: wp-includes/js/dist/editor.js:20758 wp-includes/js/dist/editor.js:32946
+#: wp-includes/js/dist/editor.js:32967 wp-includes/js/dist/editor.js:33943
 #: wp-admin/includes/meta-boxes.php:1679 wp-admin/menu.php:392
 msgid "Discussion"
 msgstr "Beszélgetés"
@@ -9068,13 +9069,13 @@ msgstr "Ezt a bejegyzést a jelenlegi felhasználó kiemelheti."
 msgid "The current user can publish this post."
 msgstr "A jelenlegi felhasználó közzéteheti ezt a bejegyzést."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1436
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1444
 #: wp-admin/includes/ms.php:45
 msgid "You have used your space quota. Please delete files before uploading."
 msgstr "A rendelkezésre álló tárhely felhasználásra került. A feltöltés előtt néhány fájlt törölni kellene."
 
 #. translators: %s: Required disk space in kilobytes.
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1416
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1424
 #: wp-admin/includes/ms.php:36
 msgid "Not enough space to upload. %s KB needed."
 msgstr "Nincs elég tárhely a feltöltéshez! %s KB szükséges."
@@ -9429,7 +9430,7 @@ msgid "The link you followed has expired."
 msgstr "A követett hivatkozás érvényessége lejárt."
 
 #: wp-includes/class-wp-customize-manager.php:524
-#: wp-includes/script-loader.php:1296 wp-admin/customize.php:17
+#: wp-includes/script-loader.php:1318 wp-admin/customize.php:17
 #: wp-admin/customize.php:34 wp-admin/edit-comments.php:13
 #: wp-admin/edit-tags.php:28 wp-admin/edit-tags.php:85
 #: wp-admin/edit-tags.php:116 wp-admin/edit-tags.php:136
@@ -9463,7 +9464,7 @@ msgstr "Mindenképpen módosítsuk, még akkor is, ha ez megállíthatja a webhe
 msgid "The query only expected one placeholder, but an array of multiple placeholders was sent."
 msgstr "A lekérdezés csak egy helyőrzőre számított, de több helyőrzőtömb érkezett."
 
-#: wp-includes/script-loader.php:1285
+#: wp-includes/script-loader.php:1307
 msgctxt "customizer changeset status"
 msgid "Scheduled"
 msgstr "Ütemezett"
@@ -9484,7 +9485,7 @@ msgid "%1$s is not a valid property of Object."
 msgstr "%1$s az objektum nem érvényes tulajdonsága."
 
 #. translators: %s: URL to Add Themes admin screen.
-#: wp-includes/script-loader.php:1334
+#: wp-includes/script-loader.php:1356
 msgid "You will not be able to install new themes from here yet since your install requires SFTP credentials. For now, please <a href=\"%s\">add themes in the admin</a>."
 msgstr "Innen nem fogunk tudni új sablonokat telepíteni, mert a telepítés SFTP hozzáférést kér. Egyelőre, <a href=\"%s\">adjunk hozzá sablonokat az admin felületről</a>!"
 
@@ -9505,7 +9506,7 @@ msgid "Click &#8220;Next&#8221; to start adding links to your new menu."
 msgstr "Új hivatkozások hozzáadásának megkezdéséhez kattintsunk a &#8220;Következő&#8221;-re, és már pakolhatjuk is őket az menübe."
 
 #: wp-includes/class-wp-customize-manager.php:4874
-#: wp-includes/script-loader.php:1284
+#: wp-includes/script-loader.php:1306
 msgctxt "customizer changeset action/button label"
 msgid "Schedule"
 msgstr "Időzít"
@@ -9530,11 +9531,11 @@ msgstr "Navigációs menü hozzáadása az oldalsávhoz."
 
 #. translators: %s: Display name of the user who has taken over the changeset
 #. in customizer.
-#: wp-includes/script-loader.php:1309
+#: wp-includes/script-loader.php:1331
 msgid "%s has taken over and is currently customizing."
 msgstr "%s átvette és jelenleg személyre szabja."
 
-#: wp-includes/script-loader.php:1303
+#: wp-includes/script-loader.php:1325
 msgid "Looks like something&#8217;s gone wrong. Wait a couple seconds, and then try again."
 msgstr "Úgy tűnik, hogy valami rosszul sült el. Várjunk egy kicsit, majd próbáljuk újra."
 
@@ -9739,20 +9740,20 @@ msgstr "&larr; Irány a kategóriákhoz"
 msgid "&larr; Go to Link Categories"
 msgstr "&larr; Irány a hivatkozás kategóriákhoz"
 
-#: wp-includes/script-loader.php:1331
+#: wp-includes/script-loader.php:1353
 msgid "Sorry, you cannot preview new themes when you have changes scheduled or saved as a draft. Please publish your changes, or wait until they publish to preview new themes."
 msgstr "Sajnáljuk, előfordulhat, hogy nem jeleníthető meg előnézet az új sablonban, amikor ütemezett változtatás vagy vázlatkénti mentés zajlik. Tegyük közzé a módosításokat, vagy várjunk amíg az új sablon előnézeti képe megjelenik!"
 
-#: wp-includes/script-loader.php:1330
+#: wp-includes/script-loader.php:1352
 msgid "Schedule your customization changes to publish (\"go live\") at a future date."
 msgstr "Időzítsük a testreszabások megjelenési idejét egy jövőbeni időpontra."
 
-#: wp-includes/script-loader.php:1322
+#: wp-includes/script-loader.php:1344
 msgid "Homepage and posts page must be different."
 msgstr "A főoldalnak és a bejegyzések oldalának különbözőnek kell lennie."
 
 #. translators: %d: Error count.
-#: wp-includes/script-loader.php:1317 wp-includes/script-loader.php:1319
+#: wp-includes/script-loader.php:1339 wp-includes/script-loader.php:1341
 #: wp-includes/widgets/class-wp-widget-custom-html.php:230
 #: wp-includes/widgets/class-wp-widget-custom-html.php:232
 msgid "There is %d error which must be fixed before you can save."
@@ -9761,273 +9762,273 @@ msgstr[0] "Mentés előtt, még %d hibát ki kell javítani."
 msgstr[1] "Mentés előtt, még %d hibát ki kell javítani."
 
 #. translators: %s: URL to the Customizer to load the autosaved version.
-#: wp-includes/script-loader.php:1311
+#: wp-includes/script-loader.php:1333
 msgid "There is a more recent autosave of your changes than the one you are previewing. <a href=\"%s\">Restore the autosave</a>"
 msgstr "A bejegyzésnek létezik a most látottnál egy frissebb változata is. <a href=\"%s\">Automatikus mentés visszaállítása</a>"
 
-#: wp-includes/script-loader.php:1307
+#: wp-includes/script-loader.php:1329
 msgid "Are you sure you want to discard your unpublished changes?"
 msgstr "Biztosan szeretnénk elvetni minden nem közzétett változást?"
 
-#: wp-includes/script-loader.php:1306
+#: wp-includes/script-loader.php:1328
 msgid "Reverting unpublished changes&hellip;"
 msgstr "Nem közzétett változások visszavonása&hellip;"
 
-#: wp-includes/script-loader.php:1305
+#: wp-includes/script-loader.php:1327
 msgid "Setting up your live preview. This may take a bit."
 msgstr "Az élő előnézet előkészítése. Egy pillanat."
 
-#: wp-includes/script-loader.php:1304
+#: wp-includes/script-loader.php:1326
 msgid "Downloading your new theme&hellip;"
 msgstr "Új sablon letöltése&hellip;"
 
-#: wp-includes/script-loader.php:1294
+#: wp-includes/script-loader.php:1316
 msgid "Discard changes"
 msgstr "Módosítások elvetése"
 
-#: wp-includes/script-loader.php:1287
+#: wp-includes/script-loader.php:1309
 msgid "Please save your changes in order to share the preview."
 msgstr "Az előnézet megtekintéséhez előbb mentsük el a változásokat."
 
-#: wp-includes/script-loader.php:1283
+#: wp-includes/script-loader.php:1305
 msgid "Updating"
 msgstr "Frissítés"
 
-#: wp-includes/script-loader.php:1282
+#: wp-includes/script-loader.php:1304
 msgid "Draft Saved"
 msgstr "Vázlat mentve"
 
-#: wp-includes/script-loader.php:1277 wp-admin/customize.php:197
+#: wp-includes/script-loader.php:1299 wp-admin/customize.php:197
 msgid "Activate &amp; Publish"
 msgstr "Bekapcsolás &amp; Közzététel"
 
-#: wp-includes/script-loader.php:1142
+#: wp-includes/script-loader.php:1164
 msgid "Yiddish"
 msgstr "Jiddis"
 
-#: wp-includes/script-loader.php:1141
+#: wp-includes/script-loader.php:1163
 msgid "Welsh"
 msgstr "welszi"
 
-#: wp-includes/script-loader.php:1140
+#: wp-includes/script-loader.php:1162
 msgid "Vietnamese"
 msgstr "vietnámi"
 
-#: wp-includes/script-loader.php:1139
+#: wp-includes/script-loader.php:1161
 msgid "Ukrainian"
 msgstr "ukrán"
 
-#: wp-includes/script-loader.php:1138
+#: wp-includes/script-loader.php:1160
 msgid "Turkish"
 msgstr "török"
 
-#: wp-includes/script-loader.php:1137
+#: wp-includes/script-loader.php:1159
 msgid "Thai"
 msgstr "thai"
 
-#: wp-includes/script-loader.php:1136
+#: wp-includes/script-loader.php:1158
 msgid "Tagalog"
 msgstr "Tagalog"
 
-#: wp-includes/script-loader.php:1135
+#: wp-includes/script-loader.php:1157
 msgid "Swedish"
 msgstr "svéd"
 
-#: wp-includes/script-loader.php:1134
+#: wp-includes/script-loader.php:1156
 msgid "Swahili"
 msgstr "szuahéli"
 
-#: wp-includes/script-loader.php:1133
+#: wp-includes/script-loader.php:1155
 msgid "Spanish"
 msgstr "spanyol"
 
-#: wp-includes/script-loader.php:1132
+#: wp-includes/script-loader.php:1154
 msgid "Slovenian"
 msgstr "szlovén"
 
-#: wp-includes/script-loader.php:1131
+#: wp-includes/script-loader.php:1153
 msgid "Slovak"
 msgstr "szlovák"
 
-#: wp-includes/script-loader.php:1130
+#: wp-includes/script-loader.php:1152
 msgid "Serbian"
 msgstr "szerb"
 
-#: wp-includes/script-loader.php:1129
+#: wp-includes/script-loader.php:1151
 msgid "Russian"
 msgstr "orosz"
 
-#: wp-includes/script-loader.php:1128
+#: wp-includes/script-loader.php:1150
 msgid "Romanian"
 msgstr "román"
 
-#: wp-includes/script-loader.php:1127
+#: wp-includes/script-loader.php:1149
 msgid "Portuguese"
 msgstr "portugál"
 
-#: wp-includes/script-loader.php:1126
+#: wp-includes/script-loader.php:1148
 msgid "Polish"
 msgstr "lengyel"
 
-#: wp-includes/script-loader.php:1125
+#: wp-includes/script-loader.php:1147
 msgid "Persian"
 msgstr "perzsa"
 
-#: wp-includes/script-loader.php:1124
+#: wp-includes/script-loader.php:1146
 msgid "Norwegian"
 msgstr "norvég"
 
-#: wp-includes/script-loader.php:1123
+#: wp-includes/script-loader.php:1145
 msgid "Maltese"
 msgstr "máltai"
 
-#: wp-includes/script-loader.php:1122
+#: wp-includes/script-loader.php:1144
 msgid "Malay"
 msgstr "maláj"
 
-#: wp-includes/script-loader.php:1121
+#: wp-includes/script-loader.php:1143
 msgid "Macedonian"
 msgstr "macedón"
 
-#: wp-includes/script-loader.php:1120
+#: wp-includes/script-loader.php:1142
 msgid "Lithuanian"
 msgstr "litván"
 
-#: wp-includes/script-loader.php:1119
+#: wp-includes/script-loader.php:1141
 msgid "Latvian"
 msgstr "lett"
 
-#: wp-includes/script-loader.php:1118
+#: wp-includes/script-loader.php:1140
 msgid "Korean"
 msgstr "koreai"
 
-#: wp-includes/script-loader.php:1117
+#: wp-includes/script-loader.php:1139
 msgid "Japanese"
 msgstr "japán"
 
-#: wp-includes/script-loader.php:1116
+#: wp-includes/script-loader.php:1138
 msgid "Italian"
 msgstr "olasz"
 
-#: wp-includes/script-loader.php:1115
+#: wp-includes/script-loader.php:1137
 msgid "Irish"
 msgstr "ír"
 
-#: wp-includes/script-loader.php:1114
+#: wp-includes/script-loader.php:1136
 msgid "Indonesian"
 msgstr "indonéz"
 
-#: wp-includes/script-loader.php:1113
+#: wp-includes/script-loader.php:1135
 msgid "Icelandic"
 msgstr "izlandi"
 
-#: wp-includes/script-loader.php:1112
+#: wp-includes/script-loader.php:1134
 msgid "Hungarian"
 msgstr "magyar"
 
-#: wp-includes/script-loader.php:1111
+#: wp-includes/script-loader.php:1133
 msgid "Hindi"
 msgstr "hindi"
 
-#: wp-includes/script-loader.php:1110
+#: wp-includes/script-loader.php:1132
 msgid "Hebrew"
 msgstr "héber"
 
-#: wp-includes/script-loader.php:1109
+#: wp-includes/script-loader.php:1131
 msgid "Haitian Creole"
 msgstr "haiti kreol"
 
-#: wp-includes/script-loader.php:1108
+#: wp-includes/script-loader.php:1130
 msgid "Greek"
 msgstr "görög"
 
-#: wp-includes/script-loader.php:1107
+#: wp-includes/script-loader.php:1129
 msgid "German"
 msgstr "német"
 
-#: wp-includes/script-loader.php:1106
+#: wp-includes/script-loader.php:1128
 msgid "Galician"
 msgstr "galíciai"
 
-#: wp-includes/script-loader.php:1105
+#: wp-includes/script-loader.php:1127
 msgid "French"
 msgstr "francia"
 
-#: wp-includes/script-loader.php:1103
+#: wp-includes/script-loader.php:1125
 msgid "Filipino"
 msgstr "filippínó"
 
-#: wp-includes/script-loader.php:1102
+#: wp-includes/script-loader.php:1124
 msgid "Estonian"
 msgstr "észt"
 
-#: wp-includes/script-loader.php:1101
+#: wp-includes/script-loader.php:1123
 #: wp-includes/js/dist/block-library.js:65371 wp-admin/includes/ms.php:655
 msgid "English"
 msgstr "Angol"
 
-#: wp-includes/script-loader.php:1100
+#: wp-includes/script-loader.php:1122
 msgid "Dutch"
 msgstr "holland"
 
-#: wp-includes/script-loader.php:1099
+#: wp-includes/script-loader.php:1121
 msgid "Danish"
 msgstr "dán"
 
-#: wp-includes/script-loader.php:1098
+#: wp-includes/script-loader.php:1120
 msgid "Czech"
 msgstr "cseh"
 
-#: wp-includes/script-loader.php:1097
+#: wp-includes/script-loader.php:1119
 msgid "Croatian"
 msgstr "horvát"
 
-#: wp-includes/script-loader.php:1096
+#: wp-includes/script-loader.php:1118
 msgid "Chinese (Traditional)"
 msgstr "kínai (hagyományos)"
 
-#: wp-includes/script-loader.php:1095
+#: wp-includes/script-loader.php:1117
 msgid "Chinese (Simplified)"
 msgstr "kínai (egyszerűsített)"
 
-#: wp-includes/script-loader.php:1094
+#: wp-includes/script-loader.php:1116
 msgid "Chinese"
 msgstr "kínai"
 
-#: wp-includes/script-loader.php:1093
+#: wp-includes/script-loader.php:1115
 msgid "Catalan"
 msgstr "katalán"
 
-#: wp-includes/script-loader.php:1092
+#: wp-includes/script-loader.php:1114
 msgid "Bulgarian"
 msgstr "bolgár"
 
-#: wp-includes/script-loader.php:1091
+#: wp-includes/script-loader.php:1113
 msgid "Belarusian"
 msgstr "fehér orosz"
 
-#: wp-includes/script-loader.php:1090
+#: wp-includes/script-loader.php:1112
 msgid "Arabic"
 msgstr "arab"
 
-#: wp-includes/script-loader.php:1089
+#: wp-includes/script-loader.php:1111
 msgid "Albanian"
 msgstr "albán"
 
-#: wp-includes/script-loader.php:1088
+#: wp-includes/script-loader.php:1110
 msgid "Afrikaans"
 msgstr "afrikai"
 
-#: wp-includes/script-loader.php:1078
+#: wp-includes/script-loader.php:1100
 msgid "Live Broadcast"
 msgstr "Élő közvetítés"
 
-#: wp-includes/script-loader.php:1086
+#: wp-includes/script-loader.php:1108
 #: wp-includes/js/dist/block-library.js:65263
 msgid "Chapters"
 msgstr "Fejezetek"
 
-#: wp-includes/script-loader.php:1072
+#: wp-includes/script-loader.php:1094
 msgid "You are using a browser that does not have Flash player enabled or installed. Please turn on your Flash player plugin or download the latest version from https://get.adobe.com/flashplayer/"
 msgstr "Olyan böngésző van használatban, amelyben nincs engedélyezve vagy telepítve a Flash player. A használathoz a Flash player bővítményt be kell kapcsolni, vagy a legújabb verziót a https://get.adobe.com/flashplayer/ oldalról letölteni és telepíteni."
 
@@ -10403,7 +10404,7 @@ msgstr "WordPress.org sablonok"
 msgid "Installed themes"
 msgstr "Telepített sablonok"
 
-#: wp-includes/script-loader.php:1337 wp-admin/customize.php:200
+#: wp-includes/script-loader.php:1359 wp-admin/customize.php:200
 #: wp-admin/customize.php:205 wp-admin/edit-form-advanced.php:389
 msgid "Publish Settings"
 msgstr "Közzétételi beállítások"
@@ -10448,7 +10449,7 @@ msgstr "Azonosítási hiba történt. Frissítsük az oldalt és próbáljuk új
 
 #. translators: %s: Number of invalid settings.
 #: wp-includes/class-wp-customize-manager.php:2803
-#: wp-includes/script-loader.php:1325 wp-includes/script-loader.php:1327
+#: wp-includes/script-loader.php:1347 wp-includes/script-loader.php:1349
 msgid "Unable to save due to %s invalid setting."
 msgid_plural "Unable to save due to %s invalid settings."
 msgstr[0] "Nem sikerült menteni %s hibás beállítás miatt."
@@ -10456,7 +10457,7 @@ msgstr[1] "Nem sikerült menteni %s hibás beállítás miatt."
 
 #: wp-includes/class-wp-customize-manager.php:2684
 #: wp-includes/class-wp-customize-manager.php:2699
-#: wp-includes/script-loader.php:1288
+#: wp-includes/script-loader.php:1310
 msgid "You must supply a future date to schedule."
 msgstr "Az időzítéshez egy jövőbeni dátumot kell megadni."
 
@@ -10464,11 +10465,11 @@ msgstr "Az időzítéshez egy jövőbeni dátumot kell megadni."
 msgid "The previous set of changes has already been published. Please try saving your current set of changes again."
 msgstr "A korábbi változások közzététele már megtörtént. Próbáljuk az aktuális változásokat újra elmenteni."
 
-#: wp-includes/admin-bar.php:923
+#: wp-includes/admin-bar.php:932
 msgid "Edit User"
 msgstr "Felhasználó szerkesztése"
 
-#: wp-includes/admin-bar.php:877
+#: wp-includes/admin-bar.php:886
 msgid "View User"
 msgstr "Felhasználó megtekintése"
 
@@ -10565,7 +10566,7 @@ msgstr "Hang hozzáadása"
 msgid "(no author)"
 msgstr "(nincs szerző)"
 
-#: wp-includes/script-loader.php:1295 wp-admin/includes/file.php:638
+#: wp-includes/script-loader.php:1317 wp-admin/includes/file.php:638
 msgid "An error occurred. Please try again later."
 msgstr "Hiba történt. Próbáljuk újra."
 
@@ -11148,23 +11149,23 @@ msgstr "Nem lehet megtekinteni az állapotot."
 msgid "Invalid status."
 msgstr "Hibás állapot."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1063
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1071
 msgid "URL to the original attachment file."
 msgstr "Az eredeti csatolmány url címe."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1043
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1051
 msgid "The attachment MIME type."
 msgstr "A csatolmány MIME típusa."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1035
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1043
 msgid "Attachment type."
 msgstr "Csatolmány típusa."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1012
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1020
 msgid "The attachment description."
 msgstr "A csatolmány leírása."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:989
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:997
 msgid "The attachment caption."
 msgstr "A csatolmány felirata."
 
@@ -11229,7 +11230,7 @@ msgid "Invalid page template."
 msgstr "Érvénytelen oldalsablon."
 
 #: wp-includes/post.php:4607 wp-includes/rest-api.php:2273
-#: wp-includes/script-loader.php:1338 wp-admin/includes/post.php:193
+#: wp-includes/script-loader.php:1360 wp-admin/includes/post.php:193
 msgid "Invalid date."
 msgstr "Érvénytelen dátum."
 
@@ -11412,7 +11413,7 @@ msgstr "Elnézést, nincs megfelelő jogosultság a bejegyzés kiemeléséhez."
 msgid "Reassign the deleted user's posts and links to this user ID."
 msgstr "Hozzárendeljük a törölt felhasználó hivatkozásait és bejegyzéseit az alábbi felhasználóhoz."
 
-#: wp-includes/script-loader.php:1312
+#: wp-includes/script-loader.php:1334
 msgid "This theme does not support video headers on this page. Navigate to the front page or another page that supports video headers."
 msgstr "Ez a sablon nem támogatja a videó beillesztését a fejrészbe ezen az oldalon. Menjünk a kezdőoldalra, vagy egy másik oldalra, amelyik támogatja a videó fejrészt!"
 
@@ -11543,12 +11544,12 @@ msgstr "A jelszómező nem hagyható üresen."
 msgid "Invalid user parameter(s)."
 msgstr "Érvénytelen felhasználói karakter(ek)."
 
-#: wp-includes/script-loader.php:1301
+#: wp-includes/script-loader.php:1323
 msgctxt "label for hide controls button without length constraints"
 msgid "Show Controls"
 msgstr "Mutassuk a vezérlőjeleket"
 
-#: wp-includes/script-loader.php:1300 wp-admin/customize.php:270
+#: wp-includes/script-loader.php:1322 wp-admin/customize.php:270
 msgctxt "label for hide controls button without length constraints"
 msgid "Hide Controls"
 msgstr "Vezérlők elrejtése"
@@ -11577,19 +11578,19 @@ msgctxt "default site language"
 msgid "Site Default"
 msgstr "A honlap alapértelmezése"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1026
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1034
 msgid "HTML description for the attachment, transformed for display."
 msgstr "A csatolmány HTML leírása, megjelenítéshez átalakítva."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1021
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1029
 msgid "Description for the attachment, as it exists in the database."
 msgstr "A csatolmány leírása, ahogyan az adatbázisban szerepel."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1003
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1011
 msgid "HTML caption for the attachment, transformed for display."
 msgstr "A csatolmány HTML felirata, megjelenítéshez átalakítva."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:998
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1006
 msgid "Caption for the attachment, as it exists in the database."
 msgstr "A csatolmány felirata, ahogyan az adatbázisban szerepel."
 
@@ -12331,54 +12332,54 @@ msgstr "Ez a lekérdezési paraméter nem engedélyezett: %s"
 msgid "Whether to bypass Trash and force deletion."
 msgstr "Hagyjuk-e ki a Lomtárat, és töröljünk egyből."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1291
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1299
 msgid "Limit result set to attachments of a particular MIME type."
 msgstr "Korlátozza az eredményhalmazt egy adott MIME-típusú mellékletekre."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1284
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1292
 msgid "Limit result set to attachments of a particular media type."
 msgstr "Korlátozza az eredményhalmazt adott médiatípusú mellékletekre."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1159
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1167
 msgid "Could not open file handle."
 msgstr "Nem sikerült megnyitni a fájlkezelőt."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1139
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1327
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1147
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1335
 msgid "Content hash did not match expected."
 msgstr "A tartalom újjlenyomata nem olyan, mint kellene."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1126
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1134
 msgid "Invalid Content-Disposition supplied. Content-Disposition needs to be formatted as `attachment; filename=\"image.png\"` or similar."
 msgstr "Érvénytelen tartalom-diszpozíció lett megadva. A tartalom-diszpozíció formázása `attachement; filename=\"image.png\"` vagy hasonló."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1116
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1124
 msgid "No Content-Disposition supplied."
 msgstr "Nincs tartalom megjelenítés."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1108
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1116
 msgid "No Content-Type supplied."
 msgstr "Tartalom típus nem engedélyezett."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1100
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1313
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1108
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1321
 msgid "No data supplied."
 msgstr "Nincsenek megadott adatok."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1057
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1065
 msgid "The ID for the associated post of the attachment."
 msgstr "A melléklethez kapcsolódó bejegyzés azonosítója."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1050
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1058
 msgid "Details about the media file, specific to its type."
 msgstr "A médiafájl részletei, a típusától függően."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:980
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:988
 msgid "Alternative text to display when attachment is not displayed."
 msgstr "Alternatív szöveg mutatása, amikor a csatolmány nem látszik."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:183
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:433
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:191
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:441
 msgid "Invalid parent type."
 msgstr "Érvénytelen szülő típus."
 
@@ -12387,7 +12388,7 @@ msgid "Sorry, you are not allowed to upload media to this post."
 msgstr "Sajnáljuk, nincs megfelelő jogosultság ehhez a bejegyzéshez médiatartalmat feltölteni."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:124
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:526
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:534
 msgid "Sorry, you are not allowed to upload media on this site."
 msgstr "Bocsánat, nincs megfelelő jogosultság média feltöltéséhez ezen az oldalon."
 
@@ -12685,7 +12686,7 @@ msgid "Learn more about CSS"
 msgstr "CSS ismeretek"
 
 #: wp-includes/class-wp-customize-manager.php:5748
-#: wp-includes/js/dist/block-editor.js:73288
+#: wp-includes/js/dist/block-editor.js:73283
 #: wp-includes/js/dist/edit-site.js:12235
 #: wp-includes/js/dist/edit-site.js:24327
 msgid "Additional CSS"
@@ -12845,35 +12846,35 @@ msgstr "Keresés eredménye"
 msgid "Rich Text Area. Press Control-Option-H for help."
 msgstr "Szövegmező. Segítséghez nyomjuk le a Ctrl + H billentyűket."
 
-#: wp-includes/script-loader.php:1077
+#: wp-includes/script-loader.php:1099
 msgid "Use Left/Right Arrow keys to advance one second, Up/Down arrows to advance ten seconds."
 msgstr "A Bal/Jobb billentyű használatával egy másodpercet, a Fel/Le billentyű használatával 10 másodpercet léptethetünk."
 
-#: wp-includes/script-loader.php:1079
+#: wp-includes/script-loader.php:1101
 msgid "Use Up/Down Arrow keys to increase or decrease volume."
 msgstr "A hangerő növeléséhez, illetőleg csökkentéséhez a Fel/Le billentyűket kell használni."
 
-#: wp-includes/script-loader.php:1082
+#: wp-includes/script-loader.php:1104
 msgid "Volume Slider"
 msgstr "Hangerő csúszka"
 
-#: wp-includes/script-loader.php:1084
+#: wp-includes/script-loader.php:1106
 msgid "Audio Player"
 msgstr "Audió lejátszó"
 
-#: wp-includes/script-loader.php:1083
+#: wp-includes/script-loader.php:1105
 msgid "Video Player"
 msgstr "Videólejátszó"
 
-#: wp-includes/script-loader.php:1076
+#: wp-includes/script-loader.php:1098
 msgid "Time Slider"
 msgstr "Időcsúszka"
 
-#: wp-includes/script-loader.php:1075 wp-includes/theme.php:1717
+#: wp-includes/script-loader.php:1097 wp-includes/theme.php:1717
 msgid "Pause"
 msgstr "Szünet"
 
-#: wp-includes/script-loader.php:1074 wp-includes/theme.php:1718
+#: wp-includes/script-loader.php:1096 wp-includes/theme.php:1718
 msgid "Play"
 msgstr "Lejátszás"
 
@@ -12973,7 +12974,7 @@ msgstr "Nem lehet lekérni a MySQL hibaüzenetet"
 msgid "Edit Menu"
 msgstr "Menü szerkesztése"
 
-#: wp-includes/script-loader.php:1977 wp-admin/includes/dashboard.php:1018
+#: wp-includes/script-loader.php:1999 wp-admin/includes/dashboard.php:1018
 msgid "Today"
 msgstr "Ma"
 
@@ -12987,13 +12988,13 @@ msgstr "Törölve:"
 msgid "Confirm use of weak password"
 msgstr "Gyenge jelszó használatának megerősítése"
 
-#: wp-includes/script-loader.php:1201
+#: wp-includes/script-loader.php:1223
 msgctxt "password strength"
 msgid "Password strength unknown"
 msgstr "Jelszó erőssége ismeretlen"
 
 #: wp-includes/rest-api/class-wp-rest-server.php:1266
-#: wp-includes/script-loader.php:812 wp-admin/js/tags.js:58
+#: wp-includes/script-loader.php:834 wp-admin/js/tags.js:58
 msgid "Sorry, you are not allowed to do that."
 msgstr "Elnézést, nincs megfelelő jogosultság a kívánt művelethez."
 
@@ -13043,12 +13044,12 @@ msgstr "Elnézést, nincs megfelelő jogosultság a felhasználók rendezéséhe
 
 #: wp-includes/class-wp-customize-manager.php:2389
 #: wp-includes/class-wp-customize-setting.php:599
-#: wp-includes/script-loader.php:1339
+#: wp-includes/script-loader.php:1361
 msgid "Invalid value."
 msgstr "Érvénytelen érték."
 
 #: wp-includes/class-wp-customize-manager.php:525
-#: wp-includes/script-loader.php:1297 wp-admin/customize.php:18
+#: wp-includes/script-loader.php:1319 wp-admin/customize.php:18
 msgid "Sorry, you are not allowed to customize this site."
 msgstr "Elnézést, nincs megfelelő jogosultság a honlap testreszabásához."
 
@@ -13063,11 +13064,11 @@ msgstr "Ne adjunk át %1$s címkéket %2$s funkciónak."
 msgid "Link options"
 msgstr "Hivatkozás beállítások"
 
-#: wp-includes/script-loader.php:1250 wp-includes/js/dist/format-library.js:800
+#: wp-includes/script-loader.php:1272 wp-includes/js/dist/format-library.js:800
 msgid "Link inserted."
 msgstr "Hivatkozás beillesztve."
 
-#: wp-includes/script-loader.php:1249 wp-includes/js/dist/block-editor.js:22690
+#: wp-includes/script-loader.php:1271 wp-includes/js/dist/block-editor.js:22690
 msgid "Link selected."
 msgstr "Hivatkozás kijelölve."
 
@@ -13125,7 +13126,7 @@ msgstr "<strong>Hiba:</strong> Az e-mail cím mező üres."
 msgid "Unregistering a built-in taxonomy is not allowed."
 msgstr "Egy beépített osztályozás eltávolítása nem engedélyezett."
 
-#: wp-includes/script-loader.php:1302 wp-includes/js/dist/block-library.js:6495
+#: wp-includes/script-loader.php:1324 wp-includes/js/dist/block-library.js:6495
 #: wp-includes/js/dist/editor.js:25089
 msgid "(Untitled)"
 msgstr "(Cím nélkül)"
@@ -13974,22 +13975,22 @@ msgstr "A regisztráció megerősítéséhez egy e-mailt fogunk küldeni."
 msgid "Show"
 msgstr "Mutat"
 
-#: wp-includes/script-loader.php:1206
+#: wp-includes/script-loader.php:1228
 msgctxt "password mismatch"
 msgid "Mismatch"
 msgstr "Eltérő jelszavak"
 
-#: wp-includes/script-loader.php:1205
+#: wp-includes/script-loader.php:1227
 msgctxt "password strength"
 msgid "Strong"
 msgstr "Erős"
 
-#: wp-includes/script-loader.php:1203
+#: wp-includes/script-loader.php:1225
 msgctxt "password strength"
 msgid "Weak"
 msgstr "Gyenge"
 
-#: wp-includes/script-loader.php:1202
+#: wp-includes/script-loader.php:1224
 msgctxt "password strength"
 msgid "Very weak"
 msgstr "Nagyon gyenge"
@@ -14171,51 +14172,51 @@ msgstr "Nincs címke"
 msgid "Attempting to parse a shortcode without a valid callback: %s"
 msgstr "Megpróbáljuk értelmezni a rövidkódot, valós visszahívás nélkül: %s"
 
-#: wp-includes/script-loader.php:796
+#: wp-includes/script-loader.php:818
 msgid "Close code tag"
 msgstr "Kód tag lezárása"
 
-#: wp-includes/script-loader.php:794
+#: wp-includes/script-loader.php:816
 msgid "Close list item tag"
 msgstr "Listaelem tag lezárása"
 
-#: wp-includes/script-loader.php:793
+#: wp-includes/script-loader.php:815
 msgid "List item"
 msgstr "Listaelem"
 
-#: wp-includes/script-loader.php:792
+#: wp-includes/script-loader.php:814
 msgid "Close numbered list tag"
 msgstr "Számozott lista tag lezárása"
 
-#: wp-includes/script-loader.php:790
+#: wp-includes/script-loader.php:812
 msgid "Close bulleted list tag"
 msgstr "Felsorolásjeles lista tag lezárása"
 
-#: wp-includes/script-loader.php:787
+#: wp-includes/script-loader.php:809
 msgid "Close inserted text tag"
 msgstr "Beillesztett szöveg tag lezárása"
 
-#: wp-includes/script-loader.php:786
+#: wp-includes/script-loader.php:808
 msgid "Inserted text"
 msgstr "Beillesztett szöveg"
 
-#: wp-includes/script-loader.php:785
+#: wp-includes/script-loader.php:807
 msgid "Close deleted text tag"
 msgstr "Törölt szöveg tag lezárása"
 
-#: wp-includes/script-loader.php:784
+#: wp-includes/script-loader.php:806
 msgid "Deleted text (strikethrough)"
 msgstr "Törölt szöveg (áthúzás)"
 
-#: wp-includes/script-loader.php:783
+#: wp-includes/script-loader.php:805
 msgid "Close blockquote tag"
 msgstr "Idézet tag lezárása"
 
-#: wp-includes/script-loader.php:780
+#: wp-includes/script-loader.php:802
 msgid "Close italic tag"
 msgstr "Dőlt tag lezárása"
 
-#: wp-includes/script-loader.php:778
+#: wp-includes/script-loader.php:800
 msgid "Close bold tag"
 msgstr "Vastagítás tag bezárása"
 
@@ -14558,7 +14559,7 @@ msgstr "Nem lehetséges szétválasztani egy megosztott kifejezést."
 msgid "Taxonomy names must be between 1 and 32 characters in length."
 msgstr "Az osztály nevének 1 és 32 karakter hosszúság között kell lennie."
 
-#: wp-includes/script-loader.php:1298 wp-includes/js/dist/edit-site.js:25365
+#: wp-includes/script-loader.php:1320 wp-includes/js/dist/edit-site.js:25365
 msgid "Site Preview"
 msgstr "Honlap előnézet"
 
@@ -14753,7 +14754,7 @@ msgstr "Sablon részletei"
 msgid "No categories found."
 msgstr "Nem találtunk kategóriát."
 
-#: wp-includes/class-wp-editor.php:1391 wp-includes/script-loader.php:776
+#: wp-includes/class-wp-editor.php:1391 wp-includes/script-loader.php:798
 msgid "Distraction-free writing mode"
 msgstr "Zavartalan írási lehetőség"
 
@@ -14856,7 +14857,7 @@ msgctxt "verb"
 msgid "Trash"
 msgstr "Lomtárba helyezés"
 
-#: wp-includes/script-loader.php:1981
+#: wp-includes/script-loader.php:2003
 #: wp-includes/js/dist/block-library.js:45111
 #: wp-includes/js/dist/components.js:58767
 msgid "Previous"
@@ -14995,10 +14996,10 @@ msgstr "Egyéni szín"
 #: wp-includes/class-wp-editor.php:1277
 #: wp-includes/js/dist/block-editor.js:27632
 #: wp-includes/js/dist/block-editor.js:28096
-#: wp-includes/js/dist/block-editor.js:71907
-#: wp-includes/js/dist/block-editor.js:72300
-#: wp-includes/js/dist/block-editor.js:72430
-#: wp-includes/js/dist/block-editor.js:73485
+#: wp-includes/js/dist/block-editor.js:71902
+#: wp-includes/js/dist/block-editor.js:72295
+#: wp-includes/js/dist/block-editor.js:72425
+#: wp-includes/js/dist/block-editor.js:73480
 #: wp-includes/js/dist/edit-site.js:21101
 msgid "Color"
 msgstr "Szín"
@@ -15050,7 +15051,7 @@ msgctxt "list style"
 msgid "Default"
 msgstr "Alapértelmezett"
 
-#: wp-includes/admin-bar.php:954
+#: wp-includes/admin-bar.php:963
 msgctxt "add new from admin bar"
 msgid "Link"
 msgstr "Hivatkozás"
@@ -15582,7 +15583,7 @@ msgctxt "list style"
 msgid "Square"
 msgstr "Négyzet"
 
-#: wp-includes/class-wp-editor.php:1192 wp-includes/script-loader.php:789
+#: wp-includes/class-wp-editor.php:1192 wp-includes/script-loader.php:811
 msgid "Bulleted list"
 msgstr "Felsorolás"
 
@@ -15794,7 +15795,7 @@ msgctxt "Search widget"
 msgid "Search"
 msgstr "Keresés"
 
-#: wp-includes/class-wp-editor.php:1388 wp-includes/script-loader.php:797
+#: wp-includes/class-wp-editor.php:1388 wp-includes/script-loader.php:819
 msgid "Insert Read More tag"
 msgstr "Bővebben tag beillesztése"
 
@@ -15802,8 +15803,8 @@ msgstr "Bővebben tag beillesztése"
 msgid "Toolbar Toggle"
 msgstr "Eszköztár összezárása"
 
-#: wp-includes/js/dist/block-editor.js:71051
-#: wp-includes/js/dist/block-editor.js:71060
+#: wp-includes/js/dist/block-editor.js:71046
+#: wp-includes/js/dist/block-editor.js:71055
 #: wp-includes/js/dist/block-library.js:34446
 #: wp-includes/js/dist/customize-widgets.js:934
 #: wp-includes/js/dist/edit-widgets.js:4095 wp-includes/js/dist/editor.js:29684
@@ -15865,7 +15866,7 @@ msgstr "Oszlop csoport"
 msgid "Rows"
 msgstr "Sorok"
 
-#: wp-includes/script-loader.php:1104
+#: wp-includes/script-loader.php:1126
 msgid "Finnish"
 msgstr "finn"
 
@@ -15933,7 +15934,7 @@ msgstr "Szöveg megjelenítése"
 msgid "Insert date/time"
 msgstr "Dátum/idő beillesztés"
 
-#: wp-includes/class-wp-editor.php:1233 wp-includes/script-loader.php:788
+#: wp-includes/class-wp-editor.php:1233 wp-includes/script-loader.php:810
 msgid "Insert image"
 msgstr "Kép beillesztése"
 
@@ -16004,7 +16005,7 @@ msgid "Clear formatting"
 msgstr "Formázás tisztítása"
 
 #: wp-includes/widgets/class-wp-widget-block.php:45
-#: wp-includes/js/dist/edit-widgets.js:3320 wp-includes/js/dist/editor.js:33304
+#: wp-includes/js/dist/edit-widgets.js:3320 wp-includes/js/dist/editor.js:33303
 msgid "Block"
 msgstr "Blokk"
 
@@ -16012,7 +16013,7 @@ msgstr "Blokk"
 msgid "Increase indent"
 msgstr "Bekezdés növelése"
 
-#: wp-includes/class-wp-editor.php:1193 wp-includes/script-loader.php:791
+#: wp-includes/class-wp-editor.php:1193 wp-includes/script-loader.php:813
 msgid "Numbered list"
 msgstr "Számozott lista"
 
@@ -16227,7 +16228,7 @@ msgstr "Váratlan hiba. Valami baj lehet a WordPress.org, vagy ennek a szerverne
 #. translators: To add an additional Open Sans character subset specific to
 #. your language, translate this to 'greek', 'cyrillic' or 'vietnamese'. Do not
 #. translate into your own language.
-#: wp-includes/script-loader.php:1572
+#: wp-includes/script-loader.php:1594
 msgctxt "Open Sans font: add new subset (greek, cyrillic, vietnamese)"
 msgid "no-subset"
 msgstr "no-subset"
@@ -16315,20 +16316,20 @@ msgstr "Beágyazás vagy hivatkozás"
 msgid "Length:"
 msgstr "Hossz:"
 
-#: wp-includes/script-loader.php:1085
+#: wp-includes/script-loader.php:1107
 msgid "Captions/Subtitles"
 msgstr "Képaláírás/Felirat"
 
-#: wp-includes/script-loader.php:1080
+#: wp-includes/script-loader.php:1102
 msgid "Unmute"
 msgstr "Némítás feloldása"
 
-#: wp-includes/script-loader.php:1071
+#: wp-includes/script-loader.php:1093
 msgid "Download File"
 msgstr "Fájl letöltése"
 
 #. translators: Whether the navigation link is Invalid or a Draft.
-#: wp-includes/script-loader.php:1286
+#: wp-includes/script-loader.php:1308
 #: wp-includes/js/dist/block-library.js:38500
 msgid "Invalid"
 msgstr "Hibás"
@@ -16453,7 +16454,7 @@ msgctxt "placeholder"
 msgid "Search &hellip;"
 msgstr "Keresés&hellip;"
 
-#: wp-includes/functions.php:7488 wp-includes/script-loader.php:1299
+#: wp-includes/functions.php:7488 wp-includes/script-loader.php:1321
 msgid "Session expired"
 msgstr "Munkamenet lejárt"
 
@@ -16489,7 +16490,7 @@ msgstr "Hibás felhasználói azonosító (ID)."
 msgid "Random Order"
 msgstr "Véletlen sorrend"
 
-#: wp-includes/media.php:5016 wp-includes/js/dist/block-editor.js:68520
+#: wp-includes/media.php:5016 wp-includes/js/dist/block-editor.js:68523
 msgid "Insert from URL"
 msgstr "Beillesztés URL-ből"
 
@@ -16560,7 +16561,7 @@ msgid "Manage Video"
 msgstr "Videó kezelése"
 
 #: wp-includes/widgets/class-wp-widget-media-video.php:28
-#: wp-includes/js/dist/block-editor.js:68714
+#: wp-includes/js/dist/block-editor.js:68717
 #: wp-includes/js/dist/block-library.js:48875
 #: wp-includes/js/dist/block-library.js:65663
 #: wp-includes/js/dist/editor.js:21651
@@ -16598,7 +16599,7 @@ msgid "Insert into page"
 msgstr "Oldalba illesztés"
 
 #: wp-includes/widgets/class-wp-widget-media-audio.php:28
-#: wp-includes/js/dist/block-editor.js:68710
+#: wp-includes/js/dist/block-editor.js:68713
 #: wp-includes/js/dist/block-library.js:48851
 #: wp-includes/js/dist/editor.js:10534 wp-includes/js/dist/editor.js:21627
 msgid "Audio"
@@ -16694,7 +16695,7 @@ msgstr "Húzzunk ide fájlt a feltöltéshez"
 msgid "Create gallery"
 msgstr "Galéria létrehozása"
 
-#: wp-includes/media.php:4979 wp-includes/js/dist/block-editor.js:68792
+#: wp-includes/media.php:4979 wp-includes/js/dist/block-editor.js:68795
 #: wp-admin/includes/media.php:21 wp-admin/upload.php:204
 #: wp-admin/upload.php:358
 msgid "Media Library"
@@ -16927,7 +16928,7 @@ msgid "Header Text Color"
 msgstr "Fejrész szöveg színe"
 
 #: wp-includes/class-wp-customize-manager.php:5275
-#: wp-includes/js/dist/block-editor.js:73487
+#: wp-includes/js/dist/block-editor.js:73482
 #: wp-includes/js/dist/edit-site.js:11520
 #: wp-includes/js/dist/edit-site.js:20789
 #: wp-includes/js/dist/edit-site.js:22444
@@ -16936,13 +16937,13 @@ msgstr "Fejrész szöveg színe"
 msgid "Colors"
 msgstr "Színek"
 
-#: wp-includes/script-loader.php:1290 wp-includes/js/dist/edit-site.js:8848
+#: wp-includes/script-loader.php:1312 wp-includes/js/dist/edit-site.js:8848
 #: wp-includes/js/dist/edit-site.js:8860 wp-includes/js/dist/editor.js:25928
 #: wp-admin/js/widgets.js:130 wp-admin/js/widgets.js:575
 msgid "Saved"
 msgstr "Elmentve"
 
-#: wp-includes/script-loader.php:1278
+#: wp-includes/script-loader.php:1300
 msgid "Save &amp; Publish"
 msgstr "Mentés &amp; Közzététel"
 
@@ -16951,7 +16952,7 @@ msgstr "Mentés &amp; Közzététel"
 msgid "Select file"
 msgstr "Fájl kiválasztása"
 
-#: wp-includes/admin-bar.php:528
+#: wp-includes/admin-bar.php:537
 #: wp-includes/customize/class-wp-customize-theme-control.php:240
 #: wp-admin/customize.php:210
 #: wp-admin/includes/class-theme-upgrader-skin.php:92
@@ -16985,11 +16986,11 @@ msgstr "Fejrész kép"
 msgid "Post Thumbnail"
 msgstr "Bélyegkép küldése"
 
-#: wp-includes/script-loader.php:775
+#: wp-includes/script-loader.php:797
 msgid "Toggle Editor Text Direction"
 msgstr "Szövegirány megfordítása a szerkesztőben"
 
-#: wp-includes/script-loader.php:774
+#: wp-includes/script-loader.php:796
 msgid "text direction"
 msgstr "szöveg irány"
 
@@ -17056,7 +17057,7 @@ msgstr "Elnézést, nem engedélyezett ennek a hozzászólásnak a szerkesztése
 msgid "Posts page"
 msgstr "Bejegyzések oldala"
 
-#: wp-includes/script-loader.php:1314
+#: wp-includes/script-loader.php:1336
 msgid "Allowed Files"
 msgstr "Engedélyezett fájlok"
 
@@ -17240,7 +17241,7 @@ msgstr "Legutóbbi saját bejegyzések"
 #: wp-includes/js/dist/core-commands.js:547
 #: wp-includes/js/dist/edit-site.js:6814 wp-includes/js/dist/edit-site.js:9284
 #: wp-includes/js/dist/edit-site.js:10647
-#: wp-includes/js/dist/edit-site.js:26673 wp-includes/js/dist/editor.js:33995
+#: wp-includes/js/dist/edit-site.js:26673 wp-includes/js/dist/editor.js:33994
 #: wp-admin/index.php:57
 msgid "Navigation"
 msgstr "Navigáció"
@@ -17280,7 +17281,7 @@ msgstr "Alapértelmezett kép hivatkozás típus"
 msgid "Sorry, you are not allowed to edit this post."
 msgstr "Bocsánat, nincs jogosultság a bejegyzés módosításához."
 
-#: wp-includes/admin-bar.php:480 wp-admin/site-editor.php:316
+#: wp-includes/admin-bar.php:482 wp-admin/site-editor.php:316
 msgid "Edit Site"
 msgstr "Honlap szerkesztése"
 
@@ -17428,24 +17429,24 @@ msgstr "Egy vagy több tábla nem található az adatbázisban. Szükséges az <
 msgid "You are posting comments too quickly. Slow down."
 msgstr "Túl gyorsan követik egymást a hozzászólások. Lassítsunk."
 
-#: wp-includes/admin-bar.php:985 wp-includes/admin-bar.php:993
+#: wp-includes/admin-bar.php:994 wp-includes/admin-bar.php:1002
 msgctxt "admin bar menu group label"
 msgid "New"
 msgstr "Új"
 
 #. translators: %s: File name.
-#: wp-includes/script-loader.php:999
+#: wp-includes/script-loader.php:1021
 msgid "%s exceeds the maximum upload size for the multi-file uploader when used in your browser."
 msgstr "%s meghaladja a maximális fájl méretet."
 
 #. translators: %s: File name.
 #. translators: %s: Name of the file that failed to upload.
-#: wp-includes/script-loader.php:1008 wp-admin/async-upload.php:125
+#: wp-includes/script-loader.php:1030 wp-admin/async-upload.php:125
 msgid "&#8220;%s&#8221; has failed to upload."
 msgstr "&#8220;%s&#8221; feltöltése sikertelen."
 
 #. translators: 1: Opening link tag, 2: Closing link tag.
-#: wp-includes/script-loader.php:997
+#: wp-includes/script-loader.php:1019
 msgid "Please try uploading this file with the %1$sbrowser uploader%2$s."
 msgstr "Próbáljuk meg ezt a fájlt a %1$s böngésző alapú feltöltővel %2$s feltölteni."
 
@@ -17477,7 +17478,7 @@ msgid "About WordPress"
 msgstr "WordPress, a csodás"
 
 #. translators: %s: File name.
-#: wp-includes/script-loader.php:984
+#: wp-includes/script-loader.php:1006
 msgid "%s exceeds the maximum upload size for this site."
 msgstr "%s meghaladja a honlaphoz engedélyezett maximális feltöltési méretet."
 
@@ -17552,15 +17553,15 @@ msgstr "%1$s, %2$s, vagy %3$s hurkok futásáig a szkripteket és stíluslapokat
 msgid "You have been added to this site. Please visit the <a href=\"%1$s\">homepage</a> or <a href=\"%2$s\">log in</a> using your username and password."
 msgstr "A honlaphoz hozzáadva. <a href=\"%1$s\">Kezdőlap</a> megtekintése, vagy a megadott felhasználónévvel és jelszóval <a href=\"%2$s\">Bejelentkezés</a>."
 
-#: wp-includes/script-loader.php:988
+#: wp-includes/script-loader.php:1010
 msgid "Memory exceeded. Please try another smaller file."
 msgstr "Memória túllépés. Kisebb fájllal kellene próbálkozni."
 
-#: wp-includes/script-loader.php:989
+#: wp-includes/script-loader.php:1011
 msgid "This is larger than the maximum size. Please try another."
 msgstr "Az engedélyezett méretnél nagyobb a fájl."
 
-#: wp-includes/script-loader.php:987
+#: wp-includes/script-loader.php:1009
 msgid "This file is not an image. Please try another."
 msgstr "Ez a fájl nem kép. Próbáljunk egy másikat."
 
@@ -17573,12 +17574,12 @@ msgstr "Kék"
 msgid "The timezone you have entered is not valid. Please select a valid timezone."
 msgstr "A megadott időzóna érvénytelen. Kérjük, jelöljön ki érvényes időzónát."
 
-#: wp-includes/admin-bar.php:1016
+#: wp-includes/admin-bar.php:1025
 msgctxt "add new from admin bar"
 msgid "Site"
 msgstr "Honlap"
 
-#: wp-includes/admin-bar.php:978
+#: wp-includes/admin-bar.php:987
 msgctxt "add new from admin bar"
 msgid "User"
 msgstr "Felhasználó"
@@ -17613,8 +17614,8 @@ msgstr "A felhasználói fiók aktiválva. <a href=\"%1$s\">Honlap megtekintése
 #: wp-includes/class-wp-editor.php:1266
 #: wp-includes/js/dist/block-editor.js:23583
 #: wp-includes/js/dist/block-editor.js:28110
-#: wp-includes/js/dist/block-editor.js:71488
-#: wp-includes/js/dist/block-editor.js:73476
+#: wp-includes/js/dist/block-editor.js:71483
+#: wp-includes/js/dist/block-editor.js:73471
 #: wp-includes/js/dist/block-library.js:5407
 #: wp-includes/js/dist/block-library.js:22588
 #: wp-includes/js/dist/block-library.js:22624
@@ -17817,7 +17818,7 @@ msgstr "Nem található bejegyzés a lomtárban."
 msgid "No pages found."
 msgstr "Az oldal nem található."
 
-#: wp-includes/admin-bar.php:776 wp-includes/admin-bar.php:781
+#: wp-includes/admin-bar.php:785 wp-includes/admin-bar.php:790
 msgid "Shortlink"
 msgstr "Rövidített URL"
 
@@ -17909,7 +17910,7 @@ msgstr "Érvénytelen bejegyzés."
 msgid "Manage Site"
 msgstr "Weboldal kezelése"
 
-#: wp-includes/admin-bar.php:742
+#: wp-includes/admin-bar.php:751
 msgid "Manage Comments"
 msgstr "Hozzászólások kezelése"
 
@@ -17948,7 +17949,7 @@ msgstr "Hivatkozás-kategória"
 msgid "User"
 msgstr "Felhasználó"
 
-#: wp-includes/admin-bar.php:582
+#: wp-includes/admin-bar.php:591
 msgid "Network Admin"
 msgstr "Hálózat kezelő"
 
@@ -18425,7 +18426,7 @@ msgstr "Honlap címe:"
 msgid "sitename"
 msgstr "honlapnev"
 
-#: wp-includes/script-loader.php:1002
+#: wp-includes/script-loader.php:1024
 msgid "File canceled."
 msgstr "Fájl megszakítva."
 
@@ -18489,7 +18490,7 @@ msgstr "\"%s\" kifejezésre keresés eredménye:"
 msgid "One response to %s"
 msgstr "Egy hozzászólás a(z) %s bejegyzéshez"
 
-#: wp-includes/admin-bar.php:1102
+#: wp-includes/admin-bar.php:1111
 #: wp-includes/class-wp-customize-nav-menus.php:675
 #: wp-includes/customize/class-wp-customize-nav-menus-panel.php:113
 #: wp-includes/js/dist/block-library.js:34420 wp-admin/menu.php:232
@@ -18707,7 +18708,7 @@ msgid "%s is your new username"
 msgstr "Az új felhasználónév: %s"
 
 #: wp-includes/class-wp-customize-nav-menus.php:1115
-#: wp-includes/script-loader.php:1980 wp-signup.php:660
+#: wp-includes/script-loader.php:2002 wp-signup.php:660
 #: wp-includes/js/dist/block-library.js:45111
 #: wp-includes/js/dist/components.js:58773
 msgid "Next"
@@ -18871,7 +18872,7 @@ msgstr "Érvénytelen tétel ID."
 msgid "Empty Term."
 msgstr "Üres kifejezés."
 
-#: wp-includes/script-loader.php:1204
+#: wp-includes/script-loader.php:1226
 msgctxt "password strength"
 msgid "Medium"
 msgstr "Közepes"
@@ -18880,93 +18881,93 @@ msgstr "Közepes"
 msgid "Separate pattern categories with commas"
 msgstr "Ha több minta kategória kerül megadásra, vesszővel kell őket elválasztani"
 
-#: wp-includes/script-loader.php:1006
+#: wp-includes/script-loader.php:1028
 msgid "moved to the Trash."
 msgstr "lomtárba helyezve."
 
-#: wp-includes/script-loader.php:1005
+#: wp-includes/script-loader.php:1027
 msgid "Crunching&hellip;"
 msgstr "Feldolgozás&hellip;"
 
-#: wp-includes/script-loader.php:1003
+#: wp-includes/script-loader.php:1025
 msgid "Upload stopped."
 msgstr "Feltöltés megállt."
 
-#: wp-includes/script-loader.php:1001
+#: wp-includes/script-loader.php:1023
 msgid "Security error."
 msgstr "Biztonsági hiba."
 
-#: wp-includes/script-loader.php:1000
+#: wp-includes/script-loader.php:1022
 msgid "IO error."
 msgstr "IO hiba."
 
-#: wp-includes/script-loader.php:995 wp-admin/includes/ajax-actions.php:2552
+#: wp-includes/script-loader.php:1017 wp-admin/includes/ajax-actions.php:2552
 msgid "Upload failed."
 msgstr "Sikertelen fájl-feltöltés."
 
-#: wp-includes/script-loader.php:992
+#: wp-includes/script-loader.php:1014
 msgid "You may only upload 1 file."
 msgstr "Csak egy fájlt lehet feltölteni."
 
-#: wp-includes/script-loader.php:991
+#: wp-includes/script-loader.php:1013
 msgid "There was a configuration error. Please contact the server administrator."
 msgstr "Beállításokkal kapcsolatos hiba fordult elő. Értesítsük a tárhelyszolgáltatót."
 
-#: wp-includes/script-loader.php:990
+#: wp-includes/script-loader.php:1012
 msgid "An error occurred in the upload. Please try again later."
 msgstr "Hiba történt a feltöltés közben. Próbálkozzunk újra."
 
-#: wp-includes/script-loader.php:985
+#: wp-includes/script-loader.php:1007
 msgid "This file is empty. Please try another."
 msgstr "Üres fájl. Próbáljunk egy másikat."
 
-#: wp-includes/script-loader.php:982
+#: wp-includes/script-loader.php:1004
 msgid "You have attempted to queue too many files."
 msgstr "Túl sok fájl sorbaállítására történt kísérlet."
 
-#: wp-includes/script-loader.php:970
+#: wp-includes/script-loader.php:992
 msgid "This feature requires inline frames. You have iframes disabled or your browser does not support them."
 msgstr "Ehhez a funkcióhoz szükség lenne iframe támogatásra, amely tiltva van, vagy a böngésző nem támogatja."
 
-#: wp-includes/script-loader.php:968
+#: wp-includes/script-loader.php:990
 msgid "of"
 msgstr "/"
 
-#: wp-includes/class-wp-editor.php:1222 wp-includes/script-loader.php:967
+#: wp-includes/class-wp-editor.php:1222 wp-includes/script-loader.php:989
 #: wp-includes/widgets/class-wp-widget-media-image.php:28
 #: wp-includes/js/dist/block-editor.js:25415
-#: wp-includes/js/dist/block-editor.js:68712
+#: wp-includes/js/dist/block-editor.js:68715
 #: wp-includes/js/dist/block-library.js:27818
 #: wp-includes/js/dist/block-library.js:48860
 #: wp-includes/js/dist/editor.js:21636 wp-admin/includes/media.php:2958
 msgid "Image"
 msgstr "Kép"
 
-#: wp-includes/script-loader.php:966
+#: wp-includes/script-loader.php:988
 msgid "&lt; Prev"
 msgstr "&lt; Előző"
 
-#: wp-includes/script-loader.php:965
+#: wp-includes/script-loader.php:987
 msgid "Next &gt;"
 msgstr "Következő &gt;"
 
-#: wp-includes/script-loader.php:773
+#: wp-includes/script-loader.php:795
 msgid "Enter a description of the image"
 msgstr "Képhez tartozó leírás"
 
-#: wp-includes/script-loader.php:772
+#: wp-includes/script-loader.php:794
 msgid "Enter the URL of the image"
 msgstr "Kép URL-címe"
 
-#: wp-includes/script-loader.php:771
+#: wp-includes/script-loader.php:793
 msgid "Enter the URL"
 msgstr "URL megadása"
 
-#: wp-includes/script-loader.php:770
+#: wp-includes/script-loader.php:792
 msgid "close tags"
 msgstr "tag-ek lezárása"
 
-#: wp-includes/script-loader.php:769
+#: wp-includes/script-loader.php:791
 msgid "Close all open tags"
 msgstr "Nyitott tag-ek lezárása"
 
@@ -19195,7 +19196,7 @@ msgstr "Mi legyen a következő lépés?"
 
 #. translators: %s: Maximum allowed file size in kilobytes.
 #: wp-includes/ms-functions.php:2147
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1425
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1433
 #: wp-admin/includes/ms.php:41
 msgid "This file is too big. Files must be less than %s KB in size."
 msgstr "A fájl túl nagy! A fájl méretének kisebbnek kell lennie %s KB-nál."
@@ -19319,12 +19320,12 @@ msgstr "Teljes képernyő"
 
 #: wp-includes/class-wp-editor.php:1263
 #: wp-includes/js/dist/block-editor.js:23928
-#: wp-includes/js/dist/block-editor.js:71474
+#: wp-includes/js/dist/block-editor.js:71469
 msgid "Remove link"
 msgstr "Hivatkozás eltávolítása"
 
-#: wp-includes/class-wp-editor.php:1267 wp-includes/script-loader.php:781
-#: wp-includes/js/dist/block-editor.js:71174
+#: wp-includes/class-wp-editor.php:1267 wp-includes/script-loader.php:803
+#: wp-includes/js/dist/block-editor.js:71169
 msgid "Insert link"
 msgstr "Hivatkozás beszúrás"
 
@@ -19338,7 +19339,7 @@ msgstr "Helyesírásellenőrzés"
 msgid "Select all"
 msgstr "Összes kiválasztása"
 
-#: wp-includes/class-wp-editor.php:1417 wp-includes/script-loader.php:1293
+#: wp-includes/class-wp-editor.php:1417 wp-includes/script-loader.php:1315
 msgid "Action"
 msgstr "Művelet"
 
@@ -19380,11 +19381,11 @@ msgstr "Jobbra fent"
 msgid "Top Left"
 msgstr "Balra fent"
 
-#: wp-includes/script-loader.php:1081
+#: wp-includes/script-loader.php:1103
 msgid "Mute"
 msgstr "Némítás"
 
-#: wp-includes/class-wp-editor.php:1258 wp-includes/script-loader.php:1073
+#: wp-includes/class-wp-editor.php:1258 wp-includes/script-loader.php:1095
 msgid "Fullscreen"
 msgstr "Teljes képernyő"
 
@@ -19412,8 +19413,8 @@ msgstr "Típus"
 msgid "Constrain proportions"
 msgstr "Arány megtartása"
 
-#: wp-includes/class-wp-editor.php:1224 wp-includes/js/dist/editor.js:33898
-#: wp-includes/js/dist/editor.js:34036
+#: wp-includes/class-wp-editor.php:1224 wp-includes/js/dist/editor.js:33897
+#: wp-includes/js/dist/editor.js:34035
 msgid "General"
 msgstr "Általános"
 
@@ -19454,9 +19455,9 @@ msgstr "Függőleges táv"
 
 #: wp-includes/class-wp-editor.php:1232
 #: wp-includes/js/dist/block-editor.js:32414
-#: wp-includes/js/dist/block-editor.js:71919
-#: wp-includes/js/dist/block-editor.js:72310
-#: wp-includes/js/dist/block-editor.js:72440
+#: wp-includes/js/dist/block-editor.js:71914
+#: wp-includes/js/dist/block-editor.js:72305
+#: wp-includes/js/dist/block-editor.js:72435
 msgid "Dimensions"
 msgstr "Méretek"
 
@@ -19514,22 +19515,22 @@ msgstr "Áthúzott"
 msgid "Underline"
 msgstr "Aláhúzás"
 
-#: wp-includes/class-wp-editor.php:1167 wp-includes/script-loader.php:779
+#: wp-includes/class-wp-editor.php:1167 wp-includes/script-loader.php:801
 #: wp-includes/js/dist/format-library.js:365
 msgid "Italic"
 msgstr "Dőlt"
 
-#: wp-includes/class-wp-editor.php:1166 wp-includes/script-loader.php:777
+#: wp-includes/class-wp-editor.php:1166 wp-includes/script-loader.php:799
 #: wp-includes/js/dist/format-library.js:40
 msgid "Bold"
 msgstr "Félkövér"
 
-#: wp-includes/class-wp-editor.php:1168 wp-includes/script-loader.php:795
+#: wp-includes/class-wp-editor.php:1168 wp-includes/script-loader.php:817
 #: wp-includes/js/dist/block-library.js:7406
 msgid "Code"
 msgstr "Kód"
 
-#: wp-includes/class-wp-editor.php:1154 wp-includes/script-loader.php:782
+#: wp-includes/class-wp-editor.php:1154 wp-includes/script-loader.php:804
 msgid "Blockquote"
 msgstr "Hosszabb idézet"
 
@@ -19558,7 +19559,7 @@ msgid "Heading 1"
 msgstr "Címsor 1"
 
 #: wp-includes/class-wp-editor.php:1153
-#: wp-includes/js/dist/block-editor.js:65059
+#: wp-includes/js/dist/block-editor.js:65062
 msgid "Paragraph"
 msgstr "Bekezdés"
 
@@ -19574,7 +19575,7 @@ msgstr "Nyelv"
 msgid "Document properties"
 msgstr "Dokumentum tulajdonságai"
 
-#: wp-includes/class-wp-editor.php:1373 wp-includes/script-loader.php:1289
+#: wp-includes/class-wp-editor.php:1373 wp-includes/script-loader.php:1311
 #: wp-includes/theme.php:3746 wp-admin/js/nav-menu.js:1555
 #: wp-admin/js/post.js:493 wp-admin/js/theme-plugin-editor.js:71
 #: wp-admin/js/user-profile.js:519 wp-admin/js/widgets.js:98
@@ -19653,7 +19654,7 @@ msgid "Insert row before"
 msgstr "Sor beszúrása elé"
 
 #: wp-includes/class-wp-editor.php:1262 wp-includes/class-wp-editor.php:1882
-#: wp-includes/script-loader.php:1244
+#: wp-includes/script-loader.php:1266
 msgid "Insert/edit link"
 msgstr "Hivatkozás beillesztés/szerkesztés"
 
@@ -19887,7 +19888,7 @@ msgstr "%s egy védett WP beállítás, nem nagyon módosítható"
 
 #. translators: Used between list items, there is a space after the comma.
 #: wp-includes/class-wp-locale.php:241 wp-includes/l10n.php:1972
-#: wp-includes/js/dist/block-editor.js:73646
+#: wp-includes/js/dist/block-editor.js:73641
 msgid ", "
 msgstr ", "
 
@@ -20267,7 +20268,7 @@ msgid "Comments on %s"
 msgstr "Hozzászólások: %s"
 
 #: wp-includes/class-wp-customize-nav-menus.php:336
-#: wp-includes/script-loader.php:1248
+#: wp-includes/script-loader.php:1270
 #: wp-includes/js/dist/block-directory.js:1794
 #: wp-includes/js/dist/block-editor.js:48828
 #: wp-includes/js/dist/block-library.js:11351
@@ -20292,7 +20293,7 @@ msgstr "&laquo; Előző oldal"
 msgid "Sorry, comments are closed for this item."
 msgstr "Elnézést, ehhez a bejegyzéshez jelenleg nem lehet hozzászólni."
 
-#: wp-includes/admin-bar.php:1091
+#: wp-includes/admin-bar.php:1100
 #: wp-includes/class-wp-customize-widgets.php:419
 #: wp-includes/functions.php:5451 wp-includes/js/dist/blocks.js:8102
 #: wp-includes/js/dist/core-data.js:1579
@@ -20371,9 +20372,9 @@ msgstr "Alapértelmezett"
 #: wp-includes/js/dist/block-editor.js:31767
 #: wp-includes/js/dist/block-editor.js:31962
 #: wp-includes/js/dist/block-editor.js:32032
-#: wp-includes/js/dist/block-editor.js:68193
-#: wp-includes/js/dist/block-editor.js:76553
-#: wp-includes/js/dist/block-editor.js:76559
+#: wp-includes/js/dist/block-editor.js:68196
+#: wp-includes/js/dist/block-editor.js:76548
+#: wp-includes/js/dist/block-editor.js:76554
 #: wp-includes/js/dist/block-library.js:44360
 #: wp-includes/js/dist/block-library.js:44371
 #: wp-includes/js/dist/block-library.js:58750
@@ -20412,7 +20413,7 @@ msgstr "E-mail cím"
 msgid "Site Title"
 msgstr "Honlap neve"
 
-#: wp-includes/taxonomy.php:196 wp-includes/js/dist/block-editor.js:66474
+#: wp-includes/taxonomy.php:196 wp-includes/js/dist/block-editor.js:66477
 #: wp-includes/js/dist/blocks.js:8105 wp-includes/js/dist/edit-site.js:20615
 #: wp-includes/js/dist/edit-site.js:20966
 #: wp-includes/js/dist/edit-site.js:21037
@@ -20433,7 +20434,7 @@ msgstr "Bekapcsolás"
 msgid "First Post"
 msgstr "Első bejegyzés"
 
-#: wp-includes/admin-bar.php:645 wp-includes/js/dist/block-editor.js:71721
+#: wp-includes/admin-bar.php:654 wp-includes/js/dist/block-editor.js:71716
 #: wp-includes/js/dist/block-library.js:1893
 #: wp-includes/js/dist/block-library.js:2277
 #: wp-includes/js/dist/block-library.js:3456
@@ -20491,11 +20492,11 @@ msgstr "Első bejegyzés"
 msgid "Settings"
 msgstr "Beállítások"
 
-#: wp-includes/admin-bar.php:565 wp-admin/menu.php:34 wp-admin/my-sites.php:38
+#: wp-includes/admin-bar.php:574 wp-admin/menu.php:34 wp-admin/my-sites.php:38
 msgid "My Sites"
 msgstr "Honlapjaim"
 
-#: wp-includes/admin-bar.php:623 wp-includes/admin-bar.php:1076
+#: wp-includes/admin-bar.php:632 wp-includes/admin-bar.php:1085
 #: wp-includes/customize/class-wp-customize-themes-panel.php:81
 #: wp-includes/taxonomy.php:195 wp-includes/js/dist/core-data.js:1650
 #: wp-admin/includes/ms.php:1078 wp-admin/themes.php:127
@@ -20506,7 +20507,7 @@ msgid "Themes"
 msgstr "Sablonok"
 
 #. translators: Sites menu item.
-#: wp-includes/admin-bar.php:601
+#: wp-includes/admin-bar.php:610
 #: wp-admin/includes/class-wp-ms-users-list-table.php:197
 #: wp-admin/network/menu.php:56 wp-admin/network/sites.php:21
 #: wp-admin/network/sites.php:388
@@ -20539,8 +20540,8 @@ msgid "Strength indicator"
 msgstr "Jelszóerősség mérő"
 
 #. translators: Network menu item.
-#: wp-includes/admin-bar.php:433 wp-includes/admin-bar.php:591
-#: wp-includes/admin-bar.php:711 wp-includes/deprecated.php:2822
+#: wp-includes/admin-bar.php:433 wp-includes/admin-bar.php:600
+#: wp-includes/admin-bar.php:720 wp-includes/deprecated.php:2822
 #: wp-includes/deprecated.php:2824 wp-admin/index.php:33 wp-admin/menu.php:29
 #: wp-admin/my-sites.php:142 wp-admin/user/menu.php:15
 #: wp-admin/includes/class-wp-ms-sites-list-table.php:748
@@ -20563,9 +20564,9 @@ msgstr "<strong>Hiba:</strong> Meg kell adni a felhasználónevet."
 #: wp-includes/widgets/class-wp-widget-media-image.php:78
 #: wp-includes/js/dist/block-editor.js:31962
 #: wp-includes/js/dist/block-editor.js:32032
-#: wp-includes/js/dist/block-editor.js:68186
-#: wp-includes/js/dist/block-editor.js:76537
-#: wp-includes/js/dist/block-editor.js:76543
+#: wp-includes/js/dist/block-editor.js:68189
+#: wp-includes/js/dist/block-editor.js:76532
+#: wp-includes/js/dist/block-editor.js:76538
 #: wp-includes/js/dist/block-library.js:5228
 #: wp-includes/js/dist/block-library.js:5236
 #: wp-includes/js/dist/block-library.js:7783
@@ -20639,7 +20640,7 @@ msgstr "Súgó"
 #: wp-includes/blocks/latest-comments.php:31
 #: wp-includes/blocks/latest-posts.php:76 wp-includes/blocks/page-list.php:196
 #: wp-includes/blocks/rss.php:37 wp-includes/media.php:4556
-#: wp-includes/script-loader.php:1247
+#: wp-includes/script-loader.php:1269
 #: wp-includes/widgets/class-wp-widget-recent-posts.php:114
 #: wp-includes/js/dist/block-library.js:29297
 #: wp-includes/js/dist/block-library.js:29329
@@ -20679,9 +20680,9 @@ msgstr "Kiválasztás"
 #: wp-includes/blocks/image.php:254 wp-includes/blocks/navigation.php:490
 #: wp-includes/class-wp-customize-manager.php:5742
 #: wp-includes/class-wp-editor.php:1189 wp-includes/class-wp-editor.php:1886
-#: wp-includes/script-loader.php:969 wp-includes/script-loader.php:1292
-#: wp-includes/script-loader.php:1976 wp-includes/js/dist/block-editor.js:71193
-#: wp-includes/js/dist/block-editor.js:72948
+#: wp-includes/script-loader.php:991 wp-includes/script-loader.php:1314
+#: wp-includes/script-loader.php:1998 wp-includes/js/dist/block-editor.js:71188
+#: wp-includes/js/dist/block-editor.js:72943
 #: wp-includes/js/dist/block-library.js:34674
 #: wp-includes/js/dist/block-library.js:37031
 #: wp-includes/js/dist/components.js:34659
@@ -20763,7 +20764,7 @@ msgid "Version"
 msgstr "Verzió"
 
 #. translators: Hidden accessibility text.
-#: wp-includes/admin-bar.php:1187 wp-includes/admin-bar.php:1189
+#: wp-includes/admin-bar.php:1196 wp-includes/admin-bar.php:1198
 #: wp-includes/blocks/search.php:27 wp-includes/blocks/search.php:28
 #: wp-includes/blocks/search.php:52 wp-includes/class-wp-editor.php:1909
 #: wp-includes/media.php:4959 wp-includes/js/dist/block-editor.js:49056
@@ -20800,7 +20801,7 @@ msgstr "Keresés"
 
 #. translators: Hidden accessibility text.
 #: wp-includes/class-wp-customize-manager.php:4306
-#: wp-includes/script-loader.php:1004
+#: wp-includes/script-loader.php:1026
 #: wp-includes/widgets/class-wp-widget-text.php:547
 #: wp-includes/widgets/class-wp-widget-text.php:562
 #: wp-includes/js/wp-pointer.js:20 wp-admin/async-upload.php:121
@@ -20827,7 +20828,7 @@ msgstr "Hozzáad"
 msgid "Add or remove tags"
 msgstr "Címke hozzáadása, vagy eltávolítása"
 
-#: wp-includes/media.php:4962 wp-includes/script-loader.php:1245
+#: wp-includes/media.php:4962 wp-includes/script-loader.php:1267
 #: wp-login.php:738 wp-includes/js/dist/edit-site.js:14782
 #: wp-includes/js/dist/edit-widgets.js:3709 wp-admin/edit-form-comment.php:245
 #: wp-admin/edit-tag-form.php:301
@@ -20878,7 +20879,7 @@ msgstr "Kép URL"
 #: wp-includes/js/dist/edit-site.js:35025
 #: wp-includes/js/dist/edit-site.js:35595
 #: wp-includes/js/dist/edit-site.js:37380
-#: wp-includes/js/dist/edit-site.js:40887 wp-includes/js/dist/editor.js:32240
+#: wp-includes/js/dist/edit-site.js:40887 wp-includes/js/dist/editor.js:32239
 #: wp-admin/includes/media.php:2597
 #: wp-admin/includes/class-wp-ms-sites-list-table.php:374
 msgid "Actions"
@@ -20887,11 +20888,11 @@ msgstr "Műveletek"
 #. translators: Default privacy policy heading.
 #: wp-includes/class-wp-editor.php:1239 wp-includes/media.php:4956
 #: wp-includes/media.php:5645 wp-includes/js/dist/block-editor.js:51891
-#: wp-includes/js/dist/block-editor.js:68708
+#: wp-includes/js/dist/block-editor.js:68711
 #: wp-includes/js/dist/block-library.js:55689
 #: wp-includes/js/dist/blocks.js:8096 wp-includes/js/dist/core-data.js:1543
 #: wp-includes/js/dist/edit-site.js:22452
-#: wp-includes/js/dist/edit-site.js:22467 wp-includes/js/dist/editor.js:34033
+#: wp-includes/js/dist/edit-site.js:22467 wp-includes/js/dist/editor.js:34032
 #: wp-admin/export.php:311
 #: wp-admin/includes/class-wp-privacy-policy-content.php:508
 #: wp-admin/includes/media.php:2595 wp-admin/menu.php:71 wp-admin/menu.php:393
@@ -20907,7 +20908,7 @@ msgstr "Kép szerkesztése"
 #: wp-includes/media-template.php:645 wp-includes/media-template.php:793
 #: wp-includes/media-template.php:1084 wp-includes/media-template.php:1147
 #: wp-includes/widgets/class-wp-widget-media-image.php:91
-#: wp-includes/js/dist/block-editor.js:73475 wp-admin/includes/media.php:1405
+#: wp-includes/js/dist/block-editor.js:73470 wp-admin/includes/media.php:1405
 #: wp-admin/includes/media.php:3263
 msgid "Caption"
 msgstr "Felirat"
@@ -21014,8 +21015,8 @@ msgstr "&#8220;%s&#8221; fájl nem létezik?"
 msgid "Thumbnail"
 msgstr "Bélyegkép"
 
-#: wp-includes/js/dist/block-editor.js:74176
-#: wp-includes/js/dist/block-editor.js:74183
+#: wp-includes/js/dist/block-editor.js:74171
+#: wp-includes/js/dist/block-editor.js:74178
 #: wp-admin/includes/image-edit.php:64 wp-admin/includes/image-edit.php:161
 msgid "Scale"
 msgstr "Átméretezés"
@@ -21097,7 +21098,7 @@ msgid "Reply"
 msgstr "Válasz"
 
 #: wp-includes/class-wp-customize-manager.php:4869
-#: wp-includes/script-loader.php:1281 wp-admin/includes/dashboard.php:607
+#: wp-includes/script-loader.php:1303 wp-admin/includes/dashboard.php:607
 #: wp-admin/includes/meta-boxes.php:56 wp-admin/js/post.js:844
 msgid "Save Draft"
 msgstr "Mentés vázlatként"
@@ -21107,23 +21108,23 @@ msgid "Tags"
 msgstr "Címkék"
 
 #. translators: accessibility text for the content landmark region.
-#: wp-includes/revision.php:33 wp-includes/js/dist/block-editor.js:72421
+#: wp-includes/revision.php:33 wp-includes/js/dist/block-editor.js:72416
 #: wp-includes/js/dist/edit-widgets.js:1443 wp-includes/js/dist/editor.js:12854
-#: wp-includes/js/dist/editor.js:33360 wp-includes/js/dist/editor.js:33415
+#: wp-includes/js/dist/editor.js:33359 wp-includes/js/dist/editor.js:33414
 #: wp-admin/includes/dashboard.php:598 wp-admin/index.php:104
 msgid "Content"
 msgstr "Tartalom"
 
 #: wp-includes/class-wp-editor.php:1188 wp-includes/class-wp-editor.php:1939
-#: wp-includes/media.php:4961 wp-includes/script-loader.php:1291
+#: wp-includes/media.php:4961 wp-includes/script-loader.php:1313
 #: wp-includes/js/dist/block-editor.js:24504
 #: wp-includes/js/dist/block-editor.js:50778
 #: wp-includes/js/dist/block-editor.js:58918
 #: wp-includes/js/dist/block-editor.js:59195
-#: wp-includes/js/dist/block-editor.js:67971
-#: wp-includes/js/dist/block-editor.js:68757
+#: wp-includes/js/dist/block-editor.js:67974
 #: wp-includes/js/dist/block-editor.js:68760
-#: wp-includes/js/dist/block-editor.js:74080
+#: wp-includes/js/dist/block-editor.js:68763
+#: wp-includes/js/dist/block-editor.js:74075
 #: wp-includes/js/dist/block-library.js:7034
 #: wp-includes/js/dist/block-library.js:40298
 #: wp-includes/js/dist/block-library.js:63030
@@ -21145,7 +21146,7 @@ msgstr "Tartalom"
 #: wp-includes/js/dist/editor.js:8449 wp-includes/js/dist/editor.js:8595
 #: wp-includes/js/dist/editor.js:14335 wp-includes/js/dist/editor.js:17626
 #: wp-includes/js/dist/editor.js:18680 wp-includes/js/dist/editor.js:25373
-#: wp-includes/js/dist/editor.js:31853 wp-includes/js/dist/editor.js:32000
+#: wp-includes/js/dist/editor.js:31852 wp-includes/js/dist/editor.js:31999
 #: wp-includes/js/dist/patterns.js:653 wp-includes/js/dist/patterns.js:841
 #: wp-includes/js/dist/patterns.js:1257 wp-includes/js/dist/patterns.js:1338
 #: wp-includes/js/dist/patterns.js:1380
@@ -21166,7 +21167,7 @@ msgstr "Tartalom"
 msgid "Cancel"
 msgstr "Mégsem"
 
-#: wp-includes/admin-bar.php:447 wp-includes/admin-bar.php:634
+#: wp-includes/admin-bar.php:447 wp-includes/admin-bar.php:643
 #: wp-includes/js/dist/block-editor.js:53584
 #: wp-includes/js/dist/core-data.js:1660 wp-includes/js/dist/editor.js:29679
 #: wp-admin/plugins.php:634 wp-admin/update-core.php:469
@@ -21207,7 +21208,7 @@ msgid "RSS"
 msgstr "RSS"
 
 #: wp-includes/js/dist/block-editor.js:24462
-#: wp-includes/js/dist/block-editor.js:71203
+#: wp-includes/js/dist/block-editor.js:71198
 #: wp-includes/js/dist/block-library.js:20478
 #: wp-admin/includes/dashboard.php:1398 wp-admin/setup-config.php:272
 msgid "Submit"
@@ -21227,7 +21228,7 @@ msgstr "Névtelen"
 msgid "Done"
 msgstr "Kész"
 
-#: wp-includes/admin-bar.php:612 wp-admin/includes/ms.php:866
+#: wp-includes/admin-bar.php:621 wp-admin/includes/ms.php:866
 #: wp-admin/includes/ms.php:1073 wp-admin/menu.php:323 wp-admin/users.php:25
 #: wp-admin/includes/class-wp-ms-sites-list-table.php:370
 #: wp-admin/network/menu.php:60 wp-admin/network/users.php:34
@@ -21248,7 +21249,7 @@ msgstr "Bejegyzés megtekintése"
 msgid "Edit Tag"
 msgstr "Címke szerkesztés"
 
-#: wp-includes/script-loader.php:1087 wp-includes/js/dist/block-editor.js:29457
+#: wp-includes/script-loader.php:1109 wp-includes/js/dist/block-editor.js:29457
 #: wp-includes/js/dist/block-editor.js:29553
 #: wp-includes/js/dist/block-editor.js:30939
 #: wp-includes/js/dist/block-library.js:22235
@@ -21308,7 +21309,7 @@ msgid "Name"
 msgstr "Név"
 
 #: wp-includes/class-wp-editor.php:1225
-#: wp-includes/js/dist/block-editor.js:71758
+#: wp-includes/js/dist/block-editor.js:71753
 #: wp-includes/js/dist/edit-post.js:2178 wp-includes/js/dist/edit-site.js:12884
 #: wp-admin/edit-link-form.php:34
 msgid "Advanced"
@@ -21352,7 +21353,7 @@ msgstr "Kategóriák"
 msgid "Save"
 msgstr "Mentés"
 
-#: wp-includes/class-wp-editor.php:1942 wp-includes/script-loader.php:1246
+#: wp-includes/class-wp-editor.php:1942 wp-includes/script-loader.php:1268
 #: wp-admin/edit-link-form.php:23 wp-admin/edit-link-form.php:90
 #: wp-admin/includes/meta-boxes.php:1151 wp-admin/link-add.php:17
 #: wp-admin/link-manager.php:104 wp-admin/menu.php:86
@@ -21369,7 +21370,7 @@ msgstr "Hivatkozás-kategória szerkesztése"
 
 #: wp-includes/js/dist/block-editor.js:59672
 #: wp-includes/js/dist/block-editor.js:61417
-#: wp-includes/js/dist/block-editor.js:74085
+#: wp-includes/js/dist/block-editor.js:74080
 #: wp-includes/js/dist/block-library.js:34965
 #: wp-includes/js/dist/edit-site.js:14775
 #: wp-includes/js/dist/edit-site.js:14821
@@ -21425,7 +21426,7 @@ msgstr "Változatok"
 #. translators: Hidden accessibility text.
 #: wp-includes/revision.php:34 wp-includes/js/dist/block-library.js:29059
 #: wp-includes/js/dist/editor.js:21007 wp-includes/js/dist/editor.js:21068
-#: wp-includes/js/dist/editor.js:33938 wp-admin/includes/meta-boxes.php:750
+#: wp-includes/js/dist/editor.js:33937 wp-admin/includes/meta-boxes.php:750
 #: wp-admin/includes/meta-boxes.php:1642 wp-admin/options-reading.php:193
 msgid "Excerpt"
 msgstr "Kivonat"
@@ -21436,7 +21437,7 @@ msgstr "Tulajdonságok"
 
 #. translators: accessibility text for the publish landmark region.
 #: wp-includes/class-wp-customize-manager.php:4864
-#: wp-includes/script-loader.php:1279 wp-includes/js/dist/block-editor.js:72992
+#: wp-includes/script-loader.php:1301 wp-includes/js/dist/block-editor.js:72987
 #: wp-includes/js/dist/edit-widgets.js:1449 wp-includes/js/dist/editor.js:12860
 #: wp-includes/js/dist/editor.js:22464 wp-includes/js/dist/editor.js:22472
 #: wp-includes/js/dist/editor.js:22850 wp-includes/js/dist/editor.js:26045
@@ -21469,9 +21470,9 @@ msgstr "Hozzászólások"
 #: wp-includes/class-wp-customize-widgets.php:804
 #: wp-includes/class-wp-editor.php:1396 wp-includes/media.php:5001
 #: wp-includes/js/dist/block-editor.js:58925
-#: wp-includes/js/dist/block-editor.js:67968
-#: wp-includes/js/dist/block-editor.js:68325
-#: wp-includes/js/dist/block-editor.js:68480
+#: wp-includes/js/dist/block-editor.js:67971
+#: wp-includes/js/dist/block-editor.js:68328
+#: wp-includes/js/dist/block-editor.js:68483
 #: wp-includes/js/dist/block-library.js:53661
 #: wp-includes/js/dist/block-library.js:57759
 #: wp-includes/js/dist/block-library.js:65390
@@ -21485,7 +21486,7 @@ msgid "Apply"
 msgstr "Alkalmaz"
 
 #: wp-includes/class-wp-editor.php:1184
-#: wp-includes/js/dist/block-editor.js:66214
+#: wp-includes/js/dist/block-editor.js:66217
 #: wp-includes/js/dist/customize-widgets.js:1023
 #: wp-includes/js/dist/edit-post.js:1072 wp-includes/js/dist/edit-post.js:2479
 #: wp-includes/js/dist/edit-site.js:6615
@@ -21545,7 +21546,7 @@ msgstr "Visszaállítás"
 #: wp-includes/class-walker-comment.php:260
 #: wp-includes/class-walker-comment.php:459
 #: wp-includes/class-wp-editor.php:1394
-#: wp-includes/js/dist/block-editor.js:68284
+#: wp-includes/js/dist/block-editor.js:68287
 #: wp-includes/js/dist/block-library.js:7006
 #: wp-includes/js/dist/block-library.js:9423
 #: wp-includes/js/dist/block-library.js:10667
@@ -21555,7 +21556,7 @@ msgstr "Visszaállítás"
 #: wp-includes/js/dist/block-library.js:40614
 #: wp-includes/js/dist/block-library.js:63869
 #: wp-includes/js/dist/block-library.js:65284
-#: wp-includes/js/dist/edit-post.js:3137 wp-includes/js/dist/edit-site.js:25009
+#: wp-includes/js/dist/edit-post.js:3151 wp-includes/js/dist/edit-site.js:25009
 #: wp-includes/js/dist/edit-site.js:25574
 #: wp-includes/js/dist/edit-site.js:25935
 #: wp-includes/js/dist/edit-site.js:37454 wp-admin/comment.php:251
@@ -21610,7 +21611,7 @@ msgstr "Hozzászólás"
 #: wp-includes/sitemaps/class-wp-sitemaps-stylesheet.php:176
 #: wp-includes/widgets/class-wp-widget-media-image.php:113
 #: wp-includes/js/dist/block-editor.js:22786
-#: wp-includes/js/dist/block-editor.js:68469
+#: wp-includes/js/dist/block-editor.js:68472
 #: wp-includes/js/dist/block-library.js:18678 wp-admin/comment.php:196
 #: wp-admin/edit-form-comment.php:69
 #: wp-admin/includes/class-walker-nav-menu-edit.php:198
@@ -21654,7 +21655,7 @@ msgstr "Szerző"
 msgid "Log Out"
 msgstr "Kijelentkezés"
 
-#: wp-includes/admin-bar.php:412 wp-includes/admin-bar.php:752
+#: wp-includes/admin-bar.php:412 wp-includes/admin-bar.php:761
 #: wp-includes/deprecated.php:2820
 msgid "Visit Site"
 msgstr "A honlap megtekintése"
@@ -21695,7 +21696,7 @@ msgid "Pending Review"
 msgstr "Függőben lévő"
 
 #: wp-includes/post.php:1305 wp-includes/post.php:1325
-#: wp-includes/script-loader.php:1280 wp-includes/js/dist/edit-site.js:40526
+#: wp-includes/script-loader.php:1302 wp-includes/js/dist/edit-site.js:40526
 #: wp-includes/js/dist/editor.js:9091 wp-includes/js/dist/editor.js:25613
 #: wp-includes/js/dist/editor.js:25634 wp-admin/includes/ajax-actions.php:2270
 #: wp-admin/includes/class-wp-posts-list-table.php:1214
