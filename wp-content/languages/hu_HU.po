@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 6.8.x - Development package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-04-16 13:22:38+0000\n"
+"PO-Revision-Date: 2025-05-05 16:22:52+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -339,6 +339,10 @@ msgstr "Az e-mailek ellenőrzése %s-ként egyszer."
 msgid "This function should not be called before the theme directory is registered."
 msgstr "Ezt a funkciót nem szabad meghívni azelőtt, hogy a sablon könyvtár regisztrálása megtörténne."
 
+#: wp-includes/taxonomy.php:149
+msgid "Add Link Category"
+msgstr "Hivatkozás-kategória hozzáadása"
+
 #: wp-includes/script-loader.php:1008
 msgid "This file cannot be processed by the web server."
 msgstr "Ezt a fájlt a kiszolgáló nem tudja feldolgozni."
@@ -408,6 +412,11 @@ msgstr "Nem lehet könyvjelzőket beállítani olyan tokenekre, amelyek nem jele
 msgid "The context element \"%s\" is not supported."
 msgstr "\"%s\" kontextuselem nem támogatott."
 
+#. translators: %s: A tag name like INPUT or BR.
+#: wp-includes/html-api/class-wp-html-processor.php:478
+msgid "The context element cannot be a void element, found \"%s\"."
+msgstr "A kontextus elem nem lehet üres, ezt találtuk: \"%s\"."
+
 #: wp-includes/html-api/class-wp-html-processor.php:464
 msgid "The context element must be a start tag."
 msgstr "A kontextus elemnek kezdőcímkének kell lennie."
@@ -437,6 +446,29 @@ msgstr "Nem találtunk bejegyzést, vagy hiba történt a bejegyzések lekérdez
 #: wp-includes/class-wp-xmlrpc-server.php:4034
 msgid "An error occurred while processing your comment. Please ensure all fields are filled correctly and try again."
 msgstr "Hiba történt a hozzászólás feldolgozása során. Ellenőrizzük, hogy minden mező helyesen van-e kitöltve, és próbáljuk meg újra."
+
+#. translators: %s: context string
+#: wp-includes/class-wp-url-pattern-prefixer.php:72
+msgid "Invalid URL pattern context %s."
+msgstr "Érvénytelen URL minta, kontextus %s."
+
+#: wp-includes/class-wp-taxonomy.php:627 wp-includes/taxonomy.php:236
+msgid "Add Category"
+msgstr "Kategória hozzáadása"
+
+#: wp-includes/class-wp-taxonomy.php:627
+msgid "Add Tag"
+msgstr "Címke hozzáadása"
+
+#. translators: %s: invalid source value
+#: wp-includes/class-wp-speculation-rules.php:141
+msgid "The value \"%s\" is not a valid source for a speculation rule."
+msgstr "A megadott \"%s\" érték nem egy spekulációs szabály érvényes forrása."
+
+#. translators: 1: allowed key, 2: alternative allowed key
+#: wp-includes/class-wp-speculation-rules.php:127
+msgid "A speculation rule must include either a \"%1$s\" key or a \"%2$s\" key, but not both."
+msgstr "Egy spekulációs szabályban vagy \"%1$s\" vagy \"%2$s\" kulcsnak szerepelnie kell, de nem mindkettőnek!"
 
 #. translators: %s: invalid ID value
 #: wp-includes/class-wp-speculation-rules.php:105
@@ -495,10 +527,24 @@ msgstr "Aláírási hiba: "
 msgid "SMTP Error: The following recipients failed: "
 msgstr "SMTP hiba: A következő címzetteknek a kézbesítés sikertelen: "
 
+#: wp-includes/class-wp-phpmailer.php:73
+msgid "You must provide at least one recipient email address."
+msgstr "Legalább egy e-mail címzettet meg kell adni."
+
 #. translators: There is a space at the beginning.
 #: wp-includes/class-wp-phpmailer.php:72
 msgid " mailer is not supported."
 msgstr " mailer nem támogatott."
+
+#. translators: There is a space after the colon.
+#: wp-includes/class-wp-phpmailer.php:70
+msgid "Invalid host: "
+msgstr "Érvénytelen hoszt: "
+
+#. translators: There is a space after the colon.
+#: wp-includes/class-wp-phpmailer.php:68
+msgid "Invalid hostentry: "
+msgstr "Érvénytelen hoszt bejegyzés: "
 
 #: wp-includes/class-wp-phpmailer.php:66
 msgid "Invalid header name or value"
@@ -577,6 +623,21 @@ msgstr "A hivatkozás szövege nem lehet üres."
 #: wp-admin/includes/nav-menu.php:354
 msgid "Please provide a valid link."
 msgstr "Adjunk meg egy valós hivatkozást."
+
+#: wp-includes/class-wp-customize-manager.php:457
+msgid "An error occurred while customizing. Please refresh the page and try again."
+msgstr "Hiba történt a testreszabás során. Frissítsük az oldalt, és próbáljuk meg újra."
+
+#: wp-includes/class-wp-block-metadata-registry.php:204
+msgid "No registered block metadata collection was found for the provided path."
+msgstr "A megadott útvonalhoz nem találtunk regisztrált blokk metaadat gyűjteményt."
+
+#. translators: %d: number of results.
+#: wp-includes/blocks/query-total.php:66
+msgid "%d result found"
+msgid_plural "%d results found"
+msgstr[0] "%d találat"
+msgstr[1] "%d találat"
 
 #: wp-includes/blocks/image.php:158
 msgid "Enlarge"

@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 6.8.x - Development - Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-03-29 09:18:53+0000\n"
+"PO-Revision-Date: 2025-05-05 18:28:30+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -36,6 +36,198 @@ msgstr "1"
 msgctxt "default GMT offset or timezone string"
 msgid "0"
 msgstr "Europe/Budapest"
+
+#: wp-admin/about.php:93
+msgid "Speculative loading speeds up navigation by preloading links before users navigate to them, bcrypt hashing strengthens password security automatically, and database optimizations improve performance."
+msgstr "A spekulatív betöltés felgyorsítja a navigációt azáltal, hogy a linkeket előretölti, mielőtt a felhasználók még oda navigálnának, a bcrypt hashing automatikusan megerősíti a jelszavak biztonságát, az adatbázis-optimalizálás pedig javítja a teljesítményt."
+
+#. translators: 1: URL to WordPress release notes, 2: WordPress version number,
+#. 3: The PHP extension name needed.
+#: wp-admin/upgrade.php:68
+msgid "You cannot upgrade because <a href=\"%1$s\">WordPress %2$s</a> requires the %3$s PHP extension."
+msgstr "A frissítés nem lehetséges, mert a <a href=\"%1$s\">WordPress %2$s</a> a %3$s PHP bővítményt igényel."
+
+#: wp-admin/themes.php:70
+msgid "An error occurred while deleting the theme."
+msgstr "Hiba történt a sablon törlése közben."
+
+#: wp-admin/theme-install.php:57 wp-admin/themes.php:234
+#: wp-admin/themes.php:255 wp-admin/network/menu.php:86
+#: wp-admin/network/themes.php:366
+msgid "Add Theme"
+msgstr "Sablon hozzáadása"
+
+#. translators: %s: https://wordpress.org/about/privacy
+#: wp-admin/privacy.php:62
+msgid "WordPress.org takes privacy and transparency very seriously. To learn more about what data is collected, and how it is used, please visit <a href=\"%s\">the WordPress.org Privacy Policy</a>."
+msgstr "A WordPress.org nagyon komolyan veszi az adatvédelmet és az átláthatóságot. Ha többet szeretnénk megtudni arról, hogy milyen adatokat gyűjt és használ fel a rendszer, látogassunk el a <a href=\"%s\">a WordPress.org adatvédelmi szabályzat</a> oldalára."
+
+#: wp-admin/privacy.php:29
+msgid "WordPress.org takes privacy and transparency very seriously"
+msgstr "A WordPress.org nagyon komolyan veszi az adatvédelmet és az átláthatóságot"
+
+#. translators: %s: File path.
+#: wp-admin/plugin-editor.php:246 wp-admin/theme-editor.php:245
+msgid "File: %s"
+msgstr "Fájl: %s"
+
+#: wp-admin/menu.php:332 wp-admin/menu.php:334 wp-admin/menu.php:342
+#: wp-admin/menu.php:344 wp-admin/user-edit.php:269 wp-admin/user-new.php:269
+#: wp-admin/user-new.php:391 wp-admin/user-new.php:515
+#: wp-admin/user-new.php:667 wp-admin/users.php:781
+#: wp-admin/network/menu.php:62 wp-admin/network/site-users.php:336
+#: wp-admin/network/site-users.php:380 wp-admin/network/user-new.php:100
+#: wp-admin/network/user-new.php:107 wp-admin/network/user-new.php:161
+#: wp-admin/network/users.php:292
+msgid "Add User"
+msgstr "Új felhasználó"
+
+#: wp-admin/menu.php:311 wp-admin/plugins.php:770 wp-admin/network/menu.php:111
+msgid "Add Plugin"
+msgstr "Bővítmény hozzáadása"
+
+#: wp-admin/menu.php:217
+msgctxt "design menu item"
+msgid "Design"
+msgstr "Megjelenés"
+
+#: wp-admin/menu-header.php:285
+msgid "Collapse Main Menu"
+msgstr "Főmenü összezárás"
+
+#: wp-admin/media-upload.php:39
+msgid "Invalid item ID. You can view all media items in the <a href=\"upload.php\">Media Library</a>."
+msgstr "Érvénytelen elem azonosító. Az összes médiaelemet megtekinthetjük a <a href=\"upload.php\">Médiatárban</a>."
+
+#: wp-admin/media-upload.php:38
+msgid "An error occurred during the upload process."
+msgstr "Hiba történt a feltöltési folyamat során."
+
+#. translators: 1: URL to WordPress release notes, 2: WordPress version number,
+#. 3: The PHP extension name needed.
+#: wp-admin/install.php:312
+msgid "You cannot install because <a href=\"%1$s\">WordPress %2$s</a> requires the %3$s PHP extension."
+msgstr "A telepítés nem lehetséges, mert a <a href=\"%1$s\">WordPress %2$s</a> a %3$s PHP bővítményt igényel."
+
+#: wp-admin/includes/template.php:738
+msgid "Add Custom Field:"
+msgstr "Egyedi mező hozzáadása"
+
+#: wp-admin/includes/revision.php:469
+msgid "An error occurred while loading the comparison. Please refresh the page and try again."
+msgstr "Hiba történt az összehasonlítás betöltése közben. Frissítsük az oldalt, és próbáljuk meg újra."
+
+#. translators: Hidden accessibility text.
+#: wp-admin/includes/meta-boxes.php:1203 wp-admin/includes/meta-boxes.php:1208
+msgid "+ Add Category"
+msgstr "+ Kategória hozzáadása"
+
+#: wp-admin/includes/class-wp-debug-data.php:1715
+msgid "Does not exist"
+msgstr "Nem létezik"
+
+#: wp-admin/includes/class-wp-debug-data.php:530
+msgid "robots.txt"
+msgstr "robots.txt"
+
+#. translators: %s: robots.txt
+#: wp-admin/includes/class-wp-debug-data.php:525
+msgid "WordPress cannot dynamically serve a %s file due to a lack of rewrite rule support"
+msgstr "WordPress nem tud dinamikusan kiszolgálni egy %s fájlt a rewrite szabályok támogatásának hiánya miatt"
+
+#. translators: %s: robots.txt
+#: wp-admin/includes/class-wp-debug-data.php:519
+msgid "Your site is using the dynamic %s file which is generated by WordPress."
+msgstr "A webhely a WordPress által generált dinamikus %s fájlt használ."
+
+#. translators: %s: robots.txt
+#: wp-admin/includes/class-wp-debug-data.php:513
+msgid "There is a static %s file in your installation folder. WordPress cannot dynamically serve one."
+msgstr "Van egy statikus %s fájl a telepítési könyvtárban. Ezért a WordPress nem tudja dinamikusan kiszolgálni."
+
+#: wp-admin/includes/class-custom-image-header.php:834
+#: wp-admin/includes/class-custom-image-header.php:1022
+msgid "The active theme does not support uploading a custom header image. Please ensure your theme supports custom headers and try again."
+msgstr "Az aktív sablon nem támogatja az egyéni fejléckép feltöltését. Győződjünk meg róla, hogy a sablon támogatja az egyéni fejléceket, és próbáljuk meg újra."
+
+#: wp-admin/includes/class-custom-image-header.php:833
+#: wp-admin/includes/class-custom-image-header.php:1021
+#: wp-admin/includes/class-custom-image-header.php:1032
+msgid "An error occurred while processing your header image."
+msgstr "Hiba történt a fejléckép feldolgozása során."
+
+#: wp-admin/customize.php:80
+msgid "Please try again or start a new changeset. This changeset cannot be further modified."
+msgstr "Próbálja meg újra, vagy indítsunk el egy új módosításcsomagot. Ez a módosításcsomag nem módosítható tovább."
+
+#: wp-admin/customize.php:79
+msgid "An error occurred while saving your changeset."
+msgstr "Hiba történt a módosításkészlet mentése közben."
+
+#: wp-admin/about.php:194
+msgid "WordPress 6.8 packs a wide range of performance fixes and enhancements to speed up everything from editing to browsing. Beyond speculative loading, WordPress 6.8 pays special attention to the block editor, block type registration, and query caching. Plus, imagine never waiting longer than 50 milliseconds—for any interaction. In WordPress 6.8, the Interactivity API takes a first step toward that goal."
+msgstr "A WordPress 6.8 számos teljesítményjavítást és fejlesztést tartalmaz, hogy a szerkesztéstől a böngészésig mindent felgyorsítson. A Spekulatív Betöltésen túl a WordPress 6.8 különös figyelmet fordít a Blokkszerkesztőre, a blokktípus-regisztrációra és a lekérdezések gyorsítótárazására. Ráadásul képzeljük el, hogy soha többé nem kell 50 ezredmásodpercnél tovább várakoznunk - semmilyen interakcióra. A WordPress 6.8-ban az Interaktivitás API megteszi az első lépést e cél felé."
+
+#: wp-admin/about.php:181
+msgid "Work continues on optimizing cache key generation in the <code>WP_Query</code> class. The goal is, as ever, to boost your site&#8217;s performance, in this case by taking some more of the load off your database. This is especially good if you get a lot of traffic."
+msgstr "Folytatódik a munka a <code>WP_Query</code> osztály cache-kulcs generálásának optimalizálásán. A cél, mint mindig, a webhely teljesítményének növelése, ebben az esetben azáltal, hogy az adatbázisról még több terhet veszünk le. Ez különösen akkor jön jól, ha nagy forgalmat bonyolít az oldal."
+
+#: wp-admin/about.php:180
+msgid "Take a load off the database"
+msgstr "Tehermentesítsük az adatbázist"
+
+#: wp-admin/about.php:172
+msgid "100+ accessibility fixes and enhancements touch a broad spectrum of the WordPress experience. This release includes fixes to every bundled theme, improvements to the navigation menu management, the customizer, and simplified labeling. The Block Editor has over 70 improvements to blocks, DataViews, and to its overall user experience."
+msgstr "A több mint 100 kisegítőlehetőség javítás és továbbfejlesztés a WordPress-élmény széles spektrumát érinti. Ez a kiadás a mellékelt sablonok javításait tartalmazza, valamint a navigációs menükezelés fejlesztéseket, valamint a Testreszabónak és az egyszerűsített címkézésnek a javításait is tartalmazza. A Blokkszerkesztő több mint 70 fejlesztéssel érkezik a blokkok, a DataViews és úgy általában a felhasználói élmény tekintetében."
+
+#: wp-admin/about.php:158
+msgid "Now passwords are harder to crack with bcrypt hashing, which takes a lot more computing power to break. This strengthens overall security, as do other encryption improvements across WordPress. You don&#8217;t need to do anything—everything updates automatically."
+msgstr "Mostantól a jelszavakat nehezebb feltörni a bcrypt hashing segítségével, amelynek feltöréséhez sokkal több számítási teljesítményre van szükség. Ez erősíti az általános biztonságot, akárcsak más titkosítási fejlesztések az egész WordPressben. Nem kell semmit sem tennünk - minden automatikusan frissül."
+
+#: wp-admin/about.php:157
+msgid "Stronger password security with bcrypt"
+msgstr "Erősebb jelszóbiztonság a bcrypt segítségével"
+
+#: wp-admin/about.php:141
+msgid "In WordPress 6.8, pages load faster than ever. When you or your user hovers over or clicks a link, WordPress may preload the next page, for a smoother, near-instant experience. The system balances speed and efficiency, and you can control how it works, with a plugin or your own code. This feature only works in modern browsers—older ones will simply ignore it without any impact."
+msgstr "A WordPress 6.8-ban az oldalak gyorsabban töltődnek be, mint valaha. Amikor a felhasználó egy hivatkozás fölé mozgatja az egeret vagy rákattint, a WordPress előretöltheti a következő oldalt, a gördülékenyebb, szinte azonnali élmény érdekében. A rendszer egyensúlyban tartja a sebességet és a hatékonyságot, és szabályozhatjuk hogy, hogyan működjön, egy bővítmény vagy saját kód segítségével. Ez a funkció csak a modern böngészőkben működik - a régebbiek egyszerűen figyelmen kívül hagyják, és nincs rájuk semmilyen hatása."
+
+#: wp-admin/about.php:140
+msgid "Near-instant page loads, thanks to Speculative Loading"
+msgstr "Közel azonnali oldalletöltés a Spekulatív Betöltésnek köszönhetően"
+
+#: wp-admin/about.php:134
+msgid "Easier ways to see your options in Data Views, and you can exclude sticky posts from the Query Loop. Plus, you&#8217;ll find lots of little improvements in the editor that smooth your way through everything you build."
+msgstr "Könnyebben láthatjuk a DataViews alatti lehetőségeinket, és kizárhatjuk a ragadós hozzászólásokat a Query Loop-okból. Ráadásul, sok apró fejlesztést is találhatunk a szerkesztőben, amik minden új lekérdezés során megkönnyítik a munkánkat."
+
+#: wp-admin/about.php:113
+msgid "Plus, now you can see it in Classic themes that have editor-styles or a theme.json file. Find the Style Book under Appearance > Design and use it to preview your theme&#8217;s evolution, as you edit CSS or make changes in the Customizer."
+msgstr "Ráadásul, mostantól a Classic sablonokban is látható, amelyekben van editor-styles vagy egy theme.json. Keressük meg a Stíluskönyvet a Megjelenés > Kinézet alatt, és használjuk a sablon fejlődésének előnézetéhez, miközben CSS-t szerkesztünk, vagy változtatásokat végzünk a Testreszabóban."
+
+#. translators: %s is a direct link to the Style Book.
+#: wp-admin/about.php:109
+msgid "Plus, now you can see it in Classic themes that have editor-styles or a theme.json file. Find <a href=\"%s\">the Style Book</a> under Appearance > Design and use it to preview your theme&#8217;s evolution, as you edit CSS or make changes in the Customizer."
+msgstr "Ráadásul mostantól a Classic sablonokban is látható, amelyekben van editor-styles vagy egy theme.json fájl. Keressük meg a <a href=\"%s\">stíluskönyvet</a> a Megjelenés > Kinézet alatt, és használjuk a sablon válzotásainak előnézetéhez, miközben CSS-t szerkesztünk vagy változtatásokat végezünk a Testreszabóban."
+
+#: wp-admin/about.php:101
+msgid "The Style Book has a new, structured layout and clearer labels, to make it even easier to edit colors, typography—almost all your site styles—in one place."
+msgstr "A Stíluskönyv új, strukturált elrendezéssel és egyértelműbb címkékkel rendelkezik, hogy még könnyebbé tegye a színek, a tipográfia - szinte az összes webhelystílus szerkesztését - egy helyen."
+
+#: wp-admin/about.php:99
+msgid "The Style Book gets a cleaner look—and a few new tricks"
+msgstr "A Stíluskönyv letisztultabb külsőt kap - és tanult pár új trükköt is"
+
+#: wp-admin/about.php:92
+msgid "The Style Book now has a structured layout and works with Classic themes, giving you more control over global styles."
+msgstr "A Stíluskönyv mostantól strukturált elrendezéssel rendelkezik, és a Classic sablonokkal is működik, így nagyobb kontrollt biztosít a globális stílusok felett."
+
+#: wp-admin/about.php:91
+msgid "WordPress 6.8 polishes and refines the tools you use every day, making your site faster, more secure, and easier to manage."
+msgstr "A WordPress 6.8 csiszolja és finomítja a mindennapokban használt eszközöket, hogy gyorsabbá, biztonságosabbá és könnyebben kezelhetővé tegye a webhelyet."
+
+#: wp-admin/about.php:90
+msgid "A release polished to a high sheen."
+msgstr "Egy magasfényűre polírozott kiadás."
 
 #: wp-admin/plugins.php:613
 msgid "If a dependent plugin is missing some dependencies, its activation button will be disabled until the required dependencies are activated."
