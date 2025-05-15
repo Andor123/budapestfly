@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WPForms &#8211; Easy Form Builder for WordPress &#8211; Contact Forms, Payment Forms, Surveys, &amp; More - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-05-05 14:24:10+0000\n"
+"PO-Revision-Date: 2025-05-12 06:52:09+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,6 +10,24 @@ msgstr ""
 "X-Generator: GlotPress/4.0.1\n"
 "Language: es\n"
 "Project-Id-Version: Plugins - WPForms &#8211; Easy Form Builder for WordPress &#8211; Contact Forms, Payment Forms, Surveys, &amp; More - Stable (latest release)\n"
+
+#. translators: %s - WPForms.com Upgrade page URL.
+#: templates/education/admin/payments/single-page.php:29
+msgid "<a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">Upgrade to Pro!</a>"
+msgstr "<a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">¡Actualiza a la versión Pro!</a>"
+
+#: templates/education/admin/payments/single-page.php:24
+msgid "Unlock conditional logic, coupons, lower Stripe fee, and more."
+msgstr "Desbloquea la lógica condicional, los cupones, reduce la comisión de Stripe y mucho más."
+
+#: templates/education/admin/payments/single-page.php:22
+msgid "Unlock conditional logic, coupons, lower Stripe and Square fees, and more."
+msgstr "Desbloquea la lógica condicional, los cupones, reduce las comisiones de Stripe y Square, y mucho más."
+
+#. translators: %1$s - link to the WPForms.com doc article.
+#: src/SmartTags/SmartTags.php:205
+msgid "Easily add dynamic information from various sources with <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">Smart Tags</a>."
+msgstr "Añade fácilmente información dinámica de varias fuentes con <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">etiquetas inteligentes</a>."
 
 #. translators: %1$s - Date format.
 #: src/SmartTags/SmartTags.php:191
@@ -66,10 +84,84 @@ msgstr "Borrar etiqueta inteligente"
 msgid "Apply changes"
 msgstr "Aplicar cambios"
 
+#: src/Integrations/Stripe/Admin/Builder/Notifications.php:55
+msgid "Enable for Stripe completed payments"
+msgstr "Habilitar para pagos completados con Stripe"
+
+#: src/Integrations/Stripe/Admin/Builder/Enqueues.php:50
+msgid "Please go to the <a href=\"#\" class=\"wpforms-stripe-settings-redirect\">Stripe payment settings</a> and select a Customer Email."
+msgstr "Por favor, ve a <a href=\"#\" class=\"wpforms-stripe-settings-redirect\">ajustes de pago de Stripe</a> y selecciona un correo electrónico de cliente."
+
+#. translators: %s - WPForms.com URL for Square webhooks documentation.
+#: src/Integrations/Square/WebhooksHealthCheck.php:204
+msgid "Looks like you have a problem with your webhooks configuration. Please check and confirm that you've configured the WPForms webhooks in your Square account. This notice will disappear automatically when a new Square request comes in. See our <a href=\"%1$s\" rel=\"nofollow noopener\" target=\"_blank\">documentation</a> for more information."
+msgstr "Parece que tienes un problema con la configuración de tus webhooks. Por favor, comprueba y confirma que has configurado los webhooks de WPForms en tu cuenta de Square. Este aviso desaparecerá automáticamente cuando llegue una nueva solicitud de Square. Consulta nuestra <a href=\"%1$s\" rel=\"nofollow noopener\" target=\"_blank\">documentación</a> para obtener más información."
+
+#: src/Integrations/Square/Process.php:859
+msgid "Square payment stopped"
+msgstr "Se detuvo el pago con Square"
+
+#: src/Integrations/Square/Process.php:857
+msgid "Square subscription payment stopped"
+msgstr "Se detuvo el pago de la suscripción a Square"
+
 #. translators: %d - Form ID.
 #: src/Integrations/Square/Process.php:710
 msgid "Form #%d"
 msgstr "Formulario #%d"
+
+#: src/Integrations/Square/Process.php:536
+msgid "Square subscription payment stopped, customer name not found."
+msgstr "Se ha detenido el pago de la suscripción a Square, no se ha encontrado el nombre del cliente."
+
+#: src/Integrations/Square/Process.php:531
+msgid "Square subscription payment stopped, customer email not found."
+msgstr "Se ha detenido el pago de la suscripción a Square, no se ha encontrado el correo electrónico del cliente."
+
+#: src/Integrations/Square/Process.php:436
+msgid "Square Subscription payment stopped validation error."
+msgstr "Error de validación de pago de suscripción Square detenido."
+
+#: src/Integrations/Square/Process.php:287
+msgid "Square payment stopped, missing payment fields."
+msgstr "Pago con Square detenido, faltan campos de pago."
+
+#: src/Integrations/Square/Process.php:270
+msgid "Square payment stopped, amount is smaller than the allowed minimum amount for a payment."
+msgstr "Pago de Square detenido, el importe es inferior al importe mínimo permitido para un pago."
+
+#: src/Integrations/Square/Process.php:259
+msgid "Square payment stopped, account connection is missing."
+msgstr "Se ha detenido el pago con Square, falta la conexión a la cuenta."
+
+#: src/Integrations/Square/Frontend.php:148
+msgid "The verification was not successful. An issue occurred while verifying the buyer."
+msgstr "La verificación no se ha realizado correctamente. Se ha producido un problema al verificar al comprador."
+
+#: src/Integrations/Square/Frontend.php:147
+msgid "Tokenization failed with status:"
+msgstr "La tokenización ha fallado con el estado:"
+
+#: src/Integrations/Square/Frontend.php:146
+msgid "Tokenization of the payment card failed."
+msgstr "Ha fallado la tokenización de la tarjeta de pago."
+
+#: src/Integrations/Square/Frontend.php:145
+#: src/Integrations/Square/Integrations/BlockEditor.php:141
+msgid "Initializing Card failed."
+msgstr "Error al inicializar la tarjeta."
+
+#: src/Integrations/Square/Frontend.php:144
+msgid "Client ID and/or Location ID is incorrect."
+msgstr "El ID de cliente y/o el ID de ubicación son incorrectos."
+
+#: src/Integrations/Square/Frontend.php:143
+msgid "An unexpected Square SDK error has occurred."
+msgstr "Se ha producido un error inesperado en el SDK de Square."
+
+#: src/Integrations/Square/Frontend.php:142
+msgid "Square.js failed to load properly."
+msgstr "Square.js no se ha cargado correctamente."
 
 #: src/Integrations/Square/Fields/Square.php:532
 msgid "CVV"
@@ -78,6 +170,18 @@ msgstr "CVV"
 #: src/Integrations/Square/Fields/Square.php:531
 msgid "MM/YY"
 msgstr "MM/AA"
+
+#: src/Integrations/Square/Fields/Square.php:413
+msgid "Heads up! Square account connection is expired. Tokens must be refreshed."
+msgstr "¡Atención! La conexión de la cuenta Square ha caducado. Los tokens deben actualizarse."
+
+#: src/Integrations/Square/Fields/Square.php:397
+msgid "Credit Card field is disabled, Square account connection is invalid. Please, contact to the site administrator."
+msgstr "El campo tarjeta de crédito está desactivado, la conexión a la cuenta Square no es válida. Por favor, contacta con el administrador del sitio."
+
+#: src/Integrations/Square/Fields/Square.php:389
+msgid "Credit Card field is disabled, Square account connection is missing."
+msgstr "El campo tarjeta de crédito está desactivado, falta la conexión a la cuenta Square."
 
 #: src/Integrations/Square/Api/WebhooksManager.php:63
 msgid "Failed to create webhook."
@@ -95,6 +199,36 @@ msgstr "Es obligatorio el token de acceso personal."
 #: src/Integrations/Square/Api/Webhooks/RefundUpdated.php:55
 msgid "Payment for transaction %s was not updated."
 msgstr "El pago de la transacción %s no se actualizó."
+
+#: src/Integrations/Square/Api/Api.php:1628
+#: src/Integrations/Square/Api/Api.php:1637
+msgid "Square fail: something went wrong during subscription update."
+msgstr "Square falló: algo ha ido mal durante la actualización de la suscripción."
+
+#: src/Integrations/Square/Api/Api.php:1571
+#: src/Integrations/Square/Api/Api.php:1580
+msgid "Square fail: something went wrong during subscription process."
+msgstr "Square falló: algo ha ido mal durante el proceso de suscripción."
+
+#: src/Integrations/Square/Api/Api.php:1541
+#: src/Integrations/Square/Api/Api.php:1550
+msgid "Square fail: subscription plan variation was not created."
+msgstr "Square falló: no se ha creado la variación del plan de suscripción."
+
+#: src/Integrations/Square/Api/Api.php:1511
+#: src/Integrations/Square/Api/Api.php:1520
+msgid "Square fail: subscription plan was not created."
+msgstr "Square falló: no se ha creado el plan de suscripción."
+
+#: src/Integrations/Square/Api/Api.php:1420
+#: src/Integrations/Square/Api/Api.php:1429
+msgid "Square fail: customer card was not created."
+msgstr "Square falló: no se ha creado la tarjeta de cliente."
+
+#: src/Integrations/Square/Api/Api.php:1365
+#: src/Integrations/Square/Api/Api.php:1374
+msgid "Square fail: customer was not created."
+msgstr "Square falló: no se ha creado el cliente."
 
 #: src/Integrations/Square/Api/Api.php:1118
 msgid "Missing customer email."
@@ -116,6 +250,16 @@ msgstr "Falta el nombre de la variación del plan de suscripción."
 msgid "Missing subscription plan name."
 msgstr "Falta el nombre del plan de suscripción."
 
+#: src/Integrations/Square/Api/Api.php:688
+#: src/Integrations/Square/Api/Api.php:699
+msgid "Square fail: payment was not processed."
+msgstr "Square falló: el pago no se procesó."
+
+#: src/Integrations/Square/Api/Api.php:632
+#: src/Integrations/Square/Api/Api.php:641
+msgid "Square fail: order was not created."
+msgstr "Square falló: no se ha creado el pedido."
+
 #: src/Integrations/Square/Api/Api.php:200
 msgid "Missing order/payment items."
 msgstr "Faltan los artículos del pedido/pago."
@@ -132,9 +276,71 @@ msgstr "Falta la divisa."
 msgid "Missing location ID."
 msgstr "Falta el ID de la ubicación."
 
+#: src/Integrations/Square/Api/Api.php:164
+msgid "Square payment stopped, missing card tokens."
+msgstr "Pago con Square detenido, faltan tokens de tarjeta."
+
+#: src/Integrations/Square/Api/Api.php:152
+msgid "The currency associated with the payment is not valid for the provided business location."
+msgstr "La moneda asociada al pago no es válida para la ubicación comercial proporcionada."
+
+#: src/Integrations/Square/Api/Api.php:146
+msgid "Square account connection is invalid."
+msgstr "La conexión de la cuenta Square no es válida."
+
+#: src/Integrations/Square/Api/Api.php:140
+msgid "Square account connection is missing."
+msgstr "Falta la conexión de la cuenta Square."
+
+#. translators: %s - WPForms.com URL for Square webhooks documentation.
+#: src/Integrations/Square/Admin/WebhookSettings.php:422
+msgid "To start using webhooks, please register a webhook route inside our application. You can do this by pressing the button above or setting the credentials manually. Please see <a href=\"%1$s\" target=\"_blank\">our documentation on Square webhooks</a> for full details."
+msgstr "Para empezar a utilizar webhooks, registra una ruta webhook dentro de nuestra aplicación. Puedes hacerlo pulsando el botón de arriba o configurando las credenciales manualmente. Consulta <a href=\"%1$s\" target=\"_blank\">nuestra documentación sobre los webhooks de Square</a> para obtener todos los detalles."
+
 #: src/Integrations/Square/Admin/WebhookSettings.php:415
 msgid "Connect Webhooks"
 msgstr "Conectar webhooks"
+
+#: src/Integrations/Square/Admin/WebhookSettings.php:414
+msgid "Press here to see the further instructions."
+msgstr "Pulsa aquí para ver más instrucciones."
+
+#: src/Integrations/Square/Admin/WebhookSettings.php:408
+msgid "Webhooks are connected and active."
+msgstr "Los webhooks están conectados y activos."
+
+#: src/Integrations/Square/Admin/WebhookSettings.php:272
+msgid "Test Mode Signature Key"
+msgstr "Clave de firma del modo de prueba"
+
+#: src/Integrations/Square/Admin/WebhookSettings.php:271
+msgid "Live Mode Signature Key"
+msgstr "Tecla de firma del modo en vivo"
+
+#: src/Integrations/Square/Admin/WebhookSettings.php:240
+msgid "Test Mode Endpoint Subscription ID"
+msgstr "Endpoint de ID de suscripción del modo de prueba"
+
+#: src/Integrations/Square/Admin/WebhookSettings.php:239
+msgid "Live Mode Endpoint Subscription ID"
+msgstr "Endpoint de ID de suscripción del modo en vivo"
+
+#: src/Integrations/Square/Admin/WebhookSettings.php:223
+msgid "Make sure that Webhooks Endpoint is updated inside the Square app after Webhooks Method switch."
+msgstr "Asegúrate de que el punto final de webhooks se actualiza dentro de la aplicación Square después de cambiar el método de webhooks."
+
+#: src/Integrations/Square/Admin/WebhookSettings.php:179
+msgid "Webhooks Live Signature Key"
+msgstr "Clave de firma de Webhooks Live"
+
+#: src/Integrations/Square/Admin/WebhookSettings.php:163
+msgid "Webhooks Test Signature Key"
+msgstr "Clave de firma de Webhooks de prueba"
+
+#. translators: %s - WPForms.com URL for Square webhooks documentation.
+#: src/Integrations/Square/Admin/WebhookSettings.php:109
+msgid "Choose the method of communication between Square and WPForms. If REST API support is disabled for WordPress, use PHP listener. <a href=\"%s\" rel=\"nofollow noopener\" target=\"_blank\">Learn more</a>."
+msgstr "Elige el método de comunicación entre Square y WPForms. Si la compatibilidad con la API REST está desactivada para WordPress, utiliza PHP listener. <a href=\"%s\" rel=\"nofollow noopener\" target=\"_blank\">Más información</a>."
 
 #: src/Integrations/Square/Admin/Settings.php:575
 msgid "No locations were found"
@@ -144,6 +350,14 @@ msgstr "No se han encontrado ubicaciones"
 msgid "Refresh tokens"
 msgstr "Recargar tokens"
 
+#: src/Integrations/Square/Admin/Settings.php:545
+msgid "Refresh connection tokens"
+msgstr "Actualizar tokens de conexión"
+
+#: src/Integrations/Square/Admin/Settings.php:523
+msgid "Disconnect Square account"
+msgstr "Desconectar cuenta Square"
+
 #: src/Integrations/Square/Admin/Settings.php:502
 msgid "Connect with Square"
 msgstr "Conectar con Square"
@@ -151,6 +365,148 @@ msgstr "Conectar con Square"
 #: src/Integrations/Square/Admin/Settings.php:501
 msgid "Connect Square account"
 msgstr "Conectar con la cuenta de Square"
+
+#: src/Integrations/Square/Admin/Settings.php:482
+msgid "WPForms currency and Business Location currency are not matched."
+msgstr "La moneda de WPForms y la moneda de la ubicación comercial no coinciden."
+
+#: src/Integrations/Square/Admin/Settings.php:466
+msgid "Your connection is expired. You must refresh tokens or reconnect your account."
+msgstr "Tu conexión ha caducado. Debes actualizar los tokens o volver a conectar tu cuenta."
+
+#: src/Integrations/Square/Admin/Settings.php:450
+msgid "It appears your connection may be invalid. You must refresh tokens or reconnect your account."
+msgstr "Parece que tu conexión no es válida. Debes actualizar los tokens o volver a conectar tu cuenta."
+
+#: src/Integrations/Square/Admin/Settings.php:435
+msgid "Your connection is missing required data. You must reconnect your Square account."
+msgstr "En tu conexión faltan datos necesarios. Debes volver a conectar tu cuenta de Square."
+
+#. translators: %s - WPForms.com Square documentation article URL.
+#: src/Integrations/Square/Admin/Settings.php:409
+msgid "Securely connect to Square with just a few clicks to begin accepting payments! <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"wpforms-learn-more\">Learn More</a>"
+msgstr "¡Conéctate de forma segura a Square con solo unos clics para empezar a aceptar pagos! <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"wpforms-learn-more\">Más información</a>"
+
+#. translators: %1$s - Square connected account name; %2$s - Square mode.
+#: src/Integrations/Square/Admin/Settings.php:383
+msgid "Connected to Square as <em>%1$s</em> in <strong>%2$s</strong> mode."
+msgstr "Conectado a Square como <em>%1$s</em> en modo <strong>%2$s</strong>."
+
+#. translators: %s - Square mode.
+#: src/Integrations/Square/Admin/Settings.php:372
+msgid "Connected to Square in <strong>%s</strong> mode."
+msgstr "Conectado a Square en modo <strong>%s</strong>."
+
+#. translators: %s - WPForms.com Square documentation article URL.
+#: src/Integrations/Square/Admin/Settings.php:255
+msgid "Easily collect credit card payments with Square. For getting started and more information, see our <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">Square documentation</a>."
+msgstr "Cobra fácilmente pagos con tarjeta de crédito con Square. Para empezar y obtener más información, consulta nuestra <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">documentación de Square</a>."
+
+#. translators: %s - WPForms.com URL for Square payment with more details.
+#: src/Integrations/Square/Admin/Settings.php:212
+msgid "Prevent Square from processing live transactions. <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"wpforms-learn-more\">Learn More</a>"
+msgstr "Evita que Square procese transacciones en directo. <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"wpforms-learn-more\">Más información</a>"
+
+#: src/Integrations/Square/Admin/Settings.php:191
+msgid "Only active locations that support credit card processing in Square can be chosen."
+msgstr "Solo se pueden elegir las ubicaciones activas que admiten el procesamiento de tarjetas de crédito en Square."
+
+#: src/Integrations/Square/Admin/Settings.php:190
+msgid "Business Location"
+msgstr "Ubicación de la empresa"
+
+#: src/Integrations/Square/Admin/Settings.php:141
+msgid "Personal Access Token is required to proceed."
+msgstr "Se necesita un identificador de acceso personal para continuar."
+
+#: src/Integrations/Square/Admin/Settings.php:124
+#: src/Integrations/Square/Admin/Settings.php:140
+msgid "Personal Access Token"
+msgstr "Token de acceso personal"
+
+#: src/Integrations/Square/Admin/Settings.php:123
+msgid "Something went wrong while performing a refresh tokens request."
+msgstr "Algo ha ido mal al realizar una solicitud de actualización de tokens."
+
+#. translators: %s - WPForms.com Upgrade page URL.
+#: src/Integrations/Square/Admin/Notices.php:263
+msgid "<strong>Pay-as-you-go Pricing</strong><br> 3%% fee per-transaction + Square fees. <a href=\"%s\" target=\"_blank\">Upgrade to Pro</a> to remove additional fees and unlock powerful features."
+msgstr "<strong>Precios de pago por uso</strong><br> 3%% de comisión por transacción + comisiones de Square. <a href=\"%s\" target=\"_blank\">Mejora a Pro</a> para eliminar las comisiones adicionales y desbloquear potentes funciones."
+
+#. translators: %s - general admin settings page URL.
+#: src/Integrations/Square/Admin/Notices.php:232
+msgid "<strong>Pay-as-you-go Pricing</strong><br> 3%% fee per-transaction + Square fees. <a href=\"%s\">Renew your license</a> to remove additional fees and unlock powerful features."
+msgstr "<strong>Precios de pago por uso</strong><br> 3%% de comisión por transacción + comisiones de Square. <a href=\"%s\">Renueva tu licencia</a> para eliminar cuotas adicionales y desbloquear potentes funciones."
+
+#. translators: %s - general admin settings page URL.
+#: src/Integrations/Square/Admin/Notices.php:216
+msgid "<strong>Pay-as-you-go Pricing</strong><br>3%% fee per-transaction + Square fees. <a href=\"%s\">Activate your license</a> to remove additional fees and unlock powerful features."
+msgstr "<strong>Precios de pago por uso</strong><br>3%% de comisión por transacción + comisiones de Square. <a href=\"%s\">Activa tu licencia</a> para eliminar las tarifas adicionales y desbloquear potentes funciones."
+
+#: src/Integrations/Square/Admin/Notices.php:153
+#: src/Integrations/Square/Admin/WebhookSettings.php:207
+msgid "Webhooks are enabled, but not yet connected."
+msgstr "Los webhooks están activados, pero aún no están conectados."
+
+#. translators: %1$s - Selected currency on the WPForms Settings admin page;
+#. %2$s - Currency of a business location.
+#: src/Integrations/Square/Admin/Notices.php:123
+msgid "The currency you have set (%1$s) does not match the currency of your Square business location (%2$s). Please choose a different business location or update your WPForms currency to %2$s."
+msgstr "La moneda que has establecido (%1$s) no coincide con la moneda de la ubicación de tu negocio Square (%2$s). Por favor, elige una ubicación de negocio diferente o actualiza la moneda de tu WPForms a %2$s."
+
+#: src/Integrations/Square/Admin/Notices.php:115
+#: src/Integrations/Square/Admin/Settings.php:308
+msgid "Business Location is required to process Square payments."
+msgstr "La ubicación comercial es requerida para procesar los pagos de Square."
+
+#: src/Integrations/Square/Admin/Notices.php:111
+msgid "Square account connection is expired. Tokens must be refreshed."
+msgstr "Ha caducado la conexión de la cuenta Square. Los tokens deben actualizarse."
+
+#: src/Integrations/Square/Admin/Notices.php:107
+msgid "Square account connection is invalid. You must reconnect your Square account."
+msgstr "La conexión de la cuenta Square no es válida. Debes volver a conectar tu cuenta Square."
+
+#: src/Integrations/Square/Admin/Notices.php:103
+msgid "Square account connection is missing required data. You must reconnect your Square account."
+msgstr "Faltan datos necesarios para la conexión de la cuenta Square. Debes volver a conectar tu cuenta Square."
+
+#: src/Integrations/Square/Admin/Notices.php:80
+msgid "There Are Some Problems With Your Square Connection"
+msgstr "Hay algunos problemas con tu conexión a Square"
+
+#: src/Integrations/Square/Admin/Connect.php:427
+msgid "Square Error: We could not save an account connection safely. Please, try again later."
+msgstr "Square falló: No hemos podido guardar una conexión de cuenta de forma segura. Por favor, inténtalo de nuevo más tarde."
+
+#: src/Integrations/Square/Admin/Connect.php:408
+msgid "Square Error: We could not connect to Square. No tokens were given."
+msgstr "Square falló: No hemos podido conectar con Square. No se entregaron tokens."
+
+#: src/Integrations/Square/Admin/Connect.php:261
+msgid "Something went wrong while performing a refresh tokens request"
+msgstr "Algo ha ido mal al realizar una solicitud de actualización de tokens"
+
+#: src/Integrations/Square/Admin/Connect.php:258
+#: src/Integrations/Square/Api/WebhooksManager.php:42
+msgid "You are not allowed to perform this action"
+msgstr "No tienes permisos para realizar esta acción"
+
+#: src/Integrations/Square/Admin/Builder/Traits/Content.php:562
+msgid "Learn more about our Square integration."
+msgstr "Más información sobre nuestra integración con Square."
+
+#: src/Integrations/Square/Admin/Builder/Traits/Content.php:546
+msgid "Connect WPForms to Square."
+msgstr "Conecta WPForms a Square."
+
+#: src/Integrations/Square/Admin/Builder/Traits/Content.php:528
+msgid "To use Square, first add the Square payment field to your form."
+msgstr "Para utilizar Square, primero añade el campo de pago Square a tu formulario."
+
+#: src/Integrations/Square/Admin/Builder/Traits/Content.php:461
+msgid "Heads up! Square account connection is expired."
+msgstr "¡Atención! La conexión a la cuenta de Square ha caducado."
 
 #: src/Integrations/Square/Admin/Builder/Traits/Content.php:450
 #: src/Integrations/Square/Admin/Builder/Traits/Content.php:471
@@ -166,10 +522,30 @@ msgstr "Producción"
 msgid "Sandbox"
 msgstr "Modo de pruebas"
 
+#: src/Integrations/Square/Admin/Builder/Traits/Content.php:440
+msgid "Square payments can't be processed because there's a problem with the account connection."
+msgstr "Los pagos de Square no se pueden procesar porque hay un problema con la conexión de la cuenta."
+
+#: src/Integrations/Square/Admin/Builder/Traits/Content.php:420
+msgid "Heads up! Square payments can't be enabled yet."
+msgstr "¡Atención! Aún no se pueden activar los pagos con Square."
+
+#: src/Integrations/Square/Admin/Builder/Traits/Content.php:394
+msgid "--- Select Billing Address ---"
+msgstr "--- Selecciona la dirección de facturación ---"
+
+#: src/Integrations/Square/Admin/Builder/Traits/Content.php:391
+msgid "Select the field that contains the billing's address. This field is optional."
+msgstr "Selecciona el campo que contiene la dirección de facturación. Este campo es opcional."
+
 #: src/Integrations/Square/Admin/Builder/Traits/Content.php:389
 #: src/Integrations/Square/Admin/Builder/Traits/Content.php:401
 msgid "Billing Address"
 msgstr "Dirección de facturación"
+
+#: src/Integrations/Square/Admin/Builder/Traits/Content.php:368
+msgid "Select the field that contains the customer's Address. This field is optional."
+msgstr "Selecciona el campo que contiene la dirección del cliente. Este campo es opcional."
 
 #: src/Integrations/Square/Admin/Builder/Traits/Content.php:335
 msgid "Square Pro"
@@ -180,17 +556,45 @@ msgstr "Square Pro"
 msgid "Multiple Subscriptions"
 msgstr "Suscripciones múltiples"
 
+#: src/Integrations/Square/Admin/Builder/Traits/Content.php:200
+msgid "Select the field that contains the customer's name. This field is required."
+msgstr "Selecciona el campo que contiene el nombre del cliente. Este campo es requerido."
+
 #: src/Integrations/Square/Admin/Builder/Traits/Content.php:153
 msgid "Phase Cadence"
 msgstr "Frecuencia de la fase"
+
+#: src/Integrations/Square/Admin/Builder/Traits/Content.php:110
+msgid "Select the field that contains the billing's name. This field is optional."
+msgstr "Selecciona el campo que contiene el nombre de la facturación. Este campo es opcional."
+
+#: src/Integrations/Square/Admin/Builder/Traits/Content.php:109
+msgid "--- Select Billing Name ---"
+msgstr "--- Selecciona el nombre de facturación ---"
 
 #: src/Integrations/Square/Admin/Builder/Traits/Content.php:105
 msgid "Billing Name"
 msgstr "Nombre de facturación"
 
+#: src/Integrations/Square/Admin/Builder/Traits/Content.php:95
+msgid "Select the field that contains the buyer's email address. This field is optional."
+msgstr "Selecciona el campo que contiene la dirección de correo electrónico del comprador. Este campo es opcional."
+
+#: src/Integrations/Square/Admin/Builder/Traits/Content.php:94
+msgid "--- Select Buyer Email ---"
+msgstr "--- Selecciona el correo electrónico del comprador ---"
+
 #: src/Integrations/Square/Admin/Builder/Traits/Content.php:90
 msgid "Buyer Email"
 msgstr "Correo electrónico del comprador"
+
+#: src/Integrations/Square/Admin/Builder/Traits/Content.php:80
+msgid "Enter your payment description. Eg: Donation for the soccer team."
+msgstr "Introduce la descripción de tu pago. Ejemplo: Donación para el equipo de fútbol."
+
+#: src/Integrations/Square/Admin/Builder/Settings.php:269
+msgid "The Square Pro addon is required to enable conditional logic for payments. Would you like to activate it?"
+msgstr "La extensión Square Pro es necesaria para activar la lógica condicional para los pagos. ¿Quieres activarlo?"
 
 #: src/Integrations/Square/Admin/Builder/Enqueues.php:103
 #: src/Integrations/Stripe/Admin/Builder/Enqueues.php:47
@@ -201,9 +605,33 @@ msgstr "Faltan campos obligatorios"
 msgid "<p>AJAX form submissions are required when using the Square field.</p><p>To proceed, please go to <strong>Settings » General » Advanced</strong> and check <strong>Enable AJAX form submission</strong>.</p>"
 msgstr "<p>Los envíos de formularios por AJAX son necesarios cuando se utiliza el campo de Square.</p><p>Para continuar, ve a <strong>Ajustes » General</strong> y marca <strong>Activar envío de formularios por AJAX</strong>.</p>"
 
+#: src/Integrations/Square/AddonCompatibility.php:64
+msgid "The WPForms Square addon is out of date. To avoid payment processing issues, please upgrade the Square addon to the latest version."
+msgstr "La extensión Square de WPForms no está actualizada. Para evitar problemas de procesamiento de pagos, actualiza la extensión Square a la última versión."
+
 #: src/Integrations/AI/Admin/Builder/Enqueues.php:156
 msgid "Open in Popup"
 msgstr "Abrir ventana emergente"
+
+#: src/Integrations/AI/Admin/Builder/Enqueues.php:155
+msgid "Dock to the Right"
+msgstr "Fijar a la derecha"
+
+#: src/Integrations/AI/Admin/Builder/Enqueues.php:155
+msgid "Dock to the Left"
+msgstr "Fijar a la izquierda"
+
+#: src/Admin/Revisions.php:394
+msgid "Invalid revision. The revision does not belong to this form."
+msgstr "Revisión no válida. La revisión no pertenece a este formulario."
+
+#: src/Admin/Revisions.php:386
+msgid "You do not have permission to restore revisions for this form."
+msgstr "No tienes permiso para restaurar las revisiones de este formulario."
+
+#: src/Admin/Forms/UserTemplates.php:381
+msgid "Failed to delete the template."
+msgstr "No se ha podido borrar la plantilla."
 
 #: src/Admin/Forms/UserTemplates.php:374
 msgid "Template not found."
