@@ -5,7 +5,7 @@ Author URI:        https://www.wpzoom.com/
 Requires at least: 6.0
 Requires PHP:      7.4
 Tested up to:      6.8
-Stable tag:        1.1.50
+Stable tag:        1.1.51
 License:           GNU General Public License v2
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 Tags:              elementor, elementor templates, elementor widgets, page builder templates, templates
@@ -45,17 +45,23 @@ Even though the plugin works great with any theme, currently, it includes templa
 
 [**Inspiro PRO**](https://www.wpzoom.com/themes/inspiro-pro/)
 [**Inspiro Premium**](https://www.wpzoom.com/themes/inspiro/)
+[**Reel**](https://www.wpzoom.com/themes/reel/) - *NEW*
 [**Inspiro Lite**](https://wordpress.org/themes/inspiro/)
 [**Foodica PRO**](https://www.wpzoom.com/themes/foodica/)
 [**CookBook**](https://www.wpzoom.com/themes/cookbook/) - *NEW*
+[**Cookely**](https://www.wpzoom.com/themes/cookely/) - *NEW*
+[**Gourmand**](https://www.wpzoom.com/themes/gourmand/) - *NEW*
 
 You can see multiple pages created using **Elementor** and this plugin in the following themes:
 
-[**Inspiro PRO**](https://demo.wpzoom.com/inspiro-pro-demo/)
-[**Inspiro Premium**](https://demo.wpzoom.com/inspiro-demo/)
+[**Inspiro PRO**](https://www.wpzoom.com/themes/inspiro-pro/starter-sites/)
+[**Inspiro Premium**](https://www.wpzoom.com/themes/inspiro/starter-sites/)
+[**Reel**](https://demo.wpzoom.com/reel-elementor/) - *NEW*
 [**Inspiro Lite**](https://demo.wpzoom.com/inspiro-lite/)
 [**Foodica PRO**](https://demo.wpzoom.com/foodica-elementor/)
 [**CookBook**](https://demo.wpzoom.com/cookbook/) - *NEW*
+[**Cookely**](https://demo.wpzoom.com/cookely/) - *NEW*
+[**Gourmand**](https://demo.wpzoom.com/gourmand/) - *NEW*
 
 
 = Additional Resources =
@@ -108,6 +114,9 @@ Absolutely no! The WPZOOM Addons for Elementor only adds additional custom templ
 
 
 == Changelog ==
+
+= 1.1.51 =
+* Added a new Portfolio widget and templates for the Reel theme
 
 = 1.1.50 =
 * Added templates for the Gourmand theme
