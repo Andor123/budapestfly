@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WPForms &#8211; Easy Form Builder for WordPress &#8211; Contact Forms, Payment Forms, Surveys, &amp; More - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-05-17 18:12:20+0000\n"
+"PO-Revision-Date: 2025-06-01 09:46:28+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,6 +10,27 @@ msgstr ""
 "X-Generator: GlotPress/4.0.1\n"
 "Language: de\n"
 "Project-Id-Version: Plugins - WPForms &#8211; Easy Form Builder for WordPress &#8211; Contact Forms, Payment Forms, Surveys, &amp; More - Stable (latest release)\n"
+
+#. translators: %1$s - Date format.
+#: src/SmartTags/SmartTags.php:189
+msgid "Date: %1$s"
+msgstr "Datum: %1$s"
+
+#. translators: %1$s - field ID, %2$s - field label.
+#: src/SmartTags/SmartTags.php:179
+msgid "Field %1$s"
+msgstr "Feld %1$s"
+
+#: src/Integrations/Square/Admin/Builder/Traits/Content.php:450
+#: src/Integrations/Square/Admin/Builder/Traits/Content.php:471
+#: src/Integrations/Square/Admin/Settings.php:377
+#: src/Integrations/Square/Admin/Settings.php:390
+msgid "Production"
+msgstr "Produktion"
+
+#: includes/admin/builder/class-builder.php:877
+msgid "Sorry, no results found"
+msgstr "Es wurden leider keine Ergebnisse gefunden"
 
 #: src/Lite/Admin/Education/Builder/Fields.php:162
 msgid "Your Form Contains Pro Fields"
@@ -1150,7 +1171,7 @@ msgstr "Auszuführende Aktion"
 
 #: templates/fields/total/summary-preview.php:83
 msgid "Qty"
-msgstr "Anz."
+msgstr "Menge"
 
 #. translators: %s - required PHP version.
 #: src/Requirements/Requirements.php:954
@@ -1160,19 +1181,19 @@ msgstr "<a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">Mehr erfahr
 #. translators: translators: %1$s - requirements message.
 #: src/Requirements/Requirements.php:948
 msgid "It requires %1$s."
-msgstr "Erfordert %1$s."
+msgstr "Dies erfordert %1$s."
 
 #: src/Integrations/ConstantContact/V3/Settings/PageIntegrations.php:73
 msgid "Reconnect Account"
-msgstr "Konto neu verbinden"
+msgstr "Konto erneut verbinden"
 
 #: src/Integrations/ConstantContact/V3/Settings/PageIntegrations.php:61
 msgid "Your Constant Contact account connection has expired. Please reconnect your account."
-msgstr "Deine Kontoverbindung zu Constant Contact ist abgelaufen. Bitte verbinde dein Konto neu."
+msgstr "Die Verbindung deines Constant Contact-Kontos ist abgelaufen. Bitte verbinde dein Konto erneut."
 
 #: src/Integrations/ConstantContact/V3/Settings/FormBuilder.php:236
 msgid "Reason"
-msgstr "Ursache"
+msgstr "Grund"
 
 #: src/Integrations/ConstantContact/V3/Settings/FormBuilder.php:222
 #: src/Providers/Provider/Settings/FormBuilder.php:121
@@ -1181,15 +1202,15 @@ msgstr "Individuelle Felder"
 
 #: src/Integrations/ConstantContact/V3/Settings/FormBuilder.php:219
 msgid "--- Select Mailing List ---"
-msgstr "--- Mailing-Liste auswählen ---"
+msgstr "--- Mailingliste auswählen ---"
 
 #: src/Integrations/ConstantContact/V3/Settings/FormBuilder.php:205
 msgid "Delete subscriber"
-msgstr "Abonnenten löschen"
+msgstr "Abonnent löschen"
 
 #: src/Integrations/ConstantContact/V3/Settings/FormBuilder.php:204
 msgid "Unsubscribe"
-msgstr "Abbestellen"
+msgstr "Abmelden"
 
 #: src/Integrations/ConstantContact/V3/Settings/FormBuilder.php:203
 msgid "Subscribe"
@@ -1197,20 +1218,20 @@ msgstr "Abonnieren"
 
 #: src/Integrations/ConstantContact/V3/Migration/Migration.php:756
 msgid "Can't receive v2 lists and finish migration."
-msgstr "Kann v2-Listen nicht abrufen und die Migration abschließen."
+msgstr "Es können keine v2-Listen empfangen und die Migration nicht beendet werden."
 
 #. translators: %1$s - link to the migration page, %2$s - closing HTML tag.
 #: src/Integrations/ConstantContact/V3/Migration/Migration.php:154
 msgid "You need to migrate your existing forms to the new version of the Constant Contact addon. Please %1$s click here%2$s to start the migration."
-msgstr "Du musst deine vorhandenen Formulare auf die neue Version des Constant-Contact-Add-Ons migrieren. Bitte %1$s klicke hier%2$s, um die Migration zu starten."
+msgstr "Du musst deine bestehenden Formulare auf die neue Version des Add-ons Constant Contact migrieren. Bitte %1$sklicke hier%2$s, um die Migration zu starten."
 
 #: src/Integrations/ConstantContact/V3/ConstantContact.php:160
 msgid "Company Name"
-msgstr "Firmenname"
+msgstr "Name des Unternehmens"
 
 #: src/Integrations/ConstantContact/V3/ConstantContact.php:159
 msgid "Job Title"
-msgstr "Stellenbezeichnung"
+msgstr "Berufsbezeichnung"
 
 #: src/Integrations/ConstantContact/V3/Auth.php:150
 msgid "This email is already connected."
@@ -1226,15 +1247,15 @@ msgstr "Ungültiger Code."
 
 #: src/Integrations/ConstantContact/V3/Auth.php:63
 msgid "There was an error while processing your request. Please try again."
-msgstr "Beim Verarbeiten deiner Anfrage ist ein Fehler aufgetreten. Bitte versuche es erneut."
+msgstr "Beim Bearbeiten deiner Anfrage ist ein Fehler aufgetreten. Bitte versuche es noch einmal."
 
 #: src/Integrations/ConstantContact/V3/Auth.php:62
 msgid "Please wait a moment..."
-msgstr "Bitte warte einen Moment …"
+msgstr "Bitte warte einen Moment …"
 
 #: src/Integrations/ConstantContact/V3/Api/Api.php:376
 msgid "Cannot refresh the token."
-msgstr "Kann das Token nicht erneuern."
+msgstr "Das Token kann nicht aktualisiert werden."
 
 #. translators: %1$d - trashed forms count.
 #: src/Admin/Forms/BulkActions.php:441
@@ -1254,24 +1275,24 @@ msgstr[1] "%1$d Formulare wurden erfolgreich dupliziert."
 #: src/Admin/Forms/BulkActions.php:431
 msgid "%1$d form was successfully permanently deleted."
 msgid_plural "%1$d forms were successfully permanently deleted."
-msgstr[0] "%1$d Formular wurde erfolgreich endgültig gelöscht."
-msgstr[1] "%1$d Formulare wurden erfolgreich endgültig gelöscht."
+msgstr[0] "%1$d Formular wurde erfolgreich dauerhaft gelöscht."
+msgstr[1] "%1$d Formulare wurden erfolgreich dauerhaft gelöscht."
 
 #: src/Admin/Challenge.php:191
 msgid "Challenge is frozen."
-msgstr "Die Aufgabe ist eingefroren."
+msgstr "Aufgabe ist eingefroren."
 
 #: src/Admin/AdminBarMenu.php:382
 msgid "Past Due Actions"
-msgstr "Vergangene zu erledigende Aufgaben"
+msgstr "Überfällige Aktionen"
 
 #: src/Admin/AdminBarMenu.php:378
 msgid "Pending Actions"
-msgstr "Ausstehende Aufgaben"
+msgstr "Ausstehende Aktionen"
 
 #: src/Admin/AdminBarMenu.php:374
 msgid "Failed Actions"
-msgstr "Fehlgeschlagene Aktionen"
+msgstr "Gescheiterte Aktionen"
 
 #: src/Admin/AdminBarMenu.php:370
 msgid "Completed Actions"
@@ -1280,7 +1301,7 @@ msgstr "Abgeschlossene Aktionen"
 #. translators: %1$s - Documentation URL.
 #: includes/providers/class-constant-contact.php:703
 msgid "If you need help connecting WPForms to Constant Contact, <a href=\"%1$s\" rel=\"noopener noreferrer\" target=\"_blank\">read our documentation</a>."
-msgstr "Wenn du Probleme beim Verbinden von WPForms mit Constant Contact hast, <a href=\"%1$s\" rel=\"noopener noreferrer\" target=\"_blank\">lies unsere Dokumentation</a>."
+msgstr "Wenn du Hilfe brauchst, um WPForms mit Constant Contact zu verbinden, <a href=\"%1$s\" rel=\"noopener noreferrer\" target=\"_blank\">lies unsere Dokumentation</a>."
 
 #: src/Integrations/Gutenberg/RestApi.php:146
 msgid "This route is accessible only to administrators."
@@ -2887,11 +2908,11 @@ msgstr "Einige Stileinstellungen sind bei Verwendung des Legacy-Templates nicht 
 
 #: src/Admin/Settings/Email.php:395
 msgid "Serif"
-msgstr "Serifen"
+msgstr "Serif"
 
 #: src/Admin/Settings/Email.php:394
 msgid "Sans Serif"
-msgstr "Serifenlos"
+msgstr "Sans Serif"
 
 #: src/Admin/Settings/Email.php:385
 msgid "Choose the style that’s applied to all text in email notifications."
@@ -6238,8 +6259,8 @@ msgstr "Alles"
 #: src/Admin/Forms/BulkActions.php:473
 msgid "%1$d template was successfully permanently deleted."
 msgid_plural "%1$d templates were successfully permanently deleted."
-msgstr[0] "%1$d Template wurde erfolgreich endgültig gelöscht."
-msgstr[1] "%1$d Templates wurden erfolgreich endgültig gelöscht."
+msgstr[0] "%1$d Template wurde erfolgreich dauerhaft gelöscht."
+msgstr[1] "%1$d Templates wurden erfolgreich dauerhaft gelöscht."
 
 #. translators: %1$d - trashed templates count.
 #: src/Admin/Forms/BulkActions.php:483
