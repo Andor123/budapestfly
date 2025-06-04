@@ -147,3 +147,19 @@ require INSPIRO_THEME_DIR . 'inc/dynamic-css/hero-header-button.php';
 require INSPIRO_THEME_DIR . 'inc/dynamic-css/main-menu.php';
 require INSPIRO_THEME_DIR . 'inc/dynamic-css/mobile-menu.php';
 
+/**
+ * Hide mobile menu on click event
+ */
+add_action("wp_head", "prefix_hide_mobile_menu_onclick");
+
+function prefix_hide_mobile_menu_onclick() {
+  ?>
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            $('#menu-main-menu .menu-item').click(function() {
+               $('body').removeClass('side-nav-open');
+            });             
+        });
+    </script>
+  <?php
+}
