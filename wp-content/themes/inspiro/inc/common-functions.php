@@ -458,3 +458,140 @@ function inspiro_check_plugin_status( $plugin_slug ) {
     // If not active or installed, it's not installed.
     return 'not_installed';
 }
+
+
+// Elementor tweaks
+add_action( 'after_switch_theme', function() {
+    update_option( 'elementor_disable_color_schemes', 'yes' );
+    update_option( 'elementor_disable_typography_schemes', 'yes' );
+    update_option( 'elementor_experiment-e_local_google_fonts', 'inactive' );
+
+} );
+
+function inspiro_store_elementor_defaults_on_theme_activation() {
+    $default_settings = [
+        'system_colors' => [
+            [
+                '_id' => 'primary',
+                'title' => 'Primary',
+                'color' => '#101010',
+            ],
+            [
+                '_id' => 'secondary',
+                'title' => 'Secondary',
+                'color' => '#18b4aa',
+            ],
+            [
+                '_id' => 'text',
+                'title' => 'Text',
+                'color' => '#444',
+            ],
+            [
+                '_id' => 'accent',
+                'title' => 'Accent',
+                'color' => '#18b4aa',
+            ],
+        ],
+        'system_typography' => [
+            [
+                '_id' => 'primary',
+                'title' => 'Primary',
+                'typography_typography' => 'custom',
+                'typography_font_family' => 'Onest',
+                'typography_font_weight' => '600',
+            ],
+            [
+                '_id' => 'secondary',
+                'title' => 'Secondary',
+                'typography_typography' => 'custom',
+                'typography_font_family' => 'Inter',
+                'typography_font_weight' => '400',
+            ],
+            [
+                '_id' => 'text',
+                'title' => 'Text',
+                'typography_typography' => 'custom',
+                'typography_font_family' => 'Inter',
+                'typography_font_weight' => '400',
+            ],
+            [
+                '_id' => 'accent',
+                'title' => 'Accent',
+                'typography_typography' => 'custom',
+                'typography_font_family' => 'Inter',
+                'typography_font_weight' => '500',
+            ],
+        ],
+    ];
+
+    update_option('inspiro_pending_elementor_defaults', $default_settings);
+}
+add_action('after_switch_theme', 'inspiro_store_elementor_defaults_on_theme_activation');
+
+
+function inspiro_apply_pending_elementor_defaults() {
+    // Exit if Elementor isn't ready
+    if ( ! did_action( 'elementor/loaded' ) ) {
+        return;
+    }
+
+    $defaults = get_option('inspiro_pending_elementor_defaults');
+    if (empty($defaults)) {
+        return;
+    }
+
+    $elementor = \Elementor\Plugin::instance();
+    if ( ! isset( $elementor->kits_manager ) ) {
+        return;
+    }
+
+    $kit = $elementor->kits_manager->get_active_kit();
+    if ( ! $kit ) {
+        return;
+    }
+
+    $kit_id = get_option('elementor_active_kit');
+    $existing_settings = get_post_meta($kit_id, '_elementor_page_settings', true);
+
+    if (empty($existing_settings) || (!isset($existing_settings['system_colors']) && !isset($existing_settings['system_typography']))) {
+        $settings = is_array($existing_settings) ? array_merge($existing_settings, $defaults) : $defaults;
+        $kit->save(['settings' => $settings]);
+        update_post_meta($kit_id, '_elementor_page_settings', $settings);
+    }
+
+    // Remove option to prevent re-applying
+    delete_option('inspiro_pending_elementor_defaults');
+}
+add_action('elementor/init', 'inspiro_apply_pending_elementor_defaults');
+
+
+
+/**
+ * Set default theme mods for fresh installations.
+ * Uses WordPress's fresh_site option which is true only on fresh installations.
+ */
+function inspiro_set_fresh_site_mods() {
+    // Only run on fresh sites
+    if (get_option('fresh_site')) {
+        set_theme_mod('hero_enable', false);
+    }
+}
+add_action('after_setup_theme', 'inspiro_set_fresh_site_mods');
+
+/**
+ * Set default theme mods when switching from another theme.
+ * This runs when a user switches from a different theme to this one.
+ *
+ * @param string $old_name Old theme name
+ * @param WP_Theme $old_theme Instance of the old theme
+ */
+function inspiro_after_switch_theme($old_name, $old_theme) {
+    // Don't run on fresh sites as that's handled by inspiro_set_fresh_site_mods
+    if (!get_option('fresh_site')) {
+        // Only set if the setting hasn't been explicitly set before
+        if (!get_theme_mod('hero_enable', null)) {
+            set_theme_mod('hero_enable', false);
+        }
+    }
+}
+add_action('after_switch_theme', 'inspiro_after_switch_theme', 10, 2);
