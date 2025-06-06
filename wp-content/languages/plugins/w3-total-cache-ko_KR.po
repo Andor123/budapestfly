@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - W3 Total Cache - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-12-30 05:41:53+0000\n"
+"PO-Revision-Date: 2025-06-05 17:37:40+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,6 +10,547 @@ msgstr ""
 "X-Generator: GlotPress/4.0.1\n"
 "Language: ko_KR\n"
 "Project-Id-Version: Plugins - W3 Total Cache - Stable (latest release)\n"
+
+#. Translators: 1 path, 2 starting line, 3 ending line, 4 opening HTML strong
+#. tag, 5 closing HTML strong tag.
+#: Util_Rule.php:473
+msgid "Edit file %4$s%1$s%5$s and remove all lines between and including %4$s%2$s%5$s and %4$s%3$s%5$s markers."
+msgstr "파일 %4$s%1$s%5$s을(를) 편집하고 %4$s%2$s%5$s 및 %4$s%3$s%5$s 표시 사이의 모든 줄을 제거하세요."
+
+#. Translators: 1 path, 2 starting line, 3 ending line, 4 opening HTML strong
+#. tag, 5 closing HTML strong tag.
+#: Util_Rule.php:362
+msgid "Edit file %4$s%1$s%5$s and replace all lines between and including %4$s%2$s%5$s and %4$s%3$s%5$s markers with:"
+msgstr "파일 %4$s%1$s%5$s을(를) 편집하고 %4$s%2$s%5$s 및 %4$s%3$s%5$s 표시 사이의 모든 줄을 다음으로 교체하십시오:"
+
+#. Translators: 1 Cache TMP dir path surround by HTML strong tag, 2
+#. Description.
+#: Util_File.php:415
+msgid "Can't create folder %1$s: %2$s"
+msgstr "폴더 %1$s을(를) 생성할 수 없습니다: %2$s"
+
+#. Translators: 1 Opening HTML strong tag, 2 Closing HTML strong tag, 3 Error
+#. message.
+#: Util_Admin.php:626
+msgid "%1$sCan't change configuration%2$s: %3$2"
+msgstr "죄송합니다. 구성 설정을 변경할 수 없습니다: %3$2"
+
+#. Translators: 1 Flush state.
+#: UsageStatistics_StorageWriter.php:228
+msgid "Unknown usage stats state %1$s."
+msgstr "알 수 없는 사용 통계는 %1$s입니다."
+
+#. Translators: 1 Log filename.
+#: UsageStatistics_Source_PageCacheLog.php:89
+msgid "Failed to open pagecache log file %1$s."
+msgstr "페이지캐시 로그 파일 %1$s을(를) 여는 데 실패했습니다."
+
+#. translators: 1 Log filename.
+#. Translators: 1 Log filename.
+#: UsageStatistics_Source_DbQueriesLog.php:79
+#: UsageStatistics_Source_ObjectCacheLog.php:76
+#: Util_DebugPurgeLog_Reader.php:75
+msgid "Failed to open log file %1$s."
+msgstr "로그 파일 %1$s을(를) 여는 데 실패했습니다."
+
+#: ObjectCache_DiskPopup_View.php:22
+msgid "Using disk as the object cache engine comes with risks:"
+msgstr "디스크를 객체 캐시 엔진으로 사용하는 것은 위험을 수반합니다:"
+
+#: inc/options/dbcache.php:134 inc/options/objectcache.php:119
+msgid "Enable for WP-CLI"
+msgstr "WP-CLI에 대해 활성화"
+
+#: inc/lightbox/exit_survey.php:53
+msgid "Email address..."
+msgstr "이메일 주소..."
+
+#: inc/lightbox/exit_survey.php:50
+msgid "We're serious about making W3 Total Cache better, and sometimes that means reaching out to users like you to get a few more details about your experience. Would you be open to us contacting you for further feedback? If so, please enter your email address below."
+msgstr "W3 Total Cache를 더 나은 제품으로 만들기 위해 진지하게 노력하고 있으며, 때로는 사용자 여러분과 같은 분들께 연락하여 경험에 대한 몇 가지 세부 정보를 얻어야 할 때가 있습니다. 추가 피드백을 위해 저희가 연락드려도 괜찮으신가요? 괜찮으시다면 아래에 이메일 주소를 입력해 주세요."
+
+#: inc/lightbox/exit_survey.php:49
+msgid "May we contact you?"
+msgstr "저희가 연락드려도 될까요?"
+
+#: inc/lightbox/exit_survey.php:47
+msgid "Please provide details..."
+msgstr "세부 정보를 제공해 주세요..."
+
+#: Generic_Plugin_AdminNotices.php:420
+msgid "Disabling Object Cache using Disk"
+msgstr "디스크를 사용하여 객체 캐시 비활성화"
+
+#: Generic_Plugin_AdminNotices.php:418
+msgid "settings"
+msgstr "설정"
+
+#. translators: 1: A link to the settings page.
+#: Generic_Plugin_AdminNotices.php:413
+msgid "W3 Total Cache has automatically disabled object caching because it was configured to write cache files to disk. This change was made to prevent potential performance issues and excessive file creation on your server. If you wish to re-enable object caching, you can do so in the %1$s. %2$s about this change and alternative caching solutions."
+msgstr "W3 Total Cache는 캐시 파일을 디스크에 쓰도록 구성되어 있어 객체 캐싱을 자동으로 비활성화했습니다. 이는 잠재적인 성능 문제와 서버에서의 과도한 파일 생성을 방지하기 위해 이루어진 변경 사항입니다. 객체 캐싱을 다시 활성화하려면 %1$s에서 설정할 수 있습니다. 이 변경 사항 및 대체 캐싱 솔루션에 대한 %2$s."
+
+#. Translators: 3 opening HTML link to activate extensionlink, 4 button link.
+#: Extension_WordPressSeo_Plugin_Admin.php:130
+msgid "Activating the %1$sYoast SEO%2$s extension for W3 Total Cache may be helpful for your site. %3$sClick here%2$s to try it. %4$s"
+msgstr "%1$sYoast SEO%2$s 확장을 W3 Total Cache에서 활성화하면 사이트에 도움이 될 수 있습니다. %3$s여기를 클릭%2$s하여 시도해 보세요. %4$s"
+
+#. Translators: 1 opening HTML link to General Settings page monitoring
+#. section, 2 closing HTML link.
+#: Extension_NewRelic_Plugin_Admin.php:184
+msgid "Please review the %1$ssettings%2$s."
+msgstr "%1$s설정%2$s을(를) 검토해 주세요."
+
+#. Translators: 1 opening HTML a tag to W3TC extensions page, 2 closing HTML a
+#. tag, 3 opening HTML a tag, 4 button link.
+#: Extension_Genesis_Plugin_Admin.php:160
+msgid "Activating the %1$sGenesis Theme%2$s extension for W3 Total Cache may be helpful for your site. %3$sClick here%2$s to try it. %4$s"
+msgstr "W3 Total Cache에 대한 %1$sGenesis 테마%2$s 확장을 활성화하면 사이트에 도움이 될 수 있습니다. %3$s여기를 클릭%2$s하여 시도해 보세요. %4$s"
+
+#: Extension_Genesis_Plugin_Admin.php:48
+msgid "Provides 30-60% improvement in page generation time for the Genesis Framework by Copyblogger Media."
+msgstr "Copyblogger Media의 Genesis Framework에 대해 페이지 생성 시간을 30-60% 개선합니다."
+
+#: Extension_Genesis_Plugin_Admin.php:46
+msgid "Genesis Framework by StudioPress"
+msgstr "StudioPress의 Genesis 프레임워크"
+
+#: Extension_CloudFlare_Api.php:491
+msgid "Improper API token / global key length."
+msgstr "잘못된 API 토큰/글로벌 키 길이입니다."
+
+#: Extension_CloudFlare_Api.php:474
+msgid "Missing authentication email and/or API token / global key."
+msgstr "인증 이메일 및/또는 API 토큰 / 글로벌 키가 누락되었습니다."
+
+#: Extension_CloudFlare_Api.php:284 Extension_CloudFlare_Api.php:354
+#: Extension_CloudFlare_Api.php:426
+msgid "Failed to reach API endpoint."
+msgstr "API 엔드포인트에 도달하지 못했습니다."
+
+#: Extension_CloudFlare_Api.php:268 Extension_CloudFlare_Api.php:338
+#: Extension_CloudFlare_Api.php:408
+msgid "Not authenticated."
+msgstr "인증되지 않음."
+
+#. Translators: 1 Table name.
+#: Extension_AlwaysCached_Queue.php:362
+msgid "Can't drop table %1$s."
+msgstr "%1$s 테이블을 삭제할 수 없습니다."
+
+#. Translators: 1 Unknown action name.
+#: Enterprise_SnsServer.php:169
+msgid "Unknown action %1$s."
+msgstr "알 수 없는 작업 %1$s."
+
+#. Translators: 1 Error message.
+#: Enterprise_SnsServer.php:42
+msgid "Not my Topic. Request came from %1$s."
+msgstr "제 주제가 아닙니다. 요청은 %1$s에서 왔습니다."
+
+#: Enterprise_SnsBase.php:62
+msgid "API Secret is not configured."
+msgstr "API 비밀키가 구성되지 않았습니다."
+
+#: DbCache_WpdbLegacy.php:70 DbCache_WpdbNew.php:70
+msgid "Called incorrectly, use instance()."
+msgstr "잘못 호출되었습니다. instance()를 사용하세요."
+
+#: Cli.php:616
+msgid "Always Cached feature is not enabled."
+msgstr "항상 캐시 기능이 활성화되어 있지 않습니다."
+
+#. Translators: 1 Filename.
+#: Cli.php:401
+msgid "Cant read file: %1$s"
+msgstr "파일을 읽을 수 없습니다: %1$s"
+
+#. Translators: 1 Result body.
+#. Translators: 1 Response message.
+#. Translators: 1 Reponse message.
+#. Translators: 1 Response body.
+#: Cdn_RackSpace_Api_Cdn.php:331 Cdn_RackSpace_Api_Cdn.php:377
+#: Cdn_RackSpace_Api_CloudFiles.php:286 Cdn_RackSpace_Api_CloudFilesCdn.php:242
+#: Cdn_RackSpace_Api_CloudFilesCdn.php:290 Cdn_RackSpace_Api_Tokens.php:212
+#: Extension_CloudFlare_Api.php:293 Extension_CloudFlare_Api.php:363
+#: Extension_CloudFlare_Api.php:435
+msgid "Failed to reach API endpoint, got unexpected response: %1$s"
+msgstr "API 엔드포인트에 도달하지 못했습니다. 예기치 않은 응답을 받았습니다: %1$s"
+
+#. Translators: 1 Tablename for queue.
+#. Translators: 1 Tablename for map.
+#. Translators: 1 Table name.
+#: Cdn_Environment.php:276 Cdn_Environment.php:302
+#: Extension_AlwaysCached_Queue.php:390
+msgid "Can't create table %1$s."
+msgstr "테이블 %1$s을(를) 생성할 수 없습니다."
+
+#. Translators: 1 acronym for CDN.
+#: Cdn_ConfigLabels.php:105
+msgid "Disable %1$s on the following pages:"
+msgstr "다음 페이지에서 %1$s을(를) 비활성화:"
+
+#. Translators: 1 acronym for CDN.
+#: Cdn_ConfigLabels.php:90
+msgid "Disable %1$s for the following roles"
+msgstr "다음 역할에 대해 %1$s을(를) 비활성화"
+
+#. Translators: 1 acronym for CDN.
+#: Cdn_ConfigLabels.php:75
+msgid "Use %1$s links for the Media Library on admin pages"
+msgstr "관리자 페이지에서 미디어 라이브러리를 위한 %1$s 링크를 사용하세요"
+
+#: Cdn_ConfigLabels.php:64
+msgid "SSL"
+msgstr "SSL"
+
+#. Translators: 1 acronym for CDN, 2 acroym for SSL.
+#: Cdn_ConfigLabels.php:59
+msgid "Disable %1$s on %2$s pages"
+msgstr "%2$s 페이지에서 %1$s 비활성화"
+
+#. Translators: 1 acronym for CSS, 2 acronym for JS.
+#: Cdn_ConfigLabels.php:39
+msgid "Host minified %1$s and %2$s files"
+msgstr "호스팅된 축소된 %1$s 및 %2$s 파일"
+
+#: Cdn_ConfigLabels.php:32
+msgid "FSD"
+msgstr "FSD"
+
+#: Cdn_ConfigLabels.php:30
+msgid " Type:"
+msgstr "유형:"
+
+#. Translators: 1 error message.
+#: Cdn_AdminActions.php:502 Cdn_AdminActions.php:567
+msgid "Error: %1$s"
+msgstr "오류: %1$s"
+
+#: Cdn_AdminActions.php:316
+msgid "Unknown files export"
+msgstr "알 수 없는 파일 내보내기"
+
+#. Translators: 1 Engine name.
+#: Cdnfsd_Core.php:71
+msgid "Unknown engine: %1$s"
+msgstr "알 수 없는 엔진: %1$s"
+
+#. translators: 1 Error message.
+#: CdnEngine_S3.php:701
+msgid "Failed to create bucket: %1$s."
+msgstr "버킷 생성 실패: %1$s."
+
+#. translators: 1 Bucket name.
+#: CdnEngine_S3.php:667
+msgid "Bucket already exists: %1$s."
+msgstr "버킷이 이미 존재합니다: %1$s."
+
+#. translators: 1 Error message.
+#: CdnEngine_S3.php:654
+msgid "Unable to list buckets: %1$s."
+msgstr "버킷을 나열할 수 없습니다: %1$s."
+
+#: CdnEngine_S3.php:139
+msgid "Empty secret key."
+msgstr "비어 있는 비밀 키."
+
+#: CdnEngine_S3.php:135
+msgid "Empty access key."
+msgstr "비어 있는 액세스 키."
+
+#: CdnEngine_S3.php:128
+msgid "Empty bucket."
+msgstr "빈 버킷."
+
+#: CdnEngine_Mirror_RackSpaceCdn.php:177
+msgid "Authentication failed"
+msgstr "인증 실패"
+
+#. translators: 1: Region name.
+#: CdnEngine_Mirror_RackSpaceCdn.php:150 CdnEngine_RackSpaceCloudFiles.php:171
+msgid "Region %1$s not found."
+msgstr "지역 %1$s을(를) 찾을 수 없습니다."
+
+#: CdnEngine_Mirror_RackSpaceCdn.php:140 CdnEngine_RackSpaceCloudFiles.php:161
+#: CdnEngine_RackSpaceCloudFiles.php:202
+msgid "Authentication failed."
+msgstr "인증 실패."
+
+#: CdnEngine_GoogleDrive.php:117
+msgid "Service not configured."
+msgstr "서비스가 구성되지 않았습니다."
+
+#. Translators: 1 Origin name.
+#: CdnEngine_CloudFront.php:471 CdnEngine_Mirror_CloudFront.php:406
+msgid "Distribution for origin \"%1$s\" not found."
+msgstr "원본 \"%1$s\"에 대한 배포를 찾을 수 없습니다."
+
+#: CdnEngine_CloudFront.php:450 CdnEngine_Mirror_CloudFront.php:385
+msgid "No distributions found."
+msgstr "배포를 찾을 수 없습니다."
+
+#. Translators: 1 Origin domain name, 2 Error message.
+#. Translators: 1 Origin domain name, 2 AWS error message.
+#: CdnEngine_CloudFront.php:406 CdnEngine_Mirror_CloudFront.php:338
+#: CdnEngine_Mirror_CloudFront.php:349
+msgid "Unable to create distribution for origin %1$s: %2$s"
+msgstr "원본 %1$s에 대한 배포를 생성할 수 없습니다: %2$s"
+
+#: CdnEngine_Base.php:157
+msgid "Not implemented."
+msgstr "구현되지 않음."
+
+#. Translators: 1 Response.
+#: CdnEngine_Azure_MI_Utility.php:638
+msgid "Error: get_blob - Invalid response data: %1$s"
+msgstr "오류: get_blob - 유효하지 않은 응답 데이터: %1$s"
+
+#. Translators: 1 HTTP status code.
+#: CdnEngine_Azure_MI_Utility.php:626
+msgid "Error: get_blob - HTTP request failed with status code: %1$s"
+msgstr "오류: get_blob - HTTP 요청이 상태 코드 %1$s로 실패했습니다"
+
+#. Translators: 1 Error message.
+#: CdnEngine_Azure_MI_Utility.php:610
+msgid "Error: get_blob - cURL request failed: %1$s"
+msgstr "오류: get_blob - cURL 요청 실패: %1$s"
+
+#. Translators: 1 Response.
+#: CdnEngine_Azure_MI_Utility.php:551
+msgid "Error: list_containers - Invalid response data: %1$s"
+msgstr "오류: list_containers - 유효하지 않은 응답 데이터: %1$s"
+
+#. Translators: 1 HTTP status code.
+#: CdnEngine_Azure_MI_Utility.php:539
+msgid "Error: list_containers - HTTP request failed with status code: %1$s"
+msgstr "오류: list_containers - HTTP 요청이 상태 코드 %1$s로 실패했습니다"
+
+#. Translators: 1 Error message.
+#: CdnEngine_Azure_MI_Utility.php:524
+msgid "Error: list_containers - cURL request failed: %1$s"
+msgstr "오류: list_containers - cURL 요청 실패: %1$s"
+
+#: CdnEngine_Azure_MI_Utility.php:484
+msgid "Error: create_container - empty response."
+msgstr "오류: create_container - 응답이 비어 있습니다."
+
+#. Translators: 1 HTTP status code.
+#: CdnEngine_Azure_MI_Utility.php:476
+msgid "Error: create_container - HTTP request failed with status code: %1$s"
+msgstr "오류: create_container - HTTP 요청이 상태 코드 %1$s로 실패했습니다"
+
+#. Translators: 1 Error message.
+#: CdnEngine_Azure_MI_Utility.php:461
+msgid "Error: create_container - cURL request failed: %1$s"
+msgstr "오류: create_container - cURL 요청 실패: %1$s"
+
+#. Translators: 1 Response.
+#: CdnEngine_Azure_MI_Utility.php:405
+msgid "Error: delete_blob - invalid response data: %1$s"
+msgstr "오류: delete_blob - 유효하지 않은 응답 데이터: %1$s"
+
+#. Translators: 1 HTTP status code.
+#: CdnEngine_Azure_MI_Utility.php:393
+msgid "Error: delete_blob - HTTP request failed with status code: %1$s"
+msgstr "오류: delete_blob - HTTP 요청이 상태 코드 %1$s로 실패했습니다"
+
+#. Translators: 1 Error message.
+#: CdnEngine_Azure_MI_Utility.php:378
+msgid "Error: delete_blob - cURL request failed: %1$s"
+msgstr "오류: delete_blob - cURL 요청 실패: %1$s"
+
+#. Translators: 1 Response.
+#: CdnEngine_Azure_MI_Utility.php:330
+msgid "Error: create_block_blob - invalid response data: %1$s"
+msgstr "오류: create_block_blob - 유효하지 않은 응답 데이터: %1$s"
+
+#. Translators: 1 HTTP status code.
+#: CdnEngine_Azure_MI_Utility.php:318
+msgid "Error: create_block_blob - HTTP request failed with status code: %1$s"
+msgstr "오류: create_block_blob - HTTP 요청이 상태 코드 %1$s로 실패했습니다"
+
+#. Translators: 1 Error message.
+#: CdnEngine_Azure_MI_Utility.php:303
+msgid "Error: create_block_blob - cURL request failed: %1$s"
+msgstr "오류: create_block_blob - cURL 요청 실패: %1$s"
+
+#. Translators: 1 Response.
+#: CdnEngine_Azure_MI_Utility.php:231
+msgid "Error: get_blob_properties - invalid response data: %1$s"
+msgstr "오류: get_blob_properties - 유효하지 않은 응답 데이터: %1$s"
+
+#. Translators: 1 HTTP status code.
+#: CdnEngine_Azure_MI_Utility.php:219
+msgid "Error: get_blob_properties - HTTP request failed with status code: %1$s"
+msgstr "오류: get_blob_properties - HTTP 요청이 상태 코드 %1$s로 실패했습니다"
+
+#. Translators: 1 Error message.
+#: CdnEngine_Azure_MI_Utility.php:204
+msgid "Error: get_blob_properties - cURL request failed: %1$s"
+msgstr "오류: get_blob_properties - cURL 요청 실패: %1$s"
+
+#. Translators: 1 Response.
+#: CdnEngine_Azure_MI_Utility.php:155
+msgid "Error: get_access_token - no token found in response data: %1$s"
+msgstr "오류: get_access_token - 응답 데이터에서 토큰을 찾을 수 없습니다: %1$s"
+
+#. Translators: 1 JSON last error message.
+#: CdnEngine_Azure_MI_Utility.php:143
+msgid "Error: get_access_token - failed to parse the JSON response: %1$s"
+msgstr "오류: get_access_token - JSON 응답을 구문 분석하지 못했습니다: %1$s"
+
+#. Translators: 1 Response.
+#: CdnEngine_Azure_MI_Utility.php:128
+msgid "Error: get_access_token - invalid response data: %1$s"
+msgstr "오류: get_access_token - 유효하지 않은 응답 데이터: %1$s"
+
+#. Translators: 1 HTTP status code.
+#: CdnEngine_Azure_MI_Utility.php:117
+msgid "Error: get_access_token - HTTP request failed with status code: %1$s"
+msgstr "오류: get_access_token - HTTP 요청이 상태 코드 %1$s로 실패했습니다"
+
+#. Translators: 1 Error message.
+#: CdnEngine_Azure_MI_Utility.php:102
+msgid "Error: get_access_token - cURL request failed: %1$s"
+msgstr "오류: get_access_token - cURL 요청 실패: %1$s"
+
+#: CdnEngine_Azure_MI_Utility.php:72
+msgid "Error: get_access_token - missing required environment variables."
+msgstr "오류: get_access_token - 필수 환경 변수가 누락되었습니다."
+
+#. Translators: 1 opening HMTL a tag to license setting, 2 closing HTML a tag.
+#: Licensing_Plugin_Admin.php:353
+msgid "Your current W3 Total Cache Pro license key is not valid. %1$sPlease confirm it%2$s."
+msgstr "현재 W3 Total Cache Pro 라이선스 키가 유효하지 않습니다. %1$s확인해 주세요%2$s."
+
+#: Licensing_Plugin_Admin.php:338
+msgid "Your W3 Total Cache license key is not active and cannot be activated due to the license activation limit being reached."
+msgstr "W3 Total Cache 라이선스 키가 활성화되어 있지 않으며, 라이선스 활성화 한도에 도달하여 활성화할 수 없습니다."
+
+#: Licensing_Plugin_Admin.php:217
+msgid "The W3 Total Cache Pro license key you provided is valid and has been applied."
+msgstr "제공하신 W3 Total Cache Pro 라이선스 키가 유효하며 적용되었습니다."
+
+#: Licensing_Plugin_Admin.php:203
+msgid "Your previous W3 Total Cache Pro license key is invalid and cannot be deactivated."
+msgstr "이전 W3 Total Cache Pro 라이선스 키가 유효하지 않아 비활성화할 수 없습니다."
+
+#: Licensing_Plugin_Admin.php:196
+msgid "Your previous W3 Total Cache Pro license key has been deactivated."
+msgstr "이전 W3 Total Cache Pro 라이선스 키가 비활성화되었습니다."
+
+#: Licensing_Plugin_Admin.php:189
+msgid "Your previous W3 Total Cache Pro license key was not found and cannot be deactivated."
+msgstr "이전 W3 Total Cache Pro 라이선스 키를 찾을 수 없으며 비활성화할 수 없습니다."
+
+#: Licensing_Plugin_Admin.php:182
+msgid "Your previous W3 Total Cache Pro license key is expired and will remain registered to this domain."
+msgstr "이전 W3 Total Cache Pro 라이선스 키가 만료되었으며, 이 도메인에 계속 등록된 상태로 유지됩니다."
+
+#: inc/options/browsercache.php:462 inc/options/browsercache.php:729
+msgid "cache immutable no max-age (\"public, immutable\")"
+msgstr "캐시 변경 불가, 최대 수명 없음 (\"public, immutable\")"
+
+#: inc/options/browsercache.php:461 inc/options/browsercache.php:728
+msgid "cache immutable (\"public, max-age=EXPIRES_SECONDS, immutable\")"
+msgstr "캐시 불변 (\"public, max-age=EXPIRES_SECONDS, immutable\")"
+
+#: inc/lightbox/exit_survey.php:76
+msgid "Skip & Deactivate"
+msgstr "건너뛰기 및 비활성화"
+
+#: inc/lightbox/exit_survey.php:75
+msgid "Submit & Deactivate"
+msgstr "제출 및 비활성화"
+
+#: inc/lightbox/exit_survey.php:57
+msgid "Selecting \"Yes\" will permanently delete all W3 Total Cache settings, cached data, and other plugin-related information from your site. This action cannot be undone."
+msgstr "‘예’를 선택하면 모든 W3 Total Cache 설정, 캐시된 데이터 및 기타 플러그인 관련 정보가 사이트에서 영구적으로 삭제됩니다. 이 작업은 되돌릴 수 없습니다."
+
+#: inc/lightbox/exit_survey.php:56
+msgid "Remove all plugin data?"
+msgstr "모든 플러그인 데이터를 제거하시겠습니까?"
+
+#: inc/lightbox/exit_survey.php:35
+msgid "I didn’t see an improvement in website speed or performance"
+msgstr "웹사이트 속도나 성능에서 개선을 보지 못했습니다."
+
+#: inc/lightbox/exit_survey.php:28
+msgid "Conflicts with other plugins or my theme"
+msgstr "다른 플러그인이나 내 테마와의 충돌"
+
+#: inc/lightbox/exit_survey.php:21
+msgid "The plugin was too complicated to set up or use"
+msgstr "플러그인은 설정하거나 사용하기에 너무 복잡했습니다."
+
+#: inc/lightbox/exit_survey.php:16
+msgid "Before you deactivate W3 Total Cache, could you take a moment to let us know why? Your feedback is incredibly valuable and helps us make W3 Total Cache better for everyone."
+msgstr "W3 Total Cache를 비활성화하기 전에 잠시 시간을 내어 이유를 알려주실 수 있나요? 귀하의 피드백은 매우 소중하며, W3 Total Cache를 모두에게 더 나은 서비스로 만드는 데 도움이 됩니다."
+
+#: inc/lightbox/exit_survey.php:15
+msgid "We're sorry to see you go!"
+msgstr "떠나시게 되어 아쉽습니다!"
+
+#: Extension_ImageService_Widget_View.php:27
+msgid "Need higher API limits? Upgrade to Pro for significantly higher hourly limits and no monthly cap!"
+msgstr "더 높은 API 제한이 필요하신가요? Pro로 업그레이드하여 시간당 제한을 크게 높이고 월간 제한 없이 사용하세요!"
+
+#. Translators: 1 opening HTML link to fragment cache block on general settings
+#. page, 2 closing HTML link.
+#: Extension_FragmentCache_Page_View.php:46
+msgid "To enable this feature please select an engine for Fragment Cache %1$shere%2$s."
+msgstr "이 기능을 활성화하려면 조각 캐시 엔진을 %1$s여기%2$s에서 선택하세요."
+
+#: Extension_FragmentCache_GeneralPage_View.php:37
+msgid "Using disk as the cache engine for fragment caching is not recommended due to its potential for slow performance depending on storage device types and server configuration."
+msgstr "조각 캐싱의 캐시 엔진으로 디스크를 사용하는 것은 저장 장치 유형과 서버 구성에 따라 성능이 느려질 수 있는 잠재성이 있기 때문에 권장되지 않습니다."
+
+#: Extension_FragmentCache_GeneralPage_View.php:35
+msgid "Warning: Disk-Based Fragment Caching Selected"
+msgstr "경고: 디스크 기반 조각 캐시가 선택되었습니다"
+
+#: Cli.php:29 Cli.php:30 Cli.php:31
+msgid "Manage W3TC settings, flush, and prime the cache."
+msgstr "W3TC 설정을 관리하고, 캐시를 비우고, 초기화합니다."
+
+#. translators: 1 HTML acronym for Content Delivery Network (CDN).
+#: Cdn_BunnyCdn_Widget_View_Unauthorized.php:132
+msgid "W3 Total Cache has detected that you do not have a %1$s configured. For optimal performance and value, we recommend considering BunnyCDN."
+msgstr "W3 Total Cache가 %1$s이(가) 구성되어 있지 않음을 감지했습니다. 최적의 성능과 가치를 위해 BunnyCDN을 고려해 보시길 권장합니다."
+
+#. translators: 1 configured CDN/CDN FSD label.
+#: Cdn_BunnyCdn_Widget_View_Unauthorized.php:112
+msgid "W3 Total Cache has detected that you are using the %1$s, which is fully supported and compatible. For optimal performance and value, we recommend considering BunnyCDN as an alternative."
+msgstr "W3 Total Cache는 %1$s를 사용 중임을 감지했으며, 이는 완전히 지원되고 호환됩니다. 최적의 성능과 가치를 위해 BunnyCDN을 대안으로 고려하는 것을 권장합니다."
+
+#: Cdn_BunnyCdn_Widget_View_Unauthorized.php:105
+msgid "CDN / CDN FSD"
+msgstr "CDN / CDN FSD"
+
+#: Cdn_BunnyCdn_Widget_View_Unauthorized.php:105
+msgid "Content Delivery Network / Content Delivery Network Full Site Delivery"
+msgstr "콘텐츠 전송 네트워크 / 콘텐츠 전송 네트워크 전체 사이트 전송"
+
+#: Cdn_BunnyCdn_Widget_View_Unauthorized.php:87
+#: Cdn_BunnyCdn_Widget_View_Unauthorized.php:99
+msgid "CDN FSD"
+msgstr "CDN FSD"
+
+#: Cdn_BunnyCdn_Widget_View_Unauthorized.php:87
+#: Cdn_BunnyCdn_Widget_View_Unauthorized.php:99
+msgid "Content Delivery Network Full Site Delivery"
+msgstr "콘텐츠 전송 네트워크 전체 사이트 전송"
+
+#: Cdn_BunnyCdn_Widget_View_Unauthorized.php:85
+msgid "and"
+msgstr "그리고"
+
+#. translators: 1 opening HTML a tag to CDN settings page, 2 closing HTML a
+#. tag.
+#: Cdn_BunnyCdn_Widget_View_Unauthorized.php:62
+msgid "W3 Total Cache has detected that BunnyCDN is selected but not fully configured. Please use the \"Authorize\" button on the %1$sCDN%2$s settings page to connect a pull zone."
+msgstr "W3 Total Cache가 BunnyCDN이 선택되었지만 완전히 구성되지 않았음을 감지했습니다. %1$sCDN%2$s 설정 페이지에서 \"인증\" 버튼을 사용하여 풀 존을 연결하세요."
 
 #. Translators: 3 closing HTML strong tag followed by closing HTML li tag.
 #: Util_Activation.php:108
@@ -297,6 +838,26 @@ msgstr "WP Cron이(가) %1$s WebP 변환에 필요한 예상대로 작동하지 
 #: inc/options/general.php:438 ObjectCache_DiskPopup_View.php:26
 msgid "This setting can potentially create a large number of files.  Please be aware of any inode or disk space limits you may have on your hosting account."
 msgstr "이 설정은 잠재적으로 많은 수의 파일을 생성할 수 있습니다.  호스팅 계정에 있는 인노드 또는 디스크 공간 제한에 유의하세요."
+
+#: Extension_AlwaysCached_Worker.php:55
+msgid ""
+"\n"
+"Queue is empty."
+msgstr ""
+"\n"
+"대기열이 비어 있습니다."
+
+#: Extension_AlwaysCached_Worker.php:48
+msgid ""
+"\n"
+"Queue worker time slot exhaused."
+msgstr ""
+"\n"
+"대기열 작업자 시간 슬롯이 초과되었습니다."
+
+#: Extension_AlwaysCached_Worker.php:43
+msgid "Processing queue."
+msgstr "처리 대기열."
 
 #: Extension_AlwaysCached_Page_View_BoxQueue.php:123
 msgid "This button removes all items in the queue. The pending changes for each removed item will not be published until the corresponding existing cache entry expires. Removed items can be re-added to the queue via further modifications to the item or a flush all caches operation with the \"Queue Purge All Requests\" option enabled."
@@ -697,6 +1258,10 @@ msgstr "개선 사항 및 권장 사항이 포함된 자세한 성능 보고서�
 #: ConfigSettingsTabsKeys.php:14
 msgid "Our more popular package is the Plugin Configuration package. Not only will we configure page caching for you, we will configure the object cache, database cache, and most other items too."
 msgstr "가장 인기 있는 패키지는 플러그인 구성 패키지입니다. 페이지 캐싱을 구성할 뿐만 아니라 객체 캐시, 데이터베이스 캐시 및 기타 대부분의 항목도 구성해 드립니다."
+
+#: Cli.php:644
+msgid "Always Cached feature is not enabled"
+msgstr "항상 캐시 기능이 활성화되지 않았습니다"
 
 #: UserExperience_Remove_CssJs_Page_View.php:69
 msgid "Specify absolute or relative URLs, or file names to be excluded from loading on the homepage. Include one entry per line, e.g. (googletagmanager.com, /wp-content/plugins/woocommerce/, myscript.js, name=\"myscript\", etc.)"
@@ -4080,6 +4645,12 @@ msgid ""
 "\t\t\t\tyour theme are all unique, that means that minify cannot automatically work for everyone."
 msgstr "모든 상황에서 모든 사이트에서 축소가 작동하지 않는 데는 여러 가지 이유가 있습니다. W3 토탈 캐시와 아무 관련이 없습니다: 귀하의 사이트 콘텐츠, 귀하의 서버, 귀하의 플러그인 및 귀하의 테마는 모두 고유합니다. 즉, 축소가 모든 사람에게 자동으로 작동할 수는 없습니다."
 
+#. Translators: 1 opening HTML a tag to license rest link, 2 closing HTML a
+#. tag.
+#: Licensing_Plugin_Admin.php:316
+msgid "Your W3 Total Cache license key is not active for this site. You can switch your license to this website following %1$sthis link%2$s"
+msgstr "이 사이트에 W3 Total Cache 라이선스 키가 활성화되어 있지 않습니다. %1$s이 링크%2$s를 따라 라이선스를 이 웹사이트로 전환할 수 있습니다."
+
 #. translators: 1 HTML line break, 2 opening HTML acronym tag, 3 closing HTML
 #. acronym tag.
 #: inc/options/parts/memcached.php:99
@@ -6939,6 +7510,11 @@ msgstr "클라우드플레어: 이미지 처리"
 msgid "Cloudflare: Content Processing"
 msgstr "클라우드플레어: 콘텐츠 처리"
 
+#. Translators: 1 disable statistics button, 2 hide notes stats button.
+#: UsageStatistics_Plugin_Admin.php:75
+msgid "W3 Total Cache: Statistics collection is currently enabled. This consumes additional resources, and is not recommended to be run continuously. %1$s %2$s"
+msgstr "W3 Total Cache: 통계 수집이 현재 활성화되어 있습니다. 이는 추가 리소스를 소모하며, 지속적으로 실행하는 것은 권장되지 않습니다. %1$s %2$s"
+
 #: BrowserCache_ConfigLabels.php:70
 msgid "<acronym title=\"Hypertext Transfer Protocol\">HTTP</acronym> Public Key Pinning"
 msgstr "<acronym title=\"하이퍼 텍스트 전송 프로토콜\">HTTP</acronym> 공개 키 고정"
@@ -7194,6 +7770,22 @@ msgstr "페이지 캐시 가비지 정리가 실패했습니다: %1$s"
 #: Cli.php:76
 msgid "Environment adjustment failed with error: %1$s"
 msgstr "환경 조정에 실패했습니다(오류 발생: %1$s)."
+
+#. Translators: 1 New Relic recommendations, 2 button link.
+#: Extension_NewRelic_AdminNotes.php:49
+msgid "Application monitoring has detected that your page load time is higher than 300ms. It is recommended that you enable the following features: %1$s %2$s"
+msgstr "애플리케이션 모니터링에서 페이지 로드 시간이 300ms보다 높다는 것을 감지했습니다. 다음 기능을 활성화할 것을 권장합니다: %1$s %2$s"
+
+#. Translators: 1 opening HTML link to extensions page, 2 closing HTML link, 3
+#. activate text, 4 button link.
+#: Extension_Wpml_Plugin_Admin.php:225
+msgid "Activating the %1$sWPML%2$s extension for W3 Total Cache may be helpful for your site. %3$s%4$s"
+msgstr "%1$sWPML%2$s 확장을 W3 Total Cache에 활성화하면 사이트에 도움이 될 수 있습니다. %3$s%4$s"
+
+#. Translators: 1 button link.
+#: Extension_Wpml_Plugin_Admin.php:50
+msgid "W3 Total Cache's Page caching cannot work effectively when WPML Language URL format is \"Language name added as a parameter\" used. Please consider another URL format. Visit the WPML -&gt; Languages settings. %1$s"
+msgstr "W3 Total Cache의 페이지 캐싱은 WPML 언어 URL 형식이 '언어 이름을 파라미터로 추가'로 설정된 경우 효과적으로 작동할 수 없습니다. 다른 URL 형식을 고려해 주세요. WPML -&gt; 언어 설정을 방문하세요. %1$s"
 
 #: UsageStatistics_GeneralPage_View.php:46
 msgid "Some statistics are available directly on your Performance Dashboard, however, the comprehensive suite of statistics are available on the Statistics screen. Web server logs created by Nginx or Apache can be analyzed if accessible."
@@ -7821,6 +8413,10 @@ msgstr "지정된 태그 슬러그 아래에 있는 모든 페이지를 항상 �
 msgid "Enabling this option will increase wp-admin performance, but may cause side-effects"
 msgstr "이 옵션을 활성화하면 wp-admin 성능이 향상되지만 부작용이 발생할 수 있습니다."
 
+#: inc/options/objectcache.php:87
+msgid "Store transients in database even when external cache is used, which allows transient values to survive object cache cleaning/expiration"
+msgstr "외부 캐시를 사용할 때에도 트랜지언트를 데이터베이스에 저장하여 객체 캐시 정리/만료 시에도 트랜지언트 값이 유지되도록 합니다."
+
 #: inc/options/pgcache.php:470
 msgid "If you use WordPress as a backend for integrations, API caching may be for you. Similar to page caching, repeat requests will benefit by having significantly lower response times and consume fewer resources to deliver. If WordPress is not used as a backend, for additional security, the API can be disabled completely."
 msgstr "통합을 위한 백엔드로 워드프레스를 사용하는 경우 API 캐싱이 적합할 수 있습니다. 페이지 캐싱과 유사하게 반복 요청은 응답 시간이 훨씬 더 짧고 전달하는 데 더 적은 리소스를 사용함으로써 이점을 얻을 수 있습니다. 워드프레스가 백엔드로 사용되지 않는 경우 추가 보안을 위해 API를 완전히 비활성화할 수 있습니다."
@@ -8070,6 +8666,26 @@ msgstr "WP_ADMIN 페이지"
 #: Cdn_RackSpaceCloudFiles_Popup_View_Intro.php:23
 msgid "Your RackSpace API key"
 msgstr "RackSpace API 키"
+
+#. Translators: 1 path, 2 opening HTML strong tag, 3 closing HTML strong tag.
+#: Util_Rule.php:375
+msgid "Edit file %2$s%1$s%3$s and add the following rules above the WordPress directives:"
+msgstr "파일 %2$s%1$s%3$s을(를) 편집하고 다음 규칙을 WordPress 지시문 위에 추가하세요:"
+
+#. Translators: 1 PHP version.
+#: Extension_NewRelic_Service.php:77
+msgid "Not supported: %1$s."
+msgstr "지원되지 않음: %1$s."
+
+#. Translators: 1 status.
+#: Extension_Swarmify_Plugin.php:174
+msgid "Swarmify%1$s"
+msgstr "Swarmify%1$s"
+
+#. Translators: 1 HTML input button to renew license.
+#: Licensing_Plugin_Admin.php:291
+msgid "Your W3 Total Cache Pro license key has expired. %1$s to continue using the Pro features"
+msgstr "W3 Total Cache Pro 라이선스 키가 만료되었습니다. Pro 기능을 계속 사용하려면 %1$s"
 
 #: BrowserCache_Page_View_SectionSecurity.php:698
 #: BrowserCache_Page_View_SectionSecurity.php:1020
@@ -8498,6 +9114,16 @@ msgstr "XSL이 추적되지 않음"
 #: Extension_NewRelic_Plugin.php:172 Extension_Swarmify_Plugin.php:133
 msgid "rejected by filter: "
 msgstr "필터에 의해 거부됨: "
+
+#. Translators: 1 via value.
+#: Cdnfsd_Plugin.php:71
+msgid "Content Delivery Network Full Site Delivery via %1$s"
+msgstr "콘텐츠 전송 네트워크 전체 사이트 전송 %1$s 통해"
+
+#. Translators: 1 action name.
+#: Root_AdminActions.php:56
+msgid "Action %1$s does not exist."
+msgstr "작업 %1$s이(가) 존재하지 않습니다."
 
 #. Author of the plugin
 #: w3-total-cache.php inc/options/common/footer.php:119
@@ -9343,6 +9969,42 @@ msgstr "데이터베이스에 있는 업로드 경로(%1$s)가 실제 경로와 
 msgid "The active theme has changed, please %1$s now to ensure proper operation. %2$s"
 msgstr "활성 테마가 변경되었으므로 제대로 작동하려면 지금 %1$s을(를) 실행하세요. %2$s"
 
+#. Translators: 1 HTML strong tag containing extension name.
+#: Extensions_AdminActions.php:31
+msgid "Extension %s has been successfully activated."
+msgstr "확장 기능 %s이(가) 성공적으로 활성화되었습니다."
+
+#. Translators: 1 memcache servers.
+#: Minify_Plugin_Admin.php:212
+msgid "Minify: %1$s."
+msgstr "축소: %1$s."
+
+#. Translators: 1 memcached servers.
+#: PgCache_Plugin_Admin.php:386
+msgid "Page Cache: %1$s."
+msgstr "페이지 캐시: %1$s."
+
+#. Translators: 1 memecached servers.
+#: ObjectCache_Plugin_Admin.php:102
+msgid "Object Cache: %1$s."
+msgstr "객체 캐시: %1$s."
+
+#. Translators: 1 memcached servers.
+#: DbCache_Plugin_Admin.php:94
+msgid "Database Cache: %1$s."
+msgstr "데이터베이스 캐시: %1$s."
+
+#. Translators: 1 last minify error, 2 dismiss button.
+#: Minify_Plugin_Admin.php:177
+msgid "Recently an error occurred while creating the CSS / JS minify cache: %1$s. %2$s"
+msgstr "최근 CSS / JS 축소 캐시를 생성하는 동안 오류가 발생했습니다: %1$s. %2$s"
+
+#. Translators: 1 empty cache button.
+#. Translators: 1 object cache flush button.
+#: Minify_Plugin_Admin.php:242 ObjectCache_Plugin_Admin.php:134
+msgid "The setting change(s) made either invalidate the cached data or modify the behavior of the site. %1$s now to provide a consistent user experience."
+msgstr "설정 변경은 캐시된 데이터를 무효화하거나 사이트의 동작을 수정합니다. 일관된 사용자 경험을 제공하기 위해 %1$s 하세요."
+
 #: Extension_NewRelic_Service.php:128
 msgid "Operating System"
 msgstr "운영 체제"
@@ -10147,6 +10809,57 @@ msgstr "%3$s%4$s를 사용하여 조각 캐싱 %1$d/%2$d 조각"
 #: Generic_Environment.php:128
 msgid "The Page Cache add-in file advanced-cache.php is not a W3 Total Cache drop-in. It should be removed. %s"
 msgstr "페이지 캐시 애드인 파일 advanced-cache.php는 W3 총 캐시 드롭인이 아닙니다. 제거해야 합니다. %s"
+
+#. Translators: 1 engine name, 2 reject reason.
+#: Minify_Plugin.php:383
+msgid "Minified using %1$s%2$s"
+msgstr "%1$s%2$s을(를) 사용하여 축소됨"
+
+#. Translators: 1 reject reason.
+#: Extension_NewRelic_Plugin.php:261
+msgid "Application Monitoring using New Relic%1$s"
+msgstr "New Relic%1$s을(를) 사용한 애플리케이션 모니터링"
+
+#. Translators: 1 error message.
+#. Translators: 1 result message.
+#: CdnEngine_Mirror_Akamai.php:133 CdnEngine_Mirror_Akamai.php:149
+#: CdnEngine_Mirror_Cotendo.php:132 CdnEngine_Mirror_Edgecast.php:89
+msgid "Unable to purge (%1$s)."
+msgstr "%1$s을(를) 제거할 수 없습니다."
+
+#. Translators: 1 error message.
+#: CdnEngine_Mirror_Akamai.php:75 CdnEngine_Mirror_Cotendo.php:80
+msgid "Constructor error (%1$s)."
+msgstr "생성자 오류 (%1$s)."
+
+#. Translators: 1 number of processed queue items.
+#: Cdn_AdminActions.php:83
+msgid "Number of processed queue items: %1$d"
+msgstr "처리된 대기열 항목 수: %1$d"
+
+#. Translators: 1 filename.
+#: Generic_AdminActions_Config.php:85
+msgid "Content-Disposition: attachment; filename=%1$s.json"
+msgstr "Content-Disposition: 첨부파일; filename=%1$s.json"
+
+#. Translators: 1 license key, 2 license key list.
+#: Extension_NewRelic_Service.php:242
+msgid "Configured license key does not match license key(s) in account: <br />%1$s <br />%2$s"
+msgstr "구성된 라이선스 키가 계정의 라이선스 키와 일치하지 않습니다: <br />%1$s <br />%2$s"
+
+#. Translators: 1 WordPress version.
+#: Enterprise_Dbcache_WpdbInjection_Cluster.php:799
+msgid "<strong>ERROR</strong>: WordPress %1$s requires MySQL 4.1.2 or higher"
+msgstr "<strong>오류</strong>: WordPress %1$s는 MySQL 4.1.2 이상이 필요합니다"
+
+#: Licensing_Plugin_Admin.php:367
+msgid "The W3 Total Cache license key cannot be verified."
+msgstr "W3 총 캐시 라이선스 키를 확인할 수 없습니다."
+
+#. Translators: 1 remove button with link.
+#: DbCache_Environment.php:165
+msgid "The Database add-in file db.php is not a W3 Total Cache drop-in. Remove it or disable Database Caching. %1$s"
+msgstr "데이터베이스 애드인 파일 db.php는 W3 Total Cache 드롭인이 아닙니다. 이를 제거하거나 데이터베이스 캐싱을 비활성화하세요. %1$s"
 
 #: Cache.php:205 inc/options/minify/csstidy2.php:23
 #: SetupGuide_Plugin_Admin.php:998
