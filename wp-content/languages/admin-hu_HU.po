@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 6.8.x - Development - Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-05-05 18:28:30+0000\n"
+"PO-Revision-Date: 2025-06-09 13:56:03+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -163,6 +163,38 @@ msgstr "Próbálja meg újra, vagy indítsunk el egy új módosításcsomagot. E
 #: wp-admin/customize.php:79
 msgid "An error occurred while saving your changeset."
 msgstr "Hiba történt a módosításkészlet mentése közben."
+
+#: wp-admin/credits.php:150
+msgid "Triage Lead"
+msgstr "Triage vezető"
+
+#: wp-admin/credits.php:149
+msgid "Tech Lead"
+msgstr "Technikai vezető"
+
+#: wp-admin/credits.php:148
+msgid "Default Theme Development Lead"
+msgstr "Alapértelmezett sablon fejlesztés-vezető"
+
+#: wp-admin/credits.php:147
+msgid "Default Theme Design Lead"
+msgstr "Alapértelmezett sablon design vezető"
+
+#: wp-admin/credits.php:146
+msgid "Performance Lead"
+msgstr "Teljesítmény vezető"
+
+#: wp-admin/credits.php:145
+msgid "Design Lead"
+msgstr "Design vezető"
+
+#: wp-admin/credits.php:144
+msgid "Test Lead"
+msgstr "Tesztelés vezető"
+
+#: wp-admin/credits.php:143
+msgid "Documentation Lead"
+msgstr "Dokumentáció vezető"
 
 #: wp-admin/about.php:194
 msgid "WordPress 6.8 packs a wide range of performance fixes and enhancements to speed up everything from editing to browsing. Beyond speculative loading, WordPress 6.8 pays special attention to the block editor, block type registration, and query caching. Plus, imagine never waiting longer than 50 milliseconds—for any interaction. In WordPress 6.8, the Interactivity API takes a first step toward that goal."
@@ -7638,6 +7670,10 @@ msgstr "A Visszakövetés (trackback) egyfajta mód arra, hogy más honlapok fel
 msgid "Excerpts are optional hand-crafted summaries of your content that can be used in your theme. <a href=\"%s\">Learn more about manual excerpts</a>."
 msgstr "A Kivonat egy opcionális, saját magunk által készített összegzés a bejegyzésünk tartalmáról, amelyet a sablonunkban használhatunk. <a href=\"%s\">Bővebben a Kivonat funkcióról</a>."
 
+#: wp-admin/edit-form-advanced.php:288
+msgid "The Code mode allows you to enter HTML along with your post text. Note that &lt;p&gt; and &lt;br&gt; tags are converted to line breaks when switching to the Code editor to make it less cluttered. When you type, a single line break can be used instead of typing &lt;br&gt;, and two line breaks instead of paragraph tags. The line breaks are converted back to tags automatically."
+msgstr "Szöveges módban lehetséges HTML kódot megadni a bejegyzés szövege mellett. Fontos megjegyezni, hogy a &lt;p&gt; és &lt;br&gt; címkék sortörésekké lesznek alakítva a szöveges módba váltáskor, hogy kevésbé legyen zsúfolt. Miközben gépelünk, az egyszerű sortörést használhatjuk a &lt;br&gt;, helyett és dupla sortörést a bekezdés címkék helyett. Végül a sortörések automatikusan visszaalakulnak címkékké."
+
 #: wp-admin/edit-form-advanced.php:287
 msgid "Visual mode gives you an editor that is similar to a word processor. Click the Toolbar Toggle button to get a second row of controls."
 msgstr "A vizuális mód egy Wordhöz hasonló megjelenésű szerkesztőt biztosít. Az Eszköztár Kinyit/Összezár gombjára kattintva nyílik meg az eszköz második sora."
@@ -9159,6 +9195,10 @@ msgstr "Szerkesztőben nem érhető el az előnézet."
 msgid "You can insert media files by clicking the button above the post editor and following the directions. You can align or edit images using the inline formatting toolbar available in Visual mode."
 msgstr "Lehetőségünk van média fájlokat is beilleszteni, a szerkesztő feletti gombra kattintva. Lehetőségünk van, a képeket elrendezni, vagy szerkeszteni a belső formázó eszköztárral Vizuális módban."
 
+#: wp-admin/edit-form-advanced.php:286
+msgid "<strong>Post editor</strong> &mdash; Enter the text for your post. There are two modes of editing: Visual and Code. Choose the mode by clicking on the appropriate tab."
+msgstr "<strong>Bejegyzés szerkesztő</strong> - Adjuk meg a bejegyzés szövegét. Két módja van a szerkesztésnek: Vizuális vagy HTML. A választáshoz kattintsunk a megfelelő fülre."
+
 #. translators: %s: URL to header image configuration in Customizer.
 #: wp-admin/includes/class-custom-image-header.php:518
 msgid "You can now manage and live-preview Custom Header in the <a href=\"%s\">Customizer</a>."
@@ -9502,6 +9542,11 @@ msgstr "<strong>Sablonok és Bővítmények</strong> &mdash; Ezen a képernyőn 
 #: wp-admin/update-core.php:990
 msgid "On this screen, you can update to the latest version of WordPress, as well as update your themes, plugins, and translations from the WordPress.org repositories."
 msgstr "Ezen a képernyőn frissíthetjük a legutóbbi verzióra a WordPress-t , valamint a WordPress.org könyvtárból származó sablonjainkat, bővítményeinket és ezek fordításait."
+
+#. translators: %s: https://wordpress.org/themes
+#: wp-admin/themes.php:156
+msgid "If you would like to see more themes to choose from, click on the &#8220;Add Theme&#8221; button and you will be able to browse or search for additional themes from the <a href=\"%s\">WordPress Theme Directory</a>. Themes in the WordPress Theme Directory are designed and developed by third parties, and are compatible with the license WordPress uses. Oh, and they are free!"
+msgstr "Amennyiben további sablonokat szeretnék választani, akkor kattintsunk az &#8220;Új sablon hozzáadása&#8221; gombra, amelynek következtében tallózhatunk, keresgélhetünk a számtalan sablon között a <a href=\"%s\" target=\"_blank\">WordPress.org sablon könyvtár</a>ában. A WordPress.org sablon könyvtárban található sablonokat külső partnerek készítik a WordPress-szel azonos licenccel. Ja, és természetesen ingyenesek!"
 
 #. translators: 1: Number of megabytes, 2: Percentage.
 #: wp-admin/includes/dashboard.php:1682
@@ -10746,6 +10791,10 @@ msgstr "A címkéket egyesével is kategóriákká lehet átalakítani a <a href
 msgid "You can delete Link Categories in the Bulk Action pull-down, but that action does not delete the links within the category. Instead, it moves them to the default Link Category."
 msgstr "A hivatkozás-kategóriák a Csoportos művelet használatával törölhetőek, de a művelet során a kategórián belüli hivatkozások nem törlődnek, hanem az alapértelmezett hivatkozás-kategóriába kerülnek átmozgatásra."
 
+#: wp-admin/edit-form-advanced.php:317
+msgid "Creating a Page is very similar to creating a Post, and the screens can be customized in the same way using drag and drop, the Screen Options tab, and expanding/collapsing boxes as you choose. This screen also has the distraction-free writing space, available in both the Visual and Code modes via the Fullscreen buttons. The Page editor mostly works the same as the Post editor, but there are some Page-specific features in the Page Attributes box."
+msgstr "Egy oldalt létrehozni éppen olyan egyszerű, mint egy bejegyzést írni, és a megjelenés szerkesztésére is van néhány mód, csak választanunk kell; fogd és vidd módszer, Képernyő opciók fül, kinyíló/összezáródó dobozok. Ez a képernyő is tartalmazza a zavartalan írás lehetőségét mind Vizuális, mind HTML módban, a teljes képernyő gombra kattintást követően. Az Oldal szerkesztése szinte teljesen ugyanúgy működik, mint a Bejegyzések szerkesztése, csak van néhány oldal-specifikus tulajdonság az Oldalak tulajdonságai dobozban:"
+
 #: wp-admin/includes/class-custom-image-header.php:595
 msgid "You can select an image to be shown at the top of your site by uploading from your computer or choosing from your media library. After selecting an image you will be able to crop it."
 msgstr "Az oldal tetejére kijelölhetünk egy képet, amelyet feltölthetünk a számítógépünkről, vagy kiválaszthatjuk a Médiatárból is. Miután kiválasztottuk a képet meg is vághatjuk."
@@ -11508,6 +11557,14 @@ msgstr "Ez itt egy általános áttekintés a különböző felhasználói jogk�
 msgid "User Roles"
 msgstr "Felhasználói szerepkörök"
 
+#: wp-admin/user-new.php:288
+msgid "Remember to click the Add User button at the bottom of this screen when you are finished."
+msgstr "Befejezésül ne felejtsünk kattintani a képernyő alján megtalálható Új felhasználó hozzáadása feliratra."
+
+#: wp-admin/user-new.php:277
+msgid "To add a new user to your site, fill in the form on this screen and click the Add User button at the bottom."
+msgstr "Új felhasználó hozzáadásához a képernyőn látható űrlapot kell kitölteni, majd az alul található Új felhasználó hozzáadása feliratra kattintani."
+
 #: wp-admin/options-permalink.php:53
 msgid "Custom Structures"
 msgstr "Egyéni struktúra"
@@ -12070,6 +12127,11 @@ msgstr "Név"
 msgid "You can find additional themes for your site by using the Theme Browser/Installer on this screen, which will display themes from the <a href=\"%s\">WordPress Theme Directory</a>. These themes are designed and developed by third parties, are available free of charge, and are compatible with the license WordPress uses."
 msgstr "Ezen az oldalon további sablonokat tölthetünk le az oldalunkhoz a Sablonkereső/Telepítő használatával, amely a <a href=\"%s\" target=\"_blank\">WordPress.org Sablonyűjtemény</a> sablonjait mutatja meg. Ezeket a sablonokat független személyek készítették, és ingyenesen felhasználhatóvá tették, a WordPress felhasználói licencével azonos feltételek mellett."
 
+#. translators: %s: WordPress Plugin Directory URL.
+#: wp-admin/plugins.php:569
+msgid "If you would like to see more plugins to choose from, click on the &#8220;Add Plugin&#8221; button and you will be able to browse or search for additional plugins from the <a href=\"%s\">WordPress Plugin Directory</a>. Plugins in the WordPress Plugin Directory are designed and developed by third parties, and are compatible with the license WordPress uses. Oh, and they are free!"
+msgstr "Amennyiben további bővítmények közül szeretnénk választani, kattintsunk az &#8220;Új bővítmény hozzáadása&#8221; fülre, ami által lehetőségünk lesz a <a href=\"%s\" target=\"_blank\">WordPress.org Bővítménytár</a> választékában keresgélni, válogatni. A WordPress.org Bővítménytárban fellelhető bővítmények külső szerző(k) műve melyek WordPress licencével kompatibilis licenc alatt kerültek kiadásra. További előny, hogy mindegyik teljesen ingyenes!"
+
 #. translators: %s: MAX_FILE_SIZE
 #: wp-admin/includes/file.php:898
 msgid "The uploaded file exceeds the %s directive that was specified in the HTML form."
@@ -12097,6 +12159,11 @@ msgstr "Fordítók"
 #: wp-admin/freedoms.php:100
 msgid "Every plugin and theme in WordPress.org&#8217;s directory is 100%% GPL or a similarly free and compatible license, so you can feel safe finding <a href=\"%1$s\">plugins</a> and <a href=\"%2$s\">themes</a> there. If you get a plugin or theme from another source, make sure to <a href=\"%3$s\">ask them if it&#8217;s GPL</a> first. If they do not respect the WordPress license, it is not recommended to use them."
 msgstr "A WordPress.org-on található minden sablon és bővítmény 100%% GPL vagy hasonló ingyenes és kompatibilis licenccel rendelkezik, így biztonságosan válogathatunk a <a href=\"%1$s\">bővítmények</a> és <a href=\"%2$s\">sablonok</a> között. Ha másmilyen forrásból származó bővítményünk, vagy sablonunk van, használat előtt <a href=\"%3$s\">bizonyosodjunk meg róla, hogy rendelkezik-e GPL licenccel</a>. Ha nem tartják tiszteletben a WordPress licencét, akkor nem javasoljuk a használatát."
+
+#. translators: %s: https://wordpressfoundation.org/trademark-policy
+#: wp-admin/freedoms.php:88
+msgid "WordPress grows when people like you tell their friends about it, and the thousands of businesses and services that are built on and around WordPress share that fact with their users. The WordPress community is flattered every time someone spreads the good word, just make sure to <a href=\"%s\">check out the WordPress Foundation trademark guidelines</a> first."
+msgstr "A WordPress szédületes növekedése annak köszönhető, hogy az emberek szívesen beszélnek róla barátaiknak, valamint szolgáltatások és üzletek ezrei épülnek a WordPress köré, és ezt megosztják a felhasználóikkal. Számunkra hízelgő, ha bármikor is ejt rólunk valaki egy jó szót, de előbb nem árt, ha először <a href=\"%s\">ellenőrizzük a WordPress Foundation védjegyhasználati útmutató</a>t."
 
 #: wp-admin/menu.php:112
 msgid "All Comments"
@@ -12153,6 +12220,10 @@ msgstr "Ha nem szeretnénk saját képet feltölteni, akkor választhatunk egyet
 #: wp-admin/includes/class-custom-image-header.php:701
 msgid "You can choose one of your previously uploaded headers, or show a random one."
 msgstr "Az előzetesen feltöltött fejrészeket lehet használni, vagy véletlenszerűen egy fejrészt."
+
+#: wp-admin/menu-header.php:287
+msgid "Collapse Menu"
+msgstr "Menü összezárása"
 
 #: wp-admin/includes/class-custom-image-header.php:699
 msgid "Uploaded Images"
@@ -12598,6 +12669,10 @@ msgstr "Ha az alapértelmezettől eltérőt választunk, az URL struktúránkban
 #: wp-admin/widgets-form.php:54
 msgid "If you want to remove the widget but save its setting for possible future use, just drag it into the Inactive Widgets area. You can add them back anytime from there. This is especially helpful when you switch to a theme with fewer or different widget areas."
 msgstr "Amennyiben el akarjuk távolítani a widgetet, de a jövőbeni használatához el akarjuk tárolni a beállításait, akkor csak egyszerűen húzzuk az Inaktív widgetek területre. Innen bármikor visszaállíthatjuk őket. Ez akkor lehet nagy segítség, ha kevesebb számú, vagy különböző widget területtel rendelkező sablonokat kapcsolgatunk ki-, be."
+
+#: wp-admin/users.php:36
+msgid "To add a new user for your site, click the Add User button at the top of the screen or Add User in the Users menu section."
+msgstr "Új felhasználó hozzáadásához a képernyő felső részén található Új felhasználó hozzáadása feliratra kell kattintani, vagy a Felhasználók menü részben lévő Új hozzáadás feliratra."
 
 #: wp-admin/options-media.php:20
 msgid "You can set maximum sizes for images inserted into your written content; you can also insert an image as Full Size."
