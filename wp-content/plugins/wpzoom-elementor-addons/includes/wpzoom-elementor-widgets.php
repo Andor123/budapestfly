@@ -68,6 +68,9 @@ class WPZOOM_Elementor_Widgets {
 		// Add Plugin actions
 		add_action( 'elementor/elements/categories_registered', [ $this, 'add_widget_categories' ] );
 		add_action( 'elementor/widgets/register', [ $this, 'init_widgets' ] );
+
+		// Add editor assets for pro upsell
+		add_action( 'elementor/editor/before_enqueue_scripts', [ $this, 'enqueue_editor_assets' ] );
 	}
 
 	/**
@@ -116,11 +119,35 @@ class WPZOOM_Elementor_Widgets {
 				'icon' => 'fa fa-plug'
 			]
 		);
-		if( self::is_supported_theme( 'inspiro' ) ) {
+        // Check Pro plugin status and premium theme for dynamic category title
+        $has_pro_plugin = class_exists( 'WPZOOM_Elementor_Addons_Pro' );
+        $has_premium_theme = self::has_premium_wpzoom_theme();
+        
+        if ( $has_pro_plugin || $has_premium_theme ) {
+            // Show "Active" status with link to license page (for Pro plugin) or just "Active" (for premium themes)
+            if ( $has_pro_plugin ) {
+                $pro_title = __( 'WPZOOM PRO', 'wpzoom-elementor-addons' ) . ' <span class="wpzoom-pro-active" style="color: #46b450; font-weight: 600;">✓ ' . esc_html__( 'Active', 'wpzoom-elementor-addons' ) . '</span> <a href="' . esc_url( admin_url( 'options-general.php?page=wpzoom-addons-pro' ) ) . '" class="wpzoom-license-link" title="' . esc_attr__( 'Manage License', 'wpzoom-elementor-addons' ) . '">' . esc_html__( 'License', 'wpzoom-elementor-addons' ) . '</a>';
+            } else {
+                // Premium theme active, just show "Active" status
+                $pro_title = __( 'WPZOOM PRO', 'wpzoom-elementor-addons' ) . ' <span class="wpzoom-pro-active" style="color: #46b450; font-weight: 600;">✓ ' . esc_html__( 'Active', 'wpzoom-elementor-addons' ) . '</span>';
+            }
+        } else {
+            // Show "Get Pro" link to plugin page
+            $pro_title = __( 'WPZOOM PRO', 'wpzoom-elementor-addons' ) . ' <a href="https://www.wpzoom.com/plugins/wpzoom-elementor-addons/" target="_blank" class="wpzoom-upgrade-link" title="' . esc_attr__( 'Get Pro Plugin', 'wpzoom-elementor-addons' ) . '">' . esc_html__( 'Upgrade', 'wpzoom-elementor-addons' ) . '</a>';
+        }
+        
+        $elements_manager->add_category(
+            'wpzoom-elementor-addons-pro',
+            [
+                'title' => $pro_title,
+                'icon' => 'fa fa-plug'
+            ]
+        );
+ 		if( self::is_supported_theme( 'inspiro' ) ) {
 			$elements_manager->add_category(
 				'wpzoom-elementor-addons-inspiro',
 				[
-					'title' => __( 'WPZOOM Inspiro', 'wpzoom-elementor-addons' ),
+					'title' => __( 'Inspiro Widgets', 'wpzoom-elementor-addons' ),
 					'icon' => 'fa fa-plug'
 				]
 			);
@@ -196,6 +223,17 @@ class WPZOOM_Elementor_Widgets {
 	}
 
 	/**
+	 * Check if a premium WPZOOM theme is active
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 * @return bool
+	 */
+	public static function has_premium_wpzoom_theme() {
+		return class_exists( 'WPZOOM' );
+	}
+
+	/**
 	 * Get a list of all the allowed HTML tags.
 	 *
 	 * @since 1.0.0
@@ -268,5 +306,22 @@ class WPZOOM_Elementor_Widgets {
 	 */
 	public static function custom_kses( $string = '' ) {
 		return wp_kses( $string, self::get_allowed_html_tags() );
+	}
+
+	/**
+	 * Enqueue editor assets for upgrade links
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 */
+	public function enqueue_editor_assets() {
+		// Enqueue editor CSS for upgrade links
+		wp_enqueue_style(
+			'wpzoom-elementor-addons-editor',
+			WPZOOM_EL_ADDONS_URL . 'assets/css/editor.css',
+			[],
+			WPZOOM_EL_ADDONS_VER
+		);
+
 	}
 }

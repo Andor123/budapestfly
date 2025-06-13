@@ -129,16 +129,47 @@ var WPZCached = null;
 		/* INSERT template buttons */
 		$('.wpzoom-btn-template-insert, .elementor-template-library-template-action').unbind('click');
         $('.wpzoom-btn-template-insert, .elementor-template-library-template-action').click(function(){
+			// Check if this is a locked template trying to be inserted
+			if ( $(this).hasClass('wpzoom-locked-template') ) {
+				// Show upgrade notice for locked template insertion
+				elementor.templates.showErrorDialog( 'This template is only available with WPZOOM Elementor Addons Pro license. Please visit wpzoom.com to get your license key.' );
+				return false;
+			}
+
 			var WPZ_selectedElement = this;
             showLoadingView();
 			var filename = $( WPZ_selectedElement ).attr( "data-template-name" ) + ".json";
 			//console.log(filename);
-			$.post( 
-				ajaxurl, 
-				{ action : 'get_content_from_elementor_export_file', filename: filename }, 
-				function(data) {
+					$.post( 
+			ajaxurl, 
+			{ 
+				action : 'get_content_from_elementor_export_file', 
+				filename: filename
+			}, 
+			function(data) {
+				try {
+					// If data is already an object (from wp_send_json_error), use it directly
+					if (typeof data === 'object' && data !== null) {
+						if (data.success === false) {
+							// Handle license error specifically
+							if (data.data && data.data.is_license_error) {
+								var errorMessage = data.data.message || 'This template requires WPZOOM Elementor Addons Pro license.';
+								var licensePageUrl = (typeof wpzoom_admin_data !== 'undefined' && wpzoom_admin_data.license_page_url) ? wpzoom_admin_data.license_page_url : '/wp-admin/options-general.php?page=wpzoom-addons-license';
+								var getLicenseUrl = (typeof wpzoom_admin_data !== 'undefined' && wpzoom_admin_data.get_license_url) ? wpzoom_admin_data.get_license_url : 'https://www.wpzoom.com/plugins/wpzoom-elementor-addons/';
+								errorMessage += '<br><br><a href="' + licensePageUrl + '" target="_blank" style="color: #007cba; text-decoration: none;">Enter License Key</a> | <a href="' + getLicenseUrl + '" target="_blank" style="color: #007cba; text-decoration: none;">Get License Key</a>';
+								elementor.templates.showErrorDialog( errorMessage );
+							} else {
+								elementor.templates.showErrorDialog( data.data.message || 'The template could not be imported. Please try again.' );
+							}
+							hideLoadingView();
+							return;
+						}
+					}
 
-					data = JSON.parse(data);
+					// Parse data if it's a string
+					if (typeof data === 'string') {
+						data = JSON.parse(data);
+					}
 
 					if(insertIndex == -1){
 						elementor.getPreviewView().addChildModel(data, {silent: 0});
@@ -154,11 +185,26 @@ var WPZCached = null;
 					}
 					showLoadingView();
 					windowWPZ.wpzModal.hide();
-			} )
-			.fail( function error(errorData) {
-				elementor.templates.showErrorDialog( 'The template couldn’t be imported. Please try again or get in touch with the WPZOOM team.' );
-				hideLoadingView();
-			} );
+				} catch (e) {
+					console.error('Error parsing template data:', e);
+					elementor.templates.showErrorDialog( 'The template could not be imported. Invalid template data.' );
+					hideLoadingView();
+				}
+		} )
+		.fail( function error(errorData) {
+			var errorMessage = 'The template could not be imported. Please try again or get in touch with the WPZOOM team.';
+			
+			// Check if it's a license-related error
+			if (errorData.responseJSON && errorData.responseJSON.data && errorData.responseJSON.data.is_license_error) {
+				errorMessage = errorData.responseJSON.data.message || 'This template requires WPZOOM Elementor Addons Pro license.';
+				var licensePageUrl = (typeof wpzoom_admin_data !== 'undefined' && wpzoom_admin_data.license_page_url) ? wpzoom_admin_data.license_page_url : '/wp-admin/options-general.php?page=wpzoom-addons-license';
+				var getLicenseUrl = (typeof wpzoom_admin_data !== 'undefined' && wpzoom_admin_data.get_license_url) ? wpzoom_admin_data.get_license_url : 'https://www.wpzoom.com/plugins/wpzoom-elementor-addons/';
+				errorMessage += '<br><br><a href="' + licensePageUrl + '" target="_blank" style="color: #007cba; text-decoration: none;">Enter License Key</a> | <a href="' + getLicenseUrl + '" target="_blank" style="color: #007cba; text-decoration: none;">Get License Key</a>';
+			}
+			
+			elementor.templates.showErrorDialog( errorMessage );
+			hideLoadingView();
+		} );
         });
 
 		/* Filter to show by theme */
@@ -196,11 +242,34 @@ var WPZCached = null;
 			var jsonData = $(this).attr('data-template');
 			var data = jQuery.parseJSON( jsonData );
 			var slug = data.id;
+			var isLocked = $(this).hasClass('wpzoom-template-thumb-locked');
+
 			//console.log( data );
 			$('.elementor-templates-modal__header__logo').hide();
 			$('#wpzoom-elementor-template-library-toolbar').hide();
 			$('#wpzoom-elementor-template-library-header-preview').show();
 			$('#wpzoom-elementor-template-library-header-preview').find('.elementor-template-library-template-action').attr( 'data-template-name', slug );
+
+			// If template is locked, add a class to the insert button to handle it differently
+			if ( isLocked ) {
+				$('#wpzoom-elementor-template-library-header-preview').find('.elementor-template-library-template-action').addClass('wpzoom-locked-template');
+				// Update button text and style for locked templates
+				$('#wpzoom-elementor-template-library-header-preview').find('.elementor-button-title').text('Unlock with Pro');
+				$('#wpzoom-elementor-template-library-header-preview').find('.elementor-template-library-template-action').css({
+					'background': '#3496ff',
+					'color': '#fff'
+				});
+			} else {
+				$('#wpzoom-elementor-template-library-header-preview').find('.elementor-template-library-template-action').removeClass('wpzoom-locked-template');
+				// Reset button text and style for free templates
+				$('#wpzoom-elementor-template-library-header-preview').find('.elementor-button-title').text('Insert');
+				$('#wpzoom-elementor-template-library-header-preview').find('.elementor-template-library-template-action').css({
+					'background': '',
+					'border-color': '',
+					'color': ''
+				});
+			}
+
 			$('.wpzoom-header-back-button').show();
             showLoadingView();
             $.post( ajaxurl, { action : 'get_wpzoom_preview', data: data}, function(data) {

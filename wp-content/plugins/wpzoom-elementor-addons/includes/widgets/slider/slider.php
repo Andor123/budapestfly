@@ -79,7 +79,7 @@ class Slider extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'Slider', 'wpzoom-elementor-addons' );
+		return esc_html__( 'Image Slider', 'wpzoom-elementor-addons' );
 	}
 
 	/**
@@ -1378,7 +1378,7 @@ class Slider extends Widget_Base {
 		$this->add_control(
 			'video_controls_color',
 			[
-				'label' => esc_html__( 'Controls Color', 'elementor' ),
+				'label' => esc_html__( 'Controls Color', 'wpzoom-elementor-addons' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => ''
 			]
