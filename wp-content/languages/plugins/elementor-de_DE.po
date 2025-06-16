@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Elementor Website Builder &#8211; More Than Just a Page Builder - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-06-05 15:03:04+0000\n"
+"PO-Revision-Date: 2025-06-16 07:35:01+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -2113,6 +2113,10 @@ msgstr "Hintergrundgröße"
 msgid "Connected as %s"
 msgstr "Verbunden als %s"
 
+#: core/settings/editor-preferences/model.php:79
+msgid "Auto detect"
+msgstr "Automatische Erkennung"
+
 #: core/settings/editor-preferences/model.php:52
 msgid "Preferences"
 msgstr "Vorlieben"
@@ -2165,10 +2169,75 @@ msgctxt "Shapes"
 msgid "X"
 msgstr "X"
 
+#: includes/widgets/divider.php:301
+msgctxt "Shapes"
+msgid "Tribal"
+msgstr "Tribal"
+
+#: includes/widgets/divider.php:292
+msgctxt "Shapes"
+msgid "Trees"
+msgstr "Bäume"
+
+#: includes/widgets/divider.php:283
+msgctxt "Shapes"
+msgid "Squares"
+msgstr "Quadrate"
+
+#: includes/widgets/divider.php:274
+msgctxt "Shapes"
+msgid "Stripes"
+msgstr "Streifen"
+
+#: includes/widgets/divider.php:265
+msgctxt "Shapes"
+msgid "Leaves"
+msgstr "Blätter"
+
+#: includes/widgets/divider.php:256
+msgctxt "Shapes"
+msgid "Half Rounds"
+msgstr "Halbrunde"
+
+#: includes/widgets/divider.php:247
+msgctxt "Shapes"
+msgid "Fir Tree"
+msgstr "Tanne"
+
 #: includes/widgets/divider.php:238
 msgctxt "Shapes"
 msgid "Dots"
 msgstr "Punkte"
+
+#: includes/widgets/divider.php:229
+msgctxt "Shapes"
+msgid "Rectangles"
+msgstr "Rechtecke"
+
+#: includes/widgets/divider.php:221
+msgctxt "Shapes"
+msgid "Parallelogram"
+msgstr "Parallelogramm"
+
+#: includes/widgets/divider.php:213
+msgctxt "Shapes"
+msgid "Rhombus"
+msgstr "Rhombus"
+
+#: includes/widgets/divider.php:205
+msgctxt "Shapes"
+msgid "Pluses"
+msgstr "Plus-Zeichen"
+
+#: includes/widgets/divider.php:197
+msgctxt "Shapes"
+msgid "Arrows"
+msgstr "Pfeile"
+
+#: includes/widgets/divider.php:181
+msgctxt "Shapes"
+msgid "Wavy"
+msgstr "Wellenförmig"
 
 #: includes/widgets/divider.php:667
 msgid "Amount"
@@ -3407,6 +3476,11 @@ msgctxt "revision date format"
 msgid "M j, H:i"
 msgstr "M j, H:i"
 
+#. translators: 1: Editing date, 2: Author display name.
+#: core/base/document.php:1553
+msgid "Last edited on %1$s by %2$s"
+msgstr "Zuletzt am %1$s von %2$s bearbeitet"
+
 #: core/kits/views/panel.php:40 includes/controls/icons.php:83
 #: includes/controls/icons.php:85 includes/controls/media.php:215
 #: includes/controls/media.php:217 includes/controls/media.php:279
@@ -3425,11 +3499,6 @@ msgstr "M j, H:i"
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:65
 msgid "Remove"
 msgstr "Löschen"
-
-#. translators: 1: Editing date, 2: Author display name.
-#: core/base/document.php:1553
-msgid "Last edited on %1$s by %2$s"
-msgstr "Zuletzt am %1$s von %2$s bearbeitet"
 
 #: modules/history/revisions-manager.php:157
 msgid "Current Version"
@@ -3476,12 +3545,6 @@ msgstr "Trend"
 #: includes/controls/dimensions.php:148
 msgid "Unlinked values"
 msgstr "Unverknüpfte Werte"
-
-#: includes/editor-templates/panel.php:133
-#: assets/js/packages/editor-app-bar/editor-app-bar.js:12
-#: assets/js/packages/editor-app-bar/editor-app-bar.strings.js:24
-msgid "Save Draft"
-msgstr "Als Entwurf speichern"
 
 #: includes/editor-templates/panel.php:119
 #: assets/js/packages/editor-app-bar/editor-app-bar.js:12
@@ -3572,6 +3635,12 @@ msgstr "Wenn du den privaten Modus aktivierst, wird YouTube so lange keine Infor
 #: assets/js/onboarding.16755744e5ca197ffd37.bundle.js:2536
 msgid "Click here"
 msgstr "Hier klicken"
+
+#: includes/editor-templates/panel.php:133
+#: assets/js/packages/editor-app-bar/editor-app-bar.js:12
+#: assets/js/packages/editor-app-bar/editor-app-bar.strings.js:24
+msgid "Save Draft"
+msgstr "Entwurf speichern"
 
 #: includes/template-library/sources/local.php:496
 #: includes/template-library/sources/local.php:612
@@ -4437,6 +4506,16 @@ msgstr "(kein Titel)"
 msgid "Local"
 msgstr "Lokal"
 
+#: includes/editor-templates/templates.php:305
+#: includes/editor-templates/templates.php:393
+#: includes/editor-templates/templates.php:439
+#: includes/editor-templates/templates.php:453 assets/js/ai-admin.js:6721
+#: assets/js/ai-gutenberg.js:8569 assets/js/ai-media-library.js:8350
+#: assets/js/ai-unify-product-images.js:8350 assets/js/ai.js:9815
+#: assets/js/editor.js:8516
+msgid "Insert"
+msgstr "Einfügen"
+
 #: core/base/document.php:172 includes/editor-templates/global.php:21
 #: includes/editor-templates/responsive-bar.php:65 includes/frontend.php:1417
 #: assets/js/ai-admin.js:588 assets/js/ai-gutenberg.js:2356
@@ -4450,16 +4529,6 @@ msgstr "Lokal"
 #: assets/js/import-export-admin.js:313
 msgid "Close"
 msgstr "Schließen"
-
-#: includes/editor-templates/templates.php:305
-#: includes/editor-templates/templates.php:393
-#: includes/editor-templates/templates.php:439
-#: includes/editor-templates/templates.php:453 assets/js/ai-admin.js:6721
-#: assets/js/ai-gutenberg.js:8569 assets/js/ai-media-library.js:8350
-#: assets/js/ai-unify-product-images.js:8350 assets/js/ai.js:9815
-#: assets/js/editor.js:8516
-msgid "Insert"
-msgstr "Einfügen"
 
 #: includes/template-library/sources/remote.php:61
 msgid "Remote"
@@ -5946,16 +6015,6 @@ msgstr "Gefahr"
 msgid "Warning"
 msgstr "Warnung"
 
-#: core/base/traits/shared-widget-controls-trait.php:156
-#: includes/elements/column.php:547 includes/elements/container.php:979
-#: includes/elements/section.php:831 includes/widgets/common-base.php:856
-#: modules/floating-buttons/base/widget-floating-bars-base.php:761
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:16
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:18
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:241
-msgid "Border"
-msgstr "Rahmen"
-
 #: core/kits/documents/tabs/theme-style-images.php:21
 #: core/kits/documents/tabs/theme-style-images.php:51
 #: includes/controls/groups/background.php:623
@@ -6025,6 +6084,11 @@ msgstr "Pfeile"
 msgid "YouTube"
 msgstr "YouTube"
 
+#. Author of the plugin
+#: elementor.php
+msgid "Elementor.com"
+msgstr "Elementor.com"
+
 #: core/kits/documents/tabs/theme-style-form-fields.php:78
 #: core/kits/documents/tabs/theme-style-typography.php:126
 #: core/kits/documents/tabs/theme-style-typography.php:155
@@ -6084,11 +6148,6 @@ msgstr "YouTube"
 msgid "Color"
 msgstr "Farbe"
 
-#. Author of the plugin
-#: elementor.php
-msgid "Elementor.com"
-msgstr "Elementor.com"
-
 #: includes/widgets/heading.php:197 includes/widgets/traits/button-trait.php:37
 #: modules/floating-buttons/base/widget-contact-button-base.php:1120
 #: modules/floating-buttons/base/widget-contact-button-base.php:1545
@@ -6101,16 +6160,6 @@ msgstr "Groß"
 #: includes/widgets/heading.php:198
 msgid "XL"
 msgstr "XL"
-
-#: core/kits/documents/tabs/settings-lightbox.php:56
-#: includes/widgets/counter.php:45 includes/widgets/counter.php:127
-#: includes/widgets/counter.php:267
-msgid "Counter"
-msgstr "Zähler"
-
-#: includes/widgets/icon-list.php:45 includes/widgets/icon-list.php:110
-msgid "Icon List"
-msgstr "Icon-Liste"
 
 #: includes/widgets/accordion.php:185 includes/widgets/accordion.php:408
 #: includes/widgets/alert.php:173 includes/widgets/divider.php:509
@@ -6136,6 +6185,16 @@ msgstr "Icon-Liste"
 #: modules/nested-tabs/widgets/nested-tabs.php:847
 msgid "Icon"
 msgstr "Icon"
+
+#: core/kits/documents/tabs/settings-lightbox.php:56
+#: includes/widgets/counter.php:45 includes/widgets/counter.php:127
+#: includes/widgets/counter.php:267
+msgid "Counter"
+msgstr "Zähler"
+
+#: includes/widgets/icon-list.php:45 includes/widgets/icon-list.php:110
+msgid "Icon List"
+msgstr "Icon-Liste"
 
 #: core/settings/editor-preferences/model.php:216
 #: includes/widgets/image-carousel.php:211
@@ -6885,6 +6944,15 @@ msgstr "Sekundäre"
 msgid "Cool Number"
 msgstr "Coole Zahl"
 
+#: includes/widgets/icon-box.php:237
+#: includes/widgets/traits/button-trait.php:142
+#: modules/floating-buttons/base/widget-contact-button-base.php:1130
+#: modules/floating-buttons/base/widget-contact-button-base.php:2396
+#: modules/floating-buttons/base/widget-floating-bars-base.php:576
+#: modules/floating-buttons/base/widget-floating-bars-base.php:1286
+msgid "Icon Position"
+msgstr "Icon-Position"
+
 #: includes/base/element-base.php:1326 includes/base/element-base.php:1354
 #: includes/controls/groups/flex-container.php:101
 #: includes/controls/groups/flex-container.php:137
@@ -6924,19 +6992,6 @@ msgstr "Coole Zahl"
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:207
 msgid "Center"
 msgstr "Zentriert"
-
-#: includes/widgets/icon-box.php:237
-#: includes/widgets/traits/button-trait.php:142
-#: modules/floating-buttons/base/widget-contact-button-base.php:1130
-#: modules/floating-buttons/base/widget-contact-button-base.php:2396
-#: modules/floating-buttons/base/widget-floating-bars-base.php:576
-#: modules/floating-buttons/base/widget-floating-bars-base.php:1286
-msgid "Icon Position"
-msgstr "Icon-Position"
-
-#: includes/settings/settings.php:271
-msgid "Post Types"
-msgstr "Inhaltstypen"
 
 #: core/document-types/page-base.php:144
 #: core/kits/documents/tabs/theme-style-buttons.php:243
@@ -6999,6 +7054,10 @@ msgstr "Innenabstand"
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:177
 msgid "Custom"
 msgstr "Individuell"
+
+#: includes/settings/settings.php:271
+msgid "Post Types"
+msgstr "Inhaltstypen"
 
 #: core/experiments/manager.php:396 core/experiments/manager.php:686
 #: modules/element-cache/module.php:129
@@ -7072,3 +7131,13 @@ msgstr "Anzeigen"
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:984
 msgid "Choose Image"
 msgstr "Bild auswählen"
+
+#: core/base/traits/shared-widget-controls-trait.php:156
+#: includes/elements/column.php:547 includes/elements/container.php:979
+#: includes/elements/section.php:831 includes/widgets/common-base.php:856
+#: modules/floating-buttons/base/widget-floating-bars-base.php:761
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:16
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:18
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:241
+msgid "Border"
+msgstr "Rand"
