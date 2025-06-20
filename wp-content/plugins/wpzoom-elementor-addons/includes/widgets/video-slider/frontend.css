@@ -56,6 +56,76 @@
 	transform: translateZ(0);
 }
 
+/* Video Background Controls */
+.wpz-background-video-buttons-wrapper {
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	z-index: 102;
+	display: flex;
+	gap: 5px;
+	pointer-events: auto;
+
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    touch-action: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.wpz-background-video-buttons-wrapper a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	color: white;
+	border-radius: 50%;
+	text-decoration: none;
+	transition: all 0.3s ease;
+    opacity: .6;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    touch-action: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+    pointer-events: auto;
+}
+
+.wpz-background-video-buttons-wrapper a:hover {
+	/*background: rgba(0, 0, 0, 0.9);*/
+	color: white;
+	text-decoration: none;
+	transform: scale(1.1);
+    opacity: .9;
+}
+
+.wpz-background-video-buttons-wrapper a svg {
+	width: 26px;
+	height: 26px;
+	fill: currentColor;
+}
+
+.wpz-background-video-buttons-wrapper .screen-reader-text {
+	position: absolute !important;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+.wpz-background-video-buttons-wrapper .display-none {
+	display: none !important;
+}
+
 .wpz-video-bg video,
 .wpz-video-bg iframe {
 	/* JavaScript handles all positioning and sizing dynamically */
@@ -539,6 +609,13 @@
 		width: 45px;
 		height: 45px;
 	}
+
+	/* Video Background Controls - Mobile */
+	.wpz-background-video-buttons-wrapper a {
+		width: 36px;
+		height: 36px;
+	}
+
 }
 
 /* Safari-specific fixes */

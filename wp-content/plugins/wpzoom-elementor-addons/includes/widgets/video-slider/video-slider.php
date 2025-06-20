@@ -1112,6 +1112,29 @@ class Video_Slider extends Widget_Base {
 			]
 		);
 
+		$this->add_control(
+			'settings_video_controls',
+			[
+				'label' => esc_html__( 'Video Controls', 'wpzoom-elementor-addons' ),
+				'type' => Controls_Manager::HEADING,
+				'separator' => 'before'
+			]
+		);
+
+		$this->add_control(
+			'show_video_controls',
+			[
+				'label' => esc_html__( 'Show Video Background Controls', 'wpzoom-elementor-addons' ),
+				'type' => Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Yes', 'wpzoom-elementor-addons' ),
+				'label_off' => esc_html__( 'No', 'wpzoom-elementor-addons' ),
+				'return_value' => 'yes',
+				'default' => 'yes',
+				'description' => esc_html__( 'Display play/pause and mute/unmute controls for video backgrounds in the bottom right corner.', 'wpzoom-elementor-addons' ),
+				'frontend_available' => true,
+			]
+		);
+
 		$this->end_controls_section();
 	}
 
@@ -2467,6 +2490,7 @@ class Video_Slider extends Widget_Base {
 				$params['rel'] = '0';
 				$params['modestbranding'] = '1';
 				$params['playsinline'] = '1';
+				$params['enablejsapi'] = '1'; // Enable JavaScript API for controls
 
 				if ( ! empty( $slide['video_start_time'] ) ) {
 					$params['start'] = $slide['video_start_time'];
@@ -2494,6 +2518,8 @@ class Video_Slider extends Widget_Base {
 				$params['portrait'] = '0';
 				$params['playsinline'] = '1';
 				$params['background'] = '1';
+				$params['api'] = '1'; // Enable JavaScript API for controls
+				$params['player_id'] = 'vimeo_' . $video_id; // Unique player ID for API
 
 				if ( ! empty( $slide['video_start_time'] ) ) {
 					$params['t'] = $slide['video_start_time'] . 's';
@@ -2577,6 +2603,14 @@ class Video_Slider extends Widget_Base {
 			$video_attrs['data-privacy-mode'] = 'true';
 		}
 
+		// Add video control data attributes for external videos
+		if ( 'youtube' === $video_type || 'vimeo' === $video_type ) {
+			$video_id = $this->get_video_id( $video_url, $video_type );
+			if ( $video_id ) {
+				$video_attrs['data-video-id'] = $video_id;
+			}
+		}
+
 		?>
 		<div <?php echo Utils::render_html_attributes( $video_attrs ); ?>>
 			<?php if ( 'hosted' === $video_type ) : ?>
@@ -2605,6 +2639,33 @@ class Video_Slider extends Widget_Base {
 				endif;
 			endif; ?>
 		</div>
+
+		<?php
+		// Add video background controls if enabled
+		$settings = $this->get_settings_for_display();
+		if ( ! empty( $settings['show_video_controls'] ) && 'yes' === $settings['show_video_controls'] ) :
+		?>
+		<div class="wpz-background-video-buttons-wrapper">
+			<a class="wpz-button-video-background-play display-none" href="#" aria-label="<?php esc_attr_e( 'Play', 'wpzoom-elementor-addons' ); ?>">
+                <svg height="32" version="1.1" viewBox="0 0 512 512" width="32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M405.2,232.9L126.8,67.2c-3.4-2-6.9-3.2-10.9-3.2c-10.9,0-19.8,9-19.8,20H96v344h0.1c0,11,8.9,20,19.8,20  c4.1,0,7.5-1.4,11.2-3.4l278.1-165.5c6.6-5.5,10.8-13.8,10.8-23.1C416,246.7,411.8,238.5,405.2,232.9z" fill="#fff"></path></svg>
+				<span class="screen-reader-text"><?php esc_html_e( 'Play', 'wpzoom-elementor-addons' ); ?></span>
+			</a>
+			<a class="wpz-button-video-background-pause display-none" href="#" aria-label="<?php esc_attr_e( 'Pause', 'wpzoom-elementor-addons' ); ?>">
+				<svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 4H10V20H6V4ZM14 4H18V20H14V4Z" fill="currentColor"/>
+                </svg>
+				<span class="screen-reader-text"><?php esc_html_e( 'Pause', 'wpzoom-elementor-addons' ); ?></span>
+			</a>
+			<a class="wpz-button-sound-background-unmute display-none" href="#" aria-label="<?php esc_attr_e( 'Unmute', 'wpzoom-elementor-addons' ); ?>">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32"  viewBox="0 0 32 32"><path d="M13.333 10.108v13.119l-4.5-3.6c-0.227-0.183-0.517-0.293-0.833-0.293h-4v-5.333h4c0.291 0.001 0.585-0.095 0.833-0.292zM13.833 6.292l-6.301 5.041h-4.865c-0.736 0-1.333 0.597-1.333 1.333v8c0 0.736 0.597 1.333 1.333 1.333h4.865l6.301 5.041c0.575 0.46 1.415 0.367 1.875-0.208 0.197-0.247 0.293-0.543 0.292-0.833v-18.667c0-0.736-0.597-1.333-1.333-1.333-0.316 0-0.607 0.111-0.833 0.292zM21.724 13.609l3.057 3.057-3.057 3.057c-0.521 0.521-0.521 1.365 0 1.885s1.365 0.521 1.885 0l3.057-3.057 3.057 3.057c0.521 0.521 1.365 0.521 1.885 0s0.521-1.365 0-1.885l-3.057-3.057 3.057-3.057c0.521-0.521 0.521-1.365 0-1.885s-1.365-0.521-1.885 0l-3.057 3.057-3.057-3.057c-0.521-0.521-1.365-0.521-1.885 0s-0.521 1.365 0 1.885z" fill="currentColor"></path></svg>
+				<span class="screen-reader-text"><?php esc_html_e( 'Unmute', 'wpzoom-elementor-addons' ); ?></span>
+			</a>
+			<a class="wpz-button-sound-background-mute display-none" href="#" aria-label="<?php esc_attr_e( 'Mute', 'wpzoom-elementor-addons' ); ?>">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path d="M13.333 10.108v13.119l-4.5-3.6c-0.227-0.183-0.517-0.293-0.833-0.293h-4v-5.333h4c0.291 0.001 0.585-0.095 0.833-0.292zM13.833 6.292l-6.301 5.041h-4.865c-0.736 0-1.333 0.597-1.333 1.333v8c0 0.736 0.597 1.333 1.333 1.333h4.865l6.301 5.041c0.575 0.46 1.415 0.367 1.875-0.208 0.197-0.247 0.293-0.543 0.292-0.833v-18.667c0-0.736-0.597-1.333-1.333-1.333-0.316 0-0.607 0.111-0.833 0.292zM24.484 8.183c2.343 2.344 3.513 5.412 3.513 8.485 0 3.072-1.171 6.14-3.513 8.483-0.52 0.521-0.52 1.365 0 1.885s1.365 0.52 1.885 0c2.863-2.863 4.293-6.617 4.295-10.368 0-3.751-1.432-7.507-4.295-10.371-0.52-0.521-1.365-0.521-1.885 0s-0.521 1.365 0 1.885zM19.777 12.889c1.041 1.041 1.561 2.404 1.561 3.771s-0.52 2.729-1.561 3.771c-0.52 0.521-0.52 1.365 0 1.885s1.365 0.52 1.885 0c1.561-1.561 2.343-3.611 2.343-5.656s-0.781-4.095-2.343-5.656c-0.52-0.521-1.365-0.521-1.885 0s-0.521 1.365 0 1.885z" fill="currentColor"></path></svg>
+				<span class="screen-reader-text"><?php esc_html_e( 'Mute', 'wpzoom-elementor-addons' ); ?></span>
+			</a>
+		</div>
+		<?php endif; ?>
 		<?php
 	}
 

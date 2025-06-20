@@ -135,11 +135,11 @@ const Edit = props => {
 							</div>
 							<div className="form-group">
 								<Button isDefault onClick={() => setOpen(false)}>
-									{ __('Cancel', 'recipe-card-blocks-by-wpzoom')}
+									{ __('Cancel', 'wpzoom-forms')}
 								</Button>
 								{ ! isEmpty( bulkOptions ) && (
 									<Button isPrimary onClick={ () => { onBulkAddItems(); } }>
-										{__('Bulk Add', 'recipe-card-blocks-by-wpzoom')}
+										{__('Bulk Add', 'wpzoom-forms')}
 									</Button>
 								)}
 							</div>

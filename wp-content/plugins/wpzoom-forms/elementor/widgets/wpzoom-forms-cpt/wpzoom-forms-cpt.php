@@ -383,13 +383,13 @@ class Wpzoom_Forms_Cpt extends Widget_Base {
 
 
 	/**
-	 * Get rcb posts.
+	 * Get form posts.
 	 *
 	 * Retrieve a list of all forms posts.
 	 *
 	 * @since 1.0.0
 	 * @access public
-	 * @return array All rcb posts.
+	 * @return array All form posts.
 	 */
 	protected function get_forms_posts() {
 
@@ -441,7 +441,7 @@ class Wpzoom_Forms_Cpt extends Widget_Base {
 
 		if ( \Elementor\Plugin::$instance->editor->is_edit_mode() ) {
 			printf( 
-				'<div class="wpzoom-forms-post wpzoom-rcb-post-shortcode">%1$s</div>',
+				'<div class="wpzoom-forms-post">%1$s</div>',
 				do_blocks( $form->post_content )
 			);
 	   } else {

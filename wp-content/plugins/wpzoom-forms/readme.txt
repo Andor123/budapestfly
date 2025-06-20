@@ -5,7 +5,7 @@ Author URI:        https://www.wpzoom.com/
 Requires at least: 6.0
 Requires PHP:      7.4
 Tested up to:      6.8
-Stable tag:        1.2.10
+Stable tag:        1.3.1
 License:           GNU General Public License v2
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 Tags:              contact, form, contact form, form builder, custom form
@@ -14,35 +14,96 @@ Tags:              contact, form, contact form, form builder, custom form
 
 
 == Description ==
+[WPZOOM Forms](https://www.wpzoom.com/plugins/wpzoom-forms/) is a powerful yet intuitive contact form plugin for WordPress that seamlessly integrates with the Gutenberg editor. Create beautiful, responsive forms in minutes using our drag-and-drop interface – no coding required.
 
-WPZOOM Forms is a flexible and intuitive contact form plugin for WordPress that makes it easy to create and customize forms using the Gutenberg editor. With its user-friendly interface and a wide range of customizable options, WPZOOM Forms is perfect for both beginners and advanced users alike.
+Trusted by over 10,000 active websites, WPZOOM Forms combines ease of use with professional functionality, making it perfect for beginners and advanced users alike. Whether you need simple contact forms, complex multi-step forms, or specialized booking systems, WPZOOM Forms delivers the flexibility and reliability your website deserves.
 
+###💪 Want More Power? Try WPZOOM Forms PRO
 
-= Features =
+Take your forms to the professional level with [**WPZOOM Forms PRO**](https://www.wpzoom.com/plugins/wpzoom-forms/). Get advanced features like custom email notifications with visual editor, AJAX submissions for seamless user experience, and file upload capabilities for documents and images. Perfect for businesses that need more than basic contact forms.
 
-* **Drag-and-drop form builder**: Create your forms using the Gutenberg editor with a simple drag-and-drop interface.
-* **Email notifications**: Receive email notifications when users submit your forms, and customize the email templates as needed.
-* **Akismet integration** for Anti-Spam Protection
-* **Spam protection**: Built-in reCAPTCHA integration helps protect your forms from spam submissions.
-* Works with **Elementor**
-* Display your form anywhere using built-in contact form **shortcodes** or **contact form block**
-* **Pre-built templates**: Choose from a variety of pre-designed form templates to get started quickly.
-* **Date Picker** field to create advanced forms like **booking** or **reservations**
-* **Save Submissions to the Database**: you can collect submissions using your forms and have them all saved in the Dashboard of your website. This helps to find quickly all messages left by your users.
+⭐️ **[Get the PRO version!](https://www.wpzoom.com/plugins/wpzoom-forms/?utm_source=wporg&utm_medium=website&utm_campaign=free_description)** ⭐️
 
+### Free Plugin Features
 
-= Coming Soon =
+**Easy Drag-and-Drop Builder**
 
-* Conditional logic
-* Files upload
+Build forms effortlessly using Gutenberg's intuitive editor. Simply drag fields, arrange layouts, and customize styling – all within your familiar WordPress interface.
 
+**Ready-to-Use Templates**
 
-= Additional Resources =
+Kickstart your form creation with professionally designed templates. Choose from contact forms, feedback forms, appointment forms, and more. Quickly adapt them to match your website's design and specific needs.
 
-* [Leave your question](https://wordpress.org/support/plugin/wpzoom-forms/)
-* [Grab a free theme](https://profiles.wordpress.org/wpzoom/#content-themes)
-* [WPZOOM website](https://www.wpzoom.com)
-* [GitHub repository](https://github.com/wpzoom/wpzoom-forms)
+**🛡️ Advanced Spam Protection**
+
+Keep unwanted submissions at bay with multiple protection layers:
+
+- Google reCAPTCHA integration (v2 and v3)
+- Akismet anti-spam protection
+- Cloudflare Turnstile integration
+
+**Email Notifications**
+
+Receive instant email notifications when users submit forms. Basic email templates help you stay organized and respond quickly to inquiries.
+
+**Seamless Elementor Integration**
+
+Works perfectly with both Gutenberg and Elementor. Embed forms anywhere on your website while maintaining consistent design across all page builders.
+
+**Easy Shortcode Integration**
+
+Display forms anywhere on your website with simple shortcodes. Copy and paste the generated shortcode into any post, page, widget, or custom template. Works with any theme or page builder, giving you complete control over form placement and styling.
+
+**Advanced Date Picker Field**
+
+Create sophisticated booking forms, reservation systems, and event registrations with our versatile date picker. Perfect for restaurants, hotels, service providers, and appointment-based businesses.
+
+**Submission Management**
+
+All form submissions are safely stored in your WordPress dashboard. Search, filter, and export submissions with ease. Never lose important leads or customer information.
+
+## ⬆️ Upgrade to WPZOOM Forms PRO
+
+**Ready for even more powerful features?** [WPZOOM Forms PRO](https://www.wpzoom.com/plugins/wpzoom-forms/) takes your form building to the next level with advanced functionality designed for professional websites and businesses.
+
+### 🌟 PRO Features Include:
+
+**Custom Email Notifications**
+
+Design beautiful, branded notification emails with our visual editor. Add dynamic field tags, customize layouts, and create professional emails that match your brand. No more generic, plain-text notifications.
+
+**AJAX Form Submissions**
+
+Eliminate page reloads for a seamless user experience. Users submit forms and see instant confirmation messages without leaving the page. Higher conversion rates and better user satisfaction guaranteed.
+
+**📎 File Upload Fields**
+
+Accept PDF documents and images directly through your forms. Perfect for:
+
+- Job applications (resumes, cover letters)
+- Project briefs and client documentation
+- Media submissions and portfolios
+- Support ticket attachments
+
+**Love WPZOOM Forms?** Help other WordPress users discover this plugin by [leaving a 5-star review](https://wordpress.org/support/plugin/wpzoom-forms/reviews/#new-post). Your feedback helps us continue improving and adding new features for the community.
+
+##Why Choose WPZOOM Forms?
+
+**Community-Driven Development** – Every feature is built based on real user feedback from our active community of 10,000+ websites.
+
+**Professional Support** – Get help when you need it with our responsive support team and comprehensive documentation.
+
+**Regular Updates** – Continuous improvements, new features, and compatibility updates ensure your forms always work perfectly.
+
+**Performance Optimized** – Lightweight code and efficient database queries mean your website stays fast, even with complex forms.
+
+###Additional Resources
+
+- [Ask a Question](https://wordpress.org/support/plugin/wpzoom-forms/) – Get support from our team and community
+- [Download Free Themes](https://profiles.wordpress.org/wpzoom/#content-themes) – Complement your forms with beautiful designs
+- [WPZOOM Official Site](https://www.wpzoom.com/) – See our complete WordPress product lineup
+- [Join us on GitHub](https://github.com/wpzoom/wpzoom-forms) – Contribute to open-source development
+- [Plugin Documentation](https://www.wpzoom.com/documentation/wpzoom-forms/) – Step-by-step guides and tutorials
 
 
 == Installation ==
@@ -76,6 +137,12 @@ To export form submissions, navigate to the Tools > Export page in Dashboard and
 
 
 == Changelog ==
+
+= 1.3.1 =
+* Minor bug fix
+
+= 1.3.0 =
+* Multiple bug fixes and improvements
 
 = 1.2.10 =
 * Added two new options to edit the Success/Confirmation and Failure messages when submitting an entry

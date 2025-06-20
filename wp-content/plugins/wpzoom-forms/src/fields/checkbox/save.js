@@ -18,9 +18,8 @@ const Save = ( { attributes } ) => {
 
 		{ showLabel && <label htmlFor={ id }>
 			<RichText.Content
-				tagName="label"
+				tagName="span"
 				value={ label }
-				htmlFor={ id }
 			/>
 			{ required && <sup className="wp-block-wpzoom-forms-required">{ __( '*', 'wpzoom-forms' ) }</sup> }
 		</label> }

@@ -104,11 +104,24 @@ jQuery(document).ready(function () {
 			}
 		});
 
+		$('.wp-tab-bar a').on('click', function() {
+			$this = $(this);
+			const url = window.location.href;
+			const urlParams = new URLSearchParams(url);
+			const tab = urlParams.get('tab');
+			if (tab === 'tab-ajax') {
+				$('.wpzoom-forms-settings-ajax-promo-container').css('display', 'inline-block');
+			} else {
+				$('.wpzoom-forms-settings-ajax-promo-container').hide();
+			}
+		});
+
 		function showCaptchaOptions() {
 			const selectedCaptcha = $('input[name="wpzf-settings[wpzf_global_captcha_service]"]:checked').val();
 			const selectedRecaptchaVersion = $('input[name="wpzf-settings[wpzf_global_captcha_type]"]:checked').val();
+			
 			if (selectedCaptcha === 'recaptcha') {
-				$('tr.required-recaptcha').show();
+				$('tr.required-recaptcha').css('display', 'block');
 				if (selectedRecaptchaVersion === 'v2') {
 					$('tr.required-recaptcha-v3').hide();
 				} else {
@@ -117,7 +130,7 @@ jQuery(document).ready(function () {
 				$('tr.required-turnstile').hide();
 			} else if (selectedCaptcha === 'turnstile') {
 				$('tr.required-recaptcha').hide();
-				$('tr.required-turnstile').show();
+				$('tr.required-turnstile').css('display', 'block');
 			} else {
 				$('tr.required-recaptcha').hide();
 				$('tr.required-turnstile').hide();

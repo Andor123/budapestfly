@@ -3,13 +3,13 @@ jQuery(document).ready(function(){
 
 		// If there are no forms, show the modal
 		if ( $('.post-type-wpzf-form #the-list').find('.no-items').length > 0 ) {
-			$('#wpzoom-forms-modal').show();
+			$('#wpzoom-forms-modal').css('display', 'flex');
 		}
 
 		// Show modal on click of "Add New" button
 		$('.wpzf_settings-add-new a, #menu-posts-wpzf-form a[href$="post-new.php?post_type=wpzf-form"]').on('click', function(e){
 			e.preventDefault();
-			$('#wpzoom-forms-modal').show();
+			$('#wpzoom-forms-modal').css('display', 'flex');
 		});
 
 		// Add active class to the selected template
@@ -33,7 +33,7 @@ jQuery(document).ready(function(){
 		// Close modal
 		$('#wpzoom_close_modal, .wpzoom-forms-modal-close').on('click', function(e){
 			e.preventDefault();
-			$('#wpzoom-forms-modal').hide();
+			$('#wpzoom-forms-modal').css('display', 'none');
 		});
 
 		$(document).keydown(function(evt) {
@@ -45,7 +45,7 @@ jQuery(document).ready(function(){
 				isEscape = (evt.keyCode === 27);
 			}
 			if (isEscape) {
-				$('#wpzoom-forms-modal').hide();
+				$('#wpzoom-forms-modal').css('display', 'none');
 			}
 		});
 

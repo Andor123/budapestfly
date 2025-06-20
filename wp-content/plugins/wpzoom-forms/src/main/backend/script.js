@@ -1,6 +1,6 @@
 import { useBlockProps, InspectorControls, InnerBlocks, RichText } from '@wordpress/block-editor';
 import { registerBlockType, updateCategory } from '@wordpress/blocks';
-import { Card, CardBody, CardHeader, Disabled, Flex, FlexBlock, FlexItem, IconButton, PanelBody, RangeControl, SelectControl, TextControl, ToggleControl, ClipboardButton, Icon, __experimentalHStack as HStack } from '@wordpress/components';
+import { Card, CardBody, CardHeader, Disabled, Flex, FlexBlock, FlexItem, IconButton, PanelBody, RangeControl, SelectControl, TextControl, ToggleControl, ClipboardButton, Button, Icon, __experimentalHStack as HStack } from '@wordpress/components';
 import { useEntityProp } from '@wordpress/core-data';
 import { useSelect, useDispatch } from '@wordpress/data';
 import { Fragment, useEffect, useState } from '@wordpress/element';
@@ -12,14 +12,27 @@ import { SortableContainer, SortableElement, SortableHandle } from 'react-sortab
 import { arrayMoveImmutable } from 'array-move';
 import FormIcons from './icons';
 
-const insertFormField = (blockName, defaultAttributes, isDisabled) => {
-	console.log('insertFormField called with:', blockName, defaultAttributes, isDisabled);
+const insertFormField = (blockName, defaultAttributes, isDisabled, isPro) => {
+	console.log('insertFormField called with:', blockName, defaultAttributes, isDisabled, isPro);
 	
-	if (isDisabled) {
+	if (isDisabled && ! isPro) {
 		console.log('Field is disabled, showing notice');
 		wp.data.dispatch('core/notices').createNotice(
 			'info',
 			__('This field can only be used once per form', 'wpzoom-forms'),
+			{
+				type: 'snackbar',
+				isDismissible: true,
+			}
+		);
+		return;
+	}
+
+	if (isDisabled && isPro) {
+		console.log('Field is pro, showing notice');
+		wp.data.dispatch('core/notices').createNotice(
+			'info',
+			__('This field is available in the PRO version', 'wpzoom-forms'),
 			{
 				type: 'snackbar',
 				isDismissible: true,
@@ -145,26 +158,30 @@ registerPlugin('wpzoom-forms-document-settings', {
 		useEffect(() => {
 			// No need to add inline styles anymore as they will be in style.scss
 			
-			// Add drop handler to the editor
-			const handleDrop = (event) => {
-				event.preventDefault();
-				event.stopPropagation();
+					// Add drop handler to the editor
+		const handleDrop = (event) => {
+			// Remove any existing drop indicators
+			document.querySelectorAll('.wpzoom-forms-drop-indicator').forEach(el => el.remove());
+
+			// Check if we've already handled this drop
+			if (event.handled) {
+				return;
+			}
+
+			try {
+				const data = event.dataTransfer.getData('text');
+				if (!data) return;
 				
-				// Remove any existing drop indicators
-				document.querySelectorAll('.wpzoom-forms-drop-indicator').forEach(el => el.remove());
-				
-				// Check if we've already handled this drop
-				if (event.handled) {
+				const { type, attributes } = JSON.parse(data);
+				if (!type || !type.startsWith('wpzoom-forms/')) {
+					// This is not a WPZOOM form field drag, let WordPress handle it
 					return;
 				}
+
+				// Only prevent default and stop propagation for WPZOOM form fields
+				event.preventDefault();
+				event.stopPropagation();
 				event.handled = true;
-				
-				try {
-					const data = event.dataTransfer.getData('text');
-					if (!data) return;
-					
-					const { type, attributes } = JSON.parse(data);
-					if (!type || !type.startsWith('wpzoom-forms/')) return;
 					
 					const { createBlock } = wp.blocks;
 					const { insertBlock, getBlockInsertionPoint } = wp.data.dispatch('core/block-editor');
@@ -222,14 +239,30 @@ registerPlugin('wpzoom-forms-document-settings', {
 				}
 			};
 
-			const handleDragOver = (event) => {
-				event.preventDefault();
-				event.stopPropagation();
-				
-				// Throttle the drag over handler
-				if (handleDragOver.timeout) {
-					return;
+					const handleDragOver = (event) => {
+			// Check if this is a WPZOOM form field drag first
+			try {
+				const data = event.dataTransfer.getData('text');
+				if (data) {
+					const { type } = JSON.parse(data);
+					if (!type || !type.startsWith('wpzoom-forms/')) {
+						// This is not a WPZOOM form field drag, let WordPress handle it
+						return;
+					}
 				}
+			} catch (error) {
+				// If we can't parse the data, let WordPress handle it
+				return;
+			}
+
+			// Only prevent default and stop propagation for WPZOOM form fields
+			event.preventDefault();
+			event.stopPropagation();
+
+			// Throttle the drag over handler
+			if (handleDragOver.timeout) {
+				return;
+			}
 				
 				handleDragOver.timeout = setTimeout(() => {
 					handleDragOver.timeout = null;
@@ -309,7 +342,7 @@ registerPlugin('wpzoom-forms-document-settings', {
 				window.removeEventListener('blur', handleDragEnd);
 				
 				// Add new event listeners
-				editor.addEventListener('drop', handleDrop, { capture: true });
+				editor.addEventListener('drop', handleDrop);
 				editor.addEventListener('dragover', handleDragOver);
 				editor.addEventListener('dragleave', handleDragEnd);
 				editor.addEventListener('dragend', handleDragEnd);
@@ -436,11 +469,11 @@ registerPlugin('wpzoom-forms-document-settings', {
 					value={formMethod}
 					options={[
 						{
-							label: __('Save to Database', 'wpzoom-forms'),
+							label: __('Save to Database Only', 'wpzoom-forms'),
 							value: 'db'
 						},
 						{
-							label: __('Email', 'wpzoom-forms'),
+							label: __('Email Only', 'wpzoom-forms'),
 							value: 'email'
 						},
 						{
@@ -450,6 +483,7 @@ registerPlugin('wpzoom-forms-document-settings', {
 
 					]}
 					onChange={value => setMeta({ ...meta, '_form_method': value })}
+					help={__('Choose how form submissions are handled.', 'wpzoom-forms')}
 				/>
 
 				{(formMethod == 'email' || formMethod == 'combined') && <TextControl
@@ -458,6 +492,7 @@ registerPlugin('wpzoom-forms-document-settings', {
 					value={formEmail}
 					placeholder={__('someone@somedomain.com', 'wpzoom-forms')}
 					onChange={value => setMeta({ ...meta, '_form_email': value })}
+					help={__('Email address where submissions will be sent.', 'wpzoom-forms')}
 				/>}
 
 				<TextControl
@@ -476,35 +511,69 @@ registerPlugin('wpzoom-forms-document-settings', {
 					type="text"
 					label={__('Success Message', 'wpzoom-forms')}
 					value={formSuccessMessage}
-					placeholder={__('Thanks! We\'ve received your submission!', 'wpzoom-forms')}
+					placeholder={__('Thank you! Your message has been sent.', 'wpzoom-forms')}
 					onChange={value => setMeta({ ...meta, '_form_success_message': value })}
-					help={__('Message shown when form is submitted successfully.', 'wpzoom-forms')}
+					help={__('This message is shown when the form is submitted successfully.', 'wpzoom-forms')}
 				/>
 
 				<TextControl
 					type="text"
 					label={__('Failure Message', 'wpzoom-forms')}
 					value={formFailureMessage}
-					placeholder={__('Submission failed!', 'wpzoom-forms')}
+					placeholder={__('Oops! Something went wrong. Please try again.', 'wpzoom-forms')}
 					onChange={value => setMeta({ ...meta, '_form_failure_message': value })}
-					help={__('Message shown when form submission fails.', 'wpzoom-forms')}
+					help={__('This message is shown if the form fails to submit.', 'wpzoom-forms')}
 				/>
+				<Button
+					isPrimary
+					disabled={true}
+					icon={
+						<svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+							<path d="M21.3 10.8l-8.8-8.8c-.4-.4-.9-.6-1.4-.6H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6c0-.5-.2-1-.7-1.4zM12 19H5V5h5v4h4v1l-4.4 4.4c-.1.1-.2.3-.2.4v3.5H12v-1.5L18.5 10H14V5.5l1.5 1.5H19v7.8L12 21v-2z" />
+						</svg>
+					}
+					className="wpzoom-forms-edit-template-button"
+					style={{
+						display: 'flex',
+						alignItems: 'center',
+						justifyContent: 'center',
+						gap: '8px',
+						width: '100%',
+						padding: '10px',
+						marginTop: '15px',
+						position: 'relative'
+					}}
+				>
+					{__('Customize Notification Email', 'wpzoom-forms')}
+					{<small class="pro-only">PRO</small>}
+				</Button>
+				<p 
+					className="description"
+					style={{
+						marginTop: 'calc(8px)',
+						fontSize: '12px',
+						color: 'rgb(117, 117, 117)',
+					}}
+				>
+					{__('Edit the template for emails sent to you when a new form entry is submitted.', 'wpzoom-forms')}
+				</p>
+
 			</PluginDocumentSettingPanel>
 
 			<PluginDocumentSettingPanel
 				name="wpzoom-forms-document-settings-fields"
 				className="wpzoom-forms-document-settings-fields"
-				title={__('Add Form Fields', 'wpzoom-forms')}
+				title={__('Form Fields', 'wpzoom-forms')}
 			>
 				<div className="wpzoom-forms-block-patterns">
 					<div className="wpzoom-forms-block-patterns-list">
 						{[
 							{
 								name: 'multi-checkbox-field',
-								title: __('Multi Checkbox', 'wpzoom-forms'),
+								title: __('Multichoice', 'wpzoom-forms'),
 								icon: FormIcons.multiCheckbox,
 								defaultAttributes: {
-									label: __('Multiple Choice', 'wpzoom-forms'),
+									label: __('Multichoice', 'wpzoom-forms'),
 									required: false,
 									options: ['Option 1', 'Option 2', 'Option 3']
 								}
@@ -520,7 +589,7 @@ registerPlugin('wpzoom-forms-document-settings', {
 							},
 							{
 								name: 'text-email-field',
-								title: __('Email Input', 'wpzoom-forms'),
+								title: __('Email', 'wpzoom-forms'),
 								icon: FormIcons.emailInput,
 								defaultAttributes: {
 									label: __('Email', 'wpzoom-forms'),
@@ -537,7 +606,7 @@ registerPlugin('wpzoom-forms-document-settings', {
 							},
 							{
 								name: 'text-name-field',
-								title: __('Name Input', 'wpzoom-forms'),
+								title: __('Name', 'wpzoom-forms'),
 								icon: FormIcons.nameInput,
 								defaultAttributes: {
 									label: __('Name', 'wpzoom-forms'),
@@ -546,7 +615,7 @@ registerPlugin('wpzoom-forms-document-settings', {
 							},
 							{
 								name: 'text-phone-field',
-								title: __('Phone Input', 'wpzoom-forms'),
+								title: __('Phone', 'wpzoom-forms'),
 								icon: FormIcons.phoneInput,
 								defaultAttributes: {
 									label: __('Phone', 'wpzoom-forms'),
@@ -555,7 +624,7 @@ registerPlugin('wpzoom-forms-document-settings', {
 							},
 							{
 								name: 'text-plain-field',
-								title: __('Text Input', 'wpzoom-forms'),
+								title: __('Text', 'wpzoom-forms'),
 								icon: FormIcons.textInput,
 								defaultAttributes: {
 									label: __('Text', 'wpzoom-forms'),
@@ -592,7 +661,7 @@ registerPlugin('wpzoom-forms-document-settings', {
 							},
 							{
 								name: 'textarea-field',
-								title: __('Textarea', 'wpzoom-forms'),
+								title: __('Message', 'wpzoom-forms'),
 								icon: FormIcons.textarea,
 								defaultAttributes: {
 									label: __('Message', 'wpzoom-forms'),
@@ -602,7 +671,7 @@ registerPlugin('wpzoom-forms-document-settings', {
 							},
 							{
 								name: 'text-website-field',
-								title: __('Website Input', 'wpzoom-forms'),
+								title: __('Website', 'wpzoom-forms'),
 								icon: FormIcons.websiteInput,
 								defaultAttributes: {
 									label: __('Website', 'wpzoom-forms'),
@@ -617,9 +686,20 @@ registerPlugin('wpzoom-forms-document-settings', {
 									label: __('Date', 'wpzoom-forms'),
 									required: false
 								}
+							},
+							{
+								name: 'upload-field',
+								title: __('Upload', 'wpzoom-forms'),
+								icon: FormIcons.upload,
+								isPro: true,
+								defaultAttributes: {
+									label: __('Upload', 'wpzoom-forms'),
+									required: false,
+								}
 							}
 						].map((block) => {
-							const isDisabled = uniqueFieldsExist[block.name] || false;
+							const isDisabled = uniqueFieldsExist[block.name] || false || block.isPro;
+							const isPro = block.isPro;
 							return (
 								<div
 									key={block.name}
@@ -639,32 +719,46 @@ registerPlugin('wpzoom-forms-document-settings', {
 										console.log('Quick form field clicked:', block.name);
 										event.preventDefault();
 										event.stopPropagation();
-										insertFormField(block.name, block.defaultAttributes, isDisabled);
+										insertFormField(block.name, block.defaultAttributes, isDisabled, isPro);
 									}}
-									title={isDisabled ? __('This field can only be used once per form', 'wpzoom-forms') : ''}
+									title={isDisabled && ! block.isPro ? __('This field can only be used once per form', 'wpzoom-forms') : ''}
 								>
 									{block.icon}
 									<span>{block.title}</span>
-									{isDisabled && (
+									{isDisabled && ! block.isPro && (
 										<span className="dashicons dashicons-info" />
 									)}
+										{block.isPro && (
+											<small className="pro-only">{__('PRO', 'wpzoom-forms')}</small>
+										)}
 								</div>
 							);
 						})}
 					</div>
+					<p 
+						className="description"
+						style={{
+							marginTop: 'calc(8px)',
+							fontSize: '12px',
+							color: 'rgb(117, 117, 117)',
+						}}
+					>
+						{__('Click or drag a field to add it to your form.', 'wpzoom-forms')}
+					</p>
 				</div>
 			</PluginDocumentSettingPanel>
 
 			<PluginDocumentSettingPanel
 				name="wpzoom-forms-document-settings-details"
 				className="wpzoom-forms-document-settings-details"
-				title={__('Form Details', 'wpzoom-forms')}
+				title={__('Form Shortcode', 'wpzoom-forms')}
 			>
 				<HStack className="wpzf-shortcode-container" style={{ alignItems: 'center', justifyContent: 'flex-start' }}>
 					<TextControl
 						value={`[wpzf_form id="${postID}"]`}
 						readOnly={true}
 						style={{ margin: 0 }}
+						help={__('Copy and paste this shortcode into any page or post to display the form.', 'wpzoom-forms')}
 					/>
 					<ClipboardButton
 						className="wpzf-copy-button"
@@ -949,7 +1043,7 @@ registerBlockType('wpzoom-forms/form', {
 				window.removeEventListener('blur', handleDragEnd);
 				
 				// Add new event listeners
-				editor.addEventListener('drop', handleDrop, { capture: true });
+				editor.addEventListener('drop', handleDrop);
 				editor.addEventListener('dragover', handleDragOver);
 				editor.addEventListener('dragleave', handleDragEnd);
 				editor.addEventListener('dragend', handleDragEnd);
@@ -1003,16 +1097,16 @@ registerBlockType('wpzoom-forms/form', {
 
 		return <div {...blockProps}>
 			<InspectorControls>
-				<PanelBody title={__('Add Form Fields', 'wpzoom-forms')} initialOpen={true}>
+				<PanelBody title={__('Form Fields', 'wpzoom-forms')} initialOpen={true}>
 					<div className="wpzoom-forms-block-patterns">
 						<div className="wpzoom-forms-block-patterns-list">
 							{[
 								{
 									name: 'multi-checkbox-field',
-									title: __('Multi Checkbox', 'wpzoom-forms'),
+									title: __('Multichoice', 'wpzoom-forms'),
 									icon: FormIcons.multiCheckbox,
 									defaultAttributes: {
-										label: __('Multiple Choice', 'wpzoom-forms'),
+										label: __('Multichoice', 'wpzoom-forms'),
 										required: false,
 										options: ['Option 1', 'Option 2', 'Option 3']
 									}
@@ -1028,7 +1122,7 @@ registerBlockType('wpzoom-forms/form', {
 								},
 								{
 									name: 'text-email-field',
-									title: __('Email Input', 'wpzoom-forms'),
+									title: __('Email', 'wpzoom-forms'),
 									icon: FormIcons.emailInput,
 									defaultAttributes: {
 										label: __('Email', 'wpzoom-forms'),
@@ -1045,7 +1139,7 @@ registerBlockType('wpzoom-forms/form', {
 								},
 								{
 									name: 'text-name-field',
-									title: __('Name Input', 'wpzoom-forms'),
+									title: __('Name', 'wpzoom-forms'),
 									icon: FormIcons.nameInput,
 									defaultAttributes: {
 										label: __('Name', 'wpzoom-forms'),
@@ -1054,7 +1148,7 @@ registerBlockType('wpzoom-forms/form', {
 								},
 								{
 									name: 'text-phone-field',
-									title: __('Phone Input', 'wpzoom-forms'),
+									title: __('Phone', 'wpzoom-forms'),
 									icon: FormIcons.phoneInput,
 									defaultAttributes: {
 										label: __('Phone', 'wpzoom-forms'),
@@ -1063,7 +1157,7 @@ registerBlockType('wpzoom-forms/form', {
 								},
 								{
 									name: 'text-plain-field',
-									title: __('Text Input', 'wpzoom-forms'),
+									title: __('Text', 'wpzoom-forms'),
 									icon: FormIcons.textInput,
 									defaultAttributes: {
 										label: __('Text', 'wpzoom-forms'),
@@ -1100,7 +1194,7 @@ registerBlockType('wpzoom-forms/form', {
 								},
 								{
 									name: 'textarea-field',
-									title: __('Textarea', 'wpzoom-forms'),
+									title: __('Message', 'wpzoom-forms'),
 									icon: FormIcons.textarea,
 									defaultAttributes: {
 										label: __('Message', 'wpzoom-forms'),
@@ -1110,7 +1204,7 @@ registerBlockType('wpzoom-forms/form', {
 								},
 								{
 									name: 'text-website-field',
-									title: __('Website Input', 'wpzoom-forms'),
+									title: __('Website', 'wpzoom-forms'),
 									icon: FormIcons.websiteInput,
 									defaultAttributes: {
 										label: __('Website', 'wpzoom-forms'),
@@ -1125,9 +1219,20 @@ registerBlockType('wpzoom-forms/form', {
 										label: __('Date', 'wpzoom-forms'),
 										required: false
 									}
+								},
+								{
+									name: 'upload-field',
+									title: __('Upload', 'wpzoom-forms'),
+									icon: FormIcons.upload,
+									isPro: true,
+									defaultAttributes: {
+										label: __('Upload', 'wpzoom-forms'),
+										required: false,
+									}
 								}
 							].map((block) => {
-								const isDisabled = uniqueFieldsExist[block.name] || false;
+								const isDisabled = uniqueFieldsExist[block.name] || false || block.isPro;
+								const isPro = block.isPro;
 								return (
 									<div
 										key={block.name}
@@ -1147,19 +1252,32 @@ registerBlockType('wpzoom-forms/form', {
 											console.log('Quick form field clicked:', block.name);
 											event.preventDefault();
 											event.stopPropagation();
-											insertFormField(block.name, block.defaultAttributes, isDisabled);
+											insertFormField(block.name, block.defaultAttributes, isDisabled, isPro);
 										}}
-										title={isDisabled ? __('This field can only be used once per form', 'wpzoom-forms') : ''}
+										title={ isDisabled && ! block.isPro ? __('This field can only be used once per form', 'wpzoom-forms') : ''}
 									>
 										{block.icon}
 										<span>{block.title}</span>
-										{isDisabled && (
+										{isDisabled && ! block.isPro && (
 											<span className="dashicons dashicons-info" />
+										)}
+										{block.isPro && (
+											<small className="pro-only">{__('PRO', 'wpzoom-forms')}</small>
 										)}
 									</div>
 								);
 							})}
 						</div>
+						<p 
+						className="description"
+						style={{
+							marginTop: 'calc(8px)',
+							fontSize: '12px',
+							color: 'rgb(117, 117, 117)',
+						}}
+					>
+						{__('Click or drag a field to add it to your form.', 'wpzoom-forms')}
+					</p>
 					</div>
 				</PanelBody>
 			</InspectorControls>
@@ -1177,7 +1295,16 @@ registerBlockType('wpzoom-forms/form', {
 					'wpzoom-forms/radio-field',
 					'wpzoom-forms/label-field',
 					'wpzoom-forms/submit-field',
-					'wpzoom-forms/datepicker-field'
+					'wpzoom-forms/datepicker-field',
+                    // Core WordPress blocks for layout and content
+                    'core/group',
+                    'core/columns',
+                    'core/column',
+                    'core/paragraph',
+                    'core/heading',
+                    'core/spacer',
+                    'core/separator',
+                    'core/html'
 
 				]}
 				template={[

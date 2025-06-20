@@ -19,7 +19,7 @@ import {
 } from '@wordpress/components';
 
 import { useSelect } from '@wordpress/data';
-import { Fragment } from '@wordpress/element';
+import { Fragment, useEffect } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import ServerSideRender from '@wordpress/server-side-render';
 
@@ -58,9 +58,21 @@ registerBlockType( 'wpzoom-forms/form-block', {
 		const { attributes, setAttributes } = props;
 		const { formId, align, formBgColor, formBrdWidth, formBrdStyle, formBrdRadius, formBrdColor, fieldBgColor, fieldBrdStyle, fieldBrdWidth, fieldBrdRadius, fieldBrdColor, fieldTextColor, labelTextColor, btnBrdRadius, btnBrdStyle, btnTextColor, btnBrdWidth, btnBrdColor, btnBgColor  } = attributes;
 		const _formId = formId && String( formId ).trim() != '' ? String( formId ) : '-1';
-		const posts = useSelect( select => select( 'core' ).getEntityRecords( 'postType', 'wpzf-form', { order: 'asc', orderby: 'title', per_page: -1 } ), [] );
+		const posts = useSelect( select => select( 'core' ).getEntityRecords( 'postType', 'wpzf-form', { 
+			order: 'asc', 
+			orderby: 'title', 
+			per_page: -1, 
+			status: 'publish' // Only show published forms, exclude draft, trash, etc.
+		} ), [] );
 		const forms = posts && posts.length > 0 ? posts.map( x => { return { key: String( x.id ), name: x.title.raw } } ) : [];
 		const theForm = forms.find( x => x.key == _formId );
+
+		// Auto-select form if there's only one available and no form is currently selected
+		useEffect( () => {
+			if ( forms.length === 1 && _formId === '-1' ) {
+				setAttributes( { formId: forms[0].key } );
+			}
+		}, [ forms, _formId, setAttributes ] );
 
 		const formSelect = (
 			<SearchableSelectControl
