@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WPForms &#8211; Easy Form Builder for WordPress &#8211; Contact Forms, Payment Forms, Surveys, &amp; More - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-03-07 12:25:11+0000\n"
+"PO-Revision-Date: 2025-06-20 13:16:56+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -97,7 +97,7 @@ msgstr "マーケット出店者申請"
 msgid "Untitled Form"
 msgstr "無題のフォーム"
 
-#: src/Integrations/Divi/Divi.php:261
+#: src/Integrations/Divi/Divi.php:272
 msgid "You do not have permission to preview form."
 msgstr "フォームをプレビューする権限がありません。"
 
@@ -791,11 +791,11 @@ msgid "Value Range"
 msgstr "値の範囲"
 
 #. translators: %d - templates count.
-#: src/Admin/Builder/Templates.php:1033
+#: src/Admin/Builder/Templates.php:1056
 msgid "Get Access to Our Complete Library of %d+ Form Templates"
 msgstr "%d種類以上のフォームテンプレートが収録された完全なライブラリにアクセスしましょう"
 
-#: src/Admin/Builder/Templates.php:1036
+#: src/Admin/Builder/Templates.php:1059
 msgid "Save time and reduce effort with our pre-built form templates covering popular use-cases in business operations, customer service, feedback, marketing, registrations, event planning, non-profit, healthcare, and education."
 msgstr "事前作成済みのフォームテンプレートを使用することで、時間と労力を大幅にカットできます。テンプレートは、事業運営、カスタマーサービス、フィードバック、マーケティング、登録、イベント企画、非営利団体、ヘルスケア、教育など一般的な使用事例を網羅しています。"
 
@@ -1140,10 +1140,6 @@ msgstr "高度な時間設定"
 msgid "Advanced date options."
 msgstr "高度な日付設定"
 
-#: templates/integrations/constant-contact-v3/builder/connection.php:55
-msgid "--- Select Action ---"
-msgstr "--- アクションを選択 ---"
-
 #: templates/integrations/constant-contact-v3/builder/connection.php:47
 msgid "Action To Perform"
 msgstr "実行するアクション"
@@ -1157,19 +1153,19 @@ msgstr "数量"
 msgid "If you need help connecting WPForms to Constant Contact, <a href=\"%1$s\" rel=\"noopener noreferrer\" target=\"_blank\">read our documentation</a>."
 msgstr "WPForms から Constant Contact への接続についてご不明点がある場合は、<a href=\"%1$s\" rel=\"noopener noreferrer\" target=\"_blank\">ドキュメンテーションをご覧ください</a>。"
 
-#: src/Admin/AdminBarMenu.php:370
+#: src/Admin/AdminBarMenu.php:374
 msgid "Completed Actions"
 msgstr "完了したアクション"
 
-#: src/Admin/AdminBarMenu.php:374
+#: src/Admin/AdminBarMenu.php:378
 msgid "Failed Actions"
 msgstr "失敗したアクション"
 
-#: src/Admin/AdminBarMenu.php:378
+#: src/Admin/AdminBarMenu.php:382
 msgid "Pending Actions"
 msgstr "保留中のアクション"
 
-#: src/Admin/AdminBarMenu.php:382
+#: src/Admin/AdminBarMenu.php:386
 msgid "Past Due Actions"
 msgstr "期限切れのアクション"
 
@@ -1253,7 +1249,7 @@ msgid "--- Select Mailing List ---"
 msgstr "--- メーリングリストを選択 ---"
 
 #: src/Integrations/ConstantContact/V3/Settings/FormBuilder.php:222
-#: src/Providers/Provider/Settings/FormBuilder.php:121
+#: src/Providers/Provider/Settings/FormBuilder.php:120
 msgid "Custom Fields"
 msgstr "カスタムフィールド"
 
@@ -1269,15 +1265,14 @@ msgstr "Constant Contact アカウント接続の有効期限が切れました�
 msgid "Reconnect Account"
 msgstr "アカウントを再接続"
 
-#. translators: translators: %1$s - requirements message.
-#: src/Requirements/Requirements.php:948
+#. translators: %1$s - requirements message.
+#: src/Requirements/Requirements.php:998
 msgid "It requires %1$s."
 msgstr "%1$sが必要です。"
 
-#. translators: %s - required PHP version.
-#: src/Requirements/Requirements.php:954
-msgid "<a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">Learn more</a>"
-msgstr "<a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">さらに詳しく</a>"
+#: templates/integrations/constant-contact-v3/builder/connection.php:55
+msgid "--- Select Action ---"
+msgstr "---アクションを選択---"
 
 #. translators: %1$d - restored templates count.
 #: src/Admin/Forms/BulkActions.php:468
@@ -1285,11 +1280,12 @@ msgid "%1$d template was successfully restored."
 msgid_plural "%1$d templates were successfully restored."
 msgstr[0] "%1$d個のテンプレートが復元されました。"
 
+#: src/Integrations/Elementor/RestApi.php:145
 #: src/Integrations/Gutenberg/RestApi.php:146
 msgid "This route is accessible only to administrators."
 msgstr "このルートには管理者のみがアクセスできます。"
 
-#: includes/admin/builder/class-builder.php:871
+#: includes/admin/builder/class-builder.php:891
 #: src/Forms/Fields/Richtext/Field.php:129
 msgid "Full"
 msgstr "フルネーム"
@@ -1299,14 +1295,14 @@ msgid "You need to <a href=\"#\" class=\"wpforms-panel-switch\" data-panel=\"set
 msgstr "これらの設定を管理する前に、<a href=\"#\" class=\"wpforms-panel-switch\" data-panel=\"setup\">フォームをセットアップする</a>必要があります。"
 
 #. translators: %1$s - create a template doc link, %2$s - Contact us page link.
-#: includes/admin/builder/panels/class-setup.php:85
-msgid "To speed up the process, you can select from one of our pre-made templates, start with a <a href=\"#\" class=\"wpforms-trigger-blank\">blank form</a> or <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">create your own</a>."
-msgstr "プロセスをスピードアップするためにあらかじめ用意されたテンプレートから選択することも、<a href=\"#\" class=\"wpforms-trigger-blank\">空白のフォーム</a>から開始したり、<a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">独自のフォームを作成</a>したりすることもできます。"
-
-#. translators: %1$s - create a template doc link, %2$s - Contact us page link.
 #: includes/admin/builder/panels/class-setup.php:103
 msgid "Have a suggestion for a new template? <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">We’d love to hear it</a>!"
 msgstr "新しいテンプレートのご提案がありましたら、<a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">ぜひ教えてください</a> !"
+
+#. translators: %1$s - create a template doc link, %2$s - Contact us page link.
+#: includes/admin/builder/panels/class-setup.php:85
+msgid "To speed up the process, you can select from one of our pre-made templates, start with a <a href=\"#\" class=\"wpforms-trigger-blank\">blank form</a> or <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">create your own</a>."
+msgstr "プロセスをスピードアップするためにあらかじめ用意されたテンプレートから選択することも、<a href=\"#\" class=\"wpforms-trigger-blank\">空白のフォーム</a>から開始したり、<a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">独自のフォームを作成</a>したりすることもできます。"
 
 #: lite/wpforms-lite.php:606
 msgid "Open confirmation in new tab"
@@ -1590,6 +1586,11 @@ msgstr "作成したい選択肢を具体的に説明するか、以下の例の
 msgid "<strong>What do you think of these choices?</strong> If you’re happy with them, you can insert these choices, or make changes by entering additional prompts."
 msgstr "<strong>これらの選択肢はいかがでしょうか ?</strong> ご満足であれば、これらの選択肢を挿入できます。あるいは、追加のプロンプトを入力して変更することもできます。"
 
+#: src/Integrations/AI/Admin/Builder/Enqueues.php:215
+#: src/Integrations/AI/Admin/Builder/Forms.php:247
+msgid "Learn More About WPForms AI"
+msgstr "WPForms AI についてさらに詳しく"
+
 #: src/Admin/Tools/Views/System.php:92
 msgid "Recreate custom tables"
 msgstr "カスタムテーブルを再作成"
@@ -1602,50 +1603,50 @@ msgstr "WPForms カスタムデータベーステーブルを再作成するに�
 msgid "Recreate Tables"
 msgstr "テーブルを再作成"
 
-#: src/Frontend/Frontend.php:1910
+#: src/Frontend/Frontend.php:1885
 msgid "Country list"
 msgstr "国名リスト"
 
-#: src/Requirements/Requirements.php:986
+#: src/Requirements/Requirements.php:1033
 msgid "WPForms plugin"
 msgstr "WPForms プラグイン"
 
-#. translators: translators: %1$s - WPForms addon name.
-#: src/Requirements/Requirements.php:990
+#. translators: %1$s - WPForms addon name.
+#: src/Requirements/Requirements.php:1037
 msgid "%1$s addon"
 msgstr "%1$s アドオン"
 
-#. translators: translators: %1$s - WPForms plugin or addon name, %2$d -
-#. requirements message.
-#: src/Requirements/Requirements.php:997
+#. translators: %1$s - WPForms plugin or addon name, %2$d - requirements
+#. message.
+#: src/Requirements/Requirements.php:1044
 msgid "The %1$s requires %2$s."
 msgstr "%1$s には%2$sが必要です。"
 
 #. translators: %1$s - What is being checked (PHP, WPForms, etc.), %2$s -
 #. required version. This is used as the completion of the sentence "The {addon
 #. name} addon requires {here goes this string}".
-#: src/Requirements/Requirements.php:1268
+#: src/Requirements/Requirements.php:1367
 msgid "%1$s %2$s or above"
 msgstr "%1$s %2$s以上"
 
 #. translators: %1$s - What is being checked (PHP, WPForms, etc.), %2$s -
 #. required version. This is used as the completion of the sentence "The {addon
 #. name} addon requires {here goes this string}".
-#: src/Requirements/Requirements.php:1270
+#: src/Requirements/Requirements.php:1369
 msgid "%1$s %2$s or below"
 msgstr "%1$s %2$s以下"
 
 #. translators: %1$s - What is being checked (PHP, WPForms, etc.), %2$s -
 #. required version. This is used as the completion of the sentence "The {addon
 #. name} addon requires {here goes this string}".
-#: src/Requirements/Requirements.php:1273
+#: src/Requirements/Requirements.php:1372
 msgid "a newer version of %1$s than %2$s"
 msgstr "%2$sよりも新しいバージョンの %1$s"
 
 #. translators: %1$s - What is being checked (PHP, WPForms, etc.), %2$s -
 #. required version. This is used as the completion of the sentence "The {addon
 #. name} addon requires {here goes this string}".
-#: src/Requirements/Requirements.php:1275
+#: src/Requirements/Requirements.php:1374
 msgid "an older version of %1$s than %2$s"
 msgstr "%2$sよりも古いバージョンの %1$s"
 
@@ -1665,7 +1666,7 @@ msgstr "WPForms カスタムデータベーステーブルが再作成されま�
 msgid "Error recreating WPForms custom database tables."
 msgstr "WPForms カスタムデータベーステーブルの再作成中にエラーが発生しました。"
 
-#: includes/admin/builder/class-builder.php:803
+#: includes/admin/builder/class-builder.php:819
 msgid "Changing the template on this form will delete existing fields, reset external connections, and unsaved changes will be lost. Are you sure you want to apply the new template?"
 msgstr "このフォームのテンプレートを変更すると、既存のフィールドが削除され、外部接続がリセットされ、保存していない変更は失われます。本当に新規テンプレートを適用してもよいですか ?"
 
@@ -1720,91 +1721,91 @@ msgstr "エントリーを探索 & さらに詳しく"
 msgid "Back to All Entries"
 msgstr "すべてのエントリーに戻る"
 
-#: src/Admin/Builder/Help.php:149
+#: src/Admin/Builder/Help.php:104
 msgid "Form Creation"
 msgstr "フォーム作成"
 
-#: src/Admin/Builder/Help.php:151
+#: src/Admin/Builder/Help.php:106
 msgid "Form Management"
 msgstr "フォーム管理"
 
-#: src/Admin/Builder/Help.php:154
+#: src/Admin/Builder/Help.php:109
 msgid "Payment Processing"
 msgstr "支払い処理"
 
-#: src/Admin/Builder/Help.php:155
+#: src/Admin/Builder/Help.php:110
 msgid "Spam Prevention and Security"
 msgstr "スパム防止とセキュリティ"
 
-#: src/Admin/Builder/Help.php:156
+#: src/Admin/Builder/Help.php:111
 msgid "Extending Functionality"
 msgstr "機能拡張"
 
-#: src/Admin/Builder/Help.php:157
+#: src/Admin/Builder/Help.php:112
 msgid "Troubleshooting and Support"
 msgstr "トラブルシューティングとサポート"
 
-#: src/Admin/Builder/Templates.php:1104
+#: src/Admin/Builder/Templates.php:1127
 msgid "User Registration Form"
 msgstr "ユーザー登録フォーム"
 
-#: src/Admin/Builder/Templates.php:1110
+#: src/Admin/Builder/Templates.php:1133
 msgid "Create customized WordPress user registration forms and add them anywhere on your website."
 msgstr "カスタマイズされた WordPress ユーザー登録フォームを作成し、サイトの任意の場所に追加します。"
 
-#: src/Admin/Builder/Templates.php:1113
+#: src/Admin/Builder/Templates.php:1136
 msgid "User Login Form"
 msgstr "ユーザーログインフォーム"
 
-#: src/Admin/Builder/Templates.php:1119
+#: src/Admin/Builder/Templates.php:1142
 msgid "Allow your users to easily log in to your site with their username and password."
 msgstr "ユーザーが自分のユーザー名とパスワードを使用してサイトに簡単にログインできるようにします。"
 
-#: src/Admin/Builder/Templates.php:1122
+#: src/Admin/Builder/Templates.php:1145
 msgid "User Password Reset Form"
 msgstr "ユーザーパスワードのリセットフォーム"
 
-#: src/Admin/Builder/Templates.php:1128
+#: src/Admin/Builder/Templates.php:1151
 msgid "Allow your users to easily reset their password."
 msgstr "ユーザーがパスワードを簡単にリセットできるようにします。"
 
-#: src/Admin/Builder/Templates.php:1148
+#: src/Admin/Builder/Templates.php:1171
 msgid "Blog Post Submission Form"
 msgstr "ブログ投稿送信フォーム"
 
-#: src/Admin/Builder/Templates.php:1154
+#: src/Admin/Builder/Templates.php:1177
 msgid "User-submitted content made easy. Allow your users to submit guest blog posts in WordPress. You can add and remove fields as needed."
 msgstr "ユーザーのコンテンツ送信が簡単になりました。ユーザーが WordPress でゲストブログの投稿を送信できるようにします。必要に応じてフィールドを追加および削除できます。"
 
-#: src/Admin/Builder/Templates.php:1174
+#: src/Admin/Builder/Templates.php:1197
 msgid "Survey Form"
 msgstr "アンケートフォーム"
 
-#: src/Admin/Builder/Templates.php:1180
+#: src/Admin/Builder/Templates.php:1203
 msgid "Collect customer feedback, then generate survey reports to determine satisfaction and spot trends."
 msgstr "顧客からのフィードバックを収集し、アンケートレポートを作成して満足度を判断し、傾向を見極めます。"
 
-#: src/Admin/Builder/Templates.php:1183
+#: src/Admin/Builder/Templates.php:1206
 msgid "Poll Form"
 msgstr "投票フォーム"
 
-#: src/Admin/Builder/Templates.php:1189
+#: src/Admin/Builder/Templates.php:1212
 msgid "Ask visitors a question and display the results after they provide an answer."
 msgstr "訪問者に質問をし、回答が提示されたら結果を表示します。"
 
-#: src/Admin/Builder/Templates.php:1192
+#: src/Admin/Builder/Templates.php:1215
 msgid "NPS Survey Simple Form"
 msgstr "NPS アンケートのシンプルフォーム"
 
-#: src/Admin/Builder/Templates.php:1198
+#: src/Admin/Builder/Templates.php:1221
 msgid "Find out if your clients or customers would recommend you to someone else with this basic Net Promoter Score survey template."
 msgstr "この基本的なネットプロモータースコアのアンケートテンプレートを使って、顧客があなたを他の人に勧めてくれるかどうかを確認してみましょう。"
 
-#: src/Admin/Builder/Templates.php:1201
+#: src/Admin/Builder/Templates.php:1224
 msgid "NPS Survey Enhanced Form"
 msgstr "NPS アンケートの拡張フォーム"
 
-#: src/Admin/Builder/Templates.php:1207
+#: src/Admin/Builder/Templates.php:1230
 msgid "Measure customer loyalty and find out exactly what they are thinking with this enhanced Net Promoter Score survey template."
 msgstr "このネットプロモータースコアの拡張されたアンケートテンプレートを使用すると、顧客ロイヤルティを測定し、顧客の考えを正確に把握できます。"
 
@@ -1849,7 +1850,7 @@ msgstr "トークンの更新エラーです。もう一度お試しいただく
 msgid "Network error or server is unreachable. Check your connection or try again later."
 msgstr "ネットワークエラーが発生したかサーバーにアクセスできません。接続を確認するか、後でもう一度お試しください。"
 
-#: src/Integrations/Gutenberg/FormSelector.php:591
+#: src/Integrations/Gutenberg/FormSelector.php:544
 msgid "It looks like the form you had selected is in the Trash or has been permanently deleted."
 msgstr "選択したフォームはゴミ箱内にあるか、完全に削除されているようです。"
 
@@ -1886,202 +1887,241 @@ msgstr "フォームテンプレートのプレビューを表示しています
 msgid "Entries are automatically deleted after %s."
 msgstr "エントリーは%sが経過すると自動的に削除されます。"
 
-#: src/Integrations/Gutenberg/FormSelector.php:489
+#: src/Integrations/Elementor/WidgetModern.php:186
+#: src/Integrations/Gutenberg/FormSelector.php:442
 msgid "Theme Name"
 msgstr "テーマ名"
 
-#: src/Integrations/Gutenberg/FormSelector.php:490
+#: src/Integrations/Gutenberg/FormSelector.php:443
 msgid "Delete Theme"
 msgstr "テーマを削除"
 
-#: src/Integrations/Gutenberg/FormSelector.php:491
+#: src/Integrations/Elementor/Elementor.php:241
+#: src/Integrations/Gutenberg/FormSelector.php:444
 msgid "Delete Form Theme"
 msgstr "フォームテーマを削除"
 
 #. Translators: %1$s: Theme name.
-#: src/Integrations/Gutenberg/FormSelector.php:493
+#: src/Integrations/Elementor/Elementor.php:243
+#: src/Integrations/Gutenberg/FormSelector.php:446
 msgid "Are you sure you want to delete the %1$s theme?"
 msgstr "本当に %1$s テーマを削除してもよいですか ?"
 
-#: src/Integrations/Gutenberg/FormSelector.php:494
+#: src/Integrations/Elementor/Elementor.php:244
+#: src/Integrations/Gutenberg/FormSelector.php:447
 msgid "This cannot be undone."
 msgstr "この操作は元に戻せません。"
 
-#: src/Integrations/Gutenberg/FormSelector.php:496
+#: src/Integrations/Elementor/Elementor.php:246
+#: src/Integrations/Gutenberg/FormSelector.php:449
 msgid "Copy"
 msgstr "コピー"
 
-#: src/Integrations/Gutenberg/FormSelector.php:497
+#: src/Integrations/Elementor/Elementor.php:247
+#: src/Integrations/Gutenberg/FormSelector.php:450
 msgid "Custom Theme"
 msgstr "カスタムテーマ"
 
-#: src/Integrations/Gutenberg/FormSelector.php:498
+#: src/Integrations/Elementor/Elementor.php:248
+#: src/Integrations/Gutenberg/FormSelector.php:451
 msgid "Noname Theme"
 msgstr "名前のないテーマ"
 
-#: src/Integrations/Gutenberg/FormSelector.php:500
+#: src/Integrations/Elementor/Elementor.php:238
+#: src/Integrations/Gutenberg/FormSelector.php:453
 msgid "Field Label"
 msgstr "フィールドラベル"
 
-#: src/Integrations/Gutenberg/FormSelector.php:501
+#: src/Integrations/Elementor/Elementor.php:239
+#: src/Integrations/Gutenberg/FormSelector.php:454
 msgid "Field Sublabel"
 msgstr "フィールドサブラベル"
 
-#: src/Integrations/Gutenberg/FormSelector.php:502
+#: src/Integrations/Elementor/Elementor.php:240
+#: src/Integrations/Gutenberg/FormSelector.php:455
 msgid "Field Border"
 msgstr "フィールドの枠線"
 
-#: src/Integrations/Gutenberg/FormSelector.php:504
+#: src/Integrations/Elementor/Elementor.php:236
+#: src/Integrations/Gutenberg/FormSelector.php:457
 msgid "Button Background"
 msgstr "ボタンの背景"
 
 #: src/Forms/Fields/Addons/Coupon/Field.php:154
-#: src/Integrations/Gutenberg/FormSelector.php:505
+#: src/Integrations/Elementor/Elementor.php:237
+#: src/Integrations/Gutenberg/FormSelector.php:458
 msgid "Button Text"
 msgstr "ボタンのテキスト"
 
-#: src/Integrations/Gutenberg/FormSelector.php:507
+#: src/Integrations/Elementor/Elementor.php:257
+#: src/Integrations/Elementor/WidgetModern.php:475
+#: src/Integrations/Gutenberg/FormSelector.php:460
 msgid "Container Styles"
 msgstr "コンテナスタイル"
 
-#: src/Integrations/Gutenberg/FormSelector.php:508
+#: src/Integrations/Elementor/Elementor.php:256
+#: src/Integrations/Elementor/WidgetModern.php:563
+#: src/Integrations/Gutenberg/FormSelector.php:461
 msgid "Background Styles"
 msgstr "背景スタイル"
 
-#: src/Integrations/Gutenberg/FormSelector.php:510
+#: src/Integrations/Elementor/WidgetModern.php:585
+#: src/Integrations/Gutenberg/FormSelector.php:463
 msgid "Position"
 msgstr "ポジション"
 
-#: src/Integrations/Gutenberg/FormSelector.php:511
+#: src/Integrations/Elementor/WidgetModern.php:588
+#: src/Integrations/Gutenberg/FormSelector.php:464
 msgid "Top Left"
 msgstr "上部左"
 
-#: src/Integrations/Gutenberg/FormSelector.php:512
+#: src/Integrations/Elementor/WidgetModern.php:589
+#: src/Integrations/Gutenberg/FormSelector.php:465
 msgid "Top Center"
 msgstr "上部中央"
 
-#: src/Integrations/Gutenberg/FormSelector.php:513
+#: src/Integrations/Elementor/WidgetModern.php:590
+#: src/Integrations/Gutenberg/FormSelector.php:466
 msgid "Top Right"
 msgstr "上部右"
 
-#: src/Integrations/Gutenberg/FormSelector.php:514
+#: src/Integrations/Elementor/WidgetModern.php:591
+#: src/Integrations/Gutenberg/FormSelector.php:467
 msgid "Center Left"
 msgstr "中央左"
 
-#: src/Integrations/Gutenberg/FormSelector.php:515
+#: src/Integrations/Elementor/WidgetModern.php:592
+#: src/Integrations/Gutenberg/FormSelector.php:468
 msgid "Center Center"
 msgstr "中央"
 
-#: src/Integrations/Gutenberg/FormSelector.php:516
+#: src/Integrations/Elementor/WidgetModern.php:593
+#: src/Integrations/Gutenberg/FormSelector.php:469
 msgid "Center Right"
 msgstr "中央右"
 
-#: src/Integrations/Gutenberg/FormSelector.php:517
+#: src/Integrations/Elementor/WidgetModern.php:594
+#: src/Integrations/Gutenberg/FormSelector.php:470
 msgid "Bottom Left"
 msgstr "下部左"
 
-#: src/Integrations/Gutenberg/FormSelector.php:518
+#: src/Integrations/Elementor/WidgetModern.php:595
+#: src/Integrations/Gutenberg/FormSelector.php:471
 msgid "Bottom Center"
 msgstr "下部中央"
 
-#: src/Integrations/Gutenberg/FormSelector.php:519
+#: src/Integrations/Elementor/WidgetModern.php:596
+#: src/Integrations/Gutenberg/FormSelector.php:472
 msgid "Bottom Right"
 msgstr "下部右"
 
-#: src/Integrations/Gutenberg/FormSelector.php:520
+#: src/Integrations/Elementor/WidgetModern.php:608
+#: src/Integrations/Gutenberg/FormSelector.php:473
 msgid "Repeat"
 msgstr "繰り返し"
 
-#: src/Integrations/Gutenberg/FormSelector.php:521
+#: src/Integrations/Elementor/WidgetModern.php:611
+#: src/Integrations/Gutenberg/FormSelector.php:474
 msgid "No Repeat"
 msgstr "繰り返しなし"
 
-#: src/Integrations/Gutenberg/FormSelector.php:522
+#: src/Integrations/Gutenberg/FormSelector.php:475
 msgid "Repeat Horizontal"
 msgstr "水平方向繰り返し"
 
-#: src/Integrations/Gutenberg/FormSelector.php:523
+#: src/Integrations/Gutenberg/FormSelector.php:476
 msgid "Repeat Vertical"
 msgstr "垂直方向繰り返し"
 
-#: src/Integrations/Gutenberg/FormSelector.php:524
+#: src/Integrations/Elementor/WidgetModern.php:612
+#: src/Integrations/Gutenberg/FormSelector.php:477
 msgid "Tile"
 msgstr "タイル"
 
-#: src/Integrations/Gutenberg/FormSelector.php:525
+#: src/Integrations/Elementor/WidgetModern.php:630
+#: src/Integrations/Gutenberg/FormSelector.php:478
 msgid "Cover"
 msgstr "背景全体"
 
-#: src/Integrations/Gutenberg/FormSelector.php:526
+#: src/Integrations/Elementor/WidgetModern.php:629
+#: src/Integrations/Gutenberg/FormSelector.php:479
 msgid "Dimensions"
 msgstr "サイズ"
 
-#: src/Integrations/Gutenberg/FormSelector.php:527
+#: src/Integrations/Gutenberg/FormSelector.php:480
 msgid "Width"
 msgstr "幅"
 
-#: src/Integrations/Gutenberg/FormSelector.php:528
+#: src/Integrations/Gutenberg/FormSelector.php:481
 msgid "Height"
 msgstr "高さ"
 
-#: src/Integrations/Gutenberg/FormSelector.php:549
+#: src/Integrations/Gutenberg/FormSelector.php:502
 msgid "Padding"
 msgstr "パディング"
 
-#: src/Integrations/Gutenberg/FormSelector.php:553
+#: src/Integrations/Gutenberg/FormSelector.php:506
 msgid "Menu"
 msgstr "メニュー"
 
-#: src/Integrations/Gutenberg/FormSelector.php:554
+#: src/Integrations/Elementor/WidgetModern.php:571
+#: src/Integrations/Gutenberg/FormSelector.php:507
 msgid "Image"
 msgstr "画像"
 
-#: src/Integrations/Gutenberg/FormSelector.php:555
+#: src/Integrations/Elementor/WidgetModern.php:575
+#: src/Integrations/Gutenberg/FormSelector.php:508
 msgid "Media Library"
 msgstr "メディアライブラリ"
 
-#: src/Integrations/Gutenberg/FormSelector.php:556
+#: src/Integrations/Elementor/WidgetModern.php:678
+#: src/Integrations/Gutenberg/FormSelector.php:509
 msgid "Choose Image"
 msgstr "画像を選択"
 
-#: src/Integrations/Gutenberg/FormSelector.php:557
+#: src/Integrations/Elementor/WidgetModern.php:576
+#: src/Integrations/Gutenberg/FormSelector.php:510
 msgid "Stock Photo"
 msgstr "ストックフォト"
 
-#: src/Integrations/Gutenberg/FormSelector.php:559
-#: src/Integrations/Gutenberg/FormSelector.php:567
+#: src/Integrations/Gutenberg/FormSelector.php:512
+#: src/Integrations/Gutenberg/FormSelector.php:520
 msgid "Border Size"
 msgstr "枠線サイズ"
 
-#: src/Integrations/Gutenberg/FormSelector.php:560
+#: src/Integrations/Gutenberg/FormSelector.php:513
 msgid "Border Style"
 msgstr "枠線スタイル"
 
-#: src/Integrations/Gutenberg/FormSelector.php:562
+#: src/Integrations/Elementor/WidgetModern.php:83
+#: src/Integrations/Gutenberg/FormSelector.php:515
 msgid "Solid"
 msgstr "単色"
 
-#: src/Integrations/Gutenberg/FormSelector.php:563
+#: src/Integrations/Elementor/WidgetModern.php:84
+#: src/Integrations/Gutenberg/FormSelector.php:516
 msgid "Dashed"
 msgstr "破線"
 
-#: src/Integrations/Gutenberg/FormSelector.php:564
+#: src/Integrations/Elementor/WidgetModern.php:85
+#: src/Integrations/Gutenberg/FormSelector.php:517
 msgid "Dotted"
 msgstr "点線"
 
-#: src/Integrations/Gutenberg/FormSelector.php:565
+#: src/Integrations/Gutenberg/FormSelector.php:518
 msgid "Double"
 msgstr "二重線"
 
-#: src/Integrations/Gutenberg/FormSelector.php:566
+#: src/Integrations/Elementor/WidgetModern.php:526
+#: src/Integrations/Gutenberg/FormSelector.php:519
 msgid "Shadow"
 msgstr "影"
 
-#: src/Integrations/Gutenberg/FormSelector.php:581
+#: src/Integrations/Gutenberg/FormSelector.php:534
 msgid "Custom CSS"
 msgstr "カスタム CSS"
 
-#: src/Integrations/Gutenberg/FormSelector.php:582
+#: src/Integrations/Gutenberg/FormSelector.php:535
 msgid "Further customize the look of this form without having to edit theme files."
 msgstr "テーマファイルを編集しなくても、このフォームの外観をさらにきめ細かくカスタマイズできます。"
 
@@ -2089,40 +2129,41 @@ msgstr "テーマファイルを編集しなくても、このフォームの外
 msgid "Can't create themes storage file."
 msgstr "テーマストレージファイルを作成できません。"
 
+#: src/Integrations/Elementor/RestApi.php:203
 #: src/Integrations/Gutenberg/RestApi.php:217
 msgid "Can't save theme data."
 msgstr "テーマデータを保存できません。"
 
 #: src/Integrations/Square/Admin/Builder/Traits/Content.php:373
-#: src/Integrations/Stripe/Admin/Builder/Traits/ContentTrait.php:563
+#: src/Integrations/Stripe/Admin/Builder/Traits/ContentTrait.php:567
 msgid "--- Select Address ---"
 msgstr "--- 住所を選択 ---"
 
-#: src/Integrations/Stripe/Admin/Builder/Traits/ContentTrait.php:586
+#: src/Integrations/Stripe/Admin/Builder/Traits/ContentTrait.php:590
 msgid "Select the field that contains the customer's address. This is optional but required for some regions."
 msgstr "顧客の住所を含むフィールドを選択してください。この選択は任意ですが、地域によっては必須となります。"
 
 #: src/Integrations/Square/Admin/Builder/Traits/Content.php:361
 #: src/Integrations/Square/Admin/Builder/Traits/Content.php:382
-#: src/Integrations/Stripe/Admin/Builder/Traits/ContentTrait.php:579
-#: src/Integrations/Stripe/Admin/Builder/Traits/ContentTrait.php:594
+#: src/Integrations/Stripe/Admin/Builder/Traits/ContentTrait.php:583
+#: src/Integrations/Stripe/Admin/Builder/Traits/ContentTrait.php:598
 msgid "Customer Address"
 msgstr "顧客の住所"
 
-#: src/Integrations/Stripe/Admin/Builder/Traits/ContentTrait.php:606
+#: src/Integrations/Stripe/Admin/Builder/Traits/ContentTrait.php:610
 msgid "Select the field that contains the shipping address. This is optional but required for some regions."
 msgstr "配送先住所を含むフィールドを選択します。この選択は任意ですが、地域によっては必須となります。"
 
-#: src/Integrations/Stripe/Admin/Builder/Traits/ContentTrait.php:604
-#: src/Integrations/Stripe/Admin/Builder/Traits/ContentTrait.php:614
+#: src/Integrations/Stripe/Admin/Builder/Traits/ContentTrait.php:608
+#: src/Integrations/Stripe/Admin/Builder/Traits/ContentTrait.php:618
 msgid "Shipping Address"
 msgstr "配送先住所"
 
-#: src/Integrations/Stripe/Process.php:1151
+#: src/Integrations/Stripe/Process.php:1257
 msgid "Secondary form submission was declined."
 msgstr "2回目の送信は拒否されました。"
 
-#: src/Integrations/Stripe/Process.php:1169
+#: src/Integrations/Stripe/Process.php:1275
 msgid "Irregular activity detected. Your submission has been declined and payment refunded."
 msgstr "異常なパターンのアクティビテイが検出されました 。送信は拒否され、支払いは返金されました。"
 
@@ -2161,7 +2202,8 @@ msgid "Customize the look and feel of your form with premade themes or simple st
 msgstr "あらかじめ用意されたテーマやシンプルなスタイル設定を利用して、フォームのルックアンドフィールをカスタマイズできます。また、ブランドに合わせた独自の色も設定可能です。テーマとスタイル設定はブロックエディター内にあり、リアルタイムでプレビューできます。<br /><a href=\"%s\" target=\"_blank\">フォームのスタイル設定についてさらに詳しく</a>"
 
 #: src/Admin/Builder/Templates.php:190
-#: src/Integrations/Gutenberg/FormSelector.php:495
+#: src/Integrations/Elementor/Elementor.php:245
+#: src/Integrations/Gutenberg/FormSelector.php:448
 msgid "Yes, Delete"
 msgstr "はい、削除します"
 
@@ -2278,11 +2320,11 @@ msgstr "フォームテンプレートを編集"
 msgid "Are you sure you want to duplicate this template?"
 msgstr "本当にこのテンプレートを複製してもよいですか ?"
 
-#: includes/admin/admin.php:307 includes/admin/builder/class-builder.php:804
+#: includes/admin/admin.php:307 includes/admin/builder/class-builder.php:820
 msgid "Use Default Template"
 msgstr "デフォルトのテンプレートを使用"
 
-#: includes/admin/admin.php:308 includes/admin/builder/class-builder.php:863
+#: includes/admin/admin.php:308 includes/admin/builder/class-builder.php:883
 msgid "Something went wrong while applying the form template. Please try again. If the error persists, contact our support team."
 msgstr "フォームテンプレートの適用中に問題が発生しました。もう一度お試しください。エラーが解決しない場合はサポートチームまでお問い合わせください。"
 
@@ -2290,7 +2332,7 @@ msgstr "フォームテンプレートの適用中に問題が発生しました
 msgid "Error Updating Template"
 msgstr "テンプレート更新エラー"
 
-#: includes/admin/builder/class-builder.php:1232
+#: includes/admin/builder/class-builder.php:1256
 msgid "You cannot embed a form template"
 msgstr "フォームテンプレートを埋め込むことができません"
 
@@ -2299,7 +2341,9 @@ msgid "Form Template Revisions"
 msgstr "フォームテンプレートのリビジョン"
 
 #: includes/admin/builder/panels/class-settings.php:60
-#: src/Integrations/Gutenberg/FormSelector.php:488
+#: src/Integrations/Elementor/Elementor.php:249
+#: src/Integrations/Elementor/WidgetModern.php:138
+#: src/Integrations/Gutenberg/FormSelector.php:441
 msgid "Themes"
 msgstr "テーマ"
 
@@ -2472,7 +2516,8 @@ msgstr "商品例3"
 msgid "Show order summary after confirmation message"
 msgstr "確認メッセージの後に注文内容を表示する"
 
-#: src/Integrations/Gutenberg/FormSelector.php:587
+#: src/Integrations/Elementor/WidgetModern.php:715
+#: src/Integrations/Gutenberg/FormSelector.php:540
 msgid "Other Styles"
 msgstr "その他のスタイル"
 
@@ -2481,12 +2526,12 @@ msgstr "その他のスタイル"
 msgid "Welcome to <strong>WPForms %s</strong>"
 msgstr "<strong>WPForms %s</strong> へようこそ"
 
-#: src/SmartTags/SmartTag/OrderSummary.php:295
+#: src/SmartTags/SmartTag/OrderSummary.php:304
 msgid "Subtotal"
 msgstr "小計"
 
 #. translators: %s - Coupon value.
-#: src/SmartTags/SmartTag/OrderSummary.php:302
+#: src/SmartTags/SmartTag/OrderSummary.php:311
 msgid "Coupon (%s)"
 msgstr "クーポン (%s)"
 
@@ -2511,11 +2556,11 @@ msgstr "数量"
 msgid "There are no products selected."
 msgstr "商品が選択されていません。"
 
-#: wpforms.php:201
+#: wpforms.php:176
 msgid "Network Admin → Plugins → Installed Plugins"
 msgstr "「サイトネットワーク管理」 → 「プラグイン」 → 「インストール済みプラグイン」"
 
-#: wpforms.php:201
+#: wpforms.php:176
 msgid "Plugins → Installed Plugins"
 msgstr "「プラグイン」 → 「インストール済みプラグイン」"
 
@@ -2567,11 +2612,11 @@ msgstr "本当に%s個のエントリーをゴミ箱に移動してもよいで�
 msgid "Unknown error."
 msgstr "不明なエラー。"
 
-#: includes/admin/admin.php:297 includes/admin/builder/class-builder.php:846
+#: includes/admin/admin.php:297 includes/admin/builder/class-builder.php:866
 msgid "You tried uploading a file type that is not allowed. Please try again."
 msgstr "許可されていないファイルタイプをアップロードしようとしました。もう一度お試しください。"
 
-#: includes/admin/builder/class-builder.php:864
+#: includes/admin/builder/class-builder.php:884
 msgid "Couldn't load the Setup panel."
 msgstr "セットアップパネルを読み込むことができませんでした。"
 
@@ -2589,7 +2634,7 @@ msgstr "クレジットカード"
 msgid "Showing the first %1$s choices.<br> All %2$s choices will be displayed when viewing the form."
 msgstr "最初の%1$s個の選択肢を表示しています。<br>フォームを表示すると、%2$s個すべての選択肢が表示されます。"
 
-#: includes/functions/education.php:43
+#: includes/functions/education.php:45
 msgid "Plugin installation is disabled for this site."
 msgstr "このサイトではプラグインのインストールが無効化されています。"
 
@@ -2702,16 +2747,16 @@ msgid "Need some help? Check out our"
 msgstr "サポートが必要な場合は、"
 
 #: src/Integrations/Square/Admin/Builder/Traits/Content.php:199
-#: src/Integrations/Stripe/Admin/Builder/Traits/ContentTrait.php:529
+#: src/Integrations/Stripe/Admin/Builder/Traits/ContentTrait.php:533
 msgid "--- Select Name ---"
 msgstr "--- 名前を選択 ---"
 
-#: src/Integrations/Stripe/Admin/Builder/Traits/ContentTrait.php:530
+#: src/Integrations/Stripe/Admin/Builder/Traits/ContentTrait.php:534
 msgid "Select the field that contains the customer's name. This is optional but recommended."
 msgstr "顧客の名前を含むフィールドを選択してください。この選択は任意ですが、選択することをお勧めします。"
 
 #: src/Integrations/Square/Admin/Builder/Traits/Content.php:192
-#: src/Integrations/Stripe/Admin/Builder/Traits/ContentTrait.php:543
+#: src/Integrations/Stripe/Admin/Builder/Traits/ContentTrait.php:547
 msgid "Customer Name"
 msgstr "顧客の氏名"
 
@@ -2762,7 +2807,7 @@ msgstr "WPForms が古いバージョンにダウングレードされたよう�
 msgid "Minimum Price"
 msgstr "最低価格"
 
-#: includes/admin/class-settings.php:503 src/Frontend/Frontend.php:1873
+#: includes/admin/class-settings.php:503 src/Frontend/Frontend.php:1848
 msgid "Amount entered is less than the required minimum."
 msgstr "入力された金額は必要最低額に届いていません。"
 
@@ -2834,7 +2879,7 @@ msgstr "本文"
 msgid "Links"
 msgstr "リンク"
 
-#: src/Admin/AdminBarMenu.php:313 src/Admin/Tools/Views/CodeSnippets.php:113
+#: src/Admin/AdminBarMenu.php:317 src/Admin/Tools/Views/CodeSnippets.php:113
 #: templates/integrations/wpcode/code-snippets.php:53
 msgid "Code Snippets"
 msgstr "コードスニペット"
@@ -2843,16 +2888,16 @@ msgstr "コードスニペット"
 msgid "Legacy"
 msgstr "レガシー"
 
-#: src/Emails/Notifications.php:1295
+#: src/Emails/Notifications.php:1253
 #: src/Forms/Fields/EntryPreview/Field.php:265
 msgid "Compact"
 msgstr "コンパクト"
 
-#: src/Emails/Notifications.php:1305
+#: src/Emails/Notifications.php:1263
 msgid "Elegant"
 msgstr "エレガント"
 
-#: src/Emails/Notifications.php:1310
+#: src/Emails/Notifications.php:1268
 msgid "Tech"
 msgstr "テック"
 
@@ -3049,7 +3094,7 @@ msgstr "作成日<br/>%1$s"
 msgid "Last Modified<br/>%1$s"
 msgstr "最終更新日<br/>%1$s"
 
-#: lite/templates/builder/context-menu.php:98 src/Admin/AdminBarMenu.php:632
+#: lite/templates/builder/context-menu.php:98 src/Admin/AdminBarMenu.php:636
 #: src/Forms/Preview.php:257
 msgid "View Payments"
 msgstr "支払いを表示"
@@ -3216,6 +3261,7 @@ msgstr "システム情報をコピー"
 msgid "Partially Refunded"
 msgstr "一部払い戻し"
 
+#: src/Integrations/Elementor/RestApi.php:128
 #: src/Integrations/Gutenberg/RestApi.php:129
 msgid "This route is private."
 msgstr "このルートは非公開です。"
@@ -3275,11 +3321,11 @@ msgstr "まず、<a href=\"%1$s\" class=\"secondary-text\">WPForms 設定</a> �
 msgid "To use Stripe, first add the Stripe payment field to your form."
 msgstr "Stripe を使用するには、最初に Stripe 支払いフィールドをフォームに追加します。"
 
-#: src/Integrations/Stripe/Admin/Builder/Traits/ContentTrait.php:495
+#: src/Integrations/Stripe/Admin/Builder/Traits/ContentTrait.php:499
 msgid "Connect WPForms to Stripe."
 msgstr "WPForms を Stripe に接続します。"
 
-#: src/Integrations/Stripe/Admin/Builder/Traits/ContentTrait.php:511
+#: src/Integrations/Stripe/Admin/Builder/Traits/ContentTrait.php:515
 msgid "Learn more about our Stripe integration."
 msgstr "Stripe の統合の詳細をご覧ください。"
 
@@ -3437,7 +3483,7 @@ msgstr "<a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">Stripe We
 msgid "It seems to be request to Stripe PHP Listener method handler but the site is not configured to use it."
 msgstr "Stripe PHP リスナー方式ハンドラーへのリクエストのようですが、このメソッドを使用するようにサイトが設定されていません。"
 
-#: src/Integrations/Stripe/Process.php:775
+#: src/Integrations/Stripe/Process.php:876
 msgid "Stripe Subscription payment stopped validation error."
 msgstr "Stripe サブスクリプションの支払いが検証エラーで停止されました。"
 
@@ -3461,7 +3507,7 @@ msgid "Something went wrong. Please try again, and if the problem persists, <a h
 msgstr "問題が発生しました。もう一度お試しください。問題が解決しない場合は、<a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">サポートチーム</a>までご連絡ください。"
 
 #. translators: %1$s - from value %2$s - to value.
-#: includes/admin/builder/class-builder.php:880
+#: includes/admin/builder/class-builder.php:900
 msgid "Please enter a valid value or change the Increment. The nearest valid values are %1$s and %2$s."
 msgstr "有効な値を入力するか、増分を変更してください。最も近い有効な値は%1$sと%2$sです。"
 
@@ -3493,7 +3539,7 @@ msgstr "選択"
 msgid "user"
 msgstr "ユーザー"
 
-#: includes/fields/class-name.php:23
+#: includes/fields/class-name.php:26
 msgid "user, first, last"
 msgstr "ユーザー、名、姓"
 
@@ -3590,35 +3636,32 @@ msgstr "製品、ストア、eコマース、支払い、決済"
 msgid "store, ecommerce, pay, payment, sum"
 msgstr "ストア、eコマース、支払い、合計"
 
-#: src/Integrations/Elementor/Elementor.php:134
-msgid "Confirm"
-msgstr "確認"
-
-#: src/Integrations/Elementor/WidgetModern.php:146
-#: src/Integrations/Elementor/WidgetModern.php:277
+#: src/Integrations/Elementor/WidgetModern.php:266
+#: src/Integrations/Elementor/WidgetModern.php:425
+#: src/Integrations/Elementor/WidgetModern.php:516
 msgid "Border Radius (px)"
 msgstr "境界半径 (px)"
 
-#: src/Integrations/Elementor/WidgetModern.php:326
+#: src/Integrations/Elementor/WidgetModern.php:752
 msgid "Additional Classes"
 msgstr "追加クラス"
 
-#: src/Integrations/Elementor/WidgetModern.php:328
+#: src/Integrations/Elementor/WidgetModern.php:754
 msgid "Separate multiple classes with spaces."
 msgstr "複数のクラスはスペースで区切ります。"
 
 #. Translators: %1$s: Opening strong tag, %2$s: Closing strong tag.
-#: src/Integrations/Gutenberg/FormSelector.php:584
+#: src/Integrations/Gutenberg/FormSelector.php:537
 msgid "You can use %1$sWPForms%2$s to build contact forms, surveys, payment forms, and more with just a few clicks."
 msgstr "%1$sWPForms%2$s を使用すると、数回クリックするだけで、お問い合わせフォーム、アンケート、支払いフォームなどを作成できます。"
 
 #. Translators: %1$s: Opening anchor tag, %2$s: Closing achor tag.
-#: src/Integrations/Gutenberg/FormSelector.php:586
+#: src/Integrations/Gutenberg/FormSelector.php:539
 msgid "Need some help? Check out our %1$scomprehensive guide.%2$s"
 msgstr "サポートが必要な場合は、%1$s総合的なガイド%2$sをご覧ください。"
 
 #. translators: %s - error message.
-#: src/Integrations/Stripe/Process.php:907
+#: src/Integrations/Stripe/Process.php:1008
 msgid "Payment Error: %s"
 msgstr "支払いエラー: %s"
 
@@ -3658,23 +3701,18 @@ msgstr "選択した期間に売上がありません"
 msgid "No coupons applied during the selected period"
 msgstr "選択した期間に適用されたクーポンはありません"
 
-#. translators: %s - required PHP version.
-#: src/Requirements/Requirements.php:1004
-msgid "<a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">Read more</a> for additional information."
-msgstr "詳細については、<a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">こちらをご覧ください</a>。"
-
 #. translators: %s - PHP extension name(s).
-#: src/Requirements/Requirements.php:1088
+#: src/Requirements/Requirements.php:1187
 msgid "%s PHP extension"
 msgid_plural "%s PHP extensions"
 msgstr[0] "%s PHP 拡張機能"
 
 #. translators: %s - license name(s).
-#: src/Requirements/Requirements.php:1159
+#: src/Requirements/Requirements.php:1258
 msgid "%s license"
 msgstr "%s ライセンス"
 
-#: includes/functions/utilities.php:336
+#: includes/functions/utilities.php:356
 #: src/Integrations/AI/Admin/Builder/Forms.php:205
 #: templates/admin/payments/reset-filter-notice.php:57
 msgid "and"
@@ -3712,14 +3750,14 @@ msgstr "クーポンの概要"
 msgid "Coupon Settings"
 msgstr "クーポン設定"
 
+#: src/Admin/Payments/Views/Coupons/Education.php:184
+msgid "Easy to Use, Yet Powerful"
+msgstr "使いやすく、しかもパワフル"
+
 #. translators: %1$s - WPForms.com Upgrade page URL.
 #: src/Admin/Payments/Views/Coupons/Education.php:171
 msgid "With the Coupons addon, you can offer customers discounts using custom coupon codes. Create your own percentage or fixed rate discount, then add the Coupon field to any payment form. When a customer enters your unique code, they’ll receive the specified discount. You can also add limits to restrict when coupons are available and how often they can be used. The Coupons addon requires a license level of Pro or higher.%s"
 msgstr "クーポンアドオンを使用すると、カスタムクーポンコードを使用して顧客に割引を提供できます。独自のパーセンテージまたは固定レートの割引を作成し、任意の支払いフォームにクーポンフィールドを追加します。顧客が固有のコードを入力すると、指定された割引が適用されます。制約を追加して、クーポンが利用可能な期間や使用頻度を制限することもできます。クーポンアドオンの使用には、Pro 以上のライセンスレベルが必要です。%s"
-
-#: src/Admin/Payments/Views/Coupons/Education.php:184
-msgid "Easy to Use, Yet Powerful"
-msgstr "使いやすく、しかもパワフル"
 
 #: src/Integrations/Stripe/Fields/Traits/CreditCard.php:226
 msgid "<p>Stripe Payments must be enabled when using the Stripe Credit Card field.</p><p>To proceed, please go to <strong>Payments » Stripe</strong> and check <strong>Enable Stripe payments</strong>.</p>"
@@ -3747,39 +3785,39 @@ msgstr "続行するには、支払いの詳細を入力してください。"
 msgid "Payment Element failed to load. Stripe API responded with the message:"
 msgstr "支払い項目の読み込みに失敗しました。Stripe API が次のメッセージで応答しました:"
 
-#: src/Integrations/Stripe/Process.php:208
+#: src/Integrations/Stripe/Process.php:219
 msgid "Unable to process payment, please try again later."
 msgstr "支払いを処理できません。しばらくしてからもう一度お試しください。"
 
-#: src/Integrations/Stripe/Process.php:574
+#: src/Integrations/Stripe/Process.php:645
 msgid "Stripe payment stopped, missing keys."
 msgstr "Stripe 支払いは停止されました。キーがありません。"
 
-#: src/Integrations/Stripe/Process.php:580
+#: src/Integrations/Stripe/Process.php:651
 msgid "Stripe payment stopped, missing payment fields."
 msgstr "Stripe 支払いは停止されました。支払いフィールドがありません。"
 
-#: src/Integrations/Stripe/Process.php:585
+#: src/Integrations/Stripe/Process.php:656
 msgid "Stripe payment stopped, invalid/empty amount."
 msgstr "Stripe 支払いは停止されました。金額が無効、または空になっています。"
 
-#: src/Integrations/Stripe/Process.php:589
+#: src/Integrations/Stripe/Process.php:660
 msgid "Stripe payment stopped, amount less than minimum charge required."
 msgstr "Stripe 支払いは停止されました。金額が必要最低額を下回っています。"
 
-#: src/Integrations/Stripe/Process.php:1033
+#: src/Integrations/Stripe/Process.php:1134
 msgid "Stripe subscription payment stopped, missing form settings."
 msgstr "Stripe サブスクリプションの支払いが停止されました。フォーム設定がありません。"
 
-#: src/Integrations/Stripe/Process.php:1038
+#: src/Integrations/Stripe/Process.php:1139
 msgid "Stripe subscription payment stopped, customer email not found."
 msgstr "Stripe サブスクリプションの支払いは停止されました。顧客のメールアドレスがありません。"
 
-#: src/Integrations/Stripe/Process.php:914
+#: src/Integrations/Stripe/Process.php:1015
 msgid "Stripe subscription payment stopped by error"
 msgstr "Stripe サブスクリプションの支払いがエラーで停止されました"
 
-#: src/Integrations/Stripe/Process.php:916
+#: src/Integrations/Stripe/Process.php:1017
 msgid "Stripe payment stopped by error"
 msgstr "Stripe 支払いがエラーで停止されました"
 
@@ -3925,27 +3963,27 @@ msgstr "Stripe と接続する"
 msgid "Please see <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">our documentation on Stripe Credit Card field modes for full details</a>."
 msgstr "詳細については、<a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">Stripe クレジットカードフィールドモードについてのドキュメンテーション</a>をご覧ください。"
 
-#: src/Integrations/Stripe/Api/Common.php:304
+#: src/Integrations/Stripe/Api/Common.php:316
 msgid "Too many requests made to the API too quickly."
 msgstr "短期間に API に対して行なわれたリクエストが多すぎます。"
 
-#: src/Integrations/Stripe/Api/Common.php:305
+#: src/Integrations/Stripe/Api/Common.php:317
 msgid "Invalid parameters were supplied to Stripe API."
 msgstr "無効なパラメーターが Stripe API に指定されました。"
 
-#: src/Integrations/Stripe/Api/Common.php:306
+#: src/Integrations/Stripe/Api/Common.php:318
 msgid "Authentication with Stripe API failed."
 msgstr "Stripe API による認証に失敗しました。"
 
-#: src/Integrations/Stripe/Api/Common.php:307
+#: src/Integrations/Stripe/Api/Common.php:319
 msgid "Network communication with Stripe failed."
 msgstr "Stripe とのネットワーク通信に失敗しました。"
 
-#: src/Integrations/Stripe/Api/Common.php:308
+#: src/Integrations/Stripe/Api/Common.php:320
 msgid "Unable to process Stripe payment."
 msgstr "Stripe の支払いを処理できません。"
 
-#: src/Integrations/Stripe/Api/Common.php:309
+#: src/Integrations/Stripe/Api/Common.php:321
 msgid "Unable to process payment."
 msgstr "支払いを処理できません。"
 
@@ -4057,17 +4095,17 @@ msgstr "空"
 
 #. translators: %1$s - data source name (e.g. Categories, Posts), %2$s - data
 #. source type (e.g. post type, taxonomy).
-#: includes/admin/builder/class-builder.php:750
+#: includes/admin/builder/class-builder.php:766
 #: includes/fields/class-base.php:3745
 msgid "This field will not be displayed in your form since there are no %2$s belonging to %1$s."
 msgstr "%1$sに属する%2$sがないため、このフィールドはフォームに表示されません。"
 
-#: includes/admin/builder/class-builder.php:755
+#: includes/admin/builder/class-builder.php:771
 #: includes/fields/class-base.php:3731
 msgid "posts"
 msgstr "投稿"
 
-#: includes/admin/builder/class-builder.php:756
+#: includes/admin/builder/class-builder.php:772
 #: includes/fields/class-base.php:3736
 msgid "terms"
 msgstr "ターム"
@@ -4511,14 +4549,14 @@ msgstr "3番目の項目"
 
 #. translators: %s - choice number.
 #. translators: %s - item number.
-#: includes/admin/builder/class-builder.php:858
+#: includes/admin/builder/class-builder.php:878
 #: src/Forms/Fields/PaymentCheckbox/Field.php:119
 #: src/Forms/Fields/PaymentCheckbox/Field.php:398
 #: src/Forms/Fields/PaymentMultiple/Field.php:386
 #: src/Forms/Fields/PaymentSelect/Field.php:439
 #: src/Forms/Fields/PaymentTotal/Field.php:690
-#: src/SmartTags/SmartTag/OrderSummary.php:200
-#: src/SmartTags/SmartTag/OrderSummary.php:275
+#: src/SmartTags/SmartTag/OrderSummary.php:209
+#: src/SmartTags/SmartTag/OrderSummary.php:284
 msgid "Item %s"
 msgstr "項目%s"
 
@@ -4615,48 +4653,48 @@ msgstr "顧客のメールアドレスを含むフィールドを選択してく
 
 #: includes/admin/builder/panels/class-base.php:211
 #: src/Integrations/Square/Admin/Builder/Traits/Content.php:137
-#: src/Integrations/Stripe/Admin/Builder/Traits/ContentTrait.php:423
+#: src/Integrations/Stripe/Admin/Builder/Traits/ContentTrait.php:425
 msgid "Plan Name"
 msgstr "プラン名"
 
 #: src/Integrations/Square/Helpers.php:423
-#: src/Integrations/Stripe/Admin/Builder/Traits/ContentTrait.php:446
-#: src/Integrations/Stripe/Api/Common.php:361
+#: src/Integrations/Stripe/Admin/Builder/Traits/ContentTrait.php:448
+#: src/Integrations/Stripe/Api/Common.php:373
 msgid "Daily"
 msgstr "毎日"
 
 #: src/Integrations/Square/Helpers.php:428
-#: src/Integrations/Stripe/Admin/Builder/Traits/ContentTrait.php:447
-#: src/Integrations/Stripe/Api/Common.php:367
+#: src/Integrations/Stripe/Admin/Builder/Traits/ContentTrait.php:449
+#: src/Integrations/Stripe/Api/Common.php:379
 msgid "Weekly"
 msgstr "毎週"
 
 #: src/Integrations/Square/Helpers.php:433
-#: src/Integrations/Stripe/Admin/Builder/Traits/ContentTrait.php:448
-#: src/Integrations/Stripe/Api/Common.php:373
+#: src/Integrations/Stripe/Admin/Builder/Traits/ContentTrait.php:450
+#: src/Integrations/Stripe/Api/Common.php:385
 msgid "Monthly"
 msgstr "毎月"
 
 #: src/Integrations/Square/Helpers.php:438
-#: src/Integrations/Stripe/Admin/Builder/Traits/ContentTrait.php:449
-#: src/Integrations/Stripe/Api/Common.php:379
+#: src/Integrations/Stripe/Admin/Builder/Traits/ContentTrait.php:451
+#: src/Integrations/Stripe/Api/Common.php:391
 msgid "Quarterly"
 msgstr "四半期ごと"
 
 #: src/Integrations/Square/Helpers.php:443
-#: src/Integrations/Stripe/Admin/Builder/Traits/ContentTrait.php:450
-#: src/Integrations/Stripe/Api/Common.php:385
+#: src/Integrations/Stripe/Admin/Builder/Traits/ContentTrait.php:452
+#: src/Integrations/Stripe/Api/Common.php:397
 msgid "Semi-Yearly"
 msgstr "半年ごと"
 
 #: src/Integrations/Square/Helpers.php:448
-#: src/Integrations/Stripe/Admin/Builder/Traits/ContentTrait.php:451
-#: src/Integrations/Stripe/Api/Common.php:391
+#: src/Integrations/Stripe/Admin/Builder/Traits/ContentTrait.php:453
+#: src/Integrations/Stripe/Api/Common.php:403
 msgid "Yearly"
 msgstr "毎年"
 
 #: src/Integrations/Square/Admin/Builder/Traits/Content.php:180
-#: src/Integrations/Stripe/Admin/Builder/Traits/ContentTrait.php:473
+#: src/Integrations/Stripe/Admin/Builder/Traits/ContentTrait.php:475
 msgid "Select the field that contains the customer's email address. This field is required."
 msgstr "顧客のメールアドレスを含むフィールドを選択してください。このフィールドは必須です。"
 
@@ -4698,7 +4736,7 @@ msgstr "購読"
 #: src/Admin/Payments/Views/Overview/Table.php:644
 #: src/Integrations/Square/Admin/Builder/Traits/Content.php:172
 #: src/Integrations/Stripe/Admin/Builder/Traits/ContentTrait.php:390
-#: src/Integrations/Stripe/Admin/Builder/Traits/ContentTrait.php:465
+#: src/Integrations/Stripe/Admin/Builder/Traits/ContentTrait.php:467
 msgid "Customer Email"
 msgstr "顧客のメールアドレス"
 
@@ -4723,21 +4761,21 @@ msgstr "支払いに関する説明 (「サッカーチームへの寄付」な�
 #: src/Integrations/Square/Admin/Builder/Traits/Content.php:179
 #: src/Integrations/Stripe/Admin/Builder/Traits/ContentTrait.php:379
 #: src/Integrations/Stripe/Admin/Builder/Traits/ContentTrait.php:394
-#: src/Integrations/Stripe/Admin/Builder/Traits/ContentTrait.php:472
+#: src/Integrations/Stripe/Admin/Builder/Traits/ContentTrait.php:474
 msgid "--- Select Email ---"
 msgstr "---メールアドレスを選択---"
 
 #: src/Integrations/Square/Admin/Builder/Traits/Content.php:142
-#: src/Integrations/Stripe/Admin/Builder/Traits/ContentTrait.php:428
+#: src/Integrations/Stripe/Admin/Builder/Traits/ContentTrait.php:430
 msgid "Enter the subscription name. Eg: Email Newsletter. Subscription period and price are automatically appended. If left empty the form name will be used."
 msgstr "サブスクリプション名 (メールニュースレターなど) を入力してください。サブスクリプション期間と価格が自動的に追加されます。空白のままにすると、フォームの名前が使用されます。"
 
-#: src/Integrations/Stripe/Admin/Builder/Traits/ContentTrait.php:439
+#: src/Integrations/Stripe/Admin/Builder/Traits/ContentTrait.php:441
 msgid "Recurring Period"
 msgstr "請求間隔"
 
 #: src/Integrations/Square/Admin/Builder/Traits/Content.php:160
-#: src/Integrations/Stripe/Admin/Builder/Traits/ContentTrait.php:453
+#: src/Integrations/Stripe/Admin/Builder/Traits/ContentTrait.php:455
 msgid "How often you would like the charge to recur."
 msgstr "料金請求の頻度です。"
 
@@ -4769,7 +4807,16 @@ msgstr "<strong>従量課金制の料金</strong><br>取引ごとに3%% の手�
 
 #: includes/admin/class-about.php:1165
 msgid "Name, Email, Single Line Text, Paragraph Text, Dropdown, Multiple Choice, Checkboxes, Numbers, Number Slider, and Payment Fields (Single Item, Total, etc.)"
-msgstr "名前、メール、単一行テキスト、段落テキスト、ドロップダウン、ラジオボタン、チェックボックス、数字、番号スライダー、支払いのフィールド (単一項目、合計など)"
+msgstr "名前、メール、単一行テキスト、段落テキスト、ドロップダウン、多項選択式、チェックボックス、数字、番号スライダー、支払いのフィールド (単一項目、合計など)"
+
+#: src/Admin/Payments/Views/Overview/Page.php:367
+msgid "First you need to set up a payment gateway. We've partnered with <strong>Stripe and Square</strong> to bring easy payment forms to everyone.&nbsp;"
+msgstr "まず、決済ゲートウェイを設定する必要があります。<strong>Stripe および Square</strong> と提携し、どなたでも簡単に決済フォームをご利用いただけます。&nbsp;"
+
+#. translators: %s - WPForms Addons admin page URL.
+#: src/Admin/Payments/Views/Overview/Page.php:370
+msgid "Other payment gateways such as <strong>PayPal</strong> and <strong>Authorize.Net</strong> can be installed from the <a href=\"%s\">Addons screen</a>."
+msgstr "<strong>PayPal</strong> や <strong>Authorize.Net</strong> などの他の支払いゲートウェイは、<a href=\"%s\">アドオン画面</a> からインストールできます。"
 
 #: src/Integrations/SMTP/Notifications.php:66
 #: src/Integrations/SMTP/Notifications.php:90
@@ -4843,10 +4890,11 @@ msgstr "一般的なメール配信の問題を解決しましょう。<a href=\
 msgid "Get Started"
 msgstr "始めてみよう"
 
-#: src/Integrations/Elementor/WidgetModern.php:136
-#: src/Integrations/Elementor/WidgetModern.php:206
-#: src/Integrations/Elementor/WidgetModern.php:267
-#: src/Integrations/Gutenberg/FormSelector.php:548
+#: src/Integrations/Elementor/WidgetModern.php:233
+#: src/Integrations/Elementor/WidgetModern.php:333
+#: src/Integrations/Elementor/WidgetModern.php:392
+#: src/Integrations/Elementor/WidgetModern.php:626
+#: src/Integrations/Gutenberg/FormSelector.php:501
 msgid "Size"
 msgstr "サイズ"
 
@@ -4902,99 +4950,96 @@ msgstr "エラーメッセージ"
 msgid "Submit button is disabled during form submission."
 msgstr "フォーム送信中は「送信」ボタンが無効化されます。"
 
-#: src/Integrations/Elementor/WidgetModern.php:113
-#: src/Integrations/Gutenberg/FormSelector.php:499
+#: src/Integrations/Elementor/WidgetModern.php:225
+#: src/Integrations/Gutenberg/FormSelector.php:452
 msgid "Field Styles"
 msgstr "フィールドスタイル"
 
-#: src/Integrations/Elementor/WidgetModern.php:198
-#: src/Integrations/Gutenberg/FormSelector.php:503
+#: src/Integrations/Elementor/WidgetModern.php:325
+#: src/Integrations/Gutenberg/FormSelector.php:456
 msgid "Label Styles"
 msgstr "ラベルスタイル"
 
-#: src/Integrations/Elementor/WidgetModern.php:259
-#: src/Integrations/Gutenberg/FormSelector.php:506
+#: src/Integrations/Elementor/WidgetModern.php:384
+#: src/Integrations/Gutenberg/FormSelector.php:459
 msgid "Button Styles"
 msgstr "ボタンスタイル"
 
-#: src/Integrations/Gutenberg/FormSelector.php:531
+#: src/Integrations/Gutenberg/FormSelector.php:484
 msgid "Additional CSS Classes"
 msgstr "追加の CSS クラス"
 
-#: src/Integrations/Gutenberg/FormSelector.php:539
-#: src/Integrations/Gutenberg/FormSelector.php:543
+#: src/Integrations/Gutenberg/FormSelector.php:492
+#: src/Integrations/Gutenberg/FormSelector.php:496
 msgid "Want to customize your form styles without editing CSS?"
 msgstr "CSS 編集をせずに、フォームのスタイルをカスタマイズしたいですか ?"
 
-#: src/Integrations/Gutenberg/FormSelector.php:540
+#: src/Integrations/Gutenberg/FormSelector.php:493
 msgid "Update WordPress to the latest version to use our modern markup and unlock the controls below."
 msgstr "WordPress を最新バージョンに更新してモダンマークアップを使用すると、次のようなコントロールをご利用いただけます。"
 
-#: src/Integrations/Gutenberg/FormSelector.php:544
+#: src/Integrations/Gutenberg/FormSelector.php:497
 msgid "Enable modern markup in your WPForms settings to unlock the controls below."
 msgstr "WPForms 設定でモダンマークアップを有効化すると、次のようなコントロールをご利用いただけます。"
 
-#: src/Integrations/Elementor/WidgetModern.php:125
-#: src/Integrations/Gutenberg/FormSelector.php:546
+#: src/Integrations/Elementor/WidgetModern.php:150
+#: src/Integrations/Gutenberg/FormSelector.php:499
 msgid "Form Styles are disabled because Lead Form Mode is turned on."
 msgstr "Lead Form モードがオンになっているため、フォームスタイルは無効化されています。"
 
-#: src/Integrations/Elementor/WidgetModern.php:126
-#: src/Integrations/Gutenberg/FormSelector.php:547
+#: src/Integrations/Elementor/WidgetModern.php:151
+#: src/Integrations/Gutenberg/FormSelector.php:500
 msgid "To change the styling for this form, open it in the form builder and edit the options in the Lead Forms settings."
 msgstr "このフォームのスタイルを変更するには、フォームビルダーでフォームを開き、Lead Form 設定でオプションを編集します。"
 
 #: src/Admin/Settings/Email.php:520
-#: src/Integrations/Elementor/WidgetModern.php:155
-#: src/Integrations/Elementor/WidgetModern.php:286
-#: src/Integrations/Gutenberg/FormSelector.php:550
+#: src/Integrations/Elementor/WidgetModern.php:276
+#: src/Integrations/Elementor/WidgetModern.php:435
+#: src/Integrations/Elementor/WidgetModern.php:696
+#: src/Integrations/Gutenberg/FormSelector.php:503
 msgid "Background"
 msgstr "背景"
 
-#: src/Integrations/Elementor/WidgetModern.php:164
-#: src/Integrations/Gutenberg/FormSelector.php:551
-#: src/Integrations/Gutenberg/FormSelector.php:568
+#: src/Integrations/Elementor/WidgetModern.php:243
+#: src/Integrations/Elementor/WidgetModern.php:285
+#: src/Integrations/Elementor/WidgetModern.php:402
+#: src/Integrations/Elementor/WidgetModern.php:444
+#: src/Integrations/Elementor/WidgetModern.php:493
+#: src/Integrations/Elementor/WidgetModern.php:541
+#: src/Integrations/Gutenberg/FormSelector.php:504
+#: src/Integrations/Gutenberg/FormSelector.php:521
 msgid "Border"
 msgstr "枠線"
 
-#: src/Integrations/Gutenberg/FormSelector.php:558
+#: src/Integrations/Gutenberg/FormSelector.php:511
 msgid "Border Radius"
 msgstr "境界半径"
 
-#: src/Integrations/Gutenberg/FormSelector.php:569
+#: src/Integrations/Gutenberg/FormSelector.php:522
 msgid "Colors"
 msgstr "色"
 
-#: src/Integrations/Elementor/WidgetModern.php:226
-#: src/Integrations/Gutenberg/FormSelector.php:571
+#: src/Integrations/Elementor/WidgetModern.php:353
+#: src/Integrations/Gutenberg/FormSelector.php:524
 msgid "Sublabel & Hint"
 msgstr "サブラベルとヒント"
 
-#: src/Integrations/Gutenberg/FormSelector.php:572
+#: src/Integrations/Gutenberg/FormSelector.php:525
 msgid "Error Message"
 msgstr "エラーメッセージ"
 
-#: src/Integrations/Elementor/Elementor.php:135
-#: src/Integrations/Elementor/WidgetModern.php:368
-msgid "Reset Style Settings"
-msgstr "スタイル設定をリセット"
-
-#: src/Integrations/Elementor/Elementor.php:136
-msgid "Are you sure you want to reset the style settings for this form? All your current styling will be removed and canʼt be recovered."
-msgstr "本当にこのフォームのスタイル設定をリセットしてもよいですか ? 現在のすべてのスタイルが削除され、復元することはできません。"
-
-#: src/Integrations/Elementor/WidgetModern.php:346
-#: src/Integrations/Gutenberg/FormSelector.php:578
+#: src/Integrations/Elementor/WidgetModern.php:772
+#: src/Integrations/Gutenberg/FormSelector.php:531
 msgid "Copy / Paste Style Settings"
 msgstr "スタイル設定をコピー / ペースト"
 
-#: src/Integrations/Elementor/Elementor.php:137
-#: src/Integrations/Gutenberg/FormSelector.php:579
+#: src/Integrations/Elementor/Elementor.php:235
+#: src/Integrations/Gutenberg/FormSelector.php:532
 msgid "There was an error parsing your JSON code. Please check your code and try again."
 msgstr "JSON コードの解析中にエラーが発生しました。コードを確認して、もう一度お試しください。"
 
-#: src/Integrations/Elementor/WidgetModern.php:348
-#: src/Integrations/Gutenberg/FormSelector.php:580
+#: src/Integrations/Elementor/WidgetModern.php:774
+#: src/Integrations/Gutenberg/FormSelector.php:533
 msgid "If you've copied style settings from another form, you can paste them here to add the same styling to this form. Any current style settings will be overwritten."
 msgstr "別のフォームからスタイル設定をコピーした場合は、ここに貼り付けると、同じスタイルをこのフォームに追加できます。現在のスタイル設定はすべて上書きされます。"
 
@@ -5003,9 +5048,9 @@ msgstr "別のフォームからスタイル設定をコピーした場合は、
 msgid "Check this option to use modern markup, which has increased accessibility and allows you to easily customize your forms in the block editor. <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">Read our form markup documentation</a> to learn more."
 msgstr "モダンマークアップを使用するには、このオプションにチェックを入れます。モダンマークアップを使用すると、アクセシビリティが向上し、ブロックエディターでフォームを簡単にカスタマイズできます。詳細は、<a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">フォームマークアップのドキュメンテーションをご覧ください</a>。"
 
-#: src/Integrations/Gutenberg/FormSelector.php:529
+#: src/Integrations/Gutenberg/FormSelector.php:482
 msgid "Also used for other fields like Multiple Choice, Checkboxes, Rating, and NPS Survey."
-msgstr "その他、多肢選択問題、チェックボックス、評価、NPS 調査などの分野でも使用されています。"
+msgstr "多項選択式、チェックボックス、評価、NPS 調査などの他のフィールドにも使用されます。"
 
 #: includes/admin/class-about.php:1106
 msgid "WPCode"
@@ -5075,7 +5120,7 @@ msgstr "データプライバシーを保護する CAPTCHA のような無料の
 msgid "Not sure which service is right for you? <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">Check out our comparison</a> for more details."
 msgstr "どのサービスが適しているかわかりませんか ? 詳しくは、<a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">比較表をご覧ください</a>。"
 
-#: src/Admin/Settings/Captcha/Turnstile.php:91 src/Frontend/Frontend.php:1893
+#: src/Admin/Settings/Captcha/Turnstile.php:91 src/Frontend/Frontend.php:1868
 msgid "Cloudflare Turnstile verification failed, please try again later."
 msgstr "Cloudflare Turnstile の検証に失敗しました。しばらくしてからもう一度お試しください。"
 
@@ -5229,9 +5274,9 @@ msgstr "<h4>テキストと画像をフォームに簡単に追加</h4> <p>ま�
 
 #: src/Admin/Settings/Email.php:522 src/Forms/Fields/Richtext/Field.php:176
 #: src/Forms/Fields/Traits/ContentInput.php:316
-#: src/Integrations/Elementor/WidgetModern.php:174
 #: src/Integrations/Elementor/WidgetModern.php:295
-#: src/Integrations/Gutenberg/FormSelector.php:552
+#: src/Integrations/Elementor/WidgetModern.php:456
+#: src/Integrations/Gutenberg/FormSelector.php:505
 msgid "Text"
 msgstr "テキスト"
 
@@ -5362,7 +5407,7 @@ msgid "Spam Protection and Security"
 msgstr "スパム対策とセキュリティ"
 
 #: lite/templates/education/builder/providers-item.php:34
-#: src/Admin/Education/Helpers.php:99 templates/builder/payment/sidebar.php:28
+#: src/Admin/Education/Helpers.php:99 templates/builder/payment/sidebar.php:29
 msgid "Recommended"
 msgstr "おすすめ"
 
@@ -5416,12 +5461,12 @@ msgstr "WPForms のテンプレート"
 msgid "After purchasing a license, just <strong>enter your license key on the WPForms Settings page</strong>. This will let your site automatically upgrade to %s! (Don't worry, all your forms and settings will be preserved.)"
 msgstr "ライセンスを購入したら、<strong>WPForms 設定ページでライセンス キーを入力</strong>します。これにより、サイトが自動的に %s! にアップグレードされます。(心配する必要はありません。すべてのフォームと設定は保持されます。)"
 
-#: src/Admin/Builder/Templates.php:1057
+#: src/Admin/Builder/Templates.php:1080
 msgid "Never start from scratch again! While WPForms Lite allows you to create any type of form, you can save even more time with WPForms Pro. Upgrade to access hundreds more form templates and advanced form fields."
 msgstr "もうゼロから始める必要はありません。WPForms Lite でもあらゆる種類のフォームを作成できますが、WPForms Pro なら、さらに時間を節約できます。WPForms Pro にアップグレードすると、数百のフォーム テンプレートと高度なフォーム フィールドにアクセスできます。"
 
 #. translators: %d - templates count.
-#: src/Admin/Builder/Templates.php:1054
+#: src/Admin/Builder/Templates.php:1077
 msgid "Get Access to Our Library of %d+ Pre-Made Form Templates"
 msgstr "%d種類以上の事前作成フォームテンプレートが収録されたライブラリにアクセスしましょう"
 
@@ -5540,19 +5585,19 @@ msgstr "Akismet アンチスパム保護を有効にする"
 
 #. translators: %1$s - link to the Akismet settings page, %2$s - link to the
 #. WPForms.com doc article.
-#: includes/admin/builder/class-builder.php:956
+#: includes/admin/builder/class-builder.php:980
 msgid "This feature cannot be used at this time because the Akismet plugin <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">has not been properly configured</a>. For information on how to use this feature please <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">refer to our documentation</a>."
 msgstr "Akismet プラグインが<a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">適切に設定</a>されていないため、この機能は現在使用できません。 この機能の使用方法については、 <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">ドキュメントを参照してください</a>。"
 
 #. translators: %1$s - link to the plugins page, %2$s - link to the WPForms.com
 #. doc article.
-#: includes/admin/builder/class-builder.php:935
+#: includes/admin/builder/class-builder.php:959
 msgid "This feature cannot be used at this time because the Akismet plugin <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">has not been activated</a>. For information on how to use this feature please <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">refer to our documentation</a>."
 msgstr "Akismet プラグインが<a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">有効化されていない</a>ため、現時点ではこの機能を使用できません。 この機能の使用方法については、<a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">ドキュメントを参照してください</a>。"
 
 #. translators: %1$s - link to the plugin search page, %2$s - link to the
 #. WPForms.com doc article.
-#: includes/admin/builder/class-builder.php:914
+#: includes/admin/builder/class-builder.php:938
 msgid "This feature cannot be used at this time because the Akismet plugin <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">has not been installed</a>. For information on how to use this feature please <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">refer to our documentation</a>."
 msgstr "Akismet プラグインが<a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">インストールされていない</a>ため、現時点ではこの機能を使用できません。 この機能の使用方法については、<a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">ドキュメントを参照してください</a>。"
 
@@ -5560,7 +5605,7 @@ msgstr "Akismet プラグインが<a href=\"%1$s\" target=\"_blank\" rel=\"noope
 msgid "Accept payments using PayPal Commerce, Stripe, Square, and PayPal Standard"
 msgstr "PayPal Commerce、Stripe、Square、および PayPal Standard を使用した支払いの受け入れ"
 
-#: includes/admin/class-settings.php:515 src/Frontend/Frontend.php:1894
+#: includes/admin/class-settings.php:515 src/Frontend/Frontend.php:1869
 msgid "Please fill out the field in required format."
 msgstr "適切な形式でフィールドに入力してください。"
 
@@ -5633,13 +5678,13 @@ msgstr "おめでとう！ 100 番目のフォームのエントリーを取得�
 msgid "Share Your Idea"
 msgstr "アイデアを共有"
 
-#: src/Admin/Notifications/EventDriven.php:694
-msgid "What’s Your Dream WPForms Feature?"
-msgstr "夢の WPForms 機能は何ですか?"
-
 #: src/Admin/Notifications/EventDriven.php:695
 msgid "If you could add just one feature to WPForms, what would it be? We want to know! Our team is busy surveying valued customers like you as we plan the year ahead. We’d love to know which features would take your business to the next level! Do you have a second to share your idea with us?"
 msgstr "WPForms に 1 つだけ機能を追加できるとしたら、何を追加しますか?私たちは知りたい！このチームは、来年の計画を立てるために、あなたのような大切な顧客を調査することに忙しくしています。どの機能がビジネスを次のレベルに引き上げるか知りたいです! アイデアを共有してください。"
+
+#: src/Admin/Notifications/EventDriven.php:694
+msgid "What’s Your Dream WPForms Feature?"
+msgstr "夢の WPForms 機能は何ですか?"
 
 #: src/Admin/Notifications/Notifications.php:790
 msgid "Watch Video"
@@ -5664,6 +5709,10 @@ msgstr "WordPress でエントリーを管理する準備が整ったら、<a hr
 msgid "Get More Leads From Your Forms!"
 msgstr "フォームからより多くの見込み客を獲得しましょう!"
 
+#: src/Admin/Notifications/EventDriven.php:589
+msgid "Nothing beats real feedback from your customers and visitors. That’s why many small businesses love our awesome Surveys and Polls addon. Instantly unlock full survey reporting right in your WordPress dashboard. And don’t forget: building a survey is easy with our pre-made templates, so you could get started within a few minutes!"
+msgstr "顧客や訪問者からの実際のフィードバックに勝るものはありません。そのため、多くの中小企業が私たちの素晴らしい「Surveys and Polls」アドオンを気に入っています。WordPress ダッシュボードですぐに完全な調査レポートのロックを解除できます。忘れないでください: 事前に作成されたテンプレートを使用してアンケートを作成するのは簡単なので、数分で開始できます!"
+
 #: src/Admin/Notifications/EventDriven.php:588
 msgid "Want to Know What Your Customers Really Think?"
 msgstr "顧客の本当の考えを知りたいですか?"
@@ -5671,6 +5720,10 @@ msgstr "顧客の本当の考えを知りたいですか?"
 #: src/Admin/Notifications/EventDriven.php:580
 msgid "Join Now"
 msgstr "今すぐ参加"
+
+#: src/Admin/Notifications/EventDriven.php:576
+msgid "Running a WordPress site can be challenging. But help is just around the corner! Our Facebook group contains tons of tips and help to get your business growing! When you join our VIP Circle, you’ll get instant access to tips, tricks, and answers from a community of loyal WPForms users. Best of all, membership is 100% free!"
+msgstr "WordPress サイトの運営は難しい場合があります。しかし、助けはすぐそばにあります！Facebook グループには、あなたのビジネスを成長させるためのヒントや助けがたくさんあります! VIP サークルに参加すると、忠実な WPForms ユーザーのコミュニティからのヒント、トリック、および回答にすぐにアクセスできます。何よりも、メンバーシップは 100% 無料です!"
 
 #: src/Admin/Notifications/EventDriven.php:575
 msgid "Want to Be a VIP? Join Now!"
@@ -5687,14 +5740,6 @@ msgstr "ガイドを見る"
 #: src/Admin/Notifications/EventDriven.php:530
 msgid "Start Building"
 msgstr "作成を開始"
-
-#: src/Admin/Notifications/EventDriven.php:589
-msgid "Nothing beats real feedback from your customers and visitors. That’s why many small businesses love our awesome Surveys and Polls addon. Instantly unlock full survey reporting right in your WordPress dashboard. And don’t forget: building a survey is easy with our pre-made templates, so you could get started within a few minutes!"
-msgstr "顧客や訪問者からの実際のフィードバックに勝るものはありません。そのため、多くの中小企業が私たちの素晴らしい「Surveys and Polls」アドオンを気に入っています。WordPress ダッシュボードですぐに完全な調査レポートのロックを解除できます。忘れないでください: 事前に作成されたテンプレートを使用してアンケートを作成するのは簡単なので、数分で開始できます!"
-
-#: src/Admin/Notifications/EventDriven.php:576
-msgid "Running a WordPress site can be challenging. But help is just around the corner! Our Facebook group contains tons of tips and help to get your business growing! When you join our VIP Circle, you’ll get instant access to tips, tricks, and answers from a community of loyal WPForms users. Best of all, membership is 100% free!"
-msgstr "WordPress サイトの運営は難しい場合があります。しかし、助けはすぐそばにあります！Facebook グループには、あなたのビジネスを成長させるためのヒントや助けがたくさんあります! VIP サークルに参加すると、忠実な WPForms ユーザーのコミュニティからのヒント、トリック、および回答にすぐにアクセスできます。何よりも、メンバーシップは 100% 無料です!"
 
 #: src/Admin/Notifications/EventDriven.php:555
 msgid "Did you know that many WordPress sites are not properly configured to send emails? With the free WP Mail SMTP plugin, you can easily optimize your site to send emails, avoid the spam folder, and make sure your emails land in the recipient’s inbox every time."
@@ -5864,6 +5909,11 @@ msgstr "棒グラフ"
 msgid "Line"
 msgstr "折れ線グラフ"
 
+#. translators: %s - upgrade to WPForms Pro landing page URL.
+#: src/Lite/Integrations/LiteConnect/LiteConnect.php:119
+msgid "<strong>Your form entries are not being stored locally, but are backed up remotely.</strong> If you <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"wpforms-upgrade-modal\">upgrade to WPForms PRO</a>, you can restore your entries and they’ll be available in the WordPress dashboard."
+msgstr "<strong>フォームエントリはローカルに保存されていませんが、リモートでバックアップされています。</strong><a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"wpforms-upgrade-modal\">WPForms PRO にアップグレード</a>すると、エントリを復元でき、WordPress ダッシュボードで利用できるようになります。"
+
 #: src/Lite/Integrations/LiteConnect/LiteConnect.php:111
 msgid "Lite Connect"
 msgstr "Lite Connect"
@@ -5884,11 +5934,6 @@ msgstr "残念ながら、フォームエントリのバックアップ設定の
 #: src/Lite/Admin/Education/LiteConnect.php:243
 msgid "Form Entry Backups were successfully disabled."
 msgstr "フォーム入力バックアップは正常に無効化されました。"
-
-#. translators: %s - upgrade to WPForms Pro landing page URL.
-#: src/Lite/Integrations/LiteConnect/LiteConnect.php:119
-msgid "<strong>Your form entries are not being stored locally, but are backed up remotely.</strong> If you <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"wpforms-upgrade-modal\">upgrade to WPForms PRO</a>, you can restore your entries and they’ll be available in the WordPress dashboard."
-msgstr "<strong>フォームエントリはローカルに保存されていませんが、リモートでバックアップされています。</strong><a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"wpforms-upgrade-modal\">WPForms PRO にアップグレード</a>すると、エントリを復元でき、WordPress ダッシュボードで利用できるようになります。"
 
 #: src/Lite/Admin/Education/LiteConnect.php:242
 msgid "Entry Backups Disabled"
@@ -5944,23 +5989,23 @@ msgstr "エントリは WPForms Lite に保存されません"
 msgid "This is the Lite Connect endpoint page."
 msgstr "これは Lite  Connect エンドポイントページです。"
 
-#: src/Forms/Locator.php:642
+#: src/Forms/Locator.php:616
 msgid "(no title)"
 msgstr "(タイトルなし)"
 
-#: src/Forms/Locator.php:480
+#: src/Forms/Locator.php:454
 msgid "Site editor template"
 msgstr "サイトエディタテンプレート"
 
-#: src/Forms/Locator.php:375
+#: src/Forms/Locator.php:349
 msgid "Form Locations"
 msgstr "フォームの場所"
 
-#: src/Forms/Locator.php:307 src/Forms/Locator.php:337
+#: src/Forms/Locator.php:281 src/Forms/Locator.php:311
 msgid "View form locations"
 msgstr "フォームの場所を表示する"
 
-#: src/Forms/Locator.php:239 src/Forms/Locator.php:263
+#: src/Forms/Locator.php:237
 msgid "Form locations"
 msgstr "フォームの場所"
 
@@ -5986,7 +6031,7 @@ msgstr[0] "最後の%d日"
 msgid "Select timespan"
 msgstr "タイムスパンを選択"
 
-#: src/Admin/AdminBarMenu.php:606
+#: src/Admin/AdminBarMenu.php:610
 msgid "Help Docs"
 msgstr "ヘルプドキュメンテーション"
 
@@ -6005,7 +6050,7 @@ msgid "%d entry has been backed up"
 msgid_plural "%d entries have been backed up"
 msgstr[0] "%d フォームエントリーがバックアップされました"
 
-#: src/Forms/Locator.php:459
+#: src/Forms/Locator.php:433
 msgid "Inactive widgets"
 msgstr "無効化なウィウィジェット"
 
@@ -6090,11 +6135,11 @@ msgstr "WPForms は、フォームエントリーのオフサイトバックア�
 msgid "One More Thing"
 msgstr "もう一つ"
 
-#: includes/admin/class-menu.php:385
+#: includes/admin/class-menu.php:372
 msgid "Read the documentation"
 msgstr "ドキュメンテーションの参照"
 
-#: includes/admin/class-menu.php:357
+#: includes/admin/class-menu.php:344
 msgid "Get WPForms Pro"
 msgstr "WPForms Pro を入手する"
 
@@ -6115,11 +6160,6 @@ msgstr "バックアップと復元"
 #: templates/builder/revisions/notice-limited.php:26
 msgid "Revisions are enabled, but they’re limited to %d. You can increase this by making a simple change to your WordPress configuration."
 msgstr "リビジョンは有効になっていますが、%dに制限されています。 WordPress の構成に簡単な変更を加えることで、これを増やすことができます。"
-
-#. translators: %s - WordPress version.
-#: wpforms.php:319
-msgid "The WPForms plugin is disabled because it requires WordPress %s or later."
-msgstr "WordPress %s 以上が必要なため、WPForms プラグインは無効になっています。"
 
 #. translators: %s - form revision author name.
 #: templates/builder/revisions/list.php:38
@@ -6289,17 +6329,17 @@ msgstr "リビジョン"
 msgid "It looks like the form you are trying to access is no longer available."
 msgstr "アクセスしようとしているフォームは利用できないようです。"
 
-#. translators: %1$d - trashed templates count.
-#: src/Admin/Forms/BulkActions.php:483
-msgid "%1$d template was successfully moved to Trash."
-msgid_plural "%1$d templates were successfully moved to Trash."
-msgstr[0] "%1$d個のテンプレートがゴミ箱に正常に移動されました。"
-
 #. translators: %1$d - deleted templates count.
 #: src/Admin/Forms/BulkActions.php:473
 msgid "%1$d template was successfully permanently deleted."
 msgid_plural "%1$d templates were successfully permanently deleted."
 msgstr[0] "%1$d個のテンプレートが完全に削除されました。"
+
+#. translators: %1$d - trashed templates count.
+#: src/Admin/Forms/BulkActions.php:483
+msgid "%1$d template was successfully moved to Trash."
+msgid_plural "%1$d templates were successfully moved to Trash."
+msgstr[0] "%1$d個のテンプレートがゴミ箱に移動されました。"
 
 #: src/Admin/Forms/Table/Facades/Columns.php:73
 msgid "Author"
@@ -6415,11 +6455,11 @@ msgstr "フォーム放棄を防ぐため、ユーザーによる送信の保存
 msgid "7000+ integrations with marketing and payment services"
 msgstr "7,000以上のマーケティングおよび支払いのサービスとの連携"
 
-#: includes/admin/builder/class-builder.php:768
+#: includes/admin/builder/class-builder.php:784
 msgid "This field cannot be duplicated."
 msgstr "このフィールドは複製できません。"
 
-#: includes/admin/builder/class-builder.php:767
+#: includes/admin/builder/class-builder.php:783
 msgid "This field cannot be deleted."
 msgstr "このフィールドは削除できません。"
 
@@ -6446,12 +6486,12 @@ msgid "The total size of the selected files %1$.3f MB exceeds the allowed limit 
 msgstr "選択したファイルの合計サイズ%1$.3f Mbが、許可されている制限%2$.3fMbを超えています。"
 
 #. translators: %1$s - words count, %2$s - words limit.
-#: src/Frontend/Frontend.php:1887
+#: src/Frontend/Frontend.php:1862
 msgid "%1$s of %2$s max words."
 msgstr "最大%2$sの単語のうち%1$s。"
 
 #. translators: %1$s - characters count, %2$s - characters limit.
-#: src/Frontend/Frontend.php:1879
+#: src/Frontend/Frontend.php:1854
 msgid "%1$s of %2$s max characters."
 msgstr "最大%2$s文字の%1$s。"
 
@@ -6460,12 +6500,12 @@ msgstr "最大%2$s文字の%1$s。"
 msgid "Hide Helper"
 msgstr "ヘルパーを非表示"
 
-#: includes/admin/builder/class-builder.php:868
+#: includes/admin/builder/class-builder.php:888
 #: includes/fields/class-base.php:2625
 msgid "Empty Label"
 msgstr "空のラベル"
 
-#: includes/admin/builder/class-builder.php:867
+#: includes/admin/builder/class-builder.php:887
 msgid "This field cannot be moved."
 msgstr "このフィールドは移動できません。"
 
@@ -6474,7 +6514,7 @@ msgid "Could not activate the plugin. Please activate it on the Plugins page."
 msgstr "プラグインを有効化できませんでした。「プラグイン」ページから有効にしてください。"
 
 #. translators: %s - suggested email address.
-#: includes/admin/class-settings.php:477 src/Frontend/Frontend.php:1865
+#: includes/admin/class-settings.php:477 src/Frontend/Frontend.php:1840
 msgid "Did you mean %s?"
 msgstr "%s のことですか？"
 
@@ -6551,7 +6591,7 @@ msgstr "プラグインを有効化しました"
 msgid "Addon activated"
 msgstr "アドオンを有効化しました"
 
-#: includes/admin/admin.php:304 includes/admin/builder/class-builder.php:866
+#: includes/admin/admin.php:304 includes/admin/builder/class-builder.php:886
 msgid "Something went wrong"
 msgstr "問題が発生しました。"
 
@@ -6666,7 +6706,7 @@ msgstr "WPForms は、<a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer
 
 #: src/Lite/Admin/Education/Builder/Confirmations.php:66
 msgid "Show entry preview after confirmation"
-msgstr "確認後に回答のプレビューを表示する"
+msgstr "確認後にエントリープレビューを表示する"
 
 #: src/Admin/Traits/FormTemplates.php:375
 #: src/Integrations/AI/Admin/Builder/Forms.php:204
@@ -6693,7 +6733,7 @@ msgid "HTML / Code Block"
 msgstr "HTML / コードのブロック"
 
 #. translators: %s - provider name.
-#: src/Providers/Provider/Settings/FormBuilder.php:497
+#: src/Providers/Provider/Settings/FormBuilder.php:466
 msgid "Get the most out of WPForms &mdash; use it with an active %s account."
 msgstr "WPFormsを最大限に活用する &mdash; 有効化したな %s アカウントで使用してください。"
 
@@ -6732,7 +6772,7 @@ msgid "Notifications are emails sent when a form is submitted. By default, these
 msgstr "通知は、フォームが送信されたときに送信される電子メールです。 デフォルトでは、これらのメールにはエントリの詳細が含まれています。 動画の概要を含むセットアップとカスタマイズのオプションについては、<a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">チュートリアルを参照して</a>ください。 "
 
 #: includes/providers/class-constant-contact.php:632
-#: src/Integrations/ConstantContact/V3/Settings/FormBuilder.php:384
+#: src/Integrations/ConstantContact/V3/Settings/FormBuilder.php:383
 msgid "Learn more about the power of email marketing."
 msgstr "メールマーケティングの力についてもっと学びましょう。"
 
@@ -6761,23 +6801,23 @@ msgstr "テンプレートを検索"
 msgid "Dismiss this message. The field will be deleted as well."
 msgstr "このメッセージを閉じます。 フィールドも削除されます。 "
 
-#: includes/admin/builder/class-builder.php:1252
+#: includes/admin/builder/class-builder.php:1276
 msgid "Exit Ctrl+Q"
 msgstr "終了します Ctrl+Q"
 
-#: includes/admin/builder/class-builder.php:1246
+#: includes/admin/builder/class-builder.php:1270
 msgid "Save Form Ctrl+S"
 msgstr "フォームの保存 Ctrl+S "
 
-#: includes/admin/builder/class-builder.php:1238
+#: includes/admin/builder/class-builder.php:1262
 msgid "Embed Form Ctrl+B"
 msgstr "埋め込みフォーム Ctrl+B"
 
-#: includes/admin/builder/class-builder.php:1221
+#: includes/admin/builder/class-builder.php:1245
 msgid "Preview Form Ctrl+P"
 msgstr "プレビューフォーム Ctrl+P"
 
-#: includes/admin/builder/class-builder.php:1201
+#: includes/admin/builder/class-builder.php:1225
 msgid "Help Ctrl+H"
 msgstr "ヘルプ Ctrl+H"
 
@@ -6789,8 +6829,8 @@ msgstr "Internet Explorer ブラウザはサポートされなくなりました
 
 #: includes/admin/builder/panels/class-settings.php:379
 #: includes/fields/class-base.php:2086
-#: src/Integrations/Elementor/WidgetModern.php:318
-#: src/Integrations/Gutenberg/FormSelector.php:530
+#: src/Integrations/Elementor/WidgetModern.php:744
+#: src/Integrations/Gutenberg/FormSelector.php:483
 #: src/Lite/Admin/Education/Builder/Notifications.php:130
 msgid "Advanced"
 msgstr "高度な設定"
@@ -6807,11 +6847,11 @@ msgstr "はい、テンプレートを使用します"
 msgid "Could not install OR activate all the required addons. Please download from wpforms.com and install them manually. Would you like to use the template anyway?"
 msgstr "必要なすべてのアドオンをインストールまたはアクティブ化できませんでした。 wpforms.com からダウンロードして、手動でインストールしてください。 とにかくテンプレートを使用しますか？ "
 
-#: includes/admin/builder/class-builder.php:787
+#: includes/admin/builder/class-builder.php:803
 msgid "Saving"
 msgstr "保存中"
 
-#: includes/admin/builder/class-builder.php:728
+#: includes/admin/builder/class-builder.php:744
 msgid "And"
 msgstr "と"
 
@@ -6852,7 +6892,7 @@ msgid "Unfortunately, the %s field is not available and will be ignored on the f
 msgstr "残念ながら、%s フィールドは使用できず、フロントエンドでは無視されます。 "
 
 #: lite/templates/admin/addons.php:71
-#: src/Integrations/Gutenberg/FormSelector.php:542
+#: src/Integrations/Gutenberg/FormSelector.php:495
 msgid "Learn more"
 msgstr "さらに詳しく"
 
@@ -7043,7 +7083,7 @@ msgstr "<a href=\"%s\" target=\"_blank\">WP Mail SMTP</a>で「差出人メー�
 msgid "This setting is disabled because you have the \"Force From Name\" setting enabled in the <a href=\"%s\" target=\"_blank\">WP Mail SMTP</a> plugin."
 msgstr "<a href=\"%s\" target=\"_blank\">WP Mail SMTP</a>で「差出人メールを要求する」設定が有効になっているため、この設定は無効になっています。"
 
-#: includes/functions/education.php:36
+#: includes/functions/education.php:38
 msgid "Install & Activate"
 msgstr "インストールと有効化"
 
@@ -7093,8 +7133,8 @@ msgstr "ボネール、シント・ユースタティウスおよびサバ"
 msgid "City"
 msgstr "市区町村"
 
-#: src/Forms/Locator.php:238 src/Forms/Locator.php:258
-#: src/Forms/Locator.php:262 src/Forms/Locator.php:338
+#: src/Forms/Locator.php:232 src/Forms/Locator.php:236
+#: src/Forms/Locator.php:312
 msgid "Locations"
 msgstr "位置情報"
 
@@ -7110,11 +7150,11 @@ msgid "N/A"
 msgstr "該当なし"
 
 #. translators: %d - form ID.
-#: src/Admin/AdminBarMenu.php:647
+#: src/Admin/AdminBarMenu.php:651
 msgid "Form ID: %d"
 msgstr "フォーム ID：%d"
 
-#: src/Admin/AdminBarMenu.php:633
+#: src/Admin/AdminBarMenu.php:637
 msgid "Survey Results"
 msgstr "アンケート結果"
 
@@ -7144,16 +7184,16 @@ msgstr "プラグインのインストールは許可されていません"
 msgid "Address Autocomplete"
 msgstr "アドレスオートコンプリート"
 
-#: src/Frontend/Frontend.php:2200
+#: src/Frontend/Frontend.php:2175
 msgid "This message is only displayed to site administrators."
 msgstr "このメッセージは、サイト管理者にのみ表示されます。"
 
 #. translators: %s - URL to the troubleshooting guide.
-#: src/Frontend/Frontend.php:2187
+#: src/Frontend/Frontend.php:2162
 msgid "Heads up! WPForms has detected an issue with JavaScript on this page. JavaScript is required for this form to work properly, so this form may not work as expected. See our <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">troubleshooting guide</a> to learn more or contact support."
 msgstr "注意してください！ WPForms は、このページで JavaScript の問題を検出しました。このフォームが正しく機能するには JavaScript が必要であるため、このフォームは期待どおりに機能しない可能性があります。詳細については<a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">トラブルシューティングガイド</a>を参照するか、サポートにお問い合わせください。"
 
-#: src/Admin/Settings/Captcha.php:155 src/Admin/Settings/Captcha/Page.php:274
+#: src/Admin/Settings/Captcha/Page.php:274
 msgid "A preview of your CAPTCHA is displayed below. Please view to verify the CAPTCHA settings are correct."
 msgstr "CAPTCHA のプレビューが下に表示されます。CAPTCHA 設定が正しいことを確認するために表示してください。"
 
@@ -7226,7 +7266,7 @@ msgid "Google reCAPTCHA v2"
 msgstr "Google reCAPTCHA v2"
 
 #. translators: %s - link to the WPForms.com doc article.
-#: includes/admin/builder/class-builder.php:894
+#: includes/admin/builder/class-builder.php:918
 msgid "Disabling entry storage for this form will completely prevent any new submissions from getting saved to your site. If you still intend to keep a record of entries through notification emails, then please <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">test your form</a> to ensure emails send reliably."
 msgstr "このフォームのエントリーストレージを無効にすると、新しい送信がサイトに保存されるのを完全に防ぐことができます。それでも通知メールでエントリの記録を保持する場合は、<a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">フォームをテストして</a>、メールが確実に送信されることを確認してください。"
 
@@ -7252,12 +7292,12 @@ msgid "Enable hCaptcha"
 msgstr "hCaptcha を有効化"
 
 #: includes/admin/class-about.php:1576
-msgid "Calculations, Form Abandonment, Conversational Forms, Lead Forms, Frontend Post Submission, User Registration, Geolocation, Google Sheets, Coupons, Dropbox, and more (30+ total)"
-msgstr "計算、フォーム放棄、会話形式、リードフォーム、フロントエンド投稿送信、ユーザー登録、位置情報、Google Sheets、クーポン、Dropbox など (合計30以上)"
+msgid "Calculations, Form Abandonment, Conversational Forms, Lead Forms, Frontend Post Submission, User Registration, Geolocation, Google Sheets, Coupons, Dropbox, Google Drive, and more (30+ total)"
+msgstr "計算、フォーム放棄、会話型フォーム、リードフォーム、フロントエンド投稿送信、ユーザー登録、地理位置情報、Google Sheets、クーポン、Dropbox、Google Drive など (合計30種類以上)"
 
 #: includes/admin/class-about.php:1583 includes/admin/class-about.php:1590
 #: includes/admin/class-about.php:1597
-msgid "Calculations, Form Abandonment, Conversational Forms, Lead Forms, Frontend Post Submission, User Registration, Geolocation, Webhooks, Google Sheets, Coupons, Dropbox, and more (35+ total)"
+msgid "Calculations, Form Abandonment, Conversational Forms, Lead Forms, Frontend Post Submission, User Registration, Geolocation, Webhooks, Google Sheets, Coupons, Dropbox, Google Drive, Entry Automation, and more (35+ total)"
 msgstr "計算、フォーム放棄、会話形式、リードフォーム、フロントエンド投稿送信、ユーザー登録、位置情報、Webhook、Google Sheets、クーポン、Dropbox など (合計35以上)"
 
 #: includes/admin/admin.php:256
@@ -7277,7 +7317,7 @@ msgstr "書き込み可能"
 msgid "View Documentation"
 msgstr "ドキュメンテーションを表示"
 
-#: src/Admin/AdminBarMenu.php:366 templates/builder/help.php:122
+#: src/Admin/AdminBarMenu.php:370 templates/builder/help.php:122
 msgid "View All"
 msgstr "すべて表示"
 
@@ -7299,6 +7339,7 @@ msgid "Search results for \"%s\""
 msgstr "「%s」の検索結果"
 
 #: src/Admin/Payments/Views/Overview/Table.php:83 src/Logger/Log.php:106
+#: templates/integrations/stripe/builder/custom-metadata.php:61
 msgid "Payment"
 msgstr "支払い"
 
@@ -7315,7 +7356,7 @@ msgstr "ログ ID"
 msgid "Log"
 msgstr "ログ"
 
-#: includes/admin/builder/class-builder.php:1204
+#: includes/admin/builder/class-builder.php:1228
 #: src/Admin/Payments/Views/Overview/Helpers.php:83
 msgid "Help"
 msgstr "ヘルプ"
@@ -7382,8 +7423,8 @@ msgstr "質問するか、ドキュメントを検索してください..."
 #: includes/admin/builder/panels/class-providers.php:64
 #: src/Integrations/ConstantContact/V3/Settings/FormBuilder.php:233
 #: src/Integrations/ConstantContact/V3/Settings/FormBuilder.php:239
-#: src/Providers/Provider/Settings/FormBuilder.php:193
-#: src/Providers/Provider/Settings/FormBuilder.php:248
+#: src/Providers/Provider/Settings/FormBuilder.php:158
+#: src/Providers/Provider/Settings/FormBuilder.php:217
 #: templates/integrations/constant-contact-v3/builder/select-field.php:15
 msgid "--- Select Form Field ---"
 msgstr "--- フォームフィールドを選択 ---"
@@ -7408,11 +7449,11 @@ msgstr "ログを検索"
 msgid "Log Title"
 msgstr "ログタイトル"
 
-#: includes/admin/builder/class-builder.php:862
+#: includes/admin/builder/class-builder.php:882
 msgid "Please contact the plugin support team if this behavior persists."
 msgstr "この動作が続く場合は、プラグインサポートチームに連絡してください。"
 
-#: includes/admin/builder/class-builder.php:861
+#: includes/admin/builder/class-builder.php:881
 msgid "Something went wrong while saving the form. Please reload the page and try again."
 msgstr "フォームの保存中に問題が発生しました。 ページを再読み込みして、もう一度お試しください。"
 
@@ -7471,11 +7512,11 @@ msgid "Allowlist / Denylist"
 msgstr "許可リスト / 拒否リスト"
 
 #: includes/admin/class-settings.php:485 includes/fields/class-email.php:652
-#: includes/fields/class-email.php:660 src/Frontend/Frontend.php:1870
+#: includes/fields/class-email.php:660 src/Frontend/Frontend.php:1845
 msgid "This email address is not allowed."
 msgstr "そのメールアドレスでは登録できません。"
 
-#: includes/admin/class-menu.php:386 includes/admin/class-review.php:297
+#: includes/admin/class-menu.php:373 includes/admin/class-review.php:297
 #: templates/builder/help.php:122
 msgid "Docs"
 msgstr "ドキュメンテーション"
@@ -7582,7 +7623,7 @@ msgstr "無効にする方法を学ぶ：%s."
 msgid "This email was auto-generated and sent from %1$s. Learn <a href=\"%2$s\">how to disable</a>"
 msgstr "このメールは自動生成され、%1$s から送信されました。<a href=\"%2$s\">無効にする方法はこちらから</a>"
 
-#: src/Integrations/Elementor/Widget.php:223
+#: src/Integrations/Elementor/Widget.php:233
 msgid "Display Options"
 msgstr "表示オプション"
 
@@ -7591,17 +7632,17 @@ msgstr "表示オプション"
 msgid "Please check out our %1$stroubleshooting guide%2$s for details on resolving this issue."
 msgstr "この問題の解決の詳細については、%1$sトラブルシューティングガイド%2$sを確認してください。"
 
-#: src/Integrations/Elementor/Widget.php:383
+#: src/Integrations/Elementor/Widget.php:425
 msgid "Select a form"
 msgstr "フォームを選択"
 
-#: src/Admin/Builder/Templates.php:829
-#: src/Integrations/Elementor/Widget.php:213
+#: src/Admin/Builder/Templates.php:852
+#: src/Integrations/Elementor/Widget.php:221
 msgid "New form"
 msgstr "新規フォーム"
 
 #. translators: %s - WPForms documentation link.
-#: src/Integrations/Elementor/Widget.php:185
+#: src/Integrations/Elementor/Widget.php:193
 msgid "<b>Heads up!</b> Don't forget to test your form. <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">Check out our complete guide!</a>"
 msgstr "<b>注意！</b> フォームをテストすることを忘れないでください。<a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">完全なガイドをチェックしてください</a>。"
 
@@ -7609,15 +7650,15 @@ msgstr "<b>注意！</b> フォームをテストすることを忘れないで�
 msgid "Enable anti-spam protection"
 msgstr "スパム対策保護を有効化"
 
-#: includes/admin/builder/class-builder.php:852
+#: includes/admin/builder/class-builder.php:872
 msgid "Add Custom Value"
 msgstr "カスタム値を追加"
 
-#: includes/admin/builder/class-builder.php:808
+#: includes/admin/builder/class-builder.php:824
 msgid "Your form contains unsaved changes. Would you like to save your changes first."
 msgstr "フォームに未保存の変更が含まれています。 最初に変更を保存しますか？"
 
-#: includes/admin/builder/class-builder.php:790
+#: includes/admin/builder/class-builder.php:806
 msgid "Save and Embed"
 msgstr "保存して埋め込む"
 
@@ -7625,12 +7666,12 @@ msgstr "保存して埋め込む"
 msgid "Please fill out all blanks."
 msgstr "すべての空欄に記入してください。"
 
-#: src/Integrations/Elementor/Widget.php:141
+#: src/Integrations/Elementor/Widget.php:149
 msgid "<b>You haven't created a form yet.</b><br> What are you waiting for?"
 msgstr "<b>フォームはまだ作成していません。</b><br> 何を待っていますか？"
 
 #. translators: %s - WPForms documentation link.
-#: src/Integrations/Elementor/Widget.php:169
+#: src/Integrations/Elementor/Widget.php:177
 msgid "Need to make changes? <a href=\"#\">Edit the selected form.</a>"
 msgstr "変更する必要がありますか？<a href=\"#\">選択したフォームを編集します。</a>"
 
@@ -7663,7 +7704,7 @@ msgstr "検証プロセスに失敗したユーザーに表示されます。"
 #. translators: %d - choice number.
 #. translators: %d - Choice ID.
 #: includes/fields/class-base.php:588 includes/fields/class-base.php:626
-#: includes/fields/class-base.php:3790 src/Integrations/Square/Process.php:801
+#: includes/fields/class-base.php:3790 src/Integrations/Square/Process.php:803
 msgid "Choice %d"
 msgstr "%d の選択"
 
@@ -7708,11 +7749,6 @@ msgstr "フォームビルダーへようこそ"
 msgid "You can add additional fields to your form, if you need them."
 msgstr "必要に応じて、フォームにフィールドを追加することができます。"
 
-#: templates/admin/challenge/builder.php:42
-#: templates/admin/form-embed-wizard/popup.php:41
-msgid "Let’s Go!"
-msgstr "行きましょう！"
-
 #: templates/admin/form-embed-wizard/popup.php:40
 msgid "Name Your Page"
 msgstr "ページに名前を付ける"
@@ -7737,6 +7773,11 @@ msgstr "フォームを既存のページに埋め込みますか、それとも
 msgid "Click the plus button, search for WPForms, click the block to<br>embed it. <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">Learn More</a>"
 msgstr "プラスボタンをクリックして WPForms を検索し、ブロックをクリックして<br>埋め込みます。 <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">さらに詳しく</a>"
 
+#: templates/admin/challenge/builder.php:42
+#: templates/admin/form-embed-wizard/popup.php:41
+msgid "Let’s Go!"
+msgstr "はじめる"
+
 #: src/Admin/Education/Fields.php:225
 msgid "Authorize.Net"
 msgstr "Authorize.Net"
@@ -7744,7 +7785,7 @@ msgstr "Authorize.Net"
 #. translators: %d - field ID.
 #. translators: %d - Field ID.
 #: includes/admin/builder/functions.php:291
-#: src/Integrations/Square/Process.php:760
+#: src/Integrations/Square/Process.php:762
 #: src/Integrations/Stripe/Fields/PaymentElementCreditCard.php:145
 msgid "Field #%d"
 msgstr "フィールド #%d"
@@ -7795,7 +7836,7 @@ msgstr "特定の条件に一致する値のみを追加できます。"
 msgid "Only unique values can be added"
 msgstr "追加できるのは一意の値のみです。"
 
-#: src/Admin/AdminBarMenu.php:305 src/Admin/Tools/Views/ActionScheduler.php:61
+#: src/Admin/AdminBarMenu.php:309 src/Admin/Tools/Views/ActionScheduler.php:61
 #: src/Admin/Tools/Views/ActionSchedulerList.php:39
 msgid "Scheduled Actions"
 msgstr "予定されたアクション"
@@ -7824,12 +7865,12 @@ msgstr "前のメッセージ"
 msgid "Hide Admin Bar Menu"
 msgstr "管理バーメニューを非表示"
 
-#: includes/admin/builder/class-builder.php:732
+#: includes/admin/builder/class-builder.php:748
 msgid "Are you sure you want to leave? You have unsaved changes"
 msgstr "終了してもよろしいですか？変更が保存されていません。"
 
 #. translators: %s - marketing integration name.
-#: includes/admin/builder/class-builder.php:833
+#: includes/admin/builder/class-builder.php:853
 msgid "In order to complete your form's %s integration, please check that all required (*) fields have been filled out."
 msgstr "フォームの %s への連携を完了するために、必須 (*) フィールドがすべて入力されていることを確認してください。"
 
@@ -7846,14 +7887,14 @@ msgstr "追加のマーケティング統合"
 msgid "We're sorry, the %1$s is not available on your plan. Please upgrade to the %2$s plan to unlock all these awesome features."
 msgstr "申し訳ございません。%1$s はこのプランではご利用いただけません。すべての素晴らしい機能をご利用いただけるように、%2$s プランにアップグレードしてください。"
 
-#: src/Admin/AdminBarMenu.php:630 src/Forms/Preview.php:222
-#: src/Integrations/Gutenberg/FormSelector.php:486
+#: src/Admin/AdminBarMenu.php:634 src/Forms/Preview.php:222
+#: src/Integrations/Gutenberg/FormSelector.php:439
 msgid "Edit Form"
 msgstr "フォームを編集"
 
-#: lite/templates/builder/context-menu.php:83 src/Admin/AdminBarMenu.php:631
+#: lite/templates/builder/context-menu.php:83 src/Admin/AdminBarMenu.php:635
 #: src/Admin/Builder/Shortcuts.php:57 src/Forms/Preview.php:238
-#: src/Integrations/Gutenberg/FormSelector.php:487
+#: src/Integrations/Gutenberg/FormSelector.php:440
 msgid "View Entries"
 msgstr "エントリーを表示"
 
@@ -7862,27 +7903,23 @@ msgstr "エントリーを表示"
 msgid "For form testing tips, check out our <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">complete guide!</a>"
 msgstr "フォームテストのヒントについては、<a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">完全ガイド</a>をご覧ください。"
 
-#: includes/admin/class-menu.php:368
+#: includes/admin/class-menu.php:355
 msgid "Go to WPForms Settings page"
 msgstr "WPForms 設定ページに移動"
 
 #: src/Lite/Admin/Settings/Access.php:133
-#: src/Lite/Admin/Settings/Access.php:262
 msgid "Delete Others Forms"
 msgstr "他のフォームを削除"
 
 #: src/Lite/Admin/Settings/Access.php:130
-#: src/Lite/Admin/Settings/Access.php:261
 msgid "Delete Forms"
 msgstr "フォームを削除"
 
 #: src/Lite/Admin/Settings/Access.php:141
-#: src/Lite/Admin/Settings/Access.php:258
 msgid "View Others Forms"
 msgstr "他のフォームを表示"
 
 #: src/Lite/Admin/Settings/Access.php:138
-#: src/Lite/Admin/Settings/Access.php:257
 msgid "View Forms"
 msgstr "フォームを表示"
 
@@ -7893,22 +7930,18 @@ msgid "Did You Know?"
 msgstr "ご存知ですか ?"
 
 #: src/Lite/Admin/Settings/Access.php:132
-#: src/Lite/Admin/Settings/Access.php:255
 msgid "Edit Forms"
 msgstr "フォームを編集"
 
 #: src/Lite/Admin/Settings/Access.php:135
-#: src/Lite/Admin/Settings/Access.php:256
 msgid "Edit Others Forms"
 msgstr "他のフォームを編集"
 
 #: src/Lite/Admin/Settings/Access.php:129
-#: src/Lite/Admin/Settings/Access.php:254
 msgid "Create Forms"
 msgstr "フォームを作成"
 
 #: src/Lite/Admin/Settings/Access.php:162
-#: src/Lite/Admin/Settings/Access.php:184
 msgid "Access Controls"
 msgstr "アクセスコントロール"
 
@@ -7925,74 +7958,50 @@ msgid "You can have multiple notifications with conditional logic."
 msgstr "条件付きロジックで複数の通知を受け取ることができます。"
 
 #: src/Lite/Admin/Settings/Access.php:168
-#: src/Lite/Admin/Settings/Access.php:274
 msgid "Custom access to the following capabilities…"
 msgstr "次の機能へのカスタムアクセス…"
 
 #: src/Lite/Admin/Settings/Access.php:140
-#: src/Lite/Admin/Settings/Access.php:270
 msgid "Delete Others Forms Entries"
 msgstr "他のフォームのエントリーを削除"
 
 #: src/Lite/Admin/Settings/Access.php:134
-#: src/Lite/Admin/Settings/Access.php:268
 msgid "Edit Others Forms Entries"
 msgstr "他のフォームのエントリーを編集"
 
 #: src/Lite/Admin/Settings/Access.php:131
-#: src/Lite/Admin/Settings/Access.php:267
 msgid "Edit Forms Entries"
 msgstr "フォームのエントリーを編集"
 
 #: src/Lite/Admin/Settings/Access.php:139
-#: src/Lite/Admin/Settings/Access.php:264
 msgid "View Others Forms Entries"
 msgstr "他のフォームのエントリーを表示"
 
 #: src/Lite/Admin/Settings/Access.php:136
-#: src/Lite/Admin/Settings/Access.php:263
 msgid "View Forms Entries"
 msgstr "フォームエントリーを表示"
 
 #: src/Lite/Admin/Settings/Access.php:157
-#: src/Lite/Admin/Settings/Access.php:235
-#: src/Lite/Admin/Settings/Access.php:236
 msgid "User Role Editor Integration"
 msgstr "User Role Editor 統合"
 
 #: src/Lite/Admin/Settings/Access.php:152
-#: src/Lite/Admin/Settings/Access.php:225
-#: src/Lite/Admin/Settings/Access.php:226
 msgid "Members Integration"
 msgstr "Members 統合"
 
 #: src/Lite/Admin/Settings/Access.php:147
-#: src/Lite/Admin/Settings/Access.php:215
-#: src/Lite/Admin/Settings/Access.php:216
 msgid "Simple Built-in Controls"
 msgstr "シンプルな組み込みコントロール"
 
-#: src/Lite/Admin/Settings/Access.php:187
-msgid "You can easily grant or restrict access using the simple built-in controls, or use our official integrations with Members and User Role Editor plugins."
-msgstr "シンプルな組み込みコントロールを使用してアクセスを簡単に許可または制限したり、Members および User Role Editor プラグインとの公式統合を使用したりできます。"
-
-#: src/Lite/Admin/Settings/Access.php:186
-msgid "Access controls allows you to manage and customize access to WPForms functionality."
-msgstr "アクセス制御を使用すると、WPForms 機能へのアクセスを管理およびカスタマイズできます。"
-
-#: src/Integrations/Gutenberg/FormSelector.php:889
+#: src/Integrations/Gutenberg/FormSelector.php:831
 msgid "The form cannot be displayed."
 msgstr "フォームを表示できません。"
 
-#: includes/admin/builder/class-builder.php:851
+#: includes/admin/builder/class-builder.php:871
 msgid "You should enter a valid absolute address to the Confirmation Redirect URL field."
 msgstr "確認リダイレクト URL フィールドに有効な絶対アドレスを入力する必要があります。"
 
-#: includes/admin/builder/class-builder.php:830
-msgid "This form is currently accepting payments. Entry storage is required to accept payments. To disable entry storage, please first disable payments."
-msgstr "このフォームは現在、支払いを受け付けています。支払いを受け入れるには、エントリーストレージが必要です。エントリーの保存を無効にするには、まず支払いを無効にしてください。"
-
-#: includes/admin/builder/class-builder.php:829
+#: includes/admin/builder/class-builder.php:845
 msgid "Entry storage is currently disabled, but is required to accept payments. Please enable in your form settings."
 msgstr "エントリーストレージは現在無効になっていますが、支払いを受け入れるために必要です。フォーム設定で有効にしてください。"
 
@@ -8020,19 +8029,24 @@ msgstr "RafflePress"
 #: includes/admin/class-menu.php:197 includes/admin/class-menu.php:198
 #: lite/templates/education/builder/did-you-know.php:30
 #: lite/wpforms-lite.php:1000 src/Admin/Builder/AntiSpam.php:350
-#: src/Admin/Builder/Templates.php:1012
+#: src/Admin/Builder/Templates.php:1035
 #: src/Forms/Fields/Traits/ProField.php:287
 #: src/Integrations/AI/Admin/Builder/Forms.php:217
+#: src/Integrations/Elementor/Elementor.php:251
 msgid "Upgrade to Pro"
 msgstr "プロ版にアップグレード"
 
 #: src/Lite/Admin/Settings/Access.php:137
-#: src/Lite/Admin/Settings/Access.php:269
 msgid "Delete Forms Entries"
 msgstr "フォームエントリーを削除"
 
+#. translators: %s: License name.
+#: includes/functions/education.php:83
+msgid "Upgrade to WPForms %s"
+msgstr "WPForms %s にアップグレード"
+
 #. translators: %s - Path to installed plugins.
-#: wpforms.php:200
+#: wpforms.php:175
 msgid "Your site already has WPForms Pro activated. If you want to switch to WPForms Lite, please first go to %s and deactivate WPForms. Then, you can activate WPForms Lite."
 msgstr "このサイトではすでに WPForms Pro が有効化されています。WPForms Lite に切り替えたい場合は、まず %s に移動して、WPForms を無効化してください。その後、WPForms Lite を有効化することができます。"
 
@@ -8416,7 +8430,7 @@ msgid "Characters"
 msgstr "文字数"
 
 #: includes/admin/class-menu.php:187 includes/admin/class-menu.php:188
-#: src/Admin/AdminBarMenu.php:572 src/Admin/Pages/Community.php:137
+#: src/Admin/AdminBarMenu.php:576 src/Admin/Pages/Community.php:137
 msgid "Community"
 msgstr "コミュニティ"
 
@@ -8645,7 +8659,7 @@ msgstr "指定されたメールは無効です。"
 msgid "Redirecting…"
 msgstr "リダイレクトしています・・・"
 
-#: src/Admin/Settings/Captcha/ReCaptcha.php:83 src/Frontend/Frontend.php:1892
+#: src/Admin/Settings/Captcha/ReCaptcha.php:83 src/Frontend/Frontend.php:1867
 msgid "Google reCAPTCHA verification failed, please try again later."
 msgstr "Google reCAPTCHA の確認に失敗しました。しばらくしてからもう一度お試しください。"
 
@@ -8667,7 +8681,7 @@ msgstr "ページのリロードなしのフォーム送信を有効にします
 msgid "reCAPTCHA v3 returns a score (1.0 is very likely a good interaction, 0.0 is very likely a bot). If the score is less than or equal to this threshold, the form submission will be blocked and the message above will be displayed."
 msgstr "reCAPTCHA v3 によりスコアが返されます (1.0は人間の正当な操作である可能性が高く、0.0はボットである可能性が高いことを示します)。スコアがこのしきい値以下の場合、フォームの送信はブロックされ、上記のメッセージが表示されます。"
 
-#: src/Frontend/Frontend.php:1869
+#: src/Frontend/Frontend.php:1844
 msgid "Click to accept this suggestion."
 msgstr "クリックしてこの提案を受け入れます。"
 
@@ -8691,28 +8705,28 @@ msgstr "メールの提案"
 msgid "Checkbox Selection Limit"
 msgstr "チェックボックス選択制限"
 
-#: src/Integrations/Gutenberg/FormSelector.php:536
+#: src/Integrations/Gutenberg/FormSelector.php:489
 msgid "Do not forget to test your form."
 msgstr "フォームをテストすることを忘れないでください。"
 
-#: src/Integrations/Gutenberg/FormSelector.php:538
+#: src/Integrations/Gutenberg/FormSelector.php:491
 msgid "Check out our complete guide!"
 msgstr "完全なガイドをチェックしてね！"
 
 #: includes/admin/class-settings.php:521 includes/fields/class-checkbox.php:653
-#: src/Frontend/Frontend.php:1875
+#: src/Frontend/Frontend.php:1850
 msgid "You have exceeded the number of allowed selections: {#}."
 msgstr "選択可能な数を超えました: {#}。"
 
-#: src/Integrations/Gutenberg/FormSelector.php:482
+#: src/Integrations/Gutenberg/FormSelector.php:435
 msgid "survey"
 msgstr "アンケート"
 
-#: src/Integrations/Gutenberg/FormSelector.php:481
+#: src/Integrations/Gutenberg/FormSelector.php:434
 msgid "contact"
 msgstr "お問い合わせ"
 
-#: includes/admin/class-settings.php:497 src/Frontend/Frontend.php:1872
+#: includes/admin/class-settings.php:497 src/Frontend/Frontend.php:1847
 msgid "Please enter a valid positive number."
 msgstr "有効な正数を入力してください。"
 
@@ -8799,25 +8813,25 @@ msgid "Select Account"
 msgstr "アカウントを選択"
 
 #: includes/integrations.php:61 includes/integrations.php:76
-#: src/Integrations/Gutenberg/FormSelector.php:577
+#: src/Integrations/Gutenberg/FormSelector.php:530
 msgid "No"
 msgstr "いいえ"
 
-#: includes/fields/class-name.php:384
+#: includes/fields/class-name.php:400
 #: src/Integrations/ConstantContact/V3/ConstantContact.php:157
 msgid "Last Name"
 msgstr "姓"
 
-#: includes/fields/class-name.php:358
+#: includes/fields/class-name.php:374
 msgid "Middle Name"
 msgstr "ミドルネーム"
 
-#: includes/fields/class-name.php:332
+#: includes/fields/class-name.php:348
 #: src/Integrations/ConstantContact/V3/ConstantContact.php:156
 msgid "First Name"
 msgstr "名"
 
-#: includes/fields/class-name.php:239 src/Forms/Fields/DateTime/Field.php:119
+#: includes/fields/class-name.php:255 src/Forms/Fields/DateTime/Field.php:119
 #: src/Forms/Fields/DateTime/Field.php:280
 #: src/Forms/Fields/DateTime/Field.php:382 src/Forms/Fields/Phone/Field.php:87
 msgid "Format"
@@ -8858,22 +8872,22 @@ msgstr "日付"
 msgid "Form ID"
 msgstr "フォーム ID"
 
-#: src/Admin/AdminBarMenu.php:309 src/Admin/Tools/Views/Logs.php:52
+#: src/Admin/AdminBarMenu.php:313 src/Admin/Tools/Views/Logs.php:52
 #: src/Logger/ListTable.php:44
 msgid "Logs"
 msgstr "ログ"
 
 #: includes/admin/class-settings.php:547
-#: src/Forms/Fields/PaymentTotal/Field.php:386 src/Frontend/Frontend.php:1994
+#: src/Forms/Fields/PaymentTotal/Field.php:386 src/Frontend/Frontend.php:1969
 msgid "Payment is required."
 msgstr "支払いが必要です。"
 
-#: src/Integrations/Elementor/Widget.php:236
-#: src/Integrations/Elementor/Widget.php:250
+#: src/Integrations/Elementor/Widget.php:246
+#: src/Integrations/Elementor/Widget.php:260
 msgid "Show"
 msgstr "表示"
 
-#: includes/fields/class-name.php:22 includes/fields/class-name.php:306
+#: includes/fields/class-name.php:25 includes/fields/class-name.php:322
 #: includes/templates/class-simple-contact-form.php:36
 #: src/Admin/Forms/Table/Facades/Columns.php:66 src/Emails/Preview.php:401
 msgid "Name"
@@ -8911,11 +8925,11 @@ msgstr "フォームを選択"
 msgid "Import"
 msgstr "インポート"
 
-#: src/Admin/AdminBarMenu.php:301 src/Admin/Tools/Views/System.php:42
+#: src/Admin/AdminBarMenu.php:305 src/Admin/Tools/Views/System.php:42
 msgid "System Info"
 msgstr "システム情報"
 
-#: includes/admin/builder/class-builder.php:1189
+#: includes/admin/builder/class-builder.php:1213
 #: src/Admin/Forms/UserTemplates.php:125 src/Admin/Settings/Email.php:213
 msgid "Template"
 msgstr "テンプレート"
@@ -8941,7 +8955,7 @@ msgstr "アドオン"
 msgid "Info"
 msgstr "情報"
 
-#: includes/admin/class-menu.php:128 src/Admin/AdminBarMenu.php:553
+#: includes/admin/class-menu.php:128 src/Admin/AdminBarMenu.php:557
 msgid "Tools"
 msgstr "ツール"
 
@@ -8966,12 +8980,12 @@ msgid "Setup"
 msgstr "セットアップ"
 
 #: includes/admin/builder/panels/class-settings.php:29
-#: includes/admin/class-menu.php:118 includes/admin/class-menu.php:369
-#: src/Admin/AdminBarMenu.php:534
+#: includes/admin/class-menu.php:118 includes/admin/class-menu.php:356
+#: src/Admin/AdminBarMenu.php:538
 msgid "Settings"
 msgstr "設定"
 
-#: includes/admin/builder/class-builder.php:869
+#: includes/admin/builder/class-builder.php:889
 #: includes/admin/builder/panels/class-fields.php:198
 #: includes/admin/builder/panels/class-settings.php:206
 #: includes/class-form.php:595 includes/class-form.php:693
@@ -8990,7 +9004,7 @@ msgstr "フィールド"
 msgid "Save Form"
 msgstr "フォームを保存"
 
-#: includes/admin/builder/class-builder.php:1224
+#: includes/admin/builder/class-builder.php:1248
 #: includes/admin/settings-api.php:433 src/Admin/Forms/Views.php:602
 #: src/Admin/Settings/Captcha/Page.php:194
 #: src/Admin/Tools/Views/Importer.php:332
@@ -8998,57 +9012,57 @@ msgstr "フォームを保存"
 msgid "Preview"
 msgstr "プレビュー"
 
-#: includes/admin/builder/class-builder.php:1033
+#: includes/admin/builder/class-builder.php:1057
 msgid "Days"
 msgstr "日"
 
-#: includes/admin/builder/class-builder.php:1029
+#: includes/admin/builder/class-builder.php:1053
 msgid "Months"
 msgstr "月"
 
-#: includes/admin/builder/class-builder.php:821
+#: includes/admin/builder/class-builder.php:837
 msgid "empty"
 msgstr "空"
 
-#: includes/admin/builder/class-builder.php:818
+#: includes/admin/builder/class-builder.php:834
 msgid "Other"
 msgstr "その他"
 
-#: includes/admin/builder/class-builder.php:817
-#: includes/functions/utilities.php:337
+#: includes/admin/builder/class-builder.php:833
+#: includes/functions/utilities.php:357
 msgid "or"
 msgstr "または"
 
-#: includes/admin/builder/class-builder.php:802
+#: includes/admin/builder/class-builder.php:818
 #: src/Admin/Forms/UserTemplates.php:333 src/Admin/Traits/FormTemplates.php:458
 msgid "Use Template"
 msgstr "テンプレートを使用"
 
-#: includes/admin/builder/class-builder.php:796 src/Frontend/Classic.php:389
+#: includes/admin/builder/class-builder.php:812 src/Frontend/Classic.php:389
 msgid "Loading"
 msgstr "読み込み中"
 
-#: includes/admin/builder/class-builder.php:786
-#: includes/admin/builder/class-builder.php:1247
+#: includes/admin/builder/class-builder.php:802
+#: includes/admin/builder/class-builder.php:1271
 msgid "Save"
 msgstr "保存"
 
-#: includes/admin/builder/class-builder.php:764
+#: includes/admin/builder/class-builder.php:780
 msgid "Field"
 msgstr "フィールド"
 
-#: includes/admin/admin.php:295 includes/admin/builder/class-builder.php:843
+#: includes/admin/admin.php:295 includes/admin/builder/class-builder.php:863
 msgid "Use Image"
 msgstr "画像を使用"
 
 #: includes/admin/admin.php:188 includes/admin/class-about.php:398
-#: src/Db/Payments/ValueValidator.php:122
+#: includes/functions/builder.php:19 src/Db/Payments/ValueValidator.php:122
 msgid "Active"
 msgstr "有効"
 
 #: includes/admin/admin.php:186 includes/admin/admin.php:253
-#: includes/admin/class-about.php:409 includes/functions/education.php:30
-#: src/Admin/Builder/Templates.php:186
+#: includes/admin/class-about.php:409 includes/functions/builder.php:20
+#: includes/functions/education.php:32 src/Admin/Builder/Templates.php:186
 msgid "Activate"
 msgstr "有効化"
 
@@ -9058,7 +9072,7 @@ msgid "Authorization Code"
 msgstr "認証コード"
 
 #: includes/integrations.php:62 includes/integrations.php:77
-#: src/Integrations/Gutenberg/FormSelector.php:576
+#: src/Integrations/Gutenberg/FormSelector.php:529
 msgid "Yes"
 msgstr "はい"
 
@@ -9089,7 +9103,7 @@ msgstr "サイトキー"
 msgid "Background Color"
 msgstr "背景色"
 
-#: includes/admin/builder/class-builder.php:769
+#: includes/admin/builder/class-builder.php:785
 msgid "Available Fields"
 msgstr "利用可能なフィールド"
 
@@ -9102,7 +9116,7 @@ msgstr "コメントまたはメッセージ"
 msgid "Simple Contact Form"
 msgstr "簡単なお問い合わせフォーム"
 
-#: includes/fields/class-name.php:252
+#: includes/fields/class-name.php:268
 msgid "Simple"
 msgstr "シンプル"
 
@@ -9114,8 +9128,8 @@ msgstr "フォームなし"
 #: src/Forms/Fields/Address/Field.php:256
 #: src/Forms/Fields/Address/Field.php:384
 #: src/Forms/Fields/Address/Field.php:440
-#: src/Integrations/Elementor/Widget.php:237
-#: src/Integrations/Elementor/Widget.php:251
+#: src/Integrations/Elementor/Widget.php:247
+#: src/Integrations/Elementor/Widget.php:261
 msgid "Hide"
 msgstr "非表示"
 
@@ -9140,7 +9154,7 @@ msgstr "Stripe"
 
 #: src/Admin/Tools/Views/Import.php:305 src/Admin/Tools/Views/Import.php:323
 #: src/Integrations/AI/Admin/Builder/Forms.php:202
-#: src/Integrations/Elementor/WidgetModern.php:236
+#: src/Integrations/Elementor/WidgetModern.php:363
 #: src/Lite/Admin/Education/LiteConnect.php:244
 msgid "Error"
 msgstr "エラー"
@@ -9157,12 +9171,12 @@ msgstr "ヘッダー画像"
 msgid "No styling"
 msgstr "スタイリングなし"
 
-#: includes/admin/class-menu.php:60 src/Admin/AdminBarMenu.php:472
+#: includes/admin/class-menu.php:60 src/Admin/AdminBarMenu.php:476
 msgid "All Forms"
 msgstr "すべてのフォーム"
 
 #: includes/admin/builder/panels/class-settings.php:173
-#: src/Integrations/Elementor/Widget.php:248
+#: src/Integrations/Elementor/Widget.php:258
 msgid "Form Description"
 msgstr "フォームの説明"
 
@@ -9174,23 +9188,23 @@ msgstr "マーケティング"
 msgid "Standard Fields"
 msgstr "標準フィールド"
 
-#: includes/admin/builder/class-builder.php:838
+#: includes/admin/builder/class-builder.php:858
 msgid "Delete rule"
 msgstr "ルールを削除"
 
-#: includes/admin/builder/class-builder.php:822
+#: includes/admin/builder/class-builder.php:838
 msgid "not empty"
 msgstr "空ではない"
 
-#: includes/admin/builder/class-builder.php:793
+#: includes/admin/builder/class-builder.php:809
 msgid "Hide Layouts"
 msgstr "レイアウトを非表示"
 
-#: includes/admin/builder/class-builder.php:775
+#: includes/admin/builder/class-builder.php:791
 msgid "No email fields"
 msgstr "メールフィールドなし"
 
-#: includes/admin/builder/class-builder.php:735
+#: includes/admin/builder/class-builder.php:751
 msgid ""
 "Blue\n"
 "Red\n"
@@ -9204,18 +9218,18 @@ msgstr ""
 msgid "Hide Empty Fields"
 msgstr "空のフィールドを非表示"
 
-#: includes/admin/admin.php:212 includes/admin/builder/class-builder.php:761
+#: includes/admin/admin.php:212 includes/admin/builder/class-builder.php:777
 #: includes/admin/class-editor.php:108 src/Admin/Education/StringsTrait.php:26
-#: src/Forms/Locator.php:376 src/Integrations/AI/Admin/Builder/Enqueues.php:157
+#: src/Forms/Locator.php:350 src/Integrations/AI/Admin/Builder/Enqueues.php:157
 #: src/Lite/Admin/Education/LiteConnect.php:246
 #: templates/builder/fullscreen/mobile-notice.php:28
 #: templates/builder/help.php:35
 msgid "Close"
 msgstr "閉じる"
 
-#: includes/admin/builder/class-builder.php:805
-#: includes/admin/builder/class-builder.php:1233
-#: includes/admin/builder/class-builder.php:1239
+#: includes/admin/builder/class-builder.php:821
+#: includes/admin/builder/class-builder.php:1257
+#: includes/admin/builder/class-builder.php:1263
 msgid "Embed"
 msgstr "埋め込む"
 
@@ -9227,7 +9241,7 @@ msgstr "登録 URL"
 msgid "Referrer URL"
 msgstr "リファラー URL"
 
-#: includes/admin/builder/class-builder.php:736
+#: includes/admin/builder/class-builder.php:752
 msgid "Show presets"
 msgstr "プリセットを表示"
 
@@ -9235,16 +9249,16 @@ msgstr "プリセットを表示"
 msgid "Show Empty Fields"
 msgstr "空のフィールドを表示"
 
-#: includes/admin/builder/class-builder.php:737
+#: includes/admin/builder/class-builder.php:753
 msgid "Hide presets"
 msgstr "プリセットを非表示"
 
-#: includes/admin/builder/class-builder.php:823
+#: includes/admin/builder/class-builder.php:839
 #: src/Admin/Payments/Views/Overview/Table.php:699
 msgid "contains"
 msgstr "次を含む"
 
-#: includes/admin/builder/class-builder.php:1013
+#: includes/admin/builder/class-builder.php:1037
 msgid "Countries"
 msgstr "国"
 
@@ -9252,7 +9266,7 @@ msgstr "国"
 msgid "System Information"
 msgstr "システム情報"
 
-#: includes/admin/builder/class-builder.php:1180
+#: includes/admin/builder/class-builder.php:1204
 msgid "Now editing"
 msgstr "編集中"
 
@@ -9268,11 +9282,11 @@ msgstr "ログイン URL"
 msgid "View preview"
 msgstr "プレビューを表示"
 
-#: includes/admin/builder/class-builder.php:794
+#: includes/admin/builder/class-builder.php:810
 msgid "Select your layout"
 msgstr "レイアウトを選択"
 
-#: includes/admin/builder/class-builder.php:836
+#: includes/admin/builder/class-builder.php:856
 msgid "Create new rule"
 msgstr "新規ルールを作成"
 
@@ -9307,15 +9321,15 @@ msgstr "フォームを表示します。"
 msgid "No file chosen"
 msgstr "ファイルが選択されていません"
 
-#: includes/admin/builder/class-builder.php:813
+#: includes/admin/builder/class-builder.php:829
 msgid "Please enter a form name."
 msgstr "フォーム名を入力してください。"
 
-#: includes/admin/builder/class-builder.php:777
+#: includes/admin/builder/class-builder.php:793
 msgid "Enter a notification name"
 msgstr "通知名を入力してください"
 
-#: includes/admin/builder/class-builder.php:770
+#: includes/admin/builder/class-builder.php:786
 msgid "No fields available"
 msgstr "利用可能なフィールドはありません"
 
@@ -9323,15 +9337,15 @@ msgstr "利用可能なフィールドはありません"
 msgid "Could not authenticate with the provider."
 msgstr "プロバイダで認証できませんでした。"
 
-#: includes/admin/builder/class-builder.php:789
+#: includes/admin/builder/class-builder.php:805
 msgid "Save and Exit"
 msgstr "保存して終了"
 
-#: includes/admin/builder/class-builder.php:795
+#: includes/admin/builder/class-builder.php:811
 msgid "Select your column"
 msgstr "カラムを選択"
 
-#: includes/admin/builder/class-builder.php:814
+#: includes/admin/builder/class-builder.php:830
 msgid "This item must contain at least one choice."
 msgstr "この項目には一つ以上の選択が必要です。"
 
@@ -9358,8 +9372,8 @@ msgstr "表示するフォームを選択"
 msgid "Sending..."
 msgstr "送信中…"
 
-#: includes/fields/class-name.php:313 includes/fields/class-name.php:339
-#: includes/fields/class-name.php:365 includes/fields/class-name.php:391
+#: includes/fields/class-name.php:329 includes/fields/class-name.php:355
+#: includes/fields/class-name.php:381 includes/fields/class-name.php:407
 #: src/Forms/Fields/Address/Field.php:215
 #: src/Forms/Fields/Address/Field.php:270
 #: src/Forms/Fields/Address/Field.php:306
@@ -9371,29 +9385,29 @@ msgstr "送信中…"
 msgid "Placeholder"
 msgstr "プレースホルダー"
 
-#: includes/fields/class-name.php:254
+#: includes/fields/class-name.php:270
 msgid "First Middle Last"
 msgstr "名、ミドルネーム、姓"
 
-#: includes/fields/class-name.php:253
+#: includes/fields/class-name.php:269
 msgid "First Last"
 msgstr "名、姓"
 
-#: includes/admin/builder/class-builder.php:874
-#: includes/fields/class-name.php:145 includes/fields/class-name.php:463
+#: includes/admin/builder/class-builder.php:894
+#: includes/fields/class-name.php:160 includes/fields/class-name.php:479
 msgid "Last"
 msgstr "姓"
 
-#: includes/admin/builder/class-builder.php:872
-#: includes/fields/class-name.php:103 includes/fields/class-name.php:453
+#: includes/admin/builder/class-builder.php:892
+#: includes/fields/class-name.php:114 includes/fields/class-name.php:469
 msgid "First"
 msgstr "名"
 
-#: includes/admin/builder/class-builder.php:778
+#: includes/admin/builder/class-builder.php:794
 msgid "Eg: User Confirmation"
 msgstr "例: ユーザー確認"
 
-#: includes/emails/class-emails.php:734 src/Emails/Notifications.php:427
+#: includes/emails/class-emails.php:734 src/Emails/Notifications.php:425
 msgid "An empty form was submitted."
 msgstr "空のフォームが送信されました。"
 
@@ -9413,7 +9427,7 @@ msgstr "スパム対策ハニーポットを有効化"
 msgid "Field required"
 msgstr "必須フィールド"
 
-#: includes/admin/builder/class-builder.php:730
+#: includes/admin/builder/class-builder.php:746
 msgid "Add New Choices"
 msgstr "新規選択肢を追加"
 
@@ -9421,12 +9435,12 @@ msgstr "新規選択肢を追加"
 msgid "Are you sure you want to disconnect this account?"
 msgstr "アカウント連携を切断してもよいですか ?"
 
-#: includes/admin/builder/class-builder.php:766
+#: includes/admin/builder/class-builder.php:782
 msgid "This field cannot be deleted or duplicated."
 msgstr "このフィールドは削除または複製できません。"
 
 #: includes/admin/class-welcome.php:220 includes/admin/class-welcome.php:274
-#: src/Admin/Builder/Help.php:150
+#: src/Admin/Builder/Help.php:105
 msgid "Entry Management"
 msgstr "項目管理"
 
@@ -9443,7 +9457,7 @@ msgstr "フォーム項目"
 msgid "View entries"
 msgstr "項目を表示"
 
-#: includes/admin/builder/class-builder.php:788
+#: includes/admin/builder/class-builder.php:804
 msgid "Saved!"
 msgstr "保存しました。"
 
@@ -9459,11 +9473,11 @@ msgstr "カーボンコピー"
 msgid "Insert Form"
 msgstr "フォームを挿入"
 
-#: includes/admin/builder/class-builder.php:1025
+#: includes/admin/builder/class-builder.php:1049
 msgid "States Postal Code"
 msgstr "州郵便番号"
 
-#: includes/admin/builder/class-builder.php:1017
+#: includes/admin/builder/class-builder.php:1041
 msgid "Countries Postal Code"
 msgstr "国郵便番号"
 
@@ -9487,7 +9501,7 @@ msgstr "レスポンシブモバイルフレンドリー"
 msgid "Easily create high performance forms with our smart conditional logic."
 msgstr "スマート条件ロジックを使ってハイパフォーマンスなフォームを簡単に作ります。"
 
-#: includes/admin/builder/class-builder.php:733
+#: includes/admin/builder/class-builder.php:749
 msgid "Hide Bulk Add"
 msgstr "一括追加を非表示"
 
@@ -9499,15 +9513,15 @@ msgstr "簡単に埋め込み"
 msgid "Are you sure you want to duplicate this form?"
 msgstr "フォームを複製してよいですか ?"
 
-#: includes/admin/builder/class-builder.php:811
+#: includes/admin/builder/class-builder.php:827
 msgid "Are you sure you want to duplicate this field?"
 msgstr "フィールドを複製してもよいですか ?"
 
-#: includes/admin/builder/class-builder.php:809
+#: includes/admin/builder/class-builder.php:825
 msgid "Are you sure you want to delete this field?"
 msgstr "フィールドを削除してもよいですか ?"
 
-#: includes/admin/builder/class-builder.php:776
+#: includes/admin/builder/class-builder.php:792
 msgid "Are you sure you want to delete this notification?"
 msgstr "本当にこの通知を削除してもよいですか ?"
 
@@ -9541,7 +9555,7 @@ msgstr "%s ( ミドルネーム )"
 msgid "%s template"
 msgstr "%s テンプレート "
 
-#: includes/admin/builder/class-builder.php:841
+#: includes/admin/builder/class-builder.php:861
 msgid "--- Select Choice ---"
 msgstr "-- 選択 --"
 
@@ -9583,11 +9597,11 @@ msgstr "受入フィールド"
 msgid "Activated"
 msgstr "有効化済み"
 
-#: includes/admin/builder/class-builder.php:847
+#: includes/admin/builder/class-builder.php:867
 msgid "Add"
 msgstr "追加"
 
-#: includes/admin/builder/class-builder.php:734
+#: includes/admin/builder/class-builder.php:750
 msgid "Add Choices (one per line)"
 msgstr "選択肢を追加する（1行に1つ）"
 
@@ -9673,7 +9687,7 @@ msgstr "アンギラ"
 msgid "April"
 msgstr "4月"
 
-#: includes/admin/builder/class-builder.php:781
+#: includes/admin/builder/class-builder.php:797
 msgid "Are you sure you want to delete this confirmation?"
 msgstr "確認を本当に削除しますか ?"
 
@@ -9894,7 +9908,7 @@ msgstr "既存のアカウントを接続する"
 msgid "Connecticut"
 msgstr "コネチカット州"
 
-#: includes/admin/builder/class-builder.php:887
+#: includes/admin/builder/class-builder.php:907
 #: includes/providers/class-base.php:97
 msgid "Connection"
 msgstr "接続"
@@ -9911,7 +9925,7 @@ msgstr "クック諸島"
 msgid "Costa Rica"
 msgstr "コスタリカ"
 
-#: includes/providers/class-base.php:1298
+#: includes/providers/class-base.php:1297
 msgid "Could not connect to the provider."
 msgstr "プロバイダーに接続できませんでした。"
 
@@ -10031,7 +10045,7 @@ msgstr "埋め込み投稿 / ページタイトル"
 msgid "Embedded Post/Page URL"
 msgstr "埋め込み投稿 / ページ URL"
 
-#: includes/admin/builder/class-builder.php:782
+#: includes/admin/builder/class-builder.php:798
 msgid "Enter a confirmation name"
 msgstr "確認ネームを入力してください。"
 
@@ -10072,7 +10086,7 @@ msgstr "2月"
 msgid "Field ID #%d"
 msgstr "フィールド ID #%d"
 
-#: includes/admin/builder/class-builder.php:765
+#: includes/admin/builder/class-builder.php:781
 msgid "Field Locked"
 msgstr "フィールドをロックした"
 
@@ -10175,7 +10189,7 @@ msgstr "ガーナ"
 msgid "Gibraltar"
 msgstr "ジブラルタル"
 
-#: includes/admin/builder/class-builder.php:827
+#: includes/admin/builder/class-builder.php:843
 msgid "greater than"
 msgstr "＞"
 
@@ -10232,7 +10246,7 @@ msgid "Hawaii"
 msgstr "ハワイ"
 
 #: src/Admin/Builder/Templates.php:184
-#: src/Integrations/Gutenberg/FormSelector.php:590
+#: src/Integrations/Gutenberg/FormSelector.php:543
 msgid "Heads Up!"
 msgstr "注意喚起！"
 
@@ -10441,7 +10455,7 @@ msgstr "レバノン"
 msgid "Lesotho"
 msgstr "レソト"
 
-#: includes/admin/builder/class-builder.php:828
+#: includes/admin/builder/class-builder.php:844
 msgid "less than"
 msgstr "＜"
 
@@ -10527,7 +10541,7 @@ msgid "Marketing &amp; Subscriptions"
 msgstr "マーケティングと購読"
 
 #: includes/admin/class-about.php:1740 includes/admin/class-welcome.php:279
-#: src/Admin/Builder/Help.php:152
+#: src/Admin/Builder/Help.php:107
 msgid "Marketing Integrations"
 msgstr "マーケティング統合"
 
@@ -10699,7 +10713,7 @@ msgstr "選択するオプションからがありません。"
 msgid "No form importers are currently enabled."
 msgstr "フォームインポーターは現在有効になっていません。"
 
-#: includes/admin/admin.php:171 includes/admin/builder/class-builder.php:876
+#: includes/admin/admin.php:171 includes/admin/builder/class-builder.php:896
 #: includes/fields/class-base.php:3537 src/Admin/Forms/Tags.php:180
 msgid "No results found"
 msgstr "一致する結果が見つかりません"
@@ -10744,7 +10758,7 @@ msgstr "10月"
 msgid "Ohio"
 msgstr "オハイオ州"
 
-#: includes/admin/admin.php:250 includes/admin/builder/class-builder.php:760
+#: includes/admin/admin.php:250 includes/admin/builder/class-builder.php:776
 msgid "OK"
 msgstr "OK"
 
@@ -10797,13 +10811,13 @@ msgid "Payment Fields"
 msgstr "支払いフィールド"
 
 #: includes/admin/class-about.php:1741 includes/admin/class-welcome.php:270
-#: src/Admin/Builder/Help.php:153
+#: src/Admin/Builder/Help.php:108
 msgid "Payment Forms"
 msgstr "支払いフォーム"
 
 #: includes/admin/builder/panels/class-payments.php:22
 #: includes/admin/class-menu.php:89 includes/admin/class-menu.php:90
-#: src/Admin/AdminBarMenu.php:225 src/Admin/AdminBarMenu.php:491
+#: src/Admin/AdminBarMenu.php:225 src/Admin/AdminBarMenu.php:495
 #: src/Admin/Forms/Views.php:592 src/Admin/Payments/Payments.php:173
 #: src/Admin/Payments/Views/Overview/Page.php:151
 #: src/Admin/Settings/Payments.php:47 src/Admin/Settings/Payments.php:78
@@ -10826,11 +10840,11 @@ msgstr "フィリピン"
 msgid "Pitcairn"
 msgstr "ピトケアン諸島"
 
-#: includes/admin/class-settings.php:553 src/Frontend/Frontend.php:1995
+#: includes/admin/class-settings.php:553 src/Frontend/Frontend.php:1970
 msgid "Please enter a valid credit card number."
 msgstr "有効なクレジットカード番号を入力してください。"
 
-#: includes/admin/class-settings.php:470 src/Frontend/Frontend.php:1861
+#: includes/admin/class-settings.php:470 src/Frontend/Frontend.php:1836
 msgid "Please enter a valid email address."
 msgstr "有効なメールアドレスを入力してください。"
 
@@ -11208,7 +11222,7 @@ msgstr "トリニダード・トバゴ"
 
 #: includes/providers/class-constant-contact.php:624
 #: includes/providers/class-constant-contact.php:819
-#: src/Integrations/ConstantContact/V3/Settings/FormBuilder.php:376
+#: src/Integrations/ConstantContact/V3/Settings/FormBuilder.php:375
 msgid "Try Constant Contact for Free"
 msgstr "Constant Contact を無料で試す"
 
@@ -11413,7 +11427,7 @@ msgstr "「WPForms_WP_Emails()」に達するまでは「init/admin_init」で�
 msgid "You don't have any fields yet. Add some!"
 msgstr "まだフィールドがありません。追加してください。"
 
-#: includes/admin/builder/class-builder.php:784
+#: includes/admin/builder/class-builder.php:800
 msgid "You must provide a confirmation name"
 msgstr "確認ネームを入力してください。"
 
@@ -11463,12 +11477,12 @@ msgstr "ジンバブエ"
 msgid "Invisible reCAPTCHA v2"
 msgstr "Invisible reCAPTCHA v2"
 
-#: includes/admin/admin.php:210 includes/admin/builder/class-builder.php:759
+#: includes/admin/admin.php:210 includes/admin/builder/class-builder.php:775
 #: includes/admin/class-editor.php:162 src/Admin/Builder/Templates.php:183
 #: src/Admin/Education/StringsTrait.php:25 src/Admin/Forms/Tags.php:452
 #: src/Admin/Payments/Views/Single.php:411
 #: src/Integrations/AI/Admin/Builder/Enqueues.php:135
-#: src/Integrations/Elementor/Elementor.php:133
+#: src/Integrations/Elementor/Elementor.php:234
 #: src/Lite/Admin/Education/LiteConnect.php:237
 #: templates/admin/components/datepicker.php:72
 #: templates/admin/forms/bulk-edit-tags.php:30
@@ -11532,11 +11546,11 @@ msgstr "フォームスタイリングを含める"
 msgid "Form CSS Class"
 msgstr "フォームの CSS クラス"
 
-#: includes/admin/builder/class-builder.php:820
+#: includes/admin/builder/class-builder.php:836
 msgid "is not"
 msgstr "≠"
 
-#: includes/admin/builder/class-builder.php:819
+#: includes/admin/builder/class-builder.php:835
 msgid "is"
 msgstr "＝"
 
@@ -11559,19 +11573,19 @@ msgstr "アドオンをインストールする"
 msgid "Form Templates"
 msgstr "フォームのテンプレート"
 
-#: includes/fields/class-name.php:385
+#: includes/fields/class-name.php:401
 msgid "Last name field advanced options."
 msgstr "姓フィールドの詳細オプション。"
 
-#: includes/fields/class-name.php:359
+#: includes/fields/class-name.php:375
 msgid "Middle name field advanced options."
 msgstr "ミドルネームフィールドの詳細オプション。"
 
-#: includes/fields/class-name.php:333
+#: includes/fields/class-name.php:349
 msgid "First name field advanced options."
 msgstr "名フィールドの詳細オプション。 "
 
-#: includes/fields/class-name.php:307
+#: includes/fields/class-name.php:323
 msgid "Name field advanced options."
 msgstr "名前フィールドの詳細オプション。"
 
@@ -11611,24 +11625,24 @@ msgstr "フィールド設定"
 msgid "Embed Form"
 msgstr "フォームを埋め込む"
 
-#: includes/admin/builder/class-builder.php:837
+#: includes/admin/builder/class-builder.php:857
 msgid "Add New Group"
 msgstr "新しいグループを追加"
 
-#: includes/admin/builder/class-builder.php:826
+#: includes/admin/builder/class-builder.php:842
 msgid "ends with"
 msgstr "次の文字列で終わる"
 
-#: includes/admin/builder/class-builder.php:825
+#: includes/admin/builder/class-builder.php:841
 #: src/Admin/Payments/Views/Overview/Table.php:701
 msgid "starts with"
 msgstr "次の文字列で始まる"
 
-#: includes/admin/builder/class-builder.php:824
+#: includes/admin/builder/class-builder.php:840
 msgid "does not contain"
 msgstr "含まない"
 
-#: includes/admin/builder/class-builder.php:762
+#: includes/admin/builder/class-builder.php:778
 msgid "Due to form changes, conditional logic rules will be removed or updated:"
 msgstr "フォームの変更により、条件付きロジックルールが削除または更新されます。 "
 
@@ -11653,7 +11667,7 @@ msgstr "無制限サイト"
 msgid "Payments Made Easy"
 msgstr "支払いが簡単に"
 
-#: includes/admin/builder/class-builder.php:865
+#: includes/admin/builder/class-builder.php:885
 #: includes/templates/class-blank.php:34
 msgid "Blank Form"
 msgstr "空白のフォーム"
@@ -11662,7 +11676,7 @@ msgstr "空白のフォーム"
 msgid "Embedded Post/Page ID"
 msgstr "埋め込み投稿 / ページ ID"
 
-#: includes/admin/builder/class-builder.php:812 includes/class-form.php:878
+#: includes/admin/builder/class-builder.php:828 includes/class-form.php:878
 #: includes/class-form.php:906 includes/class-form.php:998
 msgid "(copy)"
 msgstr "(複製)"
@@ -11695,12 +11709,12 @@ msgstr "保存中…"
 msgid "Select a form below to insert"
 msgstr "下のフォームを選択して挿入"
 
-#: includes/fields/class-name.php:240
+#: includes/fields/class-name.php:256
 msgid "Select format to use for the name form field"
 msgstr "名前フォームフィールドの形式を選択"
 
 #: includes/admin/class-about.php:1739 includes/admin/class-welcome.php:208
-#: src/Integrations/Square/Admin/Builder/Settings.php:277
+#: src/Integrations/Square/Admin/Builder/Settings.php:278
 #: src/Integrations/Stripe/Admin/Builder/Settings.php:301
 #: src/Lite/Admin/Education/Builder/Fields.php:81
 msgid "Smart Conditional Logic"
@@ -11722,7 +11736,7 @@ msgstr "Constant Contact を今すぐ試す"
 msgid "Unstar entry"
 msgstr "項目の星を削除"
 
-#: includes/admin/admin.php:294 includes/admin/builder/class-builder.php:842
+#: includes/admin/admin.php:294 includes/admin/builder/class-builder.php:862
 msgid "Upload or Choose Your Image"
 msgstr "画像を選択またはアップロード"
 
@@ -11747,7 +11761,7 @@ msgstr "まだフィールドがありません。"
 msgid "You must provide a connection nickname."
 msgstr "接続ニックネームを入力してください。"
 
-#: includes/admin/builder/class-builder.php:779
+#: includes/admin/builder/class-builder.php:795
 msgid "You must provide a notification name"
 msgstr "通知名を入力してください"
 
@@ -11767,7 +11781,7 @@ msgstr "テンプレートを生成する前にフォームを作成する必要
 msgid "Type"
 msgstr "タイプ"
 
-#: includes/admin/admin.php:189
+#: includes/admin/admin.php:189 includes/functions/builder.php:20
 msgid "Deactivate"
 msgstr "無効化"
 
@@ -11780,6 +11794,7 @@ msgid "Svalbard and Jan Mayen"
 msgstr "スバールバル諸島ヤンマイエン島"
 
 #: includes/admin/admin.php:190 includes/admin/class-about.php:406
+#: includes/functions/builder.php:19
 msgid "Inactive"
 msgstr "無効"
 
@@ -11812,7 +11827,7 @@ msgid "American Samoa"
 msgstr "アメリカ領サモア"
 
 #. translators: %s - provider type.
-#: includes/providers/class-base.php:1152
+#: includes/providers/class-base.php:1151
 msgid "Add New %s"
 msgstr "新規%sを追加"
 
@@ -11836,7 +11851,7 @@ msgstr "コンゴ民主共和国"
 msgid "Customer Support"
 msgstr "カスタマーサポート"
 
-#: includes/admin/builder/class-builder.php:1021
+#: includes/admin/builder/class-builder.php:1045
 msgid "States"
 msgstr "都道府県/州"
 
@@ -11898,7 +11913,7 @@ msgstr "スマート CAPTCHA とスパム保護により、スパムの送信が
 msgid "Equatorial Guinea"
 msgstr "赤道ギニア"
 
-#: includes/admin/builder/class-builder.php:806
+#: includes/admin/builder/class-builder.php:822
 msgid "Exit"
 msgstr "終了"
 
@@ -11911,7 +11926,7 @@ msgid "Form Fields"
 msgstr "フォームフィールド"
 
 #: includes/admin/builder/panels/class-settings.php:163
-#: src/Integrations/Elementor/Widget.php:234 src/SmartTags/SmartTags.php:117
+#: src/Integrations/Elementor/Widget.php:244 src/SmartTags/SmartTags.php:117
 msgid "Form Name"
 msgstr "フォーム名"
 
@@ -11925,7 +11940,7 @@ msgstr "フランス領南方・南極地域"
 msgid "Geolocation"
 msgstr "位置情報"
 
-#: includes/admin/class-about.php:112 src/Admin/Builder/Help.php:148
+#: includes/admin/class-about.php:112 src/Admin/Builder/Help.php:103
 msgid "Getting Started"
 msgstr "はじめてみよう"
 
@@ -11987,11 +12002,11 @@ msgid "Palau"
 msgstr "パラウ"
 
 #: includes/admin/class-settings.php:491 includes/fields/class-number.php:226
-#: src/Frontend/Frontend.php:1871
+#: src/Frontend/Frontend.php:1846
 msgid "Please enter a valid number."
 msgstr "有効な値を入力してください。"
 
-#: includes/admin/builder/class-builder.php:831
+#: includes/admin/builder/class-builder.php:851
 #: src/Forms/Fields/Pagebreak/Field.php:465
 msgid "Previous"
 msgstr "前"
@@ -12032,15 +12047,15 @@ msgstr "バージン諸島 (英領)"
 msgid "per year"
 msgstr "1年あたり"
 
-#: includes/admin/builder/class-builder.php:763
+#: includes/admin/builder/class-builder.php:779
 msgid "Are you sure you want to disable conditional logic? This will remove the rules for this field or setting."
 msgstr "条件付きロジックを無効にしてよろしいですか？これにより、このフィールドまたは設定の規則が削除されます。"
 
-#: includes/admin/builder/class-builder.php:783
+#: includes/admin/builder/class-builder.php:799
 msgid "Eg: Alternative Confirmation"
 msgstr "例：代替確認"
 
-#: includes/admin/builder/class-builder.php:810
+#: includes/admin/builder/class-builder.php:826
 msgid "Are you sure you want to delete this choice?"
 msgstr "この選択肢を削除してもよろしいですか？"
 
@@ -12130,10 +12145,6 @@ msgstr "WPForms Pro を入手して、すべての強力な機能を活用"
 msgid "How to Choose the Right Form Field"
 msgstr "適切なフォームフィールドを選択する方法"
 
-#: includes/admin/class-about.php:646
-msgid "Are you wondering which form fields you have access to in WPForms and what each field does? WPForms has lots of field types to make creating and filling out forms easy. In this tutorial, we’ll cover all of the fields available in WPForms."
-msgstr "WPForms では、どのフォームフィールドにアクセスできるのかでしょうか。また、各フィールドはどのように機能するのでしょうか。WPForms には、フォームの作成と入力を簡単にする数多くのフィールドタイプが用意されています。このチュートリアルでは、WPForms で利用できるすべてのフィールドについて説明します。"
-
 #: includes/admin/class-about.php:650 includes/admin/class-about.php:669
 #: includes/admin/class-about.php:688 includes/admin/class-about.php:707
 msgid "Read Documentation"
@@ -12151,6 +12162,10 @@ msgstr "WPForms Pro にアップグレードして、すべての強力な機能
 msgid "Feature"
 msgstr "機能"
 
+#: includes/admin/class-about.php:646
+msgid "Are you wondering which form fields you have access to in WPForms and what each field does? WPForms has lots of field types to make creating and filling out forms easy. In this tutorial, we’ll cover all of the fields available in WPForms."
+msgstr "WPForms では、どのフォームフィールドにアクセスできるのかでしょうか。また、各フィールドはどのように機能するのでしょうか。WPForms には、フォームの作成と入力を簡単にする数多くのフィールドタイプが用意されています。このチュートリアルでは、WPForms で利用できるすべてのフィールドについて説明します。"
+
 #: includes/admin/class-about.php:1528
 msgid "No Advanced Features"
 msgstr "高度な機能はありません"
@@ -12164,11 +12179,11 @@ msgid "Load Assets Globally"
 msgstr "アセットをグローバルにロード"
 
 #: includes/admin/class-settings.php:464
-#: includes/functions/escape-sanitize.php:451 src/Frontend/Frontend.php:1860
+#: includes/functions/escape-sanitize.php:451 src/Frontend/Frontend.php:1835
 msgid "This field is required."
 msgstr "この欄の入力は必須です。"
 
-#: includes/admin/class-settings.php:509 src/Frontend/Frontend.php:1874
+#: includes/admin/class-settings.php:509 src/Frontend/Frontend.php:1849
 msgid "Field values do not match."
 msgstr "フィールドの値が一致しません。"
 
@@ -12209,7 +12224,7 @@ msgstr "サイトではサポートされていない古いバージョンの PH
 #. translators: %1$s - data source name (e.g. Categories, Posts), %2$s - data
 #. source type (e.g. post type, taxonomy), %3$s - display limit, %4$s - total
 #. number of items.
-#: includes/admin/builder/class-builder.php:743
+#: includes/admin/builder/class-builder.php:759
 msgid "The %1$s %2$s contains over %3$s items (%4$s). This may make the field difficult for your visitors to use and/or cause the form to be slow."
 msgstr "%2$sの%1$s に %3$s 個以上の (%4$s) 項目が含まれています。これにより、訪問者がフィールドを使用しにくくなったり、フォームの速度が低下したりする可能性があります。"
 
@@ -12221,15 +12236,15 @@ msgstr "こんにちは。WPForms へようこそ。WPForms は最も初心者�
 msgid "Over the years, we found that most WordPress contact form plugins were bloated, buggy, slow, and very hard to use. So we started with a simple goal: build a WordPress forms plugin that’s both easy and powerful."
 msgstr "長年にわたり、ほとんどの WordPress お問い合わせフォームプラグインが肥大化し、バグがあり、遅く、そして非常に使いにくくなっていました。そこで私たちは、「簡単で強力な WordPress フォームプラグインを作成する」という、シンプルな目標から取り組み始めました。"
 
+#: includes/admin/class-about.php:621 includes/admin/class-about.php:843
+msgid "Bonus: WPForms Lite users get <span class=\"price-20-off\">50% off regular price</span>, automatically applied at checkout."
+msgstr "ボーナス : WPForms Lite ユーザーは<span class=\"price-20-off\">通常価格の 50％ 割引</span>でご利用いただけます。割引は購入手続き時に自動的に適用されます。"
+
 #. translators: %1$s - WPBeginner URL, %2$s - OptinMonster URL, %3$s -
 #. MonsterInsights URL.
 #: includes/admin/class-about.php:255
 msgid "WPForms is brought to you by the same team that’s behind the largest WordPress resource site, <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">WPBeginner</a>, the most popular lead-generation software, <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">OptinMonster</a>, the best WordPress analytics plugin, <a href=\"%3$s\" target=\"_blank\" rel=\"noopener noreferrer\">MonsterInsights</a>, and more!"
 msgstr "WPForms は、最大の WordPress リソースサイトである <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">WPBeginner</a>、最も人気のあるリードジェネレーションソフトウェア <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">OptinMonster</a>、最高の WordPress 分析プラグイン <a href=\"%3$s\" target=\"_blank\" rel=\"noopener noreferrer\">MonsterInsights</a> と同じチームが開発しています。"
-
-#: includes/admin/class-about.php:621 includes/admin/class-about.php:843
-msgid "Bonus: WPForms Lite users get <span class=\"price-20-off\">50% off regular price</span>, automatically applied at checkout."
-msgstr "ボーナス : WPForms Lite ユーザーは<span class=\"price-20-off\">通常価格の 50％ 割引</span>でご利用いただけます。割引は購入手続き時に自動的に適用されます。"
 
 #: includes/admin/class-about.php:684
 msgid "Do you need to check that your forms are compliant with the European Union’s General Data Protection Regulation? The best way to ensure GDPR compliance for your specific site is always to consult legal counsel. In this guide, we’ll discuss general considerations for GDPR compliance in your WordPress forms."
@@ -12243,16 +12258,16 @@ msgstr "大切な WPForms Lite ユーザーとして、<strong>50％オフ</stro
 msgid "The blank form allows you to create any type of form using our drag & drop builder."
 msgstr "空白のフォームを使用すると、ドラッグ＆ドロップビルダーを使用して、あらゆる種類のフォームを作成できます。"
 
-#: src/Integrations/Square/Admin/Builder/Settings.php:218
+#: src/Integrations/Square/Admin/Builder/Settings.php:219
 #: src/Integrations/Stripe/Admin/Builder/Settings.php:243
 msgid "Enable Conditional Logic"
 msgstr "条件付きロジックを有効化"
 
-#: includes/admin/admin.php:242 includes/admin/builder/class-builder.php:771
+#: includes/admin/admin.php:242 includes/admin/builder/class-builder.php:787
 #: src/Admin/Education/Builder/Captcha.php:161
 #: src/Admin/Tools/Views/Importer.php:223 src/Forms/Preview.php:338
-#: src/Integrations/Elementor/Elementor.php:132
-#: src/Integrations/Gutenberg/FormSelector.php:535 wpforms.php:213
+#: src/Integrations/Elementor/Elementor.php:233
+#: src/Integrations/Gutenberg/FormSelector.php:488 wpforms.php:188
 msgid "Heads up!"
 msgstr "ご注意ください !"
 
@@ -12282,8 +12297,8 @@ msgstr "WPForms アセットをサイト全体に読み込みます。サイト�
 msgid "Edit This Form"
 msgstr "このフォームを編集"
 
-#: includes/admin/builder/class-builder.php:873
-#: includes/fields/class-name.php:124 includes/fields/class-name.php:458
+#: includes/admin/builder/class-builder.php:893
+#: includes/fields/class-name.php:137 includes/fields/class-name.php:474
 msgid "Middle"
 msgstr "ミドルネーム"
 
@@ -12303,7 +12318,7 @@ msgstr "ユーザーメール"
 msgid "Customize the background color of the email template."
 msgstr "メールテンプレートの背景色をカスタマイズします。"
 
-#: src/Emails/Notifications.php:1315
+#: src/Emails/Notifications.php:1273
 msgid "Plain Text"
 msgstr "プレーンテキスト"
 
@@ -12370,8 +12385,8 @@ msgid "Choices"
 msgstr "選択肢"
 
 #: includes/fields/class-base.php:1251 src/Forms/Fields/Html/Field.php:73
-#: src/Integrations/Elementor/WidgetModern.php:216
-#: src/Integrations/Gutenberg/FormSelector.php:570
+#: src/Integrations/Elementor/WidgetModern.php:343
+#: src/Integrations/Gutenberg/FormSelector.php:523
 msgid "Label"
 msgstr "ラベル"
 
@@ -12413,8 +12428,8 @@ msgstr "エントリー"
 #: includes/admin/class-menu.php:137 includes/class-form.php:149
 #: includes/integrations.php:41 src/Emails/Templates/General.php:94
 #: src/Integrations/Divi/WPFormsSelector.php:35
-#: src/Integrations/Elementor/Widget.php:53
-#: src/Integrations/Gutenberg/FormSelector.php:477
+#: src/Integrations/Elementor/Widget.php:58
+#: src/Integrations/Gutenberg/FormSelector.php:430
 #: src/Lite/Admin/DashboardWidget.php:196
 #: templates/admin/dashboard/widget/settings.php:47
 msgid "WPForms"
@@ -12436,14 +12451,14 @@ msgstr "ページを表示"
 msgid "Message"
 msgstr "メッセージ"
 
-#: includes/admin/builder/class-builder.php:816
+#: includes/admin/builder/class-builder.php:832
 #: includes/admin/builder/functions.php:467 src/Admin/Tools/Views/Logs.php:110
 #: src/Integrations/Divi/WPFormsSelector.php:79
 #: src/Integrations/Divi/WPFormsSelector.php:89
 msgid "On"
 msgstr "オン"
 
-#: includes/admin/builder/class-builder.php:815
+#: includes/admin/builder/class-builder.php:831
 #: includes/admin/builder/functions.php:468 includes/fields/class-base.php:2299
 #: src/Admin/Tools/Views/Logs.php:110
 #: src/Integrations/Divi/WPFormsSelector.php:78
@@ -12451,7 +12466,7 @@ msgstr "オン"
 msgid "Off"
 msgstr "オフ"
 
-#: includes/admin/builder/class-builder.php:792
+#: includes/admin/builder/class-builder.php:808
 #: includes/fields/class-base.php:2145
 msgid "Show Layouts"
 msgstr "レイアウトを表示"
@@ -12467,9 +12482,9 @@ msgstr "CC"
 #: includes/integrations.php:49 src/Admin/Payments/Views/Overview/Table.php:105
 #: src/Forms/Preview.php:185 src/Forms/Preview.php:391
 #: src/Integrations/Divi/WPFormsSelector.php:65
-#: src/Integrations/Elementor/Widget.php:127
-#: src/Integrations/Elementor/Widget.php:155
-#: src/Integrations/Gutenberg/FormSelector.php:532
+#: src/Integrations/Elementor/Widget.php:135
+#: src/Integrations/Elementor/Widget.php:163
+#: src/Integrations/Gutenberg/FormSelector.php:485
 #: templates/emails/summary-body-plain.php:52
 #: templates/emails/summary-body.php:158
 msgid "Form"
@@ -12512,7 +12527,7 @@ msgid "Description"
 msgstr "説明"
 
 #: src/Admin/Payments/Views/Overview/Page.php:152
-#: src/Providers/Provider/Settings/FormBuilder.php:269
+#: src/Providers/Provider/Settings/FormBuilder.php:238
 #: templates/admin/payments/single/details.php:79
 #: templates/builder/field-context-menu.php:44
 #: templates/builder/templates-item.php:78
@@ -12536,7 +12551,7 @@ msgid "Confirmation Type"
 msgstr "確認タイプ"
 
 #: includes/admin/builder/panels/class-settings.php:61
-#: lite/wpforms-lite.php:136 src/Admin/AdminBarMenu.php:453
+#: lite/wpforms-lite.php:136 src/Admin/AdminBarMenu.php:457
 #: templates/admin/notifications.php:23
 msgid "Notifications"
 msgstr "通知"
@@ -12546,8 +12561,8 @@ msgstr "通知"
 msgid "Delete Field"
 msgstr "フィールドを削除"
 
-#: includes/providers/class-base.php:168 includes/providers/class-base.php:1227
-#: includes/providers/class-base.php:1275
+#: includes/providers/class-base.php:168 includes/providers/class-base.php:1226
+#: includes/providers/class-base.php:1274
 msgid "You do not have permission"
 msgstr "権限がありません"
 
@@ -12571,11 +12586,11 @@ msgstr "確認リダイレクト URL"
 msgid "No field type found"
 msgstr "フィールドタイプが見つかりません"
 
-#: includes/providers/class-base.php:777 includes/providers/class-base.php:1408
+#: includes/providers/class-base.php:777 includes/providers/class-base.php:1407
 #: includes/providers/class-constant-contact.php:543
 #: src/Integrations/ConstantContact/V3/Settings/FormBuilder.php:186
 #: src/Integrations/ConstantContact/V3/Settings/PageIntegrations.php:91
-#: src/Providers/Provider/Settings/FormBuilder.php:555
+#: src/Providers/Provider/Settings/FormBuilder.php:524
 #: src/Providers/Provider/Settings/PageIntegrations.php:256
 msgid "Add New Account"
 msgstr "新規アカウントを追加"
@@ -12584,13 +12599,12 @@ msgstr "新規アカウントを追加"
 msgid "Close this window"
 msgstr "このウィンドウを閉じる"
 
-#: includes/admin/class-menu.php:356 includes/admin/class-welcome.php:338
-#: includes/functions/education.php:79 src/Admin/FlyoutMenu.php:112
+#: includes/admin/class-menu.php:343 includes/admin/class-welcome.php:338
+#: includes/functions/education.php:78 src/Admin/FlyoutMenu.php:112
 #: src/Admin/Payments/Views/Coupons/Education.php:143
 #: src/Admin/Tools/Views/Importer.php:229
-#: src/Lite/Admin/DashboardWidget.php:324
-#: src/Lite/Admin/Settings/Access.php:300 templates/builder/help.php:91
-#: templates/education/admin/page.php:100
+#: src/Lite/Admin/DashboardWidget.php:324 templates/builder/help.php:91
+#: templates/education/admin/page.php:102
 msgid "Upgrade to WPForms Pro"
 msgstr "WPForms Pro へアップグレード"
 
@@ -12600,12 +12614,12 @@ msgid "Beginner friendly WordPress contact form plugin. Use our Drag & Drop form
 msgstr "初心者に優しいお問い合わせフォームプラグイン。ドラッグ & ドロップフォームビルダーで、 WordPress フォームを作成しましょう。"
 
 #. translators: %s - provider name.
-#: includes/providers/class-base.php:1341
+#: includes/providers/class-base.php:1340
 #: src/Providers/Provider/Settings/PageIntegrations.php:294
 msgid "Connect to %s"
 msgstr "%s に連携"
 
-#: includes/providers/class-base.php:1251
+#: includes/providers/class-base.php:1250
 msgid "Connection missing"
 msgstr "連携がありません"
 
@@ -12613,7 +12627,7 @@ msgstr "連携がありません"
 msgid "taxonomy"
 msgstr "タクソノミー"
 
-#: includes/admin/builder/class-builder.php:780 lite/wpforms-lite.php:197
+#: includes/admin/builder/class-builder.php:796 lite/wpforms-lite.php:197
 #: src/Admin/Tools/Importers/PirateForms.php:464
 msgid "Default Notification"
 msgstr "デフォルト通知"
@@ -12638,8 +12652,9 @@ msgstr "%s 残り"
 msgid "Add a Block"
 msgstr "ブロックを追加"
 
-#: src/Providers/Provider/Settings/FormBuilder.php:210
-#: src/Providers/Provider/Settings/FormBuilder.php:263
+#: src/Providers/Provider/Settings/FormBuilder.php:179
+#: src/Providers/Provider/Settings/FormBuilder.php:232
+#: templates/integrations/stripe/builder/custom-metadata.php:105
 msgid "Add Another"
 msgstr "もう一つ追加"
 
@@ -12655,7 +12670,7 @@ msgstr "フォームにフィールドを追加する"
 msgid "Add New Confirmation"
 msgstr "新しい確認を追加"
 
-#: src/Providers/Provider/Settings/FormBuilder.php:549
+#: src/Providers/Provider/Settings/FormBuilder.php:518
 msgid "Add New Connection"
 msgstr "新しい接続を追加"
 
@@ -12705,7 +12720,7 @@ msgid "Checkbox Items"
 msgstr "チェックボックスの項目"
 
 #. translators: %s - choice number.
-#: includes/admin/builder/class-builder.php:854
+#: includes/admin/builder/class-builder.php:874
 #: includes/fields/class-checkbox.php:134
 #: includes/fields/class-checkbox.php:775 includes/fields/class-radio.php:121
 #: includes/fields/class-radio.php:616
@@ -12713,7 +12728,7 @@ msgid "Choice %s"
 msgstr "%sの選択"
 
 #: includes/fields/class-base.php:1796 includes/fields/class-base.php:1953
-#: includes/fields/class-select.php:322 src/Emails/Notifications.php:1290
+#: includes/fields/class-select.php:322 src/Emails/Notifications.php:1248
 #: src/Forms/Fields/Addons/LikertScale/Field.php:248
 #: src/Forms/Fields/Addons/NetPromoterScore/Field.php:124
 #: src/Forms/Fields/FileUpload/Field.php:264
@@ -12754,11 +12769,11 @@ msgstr "ガイド付きセットアップウィザードを使用して5分以�
 msgid "Create Your Form"
 msgstr "フォームを作成"
 
-#: src/Providers/Provider/Settings/FormBuilder.php:125
+#: src/Providers/Provider/Settings/FormBuilder.php:124
 msgid "Custom Field Name"
 msgstr "カスタムフィールド名"
 
-#: includes/admin/builder/class-builder.php:785 lite/wpforms-lite.php:501
+#: includes/admin/builder/class-builder.php:801 lite/wpforms-lite.php:501
 msgid "Default Confirmation"
 msgstr "デフォルトの確認"
 
@@ -12802,8 +12817,8 @@ msgstr "フォームフィールドの説明にテキストを入力します。
 msgid "Enter text for the form field placeholder."
 msgstr "フォームフィールドのプレースホルダーのテキストを入力してください。"
 
-#: src/Providers/Provider/Settings/FormBuilder.php:186
-#: src/Providers/Provider/Settings/FormBuilder.php:241
+#: src/Providers/Provider/Settings/FormBuilder.php:151
+#: src/Providers/Provider/Settings/FormBuilder.php:210
 msgid "Field Name"
 msgstr "フィールド名"
 
@@ -12811,7 +12826,7 @@ msgstr "フィールド名"
 msgid "File Upload"
 msgstr "ファイルアップロード"
 
-#: src/Integrations/Gutenberg/FormSelector.php:480
+#: src/Integrations/Gutenberg/FormSelector.php:433
 msgid "form"
 msgstr "フォーム"
 
@@ -12827,16 +12842,16 @@ msgstr "フォームエントリーは WPForms Lite には保存されません�
 msgid "Form entries reports are not available."
 msgstr "フォームエントリーレポートは利用できません。"
 
-#: src/Providers/Provider/Settings/FormBuilder.php:126
+#: src/Providers/Provider/Settings/FormBuilder.php:125
 msgid "Form Field Value"
 msgstr "フォームフィールド値"
 
-#: includes/class-process.php:432 includes/class-process.php:597
+#: includes/class-process.php:432 includes/class-process.php:594
 #: includes/class-process.php:1594
 msgid "Form has not been submitted, please see the errors below."
 msgstr "フォームは送信されていません。下記のエラーをご覧ください。"
 
-#: src/Integrations/Gutenberg/FormSelector.php:485
+#: src/Integrations/Gutenberg/FormSelector.php:438
 msgid "Form Settings"
 msgstr "フォーム設定"
 
@@ -12884,8 +12899,8 @@ msgid "minute"
 msgid_plural "minutes"
 msgstr[0] "分"
 
-#: includes/providers/class-base.php:1235
-#: includes/providers/class-base.php:1286
+#: includes/providers/class-base.php:1234
+#: includes/providers/class-base.php:1285
 msgid "Missing data"
 msgstr "失踪データ"
 
@@ -12925,7 +12940,10 @@ msgstr "まだエントリーがありません。"
 #: includes/fields/class-email.php:395 src/Admin/Settings/Captcha/Page.php:158
 #: src/Forms/Fields/FileUpload/Field.php:432
 #: src/Forms/Fields/Pagebreak/Field.php:274
-#: src/Integrations/Gutenberg/FormSelector.php:561
+#: src/Integrations/Elementor/WidgetModern.php:82
+#: src/Integrations/Elementor/WidgetModern.php:529
+#: src/Integrations/Elementor/WidgetModern.php:574
+#: src/Integrations/Gutenberg/FormSelector.php:514
 msgid "None"
 msgstr "なし"
 
@@ -12952,7 +12970,7 @@ msgid "Rate WPForms on WordPress.org"
 msgstr "WordPress.org で WPForms を評価してください"
 
 #: src/Admin/Education/Fields.php:149 src/Forms/Fields/Rating/Field.php:35
-#: src/Integrations/Gutenberg/FormSelector.php:589
+#: src/Integrations/Gutenberg/FormSelector.php:542
 msgid "Rating"
 msgstr "評価"
 
@@ -12960,7 +12978,8 @@ msgstr "評価"
 msgid "Recommended Plugin:"
 msgstr "おすすめプラグイン"
 
-#: src/Providers/Provider/Settings/FormBuilder.php:216
+#: src/Providers/Provider/Settings/FormBuilder.php:185
+#: templates/integrations/stripe/builder/custom-metadata.php:110
 msgid "Remove"
 msgstr "削除"
 
@@ -12986,11 +13005,11 @@ msgstr "地理的位置データを表示"
 msgid "Select %s to use for auto-populating field choices."
 msgstr "自動入力フィールドの選択に使用する場合は%sを選択します。"
 
-#: src/Integrations/Gutenberg/FormSelector.php:484
+#: src/Integrations/Gutenberg/FormSelector.php:437
 msgid "Select a Form"
 msgstr "フォームを選択"
 
-#: src/Integrations/Gutenberg/FormSelector.php:478
+#: src/Integrations/Gutenberg/FormSelector.php:431
 msgid "Select and display one of your forms."
 msgstr "いずれかのフォームを選択して表示。"
 
@@ -13006,7 +13025,7 @@ msgstr "デフォルトのフォームフィールドサイズを選択します
 msgid "Select the style for the image choices."
 msgstr "画像の選択スタイルを選択してください。"
 
-#: includes/providers/class-base.php:1359
+#: includes/providers/class-base.php:1358
 #: src/Providers/Provider/Settings/PageIntegrations.php:70
 msgid "Show Accounts"
 msgstr "アカウントを表示"
@@ -13016,7 +13035,7 @@ msgid "Show all forms"
 msgstr "すべてのフォームの表示"
 
 #: src/Integrations/Divi/WPFormsSelector.php:83
-#: src/Integrations/Gutenberg/FormSelector.php:534
+#: src/Integrations/Gutenberg/FormSelector.php:487
 msgid "Show Description"
 msgstr "説明を表示"
 
@@ -13034,7 +13053,7 @@ msgid "Show Smart Tags"
 msgstr "スマートタグを表示"
 
 #: src/Integrations/Divi/WPFormsSelector.php:73
-#: src/Integrations/Gutenberg/FormSelector.php:533
+#: src/Integrations/Gutenberg/FormSelector.php:486
 msgid "Show Title"
 msgstr "タイトルを表示"
 
@@ -13094,7 +13113,7 @@ msgstr "すべてのフォームフィールドを表示するには、%s「ス�
 #: src/Forms/Fields/PaymentTotal/Field.php:24
 #: src/Forms/Fields/PaymentTotal/Field.php:555
 #: src/Forms/Fields/PaymentTotal/Field.php:616
-#: src/SmartTags/SmartTag/OrderSummary.php:164
+#: src/SmartTags/SmartTag/OrderSummary.php:172
 #: templates/admin/payments/single/payment-history.php:32
 #: templates/admin/payments/single/payment-history.php:53
 #: templates/fields/total/summary-preview.php:85
@@ -13146,7 +13165,7 @@ msgstr "数回クリックするだけで、WPForms を使用して連絡先フ�
 #: src/Admin/Forms/Ajax/Columns.php:64
 #: src/Integrations/ConstantContact/V3/Auth.php:78
 #: src/Integrations/ConstantContact/V3/Migration/Migration.php:268
-#: src/Providers/Provider/Settings/FormBuilder.php:340
+#: src/Providers/Provider/Settings/FormBuilder.php:309
 msgid "You do not have permission to perform this action."
 msgstr "この操作を実行する権限がありません。"
 
@@ -13158,11 +13177,6 @@ msgstr "権限がありません。"
 #: lite/wpforms-lite.php:662
 msgid "You've just turned off notification emails for this form. Since entries are not stored in WPForms Lite, notification emails are recommended for collecting entry details. For setup steps, <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">please see our notification tutorial</a>."
 msgstr "このフォームの通知メールをオフにしました。エントリーは WPForms Lite には保存されないため、エントリーの詳細を収集するために通知メールを使用することをお勧めします。設定手順については、<a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">通知チュートリアルをご覧ください</a>。"
-
-#. translators: %s - WPBeginner URL for recommended WordPress hosting.
-#: wpforms.php:251
-msgid "Your site is running an <strong>insecure version</strong> of PHP that is no longer supported. Please contact your web hosting provider to update your PHP version or switch to a <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">recommended WordPress hosting company</a>."
-msgstr "サイトは、もうサポートされていない<strong>安全でないバージョン</strong>の PHP を実行しています。ホスティングプロバイダーに連絡して、PHPのバージョンを更新するか、または推<a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">奨されているWordPressホスティング会社</a>に切り替えてください。"
 
 #: lite/wpforms-lite.php:211
 msgid "Enter the email address to receive form entry notifications. For multiple notifications, separate email addresses with a comma."
@@ -13180,10 +13194,10 @@ msgstr "送信元メールアドレス"
 msgid "Confirm Email"
 msgstr "メールアドレスを確認"
 
-#: includes/admin/builder/class-builder.php:844
+#: includes/admin/builder/class-builder.php:864
 #: includes/admin/settings-api.php:532 includes/fields/class-base.php:1518
 #: includes/fields/class-base.php:1679
-#: src/Integrations/Gutenberg/FormSelector.php:509
+#: src/Integrations/Gutenberg/FormSelector.php:462
 msgid "Remove Image"
 msgstr "画像を削除"
 
@@ -13203,7 +13217,7 @@ msgstr "不正なフォーム。"
 msgid "Go to URL (Redirect)"
 msgstr "URLに移動（リダイレクト）"
 
-#: includes/providers/class-base.php:1416
+#: includes/providers/class-base.php:1415
 #: src/Providers/Provider/Settings/PageIntegrations.php:264
 msgid "Please fill out all of the fields below to add your new provider account."
 msgstr "新しいプロバイダーアカウントを追加するには、以下のすべてのフィールドに入力してください。"
@@ -13249,7 +13263,7 @@ msgstr "フォームフィールドの値を手動で設定するには、この
 msgid "Send To Email Address"
 msgstr "送信先メールアドレス"
 
-#: includes/admin/builder/class-builder.php:1172
+#: includes/admin/builder/class-builder.php:1196
 #: includes/admin/class-welcome.php:143
 #: lite/templates/education/builder/lite-connect/ai-modal.php:15
 #: lite/templates/education/lite-connect-modal.php:17
@@ -13261,7 +13275,7 @@ msgid "Sullie the WPForms mascot"
 msgstr "Sullie、WPForms のマスコット"
 
 #: includes/emails/class-emails.php:643 includes/emails/class-emails.php:717
-#: src/Emails/Notifications.php:546 src/Emails/Notifications.php:719
+#: src/Emails/Notifications.php:544 src/Emails/Notifications.php:719
 #: src/SmartTags/SmartTag/FieldHtmlId.php:38
 msgid "(empty)"
 msgstr "(空)"
@@ -13288,14 +13302,14 @@ msgstr "コード"
 msgid "Dismiss this message"
 msgstr "このメッセージを非表示にする"
 
-#: includes/providers/class-base.php:1315
-#: includes/providers/class-base.php:1398
+#: includes/providers/class-base.php:1314
+#: includes/providers/class-base.php:1397
 #: src/Integrations/Square/Admin/Settings.php:524
 #: src/Providers/Provider/Settings/PageIntegrations.php:193
 msgid "Disconnect"
 msgstr "接続解除"
 
-#: includes/admin/builder/class-builder.php:731
+#: includes/admin/builder/class-builder.php:747
 #: includes/fields/class-base.php:1465
 msgid "Bulk Add"
 msgstr "一括登録"
@@ -13305,9 +13319,9 @@ msgstr "一括登録"
 msgid "Checked"
 msgstr "チェック済み"
 
-#: includes/fields/class-base.php:1987 includes/fields/class-name.php:317
-#: includes/fields/class-name.php:343 includes/fields/class-name.php:369
-#: includes/fields/class-name.php:395 src/Forms/Fields/Address/Field.php:219
+#: includes/fields/class-base.php:1987 includes/fields/class-name.php:333
+#: includes/fields/class-name.php:359 includes/fields/class-name.php:385
+#: includes/fields/class-name.php:411 src/Forms/Fields/Address/Field.php:219
 #: src/Forms/Fields/Address/Field.php:274
 #: src/Forms/Fields/Address/Field.php:310
 #: src/Forms/Fields/Address/Field.php:345
@@ -13342,7 +13356,7 @@ msgid "From Name"
 msgstr "フォーム名"
 
 #: includes/fields/class-base.php:1795 includes/fields/class-base.php:1952
-#: includes/fields/class-select.php:323 src/Emails/Notifications.php:1300
+#: includes/fields/class-select.php:323 src/Emails/Notifications.php:1258
 #: src/Forms/Fields/Addons/LikertScale/Field.php:247
 #: src/Forms/Fields/Addons/NetPromoterScore/Field.php:123
 #: src/Forms/Fields/FileUpload/Field.php:263
@@ -13357,7 +13371,8 @@ msgstr "数字"
 #: includes/emails/class-emails.php:606 src/Admin/Education/Fields.php:101
 #: src/Emails/Notifications.php:954 src/Forms/Fields/Pagebreak/Field.php:44
 #: src/Forms/Fields/Pagebreak/Field.php:472
-#: src/Integrations/Gutenberg/FormSelector.php:588
+#: src/Integrations/Elementor/WidgetModern.php:723
+#: src/Integrations/Gutenberg/FormSelector.php:541
 msgid "Page Break"
 msgstr "ページ区切り"
 
@@ -13433,7 +13448,7 @@ msgid "Third Choice"
 msgstr "選択肢3"
 
 #. translators: %s - provider name.
-#: includes/providers/class-base.php:1368
+#: includes/providers/class-base.php:1367
 #: lite/templates/education/admin/settings/integrations-item.php:36
 #: src/Providers/Provider/Settings/PageIntegrations.php:79
 msgid "Integrate %s with WPForms"
@@ -13446,11 +13461,6 @@ msgstr "WPForms Pro を今すぐ入手して、すべての強力な機能を活
 #: lite/templates/admin/entries/overview/modal.php:35
 msgid "Mark Read / Unread"
 msgstr "「未読」や「既読」としてマーク"
-
-#. translators: %s - WPForms.com URL for documentation with more details.
-#: wpforms.php:269
-msgid "<strong>Note:</strong> The WPForms plugin is disabled on your site until you fix the issue. <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">Read more for additional information.</a>"
-msgstr "<strong>注: </strong> 問題が解決されるまで、WPForms プラグインはサイトで無効になります。<a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">詳細はこちらをご覧ください。</a>"
 
 #: includes/admin/builder/panels/class-fields.php:528
 #: includes/admin/class-settings.php:128
@@ -13490,9 +13500,9 @@ msgstr "<strong>ボーナス :</strong> WPForms Lite ユーザーは<span>通常
 msgid "Last 90 days"
 msgstr "過去90日"
 
-#: includes/admin/builder/class-builder.php:840
-#: src/Providers/Provider/Settings/FormBuilder.php:171
-#: src/Providers/Provider/Settings/FormBuilder.php:228
+#: includes/admin/builder/class-builder.php:860
+#: src/Providers/Provider/Settings/FormBuilder.php:136
+#: src/Providers/Provider/Settings/FormBuilder.php:197
 msgid "--- Select Field ---"
 msgstr "---フィールドを選択---"
 
@@ -13511,8 +13521,9 @@ msgstr "メールアドレス"
 
 #: includes/fields/class-base.php:2026 src/Admin/Settings/Email.php:367
 #: src/Forms/Fields/Rating/Field.php:211 src/Forms/IconChoices.php:141
-#: src/Integrations/Elementor/WidgetModern.php:64
-#: src/Integrations/Gutenberg/FormSelector.php:573
+#: src/Integrations/Elementor/WidgetModern.php:76
+#: src/Integrations/Elementor/WidgetModern.php:530
+#: src/Integrations/Gutenberg/FormSelector.php:526
 #: templates/builder/field-context-menu.php:86
 msgid "Small"
 msgstr "S"
@@ -13520,16 +13531,18 @@ msgstr "S"
 #: includes/fields/class-base.php:2027 src/Admin/Settings/Email.php:368
 #: src/Forms/Fields/Password/Field.php:132
 #: src/Forms/Fields/Rating/Field.php:212 src/Forms/IconChoices.php:137
-#: src/Integrations/Elementor/WidgetModern.php:65
-#: src/Integrations/Gutenberg/FormSelector.php:574
+#: src/Integrations/Elementor/WidgetModern.php:77
+#: src/Integrations/Elementor/WidgetModern.php:531
+#: src/Integrations/Gutenberg/FormSelector.php:527
 #: templates/builder/field-context-menu.php:96
 msgid "Medium"
 msgstr "中程度"
 
 #: includes/fields/class-base.php:2028 src/Admin/Settings/Email.php:369
 #: src/Forms/Fields/Rating/Field.php:213 src/Forms/IconChoices.php:133
-#: src/Integrations/Elementor/WidgetModern.php:66
-#: src/Integrations/Gutenberg/FormSelector.php:575
+#: src/Integrations/Elementor/WidgetModern.php:78
+#: src/Integrations/Elementor/WidgetModern.php:532
+#: src/Integrations/Gutenberg/FormSelector.php:528
 #: templates/builder/field-context-menu.php:106
 msgid "Large"
 msgstr "L"
@@ -13538,13 +13551,7 @@ msgstr "L"
 msgid "Agreement"
 msgstr "条件"
 
-#: includes/providers/class-base.php:1005
-#: src/Integrations/ConstantContact/V3/Settings/FormBuilder.php:272
-#: src/Providers/Provider/Settings/FormBuilder.php:111
-msgid "Marketing provider connection"
-msgstr "マーケティングプロバイダー連携"
-
-#: includes/providers/class-base.php:1375
+#: includes/providers/class-base.php:1374
 #: src/Providers/Provider/Settings/PageIntegrations.php:86
 msgid "Connected"
 msgstr "接続済み"
@@ -13570,18 +13577,18 @@ msgstr "複数アイテム"
 msgid "Dropdown Items"
 msgstr "ドロップダウンアイテム"
 
-#: src/Providers/Provider/Settings/FormBuilder.php:279
+#: src/Providers/Provider/Settings/FormBuilder.php:248
 msgid "Map custom fields (or properties) to form fields values."
 msgstr "カスタムフィールド (またはプロパティ) をフォームフィールドの値にマッピングします。"
 
-#: src/Providers/Provider/Settings/FormBuilder.php:346
+#: src/Providers/Provider/Settings/FormBuilder.php:315
 #: templates/integrations/constant-contact-v3/builder/error.php:10
 msgid "Something went wrong while performing an AJAX request."
 msgstr "AJAX リクエストを実行中に問題が発生しました。"
 
 #. translators: %1$s - Connection date.
-#: includes/providers/class-base.php:1310
-#: includes/providers/class-base.php:1393
+#: includes/providers/class-base.php:1309
+#: includes/providers/class-base.php:1392
 #: src/Providers/Provider/Settings/PageIntegrations.php:180
 msgid "Connected on: %1$s"
 msgstr "接続日: %1$s"
@@ -13601,26 +13608,26 @@ msgstr "は %s の機能です"
 msgid "We're sorry, %1$s are not available on your plan. Please upgrade to the %2$s plan to unlock all these awesome features."
 msgstr "申し訳ございません。%1$s はこのプランではご利用いただけません。すべての素晴らしい機能をご利用いただけるように、%2$s プランにアップグレードしてください。"
 
-#: lite/templates/admin/entries/overview/modal.php:29
-msgid "View Entries in Dashboard"
-msgstr "ダッシュボード上で回答を表示"
-
-#: lite/templates/admin/entries/overview/modal.php:25
-msgid "Once you upgrade to WPForms Pro, all future form entries will be stored in your WordPress database and displayed on this Entries screen."
-msgstr "WPForms Pro にアップグレードすると、今後入力されるフォームの回答を WordPress のデータベースに保存し、「回答」画面に表示できます。"
-
-#: lite/templates/admin/entries/overview/modal.php:32
-msgid "Save Favorite Entries"
-msgstr "お気に入りの回答を保存"
-
-#: lite/templates/admin/entries/overview/modal.php:30
-msgid "Export Entries in a CSV File"
-msgstr "回答を CSV ファイルにエクスポート"
+#: includes/fields/class-radio.php:22
+msgid "Multiple Choice"
+msgstr "多項選択式"
 
 #: lite/templates/admin/entries/overview/modal.php:22
 msgid "View and Manage Your Form Entries inside WordPress"
-msgstr "WordPress 内のフォームの回答を表示および管理する"
+msgstr "WordPress 内のすべてのフォームエントリーを表示および管理する"
 
-#: includes/fields/class-radio.php:22
-msgid "Multiple Choice"
-msgstr "ラジオボタン"
+#: lite/templates/admin/entries/overview/modal.php:25
+msgid "Once you upgrade to WPForms Pro, all future form entries will be stored in your WordPress database and displayed on this Entries screen."
+msgstr "WPForms Pro にアップグレードすると、将来のフォームエントリーはすべて WordPress データベースに保存され、この「エントリー」画面に表示されます。"
+
+#: lite/templates/admin/entries/overview/modal.php:29
+msgid "View Entries in Dashboard"
+msgstr "ダッシュボードでエントリーを表示"
+
+#: lite/templates/admin/entries/overview/modal.php:32
+msgid "Save Favorite Entries"
+msgstr "お気に入りのエントリーを保存"
+
+#: lite/templates/admin/entries/overview/modal.php:30
+msgid "Export Entries in a CSV File"
+msgstr "エントリーを CSV ファイルにエクスポート"
