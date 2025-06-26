@@ -758,7 +758,6 @@ registerPlugin('wpzoom-forms-document-settings', {
 						value={`[wpzf_form id="${postID}"]`}
 						readOnly={true}
 						style={{ margin: 0 }}
-						help={__('Copy and paste this shortcode into any page or post to display the form.', 'wpzoom-forms')}
 					/>
 					<ClipboardButton
 						className="wpzf-copy-button"
@@ -1296,7 +1295,6 @@ registerBlockType('wpzoom-forms/form', {
 					'wpzoom-forms/label-field',
 					'wpzoom-forms/submit-field',
 					'wpzoom-forms/datepicker-field',
-                    // Core WordPress blocks for layout and content
                     'core/group',
                     'core/columns',
                     'core/column',

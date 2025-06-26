@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Akismet Anti-spam: Spam Protection - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-05-07 16:49:57+0000\n"
+"PO-Revision-Date: 2025-06-25 10:34:50+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,6 +10,55 @@ msgstr ""
 "X-Generator: GlotPress/4.0.1\n"
 "Language: ja_JP\n"
 "Project-Id-Version: Plugins - Akismet Anti-spam: Spam Protection - Stable (latest release)\n"
+
+#: views/compatible-plugins.php:111
+msgid "Show less"
+msgstr "表示を減らす"
+
+#. translators: %d: number of compatible plugins, which is guaranteed to be
+#. more than 1.
+#: views/compatible-plugins.php:107 views/compatible-plugins.php:115
+msgid "Show all %d plugins"
+msgstr "すべての%d個のプラグインを表示"
+
+#: views/compatible-plugins.php:92
+msgid "View documentation"
+msgstr "ドキュメントを表示"
+
+#. translators: The placeholder is the name of a plugin, like "Jetpack" .
+#: views/compatible-plugins.php:86
+msgid "Documentation for %s"
+msgstr "%s のドキュメント"
+
+#. translators: The placeholder is the name of a plugin, like "Jetpack" .
+#: views/compatible-plugins.php:61
+msgid "%s logo"
+msgstr "%s logo"
+
+#: views/compatible-plugins.php:32
+msgid "The plugin you've installed is compatible. Follow the documentation link to get started."
+msgid_plural "The plugins you've installed are compatible. Follow the documentation links to get started."
+msgstr[0] "インストールしたプラグインは互換性があります。ドキュメントのリンクに従って開始してください。"
+
+#: views/compatible-plugins.php:28
+msgid "See supported integrations"
+msgstr "サポートされている統合を見る"
+
+#: views/compatible-plugins.php:21
+msgid "Akismet works with other plugins to keep spam away."
+msgstr "Akismet は他のプラグインと連携してスパムを防止します。"
+
+#: views/compatible-plugins.php:13
+msgid "New"
+msgstr "新"
+
+#: views/compatible-plugins.php:12
+msgid "Compatible plugins"
+msgstr "互換性のあるプラグイン"
+
+#: views/compatible-plugins.php:11
+msgid "Compatible plugins (new feature)"
+msgstr "互換性のあるプラグイン (新機能)"
 
 #: class-akismet-compatible-plugins.php:86
 msgid "Error getting compatible plugins."
@@ -285,6 +334,11 @@ msgstr "Akismet プライバシー通知"
 #: views/config.php:206
 msgid "Privacy"
 msgstr "プライバシー"
+
+#. translators: %s: Akismet privacy URL
+#: class.akismet.php:1917
+msgid "This site uses Akismet to reduce spam. <a href=\"%s\" target=\"_blank\" rel=\"nofollow noopener\">Learn how your comment data is processed.</a>"
+msgstr "このサイトはスパムを低減するために Akismet を使っています。<a href=\"%s\" target=\"_blank\" rel=\"nofollow noopener\">コメントデータの処理方法の詳細はこちらをご覧ください</a>。"
 
 #: class.akismet-admin.php:108
 msgid "We collect information about visitors who comment on Sites that use our Akismet Anti-spam service. The information we collect depends on how the User sets up Akismet for the Site, but typically includes the commenter's IP address, user agent, referrer, and Site URL (along with other information directly provided by the commenter such as their name, username, email address, and the comment itself)."

@@ -17,7 +17,7 @@ const Save = ( { attributes } ) => {
 
 		<input
 			data-datepicker="true"
-            autocomplete="off
+			autoComplete="off"
 			data-date-format={ 'custom_format' == format ? customFormat : format }
 			data-mode={ mode }
 			type="text"
