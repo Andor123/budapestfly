@@ -1,52 +1,6 @@
-/*! elementor - v3.29.0 - 04-06-2025 */
+/*! elementor - v3.30.0 - 01-07-2025 */
 "use strict";
 (self["webpackChunkelementor"] = self["webpackChunkelementor"] || []).push([["onboarding"],{
-
-/***/ "../app/assets/js/molecules/elementor-loading.js":
-/*!*******************************************************!*\
-  !*** ../app/assets/js/molecules/elementor-loading.js ***!
-  \*******************************************************/
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-/* provided dependency */ var PropTypes = __webpack_require__(/*! prop-types */ "../node_modules/prop-types/index.js");
-/* provided dependency */ var __ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n")["__"];
-
-
-var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "../node_modules/@babel/runtime/helpers/interopRequireDefault.js");
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-exports["default"] = ElementorLoading;
-var _react = _interopRequireDefault(__webpack_require__(/*! react */ "react"));
-function ElementorLoading(props) {
-  return /*#__PURE__*/_react.default.createElement("div", {
-    className: "elementor-loading"
-  }, /*#__PURE__*/_react.default.createElement("div", {
-    className: "elementor-loader-wrapper"
-  }, /*#__PURE__*/_react.default.createElement("div", {
-    className: "elementor-loader"
-  }, /*#__PURE__*/_react.default.createElement("div", {
-    className: "elementor-loader-boxes"
-  }, /*#__PURE__*/_react.default.createElement("div", {
-    className: "elementor-loader-box"
-  }), /*#__PURE__*/_react.default.createElement("div", {
-    className: "elementor-loader-box"
-  }), /*#__PURE__*/_react.default.createElement("div", {
-    className: "elementor-loader-box"
-  }), /*#__PURE__*/_react.default.createElement("div", {
-    className: "elementor-loader-box"
-  }))), /*#__PURE__*/_react.default.createElement("div", {
-    className: "elementor-loading-title"
-  }, props.loadingText)));
-}
-ElementorLoading.propTypes = {
-  loadingText: PropTypes.string
-};
-ElementorLoading.defaultProps = {
-  loadingText: __('Loading', 'elementor')
-};
-
-/***/ }),
 
 /***/ "../app/assets/js/ui/popover-dialog/popover-dialog.js":
 /*!************************************************************!*\
@@ -1603,7 +1557,7 @@ function GoodToGo() {
   }), /*#__PURE__*/_react.default.createElement(_card.default, {
     name: "template",
     image: elementorCommon.config.urls.assets + 'images/app/onboarding/Library.svg',
-    imageAlt: __('Click here to go to Elementor\'s Kit Library', 'elementor'),
+    imageAlt: __('Click here to go to Elementor\'s Website Templates', 'elementor'),
     text: __('Choose a professionally-designed template or import your own', 'elementor'),
     link: kitLibraryLink,
     clickAction: function clickAction() {
@@ -2701,4 +2655,4 @@ var setSelectedFeatureList = exports.setSelectedFeatureList = function setSelect
 /***/ })
 
 }]);
-//# sourceMappingURL=onboarding.16755744e5ca197ffd37.bundle.js.map
+//# sourceMappingURL=onboarding.7c597804d183da3658ed.bundle.js.map

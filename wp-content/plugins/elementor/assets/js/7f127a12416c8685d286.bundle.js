@@ -1,4 +1,4 @@
-/*! elementor - v3.29.0 - 04-06-2025 */
+/*! elementor - v3.30.0 - 01-07-2025 */
 (self["webpackChunkelementor"] = self["webpackChunkelementor"] || []).push([["modules_nested-elements_assets_js_editor_nested-element-types-base_js"],{
 
 /***/ "../modules/nested-elements/assets/js/editor/nested-element-types-base.js":
@@ -117,7 +117,6 @@ function AddSectionArea(props) {
   }, /*#__PURE__*/_react.default.createElement("button", {
     type: "button",
     className: "elementor-add-section-area-button elementor-add-section-button",
-    title: __('Add new container', 'elementor'),
     "aria-label": __('Add new container', 'elementor'),
     onClick: function onClick() {
       return props.setIsRenderPresets(true);
@@ -208,7 +207,6 @@ function SelectPreset(props) {
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("button", {
     type: "button",
     className: "elementor-add-section-close",
-    title: __('Close', 'elementor'),
     "aria-label": __('Close', 'elementor'),
     onClick: function onClick() {
       return props.setIsRenderPresets(false);
@@ -483,4 +481,4 @@ module.exports = _superPropBase, module.exports.__esModule = true, module.export
 /***/ })
 
 }]);
-//# sourceMappingURL=cf70912a0f34653ad242.bundle.js.map
+//# sourceMappingURL=7f127a12416c8685d286.bundle.js.map

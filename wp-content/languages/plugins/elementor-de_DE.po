@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Elementor Website Builder &#8211; More Than Just a Page Builder - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-06-25 00:11:09+0000\n"
+"PO-Revision-Date: 2025-07-01 04:56:52+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -526,6 +526,10 @@ msgstr "Schließen-Button-Farbe"
 msgid "Send Button"
 msgstr "Senden-Button"
 
+#: modules/floating-buttons/base/widget-contact-button-base.php:655
+msgid "Rob"
+msgstr "Rob"
+
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:861
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:1320
 msgid "Title or Tagline"
@@ -717,6 +721,56 @@ msgstr "WordPress-Widgets"
 #: includes/controls/groups/flex-container.php:187
 msgid "No Wrap"
 msgstr "Kein Umbruch"
+
+#: includes/controls/groups/image-size.php:296 includes/controls/media.php:297
+#: includes/widgets/testimonial.php:317
+msgid "Image Resolution"
+msgstr "Bildauflösung"
+
+#: modules/element-manager/ajax.php:117
+msgid "Invalid nonce."
+msgstr "Ungültiger Nonce."
+
+#: includes/template-library/sources/local.php:234
+msgid "View Template"
+msgstr "Template anzeigen"
+
+#: includes/template-library/sources/local.php:233
+msgid "All Templates"
+msgstr "Alle Templates"
+
+#: includes/template-library/sources/local.php:229
+#: includes/template-library/sources/local.php:230
+msgid "Add New Template"
+msgstr "Neues Template hinzufügen"
+
+#: modules/element-manager/ajax.php:112
+msgid "You do not have permission to edit these settings."
+msgstr "Du hast keine Berechtigung, diese Einstellungen zu bearbeiten."
+
+#: includes/template-library/sources/local.php:238
+msgid "Parent Template:"
+msgstr "Übergeordnetes Template:"
+
+#: includes/template-library/sources/local.php:236
+msgid "No Templates found"
+msgstr "Es wurden keine Templates gefunden"
+
+#: includes/template-library/sources/local.php:235
+msgid "Search Template"
+msgstr "Template suchen"
+
+#: includes/template-library/sources/local.php:237
+msgid "No Templates found in Trash"
+msgstr "Im Papierkorb wurden keine Templates gefunden"
+
+#: includes/widgets/video.php:140
+msgid "VideoPress"
+msgstr "VideoPress"
+
+#: includes/widgets/video.php:291
+msgid "VideoPress URL"
+msgstr "VideoPress-URL"
 
 #: includes/editor-templates/templates.php:539 assets/js/ai-admin.js:1034
 #: assets/js/ai-admin.js:1081 assets/js/ai-admin.js:2494
@@ -1194,6 +1248,19 @@ msgstr "Vorladen"
 msgid "Metadata"
 msgstr "Metadaten"
 
+#: modules/nested-elements/module.php:17
+msgid "Nested Elements"
+msgstr "Verschachtelte Elemente"
+
+#: modules/nested-tabs/widgets/nested-tabs.php:342
+msgid "Align Title"
+msgstr "Titel ausrichten"
+
+#. translators: 1: Breakpoint label, 2: `>` character, 3: Breakpoint value.
+#: modules/nested-tabs/widgets/nested-tabs.php:422
+msgid "%1$s (%2$s %3$dpx)"
+msgstr "%1$s (%2$s %3$d px)"
+
 #: includes/settings/settings.php:458
 msgid "Lazy Load Background Images"
 msgstr "Hintergrundbilder nachladen"
@@ -1457,10 +1524,6 @@ msgstr "Seitennummerierung"
 msgid "There was a problem uploading your file."
 msgstr "Beim Hochladen der Datei ist ein Fehler aufgetreten."
 
-#: modules/library/documents/page.php:65
-msgid "Add New Page Template"
-msgstr "Neue Seitenvorlage hinzufügen"
-
 #: core/editor/promotion.php:31 assets/js/e-react-promotions.js:196
 #: assets/js/editor.js:6791 assets/js/notes.js:149 assets/js/styleguide.js:196
 msgid "Connect & Activate"
@@ -1606,10 +1669,6 @@ msgstr "Die \"Inline Font Icons\" rendern die Icons als Inline-SVG, ohne die Fon
 msgid "Not allowed to rollback versions"
 msgstr "Rollback von Versionen nicht erlaubt"
 
-#: modules/page-templates/module.php:316
-msgid "The default page template as defined in Elementor Panel → Hamburger Menu → Site Settings."
-msgstr "Die Standardseitenvorlage, wie sie in Elementor Panel >Hamburger Menu > Website Einstellungen definiert ist."
-
 #: includes/elements/column.php:455 includes/elements/container.php:852
 #: includes/elements/section.php:723 includes/widgets/heading.php:317
 msgid "Lighten"
@@ -1629,11 +1688,6 @@ msgstr "Multiplizieren"
 #: includes/elements/section.php:725 includes/widgets/heading.php:319
 msgid "Saturation"
 msgstr "Sättigung"
-
-#. translators: %1$s Link open tag, %2$s: Link close tag.
-#: modules/safe-mode/module.php:290
-msgid "Please note! We couldn't deactivate all of your plugins on Safe Mode. Please %1$sread more%2$s about this issue"
-msgstr "HINWEIS: Wir konnten nicht alle Deiner Plugins im abgesicherten Modus deaktivieren. Bitte %1$slies mehr%2$s über dieses Problem"
 
 #. translators: %1$s Link open tag, %2$s: Link close tag.
 #: modules/safe-mode/module.php:261 modules/safe-mode/module.php:274
@@ -1659,10 +1713,6 @@ msgstr "Das Argument %1$s ist seit Version %2$s veraltet! Verwende stattdessen %
 #: includes/managers/controls.php:1138
 msgid "Meet Page Transitions"
 msgstr "Infos zu Seitenübergänge"
-
-#: includes/managers/controls.php:1126
-msgid "Page Transitions let you style entrance and exit animations between pages as well as display loader until your page assets load."
-msgstr "Mit Seitenübergängen kannst Du Eingangs- und Ausgangsanimationen zwischen den Seiten gestalten und Ladevorgänge anzeigen, bis Deine Seiteninhalte geladen sind."
 
 #. translators: %1$s Link open tag, %2$s: Link close tag.
 #: includes/maintenance-mode.php:375
@@ -1705,11 +1755,6 @@ msgstr "Du kannst diesen unter den %1$sElementor Einstellungen%2$s aktivieren."
 #: includes/base/element-base.php:1393
 msgid "Hide On %s"
 msgstr "Auf %s ausblenden"
-
-#. translators: %1$s Span open tag, %2$s: Span close tag.
-#: includes/admin-templates/new-template.php:52
-msgid "Templates Help You %1$sWork Efficiently%2$s"
-msgstr "Vorlagen ermöglichen Dir ein %1$seffizienteres Arbeiten%2$s"
 
 #. translators: 1: Link open tag, 2: Link close tag.
 #: core/kits/documents/tabs/tab-base.php:80
@@ -1763,10 +1808,6 @@ msgstr "Kopfzeile"
 msgid "Sections"
 msgstr "Abschnitte"
 
-#: includes/settings/tools.php:435
-msgid "It seems like your site doesn't have any active Kit. The active Kit includes all of your Site Settings. By recreating your Kit you will able to start edit your Site Settings again."
-msgstr "Deine Website hat kein aktives Kit. Das aktive Kit enthält Deine gesamten Website Einstellungen. Wenn Du Dein Kit neu erstellst, kannst Du Deine Website Einstellungen wieder bearbeiten."
-
 #: includes/settings/tools.php:431 includes/settings/tools.php:434
 #: assets/js/editor.js:30987
 msgid "Recreate Kit"
@@ -1817,6 +1858,12 @@ msgstr "Bausatz nicht vorhanden."
 #: assets/js/kit-library.b0f0ab89c95fe1f6fde3.bundle.js:4453
 msgid "Kit Library"
 msgstr "Kit Bibliothek"
+
+#: modules/global-classes/global-classes-rest-api.php:168
+#: assets/js/packages/editor-global-classes/editor-global-classes.js:6
+#: assets/js/packages/editor-global-classes/editor-global-classes.strings.js:26
+msgid "Something went wrong"
+msgstr "Etwas ist schiefgelaufen"
 
 #: includes/settings/tools.php:341 assets/js/app.js:7614 assets/js/app.js:8335
 msgid "Important:"
@@ -1993,10 +2040,6 @@ msgstr "%1$s<br> Die für das Gerät %1$s hinzugefügten Einstellungen gelten f�
 msgid "Database update process is running in the background. Taking a while?"
 msgstr "Der Prozess der Datenbankaktualisierung läuft im Hintergrund. Dauert eine Weile?"
 
-#: core/admin/admin-notices.php:324
-msgid "With Elementor Pro, you can control user access and make sure no one messes up your design."
-msgstr "Mit Elementor Pro kannst Du den Benutzerzugang kontrollieren und sicherstellen, dass niemand Dein Design durcheinanderbringt."
-
 #: core/admin/admin-notices.php:323
 msgid "Managing a multi-user site?"
 msgstr "Verwaltest Du eine Multi-Website?"
@@ -2090,18 +2133,18 @@ msgstr "Gefällt Dir Elementor?"
 msgid "Import / Export Kit"
 msgstr "Kit importieren / exportieren"
 
-#: app/modules/import-export/module.php:149
-msgid "Bundle your whole site - or just some of its elements - to be used for another website."
-msgstr "Bündel Deine gesamte Website, oder nur einige Deiner Elemente, um diese auf einer anderen Website zu benutzen."
-
-#. translators: 1: New line break, 2: Learn more link.
-#: app/modules/import-export/module.php:137
-msgid "Design sites faster with a template kit that contains some or all components of a complete site, like templates, content & site settings.%1$sYou can import a kit and apply it to your site, or export the elements from this site to be used anywhere else. %2$s"
-msgstr "Gestalte Seiten schneller mit einem Template-Kit, das einige oder alle Komponenten einer kompletten Seite enthält, wie Vorlagen, Inhalte und Seiteneinstellungen.%1$sDu kannst ein Kit importieren und auf deine Seite anwenden, oder die Elemente von dieser Seite exportieren, um sie an anderer Stelle zu verwenden. %2$s"
-
 #: app/modules/import-export/module.php:119
 msgid "Template Kits"
 msgstr "Template-Kits"
+
+#: core/utils/import-export/wp-import.php:1143
+msgid "The uploaded file could not be moved"
+msgstr "Die hochgeladene Datei konnte nicht verschoben werden"
+
+#. translators: %s: Max file size.
+#: core/utils/import-export/wp-import.php:1095
+msgid "Remote file is too large, limit is %s"
+msgstr "Remote-Datei ist zu groß, Grenze ist %s"
 
 #: app/modules/import-export/module.php:133 core/admin/admin-notices.php:369
 #: core/admin/admin-notices.php:425 core/admin/admin-notices.php:473
@@ -2120,15 +2163,6 @@ msgstr "Template-Kits"
 #: assets/js/kit-library.b0f0ab89c95fe1f6fde3.bundle.js:3497
 msgid "Learn more"
 msgstr "Mehr erfahren"
-
-#: core/utils/import-export/wp-import.php:1143
-msgid "The uploaded file could not be moved"
-msgstr "Die hochgeladene Datei konnte nicht verschoben werden"
-
-#. translators: %s: Max file size.
-#: core/utils/import-export/wp-import.php:1095
-msgid "Remote file is too large, limit is %s"
-msgstr "Remote-Datei ist zu groß, Grenze ist %s"
 
 #: core/utils/import-export/wp-import.php:1087
 msgid "Downloaded file has incorrect size"
@@ -2393,10 +2427,6 @@ msgstr "Bearbeiten Landing Page"
 msgid "Add New Landing Page"
 msgstr "Neue Landing Page hinzufügen"
 
-#: modules/landing-pages/module.php:217
-msgid "Build Effective Landing Pages for your business' marketing campaigns."
-msgstr "Erstelle wirksame Landing Pages für die Marketingkampagnen Deines Unternehmens."
-
 #: modules/landing-pages/module.php:46
 msgid "Adds a new Elementor content type that allows creating beautiful landing pages instantly in a streamlined workflow."
 msgstr "Fügt einen neuen Elementor Inhaltstyp hinzu, mit dem Landing Pages in einem optimierten Workflow erstellen lassen."
@@ -2426,10 +2456,6 @@ msgstr "Individueller Spaltenabstand"
 #: core/kits/views/trash-kit-confirmation.php:33
 msgid "Keep my settings"
 msgstr "Behalte meine Einstellungen"
-
-#: core/kits/views/trash-kit-confirmation.php:21
-msgid "By removing this template you will delete your entire Site Settings. If this template is deleted, all associated settings: Global Colors & Fonts, Theme Style, Layout, Background, and Lightbox settings will be removed from your existing site. This action can not be undone."
-msgstr "Wenn Du diese Vorlage entfernst, löscht Du Deine gesamten Website Einstellungen: Globale Farben, Schriften, Theme Styles, Layout, Hintergrund und Lightbox Einstellungen. Diese Aktion kann nicht rückgängig gemacht werden."
 
 #: core/editor/data/globals/endpoints/base.php:34
 msgid "The Global value you are trying to use is not available."
@@ -2583,11 +2609,6 @@ msgstr "Empfohlene Favicon-Abmessungen: 512 x 512 Pixel."
 #: modules/compatibility-tag/compatibility-tag-report.php:173
 msgid "Error"
 msgstr "Fehler"
-
-#. translators: %1$s Link open tag, %2$s: Link close tag.
-#: core/admin/admin.php:873
-msgid "The latest update includes some substantial changes across different areas of the plugin. We highly recommend you %1$sbackup your site before upgrading%2$s, and make sure you first update in a staging environment"
-msgstr "Das neueste Update enthält einige wesentliche Änderungen in verschiedenen Bereichen des Plugins. Wir empfehlen Dir dringend, %1$svor dem Upgrade%2$s ein Backup Deiner Website zu erstellen"
 
 #. translators: 1: Width number pixel, 2: Height number pixel.
 #: core/kits/documents/tabs/settings-site-identity.php:102
@@ -3420,10 +3441,6 @@ msgstr "Hinweis: Dieses Widget betrifft nur Themes, die `%s` in Archiv-Seiten ve
 msgid "The database update process is now complete. Thank you for updating to the latest version!"
 msgstr "Der Aktualisierungsprozess der Datenbank ist nun abgeschlossen!"
 
-#: core/base/db-upgrades-manager.php:93
-msgid "Your site database needs to be updated to the latest version."
-msgstr "Die Datenbank Deiner Website muss auf die neueste Version aktualisiert werden."
-
 #: includes/controls/media.php:198
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:387
 msgid "Choose File"
@@ -3930,10 +3947,6 @@ msgstr "Dieses Template enthält den Header, Inhalt in voller Breite und den Foo
 msgid "Page Layout"
 msgstr "Seitenlayout"
 
-#: modules/page-templates/module.php:328
-msgid "Default Page Template from your theme."
-msgstr "Standardseitenvorlage Deines Theme."
-
 #: includes/frontend.php:1414 includes/widgets/video.php:987
 msgid "Play Video"
 msgstr "Video abspielen"
@@ -4335,10 +4348,6 @@ msgstr "Template importieren"
 msgid "Import Template to Your Library"
 msgstr "Template in deine Bibliothek importieren"
 
-#: includes/editor-templates/templates.php:564
-msgid "Drag & drop your .JSON or .zip template file"
-msgstr "Ziehe dein .JSON oder .zip Template hierher."
-
 #: includes/editor-templates/hotkeys.php:73
 #: includes/editor-templates/repeater.php:18 assets/js/editor.js:32743
 #: assets/js/editor.js:53857
@@ -4384,6 +4393,10 @@ msgstr "Hier klicken"
 #: assets/js/packages/editor-app-bar/editor-app-bar.strings.js:24
 msgid "Save Draft"
 msgstr "Entwurf speichern"
+
+#: includes/editor-templates/templates.php:564
+msgid "Drag & drop your .JSON or .zip template file"
+msgstr "Ziehe deine .JSON- oder .zip-Template-Datei per Drag-and-drop hierher"
 
 #: includes/template-library/sources/local.php:496
 #: includes/template-library/sources/local.php:612
@@ -4542,16 +4555,17 @@ msgstr "Öffnet automatisch alle Bilder-Links in der Lightbox. Gilt für alle Bi
 msgid "Image Lightbox"
 msgstr "Bilder-Lightbox"
 
-#: includes/template-library/sources/local.php:1018
-msgid "Choose an Elementor template JSON file or a .zip archive of Elementor templates, and add them to the list of templates available in your library."
-msgstr "Wähle eine Elementor-Template JSON-Datei oder ein .zip-Archiv von Elementor-Vorlagen aus und füge sie zu den Templates hinzu, die in der Bibliothek zur Verfügung stehen."
-
 #: includes/elements/column.php:906 includes/elements/container.php:1844
 #: includes/elements/section.php:1353 includes/widgets/common-base.php:757
 #: modules/floating-buttons/base/widget-contact-button-base.php:1415
 #: modules/floating-buttons/base/widget-floating-bars-base.php:916
 msgid "Animation Delay"
 msgstr "Verzögerung"
+
+#: core/kits/documents/tabs/settings-layout.php:101
+#: includes/elements/column.php:237
+msgid "Widgets Space"
+msgstr "Widget Abstand"
 
 #: core/kits/documents/tabs/theme-style-form-fields.php:137
 #: core/kits/documents/tabs/theme-style-images.php:203
@@ -4576,11 +4590,6 @@ msgstr "Verzögerung"
 #: modules/shapes/widgets/text-path.php:638
 msgid "Transition Duration"
 msgstr "Übergangsdauer"
-
-#: core/kits/documents/tabs/settings-layout.php:101
-#: includes/elements/column.php:237
-msgid "Widgets Space"
-msgstr "Widget Abstand"
 
 #: includes/elements/column.php:797 includes/elements/container.php:1748
 #: includes/elements/section.php:1264 includes/widgets/common-base.php:663
@@ -5092,10 +5101,6 @@ msgstr "Gib deine alte und deine neue URL deiner WordPress-Installation an, um a
 msgid "By"
 msgstr "Von"
 
-#: modules/history/views/revisions-panel-template.php:27
-msgid "Start designing your page and you will be able to see the entire revision history here."
-msgstr "Beginnen Sie die Gestaltung Ihrer Seite und Sie können hier die gesamte Änderungshistorie sehen."
-
 #: includes/widgets/counter.php:199
 msgid "Thousand Separator"
 msgstr "Tausendertrennzeichen"
@@ -5134,6 +5139,13 @@ msgstr "Mit eigenem CSS kannst du CSS-Code zu jedem Widget hinzufügen. Dies wir
 #: includes/managers/controls.php:1075
 msgid "Custom CSS"
 msgstr "Individuelles CSS"
+
+#: modules/promotions/widgets/pro-widget-promotion.php:75
+#: assets/js/ai-admin.js:7932 assets/js/ai-gutenberg.js:9780
+#: assets/js/ai-layout.js:3413 assets/js/ai-media-library.js:9561
+#: assets/js/ai-unify-product-images.js:9561 assets/js/ai.js:11026
+msgid "Go Pro"
+msgstr "Wechsle zu Pro"
 
 #: includes/widgets/traits/button-trait.php:38
 msgid "Extra Large"
@@ -5291,13 +5303,6 @@ msgstr "Typ"
 msgid "Back to Library"
 msgstr "Zurück zur Bibliothek"
 
-#: includes/editor-templates/hotkeys.php:181
-#: includes/editor-templates/templates.php:554
-#: includes/editor-templates/templates.php:570
-#: includes/editor-templates/templates.php:584
-msgid "Template Library"
-msgstr "Vorlagen Bibliothek"
-
 #: includes/editor-templates/global.php:45
 msgid "Add Template"
 msgstr "Template hinzufügen"
@@ -5334,6 +5339,11 @@ msgstr "Templates importieren"
 #: includes/template-library/sources/local.php:1731 assets/js/app.js:10342
 msgid "Saved Templates"
 msgstr "Gespeicherte Templates"
+
+#. translators: %s: WordPress child themes documentation.
+#: modules/system-info/reporters/theme.php:207
+msgid "If you want to modify the source code of your theme, we recommend using a <a href=\"%s\">child theme</a>."
+msgstr "Falls du den Quellcode deines Themes bearbeiten möchtest, empfehlen wir dir die Benutzung eines <a href=\"%s\">Child-Themes</a>."
 
 #: core/kits/documents/tabs/global-typography.php:28
 #: core/kits/documents/tabs/global-typography.php:47 assets/js/app.js:10360
@@ -5563,10 +5573,6 @@ msgstr "Ich habe das Plugin nicht zum Laufen bekommen"
 msgid "I no longer need the plugin"
 msgstr "Ich benötige das Plugin nicht mehr"
 
-#: includes/widgets/audio.php:171
-msgid "Like Button"
-msgstr "'Gefällt mir' Schaltfläche"
-
 #: core/admin/admin-notices.php:141 core/admin/admin-notices.php:149
 #: core/base/db-upgrades-manager.php:97
 msgid "Update Now"
@@ -5718,10 +5724,6 @@ msgstr "Intro-Portrait"
 #: includes/widgets/video.php:507
 msgid "Intro Title"
 msgstr "Intro-Titel"
-
-#: includes/widgets/audio.php:251 includes/widgets/video.php:549
-msgid "Controls Color"
-msgstr "Farbe der Schaltflächen"
 
 #: includes/controls/image-dimensions.php:81
 msgid "The server does not have ImageMagick or GD installed and/or enabled! Any of these libraries are required for WordPress to be able to resize images. Please contact your server administrator to enable this before continuing."
@@ -7334,6 +7336,10 @@ msgstr "Medien-Datei"
 msgid "Google Maps"
 msgstr "Google Maps"
 
+#: includes/editor-templates/panel-elements.php:75
+msgid "Search Widget..."
+msgstr "Widget suchen... "
+
 #: core/kits/documents/tabs/settings-background.php:79
 #: core/kits/documents/tabs/settings-lightbox.php:99
 #: core/kits/documents/tabs/settings-lightbox.php:116
@@ -7378,10 +7384,6 @@ msgstr "Google Maps"
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:221
 msgid "None"
 msgstr "Keine"
-
-#: includes/editor-templates/panel-elements.php:75
-msgid "Search Widget..."
-msgstr "Widget suchen... "
 
 #: includes/managers/elements.php:288
 msgid "Basic"
@@ -7501,6 +7503,10 @@ msgstr "CSS-Klassen"
 msgid "Minimum Height"
 msgstr "Mindesthöhe"
 
+#: includes/widgets/progress.php:188
+msgid "Percentage"
+msgstr "Prozent"
+
 #: core/kits/documents/tabs/theme-style-buttons.php:152
 #: core/kits/documents/tabs/theme-style-buttons.php:227
 #: core/kits/documents/tabs/theme-style-form-fields.php:233
@@ -7523,10 +7529,6 @@ msgstr "Mindesthöhe"
 #: modules/nested-tabs/widgets/nested-tabs.php:1028
 msgid "Border Radius"
 msgstr "Eckenradius"
-
-#: includes/widgets/progress.php:188
-msgid "Percentage"
-msgstr "Prozent"
 
 #: includes/widgets/menu-anchor.php:115
 msgid "The ID of Menu Anchor."
@@ -7652,6 +7654,10 @@ msgstr "Zentriert"
 msgid "Icon Position"
 msgstr "Icon-Position"
 
+#: includes/settings/settings.php:271
+msgid "Post Types"
+msgstr "Inhaltstypen"
+
 #: core/document-types/page-base.php:144
 #: core/kits/documents/tabs/theme-style-buttons.php:243
 #: core/kits/documents/tabs/theme-style-form-fields.php:159
@@ -7713,10 +7719,6 @@ msgstr "Innenabstand"
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:177
 msgid "Custom"
 msgstr "Individuell"
-
-#: includes/settings/settings.php:271
-msgid "Post Types"
-msgstr "Inhaltstypen"
 
 #: core/experiments/manager.php:396 core/experiments/manager.php:686
 #: modules/element-cache/module.php:129

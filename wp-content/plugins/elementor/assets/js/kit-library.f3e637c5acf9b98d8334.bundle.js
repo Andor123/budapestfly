@@ -1,4 +1,4 @@
-/*! elementor - v3.29.0 - 04-06-2025 */
+/*! elementor - v3.30.0 - 01-07-2025 */
 (self["webpackChunkelementor"] = self["webpackChunkelementor"] || []).push([["kit-library"],{
 
 /***/ "../app/modules/kit-library/assets/js/components/badge.scss":
@@ -191,53 +191,6 @@
 
 /***/ }),
 
-/***/ "../app/assets/js/molecules/elementor-loading.js":
-/*!*******************************************************!*\
-  !*** ../app/assets/js/molecules/elementor-loading.js ***!
-  \*******************************************************/
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-"use strict";
-/* provided dependency */ var PropTypes = __webpack_require__(/*! prop-types */ "../node_modules/prop-types/index.js");
-/* provided dependency */ var __ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n")["__"];
-
-
-var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "../node_modules/@babel/runtime/helpers/interopRequireDefault.js");
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-exports["default"] = ElementorLoading;
-var _react = _interopRequireDefault(__webpack_require__(/*! react */ "react"));
-function ElementorLoading(props) {
-  return /*#__PURE__*/_react.default.createElement("div", {
-    className: "elementor-loading"
-  }, /*#__PURE__*/_react.default.createElement("div", {
-    className: "elementor-loader-wrapper"
-  }, /*#__PURE__*/_react.default.createElement("div", {
-    className: "elementor-loader"
-  }, /*#__PURE__*/_react.default.createElement("div", {
-    className: "elementor-loader-boxes"
-  }, /*#__PURE__*/_react.default.createElement("div", {
-    className: "elementor-loader-box"
-  }), /*#__PURE__*/_react.default.createElement("div", {
-    className: "elementor-loader-box"
-  }), /*#__PURE__*/_react.default.createElement("div", {
-    className: "elementor-loader-box"
-  }), /*#__PURE__*/_react.default.createElement("div", {
-    className: "elementor-loader-box"
-  }))), /*#__PURE__*/_react.default.createElement("div", {
-    className: "elementor-loading-title"
-  }, props.loadingText)));
-}
-ElementorLoading.propTypes = {
-  loadingText: PropTypes.string
-};
-ElementorLoading.defaultProps = {
-  loadingText: __('Loading', 'elementor')
-};
-
-/***/ }),
-
 /***/ "../app/assets/js/ui/popover-dialog/popover-dialog.js":
 /*!************************************************************!*\
   !*** ../app/assets/js/ui/popover-dialog/popover-dialog.js ***!
@@ -425,6 +378,7 @@ exports["default"] = App;
 var _react = _interopRequireDefault(__webpack_require__(/*! react */ "react"));
 var _favorites = _interopRequireDefault(__webpack_require__(/*! ./pages/favorites/favorites */ "../app/modules/kit-library/assets/js/pages/favorites/favorites.js"));
 var _index = _interopRequireDefault(__webpack_require__(/*! ./pages/index */ "../app/modules/kit-library/assets/js/pages/index/index.js"));
+var _cloud = _interopRequireDefault(__webpack_require__(/*! ./pages/cloud/cloud */ "../app/modules/kit-library/assets/js/pages/cloud/cloud.js"));
 var _overview = _interopRequireDefault(__webpack_require__(/*! ./pages/overview/overview */ "../app/modules/kit-library/assets/js/pages/overview/overview.js"));
 var _preview = _interopRequireDefault(__webpack_require__(/*! ./pages/preview/preview */ "../app/modules/kit-library/assets/js/pages/preview/preview.js"));
 var _lastFilterContext = __webpack_require__(/*! ./context/last-filter-context */ "../app/modules/kit-library/assets/js/context/last-filter-context.js");
@@ -432,6 +386,7 @@ var _reactQuery = __webpack_require__(/*! react-query */ "../node_modules/react-
 var _devtools = __webpack_require__(/*! react-query/devtools */ "../node_modules/react-query/devtools/index.js");
 var _router = __webpack_require__(/*! @reach/router */ "../node_modules/@reach/router/es/index.js");
 var _settingsContext = __webpack_require__(/*! ./context/settings-context */ "../app/modules/kit-library/assets/js/context/settings-context.js");
+var _connectStateContext = __webpack_require__(/*! ./context/connect-state-context */ "../app/modules/kit-library/assets/js/context/connect-state-context.js");
 var queryClient = new _reactQuery.QueryClient({
   defaultOptions: {
     queries: {
@@ -441,14 +396,10 @@ var queryClient = new _reactQuery.QueryClient({
     }
   }
 });
-function App() {
-  return /*#__PURE__*/_react.default.createElement("div", {
-    className: "e-kit-library"
-  }, /*#__PURE__*/_react.default.createElement(_reactQuery.QueryClientProvider, {
-    client: queryClient
-  }, /*#__PURE__*/_react.default.createElement(_settingsContext.SettingsProvider, {
+function AppContent() {
+  return /*#__PURE__*/_react.default.createElement(_settingsContext.SettingsProvider, {
     value: elementorAppConfig['kit-library']
-  }, /*#__PURE__*/_react.default.createElement(_lastFilterContext.LastFilterProvider, null, /*#__PURE__*/_react.default.createElement(_router.Router, null, /*#__PURE__*/_react.default.createElement(_index.default, {
+  }, /*#__PURE__*/_react.default.createElement(_connectStateContext.ConnectStateProvider, null, /*#__PURE__*/_react.default.createElement(_lastFilterContext.LastFilterProvider, null, /*#__PURE__*/_react.default.createElement(_router.Router, null, /*#__PURE__*/_react.default.createElement(_index.default, {
     path: "/"
   }), /*#__PURE__*/_react.default.createElement(_favorites.default, {
     path: "/favorites"
@@ -456,7 +407,16 @@ function App() {
     path: "/preview/:id"
   }), /*#__PURE__*/_react.default.createElement(_overview.default, {
     path: "/overview/:id"
-  })))), elementorCommon.config.isElementorDebug && /*#__PURE__*/_react.default.createElement(_devtools.ReactQueryDevtools, {
+  }), /*#__PURE__*/_react.default.createElement(_cloud.default, {
+    path: "/cloud"
+  })))));
+}
+function App() {
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "e-kit-library"
+  }, /*#__PURE__*/_react.default.createElement(_reactQuery.QueryClientProvider, {
+    client: queryClient
+  }, /*#__PURE__*/_react.default.createElement(AppContent, null), elementorCommon.config.isElementorDebug && /*#__PURE__*/_react.default.createElement(_devtools.ReactQueryDevtools, {
     initialIsOpen: false
   })));
 }
@@ -713,13 +673,13 @@ function EnvatoPromotion(props) {
   return /*#__PURE__*/_react.default.createElement(_appUi.Text, {
     className: "e-kit-library-promotion",
     variant: "xl"
-  }, __('Looking for more Kits?', 'elementor'), " ", ' ', /*#__PURE__*/_react.default.createElement(_appUi.Button, {
+  }, __('Looking for more Website Templates?', 'elementor'), " ", ' ', /*#__PURE__*/_react.default.createElement(_appUi.Button, {
     variant: "underlined",
     color: "link",
     url: "https://go.elementor.com/app-envato-kits/",
     target: "_blank",
     rel: "noreferrer",
-    text: __('Check out Elementor Template Kits on ThemeForest', 'elementor'),
+    text: __('Check out Elementor Website Templates on ThemeForest', 'elementor'),
     onClick: function onClick() {
       return eventTracking('kit-library/check-kits-on-theme-forest');
     }
@@ -738,7 +698,6 @@ EnvatoPromotion.propTypes = {
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
-/* provided dependency */ var PropTypes = __webpack_require__(/*! prop-types */ "../node_modules/prop-types/index.js");
 
 
 var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "../node_modules/@babel/runtime/helpers/interopRequireDefault.js");
@@ -748,19 +707,34 @@ Object.defineProperty(exports, "__esModule", ({
 exports["default"] = ErrorScreen;
 var _react = _interopRequireDefault(__webpack_require__(/*! react */ "react"));
 var _appUi = __webpack_require__(/*! @elementor/app-ui */ "@elementor/app-ui");
-var _appsEventTracking = __webpack_require__(/*! elementor-app/event-track/apps-event-tracking */ "../app/assets/js/event-track/apps-event-tracking.js");
+var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "../node_modules/prop-types/index.js"));
 __webpack_require__(/*! ./error-screen.scss */ "../app/modules/kit-library/assets/js/components/error-screen.scss");
 /* eslint-disable jsx-a11y/alt-text */
 
-function ErrorScreen(props) {
+var ErrorScreenButton = function ErrorScreenButton(props) {
   var onClick = function onClick() {
-    (0, _appsEventTracking.appsEventTrackingDispatch)('kit-library/go-back-to-view-kits', {
-      page_source: 'home page',
-      element_position: 'empty state',
-      category: props.button.category && ('/favorites' === props.button.category ? 'favorites' : 'all')
-    });
-    props.button.action();
+    if (props.action) {
+      props.action();
+    }
   };
+  return /*#__PURE__*/_react.default.createElement(_appUi.Button, {
+    text: props.text,
+    onClick: onClick,
+    url: props.url,
+    target: props.target,
+    color: props.color || 'link',
+    variant: props.variant || ''
+  });
+};
+ErrorScreenButton.propTypes = {
+  text: _propTypes.default.string,
+  action: _propTypes.default.func,
+  url: _propTypes.default.string,
+  target: _propTypes.default.string,
+  color: _propTypes.default.oneOf(['primary', 'secondary', 'cta', 'link', 'disabled']),
+  variant: _propTypes.default.oneOf(['contained', 'underlined', 'outlined', ''])
+};
+function ErrorScreen(props) {
   return /*#__PURE__*/_react.default.createElement(_appUi.Grid, {
     container: true,
     alignItems: "center",
@@ -776,23 +750,20 @@ function ErrorScreen(props) {
   }, props.title), /*#__PURE__*/_react.default.createElement(_appUi.Text, {
     variant: "xl",
     className: "e-kit-library__error-screen-description"
-  }, props.description, " ", ' ', /*#__PURE__*/_react.default.createElement(_appUi.Button, {
-    text: props.button.text,
-    color: "link",
-    onClick: onClick,
-    url: props.button.url,
-    target: props.button.target
-  })));
+  }, props.description, " ", ' ', !props.newLineButton && /*#__PURE__*/_react.default.createElement(ErrorScreenButton, props.button)), props.newLineButton && /*#__PURE__*/_react.default.createElement(ErrorScreenButton, props.button));
 }
 ErrorScreen.propTypes = {
-  title: PropTypes.string,
-  description: PropTypes.string,
-  button: PropTypes.shape({
-    text: PropTypes.string,
-    action: PropTypes.func,
-    url: PropTypes.string,
-    target: PropTypes.string,
-    category: PropTypes.string
+  title: _propTypes.default.string,
+  description: _propTypes.default.string,
+  newLineButton: _propTypes.default.bool,
+  button: _propTypes.default.shape({
+    text: _propTypes.default.string,
+    action: _propTypes.default.func,
+    url: _propTypes.default.string,
+    target: _propTypes.default.string,
+    category: _propTypes.default.string,
+    color: _propTypes.default.oneOf(['primary', 'secondary', 'cta', 'link', 'disabled']),
+    variant: _propTypes.default.oneOf(['contained', 'underlined', 'outlined', ''])
   })
 };
 
@@ -1010,7 +981,7 @@ function useKitCallToActionButton(model, _ref) {
     if (type === _useKitCallToAction2.TYPE_CONNECT) {
       return {
         id: 'connect',
-        text: __('Apply Kit', 'elementor'),
+        text: __('Apply', 'elementor'),
         // The label is Apply kit but the this is connect button
         hideText: false,
         variant: 'contained',
@@ -1038,7 +1009,7 @@ function useKitCallToActionButton(model, _ref) {
     }
     return {
       id: 'apply',
-      text: __('Apply Kit', 'elementor'),
+      text: __('Apply', 'elementor'),
       className: 'e-kit-library__apply-button',
       icon: isApplyLoading ? 'eicon-loading eicon-animation-spin' : '',
       hideText: false,
@@ -1212,9 +1183,9 @@ function KitAlreadyAppliedDialog(props) {
     return url.toString();
   };
   return /*#__PURE__*/_react.default.createElement(_appUi.Dialog, {
-    title: __('You\'ve already applied a Kit.', 'elementor'),
-    text: /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, __('Applying two Kits on the same website will mix global styles and colors and hurt your site\'s performance.', 'elementor'), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), __('Remove the existing Kit before applying a new one.', 'elementor')),
-    approveButtonText: __('Remove existing Kit', 'elementor'),
+    title: __('You\'ve already applied a Website Templates.', 'elementor'),
+    text: /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, __('Applying two Website Templates on the same website will mix global styles and colors and hurt your site\'s performance.', 'elementor'), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), __('Remove the existing Website Template before applying a new one.', 'elementor')),
+    approveButtonText: __('Remove existing', 'elementor'),
     approveButtonColor: "primary",
     approveButtonOnClick: function approveButtonOnClick() {
       return location.href = getRemoveKitUrl();
@@ -1228,6 +1199,68 @@ KitAlreadyAppliedDialog.propTypes = {
   id: PropTypes.string.isRequired,
   dismissButtonOnClick: PropTypes.func.isRequired,
   onClose: PropTypes.func.isRequired
+};
+
+/***/ }),
+
+/***/ "../app/modules/kit-library/assets/js/components/kit-cloud-delete-dialog.js":
+/*!**********************************************************************************!*\
+  !*** ../app/modules/kit-library/assets/js/components/kit-cloud-delete-dialog.js ***!
+  \**********************************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+/* provided dependency */ var __ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n")["__"];
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "../node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports["default"] = KitCloudDeleteDialog;
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "react"));
+var _i18n = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+var _appUi = __webpack_require__(/*! @elementor/app-ui */ "@elementor/app-ui");
+var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "../node_modules/prop-types/index.js"));
+function KitCloudDeleteDialog(_ref) {
+  var kit = _ref.kit,
+    show = _ref.show,
+    onCancelClick = _ref.onCancelClick,
+    onDeleteClick = _ref.onDeleteClick,
+    isLoading = _ref.isLoading;
+  if (!kit || !show) {
+    return null;
+  }
+  var handleDeleteClick = function handleDeleteClick() {
+    if (!isLoading) {
+      onDeleteClick();
+    }
+  };
+  var handleCancelClick = function handleCancelClick() {
+    if (!isLoading) {
+      onCancelClick();
+    }
+  };
+  return /*#__PURE__*/_react.default.createElement(_appUi.Dialog, {
+    title: __('Delete this Website Template?', 'elementor'),
+    text: /* Translators: %s: Kit title. */(0, _i18n.sprintf)(__('Removing "%s" will permanently delete this website template from your library.', 'elementor'), (kit === null || kit === void 0 ? void 0 : kit.title) || ''),
+    onClose: handleCancelClick,
+    dismissButtonText: __('Cancel', 'elementor'),
+    dismissButtonOnClick: handleCancelClick,
+    approveButtonText: isLoading ? '' : __('Delete', 'elementor'),
+    approveButtonOnClick: handleDeleteClick,
+    approveButtonColor: "danger"
+  });
+}
+KitCloudDeleteDialog.propTypes = {
+  onDeleteClick: _propTypes.default.func.isRequired,
+  onCancelClick: _propTypes.default.func.isRequired,
+  show: _propTypes.default.bool.isRequired,
+  isLoading: _propTypes.default.bool.isRequired,
+  kit: _propTypes.default.shape({
+    id: _propTypes.default.string,
+    title: _propTypes.default.string
+  })
 };
 
 /***/ }),
@@ -1280,6 +1313,250 @@ KitDialog.propTypes = {
   id: PropTypes.string.isRequired,
   downloadLinkData: PropTypes.object.isRequired,
   onClose: PropTypes.func.isRequired
+};
+
+/***/ }),
+
+/***/ "../app/modules/kit-library/assets/js/components/kit-list-cloud-item.js":
+/*!******************************************************************************!*\
+  !*** ../app/modules/kit-library/assets/js/components/kit-list-cloud-item.js ***!
+  \******************************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "../node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+var _typeof = __webpack_require__(/*! @babel/runtime/helpers/typeof */ "../node_modules/@babel/runtime/helpers/typeof.js");
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports["default"] = void 0;
+var _react = _interopRequireWildcard(__webpack_require__(/*! react */ "react"));
+var _slicedToArray2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/slicedToArray */ "../node_modules/@babel/runtime/helpers/slicedToArray.js"));
+var _i18n = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+var _router = __webpack_require__(/*! @reach/router */ "../node_modules/@reach/router/es/index.js");
+var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "../node_modules/prop-types/index.js"));
+var _kit = _interopRequireDefault(__webpack_require__(/*! ../models/kit */ "../app/modules/kit-library/assets/js/models/kit.js"));
+var _appUi = __webpack_require__(/*! @elementor/app-ui */ "@elementor/app-ui");
+var _appsEventTracking = __webpack_require__(/*! elementor-app/event-track/apps-event-tracking */ "../app/assets/js/event-track/apps-event-tracking.js");
+var _useKit = __webpack_require__(/*! ../../../../import-export/assets/js/hooks/use-kit */ "../app/modules/import-export/assets/js/hooks/use-kit.js");
+__webpack_require__(/*! ./kit-list-item.scss */ "../app/modules/kit-library/assets/js/components/kit-list-item.scss");
+function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
+function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != _typeof(e) && "function" != typeof e) return { default: e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n.default = e, t && t.set(e, n), n; }
+var PopoverItem = function PopoverItem(_ref) {
+  var _ref$className = _ref.className,
+    className = _ref$className === void 0 ? '' : _ref$className,
+    icon = _ref.icon,
+    title = _ref.title,
+    onClick = _ref.onClick;
+  var handleClick = function handleClick() {
+    onClick();
+  };
+  var handleKeyDown = function handleKeyDown(event) {
+    if ('Enter' === event.key || ' ' === event.key) {
+      event.preventDefault();
+      onClick();
+    }
+  };
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "e-kit-library__kit-item-actions-popover-item ".concat(className),
+    role: "button",
+    tabIndex: 0,
+    onClick: handleClick,
+    onKeyDown: handleKeyDown
+  }, /*#__PURE__*/_react.default.createElement("i", {
+    className: icon
+  }), /*#__PURE__*/_react.default.createElement("span", null, title));
+};
+PopoverItem.propTypes = {
+  className: _propTypes.default.string,
+  icon: _propTypes.default.string.isRequired,
+  title: _propTypes.default.string.isRequired,
+  onClick: _propTypes.default.func.isRequired
+};
+var KitActionsPopover = function KitActionsPopover(_ref2) {
+  var isOpen = _ref2.isOpen,
+    onClose = _ref2.onClose,
+    onDelete = _ref2.onDelete,
+    _ref2$className = _ref2.className,
+    className = _ref2$className === void 0 ? 'e-kit-library__kit-item-actions-popover' : _ref2$className;
+  if (!isOpen) {
+    return null;
+  }
+  return /*#__PURE__*/_react.default.createElement(_appUi.Popover, {
+    className: className,
+    closeFunction: onClose,
+    arrowPosition: "none"
+  }, /*#__PURE__*/_react.default.createElement(PopoverItem, {
+    className: "e-kit-library__kit-item-actions-popover-item--danger",
+    icon: "eicon-library-delete",
+    title: (0, _i18n.__)('Delete', 'elementor'),
+    onClick: onDelete
+  }));
+};
+KitActionsPopover.propTypes = {
+  isOpen: _propTypes.default.bool.isRequired,
+  onClose: _propTypes.default.func.isRequired,
+  onDelete: _propTypes.default.func.isRequired,
+  className: _propTypes.default.string
+};
+var KitListCloudItem = function KitListCloudItem(props) {
+  var navigate = (0, _router.useNavigate)();
+  var _useState = (0, _react.useState)(false),
+    _useState2 = (0, _slicedToArray2.default)(_useState, 2),
+    isPopoverOpen = _useState2[0],
+    setIsPopoverOpen = _useState2[1];
+  var eventTracking = function eventTracking(command) {
+    (0, _appsEventTracking.appsEventTrackingDispatch)(command, {
+      kit_name: props.model.title,
+      grid_location: props.index,
+      page_source: 'cloud'
+    });
+  };
+  var handleDelete = function handleDelete() {
+    setIsPopoverOpen(false);
+    eventTracking('kit-library/cloud-delete');
+    props.onDelete();
+  };
+  return /*#__PURE__*/_react.default.createElement(_appUi.Card, {
+    className: "e-kit-library__kit-item"
+  }, /*#__PURE__*/_react.default.createElement(_appUi.CardHeader, {
+    className: "e-kit-library__kit-item-header"
+  }, /*#__PURE__*/_react.default.createElement(_appUi.Heading, {
+    tag: "h3",
+    title: props.model.title,
+    variant: "h5",
+    className: "eps-card__headline"
+  }, props.model.title), /*#__PURE__*/_react.default.createElement(_appUi.Button, {
+    text: (0, _i18n.__)('Actions', 'elementor'),
+    hideText: true,
+    icon: "eicon-ellipsis-v",
+    className: "e-kit-library__kit-item-actions-menu",
+    onClick: function onClick(event) {
+      event.stopPropagation();
+      setIsPopoverOpen(true);
+    }
+  }), /*#__PURE__*/_react.default.createElement(KitActionsPopover, {
+    isOpen: isPopoverOpen,
+    onClose: function onClose() {
+      return setIsPopoverOpen(false);
+    },
+    onDelete: handleDelete
+  })), /*#__PURE__*/_react.default.createElement(_appUi.CardBody, null, /*#__PURE__*/_react.default.createElement(_appUi.CardImage, {
+    alt: props.model.title,
+    src: props.model.thumbnailUrl || ''
+  }, /*#__PURE__*/_react.default.createElement(_appUi.CardOverlay, null, /*#__PURE__*/_react.default.createElement(_appUi.Grid, {
+    container: true,
+    direction: "column",
+    className: "e-kit-library__kit-item-cloud-overlay"
+  }, /*#__PURE__*/_react.default.createElement(_appUi.Button, {
+    className: "eps-button e-kit-library__kit-item-cloud-overlay-import-button eps-button--primary eps-button--sm eps-button--contained",
+    text: (0, _i18n.__)('Apply', 'elementor'),
+    icon: "eicon-library-download",
+    onClick: function onClick() {
+      eventTracking('kit-library/cloud-import');
+      navigate("import?referrer=kit-library&source=".concat(_useKit.KIT_SOURCE_MAP.CLOUD, "&kit_id=").concat(props.model.id), {
+        replace: true
+      });
+    }
+  }))))));
+};
+KitListCloudItem.propTypes = {
+  model: _propTypes.default.instanceOf(_kit.default).isRequired,
+  index: _propTypes.default.number,
+  source: _propTypes.default.string,
+  onDelete: _propTypes.default.func.isRequired
+};
+var _default = exports["default"] = _react.default.memo(KitListCloudItem);
+
+/***/ }),
+
+/***/ "../app/modules/kit-library/assets/js/components/kit-list-cloud.js":
+/*!*************************************************************************!*\
+  !*** ../app/modules/kit-library/assets/js/components/kit-list-cloud.js ***!
+  \*************************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+/* provided dependency */ var PropTypes = __webpack_require__(/*! prop-types */ "../node_modules/prop-types/index.js");
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "../node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+var _typeof = __webpack_require__(/*! @babel/runtime/helpers/typeof */ "../node_modules/@babel/runtime/helpers/typeof.js");
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports["default"] = KitListCloud;
+var _react = _interopRequireWildcard(__webpack_require__(/*! react */ "react"));
+var _regenerator = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/regenerator */ "../node_modules/@babel/runtime/regenerator/index.js"));
+var _asyncToGenerator2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ "../node_modules/@babel/runtime/helpers/asyncToGenerator.js"));
+var _slicedToArray2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/slicedToArray */ "../node_modules/@babel/runtime/helpers/slicedToArray.js"));
+var _kit = _interopRequireDefault(__webpack_require__(/*! ../models/kit */ "../app/modules/kit-library/assets/js/models/kit.js"));
+var _kitListCloudItem = _interopRequireDefault(__webpack_require__(/*! ./kit-list-cloud-item */ "../app/modules/kit-library/assets/js/components/kit-list-cloud-item.js"));
+var _appUi = __webpack_require__(/*! @elementor/app-ui */ "@elementor/app-ui");
+var _useKitCloudMutation = __webpack_require__(/*! ../hooks/use-kit-cloud-mutation */ "../app/modules/kit-library/assets/js/hooks/use-kit-cloud-mutation.js");
+var _kitCloudDeleteDialog = _interopRequireDefault(__webpack_require__(/*! ./kit-cloud-delete-dialog */ "../app/modules/kit-library/assets/js/components/kit-cloud-delete-dialog.js"));
+function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
+function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != _typeof(e) && "function" != typeof e) return { default: e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n.default = e, t && t.set(e, n), n; }
+function KitListCloud(props) {
+  var _useState = (0, _react.useState)(false),
+    _useState2 = (0, _slicedToArray2.default)(_useState, 2),
+    isDeleteModalOpen = _useState2[0],
+    setIsDeleteModalOpen = _useState2[1];
+  var _useKitCloudMutations = (0, _useKitCloudMutation.useKitCloudMutations)(),
+    remove = _useKitCloudMutations.remove,
+    isLoading = _useKitCloudMutations.isLoading;
+  var _useState3 = (0, _react.useState)(),
+    _useState4 = (0, _slicedToArray2.default)(_useState3, 2),
+    kit = _useState4[0],
+    setKit = _useState4[1];
+  var resetKit = (0, _react.useCallback)(function () {
+    setKit(null);
+    setIsDeleteModalOpen(false);
+  }, []);
+  var handleDelete = (0, _react.useCallback)(/*#__PURE__*/(0, _asyncToGenerator2.default)(/*#__PURE__*/_regenerator.default.mark(function _callee() {
+    return _regenerator.default.wrap(function _callee$(_context) {
+      while (1) switch (_context.prev = _context.next) {
+        case 0:
+          _context.prev = 0;
+          _context.next = 3;
+          return remove.mutate(kit.id);
+        case 3:
+          _context.prev = 3;
+          resetKit();
+          return _context.finish(3);
+        case 6:
+        case "end":
+          return _context.stop();
+      }
+    }, _callee, null, [[0,, 3, 6]]);
+  })), [kit, remove, resetKit]);
+  return /*#__PURE__*/_react.default.createElement(_appUi.CssGrid, {
+    spacing: 24,
+    colMinWidth: 290
+  }, /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, props.data.map(function (model, index) {
+    return /*#__PURE__*/_react.default.createElement(_kitListCloudItem.default, {
+      key: model.id,
+      model: model,
+      index: index,
+      source: props.source,
+      onDelete: function onDelete() {
+        setKit(model);
+        setIsDeleteModalOpen(true);
+      }
+    });
+  })), /*#__PURE__*/_react.default.createElement(_kitCloudDeleteDialog.default, {
+    kit: kit,
+    show: isDeleteModalOpen,
+    onDeleteClick: handleDelete,
+    onCancelClick: resetKit,
+    isLoading: isLoading
+  }));
+}
+KitListCloud.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.instanceOf(_kit.default)),
+  source: PropTypes.string
 };
 
 /***/ }),
@@ -1535,7 +1812,7 @@ function Header(props) {
     className: "eps-app__logo eicon-elementor"
   }), /*#__PURE__*/_react.default.createElement("h1", {
     className: "eps-app__title"
-  }, __('Kit Library', 'elementor'))), props.centerColumn || /*#__PURE__*/_react.default.createElement("span", null), props.endColumn || /*#__PURE__*/_react.default.createElement("div", {
+  }, __('Website Templates', 'elementor'))), props.centerColumn || /*#__PURE__*/_react.default.createElement("span", null), props.endColumn || /*#__PURE__*/_react.default.createElement("div", {
     style: {
       flex: 1
     }
@@ -1982,6 +2259,74 @@ TaxonomiesFilter.propTypes = {
 
 /***/ }),
 
+/***/ "../app/modules/kit-library/assets/js/context/connect-state-context.js":
+/*!*****************************************************************************!*\
+  !*** ../app/modules/kit-library/assets/js/context/connect-state-context.js ***!
+  \*****************************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "../node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+var _typeof = __webpack_require__(/*! @babel/runtime/helpers/typeof */ "../node_modules/@babel/runtime/helpers/typeof.js");
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.ConnectStateContext = void 0;
+exports.ConnectStateProvider = ConnectStateProvider;
+var _react = _interopRequireWildcard(__webpack_require__(/*! react */ "react"));
+var _slicedToArray2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/slicedToArray */ "../node_modules/@babel/runtime/helpers/slicedToArray.js"));
+var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "../node_modules/prop-types/index.js"));
+function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
+function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != _typeof(e) && "function" != typeof e) return { default: e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n.default = e, t && t.set(e, n), n; }
+var ConnectStateContext = exports.ConnectStateContext = (0, _react.createContext)();
+function ConnectStateProvider(_ref) {
+  var children = _ref.children;
+  var _useState = (0, _react.useState)(elementorCommon.config.library_connect.is_connected),
+    _useState2 = (0, _slicedToArray2.default)(_useState, 2),
+    isConnected = _useState2[0],
+    setIsConnected = _useState2[1];
+  var _useState3 = (0, _react.useState)(false),
+    _useState4 = (0, _slicedToArray2.default)(_useState3, 2),
+    isConnecting = _useState4[0],
+    setIsConnecting = _useState4[1];
+  var handleConnectSuccess = (0, _react.useCallback)(function (callback) {
+    setIsConnecting(true);
+    setIsConnected(true);
+    elementorCommon.config.library_connect.is_connected = true;
+    if (callback) {
+      callback();
+    }
+  }, []);
+  var handleConnectError = (0, _react.useCallback)(function (callback) {
+    setIsConnected(false);
+    setIsConnecting(false);
+    elementorCommon.config.library_connect.is_connected = false;
+    if (callback) {
+      callback();
+    }
+  }, []);
+  var setConnecting = (0, _react.useCallback)(function (connecting) {
+    setIsConnecting(connecting);
+  }, []);
+  var value = {
+    isConnected: isConnected,
+    isConnecting: isConnecting,
+    setConnecting: setConnecting,
+    handleConnectSuccess: handleConnectSuccess,
+    handleConnectError: handleConnectError
+  };
+  return /*#__PURE__*/_react.default.createElement(ConnectStateContext.Provider, {
+    value: value
+  }, children);
+}
+ConnectStateProvider.propTypes = {
+  children: _propTypes.default.node.isRequired
+};
+
+/***/ }),
+
 /***/ "../app/modules/kit-library/assets/js/context/last-filter-context.js":
 /*!***************************************************************************!*\
   !*** ../app/modules/kit-library/assets/js/context/last-filter-context.js ***!
@@ -2140,6 +2485,164 @@ function useAddKitPromotionUTM(promotionUrl, kitId, kitTitle) {
     url.searchParams.set('utm_content', kitId);
   }
   return url.toString();
+}
+
+/***/ }),
+
+/***/ "../app/modules/kit-library/assets/js/hooks/use-cloud-kits.js":
+/*!********************************************************************!*\
+  !*** ../app/modules/kit-library/assets/js/hooks/use-cloud-kits.js ***!
+  \********************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "../node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.KEY = void 0;
+exports["default"] = useCloudKits;
+exports.defaultQueryParams = void 0;
+var _toConsumableArray2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/toConsumableArray */ "../node_modules/@babel/runtime/helpers/toConsumableArray.js"));
+var _defineProperty2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "../node_modules/@babel/runtime/helpers/defineProperty.js"));
+var _slicedToArray2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/slicedToArray */ "../node_modules/@babel/runtime/helpers/slicedToArray.js"));
+var _kit = _interopRequireDefault(__webpack_require__(/*! ../models/kit */ "../app/modules/kit-library/assets/js/models/kit.js"));
+var _reactQuery = __webpack_require__(/*! react-query */ "../node_modules/react-query/es/index.js");
+var _react = __webpack_require__(/*! react */ "react");
+var _utils = __webpack_require__(/*! ../utils */ "../app/modules/kit-library/assets/js/utils.js");
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { (0, _defineProperty2.default)(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+var KEY = exports.KEY = 'cloud-kits';
+
+/**
+ * The default query params
+ *
+ * @type {Object}
+ */
+var defaultQueryParams = exports.defaultQueryParams = {
+  search: '',
+  referrer: null
+};
+var kitsPipeFunctions = {
+  /**
+   * Filter by search term.
+   *
+   * @param {Array<*>} data
+   * @param {*}        queryParams
+   * @return {Array} filtered data
+   */
+  searchFilter: function searchFilter(data, queryParams) {
+    if (!queryParams.search) {
+      return data;
+    }
+    return data.filter(function (item) {
+      var keywords = [item.title];
+      var searchTerm = queryParams.search.toLowerCase();
+      return keywords.some(function (keyword) {
+        return keyword.toLowerCase().includes(searchTerm);
+      });
+    });
+  }
+};
+
+/**
+ * Fetch kits
+ *
+ * @return {*} kits
+ */
+function fetchKits() {
+  return $e.data.get('cloud-kits/index', {}, {
+    refresh: true
+  }).then(function (response) {
+    return response.data;
+  }).then(function (_ref) {
+    var data = _ref.data;
+    return data.map(function (item) {
+      return _kit.default.createFromResponse(item);
+    });
+  });
+}
+
+/**
+ * Main function.
+ *
+ * @param {*} initialQueryParams
+ * @return {Object} query
+ */
+function useCloudKits() {
+  var initialQueryParams = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var _useState = (0, _react.useState)(false),
+    _useState2 = (0, _slicedToArray2.default)(_useState, 2),
+    force = _useState2[0],
+    setForce = _useState2[1];
+  var _useState3 = (0, _react.useState)(function () {
+      return _objectSpread(_objectSpread({
+        ready: false
+      }, defaultQueryParams), initialQueryParams);
+    }),
+    _useState4 = (0, _slicedToArray2.default)(_useState3, 2),
+    queryParams = _useState4[0],
+    setQueryParams = _useState4[1];
+  var forceRefetch = (0, _react.useCallback)(function () {
+    return setForce(true);
+  }, [setForce]);
+  var clearQueryParams = (0, _react.useCallback)(function () {
+    return setQueryParams(_objectSpread(_objectSpread({
+      ready: true
+    }, defaultQueryParams), initialQueryParams));
+  }, [setQueryParams]);
+  var query = (0, _reactQuery.useQuery)([KEY], function () {
+    return fetchKits(force);
+  });
+  var data = (0, _react.useMemo)(function () {
+    return !query.data ? [] : _utils.pipe.apply(void 0, (0, _toConsumableArray2.default)(Object.values(kitsPipeFunctions)))((0, _toConsumableArray2.default)(query.data), queryParams);
+  }, [query.data, queryParams]);
+  var isFilterActive = (0, _react.useMemo)(function () {
+    return !!queryParams.search;
+  }, [queryParams]);
+  (0, _react.useEffect)(function () {
+    if (!force) {
+      return;
+    }
+    query.refetch().then(function () {
+      return setForce(false);
+    });
+  }, [force]);
+  return _objectSpread(_objectSpread({}, query), {}, {
+    data: data,
+    queryParams: queryParams,
+    setQueryParams: setQueryParams,
+    clearQueryParams: clearQueryParams,
+    forceRefetch: forceRefetch,
+    isFilterActive: isFilterActive
+  });
+}
+
+/***/ }),
+
+/***/ "../app/modules/kit-library/assets/js/hooks/use-connect-state.js":
+/*!***********************************************************************!*\
+  !*** ../app/modules/kit-library/assets/js/hooks/use-connect-state.js ***!
+  \***********************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports["default"] = useConnectState;
+var _react = __webpack_require__(/*! react */ "react");
+var _connectStateContext = __webpack_require__(/*! ../context/connect-state-context */ "../app/modules/kit-library/assets/js/context/connect-state-context.js");
+function useConnectState() {
+  var context = (0, _react.useContext)(_connectStateContext.ConnectStateContext);
+  if (!context) {
+    throw new Error('useConnectState must be used within a ConnectStateProvider');
+  }
+  return context;
 }
 
 /***/ }),
@@ -2363,6 +2866,40 @@ function useKitCallToAction(kitAccessTier) {
 
 /***/ }),
 
+/***/ "../app/modules/kit-library/assets/js/hooks/use-kit-cloud-mutation.js":
+/*!****************************************************************************!*\
+  !*** ../app/modules/kit-library/assets/js/hooks/use-kit-cloud-mutation.js ***!
+  \****************************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.useKitCloudMutations = useKitCloudMutations;
+var _reactQuery = __webpack_require__(/*! react-query */ "../node_modules/react-query/es/index.js");
+var _useCloudKits = __webpack_require__(/*! ../hooks/use-cloud-kits */ "../app/modules/kit-library/assets/js/hooks/use-cloud-kits.js");
+function useKitCloudMutations() {
+  var queryClient = (0, _reactQuery.useQueryClient)();
+  var remove = (0, _reactQuery.useMutation)(function (id) {
+    return $e.data.delete('cloud-kits/index', {
+      id: id
+    });
+  }, {
+    onSuccess: function onSuccess() {
+      return queryClient.invalidateQueries(_useCloudKits.KEY);
+    }
+  });
+  return {
+    remove: remove,
+    isLoading: remove.isLoading
+  };
+}
+
+/***/ }),
+
 /***/ "../app/modules/kit-library/assets/js/hooks/use-kit-document-by-type.js":
 /*!******************************************************************************!*\
   !*** ../app/modules/kit-library/assets/js/hooks/use-kit-document-by-type.js ***!
@@ -2576,6 +3113,7 @@ var _taxonomy = __webpack_require__(/*! ../models/taxonomy */ "../app/modules/ki
 var _taxonomyTransformer = __webpack_require__(/*! ../models/taxonomy-transformer */ "../app/modules/kit-library/assets/js/models/taxonomy-transformer.js");
 var _reactQuery = __webpack_require__(/*! react-query */ "../node_modules/react-query/es/index.js");
 var _react = __webpack_require__(/*! react */ "react");
+var _utils = __webpack_require__(/*! ../utils */ "../app/modules/kit-library/assets/js/utils.js");
 function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
 function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { (0, _defineProperty2.default)(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
 var KEY = exports.KEY = 'kits';
@@ -2670,26 +3208,6 @@ var kitsPipeFunctions = {
 };
 
 /**
- * A util function to transform data throw transform functions
- *
- * @param {Array<Function>} functions
- * @return {function(*=, ...[*]): *} function
- */
-function pipe() {
-  for (var _len = arguments.length, functions = new Array(_len), _key = 0; _key < _len; _key++) {
-    functions[_key] = arguments[_key];
-  }
-  return function (value) {
-    for (var _len2 = arguments.length, args = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
-      args[_key2 - 1] = arguments[_key2];
-    }
-    return functions.reduce(function (currentValue, currentFunction) {
-      return currentFunction.apply(void 0, [currentValue].concat(args));
-    }, value);
-  };
-}
-
-/**
  * Fetch kits
  *
  * @param {boolean} force
@@ -2742,7 +3260,7 @@ function useKits() {
     return fetchKits(force);
   });
   var data = (0, _react.useMemo)(function () {
-    return !query.data ? [] : pipe.apply(void 0, (0, _toConsumableArray2.default)(Object.values(kitsPipeFunctions)))((0, _toConsumableArray2.default)(query.data), queryParams);
+    return !query.data ? [] : _utils.pipe.apply(void 0, (0, _toConsumableArray2.default)(Object.values(kitsPipeFunctions)))((0, _toConsumableArray2.default)(query.data), queryParams);
   }, [query.data, queryParams]);
   var selectedTaxonomies = (0, _useSelectedTaxonomies.default)(queryParams.taxonomies);
   var isFilterActive = (0, _react.useMemo)(function () {
@@ -2764,6 +3282,87 @@ function useKits() {
     forceRefetch: forceRefetch,
     isFilterActive: isFilterActive
   });
+}
+
+/***/ }),
+
+/***/ "../app/modules/kit-library/assets/js/hooks/use-menu-items.js":
+/*!********************************************************************!*\
+  !*** ../app/modules/kit-library/assets/js/hooks/use-menu-items.js ***!
+  \********************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+/* provided dependency */ var __ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n")["__"];
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "../node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+var _typeof = __webpack_require__(/*! @babel/runtime/helpers/typeof */ "../node_modules/@babel/runtime/helpers/typeof.js");
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports["default"] = useMenuItems;
+var _react = _interopRequireWildcard(__webpack_require__(/*! react */ "react"));
+var _useCloudKitsEligibility = _interopRequireDefault(__webpack_require__(/*! elementor-app/hooks/use-cloud-kits-eligibility */ "../app/assets/js/hooks/use-cloud-kits-eligibility.js"));
+var _useConnectState2 = _interopRequireDefault(__webpack_require__(/*! ./use-connect-state */ "../app/modules/kit-library/assets/js/hooks/use-connect-state.js"));
+function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
+function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != _typeof(e) && "function" != typeof e) return { default: e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n.default = e, t && t.set(e, n), n; }
+/**
+ * Generate the menu items for the kit library pages.
+ *
+ * @param {string} path - The current page path
+ * @return {Array} menu items
+ */
+function useMenuItems(path) {
+  var _useConnectState = (0, _useConnectState2.default)(),
+    isConnected = _useConnectState.isConnected;
+  var _useCloudKitsEligibil = (0, _useCloudKitsEligibility.default)({
+      enabled: isConnected
+    }),
+    cloudKitsData = _useCloudKitsEligibil.data;
+  var isCloudKitsAvailable = cloudKitsData === null || cloudKitsData === void 0 ? void 0 : cloudKitsData.is_eligible;
+  return (0, _react.useMemo)(function () {
+    var page = path.replace('/', '');
+    var myWebsiteTemplatesLabel = __('My Website Templates', 'elementor');
+    if (!isConnected) {
+      myWebsiteTemplatesLabel = /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, __('My Website Templates', 'elementor'), /*#__PURE__*/_react.default.createElement("span", {
+        className: "connect-badge"
+      }, __('Connect', 'elementor')));
+    } else if (isConnected && false === isCloudKitsAvailable) {
+      myWebsiteTemplatesLabel = /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, __('My Website Templates', 'elementor'), /*#__PURE__*/_react.default.createElement("span", {
+        className: "upgrade-badge"
+      }, __('Upgrade', 'elementor')));
+    }
+    var menuItems = [{
+      label: __('All Website Templates', 'elementor'),
+      icon: 'eicon-filter',
+      isActive: !page,
+      url: '/kit-library',
+      trackEventData: {
+        command: 'kit-library/select-organizing-category',
+        category: 'all'
+      }
+    }, {
+      label: myWebsiteTemplatesLabel,
+      icon: 'eicon-library-cloud-empty',
+      isActive: 'cloud' === page,
+      url: '/kit-library/cloud',
+      trackEventData: {
+        command: 'kit-library/select-organizing-category',
+        category: 'cloud'
+      }
+    }, {
+      label: __('Favorites', 'elementor'),
+      icon: 'eicon-heart-o',
+      isActive: 'favorites' === page,
+      url: '/kit-library/favorites',
+      trackEventData: {
+        command: 'kit-library/select-organizing-category',
+        category: 'favorites'
+      }
+    }];
+    return menuItems;
+  }, [path, isConnected, isCloudKitsAvailable]);
 }
 
 /***/ }),
@@ -3287,7 +3886,7 @@ var TaxonomyTypes = exports.TaxonomyTypes = [{
   data: []
 }, {
   key: SUBSCRIPTION_PLAN,
-  label: (0, _i18n.__)('Kits by plan', 'elementor'),
+  label: (0, _i18n.__)('Plan', 'elementor'),
   data: []
 }];
 var Taxonomy = exports["default"] = /*#__PURE__*/function (_BaseModel) {
@@ -3324,6 +3923,437 @@ var Taxonomy = exports["default"] = /*#__PURE__*/function (_BaseModel) {
 
 /***/ }),
 
+/***/ "../app/modules/kit-library/assets/js/pages/cloud/cloud.js":
+/*!*****************************************************************!*\
+  !*** ../app/modules/kit-library/assets/js/pages/cloud/cloud.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+/* provided dependency */ var __ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n")["__"];
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "../node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+var _typeof = __webpack_require__(/*! @babel/runtime/helpers/typeof */ "../node_modules/@babel/runtime/helpers/typeof.js");
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports["default"] = Cloud;
+var _react = _interopRequireWildcard(__webpack_require__(/*! react */ "react"));
+var _defineProperty2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "../node_modules/@babel/runtime/helpers/defineProperty.js"));
+var _content = _interopRequireDefault(__webpack_require__(/*! ../../../../../../assets/js/layout/content */ "../app/assets/js/layout/content.js"));
+var _errorScreen = _interopRequireDefault(__webpack_require__(/*! ../../components/error-screen */ "../app/modules/kit-library/assets/js/components/error-screen.js"));
+var _indexHeader = _interopRequireDefault(__webpack_require__(/*! ../index/index-header */ "../app/modules/kit-library/assets/js/pages/index/index-header.js"));
+var _indexSidebar = _interopRequireDefault(__webpack_require__(/*! ../index/index-sidebar */ "../app/modules/kit-library/assets/js/pages/index/index-sidebar.js"));
+var _kitListCloud = _interopRequireDefault(__webpack_require__(/*! ../../components/kit-list-cloud */ "../app/modules/kit-library/assets/js/components/kit-list-cloud.js"));
+var _layout = _interopRequireDefault(__webpack_require__(/*! ../../components/layout */ "../app/modules/kit-library/assets/js/components/layout/index.js"));
+var _searchInput = _interopRequireDefault(__webpack_require__(/*! ../../components/search-input */ "../app/modules/kit-library/assets/js/components/search-input.js"));
+var _useCloudKits2 = _interopRequireDefault(__webpack_require__(/*! ../../hooks/use-cloud-kits */ "../app/modules/kit-library/assets/js/hooks/use-cloud-kits.js"));
+var _useCloudKitsEligibility = _interopRequireDefault(__webpack_require__(/*! elementor-app/hooks/use-cloud-kits-eligibility */ "../app/assets/js/hooks/use-cloud-kits-eligibility.js"));
+var _useMenuItems = _interopRequireDefault(__webpack_require__(/*! ../../hooks/use-menu-items */ "../app/modules/kit-library/assets/js/hooks/use-menu-items.js"));
+var _useConnectState2 = _interopRequireDefault(__webpack_require__(/*! ../../hooks/use-connect-state */ "../app/modules/kit-library/assets/js/hooks/use-connect-state.js"));
+var _usePageTitle = _interopRequireDefault(__webpack_require__(/*! elementor-app/hooks/use-page-title */ "../app/assets/js/hooks/use-page-title.js"));
+var _appUi = __webpack_require__(/*! @elementor/app-ui */ "@elementor/app-ui");
+var _appsEventTracking = __webpack_require__(/*! elementor-app/event-track/apps-event-tracking */ "../app/assets/js/event-track/apps-event-tracking.js");
+var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "../node_modules/prop-types/index.js"));
+var _connectScreen = _interopRequireDefault(__webpack_require__(/*! ./connect-screen */ "../app/modules/kit-library/assets/js/pages/cloud/connect-screen.js"));
+var _upgradeScreen = _interopRequireDefault(__webpack_require__(/*! ./upgrade-screen */ "../app/modules/kit-library/assets/js/pages/cloud/upgrade-screen.js"));
+var _fullPageLoader = _interopRequireDefault(__webpack_require__(/*! ./full-page-loader */ "../app/modules/kit-library/assets/js/pages/cloud/full-page-loader.js"));
+__webpack_require__(/*! ../index/index.scss */ "../app/modules/kit-library/assets/js/pages/index/index.scss");
+function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
+function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != _typeof(e) && "function" != typeof e) return { default: e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n.default = e, t && t.set(e, n), n; }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { (0, _defineProperty2.default)(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function Cloud(_ref) {
+  var _ref$path = _ref.path,
+    path = _ref$path === void 0 ? '' : _ref$path,
+    _ref$renderNoResultsC = _ref.renderNoResultsComponent,
+    renderNoResultsComponent = _ref$renderNoResultsC === void 0 ? function (_ref2) {
+      var defaultComponent = _ref2.defaultComponent;
+      return defaultComponent;
+    } : _ref$renderNoResultsC;
+  (0, _usePageTitle.default)({
+    title: __('Website Templates', 'elementor')
+  });
+  var _useConnectState = (0, _useConnectState2.default)(),
+    isConnected = _useConnectState.isConnected,
+    isConnecting = _useConnectState.isConnecting,
+    setConnecting = _useConnectState.setConnecting,
+    handleConnectSuccess = _useConnectState.handleConnectSuccess,
+    handleConnectError = _useConnectState.handleConnectError;
+  var _useCloudKits = (0, _useCloudKits2.default)(),
+    data = _useCloudKits.data,
+    isSuccess = _useCloudKits.isSuccess,
+    isLoading = _useCloudKits.isLoading,
+    isFetching = _useCloudKits.isFetching,
+    isError = _useCloudKits.isError,
+    queryParams = _useCloudKits.queryParams,
+    setQueryParams = _useCloudKits.setQueryParams,
+    clearQueryParams = _useCloudKits.clearQueryParams,
+    forceRefetch = _useCloudKits.forceRefetch,
+    isFilterActive = _useCloudKits.isFilterActive;
+  var _useCloudKitsEligibil = (0, _useCloudKitsEligibility.default)({
+      enabled: isConnected
+    }),
+    cloudKitsData = _useCloudKitsEligibil.data,
+    isCheckingEligibility = _useCloudKitsEligibil.isLoading,
+    refetchEligibility = _useCloudKitsEligibil.refetch;
+  var isCloudKitsAvailable = (cloudKitsData === null || cloudKitsData === void 0 ? void 0 : cloudKitsData.is_eligible) || false;
+  var menuItems = (0, _useMenuItems.default)(path);
+  var eventTracking = function eventTracking(command, elementPosition) {
+    var search = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
+    var direction = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : null;
+    var sortType = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : null;
+    var action = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : null;
+    var eventType = arguments.length > 6 && arguments[6] !== undefined ? arguments[6] : 'click';
+    (0, _appsEventTracking.appsEventTrackingDispatch)(command, {
+      page_source: 'cloud page',
+      element_position: elementPosition,
+      search_term: search,
+      sort_direction: direction,
+      sort_type: sortType,
+      event_type: eventType,
+      action: action
+    });
+  };
+  var onConnectSuccess = function onConnectSuccess() {
+    refetchEligibility();
+    forceRefetch();
+    handleConnectSuccess();
+  };
+  var onConnectError = function onConnectError() {
+    handleConnectError();
+  };
+  var shouldShowLoading = isConnecting || isCheckingEligibility || isConnected && isLoading;
+  (0, _react.useEffect)(function () {
+    if (isConnecting && !isCheckingEligibility && !isLoading) {
+      setConnecting(false);
+    }
+  }, [isConnecting, isCheckingEligibility, isLoading, setConnecting]);
+  if (!isConnected) {
+    return /*#__PURE__*/_react.default.createElement(_connectScreen.default, {
+      onConnectSuccess: onConnectSuccess,
+      onConnectError: onConnectError,
+      menuItems: menuItems,
+      forceRefetch: forceRefetch,
+      isFetching: isFetching
+    });
+  }
+  if (shouldShowLoading) {
+    return /*#__PURE__*/_react.default.createElement(_fullPageLoader.default, {
+      menuItems: menuItems,
+      forceRefetch: forceRefetch,
+      isFetching: isFetching
+    });
+  }
+  if (!isCloudKitsAvailable && !shouldShowLoading) {
+    return /*#__PURE__*/_react.default.createElement(_upgradeScreen.default, {
+      menuItems: menuItems,
+      forceRefetch: forceRefetch,
+      isFetching: isFetching,
+      cloudKitsData: cloudKitsData
+    });
+  }
+  return /*#__PURE__*/_react.default.createElement(_layout.default, {
+    sidebar: /*#__PURE__*/_react.default.createElement(_indexSidebar.default, {
+      menuItems: menuItems
+    }),
+    header: /*#__PURE__*/_react.default.createElement(_indexHeader.default, {
+      refetch: function refetch() {
+        forceRefetch();
+      },
+      isFetching: isFetching
+    })
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "e-kit-library__index-layout-container"
+  }, /*#__PURE__*/_react.default.createElement(_appUi.Grid, {
+    container: true,
+    className: "e-kit-library__index-layout-heading"
+  }, /*#__PURE__*/_react.default.createElement(_appUi.Grid, {
+    item: true,
+    className: "e-kit-library__index-layout-heading-search"
+  }, /*#__PURE__*/_react.default.createElement(_searchInput.default
+  // eslint-disable-next-line @wordpress/i18n-ellipsis
+  , {
+    placeholder: __('Search my Website Templates...', 'elementor'),
+    value: queryParams.search,
+    onChange: function onChange(value) {
+      setQueryParams(function (prev) {
+        return _objectSpread(_objectSpread({}, prev), {}, {
+          search: value
+        });
+      });
+      eventTracking('kit-library/kit-free-search', 'top_area_search', value, null, null, null, 'search');
+    }
+  }))), /*#__PURE__*/_react.default.createElement(_content.default, {
+    className: "e-kit-library__index-layout-main"
+  }, /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, isError && /*#__PURE__*/_react.default.createElement(_errorScreen.default, {
+    title: __('Something went wrong.', 'elementor'),
+    description: __('Nothing to worry about, use 🔄 on the top corner to try again. If the problem continues, head over to the Help Center.', 'elementor'),
+    button: {
+      text: __('Learn More', 'elementor'),
+      url: 'https://go.elementor.com/app-kit-library-error/',
+      target: '_blank'
+    }
+  }), isSuccess && 0 < data.length && /*#__PURE__*/_react.default.createElement(_kitListCloud.default, {
+    data: data,
+    source: path
+  }), isSuccess && 0 === data.length && (queryParams.search ? /*#__PURE__*/_react.default.createElement(_errorScreen.default, {
+    title: __('No Website Templates found for your search', 'elementor'),
+    description: __('Try different keywords or ', 'elementor'),
+    button: {
+      text: __('Continue browsing.', 'elementor'),
+      action: clearQueryParams
+    }
+  }) : renderNoResultsComponent({
+    defaultComponent: /*#__PURE__*/_react.default.createElement(_errorScreen.default, {
+      title: __('No Website Templates to show here yet', 'elementor'),
+      description: __("Once you export a Website to the cloud, you'll find it here and be able to use it on all your sites.", 'elementor'),
+      newLineButton: true,
+      button: {
+        text: __('Export this site', 'elementor'),
+        url: elementorAppConfig.base_url + '#/export',
+        target: '_blank',
+        variant: 'contained',
+        color: 'primary'
+      }
+    }),
+    isFilterActive: isFilterActive
+  }))))));
+}
+Cloud.propTypes = {
+  path: _propTypes.default.string,
+  renderNoResultsComponent: _propTypes.default.func
+};
+
+/***/ }),
+
+/***/ "../app/modules/kit-library/assets/js/pages/cloud/connect-screen.js":
+/*!**************************************************************************!*\
+  !*** ../app/modules/kit-library/assets/js/pages/cloud/connect-screen.js ***!
+  \**************************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "../node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+var _typeof = __webpack_require__(/*! @babel/runtime/helpers/typeof */ "../node_modules/@babel/runtime/helpers/typeof.js");
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports["default"] = ConnectScreen;
+var _react = _interopRequireWildcard(__webpack_require__(/*! react */ "react"));
+var _appUi = __webpack_require__(/*! @elementor/app-ui */ "@elementor/app-ui");
+var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "../node_modules/prop-types/index.js"));
+var _content = _interopRequireDefault(__webpack_require__(/*! ../../../../../../assets/js/layout/content */ "../app/assets/js/layout/content.js"));
+var _indexHeader = _interopRequireDefault(__webpack_require__(/*! ../index/index-header */ "../app/modules/kit-library/assets/js/pages/index/index-header.js"));
+var _indexSidebar = _interopRequireDefault(__webpack_require__(/*! ../index/index-sidebar */ "../app/modules/kit-library/assets/js/pages/index/index-sidebar.js"));
+var _layout = _interopRequireDefault(__webpack_require__(/*! ../../components/layout */ "../app/modules/kit-library/assets/js/components/layout/index.js"));
+function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
+function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != _typeof(e) && "function" != typeof e) return { default: e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n.default = e, t && t.set(e, n), n; }
+function ConnectScreen(_ref) {
+  var _elementorAppConfig, _elementorAppConfig2, _elementorAppConfig3, _elementorAppConfig4;
+  var onConnectSuccess = _ref.onConnectSuccess,
+    onConnectError = _ref.onConnectError,
+    menuItems = _ref.menuItems,
+    forceRefetch = _ref.forceRefetch,
+    isFetching = _ref.isFetching;
+  var connectButtonRef = (0, _react.useRef)();
+  (0, _react.useEffect)(function () {
+    if (!connectButtonRef.current) {
+      return;
+    }
+    jQuery(connectButtonRef.current).elementorConnect({
+      popup: {
+        width: 600,
+        height: 700
+      },
+      success: function success(data) {
+        elementorCommon.config.library_connect.is_connected = true;
+        elementorCommon.config.library_connect.current_access_level = data.kits_access_level || data.access_level || 0;
+        elementorCommon.config.library_connect.current_access_tier = data.access_tier;
+        onConnectSuccess === null || onConnectSuccess === void 0 || onConnectSuccess();
+      },
+      error: function error() {
+        elementorCommon.config.library_connect.is_connected = false;
+        elementorCommon.config.library_connect.current_access_level = 0;
+        elementorCommon.config.library_connect.current_access_tier = '';
+        onConnectError === null || onConnectError === void 0 || onConnectError();
+      }
+    });
+  }, [onConnectSuccess, onConnectError]);
+  return /*#__PURE__*/_react.default.createElement(_layout.default, {
+    sidebar: /*#__PURE__*/_react.default.createElement(_indexSidebar.default, {
+      menuItems: menuItems
+    }),
+    header: /*#__PURE__*/_react.default.createElement(_indexHeader.default, {
+      refetch: function refetch() {
+        forceRefetch();
+      },
+      isFetching: isFetching
+    })
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "e-kit-library__index-layout-container"
+  }, /*#__PURE__*/_react.default.createElement(_content.default, {
+    className: "e-kit-library__index-layout-main e-kit-library__connect-container"
+  }, /*#__PURE__*/_react.default.createElement(_appUi.Grid, {
+    container: true,
+    alignItems: "center",
+    justify: "center",
+    direction: "column",
+    className: "e-kit-library__error-screen"
+  }, /*#__PURE__*/_react.default.createElement("i", {
+    className: "eicon-library-cloud-connect",
+    "aria-hidden": "true"
+  }), /*#__PURE__*/_react.default.createElement(_appUi.Heading, {
+    tag: "h3",
+    variant: "display-1",
+    className: "e-kit-library__error-screen-title"
+  }, (_elementorAppConfig = elementorAppConfig) === null || _elementorAppConfig === void 0 || (_elementorAppConfig = _elementorAppConfig['cloud-library']) === null || _elementorAppConfig === void 0 ? void 0 : _elementorAppConfig.library_connect_title_copy), /*#__PURE__*/_react.default.createElement(_appUi.Text, {
+    variant: "xl",
+    className: "e-kit-library__error-screen-description"
+  }, (_elementorAppConfig2 = elementorAppConfig) === null || _elementorAppConfig2 === void 0 || (_elementorAppConfig2 = _elementorAppConfig2['cloud-library']) === null || _elementorAppConfig2 === void 0 || (_elementorAppConfig2 = _elementorAppConfig2.library_connect_sub_title_copy) === null || _elementorAppConfig2 === void 0 ? void 0 : _elementorAppConfig2.replace(/<br\s*\/?>/gi, '\n')), /*#__PURE__*/_react.default.createElement(_appUi.Button, {
+    elRef: connectButtonRef,
+    text: (_elementorAppConfig3 = elementorAppConfig) === null || _elementorAppConfig3 === void 0 || (_elementorAppConfig3 = _elementorAppConfig3['cloud-library']) === null || _elementorAppConfig3 === void 0 || (_elementorAppConfig3 = _elementorAppConfig3.library_connect_button_copy) === null || _elementorAppConfig3 === void 0 ? void 0 : _elementorAppConfig3.replace(/&amp;/g, '&'),
+    url: (_elementorAppConfig4 = elementorAppConfig) === null || _elementorAppConfig4 === void 0 || (_elementorAppConfig4 = _elementorAppConfig4['cloud-library']) === null || _elementorAppConfig4 === void 0 || (_elementorAppConfig4 = _elementorAppConfig4.library_connect_url) === null || _elementorAppConfig4 === void 0 ? void 0 : _elementorAppConfig4.replace(/&#038;/g, '&'),
+    className: "e-kit-library__connect-button"
+  })))));
+}
+ConnectScreen.propTypes = {
+  onConnectSuccess: _propTypes.default.func,
+  onConnectError: _propTypes.default.func,
+  menuItems: _propTypes.default.array.isRequired,
+  forceRefetch: _propTypes.default.func.isRequired,
+  isFetching: _propTypes.default.bool.isRequired
+};
+
+/***/ }),
+
+/***/ "../app/modules/kit-library/assets/js/pages/cloud/full-page-loader.js":
+/*!****************************************************************************!*\
+  !*** ../app/modules/kit-library/assets/js/pages/cloud/full-page-loader.js ***!
+  \****************************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "../node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports["default"] = FullPageLoader;
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "react"));
+var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "../node_modules/prop-types/index.js"));
+var _content = _interopRequireDefault(__webpack_require__(/*! ../../../../../../assets/js/layout/content */ "../app/assets/js/layout/content.js"));
+var _indexHeader = _interopRequireDefault(__webpack_require__(/*! ../index/index-header */ "../app/modules/kit-library/assets/js/pages/index/index-header.js"));
+var _indexSidebar = _interopRequireDefault(__webpack_require__(/*! ../index/index-sidebar */ "../app/modules/kit-library/assets/js/pages/index/index-sidebar.js"));
+var _layout = _interopRequireDefault(__webpack_require__(/*! ../../components/layout */ "../app/modules/kit-library/assets/js/components/layout/index.js"));
+var _pageLoader = _interopRequireDefault(__webpack_require__(/*! ../../components/page-loader */ "../app/modules/kit-library/assets/js/components/page-loader.js"));
+function FullPageLoader(_ref) {
+  var menuItems = _ref.menuItems,
+    forceRefetch = _ref.forceRefetch,
+    isFetching = _ref.isFetching;
+  return /*#__PURE__*/_react.default.createElement(_layout.default, {
+    sidebar: /*#__PURE__*/_react.default.createElement(_indexSidebar.default, {
+      menuItems: menuItems
+    }),
+    header: /*#__PURE__*/_react.default.createElement(_indexHeader.default, {
+      refetch: function refetch() {
+        forceRefetch();
+      },
+      isFetching: isFetching
+    })
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "e-kit-library__index-layout-container"
+  }, /*#__PURE__*/_react.default.createElement(_content.default, {
+    className: "e-kit-library__index-layout-main"
+  }, /*#__PURE__*/_react.default.createElement(_pageLoader.default, null))));
+}
+FullPageLoader.propTypes = {
+  menuItems: _propTypes.default.array.isRequired,
+  forceRefetch: _propTypes.default.func.isRequired,
+  isFetching: _propTypes.default.bool.isRequired
+};
+
+/***/ }),
+
+/***/ "../app/modules/kit-library/assets/js/pages/cloud/upgrade-screen.js":
+/*!**************************************************************************!*\
+  !*** ../app/modules/kit-library/assets/js/pages/cloud/upgrade-screen.js ***!
+  \**************************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+/* provided dependency */ var __ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n")["__"];
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "../node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports["default"] = UpgradeScreen;
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "react"));
+var _appUi = __webpack_require__(/*! @elementor/app-ui */ "@elementor/app-ui");
+var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "../node_modules/prop-types/index.js"));
+var _content = _interopRequireDefault(__webpack_require__(/*! ../../../../../../assets/js/layout/content */ "../app/assets/js/layout/content.js"));
+var _indexHeader = _interopRequireDefault(__webpack_require__(/*! ../index/index-header */ "../app/modules/kit-library/assets/js/pages/index/index-header.js"));
+var _indexSidebar = _interopRequireDefault(__webpack_require__(/*! ../index/index-sidebar */ "../app/modules/kit-library/assets/js/pages/index/index-sidebar.js"));
+var _layout = _interopRequireDefault(__webpack_require__(/*! ../../components/layout */ "../app/modules/kit-library/assets/js/components/layout/index.js"));
+function UpgradeScreen(_ref) {
+  var menuItems = _ref.menuItems,
+    forceRefetch = _ref.forceRefetch,
+    isFetching = _ref.isFetching,
+    cloudKitsData = _ref.cloudKitsData;
+  var hasSubscription = '' !== (cloudKitsData === null || cloudKitsData === void 0 ? void 0 : cloudKitsData.subscription_id);
+  var url = hasSubscription ? 'https://go.elementor.com/go-pro-cloud-website-templates-library-advanced/' : 'https://go.elementor.com/go-pro-cloud-website-templates-library/';
+  return /*#__PURE__*/_react.default.createElement(_layout.default, {
+    sidebar: /*#__PURE__*/_react.default.createElement(_indexSidebar.default, {
+      menuItems: menuItems
+    }),
+    header: /*#__PURE__*/_react.default.createElement(_indexHeader.default, {
+      refetch: function refetch() {
+        forceRefetch();
+      },
+      isFetching: isFetching
+    })
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "e-kit-library__index-layout-container"
+  }, /*#__PURE__*/_react.default.createElement(_content.default, {
+    className: "e-kit-library__index-layout-main e-kit-library__connect-container"
+  }, /*#__PURE__*/_react.default.createElement(_appUi.Grid, {
+    container: true,
+    alignItems: "center",
+    justify: "center",
+    direction: "column",
+    className: "e-kit-library__error-screen"
+  }, /*#__PURE__*/_react.default.createElement("i", {
+    className: "eicon-library-subscription-upgrade",
+    "aria-hidden": "true"
+  }), /*#__PURE__*/_react.default.createElement(_appUi.Heading, {
+    tag: "h3",
+    variant: "display-1",
+    className: "e-kit-library__error-screen-title"
+  }, __('It\'s time to level up', 'elementor')), /*#__PURE__*/_react.default.createElement(_appUi.Text, {
+    variant: "xl",
+    className: "e-kit-library__error-screen-description"
+  }, __('Upgrade to Elementor Pro to import your own website template and save templates that you can reuse on any of your connected websites.', 'elementor')), /*#__PURE__*/_react.default.createElement(_appUi.Button, {
+    text: __('Upgrade now', 'elementor'),
+    url: url,
+    target: "_blank",
+    className: "e-kit-library__upgrade-button"
+  })))));
+}
+UpgradeScreen.propTypes = {
+  menuItems: _propTypes.default.array.isRequired,
+  forceRefetch: _propTypes.default.func.isRequired,
+  isFetching: _propTypes.default.bool.isRequired,
+  cloudKitsData: _propTypes.default.object.isRequired
+};
+
+/***/ }),
+
 /***/ "../app/modules/kit-library/assets/js/pages/favorites/favorites.js":
 /*!*************************************************************************!*\
   !*** ../app/modules/kit-library/assets/js/pages/favorites/favorites.js ***!
@@ -3332,7 +4362,6 @@ var Taxonomy = exports["default"] = /*#__PURE__*/function (_BaseModel) {
 
 "use strict";
 /* provided dependency */ var __ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n")["__"];
-/* provided dependency */ var PropTypes = __webpack_require__(/*! prop-types */ "../node_modules/prop-types/index.js");
 
 
 var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "../node_modules/@babel/runtime/helpers/interopRequireDefault.js");
@@ -3344,13 +4373,14 @@ var _react = _interopRequireDefault(__webpack_require__(/*! react */ "react"));
 var _index = _interopRequireDefault(__webpack_require__(/*! ../index/index */ "../app/modules/kit-library/assets/js/pages/index/index.js"));
 var _errorScreen = _interopRequireDefault(__webpack_require__(/*! ../../components/error-screen */ "../app/modules/kit-library/assets/js/components/error-screen.js"));
 var _router = __webpack_require__(/*! @reach/router */ "../node_modules/@reach/router/es/index.js");
+var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "../node_modules/prop-types/index.js"));
 function Favorites(props) {
   var navigate = (0, _router.useNavigate)();
   var indexNotResultsFavorites = /*#__PURE__*/_react.default.createElement(_errorScreen.default
   // eslint-disable-next-line @wordpress/i18n-ellipsis
   , {
     title: __('No favorites here yet...', 'elementor'),
-    description: __('Use the heart icon to save kits that inspire you. You\'ll be able to find them here.', 'elementor'),
+    description: __('Use the heart icon to save Website Templates that inspire you. You\'ll be able to find them here.', 'elementor'),
     button: {
       text: __('Continue browsing.', 'elementor'),
       action: function action() {
@@ -3374,7 +4404,7 @@ function Favorites(props) {
   });
 }
 Favorites.propTypes = {
-  path: PropTypes.string
+  path: _propTypes.default.string
 };
 
 /***/ }),
@@ -3467,7 +4497,7 @@ function IndexHeader(props) {
   }), /*#__PURE__*/_react.default.createElement(_popoverDialog.default, {
     targetRef: importRef,
     wrapperClass: "e-kit-library__tooltip"
-  }, __('Import Kit', 'elementor')), /*#__PURE__*/_react.default.createElement(_appUi.ModalProvider, {
+  }, __('Import Website Template', 'elementor')), /*#__PURE__*/_react.default.createElement(_appUi.ModalProvider, {
     title: __('Welcome to the Library', 'elementor'),
     show: isInfoModalOpen,
     setShow: setIsInfoModalOpen,
@@ -3482,12 +4512,12 @@ function IndexHeader(props) {
   }, /*#__PURE__*/_react.default.createElement(_appUi.Heading, {
     tag: "h3",
     variant: "h3"
-  }, __('What\'s a Website Kit?', 'elementor')), /*#__PURE__*/_react.default.createElement(_appUi.Text, null, __('A Website Kit is full, ready-made design that you can apply to your site. It includes all the pages, parts, settings and content that you\'d expect in a fully functional website.', 'elementor'))), /*#__PURE__*/_react.default.createElement("div", {
+  }, __('What\'s a Website Template?', 'elementor')), /*#__PURE__*/_react.default.createElement(_appUi.Text, null, __('A Website Template is full, ready-made design that you can apply to your site. It includes all the pages, parts, settings and content that you\'d expect in a fully functional website.', 'elementor'))), /*#__PURE__*/_react.default.createElement("div", {
     className: "e-kit-library-header-info-modal-container"
   }, /*#__PURE__*/_react.default.createElement(_appUi.Heading, {
     tag: "h3",
     variant: "h3"
-  }, __('What\'s going on in the Kit Library?', 'elementor')), /*#__PURE__*/_react.default.createElement(_appUi.Text, null, __('Search & filter for kits by category and tags, or browse through individual kits to see what\'s inside.', 'elementor'), /*#__PURE__*/_react.default.createElement("br", null), __('Once you\'ve picked a winner, apply it to your site!', 'elementor'))), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_appUi.Heading, {
+  }, __('What\'s going on in the Website Templates Library?', 'elementor')), /*#__PURE__*/_react.default.createElement(_appUi.Text, null, __('Search & filter for website templates by category and tags, or browse through individual website templates to see what\'s inside.', 'elementor'), /*#__PURE__*/_react.default.createElement("br", null), __('Once you\'ve picked a winner, apply it to your site!', 'elementor'))), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_appUi.Heading, {
     tag: "h3",
     variant: "h3"
   }, __('Happy browsing!', 'elementor')), /*#__PURE__*/_react.default.createElement(_appUi.Text, null, /*#__PURE__*/_react.default.createElement(_appUi.Button, {
@@ -3595,6 +4625,7 @@ var _searchInput = _interopRequireDefault(__webpack_require__(/*! ../../componen
 var _sortSelect = _interopRequireDefault(__webpack_require__(/*! ../../components/sort-select */ "../app/modules/kit-library/assets/js/components/sort-select.js"));
 var _taxonomiesFilter = _interopRequireDefault(__webpack_require__(/*! ../../components/taxonomies-filter */ "../app/modules/kit-library/assets/js/components/taxonomies-filter.js"));
 var _useKits2 = _interopRequireWildcard(__webpack_require__(/*! ../../hooks/use-kits */ "../app/modules/kit-library/assets/js/hooks/use-kits.js"));
+var _useMenuItems = _interopRequireDefault(__webpack_require__(/*! ../../hooks/use-menu-items */ "../app/modules/kit-library/assets/js/hooks/use-menu-items.js"));
 var _usePageTitle = _interopRequireDefault(__webpack_require__(/*! elementor-app/hooks/use-page-title */ "../app/assets/js/hooks/use-page-title.js"));
 var _useTaxonomies2 = _interopRequireDefault(__webpack_require__(/*! ../../hooks/use-taxonomies */ "../app/modules/kit-library/assets/js/hooks/use-taxonomies.js"));
 var _appUi = __webpack_require__(/*! @elementor/app-ui */ "@elementor/app-ui");
@@ -3641,37 +4672,6 @@ function useTaxonomiesSelection(setQueryParams) {
 }
 
 /**
- * Generate the menu items for the index page.
- *
- * @param {string} path
- * @return {Array} menu items
- */
-function useMenuItems(path) {
-  return (0, _react.useMemo)(function () {
-    var page = path.replace('/', '');
-    return [{
-      label: __('All Website Kits', 'elementor'),
-      icon: 'eicon-filter',
-      isActive: !page,
-      url: '/kit-library',
-      trackEventData: {
-        command: 'kit-library/select-organizing-category',
-        category: 'all'
-      }
-    }, {
-      label: __('Favorites', 'elementor'),
-      icon: 'eicon-heart-o',
-      isActive: 'favorites' === page,
-      url: '/kit-library/favorites',
-      trackEventData: {
-        command: 'kit-library/select-organizing-category',
-        category: 'favorites'
-      }
-    }];
-  }, [path]);
-}
-
-/**
  * Update and read the query param from the url
  *
  * @param {*}             queryParams
@@ -3712,9 +4712,9 @@ function useRouterQueryParams(queryParams, setQueryParams) {
 }
 function Index(props) {
   (0, _usePageTitle.default)({
-    title: __('Kit Library', 'elementor')
+    title: __('Website Templates', 'elementor')
   });
-  var menuItems = useMenuItems(props.path);
+  var menuItems = (0, _useMenuItems.default)(props.path);
   var _useKits = (0, _useKits2.default)(props.initialQueryParams),
     data = _useKits.data,
     isSuccess = _useKits.isSuccess,
@@ -3779,7 +4779,7 @@ function Index(props) {
   }, /*#__PURE__*/_react.default.createElement(_searchInput.default
   // eslint-disable-next-line @wordpress/i18n-ellipsis
   , {
-    placeholder: __('Search all Website Kits...', 'elementor'),
+    placeholder: __('Search all Website Templates...', 'elementor'),
     value: queryParams.search,
     onChange: function onChange(value) {
       setQueryParams(function (prev) {
@@ -4489,6 +5489,41 @@ Preview.propTypes = {
 
 /***/ }),
 
+/***/ "../app/modules/kit-library/assets/js/utils.js":
+/*!*****************************************************!*\
+  !*** ../app/modules/kit-library/assets/js/utils.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.pipe = pipe;
+/**
+ * A util function to transform data throw transform functions
+ *
+ * @param {Array<Function>} functions
+ * @return {function(*=, ...[*]): *} function
+ */
+function pipe() {
+  for (var _len = arguments.length, functions = new Array(_len), _key = 0; _key < _len; _key++) {
+    functions[_key] = arguments[_key];
+  }
+  return function (value) {
+    for (var _len2 = arguments.length, args = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
+      args[_key2 - 1] = arguments[_key2];
+    }
+    return functions.reduce(function (currentValue, currentFunction) {
+      return currentFunction.apply(void 0, [currentValue].concat(args));
+    }, value);
+  };
+}
+
+/***/ }),
+
 /***/ "../app/modules/onboarding/assets/js/components/new-page-kit-list-item.js":
 /*!********************************************************************************!*\
   !*** ../app/modules/onboarding/assets/js/components/new-page-kit-list-item.js ***!
@@ -4574,4 +5609,4 @@ var isTierAtLeast = exports.isTierAtLeast = function isTierAtLeast(currentTier, 
 /***/ })
 
 }]);
-//# sourceMappingURL=kit-library.b0f0ab89c95fe1f6fde3.bundle.js.map
+//# sourceMappingURL=kit-library.f3e637c5acf9b98d8334.bundle.js.map
