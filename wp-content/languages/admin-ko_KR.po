@@ -37,7 +37,7 @@ msgctxt "default GMT offset or timezone string"
 msgid "0"
 msgstr "0"
 
-#: wp-admin/about.php:62
+#: wp-admin/about.php:93
 msgid "Speculative loading speeds up navigation by preloading links before users navigate to them, bcrypt hashing strengthens password security automatically, and database optimizations improve performance."
 msgstr "추측 로딩은 사용자가 링크를 탐색하기 전에 미리 로드하여 탐색 속도를 높이고, bcrypt 해싱은 비밀번호 보안을 자동으로 강화하며, 데이터베이스를 최적화하여 성능을 개선합니다."
 
@@ -220,68 +220,68 @@ msgstr "마이너 릴리스 책임자"
 msgid "Release Coordination"
 msgstr "릴리스 코디네이션"
 
-#: wp-admin/about.php:163
+#: wp-admin/about.php:194
 msgid "WordPress 6.8 packs a wide range of performance fixes and enhancements to speed up everything from editing to browsing. Beyond speculative loading, WordPress 6.8 pays special attention to the block editor, block type registration, and query caching. Plus, imagine never waiting longer than 50 milliseconds—for any interaction. In WordPress 6.8, the Interactivity API takes a first step toward that goal."
 msgstr "워드프레스 6.8은 편집부터 탐색까지 모든 작업의 속도를 높이기 위해 다양한 성능 수정 및 개선 사항을 담았습니다. 워드프레스 6.8은 추측적인 로딩 외에도 블록 편집기, 블록 유형 등록, 쿼리 캐싱에 특별한 주의를 기울였습니다. 또한 상호작용을 위해 50밀리초 이상 기다리지 않는다고 상상해 보세요. 워드프레스 6.8에서는 인터랙티비티 API가 그 목표를 향한 첫걸음을 내디뎠습니다."
 
-#: wp-admin/about.php:150
+#: wp-admin/about.php:181
 msgid "Work continues on optimizing cache key generation in the <code>WP_Query</code> class. The goal is, as ever, to boost your site&#8217;s performance, in this case by taking some more of the load off your database. This is especially good if you get a lot of traffic."
 msgstr "<code>WP_Query</code> 클래스에서 캐시 키 생성을 최적화하는 작업이 계속되고 있습니다. 목표는 언제나 그렇듯이 데이터베이스의 부하를 줄여 사이트&#8217;의 성능을 향상시키는 것입니다. 트래픽이 많은 경우 특히 유용합니다."
 
-#: wp-admin/about.php:149
+#: wp-admin/about.php:180
 msgid "Take a load off the database"
 msgstr "데이터베이스 부하 줄이기"
 
-#: wp-admin/about.php:141
+#: wp-admin/about.php:172
 msgid "100+ accessibility fixes and enhancements touch a broad spectrum of the WordPress experience. This release includes fixes to every bundled theme, improvements to the navigation menu management, the customizer, and simplified labeling. The Block Editor has over 70 improvements to blocks, DataViews, and to its overall user experience."
 msgstr "100개 이상의 접근성 수정 및 향상은 다양한 WordPress 환경에 영향을 미칩니다. 이 릴리스에는 모든 번들 테마 수정, 내비게이션 메뉴 관리 개선, 커스터마이저 및 간소화된 라벨링이 포함되어 있습니다. Block Editor는 블록, DataView 및 전체 사용자 경험에 대해 70개 이상의 개선 사항을 제공합니다."
 
-#: wp-admin/about.php:127
+#: wp-admin/about.php:158
 msgid "Now passwords are harder to crack with bcrypt hashing, which takes a lot more computing power to break. This strengthens overall security, as do other encryption improvements across WordPress. You don&#8217;t need to do anything—everything updates automatically."
 msgstr "이제 암호를 해독하는 데 훨씬 더 많은 컴퓨팅 파워가 필요한 bcrypt 해싱으로 암호를 해독하기가 더 어려워졌습니다. 이는 워드프레스 전반의 다른 암호화 개선 사항과 마찬가지로 전반적인 보안을 강화합니다. 모든 것이 자동으로 업데이트 되므로 사용자는 아무것도 할 필요가 없습니다."
 
-#: wp-admin/about.php:126
+#: wp-admin/about.php:157
 msgid "Stronger password security with bcrypt"
 msgstr "bcrypt로 더욱 강력한 비밀번호 보안"
 
-#: wp-admin/about.php:110
+#: wp-admin/about.php:141
 msgid "In WordPress 6.8, pages load faster than ever. When you or your user hovers over or clicks a link, WordPress may preload the next page, for a smoother, near-instant experience. The system balances speed and efficiency, and you can control how it works, with a plugin or your own code. This feature only works in modern browsers—older ones will simply ignore it without any impact."
 msgstr "워드프레스 6.8에서는 페이지가 그 어느 때보다 빠르게 로드됩니다. 회원님이나 사용자가 링크를 가리키거나 클릭하면 워드프레스에서 다음 페이지를 미리 로드하여 더 부드럽고 즉각적인 경험을 제공합니다. 이 시스템은 속도와 효율성의 균형을 맞추며 플러그인 또는 자체 코드를 사용하여 작동 방식을 제어할 수 있습니다. 이 기능은 최신 브라우저에서만 작동하며 구형 브라우저에서는 아무런 영향 없이 무시됩니다."
 
-#: wp-admin/about.php:109
+#: wp-admin/about.php:140
 msgid "Near-instant page loads, thanks to Speculative Loading"
 msgstr "추측 로딩 덕분에 거의 즉시 페이지가 로드됩니다."
 
-#: wp-admin/about.php:103
+#: wp-admin/about.php:134
 msgid "Easier ways to see your options in Data Views, and you can exclude sticky posts from the Query Loop. Plus, you&#8217;ll find lots of little improvements in the editor that smooth your way through everything you build."
 msgstr "데이터 보기에서 옵션을 더 쉽게 확인할 수 있으며, 쿼리 루프에서 고정된 글을 제외할 수 있습니다. 그 외에도 에디터에서 모든 작업을 원활하게 진행할 수 있는 많은 개선 사항을 발견할 수 있습니다."
 
-#: wp-admin/about.php:82
+#: wp-admin/about.php:113
 msgid "Plus, now you can see it in Classic themes that have editor-styles or a theme.json file. Find the Style Book under Appearance > Design and use it to preview your theme&#8217;s evolution, as you edit CSS or make changes in the Customizer."
 msgstr "또한 이제 편집기 스타일 또는 theme.json 파일이 있는 클래식 테마에서 볼 수 있습니다. 모양 > 디자인에서 스타일 북을 찾아 CSS를 편집하거나 사용자 정의 관리자에서 변경할 때 테마의 진화를 미리 보는 데 사용하세요."
 
 #. translators: %s is a direct link to the Style Book.
-#: wp-admin/about.php:78
+#: wp-admin/about.php:109
 msgid "Plus, now you can see it in Classic themes that have editor-styles or a theme.json file. Find <a href=\"%s\">the Style Book</a> under Appearance > Design and use it to preview your theme&#8217;s evolution, as you edit CSS or make changes in the Customizer."
 msgstr "또한 이제 편집기 스타일 또는 theme.json 파일이 있는 클래식 테마에서 볼 수 있습니다. 모양 > 디자인에서 <a href=\"%s\">스타일 북</a>을 찾아 CSS를 편집하거나 사용자 정의 관리자에서 변경할 때 테마의 진화 과정을 미리 볼 수 있습니다."
 
-#: wp-admin/about.php:70
+#: wp-admin/about.php:101
 msgid "The Style Book has a new, structured layout and clearer labels, to make it even easier to edit colors, typography—almost all your site styles—in one place."
 msgstr "스타일북은 새롭고 구조화된 레이아웃과 더 명확한 레이블을 통해 색상, 타이포그래피 등 거의 모든 사이트 스타일을 한 곳에서 더욱 쉽게 편집할 수 있습니다."
 
-#: wp-admin/about.php:68
+#: wp-admin/about.php:99
 msgid "The Style Book gets a cleaner look—and a few new tricks"
 msgstr "스타일북이 더욱 깔끔해진 외관과 몇 가지 새로운 트릭을 선보입니다."
 
-#: wp-admin/about.php:61
+#: wp-admin/about.php:92
 msgid "The Style Book now has a structured layout and works with Classic themes, giving you more control over global styles."
 msgstr "이제 스타일북에 구조화된 레이아웃이 적용되고 클래식 테마와 함께 작동하여 글로벌 스타일을 더 잘 제어할 수 있습니다."
 
-#: wp-admin/about.php:60
+#: wp-admin/about.php:91
 msgid "WordPress 6.8 polishes and refines the tools you use every day, making your site faster, more secure, and easier to manage."
 msgstr "워드프레스 6.8은 매일 사용하는 도구를 다듬고 개선하여 사이트를 더 빠르고, 더 안전하고, 더 쉽게 관리할 수 있도록 합니다."
 
-#: wp-admin/about.php:59
+#: wp-admin/about.php:90
 msgid "A release polished to a high sheen."
 msgstr "매우 정교하게 다듬어진 릴리스입니다."
 
@@ -384,12 +384,12 @@ msgid "Skip to Editor"
 msgstr "에디터로 건너뛰기"
 
 #. translators: %s: WordPress version number.
-#: wp-admin/about.php:258
+#: wp-admin/about.php:289
 msgid "WordPress %s Field Guide"
 msgstr "워드프레스 %s 필드 가이드"
 
 #. translators: %s: WordPress version number.
-#: wp-admin/about.php:231
+#: wp-admin/about.php:262
 msgid "WordPress %s Release Notes"
 msgstr "워드프레스 %s 릴리스 노트"
 
@@ -548,20 +548,20 @@ msgstr "플러그인 작성자인 경우 <a href=\"https://developer.wordpress.o
 msgid "If you are a plugin author, you can learn more about <a href=\"https://developer.wordpress.org/plugins/privacy/adding-the-personal-data-eraser-to-your-plugin/\">how to add the Personal Data Eraser to a plugin</a>."
 msgstr "플러그인 작성자인 경우 <a href=\"https://developer.wordpress.org/plugins/privacy/adding-the-personal-data-eraser-to-your-plugin/\">개인 데이터 지우개를 플러그인에 추가하는 방법</a>에서 자세히 알아볼 수 있습니다."
 
-#: wp-admin/about.php:184
+#: wp-admin/about.php:215
 msgid "See everything new"
 msgstr "새로운 기능 보기"
 
-#: wp-admin/about.php:184
+#: wp-admin/about.php:215
 msgid "https://wordpress.org/download/releases/6-8/"
 msgstr "https://wordpress.org/download/releases/6-8/"
 
 #. translators: %s: Version number.
-#: wp-admin/about.php:176
+#: wp-admin/about.php:207
 msgid "For a comprehensive overview of all the new features and enhancements in WordPress %s, please visit the feature-showcase website."
 msgstr "워드프레스 %s의 모든 새로운 기능과 개선 사항에 대한 종합적인 개요를 보려면 기능 쇼케이스 웹사이트를 방문하세요."
 
-#: wp-admin/about.php:170
+#: wp-admin/about.php:201
 msgid "And much more"
 msgstr "자세히 알아보세요."
 
@@ -703,11 +703,11 @@ msgstr "지금 설치"
 msgid "Created by a worldwide team of passionate individuals"
 msgstr "전 세계의 열정적인 팀원들에 의해 만들어졌습니다"
 
-#: wp-admin/about.php:140
+#: wp-admin/about.php:171
 msgid "Accessibility improvements"
 msgstr "접근성 개선"
 
-#: wp-admin/about.php:162
+#: wp-admin/about.php:193
 msgid "Performance updates"
 msgstr "성능 개선"
 
@@ -771,12 +771,12 @@ msgid "When using Bulk Edit, you can change the metadata (categories, author, et
 msgstr "일괄 편집을 사용하면 선택한 모든 글에 대한 메타 데이터 (카테고리, 글쓴이, 등)를 한번에 변경할 수 있습니다. 그룹에서 글을 삭제하려면 나타나는 일괄 편집 영역에서 해당 이름 옆의 %s<span class=\"screen-reader-text\">삭제</span> 버튼을 클릭하세요."
 
 #. translators: %s: WordPress version number.
-#: wp-admin/about.php:241
+#: wp-admin/about.php:272
 msgid "Read the WordPress %s Release Notes for information on installation, enhancements, fixed issues, release contributors, learning resources, and the list of file changes."
 msgstr "설치, 개선 사항, 수정된 문제, 릴리스 기여자, 학습 리소스 및 파일 변경 목록에 대한 정보는 워드프레스 %s 릴리스 노트에서 확인하세요."
 
 #. translators: %s: WordPress version number.
-#: wp-admin/about.php:268
+#: wp-admin/about.php:299
 msgid "Explore the WordPress %s Field Guide. Learn about the changes in this release with detailed developer notes to help you build with WordPress."
 msgstr "워드프레스 %s 필드 가이드를 살펴보세요. 워드프레스로 빌드하는 데 도움이 되는 자세한 개발자 노트와 함께 이번 릴리즈의 변경 사항을 알아보세요."
 
@@ -795,6 +795,11 @@ msgstr "현재 서버의 PHP 버전은 %1$s 이며, 새로운 플러그인 버�
 #: wp-admin/includes/class-plugin-upgrader.php:353
 msgid "Your WordPress version is %1$s, however the new plugin version requires %2$s."
 msgstr "현재 워드프레스 버전은 %1$s이며, 새로운 플러그인 버전에는 %2$s이(가) 필요합니다."
+
+#. translators: %s: WordPress version.
+#: wp-admin/about.php:79
+msgid "https://wordpress.org/support/wordpress-version/version-%s/"
+msgstr "https://wordpress.org/support/wordpress-version/version-%s/"
 
 #: wp-admin/contribute.php:103 wp-admin/credits.php:57 wp-admin/credits.php:65
 msgid "https://make.wordpress.org/contribute/"
@@ -1259,7 +1264,7 @@ msgid "Be the future of WordPress"
 msgstr "워드프레스의 미래가 되십시오"
 
 #. translators: 1: Learn WordPress link, 2: Workshops link.
-#: wp-admin/about.php:209
+#: wp-admin/about.php:240
 msgid "<a href=\"%1$s\">Learn WordPress</a> is a free resource for new and experienced WordPress users. Learn is stocked with how-to videos on using various features in WordPress, <a href=\"%2$s\">interactive workshops</a> for exploring topics in-depth, and lesson plans for diving deep into specific areas of WordPress."
 msgstr "<a href=\"%1$s\">워드프레스 배우기</a>는 초보자와 숙련된 워드프레스 사용자를 위한 무료 리소스입니다. Learn에는 워드프레스의 다양한 기능을 사용하는 방법 동영상, 주제를 심도 있게 살펴볼 수 있는 <a href=\"%2$s\">대화형 워크샵</a>, 워드프레스의 특정 영역을 자세히 살펴볼 수 있는 강의 계획이 준비되어 있습니다."
 
@@ -1405,12 +1410,12 @@ msgid "<a href=\"https://wordpress.org/documentation/article/customizer/\">Docum
 msgstr "<a href=\"https://wordpress.org/documentation/article/customizer/\">사용자 정의하기 문서</a>"
 
 #. translators: The localized WordPress download URL.
-#: wp-admin/about.php:349
+#: wp-admin/about.php:380
 msgid "https://wordpress.org/download/"
 msgstr "https://wordpress.org/download/"
 
 #. translators: %s: The major version of WordPress for this branch.
-#: wp-admin/about.php:346
+#: wp-admin/about.php:377
 msgid "This is the final release of WordPress %s"
 msgstr "워드프레스 %s의 최종 릴리즈입니다."
 
@@ -1732,12 +1737,12 @@ msgid "Reach out to WordPress Core developers to ensure you'll never have this p
 msgstr "이 문제가 다시는 발생하지 않도록 워드프레스 코어 개발자에 문의하세요."
 
 #. translators: 1: WordPress version number, 2: Link to update WordPress
-#: wp-admin/about.php:343
+#: wp-admin/about.php:374
 msgid "Important! Your version of WordPress (%1$s) will stop receiving security updates in the near future. To keep your site secure, please <a href=\"%2$s\">update to the latest version of WordPress</a>."
 msgstr "중요! 사용중인 워드프레스 버전 (%1$s)은 조만간 보안 업데이트가 중지될 것입니다. 사이트를 안정하게 지키려면 <a href=\"%2$s\">워드프레스 최신 버전으로 업데이트</a>해주세요."
 
 #. translators: 1: WordPress version number, 2: Link to update WordPress
-#: wp-admin/about.php:340
+#: wp-admin/about.php:371
 msgid "Important! Your version of WordPress (%1$s) is no longer supported, you will not receive any security updates for your website. To keep your site secure, please <a href=\"%2$s\">update to the latest version of WordPress</a>."
 msgstr "중요! 사용중인 워드프레스 버전 (%1$s)이 더 이상 지원되지 않습니다. 더 이상 보안 업데이트를 사이트에서 받지 못합니다. 사이트를 안전하게 유지하려면 <a href=\"%2$s\">워드프레스를 최신 버전으로 업데이트 해주세요</a>."
 
@@ -1747,7 +1752,7 @@ msgid "https://make.wordpress.org/core/wordpress-%s-field-guide/"
 msgstr "https://make.wordpress.org/core/wordpress-%s-field-guide/"
 
 #. translators: %s: Version number.
-#: wp-admin/about.php:200
+#: wp-admin/about.php:231
 msgid "Learn more about WordPress %s"
 msgstr "워드프레스 %s에 대해 더 알아보기"
 
@@ -2649,7 +2654,7 @@ msgstr "새 응용 프로그램 비밀번호 추가"
 msgid "Required to create an Application Password, but not to update the user."
 msgstr "응용 프로그램 비밀번호 생성은 필수지만, 사용자 업데이트는 하지 않습니다."
 
-#: wp-admin/about.php:284
+#: wp-admin/about.php:315
 msgid "Go to Updates"
 msgstr "업데이트로 가기"
 
@@ -7634,7 +7639,7 @@ msgstr "릴리즈 대리인"
 msgid "Release Design Lead"
 msgstr "릴리즈 디자인 리드"
 
-#: wp-admin/about.php:102
+#: wp-admin/about.php:133
 msgid "Editor improvements"
 msgstr "편집기 향상"
 
@@ -8071,7 +8076,7 @@ msgid "(Currently set to: %s)"
 msgstr "(현재 설정: %s)"
 
 #. translators: %s: WordPress version number.
-#: wp-admin/about.php:314
+#: wp-admin/about.php:345
 msgid "<strong>Version %s</strong> addressed one security issue."
 msgstr "<strong>버전 %s</strong>은(는) 보안 문제를 처리했습니다."
 
@@ -8084,15 +8089,15 @@ msgstr "https://gravatar.com/"
 msgid "Profile Picture"
 msgstr "프로필 사진"
 
-#: wp-admin/about.php:311
+#: wp-admin/about.php:342
 msgid "Maintenance and Security Releases"
 msgstr "유지보수와 보안 릴리스"
 
-#: wp-admin/about.php:308
+#: wp-admin/about.php:339
 msgid "Security Releases"
 msgstr "보안 릴리스"
 
-#: wp-admin/about.php:305
+#: wp-admin/about.php:336
 msgid "Maintenance Releases"
 msgstr "유지보수 릴리즈"
 
@@ -11358,45 +11363,46 @@ msgstr "이 네트워크에 있는 기존의 사용자를 이 사이트에 초�
 msgid "Show Toolbar when viewing site"
 msgstr "사이트를 볼 때 도구모음을 보기"
 
+#. translators: %s: HelpHub URL.
 #. translators: %s: Documentation URL.
-#: wp-admin/about.php:337
+#: wp-admin/about.php:76 wp-admin/about.php:368
 msgid "For more information, see <a href=\"%s\">the release notes</a>."
 msgstr "자세한 정보는 <a href=\"%s\">릴리즈 안내</a>를 참고하세요."
 
 #. translators: 1: WordPress version number, 2: Plural number of bugs. More
 #. than one security issue.
-#: wp-admin/about.php:331
+#: wp-admin/about.php:362
 msgid "<strong>Version %1$s</strong> addressed some security issues and fixed %2$s bug."
 msgid_plural "<strong>Version %1$s</strong> addressed some security issues and fixed %2$s bugs."
 msgstr[0] "<strong>버전 %1$s</strong>이(가) 몇 가지 보안 문제를 해결하고 %2$s 버그를 수정했습니다."
 
 #. translators: 1: WordPress version number, 2: Plural number of bugs. Singular
 #. security issue.
-#: wp-admin/about.php:325
+#: wp-admin/about.php:356
 msgid "<strong>Version %1$s</strong> addressed a security issue and fixed %2$s bug."
 msgid_plural "<strong>Version %1$s</strong> addressed a security issue and fixed %2$s bugs."
 msgstr[0] "<strong>버전 %1$s</strong>이(가) 보안 문제를 해결하고 %2$s 버그를 수정했습니다."
 
 #. translators: 1: WordPress version number, 2: Plural number of bugs.
-#: wp-admin/about.php:319
+#: wp-admin/about.php:64 wp-admin/about.php:350
 msgid "<strong>Version %1$s</strong> addressed %2$s bug."
 msgid_plural "<strong>Version %1$s</strong> addressed %2$s bugs."
 msgstr[0] "<strong>버전 %1$s</strong>이(가) %2$s 버그를 해결했습니다."
 
 #. translators: %s: WordPress version number.
-#: wp-admin/about.php:316
+#: wp-admin/about.php:347
 msgid "<strong>Version %s</strong> addressed some security issues."
 msgstr "<strong>버전 %s</strong>은(는) 보안 문제를 처리했습니다."
 
-#: wp-admin/about.php:310
+#: wp-admin/about.php:59 wp-admin/about.php:341
 msgid "Maintenance and Security Release"
 msgstr "유지 보수와 보안 릴리스"
 
-#: wp-admin/about.php:307
+#: wp-admin/about.php:338
 msgid "Security Release"
 msgstr "보안 릴리스"
 
-#: wp-admin/about.php:304
+#: wp-admin/about.php:335
 msgid "Maintenance Release"
 msgstr "유지 보수 릴리스"
 
@@ -11669,11 +11675,11 @@ msgstr "<strong>편집</strong>은 해당 글에 대해 편집 할 수 있도록
 msgid "Because this is a multisite installation, you may add accounts that already exist on the Network by specifying a username or email, and defining a role. For more options, such as specifying a password, you have to be a Network Administrator and use the hover link under an existing user&#8217;s name to Edit the user profile under Network Admin > All Users."
 msgstr "왜냐하면 이는 다중 사이트 설치이기 때문입니다. 사용자명이나 이메일, 그리고 정의한 역할로 네트워크에 이미 존재하는 계정을 추가할 수도 있습니다. 비밀번호를 지정하는 것과 같은 더 많은 옵션에 대해, 네트워크 관리자여야하고 네트워크 관리자 > 모든 사용자 아래에 있는 사용자 프로필을 편집할 수 있는 존재하는 사용자의 이름 아래 있는 마우스 올리기 링크를 사용해야 합니다."
 
-#: wp-admin/about.php:291
+#: wp-admin/about.php:322
 msgid "Go to Dashboard &rarr; Home"
 msgstr "알림판 &rarr; 홈으로 이동하기"
 
-#: wp-admin/about.php:284
+#: wp-admin/about.php:315
 msgid "Go to Dashboard &rarr; Updates"
 msgstr "알림판 &rarr; 업데이트로 이동하기"
 
@@ -13367,7 +13373,7 @@ msgstr "워드프레스 업데이트"
 msgid "Edit menu item"
 msgstr "메뉴 아이템 편집"
 
-#: wp-admin/about.php:291
+#: wp-admin/about.php:322
 msgid "Go to Dashboard"
 msgstr "알림판으로 가기"
 
