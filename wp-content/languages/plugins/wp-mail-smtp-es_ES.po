@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WP Mail SMTP by WPForms &#8211; The Most Popular SMTP and Email Log Plugin - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-06-10 21:41:50+0000\n"
+"PO-Revision-Date: 2025-07-03 11:25:50+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,6 +10,78 @@ msgstr ""
 "X-Generator: GlotPress/4.0.1\n"
 "Language: es\n"
 "Project-Id-Version: Plugins - WP Mail SMTP by WPForms &#8211; The Most Popular SMTP and Email Log Plugin - Stable (latest release)\n"
+
+#: src/Providers/MailerSend/Options.php:150
+msgid "pricing page"
+msgstr "página de precios"
+
+#. translators: %s - MailerSend pricing page URL.
+#: src/Providers/MailerSend/Options.php:148
+msgid "Activate if you have a Professional or higher plan with MailerSend. This allows you to use custom headers. For more information about MailerSend plans, check their %s."
+msgstr "Activa esta opción si tienes un plan profesional o superior con MailerSend. Esto te permite usar cabeceras personalizadas. Para más información acerca de los planes de MailerSend, consulta su %s."
+
+#: src/Providers/MailerSend/Options.php:129
+msgid "Professional Plan"
+msgstr "Plan profesional"
+
+#. translators: %s - API key link.
+#: src/Providers/MailerSend/Options.php:115
+msgid "Follow this link to get an API Key from MailerSend: %s."
+msgstr "Sigue este enlace para conseguir una clave API de MailerSend: %s."
+
+#: src/Providers/MailerSend/Options.php:61
+msgid "MailerSend"
+msgstr "MailerSend"
+
+#. translators: %1$s - URL to mailersend.com; %2$s - URL to MailerSend
+#. documentation on wpmailsmtp.com.
+#: src/Providers/MailerSend/Options.php:41
+msgid "<a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">MailerSend</a> is a reliable transactional email provider with powerful features. They offer 12,000 emails per month for free and have affordable plans for higher volumes. Their modern API and excellent deliverability make them a great choice for WordPress sites.<br><br>To get started, read our <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">MailerSend documentation</a>."
+msgstr "<a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">MailerSend</a> es un proveedor de correo electrónico transaccional fiable y con potentes funciones. Ofrecen 12.000 correos electrónicos al mes gratis y tienen planes asequibles para volúmenes mayores. Su moderna API y su excelente capacidad de entrega los convierten en una gran opción para los sitios de WordPress.<br><br>Para empezar, lee nuestra <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">documentación de MailerSend</a>."
+
+#: src/Admin/Pages/MiscTab.php:161
+msgid "When selected, emails blocked by the \"Do Not Send\" option will be logged in the Email Log."
+msgstr "Si se selecciona, los correos electrónicos bloqueados por la opción \"No enviar\" se registrarán en el Registro de correos electrónicos."
+
+#: src/Admin/Pages/MiscTab.php:158
+msgid "Log Blocked Emails"
+msgstr "Registrar correos bloqueados"
+
+#: src/Admin/Pages/AlertsTab.php:386
+msgid "Phone Number ID"
+msgstr "ID del número de teléfono"
+
+#: src/Admin/Pages/AlertsTab.php:380
+msgid "WhatsApp Business Account ID"
+msgstr "ID de cuenta de WhatsApp Business"
+
+#: src/Admin/Pages/AlertsTab.php:374
+msgid "Access Token"
+msgstr "Token de acceso"
+
+#: src/Admin/Pages/AlertsTab.php:362
+msgid "WhatsApp Alerts"
+msgstr "Alertas de WhatsApp"
+
+#: src/Admin/Pages/AlertsTab.php:357
+msgid "Enter your WhatsApp Cloud API credentials to receive alerts when email sending fails. You'll need to create a Meta developer account and set up WhatsApp Business Platform."
+msgstr "Introduce tus credenciales de la API de WhatsApp Cloud para recibir alertas cuando falle el envío de correos electrónicos. Tendrás que crear una cuenta de desarrollador Meta y configurar WhatsApp Business Platform."
+
+#: src/Admin/Pages/AlertsTab.php:356
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#: assets/languages/wp-mail-smtp-vue.php:1060
+msgid "Read how to set up MailerSend"
+msgstr "Aprende cómo configurar MailerSend"
+
+#: assets/languages/wp-mail-smtp-vue.php:1057
+msgid "Enable if you have a Pro plan or higher to use advanced features like custom headers."
+msgstr "Activa esta característica si tienes un plan Pro o superior para utilizar características avanzadas como cabeceras personalizadas."
+
+#: assets/languages/wp-mail-smtp-vue.php:1047
+msgid "Pro Plan Features"
+msgstr "Características del plan pro"
 
 #: src/Admin/Pages/AlertsTab.php:345
 msgid "Connection Name"
@@ -615,6 +687,10 @@ msgstr "Consigue ahora Brevo (gratis)"
 msgid "We believe in full transparency. The Brevo (formerly Sendinblue) links above are tracking links as part of our partnership with Brevo. We can recommend just about any SMTP service, but we only recommend products that we believe will add value to our users."
 msgstr "Creemos en la transparencia total. Los enlaces de Brevo (anteriormente Sendinblue) que aparecen arriba son enlaces de seguimiento como parte de nuestra alianza con Brevo. Podemos recomendar casi cualquier servicio SMTP, pero sólo recomendamos productos que creemos que aportarán valor a nuestros usuarios."
 
+#: assets/languages/wp-mail-smtp-vue.php:1054
+msgid "Please input the sending domain/subdomain you configured in your MailerSend dashboard. More information can be found in our %1$sMailerSend documentation%2$s"
+msgstr "Introduce el dominio/subdominio de envío que configuraste en tu panel de MailerSend. Puedes encontrar más información en nuestra %1$sDocumentación de MailerSend%2$s"
+
 #: assets/languages/wp-mail-smtp-vue.php:929
 msgid "We believe in full transparency. The Brevo links above are tracking links as part of our partnership with Brevo. We can recommend just about any SMTP service, but we only recommend products that we believe will add value to our users."
 msgstr "Creemos en la transparencia total. Los enlaces de Brevo que aparecen arriba son enlaces de seguimiento como parte de nuestra alianza con Brevo. Podemos recomendar casi cualquier servicio SMTP, pero sólo recomendamos productos que creemos que aportarán valor a nuestros usuarios."
@@ -1119,6 +1195,11 @@ msgstr "%1$sSigue este enlace%2$s para conseguir una clave de API de SendLayer."
 #: assets/languages/wp-mail-smtp-vue.php:912
 msgid "Read how to set up SendGrid"
 msgstr "Lee cómo configurar SendGrid"
+
+#. Translators: Link to the MailerSend API settings.
+#: assets/languages/wp-mail-smtp-vue.php:1051
+msgid "%1$sFollow this link%2$s to get an API Key for MailerSend."
+msgstr "%1$sSigue este enlace%2$s para conseguir una clave de la API de MailerSend."
 
 #: wp_mail_smtp.php:308
 msgid "<strong>WP Mail SMTP plugin is disabled</strong> on your site until WordPress is updated to the required version."
