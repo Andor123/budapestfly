@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WP Mail SMTP by WPForms &#8211; The Most Popular SMTP and Email Log Plugin - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-06-27 13:23:51+0000\n"
+"PO-Revision-Date: 2025-07-05 05:07:31+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,6 +10,78 @@ msgstr ""
 "X-Generator: GlotPress/4.0.1\n"
 "Language: ja_JP\n"
 "Project-Id-Version: Plugins - WP Mail SMTP by WPForms &#8211; The Most Popular SMTP and Email Log Plugin - Stable (latest release)\n"
+
+#: src/Providers/MailerSend/Options.php:150
+msgid "pricing page"
+msgstr "価格ページ"
+
+#. translators: %s - MailerSend pricing page URL.
+#: src/Providers/MailerSend/Options.php:148
+msgid "Activate if you have a Professional or higher plan with MailerSend. This allows you to use custom headers. For more information about MailerSend plans, check their %s."
+msgstr "MailerSend の Professional 以上のプランを使用している場合に有効にします。これにより、カスタムヘッダーを使用できます。MailerSend プランの詳細については、%sを参照してください。"
+
+#: src/Providers/MailerSend/Options.php:129
+msgid "Professional Plan"
+msgstr "プロフェッショナルプラン"
+
+#. translators: %s - API key link.
+#: src/Providers/MailerSend/Options.php:115
+msgid "Follow this link to get an API Key from MailerSend: %s."
+msgstr "MailerSend から API キーを取得するには、次のリンクに従ってください: %s。"
+
+#: src/Providers/MailerSend/Options.php:61
+msgid "MailerSend"
+msgstr "MailerSend"
+
+#. translators: %1$s - URL to mailersend.com; %2$s - URL to MailerSend
+#. documentation on wpmailsmtp.com.
+#: src/Providers/MailerSend/Options.php:41
+msgid "<a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">MailerSend</a> is a reliable transactional email provider with powerful features. They offer 12,000 emails per month for free and have affordable plans for higher volumes. Their modern API and excellent deliverability make them a great choice for WordPress sites.<br><br>To get started, read our <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">MailerSend documentation</a>."
+msgstr "<a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">MailerSend</a> は、強力な機能を備えた信頼性の高いトランザクション電子メールプロバイダです。毎月12,000通のメールを無料で提供しており、より大量のメールを送信する場合は手頃な料金プランも用意されている。最新の API と優れた配信性により、WordPress サイトに最適です。<br><br>まず、<a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">MailerSend のドキュメント</a>.を参照してください。"
+
+#: src/Admin/Pages/MiscTab.php:161
+msgid "When selected, emails blocked by the \"Do Not Send\" option will be logged in the Email Log."
+msgstr "このオプションを選択すると、「送信しない」オプションでブロックされたメールをメールログに記録します。"
+
+#: src/Admin/Pages/MiscTab.php:158
+msgid "Log Blocked Emails"
+msgstr "ブロックした電子メールのログ"
+
+#: src/Admin/Pages/AlertsTab.php:386
+msgid "Phone Number ID"
+msgstr "電話番号 ID"
+
+#: src/Admin/Pages/AlertsTab.php:380
+msgid "WhatsApp Business Account ID"
+msgstr "WhatsApp ビジネスアカウント ID"
+
+#: src/Admin/Pages/AlertsTab.php:374
+msgid "Access Token"
+msgstr "アクセストークン"
+
+#: src/Admin/Pages/AlertsTab.php:362
+msgid "WhatsApp Alerts"
+msgstr "WhatsApp アラート"
+
+#: src/Admin/Pages/AlertsTab.php:357
+msgid "Enter your WhatsApp Cloud API credentials to receive alerts when email sending fails. You'll need to create a Meta developer account and set up WhatsApp Business Platform."
+msgstr "E メールの送信に失敗したときにアラートを受け取るには、WhatsApp Cloud API の認証情報を入力します。Meta 開発者アカウントを作成し、WhatsApp Business Platform を設定する必要があります。"
+
+#: src/Admin/Pages/AlertsTab.php:356
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#: assets/languages/wp-mail-smtp-vue.php:1060
+msgid "Read how to set up MailerSend"
+msgstr "MailerSend の設定方法を読む"
+
+#: assets/languages/wp-mail-smtp-vue.php:1057
+msgid "Enable if you have a Pro plan or higher to use advanced features like custom headers."
+msgstr "Pro プラン以上でカスタムヘッダーなどの高度な機能を使用する場合に有効にします。"
+
+#: assets/languages/wp-mail-smtp-vue.php:1047
+msgid "Pro Plan Features"
+msgstr "Pro プランの機能"
 
 #: src/Admin/Pages/AlertsTab.php:345
 msgid "Connection Name"
@@ -39,7 +111,7 @@ msgstr "%1$s <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">今�
 #. translators: %1$s - plugin name; %2$s - documentation link.
 #: src/Providers/Outlook/Provider.php:56
 msgid "<strong>%1$s</strong><br>Heads up! Microsoft is <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">discontinuing support for basic SMTP connections</a>. To continue using Outlook or Hotmail, switch to our Outlook mailer for uninterrupted email sending."
-msgstr "<strong>%1$s</strong><br>ご注意ください ! Microsoft は<a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">基本認証を使用した SMTP 接続のサポートを終了</a>します。Outlook または Hotmail を引き続きご利用になる場合、中断なくメールを送信するには当社の Outlook メーラーに切り替えてください。"
+msgstr "<strong>%1$s</strong><br>注意 ! Microsoft は<a href=\"%2$s\"target=\"_blank\"rel=\"noopener noreferrer\">基本的な SMTP 接続のサポートを終了します</a>。Outlook または Hotmail を引き続きご使用になる場合は、Outlook メーラーに切り替えてください。"
 
 #. translators: %s - link to get an API Key.
 #: src/Providers/ElasticEmail/Options.php:120
@@ -337,7 +409,7 @@ msgstr "申し訳ございませんが、お客様のプランではメール速
 
 #: src/Admin/Area.php:561
 msgid "Email Rate Limiting <br> is a Pro Feature"
-msgstr "メールレート制限<br>はプロの機能です。"
+msgstr "メールレート制限<br>は Pro の機能です。"
 
 #: assets/languages/wp-mail-smtp-vue.php:1002
 msgid "Install the WPForms plugin and create beautiful contact forms with just a few clicks."
@@ -346,7 +418,7 @@ msgstr "WPForms プラグインをインストールし、わずか数クリッ�
 #. translators: %s - URL to our Gmail doc.
 #: src/Providers/Gmail/Options.php:41
 msgid "Our Gmail mailer works with any Gmail or Google Workspace account via the Google API. You can send WordPress emails from your main email address or a Gmail alias, and it's more secure than connecting to Gmail using SMTP credentials. We now have a One-Click Setup, which simply asks you to authorize your Google account to use our app and takes care of everything for you. Alternatively, you can connect manually, which involves several steps that are more technical than other mailer options, so we created a detailed guide to walk you through the process.<br><br>To get started, read our <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">Gmail documentation</a>."
-msgstr "Gmail メーラーは、Google API を使用して、あらゆる Gmail または Google Workspace アカウントと機能します。メインのメールアドレスまたは Gmail エイリアスから WordPress メールを送信できます。SMTP ログイン情報を使用して Gmail に接続するよりも安全です。ワンクリックセットアップでは、アプリを使用するために Google アカウントに承認を求めるだけで、すべての処理を行います。オプションとして手動で接続することもできます。この場合、他のメーラーオプションよりも技術的な手順がいくつか必要になるため、詳細なガイドを作成しました。<br><br>はじめに、当社の <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">Gmailのドキュメント</a>をご覧ください。"
+msgstr "Gmail メーラーは、Google API を使用して、あらゆる Gmail または Google Workspace アカウントと機能します。メインのメールアドレスまたは Gmail エイリアスから WordPress メールを送信できます。SMTP ログイン情報を使用して Gmail に接続するよりも安全です。ワンクリックセットアップでは、アプリを使用するために Google アカウントに承認を求めるだけで、すべての処理を行います。オプションとして手動で接続することもできます。この場合、他のメーラーオプションよりも技術的な手順がいくつか必要になるため、詳細なガイドを作成しました。<br><br>はじめに、当社の <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">Gmail のドキュメント</a>をご覧ください。"
 
 #: assets/languages/wp-mail-smtp-vue.php:999 src/Admin/Area.php:558
 msgid "We're sorry, One-Click Setup for Google Mailer is not available on your plan. Please upgrade to the Pro plan to unlock all these awesome features."
@@ -382,7 +454,7 @@ msgstr "サイトと Gmail アカウントを正常にリンクしました。�
 
 #: assets/languages/wp-mail-smtp-vue.php:975
 msgid "One-Click Setup for Google Mailer requires an active license. Verify your license to proceed with this One-Click Setup, please."
-msgstr "Google メーラーのワンクリックセットアップには有効なライセンスが必要です。ワンクリックセットアップを続行するにはライセンスを確認してください。"
+msgstr "Google メーラーのワンクリックセットアップには有効なライセンスが必要です。ワンクリックセットアップを続行するには、ライセンスを確認してください。"
 
 #: assets/languages/wp-mail-smtp-vue.php:972
 msgid "One-Click Setup for Google Mailer requires an active license. Verify your license to proceed with this one-click setup, please."
@@ -390,7 +462,7 @@ msgstr "Google メーラーのワンクリックセットアップには有効�
 
 #: assets/languages/wp-mail-smtp-vue.php:969
 msgid "One-Click Setup for Google Mailer requires an active license. Verify your license to proceed with this one-click setup."
-msgstr "Google メーラーのワンクリックセットアップには有効なライセンスが必要です。ワンクリックセットアップを続行するにはライセンスを確認してください。"
+msgstr "Google メーラーのワンクリックセットアップには有効なライセンスが必要です。ワンクリックセットアップを続行するには、ライセンスを確認してください。"
 
 #: assets/languages/wp-mail-smtp-vue.php:966
 msgid "One-Click Setup for Google Mailer requires an active license. Emails are currently not being sent."
@@ -613,6 +685,10 @@ msgstr "今すぐ Brevo を入手 (無料)"
 msgid "We believe in full transparency. The Brevo (formerly Sendinblue) links above are tracking links as part of our partnership with Brevo. We can recommend just about any SMTP service, but we only recommend products that we believe will add value to our users."
 msgstr "当社は完全な透明性を信じています。上記の Brevo (旧 Sendinblue) リンクは、当社と Brevo とのパートナーシップの一環としてリンクを追跡しています。当社では、ユーザーに価値を追加すると考える SMTP サービスのみを推奨します。"
 
+#: assets/languages/wp-mail-smtp-vue.php:1054
+msgid "Please input the sending domain/subdomain you configured in your MailerSend dashboard. More information can be found in our %1$sMailerSend documentation%2$s"
+msgstr "MailerSend ダッシュボードで設定した送信ドメイン/サブドメインを入力してください。詳細は %1$sMailerSend のドキュメント%2$sをご覧ください。"
+
 #: assets/languages/wp-mail-smtp-vue.php:929
 msgid "We believe in full transparency. The Brevo links above are tracking links as part of our partnership with Brevo. We can recommend just about any SMTP service, but we only recommend products that we believe will add value to our users."
 msgstr "当社は完全な透明性を信じています。上記の Brevo リンクは、当社と Brevo とのパートナーシップの一環としてリンクを追跡しています。当社では、ユーザーに価値を追加すると考える SMTP サービスのみを推奨します。"
@@ -656,7 +732,7 @@ msgstr "WPCode Lite"
 
 #: src/Admin/Pages/AboutTab.php:483
 msgid "Top-rated WordPress donation and fundraising plugin. Over 10,000+ non-profit organizations and website owners use Charitable to create fundraising campaigns and raise more money online."
-msgstr "WordPress の評価の高い寄付および募金プラグインです。1万以上の非営利団体やサイト所有者が Charitable を使用して募金キャンペーンを作成し、オンラインでより多くの寄付金を募っています。"
+msgstr "トップ評価の WordPress 寄付・募金プラグイン。10,000以上の非営利団体やウェブサイト運営者が Charitable を使って募金キャンペーンを立ち上げ、より多くの寄付をオンラインで集めています。"
 
 #: src/Admin/Area.php:534
 msgid "We're sorry, the %name% mailer is not available on your plan. Please upgrade to the PRO plan to unlock all these awesome features."
@@ -1117,6 +1193,11 @@ msgstr "SendLayer の API キーを取得するには、%1$sこのリンクに�
 msgid "Read how to set up SendGrid"
 msgstr "SendGrid の設定方法を読む"
 
+#. Translators: Link to the MailerSend API settings.
+#: assets/languages/wp-mail-smtp-vue.php:1051
+msgid "%1$sFollow this link%2$s to get an API Key for MailerSend."
+msgstr "%1$s このリンク %2$s に従って、MailerSend の API キーを取得してください。"
+
 #: wp_mail_smtp.php:308
 msgid "<strong>WP Mail SMTP plugin is disabled</strong> on your site until WordPress is updated to the required version."
 msgstr "WordPress が必要なバージョンに更新されるまで、サイト上で<strong>WP Mail SMTP プラグインは無効化</strong>されます。"
@@ -1193,7 +1274,7 @@ msgstr "WP Simple Pay"
 
 #: src/Admin/Pages/AboutTab.php:434 src/Admin/Pages/AboutTab.php:440
 msgid "The #1 affiliate management plugin for WordPress. Easily create an affiliate program for your eCommerce store or membership site within minutes and start growing your sales with the power of referral marketing."
-msgstr "WordPress 用のナンバー1アフィリエイト管理プラグインです。e コマースストアまたはメンバーシップサイトのアフィリエイトプログラムを数分で簡単に作成し、リファラルマーケティングの力で売り上げを増やし始めることができます。"
+msgstr "WordPress 用 No.1アフィリエイト管理プラグイン。数分であなたの E コマースストアやメンバーシップサイト向けのアフィリエイトプログラムを簡単に作成し、リファラルマーケティングの力で売上を伸ばし始めましょう。"
 
 #: src/Admin/Pages/AboutTab.php:433 src/Admin/Pages/AboutTab.php:439
 msgid "AffiliateWP"
@@ -1237,7 +1318,7 @@ msgstr "まず、 <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\"
 #. translators: %1$s - URL to SparkPost website.
 #: src/Providers/SparkPost/Options.php:34
 msgid "<a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">SparkPost</a> is a transactional email provider that's trusted by big brands and small businesses. It sends more than 4 trillion emails each year and reports 99.9%% uptime. You can get started with the free test account that lets you send up to 500 emails per month."
-msgstr "<a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">SparkPost</a> は、大手ブランドや中小企業に信頼されているトランザクションメールプロバイダーです。毎年4兆通以上のメールを送信し、99.9%%のアップタイムを報告しています。月500通まで送信可能な無料のテストアカウントから始めることができます。"
+msgstr "<a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">SparkPost</a> は、大手ブランドや中小企業に信頼されているトランザクションメールプロバイダーです。毎年4兆通以上のメールを送信し、99.9%% のアップタイムを報告しています。月500通まで送信可能な無料のテストアカウントから始めることができます。"
 
 #: src/Providers/SparkPost/Mailer.php:486
 msgid "Region:"
@@ -1341,7 +1422,7 @@ msgstr "<strong><a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">B
 #. documentation on wpmailsmtp.com
 #: src/Providers/Sendgrid/Options.php:34
 msgid "<a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">SendGrid</a> is a popular transactional email provider that sends more than 35 billion emails every month. If you're just starting out, the free plan allows you to send up to 100 emails each day without entering your credit card details.<br><br>To get started, read our <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">SendGrid documentation</a>."
-msgstr "<a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">SendGrid</a> は、毎月350億以上のメールを送信する、人気のあるトランザクションメールプロバイダーです。始めは、無料プランを使うとクレジットカードの詳細を入力せずに毎日最大100件のメールを送信できます。<br><br>まず、 <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">SendGrid に関するドキュメンテーション</a>をご覧ください。"
+msgstr "<a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">SendGrid</a> は、毎月350億以上のメールを送信する、人気のあるトランザクションメールプロバイダーです。始めは、無料プランを使うとクレジットカードの詳細を入力せずに毎日最大100件のメールを送信できます。<br><br>まず、 <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">SendGrid のドキュメント</a>をご覧ください。"
 
 #. translators: %s - URL to Postmark documentation on wpmailsmtp.com
 #: src/Providers/Postmark/Options.php:145
@@ -1383,7 +1464,7 @@ msgstr "サーバー API トークン:"
 #. on wpmailsmtp.com
 #: src/Providers/Mailgun/Options.php:33
 msgid "<a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">Mailgun</a> is a transactional email provider that offers a generous 3-month free trial. After that, it offers a 'Pay As You Grow' plan that allows you to pay for what you use without committing to a fixed monthly rate.<br><br>To get started, read our <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">Mailgun documentation</a>."
-msgstr "<a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">Mailgun </a>は、3か月の無料トライアルを提供するトランザクションメールプロバイダーです。無料トライアル終了後は、月額固定料金を支払うことなく、使用した分だけ支払うことができる「Pay As You Grow」プランを提供しています。<br><br>まず、<a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">Mailgun に関するドキュメンテーションをお読みください。</a>。"
+msgstr "<a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">Mailgun</a> は、3か月の無料トライアルを提供するトランザクションメールプロバイダーです。無料トライアル終了後は、月額固定料金を支払うことなく、使用した分だけ支払うことができる「Pay As You Grow」プランを提供しています。<br><br>まず、<a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">Mailgun のドキュメント</a>をお読みください。"
 
 #: src/Admin/Pages/MiscTab.php:263
 msgid "Hide the WP Mail SMTP Dashboard Widget."
@@ -1695,7 +1776,7 @@ msgstr "WP 本体 (コア)"
 
 #: src/Reports/Emails/Summary.php:297
 msgid "Upgrade to <b>WP Mail SMTP Pro</b> and unlock <u>Email Log</u> and advanced <u>Email Reports</u>. Start measuring the success of your emails today!"
-msgstr "<b>WP Mail SMTP Pro</b>にアップグレードすると、<u>メールログ</u>や高度な<u>メールレポート</u>のロックが解除されます。今すぐメールの成果を測定しましょう。"
+msgstr "<b>WP Mail SMTP Pro</b> にアップグレードすると、<u>メールログ</u>や高度な<u>メールレポート</u>のロックが解除されます。今すぐメールの成果を測定しましょう。"
 
 #: src/Reports/Emails/Summary.php:293
 msgid "Want More Stats?"
@@ -1719,7 +1800,7 @@ msgstr "こんにちは、"
 
 #: src/Reports/Emails/Summary.php:211
 msgid "how to disable it"
-msgstr "無効にする方法"
+msgstr "無効化する方法"
 
 #. translators: %1$s - link to a site; %2$s - link to the settings page.
 #: src/Reports/Emails/Summary.php:209
@@ -2219,7 +2300,7 @@ msgstr "Action Scheduler ライブラリは、WPForms や WooCommerce などの�
 #. translators: %s - Action Scheduler website URL.
 #: src/Admin/Pages/ActionSchedulerTab.php:107
 msgid "WP Mail SMTP is using the <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">Action Scheduler</a> library, which allows it to queue and process bigger tasks in the background without making your site slower for your visitors. Below you can see the list of all tasks and their status. This table can be very useful when debugging certain issues."
-msgstr "WP Mail SMTP は、<a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">Action Scheduler</a>ライブラリを使用しています。これにより、訪問者のサイトの速度を低下させることなく、バックグラウンドでより大きなタスクをキューに入れて処理できます。以下に、すべてのタスクとそのステータスのリストを示します。この表は、特定の問題のデバッグ時に非常に役立ちます。"
+msgstr "WP Mail SMTP は、<a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">Action Scheduler</a> ライブラリを使用しています。これにより、訪問者のサイトの速度を低下させることなく、バックグラウンドでより大きなタスクをキューに入れて処理できます。以下に、すべてのタスクとそのステータスのリストを示します。この表は、特定の問題のデバッグ時に非常に役立ちます。"
 
 #: src/Admin/Pages/ActionSchedulerTab.php:41
 #: src/Admin/Pages/ActionSchedulerTab.php:101
@@ -3286,7 +3367,7 @@ msgstr "この操作を実行する権限がありません。"
 
 #: src/Admin/SetupWizard.php:1170
 msgid "You are already using the WP Mail SMTP PRO version. Please refresh this page and verify your license key."
-msgstr "WP Mail SMTP PRO バージョンをすでに使用しています。このページを更新して、ライセンス キーを確認してください。"
+msgstr "WP Mail SMTP Pro バージョンをすでに使用しています。このページを更新して、ライセンス キーを確認してください。"
 
 #: src/Admin/SetupWizard.php:1095
 msgid "WP Call Button"
@@ -3359,7 +3440,7 @@ msgstr "Chrome、Firefox、Safari、または Edge をまだ使用していな�
 
 #: src/Admin/SetupWizard.php:491
 msgid "If you are using an ad blocker, please disable it or whitelist the current page."
-msgstr "広告ブロッカーを使用している場合は広告ブロッカーを無効にするか、現在のページをホワイトリストに追加してください。"
+msgstr "広告ブロッカーを使用している場合は広告ブロッカーを無効化するか、現在のページをホワイトリストに追加してください。"
 
 #: src/Admin/SetupWizard.php:488
 msgid "In order to fix this issue, please check each of the items below:"
@@ -3446,7 +3527,7 @@ msgstr "ここにライセンスキーを貼り付けます"
 
 #: src/Admin/Pages/SettingsTab.php:181
 msgid "Already purchased? Simply enter your license key below to connect with WP Mail SMTP Pro!"
-msgstr "すでにご購入済みですか ? 以下にライセンスキーを入力して、WP Mail SMTP Pro に接続してください !"
+msgstr "すでにご購入済みですか ? 以下にライセンスキーを入力して、WP Mail SMTP Pro に接続してください。"
 
 #: src/Connect.php:302
 msgid "Pro version installed but needs to be activated on the Plugins page."
@@ -3539,7 +3620,7 @@ msgstr "有効にすると、これらのグローバル設定によって、こ
 
 #: src/Admin/Area.php:428
 msgid "If disabled, each subsite of this multisite will have its own WP Mail SMTP settings page that has to be configured separately."
-msgstr "無効にすると、このマルチサイトの各サブサイトには、個別に構成する必要がある独自の WP Mail SMTP 設定ページが表示されます。"
+msgstr "無効化すると、このマルチサイトの各サブサイトには、個別に構成する必要がある独自の WP Mail SMTP 設定ページが表示されます。"
 
 #: src/Admin/Area.php:424
 msgid "Make the plugin settings global network-wide"
@@ -3757,7 +3838,7 @@ msgstr "この問題の解決をサポートしてくれるはずです。"
 
 #: src/Admin/Pages/TestTab.php:1332
 msgid "Contact your web hosting provider and inform them you are having issues with libpcre2 library on PHP 7.4."
-msgstr "ウェブホスティングサービスに連絡して、PHP 7.4で libpcre2ライブラリに問題があることを伝えてください。"
+msgstr "ご利用のウェブホスティングプロバイダーに連絡し、PHP 7.4で libpcre2ライブラリに問題があることを伝えてください。"
 
 #: src/Admin/Pages/TestTab.php:1329
 msgid "There is a known issue with PHP version 7.4.x, when using libpcre2 library version lower than 10.33."
@@ -3777,7 +3858,7 @@ msgstr "上記の方法がわからない場合は、ホスティングサポー
 
 #: src/Admin/Pages/TestTab.php:1261
 msgid "(If cURL can't be enabled on your hosting server) Enable PHP setting: allow_url_fopen, by adding \"allow_url_fopen = On\" to the php.ini file (without the quotation marks)"
-msgstr "(ホスティングサーバーでcURLが有効になっていない場合) php.iniファイルに \"allow_url_fopen = On \"を追加することで、PHPの設定：allow_url_fopenを有効にしてください (引用符は使用しないでください)。"
+msgstr "（もしご利用のホスティングサーバーで cURL を有効にできない場合）PHP 設定の allow_url_fopen を有効にしてください。これには、php.ini ファイルに allow_url_fopen = On を追加します。"
 
 #: src/Admin/Pages/TestTab.php:1260
 msgid "(Recommended) Enable PHP extension: cURL, by adding \"extension=curl\" to the php.ini file (without the quotation marks) OR"
@@ -4000,7 +4081,7 @@ msgstr "<a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\"> Pepipost
 #. translators: %1$s - URL to pepipost.com site.
 #: src/Providers/PepipostAPI/Options.php:32
 msgid "<a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">Pepipost</a> is a transactional email service. Every month Pepipost delivers over 8 billion emails from 20,000+ customers. Their mission is to reliably send emails in the most efficient way and at the most disruptive pricing ever. Pepipost provides users 30,000 free emails the first 30 days."
-msgstr "<a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">Pepipost</a>は、トランザクションメールサービスです。毎月、2万人以上のお客様から80億通以上のメールを配信しています。Pepipostの使命は、最も効率的な方法で、最も破壊的な価格で、確実にメールを送信することです。Pepipostは、ユーザーに最初の30日間、3万通の無料メールを提供します。"
+msgstr "<a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">Pepipost</a> は、トランザクションメールサービスです。毎月、2万人以上のお客様から80億通以上のメールを配信しています。Pepipost の使命は、最も効率的な方法で、最も破壊的な価格で、確実にメールを送信することです。Pepipost は、ユーザーに最初の30日間、3万通の無料メールを提供します。"
 
 #: src/Admin/Area.php:654
 msgid "Download"
@@ -4049,7 +4130,7 @@ msgstr "Pro にアップグレード"
 
 #: src/Admin/Area.php:533
 msgid "%name% is a PRO Feature"
-msgstr "%name% は PRO 版の機能です"
+msgstr "%name% は Pro 版の機能です"
 
 #: src/Admin/Area.php:1243
 msgid "Educational notice for this mailer was successfully dismissed."
@@ -4113,11 +4194,11 @@ msgstr "問題を解決するまでご利用のサイトでは<strong>WP Mail SM
 #. translators: %1$s - WPBeginner URL for recommended WordPress hosting.
 #: wp_mail_smtp.php:197
 msgid "Your site is running an <strong>insecure version</strong> of PHP that is no longer supported. Please contact your web hosting provider to update your PHP version or switch to a <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">recommended WordPress hosting company</a>."
-msgstr "サイトは、もうサポートされていない<strong>安全でないバージョン</strong>の PHP を実行しています。ホスティングプロバイダーに連絡して、PHPのバージョンを更新するか、または<a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">推奨されている WordPress ホスティング会社</a>に切り替えてください。"
+msgstr "サイトは、もうサポートされていない<strong>安全でないバージョン</strong>の PHP を実行しています。ホスティングプロバイダーに連絡して、PHP のバージョンを更新するか、または<a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">推奨されている WordPress ホスティング会社</a>に切り替えてください。"
 
 #: src/Admin/Area.php:1175
 msgid "WP Mail SMTP Pro related message was successfully dismissed."
-msgstr "WP Mail SMTP Pro 関連メッセージが正常に却下されました。"
+msgstr "WP Mail SMTP Pro 関連のメッセージを非表示にしました。"
 
 #: src/Admin/Area.php:652
 msgid "Install and Activate"
@@ -4183,7 +4264,7 @@ msgstr "WP Mail SMTP をご愛用いただき、誠にありがとうござい�
 
 #: src/Admin/Pages/SettingsTab.php:243
 msgid "Get WP Mail SMTP Pro and Unlock all the Powerful Features"
-msgstr "WP Mail SMTP Proを取得し、すべての強力な機能のロックを解除"
+msgstr "WP Mail SMTP Pro を取得し、すべての強力な機能のロックを解除"
 
 #. Translators: %s - discount value $50
 #: src/Admin/Pages/SettingsTab.php:167
@@ -4193,7 +4274,7 @@ msgstr "大切な WP Mail SMTP Lite ユーザーとして、<strong>%s オフ</s
 #. translators: %s - WPMailSMTP.com upgrade URL.
 #: src/Admin/Pages/SettingsTab.php:147
 msgid "To unlock more features, consider <strong><a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"wp-mail-smtp-upgrade-modal\">upgrading to PRO</a></strong>."
-msgstr "より多くの機能を利用するには、 <strong><a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"wp-mail-smtp-upgrade-modal\">PRO へのアップグレード</a></strong>をご検討ください。"
+msgstr "より多くの機能を利用するには、 <strong><a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"wp-mail-smtp-upgrade-modal\">Pro へのアップグレード</a></strong>をご検討ください。"
 
 #: src/Admin/Pages/SettingsTab.php:141
 msgid "You're using WP Mail SMTP Lite - no license needed. Enjoy!"
@@ -4432,7 +4513,7 @@ msgstr "定義されたすべての定数が機能しなくなると、このペ
 #. translators: %1$s - wp-config.php file, %2$s - WPMS_ON constant name.
 #: src/Providers/OptionsAbstract.php:382
 msgid "If you want to disable the use of constants, find in %1$s file the constant %2$s and turn if off:"
-msgstr "定数の使用を無効にする場合は、%1$s ファイルで定数 %2$s を検索し、オフにします:"
+msgstr "定数の使用を無効化する場合は、%1$s ファイルで定数 %2$s を検索し、オフにします:"
 
 #. translators: %s - constant name: WPMS_SMTP_PASS.
 #: src/Providers/OptionsAbstract.php:374
@@ -4441,7 +4522,7 @@ msgstr "パスワードを変更するには、そこに定数の値を変更す
 
 #: wp_mail_smtp.php:169
 msgid "Please deactivate the free version of the WP Mail SMTP plugin before activating WP Mail SMTP Pro."
-msgstr "WP Mail SMTP Pro プロをアクティブ化する前に、WP Mail SMTP プラグインの無料版を無効にしてください。"
+msgstr "WP Mail SMTP Pro プロを有効化する前に、WP Mail SMTP プラグインの無料版を無効化してください。"
 
 #: src/Providers/PepipostAPI/Options.php:63
 msgid "Pepipost"
@@ -4490,7 +4571,7 @@ msgstr "クライアント ID"
 #. %3$s - current PHP version.
 #: src/Providers/OptionsAbstract.php:478
 msgid "%1$s requires PHP %2$s to work and does not support your current PHP version %3$s. Please contact your host and request a PHP upgrade to the latest one."
-msgstr "%1$sではPHP %2$sが動作する必要があり、現在のPHPバージョン %3$s はサポートしていません。 あなたのホストに連絡し、PHPの最新バージョンへのアップグレードをリクエストしてください。"
+msgstr "%1$s の動作には PHP %2$s が必要ですが、現在の PHP バージョン %3$s はサポートされていません。ホスティング会社に連絡して、最新バージョンへの PHP アップグレードを依頼してください。"
 
 #: assets/languages/wp-mail-smtp-vue.php:606
 #: src/Providers/OptionsAbstract.php:362
@@ -4625,7 +4706,7 @@ msgstr "その他の SMTP"
 #. translators: %1$s - Plugin name causing conflict.
 #: src/Conflicts.php:520
 msgid "Heads up! WP Mail SMTP has detected %1$s is activated. Please deactivate %1$s to prevent conflicts."
-msgstr "ご注意ください ! WP Mail SMTP は %1$s がアクティブ化されていることを検出しました。競合を防ぐために %1$s を無効にしてください。"
+msgstr "ご注意ください ! WP Mail SMTP は %1$s が有効化されていることを検出しました。競合を防ぐために %1$s を無効化してください。"
 
 #. translators: %s - plugin admin page URL.
 #: src/Core.php:558
@@ -4778,7 +4859,7 @@ msgstr "別のメーラーを使用してみてください。"
 
 #: src/Admin/Pages/TestTab.php:1388
 msgid "Contact your web hosting provider and ask them to verify your server can make outside connections. Additionally, ask them if a firewall or security policy may be preventing the connection - many shared hosts block certain ports.<br><strong>Note: this is the most common cause of this issue.</strong>"
-msgstr "Web ホスティング プロバイダに問い合わせて、サーバーが外部接続を行うことができることを確認してもらいます。さらに、ファイアウォールまたはセキュリティ ポリシーが接続を妨げている可能性があるかどうかを尋ねます - 多くの共用サーバーは特定のポートを拒否します。<br><strong>注: これがこの問題の最も一般的な原因です。</strong>"
+msgstr "ご利用のウェブホスティングプロバイダーに連絡し、サーバーが外部接続を行うことができるか確認するよう依頼してください。さらに、ファイアウォールまたはセキュリティ ポリシーが接続を妨げている可能性がないかも尋ねてください。 - 多くの共用サーバーは特定のポートをブロックしています。<br><strong>注: これがこの問題の最も一般的な原因です。</strong>"
 
 #: src/Admin/Pages/TestTab.php:1381
 msgid "Your host is rejecting the connection."
@@ -4878,7 +4959,7 @@ msgstr "通常、このエラーは、メールの送信先のアドレスが無
 #. translators: %s - Google support article URL.
 #: src/Admin/Pages/TestTab.php:1062
 msgid "if you are using Google Workspace, please <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">read this article</a> to proceed."
-msgstr "Google Workspace を使用している場合は、続行するには<a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">この記事を読んでください</a>。"
+msgstr "Google Workspace を使用している場合は、続行するには<a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">この記事</a>を読んでください。"
 
 #. translators: %s - Google support article URL.
 #: src/Admin/Pages/TestTab.php:1047
@@ -4942,7 +5023,7 @@ msgstr "いいえ"
 #. encryption.
 #: src/Admin/Pages/TestTab.php:925
 msgid "Contact your web hosting provider and ask them to verify your server can connect to %1$s on port %2$s using %3$s encryption. Additionally, ask them if a firewall or security policy may be preventing the connection - many shared hosts block certain ports.<br><strong>Note: this is the most common cause of this issue.</strong>"
-msgstr "Web ホスティング プロバイダに問い合わせて、%3$s 暗号化を使用して、サーバーがポート %2$s で %1$s に接続できることを確認してもらいます。さらに、ファイアウォールまたはセキュリティ ポリシーが接続を妨げている可能性があるかどうかを尋ねます - 多くの共用ホストは特定のポートをブロックします。<br><strong>注: これがこの問題の最も一般的な原因</strong>"
+msgstr "ご利用のウェブホスティングプロバイダーに連絡し、あなたのサーバーが %1$s へポート %2$s で %3$s 暗号化を使用して接続できるか確認するよう依頼してください。さらに、ファイアウォールまたはセキュリティポリシーが接続を妨げている可能性がないかも尋ねてください。多くの共有ホスティングでは、特定のポートをブロックしています。<br><strong>注: これがこの問題の最も一般的な原因です。</strong>"
 
 #: src/Admin/Pages/TestTab.php:922
 msgid "Triple check your SMTP settings including host address, email, and password, port, and security."
@@ -5034,7 +5115,7 @@ msgstr "SMTP アカウントを認証できませんでした。"
 
 #: src/Admin/Pages/TestTab.php:795
 msgid "Contact your web hosting provider and inform them you are having issues making outbound connections."
-msgstr "ウェブホスティングサービスに連絡して、アウトバウンド接続に問題があることを伝えてください。"
+msgstr "ご利用のウェブホスティングプロバイダーに連絡し、アウトバウンド接続に問題があることを伝えてください。"
 
 #: src/Admin/Pages/TestTab.php:784
 msgid "Could not connect to your host."
@@ -5051,7 +5132,9 @@ msgstr "「その他の SMTP」メーラーを使用している場合は、ホ�
 #. translators: %s - SMTP host address.
 #: src/Admin/Pages/TestTab.php:754
 msgid "Contact your web hosting provider and ask them to verify your server can connect to %s. Additionally, ask them if a firewall or security policy may be preventing the connection."
-msgstr "Web ホスティング プロバイダに問い合わせて、サーバーが %s に接続できることを確認します。さらに、ファイアウォールまたはセキュリティ ポリシーが接続を妨げているかどうかを尋ねます。"
+msgstr ""
+"ご利用のウェブホスティングプロバイダーに連絡し、あなたのサーバーが %s に接続できるか確認するよう依頼してください。\n"
+"さらに、ファイアウォールまたはセキュリティポリシーが接続を妨げている可能性がないかも尋ねてください。"
 
 #: src/Admin/Pages/TestTab.php:750
 msgid "Typically this error is returned your web server is blocking the connections or the SMTP host denying the request."
@@ -5082,7 +5165,7 @@ msgstr "提供する正確なエラーは、このページの下部にある [�
 
 #: src/Admin/Pages/TestTab.php:730
 msgid "Contact your web hosting provider and inform them your site has an issue with SSL certificates."
-msgstr "Web ホスティングサービスに連絡して、サイトで SSL 証明書に問題があることを知らせてください。"
+msgstr "ご利用のウェブホスティングプロバイダーに連絡し、サイトに SSL 証明書の問題があることを伝えてください。"
 
 #: src/Admin/Pages/TestTab.php:727 src/Admin/Pages/TestTab.php:792
 msgid "Typically this error is returned when web server is not configured properly."
