@@ -37,7 +37,7 @@ msgctxt "default GMT offset or timezone string"
 msgid "0"
 msgstr "Europe/Budapest"
 
-#: wp-admin/about.php:93
+#: wp-admin/about.php:118
 msgid "Speculative loading speeds up navigation by preloading links before users navigate to them, bcrypt hashing strengthens password security automatically, and database optimizations improve performance."
 msgstr "A spekulatív betöltés felgyorsítja a navigációt azáltal, hogy a linkeket előretölti, mielőtt a felhasználók még oda navigálnának, a bcrypt hashing automatikusan megerősíti a jelszavak biztonságát, az adatbázis-optimalizálás pedig javítja a teljesítményt."
 
@@ -113,7 +113,7 @@ msgstr "A telepítés nem lehetséges, mert a <a href=\"%1$s\">WordPress %2$s</a
 msgid "Add Custom Field:"
 msgstr "Egyedi mező hozzáadása"
 
-#: wp-admin/includes/revision.php:469
+#: wp-admin/includes/revision.php:471
 msgid "An error occurred while loading the comparison. Please refresh the page and try again."
 msgstr "Hiba történt az összehasonlítás betöltése közben. Frissítsük az oldalt, és próbáljuk meg újra."
 
@@ -196,68 +196,68 @@ msgstr "Tesztelés vezető"
 msgid "Documentation Lead"
 msgstr "Dokumentáció vezető"
 
-#: wp-admin/about.php:194
+#: wp-admin/about.php:219
 msgid "WordPress 6.8 packs a wide range of performance fixes and enhancements to speed up everything from editing to browsing. Beyond speculative loading, WordPress 6.8 pays special attention to the block editor, block type registration, and query caching. Plus, imagine never waiting longer than 50 milliseconds—for any interaction. In WordPress 6.8, the Interactivity API takes a first step toward that goal."
 msgstr "A WordPress 6.8 számos teljesítményjavítást és fejlesztést tartalmaz, hogy a szerkesztéstől a böngészésig mindent felgyorsítson. A Spekulatív Betöltésen túl a WordPress 6.8 különös figyelmet fordít a Blokkszerkesztőre, a blokktípus-regisztrációra és a lekérdezések gyorsítótárazására. Ráadásul képzeljük el, hogy soha többé nem kell 50 ezredmásodpercnél tovább várakoznunk - semmilyen interakcióra. A WordPress 6.8-ban az Interaktivitás API megteszi az első lépést e cél felé."
 
-#: wp-admin/about.php:181
+#: wp-admin/about.php:206
 msgid "Work continues on optimizing cache key generation in the <code>WP_Query</code> class. The goal is, as ever, to boost your site&#8217;s performance, in this case by taking some more of the load off your database. This is especially good if you get a lot of traffic."
 msgstr "Folytatódik a munka a <code>WP_Query</code> osztály cache-kulcs generálásának optimalizálásán. A cél, mint mindig, a webhely teljesítményének növelése, ebben az esetben azáltal, hogy az adatbázisról még több terhet veszünk le. Ez különösen akkor jön jól, ha nagy forgalmat bonyolít az oldal."
 
-#: wp-admin/about.php:180
+#: wp-admin/about.php:205
 msgid "Take a load off the database"
 msgstr "Tehermentesítsük az adatbázist"
 
-#: wp-admin/about.php:172
+#: wp-admin/about.php:197
 msgid "100+ accessibility fixes and enhancements touch a broad spectrum of the WordPress experience. This release includes fixes to every bundled theme, improvements to the navigation menu management, the customizer, and simplified labeling. The Block Editor has over 70 improvements to blocks, DataViews, and to its overall user experience."
 msgstr "A több mint 100 kisegítőlehetőség javítás és továbbfejlesztés a WordPress-élmény széles spektrumát érinti. Ez a kiadás a mellékelt sablonok javításait tartalmazza, valamint a navigációs menükezelés fejlesztéseket, valamint a Testreszabónak és az egyszerűsített címkézésnek a javításait is tartalmazza. A Blokkszerkesztő több mint 70 fejlesztéssel érkezik a blokkok, a DataViews és úgy általában a felhasználói élmény tekintetében."
 
-#: wp-admin/about.php:158
+#: wp-admin/about.php:183
 msgid "Now passwords are harder to crack with bcrypt hashing, which takes a lot more computing power to break. This strengthens overall security, as do other encryption improvements across WordPress. You don&#8217;t need to do anything—everything updates automatically."
 msgstr "Mostantól a jelszavakat nehezebb feltörni a bcrypt hashing segítségével, amelynek feltöréséhez sokkal több számítási teljesítményre van szükség. Ez erősíti az általános biztonságot, akárcsak más titkosítási fejlesztések az egész WordPressben. Nem kell semmit sem tennünk - minden automatikusan frissül."
 
-#: wp-admin/about.php:157
+#: wp-admin/about.php:182
 msgid "Stronger password security with bcrypt"
 msgstr "Erősebb jelszóbiztonság a bcrypt segítségével"
 
-#: wp-admin/about.php:141
+#: wp-admin/about.php:166
 msgid "In WordPress 6.8, pages load faster than ever. When you or your user hovers over or clicks a link, WordPress may preload the next page, for a smoother, near-instant experience. The system balances speed and efficiency, and you can control how it works, with a plugin or your own code. This feature only works in modern browsers—older ones will simply ignore it without any impact."
 msgstr "A WordPress 6.8-ban az oldalak gyorsabban töltődnek be, mint valaha. Amikor a felhasználó egy hivatkozás fölé mozgatja az egeret vagy rákattint, a WordPress előretöltheti a következő oldalt, a gördülékenyebb, szinte azonnali élmény érdekében. A rendszer egyensúlyban tartja a sebességet és a hatékonyságot, és szabályozhatjuk hogy, hogyan működjön, egy bővítmény vagy saját kód segítségével. Ez a funkció csak a modern böngészőkben működik - a régebbiek egyszerűen figyelmen kívül hagyják, és nincs rájuk semmilyen hatása."
 
-#: wp-admin/about.php:140
+#: wp-admin/about.php:165
 msgid "Near-instant page loads, thanks to Speculative Loading"
 msgstr "Közel azonnali oldalletöltés a Spekulatív Betöltésnek köszönhetően"
 
-#: wp-admin/about.php:134
+#: wp-admin/about.php:159
 msgid "Easier ways to see your options in Data Views, and you can exclude sticky posts from the Query Loop. Plus, you&#8217;ll find lots of little improvements in the editor that smooth your way through everything you build."
 msgstr "Könnyebben láthatjuk a DataViews alatti lehetőségeinket, és kizárhatjuk a ragadós hozzászólásokat a Query Loop-okból. Ráadásul, sok apró fejlesztést is találhatunk a szerkesztőben, amik minden új lekérdezés során megkönnyítik a munkánkat."
 
-#: wp-admin/about.php:113
+#: wp-admin/about.php:138
 msgid "Plus, now you can see it in Classic themes that have editor-styles or a theme.json file. Find the Style Book under Appearance > Design and use it to preview your theme&#8217;s evolution, as you edit CSS or make changes in the Customizer."
 msgstr "Ráadásul, mostantól a Classic sablonokban is látható, amelyekben van editor-styles vagy egy theme.json. Keressük meg a Stíluskönyvet a Megjelenés > Kinézet alatt, és használjuk a sablon fejlődésének előnézetéhez, miközben CSS-t szerkesztünk, vagy változtatásokat végzünk a Testreszabóban."
 
 #. translators: %s is a direct link to the Style Book.
-#: wp-admin/about.php:109
+#: wp-admin/about.php:134
 msgid "Plus, now you can see it in Classic themes that have editor-styles or a theme.json file. Find <a href=\"%s\">the Style Book</a> under Appearance > Design and use it to preview your theme&#8217;s evolution, as you edit CSS or make changes in the Customizer."
 msgstr "Ráadásul mostantól a Classic sablonokban is látható, amelyekben van editor-styles vagy egy theme.json fájl. Keressük meg a <a href=\"%s\">stíluskönyvet</a> a Megjelenés > Kinézet alatt, és használjuk a sablon válzotásainak előnézetéhez, miközben CSS-t szerkesztünk vagy változtatásokat végezünk a Testreszabóban."
 
-#: wp-admin/about.php:101
+#: wp-admin/about.php:126
 msgid "The Style Book has a new, structured layout and clearer labels, to make it even easier to edit colors, typography—almost all your site styles—in one place."
 msgstr "A Stíluskönyv új, strukturált elrendezéssel és egyértelműbb címkékkel rendelkezik, hogy még könnyebbé tegye a színek, a tipográfia - szinte az összes webhelystílus szerkesztését - egy helyen."
 
-#: wp-admin/about.php:99
+#: wp-admin/about.php:124
 msgid "The Style Book gets a cleaner look—and a few new tricks"
 msgstr "A Stíluskönyv letisztultabb külsőt kap - és tanult pár új trükköt is"
 
-#: wp-admin/about.php:92
+#: wp-admin/about.php:117
 msgid "The Style Book now has a structured layout and works with Classic themes, giving you more control over global styles."
 msgstr "A Stíluskönyv mostantól strukturált elrendezéssel rendelkezik, és a Classic sablonokkal is működik, így nagyobb kontrollt biztosít a globális stílusok felett."
 
-#: wp-admin/about.php:91
+#: wp-admin/about.php:116
 msgid "WordPress 6.8 polishes and refines the tools you use every day, making your site faster, more secure, and easier to manage."
 msgstr "A WordPress 6.8 csiszolja és finomítja a mindennapokban használt eszközöket, hogy gyorsabbá, biztonságosabbá és könnyebben kezelhetővé tegye a webhelyet."
 
-#: wp-admin/about.php:90
+#: wp-admin/about.php:115
 msgid "A release polished to a high sheen."
 msgstr "Egy magasfényűre polírozott kiadás."
 
@@ -360,12 +360,12 @@ msgid "Skip to Editor"
 msgstr "Ugrás a Szerkesztőhöz"
 
 #. translators: %s: WordPress version number.
-#: wp-admin/about.php:289
+#: wp-admin/about.php:314
 msgid "WordPress %s Field Guide"
 msgstr "WordPress %s mező útmutató"
 
 #. translators: %s: WordPress version number.
-#: wp-admin/about.php:262
+#: wp-admin/about.php:287
 msgid "WordPress %s Release Notes"
 msgstr "WordPress %s megjelenési megjegyzések"
 
@@ -524,20 +524,20 @@ msgstr "Ha Ön plugin-szerző, többet megtudhat arról, <a href=\"https://devel
 msgid "If you are a plugin author, you can learn more about <a href=\"https://developer.wordpress.org/plugins/privacy/adding-the-personal-data-eraser-to-your-plugin/\">how to add the Personal Data Eraser to a plugin</a>."
 msgstr "Ha Ön plugin-szerző, többet megtudhat arról, <a href=\"https://developer.wordpress.org/plugins/privacy/adding-the-personal-data-eraser-to-your-plugin/\">hogyan hogy hozzáadja a Személyes adatok Radírt egy bővítményhez</a>."
 
-#: wp-admin/about.php:215
+#: wp-admin/about.php:240
 msgid "See everything new"
 msgstr "Minden újdonság megtekintése"
 
-#: wp-admin/about.php:215
+#: wp-admin/about.php:240
 msgid "https://wordpress.org/download/releases/6-8/"
 msgstr "https://wordpress.org/download/releases/6-8/"
 
 #. translators: %s: Version number.
-#: wp-admin/about.php:207
+#: wp-admin/about.php:232
 msgid "For a comprehensive overview of all the new features and enhancements in WordPress %s, please visit the feature-showcase website."
 msgstr "Ha átfogó áttekintést szeretnénk kapni a WordPress %s összes új funkciójáról és fejlesztéséről, látogassunk el a funkciókat bemutató webhelyre."
 
-#: wp-admin/about.php:201
+#: wp-admin/about.php:226
 msgid "And much more"
 msgstr "És még sok más"
 
@@ -680,11 +680,11 @@ msgstr "Telepítés"
 msgid "Created by a worldwide team of passionate individuals"
 msgstr "Elkötelezett, lelkes egyének világméretű csapatának alkotása"
 
-#: wp-admin/about.php:171
+#: wp-admin/about.php:196
 msgid "Accessibility improvements"
 msgstr "Akadálymentesítési fejlesztések"
 
-#: wp-admin/about.php:193
+#: wp-admin/about.php:218
 msgid "Performance updates"
 msgstr "Teljesítmény frissítések"
 
@@ -751,12 +751,12 @@ msgid "When using Bulk Edit, you can change the metadata (categories, author, et
 msgstr "Lehetőség van több bejegyzés metaadatok (kategóriák, szerzők stb.) cseréjére is, a jelölődobozzal kiválasztott bejegyzéseknél egyszerre. Egy bejegyzést a Csoportok műveletekből eltávolítani egyszerű, csak a Csoportos műveletek területén %s<span class=\"screen-reader-text\">eltávolítás</span> gombra kell kattintani."
 
 #. translators: %s: WordPress version number.
-#: wp-admin/about.php:272
+#: wp-admin/about.php:297
 msgid "Read the WordPress %s Release Notes for information on installation, enhancements, fixed issues, release contributors, learning resources, and the list of file changes."
 msgstr "Olvassuk el a WordPress %s kiadási megjegyzéseket, ha érdekelnek a telepítési információk, újdonságok, hibajavítások, a kiadáshoz hozzájárulók listája, a tanulási források és a megváltozott fájlok listája."
 
 #. translators: %s: WordPress version number.
-#: wp-admin/about.php:299
+#: wp-admin/about.php:324
 msgid "Explore the WordPress %s Field Guide. Learn about the changes in this release with detailed developer notes to help you build with WordPress."
 msgstr "Fedezzük fel a WordPress %s mező útmutatóját. Nézzük át a kiadás változásait, és a részletes fejlesztői megjegyzéseket, amelyek segíthetnek WordPress oldalt építeni."
 
@@ -777,7 +777,7 @@ msgid "Your WordPress version is %1$s, however the new plugin version requires %
 msgstr "A WordPress verziónk %1$s, azonban az új bővítményhez %2$s szükséges."
 
 #. translators: %s: WordPress version.
-#: wp-admin/about.php:79
+#: wp-admin/about.php:79 wp-admin/about.php:104
 msgid "https://wordpress.org/support/wordpress-version/version-%s/"
 msgstr "https://wordpress.org/support/wordpress-version/version-%s/"
 
@@ -1244,7 +1244,7 @@ msgid "Be the future of WordPress"
 msgstr "Legyél a WordPress jövője."
 
 #. translators: 1: Learn WordPress link, 2: Workshops link.
-#: wp-admin/about.php:240
+#: wp-admin/about.php:265
 msgid "<a href=\"%1$s\">Learn WordPress</a> is a free resource for new and experienced WordPress users. Learn is stocked with how-to videos on using various features in WordPress, <a href=\"%2$s\">interactive workshops</a> for exploring topics in-depth, and lesson plans for diving deep into specific areas of WordPress."
 msgstr "A <a href=\"%1$s\">Learn WordPress</a> egy ingyenes forrás új és tapasztalt WordPress felhasználók számára. A Learn felület tömve van how-to videókkal, a WordPress különböző funkcióiról, <a href=\"%2$s\">interaktív workshopok</a> segítenek az egyes témák mélyreható megismerésében, és óratervek segítenek elmélyülni a WordPress különleges területeiben."
 
@@ -1390,12 +1390,12 @@ msgid "<a href=\"https://wordpress.org/documentation/article/customizer/\">Docum
 msgstr "<a href=\"https://wordpress.org/documentation/article/customizer/\">A Testreszabó dokumentációja</a>"
 
 #. translators: The localized WordPress download URL.
-#: wp-admin/about.php:380
+#: wp-admin/about.php:405
 msgid "https://wordpress.org/download/"
 msgstr "https://wordpress.org/download/"
 
 #. translators: %s: The major version of WordPress for this branch.
-#: wp-admin/about.php:377
+#: wp-admin/about.php:402
 msgid "This is the final release of WordPress %s"
 msgstr "Ez a WordPress %s legutóbbi verziója"
 
@@ -1718,12 +1718,12 @@ msgid "Reach out to WordPress Core developers to ensure you'll never have this p
 msgstr "Forduljunk a WordPress Core fejlesztőihez, hogy soha többé ne fordulhasson elő ez a probléma."
 
 #. translators: 1: WordPress version number, 2: Link to update WordPress
-#: wp-admin/about.php:374
+#: wp-admin/about.php:399
 msgid "Important! Your version of WordPress (%1$s) will stop receiving security updates in the near future. To keep your site secure, please <a href=\"%2$s\">update to the latest version of WordPress</a>."
 msgstr "Fontos! A WordPress (%1$s) verziója a közeljövőben nem kap több biztonsági frissítést. A webhelye biztonságának megőrzése érdekében, a <a href=\"%2$s\">WordPress legújabb verziójára kell frissíteni</a>."
 
 #. translators: 1: WordPress version number, 2: Link to update WordPress
-#: wp-admin/about.php:371
+#: wp-admin/about.php:396
 msgid "Important! Your version of WordPress (%1$s) is no longer supported, you will not receive any security updates for your website. To keep your site secure, please <a href=\"%2$s\">update to the latest version of WordPress</a>."
 msgstr "Fontos! A WordPress (%1$s) verziója már nem támogatott, nem fog biztonsági frissítéseket kapni a weboldal. A webhely biztonságának megőrzése érdekében, tanácsos <a href=\"%2$s\">frissíteni a WordPress legújabb verziójára</a>."
 
@@ -1733,7 +1733,7 @@ msgid "https://make.wordpress.org/core/wordpress-%s-field-guide/"
 msgstr "https://make.wordpress.org/core/wordpress-%s-field-guide/"
 
 #. translators: %s: Version number.
-#: wp-admin/about.php:231
+#: wp-admin/about.php:256
 msgid "Learn more about WordPress %s"
 msgstr "Bővebben a WordPress %s verzióról"
 
@@ -2638,7 +2638,7 @@ msgstr "Új alkalmazás-jelszó létrehozása"
 msgid "Required to create an Application Password, but not to update the user."
 msgstr "Alkalmazás jelszó létrehozása szükséges, a felhasználó frissítése nélkül."
 
-#: wp-admin/about.php:315
+#: wp-admin/about.php:340
 msgid "Go to Updates"
 msgstr "Irány a frissítésekhez"
 
@@ -7651,7 +7651,7 @@ msgstr "Kiadás megbízott"
 msgid "Release Design Lead"
 msgstr "Dizájn kiadás vezető"
 
-#: wp-admin/about.php:133
+#: wp-admin/about.php:158
 msgid "Editor improvements"
 msgstr "Szerkesztési fejlesztések"
 
@@ -8094,7 +8094,7 @@ msgid "(Currently set to: %s)"
 msgstr "(Jelenlegi beállítás: %s)"
 
 #. translators: %s: WordPress version number.
-#: wp-admin/about.php:345
+#: wp-admin/about.php:370
 msgid "<strong>Version %s</strong> addressed one security issue."
 msgstr "<strong>%s verzió</strong> egy biztonsági problémát javított."
 
@@ -8107,15 +8107,15 @@ msgstr "https://gravatar.com/"
 msgid "Profile Picture"
 msgstr "Adatlap-kép"
 
-#: wp-admin/about.php:342
+#: wp-admin/about.php:59 wp-admin/about.php:367
 msgid "Maintenance and Security Releases"
 msgstr "Hibajavító- és biztonsági frissítések"
 
-#: wp-admin/about.php:339
+#: wp-admin/about.php:364
 msgid "Security Releases"
 msgstr "Biztonsági frissítések"
 
-#: wp-admin/about.php:336
+#: wp-admin/about.php:361
 msgid "Maintenance Releases"
 msgstr "Hibajavító frissítések"
 
@@ -10165,17 +10165,17 @@ msgstr "Bármely két változat összehasonlításához <strong>kattintsunk a &#
 msgid "Compare any two revisions"
 msgstr "Bármely két változat összehasonlítása"
 
-#: wp-admin/includes/revision.php:455
+#: wp-admin/includes/revision.php:457
 msgid "Restore This Autosave"
 msgstr "Ennek az automatikus mentésnek a visszaállítása"
 
 #. translators: %s: User's display name.
-#: wp-admin/includes/revision.php:427
+#: wp-admin/includes/revision.php:428
 msgid "Current Revision by %s"
 msgstr "%s aktuális változata"
 
 #. translators: %s: User's display name.
-#: wp-admin/includes/revision.php:417
+#: wp-admin/includes/revision.php:418
 msgid "Autosave by %s"
 msgstr "%s automatikus mentése"
 
@@ -10210,7 +10210,7 @@ msgid "\"%1$s\" from %2$s by %3$s."
 msgstr "%3$s %2$s albumáról a(z) \"%1$s\" szám"
 
 #. translators: %s: User's display name.
-#: wp-admin/includes/revision.php:437
+#: wp-admin/includes/revision.php:438
 msgid "Revision by %s"
 msgstr "%s változat"
 
@@ -10448,7 +10448,7 @@ msgstr "Megjelenés: %d."
 msgid "%1$s by %2$s."
 msgstr "%2$s - &#8220;%1$s&#8221;."
 
-#: wp-admin/includes/revision.php:457
+#: wp-admin/includes/revision.php:459
 msgid "Restore This Revision"
 msgstr "Állítsuk vissza ezt a változatot"
 
@@ -11413,13 +11413,13 @@ msgstr "Eszköztár mutatása az oldal megtekintésekor"
 
 #. translators: %s: HelpHub URL.
 #. translators: %s: Documentation URL.
-#: wp-admin/about.php:76 wp-admin/about.php:368
+#: wp-admin/about.php:76 wp-admin/about.php:101 wp-admin/about.php:393
 msgid "For more information, see <a href=\"%s\">the release notes</a>."
 msgstr "Bővebben: <a href=\"%s\">Verzió információk</a>."
 
 #. translators: 1: WordPress version number, 2: Plural number of bugs. More
 #. than one security issue.
-#: wp-admin/about.php:362
+#: wp-admin/about.php:387
 msgid "<strong>Version %1$s</strong> addressed some security issues and fixed %2$s bug."
 msgid_plural "<strong>Version %1$s</strong> addressed some security issues and fixed %2$s bugs."
 msgstr[0] "<strong>%1$s verzió</strong> biztonsági problémát, és %2$s hibát javított."
@@ -11427,33 +11427,33 @@ msgstr[1] "<strong>%1$s verzió</strong> biztonsági problémát, és %2$s hibá
 
 #. translators: 1: WordPress version number, 2: Plural number of bugs. Singular
 #. security issue.
-#: wp-admin/about.php:356
+#: wp-admin/about.php:381
 msgid "<strong>Version %1$s</strong> addressed a security issue and fixed %2$s bug."
 msgid_plural "<strong>Version %1$s</strong> addressed a security issue and fixed %2$s bugs."
 msgstr[0] "<strong>%1$s verzió</strong> egy biztonsági problémát, és %2$s hibát javított."
 msgstr[1] "<strong>%1$s verzió</strong> egy biztonsági problémát, és %2$s hibát javított."
 
 #. translators: 1: WordPress version number, 2: Plural number of bugs.
-#: wp-admin/about.php:64 wp-admin/about.php:350
+#: wp-admin/about.php:64 wp-admin/about.php:89 wp-admin/about.php:375
 msgid "<strong>Version %1$s</strong> addressed %2$s bug."
 msgid_plural "<strong>Version %1$s</strong> addressed %2$s bugs."
 msgstr[0] "<strong>%1$s verzió</strong> %2$s hibát javít."
 msgstr[1] "<strong>%1$s verzió</strong> %2$s hibát javít."
 
 #. translators: %s: WordPress version number.
-#: wp-admin/about.php:347
+#: wp-admin/about.php:372
 msgid "<strong>Version %s</strong> addressed some security issues."
 msgstr "A(z) <strong>%s verzió</strong> néhány biztonsági problémát javít."
 
-#: wp-admin/about.php:59 wp-admin/about.php:341
+#: wp-admin/about.php:366
 msgid "Maintenance and Security Release"
 msgstr "Karbantartó és biztonsági frissítés"
 
-#: wp-admin/about.php:338
+#: wp-admin/about.php:363
 msgid "Security Release"
 msgstr "Biztonsági frissítés"
 
-#: wp-admin/about.php:335
+#: wp-admin/about.php:360
 msgid "Maintenance Release"
 msgstr "Hibajavító frissítés"
 
@@ -11726,11 +11726,11 @@ msgstr "A <strong>Szerkesztés</strong> link a bejegyzés szerkesztő képernyő
 msgid "Because this is a multisite installation, you may add accounts that already exist on the Network by specifying a username or email, and defining a role. For more options, such as specifying a password, you have to be a Network Administrator and use the hover link under an existing user&#8217;s name to Edit the user profile under Network Admin > All Users."
 msgstr "Mivel ez egy Multisite telepítés, lehetséges a hálózaton már létező felhasználókat hozzáadni, a felhasználónevük, vagy e-mail címük megadásával, és egy szerepkör meghatározásával. További lehetőségekhez, mint például jelszó megadáshoz Hálózat Adminisztrátornak kell lenni, és Hálózat-kezelő > Összes felhasználó oldalon a felhasználó neve fölé mozgatva az egeret a Szerkesztés lehetőséget választani."
 
-#: wp-admin/about.php:322
+#: wp-admin/about.php:347
 msgid "Go to Dashboard &rarr; Home"
 msgstr "Irány a Vezérlőpult &rarr; Kezdőlaphoz"
 
-#: wp-admin/about.php:315
+#: wp-admin/about.php:340
 msgid "Go to Dashboard &rarr; Updates"
 msgstr "Irány a Vezérlőpult &rarr; Frissítésekhez"
 
@@ -13439,7 +13439,7 @@ msgstr "WordPress frissítés"
 msgid "Edit menu item"
 msgstr "Menütétel szerkesztése"
 
-#: wp-admin/about.php:322
+#: wp-admin/about.php:347
 msgid "Go to Dashboard"
 msgstr "Irány a Vezérlőpultra"
 
