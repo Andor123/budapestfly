@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 6.8.x - Development package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-07-15 23:44:01+0000\n"
+"PO-Revision-Date: 2025-07-18 05:34:36+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -410,16 +410,16 @@ msgstr "원본 HTML 텍스트에 나타나지 않는 토큰에는 북마크를 �
 #. translators: %s: A tag name like IFRAME or TEXTAREA.
 #: wp-includes/html-api/class-wp-html-processor.php:498
 msgid "The context element \"%s\" is not supported."
-msgstr "Context 요소 \"%s\" 는 지원되지 않습니다."
+msgstr "컨텍스트 요소 \"%s\" 는 지원되지 않습니다."
 
 #. translators: %s: A tag name like INPUT or BR.
 #: wp-includes/html-api/class-wp-html-processor.php:478
 msgid "The context element cannot be a void element, found \"%s\"."
-msgstr "Context 요소는 \"%s\"에서 찾은 비어있는 요소일 수 없습니다."
+msgstr "컨텍스트 요소는 \"%s\"에서 찾은 비어있는 요소일 수 없습니다."
 
 #: wp-includes/html-api/class-wp-html-processor.php:464
 msgid "The context element must be a start tag."
-msgstr "Context 요소는 시작 태그여야 합니다."
+msgstr "컨텍스트 요소는 시작 태그여야 합니다."
 
 #: wp-includes/html-api/class-wp-html-processor.php:315
 msgid "No valid context element was detected."
@@ -450,7 +450,7 @@ msgstr "댓글을 처리하는 동안 오류가 발생했습니다. 모든 필�
 #. translators: %s: context string
 #: wp-includes/class-wp-url-pattern-prefixer.php:72
 msgid "Invalid URL pattern context %s."
-msgstr "URL 패턴 context %s이(가) 유효하지 않습니다."
+msgstr "URL 패턴 컨텍스트 %s이(가) 유효하지 않습니다."
 
 #: wp-includes/class-wp-taxonomy.php:627 wp-includes/taxonomy.php:236
 msgid "Add Category"
@@ -647,7 +647,7 @@ msgstr "유효한 링크를 입력하세요."
 
 #: wp-includes/class-wp-customize-manager.php:457
 msgid "An error occurred while customizing. Please refresh the page and try again."
-msgstr "커스터마이징을 하는 동안 오류가 발생했습니다. 페이지를 새로고침하고 다시 시도하세요."
+msgstr "사용자 정의를 하는 동안 오류가 발생했습니다. 페이지를 새로고침하고 다시 시도하세요."
 
 #: wp-includes/class-wp-block-metadata-registry.php:204
 msgid "No registered block metadata collection was found for the provided path."
@@ -657,13 +657,13 @@ msgstr "제공된 경로에 대해 등록된 블록 메타데이터 컬렉션을
 #: wp-includes/blocks/query-total.php:66
 msgid "%d result found"
 msgid_plural "%d results found"
-msgstr[0] "%d 개의 결과가 검색됨"
+msgstr[0] "%d개 결과가 검색됨"
 
 #. translators: 1: Start index of posts, 2: End index of posts, 3: Total number
 #. of posts
 #: wp-includes/blocks/query-total.php:54
 msgid "Displaying %1$s – %2$s of %3$s"
-msgstr "%3$s개 중 %1$s - %2$s개 표시 중"
+msgstr "총 %3$s개 중 %1$s - %2$s개 표시 중"
 
 #. translators: 1: Start index of posts, 2: Total number of posts
 #: wp-includes/blocks/query-total.php:47
@@ -681,7 +681,7 @@ msgstr "템플릿이 비어 있어 이 페이지는 비어 있습니다. 사이�
 #. translators: %s: Post format name.
 #: wp-includes/block-template-utils.php:220
 msgid "Displays the %s post format archive."
-msgstr "%s 포스트 형식의 아카이브를 표시합니다."
+msgstr "%s 글 형식의 아카이브를 표시합니다."
 
 #. translators: %s: Post format name.
 #: wp-includes/block-template-utils.php:215
@@ -726,7 +726,7 @@ msgstr "내추럴"
 #: wp-includes/theme.json
 msgctxt "Aspect ratio name"
 msgid "Tall - 9:16"
-msgstr "가로 길게 - 9:16"
+msgstr "세로 길게 - 9:16"
 
 #: wp-includes/theme.json
 msgctxt "Aspect ratio name"
@@ -756,7 +756,7 @@ msgstr "표준 - 4:3"
 #: wp-includes/theme.json
 msgctxt "Aspect ratio name"
 msgid "Square - 1:1"
-msgstr "Square - 1:1"
+msgstr "정사각형 - 1:1"
 
 #: wp-includes/blocks/tag-cloud/block.json
 msgctxt "block description"
@@ -1202,7 +1202,7 @@ msgstr "패턴 카테고리 추가 또는 제거"
 #. translators: %s: wp_remove_surrounding_empty_script_tags()
 #: wp-includes/script-loader.php:3441
 msgid "Function %s used incorrectly in PHP."
-msgstr "PHP에서 함수 %s가 잘못 사용되었습니다."
+msgstr "PHP에서 함수 %s이(가) 잘못 사용되었습니다."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:1165
 msgid "Where the template originally comes from e.g. 'theme'"
@@ -1287,15 +1287,15 @@ msgstr "글꼴 미리보기 이미지의 URL"
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-font-faces-controller.php:650
 msgid "CSS unicode-range value."
-msgstr "CSS 유니코드 범위 값입니다."
+msgstr "CSS unicode-range 값입니다."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-font-faces-controller.php:643
 msgid "CSS size-adjust value."
-msgstr "CSS size-adjust(크기 조정) 값입니다."
+msgstr "CSS size-adjust 값입니다."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-font-faces-controller.php:636
 msgid "CSS line-gap-override value."
-msgstr "CSS line-gap-override(줄간격 오버라이드) 값입니다."
+msgstr "CSS line-gap-override 값입니다."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-font-faces-controller.php:629
 msgid "CSS font-variation-settings value."
@@ -1335,12 +1335,12 @@ msgstr "사용 가능한 글꼴 두께 목록은 공백으로 구분되어 있�
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-font-faces-controller.php:539
 msgid "CSS font-style value."
-msgstr "CCS 글꼴-스타일 값."
+msgstr "CSS font-style 값."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-font-faces-controller.php:531
 #: wp-includes/rest-api/endpoints/class-wp-rest-font-families-controller.php:336
 msgid "CSS font-family value."
-msgstr "CSS 폰트 패밀리 값입니다."
+msgstr "CSS font-family 값."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-font-faces-controller.php:526
 msgid "font-face declaration in theme.json format."
@@ -1365,7 +1365,7 @@ msgstr "해당 설정과 일치하는 폰트 페이스가 이미 있습니다."
 #: wp-includes/rest-api/endpoints/class-wp-rest-font-faces-controller.php:301
 #: wp-includes/rest-api/endpoints/class-wp-rest-font-faces-controller.php:415
 msgid "The font face does not belong to the specified font family with id of \"%d\"."
-msgstr "폰트 페이스가  ID가 \"%d\"인 지정된 폰트 패밀리에 속하지 않습니다."
+msgstr "폰트 페이스가 ID가 \"%d\"인 지정된 폰트 패밀리에 속하지 않습니다."
 
 #. translators: 1: File key (e.g. "file-0") in the request data, 2: Font face
 #. source parameter name: "font_face_settings[src]".
@@ -1417,7 +1417,7 @@ msgstr "폰트 페이스의 상위 폰트 패밀리에 대한 ID"
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-font-collections-controller.php:346
 msgid "Sorry, you are not allowed to access font collections."
-msgstr "죄송합니다. 폰트 콜렉션에 접근할 수 없습니다."
+msgstr "죄송합니다. 글꼴 모음에 접근할 수 없습니다."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-font-collections-controller.php:277
 msgid "The categories for the font collection."
@@ -1425,23 +1425,23 @@ msgstr "글꼴 모음의 카테고리입니다."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-font-collections-controller.php:272
 msgid "The font families for the font collection."
-msgstr "폰트 컬렉션의 폰트 패밀리입니다."
+msgstr "글꼴 모음의 폰트 패밀리입니다."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-font-collections-controller.php:267
 msgid "The description for the font collection."
-msgstr "폰트 컬렉션에 대한 설명입니다."
+msgstr "글꼴 모음에 대한 설명입니다."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-font-collections-controller.php:262
 msgid "The name for the font collection."
-msgstr "폰트 콜렉션의 이름입니다."
+msgstr "글꼴 모음의 이름입니다."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-font-collections-controller.php:256
 msgid "Unique identifier for the font collection."
-msgstr "폰트 컬렉션의 고유 식별자입니다."
+msgstr "글꼴 모음의 고유 식별자입니다."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-font-collections-controller.php:158
 msgid "Font collection not found."
-msgstr "글꼴 컬렉션을 찾을 수 없습니다."
+msgstr "글꼴 모음을 찾을 수 없습니다."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-block-types-controller.php:751
 msgid "Allowed child block types."
@@ -1471,18 +1471,18 @@ msgstr "글꼴 패밀리"
 #. translators: %s: Font collection slug.
 #: wp-includes/fonts/class-wp-font-library.php:79
 msgid "Font collection \"%s\" not found."
-msgstr "글꼴 컬렉션 \"%s\"를 찾을 수 없습니다."
+msgstr "글꼴 모음 \"%s\"을(를) 찾을 수 없습니다."
 
 #. translators: %s: Font collection slug.
 #: wp-includes/fonts/class-wp-font-library.php:52
 msgid "Font collection with slug: \"%s\" is already registered."
-msgstr "슬러그가 있는 글꼴 컬렉션: \"%s\"가 이미 등록되어 있습니다."
+msgstr "슬러그: \"%s\"이(가) 있는 글꼴 모음이 이미 등록되어 있습니다."
 
 #. translators: 1: Font collection slug, 2: Missing property name, e.g.
 #. "font_families".
 #: wp-includes/fonts/class-wp-font-collection.php:228
 msgid "Font collection \"%1$s\" has missing or empty property: \"%2$s\"."
-msgstr "글꼴 컬렉션 \"%1$s\"에 속성 \"%2$s\"이 누락되었거나 비어 있습니다."
+msgstr "글꼴 모음 \"%1$s\"에 속성 \"%2$s\"이(가) 누락되었거나 비어 있습니다."
 
 #: wp-includes/fonts/class-wp-font-collection.php:196
 msgid "Error decoding the font collection data from the HTTP response JSON."
@@ -1534,12 +1534,12 @@ msgstr "산세리프"
 
 #: wp-includes/fonts.php:267
 msgid "Install from Google Fonts. Fonts are copied to and served from your site."
-msgstr "구글 폰트에서 설치합니다. 글꼴은 사이트에 복사되어 제공됩니다."
+msgstr "Google Fonts에서 설치합니다. 글꼴은 사이트에 복사되어 제공됩니다."
 
 #: wp-includes/fonts.php:266
 msgctxt "font collection name"
 msgid "Google Fonts"
-msgstr "구글 폰트"
+msgstr "Google Fonts"
 
 #. translators: %s: The selected image filename.
 #: wp-includes/customize/class-wp-customize-site-icon-control.php:81
@@ -1882,7 +1882,7 @@ msgstr "미디어 파일 보기"
 
 #: wp-includes/html-api/class-wp-html-processor.php:688
 msgid "Please pass a query array to this function."
-msgstr "이 함수에 쿼리 배열을 전달하세요."
+msgstr "이 함수에 쿼리 배열을 전달해주세요."
 
 #. translators: %s: WP_HTML_Processor::create_fragment().
 #: wp-includes/html-api/class-wp-html-processor.php:372
@@ -1903,7 +1903,7 @@ msgstr "%1$s 클래스는 %2$s 버전부터 <strong>사용되지 않으며</stro
 #. function name.
 #: wp-includes/functions.php:5719
 msgid "Class %1$s is <strong>deprecated</strong> since version %2$s! Use %3$s instead."
-msgstr "%1$s 클래스는 버전 %2$s부터 <strong>사용되지 않습니다</strong>! 대신 %3$s를 사용하십시오."
+msgstr "%1$s 클래스는 버전 %2$s부터 <strong>사용되지 않습니다</strong>! 대신 %3$s를 사용합니다."
 
 #: wp-includes/fonts/class-wp-font-face.php:201
 msgid "Font font-weight must be a properly formatted string or integer."
