@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Elementor Website Builder &#8211; More Than Just a Page Builder - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-07-17 13:19:59+0000\n"
+"PO-Revision-Date: 2025-07-18 15:20:25+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -840,6 +840,14 @@ msgstr "Es gibt keine zu speichernden Elemente."
 msgid "No Templates found in Trash"
 msgstr "Im Papierkorb wurden keine Templates gefunden"
 
+#: includes/controls/groups/flex-container.php:183
+#: includes/controls/groups/flex-container.php:191
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:25
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:156
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:158
+msgid "Wrap"
+msgstr "Umbruch"
+
 #: includes/widgets/video.php:140
 msgid "VideoPress"
 msgstr "VideoPress"
@@ -887,6 +895,10 @@ msgstr "Elementor Canvas"
 #: includes/settings/settings.php:446
 msgid "Optimized Gutenberg Loading"
 msgstr "Optimiertes Gutenberg-Laden"
+
+#: modules/image-loading-optimization/module.php:240
+msgid "An image should not be lazy-loaded and marked as high priority at the same time."
+msgstr "Ein Bild sollte nicht gleichzeitig verzögert geladen werden und mit hoher Priorität gekennzeichnet sein."
 
 #: includes/controls/groups/background.php:245
 #: assets/js/packages/editor-controls/editor-controls.js:55
@@ -1003,6 +1015,28 @@ msgstr "Reihe - umgekehrt"
 msgid "Align Content"
 msgstr "Inhalt ausrichten"
 
+#: includes/controls/groups/flex-container.php:91
+#: includes/controls/groups/grid-container.php:186
+msgid "Justify Content"
+msgstr "Ausrichtung Inhalt"
+
+#: includes/controls/groups/flex-item.php:173
+msgid "Flex Shrink"
+msgstr "Flex verkleinern"
+
+#: includes/controls/groups/flex-item.php:159
+msgid "Flex Grow"
+msgstr "Flex vergrößern"
+
+#: includes/controls/groups/flex-item.php:76
+#: includes/controls/groups/flex-item.php:109
+msgid "This control will affect contained elements only."
+msgstr "Dieses Steuerelement wirkt sich nur auf enthaltene Elemente aus."
+
+#: includes/controls/groups/background.php:478
+msgid "Display Size"
+msgstr "Bildschirmgröße"
+
 #: app/modules/onboarding/module.php:140
 msgid "You do not have permission to perform this action."
 msgstr "Du hast keine Berechtigung, um diese Aktion durchzuführen."
@@ -1011,22 +1045,22 @@ msgstr "Du hast keine Berechtigung, um diese Aktion durchzuführen."
 msgid "Pages Panel"
 msgstr "Seiten Panel"
 
-#: modules/nested-tabs/widgets/nested-tabs.php:199
-#: modules/nested-tabs/widgets/nested-tabs.php:869
-msgid "Below"
-msgstr "Unten"
-
-#: modules/nested-tabs/widgets/nested-tabs.php:195
-#: modules/nested-tabs/widgets/nested-tabs.php:861
-msgid "Above"
-msgstr "Oben"
-
 #. translators: %s: Post type (e.g. Page, Post, etc.)
 #: core/document-types/page-base.php:186
 #: assets/js/packages/editor-site-navigation/editor-site-navigation.js:2
 #: assets/js/packages/editor-site-navigation/editor-site-navigation.strings.js:17
 msgid "View %s"
 msgstr "%s anzeigen"
+
+#: modules/nested-tabs/widgets/nested-tabs.php:195
+#: modules/nested-tabs/widgets/nested-tabs.php:861
+msgid "Above"
+msgstr "Oberhalb"
+
+#: modules/nested-tabs/widgets/nested-tabs.php:199
+#: modules/nested-tabs/widgets/nested-tabs.php:869
+msgid "Below"
+msgstr "Unterhalb"
 
 #: includes/editor-templates/templates.php:334
 #: includes/editor-templates/templates.php:367
@@ -1043,10 +1077,6 @@ msgstr "Umbenennen"
 #: modules/nested-accordion/widgets/nested-accordion.php:401
 msgid "Space between Items"
 msgstr "Abstand zwischen Elementen"
-
-#: modules/nested-accordion/widgets/nested-accordion.php:357
-msgid "Multiple"
-msgstr "Mehrere"
 
 #: modules/nested-accordion/widgets/nested-accordion.php:356
 msgid "One"
@@ -1104,6 +1134,10 @@ msgstr "%1$s von %2$s"
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:1453
 msgid "Box"
 msgstr "Box"
+
+#: modules/nested-accordion/widgets/nested-accordion.php:357
+msgid "Multiple"
+msgstr "Mehrfach"
 
 #: modules/floating-buttons/base/widget-floating-bars-base.php:370
 #: modules/nested-accordion/widgets/nested-accordion.php:151
@@ -1172,6 +1206,14 @@ msgstr "Elementtitel"
 #: modules/nested-accordion/widgets/nested-accordion.php:66
 msgid "item #%s"
 msgstr "Element #%s"
+
+#: includes/frontend.php:1385
+msgid "Previous slide"
+msgstr "Vorheriger Slide"
+
+#: includes/frontend.php:1386
+msgid "Next slide"
+msgstr "Nächster Slide"
 
 #: includes/template-library/sources/local.php:515
 msgid "Invalid template type."
