@@ -1,4 +1,4 @@
-/*! elementor - v3.30.0 - 09-07-2025 */
+/*! elementor - v3.30.0 - 22-07-2025 */
 "use strict";
 (self["webpackChunkelementorFrontend"] = self["webpackChunkelementorFrontend"] || []).push([["text-path"],{
 
@@ -144,7 +144,7 @@ class TextPathHandler extends elementorModules.frontend.handlers.Base {
     const {
       start_point: startPoint
     } = this.getElementSettings();
-    const text = this.elements.pathContainer.dataset.text;
+    const text = (0, _utils.escapeHTML)(this.elements.pathContainer.dataset.text);
     this.attachIdToPath();
 
     // Generate the `textPath` element with its settings.
@@ -1640,4 +1640,4 @@ module.exports = purify;
 /***/ })
 
 }]);
-//# sourceMappingURL=text-path.795be0048f5240994e8b.bundle.js.map
+//# sourceMappingURL=text-path.ffadd93cf796f64a4d61.bundle.js.map
