@@ -298,7 +298,7 @@
                    <li class="t-head">
                       <div></div>
                       <div class="c">&nbsp;</div>
-                      <div class="c"><a class="button button-primary" href="https://www.wpzoom.com/themes/inspiro/?utm_source=wpzoom&amp;utm_medium=inspiro-lite&amp;utm_campaign=comparison-table"><strong>Upgrade Now</strong></a></div>
+                      <div class="c"><a class="button button-primary" href="https://www.wpzoom.com/themes/inspiro-lite/upgrade/?utm_source=wpzoom&amp;utm_medium=inspiro-lite&amp;utm_campaign=comparison-table"><strong>Upgrade Now</strong></a></div>
                    </li>
                 </ul>
 
@@ -309,7 +309,7 @@
 
 	<div class="wpz-onboard_content-side-section discover-premium">
         <div class="image-column">
-            <a href="https://www.wpzoom.com/themes/inspiro/?utm_source=wpadmin&utm_medium=about-inspiro-page&utm_campaign=upgrade-premium"
+            <a href="https://www.wpzoom.com/themes/inspiro-lite/upgrade/?utm_source=wpadmin&utm_medium=about-inspiro-page&utm_campaign=upgrade-premium"
                 title="Inspiro Premium" target="_blank">
 				<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/admin/inspiro-premium.png' ); ?>"
                     width="300" alt="<?php echo esc_attr__( 'Inspiro Premium', 'inspiro' ); ?>"/>
@@ -387,13 +387,13 @@
             </ul>
                             
             <div class="wpz-onboard_content-side-section-button">
-                <a href="https://www.wpzoom.com/themes/inspiro/?utm_source=wpadmin&utm_medium=about-inspiro-page&utm_campaign=upgrade-premium"
+                <a href="https://www.wpzoom.com/themes/inspiro-lite/upgrade/?utm_source=wpadmin&utm_medium=about-inspiro-page&utm_campaign=upgrade-premium"
                     title="Inspiro Premium" target="_blank" class="button">
-					<?php esc_html_e( 'Get Inspiro Premium &#8599;', 'inspiro' ); ?>
+					<?php esc_html_e( 'Get Inspiro Premium &rarr;', 'inspiro' ); ?>
 				</a>
                 <a href="https://www.wpzoom.com/themes/inspiro/starter-sites/?utm_source=wpadmin&utm_medium=about-inspiro-page&utm_campaign=upgrade-premium"
                     title="Inspiro Premium" target="_blank" class="button button-starter">
-					<?php esc_html_e( 'View Starter Sites &#8599;', 'inspiro' ); ?>
+					<?php esc_html_e( 'View Starter Sites &rarr;', 'inspiro' ); ?>
 				</a>
             </div>
         </div>

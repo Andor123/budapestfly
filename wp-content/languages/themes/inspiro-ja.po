@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Themes - Inspiro package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-05-25 01:32:27+0000\n"
+"PO-Revision-Date: 2025-08-02 04:33:58+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -49,8 +49,8 @@ msgid "PREMIUM SUPPORT"
 msgstr "プレミアムサポート"
 
 #: inc/admin/pages/demos.php:14
-msgid "https://www.wpzoom.com/themes/inspiro/?utm_source=wpadmin&utm_medium=demos-inspiro-page&utm_campaign=upgrade-premium"
-msgstr "https://www.wpzoom.com/themes/inspiro/?utm_source=wpadmin&utm_medium=demos-inspiro-page&utm_campaign=upgrade-premium"
+msgid "https://www.wpzoom.com/themes/inspiro-lite/upgrade/?utm_source=wpadmin&utm_medium=demos-inspiro-page&utm_campaign=upgrade-premium"
+msgstr "https://www.wpzoom.com/themes/inspiro-lite/upgrade/?utm_source=wpadmin&utm_medium=demos-inspiro-page&utm_campaign=upgrade-premium"
 
 #: inc/admin/pages/main-menu.php:139 inc/admin/pages/plugins.php:28
 msgid "Recommended Plugins"
@@ -61,8 +61,8 @@ msgid "Install Inspiro Starter Sites Plugin"
 msgstr "Inspiro スターターサイトプラグインをインストール"
 
 #: inc/admin/pages/demo.php:24
-msgid "View Premium Starter Sites &#8599;"
-msgstr "プレミアムスターターサイトを見る &#8599;"
+msgid "View Premium Starter Sites &rarr;"
+msgstr "プレミアムスターターサイトを見る &rarr;"
 
 #: inc/admin/pages/demo.php:22
 msgid "https://www.wpzoom.com/themes/inspiro/starter-sites/?utm_source=wpadmin&utm_medium=demos-starter-sites&utm_campaign=starter-sites-inspiro"
@@ -109,8 +109,8 @@ msgid "Upload theme"
 msgstr "テーマをアップロード"
 
 #: inc/admin/pages/upgrade.php:27
-msgid "View starter sites &#8599;"
-msgstr "スターターサイトを見る &#8599;"
+msgid "View starter sites &rarr;"
+msgstr "スターターサイトを見る &rarr;"
 
 #: inc/admin/pages/upgrade.php:19
 msgid "Upgrade to Inspiro Premium for exclusive demos, advanced features, priority support, and regular updates."
@@ -262,7 +262,8 @@ msgstr "ブロックエディター"
 msgid "Elementor"
 msgstr "Elementor"
 
-#: inc/admin/pages/demos.php:7 inc/admin/pages/main-menu.php:54
+#: inc/admin/pages/demos.php:7 inc/admin/pages/demos.php:20
+#: inc/admin/pages/main-menu.php:54
 msgid "Premium Starter Sites"
 msgstr "プレミアムスターターサイト"
 
@@ -298,15 +299,15 @@ msgstr "”スターターサイト” をクリックすることで、あな�
 msgid "Clicking \"Starter Sites\" will install and activate Inspiro Starter Sites plugin on your WordPress site."
 msgstr "「スターターサイト」をクリックすると、WordPress サイトに Inspiro Starter Sites プラグインがインストール、有効化されます。"
 
-#: inc/customizer/class-inspiro-customizer.php:285
+#: inc/customizer/class-inspiro-customizer.php:300
 msgid "View Demos"
 msgstr "デモを見る"
 
-#: inc/customizer/class-inspiro-customizer.php:283
+#: inc/customizer/class-inspiro-customizer.php:298
 msgid "View All Features"
 msgstr "すべての機能を表示"
 
-#: inc/customizer/class-inspiro-customizer.php:282
+#: inc/customizer/class-inspiro-customizer.php:297
 msgid "Unlock premium features: 30+ Elementor and Gutenberg Demos, 7 Style Kits, Video Backgrounds, Portfolio Integration, Premium Support and much more!"
 msgstr "プレミアム機能のロックを解除: 30 以上の Elementor と Gutenberg デモ、7 Style Kits、動画背景、ポートフォリオの統合、プレミアムサポートとその他 !"
 
@@ -404,11 +405,11 @@ msgid "Homepage Hero"
 msgstr "ホームページヒーロー"
 
 #. translators: 1: .mp4, 2: .mov
-#: inc/custom-header.php:543
+#: inc/custom-header.php:538
 msgid "Only %1$s or %2$s files may be used for header video. Please convert your video file and try again, or, upload your video to YouTube and link it with the option below."
 msgstr "%1$s または %2$s ファイルのみヘッダー動画として利用可能です。動画ファイルを変換してもう一度やり直すか、動画を YouTube にアップロードし、リンクを以下の設定で指定します。"
 
-#: inc/custom-header.php:532
+#: inc/custom-header.php:527
 msgid "This video file is too large. The free version is limited to videos of 8MB or less, while the Premium and PRO versions do not have this limitation. Try a smaller video or consider upgrading to <a href=\"%1$s\" target=\"_blank\">Inspiro Premium</a>."
 msgstr "この動画ファイルは大き過ぎます。無料版は8MB 以下の動画に限定されていますが、プレミアム版とプロ版はこの制限にありません。ファイルサイズの小さな動画で試すか、<a href=\"%1$s\" target=\"_blank\">Inspiro プレミアム</a> へのアップグレードを検討してください。"
 
@@ -444,8 +445,8 @@ msgstr "ドキュメンテーションから"
 
 #: inc/admin/pages/quick-start.php:334 inc/admin/pages/quick-start.php:515
 #: inc/admin/pages/vs-pro.php:396
-msgid "View Starter Sites &#8599;"
-msgstr "スターターサイトを見る &#8599;"
+msgid "View Starter Sites &rarr;"
+msgstr "スターターサイトを見る &rarr;"
 
 #: inc/admin/pages/quick-start.php:265 inc/admin/pages/vs-pro.php:327
 msgid "Discover Inspiro Premium!"
@@ -623,21 +624,17 @@ msgstr "ヒーローセクション"
 msgid "Hamburger Icon Color"
 msgstr "ハンバーガーのアイコンの色"
 
-#: inc/custom-header.php:60
-msgid "Ocean Header Image"
-msgstr "海のヘッダー画像"
-
 #: inc/admin/pages/demos.php:18
 msgid "https://www.wpzoom.com/themes/inspiro/starter-sites/?utm_source=wpadmin&utm_medium=demos-inspiro-page&utm_campaign=upgrade-premium"
 msgstr "https://www.wpzoom.com/themes/inspiro/starter-sites/?utm_source=wpadmin&utm_medium=demos-inspiro-page&utm_campaign=upgrade-premium"
 
 #: inc/admin/pages/quick-start.php:508
-msgid "https://www.wpzoom.com/themes/inspiro/?utm_source=wpadmin&utm_medium=about-inspiro-page&utm_campaign=upgrade-table"
-msgstr "https://www.wpzoom.com/themes/inspiro/?utm_source=wpadmin&utm_medium=about-inspiro-page&utm_campaign=upgrade-table"
+msgid "https://www.wpzoom.com/themes/inspiro-lite/upgrade/?utm_source=wpadmin&utm_medium=about-inspiro-page&utm_campaign=upgrade-table"
+msgstr "https://www.wpzoom.com/themes/inspiro-lite/upgrade/?utm_source=wpadmin&utm_medium=about-inspiro-page&utm_campaign=upgrade-table"
 
 #: inc/admin/pages/quick-start.php:17 inc/admin/pages/upgrade.php:22
-msgid "https://www.wpzoom.com/themes/inspiro/?utm_source=wpadmin&utm_medium=about-inspiro-page&utm_campaign=upgrade-premium"
-msgstr "https://www.wpzoom.com/themes/inspiro/?utm_source=wpadmin&utm_medium=about-inspiro-page&utm_campaign=upgrade-premium"
+msgid "https://www.wpzoom.com/themes/inspiro-lite/upgrade/?utm_source=wpadmin&utm_medium=about-inspiro-page&utm_campaign=upgrade-premium"
+msgstr "https://www.wpzoom.com/themes/inspiro-lite/upgrade/?utm_source=wpadmin&utm_medium=about-inspiro-page&utm_campaign=upgrade-premium"
 
 #: theme.json
 msgctxt "Space size name"
@@ -1026,10 +1023,6 @@ msgstr "無料 vs プレミアム"
 msgid "Inspiro Lite Theme Dashboard"
 msgstr "Inspiro Lite テーマのダッシュボード"
 
-#: inc/admin/pages/demos.php:16
-msgid "Discover Inspiro Premium &#8599;"
-msgstr "Inspiro プレミアムを体験しよう &#8599;"
-
 #: inc/customizer/configs/header/class-inspiro-header-area-config.php:236
 msgid "Fullscreen"
 msgstr "全画面"
@@ -1183,7 +1176,7 @@ msgstr "検索アイコンを表示"
 msgid "Get Inspiro Premium"
 msgstr "Inspiro プレミアムを入手"
 
-#: inc/customizer/class-inspiro-customizer.php:281
+#: inc/customizer/class-inspiro-customizer.php:296
 msgid "Upgrade to Inspiro Premium"
 msgstr "Inspiro Premium へアップグレード"
 
@@ -1254,7 +1247,7 @@ msgstr "見出し4"
 msgid "Heading 6"
 msgstr "見出し6"
 
-#: inc/customizer/configs/typography/class-inspiro-typo-h1-config.php:32
+#: inc/customizer/configs/typography/class-inspiro-typo-h1-config.php:69
 msgid "Heading 1"
 msgstr "見出し1"
 
@@ -1267,7 +1260,7 @@ msgid "Menu"
 msgstr "メニュー"
 
 #: inc/customizer/configs/typography/class-inspiro-typo-body-config.php:103
-#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:95
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:423
 #: inc/customizer/configs/typography/class-inspiro-typo-hero-header-button-config.php:116
 #: inc/customizer/configs/typography/class-inspiro-typo-hero-header-desc-config.php:116
 #: inc/customizer/configs/typography/class-inspiro-typo-hero-header-title-config.php:123
@@ -1278,7 +1271,7 @@ msgid "Only selected Font Variants will be loaded from Google Fonts."
 msgstr "選択されたフォントバリエーションのみが Google フォントから読み込まれます。"
 
 #: inc/customizer/configs/typography/class-inspiro-typo-body-config.php:102
-#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:94
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:422
 #: inc/customizer/configs/typography/class-inspiro-typo-hero-header-button-config.php:115
 #: inc/customizer/configs/typography/class-inspiro-typo-hero-header-desc-config.php:115
 #: inc/customizer/configs/typography/class-inspiro-typo-hero-header-title-config.php:122
@@ -1289,7 +1282,7 @@ msgid "Variants"
 msgstr "バリエーション"
 
 #: inc/customizer/configs/typography/class-inspiro-typo-body-config.php:92
-#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:84
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:412
 #: inc/customizer/configs/typography/class-inspiro-typo-hero-header-button-config.php:105
 #: inc/customizer/configs/typography/class-inspiro-typo-hero-header-desc-config.php:105
 #: inc/customizer/configs/typography/class-inspiro-typo-hero-header-title-config.php:112
@@ -1309,13 +1302,16 @@ msgid "Heading 3"
 msgstr "見出し3"
 
 #: inc/customizer/configs/typography/class-inspiro-typo-body-config.php:153
-#: inc/customizer/configs/typography/class-inspiro-typo-h1-config.php:122
+#: inc/customizer/configs/typography/class-inspiro-typo-h1-config.php:119
 #: inc/customizer/configs/typography/class-inspiro-typo-h2-config.php:122
 #: inc/customizer/configs/typography/class-inspiro-typo-h3-config.php:122
 #: inc/customizer/configs/typography/class-inspiro-typo-h4-config.php:122
 #: inc/customizer/configs/typography/class-inspiro-typo-h5-config.php:122
 #: inc/customizer/configs/typography/class-inspiro-typo-h6-config.php:122
-#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:132
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:460
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:529
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:598
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:680
 #: inc/customizer/configs/typography/class-inspiro-typo-hero-header-button-config.php:166
 #: inc/customizer/configs/typography/class-inspiro-typo-hero-header-desc-config.php:166
 #: inc/customizer/configs/typography/class-inspiro-typo-hero-header-title-config.php:173
@@ -1326,13 +1322,21 @@ msgid "Line Height"
 msgstr "行の高さ"
 
 #: inc/customizer/configs/typography/class-inspiro-typo-body-config.php:145
-#: inc/customizer/configs/typography/class-inspiro-typo-h1-config.php:103
+#: inc/customizer/configs/typography/class-inspiro-typo-h1-config.php:111
 #: inc/customizer/configs/typography/class-inspiro-typo-h2-config.php:103
 #: inc/customizer/configs/typography/class-inspiro-typo-h3-config.php:103
 #: inc/customizer/configs/typography/class-inspiro-typo-h4-config.php:103
 #: inc/customizer/configs/typography/class-inspiro-typo-h5-config.php:103
 #: inc/customizer/configs/typography/class-inspiro-typo-h6-config.php:103
-#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:124
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:452
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:521
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:590
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:672
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:738
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:804
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:870
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:936
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:1002
 #: inc/customizer/configs/typography/class-inspiro-typo-hero-header-button-config.php:158
 #: inc/customizer/configs/typography/class-inspiro-typo-hero-header-desc-config.php:158
 #: inc/customizer/configs/typography/class-inspiro-typo-hero-header-title-config.php:165
@@ -1343,13 +1347,21 @@ msgid "Lowercase"
 msgstr "小文字"
 
 #: inc/customizer/configs/typography/class-inspiro-typo-body-config.php:144
-#: inc/customizer/configs/typography/class-inspiro-typo-h1-config.php:102
+#: inc/customizer/configs/typography/class-inspiro-typo-h1-config.php:110
 #: inc/customizer/configs/typography/class-inspiro-typo-h2-config.php:102
 #: inc/customizer/configs/typography/class-inspiro-typo-h3-config.php:102
 #: inc/customizer/configs/typography/class-inspiro-typo-h4-config.php:102
 #: inc/customizer/configs/typography/class-inspiro-typo-h5-config.php:102
 #: inc/customizer/configs/typography/class-inspiro-typo-h6-config.php:102
-#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:123
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:451
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:520
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:589
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:671
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:737
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:803
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:869
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:935
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:1001
 #: inc/customizer/configs/typography/class-inspiro-typo-hero-header-button-config.php:157
 #: inc/customizer/configs/typography/class-inspiro-typo-hero-header-desc-config.php:157
 #: inc/customizer/configs/typography/class-inspiro-typo-hero-header-title-config.php:164
@@ -1360,13 +1372,21 @@ msgid "Uppercase"
 msgstr "大文字"
 
 #: inc/customizer/configs/typography/class-inspiro-typo-body-config.php:143
-#: inc/customizer/configs/typography/class-inspiro-typo-h1-config.php:101
+#: inc/customizer/configs/typography/class-inspiro-typo-h1-config.php:109
 #: inc/customizer/configs/typography/class-inspiro-typo-h2-config.php:101
 #: inc/customizer/configs/typography/class-inspiro-typo-h3-config.php:101
 #: inc/customizer/configs/typography/class-inspiro-typo-h4-config.php:101
 #: inc/customizer/configs/typography/class-inspiro-typo-h5-config.php:101
 #: inc/customizer/configs/typography/class-inspiro-typo-h6-config.php:101
-#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:122
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:450
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:519
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:588
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:670
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:736
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:802
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:868
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:934
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:1000
 #: inc/customizer/configs/typography/class-inspiro-typo-hero-header-button-config.php:156
 #: inc/customizer/configs/typography/class-inspiro-typo-hero-header-desc-config.php:156
 #: inc/customizer/configs/typography/class-inspiro-typo-hero-header-title-config.php:163
@@ -1377,13 +1397,21 @@ msgid "Capitalize"
 msgstr "先頭大文字"
 
 #: inc/customizer/configs/typography/class-inspiro-typo-body-config.php:142
-#: inc/customizer/configs/typography/class-inspiro-typo-h1-config.php:100
+#: inc/customizer/configs/typography/class-inspiro-typo-h1-config.php:108
 #: inc/customizer/configs/typography/class-inspiro-typo-h2-config.php:100
 #: inc/customizer/configs/typography/class-inspiro-typo-h3-config.php:100
 #: inc/customizer/configs/typography/class-inspiro-typo-h4-config.php:100
 #: inc/customizer/configs/typography/class-inspiro-typo-h5-config.php:100
 #: inc/customizer/configs/typography/class-inspiro-typo-h6-config.php:100
-#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:121
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:449
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:518
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:587
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:669
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:735
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:801
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:867
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:933
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:999
 #: inc/customizer/configs/typography/class-inspiro-typo-hero-header-button-config.php:155
 #: inc/customizer/configs/typography/class-inspiro-typo-hero-header-desc-config.php:155
 #: inc/customizer/configs/typography/class-inspiro-typo-hero-header-title-config.php:162
@@ -1395,13 +1423,21 @@ msgid "None"
 msgstr "なし"
 
 #: inc/customizer/configs/typography/class-inspiro-typo-body-config.php:141
-#: inc/customizer/configs/typography/class-inspiro-typo-h1-config.php:99
+#: inc/customizer/configs/typography/class-inspiro-typo-h1-config.php:107
 #: inc/customizer/configs/typography/class-inspiro-typo-h2-config.php:99
 #: inc/customizer/configs/typography/class-inspiro-typo-h3-config.php:99
 #: inc/customizer/configs/typography/class-inspiro-typo-h4-config.php:99
 #: inc/customizer/configs/typography/class-inspiro-typo-h5-config.php:99
 #: inc/customizer/configs/typography/class-inspiro-typo-h6-config.php:99
-#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:120
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:448
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:517
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:586
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:668
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:734
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:800
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:866
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:932
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:998
 #: inc/customizer/configs/typography/class-inspiro-typo-hero-header-button-config.php:154
 #: inc/customizer/configs/typography/class-inspiro-typo-hero-header-desc-config.php:154
 #: inc/customizer/configs/typography/class-inspiro-typo-hero-header-title-config.php:161
@@ -1413,13 +1449,16 @@ msgid "Inherit"
 msgstr "継承"
 
 #: inc/customizer/configs/typography/class-inspiro-typo-body-config.php:137
-#: inc/customizer/configs/typography/class-inspiro-typo-h1-config.php:95
+#: inc/customizer/configs/typography/class-inspiro-typo-h1-config.php:103
 #: inc/customizer/configs/typography/class-inspiro-typo-h2-config.php:95
 #: inc/customizer/configs/typography/class-inspiro-typo-h3-config.php:95
 #: inc/customizer/configs/typography/class-inspiro-typo-h4-config.php:95
 #: inc/customizer/configs/typography/class-inspiro-typo-h5-config.php:95
 #: inc/customizer/configs/typography/class-inspiro-typo-h6-config.php:95
-#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:116
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:444
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:513
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:582
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:664
 #: inc/customizer/configs/typography/class-inspiro-typo-hero-header-button-config.php:150
 #: inc/customizer/configs/typography/class-inspiro-typo-hero-header-desc-config.php:150
 #: inc/customizer/configs/typography/class-inspiro-typo-hero-header-title-config.php:157
@@ -1430,13 +1469,16 @@ msgid "Text Transform"
 msgstr "文字の変形"
 
 #: inc/customizer/configs/typography/class-inspiro-typo-body-config.php:124
-#: inc/customizer/configs/typography/class-inspiro-typo-h1-config.php:76
+#: inc/customizer/configs/typography/class-inspiro-typo-h1-config.php:90
 #: inc/customizer/configs/typography/class-inspiro-typo-h2-config.php:76
 #: inc/customizer/configs/typography/class-inspiro-typo-h3-config.php:76
 #: inc/customizer/configs/typography/class-inspiro-typo-h4-config.php:76
 #: inc/customizer/configs/typography/class-inspiro-typo-h5-config.php:76
 #: inc/customizer/configs/typography/class-inspiro-typo-h6-config.php:76
-#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:103
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:431
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:500
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:569
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:651
 #: inc/customizer/configs/typography/class-inspiro-typo-hero-header-button-config.php:137
 #: inc/customizer/configs/typography/class-inspiro-typo-hero-header-desc-config.php:137
 #: inc/customizer/configs/typography/class-inspiro-typo-hero-header-title-config.php:144
@@ -1447,12 +1489,15 @@ msgid "Font Weight"
 msgstr "フォントの太さ"
 
 #: inc/customizer/configs/typography/class-inspiro-typo-body-config.php:112
-#: inc/customizer/configs/typography/class-inspiro-typo-h1-config.php:53
+#: inc/customizer/configs/typography/class-inspiro-typo-h1-config.php:78
 #: inc/customizer/configs/typography/class-inspiro-typo-h2-config.php:53
 #: inc/customizer/configs/typography/class-inspiro-typo-h3-config.php:53
 #: inc/customizer/configs/typography/class-inspiro-typo-h4-config.php:53
 #: inc/customizer/configs/typography/class-inspiro-typo-h5-config.php:53
 #: inc/customizer/configs/typography/class-inspiro-typo-h6-config.php:53
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:484
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:553
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:635
 #: inc/customizer/configs/typography/class-inspiro-typo-hero-header-button-config.php:125
 #: inc/customizer/configs/typography/class-inspiro-typo-hero-header-desc-config.php:125
 #: inc/customizer/configs/typography/class-inspiro-typo-hero-header-title-config.php:132
@@ -1478,16 +1523,16 @@ msgstr "プリセットを選択すると、すべてのフォント設定が上
 msgid "Presets"
 msgstr "プリセット"
 
-#: inc/customizer/class-inspiro-customizer.php:474
+#: inc/customizer/class-inspiro-customizer.php:489
 msgid "System Fonts"
 msgstr "システムフォント"
 
-#: inc/customizer/class-inspiro-customizer.php:473
+#: inc/customizer/class-inspiro-customizer.php:488
 msgid "Default System Font"
 msgstr "既定のシステムフォント"
 
 #: inc/classes/class-inspiro-font-family-manager.php:251
-#: inc/customizer/class-inspiro-customizer.php:454
+#: inc/customizer/class-inspiro-customizer.php:469
 #: inc/customizer/custom-controls/font-variant/class-inspiro-customize-font-variant-control.php:88
 #: inc/customizer/custom-controls/typography/class-inspiro-customize-typography-control.php:104
 msgid "Inherit"
@@ -1652,8 +1697,8 @@ msgstr "ドキュメンテーション"
 #: inc/admin/pages/quick-start.php:19 inc/admin/pages/quick-start.php:330
 #: inc/admin/pages/quick-start.php:510 inc/admin/pages/upgrade.php:24
 #: inc/admin/pages/vs-pro.php:392
-msgid "Get Inspiro Premium &#8599;"
-msgstr "Inspiro プレミアムを入手 &#8599;"
+msgid "Get Inspiro Premium &rarr;"
+msgstr "Inspiro プレミアムを入手 &arr;"
 
 #: inc/admin/pages/quick-start.php:8
 msgid "Welcome to Inspiro Lite!"
@@ -2051,11 +2096,11 @@ msgstr "最新の投稿"
 msgid "Skip to content"
 msgstr "コンテンツへスキップ"
 
-#: inc/custom-header.php:464
+#: inc/custom-header.php:459
 msgid "Pause background video"
 msgstr "背景動画を一時停止"
 
-#: inc/custom-header.php:463
+#: inc/custom-header.php:458
 msgid "Play background video"
 msgstr "背景動画を再生"
 
@@ -2132,23 +2177,23 @@ msgstr "コンテンツ"
 msgid "Blog Post Options"
 msgstr "投稿オプション"
 
-#: inc/customizer/configs/theme-layout/class-inspiro-theme-layout-config.php:72
+#: inc/customizer/configs/theme-layout/class-inspiro-theme-layout-config.php:96
 msgid "Single Post Layout"
 msgstr "投稿レイアウト"
 
 #: inc/customizer-functions.php:17
-#: inc/customizer/configs/theme-layout/class-inspiro-theme-layout-config.php:64
-#: inc/customizer/configs/theme-layout/class-inspiro-theme-layout-config.php:77
+#: inc/customizer/configs/theme-layout/class-inspiro-theme-layout-config.php:88
+#: inc/customizer/configs/theme-layout/class-inspiro-theme-layout-config.php:101
 msgid "Sidebar on the right"
 msgstr "右側のサイドバー"
 
 #: inc/customizer-functions.php:16
-#: inc/customizer/configs/theme-layout/class-inspiro-theme-layout-config.php:63
-#: inc/customizer/configs/theme-layout/class-inspiro-theme-layout-config.php:76
+#: inc/customizer/configs/theme-layout/class-inspiro-theme-layout-config.php:87
+#: inc/customizer/configs/theme-layout/class-inspiro-theme-layout-config.php:100
 msgid "Full width"
 msgstr "全幅"
 
-#: inc/customizer/configs/theme-layout/class-inspiro-theme-layout-config.php:59
+#: inc/customizer/configs/theme-layout/class-inspiro-theme-layout-config.php:83
 msgid "Blog Layout"
 msgstr "ブログレイアウト"
 
@@ -2445,11 +2490,11 @@ msgstr "最初の投稿を公開する準備はできましたか ? <a href=\"%s
 msgid "Nothing Found"
 msgstr "何も見つかりませんでした"
 
-#: template-parts/navigation/navigation-primary.php:57
+#: template-parts/navigation/navigation-primary.php:63
 msgid "Toggle sidebar &amp; navigation"
 msgstr "サイドバーとナビゲーションを切り替える"
 
-#: template-parts/navigation/navigation-primary.php:29
+#: template-parts/navigation/navigation-primary.php:28
 msgctxt "menu"
 msgid "Top Horizontal Menu"
 msgstr "トップ水平メニュー"

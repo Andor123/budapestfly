@@ -151,7 +151,7 @@ if ( ! class_exists( 'Inspiro_Customizer' ) ) {
 					'typo-headings',
 					// phpcs:disable Squiz.PHP.CommentedOutCode.Found
 					// TODO: Enable all panels in the next update
-					// 'typo-h1',
+					// 'typo-h1', // Integrated into typo-headings
 					// 'typo-h2',
 					// 'typo-h3',
 					// 'typo-h4',
@@ -213,6 +213,13 @@ if ( ! class_exists( 'Inspiro_Customizer' ) ) {
 			);
 
 			Inspiro_Customizer_Control_Base::register_custom_control(
+				'inspiro-responsive-range',
+				array(
+					'callback' => 'Inspiro_Customize_Responsive_Range_Control',
+				)
+			);
+
+			Inspiro_Customizer_Control_Base::register_custom_control(
 				'inspiro-title',
 				array(
 					'callback' => 'Inspiro_Customize_Title_Control',
@@ -250,6 +257,14 @@ if ( ! class_exists( 'Inspiro_Customizer' ) ) {
 			);
 
 			Inspiro_Customizer_Control_Base::register_custom_control(
+				'inspiro-alignment',
+				array(
+					'callback'          => 'Inspiro_Customize_Alignment_Control',
+					'sanitize_callback' => 'inspiro_sanitize_choices',
+				)
+			);
+
+			Inspiro_Customizer_Control_Base::register_custom_control(
 				'accordion-section-ui-wrapper',
 				array(
 					'callback'          => 'Inspiro_Customize_Accordion_UI_Control',
@@ -281,7 +296,7 @@ if ( ! class_exists( 'Inspiro_Customizer' ) ) {
 						'title'       => esc_html__( 'Upgrade to Inspiro Premium', 'inspiro' ),
 						 'description' => esc_html__( 'Unlock premium features: 30+ Elementor and Gutenberg Demos, 7 Style Kits, Video Backgrounds, Portfolio Integration, Premium Support and much more!', 'inspiro' ),
 						'pro_text'    => esc_html__( 'View All Features', 'inspiro' ),
-						'pro_url'     => esc_url( 'https://www.wpzoom.com/themes/inspiro/?utm_source=wpadmin&utm_medium=customizer&utm_campaign=bluebutton'),
+						'pro_url'     => esc_url( 'https://www.wpzoom.com/themes/inspiro-lite/upgrade/?utm_source=wpadmin&utm_medium=customizer&utm_campaign=bluebutton'),
 						'demo_link_text'    => esc_html__( 'View Demos', 'inspiro' ),
 						'demo_link_url'     => esc_url( 'https://www.wpzoom.com/themes/inspiro/starter-sites/?utm_source=wpadmin&utm_medium=customizer&utm_campaign=customizer-starter-sites'),
 						'priority'    => 10,
