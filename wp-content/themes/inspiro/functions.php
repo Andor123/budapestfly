@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Define Constants
  */
-define( 'INSPIRO_THEME_VERSION', '2.1.1' );
+define( 'INSPIRO_THEME_VERSION', '2.1.2' );
 define( 'INSPIRO_THEME_DIR', trailingslashit( get_template_directory() ) );
 define( 'INSPIRO_THEME_URI', trailingslashit( esc_url( get_template_directory_uri() ) ) );
 define( 'INSPIRO_THEME_ASSETS_URI', INSPIRO_THEME_URI . 'dist' );
@@ -47,6 +47,11 @@ require INSPIRO_THEME_DIR . 'inc/theme-media.php';
  * Enqueues scripts and styles
  */
 require INSPIRO_THEME_DIR . 'inc/classes/class-inspiro-enqueue-scripts.php';
+
+/**
+ * Starter Content Notice
+ */
+require INSPIRO_THEME_DIR . 'inc/classes/class-inspiro-starter-content-notice.php';
 
 /**
  * Setup custom wp-admin options pages
