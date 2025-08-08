@@ -17,11 +17,11 @@ $templates = array(
 
 		'desc'    => 'A simple contact form with fields for name, email, subject, and message.',
 		'content' => '<!-- wp:wpzoom-forms/form -->
-<div class="wp-block-wpzoom-forms-form"><!-- wp:wpzoom-forms/text-name-field {"id":"input_ae87379b"} -->
+<div class="wp-block-wpzoom-forms-form"><!-- wp:wpzoom-forms/text-name-field {"id":"input_ae87379b","name":"Name"} -->
 <label for="input_ae87379b"><span>Name</span><sup class="wp-block-wpzoom-forms-required">*</sup></label><input type="text" name="input_ae87379b" id="input_ae87379b" placeholder="" required class="wp-block-wpzoom-forms-text-name-field"/>
 <!-- /wp:wpzoom-forms/text-name-field -->
 
-<!-- wp:wpzoom-forms/text-email-field {"id":"input_8468ae36"} -->
+<!-- wp:wpzoom-forms/text-email-field {"id":"input_8468ae36","name":"Email"} -->
 <label for="input_8468ae36"><span>Email</span><sup class="wp-block-wpzoom-forms-required">*</sup></label><input type="email" name="input_8468ae36" id="input_8468ae36" placeholder="" required data-replyto="false" class="wp-block-wpzoom-forms-text-email-field"/>
 <!-- /wp:wpzoom-forms/text-email-field -->
 
@@ -29,8 +29,8 @@ $templates = array(
 <label for="input_85d61063"><span>Subject</span><sup class="wp-block-wpzoom-forms-required">*</sup></label><input type="text" name="input_85d61063" id="input_85d61063" placeholder="" required data-subject="true" class="wp-block-wpzoom-forms-text-plain-field"/>
 <!-- /wp:wpzoom-forms/text-plain-field -->
 
-<!-- wp:wpzoom-forms/textarea-field {"id":"input_d8cf917c"} -->
-<label for="input_d8cf917c"><span>Message</span></label><textarea name="input_d8cf917c" id="input_d8cf917c" cols="55" rows="10" placeholder="" class="wp-block-wpzoom-forms-textarea-field"></textarea>
+<!-- wp:wpzoom-forms/textarea-field {"id":"input_9d8d7aa6","name":"Message"} -->
+<label for="input_9d8d7aa6"><span>Message</span></label><textarea name="input_9d8d7aa6" id="input_9d8d7aa6" cols="55" rows="10" placeholder="" class="wp-block-wpzoom-forms-textarea-field"></textarea>
 <!-- /wp:wpzoom-forms/textarea-field -->
 
 <!-- wp:columns {"verticalAlignment":"center"} -->
