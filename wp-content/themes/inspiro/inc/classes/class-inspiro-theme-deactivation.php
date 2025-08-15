@@ -193,15 +193,13 @@ class Inspiro_Theme_Deactivation {
 			'usage_duration_days'               => $usage_data['usage_days'] ?? 0,
 			'usage_duration_formatted'          => $usage_data['formatted'] ?? 'Unknown',
 			'theme_activated_at'                => $usage_data['activated_at'] ?? null,
+			'nps_score'                         => intval( $_POST['nps_score'] ?? null ),
 		);
 
 		// Only include admin email if user consented
 		if ( $has_consent ) {
 			$survey_data['admin_email'] = sanitize_email( $_POST['admin_email'] ?? '' );
 		}
-
-		// Log the data (you can modify this to send to your analytics service).
-		error_log( 'Inspiro Theme Deactivation Survey: ' . wp_json_encode( $survey_data ) );
 
 		// Store in database option for later retrieval.
 		$existing_data = get_option( 'inspiro_deactivation_surveys', array() );
