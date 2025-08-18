@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Elementor Website Builder &#8211; More Than Just a Page Builder - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-08-13 20:39:09+0000\n"
+"PO-Revision-Date: 2025-08-15 17:42:02+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -2406,14 +2406,6 @@ msgstr "Wortabstand"
 msgid "Show Path"
 msgstr "Pfad anzeigen "
 
-#: modules/shapes/widgets/text-path.php:205
-msgid "LTR"
-msgstr "LTR"
-
-#: modules/shapes/widgets/text-path.php:204
-msgid "RTL"
-msgstr "RTL"
-
 #: modules/shapes/widgets/text-path.php:199
 msgid "Text Direction"
 msgstr "Textausrichtung"
@@ -2536,6 +2528,14 @@ msgstr "Die Optionen Mobile und Tablet können nicht gelöscht werden."
 #: core/kits/documents/tabs/settings-layout.php:215
 msgid "Active Breakpoints"
 msgstr "Aktive Breakpoints"
+
+#: modules/shapes/widgets/text-path.php:204
+msgid "RTL"
+msgstr "Rechts-nach-links-Schreibrichtung"
+
+#: modules/shapes/widgets/text-path.php:205
+msgid "LTR"
+msgstr "Links-nach-rechts-Schreibrichtung"
 
 #: modules/atomic-widgets/elements/atomic-youtube/atomic-youtube.php:86
 msgid "Privacy mode"
@@ -4282,13 +4282,6 @@ msgstr "Benutzerrolle ausgeschlossen"
 msgid "Manage What Your Users Can Edit In Elementor"
 msgstr "Festlegen, was Benutzer in Elementor bearbeiten können"
 
-#: core/common/modules/finder/categories/general.php:61
-#: core/role-manager/role-manager-menu-item.php:28
-#: core/role-manager/role-manager-menu-item.php:32
-#: core/role-manager/role-manager.php:50
-msgid "Role Manager"
-msgstr "Benutzerrollen verwalten"
-
 #: core/document-types/page-base.php:124
 msgid "Body Style"
 msgstr "Body-Stil"
@@ -4359,6 +4352,13 @@ msgstr "Füge Templates hinzu und verwende sie auf der gesamten Website. Du kann
 #: includes/admin-templates/new-template.php:57
 msgid "Use templates to create the different pieces of your site, and reuse them with one click whenever needed."
 msgstr "Verwende Templates, um unterschiedliche Bereiche deiner Website zu erstellen. Du kannst sie mit einem Klick erneut verwenden."
+
+#: core/common/modules/finder/categories/general.php:61
+#: core/role-manager/role-manager-menu-item.php:28
+#: core/role-manager/role-manager-menu-item.php:32
+#: core/role-manager/role-manager.php:50
+msgid "Role Manager"
+msgstr "Rollenverwaltung"
 
 #: includes/widgets/image-carousel.php:204
 msgid "Set how many slides are scrolled per swipe."
@@ -7921,6 +7921,10 @@ msgstr "Coole Zahl"
 msgid "Icon Position"
 msgstr "Icon-Position"
 
+#: includes/settings/settings.php:271
+msgid "Post Types"
+msgstr "Inhaltstypen"
+
 #: includes/base/element-base.php:1326 includes/base/element-base.php:1354
 #: includes/controls/groups/flex-container.php:101
 #: includes/controls/groups/flex-container.php:137
@@ -8022,10 +8026,6 @@ msgstr "Innenabstand"
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:177
 msgid "Custom"
 msgstr "Individuell"
-
-#: includes/settings/settings.php:271
-msgid "Post Types"
-msgstr "Inhaltstypen"
 
 #: core/experiments/manager.php:390 core/experiments/manager.php:680
 #: modules/element-cache/module.php:125
