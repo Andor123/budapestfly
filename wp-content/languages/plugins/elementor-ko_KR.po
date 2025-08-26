@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Elementor Website Builder &#8211; More Than Just a Page Builder - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-08-06 01:43:51+0000\n"
+"PO-Revision-Date: 2025-08-26 06:29:28+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -11,14 +11,13 @@ msgstr ""
 "Language: ko_KR\n"
 "Project-Id-Version: Plugins - Elementor Website Builder &#8211; More Than Just a Page Builder - Stable (latest release)\n"
 
-#: core/admin/admin-notices.php:504
+#: core/admin/admin-notices.php:494
 msgid "Collecting leads is just the beginning. With Send by Elementor, you can manage contacts, launch automations, and turn form submissions into sales."
 msgstr "리드 수집은 시작일 뿐입니다. Send by Elementor를 사용하면 연락처를 관리하고, 자동화를 실행하고, 양식 제출을 판매로 전환할 수 있습니다."
 
-#. translators: %s: Form plugin name
-#: core/admin/admin-notices.php:498
-msgid "Turn %s leads into loyal shoppers"
-msgstr "%s 리드를 충성도 높은 구매 고객으로 전환하세요"
+#: core/admin/admin-notices.php:490
+msgid "Turn leads into loyal shoppers"
+msgstr "잠재 고객을 충성도 높은 고객으로 전환"
 
 #: modules/variables/classes/rest-api.php:386
 msgid "Unexpected server error"
@@ -265,6 +264,11 @@ msgstr "킷 생성 실패: 잘못된 응답입니다"
 msgid "Enforce atomic widgets capabilities"
 msgstr "원자 위젯 기능을 강제합니다"
 
+#: app/modules/import-export-customization/module.php:196
+#: app/modules/import-export/module.php:198
+msgid "Here’s where you can export this website as a .zip file, upload it to the cloud, or start the process of applying an existing template to your site."
+msgstr "여기에서 이 웹사이트를 .zip 파일로 내보내거나 클라우드에 업로드하거나 기존 템플릿을 사이트에 적용하는 프로세스를 시작할 수 있습니다."
+
 #: app/modules/import-export-customization/module.php:116
 #: app/modules/import-export-customization/module.php:119
 #: app/modules/import-export/module.php:120
@@ -413,7 +417,7 @@ msgstr "사이트 템플릿"
 msgid "Not Authorized"
 msgstr "권한 없음"
 
-#: core/admin/admin-notices.php:547
+#: core/admin/admin-notices.php:537
 msgid "Create a more inclusive site experience for all your visitors. With Ally, it's easy to add your statement page in just a few clicks."
 msgstr "모든 방문자를 위한 보다 포용적인 사이트 경험을 만드세요. Ally를 사용하면 단 몇 번의 클릭으로 성명 페이지를 쉽게 추가할 수 있습니다."
 
@@ -451,7 +455,7 @@ msgstr "템플릿에 이름을 지정하세요"
 msgid "Type or paste your URL"
 msgstr "URL을 입력하거나 붙여넣으세요"
 
-#: core/admin/admin-notices.php:546
+#: core/admin/admin-notices.php:536
 msgid "Make sure your site has an accessibility statement page"
 msgstr "사이트에 접근성 성명 페이지가 있는지 확인하세요"
 
@@ -694,19 +698,23 @@ msgstr "Elementor AI로 통합"
 msgid "New! Unify pack-shots with Elementor AI"
 msgstr "새로운 기능! Elementor AI로 팩샷 통합"
 
-#: core/admin/admin-notices.php:620
+#: modules/cloud-library/connect/cloud-library.php:340
+msgid "Not connected"
+msgstr "연결되지 않음"
+
+#: core/admin/admin-notices.php:610
 msgid "Improve Transactional Email Deliverability"
 msgstr "트랜잭션 이메일 전달성 향상"
 
-#: core/admin/admin-notices.php:621
+#: core/admin/admin-notices.php:611
 msgid "Use Elementor's Site Mailer to ensure your store emails like purchase confirmations, shipping updates and more are reliably delivered."
 msgstr "Elementor의 사이트 메일러를 사용하면 구매 확인, 배송 업데이트 등의 스토어 이메일을 안정적으로 전달할 수 있습니다."
 
-#: core/admin/admin-notices.php:599
+#: core/admin/admin-notices.php:589
 msgid "Ensure your form emails avoid the spam folder!"
 msgstr "양식 이메일이 스팸 폴더에 들어가지 않도록 하세요!"
 
-#: core/admin/admin-notices.php:600
+#: core/admin/admin-notices.php:590
 msgid "Use Site Mailer for improved email deliverability, detailed email logs, and an easy setup."
 msgstr "향상된 이메일 전달률, 상세한 이메일 로그, 간편한 설정을 위해 Site Mailer를 사용하세요."
 
@@ -1749,11 +1757,11 @@ msgstr "지금 할인된 업그레이드!"
 msgid "Upgrade Sale Now"
 msgstr "지금 업그레이드 판매"
 
-#: core/admin/admin-notices.php:719
+#: core/admin/admin-notices.php:709
 msgid "Automatically compress and optimize images, resize larger files, or convert to WebP. Optimize images individually, in bulk, or on upload."
 msgstr "이미지를 자동으로 압축 및 최적화하고, 대용량 파일의 크기를 조정하거나, WebP로 변환할 수 있습니다. 이미지를 개별적으로, 일괄적으로 또는 업로드할 때 최적화하세요."
 
-#: core/admin/admin-notices.php:718
+#: core/admin/admin-notices.php:708
 msgid "Speed up your website with Image Optimizer by Elementor"
 msgstr "Elementor의 이미지 최적화 도구로 웹사이트 속도 향상하기"
 
@@ -1984,7 +1992,7 @@ msgstr "스크롤 효과"
 msgid "Sticky"
 msgstr "고정"
 
-#: core/admin/admin-notices.php:671 includes/controls/gallery.php:123
+#: core/admin/admin-notices.php:661 includes/controls/gallery.php:123
 #: includes/controls/media.php:319
 msgid "Install Plugin"
 msgstr "플러그인 설치"
@@ -2326,7 +2334,7 @@ msgstr "플렉스 수축"
 #: includes/controls/groups/image-size.php:380
 #: modules/atomic-widgets/image/image-sizes.php:38
 #: assets/js/packages/editor-controls/editor-controls.js:71
-#: assets/js/packages/editor-controls/editor-controls.strings.js:129
+#: assets/js/packages/editor-controls/editor-controls.strings.js:140
 msgid "Full"
 msgstr "전체"
 
@@ -2553,7 +2561,7 @@ msgstr "이전 슬라이드"
 #: assets/js/ai-gutenberg.js:11525 assets/js/ai-media-library.js:11307
 #: assets/js/ai-unify-product-images.js:11307 assets/js/ai.js:12768
 #: assets/js/packages/editor-controls/editor-controls.js:71
-#: assets/js/packages/editor-controls/editor-controls.strings.js:133
+#: assets/js/packages/editor-controls/editor-controls.strings.js:144
 msgid "Gradient"
 msgstr "그래디언트"
 
@@ -2765,7 +2773,7 @@ msgstr "수직 위치 조정"
 msgid "Horizontal Alignment"
 msgstr "수평 정렬"
 
-#: core/admin/admin-notices.php:772 core/admin/admin.php:1036
+#: core/admin/admin-notices.php:762 core/admin/admin.php:1036
 msgid "Dismiss this notice."
 msgstr "이 알림을 닫습니다."
 
@@ -2957,14 +2965,14 @@ msgctxt "Typography Control"
 msgid "(Extra Light)"
 msgstr "(좀 더 얇게)"
 
-#: core/experiments/manager.php:612
-msgid "Requires"
-msgstr "요구사항:"
-
 #: includes/controls/groups/typography.php:148
 msgctxt "Typography Control"
 msgid "(Bold)"
 msgstr "(굵게)"
+
+#: core/experiments/manager.php:612
+msgid "Requires"
+msgstr "요구사항"
 
 #: app/modules/import-export-customization/module.php:173
 #: app/modules/import-export/module.php:175
@@ -3264,7 +3272,7 @@ msgstr "관점"
 
 #: includes/base/element-base.php:1179
 #: assets/js/packages/editor-controls/editor-controls.js:87
-#: assets/js/packages/editor-controls/editor-controls.strings.js:137
+#: assets/js/packages/editor-controls/editor-controls.strings.js:126
 msgid "Skew X"
 msgstr "기울이기 X"
 
@@ -3305,13 +3313,13 @@ msgstr "수평 뒤집기"
 
 #: includes/base/element-base.php:1121
 #: assets/js/packages/editor-controls/editor-controls.js:87
-#: assets/js/packages/editor-controls/editor-controls.strings.js:139
+#: assets/js/packages/editor-controls/editor-controls.strings.js:128
 msgid "Scale X"
 msgstr "스케일 X"
 
 #: includes/base/element-base.php:1143
 #: assets/js/packages/editor-controls/editor-controls.js:87
-#: assets/js/packages/editor-controls/editor-controls.strings.js:140
+#: assets/js/packages/editor-controls/editor-controls.strings.js:129
 msgid "Scale Y"
 msgstr "스케일 Y"
 
@@ -3351,7 +3359,7 @@ msgstr "X 앵커 포인트"
 
 #: includes/base/element-base.php:941
 #: assets/js/packages/editor-controls/editor-controls.js:87
-#: assets/js/packages/editor-controls/editor-controls.strings.js:142
+#: assets/js/packages/editor-controls/editor-controls.strings.js:131
 msgid "Rotate X"
 msgstr "X 회전"
 
@@ -3361,7 +3369,7 @@ msgstr "Y 앵커 포인트"
 
 #: includes/base/element-base.php:964
 #: assets/js/packages/editor-controls/editor-controls.js:87
-#: assets/js/packages/editor-controls/editor-controls.strings.js:143
+#: assets/js/packages/editor-controls/editor-controls.strings.js:132
 msgid "Rotate Y"
 msgstr "Y 회전"
 
@@ -3371,7 +3379,7 @@ msgstr "로그"
 
 #: includes/base/element-base.php:1201
 #: assets/js/packages/editor-controls/editor-controls.js:87
-#: assets/js/packages/editor-controls/editor-controls.strings.js:138
+#: assets/js/packages/editor-controls/editor-controls.strings.js:127
 msgid "Skew Y"
 msgstr "기울이기 Y"
 
@@ -3503,7 +3511,7 @@ msgstr "페이지 전환을 사용하면 페이지 자산이 로드될 때까지
 #: includes/elements/column.php:453 includes/elements/container.php:862
 #: includes/elements/section.php:721 includes/widgets/heading.php:326
 #: assets/js/packages/editor-controls/editor-controls.js:71
-#: assets/js/packages/editor-controls/editor-controls.strings.js:130
+#: assets/js/packages/editor-controls/editor-controls.strings.js:141
 msgid "Overlay"
 msgstr "오버레이"
 
@@ -3938,8 +3946,8 @@ msgstr "단어 간격"
 
 #: app/modules/import-export-customization/module.php:197
 #: app/modules/import-export/module.php:199 core/admin/admin-notices.php:284
-#: core/admin/admin-notices.php:412 core/admin/admin-notices.php:513
-#: core/admin/admin-notices.php:561 core/admin/admin-notices.php:609
+#: core/admin/admin-notices.php:412 core/admin/admin-notices.php:503
+#: core/admin/admin-notices.php:551 core/admin/admin-notices.php:599
 #: core/experiments/manager.php:317 core/experiments/manager.php:333
 #: core/experiments/manager.php:362 core/experiments/manager.php:533
 #: includes/controls/url.php:78 includes/elements/section.php:473
@@ -5681,6 +5689,11 @@ msgstr "나는 Elementor Pro를 가지고 있습니다"
 msgid "Elementor Debugger"
 msgstr "Elementor 디버거"
 
+#. translators: 1: `<code>` opening tag, 2: `</code>` closing tag.
+#: includes/widgets/traits/button-trait.php:217
+msgid "Please make sure the ID is unique and not used elsewhere on the page. This field allows %1$sA-z 0-9%2$s & underscore chars without spaces."
+msgstr "ID가 고유하고 페이지의 다른 곳에서 사용되지 않았는지 확인하세요. 이 필드에는 공백 없이 %1$sA-z 0-9%2$s 및 밑줄 문자를 사용할 수 있습니다."
+
 #: core/admin/admin.php:219 assets/js/admin.js:2096 assets/js/gutenberg.js:147
 msgid "Back to WordPress Editor"
 msgstr "워드프레스 편집기로 돌아가기"
@@ -6263,7 +6276,7 @@ msgstr "기본 글꼴 비활성화"
 #: modules/nested-tabs/widgets/nested-tabs.php:276
 #: modules/nested-tabs/widgets/nested-tabs.php:346
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:22
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:95
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:93
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:160
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:196
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:201
@@ -6297,7 +6310,7 @@ msgstr "시작"
 #: modules/nested-tabs/widgets/nested-tabs.php:284
 #: modules/nested-tabs/widgets/nested-tabs.php:354
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:22
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:97
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:95
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:162
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:198
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:203
@@ -7349,7 +7362,7 @@ msgstr "모서리 굴림"
 #: modules/floating-buttons/base/widget-floating-bars-base.php:981
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:1483
 #: assets/js/packages/editor-controls/editor-controls.js:71
-#: assets/js/packages/editor-controls/editor-controls.strings.js:131
+#: assets/js/packages/editor-controls/editor-controls.strings.js:142
 msgid "Background Overlay"
 msgstr "배경 오버레이"
 
@@ -7499,7 +7512,7 @@ msgstr "애니메이션 속도"
 #: includes/widgets/image-carousel.php:545
 #: modules/nested-tabs/widgets/nested-tabs.php:191
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:22
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:85
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:83
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:179
 msgid "Direction"
 msgstr "방향"
@@ -8034,7 +8047,7 @@ msgstr "고정"
 #: assets/js/packages/editor-controls/editor-controls.strings.js:72
 #: assets/js/packages/editor-controls/editor-controls.strings.js:124
 #: assets/js/packages/editor-controls/editor-controls.strings.js:125
-#: assets/js/packages/editor-controls/editor-controls.strings.js:134
+#: assets/js/packages/editor-controls/editor-controls.strings.js:145
 msgid "Color"
 msgstr "색상"
 
@@ -8254,7 +8267,7 @@ msgstr "이미지 선택"
 #: modules/atomic-widgets/elements/atomic-image/atomic-image.php:66
 #: assets/js/packages/editor-controls/editor-controls.js:71
 #: assets/js/packages/editor-controls/editor-controls.strings.js:41
-#: assets/js/packages/editor-controls/editor-controls.strings.js:132
+#: assets/js/packages/editor-controls/editor-controls.strings.js:143
 msgid "Image"
 msgstr "이미지"
 
@@ -8547,8 +8560,8 @@ msgstr "삭제"
 #: assets/js/ai.js:12743 assets/js/ai.js:12755 assets/js/ai.js:12766
 #: assets/js/ai.js:12777 assets/js/ai.js:12788 assets/js/ai.js:12804
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:22
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:80
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:89
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:78
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:87
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:134
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:191
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:192
@@ -8924,7 +8937,7 @@ msgstr "시작 번호"
 #: modules/nested-tabs/widgets/nested-tabs.php:701
 #: modules/nested-tabs/widgets/nested-tabs.php:1051
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:22
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:77
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:117
 msgid "Padding"
 msgstr "패딩"
 
@@ -8987,7 +9000,7 @@ msgstr "역할 제외"
 #: includes/widgets/image-gallery.php:160 includes/widgets/social-icons.php:295
 #: includes/widgets/text-editor.php:177
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:22
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:117
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:115
 msgid "Columns"
 msgstr "열"
 
@@ -9090,7 +9103,7 @@ msgstr "정보 복사 및 붙여넣기"
 #: modules/shapes/widgets/text-path.php:409
 #: modules/shapes/widgets/text-path.php:501
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:22
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:112
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:110
 msgid "Normal"
 msgstr "정상"
 
@@ -9538,7 +9551,7 @@ msgstr "스트레치"
 #: modules/nested-tabs/widgets/nested-tabs.php:350
 #: modules/shapes/widgets/text-path.php:181
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:22
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:96
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:94
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:161
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:197
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:202
@@ -9622,7 +9635,7 @@ msgstr "간격"
 #: modules/nested-tabs/widgets/nested-tabs.php:230
 #: modules/nested-tabs/widgets/nested-tabs.php:272
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:22
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:98
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:96
 msgid "Justify"
 msgstr "양쪽 맞춤"
 
@@ -9639,7 +9652,7 @@ msgstr "크게"
 #: includes/elements/container.php:1376 includes/elements/section.php:1227
 #: includes/widgets/common-base.php:310
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:22
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:76
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:116
 msgid "Margin"
 msgstr "여백"
 
@@ -9686,7 +9699,7 @@ msgctxt "Typography Control"
 msgid "Family"
 msgstr "패밀리"
 
-#: core/admin/admin-notices.php:668 includes/controls/gallery.php:123
+#: core/admin/admin-notices.php:658 includes/controls/gallery.php:123
 #: includes/controls/media.php:319
 msgid "Activate Plugin"
 msgstr "플러그인 활성화"
@@ -9713,7 +9726,7 @@ msgstr "아이콘 색상"
 #: core/upgrade/manager.php:47 includes/editor-templates/navigator.php:94
 #: includes/editor-templates/panel-elements.php:98
 #: includes/editor-templates/panel.php:197
-#: includes/editor-templates/templates.php:220 includes/plugin.php:867
+#: includes/editor-templates/templates.php:220 includes/plugin.php:868
 #: includes/settings/admin-menu-items/admin-menu-item.php:29
 #: includes/settings/settings.php:91 includes/settings/settings.php:92
 #: includes/settings/settings.php:487 modules/compatibility-tag/module.php:36
