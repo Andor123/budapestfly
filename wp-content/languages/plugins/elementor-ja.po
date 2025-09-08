@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Elementor Website Builder &#8211; More Than Just a Page Builder - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-09-04 15:03:13+0000\n"
+"PO-Revision-Date: 2025-09-06 16:00:42+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -48,6 +48,10 @@ msgstr "Ally プラグインを有効化して、サイト全体でアクセシ�
 msgid "Install Ally to add an accessibility widget visitors can use to navigate your site."
 msgstr "Ally をインストールして、訪問者がサイトをナビゲートするために使用できるアクセシビリティ ウィジェットを追加します。"
 
+#: core/utils/hints.php:452
+msgid "Customize the widget's look, position and the capabilities available for your visitors."
+msgstr "ウィジェットの外観、位置、訪問者が利用できる機能をカスタマイズします。"
+
 #. translators: %s: Platform name.
 #: modules/floating-buttons/classes/render/contact-buttons-render-base.php:270
 msgid "Open %s"
@@ -68,9 +72,78 @@ msgstr "%sを閉じる"
 msgid "Variable label already exists"
 msgstr "変数ラベルはすでに存在します"
 
+#. translators: %s: Maximum number of icons allowed.
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:572
+msgid "Add up to %s icons"
+msgstr "最大%s個のアイコンを追加"
+
+#. translators: %s: Maximum number of CTA links allowed.
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:316
+msgid "Add up to %s CTA links"
+msgstr "最大%s個の CTA リンクを追加"
+
+#. translators: %s: Maximum number of images allowed.
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:228
+msgid "Add up to %s Images"
+msgstr "最大%s枚の画像を追加"
+
+#. translators: %s: Items limit.
+#: modules/floating-buttons/base/widget-contact-button-base.php:766
+msgid "Add up to %s contact buttons"
+msgstr "最大%s個の連絡ボタンを追加"
+
+#: includes/widgets/alert.php:240
+msgid "Side Border Width"
+msgstr "サイドボーダー幅"
+
+#: includes/widgets/alert.php:229
+msgid "Side Border Color"
+msgstr "サイドボーダーの色"
+
+#: app/modules/import-export-customization/runners/import/site-settings.php:168
+#: app/modules/import-export/runners/import/site-settings.php:168
+msgid "Failed to install theme: %1$s"
+msgstr "テーマのインストールに失敗しました: %1$s"
+
+#. translators: 1: Minimum items, 2: Items limit.
+#: modules/floating-buttons/base/widget-contact-button-base.php:752
+msgid "Add between %1$s to %2$s contact buttons"
+msgstr "%1$s～%2$s個のコンタクトボタンを追加"
+
+#: app/modules/import-export-customization/runners/import/site-settings.php:172
+#: app/modules/import-export/runners/import/site-settings.php:172
+msgid "Theme: %1$s has been successfully installed"
+msgstr "テーマ: %1$s が正常にインストールされました"
+
+#: app/modules/import-export-customization/runners/import/site-settings.php:161
+#: app/modules/import-export/runners/import/site-settings.php:161
+msgid "Theme: %1$s has already been installed and activated"
+msgstr "テーマ: %1$s はすでにインストールされ、有効化されています"
+
+#: app/modules/import-export-customization/runners/import/site-settings.php:153
+#: app/modules/import-export/runners/import/site-settings.php:153
+msgid "Theme: %1$s is already used"
+msgstr "テーマ: %1$s はすでに使用されています"
+
 #: app/app.php:288
 msgid "Import/Export Customization"
 msgstr "インポート / エクスポートのカスタマイズ"
+
+#: app/modules/import-export-customization/module.php:157
+msgid "Open the Library"
+msgstr "ライブラリを開く"
+
+#: app/modules/import-export-customization/module.php:148
+msgid "Upload .zip file"
+msgstr ".zipファイルをアップロード"
+
+#: app/modules/import-export-customization/module.php:145
+msgid "Apply a Website Template"
+msgstr "サイトテンプレートを適用"
+
+#: app/app.php:289
+msgid "Enable advanced customization options for import/export functionality."
+msgstr "インポート / エクスポート機能の高度なカスタマイズオプションを有効化。"
 
 #: core/admin/admin-notices.php:494
 msgid "Collecting leads is just the beginning. With Send by Elementor, you can manage contacts, launch automations, and turn form submissions into sales."
@@ -263,6 +336,19 @@ msgstr "Elementor Library への接続に失敗しました。"
 #: includes/widgets/common-base.php:208
 msgid "Hexagon Donut"
 msgstr "六角形ドーナツ"
+
+#: modules/atomic-widgets/elements/atomic-youtube/atomic-youtube.php:87
+msgid "Related videos"
+msgstr "関連動画"
+
+#: includes/widgets/common-base.php:196
+msgid "Trapezoid Down"
+msgstr "Trapezoid Down"
+
+#: app/modules/import-export-customization/module.php:137
+#: app/modules/import-export/module.php:139
+msgid "Export this website"
+msgstr "このサイトをエクスポート"
 
 #: app/modules/import-export-customization/module.php:116
 #: app/modules/import-export-customization/module.php:119
@@ -595,6 +681,23 @@ msgstr "フローティングバー"
 msgid "Floating Bars"
 msgstr "フローティングバー"
 
+#: modules/ai/preferences.php:61
+msgid "Elementor - AI"
+msgstr "Elementor - AI"
+
+#: modules/atomic-widgets/module.php:148
+msgid "Atomic Widgets"
+msgstr "Atomic ウィジェット"
+
+#: modules/floating-buttons/base/widget-floating-bars-base.php:228
+#: modules/floating-buttons/base/widget-floating-bars-base.php:1130
+msgid "Pause and Play"
+msgstr "一時停止と再生"
+
+#: modules/floating-buttons/base/widget-floating-bars-base.php:1183
+msgid "Align Elements"
+msgstr "要素を整列"
+
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:285
 #: assets/js/packages/editor-controls/editor-controls.js:28
 #: assets/js/packages/editor-controls/editor-controls.strings.js:82
@@ -635,6 +738,10 @@ msgstr "シングルチャット"
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:1026
 msgid "Image Links"
 msgstr "画像リンク"
+
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:243
+msgid "Images Per Row"
+msgstr "行あたりの画像数"
 
 #: modules/floating-buttons/base/widget-contact-button-base.php:3082
 #: modules/floating-buttons/base/widget-floating-bars-base.php:1488
@@ -1045,6 +1152,23 @@ msgstr "見出しについて"
 msgid "Icons Per Row"
 msgstr "行あたりのアイコン数"
 
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:91
+msgid "Top 10 Recipes"
+msgstr "トップ10レシピ"
+
+#: modules/element-cache/module.php:119
+msgid "Cache Settings"
+msgstr "キャッシュ設定"
+
+#: modules/floating-buttons/base/widget-contact-button-base.php:645
+#: modules/floating-buttons/base/widget-contact-button-base.php:1714
+msgid "Message Bubble"
+msgstr "メッセージバブル"
+
+#: modules/floating-buttons/base/widget-contact-button-base.php:2766
+msgid "Open Animation"
+msgstr "アニメーションを開く"
+
 #: core/settings/editor-preferences/model.php:58
 msgid "Panel"
 msgstr "パネル"
@@ -1147,6 +1271,11 @@ msgstr "先頭に固定表示"
 msgid "Mouse Effects"
 msgstr "マウス効果"
 
+#: core/admin/admin-notices.php:661 includes/controls/gallery.php:123
+#: includes/controls/media.php:319 includes/widgets/heading.php:473
+msgid "Install Plugin"
+msgstr "プラグインをインストール"
+
 #: includes/widgets/testimonial.php:197
 msgid "Designer"
 msgstr "デザイナー"
@@ -1190,6 +1319,14 @@ msgstr "すべてのテンプレート"
 msgid "View Template"
 msgstr "テンプレートを表示"
 
+#: modules/element-manager/ajax.php:117
+msgid "Invalid nonce."
+msgstr "無効な nonce。"
+
+#: includes/template-library/sources/local.php:235
+msgid "Search Template"
+msgstr "テンプレートを検索"
+
 #: includes/widgets/video.php:162
 msgid "VideoPress"
 msgstr "VideoPress"
@@ -1212,6 +1349,10 @@ msgstr "VideoPress"
 #: assets/js/onboarding.04d189eccf40ae88f85d.bundle.js:467
 msgid "Upgrade now"
 msgstr "今すぐアップグレード"
+
+#: includes/widgets/video.php:313
+msgid "VideoPress URL"
+msgstr "VideoPress URL"
 
 #: includes/controls/groups/image-size.php:380
 #: modules/atomic-widgets/image/image-sizes.php:38
@@ -1330,6 +1471,10 @@ msgstr "フレックスシュリンク"
 msgid "Justify Items"
 msgstr "項目の両端揃え"
 
+#: includes/controls/groups/flex-container.php:41
+msgid "Row - reversed"
+msgstr "Row - reversed"
+
 #: modules/nested-tabs/widgets/nested-tabs.php:195
 #: modules/nested-tabs/widgets/nested-tabs.php:861
 msgid "Above"
@@ -1408,6 +1553,10 @@ msgstr "項目の位置"
 msgid "All collapsed"
 msgstr "すべて非表示にしました"
 
+#: modules/nested-accordion/widgets/nested-accordion.php:342
+msgid "First expanded"
+msgstr "最初に拡張"
+
 #: core/document-types/page-base.php:245
 #: includes/controls/groups/flex-item.php:80
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:22
@@ -1467,6 +1616,14 @@ msgstr "サイズに合わせる"
 #: includes/controls/gallery.php:84 assets/js/editor.js:14681
 msgid "Clear gallery"
 msgstr "ギャラリーをクリア"
+
+#: core/document-types/page-base.php:257
+msgid "Allow Comments"
+msgstr "コメントを許可"
+
+#: includes/frontend.php:1389
+msgid "Previous slide"
+msgstr "前のスライド"
 
 #: modules/ai/connect/ai.php:27 assets/js/ai-admin.js:654
 #: assets/js/ai-admin.js:7763 assets/js/ai-gutenberg.js:792
@@ -1983,6 +2140,10 @@ msgstr "3D 回転"
 #: includes/controls/groups/text-stroke.php:85
 msgid "Stroke Color"
 msgstr "線の色"
+
+#: modules/usage/usage-reporter.php:22
+msgid "Elements Usage"
+msgstr "要素の使用法"
 
 #: core/editor/data/globals/endpoints/base.php:46
 msgid "Invalid title"
