@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Themes - Inspiro package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-09-07 13:29:27+0000\n"
+"PO-Revision-Date: 2025-09-09 12:25:39+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -47,6 +47,10 @@ msgstr "新規"
 #: inc/admin/pages/quick-start.php:480
 msgid "Header Builder"
 msgstr "ヘッダービルダー"
+
+#: inc/classes/class-inspiro-theme-deactivation.php:105
+msgid "I consent to sharing my website technical details to help WPZOOM improve the Inspiro theme."
+msgstr "WPZOOM が Inspiro テーマを改善できるように、ウェブサイトの技術に関する詳細の共有に承諾いたします。"
 
 #: inc/classes/class-inspiro-starter-content-notice.php:292
 msgid "Dashboard"
@@ -267,13 +271,25 @@ msgstr "投稿タイトル"
 msgid "All Headings"
 msgstr "すべての見出し"
 
+#: inc/customizer/configs/theme-layout/class-inspiro-theme-layout-config.php:136
+msgid "Controls the width of narrow content containers (used in posts and pages). Default: 950px"
+msgstr "狭いコンテナのコンテンツの幅を操作する (投稿とページに使用される)。デフォルト: 950px"
+
 #: inc/customizer/configs/theme-layout/class-inspiro-theme-layout-config.php:135
 msgid "Narrow Container Width (px)"
 msgstr "狭いコンテナの幅 (px)"
 
+#: inc/customizer/configs/theme-layout/class-inspiro-theme-layout-config.php:125
+msgid "⚠️ Warning: This will override the width of boxed containers in your existing Elementor pages. When enabled, boxed containers in Elementor will use the same width as set above, ensuring alignment with your theme's layout."
+msgstr "⚠️ 注意: これにより既存の Elementor ページ内のボックスコンテナの幅が上書きされます。有効化すると、Elementor のボックスコンテナにセットされた幅が同じ幅を使用し、テーマのレイアウトとの配置を保証します。"
+
 #: inc/customizer/configs/theme-layout/class-inspiro-theme-layout-config.php:124
 msgid "Apply container width to Elementor pages"
 msgstr "Elementor のページにコンテナの幅を適用する"
+
+#: inc/customizer/configs/theme-layout/class-inspiro-theme-layout-config.php:111
+msgid "Controls the width of main content containers and block editor content width. Default: 1200px"
+msgstr "メインコンテナのコンテンツとブロックエディターコンテンツの幅を操作する。デフォルト: 1200px"
 
 #: inc/customizer/configs/theme-layout/class-inspiro-theme-layout-config.php:110
 msgid "Default Container Width (px)"
@@ -294,6 +310,10 @@ msgstr "さらに詳しく"
 #: inc/admin/pages/demos.php:32
 msgid "All"
 msgstr "すべて"
+
+#: inc/admin/pages/demos.php:28
+msgid "Inspiro Premium • 36 Starter Sites"
+msgstr "Inspiro プレミアム • 36 つのスターターサイト"
 
 #: inc/admin/pages/support.php:127
 msgid "Get Premium Support"
@@ -435,17 +455,37 @@ msgstr "洗練されたプレゼンテーションのために、複数のテン
 msgid "Advanced Portfolio"
 msgstr "高度なポートフォリオ"
 
+#: inc/admin/pages/quick-start.php:359
+msgid "Create a fully working slideshow with videos from YouTube or Vimeo, plus mobile video options, popups, and more."
+msgstr "YouTube や Vimeo の動画を使った本格的なスライドショーを作成できます。そしてモバイル向け動画オプション、ポップアップなどの機能も利用できます。"
+
 #: inc/admin/pages/quick-start.php:356
 msgid "Advanced Slideshow"
 msgstr "高度なスライドショー"
+
+#: inc/admin/pages/quick-start.php:236
+msgid "Reflect your brand’s style by customizing global fonts. Select font families, sizes, and weights for a cohesive, professional look."
+msgstr "あなたのブランドスタイルが反映されるためにグローバルフォントをカスタイズする。統一したプロフェッショナルな外観のために、フォントのファミリー、サイズと太さを選びましょう。"
 
 #: inc/admin/pages/quick-start.php:233
 msgid "Fonts"
 msgstr "フォント"
 
+#: inc/admin/pages/quick-start.php:216
+msgid "Align your site with your brand by setting up global colors. Customize the background, text, and link colors for consistency."
+msgstr "グロバールカラーの設定であなたのサイトのブランドに合わせましょう。統一性を確保するために背景、テキストとリンク色をカスタイズする。"
+
 #: inc/admin/pages/quick-start.php:198
 msgid "Use the Footer settings to personalize your theme’s layout. Add widgets in the Widgets section to enhance your site’s footer."
 msgstr "フッター設定を利用して、テーマのレイアウトをパーソナライズする。ウィジェットセクションにウィジェットを追加することで、サイトのフッターを強化する。"
+
+#: inc/admin/pages/quick-start.php:177
+msgid "Configure your Header settings to suit your theme. Adjust menus, logos, and other elements for a polished, branded look."
+msgstr "あなたのテーマに合わせてヘッダー設定を構成しましょう。メニュー、ロゴと他の要素を調整して、洗練されたブランドの外観を実現する。"
+
+#: inc/admin/pages/quick-start.php:152
+msgid "Importing demo data is the easiest way to set up your theme, so you can edit everything quickly without building content manually."
+msgstr "デモデータのインポートは、テーマを設定する最も簡単な方法で、手動でコンテンツを作る必要がなく、すべてを素早く編集できます。"
 
 #: inc/admin/pages/quick-start.php:122
 msgid "Update to Inspiro Premium"
@@ -466,6 +506,10 @@ msgstr "ポートフォリオをインストール"
 #: inc/admin/pages/quick-start.php:69
 msgid "Add new post"
 msgstr "新規投稿を追加"
+
+#: inc/admin/pages/quick-start.php:63
+msgid "Quickly create a Portfolio section on your site using the free version of the WPZOOM Portfolio plugin available to everyone."
+msgstr "誰でも利用可能な WPZOOM Portfolio プラグインのフリー版を使用して、サイトに素早くポートフォリオセクションを作成できます。"
 
 #: inc/admin/pages/quick-start.php:45
 msgid "Add a logo image in the Site Identity section via Customizer, and it will appear neatly in your website’s header."
@@ -509,6 +553,10 @@ msgstr "ダッシュボード"
 msgid "Preview"
 msgstr "プレビュー"
 
+#: inc/admin/pages/demos.php:488
+msgid "Available for "
+msgstr "対応端末 "
+
 #: inc/admin/pages/demos.php:44
 msgid "Block Editor"
 msgstr "ブロックエディター"
@@ -516,6 +564,10 @@ msgstr "ブロックエディター"
 #: inc/admin/pages/demos.php:38
 msgid "Elementor"
 msgstr "Elementor"
+
+#: inc/admin/pages/demos.php:11
+msgid "Explore the available demos in the Inspiro Premium theme below. Unlock access to all demos by upgrading to the premium version."
+msgstr "下にある Inspiro プレミアムテーマの利用可能なデモを探検しましょう。プレミアム版にアップグレードすると、すべてのデモにアクセス可能になります。"
 
 #: inc/admin/pages/demos.php:7 inc/admin/pages/demos.php:20
 #: inc/admin/pages/main-menu.php:54
@@ -529,6 +581,10 @@ msgstr "Inspiro スターターサイトをインストール"
 #: inc/admin/pages/demo.php:42
 msgid "Installing Inspiro Starter Sites"
 msgstr "Inspiro スターターサイトはインストール中"
+
+#: inc/admin/pages/demo.php:19
+msgid "Importing demo data is the fastest and easiest way to set up your new theme. Choose your desired template, click on 'Import Demo' and start editing pre-designed content and layouts instead of building everything from scratch."
+msgstr "デモデータのインポートは、新しいテーマを設定する最も速くて簡単な方法です。お好みのテンプレートを選び、「デモをインポート」をクリックして、ゼロから作らずに既存のデザイン済みコンテンツとレイアウトを編集開始。"
 
 #: inc/admin/pages/demo.php:17
 msgid "Inspiro Starter Sites"
@@ -741,9 +797,17 @@ msgstr "サイドバーとウィジェット"
 msgid "Adjust gradient opacity"
 msgstr "グラデーション不透明度を調整"
 
+#: inc/customizer/configs/colors/class-inspiro-color-hero-config.php:155
+msgid "Scroll to Content Arrow"
+msgstr "「コンテンツへスクロール」の矢印"
+
 #: inc/customizer/configs/colors/class-inspiro-color-hero-config.php:117
 msgid "Hero Title Text Color"
 msgstr "ヒーローのタイトルのテキスト色"
+
+#: inc/customizer/configs/colors/class-inspiro-color-header-config.php:200
+msgid "On Homepage works only when the Hero Area is disabled or not shown"
+msgstr "ホームページでは、ヒーローエリアが無効化された、もしくは表示していない場合にのみ機能します"
 
 #: inc/customizer/configs/colors/class-inspiro-color-header-config.php:187
 msgid "Header Menu"
@@ -867,6 +931,10 @@ msgstr "ヘッダー設定"
 msgid "Select a layout"
 msgstr "レイアウトを選択"
 
+#: inc/customizer/configs/footer/class-inspiro-footer-copyright-config.php:71
+msgid "You can insert the following tags: {copyright}, {current-year}, {site-title}"
+msgstr "以下のタグを挿入できます: {copyright}, {current-year}, {site-title}"
+
 #: inc/customizer/configs/footer/class-inspiro-footer-copyright-config.php:55
 msgid "Copyright Text"
 msgstr "著作権テキスト"
@@ -945,6 +1013,11 @@ msgstr "背景"
 msgctxt "Color name"
 msgid "Foreground"
 msgstr "前景"
+
+#: theme.json
+msgctxt "Color name"
+msgid "LightGrey"
+msgstr "ライトグレイ"
 
 #: theme.json
 msgctxt "Color name"
@@ -1055,6 +1128,16 @@ msgstr "価格表"
 msgctxt "Pattern title"
 msgid "List of Posts"
 msgstr "投稿のリスト"
+
+#: patterns/homepage-with-hero-at-the-top.php
+msgctxt "Pattern title"
+msgid "Homepage (with hero at the top)"
+msgstr "ホームページ (ヒーローがトップにある)"
+
+#: patterns/hero-with-video-lightbox.php
+msgctxt "Pattern title"
+msgid "Hero with Video Lightbox"
+msgstr "動画ライトボックス付きのヒーロー"
 
 #: patterns/hero-with-button.php
 msgctxt "Pattern title"
@@ -1172,6 +1255,16 @@ msgstr "賞"
 msgctxt "Pattern title"
 msgid "About Us"
 msgstr "当社について"
+
+#: patterns/about-us-dark.php
+msgctxt "Pattern title"
+msgid "About Us (Dark)"
+msgstr "当社について (ダーク)"
+
+#: patterns/about-2.php
+msgctxt "Pattern title"
+msgid "About #2"
+msgstr "当社についてその 2"
 
 #: patterns/about-2.php:14 patterns/about-us-dark.php:14
 #: patterns/about-us.php:14 patterns/contact-2.php:14
