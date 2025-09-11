@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Themes - Inspiro package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-09-09 12:25:39+0000\n"
+"PO-Revision-Date: 2025-09-10 16:35:08+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1188,9 +1188,22 @@ msgstr "ホームページ"
 msgid "Open the Documentation"
 msgstr "ドキュメンテーションをオープン"
 
+#. translators: %1$s: Documentation URL. %2$s: Link title.
+#: inc/classes/class-inspiro-theme-upgrader.php:160
+msgid "If you're having issues with your front page or the hero area after the upgrade, make sure to check the theme <a href=\"%1$s\" target=\"_blank\" title=\"%2$s\">documentation</a> for setup instructions."
+msgstr "アップグレード後にもしフロントページやヒーローエリアに問題がある場合、必ずテーマのセットアップ手順の <a href=\"%1$s\" target=\"_blank\" title=\"%2$s\"> ドキュメント </a> をご確認ください。"
+
+#: inc/classes/class-inspiro-theme-upgrader.php:158
+msgid "Click the \"Replace active with uploaded\" button below to complete the installation"
+msgstr "下にある「アップロードしたもので現在のものを置き換える」ボタンをクリックすると、インストールが完了する"
+
 #: inc/customizer/configs/logo/class-inspiro-custom-logo-text-config.php:41
 msgid "You can enter a different title without changing the Site Title"
 msgstr "サイトのタイトルを変更せずに、別のタイトルを入力できます。"
+
+#: inc/customizer/configs/homepage-media/class-inspiro-homepage-media-media-config.php:91
+msgid "Make the video full height to remove the black borders at the top and bottom (experimental option)."
+msgstr "上下の黒い枠を削除するため、動画をフルの高さで表示 (実験中のオプション)。"
 
 #: inc/customizer/configs/homepage-media/class-inspiro-homepage-media-media-config.php:90
 msgid "Full Height on Mobile Devices"
@@ -1281,6 +1294,10 @@ msgstr "WooCommerce の機能"
 msgid "👉 Unlock all options and features"
 msgstr "👉 すべてのオプションと機能をアンロック"
 
+#: inc/customizer/configs/blog-post/class-inspiro-post-options-config.php:93
+msgid "Unlock all customization and post options by upgrading to the Premium version of the theme. Disable specific elements and features, customize colors, fonts, header, footer & much more!"
+msgstr "テーマのプレミアム版にアップグレードすることで、すべてのカスタマイズと投稿オプションを利用可能になります。特定の要素や機能を無効化したり、色、フォント、ヘッダー、フッターなどを自由にカスタマイズできます。"
+
 #: inc/customizer/configs/blog-post/class-inspiro-post-options-config.php:92
 msgid "⚙️ You can control every detail in your theme with Inspiro Premium!"
 msgstr "⚙️ Inspiro プレミアムでテーマのあらゆる要素を操作出来ます !"
@@ -1301,6 +1318,15 @@ msgstr "アーカイブページに表示するコンテンツ"
 #: inc/classes/class-inspiro-notice-review.php:106
 msgid "Leave a Review"
 msgstr "レビューを残す"
+
+#. Translators: %1$s current user display name.
+#: inc/classes/class-inspiro-notice-review.php:93
+msgid "We hope you are enjoying the %1$s theme! %2$sWe'd be grateful if you could take a moment to share your positive experience with others by leaving a review on WordPress.org. This helps us continue providing updates and support for this theme."
+msgstr "%1$s テーマを楽しんでいただけていれば幸いです ! %2$s WordPress.org にレビューを残して、お客様の良い体験を他の方々にシェアしていただければとても嬉しいです。これによりテーマの継続的な更新とサポートにつながりますので、ご協力のほどよろしくお願いいたします。"
+
+#: inc/classes/class-inspiro-notice-review.php:87
+msgid "Love Inspiro Theme? Share a 5-Star Review! 🌟"
+msgstr "Inspiro テーマが気に入った ? 5つ星レビューをお願いします !"
 
 #. Template Name of the theme
 msgid "Page without title"
@@ -1361,6 +1387,10 @@ msgstr "サイトのロゴ"
 #: inc/admin/pages/quick-start.php:33
 msgid "Customize & Configure"
 msgstr "カスタマイズと構成"
+
+#: inc/admin/pages/quick-start.php:11
+msgid "Thank you for installing the Inspiro Lite theme! Below you can find quick links to different sections in the Customizer where you can configure and customize the theme. The free version includes limited features and customization options, but if you need more flexibility and plan to take your website to the next level, make sure to check out the Premium version."
+msgstr "Inspiro Lite テーマのインストール、誠にありがとうございます。下にテーマの設定とカスタマイズができるカスタマイザーの各セクションへのクイックリンクがあります。無料版は機能とカスタマイズオプションに制限がありますが、より柔軟なカスタマイズが必要で、ウェブサイトをレベルアップしたい場合、プレミアム版もぜひご覧ください。"
 
 #: inc/admin/pages/main-menu.php:42
 msgid "Free vs. Premium"
@@ -1427,6 +1457,14 @@ msgstr "幅狭"
 msgid "Header Menu Width"
 msgstr "ヘッダーメニューの幅"
 
+#: inc/customizer/configs/header/class-inspiro-header-area-config.php:191
+msgid "Center menu with Logo Center"
+msgstr "中央ロゴ付き中央メニュー"
+
+#: inc/customizer/configs/header/class-inspiro-header-area-config.php:187
+msgid "Left menu with Logo Center"
+msgstr "中央ロゴ付き左メニュー"
+
 #: inc/customizer/configs/header/class-inspiro-header-area-config.php:170
 msgid "Hidden menu"
 msgstr "隠されたメニュー"
@@ -1477,6 +1515,10 @@ msgstr "PRO"
 #: inc/customizer/configs/footer/class-inspiro-footer-widget-areas-config.php:60
 msgid "Footer Layout"
 msgstr "フッターレイアウト"
+
+#: inc/admin/pages/support.php:45
+msgid "Subscribe for Tips & Tricks"
+msgstr "ヒントとコツを購読する"
 
 #. Template Name of the theme
 msgid "Homepage (Without Hero Area)"
