@@ -168,6 +168,59 @@
 		}
 	});
 
+	// Palette Selector Control
+	api.controlConstructor['inspiro-palette'] = api.Control.extend({
+		ready() {
+			const control = this;
+			const $container = this.container;
+			const $input = $container.find('.inspiro-palette-input');
+			const $options = $container.find('.inspiro-palette-option');
+
+			// Get palette data from control params (passed from PHP)
+			const palettes = control.params.palettes || {};
+
+			// Handle palette selection
+			$options.on('click', function () {
+				const $option = $(this);
+				const paletteId = $option.data('palette');
+
+				// Update UI
+				$options.removeClass('selected');
+				$option.addClass('selected');
+
+				// Update setting
+				control.setting.set(paletteId);
+
+				// Update all theme colors from the palette
+				if (palettes[paletteId] && palettes[paletteId].theme_colors) {
+					const themeColors = palettes[paletteId].theme_colors;
+
+					// Loop through each color setting and update it
+					$.each(themeColors, function(settingId, colorValue) {
+						if (api(settingId)) {
+							api(settingId).set(colorValue);
+
+							// Trigger alpha color picker to update its visual preview
+							const $colorControl = api.control(settingId);
+							if ($colorControl && $colorControl.container) {
+								const $input = $colorControl.container.find('.zoom-alpha-color-picker');
+								if ($input.length) {
+									$input.val(colorValue).trigger('change');
+								}
+							}
+						}
+					});
+				}
+			});
+
+			// Update UI when setting changes externally
+			control.setting.bind(function (value) {
+				$options.removeClass('selected');
+				$container.find('.inspiro-palette-option[data-palette="' + value + '"]').addClass('selected');
+			});
+		}
+	});
+
 
 	// Accordion UI Control class
 	// todo: script changes, improvements
