@@ -4,7 +4,7 @@ Author URI:        https://www.wpzoom.com/
 Requires at least: 6.0
 Requires PHP:      7.4
 Tested up to:      6.8
-Stable tag:        1.2.6
+Stable tag:        1.2.7
 License:           GNU General Public License v2
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 Tags:              elementor, elementor templates, elementor widgets, page builder templates, templates
@@ -13,7 +13,7 @@ Tags:              elementor, elementor templates, elementor widgets, page build
 
 == Description ==
 
-This plugin provides a collection of custom **Elementor** templates and widgets that can make your job extremely easy to create a beautiful interface of the pages or posts on your WordPress site.
+This plugin provides a collection of custom templates for **Elementor** and widgets that can make your job extremely easy to create a beautiful interface of the pages or posts on your WordPress site.
 
 It is very easy to use and you do not need to write any code. To contribute improve this plugin, please access the [GitHub repository](https://github.com/wpzoom/wpzoom-elementor-addons).
 
@@ -26,7 +26,7 @@ It is very easy to use and you do not need to write any code. To contribute impr
 
 = ⭐️ PRO FEATURES ⭐️ =
 * **Slideshow with Video Background - 🆕**
-* **130+ Elementor Templates - 🆕**
+* **130+ Templates for Elementor - 🆕**
 * Premium Support
 * and many new features coming soon!
 
@@ -122,6 +122,9 @@ Absolutely no! The WPZOOM Addons for Elementor only adds additional custom templ
 
 
 == Changelog ==
+
+= 1.2.7 =
+* Minor bug fix
 
 = 1.2.6 =
 * New List style for Post Grid widget
