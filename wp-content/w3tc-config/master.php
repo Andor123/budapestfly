@@ -1,5 +1,5 @@
 <?php exit; ?>{
-    "version": "2.8.13",
+    "version": "2.8.14",
     "cluster.messagebus.debug": false,
     "cluster.messagebus.enabled": false,
     "cluster.messagebus.sns.region": "",
