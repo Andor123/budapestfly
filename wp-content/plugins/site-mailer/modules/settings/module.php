@@ -63,7 +63,7 @@ class Module extends Module_Base {
 
 	public function render_app() {
 		?>
-		<?php Sale_Banner::get_banner( 'https://go.elementor.com/sm-panel-wp-dash-upgrade-panel/' ); ?>
+		<?php Sale_Banner::get_banner( 'https://go.elementor.com/SM-BF-sale' ); ?>
 		<?php Birthday_Banner::get_banner( 'https://go.elementor.com/sm-b-day-banner' ); ?>
         <?php PLG_Banner::get_plg_banner( 'forms' ); ?>
 		<?php PLG_Banner::get_plg_banner( 'woocommerce' ); ?>

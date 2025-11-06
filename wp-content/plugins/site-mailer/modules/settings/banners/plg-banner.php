@@ -24,6 +24,7 @@ class PLG_Banner
     /**
      * Shared URLs and configuration
      */
+    const DISABLE_PLG_BANNERS = true;
     const INSTALL_PLUGIN_SLUG = 'send-app';
     const LEARN_MORE_URL = 'https://go.elementor.com/sm-plg-send-banner/';
     const MIN_EMAILS_DEFAULT = 50;
@@ -69,6 +70,10 @@ class PLG_Banner
 
     private static function resolve_visible_type(): ?string
     {
+        if (self::DISABLE_PLG_BANNERS) {
+            return null;
+        }
+
         foreach (self::TYPE_PRIORITY as $candidate) {
             if (self::passes_conditions($candidate) && !self::user_viewed_plg_banner($candidate)) {
                 return $candidate;
