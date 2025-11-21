@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Akismet Anti-spam: Spam Protection - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-11-12 16:51:33+0000\n"
+"PO-Revision-Date: 2025-11-20 14:56:04+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,6 +10,76 @@ msgstr ""
 "X-Generator: GlotPress/4.0.3\n"
 "Language: ko_KR\n"
 "Project-Id-Version: Plugins - Akismet Anti-spam: Spam Protection - Stable (latest release)\n"
+
+#: views/setup.php:71
+msgid "Get started"
+msgstr "시작하기"
+
+#: views/setup.php:60
+msgid "Name your own price for personal sites. Businesses start on a paid plan."
+msgstr "개인 사이트의 가격을 직접 정하세요. 비즈니스는 유료 요금제로 시작합니다."
+
+#: views/setup.php:57
+msgid "Flexible pricing"
+msgstr "유연한 가격 책정"
+
+#: views/setup.php:49
+msgid "Seamlessly integrates with plugins like Elementor, Contact Form 7, Jetpack and WPForms."
+msgstr "Elementor, Contact Form 7, Jetpack 및 WPForms와 같은 플러그인과 원활하게 통합됩니다."
+
+#: views/setup.php:46
+msgid "Works with popular contact forms"
+msgstr "널리 사용되는 문의 양식과 연동"
+
+#: views/setup.php:38
+msgid "Akismet runs quietly in the background, saving you hours of manual moderation."
+msgstr "아키스밋은 백그라운드에서 조용히 실행되므로 수동으로 조정하는 시간을 절약할 수 있습니다."
+
+#: views/setup.php:35
+msgid "Zero effort"
+msgstr "최소한의 노력 (제로 에포트)"
+
+#: views/setup.php:27
+msgid "Learns from billions of spam signals across the web to stop junk before it reaches you."
+msgstr "웹에서 수십억 개의 스팸 신호로부터 학습하여 스팸이 사용자에게 도달하기 전에 차단합니다."
+
+#: views/setup.php:24
+msgid "Machine learning accuracy"
+msgstr "머신 러닝 정확도"
+
+#: views/setup.php:16
+msgid "Protect your site from comment spam and contact form spam — automatically."
+msgstr "댓글 스팸과 문의 양식 스팸으로부터 사이트를 자동으로 보호하세요."
+
+#. translators: The placeholder is a URL.
+#: views/setup-jetpack.php:83
+msgid "Want to use a different account? <a href=\"%s\" class=\"akismet-external-link\">Visit akismet.com</a> to set it up and get your API key."
+msgstr "다른 계정을 사용하고 싶으신가요? <a href=\"%s\" class=\"akismet-external-link\"> akismet.com</a>을 방문하여 설정하고 API 키를 받으세요."
+
+#: views/setup-jetpack.php:73
+msgid "By connecting, we'll use your Jetpack account to activate Akismet on this site."
+msgstr "연결하면 Jetpack 계정을 사용하여 이 사이트에서 아키스밋을 활성화할 수 있습니다."
+
+#: views/setup-jetpack.php:62
+msgid "Contact support"
+msgstr "연락처 지원"
+
+#: views/setup-jetpack.php:58
+msgid "Your Akismet account appears to be suspended. This sometimes happens if there's a billing or verification issue. Please contact our support team so we can help you get it sorted."
+msgstr "아키스밋 계정이 일시 정지된 것 같습니다. 청구 또는 인증 문제가 있는 경우 간혹 이런 일이 발생할 수 있습니다. 지원팀에 문의하여 문제를 해결할 수 있도록 도와주세요."
+
+#: views/setup-jetpack.php:49
+msgid "Choose a plan on Akismet.com"
+msgstr "Akismet.com에서 요금제 선택"
+
+#: views/setup-jetpack.php:45
+msgid "Your Jetpack account is connected, but it doesn't have an active Akismet subscription yet. To continue, please choose a plan on Akismet.com."
+msgstr "Jetpack 계정이 연결되었지만 아직 Akismet 구독이 활성화되어 있지 않습니다. 계속하려면 Akismet.com에서 요금제를 선택하세요."
+
+#. translators: %s is the WordPress.com username
+#: views/setup-jetpack.php:31
+msgid "Signed in as %s"
+msgstr "%s로 로그인했습니다."
 
 #: views/notice.php:364
 msgid "Increase your limit"
@@ -44,6 +114,12 @@ msgstr "아키스밋에서 사이트를 스팸으로부터 보호할 수 있도�
 #: views/notice.php:176
 msgid "You can help us fight spam and upgrade your account by <a class=\"akismet-external-link\" href=\"%s\" target=\"_blank\">contributing a token amount</a>"
 msgstr "스팸과 맞서도록 도와주고 <a class=\"akismet-external-link\" href=\"%s\" target=\"_blank\">토큰 금액을 기부</a>하여 계정을 업그레이드하는 데 도움이 될 수 있습니다."
+
+#. translators: The placeholder is a URL.
+#. translators: The placeholder is a URL to the Akismet contact form.
+#: views/notice.php:165 views/notice.php:187
+msgid "Please contact <a class=\"akismet-external-link\" href=\"%s\" target=\"_blank\">Akismet support</a> for assistance."
+msgstr "도움이 필요하면 <a class=\"akismet-external-link\" href=\"%s\" target=\"_blank\">Akismet 지원팀</a>에 문의하세요."
 
 #. translators: The placeholder is a URL.
 #: views/notice.php:154
@@ -107,6 +183,11 @@ msgstr "%s에 대한 문서"
 #: views/compatible-plugins.php:62
 msgid "%s logo"
 msgstr "%s 로고"
+
+#: views/compatible-plugins.php:33
+msgid "This plugin you've installed is compatible. Follow the documentation link to get started."
+msgid_plural "These plugins you've installed are compatible. Follow the documentation links to get started."
+msgstr[0] "설치한 이 플러그인은 호환됩니다. 시작하려면 문서 링크를 따라하세요."
 
 #: views/compatible-plugins.php:29
 msgid "See supported integrations"
@@ -256,6 +337,11 @@ msgstr "(새 탭에 열림)"
 #: views/notice.php:370
 msgid "Upgrade to %s"
 msgstr "%s(으)로 업그레이드"
+
+#: views/notice.php:312 views/notice.php:320 views/notice.php:328
+#: views/notice.php:337
+msgid "Learn more about usage limits"
+msgstr "사용량 제한에 대해 자세히 알아보기"
 
 #. translators: The first placeholder is a date, the second is a (formatted)
 #. number, the third is another formatted number.
