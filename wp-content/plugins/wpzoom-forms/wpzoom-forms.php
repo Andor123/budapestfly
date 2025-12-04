@@ -13,7 +13,7 @@
  * Description: Simple, user-friendly contact form plugin for WordPress that utilizes Gutenberg blocks for easy form building and customization.
  * Author:      WPZOOM
  * Author URI:  https://www.wpzoom.com
- * Version:     1.3.3
+ * Version:     1.3.4
  * License:     GPL2+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  */
@@ -2239,7 +2239,8 @@ class WPZOOM_Forms {
 	 */
 	public function not_spam( $input ) {
 
-		if( is_callable( array( 'Akismet', 'get_api_key' ) ) && is_callable( array( 'Akismet', 'http_post' ) ) ) {
+		// Check if Akismet class exists and has required methods
+		if( class_exists( 'Akismet' ) && is_callable( array( 'Akismet', 'get_api_key' ) ) && is_callable( array( 'Akismet', 'http_post' ) ) ) {
 
 			$request    = array(
 				'comment_type'         => 'contact-form',
@@ -2258,7 +2259,7 @@ class WPZOOM_Forms {
 				'blog_charset'         => get_bloginfo( 'charset' ),
 				'user_role'            => Akismet::get_user_roles( get_current_user_id() ),
 				'is_test'              => false,
-			
+
 			);
 
 			$response = Akismet::http_post( build_query( $request ), 'comment-check' );
