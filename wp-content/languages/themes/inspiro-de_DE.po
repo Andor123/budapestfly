@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Themes - Inspiro package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-10-25 16:51:15+0000\n"
+"PO-Revision-Date: 2025-12-07 00:45:43+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -78,7 +78,7 @@ msgstr "Portfolio installieren"
 msgid "Changelog"
 msgstr "Änderungsprotokoll"
 
-#: inc/admin/pages/demos.php:506
+#: inc/admin/pages/demos.php:579
 msgid "Preview"
 msgstr "Vorschau"
 
@@ -905,6 +905,10 @@ msgstr "Keine"
 msgid "Font Family"
 msgstr "Schriftfamilie"
 
+#: inc/customizer/class-inspiro-customizer.php:497
+msgid "System Fonts"
+msgstr "System-Schriften"
+
 #: inc/customizer/configs/typography/class-inspiro-typo-body-config.php:124
 #: inc/customizer/configs/typography/class-inspiro-typo-h1-config.php:90
 #: inc/customizer/configs/typography/class-inspiro-typo-h2-config.php:76
@@ -949,10 +953,6 @@ msgstr "Schriftstärke"
 #: inc/customizer/configs/typography/class-inspiro-typo-mobile-menu-config.php:158
 msgid "Uppercase"
 msgstr "Großbuchstaben"
-
-#: inc/customizer/class-inspiro-customizer.php:497
-msgid "System Fonts"
-msgstr "System-Schriften"
 
 #: inc/customizer/configs/typography/class-inspiro-typo-panel-config.php:33
 msgid "Typography"
@@ -1415,7 +1415,7 @@ msgstr[0] "Das folgende Plugin muss auf die neueste Version aktualisiert werden,
 msgstr[1] "Die folgenden Plugins müssen auf die neueste Version aktualisiert werden, um die größtmögliche Kompatibilität mit diesem Theme zu gewährleisten: %1$s."
 
 #: inc/admin-notice.php:102 inc/admin/pages/quick-start.php:27
-#: inc/admin/pages/quick-start.php:253 inc/admin/pages/vs-pro.php:333
+#: inc/admin/pages/quick-start.php:253 inc/admin/pages/vs-pro.php:355
 msgid "Inspiro Premium"
 msgstr "Inspiro Premium"
 
@@ -1441,7 +1441,7 @@ msgstr "Das Plugin wurde erfolgreich installiert und aktiviert."
 msgid "Multiple Footer Layouts"
 msgstr "Mehrere Footer-Layouts"
 
-#: index.php:27
+#: index.php:48 index.php:50
 msgid "Latest Posts"
 msgstr "Neueste Beiträge"
 
@@ -1488,11 +1488,6 @@ msgstr "Beitragsautor"
 #: inc/template-tags.php:192
 msgid "Tags"
 msgstr "Schlagwörter"
-
-#. translators: %s: Post date.
-#: inc/template-tags.php:168 inc/template-tags.php:176
-msgid "<span class=\"screen-reader-text\">Posted on</span> %s"
-msgstr "<span class=\"screen-reader-text\">Veröffentlicht am</span> %s"
 
 #: inc/template-tags.php:138
 msgid "Comments are Disabled"
@@ -1675,7 +1670,7 @@ msgstr "Bereit, deinen ersten Beitrag zu veröffentlichen? <a href=\"%s\">Starte
 msgid "Nothing Found"
 msgstr "Nichts gefunden"
 
-#: template-parts/page/content-page.php:61
+#: template-parts/page/content-page.php:65
 #: template-parts/post/content-audio.php:56
 #: template-parts/post/content-gallery.php:43
 #: template-parts/post/content-image.php:35
@@ -1893,7 +1888,12 @@ msgstr "Meinen Namen, meine E-Mail-Adresse und meine Website in diesem Browser f
 #. translators: %s: Post title.
 #: inc/template-tags.php:224
 msgid "Edit<span class=\"screen-reader-text\"> \"%s\"</span>"
-msgstr "<span class=\"screen-reader-text\">„%s“</span> bearbeiten"
+msgstr "<span class=\"screen-reader-text\">„%s“ </span>bearbeiten"
+
+#. translators: %s: Post date.
+#: inc/template-tags.php:168 inc/template-tags.php:176
+msgid "<span class=\"screen-reader-text\">Posted on</span> %s"
+msgstr "<span class=\"screen-reader-text\">Veröffentlicht am</span> %s"
 
 #. Theme URI of the theme
 #: style.css
