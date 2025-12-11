@@ -17,16 +17,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<span><?php echo __( 'Back to Library', 'wpzoom-elementor-addons' ); ?></span>
 			</div>
 		</div>
+		<div id="wpzoom-elementor-template-library-header-tabs" class="elementor-templates-modal__header__item">
+			<div id="wpzoom-elementor-template-library-tabs-wrapper" class="elementor-component-tab elementor-template-library-menu">
+				<div class="elementor-component-tab elementor-template-library-menu-item elementor-active" data-tab="templates"><?php echo __('Pages', 'wpzoom-elementor-addons'); ?></div>
+				<div class="elementor-component-tab elementor-template-library-menu-item" data-tab="sections"><?php echo __('Sections', 'wpzoom-elementor-addons'); ?></div>
+			</div>
+		</div>
 		<div class="elementor-templates-modal__header__items-area">
 			<div class="elementor-templates-modal__header__close elementor-templates-modal__header__close--normal elementor-templates-modal__header__item">
 				<i class="eicon-close" aria-hidden="true" title="Close"></i>
 				<span class="elementor-screen-only">Close</span>
 			</div>
-			<div id="wpzoom-elementor-template-library-header-preview" style="display:none;">
+            <div id="wpzoom-elementor-template-library-header-preview" style="display:none;">
 				<div id="elementor-template-library-header-preview-insert-wrapper" class="elementor-templates-modal__header__item">
-					<a class="elementor-template-library-template-action elementor-template-library-template-insert elementor-button" data-template-name="">
+                    <a class="elementor-template-library-template-action elementor-template-library-template-insert elementor-button" data-template-name="">
 						<i class="eicon-file-download" aria-hidden="true"></i>
-						<span class="elementor-button-title">Insert</span>
+                        <span class="elementor-button-title">Insert Page</span>
 					</a>
 				</div>
 			</div>
@@ -63,10 +69,13 @@ if ( ! defined( 'ABSPATH' ) ) {
                     <option value ='inspiro-premium'>Inspiro Premium</option>
                     <option value ='reel'>Reel</option>
 				</select>
+				<select id="wpzoom-elementor-template-library-filter-category" class="elementor-template-library-filter-select" name="category" data-filter="category" style="display:none;">
+					<option value = ''>Select a category</option>
+				</select>
 			</div>
 		</div>
-		<!-- <div id="elementor-template-library-filter-text-wrapper">
-			<label for="elementor-template-library-filter-text" class="elementor-screen-only">Search Templates:</label>
+        <!-- <div id="elementor-template-library-filter-text-wrapper">
+            <label for="elementor-template-library-filter-text" class="elementor-screen-only">Search Pages:</label>
 			<input id="wpzoom-elementor-template-library-filter-text" placeholder="Search">
 			<div class='wpzoom__search'><i class="eicon-search"></i></div>
 		</div> -->

@@ -33,7 +33,8 @@ if ( did_action( 'elementor/loaded' ) ) {
 		public function update_item( $new_data ){}
 		public function export_template( $template_id ){}
 
-			public function get_finalized_data() {
+		public function get_finalized_data()
+		{
 
 		// Check if user has permission to import templates
 		if ( ! current_user_can( 'edit_posts' ) ) {
@@ -56,25 +57,26 @@ if ( did_action( 'elementor/loaded' ) ) {
 			) );
 		}
 
-		$filename = sanitize_text_field( $_POST['filename'] );
-		
+		$filename = sanitize_text_field($_POST['filename']);
+
+		// Get import type (template or section) - defaults to template for backward compatibility
+		$import_type = isset($_POST['type']) ? sanitize_text_field($_POST['type']) : 'template';
+
 		// Additional security: ensure filename has .json extension and no path traversal
-		if ( ! preg_match( '/^[a-zA-Z0-9\-_]+\.json$/', $filename ) ) {
-			wp_send_json_error( array(
-				'message' => esc_html__( 'Invalid template filename format.', 'wpzoom-elementor-addons' )
-			) );
+		if (!preg_match('/^[a-zA-Z0-9\-_]+\.json$/', $filename)) {
+			wp_send_json_error(array(
+				'message' => esc_html__('Invalid template filename format.', 'wpzoom-elementor-addons')
+			));
 		}
-		
-		// Check if this is a PRO template and validate license
-		if ( $this->is_pro_template( $filename ) && ! $this->can_import_pro_template() ) {
-					// Check if Pro plugin is active for premium templates
-		$has_pro_plugin = class_exists( 'WPZOOM_Elementor_Addons_Pro' );
-		
-		if ( ! $has_pro_plugin && ! class_exists( 'WPZOOM' ) ) {
-			$error_message = esc_html__( 'This template requires WPZOOM Elementor Addons Pro plugin. Please install and activate the Pro plugin to import premium templates.', 'wpzoom-elementor-addons' );
-		} else {
-			$error_message = '';
-		}
+
+		if ('section' !== $import_type && $this->is_pro_template($filename) && !$this->can_import_pro_template()) {
+			$has_pro_plugin = class_exists( 'WPZOOM_Elementor_Addons_Pro' );
+			
+			if ( ! $has_pro_plugin && ! class_exists( 'WPZOOM' ) ) {
+				$error_message = esc_html__( 'This template requires WPZOOM Elementor Addons Pro plugin. Please install and activate the Pro plugin to import premium templates.', 'wpzoom-elementor-addons' );
+			} else {
+				$error_message = '';
+			}
 			
 			if ( empty( $error_message ) ) {
 				$error_message = esc_html__( 'This template requires WPZOOM Elementor Addons Pro license. Please activate your license key to import PRO templates.', 'wpzoom-elementor-addons' );
@@ -86,18 +88,39 @@ if ( did_action( 'elementor/loaded' ) ) {
 			) );
 		}
 
-		//$url = sprintf( 'https://api.wpzoom.com/elementor/templates/%s', $filename );
-		//$response = wp_remote_get( $url, array( 'timeout' => 60 ) );
-		//if( !is_wp_error( $response ) ) {
-		//	$data = json_decode( wp_remote_retrieve_body( $response ), true );
-		//}
-		//else {
-			$local_file = sprintf( WPZOOM_EL_ADDONS_PATH . '/includes/data/json/%s', $filename ) ;
+			//$url = sprintf( 'https://api.wpzoom.com/elementor/templates/%s', $filename );
+			//$response = wp_remote_get( $url, array( 'timeout' => 60 ) );
+			//if( !is_wp_error( $response ) ) {
+			//	$data = json_decode( wp_remote_retrieve_body( $response ), true );
+			//}
+			//else {
+			// Check the appropriate directory based on import type
+			$data = null;
+
+			if ($import_type === 'section') {
+				// For sections, only check sections directory
+				$local_file = sprintf(WPZOOM_EL_ADDONS_PATH . '/includes/data/sections/json/%s', $filename);
+				if (self::get_filesystem()->exists($local_file)) {
+					$data = self::get_filesystem()->get_contents($local_file);
+					$data = json_decode($data, true);
+				}
+			} else {
+				// For templates (default), check templates directory first
+				$local_file = sprintf(WPZOOM_EL_ADDONS_PATH . '/includes/data/templates/json/%s', $filename);
 			if( self::get_filesystem()->exists( $local_file ) ) {
 				$data = self::get_filesystem()->get_contents( $local_file );
 				$data = json_decode( $data, true );
 			}
-		//}
+				// If not found in templates, try sections as fallback for backward compatibility
+			if (empty($data)) {
+				$local_section_file = sprintf(WPZOOM_EL_ADDONS_PATH . '/includes/data/sections/json/%s', $filename);
+				if (self::get_filesystem()->exists($local_section_file)) {
+					$data = self::get_filesystem()->get_contents($local_section_file);
+					$data = json_decode($data, true);
+				}
+			}
+			}
+			//}
 		
 		if ( empty( $data ) || ! isset( $data['content'] ) ) {
 			wp_send_json_error( array(
@@ -122,7 +145,7 @@ if ( did_action( 'elementor/loaded' ) ) {
 	 */
 	private function is_pro_template( $filename ) {
 		// Get template list to check if this template belongs to a PRO theme
-		$local_file = WPZOOM_EL_ADDONS_PATH . '/includes/data/json/info.json';
+			$local_file = WPZOOM_EL_ADDONS_PATH . '/includes/data/templates/json/info.json';
 		if ( ! self::get_filesystem()->exists( $local_file ) ) {
 			return false;
 		}
