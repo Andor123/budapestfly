@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 6.9.x - Development package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-12-03 18:37:16+0000\n"
+"PO-Revision-Date: 2025-12-11 22:41:46+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -3321,7 +3321,7 @@ msgstr "Einzeleinträge"
 #: wp-includes/block-template-utils.php:148
 msgctxt "Template name"
 msgid "Blog Home"
-msgstr "Blog-Startseite"
+msgstr "Blog-Titelseite"
 
 #: wp-includes/block-template-utils.php:92
 msgctxt "template part area"
@@ -3418,11 +3418,11 @@ msgstr "Zeigt jeden einzelnen Eintrag wie einen Beitrag oder eine Seite an. Dies
 
 #: wp-includes/block-template-utils.php:153
 msgid "Displays your site's homepage, whether it is set to display latest posts or a static page. The Front Page template takes precedence over all templates."
-msgstr "Zeigt die Homepage deiner Website an, egal ob eingestellt ist, dass sie die letzten Beiträge oder eine statische Seite anzeigt. Das Startseiten-Template erhält Vorrang vor allen anderen Templates."
+msgstr "Zeigt die Homepage deiner Website an, egal ob eingestellt ist, dass sie die letzten Beiträge oder eine statische Seite anzeigt. Das Titelseiten-Template erhält Vorrang vor allen anderen Templates."
 
 #: wp-includes/block-template-utils.php:149
 msgid "Displays the latest posts as either the site homepage or as the \"Posts page\" as defined under reading settings. If it exists, the Front Page template overrides this template when posts are shown on the homepage."
-msgstr "Zeigt die letzten Beiträge entweder als Homepage der Website oder als „Beitragsseite“ an, wie unter den Einstellungen „Lesen“ definiert. Wenn es existiert und wenn Beiträge auf der Homepage angezeigt werden, überschreibt das Startseiten-Template dieses Template."
+msgstr "Zeigt die letzten Beiträge entweder als Homepage der Website oder als „Beitragsseite“ an, wie unter den Einstellungen „Lesen“ definiert. Falls vorhanden, überschreibt das Titelseiten-Template dieses Template, wenn Beiträge auf der Homepage angezeigt werden."
 
 #: wp-includes/block-template-utils.php:145
 msgid "Used as a fallback template for all pages when a more specific template is not defined."
@@ -3531,19 +3531,19 @@ msgstr "Bitte überprüfe, ob die PHP-Erweiterung %s installiert und aktiviert i
 msgid "When using the %1$s constant, make sure to set these globals to an array: %2$s."
 msgstr "Wenn du die Konstante %1$s benutzt, stelle sicher, dass du diese globalen zum Array hinzufügst: %2$s."
 
-#: wp-includes/html-api/class-wp-html-tag-processor.php:4343
+#: wp-includes/html-api/class-wp-html-tag-processor.php:4345
 msgid "The query argument must be an array or a tag name."
 msgstr "Das Abfrageargument muss ein Array oder ein Schlagwort-Name sein."
 
-#: wp-includes/html-api/class-wp-html-tag-processor.php:3961
+#: wp-includes/html-api/class-wp-html-tag-processor.php:3963
 msgid "Invalid attribute name."
 msgstr "Der Attributname ist ungültig."
 
-#: wp-includes/html-api/class-wp-html-tag-processor.php:2629
+#: wp-includes/html-api/class-wp-html-tag-processor.php:2631
 msgid "Too many calls to seek() - this can lead to performance issues."
 msgstr "Zu viele Aufrufe von seek() – dies kann zu Leistungsproblemen führen."
 
-#: wp-includes/html-api/class-wp-html-tag-processor.php:2611
+#: wp-includes/html-api/class-wp-html-tag-processor.php:2613
 msgid "Unknown bookmark name."
 msgstr "Unbekannter Name des Lesezeichens."
 
@@ -3995,7 +3995,7 @@ msgstr "Die ID der Seite, die auf der Startseite angezeigt werden soll"
 
 #: wp-includes/option.php:2909
 msgid "What to show on the front page"
-msgstr "Was auf der Startseite angezeigt werden soll"
+msgstr "Was auf der Homepage angezeigt werden soll"
 
 #. translators: 1: PHP file name, 2: Version number.
 #: wp-includes/functions.php:5819
@@ -4061,7 +4061,7 @@ msgstr "Erzeuge einen Link, der stets auf die Homepage der Website verweist. Nor
 #: wp-includes/blocks/home-link/block.json
 msgctxt "block title"
 msgid "Home Link"
-msgstr "Startseiten-Link"
+msgstr "Homepage-Link"
 
 #: wp-includes/blocks/group/block.json
 msgctxt "block description"
@@ -5317,7 +5317,7 @@ msgstr "Einzelne Beiträge"
 #: wp-includes/block-template-utils.php:152
 msgctxt "Template name"
 msgid "Front Page"
-msgstr "Startseite"
+msgstr "Titelseite"
 
 #: wp-includes/block-template-utils.php:144
 msgctxt "Template name"
@@ -6185,7 +6185,7 @@ msgstr "Ein Tages-Archiv deiner Beiträge anzeigen."
 
 #: wp-includes/option.php:2919
 msgid "Page on front"
-msgstr "Frontseite"
+msgstr "Titelseite"
 
 #: wp-includes/option.php:2908
 msgid "Show on front"
@@ -12550,7 +12550,7 @@ msgstr "Die gelöschten Beiträge und Links des Benutzers dieser Benutzer-ID ern
 
 #: wp-includes/script-loader.php:1333
 msgid "This theme does not support video headers on this page. Navigate to the front page or another page that supports video headers."
-msgstr "Dieses Theme unterstützt auf dieser Seite keine Video-Header. Gehe zur Startseite oder zu einer anderen Seite, die Video-Header unterstützt."
+msgstr "Dieses Theme unterstützt auf dieser Seite keine Video-Header. Gehe zur Titelseite oder zu einer anderen Seite, die Video-Header unterstützt."
 
 #: wp-includes/customize/class-wp-customize-media-control.php:233
 msgid "Choose video"
@@ -20208,7 +20208,7 @@ msgstr "%s [Automatische Speicherung]"
 #: wp-includes/js/dist/block-library.js:33846 wp-admin/menu.php:31
 #: wp-admin/network/menu.php:18
 msgid "Home"
-msgstr "Startseite"
+msgstr "Start"
 
 #. translators: Hidden accessibility text.
 #: wp-includes/post-template.php:967 wp-includes/js/dist/block-editor.js:41816
