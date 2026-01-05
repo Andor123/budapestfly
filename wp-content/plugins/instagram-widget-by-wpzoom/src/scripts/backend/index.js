@@ -411,6 +411,19 @@ jQuery( function( $ ) {
 		
 		$( '#wpz-insta_widget-preview-links' ).removeClass( 'disabled' );
 
+		// Toggle Stories checkbox based on whether the account has a Facebook Page connection
+		let hasPageId = $( this ).data( 'has-page-id' ) === 1 || $( this ).data( 'has-page-id' ) === '1';
+		let $storiesRow = $( 'input[name="_wpz-insta_show-stories"]' ).not( '[type="hidden"]' ).closest( '.wpz-insta_table-row' );
+		let $storiesCheckbox = $storiesRow.find( 'input[type="checkbox"]' );
+
+		if ( hasPageId ) {
+			$storiesRow.removeClass( 'wpz-insta_disabled' );
+			$storiesCheckbox.prop( 'disabled', false );
+		} else {
+			$storiesRow.addClass( 'wpz-insta_disabled' );
+			$storiesCheckbox.prop( 'disabled', true ).prop( 'checked', false );
+		}
+
 		$( '#wpz-insta_tabs-config-cnnct' )
 			.removeClass( 'active' )
 			.prev( '.wpz-insta_sidebar' )
@@ -473,6 +486,12 @@ jQuery( function( $ ) {
 
 				if ( ! $target.is( '.preview-exclude' ) ) {
 					const key = $target.attr('name');
+
+					// Skip elements without a name attribute
+					if ( ! key ) {
+						return;
+					}
+
 					let trackingKey = key;
 					let currentValue;
 
@@ -1003,6 +1022,12 @@ jQuery( function( $ ) {
 
 		if ( params ) {
 			url += '&' + params;
+		}
+
+		// Add the post ID for the preview to identify the feed for Load More functionality
+		const postId = $( 'form#post input[name="post_ID"]' ).val();
+		if ( postId ) {
+			url += '&wpz-insta-feed-id=' + postId;
 		}
 
 		$( '#wpz-insta_widget-preview-view' ).closest( '.wpz-insta_sidebar-right' ).removeClass( 'hide-loading' );

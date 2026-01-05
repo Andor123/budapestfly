@@ -53,6 +53,10 @@ class Wpzoom_Instagram_Widget_Display {
 		// Add AJAX handlers for fast load more functionality
 		add_action( 'wp_ajax_wpzoom_instagram_load_more', array( $this, 'ajax_load_more_posts' ) );
 		add_action( 'wp_ajax_nopriv_wpzoom_instagram_load_more', array( $this, 'ajax_load_more_posts' ) );
+
+		// Add AJAX handlers for initial feed load (async loading)
+		add_action( 'wp_ajax_wpzoom_instagram_initial_load', array( $this, 'ajax_initial_load' ) );
+		add_action( 'wp_ajax_nopriv_wpzoom_instagram_initial_load', array( $this, 'ajax_initial_load' ) );
 	}
 
 	/**
@@ -168,6 +172,61 @@ class Wpzoom_Instagram_Widget_Display {
 			'lightbox_html' => $lightbox_html,
 			'has_more' => ! empty( $items['paging'] ) && property_exists( $items['paging'], 'next' ) && ! empty( $items['paging']->next ),
 			'next_url' => ! empty( $items['paging'] ) && property_exists( $items['paging'], 'next' ) ? $items['paging']->next : '',
+		);
+
+		wp_send_json_success( $response );
+	}
+
+	/**
+	 * AJAX handler for initial feed load functionality.
+	 * This allows the feed to be loaded asynchronously after page load.
+	 *
+	 * @since 2.3.0
+	 * @return void
+	 */
+	public function ajax_initial_load() {
+		// Prevent caching of AJAX responses by optimization plugins
+		if ( ! headers_sent() ) {
+			header( 'Cache-Control: no-cache, must-revalidate, max-age=0' );
+			header( 'Pragma: no-cache' );
+			header( 'Expires: Wed, 11 Jan 1984 05:00:00 GMT' );
+		}
+
+		// Verify nonce
+		if ( ! isset( $_POST['_wpnonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['_wpnonce'] ) ), 'wpzinsta-ajax-initial-load' ) ) {
+			wp_send_json_error( 'Invalid nonce' );
+		}
+
+		// Sanitize input data
+		$feed_id = isset( $_POST['feed_id'] ) ? intval( $_POST['feed_id'] ) : -1;
+
+		if ( $feed_id < 0 ) {
+			wp_send_json_error( 'Invalid feed ID' );
+		}
+
+		// Get feed post
+		$feed_post = get_post( $feed_id );
+		if ( ! $feed_post || 'wpz-insta_feed' !== $feed_post->post_type ) {
+			wp_send_json_error( 'Invalid feed' );
+		}
+
+		// Generate feed output using existing method (without AJAX loading to avoid recursion)
+		$feed_settings = array();
+		foreach ( WPZOOM_Instagram_Widget_Settings::$feed_settings as $setting_name => $setting_args ) {
+			$feed_settings[ $setting_name ] = WPZOOM_Instagram_Widget_Settings::get_feed_setting_value( $feed_id, $setting_name );
+		}
+
+		// Disable AJAX loading for this render to get actual content
+		$feed_settings['ajax-initial-load'] = false;
+		$feed_settings['feed-id'] = $feed_id;
+
+		// Get feed HTML
+		$html = $this->output_feed( $feed_id, false, $feed_settings );
+
+		// Prepare response
+		$response = array(
+			'html'    => $html,
+			'feed_id' => $feed_id,
 		);
 
 		wp_send_json_success( $response );
@@ -298,7 +357,19 @@ class Wpzoom_Instagram_Widget_Display {
 		$this->api = Wpzoom_Instagram_Widget_API::getInstance();
 		$output = '';
 		$user_id = isset( $args['user-id'] ) ? intval( $args['user-id'] ) : -1;
-		
+
+		// Check if AJAX initial load is enabled
+		$ajax_initial_load = isset( $args['ajax-initial-load'] ) && boolval( $args['ajax-initial-load'] );
+
+		// Check if we're in the block editor (REST API request or admin context)
+		$is_block_editor = defined( 'REST_REQUEST' ) && REST_REQUEST;
+		$is_admin_preview = is_admin() || ( isset( $_GET['wpz-insta-widget-preview'] ) );
+
+		// If AJAX loading enabled and not an AJAX request and not a preview and not in editor, render placeholder
+		if ( $ajax_initial_load && ! wp_doing_ajax() && ! $preview && ! $this->is_crawler() && ! $is_block_editor && ! $is_admin_preview ) {
+			return $this->render_skeleton_placeholder( $args );
+		}
+
 		if( $preview ) {
 			$args['preview'] = true;
 		};
@@ -310,6 +381,7 @@ class Wpzoom_Instagram_Widget_Display {
 				$show_user_name = isset( $args['show-account-username'] ) && boolval( $args['show-account-username'] );
 				$show_user_badge = $this->is_pro && isset( $args['show-account-badge'] ) && boolval( $args['show-account-badge'] );
                 $show_user_stats = $this->is_pro && isset( $args['show-account-stats'] ) && boolval( $args['show-account-stats'] );
+				$show_stories = $this->is_pro && ( ! isset( $args['show-stories'] ) || boolval( $args['show-stories'] ) );
 				$user_name = get_the_title( $user );
 				$user_name = preg_replace( '/[\x{200B}-\x{200D}\x{FEFF}]/u', '', $user_name );
 				$user_name_display = sprintf( '@%s', $user_name );
@@ -319,11 +391,26 @@ class Wpzoom_Instagram_Widget_Display {
 				$show_user_bio = isset( $args['show-account-bio'] ) && boolval( $args['show-account-bio'] );
 				$user_bio = get_the_content( null, false, $user );
 				$show_user_image = isset( $args['show-account-image'] ) && boolval( $args['show-account-image'] );
-				$user_image = get_the_post_thumbnail_url( $user, 'thumbnail' ) ?: plugin_dir_url( __FILE__ ) . 'dist/images/backend/icon-insta.png';
+				$user_image = get_the_post_thumbnail_url( $user, 'thumbnail' ) ?: WPZOOM_INSTAGRAM_PLUGIN_URL . 'dist/images/backend/icon-insta.png';
 				$user_account_token = get_post_meta( $user_id, '_wpz-insta_token', true ) ?: '-1';
 				$user_business_page_id = get_post_meta( $user_id, '_wpz-insta_page_id', true ) ?: null;	
 
 				if ( '-1' !== $user_account_token ) {
+					/**
+					 * Filter to allow PRO plugin to handle multi-account feeds.
+					 * Return non-null to bypass single-account rendering.
+					 *
+					 * @since 2.3.0
+					 * @param string|null $output      The output markup. Return null to continue with default.
+					 * @param array       $args        Feed arguments.
+					 * @param int         $user_id     Primary user ID.
+					 * @param bool        $preview     Whether this is a preview.
+					 */
+					$multi_account_output = apply_filters( 'wpz-insta_multi-account-feed-output', null, $args, $user_id, $preview );
+					if ( null !== $multi_account_output ) {
+						return $multi_account_output;
+					}
+
 					$attrs = '';
 					$wrapper_classes = '';
 					$layout_names = array( 0 => 'grid', 1 => 'fullwidth', 2 => 'masonry', 3 => 'carousel' );
@@ -460,27 +547,78 @@ class Wpzoom_Instagram_Widget_Display {
 						if ( $show_user_image || $show_user_nname || $show_user_name || $show_user_bio ) {
 							$output .= '<header class="zoom-instagram-widget__header">';
 
-							// Get follower count using Graph API
-							$followers_count = 0;
-							if (!empty($user_business_page_id)) {
-								$followers_count = $this->api->get_followers_count($user_business_page_id, $user_account_token);
+							// Get all account stats in a single API call (reduces 3 API calls to 1)
+							$account_stats = array(
+								'followers_count' => 0,
+								'follows_count'   => 0,
+								'media_count'     => 0,
+							);
+							if ( ! empty( $user_business_page_id ) ) {
+								$account_stats = $this->api->get_account_stats( $user_business_page_id, $user_account_token );
 							}
-
-							// Get following count using Graph API
-							$following_count = 0;
-							if (!empty($user_business_page_id)) {
-								$following_count = $this->api->get_following($user_business_page_id, $user_account_token);
-							}
-
-							// Get media count using Graph API
-							$media_count = 0;
-							if (!empty($user_business_page_id)) {
-								$media_count = $this->api->get_media_count($user_business_page_id, $user_account_token);
-							}
+							$followers_count = $account_stats['followers_count'];
+							$following_count = $account_stats['follows_count'];
+							$media_count = $account_stats['media_count'];
 
 							if ( $show_user_image && ! empty( $user_image ) ) {
-								$output .= '<div class="zoom-instagram-widget__header-column-left">';
-								$output .= '<img src="' . esc_url( $user_image ) . '" alt="' . esc_attr( $user_name_display ) . '" width="70"/>';
+								// Stories feature is only available in Pro version and when enabled in feed settings
+								$stories = array();
+								$has_stories = false;
+								$story_ring_class = '';
+
+								if ( $show_stories ) {
+									// Get stories in a single API call (has_stories now uses cached data from get_stories)
+									$stories = $this->api->get_stories( $user_business_page_id, $user_account_token );
+									$has_stories = ! empty( $stories );
+									$story_ring_class = $has_stories ? ' has-stories' : '';
+								}
+
+								$output .= '<div class="zoom-instagram-widget__header-column-left' . esc_attr( $story_ring_class ) . '">';
+
+								if ( $has_stories ) {
+									// Build Zuck.js compatible data structure
+									$stories_data = array(
+										'id'          => 'wpz-insta-' . $user_business_page_id,
+										'photo'       => $user_image,
+										'name'        => $user_name_display,
+										'link'        => $user_link,
+										'lastUpdated' => time(),
+										'items'       => array(),
+									);
+
+									// Reverse order so oldest stories appear first (like Instagram)
+									$stories = array_reverse( $stories );
+
+									foreach ( $stories as $story ) {
+										$is_video = isset( $story->media_type ) && 'VIDEO' === $story->media_type;
+										$stories_data['items'][] = array(
+											'id'       => isset( $story->id ) ? $story->id : uniqid( 'story-' ),
+											'type'     => $is_video ? 'video' : 'photo',
+											'src'      => $story->media_url,
+											'preview'  => $is_video && ! empty( $story->thumbnail_url ) ? $story->thumbnail_url : $story->media_url,
+											'length'   => $is_video ? 0 : 5, // 0 = use video duration, 5 = 5 seconds for images
+											'link'     => isset( $story->permalink ) ? $story->permalink : '',
+											'linkText' => __( 'View on Instagram', 'instagram-widget-by-wpzoom' ),
+											'time'     => isset( $story->timestamp ) ? strtotime( $story->timestamp ) : time(),
+										);
+									}
+
+									// Add aria-label for accessibility
+									$aria_label = sprintf(
+										/* translators: %s: username */
+										esc_attr__( '%s has stories available. Click to view.', 'instagram-widget-by-wpzoom' ),
+										$user_name_display
+									);
+
+									// Output clickable image with Zuck.js data
+									$output .= '<div class="wpz-insta-stories" data-stories="' . esc_attr( wp_json_encode( $stories_data ) ) . '" aria-label="' . $aria_label . '" role="button" tabindex="0">';
+									$output .= '<img src="' . esc_url( $user_image ) . '" alt="' . esc_attr( $user_name_display ) . '" width="70" />';
+									$output .= '</div>';
+								} else {
+									// No stories - just show the image
+									$output .= '<img src="' . esc_url( $user_image ) . '" alt="' . esc_attr( $user_name_display ) . '" width="70" />';
+								}
+
 								$output .= '</div>';
 							}
 
@@ -651,7 +789,7 @@ class Wpzoom_Instagram_Widget_Display {
 			$allowed_post_types = isset( $args['allowed-post-types'] ) ? $args['allowed-post-types'] : 'IMAGE,VIDEO,CAROUSEL_ALBUM';
 			$image_size = isset( $args['image-size'] ) && in_array( $args['image-size'], array( 'thumbnail', 'low_resolution', 'standard_resolution', 'full_resolution' ) ) ? $args['image-size'] : 'standard_resolution';
 			$small_class = $image_size <= 180 ? 'small' : '';
-			$svg_icons = plugin_dir_url( __FILE__ ) . 'dist/images/frontend/wpzoom-instagram-icons.svg';
+			$svg_icons = WPZOOM_INSTAGRAM_PLUGIN_URL . 'dist/images/frontend/wpzoom-instagram-icons.svg';
 			$preview = isset( $args['preview'] ) ? true : false;
 
 			$show_likes    = self::$instance->is_pro && isset( $args['show-likes'] ) && boolval( $args['show-likes'] );
@@ -825,7 +963,7 @@ class Wpzoom_Instagram_Widget_Display {
 				$count = 0;
 				$user_name = get_the_title( $user );
 				$user_name_display = sprintf( '@%s', $user_name );
-				$user_image = get_the_post_thumbnail_url( $user, 'thumbnail' ) ?: plugin_dir_url( __FILE__ ) . 'dist/images/backend/icon-insta.png';
+				$user_image = get_the_post_thumbnail_url( $user, 'thumbnail' ) ?: WPZOOM_INSTAGRAM_PLUGIN_URL . 'dist/images/backend/icon-insta.png';
 
 				foreach ( $items as $item ) {
 					$count++;
@@ -921,6 +1059,20 @@ class Wpzoom_Instagram_Widget_Display {
 
 					if ( ! empty( $item['timestamp'] ) ) {
 						$output .= '<div class="wpz-insta-date">' . sprintf( __( '%s ago', 'instagram-widget-by-wpzoom' ), human_time_diff( strtotime( $item['timestamp'] ) ) ) . '</div>';
+					}
+
+					// Add likes and comments counts
+					$likes    = isset( $item['likes'] ) ? intval( $item['likes'] ) : 0;
+					$comments = isset( $item['comments'] ) ? intval( $item['comments'] ) : 0;
+					if ( $likes > 0 || $comments > 0 ) {
+						$output .= '<div class="wpz-insta-counts">';
+						if ( $likes > 0 ) {
+							$output .= '<span class="wpz-insta-likes"><svg width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" id="heart-outline"><path fill="none" stroke="#c0c7ca" stroke-width="2" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>' . self::format_number( $likes ) . '</span>';
+						}
+						if ( $comments > 0 ) {
+							$output .= '<span class="wpz-insta-comments"><svg width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" id="comment"><path fill="#c0c7ca" d="M25.784 21.017A10.992 10.992 0 0 0 27 16c0-6.065-4.935-11-11-11S5 9.935 5 16s4.935 11 11 11c1.742 0 3.468-.419 5.018-1.215l4.74 1.185a.996.996 0 0 0 .949-.263 1 1 0 0 0 .263-.95l-1.186-4.74zm-2.033.11.874 3.498-3.498-.875a1.006 1.006 0 0 0-.731.098A8.99 8.99 0 0 1 16 25c-4.963 0-9-4.038-9-9s4.037-9 9-9 9 4.038 9 9a8.997 8.997 0 0 1-1.151 4.395.995.995 0 0 0-.098.732z"></path></svg>' . self::format_number( $comments ) . '</span>';
+						}
+						$output .= '</div>';
 					}
 
 					$output .= '<div class="view-post">
@@ -1283,5 +1435,92 @@ class Wpzoom_Instagram_Widget_Display {
 		}
 
 		return trim( $caption );
+	}
+
+	/**
+	 * Check if the current request is from a search engine crawler.
+	 * If so, render full content instead of placeholder for SEO.
+	 *
+	 * @since 2.3.0
+	 * @return bool True if crawler, false otherwise.
+	 */
+	private function is_crawler() {
+		if ( ! isset( $_SERVER['HTTP_USER_AGENT'] ) ) {
+			return false;
+		}
+
+		$user_agent = sanitize_text_field( wp_unslash( $_SERVER['HTTP_USER_AGENT'] ) );
+		$crawlers = array(
+			'googlebot',
+			'bingbot',
+			'slurp',
+			'duckduckbot',
+			'baiduspider',
+			'yandexbot',
+			'facebookexternalhit',
+			'twitterbot',
+			'linkedinbot',
+			'embedly',
+			'quora link preview',
+			'outbrain',
+			'pinterest',
+			'slack',
+			'vkshare',
+			'w3c_validator',
+			'applebot',
+		);
+
+		$user_agent_lower = strtolower( $user_agent );
+		foreach ( $crawlers as $crawler ) {
+			if ( strpos( $user_agent_lower, $crawler ) !== false ) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	/**
+	 * Renders a skeleton placeholder for AJAX-loaded feeds.
+	 *
+	 * @since 2.3.0
+	 * @param array $args Feed configuration arguments.
+	 * @return string HTML markup for skeleton placeholder.
+	 */
+	private function render_skeleton_placeholder( array $args ) {
+		$feed_id = isset( $args['feed-id'] ) ? intval( $args['feed-id'] ) : -1;
+		$col_num = isset( $args['col-num'] ) ? intval( $args['col-num'] ) : 3;
+		$item_num = isset( $args['item-num'] ) ? intval( $args['item-num'] ) : 9;
+		$show_header = isset( $args['show-account-username'] ) && boolval( $args['show-account-username'] );
+		$show_user_image = isset( $args['show-account-image'] ) && boolval( $args['show-account-image'] );
+		$spacing_between = isset( $args['spacing-between'] ) && floatval( $args['spacing-between'] ) > -1 ? floatval( $args['spacing-between'] ) : 10;
+
+		// Generate nonce for AJAX request
+		$nonce = wp_create_nonce( 'wpzinsta-ajax-initial-load' );
+
+		ob_start();
+		?>
+		<div class="wpz-insta-ajax-placeholder"
+			 data-feed-id="<?php echo esc_attr( $feed_id ); ?>"
+			 data-nonce="<?php echo esc_attr( $nonce ); ?>">
+
+			<?php if ( $show_header || $show_user_image ) : ?>
+			<div class="wpz-insta-skeleton-header">
+				<div class="wpz-insta-skeleton-header-avatar"></div>
+				<div class="wpz-insta-skeleton-header-info">
+					<div class="wpz-insta-skeleton-header-info-name"></div>
+					<div class="wpz-insta-skeleton-header-info-stats"></div>
+				</div>
+			</div>
+			<?php endif; ?>
+
+			<div class="wpz-insta-skeleton-grid" style="grid-template-columns: repeat(<?php echo esc_attr( $col_num ); ?>, 1fr); gap: <?php echo esc_attr( $spacing_between ); ?>px;">
+				<?php for ( $i = 0; $i < $item_num; $i++ ) : ?>
+				<div class="wpz-insta-skeleton-grid-item"></div>
+				<?php endfor; ?>
+			</div>
+		</div>
+		<?php
+		return ob_get_clean();
 	}
 }

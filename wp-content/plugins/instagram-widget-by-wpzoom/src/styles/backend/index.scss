@@ -1462,13 +1462,22 @@
 						grid-column: 1;
 						grid-row: 2;
 						align-self: start;
-						transition: all 0.3s ease;
+						transition: opacity 0.3s ease, visibility 0.3s ease;
 						overflow-x: hidden;
 						overflow-y: auto;
 
 						&:not(.active) {
 							pointer-events: none;
 							opacity: 0;
+							visibility: hidden;
+							position: absolute;
+							z-index: -1;
+						}
+
+						&.active {
+							visibility: visible;
+							position: relative;
+							z-index: 1;
 						}
 					}
 				}
@@ -1851,6 +1860,18 @@
 						align-items: center;
 						width: 100%;
 
+						&.wpz-insta_disabled {
+							> input[type="checkbox"] {
+								opacity: 0.5;
+								pointer-events: none;
+							}
+
+							// Gray out only the text, not the help icon
+							> span {
+								color: rgba(0, 0, 0, 0.4);
+							}
+						}
+
 						&.wpz-insta_table-row-full {
 							flex-direction: column;
 							align-items: stretch;
@@ -2047,6 +2068,69 @@
 
 				.pro-only-wrapper {
 					opacity: 0.5;
+				}
+
+				&.wpz-insta_sidebar-section-multi-account-promo {
+					max-height: 0;
+					opacity: 0;
+					overflow: hidden;
+					padding-top: 0;
+					margin-top: 0;
+					margin-bottom: 0;
+					transition: all 0.3s ease;
+
+					&.active {
+						max-height: 999em;
+						opacity: 1;
+						padding-top: 20px;
+						margin-top: 20px;
+						margin-bottom: 10px;
+						overflow: visible;
+					}
+
+					.wpz-insta_add-another-account-wrap {
+						text-align: center;
+					}
+
+					.wpz-insta_add-another-account-btn-placeholder {
+						display: inline-flex;
+						align-items: center;
+						gap: 6px;
+						padding: 10px 16px;
+						font-size: 13px;
+						font-weight: 500;
+						color: #50575e;
+						background: #f0f0f1;
+						border: 1px dashed #c3c4c7;
+						border-radius: 4px;
+						cursor: not-allowed;
+						opacity: 0.8;
+
+						.dashicons {
+							font-size: 16px;
+							width: 16px;
+							height: 16px;
+						}
+
+						.wpz-insta-pro-badge {
+							background: $orange-color;
+							color: #fff;
+							font-size: 9px;
+							font-weight: 600;
+							text-transform: uppercase;
+							padding: 2px 6px;
+							border-radius: 3px;
+							margin-left: 4px;
+							letter-spacing: 0.5px;
+						}
+					}
+
+					.wpz-insta_add-another-account-description {
+						margin: 10px 0 0 0;
+						font-size: 12px;
+						color: #757575;
+						font-style: italic;
+					}
 				}
 
 				&.wpz-insta_sidebar-section-token,
@@ -2413,6 +2497,20 @@
 							font-weight: 600;
 							line-height: 19px;
 							margin: 0 0 16px;
+
+							.recommended-badge {
+								display: inline-block;
+								font-size: 10px;
+								font-weight: 600;
+								text-transform: uppercase;
+								letter-spacing: 0.5px;
+								background: #22BB66;
+								color: #fff;
+								padding: 3px 8px;
+								border-radius: 3px;
+								margin-left: 8px;
+								vertical-align: middle;
+							}
 						}
 
 						.account-option-checklist {

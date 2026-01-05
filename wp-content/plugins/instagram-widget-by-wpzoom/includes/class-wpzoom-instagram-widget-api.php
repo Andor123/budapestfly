@@ -232,7 +232,7 @@ class Wpzoom_Instagram_Widget_API {
                             update_post_meta( $user->ID, '_wpz-insta_token_expire', strtotime( '+60 days' ) );
                         } else {
                             if ( ! isset( $data->error ) ) {
-                                error_log( __( 'Something wrong! Doesn\'t isset $data->error.', 'instagram-widget-by-wpzoom' ) );
+                                error_log( __( 'Something went wrong: $data->error.', 'instagram-widget-by-wpzoom' ) );
                                 return false;
                             } else {
                                 error_log( $data->error->error_user_msg );
@@ -343,8 +343,14 @@ class Wpzoom_Instagram_Widget_API {
 			if ( $allowed_post_types !== 'IMAGE,VIDEO,CAROUSEL_ALBUM' ) {
 				$enhanced_transient .= '_filtered_' . substr( md5( $allowed_post_types ), 0, 8 );
 			}
+
+			// Add likes/comments flag to transient key to ensure proper cache isolation
+			// Without this, data cached without likes/comments would be returned when they're requested
+			if ( ! $skip_likes_comments ) {
+				$enhanced_transient .= '_lc';
+			}
 		}
-		
+
 		// Use enhanced key as primary, but keep it reasonable length
 		$transient = strlen( $enhanced_transient ) > 170 ? $legacy_transient : $enhanced_transient;
 
@@ -1284,6 +1290,67 @@ class Wpzoom_Instagram_Widget_API {
         return $media_count;
     }
 
+    /**
+     * Get all account stats (followers, following, media count) in a single API call.
+     * Uses Facebook Graph API field expansion to reduce HTTP requests.
+     *
+     * @since 2.3.0
+     * @param string $user_business_page_id Instagram business page ID.
+     * @param string $user_account_token    Access token.
+     * @return array Array with keys: followers_count, follows_count, media_count
+     */
+    public function get_account_stats( $user_business_page_id, $user_account_token ) {
+        $default_stats = array(
+            'followers_count' => 0,
+            'follows_count'   => 0,
+            'media_count'     => 0,
+        );
+
+        if ( empty( $user_business_page_id ) || empty( $user_account_token ) ) {
+            return $default_stats;
+        }
+
+        // Create combined transient key
+        $transient_key = 'wpz-insta_account_stats_' . $user_business_page_id;
+        $cached_stats = get_transient( $transient_key );
+
+        if ( false !== $cached_stats && is_array( $cached_stats ) ) {
+            return $cached_stats;
+        }
+
+        // Single API call with all fields
+        $graph_api_url = add_query_arg(
+            array(
+                'fields'       => 'followers_count,follows_count,media_count',
+                'access_token' => $user_account_token,
+            ),
+            'https://graph.facebook.com/v21.0/' . $user_business_page_id
+        );
+
+        $response = wp_remote_get( $graph_api_url );
+
+        $stats = $default_stats;
+
+        if ( ! is_wp_error( $response ) && 200 === wp_remote_retrieve_response_code( $response ) ) {
+            $data = json_decode( wp_remote_retrieve_body( $response ) );
+
+            if ( isset( $data->followers_count ) ) {
+                $stats['followers_count'] = intval( $data->followers_count );
+            }
+            if ( isset( $data->follows_count ) ) {
+                $stats['follows_count'] = intval( $data->follows_count );
+            }
+            if ( isset( $data->media_count ) ) {
+                $stats['media_count'] = intval( $data->media_count );
+            }
+
+            // Cache for 24 hours
+            set_transient( $transient_key, $stats, DAY_IN_SECONDS );
+        }
+
+        return $stats;
+    }
+
     // Add this new method to check if using Basic Display API
     public static function is_using_basic_display_api( $user_id ) {
 
@@ -1380,6 +1447,102 @@ class Wpzoom_Instagram_Widget_API {
                 wp_die();
             });
         }
+    }
+
+    /**
+     * Get Instagram stories for a business account.
+     *
+     * This method fetches stories with all necessary fields including thumbnail_url
+     * for video posters. Results are cached for 1 hour.
+     *
+     * @since 2.0.0
+     *
+     * @param string $user_business_page_id The Instagram business page ID.
+     * @param string $user_account_token    The access token for API requests.
+     * @return array Array of story objects, or empty array if none.
+     */
+    public function get_stories( $user_business_page_id, $user_account_token ) {
+        if ( empty( $user_business_page_id ) || empty( $user_account_token ) ) {
+            return array();
+        }
+
+        // Create a unique transient key for this account
+        $transient_key = 'wpz-insta_stories_' . $user_business_page_id;
+
+        // Try to get cached stories
+        $cached = get_transient( $transient_key );
+
+        // Check for valid cached data (could be empty array for "no stories")
+        if ( false !== $cached ) {
+            return $cached;
+        }
+
+        // Fetch from API - include thumbnail_url for video posters
+        $graph_api_url = add_query_arg(
+            array(
+                'fields'       => 'stories{media_type,media_url,thumbnail_url,timestamp,permalink}',
+                'access_token' => $user_account_token,
+            ),
+            'https://graph.facebook.com/v21.0/' . $user_business_page_id
+        );
+
+        $response = self::remote_get( $graph_api_url, $this->headers );
+
+        if ( is_wp_error( $response ) ) {
+            error_log( 'Instagram Widget: Stories API error - ' . $response->get_error_message() );
+            return array();
+        }
+
+        $response_code = wp_remote_retrieve_response_code( $response );
+
+        if ( 200 !== $response_code ) {
+            $body = wp_remote_retrieve_body( $response );
+            $error_data = json_decode( $body );
+            $error_msg = isset( $error_data->error->message ) ? $error_data->error->message : 'Unknown error';
+            error_log( 'Instagram Widget: Stories API returned ' . $response_code . ' - ' . $error_msg );
+            return array();
+        }
+
+        $data = json_decode( wp_remote_retrieve_body( $response ) );
+        $stories = isset( $data->stories ) && ! empty( $data->stories->data ) ? $data->stories->data : array();
+
+        /**
+         * Filter the stories returned from the API.
+         *
+         * This filter allows modifying the stories array before caching.
+         * Useful for demo sites to show placeholder stories when none exist.
+         *
+         * @since 2.0.0
+         *
+         * @param array  $stories               Array of story objects from the API.
+         * @param string $user_business_page_id The Instagram business page ID.
+         * @param string $user_account_token    The access token used for the request.
+         */
+        $stories = apply_filters( 'wpz_insta_stories', $stories, $user_business_page_id, $user_account_token );
+
+        // Cache for 1 hour (stories expire after 24h, so 1h cache is reasonable)
+        // Empty array is also cached to prevent repeated API calls when no stories exist
+        set_transient( $transient_key, $stories, HOUR_IN_SECONDS );
+
+        return $stories;
+    }
+
+    /**
+     * Check if an Instagram business account has active stories.
+     *
+     * This is a convenience method that checks if get_stories() returns any results.
+     * It's more efficient than the previous implementation as it reuses the cached
+     * stories data instead of making a separate API call.
+     *
+     * @since 2.0.0
+     *
+     * @param string $user_business_page_id The Instagram business page ID.
+     * @param string $user_account_token    The access token for API requests.
+     * @return bool True if the account has active stories, false otherwise.
+     */
+    public function has_stories( $user_business_page_id, $user_account_token ) {
+        $stories = $this->get_stories( $user_business_page_id, $user_account_token );
+        return ! empty( $stories );
     }
 }
 
