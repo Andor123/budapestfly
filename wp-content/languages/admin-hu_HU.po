@@ -650,8 +650,8 @@ msgid_plural "<strong>Error:</strong> %1$s requires %2$d plugins to be installed
 msgstr[0] "<strong>Hiba:</strong> %1$s megköveteli %2$d bővítmény telepítését és bekapcsolását: %3$s."
 msgstr[1] "<strong>Hiba:</strong> %1$s megköveteli %2$d bővítmény telepítését és bekapcsolását: %3$s."
 
-#: wp-admin/includes/plugin-install.php:973
-#: wp-admin/includes/plugin-install.php:978
+#: wp-admin/includes/plugin-install.php:971
+#: wp-admin/includes/plugin-install.php:976
 msgctxt "plugin"
 msgid "Update Now"
 msgstr "Frissítés"
@@ -716,9 +716,9 @@ msgstr "Hálózati kikapcsolás"
 #: wp-admin/includes/class-wp-plugins-list-table.php:611
 #: wp-admin/includes/class-wp-plugins-list-table.php:942
 #: wp-admin/includes/class-wp-plugins-list-table.php:959
-#: wp-admin/includes/plugin-install.php:879
-#: wp-admin/includes/plugin-install.php:993
-#: wp-admin/includes/plugin-install.php:1024 wp-admin/js/updates.js:980
+#: wp-admin/includes/plugin-install.php:877
+#: wp-admin/includes/plugin-install.php:991
+#: wp-admin/includes/plugin-install.php:1022 wp-admin/js/updates.js:980
 #: wp-admin/js/updates.js:1025
 msgctxt "plugin"
 msgid "Activate"
@@ -748,8 +748,8 @@ msgstr "A WordPress verziónk %1$s, azonban az új sablonhoz %2$s szükséges."
 #: wp-admin/includes/class-wp-plugins-list-table.php:611
 #: wp-admin/includes/class-wp-plugins-list-table.php:836
 #: wp-admin/includes/class-wp-plugins-list-table.php:853
-#: wp-admin/includes/plugin-install.php:1006
-#: wp-admin/includes/plugin-install.php:1024 wp-admin/js/updates.js:969
+#: wp-admin/includes/plugin-install.php:1004
+#: wp-admin/includes/plugin-install.php:1022 wp-admin/js/updates.js:969
 msgctxt "plugin"
 msgid "Network Activate"
 msgstr "Hálózati bekapcsolása"
@@ -760,8 +760,8 @@ msgid "%s is already active."
 msgstr "%s már be van kapcsolva."
 
 #: wp-admin/import.php:166 wp-admin/includes/plugin-install.php:355
-#: wp-admin/includes/plugin-install.php:951
-#: wp-admin/includes/plugin-install.php:956 wp-admin/press-this.php:63
+#: wp-admin/includes/plugin-install.php:949
+#: wp-admin/includes/plugin-install.php:954 wp-admin/press-this.php:63
 #: wp-admin/js/updates.js:1312 wp-admin/js/updates.js:2637
 #: wp-admin/js/updates.js:2693
 msgctxt "plugin"
@@ -1941,7 +1941,7 @@ msgstr "Megpróbáltuk, de a webhelyet nem sikerült automatikusan frissíteni."
 
 #: wp-admin/includes/class-core-upgrader.php:166
 #: wp-admin/includes/class-wp-upgrader.php:206
-#: wp-admin/includes/update-core.php:1108
+#: wp-admin/includes/update-core.php:1109
 msgid "The update cannot be installed because some files could not be copied. This is usually due to inconsistent file permissions."
 msgstr "A frissítés nem került telepítésre, mivel néhány fájlt nem lehetett átmásolni. Ez általában akkor fordul elő, ha nem megfelelőek (nem következetesek) a fájl hozzáférési engedélyek."
 
@@ -3215,7 +3215,7 @@ msgstr "Ez a bővítmény már telepítve van."
 
 #. translators: %s: Plugin name and version.
 #. translators: %s: Plugin name.
-#: wp-admin/includes/plugin-install.php:971 wp-admin/includes/update.php:566
+#: wp-admin/includes/plugin-install.php:969 wp-admin/includes/update.php:566
 #: wp-admin/js/updates.js:2544
 msgctxt "plugin"
 msgid "Update %s now"
@@ -3224,7 +3224,7 @@ msgstr "%s frissítése most"
 #. translators: %s: Importer name.
 #. translators: %s: Plugin name and version.
 #. translators: %s: Plugin name.
-#: wp-admin/import.php:165 wp-admin/includes/plugin-install.php:949
+#: wp-admin/import.php:165 wp-admin/includes/plugin-install.php:947
 #: wp-admin/js/updates.js:1308 wp-admin/js/updates.js:2553
 #: wp-admin/js/updates.js:2689
 msgctxt "plugin"
@@ -3975,7 +3975,7 @@ msgid "The seventh parameter passed to %s should be numeric representing menu po
 msgstr "A hetedik %s funkciónak átadott paraméternek számnak kell lennie, amely a menü pozíciót jelöli."
 
 #. translators: 1: WordPress version number, 2: The PHP extension name needed.
-#: wp-admin/includes/update-core.php:1214
+#: wp-admin/includes/update-core.php:1215
 msgid "The update cannot be installed because WordPress %1$s requires the %2$s PHP extension."
 msgstr "A frissítést nem lehet telepíteni, mert a WordPress %1$s használatához %2$s PHP kiterjesztés szükséges."
 
@@ -5823,20 +5823,20 @@ msgid "Removing the old version of the translation&#8230;"
 msgstr "Fordítás régi verziójának eltávolítása&#8230;"
 
 #. translators: %s: URL to WordPress Updates screen.
-#: wp-admin/includes/plugin-install.php:845
+#: wp-admin/includes/plugin-install.php:843
 msgid "<a href=\"%s\" target=\"_parent\">Click here to update WordPress</a>."
 msgstr "<a href=\"%s\" target=\"_parent\">WordPress frissítése</a>."
 
-#: wp-admin/includes/plugin-install.php:841
+#: wp-admin/includes/plugin-install.php:839
 msgid "<strong>Error:</strong> This plugin <strong>requires a newer version of WordPress</strong>."
 msgstr "<strong>Hiba:</strong> Ez a bővítmény <strong>a WordPress újabb verzióját igényli</strong>."
 
 #. translators: %s: URL to Update PHP page.
-#: wp-admin/includes/plugin-install.php:815
+#: wp-admin/includes/plugin-install.php:813
 msgid "<a href=\"%s\" target=\"_blank\">Click here to learn more about updating PHP</a>."
 msgstr "<a href=\"%s\" target=\"_blank\">További tudásanyag a PHP frissítésről</a>."
 
-#: wp-admin/includes/plugin-install.php:810
+#: wp-admin/includes/plugin-install.php:808
 msgid "<strong>Error:</strong> This plugin <strong>requires a newer version of PHP</strong>."
 msgstr "<strong>Hiba:</strong> Ez a bővítmény <strong>a PHP újabb verzióját igényli</strong>."
 
@@ -6799,7 +6799,7 @@ msgstr "A törlési index nem lehet egynél kevesebb."
 msgid "Invalid email address in request."
 msgstr "Érvénytelen e-mail cím a kérésben."
 
-#: wp-admin/includes/plugin-install.php:680
+#: wp-admin/includes/plugin-install.php:678
 msgid "Requires PHP Version:"
 msgstr "A minimálisan elvárt PHP verzió:"
 
@@ -7061,11 +7061,11 @@ msgstr "%s éppen szerkeszti a bejegyzést. Átvegyük tőle?"
 msgid "Custom installation script."
 msgstr "Egyéni telepítő szkript."
 
-#: wp-admin/includes/plugin-install.php:687
+#: wp-admin/includes/plugin-install.php:685
 msgid "Active Installations:"
 msgstr "Aktív telepítések:"
 
-#: wp-admin/includes/plugin-install.php:602 wp-admin/update.php:128
+#: wp-admin/includes/plugin-install.php:600 wp-admin/update.php:128
 msgid "Plugin Installation"
 msgstr "Bővítmény telepítés"
 
@@ -7162,14 +7162,14 @@ msgstr "Engedélyezzük a hivatkozás értesítéseket más weboldalak új bejeg
 
 #. translators: %s: Plugin name.
 #: wp-admin/includes/class-wp-plugins-list-table.php:852
-#: wp-admin/includes/plugin-install.php:1008 wp-admin/js/updates.js:972
+#: wp-admin/includes/plugin-install.php:1006 wp-admin/js/updates.js:972
 msgctxt "plugin"
 msgid "Network Activate %s"
 msgstr "%s bővítmény bekapcsolása a hálózaton"
 
 #. translators: %s: Plugin name.
 #: wp-admin/includes/class-wp-plugins-list-table.php:958
-#: wp-admin/includes/plugin-install.php:995 wp-admin/js/updates.js:983
+#: wp-admin/includes/plugin-install.php:993 wp-admin/js/updates.js:983
 msgctxt "plugin"
 msgid "Activate %s"
 msgstr "Bekapcsolva %s"
@@ -7334,7 +7334,7 @@ msgid "&#8220;%s&#8221; is locked"
 msgstr "&#8220;%s&#8221; zárolva"
 
 #: wp-admin/includes/class-wp-plugin-install-list-table.php:723
-#: wp-admin/includes/plugin-install.php:697
+#: wp-admin/includes/plugin-install.php:695
 msgctxt "Active plugin installations"
 msgid "Less Than 10"
 msgstr "10-nél kevesebb"
@@ -7345,7 +7345,7 @@ msgstr "Sajnáljuk, a bejegyzéshez történő csatoláshoz nincs elegendő jogo
 
 #: wp-admin/freedoms.php:105
 #: wp-admin/includes/class-wp-plugin-install-list-table.php:346
-#: wp-admin/includes/plugin-install.php:704 wp-admin/plugin-install.php:101
+#: wp-admin/includes/plugin-install.php:702 wp-admin/plugin-install.php:101
 #: wp-admin/plugins.php:570
 msgid "https://wordpress.org/plugins/"
 msgstr "https://wordpress.org/plugins/"
@@ -7649,7 +7649,7 @@ msgstr "404 sablonminta beágyazása"
 msgid "Embed Template"
 msgstr "Sablonminta beágyazása"
 
-#: wp-admin/includes/plugin-install.php:989 wp-admin/js/updates.js:1155
+#: wp-admin/includes/plugin-install.php:987 wp-admin/js/updates.js:1155
 #: wp-admin/js/updates.js:1163
 msgctxt "plugin"
 msgid "Active"
@@ -7920,17 +7920,17 @@ msgstr "Szerkesztéshez vagy frissítéshez kattintás a képre"
 
 #. translators: 1: Number of stars (used to determine singular/plural), 2:
 #. Number of reviews.
-#: wp-admin/includes/plugin-install.php:745
+#: wp-admin/includes/plugin-install.php:743
 msgid "Reviews with %1$d star: %2$s. Opens in a new tab."
 msgid_plural "Reviews with %1$d stars: %2$s. Opens in a new tab."
 msgstr[0] "%1$d csillagos értékelés: %2$s. Új ablakban nyílik meg."
 msgstr[1] "%1$d csillagos értékelések: %2$s. Új ablakban nyílik meg."
 
-#: wp-admin/includes/plugin-install.php:737
+#: wp-admin/includes/plugin-install.php:735
 msgid "Read all reviews on WordPress.org or write your own!"
 msgstr "Olvassuk el a WordPress.org oldalon az értékeléseket, és írjunk mi is értkeléseket."
 
-#: wp-admin/includes/plugin-install.php:736
+#: wp-admin/includes/plugin-install.php:734
 msgid "Reviews"
 msgstr "Értékelések"
 
@@ -8961,7 +8961,7 @@ msgstr "A bővítmények frissítése sikeres."
 
 #. translators: %s: Number of millions.
 #: wp-admin/includes/class-wp-plugin-install-list-table.php:719
-#: wp-admin/includes/plugin-install.php:693
+#: wp-admin/includes/plugin-install.php:691
 msgctxt "Active plugin installations"
 msgid "%s+ Million"
 msgid_plural "%s+ Million"
@@ -9158,7 +9158,7 @@ msgstr "%3$s. %1$s %2$s. %4$s:%5$s"
 msgid "You are only logged in at this location."
 msgstr "Csak erről a helyről vagyunk belépve."
 
-#: wp-admin/includes/plugin-install.php:404
+#: wp-admin/includes/plugin-install.php:405
 msgid "These suggestions are based on the plugins you and other users have installed."
 msgstr "Ezek a javaslatok más felhasználók bővítmény telepítési szokásain alapulnak."
 
@@ -9372,7 +9372,7 @@ msgid "<strong>Incompatible</strong> with your version of WordPress"
 msgstr "<strong>Nem kompatibilis</strong> a jelenleg használt WordPress verziónkkal"
 
 #. translators: %s: Number of stars.
-#: wp-admin/includes/plugin-install.php:763
+#: wp-admin/includes/plugin-install.php:761
 msgid "%d star"
 msgid_plural "%d stars"
 msgstr[0] "%d csillag"
@@ -9392,16 +9392,16 @@ msgstr "Felhasználó hozzáadása a megerősítéshez szükséges e-mail kikül
 msgid "The grid view for the Media Library requires JavaScript. <a href=\"%s\">Switch to the list view</a>."
 msgstr "A Médiakönyvtár rácsnézetéhez JavaScript szükséges.<a href=\"%s\">Váltás listanézetre</a>."
 
-#: wp-admin/credits.php:36 wp-admin/includes/plugin-install.php:777
+#: wp-admin/credits.php:36 wp-admin/includes/plugin-install.php:775
 msgid "Contributors"
 msgstr "Közreműködők"
 
-#: wp-admin/includes/plugin-install.php:708
-#: wp-admin/includes/plugin-install.php:795
+#: wp-admin/includes/plugin-install.php:706
+#: wp-admin/includes/plugin-install.php:793
 msgid "Donate to this plugin &#187;"
 msgstr "Adomány a bővítményhez &#187;"
 
-#: wp-admin/includes/plugin-install.php:578
+#: wp-admin/includes/plugin-install.php:576
 msgctxt "Plugin installer section title"
 msgid "Reviews"
 msgstr "Értékelés"
@@ -9887,8 +9887,8 @@ msgstr "A honlap %1$s verziója kritikus hibát észlelt a WordPress %2$s verzi�
 msgid "WordPress %s is also now available."
 msgstr "Már elérhető a WordPress %s verziója."
 
-#: wp-admin/includes/update-core.php:1304
-#: wp-admin/includes/update-core.php:1340
+#: wp-admin/includes/update-core.php:1305
+#: wp-admin/includes/update-core.php:1341
 msgid "The update cannot be installed because your site is unable to copy some files. This is usually due to inconsistent file permissions."
 msgstr "A frissítés nem került telepítésre, mivel néhány fájlt nem lehetett átmásolni. Ez általában akkor fordul elő, ha nem megfelelőek (nem következetesek) a fájl hozzáférési engedélyek."
 
@@ -10003,7 +10003,7 @@ msgstr "Fordítások frissítése"
 msgid "Background updates"
 msgstr "Háttérfrissítések"
 
-#: wp-admin/includes/update-core.php:1407
+#: wp-admin/includes/update-core.php:1408
 msgid "There is not enough free disk space to complete the update."
 msgstr "Nincs elegendő szabad tárhely a frissítés elvégzéséhez."
 
@@ -10083,11 +10083,11 @@ msgstr "A felhasználónév meg nem engedett karaktereket tartalmaz."
 msgid "Please provide a valid username."
 msgstr "Érvényes felhasználónevet kell megadni."
 
-#: wp-admin/includes/update-core.php:1321
+#: wp-admin/includes/update-core.php:1322
 msgid "Copying the required files&#8230;"
 msgstr "A szükséges fájlok másolása&#8230;"
 
-#: wp-admin/includes/update-core.php:1228
+#: wp-admin/includes/update-core.php:1229
 msgid "Preparing to install the latest version&#8230;"
 msgstr "A legutóbbi verzió előkészítése a telepítésre&#8230;"
 
@@ -10777,7 +10777,7 @@ msgid "Search engine visibility"
 msgstr "Keresőmotor láthatóság"
 
 #. translators: 1: WordPress version, 2: URL to About screen.
-#: wp-admin/includes/update-core.php:1709 wp-admin/update-core.php:923
+#: wp-admin/includes/update-core.php:1710 wp-admin/update-core.php:923
 msgid "Welcome to WordPress %1$s. You will be redirected to the About WordPress screen. If not, click <a href=\"%2$s\">here</a>."
 msgstr "Üdvözöl a WordPress %1$s verzió! Most átirányításra kerülünk az 'Bővebben' képernyőre. Ha ez mégsem történne meg, kattintsunk <a href=\"%2$s\">ide</a>."
 
@@ -10913,7 +10913,7 @@ msgstr "Összecsukás"
 msgid "If you do not want a header image to be displayed on your site at all, click the &#8220;Remove Header Image&#8221; button at the bottom of the Header Image section of this page. If you want to re-enable the header image later, you just have to select one of the other image options and click &#8220;Save Changes&#8221;."
 msgstr "Ha a honlapunkon egyáltalán nem szeretnénk a fejrészben képet használni, kattintsunk a &#8220;Fejrész-kép eltávolítása&#8221; gombra ezen az oldalon, a fejrész-kép kiválasztó rész alatt. Ha később újra szeretnénk engedélyezni ezt a lehetőséget, válasszunk egyet az elérhető képek közül és kattintsunk a &#8220;Változások mentése&#8221; gombra."
 
-#: wp-admin/includes/plugin-install.php:1030
+#: wp-admin/includes/plugin-install.php:1028
 msgctxt "plugin"
 msgid "Installed"
 msgstr "Telepítve"
@@ -11068,7 +11068,7 @@ msgstr "Még nincs hozzászólás."
 
 #: wp-admin/includes/class-wp-theme-install-list-table.php:520
 #: wp-admin/includes/class-wp-themes-list-table.php:281
-#: wp-admin/includes/plugin-install.php:658
+#: wp-admin/includes/plugin-install.php:656
 msgid "Version:"
 msgstr "Verzió:"
 
@@ -11383,37 +11383,37 @@ msgstr "Ennek az oldalnak a használatának engedélyezése teszi lehetővé az 
 msgid "No comments awaiting moderation."
 msgstr "Nincs rendszer-moderációra várakozó hozzászólás."
 
-#: wp-admin/includes/plugin-install.php:579
+#: wp-admin/includes/plugin-install.php:577
 msgctxt "Plugin installer section title"
 msgid "Other Notes"
 msgstr "Egyéb megjegyzés"
 
-#: wp-admin/includes/plugin-install.php:577
+#: wp-admin/includes/plugin-install.php:575
 msgctxt "Plugin installer section title"
 msgid "Changelog"
 msgstr "Változás"
 
-#: wp-admin/includes/plugin-install.php:576
+#: wp-admin/includes/plugin-install.php:574
 msgctxt "Plugin installer section title"
 msgid "Screenshots"
 msgstr "Képernyőmentések"
 
-#: wp-admin/includes/plugin-install.php:575
+#: wp-admin/includes/plugin-install.php:573
 msgctxt "Plugin installer section title"
 msgid "FAQ"
 msgstr "GYIK"
 
-#: wp-admin/includes/plugin-install.php:574
+#: wp-admin/includes/plugin-install.php:572
 msgctxt "Plugin installer section title"
 msgid "Installation"
 msgstr "Telepítés"
 
-#: wp-admin/includes/plugin-install.php:573
+#: wp-admin/includes/plugin-install.php:571
 msgctxt "Plugin installer section title"
 msgid "Description"
 msgstr "Leírás"
 
-#: wp-admin/includes/plugin-install.php:706
+#: wp-admin/includes/plugin-install.php:704
 msgid "Plugin Homepage &#187;"
 msgstr "Bővítmény weboldala &#187;"
 
@@ -11545,7 +11545,7 @@ msgid "This screen allows you to choose your permalink structure. You can choose
 msgstr "Ezen a képernyőn lehetőségünk van a közvetlen hivatkozások struktúráját kiválasztani. Lehetséges általánosan elterjedt struktúrák közül választani, vagy teljesen sajátot létrehozni."
 
 #. translators: 1: WordPress version, 2: URL to About screen.
-#: wp-admin/includes/update-core.php:1717 wp-admin/update-core.php:931
+#: wp-admin/includes/update-core.php:1718 wp-admin/update-core.php:931
 msgid "Welcome to WordPress %1$s. <a href=\"%2$s\">Learn more</a>."
 msgstr "Üdvözlet a WordPress %1$s verziójától! <a href=\"%2$s\" target=\"_blank\">További tudnivalók</a>."
 
@@ -13486,7 +13486,7 @@ msgid "User already exists. Password inherited."
 msgstr "A felhasználó már létezik. A jelszó öröklődött."
 
 #: wp-admin/includes/class-wp-automatic-updater.php:529
-#: wp-admin/includes/update-core.php:1703 wp-admin/update-core.php:919
+#: wp-admin/includes/update-core.php:1704 wp-admin/update-core.php:919
 msgid "WordPress updated successfully."
 msgstr "WordPress frissítése sikeres."
 
@@ -14644,34 +14644,34 @@ msgstr "Frissítés %s verzióra"
 msgid "You are using a development version (%1$s). Cool! Please <a href=\"%2$s\">stay updated</a>."
 msgstr "%1$s fejlesztői verzió. Remek! Nem ártana a <a href=\"%2$s\"> frissítés</a>! :)"
 
-#: wp-admin/includes/update-core.php:1576
+#: wp-admin/includes/update-core.php:1577
 msgid "Upgrading database&#8230;"
 msgstr "Adatbázis frissítése&#8230;"
 
-#: wp-admin/includes/update-core.php:1092
+#: wp-admin/includes/update-core.php:1093
 msgid "The update could not be unpacked"
 msgstr "A frissítést nem lehet kicsomagolni"
 
-#: wp-admin/includes/update-core.php:1074
+#: wp-admin/includes/update-core.php:1075
 msgid "Verifying the unpacked files&#8230;"
 msgstr "Kicsomagolt fájlok ellenőrzése&#8230;"
 
 #. translators: 1: WordPress version number, 2: Minimum required MySQL version
 #. number, 3: Current MySQL version number.
-#: wp-admin/includes/update-core.php:1194
+#: wp-admin/includes/update-core.php:1195
 msgid "The update cannot be installed because WordPress %1$s requires MySQL version %2$s or higher. You are running version %3$s."
 msgstr "A frissítést nem lehet telepíteni, mivel a WordPresshez %1$s legalább MySQL %2$s verzió vagy újabb szükséges. A szerveren futó verzió, pedig %3$s."
 
 #. translators: 1: WordPress version number, 2: Minimum required PHP version
 #. number, 3: Current PHP version number.
-#: wp-admin/includes/update-core.php:1183
+#: wp-admin/includes/update-core.php:1184
 msgid "The update cannot be installed because WordPress %1$s requires PHP version %2$s or higher. You are running version %3$s."
 msgstr "A frissítést nem lehet telepíteni, mivel a WordPresshez %1$s legalább PHP %2$s verzió vagy újabb szükséges. A szerveren, pedig %3$s verzió található."
 
 #. translators: 1: WordPress version number, 2: Minimum required PHP version
 #. number, 3: Minimum required MySQL version number, 4: Current PHP version
 #. number, 5: Current MySQL version number.
-#: wp-admin/includes/update-core.php:1170
+#: wp-admin/includes/update-core.php:1171
 msgid "The update cannot be installed because WordPress %1$s requires PHP version %2$s or higher and MySQL version %3$s or higher. You are running PHP version %4$s and MySQL version %5$s."
 msgstr "A frissítést nem lehet telepíteni, mivel a WordPresshez %1$s legalább PHP %2$s verzió vagy újabb és MySQL %3$s verzió vagy újabb szükséges. A szerveren, pedig PHP %4$s és MySQL %5$s található."
 
@@ -14951,39 +14951,39 @@ msgstr "Valamelyik bővítmény hibás."
 msgid "The plugin generated unexpected output."
 msgstr "A bővítmény váratlan kimenetet produkált."
 
-#: wp-admin/includes/plugin-install.php:834
+#: wp-admin/includes/plugin-install.php:832
 msgid "<strong>Warning:</strong> This plugin <strong>has not been tested</strong> with your current version of WordPress."
 msgstr "<strong>Figyelmeztetés:</strong> Ez a bővítmény <strong>még nincs tesztelve</strong> a honlapon jelenleg üzemelő WordPress verzióval."
 
-#: wp-admin/includes/plugin-install.php:712
+#: wp-admin/includes/plugin-install.php:710
 msgid "Average Rating"
 msgstr "Átlagos értékelés"
 
-#: wp-admin/includes/plugin-install.php:704
+#: wp-admin/includes/plugin-install.php:702
 msgid "WordPress.org Plugin Page &#187;"
 msgstr "WordPress.org bővítmények oldala &#187;"
 
-#: wp-admin/includes/plugin-install.php:677
+#: wp-admin/includes/plugin-install.php:675
 msgid "Compatible up to:"
 msgstr "A kompatibilitás eddig a verzióig szól:"
 
 #. translators: %s: Version number.
-#: wp-admin/includes/plugin-install.php:673
-#: wp-admin/includes/plugin-install.php:683
+#: wp-admin/includes/plugin-install.php:671
+#: wp-admin/includes/plugin-install.php:681
 msgid "%s or higher"
 msgstr "%s, vagy magasabb"
 
-#: wp-admin/includes/plugin-install.php:670
+#: wp-admin/includes/plugin-install.php:668
 msgid "Requires WordPress Version:"
 msgstr "Szükséges WordPress verzió:"
 
 #: wp-admin/includes/class-wp-plugin-install-list-table.php:707
-#: wp-admin/includes/plugin-install.php:662
+#: wp-admin/includes/plugin-install.php:660
 msgid "Last Updated:"
 msgstr "Legutóbbi frissítés:"
 
 #. translators: %s: Number of ratings.
-#: wp-admin/includes/plugin-install.php:726
+#: wp-admin/includes/plugin-install.php:724
 msgid "(based on %s rating)"
 msgid_plural "(based on %s ratings)"
 msgstr[0] "(%s szavazat alapján)"
@@ -15534,7 +15534,7 @@ msgid "Empty archive."
 msgstr "Üres archívum."
 
 #: wp-admin/includes/file.php:1831 wp-admin/includes/file.php:1985
-#: wp-admin/includes/file.php:2043 wp-admin/includes/update-core.php:1514
+#: wp-admin/includes/file.php:2043 wp-admin/includes/update-core.php:1515
 msgid "Could not copy file."
 msgstr "A fájl másolása nem lehetséges."
 
@@ -15839,12 +15839,12 @@ msgid "The plugin is at the latest version."
 msgstr "A bővítmény naprakész."
 
 #: wp-admin/includes/class-wp-upgrader.php:210
-#: wp-admin/includes/update-core.php:1461
+#: wp-admin/includes/update-core.php:1462
 msgid "Disabling Maintenance mode&#8230;"
 msgstr "Karbantartás üzemmód kikapcsolása&#8230;"
 
 #: wp-admin/includes/class-wp-upgrader.php:209
-#: wp-admin/includes/update-core.php:1312
+#: wp-admin/includes/update-core.php:1313
 msgid "Enabling Maintenance mode&#8230;"
 msgstr "Karbantartás üzemmód bekapcsolása&#8230;"
 
