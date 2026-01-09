@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Elementor Website Builder &#8211; More Than Just a Page Builder - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-01-08 09:06:06+0000\n"
+"PO-Revision-Date: 2026-01-08 10:10:32+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -2643,6 +2643,10 @@ msgstr "Elementor の Pro ギャラリーウィジェットを使って、魅力
 msgid "Gain complete freedom to design every slide with Elementor\"s Pro Carousel."
 msgstr "Elementor の Pro カルーセルを使って、各スライドを自由自在にデザインできます。"
 
+#: includes/widgets/heading.php:159
+msgid "Create captivating headings that rotate with the Animated Headline Widget."
+msgstr "アニメーション見出しウィジェットで、切り替わる魅力的な見出しを作成できます。"
+
 #: includes/template-library/sources/local.php:254
 msgid "Parent Template:"
 msgstr "親テンプレート:"
@@ -2725,9 +2729,26 @@ msgstr "エレメントマネージャー"
 msgid "Upgrade now"
 msgstr "今すぐアップグレード"
 
+#. translators: %s: Recommended PHP version.
+#: modules/system-info/reporters/server.php:131
+msgid "We recommend using PHP version %s or higher."
+msgstr "PHP バージョン %s 以上の使用を推奨します。"
+
+#: modules/page-templates/module.php:156
+msgid "Elementor Full Width"
+msgstr "Elementor 全幅"
+
 #: modules/page-templates/module.php:155
 msgid "Elementor Canvas"
 msgstr "Elementor キャンバス"
+
+#: modules/image-loading-optimization/module.php:240
+msgid "An image should not be lazy-loaded and marked as high priority at the same time."
+msgstr "画像を遅延読み込みに設定しつつ、高優先度としてマークすることはできません。"
+
+#: includes/settings/settings.php:449
+msgid "Optimized Image Loading"
+msgstr "画像読み込みの最適化"
 
 #: includes/settings/settings.php:466
 msgid "Optimized Gutenberg Loading"
@@ -2740,6 +2761,20 @@ msgstr "VideoPress URL"
 #: includes/widgets/video.php:162
 msgid "VideoPress"
 msgstr "VideoPress"
+
+#: includes/widgets/star-rating.php:129
+msgid "You are currently editing a Star Rating widget in its old version. Drag a new Rating widget onto your page to use a newer version, providing better capabilities."
+msgstr "現在、旧バージョンのスター評価ウィジェットを編集中です。より高機能な新しい評価ウィジェットをページにドラッグしてご利用ください。"
+
+#. translators: 1: Rating value, 2: Rating scale.
+#. translators: 1: Rating value. 2: Rating scale.
+#: includes/widgets/rating.php:310 includes/widgets/star-rating.php:458
+msgid "Rated %1$s out of %2$s"
+msgstr "%2$s のうち %1$s と評価しました"
+
+#: includes/settings/tools.php:167
+msgid "An error occurred, the selected version is invalid. Try selecting different version."
+msgstr "エラーが発生しました。選択されたバージョンが無効です。別のバージョンを選択してください。"
 
 #: includes/controls/groups/typography.php:220
 msgid "Letter Spacing"
@@ -2795,6 +2830,11 @@ msgstr "Grow"
 msgid "Custom Order"
 msgstr "カスタムオーダー"
 
+#: includes/controls/groups/flex-item.php:76
+#: includes/controls/groups/flex-item.php:109
+msgid "This control will affect contained elements only."
+msgstr "このコントロールは、含まれるエレメントのみに影響します。"
+
 #: includes/controls/groups/flex-item.php:51
 msgid "Align Self"
 msgstr "自己整列"
@@ -2807,6 +2847,10 @@ msgstr "フレックスベース"
 #: includes/controls/groups/grid-container.php:226
 msgid "Align Content"
 msgstr "コンテンツを整列"
+
+#: includes/controls/groups/flex-container.php:195
+msgid "Items within the container can stay in a single line (No wrap), or break into multiple lines (Wrap)."
+msgstr "コンテナー内の項目は、1行にとどまる (折り返しなし) ことも、複数行に分割される (折り返し) こともできます。"
 
 #: includes/controls/groups/flex-container.php:128
 #: includes/controls/groups/grid-container.php:159
@@ -2852,6 +2896,10 @@ msgstr "グルーヴ"
 #: includes/controls/groups/border.php:60
 msgid "Border Type"
 msgstr "枠線の種類"
+
+#: includes/controls/groups/background.php:607
+msgid "Background Fallback"
+msgstr "背景フォールバック"
 
 #: includes/controls/groups/background.php:478
 msgid "Display Size"
