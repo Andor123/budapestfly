@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Elementor Website Builder &#8211; More Than Just a Page Builder - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-01-08 10:10:32+0000\n"
+"PO-Revision-Date: 2026-01-11 12:07:16+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -2935,6 +2935,10 @@ msgstr "背景タイプ"
 msgid "Classic"
 msgstr "クラシック"
 
+#: app/modules/onboarding/module.php:197
+msgid "You do not have permission to perform this action."
+msgstr "この操作を実行する権限がありません。"
+
 #: modules/nested-tabs/widgets/nested-tabs.php:1176
 #: modules/nested-tabs/widgets/nested-tabs.php:1242
 msgid "Tabs. Open items with Enter or Space, close with Escape and navigate using the Arrow keys."
@@ -2973,6 +2977,10 @@ msgstr "上"
 #: assets/js/packages/editor-site-navigation/editor-site-navigation.strings.js:19
 msgid "Rename"
 msgstr "名前を変更"
+
+#: modules/nested-accordion/widgets/nested-accordion.php:410
+msgid "Space between Items"
+msgstr "項目間のスペース"
 
 #: modules/nested-accordion/widgets/nested-accordion.php:366
 msgid "Multiple"
@@ -3023,6 +3031,26 @@ msgstr "展開"
 msgid "Item Position"
 msgstr "項目の位置"
 
+#: modules/apps/admin-pointer.php:30
+msgid "Discover our collection of plugins and add-ons carefully selected to enhance your Elementor website and unleash your creativity."
+msgstr "Elementor サイトを強化し、創造力を解き放つために厳選されたプラグインやアドオンのコレクションをご覧ください。"
+
+#: modules/apps/admin-apps-page.php:26
+msgid "Learn more about this page."
+msgstr "このページについてさらに詳しく。"
+
+#: modules/apps/admin-apps-page.php:25
+msgid "Boost your web-creation process with add-ons, plugins, and more tools specially selected to unleash your creativity, increase productivity, and enhance your Elementor-powered website."
+msgstr "創造力を解き放ち、生産性を高め、Elementor で構築されたサイトを強化するために厳選されたアドオン、プラグイン、その他のツールで、Web 制作をさらに加速させましょう。"
+
+#: modules/apps/admin-apps-page.php:24
+msgid "Popular Add-ons, New Possibilities."
+msgstr "人気のアドオン、新たな可能性。"
+
+#: includes/widgets/video.php:941
+msgid "Note: These controls have been deprecated and are only visible if they were previously in use. The video’s width and position are now set based on its aspect ratio."
+msgstr "注: これらのコントロールは非推奨となっており、以前に使用されていた場合のみ表示されます。動画の幅と位置は、現在はアスペクト比に基づいて設定されます。"
+
 #: includes/widgets/video.php:256
 msgid "Choose Video File"
 msgstr "動画ファイルを選択"
@@ -3037,6 +3065,15 @@ msgstr "%1$s / %2$s"
 msgid "Box"
 msgstr "ボックス"
 
+#. translators: 1: Link open tag, 2: Link open tag, 3: Link close tag.
+#: core/kits/documents/tabs/settings-site-identity.php:60
+msgid "Changes will be reflected only after %1$s saving %3$s and %2$s reloading %3$s preview."
+msgstr "変更は、%1$s 保存 %3$s および %2$s プレビューの再読み込み %3$s 後に反映されます。"
+
+#: core/admin/admin.php:655
+msgid "Build Smart with AI"
+msgstr "AIを活用したスマートな構築"
+
 #: includes/controls/groups/background.php:99 assets/js/ai-admin.js:11318
 #: assets/js/ai-gutenberg.js:11536 assets/js/ai-media-library.js:11318
 #: assets/js/ai-unify-product-images.js:11318 assets/js/ai.js:12870
@@ -3044,6 +3081,10 @@ msgstr "ボックス"
 #: assets/js/packages/editor-controls/editor-controls.strings.js:182
 msgid "Gradient"
 msgstr "グラデーション"
+
+#: modules/nested-tabs/widgets/nested-tabs.php:384
+msgid "Note: Scroll tabs if they don’t fit into their parent container."
+msgstr "注: タブが親コンテナに収まらない場合はスクロールしてください。"
 
 #: modules/nested-tabs/widgets/nested-tabs.php:382
 msgid "Horizontal Scroll"
@@ -3075,6 +3116,10 @@ msgstr "項目のタイトル"
 msgid "item #%d"
 msgstr "項目 #%d"
 
+#: includes/widgets/toggle.php:157
+msgid "You are currently editing a Toggle widget in its old version. Drag a new Accordion widget onto your page to use a newer version, providing nested capabilities."
+msgstr "現在、旧バージョンのトグルウィジェットを編集中です。入れ子構造に対応した新しい機能を利用するには、新しいアコーディオンウィジェットをページにドラッグしてください。"
+
 #: includes/widgets/image-box.php:428 includes/widgets/image.php:403
 msgid "Object Position"
 msgstr "オブジェクトの位置"
@@ -3083,9 +3128,21 @@ msgstr "オブジェクトの位置"
 msgid "Fit to Size"
 msgstr "サイズに合わせる"
 
+#: includes/widgets/accordion.php:154
+msgid "You are currently editing an Accordion Widget in its old version. Any new Accordion widget dragged into the canvas will be the new Accordion widget, with the improved Nested capabilities."
+msgstr "現在、旧バージョンのアコーディオンウィジェットを編集中です。キャンバスに新しく追加されるアコーディオンウィジェットは、改良されたネスト機能を備えた新しいウィジェットになります。"
+
 #: includes/frontend.php:1414
 msgid "Go to slide"
 msgstr "スライドに移動"
+
+#: includes/frontend.php:1413
+msgid "This is the last slide"
+msgstr "これが最後のスライドです"
+
+#: includes/frontend.php:1412
+msgid "This is the first slide"
+msgstr "これが最初のスライドです"
 
 #: includes/frontend.php:1411
 msgid "Next slide"
@@ -3098,6 +3155,10 @@ msgstr "前のスライド"
 #: includes/editor-templates/navigator.php:81
 msgid "Show/hide Element"
 msgstr "エレメントの表示 / 非表示"
+
+#: includes/editor-templates/navigator.php:68
+msgid "Show/hide inner elements"
+msgstr "内部エレメントを表示 / 非表示"
 
 #: includes/editor-templates/navigator.php:58
 msgid "Resize structure"
@@ -3121,6 +3182,10 @@ msgstr "コメントを許可"
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:196
 msgid "Order"
 msgstr "順序"
+
+#: includes/template-library/sources/local.php:542
+msgid "Invalid template type."
+msgstr "無効なテンプレートタイプです。"
 
 #: core/admin/admin.php:374
 msgid "Get Elementor Pro"
@@ -3148,6 +3213,10 @@ msgstr "グローバル"
 msgid "Close structure"
 msgstr "密接な構造"
 
+#: includes/editor-templates/navigator.php:32 assets/js/editor.js:36426
+msgid "Expand all elements"
+msgstr "すべてのエレメントを展開"
+
 #: includes/editor-templates/global.php:68 includes/elements/container.php:96
 #: includes/elements/container.php:104 includes/elements/container.php:383
 #: assets/js/editor.js:34343 assets/js/editor.js:43461
@@ -3159,6 +3228,10 @@ msgstr "グリッド"
 #: modules/atomic-widgets/library/flexbox.php:54
 msgid "Flexbox"
 msgstr "Flexbox"
+
+#: includes/editor-templates/global.php:9
+msgid "Select your structure"
+msgstr "構成を選択"
 
 #: includes/controls/groups/grid-container.php:115
 msgid "Auto Flow"
@@ -3197,6 +3270,14 @@ msgstr "ユニットを切り替える"
 #: modules/floating-buttons/base/widget-contact-button-base.php:116
 msgid "Top Bar"
 msgstr "トップバー"
+
+#: includes/elements/column.php:211 includes/widgets/icon-list.php:546
+msgid "Horizontal Alignment"
+msgstr "水平方向の配置"
+
+#: includes/widgets/alert.php:506 includes/widgets/alert.php:561
+msgid "Dismiss this alert."
+msgstr "このアラートを閉じる。"
 
 #: core/breakpoints/manager.php:329
 msgid "Tablet Landscape"
@@ -3241,6 +3322,11 @@ msgstr "タイトル"
 #: includes/widgets/video.php:865
 msgid "Shadow"
 msgstr "シャドウ"
+
+#: modules/nested-accordion/widgets/nested-accordion.php:436
+#: modules/nested-tabs/widgets/nested-tabs.php:474
+msgid "Distance from content"
+msgstr "コンテンツからの距離"
 
 #: modules/nested-tabs/widgets/nested-tabs.php:454
 msgid "Gap between tabs"
@@ -3514,6 +3600,11 @@ msgstr "表示してください"
 msgid "Convert"
 msgstr "変換"
 
+#: modules/container-converter/module.php:85
+#: modules/container-converter/module.php:118
+msgid "Convert to container"
+msgstr "コンテナに変換"
+
 #: includes/widgets/video.php:1001
 msgid "Play Video about"
 msgstr "動画を再生"
@@ -3768,6 +3859,10 @@ msgstr "無効なタイトル"
 #: includes/settings/tools.php:160
 msgid "Not allowed to rollback versions"
 msgstr "バージョンをロールバックすることはできません"
+
+#: includes/managers/controls.php:1138
+msgid "Meet Page Transitions"
+msgstr "ページ遷移について"
 
 #: includes/elements/column.php:462 includes/elements/container.php:874
 #: includes/elements/section.php:727 includes/widgets/heading.php:344
