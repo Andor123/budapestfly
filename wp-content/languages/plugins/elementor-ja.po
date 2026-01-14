@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Elementor Website Builder &#8211; More Than Just a Page Builder - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-01-11 12:07:16+0000\n"
+"PO-Revision-Date: 2026-01-13 07:01:38+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -3201,6 +3201,12 @@ msgstr "Elementor Pro を入手"
 msgid "AI"
 msgstr "AI"
 
+#. translators: 1: Link open tag, 2: Link close tag.
+#: includes/widgets/image-carousel.php:391
+#: includes/widgets/image-gallery.php:204 includes/widgets/image.php:229
+msgid "Manage your site’s lightbox settings in the %1$sLightbox panel%2$s."
+msgstr "%1$sライトボックスパネル%2$sでサイトのライトボックス設定を管理します。"
+
 #: includes/elements/container.php:377
 msgid "Container Layout"
 msgstr "コンテナのレイアウト"
@@ -3228,6 +3234,10 @@ msgstr "グリッド"
 #: modules/atomic-widgets/library/flexbox.php:54
 msgid "Flexbox"
 msgstr "Flexbox"
+
+#: includes/editor-templates/global.php:52
+msgid "Which layout would you like to use?"
+msgstr "どのレイアウトを使用しますか ?"
 
 #: includes/editor-templates/global.php:9
 msgid "Select your structure"
@@ -3271,6 +3281,25 @@ msgstr "ユニットを切り替える"
 msgid "Top Bar"
 msgstr "トップバー"
 
+#. translators: %s: Page title.
+#. translators: %s: Document title.
+#: core/editor/loader/v1/templates/editor-body-v1-view.php:29
+#: core/editor/loader/v2/templates/editor-body-v2-view.php:29
+#: includes/editor-templates/editor-wrapper.php:32
+#: assets/js/packages/editor-documents/editor-documents.js:2
+#: assets/js/packages/editor-documents/editor-documents.strings.js:2
+msgid "Edit \"%s\" with Elementor"
+msgstr "「%s」を Elementor で編集"
+
+#. translators: 1: Link open tag, 2: Link close tag.
+#: core/document-types/page-base.php:100
+msgid "Set a different selector for the title in the %1$sLayout panel%2$s."
+msgstr "%1$sレイアウトパネル%2$sでタイトル用のセレクターを変更してください。"
+
+#: includes/widgets/icon-list.php:603
+msgid "Adjust Vertical Position"
+msgstr "垂直位置を調整"
+
 #: includes/elements/column.php:211 includes/widgets/icon-list.php:546
 msgid "Horizontal Alignment"
 msgstr "水平方向の配置"
@@ -3291,9 +3320,19 @@ msgstr "タブレット縦レイアウト"
 msgid "Dismiss this notice."
 msgstr "この通知を非表示にする。"
 
+#: modules/generator-tag/module.php:84
+msgid "A generator tag is a meta element that indicates the attributes used to create a webpage. It is used for analytical purposes."
+msgstr "ジェネレータータグは、Web ページの作成に使用された属性を示す meta 要素です。分析目的で使用されます。"
+
 #: modules/generator-tag/module.php:76
 msgid "Generator Tag"
 msgstr "ジェネレータのタグ"
+
+#. translators: %d: Number of rows.
+#: includes/utils.php:254
+msgid "%d database row affected."
+msgid_plural "%d database rows affected."
+msgstr[0] "%d件のデータベース行が影響を受けました。"
 
 #: core/kits/documents/tabs/theme-style-form-fields.php:188
 msgid "Accent Color"
@@ -3306,6 +3345,15 @@ msgstr "すべてを無効化"
 #: core/experiments/manager.php:540
 msgid "Activate All"
 msgstr "すべてを有効化"
+
+#. translators: %1$s Link open tag, %2$s: Link close tag.
+#: core/experiments/manager.php:523
+msgid "Personalize your Elementor experience by controlling which features and experiments are active on your site. Help make Elementor better by %1$ssharing your experience and feedback with us%2$s."
+msgstr "有効にする機能や実験を管理して、Elementor の使用体験をカスタマイズできます。%1$s体験やフィードバックを共有%2$sして、Elementor の改善にご協力ください。"
+
+#: core/experiments/manager.php:517
+msgid "Experiments and Features"
+msgstr "実験と機能"
 
 #: modules/atomic-opt-in/opt-in-page.php:90
 #: modules/atomic-widgets/opt-in/opt-in.php:41
@@ -3332,6 +3380,10 @@ msgstr "コンテンツからの距離"
 msgid "Gap between tabs"
 msgstr "タブ間の隙間"
 
+#: modules/nested-tabs/widgets/nested-tabs.php:439
+msgid "Note: Choose at which breakpoint tabs will automatically switch to a vertical (“accordion”) layout."
+msgstr "注: タブが自動的に縦型 (「アコーディオン」) レイアウトに切り替わるブレークポイントを選択してください。"
+
 #. translators: 1: Breakpoint label, 2: `>` character, 3: Breakpoint value.
 #: modules/nested-tabs/widgets/nested-tabs.php:427
 msgid "%1$s (%2$s %3$dpx)"
@@ -3351,9 +3403,17 @@ msgstr "タブ #3"
 msgid "Tab #%d"
 msgstr "タブ #%d"
 
+#: modules/nested-elements/module.php:20
+msgid "Create a rich user experience by layering widgets together inside \"Nested\" Tabs, etc. When turned on, we’ll automatically enable new nested features. Your old widgets won’t be affected."
+msgstr "「ネスト」されたタブなどの中でウィジェットを重ねることで、リッチなユーザー体験を作成できます。有効化すると、新しいネスト機能が自動的に有効になります。既存のウィジェットには影響しません。"
+
 #: modules/nested-elements/module.php:17
 msgid "Nested Elements"
 msgstr "ネストされた要素"
+
+#: includes/widgets/video.php:605
+msgid "Preload attribute lets you specify how the video should be loaded when the page loads."
+msgstr "preload 属性を使用すると、ページ読み込み時に動画をどのように読み込むかを指定できます。"
 
 #: includes/widgets/video.php:599
 msgid "Metadata"
@@ -3363,11 +3423,28 @@ msgstr "メタデータ"
 msgid "Preload"
 msgstr "プリロード"
 
+#: includes/widgets/tabs.php:153
+msgid "You are currently editing a Tabs Widget in its old version. Any new tabs widget dragged into the canvas will be the new Tab widget, with the improved Nested capabilities."
+msgstr "現在、旧バージョンのタブウィジェットを編集中です。新しくキャンバスに追加されるタブウィジェットは、入れ子機能が強化された新しいタブウィジェットになります。"
+
+#. translators: 1: Link opening tag, 2: Link closing tag
+#: includes/settings/settings.php:394
+msgid "Disable this option if you want to prevent Google Fonts from being loaded. This setting is recommended when loading fonts from a different source (plugin, theme or %1$scustom fonts%2$s)."
+msgstr "Google Fonts の読み込みを防ぎたい場合は、このオプションを無効にしてください。別のソース (プラグイン、テーマ、または %1$sカスタムフォント%2$s) からフォントを読み込む場合に推奨される設定です。"
+
 #: includes/settings/settings.php:384
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:24
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:289
 msgid "Google Fonts"
 msgstr "Google Fonts"
+
+#: includes/settings/settings.php:478
+msgid "Lazy Load Background Images"
+msgstr "背景画像の遅延読み込み"
+
+#: includes/elements/container.php:1945
+msgid "Note: Avoid applying transform properties on sticky containers. Doing so might cause unexpected results."
+msgstr "注: 固定表示 (sticky) のコンテナには transform プロパティを適用しないでください。予期しない挙動が発生する可能性があります。"
 
 #: core/admin/admin.php:1051 core/utils/hints.php:464
 #: modules/apps/admin-apps-page.php:111 modules/apps/admin-apps-page.php:142
@@ -3429,6 +3506,14 @@ msgstr "(Thin)"
 msgid "Requires"
 msgstr "必須"
 
+#. translators: 1: kit title, 2: date, 3: line break
+#. translators: 1: Last imported kit title, 2: Last imported kit date, 3: Line
+#. break <br>.
+#: app/modules/import-export-customization/module.php:191
+#: app/modules/import-export/module.php:192
+msgid "Remove all the content and site settings that came with \"%1$s\" on %2$s.%3$s Your original site settings will be restored."
+msgstr "%2$s の「%1$s」に付属していたすべてのコンテンツとサイト設定を削除します。%3$s 元のサイト設定は復元されます。"
+
 #: app/modules/import-export-customization/module.php:182
 #: app/modules/import-export-customization/module.php:185
 #: app/modules/import-export-customization/module.php:192
@@ -3437,6 +3522,15 @@ msgstr "必須"
 #: app/modules/import-export/module.php:193
 msgid "imported kit"
 msgstr "インポートキット"
+
+#. translators: 1: kit title, 2: date, 3: line break, 4: kit title, 5: date.
+#. translators: 1: Last imported kit title, 2: Last imported kit date, 3: Line
+#. break <br>, 4: Penultimate imported kit title, 5: Penultimate imported kit
+#. date.
+#: app/modules/import-export-customization/module.php:181
+#: app/modules/import-export/module.php:182
+msgid "Remove all the content and site settings that came with \"%1$s\" on %2$s %3$s and revert to the site setting that came with \"%4$s\" on %5$s."
+msgstr "%2$s %3$s の「%1$s」に付属していたすべてのコンテンツとサイト設定を削除し、%5$s の「%4$s」に付属していたサイト設定に戻します。"
 
 #. translators: %d: Item index.
 #. Translators: %s is the current item index.
@@ -3485,6 +3579,10 @@ msgstr "この投稿"
 msgid "Exit to"
 msgstr "出口"
 
+#: core/kits/documents/tabs/settings-layout.php:91
+msgid "Sets the default space inside the container (Default is 10px)"
+msgstr "コンテナ内のデフォルトの余白を設定します (初期値は10px)"
+
 #: core/kits/documents/tabs/settings-layout.php:88
 msgid "Container Padding"
 msgstr "コンテナのパディング"
@@ -3503,9 +3601,20 @@ msgstr "サイト名の設定にエラーが発生しました"
 msgid "Try it out"
 msgstr "お試しください"
 
+#: core/admin/admin-notices.php:410
+msgid "With our experimental speed boosting features you can go faster than ever before. Look for the Performance label on our Experiments page and activate those experiments to improve your site loading speed."
+msgstr "実験的な高速化機能を使えば、これまで以上にスピードアップできます。実験ページで「パフォーマンス」ラベルを探し、それらを有効化することで、サイトの読み込み速度を向上させましょう。"
+
 #: core/admin/admin-notices.php:409
 msgid "Improve your site’s performance score."
 msgstr "サイトのパフォーマンススコアを改善しましょう。"
+
+#: core/editor/notice-bar.php:45 assets/js/element-manager-admin.js:505
+#: assets/js/element-manager-admin.js:2233
+#: assets/js/element-manager-admin.strings.js:28
+#: assets/js/element-manager-admin.strings.js:70
+msgid "Unleash the full power of Elementor's features and web creation tools."
+msgstr "Elementor の機能と Web 制作ツールの力を最大限に引き出しましょう。"
 
 #: includes/editor-templates/hotkeys.php:184 assets/js/notes.js:134
 #: assets/js/notes.js:138 assets/js/notes.js:224 assets/js/notes.strings.js:1
