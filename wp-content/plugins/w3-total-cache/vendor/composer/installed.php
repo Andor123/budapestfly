@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'boldgrid/w3-total-cache',
-        'pretty_version' => '2.8.15',
-        'version' => '2.8.15.0',
-        'reference' => 'f9ae82e441f97140219d1bcfa038730ea2c998b0',
+        'pretty_version' => '2.9.0',
+        'version' => '2.9.0.0',
+        'reference' => '304afc1d8d396e9f0b92fef5c4173516c5d5734a',
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -38,9 +38,9 @@
             'dev_requirement' => false,
         ),
         'boldgrid/w3-total-cache' => array(
-            'pretty_version' => '2.8.15',
-            'version' => '2.8.15.0',
-            'reference' => 'f9ae82e441f97140219d1bcfa038730ea2c998b0',
+            'pretty_version' => '2.9.0',
+            'version' => '2.9.0.0',
+            'reference' => '304afc1d8d396e9f0b92fef5c4173516c5d5734a',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -101,9 +101,9 @@
             'dev_requirement' => false,
         ),
         'nikic/php-parser' => array(
-            'pretty_version' => 'v4.19.4',
-            'version' => '4.19.4.0',
-            'reference' => '715f4d25e225bc47b293a8b997fe6ce99bf987d2',
+            'pretty_version' => 'v4.19.5',
+            'version' => '4.19.5.0',
+            'reference' => '51bd93cc741b7fc3d63d20b6bdcd99fdaa359837',
             'type' => 'library',
             'install_path' => __DIR__ . '/../nikic/php-parser',
             'aliases' => array(),
