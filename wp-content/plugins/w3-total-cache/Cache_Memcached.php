@@ -244,7 +244,7 @@ class Cache_Memcached extends Cache_Base {
 	/**
 	 * Retrieves multiple cached values in a single request.
 	 *
-	 * @since 2.9.0
+	 * @since 2.9.1
 	 *
 	 * @param array  $keys  Cache keys.
 	 * @param string $group Cache group.
@@ -293,7 +293,7 @@ class Cache_Memcached extends Cache_Base {
 	/**
 	 * Stores multiple values in a single request.
 	 *
-	 * @since 2.9.0
+	 * @since 2.9.1
 	 *
 	 * @param array  $items  Map of cache key => payload.
 	 * @param string $group  Cache group.

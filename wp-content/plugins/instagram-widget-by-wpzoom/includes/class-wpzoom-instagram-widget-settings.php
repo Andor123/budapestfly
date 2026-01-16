@@ -72,7 +72,7 @@ class WPZOOM_Instagram_Widget_Settings {
 		'image-width-suffix'              => array( 'type' => 'integer', 'default' => 0 ),
 		'show-overlay'                    => array( 'type' => 'boolean', 'default' => true ),
 		'lazy-load'                       => array( 'type' => 'boolean', 'default' => true ),
-		'ajax-initial-load'               => array( 'type' => 'boolean', 'default' => true ),
+		'ajax-initial-load'               => array( 'type' => 'boolean', 'default' => false ),
 		'lightbox'                        => array( 'type' => 'boolean', 'default' => true ),
 		'allowed-post-types'              => array( 'type' => 'string',  'default' => 'IMAGE,VIDEO,CAROUSEL_ALBUM' ),
 		'image-aspect-ratio'              => array( 'type' => 'string',  'default' => 'square' ),
@@ -2931,15 +2931,18 @@ class WPZOOM_Instagram_Widget_Settings {
 			$legacy_base = 'zoom_instagram_is_configured_' . substr( $post_ID, 0, 20 );
 			delete_transient( $legacy_base );
 			delete_transient( $legacy_base . '_no_videos' );
-			
+
 			// Clear filtered variants of legacy transients for this feed only
-			$wpdb->query( 
-				$wpdb->prepare( 
-					"DELETE FROM {$wpdb->options} WHERE option_name LIKE %s", 
+			$wpdb->query(
+				$wpdb->prepare(
+					"DELETE FROM {$wpdb->options} WHERE option_name LIKE %s",
 					'_transient_' . $legacy_base . '%'
-				) 
+				)
 			);
 		}
+
+		// Always clear the HTML output cache for AJAX initial load
+		delete_transient( 'wpz_insta_feed_html_' . $post_ID );
 	}
 
 	/**

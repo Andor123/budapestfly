@@ -2,14 +2,14 @@
 # This file is distributed under the GPL v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: W3 Total Cache 2.9.0\n"
+"Project-Id-Version: W3 Total Cache 2.9.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/w3-total-cache\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-01-14T23:17:14+00:00\n"
+"POT-Creation-Date: 2026-01-15T23:27:24+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: w3-total-cache\n"
@@ -2575,7 +2575,7 @@ msgid "CDN FSD"
 msgstr ""
 
 #: Cdn_BunnyCdn_Widget_View_Unauthorized.php:104
-#: Extension_ImageService_Api.php:398
+#: Extension_ImageService_Api.php:418
 #: Generic_WidgetAccount_View.php:46
 #: inc/email/support_request.php:54
 #: inc/email/support_request.php:57
@@ -5360,7 +5360,7 @@ msgstr ""
 #: Extension_FragmentCache_Plugin_Admin.php:125
 #: Extension_ImageService_Plugin_Admin.php:156
 #: Extension_ImageService_Plugin_Admin.php:622
-#: Extension_ImageService_Plugin_Admin.php:1085
+#: Extension_ImageService_Plugin_Admin.php:1087
 #: Extension_NewRelic_Plugin_Admin.php:138
 #: FeatureShowcase_Plugin_Admin.php:213
 #: FeatureShowcase_Plugin_Admin.php:252
@@ -5635,13 +5635,13 @@ msgstr ""
 
 #: Extension_ImageService_Api.php:200
 #: Extension_ImageService_Api.php:298
-#: Extension_ImageService_Api.php:343
+#: Extension_ImageService_Api.php:363
 msgid "WP Error: "
 msgstr ""
 
 #: Extension_ImageService_Api.php:210
-#: Extension_ImageService_Api.php:439
-#: Extension_ImageService_Api.php:457
+#: Extension_ImageService_Api.php:459
+#: Extension_ImageService_Api.php:477
 #: Extension_ImageService_Plugin_Admin.php:525
 #: SetupGuide_Plugin_Admin.php:1149
 msgid "Unlimited"
@@ -5691,8 +5691,18 @@ msgstr ""
 msgid "Please verify your license key in %1$sGeneral Settings%2$s."
 msgstr ""
 
+#: Extension_ImageService_Api.php:309
+msgid "Error: Job not found (404)."
+msgstr ""
+
 #. translators: 1: HTTP status code.
-#: Extension_ImageService_Api.php:356
+#: Extension_ImageService_Api.php:319
+#, php-format
+msgid "Error: Received a non-200 response code: %1$d"
+msgstr ""
+
+#. translators: 1: HTTP status code.
+#: Extension_ImageService_Api.php:376
 #, php-format
 msgid "HTTP Error: Received status code %1$d"
 msgstr ""
@@ -5917,23 +5927,23 @@ msgid "Total Cache Image Converter"
 msgstr ""
 
 #: Extension_ImageService_Plugin_Admin.php:606
-#: Extension_ImageService_Plugin_Admin.php:1087
-#: Extension_ImageService_Plugin_Admin.php:1091
+#: Extension_ImageService_Plugin_Admin.php:1089
+#: Extension_ImageService_Plugin_Admin.php:1093
 msgid "Convert"
 msgstr ""
 
 #: Extension_ImageService_Plugin_Admin.php:607
-#: Extension_ImageService_Plugin_Admin.php:1142
+#: Extension_ImageService_Plugin_Admin.php:1146
 msgid "Convert to WebP"
 msgstr ""
 
 #: Extension_ImageService_Plugin_Admin.php:608
-#: Extension_ImageService_Plugin_Admin.php:1133
+#: Extension_ImageService_Plugin_Admin.php:1139
 msgid "Convert to AVIF"
 msgstr ""
 
 #: Extension_ImageService_Plugin_Admin.php:609
-#: Extension_ImageService_Plugin_Admin.php:1037
+#: Extension_ImageService_Plugin_Admin.php:1038
 msgid "Sending..."
 msgstr ""
 
@@ -5942,19 +5952,19 @@ msgid "Submitted"
 msgstr ""
 
 #: Extension_ImageService_Plugin_Admin.php:611
-#: Extension_ImageService_Plugin_Admin.php:1040
+#: Extension_ImageService_Plugin_Admin.php:1041
 msgid "Processing..."
 msgstr ""
 
 #: Extension_ImageService_Plugin_Admin.php:612
-#: Extension_ImageService_Plugin_Admin.php:984
-#: Extension_ImageService_Plugin_Admin.php:1078
-#: Extension_ImageService_Plugin_Admin.php:1080
+#: Extension_ImageService_Plugin_Admin.php:985
+#: Extension_ImageService_Plugin_Admin.php:1079
+#: Extension_ImageService_Plugin_Admin.php:1081
 msgid "Converted"
 msgstr ""
 
 #: Extension_ImageService_Plugin_Admin.php:613
-#: Extension_ImageService_Plugin_Admin.php:839
+#: Extension_ImageService_Plugin_Admin.php:840
 msgid "Not converted"
 msgstr ""
 
@@ -5967,7 +5977,7 @@ msgid "Reverted"
 msgstr ""
 
 #: Extension_ImageService_Plugin_Admin.php:616
-#: Extension_ImageService_Plugin_Admin.php:1103
+#: Extension_ImageService_Plugin_Admin.php:1105
 msgid "Revert"
 msgstr ""
 
@@ -5995,12 +6005,12 @@ msgstr ""
 
 #. translators: 1: HTML anchor open tag, 2: HTML anchor close tag.
 #: Extension_ImageService_Plugin_Admin.php:631
-#: Extension_ImageService_Plugin_Admin.php:998
+#: Extension_ImageService_Plugin_Admin.php:999
 #, php-format
 msgid "The converted image would be larger than the original; conversion canceled.  %1$sLearn more%2$s."
 msgstr ""
 
-#: Extension_ImageService_Plugin_Admin.php:673
+#: Extension_ImageService_Plugin_Admin.php:674
 #: FeatureShowcase_Plugin_Admin.php:418
 #: inc/options/common/top_nav_bar.php:68
 #: inc/options/general.php:1129
@@ -6012,16 +6022,16 @@ msgstr ""
 msgid "Image Converter"
 msgstr ""
 
-#: Extension_ImageService_Plugin_Admin.php:983
+#: Extension_ImageService_Plugin_Admin.php:984
 msgid "WEBP"
 msgstr ""
 
-#: Extension_ImageService_Plugin_Admin.php:1150
+#: Extension_ImageService_Plugin_Admin.php:1152
 msgid "Attachment id: "
 msgstr ""
 
 #. translators: 1: Submissions.
-#: Extension_ImageService_Plugin_Admin.php:1264
+#: Extension_ImageService_Plugin_Admin.php:1266
 #, php-format
 msgid "Submitted %1$u image for processing."
 msgid_plural "Submitted %1$u images for processing."
@@ -6029,51 +6039,51 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: 1: Successes, 2: Skipped, 3: Errored, 4: Invalid.
-#: Extension_ImageService_Plugin_Admin.php:1282
+#: Extension_ImageService_Plugin_Admin.php:1284
 #, php-format
 msgid "Successful: %1$u | Skipped: %2$u | Errored: %3$u | Invalid: %4$u"
 msgstr ""
 
-#: Extension_ImageService_Plugin_Admin.php:1303
+#: Extension_ImageService_Plugin_Admin.php:1305
 msgid "All selected optimizations have been reverted."
 msgstr ""
 
 #. translators: 1: HTML anchor open tag, 2: HTML anchor close tag.
-#: Extension_ImageService_Plugin_Admin.php:1318
+#: Extension_ImageService_Plugin_Admin.php:1320
 #, php-format
 msgid "Switch to %1$slist mode%2$s for image format conversions."
 msgstr ""
 
 #. translators: 1: HTML achor open tag, 2: HTML anchor close tag.
-#: Extension_ImageService_Plugin_Admin.php:1441
-#: Extension_ImageService_Plugin_Admin.php:1766
+#: Extension_ImageService_Plugin_Admin.php:1443
+#: Extension_ImageService_Plugin_Admin.php:1773
 #, php-format
 msgid "%1$sLearn more%2$s."
 msgstr ""
 
-#: Extension_ImageService_Plugin_Admin.php:1781
-#: Extension_ImageService_Plugin_Admin.php:1976
-#: Extension_ImageService_Plugin_Admin.php:2024
+#: Extension_ImageService_Plugin_Admin.php:1788
+#: Extension_ImageService_Plugin_Admin.php:1988
+#: Extension_ImageService_Plugin_Admin.php:2036
 msgid "Missing input post id."
 msgstr ""
 
 #. translators: 1: Image filepath.
-#: Extension_ImageService_Plugin_Admin.php:1797
+#: Extension_ImageService_Plugin_Admin.php:1804
 #, php-format
 msgid "File \"%1$s\" does not exist."
 msgstr ""
 
-#: Extension_ImageService_Plugin_Admin.php:1846
-#: Extension_ImageService_Plugin_Admin.php:1867
+#: Extension_ImageService_Plugin_Admin.php:1853
+#: Extension_ImageService_Plugin_Admin.php:1874
 msgid "Invalid API response."
 msgstr ""
 
-#: Extension_ImageService_Plugin_Admin.php:2010
+#: Extension_ImageService_Plugin_Admin.php:2022
 msgid "No converted images found to revert."
 msgstr ""
 
 #. translators: 1: HTML anchor open tag, 2: HTML anchor close tag.
-#: Extension_ImageService_Plugin_Admin.php:2131
+#: Extension_ImageService_Plugin_Admin.php:2143
 #, php-format
 msgid "WP Cron is not working as expected, which is required for image format conversions.  %2$sLearn more%3$s."
 msgstr ""
@@ -11675,121 +11685,121 @@ msgid "%1$sUpgrade Performance%2$s"
 msgstr ""
 
 #. Translators: 1 Product name.
-#: Licensing_Plugin_Admin.php:262
+#: Licensing_Plugin_Admin.php:268
 #, php-format
 msgid "Your previous %1$s Pro license key is expired and will remain registered to this domain."
 msgstr ""
 
 #. Translators: 1 Product name.
-#: Licensing_Plugin_Admin.php:276
+#: Licensing_Plugin_Admin.php:282
 #, php-format
 msgid "Your previous %1$s Pro license key was not found and cannot be deactivated."
 msgstr ""
 
 #. Translators: 1 Product name.
-#: Licensing_Plugin_Admin.php:290
+#: Licensing_Plugin_Admin.php:296
 #, php-format
 msgid "Your previous %1$s Pro license key has been deactivated."
 msgstr ""
 
 #. translators: 1 Product name, 2 HTML anchor open tag, 3 HTML anchor close tag.
-#: Licensing_Plugin_Admin.php:304
+#: Licensing_Plugin_Admin.php:310
 #, php-format
 msgid "Your previous %1$s Pro license key is invalid and cannot be deactivated. Please %2$scontact support%3$s for assistance."
 msgstr ""
 
 #. Translators: 1 Product name.
-#: Licensing_Plugin_Admin.php:327
+#: Licensing_Plugin_Admin.php:333
 #, php-format
 msgid "The %1$s Pro license key you provided is valid and has been applied."
 msgstr ""
 
 #. Translators: 1 Product name, 2 opening HTML a tag to billing portal, 3 closing HTML a tag, 4 opening HTML a tag for recheck, 5 closing HTML a tag.
-#: Licensing_Plugin_Admin.php:491
+#: Licensing_Plugin_Admin.php:497
 #, php-format
 msgid "Your %1$s Pro subscription requires a PayPal billing agreement update. Please %2$sUpdate your billing agreement%3$s to ensure uninterrupted service. Already updated? %4$sRecheck your license status%5$s or dismiss this notice."
 msgstr ""
 
 #. Translators: 1 Product name, 2 opening HTML a tag for recheck, 3 closing HTML a tag.
-#: Licensing_Plugin_Admin.php:504
+#: Licensing_Plugin_Admin.php:510
 #, php-format
 msgid "Your %1$s Pro subscription requires a PayPal billing agreement update. Please contact support to ensure uninterrupted service. Already updated? %2$sRecheck your license status%3$s or dismiss this notice."
 msgstr ""
 
-#: Licensing_Plugin_Admin.php:571
+#: Licensing_Plugin_Admin.php:577
 msgid "Rechecking..."
 msgstr ""
 
 #. Translators: 1 Product name, 2 opening HTML a tag to billing portal, 3 closing HTML a tag, 4 opening HTML a tag for recheck, 5 closing HTML a tag.
-#: Licensing_Plugin_Admin.php:627
+#: Licensing_Plugin_Admin.php:633
 #, php-format
 msgid "Your %1$s Pro subscription payment is past due. Please update your %2$sBilling Information%3$s to prevent service interruption. Already updated? %4$sRecheck your license status%5$s."
 msgstr ""
 
 #. Translators: 1 Product name, 2 opening HTML a tag for recheck, 3 closing HTML a tag.
-#: Licensing_Plugin_Admin.php:641
+#: Licensing_Plugin_Admin.php:647
 #, php-format
 msgid "Your %1$s Pro subscription payment is past due. Please update your billing information or contact us to prevent service interruption. Already updated? %2$sRecheck your license status%3$s."
 msgstr ""
 
 #. Translators: 1 Product name, 2 HTML input to renew subscription.
-#: Licensing_Plugin_Admin.php:653
+#: Licensing_Plugin_Admin.php:659
 #, php-format
 msgid "Your %1$s Pro license key has expired. %2$s to continue using the Pro features"
 msgstr ""
 
-#: Licensing_Plugin_Admin.php:660
+#: Licensing_Plugin_Admin.php:666
 msgid "Renew Now"
 msgstr ""
 
 #. Translators: 1 Product name, 2 opening HTML a tag to reset license URIs, 3 closing HTML a tag.
-#: Licensing_Plugin_Admin.php:676
+#: Licensing_Plugin_Admin.php:682
 #, php-format
 msgid "Your %1$s license key is not active for this site. You can switch your license to this website following %2$sthis link%3$s"
 msgstr ""
 
 #. Translators: 1 Product name.
-#: Licensing_Plugin_Admin.php:688
+#: Licensing_Plugin_Admin.php:694
 #, php-format
 msgid "Your %1$s license key is not active and cannot be activated due to the license activation limit being reached."
 msgstr ""
 
 #. Translators: 1 Product name.
-#: Licensing_Plugin_Admin.php:698
+#: Licensing_Plugin_Admin.php:704
 #, php-format
 msgid "The %1$s license key is not active."
 msgstr ""
 
 #. Translators: 1 Product name, 2 opening HTML a tag to license setting, 3 closing HTML a tag.
-#: Licensing_Plugin_Admin.php:711
+#: Licensing_Plugin_Admin.php:717
 #, php-format
 msgid "Your current %1$s Pro license key is not valid. %2$sPlease confirm it%3$s."
 msgstr ""
 
 #. translators: 1: Product name, 2: HTML anchor open tag, 3: HTML anchor close tag.
-#: Licensing_Plugin_Admin.php:726
+#: Licensing_Plugin_Admin.php:732
 #, php-format
 msgid "The %1$s license key cannot be verified. Please %2$scontact support%3$s for assistance."
 msgstr ""
 
-#: Licensing_Plugin_Admin.php:830
+#: Licensing_Plugin_Admin.php:836
 #: SetupGuide_Plugin_Admin.php:1405
 msgid "Accept"
 msgstr ""
 
-#: Licensing_Plugin_Admin.php:834
+#: Licensing_Plugin_Admin.php:840
 #: SetupGuide_Plugin_Admin.php:1406
 msgid "Decline"
 msgstr ""
 
 #. translators: 1 opening HTML a tag to W3TC Terms page, 2 closing HTML a tag.
-#: Licensing_Plugin_Admin.php:859
+#: Licensing_Plugin_Admin.php:865
 #, php-format
 msgid "Our terms of use and privacy policies have been updated. Please %1$sreview%2$s and accept them."
 msgstr ""
 
 #. translators: 1: Product name, 2: HTML break tag, 3: Anchor/link open tag, 4: Anchor/link close tag.
-#: Licensing_Plugin_Admin.php:869
+#: Licensing_Plugin_Admin.php:875
 #, php-format
 msgid "By allowing us to collect data about how %1$s is used, we can improve our features and experience for everyone. This data will not include any personally identifiable information.%2$sFeel free to review our %3$sterms of use and privacy policy%4$s."
 msgstr ""

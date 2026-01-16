@@ -3,7 +3,7 @@
  * Plugin Name:       Elementor Addons by WPZOOM
  * Plugin URI:        https://www.wpzoom.com/plugins/wpzoom-elementor-addons/
  * Description:       A plugin that provides a collection of Elementor Templates and advanced widgets created by the WPZOOM team
- * Version:           1.3.0
+ * Version:           1.3.1
  * Author:            WPZOOM
  * Author URI:        https://www.wpzoom.com/
  * Text Domain:       wpzoom-elementor-addons
@@ -268,7 +268,7 @@ final class WPZOOM_Elementor_Addons {
 		
 			$message = sprintf(
 				/* translators: 1: Plugin name 2: Elementor */
-				esc_html__( '"%1$s" requires "%2$s" to activated.', 'wpzoom-elementor-addons' ),
+				esc_html__( '"%1$s" requires "%2$s" to be activated.', 'wpzoom-elementor-addons' ),
 				'<strong>' . esc_html__( 'WPZOOM Elementor Addons', 'wpzoom-elementor-addons' ) . '</strong>',
 				'<strong>' . esc_html__( 'Elementor', 'wpzoom-elementor-addons' ) . '</strong>'
 			);

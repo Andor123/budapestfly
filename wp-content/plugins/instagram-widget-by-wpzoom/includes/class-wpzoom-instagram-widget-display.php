@@ -181,6 +181,12 @@ class Wpzoom_Instagram_Widget_Display {
 	 * AJAX handler for initial feed load functionality.
 	 * This allows the feed to be loaded asynchronously after page load.
 	 *
+	 * Note: This endpoint intentionally does not use nonce verification because:
+	 * 1. It's a read-only operation that only displays public Instagram feed content
+	 * 2. Nonces become stale when pages are cached (WP Rocket, etc.), causing failures
+	 * 3. The feed_id is validated against actual feed posts for security
+	 * 4. No user data is modified or sensitive actions performed
+	 *
 	 * @since 2.3.0
 	 * @return void
 	 */
@@ -190,11 +196,6 @@ class Wpzoom_Instagram_Widget_Display {
 			header( 'Cache-Control: no-cache, must-revalidate, max-age=0' );
 			header( 'Pragma: no-cache' );
 			header( 'Expires: Wed, 11 Jan 1984 05:00:00 GMT' );
-		}
-
-		// Verify nonce
-		if ( ! isset( $_POST['_wpnonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['_wpnonce'] ) ), 'wpzinsta-ajax-initial-load' ) ) {
-			wp_send_json_error( 'Invalid nonce' );
 		}
 
 		// Sanitize input data
@@ -210,6 +211,19 @@ class Wpzoom_Instagram_Widget_Display {
 			wp_send_json_error( 'Invalid feed' );
 		}
 
+		// Try to get cached HTML output first
+		$cache_key = 'wpz_insta_feed_html_' . $feed_id;
+		$cached_html = get_transient( $cache_key );
+
+		if ( false !== $cached_html && ! empty( $cached_html ) ) {
+			// Return cached HTML - much faster!
+			wp_send_json_success( array(
+				'html'    => $cached_html,
+				'feed_id' => $feed_id,
+				'cached'  => true,
+			) );
+		}
+
 		// Generate feed output using existing method (without AJAX loading to avoid recursion)
 		$feed_settings = array();
 		foreach ( WPZOOM_Instagram_Widget_Settings::$feed_settings as $setting_name => $setting_args ) {
@@ -223,13 +237,42 @@ class Wpzoom_Instagram_Widget_Display {
 		// Get feed HTML
 		$html = $this->output_feed( $feed_id, false, $feed_settings );
 
+		// Cache the HTML output using the same lifetime as the feed's API cache
+		$cache_lifetime = $this->get_feed_cache_lifetime( $feed_id );
+		set_transient( $cache_key, $html, $cache_lifetime );
+
 		// Prepare response
 		$response = array(
 			'html'    => $html,
 			'feed_id' => $feed_id,
+			'cached'  => false,
 		);
 
 		wp_send_json_success( $response );
+	}
+
+	/**
+	 * Get the cache lifetime for a feed based on its settings.
+	 *
+	 * @since 2.3.0
+	 * @param int $feed_id The feed ID.
+	 * @return int Cache lifetime in seconds.
+	 */
+	private function get_feed_cache_lifetime( $feed_id ) {
+		$interval = (int) WPZOOM_Instagram_Widget_Settings::get_feed_setting_value( $feed_id, 'check-new-posts-interval-number' );
+		$interval_suffix = (int) WPZOOM_Instagram_Widget_Settings::get_feed_setting_value( $feed_id, 'check-new-posts-interval-suffix' );
+
+		$multipliers = array(
+			MINUTE_IN_SECONDS,
+			HOUR_IN_SECONDS,
+			DAY_IN_SECONDS,
+			WEEK_IN_SECONDS,
+			MONTH_IN_SECONDS,
+		);
+
+		$multiplier = isset( $multipliers[ $interval_suffix ] ) ? $multipliers[ $interval_suffix ] : DAY_IN_SECONDS;
+
+		return intval( $multiplier * max( 1, $interval ) );
 	}
 
 	/**
@@ -1495,14 +1538,10 @@ class Wpzoom_Instagram_Widget_Display {
 		$show_user_image = isset( $args['show-account-image'] ) && boolval( $args['show-account-image'] );
 		$spacing_between = isset( $args['spacing-between'] ) && floatval( $args['spacing-between'] ) > -1 ? floatval( $args['spacing-between'] ) : 10;
 
-		// Generate nonce for AJAX request
-		$nonce = wp_create_nonce( 'wpzinsta-ajax-initial-load' );
-
 		ob_start();
 		?>
 		<div class="wpz-insta-ajax-placeholder"
-			 data-feed-id="<?php echo esc_attr( $feed_id ); ?>"
-			 data-nonce="<?php echo esc_attr( $nonce ); ?>">
+			 data-feed-id="<?php echo esc_attr( $feed_id ); ?>">
 
 			<?php if ( $show_header || $show_user_image ) : ?>
 			<div class="wpz-insta-skeleton-header">

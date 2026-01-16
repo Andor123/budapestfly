@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Elementor Website Builder &#8211; More Than Just a Page Builder - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-01-14 12:19:39+0000\n"
+"PO-Revision-Date: 2026-01-15 12:24:44+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -3740,6 +3740,11 @@ msgstr "動画を再生"
 msgid "Pagination"
 msgstr "ページネーション"
 
+#. translators: %s: 100vh.
+#: includes/elements/container.php:499
+msgid "To achieve full height Container use %s."
+msgstr "全高コンテナを実現するには %s を使用してください。"
+
 #: core/experiments/manager.php:342 includes/elements/container.php:72
 #: includes/elements/container.php:361
 #: modules/library/documents/container.php:52 assets/js/editor.js:8584
@@ -3971,6 +3976,11 @@ msgstr "プライバシーポリシー"
 msgid "Terms of Service"
 msgstr "利用規約"
 
+#. translators: 1. "Terms of service" link, 2. "Privacy policy" link
+#: includes/admin-templates/beta-tester.php:44
+msgid "By clicking Sign Up, you agree to Elementor's %1$s and %2$s"
+msgstr "「サインアップ」をクリックすると、Elementor の %1$s および %2$s に同意したものとみなされます"
+
 #: core/logger/log-reporter.php:25
 msgid "Log"
 msgstr "ログ"
@@ -3982,6 +3992,10 @@ msgstr "進行中の実験"
 #: core/experiments/manager.php:503
 msgid "Stable Features"
 msgstr "安定した機能"
+
+#: core/experiments/manager.php:316
+msgid "The “Inline Font Icons” will render the icons as inline SVG without loading the Font-Awesome and the eicons libraries and its related CSS files and fonts."
+msgstr "「インラインフォントアイコン」は、Font Awesome や eicons ライブラリ、および関連する CSS やフォントを読み込まずに、アイコンをインライン SVG として表示します。"
 
 #: core/experiments/manager.php:312
 msgid "Inline Font Icons"
@@ -3999,9 +4013,30 @@ msgstr "無効なタイトル"
 msgid "Not allowed to rollback versions"
 msgstr "バージョンをロールバックすることはできません"
 
+#. translators: 1: Function argument, 2: Elementor version number.
+#: modules/dev-tools/deprecation.php:292
+msgid "The %1$s argument is deprecated since version %2$s!"
+msgstr "%1$s 引数はバージョン%2$s以降、非推奨となりました。"
+
+#. translators: 1: Function argument, 2: Elementor version number, 3:
+#. Replacement argument name.
+#: modules/dev-tools/deprecation.php:288
+msgid "The %1$s argument is deprecated since version %2$s! Use %3$s instead."
+msgstr "%1$s 引数はバージョン%2$s以降、非推奨となりました。代わりに %3$s を使用してください。"
+
+#. translators: 1: Link open tag, 2: Link close tag.
+#: includes/settings/tools.php:419
+msgid "%1$sClick here%2$s %3$sto join our first-to-know email updates.%4$s"
+msgstr "最新情報をいち早くメールで受け取るには、%1$sここをクリック%2$s%3$sしてください。%4$s"
+
 #: includes/managers/controls.php:1138
 msgid "Meet Page Transitions"
 msgstr "ページ遷移について"
+
+#. translators: %1$s Link open tag, %2$s: Link close tag.
+#: includes/maintenance-mode.php:375
+msgid "Select one or go ahead and %1$screate one%2$s now."
+msgstr "1つ選択するか、今すぐ %1$s新しく作成%2$s してください。"
 
 #: includes/elements/column.php:462 includes/elements/container.php:874
 #: includes/elements/section.php:727 includes/widgets/heading.php:344
@@ -4059,10 +4094,25 @@ msgstr "画面"
 msgid "Multiply"
 msgstr "乗算"
 
+#. translators: %1$s Link open tag, %2$s: Link close tag.
+#: includes/editor-templates/panel.php:207
+msgid "You can enable it from the %1$sElementor settings page%2$s."
+msgstr "%1$sElementor 設定ページ%2$s から有効化できます。"
+
 #. translators: %s: Device name.
 #: includes/base/element-base.php:1395
 msgid "Hide On %s"
 msgstr "%sで隠す"
+
+#. translators: %1$s Span open tag, %2$s: Span close tag.
+#: includes/admin-templates/new-template.php:52
+msgid "Templates Help You %1$sWork Efficiently%2$s"
+msgstr "テンプレートで %1$s効率的に作業%2$s できます"
+
+#. translators: 1: Link open tag, 2: Link close tag.
+#: core/kits/documents/tabs/tab-base.php:80
+msgid "In order for Theme Style to affect all relevant Elementor elements, please disable Default Colors and Fonts from the %1$sSettings Page%2$s."
+msgstr "テーマスタイルをすべての関連する Elementor 要素に適用するには、%1$s設定ページ%2$s で「デフォルトのカラー」と「デフォルトのフォント」を無効化してください。"
 
 #: core/kits/documents/tabs/settings-page-transitions.php:19
 #: includes/managers/controls.php:1120
@@ -4072,6 +4122,10 @@ msgstr "ページ遷移"
 #: core/experiments/manager.php:332
 msgid "Get pixel-perfect design for every screen size. You can now add up to 6 customizable breakpoints beyond the default desktop setting: mobile, mobile extra, tablet, tablet extra, laptop, and widescreen."
 msgstr "あらゆる画面サイズでピクセルパーフェクトなデザインを実現。デフォルトのデスクトップ設定に加え、モバイル、モバイルエクストラ、タブレット、タブレットエクストラ、ラップトップ、ワイドスクリーンの6つのカスタマイズ可能なブレークポイントを追加できるようになりました。"
+
+#: core/experiments/manager.php:329
+msgid "Additional Custom Breakpoints"
+msgstr "追加のカスタムブレークポイント"
 
 #: includes/managers/elements.php:336
 #: assets/js/kit-library.ab2ea8474ed4764e95c7.bundle.js:3831
