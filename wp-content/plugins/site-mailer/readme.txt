@@ -1,10 +1,10 @@
 === Site Mailer - SMTP Replacement, Email API Deliverability & Email Log ===
 Contributors: elemntor
 Tags: email, email log, SMTP, email API, sender
-Requires at least: 6.3
-Tested up to: 6.8
+Requires at least: 6.6
+Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 1.3.0
+Stable tag: 1.4.0
 License: GPL-3
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -120,7 +120,13 @@ You can report security bugs through the Patchstack Vulnerability Disclosure Pro
 5. Custom Domain Authentication Wizard - Guides you through adding a custom domain with DNS settings.
 
 == Changelog ==
-= 1.3.0 - 2024-11-04 =
+= 1.4.0 - 2026-01-20 =
+* Tweak: Moved the plugin entry point under a unified Elementor menu
+* Tweak: Redesigned the plugin settings interface for a unified look and feel
+* Tweak: Added support for "Elementor One"
+* Fix: Corrected the direct upgrade link to include the specific subscription ID
+
+= 1.3.0 - 2025-11-04 =
 * Tweak: Improved the Reviews component flow
 * Fix: Resolved toast review notification issue
 
