@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WPForms &#8211; Easy Form Builder for WordPress &#8211; Contact Forms, Payment Forms, Surveys, &amp; More - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-01-18 15:44:24+0000\n"
+"PO-Revision-Date: 2026-01-21 15:07:33+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -2698,6 +2698,14 @@ msgstr "Übersetzung"
 msgid "Minimum Price: %1$s"
 msgstr "Mindestpreis: %1$s"
 
+#. translators: %1$s - addon download URL, %2$s - link to manual installation
+#. guide, %3$s - link to contact support.
+#. translators: %1$s - addon download URL, %2$s - link to a manual installation
+#. guide, %3$s - link to contact support.
+#: includes/admin/admin.php:203 includes/admin/ajax-actions.php:801
+msgid "Could not install the addon. Please <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">download it from wpforms.com</a> and <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">install it manually</a>, or <a href=\"%3$s\" target=\"_blank\" rel=\"noopener noreferrer\">contact support</a> for assistance."
+msgstr "Das Add-on konnte nicht installiert werden. Bitte <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">lade es von wpforms.com</a> herunter und <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">installiere es manuell</a> oder <a href=\"%3$s\" target=\"_blank\" rel=\"noopener noreferrer\">kontaktiere den Support</a> für Hilfe."
+
 #: includes/admin/admin.php:223
 msgid "Change columns to display"
 msgstr "Anzuzeigende Spalten ändern"
@@ -2717,14 +2725,6 @@ msgstr "Bist du sicher, dass du diesen Eintrag löschen willst? Dadurch werden a
 #: includes/admin/admin.php:227
 msgid "Are you sure you want to delete ALL entries? This will also remove all associated files, notes, and logs."
 msgstr "Bist du sicher, dass du ALLE Einträge löschen willst? Dadurch werden auch alle zugehörigen Dateien, Notizen und Protokolle gelöscht."
-
-#. translators: %1$s - addon download URL, %2$s - link to manual installation
-#. guide, %3$s - link to contact support.
-#. translators: %1$s - addon download URL, %2$s - link to a manual installation
-#. guide, %3$s - link to contact support.
-#: includes/admin/admin.php:203 includes/admin/ajax-actions.php:801
-msgid "Could not install the addon. Please <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">download it from wpforms.com</a> and <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">install it manually</a>, or <a href=\"%3$s\" target=\"_blank\" rel=\"noopener noreferrer\">contact support</a> for assistance."
-msgstr "Das Add-on konnte nicht installiert werden. Bitte <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">lade es von wpforms.com</a> herunter und <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">installiere es manuell</a> oder <a href=\"%3$s\" target=\"_blank\" rel=\"noopener noreferrer\">kontaktiere den Support</a> für Hilfe."
 
 #. translators: %s - entry count.
 #: includes/admin/admin.php:229
@@ -3868,14 +3868,14 @@ msgstr "Gutschein-Übersicht"
 msgid "Coupon Settings"
 msgstr "Gutschein-Einstellungen"
 
+#: src/Admin/Payments/Views/Coupons/Education.php:184
+msgid "Easy to Use, Yet Powerful"
+msgstr "Einfach zu bedienen, trotzdem leistungsstark"
+
 #. translators: %1$s - WPForms.com Upgrade page URL.
 #: src/Admin/Payments/Views/Coupons/Education.php:171
 msgid "With the Coupons addon, you can offer customers discounts using custom coupon codes. Create your own percentage or fixed rate discount, then add the Coupon field to any payment form. When a customer enters your unique code, they’ll receive the specified discount. You can also add limits to restrict when coupons are available and how often they can be used. The Coupons addon requires a license level of Pro or higher.%s"
 msgstr "Mit dem Gutschein-Add-on kannst du deinen Kunden Rabatte mit individuellen Gutschein-Codes anbieten. Erstelle deinen eigenen prozentualen oder festen Rabatt und füge das Gutschein-Feld in jedem Zahlungsformular hinzu. Wenn ein Kunde deinen individuellen Code eingibt, erhält er den angegebenen Rabatt. Du kannst auch Limits hinzufügen, um einzuschränken, wann Gutscheine verfügbar sind und wie oft sie genutzt werden können. Das Gutschein-Add-on erfordert Pro oder höher als Lizenzstufe.%s"
-
-#: src/Admin/Payments/Views/Coupons/Education.php:184
-msgid "Easy to Use, Yet Powerful"
-msgstr "Einfach zu bedienen, trotzdem leistungsstark"
 
 #: src/Integrations/Stripe/Fields/Traits/CreditCard.php:226
 msgid "<p>Stripe Payments must be enabled when using the Stripe Credit Card field.</p><p>To proceed, please go to <strong>Payments » Stripe</strong> and check <strong>Enable Stripe payments</strong>.</p>"
@@ -5825,13 +5825,13 @@ msgstr "Teile deine Idee"
 msgid "If you could add just one feature to WPForms, what would it be? We want to know! Our team is busy surveying valued customers like you as we plan the year ahead. We’d love to know which features would take your business to the next level! Do you have a second to share your idea with us?"
 msgstr "Wenn du nur eine Funktion zu WPForms hinzufügen könntest, welche wäre das? Wir wollen es wissen! Unser Team befragt gerade geschätzte Kunden wie dich, während wir das kommende Jahr planen. Wir würden gerne wissen, welche Funktionen dein Unternehmen auf die nächste Stufe heben würden! Hast du einen Moment Zeit, uns deine Idee mitzuteilen?"
 
-#: src/Admin/Notifications/EventDriven.php:733
-msgid "You just hit 100 entries&hellip; and this is just the beginning! Now it’s time to dig into the data and figure out what makes your visitors tick. The User Journey addon shows you what your visitors looked at before submitting your form. Now you can easily find which areas of your site are triggering form conversions."
-msgstr "Du hast gerade 100 Einträge erreicht&hellip; und das ist erst der Anfang! Jetzt ist es an der Zeit, die Daten zu analysieren und herauszufinden, wie deine Besucher ticken. Das User-Journey-Add-on zeigt dir, was sich deine Besucher angeschaut haben, bevor sie dein Formular abschickten. Jetzt kannst du ganz einfach herausfinden, welche Bereiche deiner Website Formular-Konversionen auslösen."
-
 #: src/Admin/Notifications/EventDriven.php:718
 msgid "What’s Your Dream WPForms Feature?"
 msgstr "Was ist deine Traum-Funktion für WPForms?"
+
+#: src/Admin/Notifications/EventDriven.php:733
+msgid "You just hit 100 entries&hellip; and this is just the beginning! Now it’s time to dig into the data and figure out what makes your visitors tick. The User Journey addon shows you what your visitors looked at before submitting your form. Now you can easily find which areas of your site are triggering form conversions."
+msgstr "Du hast gerade 100 Einträge erreicht&hellip; und das ist erst der Anfang! Jetzt ist es an der Zeit, die Daten zu analysieren und herauszufinden, wie deine Besucher ticken. Das User-Journey-Add-on zeigt dir, was sich deine Besucher angeschaut haben, bevor sie dein Formular abschickten. Jetzt kannst du ganz einfach herausfinden, welche Bereiche deiner Website Formular-Konversionen auslösen."
 
 #. translators: %1$s - WPForms.com Upgrade page URL.
 #: templates/emails/summary-body.php:49
@@ -5848,13 +5848,13 @@ msgstr "Wenn du deine Einträge in WordPress verwalten möchtest, kannst du <a h
 msgid "Backups are completely free, 100%% secure, and you can turn them on in a few clicks! <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">Enable entry backups now.</a>"
 msgstr "Backups sind völlig kostenlos, 100 %% sicher und du kannst sie mit ein paar Klicks einschalten! <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">Aktiviere jetzt Eingangssicherungen.</a>"
 
-#: src/Admin/Notifications/EventDriven.php:666
-msgid "Are your forms converting fewer visitors than you hoped? Often, visitors quit forms partway through. That can prevent you from getting all the leads you deserve to capture. With our Form Abandonment addon, you can capture partial entries even if your visitor didn’t hit Submit! From there, it’s easy to follow up with leads and turn them into loyal customers."
-msgstr "Konvertieren deine Formulare weniger Besucher als du gehofft hast? Oft brechen Besucher Formulare auf halbem Weg ab. Das kann dazu führen, dass du nicht alle Leads bekommst, die du eigentlich erfassen wolltest. Mit unserem Form-Abandonment-Add-on kannst du Teileinträge erfassen, auch wenn dein Besucher nicht auf Absenden geklickt hat! Danach ist es ganz einfach, die Leads weiterzuverfolgen und sie in treue Kunden zu verwandeln."
-
 #: src/Admin/Notifications/EventDriven.php:665
 msgid "Get More Leads From Your Forms!"
 msgstr "Erhalte mehr Leads aus deinen Formularen!"
+
+#: src/Admin/Notifications/EventDriven.php:666
+msgid "Are your forms converting fewer visitors than you hoped? Often, visitors quit forms partway through. That can prevent you from getting all the leads you deserve to capture. With our Form Abandonment addon, you can capture partial entries even if your visitor didn’t hit Submit! From there, it’s easy to follow up with leads and turn them into loyal customers."
+msgstr "Konvertieren deine Formulare weniger Besucher als du gehofft hast? Oft brechen Besucher Formulare auf halbem Weg ab. Das kann dazu führen, dass du nicht alle Leads bekommst, die du eigentlich erfassen wolltest. Mit unserem Form-Abandonment-Add-on kannst du Teileinträge erfassen, auch wenn dein Besucher nicht auf Absenden geklickt hat! Danach ist es ganz einfach, die Leads weiterzuverfolgen und sie in treue Kunden zu verwandeln."
 
 #: src/Admin/Notifications/EventDriven.php:613
 msgid "Nothing beats real feedback from your customers and visitors. That’s why many small businesses love our awesome Surveys and Polls addon. Instantly unlock full survey reporting right in your WordPress dashboard. And don’t forget: building a survey is easy with our pre-made templates, so you could get started within a few minutes!"
@@ -6077,14 +6077,14 @@ msgstr "Backups der Formulareinträge wurden erfolgreich deaktiviert."
 msgid "Entry Backups Disabled"
 msgstr "Backups der Einträge deaktiviert"
 
+#: src/Lite/Admin/Education/LiteConnect.php:249
+msgid "Awesome! If you decide to upgrade to WPForms Pro, you can restore your entries and will have instant access to reports."
+msgstr "Toll! Wenn du dich für ein Upgrade auf WPForms Pro entscheidest, kannst du deine Einträge wiederherstellen und hast sofortigen Zugriff auf die Berichte."
+
 #. translators: %s - upgrade to WPForms Pro landing page URL.
 #: src/Lite/Integrations/LiteConnect/LiteConnect.php:119
 msgid "<strong>Your form entries are not being stored locally, but are backed up remotely.</strong> If you <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"wpforms-upgrade-modal\">upgrade to WPForms PRO</a>, you can restore your entries and they’ll be available in the WordPress dashboard."
 msgstr "<strong>Deine Formulareinträge werden nicht lokal gespeichert, sondern per Fernzugriff gesichert.</strong> Wenn du <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"wpforms-upgrade-modal\">ein Upgrade auf WPForms PRO</a> durchführst, kannst du deine Einträge wiederherstellen und sie sind dann im WordPress-Dashboard verfügbar."
-
-#: src/Lite/Admin/Education/LiteConnect.php:249
-msgid "Awesome! If you decide to upgrade to WPForms Pro, you can restore your entries and will have instant access to reports."
-msgstr "Toll! Wenn du dich für ein Upgrade auf WPForms Pro entscheidest, kannst du deine Einträge wiederherstellen und hast sofortigen Zugriff auf die Berichte."
 
 #: src/Lite/Admin/Education/LiteConnect.php:248
 msgid "Entry Backups Enabled"
@@ -11940,10 +11940,6 @@ msgstr "Hol dir WPForms Pro heute und schalte alle seine mächtigen Funktionen f
 msgid "Lao People's Democratic Republic"
 msgstr "Laos (Demokratische Volksrepublik)"
 
-#: includes/functions/data-presets.php:180
-msgid "Heard Island and McDonald Islands"
-msgstr "Heard- und McDonald-Inseln"
-
 #: includes/functions/data-presets.php:134
 msgid "Congo"
 msgstr "Kongo (Republik)"
@@ -12268,10 +12264,6 @@ msgstr "Exportieren"
 msgid "Thanks for being a loyal WPForms Lite user. <strong>Upgrade to WPForms Pro</strong> to unlock all the awesome features and experience<br>why WPForms is consistently rated the best WordPress form builder."
 msgstr "Danke, dass du ein treuer WPForms Lite Nutzer bist. <strong>Baue auf WPForms Pro</strong> auf, um alle fantastischen Funktionen zu nutzen und zu erfahren<br>warum WPForms immer wieder als bester WordPress-Formularersteller bewertet wird."
 
-#: includes/functions/data-presets.php:154
-msgid "Ethiopia"
-msgstr "Äthopien"
-
 #: includes/functions/data-presets.php:165
 msgctxt "Country"
 msgid "Georgia"
@@ -12413,6 +12405,14 @@ msgstr "Es wurden keine Formulare gefunden."
 #: includes/functions/data-presets.php:204
 msgid "Kyrgyzstan"
 msgstr "Kirgisistan"
+
+#: includes/functions/data-presets.php:180
+msgid "Heard Island and McDonald Islands"
+msgstr "Heard und McDonaldinseln"
+
+#: includes/functions/data-presets.php:154
+msgid "Ethiopia"
+msgstr "Äthiopien"
 
 #: src/Integrations/Gutenberg/FormSelector.php:435
 msgid "Select a Form"
@@ -13660,14 +13660,6 @@ msgstr "Es tut uns leid, %1$s ist in deinem Tarif nicht verfügbar. Bitte upgrad
 msgid "Label"
 msgstr "Beschriftung"
 
-#: includes/admin/builder/class-builder.php:840
-#: includes/admin/builder/functions.php:520 includes/fields/class-base.php:2521
-#: src/Admin/Tools/Views/Logs.php:110
-#: src/Integrations/Divi/WPFormsSelector.php:78
-#: src/Integrations/Divi/WPFormsSelector.php:88
-msgid "Off"
-msgstr "Aus"
-
 #: includes/admin/builder/panels/class-fields.php:593
 #: includes/admin/class-settings.php:128
 #: includes/fields/class-internal-information.php:302
@@ -13688,6 +13680,14 @@ msgstr "Aus"
 #: src/Lite/Admin/Education/Admin/DidYouKnow.php:136
 msgid "Learn More"
 msgstr "Weitere Informationen"
+
+#: includes/admin/builder/class-builder.php:840
+#: includes/admin/builder/functions.php:520 includes/fields/class-base.php:2521
+#: src/Admin/Tools/Views/Logs.php:110
+#: src/Integrations/Divi/WPFormsSelector.php:78
+#: src/Integrations/Divi/WPFormsSelector.php:88
+msgid "Off"
+msgstr "Aus"
 
 #: includes/admin/class-welcome.php:305
 msgid "Upgrade to PRO"
