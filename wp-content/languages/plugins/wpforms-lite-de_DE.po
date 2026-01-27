@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WPForms &#8211; Easy Form Builder for WordPress &#8211; Contact Forms, Payment Forms, Surveys, &amp; More - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-01-21 15:07:33+0000\n"
+"PO-Revision-Date: 2026-01-23 19:19:42+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -5852,6 +5852,10 @@ msgstr "Backups sind völlig kostenlos, 100 %% sicher und du kannst sie mit ein 
 msgid "Get More Leads From Your Forms!"
 msgstr "Erhalte mehr Leads aus deinen Formularen!"
 
+#: src/Admin/Notifications/EventDriven.php:612
+msgid "Want to Know What Your Customers Really Think?"
+msgstr "Willst du wissen, was deine Kunden wirklich denken?"
+
 #: src/Admin/Notifications/EventDriven.php:666
 msgid "Are your forms converting fewer visitors than you hoped? Often, visitors quit forms partway through. That can prevent you from getting all the leads you deserve to capture. With our Form Abandonment addon, you can capture partial entries even if your visitor didn’t hit Submit! From there, it’s easy to follow up with leads and turn them into loyal customers."
 msgstr "Konvertieren deine Formulare weniger Besucher als du gehofft hast? Oft brechen Besucher Formulare auf halbem Weg ab. Das kann dazu führen, dass du nicht alle Leads bekommst, die du eigentlich erfassen wolltest. Mit unserem Form-Abandonment-Add-on kannst du Teileinträge erfassen, auch wenn dein Besucher nicht auf Absenden geklickt hat! Danach ist es ganz einfach, die Leads weiterzuverfolgen und sie in treue Kunden zu verwandeln."
@@ -5859,10 +5863,6 @@ msgstr "Konvertieren deine Formulare weniger Besucher als du gehofft hast? Oft b
 #: src/Admin/Notifications/EventDriven.php:613
 msgid "Nothing beats real feedback from your customers and visitors. That’s why many small businesses love our awesome Surveys and Polls addon. Instantly unlock full survey reporting right in your WordPress dashboard. And don’t forget: building a survey is easy with our pre-made templates, so you could get started within a few minutes!"
 msgstr "Nichts ist besser als echtes Feedback von deinen Kunden und Besuchern. Deshalb lieben viele kleine Unternehmen unser großartiges Add-on für Umfragen und Abstimmungen, Surveys and Polls. Mit diesem Add-on kannst du Umfragen direkt in deinem WordPress-Dashboard erstellen. Und vergiss nicht: Mit unseren vorgefertigten Vorlagen ist es ganz einfach, eine Umfrage zu erstellen, sodass du innerhalb weniger Minuten loslegen kannst!"
-
-#: src/Admin/Notifications/EventDriven.php:612
-msgid "Want to Know What Your Customers Really Think?"
-msgstr "Willst du wissen, was deine Kunden wirklich denken?"
 
 #: src/Admin/Notifications/EventDriven.php:604
 msgid "Join Now"
@@ -6081,14 +6081,14 @@ msgstr "Backups der Einträge deaktiviert"
 msgid "Awesome! If you decide to upgrade to WPForms Pro, you can restore your entries and will have instant access to reports."
 msgstr "Toll! Wenn du dich für ein Upgrade auf WPForms Pro entscheidest, kannst du deine Einträge wiederherstellen und hast sofortigen Zugriff auf die Berichte."
 
+#: src/Lite/Admin/Education/LiteConnect.php:248
+msgid "Entry Backups Enabled"
+msgstr "Backups der Einträge aktiviert"
+
 #. translators: %s - upgrade to WPForms Pro landing page URL.
 #: src/Lite/Integrations/LiteConnect/LiteConnect.php:119
 msgid "<strong>Your form entries are not being stored locally, but are backed up remotely.</strong> If you <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"wpforms-upgrade-modal\">upgrade to WPForms PRO</a>, you can restore your entries and they’ll be available in the WordPress dashboard."
 msgstr "<strong>Deine Formulareinträge werden nicht lokal gespeichert, sondern per Fernzugriff gesichert.</strong> Wenn du <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"wpforms-upgrade-modal\">ein Upgrade auf WPForms PRO</a> durchführst, kannst du deine Einträge wiederherstellen und sie sind dann im WordPress-Dashboard verfügbar."
-
-#: src/Lite/Admin/Education/LiteConnect.php:248
-msgid "Entry Backups Enabled"
-msgstr "Backups der Einträge aktiviert"
 
 #: src/Lite/Admin/Education/LiteConnect.php:244
 msgid "Disable Entry Backups"
@@ -6811,14 +6811,14 @@ msgstr "Suchergebnisse für <strong>%s</strong>"
 msgid "Action Scheduler library is also used by other plugins, like WP Mail SMTP and WooCommerce, so you might see tasks that are not related to our plugin in the table below."
 msgstr "Die Action-Scheduler-Bibliothek wird auch von anderen Plugins wie WP Mail SMTP und WooCommerce verwendet, sodass du in der Tabelle unten möglicherweise Aufgaben siehst, die nicht mit unserem Plugin zusammenhängen."
 
+#: src/Admin/Pages/Community.php:88
+msgid "Visit WPForms YouTube Channel"
+msgstr "WPForms-YouTube-Kanal besuchen"
+
 #. translators: %s - Action Scheduler website URL.
 #: src/Admin/Tools/Views/ActionSchedulerList.php:45
 msgid "WPForms is using the <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">Action Scheduler</a> library, which allows it to queue and process bigger tasks in the background without making your site slower for your visitors. Below you can see the list of all tasks and their status. This table can be very useful when debugging certain issues."
 msgstr "WPForms verwendet die <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">Action-Scheduler</a>-Bibliothek, die es ermöglicht, größere Aufgaben in eine Warteschlange zu stellen und im Hintergrund auszuführen, ohne dass deine Website für deine Besucher langsamer wird. Unten siehst du eine Liste mit allen Aufgaben und ihrem Status. Diese Tabelle kann sehr nützlich sein, wenn du bestimmte Probleme beheben willst."
-
-#: src/Admin/Pages/Community.php:88
-msgid "Visit WPForms YouTube Channel"
-msgstr "WPForms-YouTube-Kanal besuchen"
 
 #: src/Admin/Pages/Community.php:87
 msgid "Take a visual dive into everything WPForms has to offer. From simple contact forms to advanced payment forms and email marketing integrations, our extensive video collection covers it all."
@@ -9393,10 +9393,6 @@ msgstr "Costa Rica"
 #: includes/providers/class-base.php:1297
 msgid "Could not connect to the provider."
 msgstr "Konnte keine Verbindung mit dem Anbieter herstellen."
-
-#: includes/admin/ajax-actions.php:718
-msgid "Could not deactivate the addon. Please deactivate from the Plugins page."
-msgstr "Add-on konnte nicht deaktiviert werden. Bitte deaktiviere es auf der Plugins-Seite."
 
 #: includes/admin/builder/class-builder.php:1060
 msgid "Countries"
@@ -12414,6 +12410,10 @@ msgstr "Heard und McDonaldinseln"
 msgid "Ethiopia"
 msgstr "Äthiopien"
 
+#: includes/admin/ajax-actions.php:718
+msgid "Could not deactivate the addon. Please deactivate from the Plugins page."
+msgstr "Das Add-on konnte nicht deaktiviert werden. Bitte deaktiviere es über die Plugin-Seite."
+
 #: src/Integrations/Gutenberg/FormSelector.php:435
 msgid "Select a Form"
 msgstr "Ein Formular auswählen"
@@ -13359,13 +13359,6 @@ msgstr "Du hast gerade die Benachrichtigungs-E-Mails für dieses Formular ausges
 msgid "Add Another"
 msgstr "Weiterer Eintrag"
 
-#. translators: %1$s - number of minutes in HTML container, %2$s - singular or
-#. plural form of 'minute', %3$s - number of seconds in HTML container, %4$s -
-#. singular or plural form of 'second', %5$s - 5 rating star symbols HTML.
-#: templates/admin/challenge/embed.php:61
-msgid "You completed the WPForms Challenge in <b>%1$s %2$s %3$s %4$s</b>. Share your success story with other WPForms users and help us spread the word <b>by giving WPForms a 5-star rating (%5$s) on WordPress.org</b>. Thanks for your support and we look forward to bringing you more awesome features."
-msgstr "Du hast die WPForms-Aufgabe in <b>%1$s %2$s %3$s %4$s</b>beendet. Teile deinen Erfolg mit anderen WPForms-Benutzern und hilf uns, die Botschaft weiterzugeben <b>indem du WPForms eine 5-Sterne-Bewertung gibst (%5$s) auf WordPress.org</b>. Danke für deine Unterstützung und wir bemühen uns, weitere tolle Funktionen bereitzustellen."
-
 #: templates/admin/challenge/modal.php:23
 msgid "Cancel challenge"
 msgstr "Aufgabe abbrechen"
@@ -13373,6 +13366,13 @@ msgstr "Aufgabe abbrechen"
 #: templates/admin/challenge/modal.php:22
 msgid "Skip challenge"
 msgstr "Aufgabe überspringen"
+
+#. translators: %1$s - number of minutes in HTML container, %2$s - singular or
+#. plural form of 'minute', %3$s - number of seconds in HTML container, %4$s -
+#. singular or plural form of 'second', %5$s - 5 rating star symbols HTML.
+#: templates/admin/challenge/embed.php:61
+msgid "You completed the WPForms Challenge in <b>%1$s %2$s %3$s %4$s</b>. Share your success story with other WPForms users and help us spread the word <b>by giving WPForms a 5-star rating (%5$s) on WordPress.org</b>. Thanks for your support and we look forward to bringing you more awesome features."
+msgstr "Du hast die WPForms-Aufgabe in <b>%1$s %2$s %3$s %4$s</b>beendet. Teile deinen Erfolg mit anderen WPForms-Benutzern und hilf uns, die Botschaft weiterzugeben <b>indem du WPForms eine 5-Sterne-Bewertung gibst (%5$s) auf WordPress.org</b>. Danke für deine Unterstützung und wir bemühen uns, weitere tolle Funktionen bereitzustellen."
 
 #. translators: %s - total number of choices.
 #: includes/admin/builder/panels/class-fields.php:732
