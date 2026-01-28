@@ -25,8 +25,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Class Module
  */
 class Module extends Module_Base {
-
-
     const SETTING_PREFIX = 'site_mailer_';
     const SETTING_GROUP = 'site_mailer_settings';
     const SETTING_BASE_SLUG = 'site-mailer-settings';
@@ -128,8 +126,8 @@ class Module extends Module_Base {
     /**
      * Enqueue Scripts and Styles
      */
-    public function enqueue_scripts( $hook ) {
-        if ( 'elementor_page_site-mailer-settings' !== $hook ) {
+    public function enqueue_scripts(): void {
+        if ( ! Utils::is_plugin_page() ) {
             return;
         }
 

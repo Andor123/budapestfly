@@ -63,7 +63,7 @@ Did an email fail to deliver? Easily resend it with a single click to ensure you
 
 Enable easy unsubscribe options for your emails. Track and manage all unsubscribed recipients directly in the Suppressions tab.
 
- == Benefits ==
+== Benefits ==
 
 * **No Integration Needed**: Use Site Mailer without the need for additional plugins or integrations.
 * **Troubleshooting**: Efficiently troubleshoot and resend emails when necessary.

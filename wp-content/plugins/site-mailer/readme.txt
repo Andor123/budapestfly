@@ -4,7 +4,7 @@ Tags: email, email log, SMTP, email API, sender
 Requires at least: 6.6
 Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 1.4.0
+Stable tag: 1.4.2
 License: GPL-3
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -120,6 +120,13 @@ You can report security bugs through the Patchstack Vulnerability Disclosure Pro
 5. Custom Domain Authentication Wizard - Guides you through adding a custom domain with DNS settings.
 
 == Changelog ==
+= 1.4.2 - 2026-01-28 =
+* Tweak - Security enhancements for access control
+
+= 1.4.1 - 2026-01-28 =
+* Fix: Resolved loading issues for settings on RTL websites
+* Fix: Resolved missing style loading warnings in reviews
+
 = 1.4.0 - 2026-01-20 =
 * Tweak: Moved the plugin entry point under a unified Elementor menu
 * Tweak: Redesigned the plugin settings interface for a unified look and feel

@@ -18,11 +18,13 @@ class Utils {
 	public static function is_plugin_page(): bool {
 		$current_screen = get_current_screen();
 
-		return str_contains( $current_screen->id, 'site-mailer-' );
+		return str_contains( $current_screen->id, '_page_site-mailer-settings' );
 	}
+
 	public static function user_is_admin(): bool {
 		return current_user_can( 'manage_options' );
 	}
+
 	public static function is_wp_dashboard_page(): bool {
 		$current_screen = get_current_screen();
 

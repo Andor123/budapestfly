@@ -44,8 +44,8 @@ class Module extends Module_Base {
 	/**
 	 * Enqueue Scripts and Styles
 	 */
-	public function enqueue_scripts( $hook ): void {
-		if ( 'settings_page_site-mailer-settings' !== $hook ) {
+	public function enqueue_scripts(): void {
+		if ( ! Utils::is_plugin_page() ) {
 			return;
 		}
 
@@ -53,7 +53,7 @@ class Module extends Module_Base {
 			return;
 		}
 
-		Utils\Assets::enqueue_app_assets( 'reviews' );
+		Utils\Assets::enqueue_app_assets( 'reviews', false );
 
 		wp_localize_script(
 			'reviews',

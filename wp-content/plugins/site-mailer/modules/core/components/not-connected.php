@@ -23,7 +23,8 @@ class Not_Connected {
         ?>
         <div class="notice notice-info notice is-dismissible site-mailer__notice site-mailer__notice--pink"
              data-notice-slug="<?php echo esc_attr( self::NOT_CONNECTED_NOTICE_SLUG ); ?>">
-            <div class="site-mailer__icon-block">
+
+             <div class="site-mailer__notice-icon">
                 <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0 0H48V48H0V0Z" fill="#FAE4FA" fill-opacity="0.5"/>
                     <path d="M24 12C17.37 12 12 17.37 12 24C12 30.63 17.37 36 24 36C30.63 36 36 30.63 36 24C36 17.37 30.63 12 24 12ZM20.4 30H18V18H20.4V30ZM30 30H22.8V27.6H30V30ZM30 25.2H22.8V22.8H30V25.2ZM30 20.4H22.8V18H30V20.4Z" fill="#ED01EE"/>
