@@ -70,6 +70,8 @@ const Edit = props => {
 					value={ name }
 					placeholder={ __( 'e.g. My Radio Field', 'wpzoom-forms' ) }
 					onChange={ handleNameChange }
+					__next40pxDefaultSize
+					__nextHasNoMarginBottom
 				/>
 
 				<Card size="small">
@@ -90,6 +92,8 @@ const Edit = props => {
 										<TextControl
 											value={ options[ index ] }
 											onChange={ value => optionChange( value, index ) }
+											__next40pxDefaultSize
+											__nextHasNoMarginBottom
 										/>
 									</FlexBlock>
 
@@ -98,6 +102,8 @@ const Edit = props => {
 											icon="no-alt"
 											label={ __( 'Delete Item', 'wpzoom-forms' ) }
 											onClick={ () => optionRemove( index ) }
+											__next40pxDefaultSize
+											__nextHasNoMarginBottom
 										/>
 									</FlexItem> }
 								</Flex>
@@ -110,6 +116,8 @@ const Edit = props => {
 						icon="admin-settings"
 						label={__('Add Bulk Options', 'wpzoom-forms')}
 						onClick={openModal}
+						__next40pxDefaultSize
+						__nextHasNoMarginBottom
 					>
 						{__('Add Bulk Options', 'wpzoom-forms')}
 					</Button>
@@ -130,15 +138,17 @@ const Edit = props => {
 										rows="5"
 										value={ bulkOptions }
 										onChange={value => setBulkOptions(value)}
+										__next40pxDefaultSize
+										__nextHasNoMarginBottom
 									/>
 								</div>
 							</div>
 							<div className="form-group">
-								<Button isDefault onClick={() => setOpen(false)}>
+								<Button variant="secondary" onClick={() => setOpen(false)} __next40pxDefaultSize __nextHasNoMarginBottom>
 									{ __('Cancel', 'wpzoom-forms')}
 								</Button>
 								{ ! isEmpty( bulkOptions ) && (
-									<Button isPrimary onClick={ () => { onBulkAddItems(); } }>
+									<Button variant="primary" onClick={ () => { onBulkAddItems(); } } __next40pxDefaultSize __nextHasNoMarginBottom>
 										{__('Bulk Add', 'wpzoom-forms')}
 									</Button>
 								)}
@@ -152,30 +162,38 @@ const Edit = props => {
 					value={ defaultValue }
 					options={ options.map( ( option, index ) => ( { label: option, value: option } ) ) }
 					onChange={ value => setAttributes( { defaultValue: value } ) }
+					__next40pxDefaultSize
+					__nextHasNoMarginBottom
 				/>
 
 				<ToggleControl
 					label={ __( 'Show Label', 'wpzoom-forms' ) }
 					checked={ !! showLabel }
 					onChange={ value => setAttributes( { showLabel: !! value } ) }
+					__next40pxDefaultSize
+					__nextHasNoMarginBottom
 				/>
 
 				{ showLabel && <TextControl
 					label={ __( 'Label', 'wpzoom-forms' ) }
 					value={ label }
 					onChange={ value => setAttributes( { label: value } ) }
+					__next40pxDefaultSize
+					__nextHasNoMarginBottom
 				/> }
 
 				<ToggleControl
 					label={ __( 'Required', 'wpzoom-forms' ) }
 					checked={ !! required }
 					onChange={ value => setAttributes( { required: !! value } ) }
+					__next40pxDefaultSize
+					__nextHasNoMarginBottom
 				/>
 			</PanelBody>
 		</InspectorControls>
 
 		<Fragment>
-			{ showLabel && <label htmlFor={ uniqueId }>
+			{ showLabel && <>
 				<RichText
 					tagName="label"
 					placeholder={ __( 'Label', 'wpzoom-forms' ) }
@@ -184,7 +202,7 @@ const Edit = props => {
 					onChange={ value => setAttributes( { label: value } ) }
 				/>
 				{ required && <sup className="wp-block-wpzoom-forms-required">{ __( '*', 'wpzoom-forms' ) }</sup> }
-			</label> }
+			</> }
 
 			<ul { ...blockProps }>
 				{ options.map( ( option, index ) =>

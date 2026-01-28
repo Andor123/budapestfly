@@ -1,4 +1,4 @@
-import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
+import { useBlockProps, InspectorControls, RichText } from '@wordpress/block-editor';
 import { Fragment, useEffect } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { PanelBody, TextControl } from '@wordpress/components';
@@ -21,15 +21,19 @@ const Edit = props => {
 					label={ __( 'Name', 'wpzoom-forms' ) }
 					value={ name }
 					onChange={ value => setAttributes( { name: value } ) }
+					__next40pxDefaultSize
 				/>
 			</PanelBody>
 		</InspectorControls>
 
 		<Fragment>
-			<input
+			<RichText
+				tagName="button"
 				type="submit"
 				id={ id }
 				value={ name }
+				onChange={ value => setAttributes( { name: value } ) }
+				placeholder={ __( 'Submit', 'wpzoom-forms' ) }
 				{ ...blockProps }
 			/>
 		</Fragment>

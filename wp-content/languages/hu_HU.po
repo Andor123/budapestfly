@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 6.9.x - Development package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-01-07 20:36:41+0000\n"
+"PO-Revision-Date: 2026-01-26 09:03:23+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -472,6 +472,11 @@ msgstr "Opcionális"
 msgid "Visible"
 msgstr "Látható"
 
+#: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:153
+#: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:594
+msgid "Sorry, this post type does not support notes."
+msgstr "Sajnáljuk, ez a bejegyzés típus nem támogatja a megjegyzéseket."
+
 #: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:677
 msgid "Unable to flip this image."
 msgstr "Ezt a képet nem sikerült megfordítani."
@@ -915,6 +920,14 @@ msgstr "500px"
 #: wp-includes/js/dist/block-library.js:44916
 msgid "Post Type: \"%s\""
 msgstr "Bejegyzés típusa: \"%s\""
+
+#. translators: %s: the number of characters in the post.
+#: wp-includes/blocks/post-time-to-read.php:151
+#: wp-includes/js/dist/block-library.js:40444
+msgid "%s character"
+msgid_plural "%s characters"
+msgstr[0] "%s karakter"
+msgstr[1] "%s karakter"
 
 #: wp-includes/block-bindings/term-data.php:112
 msgctxt "block bindings source"
@@ -9684,7 +9697,7 @@ msgstr "Egy változó eltérést észleltünk."
 
 #: wp-activate.php:30
 msgid "A key value mismatch has been detected. Please follow the link provided in your activation email."
-msgstr "Egy kulcs érték eltérést észleltünk. Kövessük az aktiváló e-mail-ben megadott hivatkozást."
+msgstr "Egy kulcs érték eltérést észleltünk. Kövessük az aktiváló e-mailben megadott hivatkozást."
 
 #. translators: %s: the number of words in the post.
 #: wp-includes/blocks/post-time-to-read.php:147
@@ -20270,7 +20283,7 @@ msgstr "Elnézést, a felhasználó nevében betűknek is kell lenni!"
 
 #: wp-includes/ms-functions.php:508
 msgid "You cannot use that email address to signup. There are problems with them blocking some emails from WordPress. Please use another email provider."
-msgstr "Ez az e-mail cím feliratkozáshoz nem használható. Problémák adódtak ezekkel, mivel blokkolták néhány levelünket. Másik e-mail-szolgáltató használata ajánlott."
+msgstr "Ez az e-mail cím feliratkozáshoz nem használható. Problémák adódtak ezekkel, mivel blokkolták néhány levelünket. Másik e-mail szolgáltató használata ajánlott."
 
 #: wp-includes/ms-functions.php:284
 msgid "That user does not exist."

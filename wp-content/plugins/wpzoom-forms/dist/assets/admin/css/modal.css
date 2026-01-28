@@ -19,6 +19,8 @@
 	border: 1px solid #888;
 	width:auto;
 	max-width: 850px;
+    max-height: 80vh;
+    overflow-y: scroll;
 }
 .wpzoom-forms-templates-list {
 	display: grid;
@@ -37,6 +39,13 @@
 .wpzoom-forms-templates-list li:not(.wpzoom-forms-template-list-item-pro).active {
 	border-color: #3496FF;
 }
+.wpzoom-forms-templates-list li.wpzoom-forms-template-list-item-pro:hover {
+	border-color: #f57c00;
+}
+.wpzoom-forms-templates-list li {
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
 .wpzoom-forms-templates-list li a {
 	display: block;
 	padding: 15px 20px;
@@ -48,10 +57,11 @@
 	font-weight: 600;
 	line-height: 26px;
 }
+.wpzoom-forms-template-list-item.wpzoom-forms-template-list-item-pro {
+	cursor: pointer;
+}
 .wpzoom-forms-template-list-item.wpzoom-forms-template-list-item-pro a {
 	opacity: 0.5;
-	pointer-events: none;
-	cursor: not-allowed;
 }
 .wpzoom-forms-templates-list li:not(.wpzoom-forms-template-list-item-pro) a:hover,
 .wpzoom-forms-templates-list li:not(.wpzoom-forms-template-list-item-pro).active a {
@@ -92,6 +102,85 @@
 	border-radius: 2px;
 	transform: translate(50%, -50%);
 }
+.wpzoom-forms-template-list-item-cta {
+	border: 2px solid #3496FF !important;
+	background: linear-gradient(135deg, rgba(52, 150, 255, 0.05) 0%, rgba(26, 95, 184, 0.05) 100%);
+}
+.wpzoom-forms-template-list-item-cta:hover {
+	border-color: #1a5fb8 !important;
+	background: linear-gradient(135deg, rgba(52, 150, 255, 0.1) 0%, rgba(26, 95, 184, 0.1) 100%);
+	transform: translateY(-2px);
+	box-shadow: 0 4px 12px rgba(52, 150, 255, 0.2);
+	transition: all 0.2s ease;
+}
+.wpzoom-forms-template-list-item-cta a {
+	color: #3496FF !important;
+}
+.wpzoom-forms-template-list-item-cta a:hover {
+	color: #1a5fb8 !important;
+}
+.wpzoom-forms-template-list-item-cta svg {
+	fill: #3496FF !important;
+}
+
+.wpzoom-forms-ai-upsell {
+	background: rgba(52, 150, 255, 0.05);
+	border: 1px solid #c3c4c7;
+	border-radius: 4px;
+	padding: 20px;
+	margin-bottom: 30px;
+	box-shadow: 0 1px 1px rgba(0,0,0,.04);
+}
+.wpzoom-forms-ai-upsell-content {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+.wpzoom-forms-ai-upsell-icon {
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.wpzoom-forms-ai-upsell-icon svg {
+	fill: #3496FF;
+}
+.wpzoom-forms-ai-upsell-text {
+	flex: 1;
+}
+.wpzoom-forms-ai-upsell-text h3 {
+	color: #1d2327;
+	font-size: 16px;
+	font-weight: 600;
+	margin: 0 0 8px 0;
+	line-height: 1.4;
+}
+.wpzoom-forms-ai-upsell-text p {
+	color: #50575e;
+	font-size: 14px;
+	margin: 0;
+	line-height: 1.6;
+}
+.wpzoom-forms-ai-upsell-button {
+	flex-shrink: 0;
+}
+.wpzoom-forms-ai-upsell-button .button-primary {
+	background: #3496FF !important;
+	border-color: #3496FF !important;
+	color: #fff !important;
+	font-weight: 600;
+	padding: 16px 20px !important;
+	border-radius: 4px;
+	white-space: nowrap;
+	height: auto;
+	line-height: 1;
+	text-decoration: none;
+	display: inline-block;
+}
+.wpzoom-forms-ai-upsell-button .button-primary:hover {
+	background: #1a5fb8 !important;
+	border-color: #1a5fb8 !important;
+}
 
 .wpzoom-forms-modal-header {
 	display: flex;
@@ -108,6 +197,12 @@
 }
 .wpzoom-forms-modal-header h2 span {
 	margin-right: 15px;
+}
+.wpzoom-forms-modal-hint {
+	color: #50575e;
+	font-size: 14px;
+	margin: 0 0 20px 0;
+	text-align: center;
 }
 .wpzoom-forms-templates-list li a .wpzoom-forms-icon-holder {
 	display: flex;
@@ -172,6 +267,17 @@ div.wpzoom-forms_form {
 	}
 	.wpzoom-forms-modal-content {
 		margin-bottom: 80px;
+	}
+	.wpzoom-forms-ai-upsell-content {
+		flex-direction: column;
+		text-align: center;
+		gap: 15px;
+	}
+	.wpzoom-forms-ai-upsell-text {
+		text-align: center;
+	}
+	.wpzoom-forms-ai-upsell-button .button-primary {
+		width: 100%;
 	}
 }
 @media screen and (max-width: 375px) { 

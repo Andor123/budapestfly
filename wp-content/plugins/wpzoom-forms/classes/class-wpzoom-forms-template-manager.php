@@ -140,7 +140,7 @@ if ( ! class_exists( 'WPZOOM_Forms_Template_Manager' ) ) {
 				), $new_post_link );
 
 				?>
-				<div id="wpzoom-forms-modal" class="wpzoom-forms-modal">
+				<div id="wpzoom-forms-modal" class="wpzoom-forms-modal" data-new-post-url="<?php echo esc_url( $new_post_link ); ?>">
 					<div class="wpzoom-forms-modal-content">
 						<div class="wpzoom-forms-modal-header">
 							<h2>
@@ -159,6 +159,26 @@ if ( ! class_exists( 'WPZOOM_Forms_Template_Manager' ) ) {
 							</h2>
 							<span class="wpzoom-forms-modal-close">&times;</span>
 						</div>
+						
+						<div class="wpzoom-forms-ai-upsell">
+							<div class="wpzoom-forms-ai-upsell-content">
+								<div class="wpzoom-forms-ai-upsell-icon">
+									<svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#3496FF"/>
+									</svg>
+								</div>
+								<div class="wpzoom-forms-ai-upsell-text">
+									<h3><?php esc_html_e( 'Generate Forms with AI', 'wpzoom-forms' ); ?></h3>
+									<p><?php esc_html_e( 'Describe your form in simple words and let AI create it for you instantly.', 'wpzoom-forms' ); ?></p>
+								</div>
+								<div class="wpzoom-forms-ai-upsell-button">
+									<a href="https://www.wpzoom.com/plugins/wpzoom-forms/?utm_source=wpadmin&utm_medium=wpzoom-forms-free&utm_campaign=ai-generator-upsell-template-modal" target="_blank" class="button button-primary">
+										<?php esc_html_e( 'Upgrade to PRO', 'wpzoom-forms' ); ?>
+									</a>
+								</div>
+							</div>
+						</div>
+						
 						<ul class="wpzoom-forms-templates-list">
 							<?php
 								$templates = include WPZOOM_FORMS_PATH . 'templates/templates.php';
@@ -169,7 +189,6 @@ if ( ! class_exists( 'WPZOOM_Forms_Template_Manager' ) ) {
 									if( $is_pro ) {
 										$class[] = ' wpzoom-forms-template-list-item-pro';
 									}
-									$class[] = ( $template_data['id'] == 'contact-form' ) ? ' active' : null;
 									$class = implode( ' ', $class );
 									
 									?>
@@ -190,10 +209,22 @@ if ( ! class_exists( 'WPZOOM_Forms_Template_Manager' ) ) {
 									<?php
 								}
 							?>
+							<li class="wpzoom-forms-template-list-item wpzoom-forms-template-list-item-cta">
+								<a href="https://zoomforms.co/?utm_source=wpadmin&utm_medium=wpzoom-forms-free&utm_campaign=view-all-templates-template-modal" target="_blank">
+									<div class="wpzoom-forms-template-list-wrapper">
+										<span class="wpzoom-forms-icon-holder">
+											<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M440-140H212.31Q182-140 161-161q-21-21-21-51.31v-535.38Q140-778 161-799q21-21 51.31-21H440v680Zm80-380v-300h227.69Q778-820 799-799q21 21 21 51.31V-520H520Zm0 380v-300h300v227.69Q820-182 799-161q-21 21-51.31 21H520Z"/></svg>
+										</span>
+										<div class="wpzoom-forms-template-list-content">
+											<?php esc_html_e( 'View All 30+ Templates', 'wpzoom-forms' ); ?>
+											<span><?php esc_html_e( 'Explore our complete collection of professional form templates', 'wpzoom-forms' ); ?></span>
+										</div>
+									</div>
+								</a>
+							</li>
 						</ul>
 						<div class="wpzoom-forms-modal-footer">
 							<a class="button-secondary wpzoom-btn-bordered" id="wpzoom_close_modal" href="#"><?php esc_html_e( 'Cancel', 'wpzoom-forms' ); ?></a>
-							<a class="button-primary wpzoom-btn-solid" id="wpzoom_proceed_template" href="<?php echo esc_url( $new_post_link ); ?>"><?php esc_html_e( 'Proceed', 'wpzoom-forms' ); ?></a>
 						</div>
 					</div>
 					

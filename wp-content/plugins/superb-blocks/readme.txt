@@ -4,7 +4,7 @@ Tags: block, blocks, gutenberg, gutenberg blocks, editor
 Requires at least: 4.9
 Tested up to: 6.9
 Requires PHP: 6.0
-Stable tag: 3.7.0
+Stable tag: 3.7.1
 License: GPL-3.0+
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
 
@@ -129,6 +129,14 @@ Showcase your images in any size or aspect ratio. Ideal for photographers, galle
 
 Add a customizable reveal button to reveal coupon or bonus codes. Loved by coupon, betting, and casino affiliate websites, this block drives user engagement. You choose the layout, appearance and reveal conditions. You can style the buttons you wish and control how it's revealed. It's a great block for improving conversion rate.
 
+
+## Extended social media buttons for the Social Icons Block
+
+We have added following social medias to the Social Icon Block: Bilibili, Buy Me a Coffee, GitLab, Gumroad, KakaoTalk, Kick, Ko-fi, Letterboxd, LINE, Linktree, Locals, Notion, pixiv, Rumble, Signal, Slack, Steam, Substack, Tripadvisor, WeChat & Weibo.
+
+## Drop caps for paragraphs
+
+Add a customizable drop cap to any paragraph block to give it a classic and elegant look.
 
 ## Make Any WordPress Theme Mobile Responsive with Responsive Block Control  
 
@@ -263,6 +271,9 @@ The patterns are built with default blocks from the WordPress FSE editor. We use
 5. Theme Designer
 
 == Changelog ==
+= 3.7.1 =
+* Fixed compatibility issue with some versions of WooCommerce.
+
 = 3.7.0 =
 * Fixed issue where the Theme Designer was not able to complete with themes that had missing template parts.
 * Added compatibility fix where fallback colors were being applied incorrectly when other plugins were modifying enqueue orders.

@@ -4,6 +4,8 @@ define('WP_CACHE', true); // Added by W3 Total Cache
 
 
 
+
+
 /**
  * The base configuration for WordPress
  *
@@ -31,7 +33,7 @@ define( 'DB_NAME', 'budapestfly' );
 define( 'DB_USER', 'root' );
 
 /** Database password */
-define( 'DB_PASSWORD', '' );
+define( 'DB_PASSWORD', 'root' );
 
 /** Database hostname */
 define( 'DB_HOST', 'localhost' );
@@ -93,7 +95,8 @@ $table_prefix = 'wp_';
 define( 'WP_DEBUG', false );
 
 /* Add any custom values between this line and the "stop editing" line. */
-
+define( 'FS_METHOD', 'direct' );
+define( 'WP_MEMORY_LIMIT', '256M' );
 
 
 /* That's all, stop editing! Happy publishing. */

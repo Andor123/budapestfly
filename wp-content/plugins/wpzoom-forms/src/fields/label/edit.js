@@ -45,12 +45,14 @@ const Edit = props => {
 						? allwpzoomFormBlocks
 						: [{ value: '-1', label: __('No inputs found...', 'wpzoom-forms') }]
 				}
-				onChange={value => setAttributes({ forInput: value })}
+				onChange={value => setAttributes({ forInput: value })} // TODO: set "name" as well.
+				__next40pxDefaultSize
 			/>
 			<ToggleControl
 				label={__('Required', 'wpzoom-forms')}
 				checked={required === true}
 				onChange={value => setAttributes({ required: value })}
+				__next40pxDefaultSize
 			/>
 		</>
 	);

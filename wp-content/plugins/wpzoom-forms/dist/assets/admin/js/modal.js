@@ -12,21 +12,29 @@ jQuery(document).ready(function(){
 			$('#wpzoom-forms-modal').css('display', 'flex');
 		});
 
-		// Add active class to the selected template
-		$('.wpzoom-forms-templates-list li').on('click', function(e){
-			e.preventDefault();
-			$('.wpzoom-forms-templates-list li').removeClass('active');
-			$(this).addClass('active');
-		});
+		// Get base URL for creating new forms
+		var baseUrl = $('#wpzoom-forms-modal').data('new-post-url');
 
-		let templates_list = $('.wpzoom-forms-templates-list'),
-			templates = templates_list.children();
-
-		templates.find('a').on('click', function(e){
+		// Direct template selection - click to proceed immediately
+		$('.wpzoom-forms-templates-list li:not(.wpzoom-forms-template-list-item-cta)').on('click', function(e){
 			e.preventDefault();
-			let template_id = $(this).data('template-id');
-			if( template_id ){
-				updateUrlAttribute( 'template', template_id );
+			
+			var $item = $(this);
+			var $link = $item.find('a');
+			var templateId = $link.data('template-id');
+			
+			// Check if this is a pro template
+			if ( $item.hasClass('wpzoom-forms-template-list-item-pro') ) {
+				// Redirect to pro upgrade page
+				window.open('https://www.wpzoom.com/plugins/wpzoom-forms/?utm_source=wpadmin&utm_medium=wpzoom-forms-free&utm_campaign=pro-template-' + templateId, '_blank');
+				return;
+			}
+			
+			// Build URL with template parameter and navigate
+			if ( templateId && baseUrl ) {
+				var url = new URL( baseUrl );
+				url.searchParams.set( 'template', templateId );
+				window.location.href = url.toString();
 			}
 		});
 
@@ -48,20 +56,6 @@ jQuery(document).ready(function(){
 				$('#wpzoom-forms-modal').css('display', 'none');
 			}
 		});
-
-		// Get current URL
-		var proceedButton = $('#wpzoom_proceed_template');
-		var currentUrl = proceedButton.attr('href');
-
-		// Function to update URL attribute
-		function updateUrlAttribute( attributeName, attributeValue ) {
-			
-			var url = new URL( currentUrl );
-			url.searchParams.set( attributeName, attributeValue );
-			proceedButton.attr( 'href', url.toString() );
-		
-		}
-
 
 	})(jQuery);
 });

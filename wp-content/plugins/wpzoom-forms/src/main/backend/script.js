@@ -566,6 +566,16 @@ registerPlugin('wpzoom-forms-document-settings', {
 				title={__('Form Fields', 'wpzoom-forms')}
 			>
 				<div className="wpzoom-forms-block-patterns">
+					<p 
+						className="description"
+						style={{
+							marginTop: 'calc(8px)',
+							fontSize: '12px',
+							color: 'rgb(117, 117, 117)',
+						}}
+					>
+						{__('Click or drag a field to add it to your form.', 'wpzoom-forms')}
+					</p>
 					<div className="wpzoom-forms-block-patterns-list">
 						{[
 							{
@@ -696,6 +706,46 @@ registerPlugin('wpzoom-forms-document-settings', {
 									label: __('Upload', 'wpzoom-forms'),
 									required: false,
 								}
+							},
+							{
+								name: 'number-field',
+								title: __('Number', 'wpzoom-forms'),
+								icon: FormIcons.number,
+								isPro: true,
+								defaultAttributes: {
+									label: __('Number', 'wpzoom-forms'),
+									required: false
+								}
+							},
+							{
+								name: 'timepicker-field',
+								title: __('Time', 'wpzoom-forms'),
+								icon: FormIcons.time,
+								isPro: true,
+								defaultAttributes: {
+									label: __('Time', 'wpzoom-forms'),
+									required: false
+								}
+							},
+							{
+								name: 'gdpr-field',
+								title: __('GDPR', 'wpzoom-forms'),
+								icon: FormIcons.gdpr,
+								isPro: true,
+								defaultAttributes: {
+									consentText: __('I consent to having this website store my submitted information so they can respond to my inquiry.', 'wpzoom-forms'),
+									required: true
+								}
+							},
+							{
+								name: 'hidden-field',
+								title: __('Hidden', 'wpzoom-forms'),
+								icon: FormIcons.hidden,
+								isPro: true,
+								defaultAttributes: {
+									name: __('Hidden Field', 'wpzoom-forms'),
+									defaultValue: ''
+								}
 							}
 						].map((block) => {
 							const isDisabled = uniqueFieldsExist[block.name] || false || block.isPro;
@@ -735,16 +785,6 @@ registerPlugin('wpzoom-forms-document-settings', {
 							);
 						})}
 					</div>
-					<p 
-						className="description"
-						style={{
-							marginTop: 'calc(8px)',
-							fontSize: '12px',
-							color: 'rgb(117, 117, 117)',
-						}}
-					>
-						{__('Click or drag a field to add it to your form.', 'wpzoom-forms')}
-					</p>
 				</div>
 			</PluginDocumentSettingPanel>
 
@@ -1219,64 +1259,104 @@ registerBlockType('wpzoom-forms/form', {
 										required: false
 									}
 								},
-								{
-									name: 'upload-field',
-									title: __('Upload', 'wpzoom-forms'),
-									icon: FormIcons.upload,
-									isPro: true,
-									defaultAttributes: {
-										label: __('Upload', 'wpzoom-forms'),
-										required: false,
-									}
+							{
+								name: 'upload-field',
+								title: __('Upload', 'wpzoom-forms'),
+								icon: FormIcons.upload,
+								isPro: true,
+								defaultAttributes: {
+									label: __('Upload', 'wpzoom-forms'),
+									required: false,
 								}
-							].map((block) => {
-								const isDisabled = uniqueFieldsExist[block.name] || false || block.isPro;
-								const isPro = block.isPro;
-								return (
-									<div
-										key={block.name}
-										className={`wpzoom-forms-block-pattern-item${isDisabled ? ' disabled' : ''}`}
-										draggable={!isDisabled}
-										onDragStart={(event) => {
-											if (isDisabled) {
-												event.preventDefault();
-												return;
-											}
-											event.dataTransfer.setData('text', JSON.stringify({
-												type: `wpzoom-forms/${block.name}`,
-												attributes: block.defaultAttributes
-											}));
-										}}
-										onClick={(event) => {
-											console.log('Quick form field clicked:', block.name);
+							},
+							{
+								name: 'number-field',
+								title: __('Number', 'wpzoom-forms'),
+								icon: FormIcons.number,
+								isPro: true,
+								defaultAttributes: {
+									label: __('Number', 'wpzoom-forms'),
+									required: false
+								}
+							},
+							{
+								name: 'timepicker-field',
+								title: __('Time', 'wpzoom-forms'),
+								icon: FormIcons.time,
+								isPro: true,
+								defaultAttributes: {
+									label: __('Time', 'wpzoom-forms'),
+									required: false
+								}
+							},
+							{
+								name: 'gdpr-field',
+								title: __('GDPR', 'wpzoom-forms'),
+								icon: FormIcons.gdpr,
+								isPro: true,
+								defaultAttributes: {
+									consentText: __('I consent to having this website store my submitted information so they can respond to my inquiry.', 'wpzoom-forms'),
+									required: true
+								}
+							},
+							{
+								name: 'hidden-field',
+								title: __('Hidden', 'wpzoom-forms'),
+								icon: FormIcons.hidden,
+								isPro: true,
+								defaultAttributes: {
+									name: __('Hidden Field', 'wpzoom-forms'),
+									defaultValue: ''
+								}
+							}
+						].map((block) => {
+							const isDisabled = uniqueFieldsExist[block.name] || false || block.isPro;
+							const isPro = block.isPro;
+							return (
+								<div
+									key={block.name}
+									className={`wpzoom-forms-block-pattern-item${isDisabled ? ' disabled' : ''}`}
+									draggable={!isDisabled}
+									onDragStart={(event) => {
+										if (isDisabled) {
 											event.preventDefault();
-											event.stopPropagation();
-											insertFormField(block.name, block.defaultAttributes, isDisabled, isPro);
-										}}
-										title={ isDisabled && ! block.isPro ? __('This field can only be used once per form', 'wpzoom-forms') : ''}
-									>
-										{block.icon}
-										<span>{block.title}</span>
-										{isDisabled && ! block.isPro && (
-											<span className="dashicons dashicons-info" />
-										)}
-										{block.isPro && (
-											<small className="pro-only">{__('PRO', 'wpzoom-forms')}</small>
-										)}
-									</div>
-								);
-							})}
-						</div>
-						<p 
-						className="description"
-						style={{
-							marginTop: 'calc(8px)',
-							fontSize: '12px',
-							color: 'rgb(117, 117, 117)',
-						}}
-					>
-						{__('Click or drag a field to add it to your form.', 'wpzoom-forms')}
-					</p>
+											return;
+										}
+										event.dataTransfer.setData('text', JSON.stringify({
+											type: `wpzoom-forms/${block.name}`,
+											attributes: block.defaultAttributes
+										}));
+									}}
+									onClick={(event) => {
+										console.log('Quick form field clicked:', block.name);
+										event.preventDefault();
+										event.stopPropagation();
+										insertFormField(block.name, block.defaultAttributes, isDisabled, isPro);
+									}}
+									title={isDisabled && ! block.isPro ? __('This field can only be used once per form', 'wpzoom-forms') : ''}
+								>
+									{block.icon}
+									<span>{block.title}</span>
+									{isDisabled && ! block.isPro && (
+										<span className="dashicons dashicons-info" />
+									)}
+									{block.isPro && (
+										<small className="pro-only">{__('PRO', 'wpzoom-forms')}</small>
+									)}
+								</div>
+							);
+						})}
+					</div>
+					<p 
+					className="description"
+					style={{
+						marginTop: 'calc(8px)',
+						fontSize: '12px',
+						color: 'rgb(117, 117, 117)',
+					}}
+				>
+					{__('Click or drag a field to add it to your form.', 'wpzoom-forms')}
+				</p>
 					</div>
 				</PanelBody>
 			</InspectorControls>

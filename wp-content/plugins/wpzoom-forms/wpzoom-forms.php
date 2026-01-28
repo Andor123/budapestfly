@@ -13,7 +13,7 @@
  * Description: Simple, user-friendly contact form plugin for WordPress that utilizes Gutenberg blocks for easy form building and customization.
  * Author:      WPZOOM
  * Author URI:  https://www.wpzoom.com
- * Version:     1.3.4
+ * Version:     1.3.5
  * License:     GPL2+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  */
@@ -176,6 +176,10 @@ class WPZOOM_Forms {
 
 			add_action( 'restrict_manage_posts',                       array( $this, 'custom_filter_by_form' ),           10 );
 			add_action( 'parse_query',                                 array( $this, 'filter_posts_by_form' ),            10 );
+
+			// Upsell notice for PRO version
+			add_action( 'admin_notices',                               array( $this, 'upsell_notice' ) );
+			add_action( 'wp_ajax_wpzf_dismiss_upsell_notice',          array( $this, 'dismiss_upsell_notice' ) );
 
 			register_post_type(
 				'wpzf-form',
@@ -761,10 +765,19 @@ class WPZOOM_Forms {
 		add_submenu_page(
 			'edit.php?post_type=wpzf-form',
 			$page_title,
-            '<span style="color:#3496fe; font-weight: 600;">' . esc_html__( 'UPGRADE', 'wpzoom-forms' ) . ' &rarr; <span class="wpz-premium-badge" style="background-color: #3496fe; color: #fff; margin-left: 3px; font-size: 11px; min-height: 16px;  border-radius: 8px; display: inline-block; font-weight: 600; line-height: 1.6; padding: 0 8px">PRO</span></span>',
+            '<span style="color:#3496fe; font-weight: 600;">' . esc_html__( 'UPGRADE', 'wpzoom-forms' ) . ' &rarr; <span class="wpz-premium-badge" style="background-color: #3496fe; color: #fff; margin-left: 3px; font-size: 9px; min-height: 14px; border-radius: 3px; display: inline-block; font-weight: 600; line-height: 1.4; padding: 0 5px">PRO</span></span>',
 			'manage_options',
-			'wpzf-upsell',
+			'wpzf-pro-page',
 			array( $this, 'render_upsell_page' )
+		);
+
+		add_submenu_page(
+			'edit.php?post_type=wpzf-form',
+			esc_html__( 'Import & Export', 'wpzoom-forms' ),
+			esc_html__( 'Import & Export', 'wpzoom-forms' ) . ' <span class="wpz-premium-badge" style="background-color: #3496fe; color: #fff; margin-left: 3px; font-size: 9px; min-height: 14px; border-radius: 3px; display: inline-block; font-weight: 600; line-height: 1.4; padding: 0 5px">PRO</span>',
+			'edit_posts',
+			'wpzf-import',
+			array( $this, 'render_import_export_upsell_page' )
 		);
 
 	}
@@ -790,7 +803,7 @@ class WPZOOM_Forms {
 
 		$current_page = get_current_screen()->id;
 
-		if ( 'edit-wpzf-form' == $current_page || 'wpzf-form' == $current_page || 'edit-wpzf-submission' == $current_page || 'wpzf-submission' == $current_page || 'wpzf-form_page_wpzf-settings' == $current_page || 'wpzf-form_page_wpzoom-forms-pro-license' == $current_page || 'wpzf-form_page_wpzf-upsell' == $current_page ) {
+		if ( 'edit-wpzf-form' == $current_page || 'wpzf-form' == $current_page || 'edit-wpzf-submission' == $current_page || 'wpzf-submission' == $current_page || 'wpzf-form_page_wpzf-settings' == $current_page || 'wpzf-form_page_wpzoom-forms-pro-license' == $current_page || 'wpzf-form_page_wpzf-pro-page' == $current_page || 'wpzf-form_page_wpzf-import' == $current_page ) {
 			wp_enqueue_style(
 				'wpzoom-forms-css-backend-main',
 				trailingslashit( $this->main_dir_url ) . 'main/backend/style.css',
@@ -1785,6 +1798,179 @@ class WPZOOM_Forms {
 	}
 
 	/**
+	 * Render the Import & Export upsell page.
+	 *
+	 * @access public
+	 * @return void
+	 * @since  1.3.4
+	 */
+	public function render_import_export_upsell_page() {
+		if ( ! current_user_can( 'edit_posts' ) ) {
+			wp_die( esc_html__( 'You do not have sufficient permissions to access this page.', 'wpzoom-forms' ) );
+		}
+
+		$pro_url = 'https://www.wpzoom.com/plugins/wpzoom-forms/?utm_source=wpadmin&utm_medium=wpzoom-forms-free&utm_campaign=import-export-upsell';
+		?>
+		<div class="wrap wpzoom-forms-import-export-upsell-page" style="position: relative;">
+			<h1><?php esc_html_e( 'Import & Export Forms', 'wpzoom-forms' ); ?></h1>
+			<div class="wpzoom-forms-import-export-upsell-container">
+			<!-- Blurred placeholder content -->
+			<div class="wpzoom-forms-import-export-blurred-content" style="filter: blur(4px); pointer-events: none; opacity: 0.3; margin-bottom: 40px;">
+				<div style="background: #fff; border: 1px solid #c3c4c7; padding: 20px; margin: 20px 0; border-radius: 4px;">
+					<div style="display: flex; gap: 20px; margin-bottom: 30px;">
+						<div style="flex: 1;">
+							<label style="display: block; margin-bottom: 8px; font-weight: 600; color: #1d2327;"><?php esc_html_e( 'Export Forms', 'wpzoom-forms' ); ?></label>
+							<select style="width: 100%; padding: 8px; border: 1px solid #c3c4c7; border-radius: 4px;">
+								<option><?php esc_html_e( 'Select forms to export...', 'wpzoom-forms' ); ?></option>
+								<option><?php esc_html_e( 'Contact Form', 'wpzoom-forms' ); ?></option>
+								<option><?php esc_html_e( 'Newsletter Form', 'wpzoom-forms' ); ?></option>
+							</select>
+						</div>
+						<div style="flex: 1;">
+							<label style="display: block; margin-bottom: 8px; font-weight: 600; color: #1d2327;"><?php esc_html_e( 'Export Format', 'wpzoom-forms' ); ?></label>
+							<select style="width: 100%; padding: 8px; border: 1px solid #c3c4c7; border-radius: 4px;">
+								<option>JSON</option>
+								<option>CSV</option>
+							</select>
+						</div>
+					</div>
+					<div style="display: flex; gap: 20px; margin-bottom: 30px;">
+						<div style="flex: 1;">
+							<label style="display: block; margin-bottom: 8px; font-weight: 600; color: #1d2327;"><?php esc_html_e( 'Import Forms', 'wpzoom-forms' ); ?></label>
+							<input type="file" style="width: 100%; padding: 8px; border: 1px solid #c3c4c7; border-radius: 4px;" />
+						</div>
+						<div style="flex: 1;">
+							<label style="display: block; margin-bottom: 8px; font-weight: 600; color: #1d2327;"><?php esc_html_e( 'Export Submissions', 'wpzoom-forms' ); ?></label>
+							<select style="width: 100%; padding: 8px; border: 1px solid #c3c4c7; border-radius: 4px;">
+								<option><?php esc_html_e( 'Select form...', 'wpzoom-forms' ); ?></option>
+							</select>
+						</div>
+					</div>
+					<div style="display: flex; gap: 10px;">
+						<button style="padding: 10px 20px; background: #2271b1; color: #fff; border: none; border-radius: 4px; cursor: pointer;"><?php esc_html_e( 'Export', 'wpzoom-forms' ); ?></button>
+						<button style="padding: 10px 20px; background: #2271b1; color: #fff; border: none; border-radius: 4px; cursor: pointer;"><?php esc_html_e( 'Import', 'wpzoom-forms' ); ?></button>
+						<button style="padding: 10px 20px; background: #2271b1; color: #fff; border: none; border-radius: 4px; cursor: pointer;"><?php esc_html_e( 'Export CSV', 'wpzoom-forms' ); ?></button>
+					</div>
+				</div>
+			</div>
+
+			<!-- Overlay with Popover Modal -->
+			<div class="import-export-upsell-overlay">
+				<div class="wpzoom-forms-import-export-popover" style="background: #fff; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.15); padding: 40px; max-width: 500px; width: 90%;">
+				<!-- Icon -->
+				<div style="text-align: center; margin-bottom: 20px;">
+					<div style="width: 60px; height: 60px; margin: 0 auto; background-color: #3496FF; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(52, 150, 255, 0.3);">
+						<svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#fff"/>
+						</svg>
+					</div>
+				</div>
+
+				<!-- Title -->
+				<h2 style="text-align: center; margin: 0 0 15px 0; font-size: 24px; font-weight: 600; color: #1d2327;">
+					<?php esc_html_e( 'Unlock Import & Export', 'wpzoom-forms' ); ?>
+				</h2>
+
+				<!-- Description -->
+				<p style="text-align: center; margin: 0 0 25px 0; color: #50575e; font-size: 14px; line-height: 1.6;">
+					<?php esc_html_e( 'Transfer your forms between sites, back up your work, and export submissions for analysis. Manage your forms with powerful import and export tools.', 'wpzoom-forms' ); ?>
+				</p>
+
+				<!-- Features List -->
+				<ul style="list-style: none; padding: 0; margin: 0 0 30px 0;">
+					<li style="display: flex; align-items: flex-start; margin-bottom: 12px; color: #1d2327; font-size: 14px;">
+						<span style="display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; background: #3496FF; border-radius: 50%; margin-right: 12px; flex-shrink: 0; margin-top: 2px;">
+							<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M10 3L4.5 8.5L2 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+						</span>
+						<span><?php esc_html_e( 'Export forms to JSON files for backup or migration', 'wpzoom-forms' ); ?></span>
+					</li>
+					<li style="display: flex; align-items: flex-start; margin-bottom: 12px; color: #1d2327; font-size: 14px;">
+						<span style="display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; background: #3496FF; border-radius: 50%; margin-right: 12px; flex-shrink: 0; margin-top: 2px;">
+							<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M10 3L4.5 8.5L2 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+						</span>
+						<span><?php esc_html_e( 'Import forms from JSON files to quickly set up new sites', 'wpzoom-forms' ); ?></span>
+					</li>
+					<li style="display: flex; align-items: flex-start; margin-bottom: 12px; color: #1d2327; font-size: 14px;">
+						<span style="display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; background: #3496FF; border-radius: 50%; margin-right: 12px; flex-shrink: 0; margin-top: 2px;">
+							<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M10 3L4.5 8.5L2 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+						</span>
+						<span><?php esc_html_e( 'Export form submissions to CSV for data analysis', 'wpzoom-forms' ); ?></span>
+					</li>
+					<li style="display: flex; align-items: flex-start; margin-bottom: 12px; color: #1d2327; font-size: 14px;">
+						<span style="display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; background: #3496FF; border-radius: 50%; margin-right: 12px; flex-shrink: 0; margin-top: 2px;">
+							<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M10 3L4.5 8.5L2 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+						</span>
+						<span><?php esc_html_e( 'Transfer forms between multiple WordPress sites', 'wpzoom-forms' ); ?></span>
+					</li>
+					<li style="display: flex; align-items: flex-start; margin-bottom: 12px; color: #1d2327; font-size: 14px;">
+						<span style="display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; background: #3496FF; border-radius: 50%; margin-right: 12px; flex-shrink: 0; margin-top: 2px;">
+							<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M10 3L4.5 8.5L2 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+						</span>
+						<span><?php esc_html_e( 'Backup your forms before making major changes', 'wpzoom-forms' ); ?></span>
+					</li>
+				</ul>
+
+				<!-- CTA Button -->
+				<div style="text-align: center; margin-bottom: 15px;">
+					<a href="<?php echo esc_url( $pro_url ); ?>" class="button button-primary button-large" style="background-color: #3496FF; border: none; border-radius: 6px; padding: 16px 20px; line-height: 1; font-size: 16px; font-weight: 600; color: #fff; text-decoration: none; display: inline-block; box-shadow: 0 4px 12px rgba(52, 150, 255, 0.3); transition: transform 0.2s, box-shadow 0.2s;" target="_blank" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 16px rgba(52, 150, 255, 0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(52, 150, 255, 0.3)';">
+						<?php esc_html_e( 'Upgrade to PRO', 'wpzoom-forms' ); ?>
+					</a>
+				</div>
+
+				<!-- Plugin Attribution -->
+				<p style="text-align: center; margin: 0; color: #8c8f94; font-size: 12px;">
+					<?php esc_html_e( 'Part of the WPZOOM Forms PRO plugin', 'wpzoom-forms' ); ?>
+				</p>
+				</div>
+			</div>
+			</di>
+		</div>
+
+		<style>
+		.wpzoom-forms-import-export-upsell-container {
+			position: relative;
+			min-height: 680px;
+		}
+		.wpzoom-forms-import-export-blurred-content {
+			z-index: 1;
+		}
+		.import-export-upsell-overlay {
+			position: absolute;
+			top: 60px;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			display: flex;
+			align-items: flex-start;
+			justify-content: center;
+			padding-top: 80px;
+			z-index: 100;
+			background: hsla(0, 0%, 100%, .1);
+		}
+		.wpzoom-forms-import-export-popover {
+			z-index: 10000;
+		}
+		@media screen and (max-width: 782px) {
+			.wpzoom-forms-import-export-popover {
+				padding: 30px 20px;
+				max-width: 90%;
+			}
+		}
+		</style>
+		<?php
+	}
+
+	/**
 	 * Page header used on all admin pages.
 	 *
 	 * @access public
@@ -1795,7 +1981,7 @@ class WPZOOM_Forms {
 
 		$current_page = get_current_screen()->id;
 
-		if ( 'edit-wpzf-form' == $current_page || 'edit-wpzf-submission' == $current_page || 'wpzf-submission' == $current_page || 'wpzf-form_page_wpzf-settings' == $current_page || 'wpzf-form_page_wpzoom-forms-pro-license' == $current_page || 'wpzf-form_page_wpzf-upsell' == $current_page ) {
+		if ( 'edit-wpzf-form' == $current_page || 'edit-wpzf-submission' == $current_page || 'wpzf-submission' == $current_page || 'wpzf-form_page_wpzf-settings' == $current_page || 'wpzf-form_page_wpzoom-forms-pro-license' == $current_page || 'wpzf-form_page_wpzf-pro-page' == $current_page ) {
 			?>
 			<header class="wpzoom-new-admin-wrap wpzoom-new-admin_settings-header">
 				<h1 class="wpzoom-new-admin_settings-main-title wp-heading">
@@ -1840,9 +2026,13 @@ class WPZOOM_Forms {
 									'name' => esc_html__( 'Settings', 'wpzoom-forms' ),
 									'url'  => admin_url( 'edit.php?post_type=wpzf-form&page=wpzf-settings' ),
 								),
-								'wpzf-form_page_wpzf-upsell' => array(
+								'wpzf-form_page_wpzf-pro-page' => array(
 									'name' => esc_html__( 'Upgrade to PRO', 'wpzoom-forms' ),
-									'url'  => admin_url( 'edit.php?post_type=wpzf-form&page=wpzf-upsell' ),
+									'url'  => admin_url( 'edit.php?post_type=wpzf-form&page=wpzf-pro-page' ),
+								),
+								'wpzf-form_page_wpzf-import' => array(
+									'name' => esc_html__( 'Import & Export', 'wpzoom-forms' ),
+									'url'  => admin_url( 'edit.php?post_type=wpzf-form&page=wpzf-import' ),
 								),
 							)
 						);
@@ -2166,7 +2356,7 @@ class WPZOOM_Forms {
 	public function admin_page_footer() {
 		$current_page = get_current_screen()->id;
 
-		if ( 'edit-wpzf-form' == $current_page || 'wpzf-form' == $current_page || 'edit-wpzf-submission' == $current_page || 'wpzf-submission' == $current_page || 'wpzf-form_page_wpzf-settings' == $current_page || 'wpzf-form_page_wpzoom-forms-pro-license' == $current_page || 'wpzf-form_page_wpzf-upsell' == $current_page ) {
+		if ( 'edit-wpzf-form' == $current_page || 'wpzf-form' == $current_page || 'edit-wpzf-submission' == $current_page || 'wpzf-submission' == $current_page || 'wpzf-form_page_wpzf-settings' == $current_page || 'wpzf-form_page_wpzoom-forms-pro-license' == $current_page || 'wpzf-form_page_wpzf-pro-page' == $current_page ) {
 			?>
 			<footer class="wpzoom-new-admin_settings-footer">
 				<div class="wpzoom-new-admin_settings-footer-wrap">
@@ -2216,7 +2406,7 @@ class WPZOOM_Forms {
 	public function admin_body_class_filter( $classes ) {
 		$current_page = get_current_screen()->id;
 
-		if ( 'edit-wpzf-form' == $current_page || 'wpzf-form' == $current_page || 'edit-wpzf-submission' == $current_page || 'wpzf-submission' == $current_page || 'wpzf-form_page_wpzf-settings' == $current_page || 'wpzf-form_page_wpzoom-forms-pro-license' == $current_page || 'wpzf-form_page_wpzf-upsell' == $current_page ) {
+		if ( 'edit-wpzf-form' == $current_page || 'wpzf-form' == $current_page || 'edit-wpzf-submission' == $current_page || 'wpzf-submission' == $current_page || 'wpzf-form_page_wpzf-settings' == $current_page || 'wpzf-form_page_wpzoom-forms-pro-license' == $current_page || 'wpzf-form_page_wpzf-pro-page' == $current_page || 'wpzf-form_page_wpzf-import' == $current_page ) {
 			$classes .= ' wpzoom-new-admin';
 		}
 
@@ -2694,6 +2884,104 @@ class WPZOOM_Forms {
 		}
 
 		return $output;
+	}
+
+	/**
+	 * Display upsell notice for PRO version.
+	 *
+	 * @since  1.3.4
+	 * @return void
+	 */
+	public function upsell_notice() {
+		// Only show to users who can manage options
+		if ( ! current_user_can( 'manage_options' ) ) {
+			return;
+		}
+
+		// Don't show if PRO version is active
+		if ( defined( 'WPZOOM_FORMS_PRO_VERSION' ) ) {
+			return;
+		}
+
+		// Check if notice was dismissed
+		if ( get_option( 'wpzf_upsell_notice_dismissed' ) ) {
+			return;
+		}
+
+		// Only show on dashboard or WPZOOM Forms pages
+		$screen = get_current_screen();
+		if ( ! $screen ) {
+			return;
+		}
+
+		$allowed_screens = array( 'dashboard', 'edit-wpzf-form', 'wpzf-form', 'edit-wpzf-submission', 'wpzf-submission' );
+		if ( ! in_array( $screen->id, $allowed_screens, true ) ) {
+			return;
+		}
+
+		$upsell_url = admin_url( 'edit.php?post_type=wpzf-form&page=wpzf-pro-page' );
+		$pro_url    = 'https://www.wpzoom.com/plugins/wpzoom-forms/?utm_source=wpadmin&utm_medium=wpzoom-forms-free&utm_campaign=upsell-notice';
+		?>
+		<div class="notice notice-info is-dismissible wpzf-pro-page-notice" style="padding: 15px 20px; border-left-color: #3496FF;">
+			<div style="display: flex; align-items: flex-start; gap: 15px;">
+				<div style="flex-shrink: 0;">
+					<svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#3496FF"/>
+					</svg>
+				</div>
+				<div style="flex: 1;">
+					<h3 style="margin: 0 0 8px 0; font-size: 16px; color: #1d2327;">
+						<?php esc_html_e( 'Upgrade to WPZOOM Forms PRO', 'wpzoom-forms' ); ?>
+					</h3>
+					<p style="margin: 0 0 12px 0; color: #50575e; font-size: 14px;">
+						<?php esc_html_e( 'Unlock powerful features to build smarter, more flexible forms:', 'wpzoom-forms' ); ?>
+					</p>
+					<ul style="margin: 0 0 12px 0; padding-left: 0; color: #50575e; font-size: 13px; line-height: 1.8;">
+						<li><strong><?php esc_html_e( 'AI Form Generator', 'wpzoom-forms' ); ?></strong> &mdash; <?php esc_html_e( 'Describe your form in simple words and let AI create it for you!', 'wpzoom-forms' ); ?></li>
+						<li><strong><?php esc_html_e( '30+ Pre-built Templates', 'wpzoom-forms' ); ?></strong> &mdash; <?php esc_html_e( 'Healthcare, education, real estate, restaurant, HR, and more categories.', 'wpzoom-forms' ); ?></li>
+						<li><strong><?php esc_html_e( 'Mailchimp Integration', 'wpzoom-forms' ); ?></strong> &mdash; <?php esc_html_e( 'Automatically add subscribers to your Mailchimp audiences.', 'wpzoom-forms' ); ?></li>
+						<li><strong><?php esc_html_e( 'Import/Export Forms', 'wpzoom-forms' ); ?></strong> &mdash; <?php esc_html_e( 'Easily transfer forms between sites or back up your work.', 'wpzoom-forms' ); ?></li>
+						<li><strong><?php esc_html_e( 'Export Submissions to CSV', 'wpzoom-forms' ); ?></strong> &mdash; <?php esc_html_e( 'Download form submissions as CSV files for reporting.', 'wpzoom-forms' ); ?></li>
+					</ul>
+					<p style="margin: 0;">
+						<a href="<?php echo esc_url( $pro_url ); ?>" class="button button-primary" style="background: #3496FF; border-color: #3496FF; margin-right: 8px;" target="_blank">
+							<?php esc_html_e( 'Upgrade to PRO', 'wpzoom-forms' ); ?>
+						</a>
+						<a href="<?php echo esc_url( $upsell_url ); ?>" class="button">
+							<?php esc_html_e( 'Learn More', 'wpzoom-forms' ); ?>
+						</a>
+					</p>
+				</div>
+			</div>
+		</div>
+		<script>
+		jQuery(document).ready(function($) {
+			$('.wpzf-pro-page-notice').on('click', '.notice-dismiss', function() {
+				$.post(ajaxurl, {
+					action: 'wpzf_dismiss_upsell_notice',
+					_wpnonce: '<?php echo esc_js( wp_create_nonce( 'wpzf_dismiss_upsell_notice' ) ); ?>'
+				});
+			});
+		});
+		</script>
+		<?php
+	}
+
+	/**
+	 * AJAX handler to dismiss upsell notice.
+	 *
+	 * @since  1.3.4
+	 * @return void
+	 */
+	public function dismiss_upsell_notice() {
+		check_ajax_referer( 'wpzf_dismiss_upsell_notice' );
+
+		if ( ! current_user_can( 'manage_options' ) ) {
+			wp_die();
+		}
+
+		update_option( 'wpzf_upsell_notice_dismissed', true );
+		wp_die();
 	}
 }
 

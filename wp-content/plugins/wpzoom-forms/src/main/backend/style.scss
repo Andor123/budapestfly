@@ -126,14 +126,13 @@
 
 		.pro-only {
 			position: absolute;
-			top: 0;
-			right: 0;
+			top: -6px;
+			right: -4px;
 			line-height: 1.5;
-			color: $light-color;
-			background: $orange-color;
+			color: #fff;
+			background: #f57c00;
 			padding: 0 4px;
 			border-radius: 2px;
-			transform: translate(50%, -50%);
 		}
 
 		.notice-warning {
@@ -2815,7 +2814,8 @@
 		float:none;
 		order:1;
 	}
-	.wpzoom-forms-settings-ajax-promo-container {
+	.wpzoom-forms-settings-ajax-promo-container,
+	.wpzoom-forms-settings-integrations-promo-container {
 		width: auto;
 	}
 	.wpzf-form_page_wpzf-settings div.wp-tab-panel {
@@ -3024,7 +3024,8 @@
 }
 
 .wpzoom-forms-settings-upsell-grid {
-	display: flex;
+	display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
 	gap: 40px;
 }
 .wpzoom-forms-settings-upsell-grid .section {
@@ -3035,7 +3036,7 @@
 	flex-direction: column;
 	justify-content: flex-start;
 	flex: 1;
-	max-width: 300px;
+	// max-width: 300px;
 }
 
 .wpzoom-forms-settings-upsell-grid .section .wpzoom-forms-pro-badge {
@@ -3177,13 +3178,16 @@
 }
 @media (max-width: 1024px) { 
 	.wpzoom-forms-settings-upsell-grid {
-		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
 	}
 	.wpzoom-forms-settings-upsell-grid .section {
 		max-width: 100%;
 	}
 }
 @media screen and (max-width: 600px) {
+	.wpzoom-forms-settings-upsell-grid {
+		grid-template-columns: 1fr;
+	}
 	.wpzoom-forms-settings-upsell-page-container img {
 		float: none;
 		margin-right: 0;

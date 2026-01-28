@@ -95,6 +95,9 @@ class WizardTemplateProvider
         }
 
         $partTemplate = get_block_template(get_stylesheet() . '//' . $slug, $type);
+        if (!$partTemplate) {
+            return;
+        }
 
         $hasModifiedPart = $this->HasModifiedTemplate($slug, $type, $area);
         if ($partTemplate) {

@@ -22,30 +22,35 @@ const Edit = props => {
 					value={ name }
 					placeholder={ __( 'e.g. My Email Field', 'wpzoom-forms' ) }
 					onChange={ value => setAttributes( { name: value } ) }
+					__next40pxDefaultSize
 				/>
 
 				<TextControl
 					label={ __( 'Placeholder', 'wpzoom-forms' ) }
 					value={ placeholder }
 					onChange={ value => setAttributes( { placeholder: value } ) }
+					__next40pxDefaultSize
 				/>
 
 				<ToggleControl
 					label={ __( 'Show Label', 'wpzoom-forms' ) }
 					checked={ !! showLabel }
 					onChange={ value => setAttributes( { showLabel: !! value } ) }
+					__next40pxDefaultSize
 				/>
 
 				{ showLabel && <TextControl
 					label={ __( 'Label', 'wpzoom-forms' ) }
 					value={ label }
 					onChange={ value => setAttributes( { label: value } ) }
+					__next40pxDefaultSize
 				/> }
 
 				<ToggleControl
 					label={ __( 'Required', 'wpzoom-forms' ) }
 					checked={ !! required }
 					onChange={ value => setAttributes( { required: !! value } ) }
+					__next40pxDefaultSize
 				/>
 
 				<ToggleControl
@@ -53,12 +58,13 @@ const Edit = props => {
 					help={ __( 'Whether this email field should be used as the reply-to address in the form (useful for contact forms).', 'wpzoom-forms' ) }
 					checked={ !! replyto }
 					onChange={ value => setAttributes( { replyto: !! value } ) }
+					__next40pxDefaultSize
 				/>
 			</PanelBody>
 		</InspectorControls>
 
 		<Fragment>
-			{ showLabel && <label htmlFor={ id }>
+			{ showLabel && <>
 				<RichText
 					tagName="label"
 					placeholder={ __( 'Label', 'wpzoom-forms' ) }
@@ -67,7 +73,7 @@ const Edit = props => {
 					onChange={ value => setAttributes( { label: value } ) }
 				/>
 				{ required && <sup className="wp-block-wpzoom-forms-required">{ __( '*', 'wpzoom-forms' ) }</sup> }
-			</label> }
+			</> }
 
 			<input
 				type="email"

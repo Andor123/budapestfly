@@ -29,6 +29,8 @@ const Edit = props => {
 					value={ name }
 					placeholder={ __( 'e.g. My Textarea Field', 'wpzoom-forms' ) }
 					onChange={ handleNameChange }
+					__next40pxDefaultSize
+					__nextHasNoMarginBottom
 				/>
 
 				<RangeControl
@@ -37,6 +39,8 @@ const Edit = props => {
 					min={ 1 }
 					value={ Number( cols ) }
 					onChange={ value => setAttributes( { cols: value } ) }
+					__next40pxDefaultSize
+					__nextHasNoMarginBottom
 				/>
 
 				<RangeControl
@@ -45,36 +49,46 @@ const Edit = props => {
 					min={ 1 }
 					value={ Number( rows ) }
 					onChange={ value => setAttributes( { rows: value } ) }
+					__next40pxDefaultSize
+					__nextHasNoMarginBottom
 				/>
 
 				<TextControl
 					label={ __( 'Placeholder', 'wpzoom-forms' ) }
 					value={ placeholder }
 					onChange={ value => setAttributes( { placeholder: value } ) }
+					__next40pxDefaultSize
+					__nextHasNoMarginBottom
 				/>
 
 				<ToggleControl
 					label={ __( 'Show Label', 'wpzoom-forms' ) }
 					checked={ !! showLabel }
 					onChange={ value => setAttributes( { showLabel: !! value } ) }
+					__next40pxDefaultSize
+					__nextHasNoMarginBottom
 				/>
 
 				{ showLabel && <TextControl
 					label={ __( 'Label', 'wpzoom-forms' ) }
 					value={ label }
 					onChange={ value => setAttributes( { label: value } ) }
+					__next40pxDefaultSize
+					__nextHasNoMarginBottom
 				/> }
 
 				<ToggleControl
 					label={ __( 'Required', 'wpzoom-forms' ) }
 					checked={ !! required }
 					onChange={ value => setAttributes( { required: !! value } ) }
+					__next40pxDefaultSize
+					__nextHasNoMarginBottom
 				/>
 			</PanelBody>
 		</InspectorControls>
 
 		<Fragment>
-			{ showLabel && <label htmlFor={ uniqueId }>
+			{ showLabel && <>
 				<RichText
 					tagName="label"
 					placeholder={ __( 'Label', 'wpzoom-forms' ) }
@@ -83,7 +97,7 @@ const Edit = props => {
 					onChange={ value => setAttributes( { label: value } ) }
 				/>
 				{ required && <sup className="wp-block-wpzoom-forms-required">{ __( '*', 'wpzoom-forms' ) }</sup> }
-			</label> }
+			</> }
 
 			<textarea
 				name={ uniqueId }

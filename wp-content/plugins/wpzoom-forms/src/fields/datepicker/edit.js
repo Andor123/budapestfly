@@ -29,6 +29,7 @@ const Edit = props => {
 					value={ name }
 					placeholder={ __( 'e.g. My Text Field', 'wpzoom-forms' ) }
 					onChange={ handleNameChange }
+					__next40pxDefaultSize
 				/>
 
 				<SelectControl
@@ -49,6 +50,7 @@ const Edit = props => {
 						},
 					] }
 					onChange={ value => setAttributes( { mode: value } ) }
+					__next40pxDefaultSize
 				/>
 
 				<SelectControl
@@ -77,12 +79,14 @@ const Edit = props => {
 						},
 					] }
 					onChange={ value => setAttributes( { format: value } ) }
+					__next40pxDefaultSize
 				/>
 				{ 'custom_format' == format && 
 					<TextControl
 						label={ __( 'Custom Format', 'wpzoom-forms' ) }
 						value={ customFormat }
 						onChange={ value => setAttributes( { customFormat: value } ) }
+						__next40pxDefaultSize
 					/>
 				}
 
@@ -90,24 +94,27 @@ const Edit = props => {
 					label={ __( 'Show Label', 'wpzoom-forms' ) }
 					checked={ !! showLabel }
 					onChange={ value => setAttributes( { showLabel: !! value } ) }
+					__next40pxDefaultSize
 				/>
 
 				{ showLabel && <TextControl
 					label={ __( 'Label', 'wpzoom-forms' ) }
 					value={ label }
 					onChange={ value => setAttributes( { label: value } ) }
+					__next40pxDefaultSize
 				/> }
 
 				<ToggleControl
 					label={ __( 'Required', 'wpzoom-forms' ) }
 					checked={ !! required }
 					onChange={ value => setAttributes( { required: !! value } ) }
+					__next40pxDefaultSize
 				/>
 			</PanelBody>
 		</InspectorControls>
 
 		<Fragment>
-			{ showLabel && <label htmlFor={ uniqueId }>
+			{ showLabel && <>
 				<RichText
 					tagName="label"
 					placeholder={ __( 'Label', 'wpzoom-forms' ) }
@@ -116,7 +123,7 @@ const Edit = props => {
 					onChange={ value => setAttributes( { label: value } ) }
 				/>
 				{ required && <sup className="wp-block-wpzoom-forms-required">{ __( '*', 'wpzoom-forms' ) }</sup> }
-			</label> }
+			</> }
 
 			<input
 				data-datepicker="true"

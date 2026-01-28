@@ -37,13 +37,16 @@ class WizardPartCreator
             $template_part_data['type'] = sanitize_text_field($template_part_data['type']);
 
             $template_part_area = $stage_type === WizardStageTypes::HEADER_STAGE ? 'header' : 'footer';
-
             // Get all block template parts
             $specificUpdatePart = isset($template_part_data['updatedTemplatePart']) && $template_part_data['updatedTemplatePart'] !== 'all' ? sanitize_text_field($template_part_data['updatedTemplatePart']) : false;
             $templates = get_block_templates(['area' => $template_part_area], 'wp_template_part');
             foreach ($templates as $template) {
                 if ($specificUpdatePart && !empty($specificUpdatePart) && $template->slug !== $specificUpdatePart) {
                     // If we only want to update a specific part, skip the others.
+                    continue;
+                }
+                if ($template->area !== $template_part_area) {
+                    // Sometimes get_block_templates returns parts from other areas, skip those.
                     continue;
                 }
                 self::InitCreateTemplatePartProcess($template, $template_part_data, $template_part_area);

@@ -14,14 +14,43 @@ jQuery(document).ready(function () {
 
 			// Change url depending by active tab
 			window.history.pushState('', '', href);
+
+			// Show/hide promo banners based on active tab
+			const tab = query_args['tab'];
+			if (tab === 'tab-ajax') {
+				$('.wpzoom-forms-settings-ajax-promo-container').css('display', 'inline-block');
+				$('.wpzoom-forms-settings-integrations-promo-container').hide();
+			} else if (tab === 'tab-integrations') {
+				$('.wpzoom-forms-settings-integrations-promo-container').css('display', 'inline-block');
+				$('.wpzoom-forms-settings-ajax-promo-container').hide();
+			} else {
+				$('.wpzoom-forms-settings-ajax-promo-container').hide();
+				$('.wpzoom-forms-settings-integrations-promo-container').hide();
+			}
 		});
 
 		// Make setting wp-tab-active optional.
 		$('.wp-tab-bar').each(function () {
-			if ($('.wp-tab-active', this).length)
+			if ($('.wp-tab-active', this).length) {
 				$('.wp-tab-active', this).click();
-			else
+			} else {
 				$('a', this).first().click();
+			}
+			
+			// Check initial tab on page load
+			const url = window.location.href;
+			const urlParams = new URLSearchParams(url);
+			const tab = urlParams.get('tab');
+			if (tab === 'tab-ajax') {
+				$('.wpzoom-forms-settings-ajax-promo-container').css('display', 'inline-block');
+				$('.wpzoom-forms-settings-integrations-promo-container').hide();
+			} else if (tab === 'tab-integrations') {
+				$('.wpzoom-forms-settings-integrations-promo-container').css('display', 'inline-block');
+				$('.wpzoom-forms-settings-ajax-promo-container').hide();
+			} else {
+				$('.wpzoom-forms-settings-ajax-promo-container').hide();
+				$('.wpzoom-forms-settings-integrations-promo-container').hide();
+			}
 		});
 
 		// reset settings to defaults
@@ -111,8 +140,13 @@ jQuery(document).ready(function () {
 			const tab = urlParams.get('tab');
 			if (tab === 'tab-ajax') {
 				$('.wpzoom-forms-settings-ajax-promo-container').css('display', 'inline-block');
+				$('.wpzoom-forms-settings-integrations-promo-container').hide();
+			} else if (tab === 'tab-integrations') {
+				$('.wpzoom-forms-settings-integrations-promo-container').css('display', 'inline-block');
+				$('.wpzoom-forms-settings-ajax-promo-container').hide();
 			} else {
 				$('.wpzoom-forms-settings-ajax-promo-container').hide();
+				$('.wpzoom-forms-settings-integrations-promo-container').hide();
 			}
 		});
 
