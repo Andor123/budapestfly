@@ -5117,10 +5117,10 @@ FullPageLoader.propTypes = {
 
 /***/ }),
 
-/***/ "../app/modules/kit-library/assets/js/pages/cloud/upgrade-screen.js":
-/*!**************************************************************************!*\
-  !*** ../app/modules/kit-library/assets/js/pages/cloud/upgrade-screen.js ***!
-  \**************************************************************************/
+/***/ "../app/modules/kit-library/assets/js/pages/cloud/upgrade-message.js":
+/*!***************************************************************************!*\
+  !*** ../app/modules/kit-library/assets/js/pages/cloud/upgrade-message.js ***!
+  \***************************************************************************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -5132,23 +5132,98 @@ var _typeof = __webpack_require__(/*! @babel/runtime/helpers/typeof */ "../node_
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports["default"] = UpgradeScreen;
+exports["default"] = UpgradeMessage;
 var _react = _interopRequireWildcard(__webpack_require__(/*! react */ "react"));
 var _appUi = __webpack_require__(/*! @elementor/app-ui */ "@elementor/app-ui");
+var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "../node_modules/prop-types/index.js"));
+var _appsEventTracking = __webpack_require__(/*! elementor-app/event-track/apps-event-tracking */ "../app/assets/js/event-track/apps-event-tracking.js");
+function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != _typeof(e) && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
+var UPGRADE_URLS = {
+  ADVANCED_PLAN: 'https://go.elementor.com/go-pro-cloud-website-templates-library-advanced/',
+  GO_PRO: 'https://go.elementor.com/go-pro-cloud-website-templates-library/'
+};
+function UpgradeMessage(_ref) {
+  var hasSubscription = _ref.hasSubscription,
+    isCloudKitsAvailable = _ref.isCloudKitsAvailable;
+  var showPlanUpgradeMessage = !isCloudKitsAvailable && hasSubscription;
+  var content = (0, _react.useMemo)(function () {
+    return showPlanUpgradeMessage ? {
+      heading: __('Access Website Templates with a plan upgrade', 'elementor'),
+      description: __('Your current plan doesn\'t include saving and importing Website Templates. Upgrade to the Advanced plan or higher to use this feature.', 'elementor'),
+      buttonText: __('Compare plans', 'elementor'),
+      url: UPGRADE_URLS.ADVANCED_PLAN
+    } : {
+      heading: __('It\'s time to level up', 'elementor'),
+      description: __('Upgrade to Elementor Pro to import your own website template and save templates that you can reuse on any of your connected websites.', 'elementor'),
+      buttonText: __('Upgrade now', 'elementor'),
+      url: UPGRADE_URLS.GO_PRO
+    };
+  }, [showPlanUpgradeMessage]);
+  return /*#__PURE__*/_react.default.createElement(_appUi.Grid, {
+    container: true,
+    alignItems: "center",
+    justify: "center",
+    direction: "column",
+    className: "e-kit-library__error-screen"
+  }, /*#__PURE__*/_react.default.createElement("i", {
+    className: "eicon-library-subscription-upgrade",
+    "aria-hidden": "true"
+  }), /*#__PURE__*/_react.default.createElement(_appUi.Heading, {
+    tag: "h3",
+    variant: "display-1",
+    className: "e-kit-library__error-screen-title"
+  }, content.heading), /*#__PURE__*/_react.default.createElement(_appUi.Text, {
+    variant: "xl",
+    className: "e-kit-library__error-screen-description"
+  }, content.description), /*#__PURE__*/_react.default.createElement(_appUi.Button, {
+    text: content.buttonText,
+    url: content.url,
+    onClick: function onClick() {
+      _appsEventTracking.AppsEventTracking.sendKitsCloudUpgradeClicked(elementorCommon.eventsManager.config.secondaryLocations.kitLibrary.cloudKitLibrary);
+    },
+    target: "_blank",
+    className: "e-kit-library__upgrade-button"
+  }));
+}
+UpgradeMessage.propTypes = {
+  hasSubscription: _propTypes.default.bool.isRequired,
+  isCloudKitsAvailable: _propTypes.default.bool.isRequired
+};
+
+/***/ }),
+
+/***/ "../app/modules/kit-library/assets/js/pages/cloud/upgrade-screen.js":
+/*!**************************************************************************!*\
+  !*** ../app/modules/kit-library/assets/js/pages/cloud/upgrade-screen.js ***!
+  \**************************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "../node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+var _typeof = __webpack_require__(/*! @babel/runtime/helpers/typeof */ "../node_modules/@babel/runtime/helpers/typeof.js");
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports["default"] = UpgradeScreen;
+var _react = _interopRequireWildcard(__webpack_require__(/*! react */ "react"));
 var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "../node_modules/prop-types/index.js"));
 var _content = _interopRequireDefault(__webpack_require__(/*! ../../../../../../assets/js/layout/content */ "../app/assets/js/layout/content.js"));
 var _indexHeader = _interopRequireDefault(__webpack_require__(/*! ../index/index-header */ "../app/modules/kit-library/assets/js/pages/index/index-header.js"));
 var _indexSidebar = _interopRequireDefault(__webpack_require__(/*! ../index/index-sidebar */ "../app/modules/kit-library/assets/js/pages/index/index-sidebar.js"));
 var _layout = _interopRequireDefault(__webpack_require__(/*! ../../components/layout */ "../app/modules/kit-library/assets/js/components/layout/index.js"));
 var _appsEventTracking = __webpack_require__(/*! elementor-app/event-track/apps-event-tracking */ "../app/assets/js/event-track/apps-event-tracking.js");
+var _upgradeMessage = _interopRequireDefault(__webpack_require__(/*! ./upgrade-message */ "../app/modules/kit-library/assets/js/pages/cloud/upgrade-message.js"));
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != _typeof(e) && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
 function UpgradeScreen(_ref) {
+  var _cloudKitsData$is_eli;
   var menuItems = _ref.menuItems,
     forceRefetch = _ref.forceRefetch,
     isFetching = _ref.isFetching,
     cloudKitsData = _ref.cloudKitsData;
   var hasSubscription = '' !== (cloudKitsData === null || cloudKitsData === void 0 ? void 0 : cloudKitsData.subscription_id);
-  var url = hasSubscription ? 'https://go.elementor.com/go-pro-cloud-website-templates-library-advanced/' : 'https://go.elementor.com/go-pro-cloud-website-templates-library/';
+  var isCloudKitsAvailable = (_cloudKitsData$is_eli = cloudKitsData === null || cloudKitsData === void 0 ? void 0 : cloudKitsData.is_eligible) !== null && _cloudKitsData$is_eli !== void 0 ? _cloudKitsData$is_eli : false;
   (0, _react.useEffect)(function () {
     _appsEventTracking.AppsEventTracking.sendPageViewsWebsiteTemplates(elementorCommon.eventsManager.config.secondaryLocations.kitLibrary.cloudKitLibraryUpgrade);
   }, []);
@@ -5166,31 +5241,10 @@ function UpgradeScreen(_ref) {
     className: "e-kit-library__index-layout-container"
   }, /*#__PURE__*/_react.default.createElement(_content.default, {
     className: "e-kit-library__index-layout-main e-kit-library__connect-container"
-  }, /*#__PURE__*/_react.default.createElement(_appUi.Grid, {
-    container: true,
-    alignItems: "center",
-    justify: "center",
-    direction: "column",
-    className: "e-kit-library__error-screen"
-  }, /*#__PURE__*/_react.default.createElement("i", {
-    className: "eicon-library-subscription-upgrade",
-    "aria-hidden": "true"
-  }), /*#__PURE__*/_react.default.createElement(_appUi.Heading, {
-    tag: "h3",
-    variant: "display-1",
-    className: "e-kit-library__error-screen-title"
-  }, __('It\'s time to level up', 'elementor')), /*#__PURE__*/_react.default.createElement(_appUi.Text, {
-    variant: "xl",
-    className: "e-kit-library__error-screen-description"
-  }, __('Upgrade to Elementor Pro to import your own website template and save templates that you can reuse on any of your connected websites.', 'elementor')), /*#__PURE__*/_react.default.createElement(_appUi.Button, {
-    text: __('Upgrade now', 'elementor'),
-    url: url,
-    onClick: function onClick() {
-      _appsEventTracking.AppsEventTracking.sendKitsCloudUpgradeClicked(elementorCommon.eventsManager.config.secondaryLocations.kitLibrary.cloudKitLibrary);
-    },
-    target: "_blank",
-    className: "e-kit-library__upgrade-button"
-  })))));
+  }, /*#__PURE__*/_react.default.createElement(_upgradeMessage.default, {
+    hasSubscription: hasSubscription,
+    isCloudKitsAvailable: isCloudKitsAvailable
+  }))));
 }
 UpgradeScreen.propTypes = {
   menuItems: _propTypes.default.array.isRequired,
@@ -5288,7 +5342,6 @@ var _header = _interopRequireDefault(__webpack_require__(/*! ../../components/la
 var _appUi = __webpack_require__(/*! @elementor/app-ui */ "@elementor/app-ui");
 var _router = __webpack_require__(/*! @reach/router */ "../node_modules/@reach/router/es/index.js");
 var _popoverDialog = _interopRequireDefault(__webpack_require__(/*! elementor-app/ui/popover-dialog/popover-dialog */ "../app/assets/js/ui/popover-dialog/popover-dialog.js"));
-var _returnToContext = __webpack_require__(/*! ../../context/return-to-context */ "../app/modules/kit-library/assets/js/context/return-to-context.js");
 __webpack_require__(/*! ./index-header.scss */ "../app/modules/kit-library/assets/js/pages/index/index-header.scss");
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != _typeof(e) && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
 function IndexHeader(props) {
@@ -5299,8 +5352,9 @@ function IndexHeader(props) {
     isInfoModalOpen = _useState2[0],
     setIsInfoModalOpen = _useState2[1];
   var importRef = (0, _react.useRef)();
-  var returnTo = (0, _returnToContext.useReturnTo)();
   var shouldShowImportButton = elementorAppConfig.user.is_administrator || ((_elementorAppConfig$u = (_elementorAppConfig$u2 = elementorAppConfig.user.restrictions) === null || _elementorAppConfig$u2 === void 0 ? void 0 : _elementorAppConfig$u2.includes('json-upload')) !== null && _elementorAppConfig$u !== void 0 ? _elementorAppConfig$u : false);
+  var refetch = props.refetch,
+    isFetching = props.isFetching;
   var buttons = (0, _react.useMemo)(function () {
     return [{
       id: 'info',
@@ -5314,9 +5368,9 @@ function IndexHeader(props) {
       id: 'refetch',
       text: __('Refetch', 'elementor'),
       hideText: true,
-      icon: "eicon-sync ".concat(props.isFetching ? 'eicon-animation-spin' : ''),
+      icon: "eicon-sync ".concat(isFetching ? 'eicon-animation-spin' : ''),
       onClick: function onClick() {
-        props.refetch();
+        refetch();
       }
     }, shouldShowImportButton && {
       id: 'import',
@@ -5325,14 +5379,11 @@ function IndexHeader(props) {
       icon: 'eicon-upload-circle-o',
       elRef: importRef,
       onClick: function onClick() {
-        var importUrl = '/import?referrer=kit-library';
-        if (returnTo) {
-          importUrl += "&return_to=".concat(encodeURIComponent(returnTo));
-        }
+        var importUrl = '/import-customization';
         navigate(importUrl);
       }
     }];
-  }, [props.isFetching, props.refetch, shouldShowImportButton, navigate, returnTo]);
+  }, [isFetching, refetch, shouldShowImportButton, navigate]);
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_header.default, {
     buttons: buttons
   }), /*#__PURE__*/_react.default.createElement(_popoverDialog.default, {
@@ -6434,4 +6485,4 @@ var isTierAtLeast = exports.isTierAtLeast = function isTierAtLeast(currentTier, 
 /***/ })
 
 }]);
-//# sourceMappingURL=kit-library.6fbef525614a7b49f293.bundle.js.map
+//# sourceMappingURL=kit-library.9c4bbee79edf32c6fcb3.bundle.js.map
