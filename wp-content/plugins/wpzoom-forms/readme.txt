@@ -5,7 +5,7 @@ Author URI:        https://www.wpzoom.com/
 Requires at least: 6.0
 Requires PHP:      7.4
 Tested up to:      6.9
-Stable tag:        1.3.5
+Stable tag:        1.3.6
 License:           GNU General Public License v2
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 Tags:              contact form, form builder, gutenberg form, contact form block, forms
@@ -120,6 +120,10 @@ Download your form submissions as CSV files for reporting, analysis, or migratio
 
 Clone any existing form with one click. Quickly create variations of your forms without starting from scratch.
 
+**🔀 Conditional Logic**
+
+Create dynamic forms that adapt based on user input. Show or hide fields depending on previous answers to create personalized form experiences.
+
 **Love WPZOOM Forms?** Help other WordPress users discover this plugin by [leaving a 5-star review](https://wordpress.org/support/plugin/wpzoom-forms/reviews/#new-post). Your feedback helps us continue improving and adding new features for the community.
 
 ##Why Choose WPZOOM Forms?
@@ -172,6 +176,9 @@ To export form submissions, navigate to the Tools > Export page in Dashboard and
 
 
 == Changelog ==
+
+= 1.3.6 =
+* Multiple bug fixes and improvements
 
 = 1.3.5 =
 * Improved template modal UI

@@ -29,11 +29,31 @@
 	}
 }
 
-#post-body {
-	#post-body-content,
-	#postbox-container-1,
-	#advanced-sortables {
-		display: none;
+// Scope to submission edit page only
+.post-type-wpzf-submission {
+	#post-body.columns-2 {
+		display: flex;
+		flex-direction: row-reverse;
+		margin-right: 0;
+
+		#postbox-container-1 {
+			float: none;
+			margin-right: 0;
+			width: 280px;
+			flex-shrink: 0;
+		}
+
+		#postbox-container-2 {
+			flex-grow: 1;
+            margin-right: 25px;
+		}
+	}
+
+	#post-body {
+		#post-body-content,
+		#advanced-sortables {
+			display: none;
+		}
 	}
 }
 

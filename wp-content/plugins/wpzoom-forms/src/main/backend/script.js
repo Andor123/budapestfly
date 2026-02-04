@@ -11,6 +11,7 @@ import { default as WelcomeGuide } from './welcome';
 import { SortableContainer, SortableElement, SortableHandle } from 'react-sortable-hoc';
 import { arrayMoveImmutable } from 'array-move';
 import FormIcons from './icons';
+import './conditional-logic-placeholder';
 
 const insertFormField = (blockName, defaultAttributes, isDisabled, isPro) => {
 	console.log('insertFormField called with:', blockName, defaultAttributes, isDisabled, isPro);

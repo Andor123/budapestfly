@@ -73,7 +73,7 @@ $templates = array(
 <!-- wp:columns {"style":{"spacing":{"blockGap":{"top":"0","left":"var:preset|spacing|40"}}}} -->
 <div class="wp-block-columns"><!-- wp:column {"width":"","style":{"spacing":{"padding":{"right":"var:preset|spacing|40"}}}} -->
 <div class="wp-block-column" style="padding-right:var(--wp--preset--spacing--40)"><!-- wp:wpzoom-forms/text-name-field {"id":"input_name","name":"First","label":"First","style":{"spacing":{"margin":{"left":"0px"}}}} -->
-<label for="input_name"><span>First</span><sup class="wp-block-wpzoom-forms-required">*</sup></label><input type="text" name="input_name" id="input_name" placeholder="" required class="wp-block-wpzoom-forms-text-name-field"/>
+<label for="input_name"><span>First</span><sup class="wp-block-wpzoom-forms-required">*</sup></label><input type="text" name="input_name" id="input_name" placeholder="" required class="wp-block-wpzoom-forms-text-name-field" style="margin-left:0px"/>
 <!-- /wp:wpzoom-forms/text-name-field --></div>
 <!-- /wp:column -->
 

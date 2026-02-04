@@ -2,6 +2,7 @@ import { registerBlockType } from '@wordpress/blocks';
 import json from './block.json';
 import Edit from './edit';
 import Save from './save';
+import deprecated from './deprecated';
 
 const { name } = json;
 
@@ -16,6 +17,7 @@ registerBlockType(
 					<path d="M21 4.25035C21.4142 4.25035 21.75 4.58613 21.75 5.00035C21.7498 5.41443 21.4141 5.75035 21 5.75035H11C10.5859 5.75035 10.2502 5.41443 10.25 5.00035C10.25 4.58613 10.5858 4.25035 11 4.25035H21Z" fill="currentColor"/>
 				</svg> ),
 		edit: Edit,
-		save: Save
+		save: Save,
+		deprecated
 	}
 );

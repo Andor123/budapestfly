@@ -10,6 +10,7 @@ import {
 	Button,
 	SelectControl,
 	RangeControl,
+	ComboboxControl,
 	__experimentalHStack as HStack
 } from '@wordpress/components';
 import { useSelect } from '@wordpress/data';
@@ -19,7 +20,6 @@ import { InspectorControls, PanelColorSettings } from '@wordpress/block-editor';
 /**
  * Internal dependencies.
  */
-import SearchableSelectControl from './searchable-select';
 import FieldsControls from './controls/fields';
 import ButtonControls from './controls/button';
 
@@ -57,14 +57,14 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 
 
 	const formSelect = (
-		<SearchableSelectControl
+		<ComboboxControl
 			label={__('Form', 'wpzoom-forms')}
-			selectPlaceholder={forms.length < 1 ? __('No forms exist...', 'wpzoom-forms') : __('Select a form...', 'wpzoom-forms')}
-			searchPlaceholder={__('Search...', 'wpzoom-forms')}
-			noResultsLabel={__('Nothing found...', 'wpzoom-forms')}
-			options={forms}
-			value={typeof theForm !== 'undefined' ? theForm : ''}
-			onChange={(value) => setAttributes({ formId: String(value.selectedItem.key) })}
+			placeholder={forms.length < 1 ? __('No forms exist...', 'wpzoom-forms') : __('Select a form...', 'wpzoom-forms')}
+			options={forms.map(form => ({ label: form.name, value: form.key }))}
+			value={typeof theForm !== 'undefined' ? theForm.key : ''}
+			onChange={(value) => setAttributes({ formId: String(value) })}
+			allowReset={false}
+			__next40pxDefaultSize
 		/>
 	);
 

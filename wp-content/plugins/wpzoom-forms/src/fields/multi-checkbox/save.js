@@ -14,14 +14,14 @@ const Save = ( { attributes } ) => {
 			{ required && <sup className="wp-block-wpzoom-forms-required">{ __( '*', 'wpzoom-forms' ) }</sup> }
 		</label> }
 
-		<ul { ...blockProps }>
+		<ul { ...blockProps } id={ id }>
 			{ options.map( ( option, index ) =>
 				<li key={ index }>
 					<label>
 						<input
 							type="checkbox"
 							name={ `${id}[]` }
-							id={ id }
+							id={ `${id}-${index}` }
 							value={ option }
 							checked={ option == defaultValue }
 							onChange={ e => {} }

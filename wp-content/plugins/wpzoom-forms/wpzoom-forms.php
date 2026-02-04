@@ -13,7 +13,7 @@
  * Description: Simple, user-friendly contact form plugin for WordPress that utilizes Gutenberg blocks for easy form building and customization.
  * Author:      WPZOOM
  * Author URI:  https://www.wpzoom.com
- * Version:     1.3.5
+ * Version:     1.3.6
  * License:     GPL2+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  */
@@ -1173,10 +1173,13 @@ class WPZOOM_Forms {
 	 */
 	public function post_list_columns_submit( $columns ) {
 		return array(
-			'cb'   => $columns['cb'],
-			'desc' => __( 'Submission', 'wpzoom-forms' ),
-			'form' => __( 'Form', 'wpzoom-forms' ),
-			'date' => $columns['date']
+			'cb'            => $columns['cb'],
+			'submission_id' => __( 'ID', 'wpzoom-forms' ),
+			'name'          => __( 'Name', 'wpzoom-forms' ),
+			'email'         => __( 'Email', 'wpzoom-forms' ),
+			'subject'       => __( 'Subject', 'wpzoom-forms' ),
+			'form'          => __( 'Form', 'wpzoom-forms' ),
+			'date'          => $columns['date']
 		);
 	}
 
@@ -1189,7 +1192,7 @@ class WPZOOM_Forms {
 	 * @since  1.0.0
 	 */
 	public function post_list_sortable_columns_submit( $columns ) {
-		$columns['desc'] = 'wpzf_desc';
+		$columns['submission_id'] = 'ID';
 		$columns['form'] = 'wpzf_form';
 
 		return $columns;
@@ -1311,33 +1314,125 @@ class WPZOOM_Forms {
 	 * @since  1.0.0
 	 */
 	public function post_list_custom_columns_submit( $column, $post_id ) {
-		if ( 'desc' == $column ) {
-			$data = get_post_meta( $post_id, '_wpzf_fields', true );
-			$title = __( '[Unknown]', 'wpzoom-forms' );
+		$fields = get_post_meta( $post_id, '_wpzf_fields', true );
 
-			if ( ! is_null( $data ) && false !== $data && is_array( $data ) && ! empty( $data ) ) {
-				$title = '';
+		switch ( $column ) {
+			case 'submission_id':
+				printf(
+					'<strong><a href="%s" class="row-title">%s #%s</a></strong>',
+					esc_url( get_edit_post_link( $post_id ) ),
+					esc_html__( 'Submission', 'wpzoom-forms' ),
+					esc_html( $post_id )
+				);
+				break;
 
-				foreach ( $data as $name => $value ) {
-					$title .= '<span class="field-name">' . esc_html( substr( $name, 0, 250 ) ) . ( strlen( $name ) > 250 ? '&hellip;' : '' ) . '</span>
-					           <span class="field-value">' . esc_html( substr( $value, 0, 250 ) ) . ( strlen( $value ) > 250 ? '&hellip;' : '' ) . '</span>';
+			case 'name':
+				$name_found = false;
+
+				if ( ! empty( $fields ) && is_array( $fields ) ) {
+					// Common name field patterns
+					$name_patterns = array( 'name', 'full_name', 'first_name', 'last_name', 'fullname', 'your_name' );
+
+					foreach ( $fields as $name => $value ) {
+						$field_name = strtolower( $name );
+						foreach ( $name_patterns as $pattern ) {
+							if ( strpos( $field_name, $pattern ) !== false && ! empty( $value ) ) {
+								echo '<strong>' . esc_html( $value ) . '</strong>';
+								$name_found = true;
+								break 2;
+							}
+						}
+					}
 				}
-			}
 
-			printf( '<a href="%s" class="row-title">%s</a>', esc_url( get_edit_post_link( $post_id ) ), $title );
-		} elseif ( 'form' == $column ) {
-			$form_id = intval( get_post_meta( $post_id, '_wpzf_form_id', true ) );
-			$form_name = __( '[Unknown]', 'wpzoom-forms' );
-
-			if ( $form_id > 0 ) {
-				$form_name = $form_id;
-
-				if ( ! is_null( get_post( $form_id ) ) ) {
-					$form_name = '<a href="' . esc_url( get_edit_post_link( $form_id ) ) . '">' . get_the_title( $form_id ) . '</a>';
+				if ( ! $name_found ) {
+					echo '&mdash;';
 				}
-			}
+				break;
 
-			echo wp_kses( $form_name, array( 'a' => array( 'href' => array() ) ) );
+			case 'email':
+				$email_found = false;
+
+				if ( ! empty( $fields ) && is_array( $fields ) ) {
+					// Common email field patterns
+					$email_patterns = array( 'email', 'e-mail', 'mail', 'email_address', 'your_email' );
+
+					foreach ( $fields as $name => $value ) {
+						$field_name = strtolower( $name );
+						foreach ( $email_patterns as $pattern ) {
+							if ( strpos( $field_name, $pattern ) !== false && ! empty( $value ) ) {
+								echo '<a href="mailto:' . esc_attr( $value ) . '">' . esc_html( $value ) . '</a>';
+								$email_found = true;
+								break 2;
+							}
+						}
+					}
+				}
+
+				if ( ! $email_found ) {
+					echo '&mdash;';
+				}
+				break;
+
+			case 'subject':
+				$subject_found = false;
+
+				if ( ! empty( $fields ) && is_array( $fields ) ) {
+					// First try to find a subject field
+					foreach ( $fields as $name => $value ) {
+						if ( stripos( $name, 'subject' ) !== false || stripos( $name, 'title' ) !== false || stripos( $name, 'topic' ) !== false ) {
+							echo esc_html( $value );
+							$subject_found = true;
+							break;
+						}
+					}
+
+					// If no subject field found, show first non-empty field (likely message)
+					if ( ! $subject_found ) {
+						foreach ( $fields as $name => $value ) {
+							// Skip name and email fields
+							$field_name = strtolower( $name );
+							if ( strpos( $field_name, 'name' ) !== false || strpos( $field_name, 'email' ) !== false ) {
+								continue;
+							}
+							if ( ! empty( $value ) ) {
+								echo esc_html( wp_trim_words( $value, 10, '...' ) );
+								$subject_found = true;
+								break;
+							}
+						}
+					}
+				}
+
+				if ( ! $subject_found ) {
+					echo '&mdash;';
+				}
+				break;
+
+			case 'form':
+				$form_id = intval( get_post_meta( $post_id, '_wpzf_form_id', true ) );
+				$form_name = __( '[Unknown]', 'wpzoom-forms' );
+
+				if ( $form_id > 0 ) {
+					$form_post = get_post( $form_id );
+
+					if ( ! is_null( $form_post ) && 'wpzf-form' === $form_post->post_type ) {
+						$form_title = get_the_title( $form_id );
+
+						if ( ! empty( $form_title ) && 'trash' !== $form_post->post_status ) {
+							$form_name = '<a href="' . esc_url( get_edit_post_link( $form_id ) ) . '">' . esc_html( $form_title ) . '</a>';
+						} elseif ( 'trash' === $form_post->post_status ) {
+							$form_name = sprintf(
+								'<span style="color: #d63638;">%s</span> <small>(%s)</small>',
+								esc_html( $form_title ?: __( 'Untitled Form', 'wpzoom-forms' ) ),
+								esc_html__( 'Trashed', 'wpzoom-forms' )
+							);
+						}
+					}
+				}
+
+				echo wp_kses( $form_name, array( 'a' => array( 'href' => array() ), 'span' => array( 'style' => array() ), 'small' => array() ) );
+				break;
 		}
 	}
 
@@ -1352,7 +1447,7 @@ class WPZOOM_Forms {
 	 */
 	public function post_list_primary_column( $default, $screen ) {
 		if ( 'edit-wpzf-submission' == $screen ) {
-			$default = 'desc';
+			$default = 'submission_id';
 		}
 
 		return $default;
@@ -1403,7 +1498,11 @@ class WPZOOM_Forms {
 			$wp_meta_boxes = array(
 				'wpzf-submission' => array(
 					'advanced' => array(),
-					'side'     => array(),
+					'side'     => array(
+						'high' => array(
+							'wpzf-submission-details-mb' => $wp_meta_boxes['wpzf-submission']['side']['high']['wpzf-submission-details-mb']
+						)
+					),
 					'normal'   => array(
 						'high' => array(
 							'wpzf-submission-mb' => $wp_meta_boxes['wpzf-submission']['normal']['high']['wpzf-submission-mb']
@@ -1412,7 +1511,7 @@ class WPZOOM_Forms {
 				)
 			);
 
-			add_screen_option( 'layout_columns', array( 'max' => 1, 'default' => 1 ) );
+			add_screen_option( 'layout_columns', array( 'max' => 2, 'default' => 2 ) );
 		}
 	}
 
@@ -1466,6 +1565,15 @@ class WPZOOM_Forms {
 	 */
 	public function add_meta_boxes() {
 		add_meta_box(
+			'wpzf-submission-details-mb',
+			__( 'Submission Details', 'wpzoom-forms' ),
+			array( $this, 'submission_meta_box_details' ),
+			'wpzf-submission',
+			'side',
+			'high'
+		);
+
+		add_meta_box(
 			'wpzf-submission-mb',
 			__( 'Submission', 'wpzoom-forms' ),
 			array( $this, 'submission_meta_box' ),
@@ -1473,6 +1581,131 @@ class WPZOOM_Forms {
 			'normal',
 			'high'
 		);
+	}
+
+	/**
+	 * Outputs the content for the submission details sidebar meta box.
+	 *
+	 * @access public
+	 * @return void
+	 * @since  1.3.5
+	 */
+	public function submission_meta_box_details() {
+		$post_id = get_the_ID();
+		$post = get_post( $post_id );
+
+		// Get form info
+		$form_id = get_post_meta( $post_id, '_wpzf_form_id', true );
+		$form_name = __( '[Unknown]', 'wpzoom-forms' );
+		$show_form_link = false;
+
+		if ( $form_id > 0 ) {
+			$form_post = get_post( $form_id );
+
+			if ( ! is_null( $form_post ) && 'wpzf-form' === $form_post->post_type ) {
+				$form_title = get_the_title( $form_id );
+
+				if ( ! empty( $form_title ) && 'trash' !== $form_post->post_status ) {
+					$form_name = $form_title;
+					$show_form_link = true;
+				} elseif ( 'trash' === $form_post->post_status ) {
+					$form_name = sprintf(
+						'<span style="color: #d63638;">%s</span> <small>(%s)</small>',
+						$form_title ?: __( 'Untitled Form', 'wpzoom-forms' ),
+						__( 'Trashed', 'wpzoom-forms' )
+					);
+				}
+			}
+		}
+
+		// Get submission date
+		$date = sprintf(
+			__( 'Submitted on %1$s at %2$s', 'wpzoom-forms' ),
+			get_the_date(),
+			get_the_time()
+		);
+
+		// Get trash/delete link
+		$delete_link = '';
+		$action_text = '';
+		if ( current_user_can( 'delete_post', $post_id ) ) {
+			if ( 'trash' === $post->post_status ) {
+				$delete_link = get_delete_post_link( $post_id, '', true );
+				$action_text = __( 'Delete Permanently', 'wpzoom-forms' );
+			} else {
+				$delete_link = get_delete_post_link( $post_id );
+				$action_text = _x( 'Move to Trash', 'verb', 'wpzoom-forms' );
+			}
+		}
+
+		// Output the details
+		?>
+		<style>
+			#wpzf-submission-details-mb {
+				display: block !important;
+			}
+			#wpzf-submission-details-mb .inside {
+				margin: 0;
+				padding: 0;
+			}
+			.wpzf-submission-details {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				display: block !important;
+			}
+			.wpzf-submission-details li {
+				margin: 0;
+				padding: 8px 12px;
+				border-bottom: 1px solid #eee;
+				display: block;
+				line-height: 1.5;
+			}
+			.wpzf-submission-details li:last-child {
+				border-bottom: none;
+			}
+			.wpzf-submission-details li strong {
+				display: block;
+				margin-bottom: 4px;
+				color: #1d2327;
+			}
+			.wpzf-submission-details .wpzf-submission-actions {
+				padding: 12px;
+			}
+			.wpzf-submission-details .submitdelete {
+				color: #b32d2e;
+				text-decoration: none;
+			}
+			.wpzf-submission-details .submitdelete:hover {
+				color: #a00;
+			}
+		</style>
+		<ul class="wpzf-submission-details">
+			<li>
+				<strong><?php esc_html_e( 'Submission ID:', 'wpzoom-forms' ); ?></strong>
+				#<?php echo esc_html( $post_id ); ?>
+			</li>
+			<li>
+				<strong><?php esc_html_e( 'Form:', 'wpzoom-forms' ); ?></strong>
+				<?php if ( $show_form_link ) : ?>
+					<a href="<?php echo esc_url( get_edit_post_link( $form_id ) ); ?>"><?php echo esc_html( $form_name ); ?></a>
+				<?php else : ?>
+					<?php echo wp_kses_post( $form_name ); ?>
+				<?php endif; ?>
+			</li>
+			<li>
+				<strong><?php esc_html_e( 'Date:', 'wpzoom-forms' ); ?></strong>
+				<?php echo esc_html( $date ); ?>
+			</li>
+			<?php if ( ! empty( $delete_link ) ) : ?>
+			<li class="wpzf-submission-actions">
+				<a href="<?php echo esc_url( $delete_link ); ?>" class="submitdelete deletion">
+					<?php echo esc_html( $action_text ); ?>
+				</a>
+			</li>
+			<?php endif; ?>
+		</ul>
+		<?php
 	}
 
 	/**
@@ -1653,6 +1886,18 @@ class WPZOOM_Forms {
 			$form_failure_message = __( 'Submission failed!', 'wpzoom-forms' );
 		}
 
+		// Enqueue core block library styles for inner blocks (columns, group, spacer, etc.)
+		wp_enqueue_style( 'wp-block-library' );
+
+		// Process form content through do_blocks() to render inner blocks and enqueue their styles
+		$form_content = get_post_field( 'post_content', intval( $attributes['formId'] ), 'raw' );
+		$form_content = do_blocks( $form_content );
+		$form_content = preg_replace(
+			array( '/<!--(.*)-->/Uis', '/<(input|textarea|select)(.*)name="([^"]+)"/Uis' ),
+			array( '', '<$1$2name="wpzf_$3"' ),
+			$form_content
+		);
+
 		$content = sprintf(
 			'<!-- ZOOM Forms Start -->
 			<form id="wpzf-%2$s" method="post" action="%1$s" class="wpzoom-forms_form%6$s">
@@ -1672,11 +1917,7 @@ class WPZOOM_Forms {
 				  '</p></div>'
 				: ''
 			),
-			preg_replace(
-				array( '/<!--(.*)-->/Uis', '/<(input|textarea|select)(.*)name="([^"]+)"/Uis' ),
-				array( '', '<$1$2name="wpzf_$3"' ),
-				get_post_field( 'post_content', intval( $attributes['formId'] ), 'display' )
-			),
+			$form_content,
 			( 'none' !== $align ? ' align' . $align : '' )
 		);
 
@@ -2993,11 +3234,45 @@ if( ! function_exists ( 'wpzoom_forms_load_files' ) ) {
 		require_once 'classes/class-wpzoom-forms-settings-page.php';
 		require_once 'classes/class-wpzoom-forms-template-manager.php';
 		require_once 'classes/class-wpzoom-forms-settings-upsell.php';
-	
+
 	}
 	add_action( 'plugin_loaded', 'wpzoom_forms_load_files' );
 }
 
+if ( ! function_exists( 'wpzoom_forms_plugin_action_links' ) ) {
+	/**
+	 * Plugin action links.
+	 *
+	 * Adds action links to the plugin list table.
+	 *
+	 * Fired by `plugin_action_links` filter.
+	 *
+	 * @since 1.3.5
+	 *
+	 * @param array $links An array of plugin action links.
+	 *
+	 * @return array An array of plugin action links.
+	 */
+	function wpzoom_forms_plugin_action_links( $links ) {
+		$settings_link = sprintf(
+			'<a href="%1$s">%2$s</a>',
+			admin_url( 'edit.php?post_type=wpzf-form&page=' . WPZOOM_FORMS_SETTINGS_PAGE ),
+			esc_html__( 'Settings', 'wpzoom-forms' )
+		);
+
+		array_unshift( $links, $settings_link );
+
+		$links['go_pro'] = sprintf(
+			'<a href="%1$s" target="_blank" class="wpzoom-forms-gopro" style="color:#2271b1;font-weight:bold;">%2$s &rarr; <span class="wpzoom-premium-badge" style="background-color: #2271b1; color: #fff; margin-left: 5px; font-size: 11px; min-height: 16px; border-radius: 8px; display: inline-block; font-weight: 600; line-height: 1.6; padding: 0 8px;">%3$s</span></a>',
+			'https://www.wpzoom.com/plugins/wpzoom-forms/?utm_source=wpadmin&utm_medium=plugin&utm_campaign=wpzoom-forms-free&utm_content=plugins-page',
+			esc_html__( 'UPGRADE', 'wpzoom-forms' ),
+			esc_html__( 'PRO', 'wpzoom-forms' )
+		);
+
+		return $links;
+	}
+	add_filter( 'plugin_action_links_' . WPZOOM_FORMS_PLUGIN_BASE, 'wpzoom_forms_plugin_action_links' );
+}
 
 /**
  * Check if the Elementor Page Builder is enabled load the widget
