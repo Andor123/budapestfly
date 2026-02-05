@@ -230,6 +230,7 @@ __( 'Hide', 'elementor' );
 __( 'Remove', 'elementor' );
 __( 'Open item', 'elementor' );
 __( 'Display Conditions', 'elementor' );
+__( 'Attributes', 'elementor' );
 __( 'Origin X', 'elementor' );
 __( 'Origin Y', 'elementor' );
 __( 'Origin Z', 'elementor' );
