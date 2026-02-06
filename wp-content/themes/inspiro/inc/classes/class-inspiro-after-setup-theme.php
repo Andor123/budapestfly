@@ -423,6 +423,7 @@ if ( ! class_exists( 'Inspiro_After_Setup_Theme' ) ) {
                     'slug'            => 'wpzoom-elementor-addons',
                     'description'     => 'A collection of pre-designed templates and advanced widgets for the Elementor page builder.',
                     'required'        => false,
+                    'optional'        => true,
                     'thumbnail'       => 'https://ps.w.org/wpzoom-elementor-addons/assets/icon-256x256.gif?rev=3370924',
                     'external_url'    => 'https://wordpress.org/plugins/wpzoom-elementor-addons/',
                     'category'        => 'Page Builder',
@@ -430,20 +431,21 @@ if ( ! class_exists( 'Inspiro_After_Setup_Theme' ) ) {
                     'active_installs' => 20000,
                 ),
 
-                // array(
-                //     'name'            => 'Video Popup Block',
-                //     'slug'            => 'wpzoom-video-popup-block',
-                //     'description'     => 'Easily add a Gutenberg block to create customizable Play icon that open popups with YouTube, Vimeo, or MP4 videos.',
-                //     'required'        => false,
-                //     'thumbnail'       => 'https://ps.w.org/wpzoom-video-popup-block/assets/icon-256x256.png',
-                //     'external_url'    => 'https://wordpress.org/plugins/wpzoom-video-popup-block/',
-                //     'category'        => 'Video',
-                //     'rating'          => 94,
-                //     'active_installs' => 10000,
-                // ),
+                array(
+                    'name'            => 'Video Popup Block',
+                    'slug'            => 'wpzoom-video-popup-block',
+                    'description'     => 'Easily add a Gutenberg block to create customizable Play icon that open popups with YouTube, Vimeo, or MP4 videos.',
+                    'required'        => false,
+                    'optional'        => true,
+                    'thumbnail'       => 'https://ps.w.org/wpzoom-video-popup-block/assets/icon-256x256.png',
+                    'external_url'    => 'https://wordpress.org/plugins/wpzoom-video-popup-block/',
+                    'category'        => 'Video',
+                    'rating'          => 94,
+                    'active_installs' => 10000,
+                ),
 
                 array(
-                    'name'            => 'Instagram Feed',
+                    'name'            => 'Instagram Feeds',
                     'slug'            => 'instagram-widget-by-wpzoom',
                     'description'     => 'Formerly known as "Instagram Widget by WPZOOM". Simple and lightweight widget for WordPress to display your Instagram feed.',
                     'required'        => false,
@@ -455,7 +457,7 @@ if ( ! class_exists( 'Inspiro_After_Setup_Theme' ) ) {
                 ),
 
                 array(
-                    'name'            => 'Social Icons Widget & Block',
+                    'name'            => 'Share Buttons & Social Icons',
                     'slug'            => 'social-icons-widget-by-wpzoom',
                     'description'     => 'Add social media icons and sharing buttons to your website! Social Icons & Sharing Buttons includes 400+ icons and customizable sharing buttons.',
                     'required'        => false,
@@ -464,6 +466,19 @@ if ( ! class_exists( 'Inspiro_After_Setup_Theme' ) ) {
                     'category'        => 'Social Media',
                     'rating'          => 98,
                     'active_installs' => 100000,
+                ),
+
+                array(
+                    'name'            => 'TranslatePress',
+                    'slug'            => 'translatepress-multilingual',
+                    'description'     => 'Experience a better way to translate your WordPress site and go multilingual, directly from the front-end using a visual translation interface.',
+                    'required'        => false,
+                    'optional'        => true,
+                    'thumbnail'       => 'https://ps.w.org/translatepress-multilingual/assets/icon-256x256.png',
+                    'external_url'    => 'https://wordpress.org/plugins/translatepress-multilingual/',
+                    'category'        => 'Translation',
+                    'rating'          => 96,
+                    'active_installs' => 400000,
                 ),
 
 			);
@@ -481,8 +496,8 @@ if ( ! class_exists( 'Inspiro_After_Setup_Theme' ) ) {
 				'id'           => 'inspiro_wporg',         // Unique ID for hashing notices for multiple instances of TGMPA.
 				'default_path' => '',                      // Default absolute path to bundled plugins.
 				'menu'         => 'inspiro-plugins', // Menu slug.
-                'parent_slug'  => 'inspiro',
-				'has_notices'  => true,                    // Show admin notices or not.
+				'parent_slug'  => 'inspiro',
+				'has_notices'  => false,                   // Disable default TGMPA notices - we use custom notice.
 				'dismissable'  => true,                    // If false, a user cannot dismiss the nag message.
 				'dismiss_msg'  => '',                      // If 'dismissable' is false, this message will be output at top of nag.
 				'is_automatic' => false,                   // Automatically activate plugins after installation or not.

@@ -872,7 +872,7 @@ body {
 
 	/**
 	 * Handle page title text alignment with custom preview handler
-	 * 
+	 *
 	 * @since 2.0.8
 	 */
 	wp.customize('page-title-text-align', function (value) {
@@ -880,16 +880,85 @@ body {
 			const selector = '.page .entry-title, .page-title, .page .entry-cover-image .entry-header .entry-title';
 			const cssProperty = 'text-align';
 			const controlId = 'page-title-text-align';
-			
+
 			// Remove existing styles
 			$('style#' + controlId + '-' + cssProperty).remove();
-			
+
 			// Add new styles
 			const style = '<style id="' + controlId + '-' + cssProperty + '">' +
 				selector + ' { ' + cssProperty + ': ' + newValue + '; }' +
 				'</style>';
-			
+
 			$('head').append(style);
+		});
+	});
+
+	/**
+	 * Handle blog text alignment with custom preview handler
+	 *
+	 * @since 2.1.9
+	 */
+	wp.customize('blog_text_align', function (value) {
+		value.bind(function (newValue) {
+			const selector = 'body:not(.page-layout-sidebar-right).blog .site-main article, body:not(.page-layout-sidebar-right).archive .site-main article, body:not(.page-layout-sidebar-right).search .site-main article, body:not(.page-layout-sidebar-right).blog .site-main article .entry-title, body:not(.page-layout-sidebar-right).archive .site-main article .entry-title, body:not(.page-layout-sidebar-right).search .site-main article .entry-title, .post-grid article .entry-header, .post-grid article .entry-title, body:not(.page-layout-sidebar-right).blog .site-main article .link-more, body:not(.page-layout-sidebar-right).archive .site-main article .link-more, body:not(.page-layout-sidebar-right).search .site-main article .link-more, .post-grid article .link-more';
+			const cssProperty = 'text-align';
+			const controlId = 'blog-text-align';
+
+			// Remove existing styles
+			$('style#' + controlId + '-' + cssProperty).remove();
+
+			// Add new styles
+			const style = '<style id="' + controlId + '-' + cssProperty + '">' +
+				selector + ' { ' + cssProperty + ': ' + newValue + '; }' +
+				'</style>';
+
+			$('head').append(style);
+		});
+	});
+
+	/**
+	 * Handle blog show/hide post meta with custom preview handler
+	 *
+	 * @since 2.1.9
+	 */
+	wp.customize('blog_show_post_meta', function (value) {
+		value.bind(function (newValue) {
+			const selector = '.blog .site-main article .entry-meta, .archive .site-main article .entry-meta, .search .site-main article .entry-meta, .post-grid article .entry-meta';
+			const controlId = 'blog-show-post-meta';
+
+			// Remove existing styles
+			$('style#' + controlId).remove();
+
+			// Add styles to hide meta if unchecked
+			if (newValue === false) {
+				const style = '<style id="' + controlId + '">' +
+					selector + ' { display: none; }' +
+					'</style>';
+				$('head').append(style);
+			}
+		});
+	});
+
+	/**
+	 * Handle blog show/hide excerpt (for grid layout) with custom preview handler
+	 *
+	 * @since 2.1.9
+	 */
+	wp.customize('blog_show_excerpt', function (value) {
+		value.bind(function (newValue) {
+			const selector = '.post-grid article .entry-summary';
+			const controlId = 'blog-show-excerpt';
+
+			// Remove existing styles
+			$('style#' + controlId).remove();
+
+			// Add styles to hide excerpt if unchecked
+			if (newValue === false) {
+				const style = '<style id="' + controlId + '">' +
+					selector + ' { display: none; }' +
+					'</style>';
+				$('head').append(style);
+			}
 		});
 	});
 

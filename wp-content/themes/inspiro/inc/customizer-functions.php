@@ -70,6 +70,40 @@ function inspiro_sanitize_display_content( $input ) {
 	return 'excerpt';
 }
 
+
+/**
+ * Sanitize the blog layout.
+ *
+ * @param string $input Content to blog layout.
+ */
+function inspiro_sanitize_blog_layout( $input ) {
+	$valid = array( 'list', 'grid' );
+
+	if ( in_array( $input, $valid, true ) ) {
+		return $input;
+	}
+
+	return 'list';
+}
+
+/**
+ * Sanitize text alignment.
+ *
+ * @since 2.1.9
+ *
+ * @param string $input Text alignment value.
+ * @return string Sanitized text alignment.
+ */
+function inspiro_sanitize_text_align( $input ) {
+	$valid = array( 'left', 'center', 'right' );
+
+	if ( in_array( $input, $valid, true ) ) {
+		return $input;
+	}
+
+	return 'center';
+}
+
 /**
  * Callback for sanitizing the header_button_url value.
  *
@@ -121,6 +155,81 @@ function inspiro_is_view_is_single() {
 function inspiro_is_view_with_layout_option() {
 	// This option is available on all pages. It's also available on archives when there isn't a sidebar.
 	return ( is_front_page() || is_home() || is_single() );
+}
+
+/**
+ * Return whether the blog layout is set to list.
+ *
+ * @since 2.1.9
+ *
+ * @return bool True if blog layout is list.
+ */
+function inspiro_is_blog_layout_list() {
+	return 'list' === get_theme_mod( 'blog_layout', 'list' );
+}
+
+/**
+ * Return whether the blog layout is set to grid.
+ *
+ * @since 2.1.9
+ *
+ * @return bool True if blog layout is grid.
+ */
+function inspiro_is_blog_layout_grid() {
+	return 'grid' === get_theme_mod( 'blog_layout', 'list' );
+}
+
+/**
+ * Get all registered image sizes with dimensions for select options.
+ *
+ * @since 2.1.9
+ *
+ * @return array Array of image sizes with labels.
+ */
+function inspiro_get_image_sizes_choices() {
+	$sizes      = array();
+	$size_names = get_intermediate_image_sizes();
+	$size_data  = wp_get_registered_image_subsizes();
+
+	foreach ( $size_names as $size ) {
+		$label = ucwords( str_replace( array( '-', '_', '@' ), array( ' ', ' ', ' ' ), $size ) );
+
+		if ( isset( $size_data[ $size ] ) ) {
+			$w    = $size_data[ $size ]['width'];
+			$h    = $size_data[ $size ]['height'];
+			$crop = ! empty( $size_data[ $size ]['crop'] ) ? __( ' (cropped)', 'inspiro' ) : '';
+
+			if ( 0 === $h ) {
+				$label .= " ({$w}×auto{$crop})";
+			} else {
+				$label .= " ({$w}×{$h}{$crop})";
+			}
+		}
+
+		$sizes[ $size ] = $label;
+	}
+
+	$sizes['full'] = __( 'Full Size (Original)', 'inspiro' );
+
+	return $sizes;
+}
+
+/**
+ * Sanitize image size selection.
+ *
+ * @since 2.1.9
+ *
+ * @param string $input Image size name.
+ * @return string Sanitized image size.
+ */
+function inspiro_sanitize_image_size( $input ) {
+	$valid = array_keys( inspiro_get_image_sizes_choices() );
+
+	if ( in_array( $input, $valid, true ) ) {
+		return $input;
+	}
+
+	return 'inspiro-loop';
 }
 
 /**
