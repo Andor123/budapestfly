@@ -419,7 +419,12 @@ class WPZOOM_Social_Sharing_Buttons {
 		if ( is_admin() || is_feed() ) {
 			return $content;
 		}
-		
+
+		// Only add sharing buttons in the main loop (not in widgets or other secondary content)
+		if ( ! in_the_loop() ) {
+			return $content;
+		}
+
 		// Get config
 		$config = $this->get_sharing_config();
 		
@@ -437,7 +442,8 @@ class WPZOOM_Social_Sharing_Buttons {
 			if ( $show_on_front === '1' ) {
 				// Get sharing buttons from the config
 				$sharing_buttons = do_blocks( $config->post_content );
-				
+				$sharing_buttons = self::prevent_pinterest_sdk_hijack( $sharing_buttons );
+
 				// Add buttons based on position setting
 				if ( 'top' === $position || 'both' === $position ) {
 					$content = '<div class="wpzoom-social-sharing-buttons-top">' . $sharing_buttons . '</div>' . $content;
@@ -464,7 +470,8 @@ class WPZOOM_Social_Sharing_Buttons {
 		
 		// Get sharing buttons from the config
 		$sharing_buttons = do_blocks( $config->post_content );
-		
+		$sharing_buttons = self::prevent_pinterest_sdk_hijack( $sharing_buttons );
+
 		// Add buttons based on position setting
 		if ( 'top' === $position || 'both' === $position ) {
 			$content = '<div class="wpzoom-social-sharing-buttons-top">' . $sharing_buttons . '</div>' . $content;
@@ -475,6 +482,25 @@ class WPZOOM_Social_Sharing_Buttons {
 		}
 		
 		return $content;
+	}
+
+	/**
+	 * Prevent Pinterest SDK from hijacking our Pinterest share buttons.
+	 *
+	 * The Pinterest SDK (pinit.js) scans the DOM for links containing
+	 * pinterest.com/pin/create/button/ and transforms them into its own
+	 * save buttons. Adding data-pin-custom="true" tells the SDK to leave
+	 * our custom-styled buttons alone.
+	 *
+	 * @param string $html The rendered HTML containing sharing buttons.
+	 * @return string The HTML with data-pin-custom attribute added to Pinterest links.
+	 */
+	public static function prevent_pinterest_sdk_hijack( $html ) {
+		return str_replace(
+			'data-platform="pinterest"',
+			'data-platform="pinterest" data-pin-custom="true"',
+			$html
+		);
 	}
 }
 
