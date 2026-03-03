@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Elementor Website Builder &#8211; More Than Just a Page Builder - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-02-25 02:06:32+0000\n"
+"PO-Revision-Date: 2026-03-03 02:38:37+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -63,13 +63,6 @@ msgstr "구성 요소에 지원되지 않는 요소(%s)가 포함되어 있습�
 msgid "Failed to archive components"
 msgstr "구성 요소 아카이브에 실패함"
 
-#: modules/components/components-rest-api.php:371
-#: modules/components/components-rest-api.php:590
-#: assets/js/packages/editor-components/editor-components.js:13
-#: assets/js/packages/editor-components/editor-components.strings.js:42
-msgid "Components require atomic elements only. Remove widgets to create this component."
-msgstr "구성 요소는 원자 구성 요소만 필요로 합니다. 위젯을 제거하여 이 구성요소를 생성하세요."
-
 #: modules/components/components-rest-api.php:361
 #: modules/components/components-rest-api.php:580
 #: modules/components/module.php:105
@@ -119,6 +112,13 @@ msgstr "편집자간 피드백 제출 기능을 활성화합니다."
 #: core/common/modules/connect/apps/feedback.php:21
 msgid "In-Editor Feedback"
 msgstr "편집자간 피드백"
+
+#: modules/components/components-rest-api.php:371
+#: modules/components/components-rest-api.php:590
+#: assets/js/packages/editor-components/editor-components.js:13
+#: assets/js/packages/editor-components/editor-components.strings.js:42
+msgid "Components require atomic elements only. Remove widgets to create this component."
+msgstr "구성 요소는 아토믹 구성 요소만 필요로 합니다. 위젯을 제거하여 이 구성요소를 생성하세요."
 
 #: modules/editor-one/components/top-bar-handler.php:59
 msgid "website builder"
@@ -177,10 +177,6 @@ msgstr "Image Optimizer는 설치되어 있으며 귀하의 ONE 구독에 포함
 msgid "Unable to create or access Site Settings page."
 msgstr "사이트 설정 페이지를 생성하거나 접근할 수 없습니다."
 
-#: core/admin/admin-notices.php:894 core/admin/admin.php:1154
-msgid "Speed up your website with Image Optimizer"
-msgstr "Image Optimizer로 웹사이트 속도 향상"
-
 #: core/admin/admin-notices.php:859 includes/controls/media.php:357
 msgid "Your ONE subscription includes Image Optimizer. Activate it to optimize images and improve site performance."
 msgstr "귀하의 ONE 구독에는 Image Optimizer가 포함되어 있습니다. 활성화하여 이미지를 최적화하고 사이트 성능을 향상시키세요."
@@ -209,10 +205,6 @@ msgstr "사이트 메일러는 ONE 구독에 설치되어 포함되어 있습니
 msgid "Use Site Mailer to ensure store emails like purchase confirmations and shipping updates reach the inbox every time. Included in your ONE subscription."
 msgstr "사이트 메일러를 사용하여 구매 확인 및 배송 업데이트와 같은 스토어 이메일이 매번 받은편지함에 도달하도록 하세요. ONE 구독에 포함되어 있습니다."
 
-#: core/admin/admin-notices.php:647
-msgid "Improve transactional email deliverability"
-msgstr "트랜잭셔널 이메일 전달성 향상"
-
 #: core/admin/admin-notices.php:558
 msgid "Your ONE subscription includes Ally. Activate it to create your accessibility statement page quickly."
 msgstr "귀하의 ONE 구독에는 Ally가 포함되어 있습니다. 활성화하여 접근성 성명 페이지를 빠르게 생성하세요."
@@ -228,6 +220,14 @@ msgstr "비전을 실현하는 데 필요한 권한(권한 항목)을 선택하�
 #: app/modules/onboarding/module.php:181
 msgid " Elevate your website with additional features."
 msgstr " 추가 기능으로 웹사이트를 향상하세요."
+
+#: core/admin/admin-notices.php:894 core/admin/admin.php:1154
+msgid "Speed up your website with Image Optimizer"
+msgstr "Image Optimizer로 웹사이트 속도를 향상시키세요"
+
+#: core/admin/admin-notices.php:647
+msgid "Improve transactional email deliverability"
+msgstr "트랜잭셔널 이메일 전달성을 개선하세요"
 
 #: includes/editor-templates/templates.php:607
 msgid "Connect account"
@@ -351,14 +351,6 @@ msgstr "Google은 더 이상 FAQ 스키마를 지원하지 않지만, 여전히 
 msgid "Document not found for preview."
 msgstr "미리보기를 위한 문서를 찾을 수 없습니다."
 
-#: modules/atomic-widgets/module.php:209
-msgid "Editor MCP for atomic widgets."
-msgstr "원자 위젯을 위한 편집기 MCP."
-
-#: modules/atomic-widgets/module.php:208
-msgid "Editor MCP for atomic widgets"
-msgstr "원자 위젯용 편집기 MCP"
-
 #: modules/atomic-widgets/elements/div-block/div-block.php:40
 msgid "Div block"
 msgstr "Div 블록"
@@ -388,6 +380,14 @@ msgstr "순서는 음이 아닌 정수여야 합니다"
 #: modules/variables/classes/rest-api.php:570
 msgid "Batch operation failed: Variable labels already exist"
 msgstr "일괄 작업 실패: 변수 라벨이 이미 존재합니다."
+
+#: modules/atomic-widgets/module.php:209
+msgid "Editor MCP for atomic widgets."
+msgstr "아토믹 위젯을 위한 편집기 MCP."
+
+#: modules/atomic-widgets/module.php:208
+msgid "Editor MCP for atomic widgets"
+msgstr "아토믹 위젯용 편집기 MCP"
 
 #: modules/promotions/pointers/black-friday.php:31
 msgid "Save big on Elementor Pro and unlock the tools to design without limits."
@@ -698,10 +698,6 @@ msgstr "클라우드 킷이 인스턴스화되지 않았습니다."
 msgid "Cloud Kits"
 msgstr "클라우드 킷"
 
-#: modules/atomic-widgets/module.php:200
-msgid "Enforce atomic widgets capabilities."
-msgstr "원자 위젯 기능을 강제합니다."
-
 #: modules/atomic-widgets/module.php:192
 msgid "Enable V4 Indication Popovers"
 msgstr "V4 표시 팝오버 활성화"
@@ -924,13 +920,17 @@ msgstr "라벨은 %d자를 초과할 수 없습니다"
 msgid "Label cannot be empty"
 msgstr "라벨은 비어 있을 수 없습니다"
 
-#: modules/atomic-widgets/module.php:199
-msgid "Enforce atomic widgets capabilities"
-msgstr "원자 위젯 기능 강제 적용"
-
 #: core/admin/admin-notices.php:278
 msgid "We're updating our Terms and Conditions to include the collection of usage and behavioral data. This information helps us understand how you use Elementor so we can make informed improvements to the product."
 msgstr "저희는 이용 및 행동 데이터 수집을 포함하기 위해 약관을 업데이트하고 있습니다. 이 정보는 고객님이 Elementor를 어떻게 사용하는지 이해하는 데 도움이 되어 제품 개선에 대해 신중하게 판단할 수 있도록 해줍니다."
+
+#: modules/atomic-widgets/module.php:200
+msgid "Enforce atomic widgets capabilities."
+msgstr "아토믹  위젯 기능을 강제하세요."
+
+#: modules/atomic-widgets/module.php:199
+msgid "Enforce atomic widgets capabilities"
+msgstr "아토믹 위젯 기능 강제 적용"
 
 #: app/modules/import-export-customization/module.php:120
 #: app/modules/import-export-customization/module.php:123
@@ -1261,10 +1261,6 @@ msgstr "로컬에 Google Fonts 로드"
 msgid "Animate With AI"
 msgstr "AI로 애니메이션 만들기"
 
-#: modules/promotions/promotion-data.php:99
-msgid "Boost Conversions with CTAs"
-msgstr "CTA로 전환율 향상"
-
 #: modules/promotions/promotion-data.php:135
 msgid "Display reviews in a rotating carousel."
 msgstr "회전하는 캐러셀에 리뷰를 표시합니다."
@@ -1284,10 +1280,6 @@ msgstr "캐러셀 이름"
 #: modules/promotions/promotion-data.php:133
 msgid "Upgrade Your Testimonials"
 msgstr "추천글 업그레이드"
-
-#: modules/promotions/promotion-data.php:67
-msgid "Highlight key messages dynamically."
-msgstr "주요 메시지를 동적으로 강조 표시합니다."
 
 #: includes/widgets/image-carousel.php:664
 msgid "Space Between Dots"
@@ -1371,21 +1363,29 @@ msgstr "사용자 정의 캐러셀 디자인"
 msgid "Seamlessly customize video appearance."
 msgstr "동영상 모양을 매끄럽게 사용자 정의하세요."
 
-#: modules/ai/feature-intro/product-image-unification-intro.php:34
-msgid "New! Unify pack-shots with Elementor AI"
-msgstr "새로운 기능! Elementor AI로 팩샷 통합하세요"
-
 #: modules/promotions/promotion-data.php:119
 msgid "Adjust transitions and animations."
 msgstr "전환 및 애니메이션을 조정하세요."
 
-#: core/admin/admin-notices.php:678
-msgid "Improve Transactional Email Deliverability"
-msgstr "트랜잭션 이메일 전달성 향상"
+#: modules/promotions/promotion-data.php:99
+msgid "Boost Conversions with CTAs"
+msgstr "CTA로 전환율을 높이세요"
+
+#: modules/promotions/promotion-data.php:67
+msgid "Highlight key messages dynamically."
+msgstr "주요 메시지를 동적으로 강조 표시하세요."
+
+#: modules/ai/feature-intro/product-image-unification-intro.php:34
+msgid "New! Unify pack-shots with Elementor AI"
+msgstr "새로운 기능! Elementor AI로 상품 이미지를 통합하세요"
 
 #: core/admin/admin-notices.php:679
 msgid "Use Elementor's Site Mailer to ensure your store emails like purchase confirmations, shipping updates and more are reliably delivered."
 msgstr "Elementor의 사이트 메일러를 사용하면 구매 확인, 배송 업데이트 등의 스토어 이메일을 안정적으로 전달할 수 있습니다."
+
+#: core/admin/admin-notices.php:678
+msgid "Improve Transactional Email Deliverability"
+msgstr "트랜잭션 이메일 전달성을 개선하세요"
 
 #: core/admin/admin-notices.php:691
 msgid "Ensure your form emails avoid the spam folder!"
@@ -1567,14 +1567,6 @@ msgstr "처음 3개 페이지 만들기"
 msgid "Tag"
 msgstr "태그"
 
-#: modules/atomic-widgets/module.php:181
-msgid "Enable atomic widgets."
-msgstr "원자 위젯을 활성화합니다."
-
-#: modules/atomic-widgets/module.php:180
-msgid "Atomic Widgets"
-msgstr "원자 위젯"
-
 #: includes/settings/settings.php:494
 msgid "Improve initial page load performance by lazy loading all background images except the first one."
 msgstr "첫 번째 이미지를 제외한 모든 배경 이미지를 지연 로드하여 초기 페이지 로딩 성능을 개선하세요."
@@ -1627,6 +1619,14 @@ msgstr "죄송합니다, 페이지에서 내용 영역을 찾을 수 없습니�
 #: includes/settings/settings.php:363
 msgid "Personalize the way Elementor works on your website by choosing the advanced features and how they operate."
 msgstr "고급 기능과 작동 방식을 선택하여 웹사이트에서 Elementor가 작동하는 방식을 개인화 하세요."
+
+#: modules/atomic-widgets/module.php:181
+msgid "Enable atomic widgets."
+msgstr "아토믹 위젯을 활성화하세요."
+
+#: modules/atomic-widgets/module.php:180
+msgid "Atomic Widgets"
+msgstr "아토믹 위젯"
 
 #: modules/link-in-bio/widgets/link-in-bio.php:28
 msgid "Minimalist"
@@ -2269,11 +2269,6 @@ msgstr "요구 사항에 가장 적합한 최적화 도구를 선택하여 사�
 msgid "Decide where you want to go when leaving the editor."
 msgstr "편집기를 떠날 때 어디로 이동할지 결정합니다."
 
-#: core/settings/editor-preferences/model.php:188
-#: modules/styleguide/module.php:129
-msgid "Temporarily overlay the canvas with the style guide to preview your changes to global colors and fonts."
-msgstr "스타일 가이드로 캔버스를 일시적으로 오버레이하여 전역 색상 및 글꼴에 대한 변경 사항을 미리 볼 수 있습니다."
-
 #: core/settings/editor-preferences/model.php:183
 #: modules/styleguide/module.php:127
 #: assets/js/styleguide-app-initiator.strings.js:1
@@ -2402,10 +2397,10 @@ msgstr "구분선"
 msgid "Open Animation"
 msgstr "열기 애니메이션"
 
-#: core/admin/admin.php:1142 includes/controls/gallery.php:169
-#: includes/controls/media.php:363
-msgid "Optimize your images to enhance site performance by using Image Optimizer."
-msgstr "이미지 최적화 도구를 사용하여 이미지를 최적화하여 사이트 성능을 향상하세요."
+#: core/settings/editor-preferences/model.php:188
+#: modules/styleguide/module.php:129
+msgid "Temporarily overlay the canvas with the style guide to preview your changes to global colors and fonts."
+msgstr "스타일 가이드로 표시 영역을 일시적으로 오버레이하여 전역 색상 및 글꼴에 대한 변경 사항을 미리 볼 수 있습니다."
 
 #: core/settings/editor-preferences/model.php:132
 msgid "This only applies while you’re working in the editor. The front end won’t be affected."
@@ -2454,6 +2449,11 @@ msgstr "숨겨진 요소 표시"
 #: core/settings/editor-preferences/model.php:120
 msgid "Show additional actions while hovering over the handle of an element."
 msgstr "요소의 핸들 위로 호버하면 추가 작업을 표시하세요."
+
+#: core/admin/admin.php:1142 includes/controls/gallery.php:169
+#: includes/controls/media.php:363
+msgid "Optimize your images to enhance site performance by using Image Optimizer."
+msgstr "이미지 최적화 도구를 사용하여 이미지를 최적화하여 사이트 성능을 향상시키세요."
 
 #: core/admin/admin.php:377
 msgid "Discounted Upgrades Now!"
@@ -2909,10 +2909,6 @@ msgstr "컨테이너 기반 내용은 사이트에서 숨겨지며 모든 경우
 msgid "No Wrap"
 msgstr "감싸지 않음"
 
-#: includes/widgets/star-rating.php:129
-msgid "You are currently editing a Star Rating widget in its old version. Drag a new Rating widget onto your page to use a newer version, providing better capabilities."
-msgstr "현재 이전 버전의 별점 위젯을 편집하고 있습니다. 더 나은 기능을 제공하는 최신 버전을 사용하려면 새 평점 위젯을 페이지로 드래그하세요."
-
 #. translators: %s: Recommended PHP version.
 #: modules/system-info/reporters/server.php:131
 msgid "We recommend using PHP version %s or higher."
@@ -2979,6 +2975,10 @@ msgstr "VideoPress URL"
 #: includes/widgets/video.php:162
 msgid "VideoPress"
 msgstr "VideoPress"
+
+#: includes/widgets/star-rating.php:129
+msgid "You are currently editing a Star Rating widget in its old version. Drag a new Rating widget onto your page to use a newer version, providing better capabilities."
+msgstr "현재 이전 버전의 별점 위젯을 편집하고 있습니다. 더 나은 기능을 제공하는 최신 버전을 사용하려면 새 평점 위젯을 페이지로 끌어오세요."
 
 #: includes/controls/groups/flex-container.php:128
 #: includes/controls/groups/grid-container.php:159
@@ -3287,7 +3287,7 @@ msgstr "Elementor 웹사이트를 개선하고 창의력을 발휘할 수 있도
 
 #: modules/apps/admin-apps-page.php:25
 msgid "Boost your web-creation process with add-ons, plugins, and more tools specially selected to unleash your creativity, increase productivity, and enhance your Elementor-powered website."
-msgstr "창의력을 발휘하고 생산성을 높이며 Elementor 기반 웹사이트를 개선하기 위해 특별히 선택된 추가 기능, 플러그인 및 기타 도구로 웹 제작 프로세스를 향상하세요."
+msgstr "창의력을 발휘하고 생산성을 높이며 Elementor 기반 웹사이트를 개선하기 위해 특별히 선택된 추가 기능, 플러그인 및 기타 도구로 웹 제작 프로세스를 향상시키세요."
 
 #: includes/frontend.php:1419
 msgid "Go to slide"
@@ -3317,17 +3317,9 @@ msgstr "참고: 탭이 상위 컨테이너에 맞지 않는 경우 스크롤하�
 msgid "Horizontal Scroll"
 msgstr "가로 스크롤"
 
-#: includes/widgets/toggle.php:157
-msgid "You are currently editing a Toggle widget in its old version. Drag a new Accordion widget onto your page to use a newer version, providing nested capabilities."
-msgstr "현재 이전 버전의 토글 위젯을 편집하고 있습니다. 새 아코디언 위젯을 페이지로 드래그하여 중첩된 기능을 제공하는 최신 버전을 사용하세요."
-
 #: includes/widgets/icon.php:331
 msgid "Fit to Size"
 msgstr "사이즈 맞춤"
-
-#: includes/widgets/accordion.php:154
-msgid "You are currently editing an Accordion Widget in its old version. Any new Accordion widget dragged into the canvas will be the new Accordion widget, with the improved Nested capabilities."
-msgstr "현재 이전 버전의 아코디언 위젯을 편집하고 있습니다. 캔버스에 드래그한 새 아코디언 위젯은 향상된 중첩 기능을 갖춘 새로운 아코디언 위젯이 됩니다."
 
 #: includes/editor-templates/navigator.php:58
 msgid "Resize structure"
@@ -3397,6 +3389,14 @@ msgstr "항목 #%d"
 #: includes/controls/gallery.php:105 assets/js/editor.js:15282
 msgid "Clear gallery"
 msgstr "갤러리 지우기"
+
+#: includes/widgets/toggle.php:157
+msgid "You are currently editing a Toggle widget in its old version. Drag a new Accordion widget onto your page to use a newer version, providing nested capabilities."
+msgstr "현재 이전 버전의 위젯 전환을 편집하고 있습니다. 새 아코디언 위젯을 페이지로 끌어와 중첩된 기능을 제공하는 최신 버전을 사용하세요."
+
+#: includes/widgets/accordion.php:154
+msgid "You are currently editing an Accordion Widget in its old version. Any new Accordion widget dragged into the canvas will be the new Accordion widget, with the improved Nested capabilities."
+msgstr "현재 이전 버전의 아코디언 위젯을 편집하고 있습니다. 표시 영역으로 끌어온 새 아코디언 위젯은 향상된 중첩 기능을 갖춘 새로운 아코디언 위젯이 됩니다."
 
 #: includes/template-library/sources/local.php:581
 msgid "Invalid template type."
@@ -3568,7 +3568,7 @@ msgstr[0] "%d개의 데이터베이스 행이 영향을 받았습니다."
 #. translators: %1$s Link open tag, %2$s: Link close tag.
 #: core/experiments/manager.php:523
 msgid "Personalize your Elementor experience by controlling which features and experiments are active on your site. Help make Elementor better by %1$ssharing your experience and feedback with us%2$s."
-msgstr "사이트에서 활성화되는 기능과 실험을 제어하여 Elementor 경험을 개인화하세요. %1$s경험과 피드백을 %2$s와 공유하여 Elementor를 개선할 수 있도록 도와주세요."
+msgstr "사이트에서 활성화되는 기능과 실험을 제어하여 Elementor 경험을 개인화하세요. %1$s저희와 경험과 피드백%2$s을 공유하여 Elementor를 개선할 수 있도록 도와주세요."
 
 #: modules/atomic-widgets/opt-in/opt-in.php:44
 #: assets/js/editor-v4-opt-in.js:493 assets/js/editor-v4-opt-in.strings.js:14
@@ -3610,10 +3610,6 @@ msgstr "탭 #3"
 msgid "Gap between tabs"
 msgstr "탭 사이의 간격"
 
-#: includes/widgets/tabs.php:153
-msgid "You are currently editing a Tabs Widget in its old version. Any new tabs widget dragged into the canvas will be the new Tab widget, with the improved Nested capabilities."
-msgstr "현재 이전 버전에서 탭 위젯을 편집하고 있습니다. 캔버스로 끌어온 모든 새 탭 위젯은 중첩 기능이 개선된 새 탭 위젯이 됩니다."
-
 #: includes/widgets/video.php:605
 msgid "Preload attribute lets you specify how the video should be loaded when the page loads."
 msgstr "미리 로드 속성을 사용하면 페이지가 로드될 때 동영상이 로드되는 방식을 지정할 수 있습니다."
@@ -3649,6 +3645,10 @@ msgstr "내용으로부터의 거리"
 #: modules/nested-tabs/widgets/nested-tabs.php:439
 msgid "Note: Choose at which breakpoint tabs will automatically switch to a vertical (“accordion”) layout."
 msgstr "참고: 어떤 중단점 탭이 세로(\"아코디언\") 레이아웃으로 자동 전환되는지 선택하세요."
+
+#: includes/widgets/tabs.php:153
+msgid "You are currently editing a Tabs Widget in its old version. Any new tabs widget dragged into the canvas will be the new Tab widget, with the improved Nested capabilities."
+msgstr "현재 이전 버전에서 탭 위젯을 편집하고 있습니다. 표시 영역으로 끌어온 모든 새 탭 위젯은 중첩 기능이 개선된 새 탭 위젯이 됩니다."
 
 #: includes/settings/settings.php:486
 msgid "Lazy Load Background Images"
@@ -4872,10 +4872,6 @@ msgstr "텍스트 경로"
 msgid "Text Direction"
 msgstr "텍스트 방향"
 
-#: modules/shapes/module.php:43
-msgid "Wave"
-msgstr "파도"
-
 #: core/kits/documents/tabs/settings-layout.php:215
 msgid "Active Breakpoints"
 msgstr "활성 중단점"
@@ -4950,6 +4946,10 @@ msgstr "이 WXR 파일을 읽는 동안 오류가 발생했습니다"
 #: core/utils/import-export/parsers/wxr-parser-xml.php:190
 msgid "This does not appear to be a WXR file, missing/invalid WXR version number"
 msgstr "이것은 WXR 파일이 아닌 것 같습니다. WXR 버전 번호가 없거나 잘못되었습니다"
+
+#: modules/shapes/module.php:43
+msgid "Wave"
+msgstr "물결"
 
 #: modules/atomic-widgets/elements/atomic-youtube/atomic-youtube.php:90
 msgid "Privacy mode"
@@ -7284,16 +7284,6 @@ msgstr "UI 색상"
 msgid "No History Yet"
 msgstr "아직 기록 없음"
 
-#: includes/editor-templates/hotkeys.php:137
-#: includes/editor-templates/panel.php:90 assets/js/ai-admin.js:2057
-#: assets/js/ai-gutenberg.js:2195 assets/js/ai-media-library.js:2057
-#: assets/js/ai-unify-product-images.js:2057 assets/js/ai.js:2845
-#: assets/js/editor.js:52612
-#: assets/js/packages/editor-app-bar/editor-app-bar.js:12
-#: assets/js/packages/editor-app-bar/editor-app-bar.strings.js:30
-msgid "History"
-msgstr "역사"
-
 #: modules/history/views/history-panel-template.php:25
 msgid "Once you start working, you'll be able to redo / undo any action you make in the editor."
 msgstr "작업을 시작하면 편집기에서 수행한 모든 작업을 다시 실행/실행 취소할 수 있습니다."
@@ -7318,6 +7308,16 @@ msgstr "이전 버전을 보려면 리비전 탭으로 전환하세요"
 #: includes/widgets/video.php:917
 msgid "UI Hover Color"
 msgstr "UI 호버 색상"
+
+#: includes/editor-templates/hotkeys.php:137
+#: includes/editor-templates/panel.php:90 assets/js/ai-admin.js:2057
+#: assets/js/ai-gutenberg.js:2195 assets/js/ai-media-library.js:2057
+#: assets/js/ai-unify-product-images.js:2057 assets/js/ai.js:2845
+#: assets/js/editor.js:52612
+#: assets/js/packages/editor-app-bar/editor-app-bar.js:12
+#: assets/js/packages/editor-app-bar/editor-app-bar.strings.js:30
+msgid "History"
+msgstr "이력"
 
 #: core/kits/documents/tabs/settings-lightbox.php:45
 msgid "Image Lightbox"
@@ -7564,17 +7564,9 @@ msgstr "유지 관리 모드"
 msgid "Drop Cap"
 msgstr "드롭 캡"
 
-#: includes/maintenance-mode.php:216
-msgid "Coming Soon"
-msgstr "곧 출시"
-
 #: includes/maintenance-mode.php:231
 msgid "Who Can Access"
 msgstr "액세스할 수 있는 사람"
-
-#: includes/maintenance-mode.php:217
-msgid "Maintenance"
-msgstr "유지"
 
 #: includes/maintenance-mode.php:283
 msgid "Maintenance Mode ON"
@@ -7592,10 +7584,6 @@ msgstr "유지 관리 모드를 활성화하려면 유지 관리 모드 페이�
 msgid "Set your entire website as MAINTENANCE MODE, meaning the site is offline temporarily for maintenance, or set it as COMING SOON mode, meaning the site is offline until it is ready to be launched."
 msgstr "전체 웹사이트를 유지 관리 모드(유지 관리를 위해 사이트가 일시적으로 오프라인 상태임)로 설정하거나 출시 준비가 될 때까지 사이트가 오프라인 상태임을 의미하는 COMING SOON 모드로 설정합니다."
 
-#: includes/maintenance-mode.php:220
-msgid "Choose between Coming Soon mode (returning HTTP 200 code) or Maintenance Mode (returning HTTP 503 code)."
-msgstr "출시 예정 모드(HTTP 200 코드 반환) 또는 유지 관리 모드(HTTP 503 코드 반환) 중에서 선택합니다."
-
 #: includes/maintenance-mode.php:251
 msgid "Choose Template"
 msgstr "템플릿 선택"
@@ -7609,10 +7597,6 @@ msgstr "템플릿 편집"
 msgid "Page Title Selector"
 msgstr "페이지 제목 선택기"
 
-#: includes/maintenance-mode.php:226
-msgid "Coming Soon returns HTTP 200 code, meaning the site is ready to be indexed."
-msgstr "Coming Soon은 HTTP 200 코드를 반환하며 이는 사이트를 인덱싱할 준비가 되었음을 의미합니다."
-
 #: includes/maintenance-mode.php:237
 msgid "Logged In"
 msgstr "로그인 됨"
@@ -7622,10 +7606,6 @@ msgstr "로그인 됨"
 msgid "Template"
 msgstr "템플릿"
 
-#: core/settings/editor-preferences/model.php:107
-msgid "Canvas"
-msgstr "캔버스"
-
 #: core/kits/documents/tabs/settings-layout.php:143
 msgid "Elementor lets you hide the page title. This works for themes that have \"h1.entry-title\" selector. If your theme's selector is different, please enter it above."
 msgstr "Elementor를 사용하면 페이지 제목을 숨길 수 있습니다. 이것은 \"h1.entry-title\" 선택기가 있는 테마에서 작동합니다. 테마 선택자가 다른 경우 위에 입력해주세요."
@@ -7634,6 +7614,26 @@ msgstr "Elementor를 사용하면 페이지 제목을 숨길 수 있습니다. �
 #: assets/js/editor.js:52289
 msgid "Disabled"
 msgstr "비활성화"
+
+#: includes/maintenance-mode.php:216
+msgid "Coming Soon"
+msgstr "출시 예정"
+
+#: includes/maintenance-mode.php:217
+msgid "Maintenance"
+msgstr "유지 관리"
+
+#: includes/maintenance-mode.php:220
+msgid "Choose between Coming Soon mode (returning HTTP 200 code) or Maintenance Mode (returning HTTP 503 code)."
+msgstr "출시 예정 모드(HTTP 200 코드 반환) 또는 유지 관리 모드(HTTP 503 코드 반환) 중에서 선택하세요."
+
+#: includes/maintenance-mode.php:226
+msgid "Coming Soon returns HTTP 200 code, meaning the site is ready to be indexed."
+msgstr "출시 예정은 HTTP 200 코드를 반환하며 이는 사이트를 인덱싱할 준비가 되었음을 의미합니다."
+
+#: core/settings/editor-preferences/model.php:107
+msgid "Canvas"
+msgstr "표시 영역"
 
 #: includes/elements/container.php:1330 includes/elements/section.php:1109
 msgid "Bring to Front"
@@ -8010,10 +8010,6 @@ msgstr "JS를 사용하여 섹션을 페이지의 전체 너비로 늘립니다.
 msgid "Stretched Section Fit To"
 msgstr "늘어진 섹션 맞추기"
 
-#: core/kits/documents/tabs/settings-layout.php:161
-msgid "Enter parent element selector to which stretched sections will fit to (e.g. #primary / .wrapper / main etc). Leave blank to fit to page width."
-msgstr "확장된 섹션에 맞는 상위 요소 선택기를 입력합니다(예: #primary / .wrapper / main 등). 페이지 너비에 맞게 비워 둡니다."
-
 #: includes/elements/section.php:464
 msgid "Stretch Section"
 msgstr "섹션 늘이기"
@@ -8021,6 +8017,10 @@ msgstr "섹션 늘이기"
 #: core/kits/documents/tabs/settings-layout.php:74
 msgid "Sets the default width of the content area (Default: 1140px)"
 msgstr "내용 영역의 기본 너비를 설정합니다. (기본: 1140px)"
+
+#: core/kits/documents/tabs/settings-layout.php:161
+msgid "Enter parent element selector to which stretched sections will fit to (e.g. #primary / .wrapper / main etc). Leave blank to fit to page width."
+msgstr "확장된 섹션에 맞는 상위 요소 선택기를 입력하세요(예: #primary / .wrapper / main 등). 페이지 너비에 맞추려면 비워 두세요."
 
 #: includes/elements/section.php:1383
 msgid "Reverse Columns"
@@ -8470,12 +8470,6 @@ msgstr "배경"
 msgid "Wider"
 msgstr "더 넓게"
 
-#: includes/editor-templates/hotkeys.php:46 assets/js/editor.js:31378
-#: assets/js/editor.js:33718 assets/js/editor.js:43452
-#: assets/js/editor.js:44520
-msgid "Paste"
-msgstr "붙이기"
-
 #: includes/widgets/image-carousel.php:364 includes/widgets/image.php:198
 msgid "Custom URL"
 msgstr "사용자 정의 URL"
@@ -8488,6 +8482,12 @@ msgstr "사용자 정의 URL"
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:19
 msgid "General"
 msgstr "일반"
+
+#: includes/editor-templates/hotkeys.php:46 assets/js/editor.js:31378
+#: assets/js/editor.js:33718 assets/js/editor.js:43452
+#: assets/js/editor.js:44520
+msgid "Paste"
+msgstr "붙여넣기"
 
 #: includes/widgets/image-carousel.php:534
 msgid "Animation Speed"
@@ -9909,6 +9909,11 @@ msgstr "아이콘 상자"
 msgid "Accordion Items"
 msgstr "아코디언 항목"
 
+#: core/kits/documents/tabs/global-colors.php:92
+#: core/kits/documents/tabs/global-typography.php:149
+msgid "Accent"
+msgstr "악센트"
+
 #: core/base/traits/shared-widget-controls-trait.php:159
 #: core/settings/editor-preferences/model.php:119
 #: core/settings/editor-preferences/model.php:131
@@ -9933,11 +9938,6 @@ msgstr "아코디언 항목"
 #: assets/js/packages/editor-interactions/editor-interactions.strings.js:29
 msgid "No"
 msgstr "아니요"
-
-#: core/kits/documents/tabs/global-colors.php:92
-#: core/kits/documents/tabs/global-typography.php:149
-msgid "Accent"
-msgstr "악센트"
 
 #: includes/widgets/alert.php:46 includes/widgets/alert.php:111
 #: includes/widgets/alert.php:210
@@ -10003,16 +10003,6 @@ msgstr "이미지 상자"
 msgid "Toggle #2"
 msgstr "전환 #2"
 
-#: includes/widgets/toggle.php:134
-msgid "Toggle Title"
-msgstr "제목 전환"
-
-#: includes/widgets/alert.php:136 includes/widgets/heading.php:192
-#: includes/widgets/icon-box.php:173 includes/widgets/image-box.php:148
-#: includes/widgets/progress.php:122
-msgid "Enter your title"
-msgstr "제목을 입력하세요"
-
 #: core/kits/documents/tabs/theme-style-buttons.php:91
 #: core/kits/documents/tabs/theme-style-form-fields.php:117
 #: core/kits/documents/tabs/theme-style-images.php:63
@@ -10058,6 +10048,16 @@ msgstr "제목을 입력하세요"
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:243
 msgid "Normal"
 msgstr "정상"
+
+#: includes/widgets/toggle.php:134
+msgid "Toggle Title"
+msgstr "제목 전환"
+
+#: includes/widgets/alert.php:136 includes/widgets/heading.php:192
+#: includes/widgets/icon-box.php:173 includes/widgets/image-box.php:148
+#: includes/widgets/progress.php:122
+msgid "Enter your title"
+msgstr "제목을 입력하세요"
 
 #: includes/elements/section.php:289
 msgid "Narrow"
@@ -10209,16 +10209,6 @@ msgstr "활성"
 msgid "XL"
 msgstr "XL"
 
-#: includes/controls/icons.php:80 includes/controls/media.php:257
-msgid "Add"
-msgstr "추가"
-
-#: includes/widgets/divider.php:832 includes/widgets/icon-box.php:130
-#: includes/widgets/icon.php:131 includes/widgets/text-editor.php:426
-#: assets/js/editor.js:11048
-msgid "View"
-msgstr "보기"
-
 #: includes/base/element-base.php:1353 includes/controls/dimensions.php:82
 #: includes/elements/column.php:188 includes/elements/container.php:1185
 #: includes/elements/container.php:1666 includes/elements/section.php:406
@@ -10238,6 +10228,20 @@ msgstr "보기"
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:260
 msgid "Top"
 msgstr "상단"
+
+#: includes/controls/icons.php:80 includes/controls/media.php:257
+msgid "Add"
+msgstr "추가"
+
+#: includes/widgets/divider.php:832 includes/widgets/icon-box.php:130
+#: includes/widgets/icon.php:131 includes/widgets/text-editor.php:426
+#: assets/js/editor.js:11048
+msgid "View"
+msgstr "보기"
+
+#: core/admin/admin.php:649 core/admin/menu/main.php:41
+msgid "Help"
+msgstr "도움"
 
 #: includes/base/element-base.php:1403
 #: includes/controls/groups/grid-container.php:33
@@ -10289,10 +10293,6 @@ msgstr "표시"
 #: assets/js/element-manager-admin.strings.js:70
 msgid "Edit"
 msgstr "편집"
-
-#: core/admin/admin.php:649 core/admin/menu/main.php:41
-msgid "Help"
-msgstr "도움"
 
 #. Author of the plugin
 #: elementor.php
@@ -10683,29 +10683,6 @@ msgstr "스크롤할 슬라이드 수"
 msgid "Slides to Show"
 msgstr "표시할 슬라이드 수"
 
-#: core/kits/documents/tabs/theme-style-buttons.php:152
-#: core/kits/documents/tabs/theme-style-buttons.php:227
-#: core/kits/documents/tabs/theme-style-form-fields.php:233
-#: core/kits/documents/tabs/theme-style-images.php:83
-#: core/kits/documents/tabs/theme-style-images.php:154
-#: includes/elements/column.php:572 includes/elements/column.php:609
-#: includes/elements/container.php:1040 includes/elements/container.php:1091
-#: includes/elements/section.php:855 includes/elements/section.php:891
-#: includes/widgets/common-base.php:991 includes/widgets/common-base.php:1028
-#: includes/widgets/divider.php:1025 includes/widgets/icon-box.php:622
-#: includes/widgets/icon.php:412 includes/widgets/image-box.php:464
-#: includes/widgets/image-carousel.php:819
-#: includes/widgets/image-gallery.php:342 includes/widgets/image.php:545
-#: includes/widgets/progress.php:343 includes/widgets/social-icons.php:506
-#: includes/widgets/testimonial.php:359 includes/widgets/text-editor.php:534
-#: includes/widgets/traits/button-trait.php:485
-#: modules/nested-accordion/widgets/nested-accordion.php:470
-#: modules/nested-accordion/widgets/nested-accordion.php:535
-#: modules/nested-tabs/widgets/nested-tabs.php:693
-#: modules/nested-tabs/widgets/nested-tabs.php:1033
-msgid "Border Radius"
-msgstr "테두리 반경"
-
 #: includes/elements/container.php:399 includes/elements/section.php:254
 #: includes/widgets/common-base.php:342 includes/widgets/icon-list.php:216
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:1554
@@ -10736,6 +10713,29 @@ msgstr "모바일 가로"
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:278
 msgid "Double"
 msgstr "이중"
+
+#: core/kits/documents/tabs/theme-style-buttons.php:152
+#: core/kits/documents/tabs/theme-style-buttons.php:227
+#: core/kits/documents/tabs/theme-style-form-fields.php:233
+#: core/kits/documents/tabs/theme-style-images.php:83
+#: core/kits/documents/tabs/theme-style-images.php:154
+#: includes/elements/column.php:572 includes/elements/column.php:609
+#: includes/elements/container.php:1040 includes/elements/container.php:1091
+#: includes/elements/section.php:855 includes/elements/section.php:891
+#: includes/widgets/common-base.php:991 includes/widgets/common-base.php:1028
+#: includes/widgets/divider.php:1025 includes/widgets/icon-box.php:622
+#: includes/widgets/icon.php:412 includes/widgets/image-box.php:464
+#: includes/widgets/image-carousel.php:819
+#: includes/widgets/image-gallery.php:342 includes/widgets/image.php:545
+#: includes/widgets/progress.php:343 includes/widgets/social-icons.php:506
+#: includes/widgets/testimonial.php:359 includes/widgets/text-editor.php:534
+#: includes/widgets/traits/button-trait.php:485
+#: modules/nested-accordion/widgets/nested-accordion.php:470
+#: modules/nested-accordion/widgets/nested-accordion.php:535
+#: modules/nested-tabs/widgets/nested-tabs.php:693
+#: modules/nested-tabs/widgets/nested-tabs.php:1033
+msgid "Border Radius"
+msgstr "테두리 반경"
 
 #: includes/controls/groups/border.php:65 includes/widgets/divider.php:342
 #: includes/widgets/icon-list.php:304 includes/widgets/star-rating.php:188
@@ -10803,6 +10803,25 @@ msgstr "버튼"
 msgid "Accordion Content"
 msgstr "아코디언 내용"
 
+#: core/kits/documents/tabs/settings-layout.php:55
+#: includes/elements/container.php:394 includes/elements/section.php:249
+#: includes/widgets/video.php:954
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:1590
+msgid "Content Width"
+msgstr "내용 너비"
+
+#: includes/widgets/video.php:974
+msgid "Content Position"
+msgstr "내용 위치"
+
+#: includes/widgets/toggle.php:147
+msgid "Toggle Content"
+msgstr "내용 전환"
+
+#: includes/widgets/tabs.php:142 includes/widgets/tabs.php:143
+msgid "Tab Content"
+msgstr "탭 내용"
+
 #: includes/managers/controls.php:334 includes/widgets/accordion.php:145
 #: includes/widgets/accordion.php:488 includes/widgets/alert.php:148
 #: includes/widgets/icon-box.php:640 includes/widgets/image-box.php:597
@@ -10822,25 +10841,6 @@ msgstr "아코디언 내용"
 #: assets/js/app.js:16961 assets/js/editor.js:38279
 msgid "Content"
 msgstr "내용"
-
-#: core/kits/documents/tabs/settings-layout.php:55
-#: includes/elements/container.php:394 includes/elements/section.php:249
-#: includes/widgets/video.php:954
-#: modules/link-in-bio/base/widget-link-in-bio-base.php:1590
-msgid "Content Width"
-msgstr "내용 너비"
-
-#: includes/widgets/video.php:974
-msgid "Content Position"
-msgstr "내용 위치"
-
-#: includes/widgets/toggle.php:147
-msgid "Toggle Content"
-msgstr "내용 전환"
-
-#: includes/widgets/tabs.php:142 includes/widgets/tabs.php:143
-msgid "Tab Content"
-msgstr "탭 내용"
 
 #: core/kits/manager.php:139 includes/controls/groups/background.php:329
 #: includes/controls/groups/background.php:487
