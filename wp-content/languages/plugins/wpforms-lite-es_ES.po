@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WPForms &#8211; Easy Form Builder for WordPress &#8211; Contact Forms, Payment Forms, Surveys, &amp; More - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-03-03 08:00:28+0000\n"
+"PO-Revision-Date: 2026-03-03 13:50:32+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -393,6 +393,51 @@ msgstr "Activar esta opción para ocultar las imágenes en las entradas y notifi
 #: includes/fields/class-base.php:2920
 msgid "Hide Images in Notifications"
 msgstr "Ocultar imágenes en las notificaciones"
+
+#: src/Forms/Fields/Camera/Field.php:331
+msgid "Link"
+msgstr "Enlace"
+
+#: src/Forms/Fields/Camera/Field.php:330
+msgid "Button"
+msgstr "Botón"
+
+#: src/Forms/Fields/Camera/Field.php:318
+msgid "Choose the style of the camera button."
+msgstr "Elige el estilo del botón de la cámara."
+
+#: src/Forms/Fields/Camera/Field.php:215 src/Forms/Fields/Camera/Field.php:376
+#: src/Forms/Fields/FileUpload/Field.php:358
+msgid "Capture With Your Camera"
+msgstr "Captura con tu cámara"
+
+#: src/Admin/Pages/PrivacyCompliance.php:419
+msgid "Activate WPConsent"
+msgstr "Activar WPConsent"
+
+#: src/Admin/Pages/PrivacyCompliance.php:383
+msgid "WPConsent"
+msgstr "WPConsent"
+
+#: src/Admin/Pages/PrivacyCompliance.php:395
+msgid "Install WPConsent"
+msgstr "Instalar WPConsent"
+
+#: src/Admin/Pages/PrivacyCompliance.php:371
+msgid "Install WPConsent from the WordPress.org plugin repository."
+msgstr "Instala WPConsent desde el repositorio de plugins de WordPress.org."
+
+#: src/Admin/Pages/PrivacyCompliance.php:359
+msgid "Install & Activate WPConsent"
+msgstr "Instalar y activar WPConsent"
+
+#: src/Admin/Pages/PrivacyCompliance.php:175
+msgid "With WPConsent Pro you can access advanced features like geolocation, popup layout, records of consent, multilanguage support, and more."
+msgstr "Con WPConsent Pro, puedes acceder a funciones avanzadas como geolocalización, diseño de ventanas emergentes, registros de consentimiento, compatibilidad con varios idiomas y mucho más."
+
+#: src/Admin/Pages/PrivacyCompliance.php:174
+msgid "Get Advanced Cookie Consent Features"
+msgstr "Obtén funciones avanzadas de consentimiento de cookies"
 
 #: src/Admin/Education/Admin/Tools/EntryAutomation.php:87
 msgid "Powerful Automation Features"
@@ -2591,8 +2636,8 @@ msgstr "Acciones completadas"
 msgid "If you need help connecting WPForms to Constant Contact, <a href=\"%1$s\" rel=\"noopener noreferrer\" target=\"_blank\">read our documentation</a>."
 msgstr "Si necesitas ayuda para conectar WPForms con Constant Contact <a href=\"%1$s\" rel=\"noopener noreferrer\" target=\"_blank\">lee nuestra documentación</a>."
 
-#: src/Integrations/Elementor/RestApi.php:145
-#: src/Integrations/Gutenberg/RestApi.php:146
+#: src/Integrations/Elementor/RestApi.php:125
+#: src/Integrations/Gutenberg/RestApi.php:163
 msgid "This route is accessible only to administrators."
 msgstr "Esta ruta solo está accesible para administradores."
 
@@ -3256,12 +3301,12 @@ msgstr "Selecciona el campo que contiene la dirección del cliente. Es opcional 
 msgid "--- Select Address ---"
 msgstr "--- Seleccionar dirección ---"
 
-#: src/Integrations/Elementor/RestApi.php:203
-#: src/Integrations/Gutenberg/RestApi.php:217
+#: src/Integrations/Elementor/RestApi.php:171
+#: src/Integrations/Gutenberg/RestApi.php:234
 msgid "Can't save theme data."
 msgstr "No se pueden guardar los datos del tema."
 
-#: src/Integrations/Gutenberg/RestApi.php:203
+#: src/Integrations/Gutenberg/RestApi.php:220
 msgid "Can't create themes storage file."
 msgstr "No se puede crear el archivo de almacenamiento en temas."
 
@@ -4594,8 +4639,9 @@ msgstr "Sólo puedes utilizar un tipo de pago cada  vez. Si quieres activar los 
 msgid "You can only use one payment type at a time. If you'd like to enable Recurring Payments, please disable One-Time Payments."
 msgstr "Sólo puedes utilizar un tipo de pago cada  vez. Si quieres activar los pagos periódicos, desactiva los pagos únicos."
 
-#: src/Integrations/Elementor/RestApi.php:128
+#: src/Integrations/Elementor/RestApi.php:108
 #: src/Integrations/Gutenberg/RestApi.php:129
+#: src/Integrations/Gutenberg/RestApi.php:146
 msgid "This route is private."
 msgstr "Esta ruta es privada."
 
@@ -6162,37 +6208,37 @@ msgstr "Resuelve definitivamente los problemas habituales de entrega de correo e
 msgid "Make Sure Important Emails Reach Your Customers"
 msgstr "Asegúrate de que los correos electrónicos importantes llegen a tus clientes"
 
-#: src/Admin/Education/Admin/EditPost.php:235
+#: src/Admin/Education/Admin/EditPost.php:236
 msgid "You've already created a form, now add it to the page so your customers can get in touch."
 msgstr "Ya has creado un formulario, ahora añádelo a la página para que tus clientes puedan ponerse en contacto contigo."
 
 #. translators: %1$s - link to create a new form.
-#: src/Admin/Education/Admin/EditPost.php:211
-#: src/Admin/Education/Admin/EditPost.php:237
+#: src/Admin/Education/Admin/EditPost.php:212
+#: src/Admin/Education/Admin/EditPost.php:238
 msgid "Did you know that with <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">WPForms</a>, you can create an easy-to-use contact form in a matter of minutes?"
 msgstr "¿Sabías que con <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">WPForms</a> puedes crear un formulario de contacto fácil de usar en cuestión de minutos?"
 
-#: src/Admin/Education/Admin/EditPost.php:209
+#: src/Admin/Education/Admin/EditPost.php:210
 msgid "Don't forget to embed your contact form. Simply click the Add Form button below."
 msgstr "No olvides incrustar tu formulario de contacto. Simplemente haz clic en el botón de abajo de «Añadir formulario»."
 
-#: src/Admin/Education/Admin/EditPost.php:192
+#: src/Admin/Education/Admin/EditPost.php:193
 msgid "Then click on the WPForms block to embed your desired contact form."
 msgstr "Luego haz clic en el bloque de WPForms para incrustar tu formulario de contacto deseado."
 
-#: src/Admin/Education/Admin/EditPost.php:191
+#: src/Admin/Education/Admin/EditPost.php:192
 msgid "Embed your form"
 msgstr "Incrusta tu formulario"
 
-#: src/Admin/Education/Admin/EditPost.php:187
+#: src/Admin/Education/Admin/EditPost.php:188
 msgid "Oh hey, it looks like you're working on a contact page. Don't forget to embed your contact form. Click the plus icon above and search for WPForms."
 msgstr "Vaya, parece que estás trabajando en una página de contacto. No olvides incrustar tu formulario de contacto. Haz clic en el icono de más de arriba y busca WPForms."
 
-#: src/Admin/Education/Admin/EditPost.php:186
+#: src/Admin/Education/Admin/EditPost.php:187
 msgid "Easily add your contact form"
 msgstr "Añade fácilmente tu formulario de contacto"
 
-#: src/Admin/Education/Admin/EditPost.php:173
+#: src/Admin/Education/Admin/EditPost.php:174
 #: src/Admin/Splash/SplashTrait.php:129 src/Integrations/Divi/Divi.php:308
 #: templates/admin/empty-states/payments/get-started.php:34
 #: templates/integrations/elementor/no-forms.php:26
