@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WPForms &#8211; Easy Form Builder for WordPress &#8211; Contact Forms, Payment Forms, Surveys, &amp; More - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-03-02 22:16:42+0000\n"
+"PO-Revision-Date: 2026-03-05 11:46:51+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1358,8 +1358,8 @@ msgid_plural "%1$d templates were successfully restored."
 msgstr[0] "%1$d Template wurde erfolgreich wiederhergestellt."
 msgstr[1] "%1$d Templates wurden erfolgreich wiederhergestellt."
 
-#: src/Integrations/Elementor/RestApi.php:145
-#: src/Integrations/Gutenberg/RestApi.php:146
+#: src/Integrations/Elementor/RestApi.php:125
+#: src/Integrations/Gutenberg/RestApi.php:163
 msgid "This route is accessible only to administrators."
 msgstr "Diese Route ist nur für Administratoren zugänglich."
 
@@ -2249,12 +2249,12 @@ msgstr "Individuelles CSS"
 msgid "Further customize the look of this form without having to edit theme files."
 msgstr "Du kannst das Aussehen des Formulars individuell anpassen, ohne dass du die Dateien des Themes bearbeiten musst."
 
-#: src/Integrations/Gutenberg/RestApi.php:203
+#: src/Integrations/Gutenberg/RestApi.php:220
 msgid "Can't create themes storage file."
 msgstr "Kann die Themes-Speicherdatei nicht erstellen."
 
-#: src/Integrations/Elementor/RestApi.php:203
-#: src/Integrations/Gutenberg/RestApi.php:217
+#: src/Integrations/Elementor/RestApi.php:171
+#: src/Integrations/Gutenberg/RestApi.php:234
 msgid "Can't save theme data."
 msgstr "Die Daten des Themes können nicht gespeichert werden."
 
@@ -3353,8 +3353,9 @@ msgstr "Systeminformationen kopieren"
 msgid "Partially Refunded"
 msgstr "Teilweise erstattet"
 
-#: src/Integrations/Elementor/RestApi.php:128
+#: src/Integrations/Elementor/RestApi.php:108
 #: src/Integrations/Gutenberg/RestApi.php:129
+#: src/Integrations/Gutenberg/RestApi.php:146
 msgid "This route is private."
 msgstr "Diese Route ist privat."
 
@@ -4906,7 +4907,7 @@ msgstr "Ausgeblendet"
 msgid "Payment Details"
 msgstr "Zahlungsinformationen"
 
-#: src/Admin/Education/Admin/EditPost.php:173
+#: src/Admin/Education/Admin/EditPost.php:174
 #: src/Admin/Splash/SplashTrait.php:129 src/Integrations/Divi/Divi.php:308
 #: templates/admin/empty-states/payments/get-started.php:34
 #: templates/integrations/elementor/no-forms.php:26
@@ -4923,33 +4924,33 @@ msgstr "Bitte gib eine gültige E-Mail-Adresse ein. Deine Nachrichten werden nic
 msgid "Notifications can only use 1 From Email. Please do not enter multiple addresses."
 msgstr "Benachrichtigungen können nur 1 Absender-E-Mail verwenden. Bitte gib nicht mehrere Adressen ein."
 
-#: src/Admin/Education/Admin/EditPost.php:186
+#: src/Admin/Education/Admin/EditPost.php:187
 msgid "Easily add your contact form"
 msgstr "Füge ganz einfach dein Kontaktformular hinzu"
 
-#: src/Admin/Education/Admin/EditPost.php:187
+#: src/Admin/Education/Admin/EditPost.php:188
 msgid "Oh hey, it looks like you're working on a contact page. Don't forget to embed your contact form. Click the plus icon above and search for WPForms."
 msgstr "Oh hey, es sieht so aus, als würdest du an einer Kontaktseite arbeiten. Vergiss nicht, dein Kontaktformular einzubetten. Klicke auf das Plus-Symbol oben und suche nach WPForms."
 
-#: src/Admin/Education/Admin/EditPost.php:191
+#: src/Admin/Education/Admin/EditPost.php:192
 msgid "Embed your form"
 msgstr "Dein Formular einbetten"
 
-#: src/Admin/Education/Admin/EditPost.php:192
+#: src/Admin/Education/Admin/EditPost.php:193
 msgid "Then click on the WPForms block to embed your desired contact form."
 msgstr "Klicke dann auf den WPForms-Block, um dein gewünschtes Kontaktformular einzubetten."
 
-#: src/Admin/Education/Admin/EditPost.php:209
+#: src/Admin/Education/Admin/EditPost.php:210
 msgid "Don't forget to embed your contact form. Simply click the Add Form button below."
 msgstr "Vergiss nicht, dein Kontaktformular einzubinden. Klicke einfach unten auf den Button „Formular hinzufügen“."
 
 #. translators: %1$s - link to create a new form.
-#: src/Admin/Education/Admin/EditPost.php:211
-#: src/Admin/Education/Admin/EditPost.php:237
+#: src/Admin/Education/Admin/EditPost.php:212
+#: src/Admin/Education/Admin/EditPost.php:238
 msgid "Did you know that with <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">WPForms</a>, you can create an easy-to-use contact form in a matter of minutes?"
 msgstr "Wusstest du, dass du mit <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">WPForms</a> in wenigen Minuten ein einfach zu bedienendes Kontaktformular erstellen kannst?"
 
-#: src/Admin/Education/Admin/EditPost.php:235
+#: src/Admin/Education/Admin/EditPost.php:236
 msgid "You've already created a form, now add it to the page so your customers can get in touch."
 msgstr "Du hast bereits ein Formular erstellt. Füge es jetzt der Seite hinzu, damit deine Kunden mit dir in Kontakt treten können."
 
@@ -10793,10 +10794,6 @@ msgstr "Vorschau"
 msgid "Previous"
 msgstr "Zurück"
 
-#: includes/admin/class-about.php:1653
-msgid "Priority Support"
-msgstr "Bevorzugter Support"
-
 #: src/Admin/Education/Admin/Settings/Geolocation.php:146
 #: src/Lite/Admin/Settings/Access.php:167
 msgid "Pro"
@@ -12332,6 +12329,10 @@ msgstr "Validierungsmeldungen"
 #: includes/providers/class-base.php:1151
 msgid "Add New %s"
 msgstr "%s neu hinzufügen"
+
+#: includes/admin/class-about.php:1653
+msgid "Priority Support"
+msgstr "Vorrangiger Support"
 
 #: src/Integrations/Gutenberg/FormSelector.php:435
 msgid "Select a Form"
