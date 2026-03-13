@@ -3,14 +3,14 @@
  * Plugin Name:         Social Icons & Sharing Buttons by WPZOOM
  * Plugin URI:          https://www.wpzoom.com/plugins/social-share/
  * Description:         Add Social Icons and Share Buttons to your website easily. Link to your social media profiles or let visitors share your content on popular networks. Supports over 400 social media icons, customizable colors, and drag-and-drop sorting.
- * Version:             4.5.8
+ * Version:             4.5.9
  * Author:              WPZOOM
  * Author URI:          https://www.wpzoom.com/
  * Text Domain:         social-icons-widget-by-wpzoom
  * License:             GNU General Public License v2.0 or later
  * License URI:         http://www.gnu.org/licenses/gpl-2.0.txt
  * Requires at least:   6.5
- * Tested up to:        6.9
+ * Tested up to:        7.0
  *
  * @package WPZOOM_Social_Icons
  */
@@ -45,6 +45,18 @@ require_once plugin_dir_path( __FILE__ ) . 'includes/classes/class-zoom-social-i
 require_once plugin_dir_path( __FILE__ ) . 'includes/classes/class-wpzoom-social-icons-shortcode.php';
 require_once plugin_dir_path( __FILE__ ) . 'includes/classes/class-wpzoom-share-analytics-upsell.php';
 require_once plugin_dir_path( __FILE__ ) . 'includes/classes/class-wpzoom-floating-buttons-upsell.php';
+
+// WPZOOM Notice Center (submodule at includes/notice-center).
+$wpz_notice_center_path = WPZOOM_SOCIAL_ICONS_PLUGIN_PATH . 'includes/notice-center/';
+$wpz_notice_center_url  = WPZOOM_SOCIAL_ICONS_PLUGIN_URL . 'includes/notice-center/';
+if ( is_admin() && ! class_exists( 'WPZOOM_Notice_Center' ) && file_exists( $wpz_notice_center_path . 'notice-center.php' ) ) {
+	require_once $wpz_notice_center_path . 'notice-center.php';
+	WPZOOM_Notice_Center::get_instance()->set_assets( array(
+		'css_url' => $wpz_notice_center_url . 'assets/notice-center.css',
+		'js_url'  => $wpz_notice_center_url . 'assets/notice-center.js',
+	) );
+}
+
 require_once plugin_dir_path( __FILE__ ) . 'includes/classes/class-wpzoom-sharing-buttons-notice.php';
 require_once plugin_dir_path( __FILE__ ) . 'includes/classes/class-wpzoom-social-icons-upsell.php';
 
