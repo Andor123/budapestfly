@@ -1,25 +1,33 @@
-=== WPZOOM Forms - Contact Form Plugin for Gutenberg ===
+=== WPZOOM Forms - Drag & Drop Contact Form Builder for WordPress ===
 Contributors:      WPZOOM
 Donate link:       http://paypal.me/wpzm/10usd
 Author URI:        https://www.wpzoom.com/
-Requires at least: 6.0
+Requires at least: 6.5
 Requires PHP:      7.4
-Tested up to:      6.9
-Stable tag:        1.3.6
+Tested up to:      7.0
+Stable tag:        1.3.7
 License:           GNU General Public License v2
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
-Tags:              contact form, form builder, gutenberg form, contact form block, forms
+Tags:              contact form, form builder, contact, forms, email form
 
-Contact form plugin for WordPress - Build beautiful forms with Gutenberg blocks. Drag & drop form builder with spam protection, email notifications & submissions management.
-
+Drag & drop contact form builder for WordPress. Create contact forms, custom forms, email forms with spam protection. Works with Elementor, shortcodes
 
 == Description ==
 
-= Contact Form Builder for Gutenberg - Simple & Powerful =
+= Simple & Powerful Contact Form Builder =
 
-**The best contact form plugin for WordPress block editor.** Create beautiful, responsive contact forms using Gutenberg blocks. Drag & drop form builder with spam protection - no coding required.
+**The easiest way to create contact forms in WordPress.** Drag & drop form builder with spam protection, email notifications, and submission management - no coding required. Works everywhere: Block Editor, Elementor, or shortcodes.
 
-[WPZOOM Forms](https://www.wpzoom.com/plugins/wpzoom-forms/) is trusted by over 10,000 active websites. Perfect for contact forms, feedback forms, appointment booking, and more.
+[WPZOOM Forms](https://www.wpzoom.com/plugins/wpzoom-forms/) is trusted by over 20,000 active websites. Perfect for contact forms, feedback forms, email forms, appointment booking, and quote request forms.
+
+### Why Choose WPZOOM Forms?
+
+✅ **Works Everywhere** - Use with Block Editor, Elementor, Classic Editor, or any theme via shortcodes
+✅ **Powerful Spam Protection** - reCAPTCHA v2/v3, Cloudflare Turnstile, and Akismet built-in
+✅ **Email Notifications** - Get instant alerts when someone submits your contact form
+✅ **Form Submissions Dashboard** - All entries saved and searchable in WordPress
+✅ **Mobile Responsive** - Forms look great on all devices
+✅ **Ready-to-Use Templates** - Contact form, feedback form, appointment form, and more
 
 ###💪 Want More Power? Try WPZOOM Forms PRO
 
@@ -29,13 +37,18 @@ Take your forms to the professional level with [**WPZOOM Forms PRO**](https://ww
 
 ### Free Plugin Features
 
-**Easy Drag-and-Drop Builder**
+**Drag-and-Drop Form Builder**
 
-Build forms effortlessly using Gutenberg's intuitive editor. Simply drag fields, arrange layouts, and customize styling – all within your familiar WordPress interface.
+Build contact forms, feedback forms, and email forms effortlessly. Simply drag fields, arrange layouts, and customize styling - no coding required. Works in Block Editor and Elementor.
 
-**Ready-to-Use Templates**
+**Ready-to-Use Form Templates**
 
-Kickstart your form creation with professionally designed templates. Choose from contact forms, feedback forms, appointment forms, and more. Quickly adapt them to match your website's design and specific needs.
+Get started fast with professionally designed templates:
+- Simple contact form
+- Feedback form
+- Appointment booking form
+- Quote request form
+- Newsletter signup form
 
 **🛡️ Advanced Spam Protection**
 
@@ -47,19 +60,19 @@ Keep unwanted submissions at bay with multiple protection layers:
 
 **Email Notifications**
 
-Receive instant email notifications when users submit forms. Basic email templates help you stay organized and respond quickly to inquiries.
+Receive instant email notifications when users submit your contact form. Stay organized and respond quickly to customer inquiries.
 
-**Seamless Elementor Integration**
+**Elementor Widget**
 
-Works perfectly with both Gutenberg and Elementor. Embed forms anywhere on your website while maintaining consistent design across all page builders.
+Full Elementor integration with a dedicated widget. Build and style your contact forms directly in Elementor - no shortcodes needed.
 
-**Easy Shortcode Integration**
+**Shortcode Support**
 
-Display forms anywhere on your website with simple shortcodes. Copy and paste the generated shortcode into any post, page, widget, or custom template. Works with any theme or page builder, giving you complete control over form placement and styling.
+Display forms anywhere on your website with simple shortcodes. Works with any theme, page builder, or widget area. Perfect for Classic Editor users.
 
-**Advanced Date Picker Field**
+**Date Picker Field**
 
-Create sophisticated booking forms, reservation systems, and event registrations with our versatile date picker. Perfect for restaurants, hotels, service providers, and appointment-based businesses.
+Create booking forms, reservation systems, and event registrations with our versatile date picker. Perfect for restaurants, hotels, service providers, and appointment-based businesses.
 
 **Submission Management**
 
@@ -124,17 +137,27 @@ Clone any existing form with one click. Quickly create variations of your forms 
 
 Create dynamic forms that adapt based on user input. Show or hide fields depending on previous answers to create personalized form experiences.
 
-**Love WPZOOM Forms?** Help other WordPress users discover this plugin by [leaving a 5-star review](https://wordpress.org/support/plugin/wpzoom-forms/reviews/#new-post). Your feedback helps us continue improving and adding new features for the community.
+**🔢 Number Field**
 
-##Why Choose WPZOOM Forms?
+Collect numeric data with validation. Perfect for quantity fields, age inputs, budget ranges, and any form requiring number-only entries.
 
-**Community-Driven Development** – Every feature is built based on real user feedback from our active community of 10,000+ websites.
+**📋 20+ PRO Templates**
+
+Jump-start your forms with industry-specific templates: business consultation, project inquiry, patient intake, real estate listings, job applications, restaurant reservations, and more.
+
+**Love WPZOOM Forms?** Help other WordPress users find a great contact form plugin by [leaving a 5-star review](https://wordpress.org/support/plugin/wpzoom-forms/reviews/#new-post). Your feedback helps us continue improving and adding new features for the community.
+
+## WPZOOM Forms vs Other Contact Form Plugins
+
+**Lightweight & Fast** – Unlike bloated alternatives, WPZOOM Forms is performance optimized with efficient database queries.
+
+**No Limits** – Create unlimited forms and receive unlimited submissions. No artificial restrictions.
+
+**Community-Driven** – Every feature is built based on real user feedback from our active community of 10,000+ websites.
 
 **Professional Support** – Get help when you need it with our responsive support team and comprehensive documentation.
 
-**Regular Updates** – Continuous improvements, new features, and compatibility updates ensure your forms always work perfectly.
-
-**Performance Optimized** – Lightweight code and efficient database queries mean your website stays fast, even with complex forms.
+**Regular Updates** – Continuous improvements, new features, and compatibility updates ensure your contact forms always work perfectly.
 
 ###Additional Resources
 
@@ -151,18 +174,39 @@ Create dynamic forms that adapt based on user input. Show or hide fields dependi
 
 == Frequently Asked Questions ==
 
-= How do I add a form to my page or post? =
+= How do I add a contact form to my page? =
 
-You can add a form to your page or post using the provided shortcode or by using the WPZOOM Forms block. Detailed instructions can be found in the plugin documentation.
+You have three options:
+1. **Block Editor**: Add the "WPZOOM Form" block directly to your page
+2. **Elementor**: Use the WPZOOM Forms widget in Elementor
+3. **Shortcode**: Copy the shortcode from any form and paste it anywhere
 
-= Is there any anti-spam protection? =
+= Does this contact form plugin work with Elementor? =
 
-Yes, if you have the Akismet plugin installed and connected, WPZOOM Forms will include spam protection. You can get an Akismet API key for free if you use it for non-commercial uses.
+Yes! WPZOOM Forms has a dedicated Elementor widget. You can add and style your contact forms directly in the Elementor editor.
 
+= Is there spam protection for contact forms? =
+
+Yes, WPZOOM Forms includes multiple spam protection options:
+- Google reCAPTCHA v2 and v3
+- Cloudflare Turnstile
+- Akismet anti-spam integration
+
+= Can I receive email notifications when someone submits a form? =
+
+Yes, you receive instant email notifications for every form submission. All submissions are also saved in your WordPress dashboard.
+
+= Is this a free contact form plugin? =
+
+Yes, WPZOOM Forms is free with all essential features. A PRO version is available with advanced features like file uploads, conditional logic, and Mailchimp integration.
 
 = How do I export form submissions? =
 
-To export form submissions, navigate to the Tools > Export page in Dashboard and choose "WPZOOM Submissions".
+Navigate to Tools > Export in your Dashboard and choose "WPZOOM Submissions" to export all entries.
+
+= Does it work with the Classic Editor? =
+
+Yes! Use shortcodes to embed your contact forms in the Classic Editor or any theme.
 
 
 == Screenshots ==
@@ -176,6 +220,9 @@ To export form submissions, navigate to the Tools > Export page in Dashboard and
 
 
 == Changelog ==
+
+= 1.3.7 =
+* Multiple bug fixes and improvements
 
 = 1.3.6 =
 * Multiple bug fixes and improvements

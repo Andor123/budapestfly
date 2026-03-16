@@ -123,6 +123,7 @@ class WPZOOM_Elementor_Form {
 		wp_enqueue_style( 
 			'wpzoom-forms-elementor', 
 			WPZOOM_FORMS_URL . 'elementor/assets/css/wpzoom-forms-elementor.css', 
+			array(),
 			WPZOOM_FORMS_VERSION
 		);
 	}

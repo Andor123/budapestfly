@@ -13,11 +13,89 @@ import { arrayMoveImmutable } from 'array-move';
 import FormIcons from './icons';
 import './conditional-logic-placeholder';
 
+const findFirstBlockByName = (blocks, blockName) => {
+	for (const block of blocks) {
+		if (block.name === blockName) {
+			return block;
+		}
+
+		if (block.innerBlocks && block.innerBlocks.length > 0) {
+			const childMatch = findFirstBlockByName(block.innerBlocks, blockName);
+			if (childMatch) {
+				return childMatch;
+			}
+		}
+	}
+
+	return null;
+};
+
+const findPreferredFormInsertionTarget = (formBlock) => {
+	if (!formBlock || !formBlock.innerBlocks || formBlock.innerBlocks.length === 0) {
+		return formBlock;
+	}
+
+	const groupBlock = formBlock.innerBlocks.find(block => block.name === 'core/group');
+	if (!groupBlock || !groupBlock.innerBlocks || groupBlock.innerBlocks.length === 0) {
+		return formBlock;
+	}
+
+	const columnsBlock = groupBlock.innerBlocks.find(block => block.name === 'core/columns');
+	if (!columnsBlock || !columnsBlock.innerBlocks || columnsBlock.innerBlocks.length === 0) {
+		return formBlock;
+	}
+
+	const columnBlock = columnsBlock.innerBlocks.find(block => block.name === 'core/column');
+	return columnBlock || formBlock;
+};
+
+const getBlockNameByClientId = (selectors, clientId) => {
+	if (!clientId) {
+		return null;
+	}
+
+	if (typeof selectors.getBlockName === 'function') {
+		return selectors.getBlockName(clientId);
+	}
+
+	const block = selectors.getBlock(clientId);
+	return block ? block.name : null;
+};
+
+const isClientIdInsideForm = (selectors, clientId) => {
+	if (!clientId) {
+		return false;
+	}
+
+	const blockName = getBlockNameByClientId(selectors, clientId);
+	if (blockName === 'wpzoom-forms/form') {
+		return true;
+	}
+
+	const parents = typeof selectors.getBlockParents === 'function'
+		? selectors.getBlockParents(clientId) || []
+		: [];
+
+	return parents.some(parentId => getBlockNameByClientId(selectors, parentId) === 'wpzoom-forms/form');
+};
+
+const getFormInsertionContext = (selectors) => {
+	const allBlocks = selectors.getBlocks();
+	const formBlock = findFirstBlockByName(allBlocks, 'wpzoom-forms/form');
+
+	if (!formBlock) {
+		return null;
+	}
+
+	const preferredTarget = findPreferredFormInsertionTarget(formBlock);
+	return {
+		formBlock,
+		defaultRootClientId: preferredTarget.clientId,
+	};
+};
+
 const insertFormField = (blockName, defaultAttributes, isDisabled, isPro) => {
-	console.log('insertFormField called with:', blockName, defaultAttributes, isDisabled, isPro);
-	
 	if (isDisabled && ! isPro) {
-		console.log('Field is disabled, showing notice');
 		wp.data.dispatch('core/notices').createNotice(
 			'info',
 			__('This field can only be used once per form', 'wpzoom-forms'),
@@ -30,7 +108,6 @@ const insertFormField = (blockName, defaultAttributes, isDisabled, isPro) => {
 	}
 
 	if (isDisabled && isPro) {
-		console.log('Field is pro, showing notice');
 		wp.data.dispatch('core/notices').createNotice(
 			'info',
 			__('This field is available in the PRO version', 'wpzoom-forms'),
@@ -43,61 +120,51 @@ const insertFormField = (blockName, defaultAttributes, isDisabled, isPro) => {
 	}
 	
 	const { createBlock } = wp.blocks;
-	const { insertBlock, getBlocksByClientId } = wp.data.dispatch('core/block-editor');
-	const { getSelectedBlock, getBlockSelectionStart, getBlocks } = wp.data.select('core/block-editor');
-	
-	console.log('Creating block:', `wpzoom-forms/${blockName}`);
+	const { insertBlock } = wp.data.dispatch('core/block-editor');
+	const selectors = wp.data.select('core/block-editor');
 	const newBlock = createBlock(`wpzoom-forms/${blockName}`, defaultAttributes);
-	const selectedBlock = getSelectedBlock();
-	const focusedBlockClientId = getBlockSelectionStart();
-	
-	console.log('Selected block:', selectedBlock);
-	console.log('Focused block client ID:', focusedBlockClientId);
-	
-	// Get all blocks to find the form block
-	const allBlocks = getBlocks();
-	console.log('All blocks:', allBlocks);
-	
-	// Find the form block
-	const formBlock = allBlocks.find(block => block.name === 'wpzoom-forms/form');
-	console.log('Form block:', formBlock);
-	
-	if (selectedBlock) {
-		console.log('Inserting after selected block');
-		// Insert after the selected block
-		insertBlock(newBlock, undefined, selectedBlock.clientId, false);
-	} else if (focusedBlockClientId) {
-		console.log('Inserting after focused block');
-		// Insert after the focused block
-		insertBlock(newBlock, undefined, focusedBlockClientId, false);
-	} else if (formBlock) {
-		console.log('Inserting at the end of the form block');
-		// Find the innermost column block to insert into
-		let targetBlock = formBlock;
-		
-		// Navigate through the inner blocks to find the column block
-		if (formBlock.innerBlocks && formBlock.innerBlocks.length > 0) {
-			// Find the group block
-			const groupBlock = formBlock.innerBlocks.find(block => block.name === 'core/group');
-			if (groupBlock && groupBlock.innerBlocks && groupBlock.innerBlocks.length > 0) {
-				// Find the columns block
-				const columnsBlock = groupBlock.innerBlocks.find(block => block.name === 'core/columns');
-				if (columnsBlock && columnsBlock.innerBlocks && columnsBlock.innerBlocks.length > 0) {
-					// Find the column block
-					const columnBlock = columnsBlock.innerBlocks.find(block => block.name === 'core/column');
-					if (columnBlock) {
-						targetBlock = columnBlock;
-					}
-				}
+	const selectedBlock = selectors.getSelectedBlock();
+	const focusedBlockClientId = selectors.getBlockSelectionStart();
+	const insertionContext = getFormInsertionContext(selectors);
+
+	if (!insertionContext) {
+		wp.data.dispatch('core/notices').createNotice(
+			'warning',
+			__('Could not find a Contact Form block to insert this field.', 'wpzoom-forms'),
+			{
+				type: 'snackbar',
+				isDismissible: true,
+			}
+		);
+		return;
+	}
+
+	const selectedClientId = selectedBlock ? selectedBlock.clientId : focusedBlockClientId;
+	let rootClientId = insertionContext.defaultRootClientId;
+	let index;
+
+	if (selectedClientId && isClientIdInsideForm(selectors, selectedClientId)) {
+		const selectedBlockName = getBlockNameByClientId(selectors, selectedClientId);
+		if (selectedBlockName !== 'wpzoom-forms/form') {
+			const selectedRootClientId = selectors.getBlockRootClientId(selectedClientId);
+			const selectedIndex = selectors.getBlockIndex(selectedClientId, selectedRootClientId);
+			if (selectedRootClientId && typeof selectedIndex === 'number' && selectedIndex >= 0) {
+				rootClientId = selectedRootClientId;
+				index = selectedIndex + 1;
 			}
 		}
-		
-		console.log('Target block for insertion:', targetBlock);
-		insertBlock(newBlock, undefined, targetBlock.clientId, false);
-	} else {
-		console.log('No form block found, inserting at root');
-		insertBlock(newBlock);
+	} else if (selectedClientId) {
+		wp.data.dispatch('core/notices').createNotice(
+			'info',
+			__('Field added to your Contact Form. Select a form field first to insert right after it.', 'wpzoom-forms'),
+			{
+				type: 'snackbar',
+				isDismissible: true,
+			}
+		);
 	}
+
+	insertBlock(newBlock, index, rootClientId, false);
 };
 
 updateCategory('wpzoom-forms', {
@@ -185,9 +252,23 @@ registerPlugin('wpzoom-forms-document-settings', {
 				event.handled = true;
 					
 					const { createBlock } = wp.blocks;
-					const { insertBlock, getBlockInsertionPoint } = wp.data.dispatch('core/block-editor');
-					const { getBlockRootClientId, getBlockIndex } = wp.data.select('core/block-editor');
+					const { insertBlock } = wp.data.dispatch('core/block-editor');
+					const selectors = wp.data.select('core/block-editor');
+					const { getBlockRootClientId, getBlockIndex } = selectors;
 					const newBlock = createBlock(type, attributes);
+					const insertionContext = getFormInsertionContext(selectors);
+
+					if (!insertionContext) {
+						wp.data.dispatch('core/notices').createNotice(
+							'warning',
+							__('Could not find a Contact Form block to insert this field.', 'wpzoom-forms'),
+							{
+								type: 'snackbar',
+								isDismissible: true,
+							}
+						);
+						return;
+					}
 					
 					// Get the closest block element from the drop point
 					const dropPoint = {
@@ -224,16 +305,29 @@ registerPlugin('wpzoom-forms-document-settings', {
 						const targetClientId = closestBlock.getAttribute('data-block');
 						const rootClientId = getBlockRootClientId(targetClientId);
 						const targetIndex = getBlockIndex(targetClientId);
-						
-						insertBlock(
-							newBlock,
-							insertAfter ? targetIndex + 1 : targetIndex,
-							rootClientId,
-							false
-						);
+						const targetInsideForm = isClientIdInsideForm(selectors, targetClientId);
+						const canInsertNearTarget = targetInsideForm && typeof targetIndex === 'number' && targetIndex >= 0;
+
+						if (canInsertNearTarget) {
+							insertBlock(
+								newBlock,
+								insertAfter ? targetIndex + 1 : targetIndex,
+								rootClientId,
+								false
+							);
+						} else {
+							insertBlock(newBlock, undefined, insertionContext.defaultRootClientId, false);
+							wp.data.dispatch('core/notices').createNotice(
+								'info',
+								__('Field added to your Contact Form. Drop over the form to place it more precisely.', 'wpzoom-forms'),
+								{
+									type: 'snackbar',
+									isDismissible: true,
+								}
+							);
+						}
 					} else {
-						// If no target found, insert at the end
-						insertBlock(newBlock);
+						insertBlock(newBlock, undefined, insertionContext.defaultRootClientId, false);
 					}
 				} catch (error) {
 					console.error('Error handling block drop:', error);

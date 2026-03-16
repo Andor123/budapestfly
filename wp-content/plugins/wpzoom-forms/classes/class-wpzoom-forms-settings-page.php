@@ -398,7 +398,7 @@ class WPZOOM_Forms_Settings {
 								'type'  => 'note',
 								'args'  => array(
 									'class'       => 'wpzoom-forms-field required-turnstile',
-									'description' => '<a target="_blank" href="https://dash.cloudflare.com/sign-up/turnstile">Click here</a> to generate your Turnstile keys and enter them below.',
+									'description' => '<a target="_blank" href="https://www.cloudflare.com/application-services/products/turnstile/#turnstile-pricing">Click here</a> to generate your Turnstile keys and enter them below.',
 								),
 							),
 							array(
