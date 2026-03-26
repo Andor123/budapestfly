@@ -1,10 +1,5 @@
 __( 'Not Found', 'elementor' );
 __( 'Not Found', 'elementor' );
-__( 'This file type is not allowed', 'elementor' );
-__( 'Select File', 'elementor' );
-__( 'Upgrade Now', 'elementor' );
-__( 'Loading', 'elementor' );
-__( 'Back to dashboard', 'elementor' );
 __( 'Something went wrong.', 'elementor' );
 __( 'Continue', 'elementor' );
 __( 'Go Back', 'elementor' );
@@ -16,20 +11,13 @@ __( 'We’re sorry, but something went wrong. Click on ‘Learn more’ and foll
 __( 'Learn More', 'elementor' );
 __( 'Go Back', 'elementor' );
 __( 'This file type is not allowed', 'elementor' );
+__( 'This file type is not allowed', 'elementor' );
+__( 'Select File', 'elementor' );
+__( 'Upgrade Now', 'elementor' );
+__( 'Loading', 'elementor' );
+__( 'Back to dashboard', 'elementor' );
 __( 'Close', 'elementor' );
 __( 'Elementor', 'elementor' );
-__( 'Are you sure?', 'elementor' );
-__( 'Removing %s will permanently delete changes made to the Websites Template\'s content and site settings', 'elementor' );
-__( 'Delete', 'elementor' );
-__( 'Cancel', 'elementor' );
-__( 'Try a different Website Template or build your site from scratch.', 'elementor' );
-__( 'OK', 'elementor' );
-__( 'Library', 'elementor' );
-__( 'You\'re ready to apply a new Kit!', 'elementor' );
-__( 'Continue to new Kit', 'elementor' );
-__( 'Close', 'elementor' );
-__( '%s was successfully deleted', 'elementor' );
-__( 'Your Kit', 'elementor' );
 __( 'Header', 'elementor' );
 __( 'What is a Header Template?', 'elementor' );
 __( 'The header template allows you to easily design and edit custom WordPress headers so you are no longer constrained by your theme’s header design limitations.', 'elementor' );
@@ -66,10 +54,40 @@ __( '404 page', 'elementor' );
 __( 'What is a 404 Page Template?', 'elementor' );
 __( 'A 404 page template allows you to easily design the layout and style of the page that is displayed when a visitor arrives at a page that does not exist.', 'elementor' );
 __( 'Keep your site\'s visitors happy when they get lost by displaying your recent posts, a search bar, or any information that might help the user find what they were looking for.', 'elementor' );
+__( 'Are you sure?', 'elementor' );
+__( 'Removing %s will permanently delete changes made to the Websites Template\'s content and site settings', 'elementor' );
+__( 'Delete', 'elementor' );
+__( 'Cancel', 'elementor' );
+__( 'Try a different Website Template or build your site from scratch.', 'elementor' );
+__( 'OK', 'elementor' );
+__( 'Library', 'elementor' );
+__( 'You\'re ready to apply a new Kit!', 'elementor' );
+__( 'Continue to new Kit', 'elementor' );
+__( 'Close', 'elementor' );
+__( '%s was successfully deleted', 'elementor' );
+__( 'Your Kit', 'elementor' );
 __( 'Add New', 'elementor' );
 __( 'Close', 'elementor' );
 __( 'Tip', 'elementor' );
 __( 'Close', 'elementor' );
+__( 'Upgrade', 'elementor' );
+__( 'Customize every part of your site', 'elementor' );
+__( 'Get total control, consistency and a faster workflow by designing the recurring parts that make up a complete website like the Header & Footer, Archive, 404, WooCommerce pages and more.', 'elementor' );
+__( 'Upgrade Now', 'elementor' );
+__( 'Theme Builder could not be loaded', 'elementor' );
+__( 'We’re sorry, but something went wrong. Click on ‘Learn more’ and follow each of the steps to quickly solve it.', 'elementor' );
+__( 'Learn More', 'elementor' );
+__( 'Go Back', 'elementor' );
+__( 'Theme Builder', 'elementor' );
+__( 'Info', 'elementor' );
+__( 'Learn More', 'elementor' );
+__( 'Tip', 'elementor' );
+__( 'Watch Video', 'elementor' );
+__( 'Upgrade Now', 'elementor' );
+__( 'Site Parts', 'elementor' );
+__( 'All Parts', 'elementor' );
+__( 'Error:', 'elementor' );
+__( 'Loading', 'elementor' );
 __( 'Templates & Theme Builder', 'elementor' );
 __( 'WooCommerce Builder', 'elementor' );
 __( 'Lead Collection & Form Builder', 'elementor' );
@@ -359,24 +377,6 @@ __( 'Plugins', 'elementor' );
 __( 'All plugins are required for this website templates to work', 'elementor' );
 __( 'Import', 'elementor' );
 __( 'Export', 'elementor' );
-__( 'Theme Builder', 'elementor' );
-__( 'Upgrade', 'elementor' );
-__( 'Customize every part of your site', 'elementor' );
-__( 'Get total control, consistency and a faster workflow by designing the recurring parts that make up a complete website like the Header & Footer, Archive, 404, WooCommerce pages and more.', 'elementor' );
-__( 'Upgrade Now', 'elementor' );
-__( 'Theme Builder could not be loaded', 'elementor' );
-__( 'We’re sorry, but something went wrong. Click on ‘Learn more’ and follow each of the steps to quickly solve it.', 'elementor' );
-__( 'Learn More', 'elementor' );
-__( 'Go Back', 'elementor' );
-__( 'Info', 'elementor' );
-__( 'Learn More', 'elementor' );
-__( 'Tip', 'elementor' );
-__( 'Watch Video', 'elementor' );
-__( 'Upgrade Now', 'elementor' );
-__( 'Site Parts', 'elementor' );
-__( 'All Parts', 'elementor' );
-__( 'Error:', 'elementor' );
-__( 'Loading', 'elementor' );
 __( 'Elementor Account', 'elementor' );
 __( 'Hello Biz Theme', 'elementor' );
 __( 'Choose Theme', 'elementor' );
@@ -616,6 +616,12 @@ __( 'The export failed because it will pass the maximum Website Templates storag
 __( 'Try Again', 'elementor' );
 __( 'Learn More', 'elementor' );
 __( 'Close', 'elementor' );
+__( 'Site Area', 'elementor' );
+__( 'Included', 'elementor' );
+__( 'Elementor Templates', 'elementor' );
+__( 'Site Settings', 'elementor' );
+__( 'Content', 'elementor' );
+__( 'Plugins', 'elementor' );
 __( 'Templates', 'elementor' );
 __( 'Saved Templates', 'elementor' );
 __( 'Headers', 'elementor' );
@@ -643,12 +649,6 @@ __( 'Theme Style settings', 'elementor' );
 __( 'Layout Settings', 'elementor' );
 __( 'Lightbox Settings', 'elementor' );
 __( 'Background Settings', 'elementor' );
-__( 'Site Area', 'elementor' );
-__( 'Included', 'elementor' );
-__( 'Elementor Templates', 'elementor' );
-__( 'Site Settings', 'elementor' );
-__( 'Content', 'elementor' );
-__( 'Plugins', 'elementor' );
 __( 'Kit Info', 'elementor' );
 __( 'Import a Website Template', 'elementor' );
 __( 'What’s a Website Template?', 'elementor' );
@@ -722,6 +722,19 @@ __( 'Upgrade now', 'elementor' );
 __( 'Cancel', 'elementor' );
 __( 'Export as .zip', 'elementor' );
 __( 'Try Again', 'elementor' );
+__( 'Version' ) } ${ cellLinkProps.text }` } <Icon className="eicon-editor-external-link" />
+		</InlineLink>
+	);
+
+	const getHeaders = () => {
+		if ( ! withHeader ) {
+			return [];
+		}
+
+		const headers = [ 'Plugin Name', 'Version' ];
+
+		if ( withStatus ) {
+			headers.splice( 1, 0, 'Status' );
 __( 'Previous', 'elementor' );
 __( 'Next', 'elementor' );
 __( 'Learn More', 'elementor' );
@@ -780,19 +793,6 @@ __( 'You can find it in the My Website Templates tab.', 'elementor' );
 __( 'Once the download is complete, you can upload it to be used for other sites.', 'elementor' );
 __( 'Build sites faster with Website Templates.', 'elementor' );
 __( 'Is the automatic download not starting?', 'elementor' );
-__( 'Version' ) } ${ cellLinkProps.text }` } <Icon className="eicon-editor-external-link" />
-		</InlineLink>
-	);
-
-	const getHeaders = () => {
-		if ( ! withHeader ) {
-			return [];
-		}
-
-		const headers = [ 'Plugin Name', 'Version' ];
-
-		if ( withStatus ) {
-			headers.splice( 1, 0, 'Status' );
 __( 'Edit Template', 'elementor' );
 __( 'Imported', 'elementor' );
 __( 'Existing', 'elementor' );
@@ -802,10 +802,10 @@ __( 'Is your Elementor Pro ready?', 'elementor' );
 __( 'If you’ve purchased, installed & activated Elementor Pro, we can continue importing all the parts of this site.', 'elementor' );
 __( 'Yes', 'elementor' );
 __( 'Not yet', 'elementor' );
-__( 'Plugins to add:', 'elementor' );
-__( 'Missing Required Plugins:', 'elementor' );
 __( 'Previous', 'elementor' );
 __( 'Next', 'elementor' );
+__( 'Plugins to add:', 'elementor' );
+__( 'Missing Required Plugins:', 'elementor' );
 __( 'Plugins you already have:', 'elementor' );
 __( 'Previous', 'elementor' );
 __( 'Import', 'elementor' );
@@ -818,12 +818,12 @@ __( "If you don't include them, this kit may not work properly.", 'elementor' );
 __( 'Go Back', 'elementor' );
 __( 'See It Live', 'elementor' );
 __( 'Got It', 'elementor' );
-__( 'Let’s do it', 'elementor' );
-__( 'Tip:', 'elementor' );
-__( 'Make sure your Elementor Pro account is connected', 'elementor' );
 __( 'Learn more', 'elementor' );
 __( 'Important:', 'elementor' );
 __( "There are few plugins that we couldn't install:", 'elementor' );
+__( 'Let’s do it', 'elementor' );
+__( 'Tip:', 'elementor' );
+__( 'Make sure your Elementor Pro account is connected', 'elementor' );
 __( 'Save to library', 'elementor' );
 __( 'Save to library', 'elementor' );
 __( 'Save to library', 'elementor' );
