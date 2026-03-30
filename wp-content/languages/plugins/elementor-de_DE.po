@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Elementor Website Builder &#8211; More Than Just a Page Builder - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-03-21 20:17:32+0000\n"
+"PO-Revision-Date: 2026-03-29 16:28:15+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -868,19 +868,19 @@ msgstr "Abstand zwischen Punkten"
 msgid "Carousel Name"
 msgstr "Karussell-Name"
 
-#: core/admin/admin-notices.php:679
+#: core/admin/admin-notices.php:699
 msgid "Use Elementor's Site Mailer to ensure your store emails like purchase confirmations, shipping updates and more are reliably delivered."
 msgstr "Verwende den Site Mailer von Elementor, um sicherzustellen, dass E-Mails deines Shops – wie Kaufbestätigungen, Versandbenachrichtigungen und mehr – zuverlässig zugestellt werden."
 
-#: core/admin/admin-notices.php:678
+#: core/admin/admin-notices.php:698
 msgid "Improve Transactional Email Deliverability"
 msgstr "Verbessere die Zustellbarkeit transaktionaler E-Mails"
 
-#: core/admin/admin-notices.php:692
+#: core/admin/admin-notices.php:722
 msgid "Use Site Mailer for improved email deliverability, detailed email logs, and an easy setup."
 msgstr "Nutze Site Mailer für eine bessere E-Mail-Zustellbarkeit, detaillierte E-Mail-Protokolle und eine einfache Einrichtung."
 
-#: core/admin/admin-notices.php:691
+#: core/admin/admin-notices.php:721
 msgid "Ensure your form emails avoid the spam folder!"
 msgstr "Stelle sicher, dass deine Formular-E-Mails nicht im Spam-Ordner landen!"
 
@@ -1685,7 +1685,7 @@ msgstr "Anzeigemodus"
 msgid "Show hidden elements"
 msgstr "Verborgene Elemente anzeigen"
 
-#: core/files/uploads-manager.php:589
+#: core/files/uploads-manager.php:659
 msgid "You do not have permission to upload JSON files."
 msgstr "Du hast keine Berechtigung, um JSON-Dateien hochzuladen."
 
@@ -1862,10 +1862,10 @@ msgid "* Requires an Advanced subscription or higher"
 msgstr "* Erfordert ein höheres oder erweitertes Abonnement"
 
 #: core/admin/admin-notices.php:549 core/admin/admin-notices.php:573
-#: core/admin/admin-notices.php:651 core/admin/admin-notices.php:665
-#: core/admin/admin-notices.php:682 core/admin/admin-notices.php:695
-#: core/admin/admin-notices.php:795 core/admin/admin-notices.php:850
-#: core/admin/admin-notices.php:873 core/admin/admin.php:1134
+#: core/admin/admin-notices.php:651 core/admin/admin-notices.php:675
+#: core/admin/admin-notices.php:702 core/admin/admin-notices.php:725
+#: core/admin/admin-notices.php:837 core/admin/admin-notices.php:892
+#: core/admin/admin-notices.php:915 core/admin/admin.php:1134
 #: core/admin/admin.php:1144 core/utils/hints.php:483
 #: includes/controls/gallery.php:159 includes/controls/gallery.php:171
 #: includes/controls/media.php:353 includes/controls/media.php:365
@@ -1874,10 +1874,10 @@ msgid "Install now"
 msgstr "Jetzt installieren"
 
 #: core/admin/admin-notices.php:559 core/admin/admin-notices.php:582
-#: core/admin/admin-notices.php:656 core/admin/admin-notices.php:670
-#: core/admin/admin-notices.php:686 core/admin/admin-notices.php:699
-#: core/admin/admin-notices.php:792 core/admin/admin-notices.php:860
-#: core/admin/admin-notices.php:882 core/admin/admin.php:1138
+#: core/admin/admin-notices.php:661 core/admin/admin-notices.php:685
+#: core/admin/admin-notices.php:711 core/admin/admin-notices.php:734
+#: core/admin/admin-notices.php:834 core/admin/admin-notices.php:902
+#: core/admin/admin-notices.php:924 core/admin/admin.php:1138
 #: core/admin/admin.php:1147 core/utils/hints.php:484
 #: includes/controls/gallery.php:164 includes/controls/gallery.php:175
 #: includes/controls/media.php:358 includes/controls/media.php:369
@@ -1894,7 +1894,7 @@ msgstr "Aktiviere die Option zum Hochladen von JSON-Dateien"
 msgid "Heads up"
 msgstr "Achtung"
 
-#: core/files/uploads-manager.php:290
+#: core/files/uploads-manager.php:360
 msgid "Invalid file name."
 msgstr "Ungültiger Dateiname."
 
@@ -2516,7 +2516,7 @@ msgstr "Tablet Hochformat"
 msgid "Tablet Landscape"
 msgstr "Tablet Querformat"
 
-#: core/admin/admin-notices.php:945 core/admin/admin.php:1170
+#: core/admin/admin-notices.php:992 core/admin/admin.php:1170
 msgid "Dismiss this notice."
 msgstr "Diesen Hinweis verwerfen"
 
@@ -3643,10 +3643,23 @@ msgstr "Mit Elementor Pro kannst du den Benutzerzugang kontrollieren und sichers
 msgid "Scale"
 msgstr "Skalieren"
 
+#: core/utils/import-export/wp-import.php:1163
+msgid "The uploaded file could not be moved"
+msgstr "Die hochgeladene Datei konnte nicht verschoben werden"
+
+#. translators: %s: Max file size.
+#: core/utils/import-export/wp-import.php:1115
+msgid "Remote file is too large, limit is %s"
+msgstr "Remote-Datei ist zu groß, Grenze ist %s"
+
+#: core/utils/import-export/wp-import.php:1107
+msgid "Downloaded file has incorrect size"
+msgstr "Die heruntergeladene Datei hat die falsche Größe"
+
 #: app/modules/import-export-customization/module.php:211
 #: app/modules/import-export/module.php:207 core/admin/admin-notices.php:290
 #: core/admin/admin-notices.php:418 core/admin/admin-notices.php:505
-#: core/admin/admin-notices.php:604 core/admin/admin-notices.php:724
+#: core/admin/admin-notices.php:604 core/admin/admin-notices.php:766
 #: core/experiments/manager.php:317 core/experiments/manager.php:333
 #: core/experiments/manager.php:363 core/experiments/manager.php:534
 #: includes/controls/url.php:78 includes/elements/section.php:473
@@ -3671,19 +3684,6 @@ msgstr "Skalieren"
 #: assets/js/packages/editor-components/editor-components.strings.js:104
 msgid "Learn more"
 msgstr "Mehr erfahren"
-
-#: core/utils/import-export/wp-import.php:1163
-msgid "The uploaded file could not be moved"
-msgstr "Die hochgeladene Datei konnte nicht verschoben werden"
-
-#. translators: %s: Max file size.
-#: core/utils/import-export/wp-import.php:1115
-msgid "Remote file is too large, limit is %s"
-msgstr "Remote-Datei ist zu groß, Grenze ist %s"
-
-#: core/utils/import-export/wp-import.php:1107
-msgid "Downloaded file has incorrect size"
-msgstr "Die heruntergeladene Datei hat die falsche Größe"
 
 #: core/utils/import-export/wp-import.php:1101
 msgid "Zero size file downloaded"
@@ -4142,13 +4142,6 @@ msgstr "Download"
 msgid "Object Fit"
 msgstr "Objektanpassung"
 
-#: includes/widgets/common-base.php:1139 includes/widgets/image-box.php:411
-#: includes/widgets/image.php:388
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:24
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:155
-msgid "Fill"
-msgstr "Füllen"
-
 #: includes/controls/groups/flex-container.php:24
 #: includes/controls/groups/grid-container.php:26
 #: includes/widgets/icon-list.php:180
@@ -4187,6 +4180,13 @@ msgstr "Vorgeschlagene Bildabmessungen: %1$s × %2$s Pixel."
 #: core/admin/admin.php:971
 msgid "The latest update includes some substantial changes across different areas of the plugin. We highly recommend you %1$sbackup your site before upgrading%2$s, and make sure you first update in a staging environment"
 msgstr "Das neueste Update enthält umfassende Änderungen in verschiedenen Bereichen des Plugins. Wir empfehlen dir dringend, %1$sdeine Website zu sichern, bevor du das Upgrade durchführst%2$s, und das Update zunächst in einer Staging-Umgebung zu testen."
+
+#: includes/widgets/common-base.php:1139 includes/widgets/image-box.php:411
+#: includes/widgets/image.php:388
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:24
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:155
+msgid "Fill"
+msgstr "Ausfüllen"
 
 #: core/common/modules/connect/apps/base-app.php:109
 msgid "Reset Data"
@@ -4773,7 +4773,7 @@ msgstr "Bitte beachten! Das Zulassen von Uploads beliebiger Dateien (SVG und JSO
 msgid "As a beta tester, you’ll receive an update that includes a testing version of Elementor and its content directly to your Email"
 msgstr "Als Beta-Tester erhältst du ein Update, das eine Testversion von Elementor und deren Inhalt direkt an deine E-Mail-Adresse gesendet"
 
-#: core/files/file-types/svg.php:73 core/files/uploads-manager.php:590
+#: core/files/file-types/svg.php:73 core/files/uploads-manager.php:660
 msgid "This file is not allowed for security reasons."
 msgstr "Diese Datei ist aus Sicherheitsgründen nicht erlaubt."
 
@@ -6321,7 +6321,7 @@ msgstr "Versionskontrolle"
 
 #: includes/rollback.php:165 includes/settings/tools.php:195
 #: includes/settings/tools.php:390 assets/js/admin-feedback.strings.js:14
-#: assets/js/admin-modules.strings.js:14 assets/js/admin.js:4206
+#: assets/js/admin-modules.strings.js:14 assets/js/admin.js:4204
 #: assets/js/admin.strings.js:14 assets/js/gutenberg.strings.js:14
 msgid "Rollback to Previous Version"
 msgstr "Frühere Version wiederherstellen"
@@ -7879,8 +7879,8 @@ msgstr "Hilfe"
 #: includes/editor-templates/templates.php:469
 #: includes/editor-templates/templates.php:481
 #: includes/editor-templates/templates.php:556
-#: includes/editor-templates/templates.php:568 assets/js/e-home-screen.js:2168
-#: assets/js/e-home-screen.js:3210 assets/js/e-home-screen.strings.js:6
+#: includes/editor-templates/templates.php:568 assets/js/e-home-screen.js:2161
+#: assets/js/e-home-screen.js:3203 assets/js/e-home-screen.strings.js:8
 #: assets/js/e-home-screen.strings.js:14 assets/js/editor.js:8567
 #: assets/js/editor.js:46933 assets/js/element-manager-admin.js:411
 #: assets/js/element-manager-admin.js:2366
@@ -9731,15 +9731,6 @@ msgstr "Bild-Overlay"
 msgid "Image Position"
 msgstr "Bildposition"
 
-#: includes/widgets/counter.php:155
-msgid "Number Prefix"
-msgstr "Präfix der Zahl"
-
-#: includes/widgets/alert.php:46 includes/widgets/alert.php:111
-#: includes/widgets/alert.php:210
-msgid "Alert"
-msgstr "Warnmeldung"
-
 #: includes/base/element-base.php:1402
 #: includes/controls/groups/grid-container.php:34
 #: includes/widgets/alert.php:164 includes/widgets/audio.php:162
@@ -9765,6 +9756,15 @@ msgstr "Warnmeldung"
 #: assets/js/packages/editor-controls/editor-controls.strings.js:275
 msgid "Hide"
 msgstr "Ausblenden"
+
+#: includes/widgets/counter.php:155
+msgid "Number Prefix"
+msgstr "Präfix der Zahl"
+
+#: includes/widgets/alert.php:46 includes/widgets/alert.php:111
+#: includes/widgets/alert.php:210
+msgid "Alert"
+msgstr "Warnmeldung"
 
 #: core/common/modules/finder/categories/general.php:55
 #: modules/system-info/admin-menu-items/editor-one-system-info-menu.php:29
