@@ -4,6 +4,7 @@ import { __ } from '@wordpress/i18n';
 const Save = ( { attributes } ) => {
 	const blockProps = useBlockProps.save();
 	const { id, name, options, defaultValue, label, showLabel, multiple, required } = attributes;
+	const normalizedDefaultValue = options.includes( defaultValue ) ? defaultValue : ( options[0] || '' );
 
 	return <>
 		{ showLabel && <label htmlFor={ id }>
@@ -19,7 +20,7 @@ const Save = ( { attributes } ) => {
 			id={ id }
 			required={ !! required }
 			multiple={ !! multiple }
-			defaultValue={ defaultValue }
+			defaultValue={ normalizedDefaultValue }
 			{ ...blockProps }
 		>
 			{ options.map( ( option, index ) => <option key={ index } value={ option }>{ option }</option> ) }
