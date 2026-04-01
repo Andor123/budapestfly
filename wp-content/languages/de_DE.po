@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 6.9.x package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-03-30 22:23:40+0000\n"
+"PO-Revision-Date: 2026-03-31 20:05:41+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1683,16 +1683,6 @@ msgid "Details"
 msgstr "Details"
 
 #: wp-includes/blocks/details/block.json
-msgctxt "block description"
-msgid "Hide and show additional content."
-msgstr "Zusätzliche Inhalte verbergen und anzeigen."
-
-#: wp-includes/blocks/details/block.json
-msgctxt "block keyword"
-msgid "disclosure"
-msgstr "Offenlegung"
-
-#: wp-includes/blocks/details/block.json
 msgctxt "block keyword"
 msgid "summary"
 msgstr "Zusammenfassung"
@@ -1726,11 +1716,6 @@ msgstr "Titel"
 #: wp-admin/includes/class-wp-posts-list-table.php:1573
 msgid "Export as JSON"
 msgstr "Als JSON exportieren"
-
-#: wp-includes/blocks/details/block.json
-msgctxt "block keyword"
-msgid "toggle"
-msgstr "umschalten"
 
 #: wp-includes/blocks/post-author/block.json
 msgctxt "block title"
@@ -1921,6 +1906,21 @@ msgstr "Zeigt die erforderliche Lesedauer des Beitrags in Minuten an. Es kann au
 msgctxt "block description"
 msgid "Display a list of your most recent posts."
 msgstr "Zeigt eine Liste der neuesten Beiträge an."
+
+#: wp-includes/blocks/details/block.json
+msgctxt "block description"
+msgid "Hide and show additional content."
+msgstr "Zusätzliche Inhalte ein- und ausblenden."
+
+#: wp-includes/blocks/details/block.json
+msgctxt "block keyword"
+msgid "toggle"
+msgstr "umschalten, aufklappen, einklappen, verstecken, einblenden, ausblenden"
+
+#: wp-includes/blocks/details/block.json
+msgctxt "block keyword"
+msgid "disclosure"
+msgstr "Spoiler"
 
 #: wp-includes/js/dist/block-library.js:51914
 #: wp-admin/includes/class-plugin-installer-skin.php:223
@@ -3271,10 +3271,6 @@ msgstr "%1$s &lsaquo; %2$s &#8211; WordPress"
 msgid "Add a navigation menu to your sidebar."
 msgstr "Der Seitenleiste ein Navigationsmenü hinzufügen."
 
-#: wp-includes/user.php:4692
-msgid "Action has been confirmed."
-msgstr "Aktion wurde bestätigt."
-
 #. translators: Do not translate DESCRIPTION, CONFIRM_URL, SITENAME, SITEURL:
 #. those are placeholders.
 #: wp-includes/user.php:4894
@@ -3309,6 +3305,10 @@ msgstr ""
 "Viele Grüße\n"
 "Alle von ###SITENAME###\n"
 "###SITEURL###"
+
+#: wp-includes/user.php:4692
+msgid "Action has been confirmed."
+msgstr "Aktion wurde bestätigt."
 
 #: wp-includes/user.php:4693
 msgid "The site administrator has been notified and will fulfill your request as soon as possible."
@@ -3454,6 +3454,22 @@ msgstr ""
 "Alle von ###SITENAME###\n"
 "###SITEURL###"
 
+#: wp-includes/user.php:4697
+msgid "Thanks for confirming your export request."
+msgstr "Danke für das Bestätigen deiner Export-Anfrage."
+
+#: wp-includes/user.php:4698
+msgid "The site administrator has been notified. You will receive a link to download your export via email when they fulfill your request."
+msgstr "Der Website-Administrator wurde benachrichtigt. Du erhältst einen Link zum Herunterladen deines Exports per E-Mail, wenn er deine Anfrage beantwortet."
+
+#: wp-includes/user.php:4700
+msgid "Thanks for confirming your erasure request."
+msgstr "Danke für das Bestätigen deiner Lösch-Anfrage."
+
+#: wp-includes/user.php:4701
+msgid "The site administrator has been notified. You will receive an email confirmation when they erase your data."
+msgstr "Der Website-Administrator wurde benachrichtigt. Wenn die Daten gelöscht werden, erhältst du eine Bestätigung per E-Mail."
+
 #. translators: Do not translate SITENAME, SITEURL, PRIVACY_POLICY_URL; those
 #. are placeholders.
 #: wp-includes/user.php:4525
@@ -3481,22 +3497,6 @@ msgstr ""
 "Viele Grüße\n"
 "Alle von ###SITENAME###\n"
 "###SITEURL###"
-
-#: wp-includes/user.php:4697
-msgid "Thanks for confirming your export request."
-msgstr "Danke für das Bestätigen deiner Export-Anfrage."
-
-#: wp-includes/user.php:4698
-msgid "The site administrator has been notified. You will receive a link to download your export via email when they fulfill your request."
-msgstr "Der Website-Administrator wurde benachrichtigt. Du erhältst einen Link zum Herunterladen deines Exports per E-Mail, wenn er deine Anfrage beantwortet."
-
-#: wp-includes/user.php:4700
-msgid "Thanks for confirming your erasure request."
-msgstr "Danke für das Bestätigen deiner Lösch-Anfrage."
-
-#: wp-includes/user.php:4701
-msgid "The site administrator has been notified. You will receive an email confirmation when they erase your data."
-msgstr "Der Website-Administrator wurde benachrichtigt. Wenn die Daten gelöscht werden, erhältst du eine Bestätigung per E-Mail."
 
 #. translators: Privacy data request confirmed notification email subject. 1:
 #. Site title, 2: Name of the confirmed action.
@@ -10568,26 +10568,6 @@ msgstr "%1$s ist nicht vom Typ %2$s."
 msgid "%s is not a valid IP address."
 msgstr "%s ist keine gültige IP-Adresse."
 
-#. translators: 1: Parameter, 2: Minimum number, 3: Maximum number.
-#: wp-includes/rest-api.php:2609
-msgid "%1$s must be between %2$d (exclusive) and %3$d (exclusive)"
-msgstr "%1$s muss zwischen %2$d (exklusiv) und %3$d (exklusive) liegen"
-
-#. translators: 1: Parameter, 2: Minimum number, 3: Maximum number.
-#: wp-includes/rest-api.php:2639
-msgid "%1$s must be between %2$d (inclusive) and %3$d (exclusive)"
-msgstr "%1$s muss zwischen %2$d (inklusiv) und %3$d (exklusiv) liegen"
-
-#. translators: 1: Parameter, 2: Minimum number, 3: Maximum number.
-#: wp-includes/rest-api.php:2624
-msgid "%1$s must be between %2$d (exclusive) and %3$d (inclusive)"
-msgstr "%1$s muss zwischen %2$d (exklusiv) und %3$d (inklusiv) liegen"
-
-#. translators: 1: Parameter, 2: Minimum number, 3: Maximum number.
-#: wp-includes/rest-api.php:2654
-msgid "%1$s must be between %2$d (inclusive) and %3$d (inclusive)"
-msgstr "%1$s muss zwischen %2$d (inklusiv) und %3$d (inklusiv) liegen"
-
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:741
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:959
 msgid "Comment field exceeds maximum length allowed."
@@ -10854,6 +10834,41 @@ msgstr "Die Scrape-Nonce-Prüfung ist fehlgeschlagen. Bitte versuche es erneut."
 msgid "User cannot be added to this site."
 msgstr "Benutzer kann nicht zu dieser Website hinzugefügt werden."
 
+#. translators: Do not translate OLD_EMAIL, NEW_EMAIL, SITENAME, SITEURL: those
+#. are placeholders.
+#: wp-includes/ms-functions.php:2895
+msgid ""
+"Hi,\n"
+"\n"
+"This notice confirms that the network admin email address was changed on ###SITENAME###.\n"
+"\n"
+"The new network admin email address is ###NEW_EMAIL###.\n"
+"\n"
+"This email has been sent to ###OLD_EMAIL###\n"
+"\n"
+"Regards,\n"
+"All at ###SITENAME###\n"
+"###SITEURL###"
+msgstr ""
+"Hallo,\n"
+" \n"
+"diese Mitteilung bestätigt, dass die E-Mail-Adresse des Netzwerkadministrators auf ###SITENAME### geändert wurde.\n"
+" \n"
+"Die neue E-Mail-Adresse des Netzwerkadministrators lautet ###NEW_EMAIL###.\n"
+" \n"
+"Diese E-Mail wurde an ###OLD_EMAIL### versandt.\n"
+" \n"
+"Viele Grüße\n"
+"Alle von ###SITENAME###\n"
+"###SITEURL###"
+
+#. translators: 1: Trackback/pingback website name, 2: Website IP address, 3:
+#. Website hostname.
+#: wp-includes/pluggable.php:1875 wp-includes/pluggable.php:1889
+#: wp-includes/pluggable.php:2082 wp-includes/pluggable.php:2093
+msgid "Website: %1$s (IP address: %2$s, %3$s)"
+msgstr "Website: %1$s (IP-Adresse: %2$s, %3$s)"
+
 #. translators: Do not translate USERNAME, ADMIN_URL, EMAIL, SITENAME, SITEURL:
 #. those are placeholders.
 #: wp-includes/ms-functions.php:2796
@@ -10889,41 +10904,6 @@ msgstr ""
 "Viele Grüße\n"
 "Alle von ###SITENAME###\n"
 "###SITEURL###"
-
-#. translators: Do not translate OLD_EMAIL, NEW_EMAIL, SITENAME, SITEURL: those
-#. are placeholders.
-#: wp-includes/ms-functions.php:2895
-msgid ""
-"Hi,\n"
-"\n"
-"This notice confirms that the network admin email address was changed on ###SITENAME###.\n"
-"\n"
-"The new network admin email address is ###NEW_EMAIL###.\n"
-"\n"
-"This email has been sent to ###OLD_EMAIL###\n"
-"\n"
-"Regards,\n"
-"All at ###SITENAME###\n"
-"###SITEURL###"
-msgstr ""
-"Hallo,\n"
-" \n"
-"diese Mitteilung bestätigt, dass die E-Mail-Adresse des Netzwerkadministrators auf ###SITENAME### geändert wurde.\n"
-" \n"
-"Die neue E-Mail-Adresse des Netzwerkadministrators lautet ###NEW_EMAIL###.\n"
-" \n"
-"Diese E-Mail wurde an ###OLD_EMAIL### versandt.\n"
-" \n"
-"Viele Grüße\n"
-"Alle von ###SITENAME###\n"
-"###SITEURL###"
-
-#. translators: 1: Trackback/pingback website name, 2: Website IP address, 3:
-#. Website hostname.
-#: wp-includes/pluggable.php:1875 wp-includes/pluggable.php:1889
-#: wp-includes/pluggable.php:2082 wp-includes/pluggable.php:2093
-msgid "Website: %1$s (IP address: %2$s, %3$s)"
-msgstr "Website: %1$s (IP-Adresse: %2$s, %3$s)"
 
 #. translators: 1: Note author's name, 2: Note author's IP address, 3: Note
 #. author's hostname.
@@ -11368,10 +11348,6 @@ msgstr "Beiträge"
 #: wp-includes/formatting.php:5088
 msgid "https://wordpress.org/documentation/article/customize-permalinks/#choosing-your-permalink-structure"
 msgstr "https://wordpress.org/documentation/article/customize-permalinks/#choosing-your-permalink-structure"
-
-#: wp-includes/nav-menu.php:97
-msgid "Nav menu locations must be strings."
-msgstr "Navigations-Menüpositionen müssen aus Zeichenfolgen bestehen."
 
 #. translators: Hidden accessibility text.
 #: wp-includes/media-template.php:327 wp-includes/js/dist/block-editor.js:56191
@@ -12536,10 +12512,6 @@ msgstr "In dieses Navigationsmenü hochgeladen"
 msgid "Filter Navigation Menu list"
 msgstr "Navigationsmenü-Liste filtern"
 
-#: wp-includes/post.php:560
-msgid "Navigation Menus list navigation"
-msgstr "Navigation der Navigationsmenüs-Liste"
-
 #: wp-includes/post.php:561
 msgid "Navigation Menus list"
 msgstr "Liste der Navigationsmenüs"
@@ -12946,11 +12918,6 @@ msgstr "Die Klasse %1$s ist seit der Version %2$s <strong>veraltet</strong> ohn
 #: wp-includes/functions.php:9067
 msgid "The %s key must be a string without spaces."
 msgstr "Der %s-Schlüssel muss eine Zeichenfolge ohne Leerzeichen sein."
-
-#. translators: %s: WP_HTML_Processor::create_fragment().
-#: wp-includes/html-api/class-wp-html-processor.php:389
-msgid "Call %s to create an HTML Processor instead of calling the constructor directly."
-msgstr "%s aufrufen, um einen HTML-Processor zu erstellen, statt den Constructor direkt aufzurufen."
 
 #: wp-includes/html-api/class-wp-html-processor.php:705
 msgid "Please pass a query array to this function."
@@ -13510,10 +13477,6 @@ msgstr "Beschränkt die Ergebnisse auf Fähigkeiten einer bestimmten Fähigkeits
 msgid "Abilities that perform updates require POST method."
 msgstr "Fähigkeiten, die Updates ausführen, erfordern die POST-Methode."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-abilities-v1-run-controller.php:124
-msgid "Read-only abilities require GET method."
-msgstr "Abfragefähigkeiten erfordern die GET-Methode."
-
 #: wp-includes/rest-api/endpoints/class-wp-rest-abilities-v1-run-controller.php:126
 msgid "Abilities that perform destructive actions require DELETE method."
 msgstr "Fähigkeiten, die destruktive Aktionen ausführen, erfordern die DELETE-Methode."
@@ -13629,6 +13592,43 @@ msgstr "erledigt / wieder geöffnet"
 #: wp-includes/formatting.php:5087
 msgid "A structure tag is required when using custom permalinks. <a href=\"%s\">Learn more</a>"
 msgstr "Ein Struktur-Platzhalter ist bei der Verwendung individueller Permalinks erforderlich. <a href=\"%s\">Mehr erfahren (engl.)</a>"
+
+#. translators: 1: Parameter, 2: Minimum number, 3: Maximum number.
+#: wp-includes/rest-api.php:2609
+msgid "%1$s must be between %2$d (exclusive) and %3$d (exclusive)"
+msgstr "%1$s muss zwischen %2$d (ausschließlich) und %3$d (ausschließlich) liegen"
+
+#. translators: 1: Parameter, 2: Minimum number, 3: Maximum number.
+#: wp-includes/rest-api.php:2639
+msgid "%1$s must be between %2$d (inclusive) and %3$d (exclusive)"
+msgstr "%1$s muss zwischen %2$d (einschließlich) und %3$d (ausschließlich) liegen"
+
+#. translators: 1: Parameter, 2: Minimum number, 3: Maximum number.
+#: wp-includes/rest-api.php:2624
+msgid "%1$s must be between %2$d (exclusive) and %3$d (inclusive)"
+msgstr "%1$s muss zwischen %2$d (ausschließlich) und %3$d (einschließlich) liegen"
+
+#. translators: 1: Parameter, 2: Minimum number, 3: Maximum number.
+#: wp-includes/rest-api.php:2654
+msgid "%1$s must be between %2$d (inclusive) and %3$d (inclusive)"
+msgstr "%1$s muss zwischen %2$d (einschließlich) und %3$d (einschließlich) liegen"
+
+#: wp-includes/post.php:560
+msgid "Navigation Menus list navigation"
+msgstr "Navigation der Navigationsmenü-Liste"
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-abilities-v1-run-controller.php:124
+msgid "Read-only abilities require GET method."
+msgstr "Schreibgeschützte Fähigkeiten erfordern die GET-Methode."
+
+#. translators: %s: WP_HTML_Processor::create_fragment().
+#: wp-includes/html-api/class-wp-html-processor.php:389
+msgid "Call %s to create an HTML Processor instead of calling the constructor directly."
+msgstr "%s aufrufen, um einen HTML-Processor zu erstellen, statt den Konstruktor direkt aufzurufen."
+
+#: wp-includes/nav-menu.php:97
+msgid "Nav menu locations must be strings."
+msgstr "Die Positionen für Navigationsmenüs müssen aus Zeichenfolgen bestehen."
 
 #: wp-includes/class-wp-post-type.php:999
 #: wp-includes/js/dist/block-library.js:25843
@@ -14219,12 +14219,6 @@ msgstr "Kategorie bearbeiten"
 #: wp-includes/deprecated.php:2699 wp-admin/network/settings.php:342
 msgid "First Post"
 msgstr "Erster Beitrag"
-
-#: wp-includes/class-wp-customize-manager.php:5152
-#: wp-includes/class-wp-xmlrpc-server.php:599 wp-admin/install.php:113
-#: wp-admin/options-general.php:76 wp-admin/network/site-new.php:237
-msgid "Site Title"
-msgstr "Titel der Website"
 
 #: wp-includes/comment-template.php:2551 wp-login.php:1174
 #: wp-includes/js/dist/block-library.js:17387
@@ -16966,10 +16960,6 @@ msgstr "Unter %s"
 msgid "Out from under %s"
 msgstr "Heraus von unterhalb %s"
 
-#: wp-includes/class-wp-customize-nav-menus.php:661
-msgid "This panel is used for managing navigation menus for content you have already published on your site. You can create menus and add items for existing content such as pages, posts, categories, tags, formats, or custom links."
-msgstr "In diesem Bereich werden Navigations-Menüs für Inhalte verwaltet, die du bereits auf deiner Website veröffentlicht hast. Du kannst Menüs erstellen und Einträge für existierende Inhalte wie Seiten, Beiträge, Kategorien, Schlagwörter, Formate oder individuelle Links hinzufügen."
-
 #. translators: %s: Number of menu locations.
 #: wp-includes/class-wp-customize-nav-menus.php:697
 msgid "Your theme can display menus in %s location. Select which menu you would like to use."
@@ -17099,11 +17089,6 @@ msgstr "Sortiermodus aktiviert"
 #: wp-includes/class-wp-customize-widgets.php:816
 msgid "Reorder mode closed"
 msgstr "Sortiermodus beendet"
-
-#. translators: %s: URL to the Widgets panel of the Customizer.
-#: wp-includes/class-wp-customize-nav-menus.php:665
-msgid "Menus can be displayed in locations defined by your theme or in <a href=\"%s\">widget areas</a> by adding a &#8220;Navigation Menu&#8221; widget."
-msgstr "Menüs können an Positionen angezeigt werden, die von deinem Theme festgelegt wurden oder in den <a href=\"%s\">Widget-Bereichen</a> durch Hinzufügen eines &#8222;Navigations-Menü&#8220;-Widgets."
 
 #: wp-includes/class-wp-customize-nav-menus.php:669
 msgid "Menus can be displayed in locations defined by your theme."
@@ -18321,6 +18306,10 @@ msgstr "WordPress.org-Themes"
 msgid "Homepage Settings"
 msgstr "Homepage-Einstellungen"
 
+#: wp-includes/class-wp-customize-manager.php:5642
+msgid "You can choose what&#8217;s displayed on the homepage of your site. It can be posts in reverse chronological order (classic blog), or a fixed/static page. To set a static homepage, you first need to create two Pages. One will become the homepage, and the other will be where your posts are displayed."
+msgstr "Du kannst auswählen, was auf der Homepage deiner Website angezeigt wird. Das können Beiträge in umgekehrter chronologischer Reihenfolge (klassischer Blog) oder eine feststehende/statische Seite sein. Um eine statische Homepage festzulegen, musst du erst zwei Seiten erstellen. Eine wird die Homepage und die andere wird die, auf der deine Beiträge angezeigt werden."
+
 #: wp-includes/class-wp-customize-manager.php:5659
 #: wp-admin/options-reading.php:85
 msgid "Your homepage displays"
@@ -18347,10 +18336,6 @@ msgstr "Im Bearbeitungsbereich fügt die Tab-Taste ein Tab-Zeichen ein."
 #: wp-admin/plugin-editor.php:147 wp-admin/theme-editor.php:36
 msgid "To move away from this area, press the Esc key followed by the Tab key."
 msgstr "Zum Verlassen dieses Bereichs drücke die Escape-Taste und dann die Tab-Taste."
-
-#: wp-includes/class-wp-customize-manager.php:5642
-msgid "You can choose what&#8217;s displayed on the homepage of your site. It can be posts in reverse chronological order (classic blog), or a fixed/static page. To set a static homepage, you first need to create two Pages. One will become the homepage, and the other will be where your posts are displayed."
-msgstr "Du kannst auswählen, was auf der Homepage deiner Website angezeigt wird. Das können Beiträge in umgekehrter chronologischer Reihenfolge (klassischer Blog) oder eine feststehende/statische Seite sein. Um eine statische Homepage festzulegen, musst du erst zwei Seiten erstellen. Eine wird die Homepage und die andere wird die, auf der deine Beiträge angezeigt werden."
 
 #: wp-includes/class-wp-customize-manager.php:5721
 #: wp-includes/widgets/class-wp-widget-custom-html.php:328
@@ -18383,11 +18368,6 @@ msgstr[1] "Dein Theme kann Menüs an %s Positionen anzeigen."
 #: wp-includes/class-wp-customize-nav-menus.php:520
 msgid "If your theme has multiple menus, giving them clear names will help you manage them."
 msgstr "Hat dein Theme mehrere Menüs, dann kann es hilfreich sein, wenn du ihnen eindeutige Namen gibst."
-
-#. translators: URL to the Widgets panel of the Customizer.
-#: wp-includes/class-wp-customize-nav-menus.php:702
-msgid "If your theme has widget areas, you can also add menus there. Visit the <a href=\"%s\">Widgets panel</a> and add a &#8220;Navigation Menu widget&#8221; to display a menu in a sidebar or footer."
-msgstr "Falls dein Theme Widget-Bereiche hat, kannst du dort auch Menüs hinzufügen. Gehe zum <a href=\"%s\">Widget-Bereich</a> und füge ein &#8222;Navigations-Menü&#8220;-Widget hinzu, um ein Menü in einer Seitenleiste oder im Footer anzuzeigen."
 
 #: wp-includes/class-wp-customize-nav-menus.php:854
 msgid "New Menu"
@@ -18899,16 +18879,6 @@ msgstr "Bei einem nicht geschützten Endpunkt ist ein Fehler aufgetreten."
 msgid "Please contact your host for assistance with investigating this issue further."
 msgstr "Bitte kontaktiere dein Hosting-Unternehmen, um Unterstützung bei der weiteren Untersuchung dieses Problems zu erhalten."
 
-#. translators: %s: Plugin name.
-#: wp-includes/class-wp-recovery-mode-email-service.php:280
-msgid "In this case, WordPress caught an error with one of your plugins, %s."
-msgstr "In diesem Fall hat WordPress einen Fehler in einem deiner Plugins, %s, abgefangen."
-
-#. translators: %s: Theme name.
-#: wp-includes/class-wp-recovery-mode-email-service.php:286
-msgid "In this case, WordPress caught an error with your theme, %s."
-msgstr "In diesem Fall hat WordPress einen Fehler in deinem Theme „%s“ abgefangen."
-
 #. translators: Do not translate LINK, EXPIRES, CAUSE, DETAILS, SITEURL,
 #. PAGEURL, SUPPORT. DEBUG: those are placeholders.
 #: wp-includes/class-wp-recovery-mode-email-service.php:153
@@ -18950,6 +18920,16 @@ msgstr ""
 "###DEBUG###\n"
 "\n"
 "###DETAILS###"
+
+#. translators: %s: Plugin name.
+#: wp-includes/class-wp-recovery-mode-email-service.php:280
+msgid "In this case, WordPress caught an error with one of your plugins, %s."
+msgstr "In diesem Fall hat WordPress einen Fehler in einem deiner Plugins, %s, abgefangen."
+
+#. translators: %s: Theme name.
+#: wp-includes/class-wp-recovery-mode-email-service.php:286
+msgid "In this case, WordPress caught an error with your theme, %s."
+msgstr "In diesem Fall hat WordPress einen Fehler in deinem Theme „%s“ abgefangen."
 
 #: wp-includes/customize/class-wp-customize-theme-control.php:98
 #: wp-admin/themes.php:450 wp-admin/themes.php:848
@@ -19141,6 +19121,27 @@ msgstr "<a href=\"%1$s\">Bitte aktualisiere WordPress</a> und dann <a href=\"%2$
 msgid "<a href=\"%s\">Please update WordPress</a>."
 msgstr "<a href=\"%s\">Bitte aktualisiere WordPress</a>."
 
+#: wp-includes/customize/class-wp-customize-theme-control.php:209
+#: wp-admin/includes/theme.php:1013 wp-admin/theme-install.php:366
+#: wp-admin/theme-install.php:571 wp-admin/themes.php:554
+#: wp-admin/themes.php:949 wp-admin/themes.php:1129
+msgid "This theme does not work with your version of WordPress."
+msgstr "Dieses Theme funktioniert nicht mit deiner WordPress-Version."
+
+#: wp-includes/customize/class-wp-customize-theme-control.php:220
+#: wp-admin/includes/theme.php:1024 wp-admin/theme-install.php:377
+#: wp-admin/theme-install.php:582 wp-admin/themes.php:563
+#: wp-admin/themes.php:960 wp-admin/themes.php:1140
+msgid "This theme does not work with your version of PHP."
+msgstr "Dieses Theme funktioniert nicht mit deiner PHP-Version."
+
+#. translators: %s: Theme name.
+#: wp-includes/customize/class-wp-customize-theme-control.php:116
+#: wp-admin/includes/theme.php:908 wp-admin/includes/update.php:766
+#: wp-admin/themes.php:464 wp-admin/themes.php:857 wp-admin/themes.php:1168
+msgid "There is a new version of %s available, but it does not work with your versions of WordPress and PHP."
+msgstr "Es gibt eine neue Version von %s, aber sie funktioniert nicht mit deiner PHP- und WordPress-Version."
+
 #. translators: %s: URL to Update PHP page.
 #: wp-includes/customize/class-wp-customize-theme-control.php:136
 #: wp-includes/customize/class-wp-customize-theme-control.php:167
@@ -19166,27 +19167,6 @@ msgstr "<a href=\"%s\">Bitte aktualisiere WordPress</a>."
 #: wp-admin/upgrade.php:106
 msgid "<a href=\"%s\">Learn more about updating PHP</a>."
 msgstr "<a href=\"%s\">Erfahre mehr über die PHP-Aktualisierung (engl.)</a>."
-
-#: wp-includes/customize/class-wp-customize-theme-control.php:209
-#: wp-admin/includes/theme.php:1013 wp-admin/theme-install.php:366
-#: wp-admin/theme-install.php:571 wp-admin/themes.php:554
-#: wp-admin/themes.php:949 wp-admin/themes.php:1129
-msgid "This theme does not work with your version of WordPress."
-msgstr "Dieses Theme funktioniert nicht mit deiner WordPress-Version."
-
-#: wp-includes/customize/class-wp-customize-theme-control.php:220
-#: wp-admin/includes/theme.php:1024 wp-admin/theme-install.php:377
-#: wp-admin/theme-install.php:582 wp-admin/themes.php:563
-#: wp-admin/themes.php:960 wp-admin/themes.php:1140
-msgid "This theme does not work with your version of PHP."
-msgstr "Dieses Theme funktioniert nicht mit deiner PHP-Version."
-
-#. translators: %s: Theme name.
-#: wp-includes/customize/class-wp-customize-theme-control.php:116
-#: wp-admin/includes/theme.php:908 wp-admin/includes/update.php:766
-#: wp-admin/themes.php:464 wp-admin/themes.php:857 wp-admin/themes.php:1168
-msgid "There is a new version of %s available, but it does not work with your versions of WordPress and PHP."
-msgstr "Es gibt eine neue Version von %s, aber sie funktioniert nicht mit deiner PHP- und WordPress-Version."
 
 #. translators: %s: Theme name.
 #: wp-includes/customize/class-wp-customize-theme-control.php:146
@@ -20073,6 +20053,26 @@ msgstr "Ob eine oEmbed-Discovery-Anfrage für nicht autorisierte Anbieter durchg
 #: wp-includes/class-wp-xmlrpc-server.php:604
 msgid "Site Tagline"
 msgstr "Website-Untertitel"
+
+#. translators: URL to the Widgets panel of the Customizer.
+#: wp-includes/class-wp-customize-nav-menus.php:702
+msgid "If your theme has widget areas, you can also add menus there. Visit the <a href=\"%s\">Widgets panel</a> and add a &#8220;Navigation Menu widget&#8221; to display a menu in a sidebar or footer."
+msgstr "Falls dein Theme Widget-Bereiche hat, kannst du dort auch Menüs hinzufügen. Gehe zum <a href=\"%s\">Widget-Bereich</a> und füge ein &#8222;Navigationsmenü&#8220;-Widget hinzu, um ein Menü in einer Seitenleiste oder im Footer anzuzeigen."
+
+#. translators: %s: URL to the Widgets panel of the Customizer.
+#: wp-includes/class-wp-customize-nav-menus.php:665
+msgid "Menus can be displayed in locations defined by your theme or in <a href=\"%s\">widget areas</a> by adding a &#8220;Navigation Menu&#8221; widget."
+msgstr "Menüs können an Positionen angezeigt werden, die von deinem Theme festgelegt wurden oder in den <a href=\"%s\">Widget-Bereichen</a> durch Hinzufügen eines &#8222;Navigationsmenü&#8220;-Widgets."
+
+#: wp-includes/class-wp-customize-nav-menus.php:661
+msgid "This panel is used for managing navigation menus for content you have already published on your site. You can create menus and add items for existing content such as pages, posts, categories, tags, formats, or custom links."
+msgstr "In diesem Bereich werden Navigationsmenüs für Inhalte verwaltet, die du bereits auf deiner Website veröffentlicht hast. Du kannst Menüs erstellen und Einträge für existierende Inhalte wie Seiten, Beiträge, Kategorien, Schlagwörter, Formate oder individuelle Links hinzufügen."
+
+#: wp-includes/class-wp-customize-manager.php:5152
+#: wp-includes/class-wp-xmlrpc-server.php:599 wp-admin/install.php:113
+#: wp-admin/options-general.php:76 wp-admin/network/site-new.php:237
+msgid "Site Title"
+msgstr "Website-Titel"
 
 #: wp-activate.php:126
 msgid "Activation Key Required"
@@ -21103,12 +21103,6 @@ msgstr "Blocktyp „%s“ ist bereits registriert."
 msgid "Block type \"%s\" is not registered."
 msgstr "Blocktyp „%s“ ist nicht registriert."
 
-#. translators: %s: human-readable time difference.
-#. translators: %s: Duration.
-#: wp-includes/blocks/post-date.php:65 wp-includes/script-loader.php:435
-msgid "%s from now"
-msgstr "%s ab jetzt"
-
 #: wp-includes/blocks/query-pagination.php:26
 #: wp-includes/js/dist/edit-site.js:22690
 #: wp-admin/includes/class-wp-screen.php:1280
@@ -21982,13 +21976,13 @@ msgstr "Zeigt ein Archiv für Beiträge eines einzelnen Autors an. Dieses Templa
 msgid "Displays a post category archive. This template will serve as a fallback when a more specific template (e.g. Category: Recipes) cannot be found."
 msgstr "Zeigt ein Archiv für eine Beitragskategorie an. Dieses Template wird als Fallback ausgeliefert, wenn kein spezifischeres Template (z. B. Kategorie: Rezepte) gefunden werden kann."
 
-#: wp-includes/block-template-utils.php:185
-msgid "Displays a post archive when a specific date is visited (e.g., example.com/2023/)."
-msgstr "Zeigt ein Beitragsarchiv an, wenn ein spezifisches Datum angegeben ist (z. B. example.com/2023/)."
-
 #: wp-includes/block-template-utils.php:181
 msgid "Displays a custom taxonomy archive. Like categories and tags, taxonomies have terms which you use to classify things. For example: a taxonomy named \"Art\" can have multiple terms, such as \"Modern\" and \"18th Century.\" This template will serve as a fallback when a more specific template (e.g. Taxonomy: Art) cannot be found."
 msgstr "Zeigt ein Archiv für eine individuelle Taxonomie an. Wie Kategorien und Schlagwörter haben Taxonomien Begriffe, die du benutzt, um Dinge zu klassifizieren. Zum Beispiel: Eine Taxonomie namens „Kunst“ kann mehrere Begriffe beinhalten, wie „Modern“ und „18. Jahrhundert“. Dieses Template wird als Fallback ausgeliefert, wenn kein spezifischeres Template (z. B. Taxonomie: Kunst) gefunden werden kann."
+
+#: wp-includes/block-template-utils.php:185
+msgid "Displays a post archive when a specific date is visited (e.g., example.com/2023/)."
+msgstr "Zeigt ein Beitragsarchiv an, wenn ein spezifisches Datum angegeben ist (z. B. example.com/2023/)."
 
 #: wp-includes/block-template-utils.php:189
 msgid "Displays a post tag archive. This template will serve as a fallback when a more specific template (e.g. Tag: Pizza) cannot be found."
@@ -22920,3 +22914,9 @@ msgstr "Yelp"
 msgctxt "social link block variation name"
 msgid "YouTube"
 msgstr "YouTube"
+
+#. translators: %s: human-readable time difference.
+#. translators: %s: Duration.
+#: wp-includes/blocks/post-date.php:65 wp-includes/script-loader.php:435
+msgid "%s from now"
+msgstr "in %s"
