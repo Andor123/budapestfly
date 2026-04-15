@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Elementor Website Builder &#8211; more than just a page builder - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-04-01 02:17:56+0000\n"
+"PO-Revision-Date: 2026-04-15 05:15:09+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -37,7 +37,7 @@ msgstr "Atomic 클래스"
 msgid "Atomic Variables"
 msgstr "Atomic 변수"
 
-#: modules/components/module.php:131
+#: modules/components/module.php:132
 msgid "You do not have permission to edit component source."
 msgstr "구성 요소 소스 코드를 편집할 권한이 없습니다."
 
@@ -355,25 +355,17 @@ msgstr "Elementor %1$s JSON 파일 또는 Elementor %2$s의 .zip 아카이브를
 msgid "Feedback submitted successfully."
 msgstr "피드백이 성공적으로 제출되었습니다."
 
-#: modules/components/components-rest-api.php:558
+#: modules/components/components-rest-api.php:570
 msgid "Failed to archive components"
 msgstr "구성 요소 아카이브에 실패함"
 
-#: modules/components/components-rest-api.php:365
-#: modules/components/components-rest-api.php:612
-#: modules/components/module.php:116
+#: modules/components/components-rest-api.php:377
+#: modules/components/components-rest-api.php:624
+#: modules/components/module.php:117
 #: assets/js/packages/editor-components/editor-components.js:2
 #: assets/js/packages/editor-components/editor-components.strings.js:1
 msgid "Can't add this component - components that contain each other can't be nested."
 msgstr "이 구성 요소를 추가할 수 없음 - 서로를 포함하는 구성 요소는 중첩될 수 없습니다."
-
-#: modules/components/components-rest-api.php:328
-msgid "Component not found"
-msgstr "구성 요소를 찾을 수 없습니다"
-
-#: modules/components/components-rest-api.php:319
-msgid "Invalid component ID"
-msgstr "잘못된 구성 요소 ID"
 
 #. translators: %1$s: Component ID, %2$s: Component ID that creates the cycle.
 #: modules/components/circular-dependency-validator.php:161
@@ -385,11 +377,11 @@ msgstr "순환 종속성이 감지되었습니다. 구성 요소 \"%1$s\"은(는
 msgid "Circular dependency detected: Component \"%s\" references itself."
 msgstr "순환 종속성이 감지되었습니다. 구성 요소 \"%s\"이(가) 자기 자신을 참조합니다."
 
-#: modules/atomic-widgets/module.php:217
+#: modules/atomic-widgets/module.php:221
 msgid "Enable automatic prop type migrations for atomic widgets"
 msgstr "Atomic 위젯에 대한 자동 속성 유형 마이그레이션 활성화"
 
-#: modules/atomic-widgets/module.php:216
+#: modules/atomic-widgets/module.php:220
 msgid "Backward compatibility migrations"
 msgstr "하위 호환성 마이그레이션"
 
@@ -414,8 +406,8 @@ msgstr "편집자간 피드백 제출 기능을 활성화하세요."
 msgid "Component contains non-supported elements: %s. Only atomic elements are allowed inside components."
 msgstr "구성 요소에 지원되지 않는 요소(%s)가 포함되어 있습니다. 구성 요소 내부에는 Atomic 요소만 허용됩니다."
 
-#: modules/components/components-rest-api.php:375
-#: modules/components/components-rest-api.php:622
+#: modules/components/components-rest-api.php:387
+#: modules/components/components-rest-api.php:634
 msgid "Components require atomic elements only. Remove widgets to create this component."
 msgstr "구성 요소는 Atomic 구성 요소만 필요로 합니다. 위젯을 제거하여 이 구성 요소를 생성하세요."
 
@@ -495,10 +487,6 @@ msgstr "사이트 메일러는 ONE 구독에 설치되어 포함되어 있습니
 msgid "Use Site Mailer to ensure store emails like purchase confirmations and shipping updates reach the inbox every time. Included in your ONE subscription."
 msgstr "사이트 메일러를 사용하여 구매 확인 및 배송 업데이트와 같은 스토어 이메일이 매번 받은편지함에 도달하도록 하세요. ONE 구독에 포함되어 있습니다."
 
-#: core/admin/admin-notices.php:558
-msgid "Your ONE subscription includes Ally. Activate it to create your accessibility statement page quickly."
-msgstr "귀하의 ONE 구독에는 Ally가 포함되어 있습니다. 활성화하여 접근성 성명 페이지를 빠르게 생성하세요."
-
 #: core/admin/admin-notices.php:548
 msgid "Make sure your site has an accessibility statement page. Install Ally, included in ONE, to create it in a few clicks."
 msgstr "사이트에 접근성 안내 페이지가 있는지 확인하세요. ONE에 포함된 Ally를 설치하면 몇 번의 클릭으로 생성할 수 있습니다."
@@ -518,6 +506,10 @@ msgstr "추가 기능"
 #: core/admin/admin-notices.php:671
 msgid "Keep your form emails out of the spam folder"
 msgstr "양식 이메일을 스팸 폴더로 가지 않게 하세요"
+
+#: core/admin/admin-notices.php:558
+msgid "Your ONE subscription includes Ally. Activate it to create your accessibility statement page quickly."
+msgstr "귀하의 ONE 구독에는 Ally가 포함되어 있습니다. Ally를 활성화하면 접근성 정책 페이지를 빠르게 만들 수 있습니다."
 
 #: includes/editor-templates/templates.php:656
 msgid "Connect account"
@@ -549,17 +541,17 @@ msgstr "구성 요소 uid '%s'가 중복되었습니다."
 msgid "Component title '%s' is duplicated."
 msgstr "구성 요소 제목 '%s'가 중복되었습니다."
 
-#: modules/components/components-rest-api.php:538
+#: modules/components/components-rest-api.php:550
 msgid "Failed to get lock status"
 msgstr "잠금 상태 가져오기 실패"
 
-#: modules/components/components-rest-api.php:483
-#: modules/components/components-rest-api.php:490
+#: modules/components/components-rest-api.php:495
+#: modules/components/components-rest-api.php:502
 msgid "Failed to unlock component"
 msgstr "구성 요소 잠금 해제 실패"
 
-#: modules/components/components-rest-api.php:457
-#: modules/components/components-rest-api.php:464
+#: modules/components/components-rest-api.php:469
+#: modules/components/components-rest-api.php:476
 msgid "Failed to lock component"
 msgstr "구성 요소 잠금 실패"
 
@@ -655,11 +647,11 @@ msgstr "일괄 작업 실패: 변수 라벨이 이미 존재합니다."
 msgid "Batch operation failed: Reached the maximum number of variables"
 msgstr "일괄 작업 실패: 변수의 최대 개수에 도달하였습니다"
 
-#: modules/atomic-widgets/module.php:208
+#: modules/atomic-widgets/module.php:212
 msgid "Editor MCP for atomic widgets."
 msgstr "Atomic 위젯을 위한 편집기 MCP."
 
-#: modules/atomic-widgets/module.php:207
+#: modules/atomic-widgets/module.php:211
 msgid "Editor MCP for atomic widgets"
 msgstr "Atomic 위젯용 편집기 MCP"
 
@@ -760,14 +752,14 @@ msgstr "이 페이지에 접근할 수 있는 충분한 권한이 없습니다."
 msgid "Show Pro free trial popup on 4th editor visit"
 msgstr "네 번째 편집기 방문 시 Pro 무료 체험 팝업 표시"
 
-#: modules/components/documents/component.php:42
-#: modules/components/module.php:63
+#: modules/components/documents/component.php:45
+#: modules/components/module.php:64
 #: assets/js/packages/editor-components/editor-components.js:2
 #: assets/js/packages/editor-components/editor-components.strings.js:2
 msgid "Components"
 msgstr "구성 요소"
 
-#: modules/components/documents/component.php:38
+#: modules/components/documents/component.php:41
 #: modules/components/widgets/component-instance.php:27
 msgid "Component"
 msgstr "구성 요소"
@@ -826,7 +818,7 @@ msgstr "인덱스 %d에서 잘못된 작업 유형"
 msgid "Invalid operation structure at index %d"
 msgstr "인덱스 %d에서 잘못된 작업 구조"
 
-#: modules/components/module.php:64
+#: modules/components/module.php:65
 msgid "Enable components."
 msgstr "구성 요소를 활성화하세요."
 
@@ -973,11 +965,11 @@ msgstr "클라우드 킷이 인스턴스화되지 않았습니다."
 msgid "Cloud Kits"
 msgstr "클라우드 킷"
 
-#: modules/atomic-widgets/module.php:191
+#: modules/atomic-widgets/module.php:195
 msgid "Enable V4 Indication Popovers"
 msgstr "V4 표시 팝오버 활성화"
 
-#: modules/atomic-widgets/module.php:190
+#: modules/atomic-widgets/module.php:194
 msgid "V4 Indications Popover"
 msgstr "V4 표시 팝오버"
 
@@ -1025,7 +1017,7 @@ msgstr "칠각형"
 #: modules/atomic-widgets/elements/atomic-image/atomic-image.php:85
 #: modules/atomic-widgets/elements/atomic-paragraph/atomic-paragraph.php:108
 #: modules/atomic-widgets/elements/atomic-self-hosted-video/atomic-self-hosted-video.php:171
-#: modules/atomic-widgets/elements/atomic-svg/atomic-svg.php:81
+#: modules/atomic-widgets/elements/atomic-svg/atomic-svg.php:80
 #: modules/atomic-widgets/elements/atomic-tabs/atomic-tabs-content-area/atomic-tabs-content-area.php:70
 #: modules/atomic-widgets/elements/atomic-tabs/atomic-tabs-menu/atomic-tabs-menu.php:74
 #: modules/atomic-widgets/elements/atomic-tabs/atomic-tabs/atomic-tabs.php:95
@@ -1202,11 +1194,11 @@ msgstr "저희는 이용 및 행동 데이터 수집을 포함하기 위해 약�
 msgid "Become a super contributor by helping us understand how you use our service to enhance your experience and improve our product."
 msgstr "저희 서비스를 어떻게 사용하시는지 이해하는 데 도움을 주어 경험을 향상하고 제품을 개선하는 데 기여함으로써 최고 기여자가 되어보세요."
 
-#: modules/atomic-widgets/module.php:199
+#: modules/atomic-widgets/module.php:203
 msgid "Enforce atomic widgets capabilities."
 msgstr "Atomic 위젯 기능을 강제하세요."
 
-#: modules/atomic-widgets/module.php:198
+#: modules/atomic-widgets/module.php:202
 msgid "Enforce atomic widgets capabilities"
 msgstr "Atomic 위젯 기능 강제 적용"
 
@@ -1334,10 +1326,6 @@ msgstr "사이트 템플릿"
 msgid "Not Authorized"
 msgstr "권한 없음"
 
-#: core/admin/admin-notices.php:569
-msgid "Create a more inclusive site experience for all your visitors. With Ally, it's easy to add your statement page in just a few clicks."
-msgstr "모든 방문자를 위한 보다 포용적인 사이트 경험을 만드세요. Ally를 사용하면 단 몇 번의 클릭으로 성명 페이지를 쉽게 추가할 수 있습니다."
-
 #. translators: %d: Maximum allowed items.
 #: modules/global-classes/global-classes-rest-api.php:193
 msgid "Global classes limit exceeded. Maximum allowed: %d"
@@ -1372,16 +1360,12 @@ msgstr "템플릿에 이름을 지정하세요"
 #: modules/atomic-widgets/elements/atomic-heading/atomic-heading.php:120
 #: modules/atomic-widgets/elements/atomic-image/atomic-image.php:82
 #: modules/atomic-widgets/elements/atomic-paragraph/atomic-paragraph.php:102
-#: modules/atomic-widgets/elements/atomic-svg/atomic-svg.php:78
+#: modules/atomic-widgets/elements/atomic-svg/atomic-svg.php:77
 #: modules/atomic-widgets/elements/atomic-youtube/atomic-youtube.php:79
 #: modules/atomic-widgets/elements/div-block/div-block.php:121
 #: modules/atomic-widgets/elements/flexbox/flexbox.php:124
 msgid "Type or paste your URL"
 msgstr "URL을 입력하거나 붙여넣으세요"
-
-#: core/admin/admin-notices.php:594
-msgid "Make sure your site has an accessibility statement page"
-msgstr "사이트에 접근성 성명 페이지가 있는지 확인하세요"
 
 #: modules/cloud-library/connect/cloud-library.php:221
 msgid "Failed to mark preview as failed."
@@ -1409,6 +1393,14 @@ msgstr "변수를 활성화하세요. (이 기능을 사용하려면 Atomic 위�
 #: assets/js/packages/unlock-v4-promo/unlock-v4-promo.strings.js:3
 msgid "Atomic Elements"
 msgstr "Atomic 요소"
+
+#: core/admin/admin-notices.php:594
+msgid "Make sure your site has an accessibility statement page"
+msgstr "웹사이트에 접근성 정책 페이지가 있는지 확인하세요"
+
+#: core/admin/admin-notices.php:569
+msgid "Create a more inclusive site experience for all your visitors. With Ally, it's easy to add your statement page in just a few clicks."
+msgstr "모든 방문자를 위한 더욱 포용적인 사이트 환경을 조성하세요. Ally를 사용하면 몇 번의 클릭만으로 정책 페이지를 간편하게 추가할 수 있습니다."
 
 #. translators: %1$s Link open tag, %2$s: Link close tag.
 #: modules/floating-buttons/module.php:352 modules/landing-pages/module.php:206
@@ -1896,11 +1888,11 @@ msgstr "죄송합니다, 페이지에서 내용 영역을 찾을 수 없습니�
 msgid "Personalize the way Elementor works on your website by choosing the advanced features and how they operate."
 msgstr "고급 기능과 작동 방식을 선택하여 웹사이트에서 Elementor가 작동하는 방식을 개인화 하세요."
 
-#: modules/atomic-widgets/module.php:176
+#: modules/atomic-widgets/module.php:180
 msgid "Enable atomic widgets."
 msgstr "Atomic 위젯을 활성화하세요."
 
-#: modules/atomic-widgets/module.php:175
+#: modules/atomic-widgets/module.php:179
 msgid "Atomic Widgets"
 msgstr "Atomic 위젯"
 
@@ -2858,7 +2850,7 @@ msgstr "6"
 msgid "7"
 msgstr "7"
 
-#: includes/widgets/text-editor.php:189 assets/js/editor-one-top-bar.js:305
+#: includes/widgets/text-editor.php:189
 msgid "8"
 msgstr "8"
 
@@ -3405,7 +3397,7 @@ msgstr "홈"
 msgid "An error occurred, the selected version is invalid. Try selecting different version."
 msgstr "오류가 발생하였습니다. 선택한 버전이 유효하지 않습니다. 다른 버전을 선택해보세요."
 
-#: modules/components/components-rest-api.php:690
+#: modules/components/components-rest-api.php:702
 msgid "You do not have permission to perform this action."
 msgstr "이 작업을 수행할 수 있는 권한이 없습니다."
 
@@ -4311,8 +4303,8 @@ msgstr "사용자 정의 코드"
 
 #: includes/base/element-base.php:864
 #: assets/js/packages/editor-controls/editor-controls.js:78
-#: assets/js/packages/editor-controls/editor-controls.strings.js:221
-#: assets/js/packages/editor-controls/editor-controls.strings.js:227
+#: assets/js/packages/editor-controls/editor-controls.strings.js:148
+#: assets/js/packages/editor-controls/editor-controls.strings.js:154
 #: assets/js/packages/editor-controls/editor-controls.strings.js:267
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:240
@@ -4389,8 +4381,8 @@ msgstr "개인 정보 보호 정책"
 
 #: includes/base/element-base.php:1170
 #: assets/js/packages/editor-controls/editor-controls.js:78
-#: assets/js/packages/editor-controls/editor-controls.strings.js:226
-#: assets/js/packages/editor-controls/editor-controls.strings.js:231
+#: assets/js/packages/editor-controls/editor-controls.strings.js:153
+#: assets/js/packages/editor-controls/editor-controls.strings.js:158
 msgid "Skew"
 msgstr "기울이기"
 
@@ -4731,7 +4723,7 @@ msgid "Important:"
 msgstr "중요:"
 
 #: core/common/modules/connect/rest/rest-api.php:139
-#: modules/components/components-rest-api.php:680
+#: modules/components/components-rest-api.php:692
 #: modules/global-classes/global-classes-rest-api.php:264
 #: assets/js/packages/editor-global-classes/editor-global-classes.js:2
 #: assets/js/packages/editor-global-classes/editor-global-classes.strings.js:56
@@ -4967,8 +4959,8 @@ msgstr "가운데 가운데"
 #: includes/base/element-base.php:1079 includes/base/element-base.php:1102
 #: includes/widgets/common-base.php:1153
 #: assets/js/packages/editor-controls/editor-controls.js:78
-#: assets/js/packages/editor-controls/editor-controls.strings.js:224
-#: assets/js/packages/editor-controls/editor-controls.strings.js:229
+#: assets/js/packages/editor-controls/editor-controls.strings.js:151
+#: assets/js/packages/editor-controls/editor-controls.strings.js:156
 #: assets/js/packages/editor-interactions/editor-interactions.js:2
 #: assets/js/packages/editor-interactions/editor-interactions.strings.js:55
 msgid "Scale"
@@ -5109,8 +5101,8 @@ msgstr "LTR"
 msgid "RTL"
 msgstr "RTL"
 
-#: modules/atomic-widgets/elements/atomic-svg/atomic-svg.php:38
-#: modules/atomic-widgets/elements/atomic-svg/atomic-svg.php:66
+#: modules/atomic-widgets/elements/atomic-svg/atomic-svg.php:39
+#: modules/atomic-widgets/elements/atomic-svg/atomic-svg.php:65
 #: modules/shapes/widgets/text-path.php:136
 msgid "SVG"
 msgstr "SVG"
@@ -5802,7 +5794,7 @@ msgstr "이행"
 
 #: includes/controls/groups/background.php:645
 #: assets/js/packages/editor-controls/editor-controls.js:78
-#: assets/js/packages/editor-controls/editor-controls.strings.js:153
+#: assets/js/packages/editor-controls/editor-controls.strings.js:166
 #: assets/js/packages/editor-interactions/editor-interactions.js:2
 #: assets/js/packages/editor-interactions/editor-interactions.strings.js:24
 msgid "Duration"
@@ -6824,7 +6816,7 @@ msgstr "새 %s 추가"
 #: modules/floating-buttons/base/widget-floating-bars-base.php:1010
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:1502
 #: assets/js/packages/editor-controls/editor-controls.js:78
-#: assets/js/packages/editor-controls/editor-controls.strings.js:216
+#: assets/js/packages/editor-controls/editor-controls.strings.js:229
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:237
 msgid "Opacity"
@@ -6850,7 +6842,7 @@ msgstr "최대 너비"
 #: assets/js/packages/editor-controls/editor-controls.js:62
 #: assets/js/packages/editor-controls/editor-controls.js:78
 #: assets/js/packages/editor-controls/editor-controls.strings.js:98
-#: assets/js/packages/editor-controls/editor-controls.strings.js:190
+#: assets/js/packages/editor-controls/editor-controls.strings.js:203
 #: assets/js/packages/editor-controls/editor-controls.strings.js:325
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:12
@@ -7089,8 +7081,8 @@ msgstr "작성자"
 #: includes/editor-templates/templates.php:89
 #: includes/editor-templates/templates.php:132
 #: includes/editor-templates/templates.php:787
-#: modules/atomic-widgets/module.php:425
-#: assets/js/atomic-widgets-editor.js:1536
+#: modules/atomic-widgets/module.php:432
+#: assets/js/atomic-widgets-editor.js:1544
 #: assets/js/atomic-widgets-editor.strings.js:2 assets/js/editor.js:35309
 #: assets/js/editor.js:35812
 #: assets/js/kit-library.b768952e1d4177aa68d8.bundle.js:5675
@@ -7593,7 +7585,7 @@ msgstr "애니메이션 지연"
 #. translators: %s: Element type title.
 #: core/document-types/page-base.php:194
 #: includes/template-library/sources/local.php:403
-#: assets/js/atomic-widgets-editor.js:1755
+#: assets/js/atomic-widgets-editor.js:1763
 #: assets/js/atomic-widgets-editor.strings.js:7 assets/js/editor.js:32217
 #: assets/js/editor.js:32410 assets/js/editor.js:34881
 #: assets/js/editor.js:35357 assets/js/editor.js:35458
@@ -8583,7 +8575,7 @@ msgid "Buy Button"
 msgstr "구매 버튼"
 
 #: core/admin/admin-notices.php:149 core/admin/admin-notices.php:157
-#: core/base/db-upgrades-manager.php:97 assets/js/atomic-widgets-editor.js:1582
+#: core/base/db-upgrades-manager.php:97 assets/js/atomic-widgets-editor.js:1590
 #: assets/js/atomic-widgets-editor.strings.js:5
 #: assets/js/packages/editor-components/editor-components.js:2
 #: assets/js/packages/editor-components/editor-components.strings.js:6
@@ -8678,7 +8670,7 @@ msgstr "플러그인이 제대로 작동하지 않습니다"
 #: assets/js/ai-media-library.js:11314
 #: assets/js/ai-unify-product-images.js:11314 assets/js/ai.js:12866
 #: assets/js/packages/editor-controls/editor-controls.js:78
-#: assets/js/packages/editor-controls/editor-controls.strings.js:206
+#: assets/js/packages/editor-controls/editor-controls.strings.js:219
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:14
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:303
@@ -8922,7 +8914,7 @@ msgstr "요소"
 #: modules/atomic-widgets/elements/atomic-image/atomic-image.php:73
 #: modules/atomic-widgets/elements/atomic-paragraph/atomic-paragraph.php:81
 #: modules/atomic-widgets/elements/atomic-self-hosted-video/atomic-self-hosted-video.php:162
-#: modules/atomic-widgets/elements/atomic-svg/atomic-svg.php:69
+#: modules/atomic-widgets/elements/atomic-svg/atomic-svg.php:68
 #: modules/atomic-widgets/elements/atomic-tabs/atomic-tab-content/atomic-tab-content.php:69
 #: modules/atomic-widgets/elements/atomic-tabs/atomic-tab/atomic-tab.php:71
 #: modules/atomic-widgets/elements/atomic-tabs/atomic-tabs-content-area/atomic-tabs-content-area.php:66
@@ -9055,7 +9047,7 @@ msgstr "시스템 정보 다운로드"
 #: modules/shapes/widgets/text-path.php:203 assets/js/editor.js:48887
 #: assets/js/editor.js:48898
 #: assets/js/packages/editor-controls/editor-controls.js:78
-#: assets/js/packages/editor-controls/editor-controls.strings.js:160
+#: assets/js/packages/editor-controls/editor-controls.strings.js:173
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:18
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:96
 msgid "Default"
@@ -9079,8 +9071,8 @@ msgstr "기본"
 #: assets/js/packages/editor-controls/editor-controls.js:78
 #: assets/js/packages/editor-controls/editor-controls.strings.js:31
 #: assets/js/packages/editor-controls/editor-controls.strings.js:39
-#: assets/js/packages/editor-controls/editor-controls.strings.js:192
-#: assets/js/packages/editor-controls/editor-controls.strings.js:195
+#: assets/js/packages/editor-controls/editor-controls.strings.js:205
+#: assets/js/packages/editor-controls/editor-controls.strings.js:208
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:171
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:174
@@ -9138,8 +9130,8 @@ msgstr "반복"
 #: assets/js/packages/editor-controls/editor-controls.js:78
 #: assets/js/packages/editor-controls/editor-controls.strings.js:30
 #: assets/js/packages/editor-controls/editor-controls.strings.js:40
-#: assets/js/packages/editor-controls/editor-controls.strings.js:193
-#: assets/js/packages/editor-controls/editor-controls.strings.js:194
+#: assets/js/packages/editor-controls/editor-controls.strings.js:206
+#: assets/js/packages/editor-controls/editor-controls.strings.js:207
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:172
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:173
@@ -9163,7 +9155,7 @@ msgstr "왼쪽"
 #: modules/atomic-widgets/elements/atomic-heading/atomic-heading.php:121
 #: modules/atomic-widgets/elements/atomic-image/atomic-image.php:83
 #: modules/atomic-widgets/elements/atomic-paragraph/atomic-paragraph.php:103
-#: modules/atomic-widgets/elements/atomic-svg/atomic-svg.php:79
+#: modules/atomic-widgets/elements/atomic-svg/atomic-svg.php:78
 #: modules/atomic-widgets/elements/div-block/div-block.php:122
 #: modules/atomic-widgets/elements/flexbox/flexbox.php:125
 #: modules/floating-buttons/base/widget-contact-button-base.php:418
@@ -9429,7 +9421,7 @@ msgstr "텍스트 색상"
 #: includes/elements/section.php:1131 assets/js/editor-modules.js:1431
 #: assets/js/editor.js:45951
 #: assets/js/packages/editor-controls/editor-controls.js:78
-#: assets/js/packages/editor-controls/editor-controls.strings.js:198
+#: assets/js/packages/editor-controls/editor-controls.strings.js:211
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:13
 msgid "Typography"
@@ -9490,8 +9482,8 @@ msgstr "이미지 크기"
 #: includes/widgets/divider.php:981 includes/widgets/icon-box.php:585
 #: includes/widgets/icon.php:376 modules/shapes/widgets/text-path.php:283
 #: assets/js/packages/editor-controls/editor-controls.js:78
-#: assets/js/packages/editor-controls/editor-controls.strings.js:225
-#: assets/js/packages/editor-controls/editor-controls.strings.js:230
+#: assets/js/packages/editor-controls/editor-controls.strings.js:152
+#: assets/js/packages/editor-controls/editor-controls.strings.js:157
 msgid "Rotate"
 msgstr "회전"
 
@@ -9654,7 +9646,7 @@ msgstr "성공"
 #: modules/shapes/widgets/text-path.php:251
 #: assets/js/packages/editor-controls/editor-controls.js:62
 #: assets/js/packages/editor-controls/editor-controls.js:78
-#: assets/js/packages/editor-controls/editor-controls.strings.js:183
+#: assets/js/packages/editor-controls/editor-controls.strings.js:196
 #: assets/js/packages/editor-controls/editor-controls.strings.js:309
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:11
@@ -10076,7 +10068,7 @@ msgstr "아코디언 항목"
 #: modules/nested-tabs/widgets/nested-tabs.php:706
 #: modules/nested-tabs/widgets/nested-tabs.php:1056
 #: assets/js/packages/editor-controls/editor-controls.js:78
-#: assets/js/packages/editor-controls/editor-controls.strings.js:170
+#: assets/js/packages/editor-controls/editor-controls.strings.js:183
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:142
 msgid "Padding"
@@ -10150,7 +10142,7 @@ msgstr "웹 디자이너"
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:1094
 #: assets/js/editor.js:12425
 #: assets/js/packages/editor-controls/editor-controls.js:78
-#: assets/js/packages/editor-controls/editor-controls.strings.js:152
+#: assets/js/packages/editor-controls/editor-controls.strings.js:165
 #: assets/js/packages/editor-interactions/editor-interactions.js:2
 #: assets/js/packages/editor-interactions/editor-interactions.strings.js:20
 msgid "Type"
@@ -10324,7 +10316,7 @@ msgstr "섹션"
 #: includes/widgets/image-box.php:395 includes/widgets/image.php:359
 #: includes/widgets/progress.php:331
 #: assets/js/packages/editor-controls/editor-controls.js:78
-#: assets/js/packages/editor-controls/editor-controls.strings.js:185
+#: assets/js/packages/editor-controls/editor-controls.strings.js:198
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:144
 msgid "Height"
@@ -10374,7 +10366,7 @@ msgstr "보기"
 #: assets/js/packages/editor-controls/editor-controls.js:62
 #: assets/js/packages/editor-controls/editor-controls.js:78
 #: assets/js/packages/editor-controls/editor-controls.strings.js:27
-#: assets/js/packages/editor-controls/editor-controls.strings.js:191
+#: assets/js/packages/editor-controls/editor-controls.strings.js:204
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:175
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:261
@@ -10516,7 +10508,7 @@ msgstr "양쪽 맞춤"
 #: includes/elements/section.php:831 includes/widgets/common-base.php:966
 #: modules/floating-buttons/base/widget-floating-bars-base.php:761
 #: assets/js/packages/editor-controls/editor-controls.js:78
-#: assets/js/packages/editor-controls/editor-controls.strings.js:210
+#: assets/js/packages/editor-controls/editor-controls.strings.js:223
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:15
 msgid "Border"
@@ -10583,7 +10575,7 @@ msgstr "중앙"
 #: assets/js/packages/editor-controls/editor-controls.js:62
 #: assets/js/packages/editor-controls/editor-controls.js:78
 #: assets/js/packages/editor-controls/editor-controls.strings.js:36
-#: assets/js/packages/editor-controls/editor-controls.strings.js:196
+#: assets/js/packages/editor-controls/editor-controls.strings.js:209
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:176
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:267
@@ -10648,7 +10640,7 @@ msgstr "크게"
 #: includes/elements/container.php:1380 includes/elements/section.php:1232
 #: includes/widgets/common-base.php:310
 #: assets/js/packages/editor-controls/editor-controls.js:78
-#: assets/js/packages/editor-controls/editor-controls.strings.js:162
+#: assets/js/packages/editor-controls/editor-controls.strings.js:175
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:141
 msgid "Margin"
@@ -10915,28 +10907,6 @@ msgstr "버튼"
 msgid "Accordion Content"
 msgstr "아코디언 내용"
 
-#: includes/managers/controls.php:334 includes/widgets/accordion.php:145
-#: includes/widgets/accordion.php:488 includes/widgets/alert.php:148
-#: includes/widgets/icon-box.php:640 includes/widgets/image-box.php:597
-#: includes/widgets/tabs.php:141 includes/widgets/tabs.php:456
-#: includes/widgets/testimonial.php:139 includes/widgets/testimonial.php:276
-#: includes/widgets/toggle.php:145 includes/widgets/toggle.php:512
-#: modules/atomic-widgets/elements/atomic-button/atomic-button.php:74
-#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:139
-#: modules/atomic-widgets/elements/atomic-heading/atomic-heading.php:73
-#: modules/atomic-widgets/elements/atomic-image/atomic-image.php:67
-#: modules/atomic-widgets/elements/atomic-paragraph/atomic-paragraph.php:74
-#: modules/atomic-widgets/elements/atomic-self-hosted-video/atomic-self-hosted-video.php:134
-#: modules/atomic-widgets/elements/atomic-svg/atomic-svg.php:63
-#: modules/atomic-widgets/elements/atomic-tabs/atomic-tabs/atomic-tabs.php:81
-#: modules/atomic-widgets/elements/atomic-youtube/atomic-youtube.php:76
-#: modules/nested-accordion/widgets/nested-accordion.php:501
-#: modules/nested-tabs/widgets/nested-tabs.php:995 assets/js/app.js:6076
-#: assets/js/app.js:7600 assets/js/app.js:12015 assets/js/app.js:17230
-#: assets/js/app.js:17739 assets/js/editor.js:39386
-msgid "Content"
-msgstr "내용"
-
 #: core/kits/documents/tabs/settings-layout.php:55
 #: includes/elements/container.php:394 includes/elements/section.php:249
 #: includes/widgets/video.php:954
@@ -10951,6 +10921,28 @@ msgstr "내용 위치"
 #: includes/widgets/tabs.php:142 includes/widgets/tabs.php:143
 msgid "Tab Content"
 msgstr "탭 내용"
+
+#: includes/managers/controls.php:334 includes/widgets/accordion.php:145
+#: includes/widgets/accordion.php:488 includes/widgets/alert.php:148
+#: includes/widgets/icon-box.php:640 includes/widgets/image-box.php:597
+#: includes/widgets/tabs.php:141 includes/widgets/tabs.php:456
+#: includes/widgets/testimonial.php:139 includes/widgets/testimonial.php:276
+#: includes/widgets/toggle.php:145 includes/widgets/toggle.php:512
+#: modules/atomic-widgets/elements/atomic-button/atomic-button.php:74
+#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:139
+#: modules/atomic-widgets/elements/atomic-heading/atomic-heading.php:73
+#: modules/atomic-widgets/elements/atomic-image/atomic-image.php:67
+#: modules/atomic-widgets/elements/atomic-paragraph/atomic-paragraph.php:74
+#: modules/atomic-widgets/elements/atomic-self-hosted-video/atomic-self-hosted-video.php:134
+#: modules/atomic-widgets/elements/atomic-svg/atomic-svg.php:62
+#: modules/atomic-widgets/elements/atomic-tabs/atomic-tabs/atomic-tabs.php:81
+#: modules/atomic-widgets/elements/atomic-youtube/atomic-youtube.php:76
+#: modules/nested-accordion/widgets/nested-accordion.php:501
+#: modules/nested-tabs/widgets/nested-tabs.php:995 assets/js/app.js:6076
+#: assets/js/app.js:7600 assets/js/app.js:12015 assets/js/app.js:17230
+#: assets/js/app.js:17739 assets/js/editor.js:39386
+msgid "Content"
+msgstr "내용"
 
 #: core/kits/manager.php:139 includes/controls/groups/background.php:329
 #: includes/controls/groups/background.php:487
@@ -11002,7 +10994,7 @@ msgstr "사용자 정의"
 #: modules/shapes/widgets/text-path.php:540
 #: modules/shapes/widgets/text-path.php:611
 #: assets/js/packages/editor-controls/editor-controls.js:78
-#: assets/js/packages/editor-controls/editor-controls.strings.js:184
+#: assets/js/packages/editor-controls/editor-controls.strings.js:197
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:143
 msgid "Width"
