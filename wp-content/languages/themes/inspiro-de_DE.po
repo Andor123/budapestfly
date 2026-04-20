@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Themes - Inspiro package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-04-04 02:59:40+0000\n"
+"PO-Revision-Date: 2026-04-19 22:07:27+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -79,7 +79,7 @@ msgstr "Portfolio installieren"
 msgid "Changelog"
 msgstr "Änderungsprotokoll"
 
-#: inc/admin/pages/demos.php:612
+#: inc/admin/pages/demos.php:589
 msgid "Preview"
 msgstr "Vorschau"
 
@@ -501,6 +501,8 @@ msgid "Portfolio"
 msgstr "Portfolio"
 
 #: inc/admin/pages/quick-start.php:42
+#: inc/customizer/footer-builder/class-inspiro-lite-footer-builder.php:48
+#: inc/customizer/header-builder/class-inspiro-lite-header-builder.php:51
 msgid "Site Logo"
 msgstr "Website-Logo"
 
@@ -525,6 +527,8 @@ msgid "Menu Background"
 msgstr "Menü-Hintergrund"
 
 #: inc/admin/pages/quick-start.php:213
+#: inc/customizer/footer-builder/class-inspiro-lite-footer-builder.php:225
+#: inc/customizer/header-builder/class-inspiro-lite-header-builder.php:218
 msgid "Colors"
 msgstr "Farben"
 
@@ -888,21 +892,6 @@ msgctxt "text transform"
 msgid "None"
 msgstr "Keine"
 
-#: inc/customizer/configs/typography/class-inspiro-typo-body-config.php:92
-#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:412
-#: inc/customizer/configs/typography/class-inspiro-typo-hero-header-button-config.php:105
-#: inc/customizer/configs/typography/class-inspiro-typo-hero-header-desc-config.php:105
-#: inc/customizer/configs/typography/class-inspiro-typo-hero-header-title-config.php:112
-#: inc/customizer/configs/typography/class-inspiro-typo-logo-config.php:108
-#: inc/customizer/configs/typography/class-inspiro-typo-main-menu-config.php:113
-#: inc/customizer/configs/typography/class-inspiro-typo-mobile-menu-config.php:106
-msgid "Font Family"
-msgstr "Schriftfamilie"
-
-#: inc/customizer/class-inspiro-customizer.php:499
-msgid "System Fonts"
-msgstr "System-Schriften"
-
 #: inc/customizer/configs/typography/class-inspiro-typo-body-config.php:124
 #: inc/customizer/configs/typography/class-inspiro-typo-h1-config.php:90
 #: inc/customizer/configs/typography/class-inspiro-typo-h2-config.php:76
@@ -922,6 +911,21 @@ msgstr "System-Schriften"
 #: inc/customizer/configs/typography/class-inspiro-typo-mobile-menu-config.php:138
 msgid "Font Weight"
 msgstr "Schriftstärke"
+
+#: inc/customizer/configs/typography/class-inspiro-typo-body-config.php:92
+#: inc/customizer/configs/typography/class-inspiro-typo-headings-config.php:412
+#: inc/customizer/configs/typography/class-inspiro-typo-hero-header-button-config.php:105
+#: inc/customizer/configs/typography/class-inspiro-typo-hero-header-desc-config.php:105
+#: inc/customizer/configs/typography/class-inspiro-typo-hero-header-title-config.php:112
+#: inc/customizer/configs/typography/class-inspiro-typo-logo-config.php:108
+#: inc/customizer/configs/typography/class-inspiro-typo-main-menu-config.php:113
+#: inc/customizer/configs/typography/class-inspiro-typo-mobile-menu-config.php:106
+msgid "Font Family"
+msgstr "Schriftfamilie"
+
+#: inc/customizer/class-inspiro-customizer.php:499
+msgid "System Fonts"
+msgstr "System-Schriften"
 
 #: inc/customizer/configs/typography/class-inspiro-typo-body-config.php:144
 #: inc/customizer/configs/typography/class-inspiro-typo-h1-config.php:110
@@ -959,6 +963,10 @@ msgstr "Typografie"
 msgid "Inherit"
 msgstr "Vererbt"
 
+#: inc/customizer/class-inspiro-customizer.php:498
+msgid "Default System Font"
+msgstr "Standard-Systemschrift"
+
 #: inc/customizer/configs/typography/class-inspiro-typo-body-config.php:141
 #: inc/customizer/configs/typography/class-inspiro-typo-h1-config.php:107
 #: inc/customizer/configs/typography/class-inspiro-typo-h2-config.php:99
@@ -985,17 +993,13 @@ msgctxt "text transform"
 msgid "Inherit"
 msgstr "Vererbt"
 
-#: inc/customizer/class-inspiro-customizer.php:498
-msgid "Default System Font"
-msgstr "Standard-Systemschrift"
-
 #. translators: %s: WordPress Version.
 #: inc/back-compat.php:42 inc/back-compat.php:61 inc/back-compat.php:86
 msgid "This theme requires WordPress 5.3 or newer. You are running version %s. Please upgrade."
 msgstr "Dieses Theme erfordert WordPress 5.3 oder neuer. Du verwendest Version %s. Bitte führe eine Aktualisierung durch."
 
 #. translators: %1$s: Comment date %2$s: Comment time
-#: inc/common-functions.php:313
+#: inc/common-functions.php:341
 msgid "%1$s @ %2$s"
 msgstr "%1$s um %2$s"
 
@@ -1535,18 +1539,9 @@ msgstr "Hell"
 msgid "Color Scheme"
 msgstr "Farbschema"
 
-#: inc/common-functions.php:96 inc/common-functions.php:108
-#: inc/common-functions.php:120 inc/common-functions.php:132
-msgid "Add widgets here to appear in your footer."
-msgstr "Füge hier Widgets hinzu, die in deinem Footer erscheinen sollen."
-
 #: inc/common-functions.php:94
 msgid "Footer 1"
 msgstr "Footer 1"
-
-#: inc/common-functions.php:84
-msgid "Add widgets here to appear in your sidebar on blog posts and archive pages."
-msgstr "Widgets, die Du hier einfügst, erscheinen in der Seitenleiste, in Blogbeiträgen und auf Archivseiten."
 
 #: inc/common-functions.php:82
 #: inc/customizer/configs/theme-layout/class-inspiro-theme-layout-config.php:32
@@ -1598,10 +1593,6 @@ msgstr "Neuere Kommentare <span class=\"meta-nav\">&rarr;</span>"
 msgid "<span class=\"meta-nav\">&larr;</span> Older Comments"
 msgstr "<span class=\"meta-nav\">&larr;</span> Ältere Kommentare"
 
-#: comments.php:30 inc/template-tags.php:136
-msgid "% Comments"
-msgstr "% Kommentare"
-
 #: comments.php:30 inc/template-tags.php:135
 msgid "One Comment"
 msgstr "Ein Kommentar"
@@ -1609,10 +1600,6 @@ msgstr "Ein Kommentar"
 #: comments.php:30 inc/template-tags.php:134
 msgid "No Comments"
 msgstr "Keine Kommentare"
-
-#: 404.php:24
-msgid "It looks like nothing was found at this location. Maybe try a search?"
-msgstr "Wie es aussieht, wurde an dieser Stelle nichts gefunden. Möchtest du eine Suche starten?"
 
 #: 404.php:21
 msgid "Oops! That page can&rsquo;t be found."
@@ -1625,10 +1612,6 @@ msgstr "Homepage (Page Builder)"
 #. Template Name of the theme
 msgid "Page Builder (Transparent Header, Without Title)"
 msgstr "Page Builder (Transparenter Header, ohne Titel)"
-
-#: search.php:55
-msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
-msgstr "Leider gibt es keine Übereinstimmung mit deinen Suchbegriffen. Bitte versuche es mit anderen Stichwörtern erneut."
 
 #. translators: Search query.
 #: search.php:22
@@ -1649,11 +1632,6 @@ msgstr "Kommentar abschicken"
 #: template-parts/header/site-branding.php:29
 msgid "[Edit]"
 msgstr "[Bearbeiten]"
-
-#. translators: %s: Post editor URL.
-#: template-parts/post/content-none.php:29
-msgid "Ready to publish your first post? <a href=\"%s\">Get started here</a>."
-msgstr "Bereit, deinen ersten Beitrag zu veröffentlichen? <a href=\"%s\">Starte hier</a>."
 
 #: search.php:26 template-parts/post/content-none.php:18
 msgid "Nothing Found"
@@ -1694,20 +1672,17 @@ msgstr "Gebe deine Schlagwörter ein und drücke dann Enter..."
 msgid "Search for:"
 msgstr "Suchen nach:"
 
-#: template-parts/post/content-none.php:35
-msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
-msgstr "Es sieht so aus, als ob wir nicht das finden konnten, wonach du gesucht hast. Möglicherweise hilft eine Suche."
-
 #. Template Name of the theme
 msgid "Page Builder (Without Page Title)"
 msgstr "Page Builder (ohne Seitentitel)"
 
-#: template-parts/navigation/navigation-primary.php:28
+#: inc/customizer/header-builder/class-inspiro-lite-header-builder.php:398
+#: template-parts/navigation/navigation-primary.php:32
 msgctxt "menu"
 msgid "Top Horizontal Menu"
 msgstr "Horizontales Menü oben"
 
-#: template-parts/navigation/navigation-primary.php:63
+#: template-parts/navigation/navigation-primary.php:69
 msgid "Toggle sidebar &amp; navigation"
 msgstr "Seitenleiste &amp; Navigation umschalten"
 
@@ -1728,7 +1703,8 @@ msgstr "Mobile-Menü"
 msgid "Toggle navigation"
 msgstr "Navigation umschalten"
 
-#: inc/template-tags.php:120 template-parts/footer/site-info.php:30
+#: inc/template-tags.php:120
+#: template-parts/footer/site-info-theme-credit.php:13
 msgid "by"
 msgstr "von"
 
@@ -1737,11 +1713,11 @@ msgstr "von"
 msgid ", "
 msgstr ", "
 
-#: inc/common-functions.php:329
+#: inc/common-functions.php:357
 msgid "Edit"
 msgstr "Bearbeiten"
 
-#: inc/common-functions.php:323
+#: inc/common-functions.php:351
 msgid "Reply"
 msgstr "Antworten"
 
@@ -1757,11 +1733,11 @@ msgstr "Widget-Bereich im Header. Installiere das Plugin \"Social Icons Widget v
 msgid "Header Social Icons"
 msgstr "Social-Icons im Header"
 
-#: inc/common-functions.php:351
+#: inc/common-functions.php:379
 msgid "(Edit)"
 msgstr "(Bearbeiten)"
 
-#: inc/common-functions.php:351
+#: inc/common-functions.php:379
 msgid "Pingback:"
 msgstr "Pingback:"
 
@@ -1826,7 +1802,7 @@ msgid "on"
 msgstr "an"
 
 #. translators: %s: Post title.
-#: inc/common-functions.php:185 template-parts/post/content-audio.php:49
+#: inc/common-functions.php:213 template-parts/post/content-audio.php:49
 #: template-parts/post/content-gallery.php:36
 #: template-parts/post/content-image.php:28
 #: template-parts/post/content-video.php:49 template-parts/post/content.php:37
@@ -1845,7 +1821,7 @@ msgstr "Individuell"
 msgid "Skip to content"
 msgstr "Zum Inhalt springen"
 
-#: inc/common-functions.php:337
+#: inc/common-functions.php:365
 msgid "Your comment is awaiting moderation."
 msgstr "Dein Kommentar wartet auf Freischaltung."
 
@@ -1870,10 +1846,6 @@ msgstr "Hintergrund-Video pausieren"
 msgid "Play background video"
 msgstr "Hintergrund-Video wiedergeben"
 
-#: comments.php:103
-msgid "Save my name, email, and website in this browser for the next time I comment."
-msgstr "Meinen Namen, meine E-Mail-Adresse und meine Website in diesem Browser für die nächste Kommentierung speichern."
-
 #. translators: %s: Post title.
 #: inc/template-tags.php:224
 msgid "Edit<span class=\"screen-reader-text\"> \"%s\"</span>"
@@ -1889,6 +1861,40 @@ msgstr "<span class=\"screen-reader-text\">Veröffentlicht am</span> %s"
 #: inc/customizer/configs/theme-layout/class-inspiro-theme-layout-config.php:100
 msgid "Full width"
 msgstr "Volle Breite"
+
+#: comments.php:103
+msgid "Save my name, email, and website in this browser for the next time I comment."
+msgstr "Name, E-Mail-Adresse und Website in diesem Browser für meinen nächsten Kommentar speichern."
+
+#: comments.php:30 inc/template-tags.php:136
+msgid "% Comments"
+msgstr "% Kommentare"
+
+#: 404.php:24
+msgid "It looks like nothing was found at this location. Maybe try a search?"
+msgstr "An dieser Stelle konnte leider nichts gefunden werden. Vielleicht hilft die Suchfunktion."
+
+#: template-parts/post/content-none.php:35
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Das Gesuchte konnte leider nicht gefunden werden. Vielleicht hilft die Suchfunktion."
+
+#: search.php:55
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Es konnte leider nichts Passendes gefunden werden. Bitte versuche es mit anderen Suchbegriffen."
+
+#. translators: %s: Post editor URL.
+#: template-parts/post/content-none.php:29
+msgid "Ready to publish your first post? <a href=\"%s\">Get started here</a>."
+msgstr "Bereit, deinen ersten Beitrag zu veröffentlichen? <a href=\"%s\">Jetzt starten</a>."
+
+#: inc/common-functions.php:84
+msgid "Add widgets here to appear in your sidebar on blog posts and archive pages."
+msgstr "Füge hier Widgets hinzu, die in deiner Seitenleiste bei Blogbeiträgen und auf Archivseiten angezeigt werden sollen."
+
+#: inc/common-functions.php:96 inc/common-functions.php:108
+#: inc/common-functions.php:120 inc/common-functions.php:132
+msgid "Add widgets here to appear in your footer."
+msgstr "Füge hier Widgets hinzu, die im Footer angezeigt werden sollen."
 
 #. Theme URI of the theme
 #: style.css
