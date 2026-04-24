@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 6.9.x package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-04-21 21:38:54+0000\n"
+"PO-Revision-Date: 2026-04-24 10:27:15+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -2880,12 +2880,6 @@ msgstr "<strong>Fehler:</strong> Cookies sind gesperrt oder werden von deinem Br
 msgid "<strong>You have successfully updated WordPress!</strong> Please log back in to see what&#8217;s new."
 msgstr "<strong>Du hast WordPress erfolgreich aktualisiert!</strong> Bitte melde dich wieder an, wenn du sehen möchtest, was es Neues gibt."
 
-#. translators: 1: The 'id' argument, 2: Sidebar name, 3: Recommended 'id'
-#. value.
-#: wp-includes/widgets.php:307
-msgid "No %1$s was set in the arguments array for the \"%2$s\" sidebar. Defaulting to \"%3$s\". Manually set the %1$s to \"%3$s\" to silence this notice and keep existing sidebar content."
-msgstr "Es wurde kein %1$s im Parameter-Array definiert für die Seitenleiste „%2$s“. Standardwert ist „%3$s“. Um diesen Hinweis zu entfernen und den existierenden Seitenleisteninhalt zu behalten, kann %1$s manuell auf „%3$s“ gestellt werden."
-
 #. translators: Hidden accessibility text.
 #: wp-includes/widgets/class-wp-widget-custom-html.php:272
 #: wp-includes/widgets/class-wp-widget-text.php:511
@@ -3773,29 +3767,6 @@ msgstr ""
 "Das Team von ###SITENAME###\n"
 "###SITEURL###"
 
-#. translators: Do not translate SITENAME, SITEURL; those are placeholders.
-#: wp-includes/user.php:4511
-msgid ""
-"Howdy,\n"
-"\n"
-"Your request to erase your personal data on ###SITENAME### has been completed.\n"
-"\n"
-"If you have any follow-up questions or concerns, please contact the site administrator.\n"
-"\n"
-"Regards,\n"
-"All at ###SITENAME###\n"
-"###SITEURL###"
-msgstr ""
-"Hallo,\n"
-"\n"
-"deine Anfrage auf Löschung deiner personenbezogenen Daten auf ###SITENAME### wurde abgeschlossen.\n"
-"\n"
-"Wenn du weitere Fragen oder Bedenken hast, wende dich bitte an den Administrator der Website.\n"
-"\n"
-"Viele Grüße\n"
-"Das Team von ###SITENAME###\n"
-"###SITEURL###"
-
 #. translators: Do not translate SITENAME, SITEURL, PRIVACY_POLICY_URL; those
 #. are placeholders.
 #: wp-includes/user.php:4525
@@ -3819,6 +3790,29 @@ msgstr ""
 "Wenn du weitere Fragen oder Bedenken hast, wende dich bitte an den Administrator der Website.\n"
 "\n"
 "Für weitere Informationen kannst du auch unsere Datenschutzerklärung lesen: ###PRIVACY_POLICY_URL###\n"
+"\n"
+"Viele Grüße\n"
+"Das Team von ###SITENAME###\n"
+"###SITEURL###"
+
+#. translators: Do not translate SITENAME, SITEURL; those are placeholders.
+#: wp-includes/user.php:4511
+msgid ""
+"Howdy,\n"
+"\n"
+"Your request to erase your personal data on ###SITENAME### has been completed.\n"
+"\n"
+"If you have any follow-up questions or concerns, please contact the site administrator.\n"
+"\n"
+"Regards,\n"
+"All at ###SITENAME###\n"
+"###SITEURL###"
+msgstr ""
+"Hallo,\n"
+"\n"
+"deine Anfrage auf Löschung deiner personenbezogenen Daten auf ###SITENAME### wurde abgeschlossen.\n"
+"\n"
+"Wenn du weitere Fragen oder Bedenken hast, wende dich bitte an den Administrator der Website.\n"
 "\n"
 "Viele Grüße\n"
 "Das Team von ###SITENAME###\n"
@@ -3856,6 +3850,12 @@ msgstr "Dies ist anscheinend nicht der richtige Dateityp. Bitte verlinke stattde
 #: wp-includes/widgets/class-wp-widget-meta.php:74
 msgid "Entries feed"
 msgstr "Eintrags-Feed"
+
+#. translators: 1: The 'id' argument, 2: Sidebar name, 3: Recommended 'id'
+#. value.
+#: wp-includes/widgets.php:307
+msgid "No %1$s was set in the arguments array for the \"%2$s\" sidebar. Defaulting to \"%3$s\". Manually set the %1$s to \"%3$s\" to silence this notice and keep existing sidebar content."
+msgstr "Es wurde kein %1$s im Parameter-Array für die Seitenleiste „%2$s“ definiert. Der Standardwert ist „%3$s“. Um diesen Hinweis zu unterdrücken und den bereits vorhandenen Seitenleisteninhalt beizubehalten, kann %1$s manuell auf „%3$s“ gesetzt werden."
 
 #. translators: Hidden accessibility text.
 #: wp-includes/revision.php:34 wp-includes/js/dist/block-library.js:25465
@@ -4665,12 +4665,6 @@ msgstr "Das Beitrags-Passwort ist falsch."
 #: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:567
 msgid "Sorry, you are not allowed to create new users."
 msgstr "Du bist leider nicht berechtigt, neue Benutzer anzulegen."
-
-#: wp-includes/rest-api/endpoints/class-wp-rest-menu-items-controller.php:129
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:688
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:742
-msgid "Cannot create existing post."
-msgstr "Ein bestehender Beitrag kann nicht erstellt werden."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-plugins-controller.php:228
 msgid "Sorry, you are not allowed to manage this plugin."
@@ -7570,6 +7564,12 @@ msgstr "Die URL wurde nicht gefunden. Die Antwort gab einen anderen Statuscode a
 msgid "<strong>Error:</strong> Your account has been marked as a spammer."
 msgstr "<strong>Fehler:</strong> Dein Konto wurde als Spam markiert."
 
+#. translators: %s: Name of parameter being updated:
+#. font_family_settings[slug]".
+#: wp-includes/rest-api/endpoints/class-wp-rest-font-families-controller.php:114
+msgid "%s cannot be updated."
+msgstr "%s konnte nicht aktualisiert werden."
+
 #. translators: Do not translate USERNAME, ADMIN_URL, EMAIL, SITENAME, SITEURL:
 #. those are placeholders.
 #: wp-includes/user.php:3853
@@ -7664,12 +7664,6 @@ msgstr ""
 "Viele Grüße\n"
 "Das Team von ###SITENAME###\n"
 "###SITEURL###"
-
-#. translators: %s: Name of parameter being updated:
-#. font_family_settings[slug]".
-#: wp-includes/rest-api/endpoints/class-wp-rest-font-families-controller.php:114
-msgid "%s cannot be updated."
-msgstr "%s konnte nicht aktualisiert werden."
 
 #: wp-includes/theme.php:2469
 msgctxt "Theme starter content"
@@ -7780,6 +7774,12 @@ msgstr "Traumallee 213"
 #: wp-includes/sitemaps/class-wp-sitemaps-stylesheet.php:166
 msgid "Learn more about XML sitemaps."
 msgstr "Mehr über XML-Sitemaps erfahren (engl.)."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-menu-items-controller.php:129
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:688
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:742
+msgid "Cannot create existing post."
+msgstr "Ein bereits vorhandener Beitrag kann nicht erstellt werden."
 
 #: wp-includes/post.php:1326 wp-includes/post.php:1346
 #: wp-includes/script-loader.php:1301 wp-includes/js/dist/edit-site.js:46420
@@ -10315,10 +10315,6 @@ msgstr "Der Datei-Handle konnte nicht geöffnet werden."
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:219
 msgid "Query parameter not permitted: %s"
 msgstr "Abfrage-Parameter nicht erlaubt: %s"
-
-#: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:654
-msgid "Cannot create existing comment."
-msgstr "Ein bestehender Kommentar kann nicht erstellt werden."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:717
 msgid "Creating a comment requires valid author name and email values."
@@ -13453,6 +13449,34 @@ msgstr ""
 "Das Team von ###SITENAME###\n"
 "###SITEURL###"
 
+#. translators: Do not translate OLD_EMAIL, NEW_EMAIL, SITENAME, SITEURL: those
+#. are placeholders.
+#: wp-includes/functions.php:8167
+msgid ""
+"Hi,\n"
+"\n"
+"This notice confirms that the admin email address was changed on ###SITENAME###.\n"
+"\n"
+"The new admin email address is ###NEW_EMAIL###.\n"
+"\n"
+"This email has been sent to ###OLD_EMAIL###\n"
+"\n"
+"Regards,\n"
+"All at ###SITENAME###\n"
+"###SITEURL###"
+msgstr ""
+"Hallo,\n"
+"\n"
+"diese Mitteilung bestätigt die Änderung der E-Mail-Adresse des Administrators auf ###SITENAME###.\n"
+"\n"
+"Die neue E-Mail-Adresse des Administrators lautet ###NEW_EMAIL###.\n"
+"\n"
+"Diese E-Mail wurde an ###OLD_EMAIL### gesendet.\n"
+"\n"
+"Viele Grüße\n"
+"Das Team von ###SITENAME###\n"
+"###SITEURL###"
+
 #. translators: Do not translate USERNAME, ADMIN_URL, EMAIL, SITENAME, SITEURL:
 #. those are placeholders.
 #: wp-includes/ms-functions.php:2796
@@ -13484,34 +13508,6 @@ msgstr ""
 "Du kannst diese E-Mail ruhig ignorieren und löschen, wenn du das nicht tun möchtest.\n"
 "\n"
 "Diese E-Mail wurde an ###EMAIL### gesendet.\n"
-"\n"
-"Viele Grüße\n"
-"Das Team von ###SITENAME###\n"
-"###SITEURL###"
-
-#. translators: Do not translate OLD_EMAIL, NEW_EMAIL, SITENAME, SITEURL: those
-#. are placeholders.
-#: wp-includes/functions.php:8167
-msgid ""
-"Hi,\n"
-"\n"
-"This notice confirms that the admin email address was changed on ###SITENAME###.\n"
-"\n"
-"The new admin email address is ###NEW_EMAIL###.\n"
-"\n"
-"This email has been sent to ###OLD_EMAIL###\n"
-"\n"
-"Regards,\n"
-"All at ###SITENAME###\n"
-"###SITEURL###"
-msgstr ""
-"Hallo,\n"
-"\n"
-"diese Mitteilung bestätigt die Änderung der E-Mail-Adresse des Administrators auf ###SITENAME###.\n"
-"\n"
-"Die neue E-Mail-Adresse des Administrators lautet ###NEW_EMAIL###.\n"
-"\n"
-"Diese E-Mail wurde an ###OLD_EMAIL### gesendet.\n"
 "\n"
 "Viele Grüße\n"
 "Das Team von ###SITENAME###\n"
@@ -13631,6 +13627,10 @@ msgstr "Ohne"
 msgctxt "label"
 msgid "Search for:"
 msgstr "Suchen nach:"
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:654
+msgid "Cannot create existing comment."
+msgstr "Ein bereits vorhandener Kommentar kann nicht erstellt werden."
 
 #: wp-includes/class-wp-post-type.php:999
 #: wp-includes/js/dist/block-library.js:25843
@@ -15351,10 +15351,6 @@ msgstr "Das Beitragsformat ist ungültig."
 #: wp-includes/class-wp-editor.php:1891
 msgid "Enter the destination URL"
 msgstr "Gib die Ziel-URL ein"
-
-#: wp-includes/class-wp-editor.php:1905
-msgid "Or link to existing content"
-msgstr "Oder verlinke auf bestehende Inhalte"
 
 #: wp-includes/class-wp-http.php:602
 msgid "There are no HTTP transports available which can complete the requested request."
@@ -19954,10 +19950,6 @@ msgstr "Falls dein Theme Widget-Bereiche hat, kannst du dort auch Menüs hinzuf�
 msgid "Menus can be displayed in locations defined by your theme or in <a href=\"%s\">widget areas</a> by adding a &#8220;Navigation Menu&#8221; widget."
 msgstr "Menüs können an Positionen angezeigt werden, die von deinem Theme festgelegt wurden oder in den <a href=\"%s\">Widget-Bereichen</a> durch Hinzufügen eines &#8222;Navigationsmenü&#8220;-Widgets."
 
-#: wp-includes/class-wp-customize-nav-menus.php:661
-msgid "This panel is used for managing navigation menus for content you have already published on your site. You can create menus and add items for existing content such as pages, posts, categories, tags, formats, or custom links."
-msgstr "In diesem Bereich werden Navigationsmenüs für Inhalte verwaltet, die du bereits auf deiner Website veröffentlicht hast. Du kannst Menüs erstellen und Einträge für existierende Inhalte wie Seiten, Beiträge, Kategorien, Schlagwörter, Formate oder individuelle Links hinzufügen."
-
 #: wp-includes/class-wp-customize-manager.php:5152
 #: wp-includes/class-wp-xmlrpc-server.php:599 wp-admin/install.php:113
 #: wp-admin/options-general.php:76 wp-admin/network/site-new.php:237
@@ -20075,6 +20067,14 @@ msgstr "Mehr über die Problembehandlung in WordPress erfahren (engl.)."
 #: wp-admin/upgrade.php:106
 msgid "<a href=\"%s\">Learn more about updating PHP</a>."
 msgstr "<a href=\"%s\">Mehr über die PHP-Aktualisierung erfahren (engl.)</a>."
+
+#: wp-includes/class-wp-editor.php:1905
+msgid "Or link to existing content"
+msgstr "Oder verlinke auf vorhandene Inhalte"
+
+#: wp-includes/class-wp-customize-nav-menus.php:661
+msgid "This panel is used for managing navigation menus for content you have already published on your site. You can create menus and add items for existing content such as pages, posts, categories, tags, formats, or custom links."
+msgstr "In diesem Bereich werden Navigationsmenüs für Inhalte verwaltet, die du bereits auf deiner Website veröffentlicht hast. Du kannst Menüs erstellen und Einträge für vorhandene Inhalte wie Seiten, Beiträge, Kategorien, Schlagwörter, Formate oder individuelle Links hinzufügen."
 
 #: wp-activate.php:126
 msgid "Activation Key Required"
