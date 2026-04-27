@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WPForms &#8211; Easy Form Builder for WordPress &#8211; Contact Forms, Payment Forms, Surveys, &amp; More - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-04-21 01:03:25+0000\n"
+"PO-Revision-Date: 2026-04-26 16:54:59+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -2705,6 +2705,10 @@ msgstr "Bist du sicher, dass du ALLE Einträge löschen willst? Dadurch werden a
 msgid "Are you sure you want to delete %s entries? This will also remove all associated files, notes, and logs."
 msgstr "Bist du sicher, dass du %s Einträge löschen willst? Dadurch werden auch alle zugehörigen Dateien, Notizen und Protokolle gelöscht."
 
+#: includes/admin/admin.php:232
+msgid "Are you sure you want to trash this entry? This will also remove all associated files, notes, and logs."
+msgstr "Bist du sicher, dass du diesen Eintrag löschen willst? Dadurch werden auch alle zugehörigen Dateien, Notizen und Protokolle gelöscht."
+
 #. translators: %1$s - addon download URL, %2$s - link to manual installation
 #. guide, %3$s - link to contact support.
 #. translators: %1$s - addon download URL, %2$s - link to a manual installation
@@ -2712,10 +2716,6 @@ msgstr "Bist du sicher, dass du %s Einträge löschen willst? Dadurch werden auc
 #: includes/admin/admin.php:203 includes/admin/ajax-actions.php:801
 msgid "Could not install the addon. Please <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">download it from wpforms.com</a> and <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">install it manually</a>, or <a href=\"%3$s\" target=\"_blank\" rel=\"noopener noreferrer\">contact support</a> for assistance."
 msgstr "Das Add-on konnte nicht installiert werden. Bitte <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">lade es von wpforms.com</a> herunter und <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">installiere es manuell</a> oder <a href=\"%3$s\" target=\"_blank\" rel=\"noopener noreferrer\">kontaktiere den Support</a> für Hilfe."
-
-#: includes/admin/admin.php:232
-msgid "Are you sure you want to trash this entry? This will also remove all associated files, notes, and logs."
-msgstr "Bist du sicher, dass du diesen Eintrag löschen willst? Dadurch werden auch alle zugehörigen Dateien, Notizen und Protokolle gelöscht."
 
 #: includes/admin/admin.php:233
 msgid "Are you sure you want to trash ALL entries? This will also remove all associated files, notes, and logs."
@@ -3004,10 +3004,6 @@ msgstr "seit %1$s"
 msgid "Select a template to use for this notification or %1$sview templates%2$s."
 msgstr "Wähle ein Template aus, das du für diese Meldung verwenden möchtest, oder %1$szeige Templates an%2$s."
 
-#: templates/builder/notifications/email-template-modal.php:21
-msgid "Choose a Template"
-msgstr "Template wählen"
-
 #: templates/builder/notifications/email-template-modal.php:24
 msgid "Browse through our collection of email notification templates."
 msgstr "Stöbere in unserer Sammlung von Templates für E-Mail-Benachrichtigungen."
@@ -3092,6 +3088,10 @@ msgstr "Serifen"
 #: src/Admin/Settings/Email.php:394
 msgid "Sans Serif"
 msgstr "Serifenlos"
+
+#: templates/builder/notifications/email-template-modal.php:21
+msgid "Choose a Template"
+msgstr "Template auswählen"
 
 #. translators: %1$s - link to the WPForms.com doc article.
 #: src/Admin/Education/Builder/Calculations.php:161
@@ -3340,10 +3340,6 @@ msgstr "Verwende Formularexportdateien, um ein Backup deiner Formulare zu erstel
 #: src/Admin/Tools/Views/Export.php:177
 msgid "Export a Form Template"
 msgstr "Eine Formularvorlage exportieren"
-
-#: src/Admin/Tools/Views/Import.php:218
-msgid "Choose a File"
-msgstr "Datei wählen"
 
 #: src/Admin/Tools/Views/Logs.php:98
 msgid "Log Settings"
@@ -3613,6 +3609,10 @@ msgstr "E-Mails können asynchron versendet werden, was die Verarbeitung beschle
 #: src/Admin/Payments/Views/Single.php:151
 msgid "Are you sure you want to cancel this subscription?"
 msgstr "Möchtest du dieses Abonnement wirklich kündigen?"
+
+#: src/Admin/Tools/Views/Import.php:218
+msgid "Choose a File"
+msgstr "Datei auswählen"
 
 #: includes/admin/admin.php:222
 msgid "Close and Refresh"
@@ -13078,13 +13078,6 @@ msgstr "Geolocation-Daten ansehen"
 msgid "Select %s to use for auto-populating field choices."
 msgstr "%s als Auto-Ausfüllen-Methode für Feld-Wahlmöglichkeiten auswählen."
 
-#: includes/admin/builder/panels/class-setup.php:77
-#: src/Admin/Tools/Views/Export.php:207
-#: templates/admin/challenge/builder.php:21
-#: templates/admin/challenge/modal.php:39
-msgid "Select a Template"
-msgstr "Ein Template auswählen"
-
 #: src/Integrations/Gutenberg/FormSelector.php:429
 msgid "Select and display one of your forms."
 msgstr "Eines deiner Formulare auswählen und anzeigen."
@@ -13499,14 +13492,6 @@ msgstr "Alle Formulareinträge innerhalb des WordPress-Dashboards anzeigen"
 msgid "Post Type"
 msgstr "Inhaltstyp"
 
-#: lite/wpforms-lite.php:266
-msgid "From Name"
-msgstr "Name des Absenders (von)"
-
-#: lite/wpforms-lite.php:299
-msgid "From Email"
-msgstr "E-Mail des Absenders (von)"
-
 #: src/Admin/Helpers/Datepicker.php:419
 msgid "Last 90 days"
 msgstr "Letzte 90 Tage"
@@ -13707,3 +13692,18 @@ msgstr "Jetzt upgraden"
 #: src/Lite/Admin/Education/Admin/DidYouKnow.php:136
 msgid "Learn More"
 msgstr "Mehr erfahren"
+
+#: includes/admin/builder/panels/class-setup.php:77
+#: src/Admin/Tools/Views/Export.php:207
+#: templates/admin/challenge/builder.php:21
+#: templates/admin/challenge/modal.php:39
+msgid "Select a Template"
+msgstr "Template auswählen"
+
+#: lite/wpforms-lite.php:266
+msgid "From Name"
+msgstr "Absendername"
+
+#: lite/wpforms-lite.php:299
+msgid "From Email"
+msgstr "E-Mail-Adresse des Absenders"
