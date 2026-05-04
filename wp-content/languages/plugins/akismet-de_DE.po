@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Akismet Anti-spam: Spam Protection - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-04-23 23:00:33+0000\n"
+"PO-Revision-Date: 2026-05-02 14:16:14+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -58,7 +58,7 @@ msgstr "API-Schlüssel für Akismet."
 
 #: class.akismet-admin.php:118
 msgid "Akismet API Key"
-msgstr "Akismet API Schlüssel"
+msgstr "Akismet-API-Schlüssel"
 
 #: class-akismet-connector.php:130
 msgid "Protect your site from spam."
@@ -70,7 +70,7 @@ msgstr "Fähigkeiten für Spamschutz und Kommentarmoderation mit Akismet."
 
 #: abilities/class-akismet-ability-get-stats.php:189
 msgid "Failed to retrieve stats from Akismet API."
-msgstr "Statistiken konnten nicht von Akismet API abgerufen werden."
+msgstr "Das Abrufen der Statistiken von der Akismet-API ist fehlgeschlagen."
 
 #: abilities/class-akismet-ability-get-stats.php:137
 msgid "Error message if the operation could not be completed."
@@ -90,11 +90,11 @@ msgstr "Anzahl der legitimen Kommentare, die in diesem Zeitraum fälschlicherwei
 
 #: abilities/class-akismet-ability-get-stats.php:118
 msgid "Number of spam comments that were missed in this period."
-msgstr "Anzahl der Spam-Kommentare, die in diesem Zeitraum verpasst wurden."
+msgstr "Anzahl der Spam-Kommentare, die in diesem Zeitraum übersehen wurden."
 
 #: abilities/class-akismet-ability-get-stats.php:114
 msgid "Total number of legitimate comments approved in this period."
-msgstr "Gesamtanzahl legitimer Kommentare, die in diesem Zeitraum genehmigt wurden."
+msgstr "Gesamtanzahl legitimer Kommentare, die in diesem Zeitraum freigegeben wurden."
 
 #: abilities/class-akismet-ability-get-stats.php:110
 msgid "Total number of spam comments blocked in this period."
@@ -106,7 +106,7 @@ msgstr "Monatliche Aufschlüsselung der Statistiken."
 
 #: abilities/class-akismet-ability-get-stats.php:100
 msgid "Estimated time saved by Akismet blocking spam, in seconds."
-msgstr "Geschätzte Zeitersparnis durch Blockieren von Spam durch Akismet in Sekunden."
+msgstr "Geschätzte Zeitersparnis durch die Spam-Blockierung durch Akismet in Sekunden."
 
 #: abilities/class-akismet-ability-get-stats.php:96
 msgid "Accuracy percentage of spam detection."
@@ -122,7 +122,7 @@ msgstr "Anzahl übersehener Spam-Kommentare."
 
 #: abilities/class-akismet-ability-get-stats.php:84
 msgid "Total number of legitimate comments approved."
-msgstr "Gesamtanzahl zulässiger genehmigter Kommentare."
+msgstr "Gesamtzahl der freigegebenen legitimen Kommentare."
 
 #: abilities/class-akismet-ability-get-stats.php:80
 msgid "Total number of spam comments blocked."
@@ -134,7 +134,7 @@ msgstr "Ob die Statistiken erfolgreich abgerufen wurden."
 
 #: abilities/class-akismet-ability-get-stats.php:56
 msgid "The time interval for stats. Options: \"6-months\", \"all\", or \"60-days\"."
-msgstr "Das Zeitintervall für Statistiken. Optionen: „6 Monate“, „alle“ oder „60 Tage“."
+msgstr "Das Zeitintervall für Statistiken. Optionen: „6-months“, „all“ oder „60-days“."
 
 #: abilities/class-akismet-ability-get-stats.php:42
 msgid "Retrieves Akismet spam protection statistics including spam blocked count, accuracy percentage, and other key metrics."
@@ -142,7 +142,7 @@ msgstr "Ruft Statistiken zum Spamschutz von Akismet ab, einschließlich Anzahl b
 
 #: abilities/class-akismet-ability-get-stats.php:33
 msgid "Get Akismet statistics"
-msgstr "Akismet-Statistiken erhalten"
+msgstr "Akismet-Statistiken abrufen"
 
 #: abilities/class-akismet-ability-comment-check.php:195
 msgid "Failed to check comment with Akismet API."
@@ -186,7 +186,7 @@ msgstr "User Agent-Zeichenfolge des Webbrowsers, der den Kommentar übermittelt.
 
 #: abilities/class-akismet-ability-comment-check.php:88
 msgid "IP address of the commenter."
-msgstr "IP-Adresse des Kommentators."
+msgstr "Die IP-Adresse des Kommentarautors."
 
 #: abilities/class-akismet-ability-comment-check.php:83
 msgid "The permanent link to the post or page."
@@ -194,7 +194,7 @@ msgstr "Der permanente Link zum Beitrag oder zur Seite."
 
 #: abilities/class-akismet-ability-comment-check.php:79
 msgid "The ID of the post the comment is being submitted to."
-msgstr "Die ID des Beitrags, an den der Kommentar übermittelt wird."
+msgstr "Die ID des Beitrags, zu dem der Kommentar abgegeben wurde."
 
 #: abilities/class-akismet-ability-comment-check.php:74
 msgid "The comment type (e.g., \"comment\", \"trackback\", \"pingback\")."
@@ -214,7 +214,7 @@ msgstr "E-Mail-Adresse des Kommentar-Autors."
 
 #: abilities/class-akismet-ability-comment-check.php:56
 msgid "Name of the comment author."
-msgstr "Name des Kommentar-Autors."
+msgstr "Der Name des Kommentarautors."
 
 #: abilities/class-akismet-ability-comment-check.php:42
 msgid "Checks a comment against the Akismet spam filter to determine if it is spam or legitimate content."
@@ -692,6 +692,10 @@ msgstr "Deine Website konnte keine Verbindung zu den Akismet-Servern herstellen.
 #: views/predefined.php:7
 msgid "An Akismet API key has been defined in the %s file for this site."
 msgstr "Ein Akismet-API-Schlüssel wurde in der Datei %s für diese Website definiert."
+
+#: views/predefined.php:2
+msgid "Manual configuration"
+msgstr "Manuelle Konfiguration"
 
 #: class.akismet-admin.php:300
 msgid "On this page, you are able to update your Akismet settings and view spam stats."

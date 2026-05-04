@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WPForms &#8211; Easy Form Builder for WordPress &#8211; Contact Forms, Payment Forms, Surveys, &amp; More - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-03-21 06:38:35+0000\n"
+"PO-Revision-Date: 2026-05-01 08:34:53+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,6 +10,73 @@ msgstr ""
 "X-Generator: GlotPress/4.0.3\n"
 "Language: es\n"
 "Project-Id-Version: Plugins - WPForms &#8211; Easy Form Builder for WordPress &#8211; Contact Forms, Payment Forms, Surveys, &amp; More - Stable (latest release)\n"
+
+#: templates/education/admin/payments/single-page.php:22
+msgid "Unlock conditional logic, coupons, lower Stripe, PayPal and Square fees, and more."
+msgstr "Desbloquea la lógica condicional, cupones, reduce las comisiones de Stripe, PayPal y Square, y mucho más."
+
+#. translators: %s - WPForms support URL.
+#: src/Lite/Integrations/LiteConnect/Admin.php:99
+msgid "<strong>Entry Backup Failures Detected</strong><br>Some entry backups may not have been saved. This is usually caused by a scheduling issue on your site. Please <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">contact Support</a> so we can help resolve it and ensure your entries are protected."
+msgstr "<strong>Se detectaron errores en la copia de seguridad de entradas</strong><br>Es posible que algunas copias de seguridad de entrada no se hayan guardado. Esto suele deberse a un problema de programación en tu sitio. <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">contacta con el soporte</a> para que podamos ayudarte a resolverlo y garantizar que tus entradas estén protegidas."
+
+#. translators: %s - WPForms.com URL for PayPal Commerce webhooks
+#. documentation.
+#: src/Integrations/PayPalCommerce/WebhooksHealthCheck.php:216
+msgid "Looks like you have a problem with your webhooks configuration. Please check and confirm that you've configured the WPForms webhooks in your PayPal account. This notice will disappear automatically when a new PayPal request comes in. See our <a href=\"%1$s\" rel=\"nofollow noopener\" target=\"_blank\">documentation</a> for more information."
+msgstr "Parece que tienes un problema en la configuración de tus webhooks. Comprueba y confirma que has configurado los webhooks de WPForms en tu cuenta de PayPal. Este aviso desaparecerá automáticamente cuando llegue una nueva solicitud de PayPal. Consulta nuestra <a href=\"%1$s\" rel=\"nofollow noopener\" target=\"_blank\">documentación</a> para obtener más información."
+
+#: src/Integrations/PayPalCommerce/Process/ProcessSubscriptionAjax.php:99
+#: src/Integrations/PayPalCommerce/Process/ProcessSubscriptionProcessorAjax.php:92
+msgid "This subscription cannot be processed because there was an error with the subscription processing API call."
+msgstr "Esta suscripción no se ha podido procesar porque se ha producido un error con la llamada a la API de procesamiento de la suscripción."
+
+#: src/Integrations/PayPalCommerce/Process/ProcessSubscriptionAjax.php:58
+#: src/Integrations/PayPalCommerce/Process/ProcessSubscriptionProcessorAjax.php:57
+msgid "This subscription cannot be created because there was an error with the create subscription API call."
+msgstr "No se puede crear esta suscripción porque se ha producido un error en la llamada a la API para crear la suscripción."
+
+#: src/Integrations/PayPalCommerce/Process/ProcessSingleAjax.php:58
+msgid "This order cannot be created because there was an error with the create order API call."
+msgstr "Este pedido no se puede crear porque se ha producido un error en la llamada a la API para crear el pedido."
+
+#: src/Integrations/PayPalCommerce/Process/ProcessSingleAjax.php:47
+#: src/Integrations/PayPalCommerce/Process/ProcessSubscriptionAjax.php:47
+#: src/Integrations/PayPalCommerce/Process/ProcessSubscriptionProcessorAjax.php:46
+msgid "Something went wrong. Please contact site administrator."
+msgstr "Se ha producido un error. Contacta con el administrador del sitio."
+
+#: src/Integrations/PayPalCommerce/Process/ProcessHelper.php:86
+msgid "Not specified"
+msgstr "No especificado"
+
+#: src/Integrations/PayPalCommerce/Process/Process.php:1061
+msgid "Irregular activity detected. Your submission has been declined."
+msgstr "Se ha rechazado tu envío porque se ha detectado actividad irregular."
+
+#: src/Integrations/PayPalCommerce/Process/Process.php:269
+msgid "This subscription cannot be activated because there was an error with the capture API call."
+msgstr "Esta suscripción no se puede activar porque se ha producido un error en la llamada a la API de captura."
+
+#: src/Integrations/PayPalCommerce/Process/Process.php:238
+msgid "This subscription cannot be activated because there was an error with the activation API call."
+msgstr "Esta suscripción no se ha podido activar porque se ha producido un error en la llamada a la API de activación."
+
+#: src/Integrations/PayPalCommerce/Process/Process.php:211
+msgid "This payment cannot be processed because there was an error with the create order API call."
+msgstr "Este pago no se ha podido procesar porque se ha producido un error en la llamada a la API para crear el pedido."
+
+#: src/Integrations/PayPalCommerce/Process/Process.php:172
+msgid "This payment cannot be processed because it was declined by payment processor."
+msgstr "Este pago no se ha podido procesar porque ha sido rechazado por el procesador de pagos."
+
+#: src/Integrations/PayPalCommerce/Process/Process.php:158
+msgid "This payment cannot be processed because there was an error with the capture order API call."
+msgstr "Este pago no se ha podido procesar porque se ha producido un error en la llamada a la API de captura de pedidos."
+
+#: src/Integrations/PayPalCommerce/Process/Base.php:131
+msgid "This payment cannot be processed because the account connection is expired or invalid."
+msgstr "Este pago no se puede ha podido porque la conexión de la cuenta ha caducado o no es válida."
 
 #: src/Forms/Fields/Addons/Map/Field.php:798
 msgid "100 km"
@@ -1323,19 +1390,19 @@ msgstr "Faltan datos necesarios para la conexión de la cuenta Square. Debes vol
 msgid "There Are Some Problems With Your Square Connection"
 msgstr "Hay algunos problemas con tu conexión a Square"
 
-#: src/Integrations/Square/Admin/Connect.php:427
+#: src/Integrations/Square/Admin/Connect.php:450
 msgid "Square Error: We could not save an account connection safely. Please, try again later."
 msgstr "Square falló: No hemos podido guardar una conexión de cuenta de forma segura. Por favor, inténtalo de nuevo más tarde."
 
-#: src/Integrations/Square/Admin/Connect.php:408
+#: src/Integrations/Square/Admin/Connect.php:431
 msgid "Square Error: We could not connect to Square. No tokens were given."
 msgstr "Square falló: No hemos podido conectar con Square. No se entregaron tokens."
 
-#: src/Integrations/Square/Admin/Connect.php:261
+#: src/Integrations/Square/Admin/Connect.php:284
 msgid "Something went wrong while performing a refresh tokens request"
 msgstr "Algo ha ido mal al realizar una solicitud de actualización de tokens"
 
-#: src/Integrations/Square/Admin/Connect.php:258
+#: src/Integrations/Square/Admin/Connect.php:281
 #: src/Integrations/Square/Api/WebhooksManager.php:42
 msgid "You are not allowed to perform this action"
 msgstr "No tienes permisos para realizar esta acción"
