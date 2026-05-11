@@ -1,20 +1,24 @@
-=== Video Popup Block by WPZOOM ===
+=== Video Popup Block - YouTube, Vimeo, TikTok Lightbox by WPZOOM ===
 Contributors:       wpzoom
 Donate link:        http://paypal.me/wpzm/10usd
 Author URI:         https://www.wpzoom.com/
-Requires at least:  6.0
-Tested up to:       6.8
-Stable tag:         1.1.4
+Requires at least:  6.4
+Tested up to:       7.4
+Stable tag:         1.1.5
 Requires PHP:       7.4
 License:            GPLv2 or later
 License URI:        https://www.gnu.org/licenses/gpl-2.0.html
-Tags:               video block, video popup, play button, self-hosted, lightbox
+Tags:               video popup, video lightbox, youtube popup, video block, play button
 
-Easily add a Gutenberg block to create customizable Play icon that open popups with YouTube, YouTube Shorts, TikTok, Vimeo, or MP4 videos
+Video popup plugin for WordPress - Add YouTube, Vimeo, TikTok & MP4 videos in a lightbox popup. Customizable play button with Gutenberg block.
 
 == Description ==
 
-Video Popup Block by WPZOOM - a simple yet powerful single-block WordPress plugin designed to enhance your website with engaging video content. This plugin adds a Gutenberg block to your WordPress editor, enabling you to effortlessly create customizable buttons that, when clicked, open a responsive popup containing a YouTube, YouTube Shorts, TikTok, Vimeo, or Self-Hosted (MP4) video.
+= Video Popup & Lightbox Block for WordPress =
+
+**Display YouTube, Vimeo, TikTok, and MP4 videos in beautiful lightbox popups.** Add customizable play buttons anywhere on your site that open responsive video popups - perfect for hero sections, portfolios, and landing pages.
+
+A simple yet powerful Gutenberg block that enhances your website with engaging video content.
 
 [VIEW DEMO](https://demo.wpzoom.com/inspiro-blocks)
 
@@ -72,6 +76,9 @@ In the Block editor click on the "+" button to add a new button. Search for "Vid
 
 
 == Changelog ==
+
+= 1.1.5 =
+* Added new Aspect Ratio option
 
 = 1.1.4 =
 * Added support for TikTok videos with portrait orientation
