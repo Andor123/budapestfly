@@ -26,6 +26,8 @@ updateCategory( 'wpzoom-blocks', {
 } );
 
 registerBlockType( 'wpzoom-forms/form-block', {
+	$schema:      'https://schemas.wp.org/trunk/block.json',
+	apiVersion:   3,
 	title:       __( 'Contact Form by WPZOOM', 'wpzoom-blocks' ),
 	description: __( 'A contact form block for accepting submissions from users.', 'wpzoom-blocks' ),
     keywords: [

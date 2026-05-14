@@ -5,7 +5,7 @@ Author URI:        https://www.wpzoom.com/
 Requires at least: 6.5
 Requires PHP:      7.4
 Tested up to:      7.0
-Stable tag:        1.3.8
+Stable tag:        1.3.9
 License:           GNU General Public License v2
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 Tags:              contact form, form builder, contact, forms, email form
@@ -27,7 +27,7 @@ Drag & drop contact form builder for WordPress. Create contact forms, custom for
 ✅ **Email Notifications** - Get instant alerts when someone submits your contact form
 ✅ **Form Submissions Dashboard** - All entries saved and searchable in WordPress
 ✅ **Mobile Responsive** - Forms look great on all devices
-✅ **Ready-to-Use Templates** - Contact, feedback, quote, and 20+ additional free starter layouts
+✅ **Ready-to-Use Templates** - Contact form, feedback form, appointment form, and more
 
 ###💪 Want More Power? Try WPZOOM Forms PRO
 
@@ -43,13 +43,7 @@ Build contact forms, feedback forms, and email forms effortlessly. Simply drag f
 
 **Ready-to-Use Form Templates**
 
-Get started fast with professionally designed templates:
-- Simple contact form
-- Feedback form
-- Appointment booking form
-- Quote request form
-- Newsletter signup form
-- +20 additional free starter templates
+Get started fast with professionally designed templates, including contact, advanced contact, quote request, and feedback forms, plus twenty new layouts for leads, waitlists, demos, audits, events, support, education, real estate, restaurants, and local services.
 
 **🛡️ Advanced Spam Protection**
 
@@ -221,6 +215,9 @@ Yes! Use shortcodes to embed your contact forms in the Classic Editor or any the
 
 
 == Changelog ==
+
+= 1.3.9 =
+* Added compatibility for WordPress 7.0
 
 = 1.3.8 =
 * Added 20 new free form templates
