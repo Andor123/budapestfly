@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 6.9.x package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-05-17 04:27:42+0000\n"
+"PO-Revision-Date: 2026-05-18 10:13:19+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -2666,10 +2666,6 @@ msgstr "Deine Registrierungs-E-Mail wird an diese Adresse gesendet. (Bitte über
 msgid "Wait a little longer. Sometimes delivery of email can be delayed by processes outside of our control."
 msgstr "Bitte warte noch ein bisschen. Manchmal kann sich die Zustellung von E-Mails durch Vorgänge außerhalb unserer Kontrolle verzögern."
 
-#: wp-signup.php:881
-msgid "Check the junk or spam folder of your email client. Sometime emails wind up there by mistake."
-msgstr "Überprüfe den Junk/Spam-Ordner deines E-Mail-Postfachs, da E-Mails manchmal fälschlicherweise als Spam gekennzeichnet werden."
-
 #: wp-signup.php:1015
 msgid "Sorry, new registrations are not allowed at this time."
 msgstr "Neue Registrierungen sind derzeit leider nicht erlaubt."
@@ -3720,29 +3716,6 @@ msgstr ""
 "Das Team von ###SITENAME###\n"
 "###SITEURL###"
 
-#. translators: Do not translate SITENAME, SITEURL; those are placeholders.
-#: wp-includes/user.php:4511
-msgid ""
-"Howdy,\n"
-"\n"
-"Your request to erase your personal data on ###SITENAME### has been completed.\n"
-"\n"
-"If you have any follow-up questions or concerns, please contact the site administrator.\n"
-"\n"
-"Regards,\n"
-"All at ###SITENAME###\n"
-"###SITEURL###"
-msgstr ""
-"Hallo,\n"
-"\n"
-"deine Anfrage auf Löschung deiner personenbezogenen Daten auf ###SITENAME### wurde abgeschlossen.\n"
-"\n"
-"Wenn du weitere Fragen oder Bedenken hast, wende dich bitte an den Administrator der Website.\n"
-"\n"
-"Viele Grüße\n"
-"Das Team von ###SITENAME###\n"
-"###SITEURL###"
-
 #. translators: Do not translate SITENAME, SITEURL, PRIVACY_POLICY_URL; those
 #. are placeholders.
 #: wp-includes/user.php:4525
@@ -3766,6 +3739,29 @@ msgstr ""
 "Wenn du weitere Fragen oder Bedenken hast, wende dich bitte an den Administrator der Website.\n"
 "\n"
 "Für weitere Informationen kannst du auch unsere Datenschutzerklärung lesen: ###PRIVACY_POLICY_URL###\n"
+"\n"
+"Viele Grüße\n"
+"Das Team von ###SITENAME###\n"
+"###SITEURL###"
+
+#. translators: Do not translate SITENAME, SITEURL; those are placeholders.
+#: wp-includes/user.php:4511
+msgid ""
+"Howdy,\n"
+"\n"
+"Your request to erase your personal data on ###SITENAME### has been completed.\n"
+"\n"
+"If you have any follow-up questions or concerns, please contact the site administrator.\n"
+"\n"
+"Regards,\n"
+"All at ###SITENAME###\n"
+"###SITEURL###"
+msgstr ""
+"Hallo,\n"
+"\n"
+"deine Anfrage auf Löschung deiner personenbezogenen Daten auf ###SITENAME### wurde abgeschlossen.\n"
+"\n"
+"Wenn du weitere Fragen oder Bedenken hast, wende dich bitte an den Administrator der Website.\n"
 "\n"
 "Viele Grüße\n"
 "Das Team von ###SITENAME###\n"
@@ -3856,6 +3852,10 @@ msgstr "Linkbeschreibung anzeigen"
 #: wp-includes/widgets/class-wp-widget-links.php:167
 msgid "Show Link Image"
 msgstr "Linkbild anzeigen"
+
+#: wp-signup.php:881
+msgid "Check the junk or spam folder of your email client. Sometime emails wind up there by mistake."
+msgstr "Überprüfe den Junk- oder Spamordner deines E-Mail-Postfachs. Manchmal gelangen E-Mails versehentlich dorthin."
 
 #. translators: Hidden accessibility text.
 #: wp-includes/revision.php:34 wp-includes/js/dist/block-library.js:25465
@@ -7417,6 +7417,12 @@ msgstr "Die URL wurde nicht gefunden. Die Antwort gab einen anderen Statuscode a
 msgid "<strong>Error:</strong> Your account has been marked as a spammer."
 msgstr "<strong>Fehler:</strong> Dein Konto wurde als Spam markiert."
 
+#. translators: %s: Name of parameter being updated:
+#. font_family_settings[slug]".
+#: wp-includes/rest-api/endpoints/class-wp-rest-font-families-controller.php:114
+msgid "%s cannot be updated."
+msgstr "%s konnte nicht aktualisiert werden."
+
 #. translators: Do not translate USERNAME, ADMIN_URL, EMAIL, SITENAME, SITEURL:
 #. those are placeholders.
 #: wp-includes/user.php:3853
@@ -7451,17 +7457,6 @@ msgstr ""
 "Viele Grüße\n"
 "Das Team von ###SITENAME###\n"
 "###SITEURL###"
-
-#. translators: %s: Name of parameter being updated:
-#. font_family_settings[slug]".
-#: wp-includes/rest-api/endpoints/class-wp-rest-font-families-controller.php:114
-msgid "%s cannot be updated."
-msgstr "%s konnte nicht aktualisiert werden."
-
-#: wp-includes/theme.php:2469
-msgctxt "Theme starter content"
-msgid "This is a page with some basic contact information, such as an address and phone number. You might also try a plugin to add a contact form."
-msgstr "Das ist eine Seite mit einigen grundlegenden Kontaktinformationen, wie Adresse und Telefonnummer. Du kannst auch ein Plugin nutzen, um ein Kontaktformular einzufügen."
 
 #. translators: Do not translate USERNAME, ADMIN_EMAIL, NEW_EMAIL, EMAIL,
 #. SITENAME, SITEURL: those are placeholders.
@@ -7522,6 +7517,11 @@ msgstr ""
 "Viele Grüße\n"
 "Das Team von ###SITENAME###\n"
 "###SITEURL###"
+
+#: wp-includes/theme.php:2469
+msgctxt "Theme starter content"
+msgid "This is a page with some basic contact information, such as an address and phone number. You might also try a plugin to add a contact form."
+msgstr "Das ist eine Seite mit einigen grundlegenden Kontaktinformationen, wie Adresse und Telefonnummer. Du kannst auch ein Plugin nutzen, um ein Kontaktformular einzufügen."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-global-styles-controller.php:481
 msgid "Title of the global styles variation."
@@ -9715,6 +9715,40 @@ msgstr "Die Option %1$s ist für die Funktionsfamilie %2$s veraltet. %3$s sollte
 msgid "Drag and drop to reorder media files."
 msgstr "Nutze Drag-and-drop zum Umsortieren der Mediendateien."
 
+#. translators: Do not translate USERNAME, SITE_NAME, BLOG_URL, PASSWORD: those
+#. are placeholders.
+#: wp-includes/ms-functions.php:1672 wp-admin/includes/schema.php:1295
+msgid ""
+"Howdy USERNAME,\n"
+"\n"
+"Your new SITE_NAME site has been successfully set up at:\n"
+"BLOG_URL\n"
+"\n"
+"You can log in to the administrator account with the following information:\n"
+"\n"
+"Username: USERNAME\n"
+"Password: PASSWORD\n"
+"Log in here: BLOG_URLwp-login.php\n"
+"\n"
+"We hope you enjoy your new site. Thanks!\n"
+"\n"
+"--The Team @ SITE_NAME"
+msgstr ""
+"Hallo USERNAME,\n"
+"\n"
+"deine neue Website SITE_NAME wurde erfolgreich eingerichtet:\n"
+"BLOG_URL\n"
+"\n"
+"Du kannst dich mit den folgenden Angaben als Administrator anmelden:\n"
+"\n"
+"Benutzername: USERNAME\n"
+"Passwort: PASSWORD\n"
+"Melde dich hier an: BLOG_URLwp-login.php\n"
+"\n"
+"Wir hoffen, dir gefällt deine neue Website. Vielen Dank!\n"
+"\n"
+"-- Das Team von SITE_NAME"
+
 #. translators: Do not translate USERNAME, PASSWORD, LOGINLINK, SITE_NAME:
 #. those are placeholders.
 #: wp-includes/ms-functions.php:2399
@@ -9749,40 +9783,6 @@ msgstr ""
 #: wp-includes/ms-load.php:484
 msgid "<strong>Database tables are missing.</strong> This means that your host&#8217;s database server is not running, WordPress was not installed properly, or someone deleted %s. You really should look at your database now."
 msgstr "<strong>Datenbanktabellen fehlen.</strong> Das heißt, dass der Datenbankserver deines Hostings nicht läuft, WordPress nicht richtig installiert wurde oder %s von jemandem gelöscht wurde. Du solltest jetzt ernsthaft einen Blick auf deine Datenbank werfen."
-
-#. translators: Do not translate USERNAME, SITE_NAME, BLOG_URL, PASSWORD: those
-#. are placeholders.
-#: wp-includes/ms-functions.php:1672 wp-admin/includes/schema.php:1295
-msgid ""
-"Howdy USERNAME,\n"
-"\n"
-"Your new SITE_NAME site has been successfully set up at:\n"
-"BLOG_URL\n"
-"\n"
-"You can log in to the administrator account with the following information:\n"
-"\n"
-"Username: USERNAME\n"
-"Password: PASSWORD\n"
-"Log in here: BLOG_URLwp-login.php\n"
-"\n"
-"We hope you enjoy your new site. Thanks!\n"
-"\n"
-"--The Team @ SITE_NAME"
-msgstr ""
-"Hallo USERNAME,\n"
-"\n"
-"deine neue Website SITE_NAME wurde erfolgreich eingerichtet:\n"
-"BLOG_URL\n"
-"\n"
-"Du kannst dich mit den folgenden Angaben als Administrator anmelden:\n"
-"\n"
-"Benutzername: USERNAME\n"
-"Passwort: PASSWORD\n"
-"Melde dich hier an: BLOG_URLwp-login.php\n"
-"\n"
-"Wir hoffen, dir gefällt deine neue Website. Vielen Dank!\n"
-"\n"
-"-- Das Team von SITE_NAME"
 
 #. translators: 1: Site URL, 2: Table name, 3: Database name.
 #: wp-includes/ms-load.php:490
@@ -10321,6 +10321,18 @@ msgstr "Ergebnissatz auf Kommentare begrenzen, denen ein bestimmter Status zugew
 msgid "Limit result set to comments assigned a specific type. Requires authorization."
 msgstr "Ergebnissatz auf Kommentare begrenzen, denen ein bestimmter Typ zugewiesen ist. Erfordert eine Autorisierung."
 
+#: wp-includes/rest-api/endpoints/class-wp-rest-abilities-v1-categories-controller.php:279
+#: wp-includes/rest-api/endpoints/class-wp-rest-abilities-v1-list-controller.php:344
+#: wp-includes/rest-api/endpoints/class-wp-rest-controller.php:345
+msgid "Current page of the collection."
+msgstr "Aktuelle Seite der Sammlung."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-abilities-v1-categories-controller.php:285
+#: wp-includes/rest-api/endpoints/class-wp-rest-abilities-v1-list-controller.php:350
+#: wp-includes/rest-api/endpoints/class-wp-rest-controller.php:353
+msgid "Maximum number of items to be returned in result set."
+msgstr "Maximale Anzahl der im Ergebnissatz zurückzugebenden Elemente."
+
 #. translators: %s: Method name.
 #: wp-includes/rest-api/endpoints/class-wp-rest-controller.php:70
 #: wp-includes/rest-api/endpoints/class-wp-rest-controller.php:87
@@ -10336,18 +10348,6 @@ msgstr "Ergebnissatz auf Kommentare begrenzen, denen ein bestimmter Typ zugewies
 #: wp-includes/rest-api/endpoints/class-wp-rest-controller.php:258
 msgid "Method '%s' not implemented. Must be overridden in subclass."
 msgstr "Die Methode ‚%s‘ wurde nicht implementiert. Sie muss in der Unterklasse überschrieben werden."
-
-#: wp-includes/rest-api/endpoints/class-wp-rest-abilities-v1-categories-controller.php:279
-#: wp-includes/rest-api/endpoints/class-wp-rest-abilities-v1-list-controller.php:344
-#: wp-includes/rest-api/endpoints/class-wp-rest-controller.php:345
-msgid "Current page of the collection."
-msgstr "Aktuelle Seite der Sammlung."
-
-#: wp-includes/rest-api/endpoints/class-wp-rest-abilities-v1-categories-controller.php:285
-#: wp-includes/rest-api/endpoints/class-wp-rest-abilities-v1-list-controller.php:350
-#: wp-includes/rest-api/endpoints/class-wp-rest-controller.php:353
-msgid "Maximum number of items to be returned in result set."
-msgstr "Maximale Anzahl der im Ergebnissatz zurückzugebenden Elemente."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-controller.php:362
 msgid "Limit results to those matching a string."
@@ -15383,6 +15383,24 @@ msgstr "Du bist leider nicht berechtigt, diese Kategorie zu löschen."
 msgid "Sorry, you are not allowed to edit posts in this post type."
 msgstr "Du bist leider nicht berechtigt, Beiträge dieses Inhaltstyps zu bearbeiten."
 
+#: wp-includes/class-wp-xmlrpc-server.php:1464
+#: wp-includes/class-wp-xmlrpc-server.php:1952
+#: wp-includes/class-wp-xmlrpc-server.php:4804
+#: wp-includes/class-wp-xmlrpc-server.php:4988
+#: wp-includes/class-wp-xmlrpc-server.php:5235
+#: wp-includes/class-wp-xmlrpc-server.php:5795
+#: wp-includes/class-wp-xmlrpc-server.php:6138
+#: wp-includes/class-wp-xmlrpc-server.php:6508
+#: wp-includes/class-wp-xmlrpc-server.php:6698
+#: wp-includes/class-wp-xmlrpc-server.php:6756
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:586
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:901
+#: wp-admin/includes/ajax-actions.php:2078 wp-admin/includes/media.php:3828
+#: wp-admin/includes/post.php:288 wp-admin/includes/post.php:2091
+#: wp-admin/includes/post.php:2095
+msgid "Sorry, you are not allowed to edit this post."
+msgstr "Du bist leider nicht berechtigt, diesen Beitrag zu bearbeiten."
+
 #: wp-includes/class-wp-xmlrpc-server.php:562
 msgid "Image default link type"
 msgstr "Standard-Bildlink"
@@ -15404,24 +15422,6 @@ msgstr "Deine letzten Beiträge"
 #: wp-admin/options-general.php:95
 msgid "Tagline"
 msgstr "Untertitel"
-
-#: wp-includes/class-wp-xmlrpc-server.php:1464
-#: wp-includes/class-wp-xmlrpc-server.php:1952
-#: wp-includes/class-wp-xmlrpc-server.php:4804
-#: wp-includes/class-wp-xmlrpc-server.php:4988
-#: wp-includes/class-wp-xmlrpc-server.php:5235
-#: wp-includes/class-wp-xmlrpc-server.php:5795
-#: wp-includes/class-wp-xmlrpc-server.php:6138
-#: wp-includes/class-wp-xmlrpc-server.php:6508
-#: wp-includes/class-wp-xmlrpc-server.php:6698
-#: wp-includes/class-wp-xmlrpc-server.php:6756
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:586
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:901
-#: wp-admin/includes/ajax-actions.php:2078 wp-admin/includes/media.php:3828
-#: wp-admin/includes/post.php:288 wp-admin/includes/post.php:2091
-#: wp-admin/includes/post.php:2095
-msgid "Sorry, you are not allowed to edit this post."
-msgstr "Du bist leider nicht berechtigt, diesen Beitrag zu bearbeiten."
 
 #. translators: %s: Document title from the preview.
 #: wp-includes/class-wp-customize-manager.php:4590
@@ -15518,6 +15518,15 @@ msgstr "Das Löschen des Begriffs ist leider fehlgeschlagen."
 msgid "Sorry, you are not allowed to assign terms in this taxonomy."
 msgstr "Du bist leider nicht berechtigt, in dieser Taxonomie Begriffe zuzuordnen."
 
+#: wp-includes/class-wp-customize-manager.php:5698
+msgid "Posts page"
+msgstr "Beitragsseite"
+
+#. translators: Hidden accessibility text.
+#: wp-includes/customize/class-wp-customize-header-image-control.php:149
+msgid "Remove image"
+msgstr "Bild entfernen"
+
 #. translators: Hidden accessibility text.
 #: wp-includes/class-wp-customize-manager.php:5249
 #: wp-includes/class-wp-customize-widgets.php:807
@@ -15540,15 +15549,6 @@ msgstr "Du bist leider nicht berechtigt, in dieser Taxonomie Begriffe zuzuordnen
 #: wp-admin/includes/class-wp-users-list-table.php:487
 msgid "Remove"
 msgstr "Entfernen"
-
-#: wp-includes/class-wp-customize-manager.php:5698
-msgid "Posts page"
-msgstr "Beitragsseite"
-
-#. translators: Hidden accessibility text.
-#: wp-includes/customize/class-wp-customize-header-image-control.php:149
-msgid "Remove image"
-msgstr "Bild entfernen"
 
 #: wp-includes/customize/class-wp-customize-media-control.php:249
 msgid "Change image"
@@ -15679,6 +15679,10 @@ msgstr "Das Spiegeln des Bildes ist fehlgeschlagen."
 msgid "Image Editor Save Failed"
 msgstr "Das Speichern der Bildbearbeitung ist fehlgeschlagen"
 
+#: wp-includes/class-wp-post-type.php:1006
+msgid "Uploaded to this post"
+msgstr "Zu diesem Beitrag hochgeladen"
+
 #: wp-includes/class-wp-editor.php:1314 wp-includes/media-template.php:965
 #: wp-includes/js/dist/block-editor.js:17466
 #: wp-includes/js/dist/block-editor.js:17490
@@ -15697,10 +15701,6 @@ msgstr "Das Speichern der Bildbearbeitung ist fehlgeschlagen"
 #: wp-admin/includes/class-wp-screen.php:1162
 msgid "Columns"
 msgstr "Spalten"
-
-#: wp-includes/class-wp-post-type.php:1006
-msgid "Uploaded to this post"
-msgstr "Zu diesem Beitrag hochgeladen"
 
 #: wp-includes/class-wp-post-type.php:1005
 msgid "Insert into page"
@@ -15740,6 +15740,18 @@ msgstr "Anmelde-Adresse (URL)"
 #: wp-includes/class-wp-xmlrpc-server.php:557
 msgid "The URL to the admin area"
 msgstr "Die URL des Administrationsbereichs"
+
+#. translators: Localized date and time format, see
+#. https://www.php.net/manual/datetime.format.php
+#. translators: Date/Time format, see
+#. https://www.php.net/manual/datetime.format.php
+#. translators: Links last updated date format, see
+#. https://www.php.net/manual/datetime.format.php
+#: wp-includes/class-wp-locale.php:424 wp-includes/script-loader.php:159
+#: wp-includes/script-loader.php:471 wp-admin/includes/schema.php:440
+#: wp-admin/options-general.php:449
+msgid "F j, Y g:i a"
+msgstr "j. F Y, G:i"
 
 #. translators: Localized date format, see
 #. https://www.php.net/manual/datetime.format.php
@@ -15788,18 +15800,6 @@ msgstr "j. F Y"
 #: wp-admin/includes/schema.php:438 wp-admin/options-general.php:522
 msgid "g:i a"
 msgstr "G:i"
-
-#. translators: Localized date and time format, see
-#. https://www.php.net/manual/datetime.format.php
-#. translators: Date/Time format, see
-#. https://www.php.net/manual/datetime.format.php
-#. translators: Links last updated date format, see
-#. https://www.php.net/manual/datetime.format.php
-#: wp-includes/class-wp-locale.php:424 wp-includes/script-loader.php:159
-#: wp-includes/script-loader.php:471 wp-admin/includes/schema.php:440
-#: wp-admin/options-general.php:449
-msgid "F j, Y g:i a"
-msgstr "j. F Y, G:i"
 
 #: wp-includes/class-wp-http-streams.php:205
 #: wp-includes/class-wp-http-streams.php:214
@@ -17993,10 +17993,6 @@ msgstr "WordPress.org-Themes"
 msgid "Homepage Settings"
 msgstr "Homepage-Einstellungen"
 
-#: wp-includes/class-wp-customize-manager.php:5642
-msgid "You can choose what&#8217;s displayed on the homepage of your site. It can be posts in reverse chronological order (classic blog), or a fixed/static page. To set a static homepage, you first need to create two Pages. One will become the homepage, and the other will be where your posts are displayed."
-msgstr "Du kannst auswählen, was auf der Homepage deiner Website angezeigt wird. Das können Beiträge in umgekehrter chronologischer Reihenfolge (klassischer Blog) oder eine feststehende/statische Seite sein. Um eine statische Homepage festzulegen, musst du erst zwei Seiten erstellen. Eine wird die Homepage und die andere wird die, auf der deine Beiträge angezeigt werden."
-
 #: wp-includes/class-wp-customize-manager.php:5659
 #: wp-admin/options-reading.php:85
 msgid "Your homepage displays"
@@ -18023,6 +18019,10 @@ msgstr "Im Bearbeitungsbereich fügt die Tab-Taste ein Tab-Zeichen ein."
 #: wp-admin/plugin-editor.php:147 wp-admin/theme-editor.php:36
 msgid "To move away from this area, press the Esc key followed by the Tab key."
 msgstr "Zum Verlassen dieses Bereichs drücke die Escape-Taste und dann die Tab-Taste."
+
+#: wp-includes/class-wp-customize-manager.php:5642
+msgid "You can choose what&#8217;s displayed on the homepage of your site. It can be posts in reverse chronological order (classic blog), or a fixed/static page. To set a static homepage, you first need to create two Pages. One will become the homepage, and the other will be where your posts are displayed."
+msgstr "Du kannst auswählen, was auf der Homepage deiner Website angezeigt wird. Das können Beiträge in umgekehrter chronologischer Reihenfolge (klassischer Blog) oder eine feststehende/statische Seite sein. Um eine statische Homepage festzulegen, musst du erst zwei Seiten erstellen. Eine wird die Homepage und die andere wird die, auf der deine Beiträge angezeigt werden."
 
 #: wp-includes/class-wp-customize-manager.php:5769
 msgid "CSS code"
@@ -18478,6 +18478,16 @@ msgstr "Bei einem nicht geschützten Endpunkt ist ein Fehler aufgetreten."
 msgid "Please contact your host for assistance with investigating this issue further."
 msgstr "Bitte kontaktiere dein Hosting-Unternehmen, um Unterstützung bei der weiteren Untersuchung dieses Problems zu erhalten."
 
+#. translators: %s: Plugin name.
+#: wp-includes/class-wp-recovery-mode-email-service.php:280
+msgid "In this case, WordPress caught an error with one of your plugins, %s."
+msgstr "In diesem Fall hat WordPress einen Fehler in einem deiner Plugins, %s, abgefangen."
+
+#. translators: %s: Theme name.
+#: wp-includes/class-wp-recovery-mode-email-service.php:286
+msgid "In this case, WordPress caught an error with your theme, %s."
+msgstr "In diesem Fall hat WordPress einen Fehler in deinem Theme „%s“ abgefangen."
+
 #. translators: Do not translate LINK, EXPIRES, CAUSE, DETAILS, SITEURL,
 #. PAGEURL, SUPPORT. DEBUG: those are placeholders.
 #: wp-includes/class-wp-recovery-mode-email-service.php:153
@@ -18519,16 +18529,6 @@ msgstr ""
 "###DEBUG###\n"
 "\n"
 "###DETAILS###"
-
-#. translators: %s: Plugin name.
-#: wp-includes/class-wp-recovery-mode-email-service.php:280
-msgid "In this case, WordPress caught an error with one of your plugins, %s."
-msgstr "In diesem Fall hat WordPress einen Fehler in einem deiner Plugins, %s, abgefangen."
-
-#. translators: %s: Theme name.
-#: wp-includes/class-wp-recovery-mode-email-service.php:286
-msgid "In this case, WordPress caught an error with your theme, %s."
-msgstr "In diesem Fall hat WordPress einen Fehler in deinem Theme „%s“ abgefangen."
 
 #: wp-includes/customize/class-wp-customize-theme-control.php:98
 #: wp-admin/themes.php:450 wp-admin/themes.php:848
@@ -18680,28 +18680,6 @@ msgstr "Benachrichtigungen"
 msgid "This theme does not work with your versions of WordPress and PHP."
 msgstr "Dieses Theme funktioniert nicht mit deinen Versionen von WordPress und PHP."
 
-#. translators: %s: URL to WordPress Updates screen.
-#: wp-includes/customize/class-wp-customize-theme-control.php:130
-#: wp-includes/customize/class-wp-customize-theme-control.php:152
-#: wp-includes/customize/class-wp-customize-theme-control.php:195
-#: wp-includes/customize/class-wp-customize-theme-control.php:213
-#: wp-admin/includes/class-wp-plugin-install-list-table.php:625
-#: wp-admin/includes/class-wp-plugin-install-list-table.php:641
-#: wp-admin/includes/class-wp-plugins-list-table.php:1432
-#: wp-admin/includes/class-wp-plugins-list-table.php:1448
-#: wp-admin/includes/theme.php:922 wp-admin/includes/theme.php:944
-#: wp-admin/includes/theme.php:999 wp-admin/includes/theme.php:1017
-#: wp-admin/includes/update.php:780 wp-admin/includes/update.php:800
-#: wp-admin/theme-install.php:352 wp-admin/theme-install.php:370
-#: wp-admin/theme-install.php:557 wp-admin/theme-install.php:575
-#: wp-admin/themes.php:478 wp-admin/themes.php:498 wp-admin/themes.php:542
-#: wp-admin/themes.php:558 wp-admin/themes.php:871 wp-admin/themes.php:893
-#: wp-admin/themes.php:935 wp-admin/themes.php:953 wp-admin/themes.php:1115
-#: wp-admin/themes.php:1133 wp-admin/themes.php:1182 wp-admin/themes.php:1204
-#: wp-admin/update-core.php:716 wp-admin/update-core.php:737
-msgid "<a href=\"%s\">Please update WordPress</a>."
-msgstr "<a href=\"%s\">Bitte aktualisiere WordPress</a>."
-
 #: wp-includes/customize/class-wp-customize-theme-control.php:209
 #: wp-admin/includes/theme.php:1013 wp-admin/theme-install.php:366
 #: wp-admin/theme-install.php:571 wp-admin/themes.php:554
@@ -18736,6 +18714,28 @@ msgstr "Es gibt eine neue Version von %s, aber sie funktioniert nicht mit deiner
 #: wp-admin/themes.php:505 wp-admin/themes.php:902 wp-admin/themes.php:1213
 msgid "There is a new version of %s available, but it does not work with your version of PHP."
 msgstr "Es gibt eine neue Version von %s, aber sie funktioniert nicht mit deiner PHP-Version."
+
+#. translators: %s: URL to WordPress Updates screen.
+#: wp-includes/customize/class-wp-customize-theme-control.php:130
+#: wp-includes/customize/class-wp-customize-theme-control.php:152
+#: wp-includes/customize/class-wp-customize-theme-control.php:195
+#: wp-includes/customize/class-wp-customize-theme-control.php:213
+#: wp-admin/includes/class-wp-plugin-install-list-table.php:625
+#: wp-admin/includes/class-wp-plugin-install-list-table.php:641
+#: wp-admin/includes/class-wp-plugins-list-table.php:1432
+#: wp-admin/includes/class-wp-plugins-list-table.php:1448
+#: wp-admin/includes/theme.php:922 wp-admin/includes/theme.php:944
+#: wp-admin/includes/theme.php:999 wp-admin/includes/theme.php:1017
+#: wp-admin/includes/update.php:780 wp-admin/includes/update.php:800
+#: wp-admin/theme-install.php:352 wp-admin/theme-install.php:370
+#: wp-admin/theme-install.php:557 wp-admin/theme-install.php:575
+#: wp-admin/themes.php:478 wp-admin/themes.php:498 wp-admin/themes.php:542
+#: wp-admin/themes.php:558 wp-admin/themes.php:871 wp-admin/themes.php:893
+#: wp-admin/themes.php:935 wp-admin/themes.php:953 wp-admin/themes.php:1115
+#: wp-admin/themes.php:1133 wp-admin/themes.php:1182 wp-admin/themes.php:1204
+#: wp-admin/update-core.php:716 wp-admin/update-core.php:737
+msgid "<a href=\"%s\">Please update WordPress</a>."
+msgstr "<a href=\"%s\">Bitte aktualisiere WordPress</a>."
 
 #: wp-includes/class-wp-xmlrpc-server.php:3965
 #: wp-includes/class-wp-xmlrpc-server.php:3972
@@ -20650,18 +20650,6 @@ msgstr "Die Menü-ID darf nicht leer sein."
 msgctxt "admin bar menu group label"
 msgid "New"
 msgstr "Neu"
-
-#. translators: 1: Login URL, 2: Username, 3: User email address, 4: Lost
-#. password URL.
-#: wp-activate.php:148
-msgid "Your account has been activated. You may now <a href=\"%1$s\">log in</a> to the site using your chosen username of &#8220;%2$s&#8221;. Please check your email inbox at %3$s for your password and login instructions. If you do not receive an email, please check your junk or spam folder. If you still do not receive an email within an hour, you can <a href=\"%4$s\">reset your password</a>."
-msgstr "Dein Konto wurde aktiviert. Du kannst dich nun mit dem gewählten Benutzernamen &#8222;%2$s&#8220; <a href=\"%1$s\">anmelden</a>. Bitte überprüfe deinen E-Mail-Posteingang %3$s für dein Passwort und die Anmelde-Instruktionen. Falls du keine E-Mail erhalten hast, überprüfe bitte auch deinen Spam-Ordner. Solltest du nicht innerhalb von einer Stunde eine E-Mail erhalten haben, kannst du dein <a href=\"%4$s\">Passwort zurücksetzen</a>."
-
-#. translators: 1: Site URL, 2: Username, 3: User email address, 4: Lost
-#. password URL.
-#: wp-activate.php:157
-msgid "Your site at %1$s is active. You may now log in to your site using your chosen username of &#8220;%2$s&#8221;. Please check your email inbox at %3$s for your password and login instructions. If you do not receive an email, please check your junk or spam folder. If you still do not receive an email within an hour, you can <a href=\"%4$s\">reset your password</a>."
-msgstr "Deine Website unter %1$s ist aktiviert. Du kannst dich nun mit dem gewählten Benutzernamen &#8222;%2$s&#8220; anmelden. Bitte überprüfe deinen E-Mail-Posteingang %3$s für dein Passwort und die Anmelde-Instruktionen. Falls du keine E-Mail erhalten hast, überprüfe bitte auch deinen Spam-Ordner. Solltest du nicht innerhalb von einer Stunde eine E-Mail erhalten haben, kannst du dein <a href=\"%4$s\">Passwort zurücksetzen</a>."
 
 #: wp-includes/admin-bar.php:478 wp-admin/site-editor.php:316
 msgid "Edit Site"
@@ -22922,3 +22910,15 @@ msgstr "Bei der Aktivierung ist ein Fehler aufgetreten"
 #: wp-includes/script-loader.php:1309
 msgid "You must supply a future date to schedule."
 msgstr "Du musst ein in der Zukunft liegendes Datum für die Planung angeben."
+
+#. translators: 1: Site URL, 2: Username, 3: User email address, 4: Lost
+#. password URL.
+#: wp-activate.php:157
+msgid "Your site at %1$s is active. You may now log in to your site using your chosen username of &#8220;%2$s&#8221;. Please check your email inbox at %3$s for your password and login instructions. If you do not receive an email, please check your junk or spam folder. If you still do not receive an email within an hour, you can <a href=\"%4$s\">reset your password</a>."
+msgstr "Deine Website unter %1$s ist aktiviert. Du kannst dich nun mit dem gewählten Benutzernamen &#8222;%2$s&#8220; anmelden. Bitte überprüfe deinen E-Mail-Posteingang %3$s für dein Passwort und die Anweisungen zur Anmeldung. Falls du keine E-Mail erhalten hast, überprüfe bitte auch deinen Spamordner. Solltest du nicht innerhalb von einer Stunde eine E-Mail erhalten haben, kannst du dein <a href=\"%4$s\">Passwort zurücksetzen</a>."
+
+#. translators: 1: Login URL, 2: Username, 3: User email address, 4: Lost
+#. password URL.
+#: wp-activate.php:148
+msgid "Your account has been activated. You may now <a href=\"%1$s\">log in</a> to the site using your chosen username of &#8220;%2$s&#8221;. Please check your email inbox at %3$s for your password and login instructions. If you do not receive an email, please check your junk or spam folder. If you still do not receive an email within an hour, you can <a href=\"%4$s\">reset your password</a>."
+msgstr "Dein Konto wurde aktiviert. Du kannst dich nun mit dem gewählten Benutzernamen &#8222;%2$s&#8220; <a href=\"%1$s\">anmelden</a>. Bitte überprüfe deinen E-Mail-Posteingang %3$s für dein Passwort und die Anweisungen zur Anmeldung. Falls du keine E-Mail erhalten hast, überprüfe bitte auch deinen Spamordner. Solltest du nicht innerhalb von einer Stunde eine E-Mail erhalten haben, kannst du dein <a href=\"%4$s\">Passwort zurücksetzen</a>."

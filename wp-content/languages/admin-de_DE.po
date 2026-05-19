@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 6.9.x - Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-05-18 08:05:02+0000\n"
+"PO-Revision-Date: 2026-05-19 00:49:10+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -5017,6 +5017,10 @@ msgstr "Über diese Ansicht kannst du Revisionen überprüfen, vergleichen und w
 msgid "<strong>Edit</strong> takes you to a simple screen to edit that individual file&#8217;s metadata. You can also reach that screen by clicking on the media file name or thumbnail."
 msgstr "<strong>Bearbeiten</strong> führt dich zu einer einfachen Ansicht, in der du die Metadaten dieser Datei bearbeiten kannst. Du kannst diese Ansicht auch aufrufen, indem du auf den Namen der Mediendatei oder auf das Vorschaubild klickst."
 
+#: wp-admin/update-core.php:1002
+msgid "<strong>Themes and Plugins</strong> &mdash; To update individual themes or plugins from this screen, use the checkboxes to make your selection, then <strong>click on the appropriate &#8220;Update&#8221; button</strong>. To update all of your themes or plugins at once, you can check the box at the top of the section to select all before clicking the update button."
+msgstr "<strong>Themes und Plugins</strong> &ndash; Um einzelne Themes oder Plugins in dieser Ansicht zu aktualisieren, triff deine Auswahl über die Kontrollkästchen und <strong>klicke dann auf den entsprechenden Button „Aktualisieren“</strong>. Um all deine Themes oder Plugins auf einmal zu aktualisieren, kannst du das Kontrollkästchen oben im Abschnitt aktivieren, um alle auszuwählen, bevor du auf den Button „Aktualisieren“ klickst."
+
 #: wp-admin/revision.php:142
 msgid "This screen is used for managing your content revisions."
 msgstr "In dieser Ansicht kannst du die Revisionen deiner Inhalte verwalten."
@@ -5039,10 +5043,6 @@ msgstr "Diese Ansicht enthält die Einstellungen, die sich auf die Darstellung d
 #: wp-admin/users.php:36
 msgid "To add a new user for your site, click the Add User button at the top of the screen or Add User in the Users menu section."
 msgstr "Um einen neuen Benutzer für deine Website anzulegen, klicke auf den Button „Benutzer hinzufügen“ am oberen Rand der Ansicht oder im Menüabschnitt Benutzer."
-
-#: wp-admin/update-core.php:1002
-msgid "<strong>Themes and Plugins</strong> &mdash; To update individual themes or plugins from this screen, use the checkboxes to make your selection, then <strong>click on the appropriate &#8220;Update&#8221; button</strong>. To update all of your themes or plugins at once, you can check the box at the top of the section to select all before clicking the update button."
-msgstr "<strong>Themes und Plugins</strong> &ndash; Um einzelne Themes oder Plugins in dieser Ansicht zu aktualisieren, triff deine Auswahl über die Kontrollkästchen und <strong>klicke dann auf den entsprechenden Button „Aktualisieren“</strong>. Um all deine Themes oder Plugins auf einmal zu aktualisieren, kannst du das Kontrollkästchen oben im Abschnitt aktivieren, um alle auszuwählen, bevor du auf den Button „Aktualisieren“ klickst."
 
 #: wp-admin/themes.php:173
 msgid "Tap or hover on any theme then click the Live Preview button to see a live preview of that theme and change theme options in a separate, full-screen view. You can also find a Live Preview button at the bottom of the theme details screen. Any installed theme can be previewed and customized in this way."
@@ -10067,11 +10067,6 @@ msgstr "Sicherheits- und Wartungsaktualisierungen für WordPress werden durch %s
 msgid "WordPress security and maintenance releases are blocked by the %s filter."
 msgstr "Sicherheits- und Wartungsaktualisierungen für WordPress werden durch den Filter %s blockiert."
 
-#: wp-admin/includes/template.php:2346
-msgctxt "page label"
-msgid "Privacy Policy Page"
-msgstr "Datenschutzerklärung"
-
 #. translators: Do not translate USERNAME, ADMIN_URL, EMAIL, SITENAME, SITEURL:
 #. those are placeholders.
 #: wp-admin/includes/misc.php:1459
@@ -10110,6 +10105,11 @@ msgstr ""
 "Viele Grüße\n"
 "Das Team von ###SITENAME###\n"
 "###SITEURL###"
+
+#: wp-admin/includes/template.php:2346
+msgctxt "page label"
+msgid "Privacy Policy Page"
+msgstr "Datenschutzerklärung"
 
 #: wp-admin/includes/class-wp-screen.php:1118
 msgid "Screen elements"
@@ -14988,11 +14988,6 @@ msgstr "In diesem Abschnitt solltest du angeben, welche personenbezogenen Daten 
 msgid "In addition to listing what personal data you collect, you need to note why you collect it. These explanations must note either the legal basis for your data collection and retention or the active consent the user has given."
 msgstr "Zusätzlich zu der Auflistung der Art personenbezogener Daten, die du erfasst, musst du den Grund dafür darlegen. Diese Erklärungen müssen entweder die Rechtsgrundlage für die Erfassung und Speicherung der Daten nennen oder die aktive Einwilligung, die der Benutzer erteilt hat."
 
-#. translators: Privacy policy tutorial.
-#: wp-admin/includes/class-wp-privacy-policy-content.php:522
-msgid "By default, WordPress does not include a contact form. If you use a contact form plugin, use this subsection to note what personal data is captured when someone submits a contact form, and how long you keep it. For example, you may note that you keep contact form submissions for a certain period for customer service purposes, but you do not use the information submitted through them for marketing purposes."
-msgstr "Standardmäßig beinhaltet WordPress kein Kontaktformular. Falls du ein Kontaktformular-Plugin benutzt, nutze diesen Unterabschnitt, um anzugeben, welche personenbezogenen Daten bei der Übermittlung eines Kontaktformulars aufgezeichnet werden und wie lange du sie speicherst. Sie könntest zum Beispiel angeben, dass du übermittelte Kontaktformulare für Kundenservice-Zwecke eine bestimmte Zeit lang aufbewahrst, aber die darüber übermittelten Informationen nicht für Marketingzwecke verwendest."
-
 #. translators: Default privacy policy text.
 #: wp-admin/includes/class-wp-privacy-policy-content.php:539
 msgid "If you edit or publish an article, an additional cookie will be saved in your browser. This cookie includes no personal data and simply indicates the post ID of the article you just edited. It expires after 1 day."
@@ -15031,15 +15026,15 @@ msgstr "Welche personenbezogenen Daten wir erfassen und warum wir diese erheben"
 msgid "Personal data is not just created by a user&#8217;s interactions with your site. Personal data is also generated from technical processes such as contact forms, comments, cookies, analytics, and third party embeds."
 msgstr "Personenbezogene Daten werden nicht nur bei Interaktionen eines Benutzers mit deiner Website erstellt. Personenbezogene Daten werden auch bei technischen Prozessen wie Kontaktformularen, Kommentaren, Cookies, Analysewerkzeugen und Einbettungen von Drittanbietern erzeugt."
 
-#. translators: Default privacy policy text.
-#: wp-admin/includes/class-wp-privacy-policy-content.php:607
-msgid "Visitor comments may be checked through an automated spam detection service."
-msgstr "Besucher-Kommentare können von einem automatisierten Dienst zur Spam-Erkennung untersucht werden."
-
 #. translators: %s: Date of plugin deactivation.
 #: wp-admin/includes/class-wp-privacy-policy-content.php:396
 msgid "You deactivated this plugin on %s and may no longer need this policy."
 msgstr "Du hast dieses Plugin am %s deaktiviert und benötigst möglicherweise dessen Abschnitt für die Datenschutzerklärung nicht mehr."
+
+#. translators: Privacy policy tutorial.
+#: wp-admin/includes/class-wp-privacy-policy-content.php:565
+msgid "In this section you should name and list all third party providers with whom you share site data, including partners, cloud-based services, payment processors, and third party service providers, and note what data you share with them and why. Link to their own privacy policies if possible."
+msgstr "In diesem Abschnitt solltest du alle Drittanbieter namentlich auflisten, mit denen du Website-Daten teilst, darunter Partner, Cloud-basierte Dienstleister, Zahlungsdienstleister und sonstige Drittanbieter, und angeben, welche Daten du mit ihnen teilst und warum. Füge nach Möglichkeit Links zu deren eigenen Datenschutzerklärungen hinzu."
 
 #. translators: Default privacy policy text.
 #: wp-admin/includes/class-wp-privacy-policy-content.php:515
@@ -15060,11 +15055,6 @@ msgstr "Standardmäßig erhebt WordPress keine Analysedaten. Allerdings erfassen
 #: wp-admin/includes/class-wp-privacy-policy-content.php:555
 msgid "In this subsection you should note what analytics package you use, how users can opt out of analytics tracking, and a link to your analytics provider&#8217;s privacy policy, if any."
 msgstr "In diesem Unterabschnitt solltest du angeben, welche Analysedienste du verwendest und wie Benutzer das Analyse-Tracking ablehnen können. Füge außerdem einen Link zur Datenschutzerklärung deines Analysedienst-Anbieters ein, falls vorhanden."
-
-#. translators: Privacy policy tutorial.
-#: wp-admin/includes/class-wp-privacy-policy-content.php:565
-msgid "In this section you should name and list all third party providers with whom you share site data, including partners, cloud-based services, payment processors, and third party service providers, and note what data you share with them and why. Link to their own privacy policies if possible."
-msgstr "In diesem Abschnitt solltest du alle Drittanbieter namentlich auflisten, mit denen du Website-Daten teilst, darunter Partner, Cloud-basierte Dienstleister, Zahlungsdienstleister und sonstige Drittanbieter, und angeben, welche Daten du mit ihnen teilst und warum. Füge nach Möglichkeit Links zu deren eigenen Datenschutzerklärungen hinzu."
 
 #. translators: Default privacy policy text.
 #: wp-admin/includes/class-wp-privacy-policy-content.php:533
@@ -15091,6 +15081,11 @@ msgid "If you are not sure, check the plugin documentation or contact the plugin
 msgstr "Wenn du dir nicht sicher bist, schaue in die Dokumentation des Plugins oder kontaktiere den Autor, um zu erfahren, ob das Plugin Daten erhebt und ob es die Funktionen zum Löschen der personenbezogenen Daten unterstützt. Diese Informationen findest du möglicherweise im <a href=\"%s\">Leitfaden zur Datenschutzerklärung</a>."
 
 #. translators: Privacy policy tutorial.
+#: wp-admin/includes/class-wp-privacy-policy-content.php:578
+msgid "In this section you should explain how long you retain personal data collected or processed by the website. While it is your responsibility to come up with the schedule of how long you keep each dataset for and why you keep it, that information does need to be listed here. For example, you may want to say that you keep contact form entries for six months, analytics records for a year, and customer purchase records for ten years."
+msgstr "In diesem Abschnitt solltest du erläutern, wie lange du personenbezogene Daten aufbewahrst, die auf der Website erfasst oder verarbeitet werden. Während es in deiner Verantwortung liegt, festzulegen, wie lange du jeden einzelnen Datensatz aufbewahrst und warum, müssen diese Informationen hier zwingend aufgeführt werden. Beispielsweise kannst du eintragen, dass du Kontaktformulardaten für sechs Monate, Analysedaten für ein Jahr und Bestelldaten für zehn Jahre aufbewahrst."
+
+#. translators: Privacy policy tutorial.
 #: wp-admin/includes/class-wp-privacy-policy-content.php:471
 msgid "In this section you should note your site URL, as well as the name of the company, organization, or individual behind it, and some accurate contact information."
 msgstr "In diesem Abschnitt solltest du die URL deiner Website nennen sowie den Namen des Unternehmens, der Organisation oder der Einzelperson hinter dem Projekt und auch korrekte Kontaktinformationen."
@@ -15098,11 +15093,6 @@ msgstr "In diesem Abschnitt solltest du die URL deiner Website nennen sowie den 
 #: wp-admin/erase-personal-data.php:26
 msgid "Privacy Laws around the world require businesses and online services to delete, anonymize, or forget the data they collect about an individual. The rights those laws enshrine are sometimes called the \"Right to be Forgotten\"."
 msgstr "Datenschutzgesetze rund um die Welt fordern von Unternehmen und Online-Diensten, Daten zu löschen, zu anonymisieren oder zu vergessen, die sie über eine Einzelperson erfassen. Die in diesen Gesetzen verankerten Rechte werden manchmal als „Recht auf Vergessenwerden“ bezeichnet."
-
-#. translators: Privacy policy tutorial.
-#: wp-admin/includes/class-wp-privacy-policy-content.php:578
-msgid "In this section you should explain how long you retain personal data collected or processed by the website. While it is your responsibility to come up with the schedule of how long you keep each dataset for and why you keep it, that information does need to be listed here. For example, you may want to say that you keep contact form entries for six months, analytics records for a year, and customer purchase records for ten years."
-msgstr "In diesem Abschnitt solltest du erläutern, wie lange du personenbezogene Daten aufbewahrst, die auf der Website erfasst oder verarbeitet werden. Während es in deiner Verantwortung liegt, festzulegen, wie lange du jeden einzelnen Datensatz aufbewahrst und warum, müssen diese Informationen hier zwingend aufgeführt werden. Beispielsweise kannst du eintragen, dass du Kontaktformulardaten für sechs Monate, Analysedaten für ein Jahr und Bestelldaten für zehn Jahre aufbewahrst."
 
 #. translators: Privacy policy tutorial.
 #: wp-admin/includes/class-wp-privacy-policy-content.php:499
@@ -15410,6 +15400,16 @@ msgstr "<a href=\"https://codex.wordpress.org/Links_Link_Categories_Screen\">Dok
 #: wp-admin/export-personal-data.php:39
 msgid "<strong>Community Events Location</strong> &mdash; The IP Address of the user, which populates the Upcoming Community Events dashboard widget with relevant information."
 msgstr "<strong>Standort für WordPress-Veranstaltungen</strong> &ndash; Die IP-Adresse des Benutzers, die dazu verwendet wird, passende Einträge im Dashboard-Widget „WordPress-Veranstaltungen und Neuigkeiten“ anzuzeigen."
+
+#. translators: Default privacy policy text.
+#: wp-admin/includes/class-wp-privacy-policy-content.php:607
+msgid "Visitor comments may be checked through an automated spam detection service."
+msgstr "Kommentare von Besuchern werden möglicherweise durch einen automatisierten Spam-Erkennungsdienst überprüft."
+
+#. translators: Privacy policy tutorial.
+#: wp-admin/includes/class-wp-privacy-policy-content.php:522
+msgid "By default, WordPress does not include a contact form. If you use a contact form plugin, use this subsection to note what personal data is captured when someone submits a contact form, and how long you keep it. For example, you may note that you keep contact form submissions for a certain period for customer service purposes, but you do not use the information submitted through them for marketing purposes."
+msgstr "Standardmäßig beinhaltet WordPress kein Kontaktformular. Falls du ein Kontaktformular-Plugin benutzt, nutze diesen Unterabschnitt, um anzugeben, welche personenbezogenen Daten bei der Übermittlung eines Kontaktformulars aufgezeichnet werden und wie lange du sie speicherst. Du könntest zum Beispiel angeben, dass du übermittelte Kontaktformulare für Kundenservice-Zwecke eine bestimmte Zeit lang aufbewahrst, aber die darüber übermittelten Informationen nicht für Marketingzwecke verwendest."
 
 #. translators: %s: Number of comments.
 #: wp-admin/edit-comments.php:334
