@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WPForms &#8211; Easy Form Builder for WordPress &#8211; Contact Forms, Payment Forms, Surveys, &amp; More - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-05-20 15:51:25+0000\n"
+"PO-Revision-Date: 2026-05-21 15:32:13+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -123,6 +123,284 @@ msgstr "La comprobación de seguridad falló."
 #: src/Integrations/PayPalCommerce/PaymentMethods/ApplePay/DomainManager.php:96
 msgid "If you haven't registered your domain yet, Apple Pay may not work properly. If this notice persists, please <a href=\"%1$s\" rel=\"nofollow noopener\" target=\"_blank\">verify your domain registration.</a>"
 msgstr "Si aun no has registrado tu dominio, Apple Pay podría no funcionar correctamente. Si este aviso continúa, por favor <a href=\"%1$s\" rel=\"nofollow noopener\" target=\"_blank\">verifica el registro de tu dominio.</a>"
+
+#: src/Integrations/PayPalCommerce/Frontend/Frontend.php:232
+msgid "Please enter a valid card number."
+msgstr "Por favor, introduce un número de tarjeta válido"
+
+#: src/Integrations/PayPalCommerce/Frontend/Frontend.php:231
+msgid "is not supported. Please enter the details for a supported credit card."
+msgstr "no es compatible. Por favor, introduce los detalles de una tarjeta de crédito compatible"
+
+#: src/Integrations/PayPalCommerce/Frontend/Frontend.php:230
+msgid "This payment cannot be processed because there was an error with 3D Secure authentication."
+msgstr "Este pago no se puede procesar porque se produjo un error con la identificación 3D Secure"
+
+#: src/Integrations/PayPalCommerce/Frontend/Frontend.php:229
+msgid "There was an error creating this subscription. Please contact the site administrator."
+msgstr "Se ha producido un error al crear esta suscripción. Por favor, contacta con el administrador del sitio."
+
+#: src/Integrations/PayPalCommerce/Frontend/Frontend.php:228
+msgid "API error:"
+msgstr "Error en la API:"
+
+#: src/Integrations/PayPalCommerce/Frontend/Frontend.php:227
+msgid "There was an error processing this payment. Please contact the site administrator."
+msgstr "Se ha producido un error al procesar este pago. Por favor, contacta con el administrador del sitio."
+
+#: src/Integrations/PayPalCommerce/Frontend/Frontend.php:226
+msgid "PayPal payment was canceled."
+msgstr "El pago con PayPal se ha cancelado."
+
+#: src/Integrations/PayPalCommerce/Frontend/Frontend.php:225
+msgid "PayPal.js failed to load properly."
+msgstr "PayPal.js no pudo cargar correctamente."
+
+#: src/Integrations/PayPalCommerce/Fields/PayPalCommerce.php:1409
+msgid "PayPal Commerce payments are disabled because details are missing from one of the recurring plans. Please ask your site administrator to check the form settings."
+msgstr "Los pagos de PayPal Commerce están desactivados porque faltan datos en uno de los planes periódicos. Por favor, pide al administrador de tu sitio que compruebe los ajustes del formulario."
+
+#: src/Integrations/PayPalCommerce/Fields/PayPalCommerce.php:1393
+msgid "PayPal Commerce payments are not enabled in the form settings."
+msgstr "Los pagos de PayPal Commerce no están activados en los ajustes del formulario."
+
+#: src/Integrations/PayPalCommerce/Fields/PayPalCommerce.php:1385
+msgid "PayPal Commerce payments are disabled because your connection is not set up correctly. Please ask your site administrator to check the connection settings."
+msgstr "Los pagos de PayPal Commerce están desactivados por que tu conexión no se ha establecido correctamente. Por favor, pide al administrador de tu sitio que compruebe los ajustes de conexión."
+
+#: src/Integrations/PayPalCommerce/Fields/PayPalCommerce.php:1377
+msgid "PayPal Commerce payments are disabled. Please set up a connection with PayPal in your form’s settings."
+msgstr "Los pagos de PayPal Commerce están desactivados. Por favor, establece una conexión con PayPal en los ajustes de tu formulario."
+
+#: src/Integrations/PayPalCommerce/Fields/PayPalCommerce.php:1369
+msgid "This page is not secure. PayPal Commerce payments should be used for testing purposes only."
+msgstr "Esta página no es segura. Los pagos de PayPal Commerce deberían utilizarse solo para realizar pruebas."
+
+#: src/Integrations/PayPalCommerce/Fields/PayPalCommerce.php:1027
+msgid "PayPal Checkout is enabled. The form’s submit button has been replaced by PayPal’s smart buttons."
+msgstr "El pago con PayPal está activado. Se ha reemplazado el botón de envío del formulario por los botones de PayPal."
+
+#: src/Integrations/PayPalCommerce/Fields/PayPalCommerce.php:1031
+msgid "Please enable at least one credit card type."
+msgstr "Por favor, activa al menos un tipo de tarjeta de crédito."
+
+#: src/Integrations/PayPalCommerce/Fields/PayPalCommerce.php:1026
+msgid "Please enable at least one payment method."
+msgstr "Por favor, activa al menos un método de pago."
+
+#: src/Integrations/PayPalCommerce/Fields/PayPalCommerce.php:964
+#: src/Integrations/PayPalCommerce/Frontend/Frontend.php:683
+msgid "Card Holder Name"
+msgstr "Titular de la tarjeta"
+
+#: src/Integrations/PayPalCommerce/Fields/PayPalCommerce.php:962
+#: src/Integrations/PayPalCommerce/Frontend/Frontend.php:680
+msgid "Expiration Date"
+msgstr "Fecha de caducidad"
+
+#: src/Integrations/PayPalCommerce/Fields/PayPalCommerce.php:753
+msgid "Additional credit card fields."
+msgstr "Campos adicionales de la tarjeta de crédito."
+
+#: src/Integrations/PayPalCommerce/Fields/PayPalCommerce.php:719
+msgid "Visa"
+msgstr "Visa"
+
+#: src/Integrations/PayPalCommerce/Fields/PayPalCommerce.php:707
+msgid "Mastercard"
+msgstr "Mastercard"
+
+#: src/Integrations/PayPalCommerce/Fields/PayPalCommerce.php:695
+msgid "Maestro"
+msgstr "Maestro"
+
+#: src/Integrations/PayPalCommerce/Fields/PayPalCommerce.php:683
+msgid "Discover"
+msgstr "Discover"
+
+#: src/Integrations/PayPalCommerce/Fields/PayPalCommerce.php:671
+msgid "American Express"
+msgstr "American Express"
+
+#: src/Integrations/PayPalCommerce/Fields/PayPalCommerce.php:660
+msgid "Select supported credit cards."
+msgstr "Selecciona una tarjeta de crédito compatible."
+
+#: src/Integrations/PayPalCommerce/Fields/PayPalCommerce.php:659
+msgid "Supported Credit Cards"
+msgstr "Tarjetas de crédito compatibles"
+
+#: src/Integrations/PayPalCommerce/Fields/PayPalCommerce.php:610
+msgid "Default Payment Method"
+msgstr "Método de pago por defecto."
+
+#: src/Integrations/PayPalCommerce/Fields/PayPalCommerce.php:566
+#: src/Integrations/PayPalCommerce/Fields/PayPalCommerce.php:623
+#: src/Integrations/PayPalCommerce/Fields/PayPalCommerce.php:1001
+#: src/Integrations/PayPalCommerce/Fields/PayPalCommerce.php:1441
+msgid "PayPal Checkout"
+msgstr "Pago con PayPal"
+
+#: src/Integrations/PayPalCommerce/Fields/PayPalCommerce.php:611
+msgid "Select the default payment method."
+msgstr "Selecciona el método de pago por defecto."
+
+#: src/Integrations/PayPalCommerce/Fields/PayPalCommerce.php:555
+msgid "Select payment methods to enable."
+msgstr "Selecciona los métodos de pago a activar."
+
+#: src/Integrations/PayPalCommerce/Fields/PayPalCommerce.php:554
+msgid "Supported Payment Methods"
+msgstr "Métodos de pago compatibles"
+
+#: src/Integrations/PayPalCommerce/Fields/PayPalCommerce.php:515
+msgid "Silver"
+msgstr "Plata"
+
+#: src/Integrations/PayPalCommerce/Fields/PayPalCommerce.php:514
+msgid "Gold"
+msgstr "Oro"
+
+#: src/Integrations/PayPalCommerce/Fields/PayPalCommerce.php:513
+msgid "White"
+msgstr "Blanco"
+
+#: src/Integrations/PayPalCommerce/Fields/PayPalCommerce.php:512
+msgid "Black"
+msgstr "Negro"
+
+#: src/Integrations/PayPalCommerce/Fields/PayPalCommerce.php:511
+msgid "Blue"
+msgstr "Azul"
+
+#: src/Integrations/PayPalCommerce/Fields/PayPalCommerce.php:499
+msgid "PayPal checkout button color."
+msgstr "Color del botón de pago con PayPal."
+
+#: src/Integrations/PayPalCommerce/Fields/PayPalCommerce.php:498
+msgid "Button Color"
+msgstr "Color del botón"
+
+#: src/Integrations/PayPalCommerce/Fields/PayPalCommerce.php:590
+#: src/Integrations/PayPalCommerce/Fields/PayPalCommerce.php:625
+#: src/Integrations/PayPalCommerce/Fields/PayPalCommerce.php:1003
+#: src/Integrations/PayPalCommerce/Fields/PayPalCommerce.php:1449
+#: src/Integrations/PayPalCommerce/Fields/PayPalCommerce.php:1501
+msgid "Fastlane"
+msgstr "Fastlane"
+
+#: src/Integrations/PayPalCommerce/Frontend/Frontend.php:238
+msgid "Please enter a valid Fastlane details."
+msgstr "Por favor, introduce detalles válidos de Fastlane."
+
+#: src/Integrations/PayPalCommerce/Frontend/Frontend.php:239
+msgid "Please enter a valid Fastlane billing address."
+msgstr "Por favor, introduce una dirección de facturación válida de FastLine."
+
+#: src/Integrations/PayPalCommerce/Frontend/Frontend.php:237
+msgid "No Fastlane account found with this email."
+msgstr "No se ha encontrado una cuenta de Fastlane con este correo electrónico."
+
+#: src/Integrations/PayPalCommerce/Fields/PayPalCommerce.php:889
+msgid "Customize Fastlane email placeholder and button text."
+msgstr "Personaliza el texto del marcador de posición del correo electrónico y el texto del botón de Fastlane."
+
+#: src/Integrations/PayPalCommerce/Fields/PayPalCommerce.php:888
+msgid "Fastlane Labels"
+msgstr "Etiquetas de Fastlane"
+
+#: src/Integrations/PayPalCommerce/Fields/PayPalCommerce.php:752
+msgid "Sublabels"
+msgstr "Etiquetas secundarias"
+
+#: src/Integrations/PayPalCommerce/Fields/PayPalCommerce.php:468
+msgid "Rectangle"
+msgstr "Rectángulo"
+
+#: src/Integrations/PayPalCommerce/Fields/PayPalCommerce.php:467
+msgid "Pill"
+msgstr "Redondeado"
+
+#: src/Integrations/PayPalCommerce/Fields/PayPalCommerce.php:455
+msgid "PayPal checkout button shape."
+msgstr "Forma del botón de pago de PayPal."
+
+#: src/Integrations/PayPalCommerce/Fields/PayPalCommerce.php:454
+msgid "Button Shape"
+msgstr "Forma del botón"
+
+#: src/Integrations/PayPalCommerce/Fields/PayPalCommerce.php:421
+msgid "Responsive"
+msgstr "Adaptable"
+
+#: src/Integrations/PayPalCommerce/Fields/PayPalCommerce.php:409
+msgid "PayPal checkout button size."
+msgstr "Tamaño del botón de pago de PayPal."
+
+#: src/Integrations/PayPalCommerce/Fields/PayPalCommerce.php:408
+msgid "Button Size"
+msgstr "Tamaño del botón"
+
+#: src/Integrations/PayPalCommerce/Admin/WebhookSettings.php:120
+#: src/Integrations/PayPalCommerce/Admin/WebhookSettings.php:129
+msgid "PayPal Commerce webhook ID created for the app. Created and configured automatically."
+msgstr "Se ha creado y configurado automáticamente el identificador del webhook de PayPal Commerce para la aplicación."
+
+#: src/Integrations/PayPalCommerce/Admin/WebhookSettings.php:118
+msgid "Webhooks Sandbox ID"
+msgstr "Identificador del entorno de pruebas de webhooks"
+
+#. translators: %s - WPForms.com URL for PayPal Commerce webhooks
+#. documentation.
+#: src/Integrations/PayPalCommerce/Admin/WebhookSettings.php:43
+msgid "PayPal uses webhooks to notify WPForms when events occur in your PayPal account. Please see <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">our documentation on PayPal webhooks</a> for full details."
+msgstr "PayPal usa webhooks para avisar a WPForms cuando se producen eventos en tu cuenta de PayPal. Consulta <a href=\"%s\" target=\"blank\" rel=\"noopener noreferrer\">nuestra documentación sobre webhooks de PayPal</a> para más detalles."
+
+#: src/Integrations/PayPalCommerce/Admin/Settings.php:782
+msgid "Disconnect PayPal Commerce account"
+msgstr "Desconectar la cuenta de PayPal Commerce"
+
+#: src/Integrations/PayPalCommerce/Admin/Settings.php:761
+msgid "Connect with PayPal Commerce"
+msgstr "Conectarse con PayPal Commerce"
+
+#: src/Integrations/PayPalCommerce/Admin/Settings.php:760
+msgid "Connect PayPal Commerce account"
+msgstr "Conectar la cuenta de PayPal Commerce"
+
+#: src/Integrations/PayPalCommerce/Admin/Settings.php:723
+msgid "Primary email unconfirmed."
+msgstr "El correo electrónico principal no está confirmado."
+
+#: src/Integrations/PayPalCommerce/Admin/Settings.php:719
+msgid "Payments are disabled."
+msgstr "Los pagos están desactivados."
+
+#: src/Integrations/PayPalCommerce/Admin/Settings.php:693
+msgid "Your PayPal Commerce connection is not valid. Please reconnect your PayPal Commerce account."
+msgstr "Tu conexión con PayPal Commerce no es válida. Por favor, conéctate de nuevo a tu cuenta de PayPal Commerce"
+
+#: src/Integrations/PayPalCommerce/Admin/Settings.php:660
+msgid "Your PayPal Commerce client token is not valid. Please reconnect your PayPal Commerce account."
+msgstr "Tu token de cliente de PayPal Commerce no es válido. Por favor, conéctate de nuevo a tu cuenta de PayPal Commerce"
+
+#: src/Integrations/PayPalCommerce/Admin/Settings.php:646
+msgid "Your PayPal Commerce access token is not valid. Please reconnect your PayPal Commerce account."
+msgstr "Tu token de acceso de PayPal Commerce no es válido. Por favor, conéctate de nuevo a tu cuenta de PayPal Commerce"
+
+#: src/Integrations/PayPalCommerce/Admin/Settings.php:632
+msgid "Your connection to PayPal Commerce is not complete. Please reconnect your PayPal Commerce account."
+msgstr "Tu conexión con PayPal Commerce está incompleta. Por favor, conéctate de nuevo a tu cuenta de PayPal Commerce"
+
+#. translators: %s - WPForms.com PayPal Commerce documentation article URL.
+#: src/Integrations/PayPalCommerce/Admin/Settings.php:606
+msgid "Securely connect to PayPal Commerce with just a few clicks to begin accepting payments! <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"wpforms-learn-more\">Learn More</a>"
+msgstr "¡Conecta PayPal Commerce de forma segura en unos pocos clics y empieza a aceptar pagos! <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"wpforms-learn-more\">Más información</a>"
+
+#. translators: %s - WPForms Payments page URL.
+#: src/Integrations/PayPalCommerce/Admin/Settings.php:583
+msgid "There’s a temporary problem with the connection to PayPal Commerce. Please click <a href=\"%s\" rel=\"noopener noreferrer\">here</a> to try again."
+msgstr "Se ha producido un problema temporal en la conexión a PayPal Commerce. Haz clic <a href=\"%s\" rel=\"noopener noreferrer\">aquí</a> para volver a intentarlo."
 
 #: src/Forms/Fields/Addons/Map/Field.php:798
 msgid "100 km"
@@ -778,14 +1056,14 @@ msgstr "A prueba de fallos"
 msgid "Powerful Automation Features"
 msgstr "Potentes funciones de automatización"
 
+#: src/Admin/Education/Admin/Tools/EntryAutomation.php:72
+msgid "Tired of manually exporting and deleting entries? Wish you could schedule these actions for optimal efficiency?"
+msgstr "¿Cansado de exportar y eliminar entradas manualmente? ¿Desearías poder programar estas acciones para una eficacia óptima?"
+
 #. translators: %1$s - WPForms.com Upgrade page URL.
 #: src/Admin/Education/Admin/Tools/EntryAutomation.php:74
 msgid "Entry Automation introduces powerful, automated task chaining, allowing you to seamlessly schedule exports and deletions, ensuring your data is managed precisely how you need it. Chain multiple tasks together for complex workflows – export to CSV, then automatically delete after a specified period, for example. We've built robust failsafes to guarantee data integrity, so you can automate with confidence, knowing your valuable entries are always protected. Take back your time and let our addon handle the heavy lifting, keeping your WPForms data organized and secure, automatically."
 msgstr "La Automatización de entradas introduce un potente encadenamiento de tareas automatizadas, que te permite programar sin problemas las exportaciones y eliminaciones, garantizando que tus datos se gestionan exactamente como los necesitas. Encadena varias tareas para crear flujos de trabajo complejos: por ejemplo, exporta a CSV y luego elimínalos automáticamente tras un periodo determinado. Hemos creado sólidos mecanismos de seguridad para garantizar la integridad de los datos, de modo que puedas automatizar con confianza, sabiendo que tus valiosas entradas están siempre protegidas. Recupera tu tiempo y deja que nuestro complemento se encargue del trabajo pesado, manteniendo tus datos WPForms organizados y seguros, automáticamente."
-
-#: src/Admin/Education/Admin/Tools/EntryAutomation.php:72
-msgid "Tired of manually exporting and deleting entries? Wish you could schedule these actions for optimal efficiency?"
-msgstr "¿Cansado de exportar y eliminar entradas manualmente? ¿Desearías poder programar estas acciones para una eficacia óptima?"
 
 #: templates/integrations/stripe/builder/custom-metadata.php:103
 msgid "--- Select Meta Value ---"
@@ -1060,11 +1338,6 @@ msgstr "Habilitar para pagos completados con Stripe"
 msgid "When recurring subscription payments are enabled, the Customer Email is required."
 msgstr "Cuando se activan los pagos de suscripción recurrentes, se requiere el correo electrónico del cliente."
 
-#. translators: %s - WPForms.com URL for Square webhooks documentation.
-#: src/Integrations/Square/WebhooksHealthCheck.php:204
-msgid "Looks like you have a problem with your webhooks configuration. Please check and confirm that you've configured the WPForms webhooks in your Square account. This notice will disappear automatically when a new Square request comes in. See our <a href=\"%1$s\" rel=\"nofollow noopener\" target=\"_blank\">documentation</a> for more information."
-msgstr "Parece que tienes un problema con la configuración de tus webhooks. Por favor, comprueba y confirma que has configurado los webhooks de WPForms en tu cuenta de Square. Este aviso desaparecerá automáticamente cuando llegue una nueva solicitud de Square. Consulta nuestra <a href=\"%1$s\" rel=\"nofollow noopener\" target=\"_blank\">documentación</a> para obtener más información."
-
 #: src/Integrations/Square/Process.php:861
 msgid "Square payment stopped"
 msgstr "Se detuvo el pago con Square"
@@ -1076,6 +1349,11 @@ msgstr "Se detuvo el pago de la suscripción a Square"
 #: src/Integrations/Square/Process.php:538
 msgid "Square subscription payment stopped, customer name not found."
 msgstr "Se ha detenido el pago de la suscripción a Square, no se ha encontrado el nombre del cliente."
+
+#. translators: %s - WPForms.com URL for Square webhooks documentation.
+#: src/Integrations/Square/WebhooksHealthCheck.php:204
+msgid "Looks like you have a problem with your webhooks configuration. Please check and confirm that you've configured the WPForms webhooks in your Square account. This notice will disappear automatically when a new Square request comes in. See our <a href=\"%1$s\" rel=\"nofollow noopener\" target=\"_blank\">documentation</a> for more information."
+msgstr "Parece que tienes un problema con la configuración de tus webhooks. Por favor, comprueba y confirma que has configurado los webhooks de WPForms en tu cuenta de Square. Este aviso desaparecerá automáticamente cuando llegue una nueva solicitud de Square. Consulta nuestra <a href=\"%1$s\" rel=\"nofollow noopener\" target=\"_blank\">documentación</a> para obtener más información."
 
 #: src/Integrations/Square/Process.php:533
 msgid "Square subscription payment stopped, customer email not found."
@@ -1219,10 +1497,6 @@ msgstr "El addon Stripe Pro es necesario para activar la notificación de pagos 
 msgid "The Stripe Pro addon is required to enable notification for completed payments. Would you like to activate it?"
 msgstr "La extensión Stripe Pro es necesaria para activar la notificación de pagos completados. ¿Quieres activarla?"
 
-#: src/Integrations/Square/Api/WebhookRoute.php:156
-msgid "It seems to be request to Square PHP Listener method handler but the site is not configured to use it."
-msgstr "Parece que se trata de una petición a Square PHP Listener method handler, pero el sitio no está configurado para utilizarlo."
-
 #: templates/education/admin/payments/single-page.php:24
 msgid "Unlock conditional logic, coupons, lower Stripe and PayPal fees, and more."
 msgstr "Desbloquea la lógica condicional, los cupones, reduce las cuotas de Stripe y Square, y mucho más."
@@ -1330,11 +1604,6 @@ msgstr "Endpoint de ID de suscripción del modo en vivo"
 #: src/Integrations/Square/Admin/WebhookSettings.php:223
 msgid "Make sure that Webhooks Endpoint is updated inside the Square app after Webhooks Method switch."
 msgstr "Asegúrate de que el punto final de webhooks se actualiza dentro de la aplicación Square después de cambiar el método de webhooks."
-
-#. translators: %s - WPForms.com URL for Square webhooks documentation.
-#: src/Integrations/Square/Admin/WebhookSettings.php:109
-msgid "Choose the method of communication between Square and WPForms. If REST API support is disabled for WordPress, use PHP listener. <a href=\"%s\" rel=\"nofollow noopener\" target=\"_blank\">Learn more</a>."
-msgstr "Elige el método de comunicación entre Square y WPForms. Si la compatibilidad con la API REST está desactivada para WordPress, utiliza PHP listener. <a href=\"%s\" rel=\"nofollow noopener\" target=\"_blank\">Más información</a>."
 
 #. translators: %s - WPForms.com URL for Square webhooks documentation.
 #: src/Integrations/Square/Admin/WebhookSettings.php:61
@@ -4700,14 +4969,14 @@ msgstr "Realiza cálculos fácilmente basados en lo que introduzca el usuario. V
 msgid "AI Calculations Are Here!"
 msgstr "¡Ya están aquí los cálculos de IA!"
 
+#: src/Lite/Admin/Connect.php:87
+msgid "There must be a non-developer Lite version installed to upgrade."
+msgstr "Debe haber una versión Lite no para desarrolladores instalada para actualizar."
+
 #. translators: %s - WPForms.com URL for Stripe webhooks documentation.
 #: src/Integrations/Stripe/WebhooksHealthCheck.php:227
 msgid "Heads up! Looks like you have a problem with your webhooks configuration. Please check and confirm that you've configured the WPForms webhooks in your Stripe account. This notice will disappear automatically when a new Stripe request comes in. See our <a href=\"%1$s\" rel=\"nofollow noopener\" target=\"_blank\">documentation</a> for more information."
 msgstr "¡Atención! Parece que tienes un problema con la configuración de tus webhooks. Por favor, comprueba y confirma que has configurado los webhooks de WPForms en tu cuenta de Stripe. Este aviso desaparecerá automáticamente cuando llegue una nueva solicitud de Stripe. Consulta nuestra <a href=\"%1$s\" rel=\"nofollow noopener\" target=\"_blank\">documentación</a> para más información."
-
-#: src/Lite/Admin/Connect.php:87
-msgid "There must be a non-developer Lite version installed to upgrade."
-msgstr "Debe haber una versión Lite no para desarrolladores instalada para actualizar."
 
 #: templates/admin/challenge/embed.php:97
 msgid "Do you need more help?"
@@ -5120,17 +5389,6 @@ msgstr "Método para los Webhooks"
 msgid "REST API (recommended)"
 msgstr "API REST (recomendada)"
 
-#: src/Integrations/PayPalCommerce/Admin/WebhookSettings.php:75
-#: src/Integrations/Square/Admin/WebhookSettings.php:105
-#: src/Integrations/Stripe/Admin/WebhookSettings.php:82
-msgid "PHP listener"
-msgstr "Escucha mediante PHP"
-
-#. translators: %s - WPForms.com URL for Stripe webhooks documentation.
-#: src/Integrations/Stripe/Admin/WebhookSettings.php:86
-msgid "Choose the method of communication between Stripe and WPForms. If REST API support is disabled for WordPress, use PHP listener. <a href=\"%s\" rel=\"nofollow noopener\" target=\"_blank\">Learn more</a>."
-msgstr "Elige el método de comunicación entre Stripe y WPForms. Si la compatibilidad con la API REST está desactivada para WordPress, utiliza la escucha PHP. <a href=\"%s\" rel=\"nofollow noopener\" target=\"_blank\">Más información en</a>."
-
 #: src/Integrations/PayPalCommerce/Admin/WebhookSettings.php:95
 #: src/Integrations/Square/Admin/WebhookSettings.php:133
 #: src/Integrations/Stripe/Admin/WebhookSettings.php:102
@@ -5188,10 +5446,6 @@ msgstr "Secreto de firma en pruebas"
 #: src/Integrations/Stripe/Admin/WebhookSettings.php:206
 msgid "Retrieve your %1$s from your <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">Stripe webhook settings</a>. Select the endpoint, then click Reveal."
 msgstr "Recupera tu %1$s de los ajustes de tu webhook de Stripe <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\"></a>. Selecciona el punto final y haz clic en Revelar."
-
-#: src/Integrations/Stripe/Api/WebhookRoute.php:153
-msgid "It seems to be request to Stripe PHP Listener method handler but the site is not configured to use it."
-msgstr "Parece que se trata de una petición al manejador del método PHP Listener de Stripe, pero el sitio no está configurado para utilizarlo."
 
 #. translators: %s - Payments settings page URL.
 #: src/Integrations/Stripe/Admin/Payments/SingleActionsHandler.php:201

@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 7.0.x - Development package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-05-20 10:09:13+0000\n"
+"PO-Revision-Date: 2026-05-21 16:24:49+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -296,6 +296,21 @@ msgctxt "verb"
 msgid "Preview"
 msgstr "Előnézet"
 
+#. translators: Comment reply button text.
+#: wp-includes/comment-template.php:1760
+#: wp-includes/js/dist/block-library.js:12982
+#: wp-includes/js/dist/block-library.js:14245
+#: wp-admin/includes/class-wp-comments-list-table.php:879
+#: wp-admin/includes/dashboard.php:776 wp-admin/js/edit-comments.js:374
+#: wp-admin/js/edit-comments.js:1017
+msgctxt "verb"
+msgid "Reply"
+msgstr "Válasz"
+
+#: wp-includes/connectors.php:226
+msgid "Protect your site from spam."
+msgstr "Vedjük meg a webhelyet a spamtől."
+
 #: wp-includes/script-loader.php:2023
 msgctxt "datepicker: navigate to previous month"
 msgid "Previous"
@@ -421,6 +436,18 @@ msgstr "Növekvő"
 #: wp-admin/includes/media.php:2687
 msgid "Descending"
 msgstr "Csökkenő"
+
+#: wp-includes/connectors.php:312
+msgid "Text and image generation with GPT and Dall-E."
+msgstr "Szöveg - és képgenerálás a GPT és a Dall-E segítségével."
+
+#: wp-includes/connectors.php:300
+msgid "Text and image generation with Gemini and Imagen."
+msgstr "Szöveg- és képgenerálás a Gemini és az Imagen segítségével."
+
+#: wp-includes/connectors.php:288
+msgid "Text generation with Claude."
+msgstr "Szöveggenerálás Claude-dal."
 
 #. translators: %1$s is the feed URL, %2$s is the error message.
 #: wp-includes/feed.php:880
@@ -2879,6 +2906,12 @@ msgstr "Betűtípusok"
 msgid "Template part updated."
 msgstr "Sablonrész frissítve."
 
+#: wp-includes/build/routes/connectors-home/content.js:1824
+#: wp-includes/build/routes/connectors-home/route.js:53 wp-admin/menu.php:407
+#: wp-admin/options-connectors.php:30
+msgid "Connectors"
+msgstr "Csatlakozók"
+
 #: wp-includes/taxonomy.php:235
 msgctxt "taxonomy singular name"
 msgid "Pattern Category"
@@ -3054,6 +3087,15 @@ msgstr "Jelenítse meg a taxonómiából hozzárendelt kifejezések listáját: 
 #: wp-includes/blocks/image.php:206
 msgid "Enlarged image"
 msgstr "Nagyított kép"
+
+#. translators: %s: Image alt text.
+#: wp-includes/blocks/image.php:215
+msgid "Enlarged image: %s"
+msgstr "Felnagyított kép: %s"
+
+#: wp-includes/blocks/image.php:324
+msgid "Enlarged images"
+msgstr "Felnagyított képek"
 
 #. Translators: %d: Integer representing the number of return links on the
 #. page.
@@ -9159,6 +9201,10 @@ msgstr "\"%1$s\" nevű blokk nem tartalmazza a(z) \"%2$s\" blokkstílus nevet."
 msgid "Block style name must be a string."
 msgstr "A blokk stílus nevének karakterláncnak kell lennie."
 
+#: wp-includes/class-wp-icons-registry.php:107
+msgid "Icon name must be a string."
+msgstr "Az ikon nevének karakterláncnak kell lennie."
+
 #: wp-includes/class-wp-fatal-error-handler.php:200
 msgid "There has been a critical error on this website."
 msgstr "Súlyos hiba történt a webhelyünkön."
@@ -14251,6 +14297,11 @@ msgstr "Ma"
 msgid "Deleted:"
 msgstr "Törölve:"
 
+#. translators: %s is the search term.
+#: wp-includes/blocks/query-title.php:51
+msgid "Search results for: &#8220;%s&#8221;"
+msgstr "&#8220;%s&#8221; kifejezésre történő keresési eredmények"
+
 #: wp-login.php:1051 wp-admin/install.php:172 wp-admin/user-edit.php:725
 #: wp-admin/user-new.php:625 wp-admin/js/user-profile.js:61
 msgid "Confirm use of weak password"
@@ -16378,6 +16429,11 @@ msgstr "Szűrés típus alapján"
 #: wp-includes/class-wp-post-type.php:1009 wp-includes/media.php:5018
 msgid "Filter by date"
 msgstr "Szűrés dátum alapján"
+
+#: wp-includes/js/dist/editor.js:12736 wp-includes/js/dist/media-utils.js:17110
+#: wp-admin/includes/class-wp-media-list-table.php:647
+msgid "(Unattached)"
+msgstr "(Különálló)"
 
 #: wp-includes/media.php:5002 wp-admin/includes/class-wp-list-table.php:765
 #: wp-admin/includes/media.php:2885
@@ -18865,6 +18921,11 @@ msgstr "Az engedélyezett méretnél nagyobb a fájl."
 #: wp-includes/script-loader.php:1016
 msgid "This file is not an image. Please try another."
 msgstr "Ez a fájl nem kép. Próbáljunk egy másikat."
+
+#: wp-includes/general-template.php:4930
+msgctxt "admin color scheme"
+msgid "Fresh"
+msgstr "Friss"
 
 #: wp-includes/general-template.php:4954
 msgctxt "admin color scheme"
