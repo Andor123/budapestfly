@@ -8,6 +8,15 @@ namespace Inspiro\Starter_Sites;
 
 class WXRImporter extends \AwesomeMotive\WPContentImporter2\WXRImporter {
 	/**
+	 * GUIDs already encountered in the current import — used to detect and
+	 * rewrite duplicates so WXR's dedupe-by-guid doesn't drop legitimate
+	 * posts (notably nav_menu_items exported with identical date-only guids).
+	 *
+	 * @var array<string, true>
+	 */
+	private $seen_guids = array();
+
+	/**
 	 * Constructor method.
 	 *
 	 * @param array $options Importer options.
@@ -24,6 +33,59 @@ class WXRImporter extends \AwesomeMotive\WPContentImporter2\WXRImporter {
 		if ( class_exists( 'WooCommerce' ) ) {
 			add_filter( 'wxr_importer.pre_process.term', array( $this, 'woocommerce_product_attributes_registration' ), 10, 1 );
 		}
+
+		// Fix empty OR duplicate guids by substituting the post's permalink (link).
+		// Without this, WXR's dedupe-by-guid drops posts that share a guid
+		// (e.g. menu items exported with the same date-only guid).
+		add_filter( 'wxr_importer.pre_process.post', array( $this, 'fill_empty_guid_from_link' ), 10, 1 );
+	}
+
+	/**
+	 * Fix empty or duplicate guids by substituting the post's permalink (link).
+	 *
+	 * @param array $data Post data.
+	 * @return array
+	 */
+	public function fill_empty_guid_from_link( $data ) {
+		$guid = isset( $data['guid'] ) ? (string) $data['guid'] : '';
+		$link = isset( $data['link'] ) ? (string) $data['link'] : '';
+
+		$is_empty     = ( '' === $guid );
+		$is_duplicate = ( '' !== $guid && isset( $this->seen_guids[ $guid ] ) );
+
+		if ( ( $is_empty || $is_duplicate ) && '' !== $link ) {
+			$data['guid'] = $link;
+		}
+
+		if ( ! empty( $data['guid'] ) ) {
+			$this->seen_guids[ $data['guid'] ] = true;
+		}
+
+		return $data;
+	}
+
+	/**
+	 * Extends the parent parser to also capture the <link> tag so it is
+	 * available in post data (used by fill_empty_guid_from_link above).
+	 *
+	 * @param \DOMNode $node
+	 * @return array|\WP_Error
+	 */
+	protected function parse_post_node( $node ) {
+		$result = parent::parse_post_node( $node );
+
+		if ( is_wp_error( $result ) ) {
+			return $result;
+		}
+
+		foreach ( $node->childNodes as $child ) {
+			if ( $child->nodeType === XML_ELEMENT_NODE && $child->tagName === 'link' ) {
+				$result['data']['link'] = $child->textContent;
+				break;
+			}
+		}
+
+		return $result;
 	}
 
 	/**

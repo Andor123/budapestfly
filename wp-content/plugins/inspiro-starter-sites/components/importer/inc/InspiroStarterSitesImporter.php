@@ -154,6 +154,9 @@ class InspiroStarterSitesImporter {
 		add_action( 'wxr_importer.processed.post', array( $this, 'track_post' ), 10, 2 );
 		add_action( 'wxr_importer.processed.term', array( $this, 'track_term' ) );
 
+		// Track each widget instance we import, so we can remove exactly those on demo deletion.
+		add_action( 'inspiro_starter_sites/widget_importer_after_single_widget_import', array( $this, 'track_imported_widget' ) );
+
 		// Delete imported demo.
 		add_action( 'wp_ajax_inspiro_starter_sites_delete_imported_demo', array( $this, 'delete_imported_demo_ajax_callback' ) );
 
@@ -889,14 +892,141 @@ class InspiroStarterSitesImporter {
 			}
 		}
 
+		// Remove the widgets this plugin imported, so they don't pile up
+		// across demos or linger after deletion.
+		$this->reset_widgets_data();
+
+		// Reset customizer settings so leftovers from the deleted demo
+		// (color scheme, fonts, nav menu locations, etc.) don't persist.
+		$this->reset_customizer_data();
+
 		// Delete the demo ID option.
 		delete_option( 'inspiro_starter_sites_imported_demo_id' );
 
 		// Send a JSON response with success message.
-		wp_send_json_success( 
-			esc_html__( 'Demo data has been deleted successfully.', 'inspiro-starter-sites' ) 
+		wp_send_json_success(
+			esc_html__( 'Demo data has been deleted successfully.', 'inspiro-starter-sites' )
 		);
 
+	}
+
+	/**
+	 * Record a widget instance imported by the WidgetImporter so it can be
+	 * removed later when the demo is deleted.
+	 *
+	 * @param array $data Data passed by inspiro_starter_sites/widget_importer_after_single_widget_import.
+	 * @return void
+	 */
+	public function track_imported_widget( $data ) {
+		if ( empty( $data['widget_id'] ) ) {
+			return;
+		}
+
+		$imported = get_option( 'inspiro_starter_sites_imported_widgets', array() );
+		if ( ! is_array( $imported ) ) {
+			$imported = array();
+		}
+
+		$imported[] = $data['widget_id'];
+
+		update_option( 'inspiro_starter_sites_imported_widgets', array_values( array_unique( $imported ) ), 'no' );
+	}
+
+	/**
+	 * Remove the widget instances this plugin imported.
+	 *
+	 * Deletes only the widgets tracked during import (so user-created widgets
+	 * are untouched), removing them from every sidebar and deleting their
+	 * stored instance settings, then clears the tracking option.
+	 *
+	 * @return void
+	 */
+	public function reset_widgets_data() {
+		$imported = get_option( 'inspiro_starter_sites_imported_widgets', array() );
+
+		if ( empty( $imported ) || ! is_array( $imported ) ) {
+			delete_option( 'inspiro_starter_sites_imported_widgets' );
+			return;
+		}
+
+		$sidebars_widgets = get_option( 'sidebars_widgets', array() );
+		if ( ! is_array( $sidebars_widgets ) ) {
+			$sidebars_widgets = array();
+		}
+
+		foreach ( $imported as $widget_id ) {
+			// Split e.g. "text-5" into id_base ("text") and instance number (5).
+			$id_base = preg_replace( '/-[0-9]+$/', '', $widget_id );
+			$number  = (int) preg_replace( '/^.*-([0-9]+)$/', '$1', $widget_id );
+
+			// Remove the instance from every sidebar (and the inactive list).
+			foreach ( $sidebars_widgets as $sidebar_id => $widgets ) {
+				if ( is_array( $widgets ) ) {
+					$sidebars_widgets[ $sidebar_id ] = array_values( array_diff( $widgets, array( $widget_id ) ) );
+				}
+			}
+
+			// Delete the stored settings for this instance.
+			$instances = get_option( 'widget_' . $id_base );
+			if ( is_array( $instances ) && isset( $instances[ $number ] ) ) {
+				unset( $instances[ $number ] );
+				update_option( 'widget_' . $id_base, $instances );
+			}
+		}
+
+		update_option( 'sidebars_widgets', $sidebars_widgets );
+		delete_option( 'inspiro_starter_sites_imported_widgets' );
+
+		do_action( 'inspiro_starter_sites/after_reset_widgets_data' );
+	}
+
+	/**
+	 * Reset the theme to its defaults after a demo is deleted.
+	 *
+	 * Removes all customizer theme mods, custom CSS, and the front-page /
+	 * demo-layout options set during import — otherwise settings from the
+	 * deleted demo (color scheme, fonts, nav menu locations, etc.) linger
+	 * and bleed into the next demo that doesn't explicitly override them.
+	 *
+	 * @return void
+	 */
+	public function reset_customizer_data() {
+		// Theme mods that should survive the reset. Demos never set these, so
+		// the current value is the user's own setting — wiping it would let it
+		// fall back to a config default that doesn't match the shipped state
+		// (e.g. `hero_enable` defaults to true in config but ships unchecked).
+		$preserve_keys = apply_filters( 'inspiro_starter_sites/preserve_theme_mods', array( 'hero_enable' ) );
+
+		$preserved = array();
+		foreach ( $preserve_keys as $key ) {
+			$value = get_theme_mod( $key, null );
+			if ( null !== $value ) {
+				$preserved[ $key ] = $value;
+			}
+		}
+
+		// Reset all WordPress theme modifications to defaults.
+		remove_theme_mods();
+
+		// Restore the preserved mods.
+		foreach ( $preserved as $key => $value ) {
+			set_theme_mod( $key, $value );
+		}
+
+		// Clear any custom CSS saved through the Customizer.
+		if ( function_exists( 'wp_update_custom_css_post' ) ) {
+			wp_update_custom_css_post( '' );
+		}
+
+		// Undo the static front page / blog page assignment made on import.
+		update_option( 'show_on_front', 'posts' );
+		delete_option( 'page_on_front' );
+		delete_option( 'page_for_posts' );
+
+		// Remove the demo layout body-class flag set in after_import_setup().
+		delete_option( 'inspiro_demo_layout' );
+
+		do_action( 'inspiro_starter_sites/after_reset_customizer_data' );
 	}
 
 	/**

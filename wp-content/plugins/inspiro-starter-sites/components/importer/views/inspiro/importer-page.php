@@ -19,6 +19,7 @@ $premium_section   = ! empty( $premium_demos['inspiro-premium'] ) ? $premium_dem
 $imported_demo_id = get_option( 'inspiro_starter_sites_imported_demo_id', false );
 
 ?>
+<div class="inspiro-starter-sites">
 <div class="inspiro-starter-sites-demo-section">
 	<h3 class="inspiro-starter-sites-demo-section-title"><?php esc_html_e( 'Free Starter Sites', 'inspiro-starter-sites' ); ?></h3>
 	<p class="inspiro-starter-sites-demo-section-description"><?php esc_html_e( 'Import any of these starter sites directly into Inspiro Lite.', 'inspiro-starter-sites' ); ?></p>
@@ -53,7 +54,12 @@ $imported_demo_id = get_option( 'inspiro_starter_sites_imported_demo_id', false 
 				<li data-name="<?php echo esc_attr( strtolower( $import_file['import_file_name'] ) ); ?>" data-import-id="<?php echo esc_attr( $import_file['import_id'] ); ?>">
 					<figure title="<?php echo esc_attr( $import_file['import_file_name'] ); ?>">
 						<div class="preview-thumbnail inspiro-starter-sites-import" style="background-image:url('<?php echo esc_url( $img_src ) ?>')">
-							<span class="inspiro-starter-sites-demo-badge inspiro-starter-sites-demo-badge-free"><?php esc_html_e( 'Free', 'inspiro-starter-sites' ); ?></span>
+							<div class="inspiro-starter-sites-demo-badges">
+								<span class="inspiro-starter-sites-demo-badge inspiro-starter-sites-demo-badge-free"><?php esc_html_e( 'Free', 'inspiro-starter-sites' ); ?></span>
+								<?php if ( ! empty( $import_file['is_new'] ) ) : ?>
+									<span class="inspiro-starter-sites-demo-badge inspiro-starter-sites-demo-badge-new"><?php esc_html_e( 'New', 'inspiro-starter-sites' ); ?></span>
+								<?php endif; ?>
+							</div>
 							<a href="<?php echo esc_url( $import_file['preview_url'] ); ?>" target="_blank" class="button-select-template"><?php esc_html_e( 'View Demo', 'inspiro-starter-sites' ); ?></a></div>
 						<figcaption>
 							<h5><?php echo esc_html( $import_file['import_file_name'] ); ?></h5>
@@ -117,3 +123,4 @@ $imported_demo_id = get_option( 'inspiro_starter_sites_imported_demo_id', false 
 		</li>
 	</ol>
 <?php endif; ?>
+</div>
