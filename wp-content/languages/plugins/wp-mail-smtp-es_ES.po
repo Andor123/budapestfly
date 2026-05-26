@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WP Mail SMTP by WPForms &#8211; The Most Popular SMTP and Email Log Plugin - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-05-24 10:48:05+0000\n"
+"PO-Revision-Date: 2026-05-26 09:10:29+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -11,6 +11,19 @@ msgstr ""
 "Language: es\n"
 "Project-Id-Version: Plugins - WP Mail SMTP by WPForms &#8211; The Most Popular SMTP and Email Log Plugin - Stable (latest release)\n"
 
+#: src/Providers/Sendlayer/QuickConnect.php:830
+msgid "Something went wrong while connecting to SendLayer. Please try again, or contact support and provide the error code."
+msgstr "Algo salió mal al conectar con SendLayer. Inténtalo de nuevo o contacta con el soporte proporcionando el código de error."
+
+#. translators: %1$s - URL to SendLayer app; %2$s - URL to documentation.
+#: src/Providers/Sendlayer/QuickConnect.php:681
+msgid "You can customize your From Email by adding your own domain first on the <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">SendLayer dashboard</a>. Check our <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">documentation</a> on how to add a custom domain."
+msgstr "Puedes personalizar tu dirección de correo electrónico del remitente añadiendo primero tu propio dominio en el <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">escritorio de SendLayer</a>. Consulta nuestra <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">documentación</a> sobre cómo añadir un dominio personalizado."
+
+#: src/Providers/Sendlayer/QuickConnect.php:656
+msgid "From Email Address"
+msgstr "Dirección de correo electrónico del remitente"
+
 #: src/Providers/Sendlayer/QuickConnect.php:608
 msgid "Dismiss"
 msgstr "Descartar"
@@ -18,6 +31,163 @@ msgstr "Descartar"
 #: src/Providers/Sendlayer/QuickConnect.php:597
 msgid "Setup SendLayer"
 msgstr "Configurar SendLayer"
+
+#. translators: %s - URL to SendLayer.
+#: src/Providers/Sendlayer/QuickConnect.php:580
+msgid "You're using the default WordPress mailer, which often lands in spam! Switch to <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">SendLayer</a>, our recommended mailer, and send your <strong>first 200 emails for free with just a few clicks!</strong>"
+msgstr "Estás utilizando el servicio de envío  predeterminado de WordPress, que a menudo termina en spam. Cambia a <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">SendLayer</a>, nuestro servicio de correo recomendado, y envía tus <strong>primeros 200 correos electrónicos gratis con solo unos clics.</strong>"
+
+#: src/Providers/Sendlayer/QuickConnect.php:573
+msgid "Seems like you don't have a mailer setup yet!"
+msgstr "¡Parece que aún no has configurado un servicio de envío!"
+
+#: src/Providers/Sendlayer/QuickConnect.php:483
+msgid "SendLayer disconnect failed. The nonce is invalid. Please try again."
+msgstr "Error al desconectar SendLayer. El nonce no es válido. Inténtalo de nuevo."
+
+#: src/Providers/Sendlayer/QuickConnect.php:474
+msgid "SendLayer disconnect failed. You do not have permission to perform this action."
+msgstr "Error al desconectar SendLayer. No tienes permisos para realizar esta acción."
+
+#: src/Providers/Sendlayer/QuickConnect.php:444
+msgid "SendLayer connection failed. Your connection code has expired. Please try again."
+msgstr "Error de conexión con SendLayer. Tu código de conexión ha caducado. Inténtalo de nuevo."
+
+#: src/Providers/Sendlayer/QuickConnect.php:443
+msgid "SendLayer connection failed. Too many attempts. Please wait a few minutes and try again."
+msgstr "Error de conexión con SendLayer. Demasiados intentos. Espera unos minutos e inténtalo de nuevo."
+
+#: src/Providers/Sendlayer/QuickConnect.php:442
+msgid "SendLayer connection failed. Your session has expired. Please try again."
+msgstr "Error de conexión con SendLayer. Tu sesión ha caducado. Inténtalo de nuevo."
+
+#: src/Providers/Sendlayer/QuickConnect.php:441
+msgid "SendLayer connection failed. You do not have permission to perform this action."
+msgstr "Error de conexión con SendLayer. No tienes permisos para realizar esta acción."
+
+#: src/Providers/Sendlayer/QuickConnect.php:432
+msgid "SendLayer connected successfully! You can now send emails through SendLayer."
+msgstr "¡SendLayer se ha conectado correctamente! Ya puedes enviar correos electrónicos a través de SendLayer."
+
+#: src/Providers/Sendlayer/QuickConnect.php:414
+msgid "SendLayer disconnected successfully."
+msgstr "SendLayer se ha desconectado correctamente."
+
+#: src/Providers/Sendlayer/QuickConnect.php:66
+#: src/Providers/Sendlayer/QuickConnect.php:520
+msgid "You do not have permission to perform this action."
+msgstr "No tienes permiso para realizar esta acción."
+
+#. translators: %1$s - URL to SendLayer app domains page; %2$s - URL to
+#. documentation about custom domains.
+#: src/Providers/Sendlayer/Options.php:151
+msgid "You will need to register your own domain first on the <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">SendLayer dashboard</a> to change it here. Check our <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">documentation</a> on how to add a custom domain."
+msgstr "Antes necesitarás registrar tu propio dominio en el <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">Escritorio de SendLayer </a> para cambiarlo aquí. Comprueba nuestra <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">documentación</a> sobre como añadir un dominio personalizado."
+
+#: src/Providers/Sendlayer/Options.php:144
+msgid "This is a shared domain created for you via SendLayer Connect."
+msgstr "Este es un dominio compartido creado para ti por medio de SendLayer Connect."
+
+#: src/Providers/Sendlayer/Options.php:125
+msgid "Connect manually with API Key"
+msgstr "Conectarse manualmente con la clave API"
+
+#: src/Providers/Sendlayer/Options.php:105
+msgid "Please save this additional connection first to use Quick Connect or enter an API Key manually."
+msgstr "Por favor, guarda antes esta conexión adicional para usar la conexión rápida o introduce una clave API manualmente."
+
+#. translators: %1$s - URL to sendlayer.com; %2$s - URL to SendLayer
+#. documentation on wpmailsmtp.com.
+#: src/Providers/Sendlayer/Options.php:42
+msgid "<strong><a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">SendLayer</a> is our #1 recommended mailer.</strong> It offers affordable pricing and is easy to set up, which makes it an excellent option for WordPress sites. With SendLayer, your domain will be authenticated so all your outgoing emails reach your customers' inboxes. Our detailed <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">documentation</a> will walk you through the entire process, start to finish. <span class=\"wp-mail-smtp-text-blue wp-mail-smtp-text-italic\">When you sign up for a free trial, you can send your first emails at no charge.</span>"
+msgstr "<strong><a href=\"%1$s\" target=\"blank\" rel=\"noopener noreferrer\">SendLayer</a> es nuestro servicio de envío recomendado número uno.</strong> Ofrece precios asequibles y es fácil de configurar, lo que lo convierte en una excelente opción para sitios de WordPress. Con SendLayer, tu dominio quedará identificado para que todos tus correos salientes lleguen a la bandeja de entrada de tus clientes. Nuestra <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">documentación</a> detallada te guiará por todo el proceso, de principio a fin. <span class=\"wp-mail-smtp-text-blue wp-mail-smtp-text-italic\">Si te registras para un periodo de prueba gratuito, podrás enviar tus primeros correos electrónicos sin coste.</span>"
+
+#: src/Admin/Area.php:589
+msgid "Connecting..."
+msgstr "Conectando..."
+
+#: assets/languages/wp-mail-smtp-vue.php:1144
+#: src/Providers/Sendlayer/Options.php:116
+#: src/Providers/Sendlayer/QuickConnect.php:601
+msgid "Takes about 2 mins"
+msgstr "Dura alrededor de 2 minutos"
+
+#. Translators: %1$s and %2$s are bold tag open/close.
+#: assets/languages/wp-mail-smtp-vue.php:1141
+msgid "Easily start sending emails from your site in just a few clicks and enjoy your %1$sfirst 200 emails absolutely free!%2$s"
+msgstr "¡Empieza a enviar correos electrónicos desde tu sitio fácilmente con solo unos clics y disfruta de tus %1$sprimeros 200 correos electrónicos totalmente gratis!%2$s"
+
+#: assets/languages/wp-mail-smtp-vue.php:1130
+msgid "Read how to setup manually"
+msgstr "Lee como configurarlo manualmente"
+
+#: assets/languages/wp-mail-smtp-vue.php:1127
+#: src/Providers/Sendlayer/Options.php:110
+msgid "Quick Connect"
+msgstr "Conexión rápida"
+
+#. Translators: %1$s/%2$s - link open/close for SendLayer dashboard; %3$s/%4$s
+#. - link open/close for documentation.
+#: assets/languages/wp-mail-smtp-vue.php:1124
+msgid "This is a shared domain created for you via SendLayer Connect. You will need to register your own domain first on the %1$sSendLayer dashboard%2$s to change it here. Check our %3$sdocumentation%4$s on how to add a custom domain."
+msgstr "Este es un dominio compartido creado para ti a través de SendLayer Connect. Primero tendrás que registrar tu propio dominio en el %1$sescritorio de SendLayer%2$s para poder cambiarlo aquí. Consulta nuestra %3$sdocumentación%4$s para saber cómo añadir un dominio personalizado."
+
+#: assets/languages/wp-mail-smtp-vue.php:1120
+#: src/Providers/Sendlayer/Options.php:140
+msgid "Change"
+msgstr "Cambiar"
+
+#: assets/languages/wp-mail-smtp-vue.php:1117
+msgid "Connected to"
+msgstr "Conectado a"
+
+#: assets/languages/wp-mail-smtp-vue.php:1114
+#: src/Providers/Sendlayer/Options.php:134
+msgid "Domain"
+msgstr "Dominio"
+
+#. Translators: %1$s/%2$s - link open/close for SendLayer dashboard; %3$s/%4$s
+#. - link open/close for documentation.
+#: assets/languages/wp-mail-smtp-vue.php:1111
+msgid "The email address that emails are sent from. You can customize your From Email by adding your domain on %1$sSendLayer dashboard%2$s. Check our %3$sdocumentation%4$s on how to add a custom domain."
+msgstr "La dirección de correo electrónico desde la que se envían los correos electrónicos. Puedes personalizar tu correo electrónico del remitente añadiendo tu dominio en el %1$sescritorio de SendLayer%2$s. Consulta nuestra %3$sdocumentación%4$s sobre cómo añadir un dominio personalizado."
+
+#: assets/languages/wp-mail-smtp-vue.php:1107
+msgid "If enabled, your specified From Email Address will be used for all outgoing emails, regardless of values set by other plugins."
+msgstr "Si está activado, tu dirección de correo electrónico del remitente especificada se usará para todos los correos electrónicos salientes, independientemente de los valores establecidos por otros plugins."
+
+#: assets/languages/wp-mail-smtp-vue.php:1104
+#: src/Providers/Sendlayer/Options.php:199
+msgid "Disconnect"
+msgstr "Desconectar"
+
+#: assets/languages/wp-mail-smtp-vue.php:1101 src/WP.php:150
+msgid "Copy error code"
+msgstr "Copiar el código de error"
+
+#: assets/languages/wp-mail-smtp-vue.php:1098
+msgid "Retry Connecting"
+msgstr "Reintentar conexión"
+
+#: assets/languages/wp-mail-smtp-vue.php:1095
+msgid "Your site was not connected to SendLayer. You can retry or connect manually with API key. Our detailed documentation for manually connecting will walk you through the entire process."
+msgstr "Tu sitio no se ha conectado a SendLayer. Puedes volver a intentarlo o conectarlo manualmente mediante una clave API. Nuestra documentación detallada sobre la conexión manual te guiará durante todo el proceso."
+
+#: assets/languages/wp-mail-smtp-vue.php:1092
+msgid "SendLayer Connection Failed!"
+msgstr "¡La conexión con SendLayer ha fallado!"
+
+#: assets/languages/wp-mail-smtp-vue.php:1089
+msgid "Your site was successfully connected to SendLayer. This site will now send emails via your SendLayer account."
+msgstr "Tu sitio se ha conectado correctamente a SendLayer. Este sitio ahora enviará correos electrónicos mediante tu cuenta de SendLayer."
+
+#: assets/languages/wp-mail-smtp-vue.php:1086 src/Admin/Area.php:588
+msgid "A server error occurred. Please try again."
+msgstr "Se ha producido un error del servidor. Inténtalo de nuevo."
+
+#: assets/languages/wp-mail-smtp-vue.php:1083 src/Admin/Area.php:587
+msgid "An error occurred. Please try again."
+msgstr "Se ha producido un error. Inténtalo de nuevo."
 
 #: src/Providers/Resend/Options.php:123
 msgid "API Keys"
@@ -84,6 +254,76 @@ msgstr "<strong>%s DE DESCUENTO</strong> para usuarios de WP Mail SMTP, aplicado
 #: src/Admin/Pages/SettingsTab.php:283
 msgid "Discount"
 msgstr "Descuento"
+
+#: src/Admin/Pages/SettingsTab.php:272
+msgid "Professional Setup and World-Class Support"
+msgstr "Configuración profesional y soporte de primer nivel"
+
+#: src/Admin/Pages/SettingsTab.php:271
+msgid "White Glove Setup - Sit back while we handle everything"
+msgstr "White Glove Setup - relájate mientras nosotros nos encargamos de todo"
+
+#: src/Admin/Pages/SettingsTab.php:268
+msgid "Smart Routing, Multisite Support, and Manage Notifications"
+msgstr "Enrutamiento inteligente, compatibilidad multisitio y gestión de avisos"
+
+#: src/Admin/Pages/SettingsTab.php:267
+msgid "Effortless Management - Control your email experience"
+msgstr "Gestión sencilla: controla tu experiencia de correo electrónico"
+
+#: src/Admin/Pages/SettingsTab.php:264
+msgid "Gmail one-click setup, Microsoft 365 / Outlook, Amazon SES, and Zoho Mail"
+msgstr "Configuración con un clic para Gmail, Microsoft 365 / Outlook, Amazon SES y Zoho Mail"
+
+#: src/Admin/Pages/SettingsTab.php:263
+msgid "Professional Email Services - Access enterprise-grade email providers"
+msgstr "Servicios profesionales de correo electrónico: accede a proveedores de correo electrónico de nivel empresarial"
+
+#: src/Admin/Pages/SettingsTab.php:260
+msgid "Email Logging, Alerts, and Backup Connection"
+msgstr "Registro de correos, alertas y conexión a las copias de seguridad"
+
+#: src/Admin/Pages/SettingsTab.php:259
+msgid "Peace of Mind - Never wonder about your email status"
+msgstr "Tranquilidad total: sabrás siempre el estado de tus correos."
+
+#: src/Admin/Pages/SettingsTab.php:254
+msgid "Key Features You’ll Unlock:"
+msgstr "Funciones principales que desbloquearás:"
+
+#: src/Admin/Pages/SettingsTab.php:248
+msgid "Upgrade and join over <strong>4,000,000</strong> websites!"
+msgstr "Actualiza tu plan y únete a más de <strong>4,000,000</strong> sitios web."
+
+#: src/Admin/Pages/SettingsTab.php:245
+msgid "Level Up Your Email Game - Get Pro Features Now"
+msgstr "Haz que tu correo electrónico suba de nivel: obtén ahora las funciones Pro."
+
+#: src/Admin/Pages/SettingsTab.php:221
+msgid "Email Logs"
+msgstr "Registros de correo electrónico"
+
+#. Translators: %s - discount value $50
+#: src/Admin/Pages/SettingsTab.php:80
+msgid "As a valued WP Mail SMTP Lite user, you can enjoy an exclusive <strong>%s discount</strong>, automatically applied at checkout to unlock even more features!"
+msgstr "Como usuario valorado de WP Mail SMTP Lite, puedes disfrutar de un <strong>%s de descuento</strong> exclusivo, que se aplicará automáticamente al finalizar la compra para desbloquear aún más funciones."
+
+#: src/Admin/Pages/SettingsTab.php:74
+msgid "You're using <strong>WP Mail SMTP Lite</strong> - no license needed. Enjoy!"
+msgstr "Estás usando <strong>WP Mail SMTP Lite</strong> : no necesitas licencia. ¡Disfrútalo!"
+
+#. translators: %s - WPMailSMTP.com Upgrade page URL.
+#: src/Admin/Education.php:73
+msgid "You’re using WP Mail SMTP Lite. To unlock more features, consider <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">upgrading to Pro</a> for <strong>%2$s OFF</strong>."
+msgstr "Estás usando WP Mail SMTP Lite. Para desbloquear más funciones, considera <a href=\"%1$s\" target=\"blank\" rel=\"noopener noreferrer\">actualizar a Pro</a> con un <strong>%2$s de descuento</strong>."
+
+#: assets/languages/wp-mail-smtp-vue.php:1073
+msgid "Read how to set up Mandrill"
+msgstr "Lee como configurar Mandrill"
+
+#: assets/languages/wp-mail-smtp-vue.php:1070
+msgid "Follow this link to get an API Key from Mandrill."
+msgstr "Sigue este enlace para conseguir una clave API de Mandrill."
 
 #: src/Providers/MailerSend/Options.php:150
 msgid "pricing page"

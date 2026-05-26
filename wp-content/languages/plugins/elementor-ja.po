@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Elementor Website Builder &#8211; more than just a page builder - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-05-24 15:04:19+0000\n"
+"PO-Revision-Date: 2026-05-26 09:20:59+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -11,10 +11,108 @@ msgstr ""
 "Language: ja_JP\n"
 "Project-Id-Version: Plugins - Elementor Website Builder &#8211; more than just a page builder - Stable (latest release)\n"
 
+#: modules/mcp/abilities/update-settings-ability.php:82
+msgid "Could not save document settings."
+msgstr "ドキュメントの設定を保存できませんでした。"
+
+#: modules/mcp/abilities/update-settings-ability.php:66
+msgid "The settings object is required."
+msgstr "設定オブジェクト (settings object) が必要です。"
+
+#: modules/mcp/abilities/update-settings-ability.php:20
+msgid "Updates Elementor document-level settings for a post (for example page layout, title visibility, or custom page settings). Pass only the keys you want to change. Use list-pages to resolve IDs and get-page-structure when you also need the element tree. Requires permission to edit the target post."
+msgstr "投稿に対する Elementor のドキュメントレベルの設定 (例: ページレイアウト、タイトルの表示状態、またはカスタムページ設定など) を更新します。変更したいキーのみを渡してください。ID を解決するには list-pages を、要素ツリーも必要な場合は get-page-structure を使用してください。対象の投稿を編集する権限が必要です。"
+
+#: modules/mcp/abilities/update-settings-ability.php:19
+msgid "Update Elementor Page Settings"
+msgstr "Elementor ページ設定の更新"
+
+#: modules/mcp/abilities/get-structure-ability.php:116
+#: modules/mcp/abilities/update-settings-ability.php:76
+msgid "Sorry, you are not allowed to edit this document."
+msgstr "このドキュメントを編集する権限がありません。"
+
+#: modules/mcp/abilities/get-structure-ability.php:78
+#: modules/mcp/abilities/update-settings-ability.php:62
+msgid "A valid post_id is required."
+msgstr "有効な post_id が必要です。"
+
+#: modules/mcp/abilities/list-pages-ability.php:18
+msgid "Returns pages and posts built with Elementor on this WordPress site. Each item includes ID, title, status (publish/draft), URL, and post type. Use this first to discover which pages exist before fetching their structure or modifying settings."
+msgstr "この WordPress サイト上で Elementor を使って構築されたページと投稿を返します。各項目には、ID、タイトル、ステータス (公開 / 下書き)、URL、および投稿タイプが含まれます。ページの構造を取得したり設定を変更したりする前に、まずこれを使用してどのページが存在するかを確認してください。"
+
+#: modules/mcp/abilities/list-pages-ability.php:17
+msgid "List Elementor Pages"
+msgstr "Elementor ページのリスト"
+
+#: modules/mcp/abilities/get-structure-ability.php:108
+msgid "This post is not built with Elementor."
+msgstr "この投稿は Elementor で構築されていません。"
+
+#: modules/mcp/abilities/get-structure-ability.php:86
+msgid "Sorry, you are not allowed to access this document."
+msgstr "このドキュメントにアクセスする権限がありません。"
+
+#: modules/mcp/abilities/get-structure-ability.php:20
+msgid "Returns the Elementor element tree (widgets, containers, and nested content) for a single post or page ID. Use after list-pages when you need the live JSON structure to reason about layout, widget types, or to plan edits. Only works for posts that were saved with Elementor."
+msgstr "単一の投稿またはページ ID に対する Elementor の要素ツリー (ウィジェット、コンテナ、および入れ子にされたコンテンツ) を返します。レイアウトやウィジェットのタイプを把握したり、編集の計画を立てるために、生の JSON 構造が必要な場合は list-pages の後にこれを使用してください。Elementor で保存された投稿でのみ動作します。"
+
+#: modules/mcp/abilities/get-structure-ability.php:19
+msgid "Get Elementor Page Structure"
+msgstr "Elementor ページ構造の取得"
+
+#: modules/mcp/abilities/get-globals-ability.php:24
+msgid "Returns site-wide Elementor design data: global classes (shared CSS classes from the kit) and variables (design tokens such as colors and fonts tied to the active kit). Use when you need kit-level styling context, not a single page tree."
+msgstr "サイト全体の Elementor デザインデータを返します: グローバルクラス (キット共通の CSS クラス) および変数 (有効なキットに紐づく色やフォントなどのデザイントークン)。個別ページツリーではなく、キットレベルのスタイリングのコンテキストが必要な場合に使用します。"
+
+#: modules/mcp/abilities/get-globals-ability.php:23
+msgid "Get Elementor Globals"
+msgstr "Elementor グローバルを取得"
+
+#: modules/mcp/abilities/create-page-ability.php:123
+msgid "Document could not be loaded."
+msgstr "ドキュメントを読み込めませんでした。"
+
+#: modules/mcp/abilities/create-page-ability.php:107
+msgid "Elementor Draft"
+msgstr "Elementor 下書き"
+
+#: modules/mcp/abilities/create-page-ability.php:96
+msgid "Sorry, you are not allowed to create posts of this type."
+msgstr "このタイプの投稿を作成する権限がありません。"
+
+#: modules/mcp/abilities/create-page-ability.php:82
+msgid "This post type does not support Elementor."
+msgstr "この投稿タイプは Elementor をサポートしていません。"
+
+#: modules/mcp/abilities/create-page-ability.php:20
+msgid "Creates a new draft post or page and marks it as built with Elementor (blank canvas in the editor). Use when the user wants a new layout shell to design in Elementor. Returns the new post ID and edit URL."
+msgstr "新しい下書きの投稿またはページを作成し、Elementor で構築されたもの (エディタ内の空白のキャンバス) としてマークします。ユーザーが Elementor でデザインするための新しいレイアウトの枠組みを求めている場合に使用します。新しい投稿 ID と編集 URL を返します。"
+
+#: modules/mcp/abilities/create-page-ability.php:19
+msgid "Create Elementor Page"
+msgstr "Elementor ページを作成"
+
+#: modules/markdown-render/module.php:25
+msgid "Generate website markdown"
+msgstr "サイトの Markdown 生成"
+
+#: modules/markdown-render/module.php:193
+msgid "Specify the duration for which Markdown output is cached. This cache is served to AI crawlers requesting text/markdown content."
+msgstr "Markdown 出力のキャッシュ保持期間を指定します。このキャッシュは、text/markdown (Markdown形式のコンテンツ) を要求する AI クローラーに提供されます。"
+
+#: modules/markdown-render/module.php:178
+msgid "Markdown Cache"
+msgstr "Markdown キャッシュ"
+
+#: modules/markdown-render/module.php:28
+msgid "Serve your pages as Markdown files so AI agents can ingest and understand your content more efficiently."
+msgstr "AI エージェントがコンテンツをより効率的に取り込み、理解できるように、ページを Markdown ファイルとして提供します。"
+
 #: includes/editor-templates/panel-elements.php:110
 #: modules/widget-creation/module.php:103
 #: assets/js/packages/editor-app-bar/editor-app-bar.js:2
-#: assets/js/packages/editor-app-bar/editor-app-bar.strings.js:57
+#: assets/js/packages/editor-app-bar/editor-app-bar.strings.js:58
 msgid "Try for free"
 msgstr "無料でお試し"
 
@@ -38,7 +136,7 @@ msgstr "入力"
 msgid "Submit button"
 msgstr "送信ボタン"
 
-#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:166
+#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:204
 msgid "User Agent"
 msgstr "ユーザーエージェント"
 
@@ -64,21 +162,23 @@ msgstr "ダウンロードを許可"
 msgid "None (Lazy Load)"
 msgstr "なし (遅延読み込み)"
 
-#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:266
-#: modules/atomic-widgets/elements/atomic-form/form-error-message/form-error-message.php:21
+#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:305
+#: modules/atomic-widgets/elements/atomic-form/form-error-message/form-error-message.php:23
 msgid "Error message"
 msgstr "エラーメッセージ"
 
-#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:264
+#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:303
+#: modules/atomic-widgets/elements/atomic-form/form-error-message/form-error-message.php:35
 msgid "We couldn’t process your submission. Please retry"
 msgstr "送信内容を処理できませんでした。もう一度お試しください"
 
-#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:261
-#: modules/atomic-widgets/elements/atomic-form/form-success-message/form-success-message.php:21
+#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:300
+#: modules/atomic-widgets/elements/atomic-form/form-success-message/form-success-message.php:23
 msgid "Success message"
 msgstr "成功メッセージ"
 
-#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:259
+#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:298
+#: modules/atomic-widgets/elements/atomic-form/form-success-message/form-success-message.php:35
 msgid "Great! We’ve received your information."
 msgstr "ありがとうございます ! 登録情報を確認しました。"
 
@@ -100,34 +200,34 @@ msgstr "Atomic エディター"
 msgid "The Elementor Website Builder has it all: drag and drop page builder, Atomic Editor, pixel perfect design, global and reusable style systems, mobile responsive editing, and more. Get started now!"
 msgstr "Elementor サイトビルダーには、ドラッグ & ドロップ式ページビルダー、Atomic エディター、ピクセルパーフェクトなデザイン、グローバルかつ再利用可能なスタイルシステム、モバイル対応編集など、必要な機能がすべて揃っています。今すぐ始めましょう !"
 
-#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:243
+#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:281
 msgid "your@mail.com"
 msgstr "your@mail.com"
 
-#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:239
-#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:240
+#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:277
+#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:278
 msgid "Last name"
 msgstr "姓"
 
-#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:236
-#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:237
+#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:274
+#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:275
 msgid "First name"
 msgstr "名"
 
-#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:162
+#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:200
 msgid "User IP"
 msgstr "ユーザー IP"
 
-#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:246
+#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:284
 msgid "Your message"
 msgstr "メッセージ"
 
-#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:248
+#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:287
 #: modules/promotions/widgets/atomic-form-widget-promotion.php:67
 msgid "Checkbox"
 msgstr "チェックボックス"
 
-#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:58
+#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:72
 #: modules/promotions/widgets/atomic-form-widget-promotion.php:76
 msgid "Atomic form"
 msgstr "Atomic フォーム"
@@ -152,7 +252,7 @@ msgstr "コンポーネントを作成"
 msgid "Create custom widget"
 msgstr "カスタムウィジェットを作成"
 
-#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:142
+#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:172
 msgid "Form name"
 msgstr "フォーム名"
 
@@ -166,15 +266,15 @@ msgstr "テンプレートを選択"
 msgid "Preview of template"
 msgstr "テンプレートのプレビュー"
 
-#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:158
+#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:196
 msgid "Include metadata"
 msgstr "メタデータを含める"
 
-#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:149
+#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:183
 msgid "Collect submissions"
 msgstr "送信データを蓄積する"
 
-#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:145
+#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:175
 msgid "Actions after submit"
 msgstr "送信後のアクション"
 
@@ -250,6 +350,7 @@ msgid "Product Feedback"
 msgstr "製品フィードバック"
 
 #: includes/managers/elements.php:342
+#: modules/atomic-widgets/elements/atomic-form/atomic-form-promotion.php:35
 msgid "Atomic Form"
 msgstr "Atomic フォーム"
 
@@ -287,11 +388,11 @@ msgstr "エディターのツールがまとめて整理され、すばやくア
 msgid "The Editor has a new home"
 msgstr "エディターの新しいホーム"
 
-#: includes/widgets/heading.php:491
+#: includes/widgets/heading.php:519
 msgid "Keep your content accessible. Activate Ally, included in ONE, to scan this page."
 msgstr "コンテンツのアクセシビリティを保ちましょう。ONE に含まれる Ally を有効化して、このページをスキャンできます。"
 
-#: includes/widgets/heading.php:481
+#: includes/widgets/heading.php:509
 msgid "Want to ensure this heading is accessible? Your ONE subscription includes Ally. Install it and scan your page."
 msgstr "この見出しのアクセシビリティを確認したいですか ? ONE サブスクリプションには Ally が含まれています。インストールしてページをスキャンしてください。"
 
@@ -394,7 +495,7 @@ msgstr "タブメニュー"
 msgid "Tabs content area"
 msgstr "タブコンテンツエリア"
 
-#: modules/atomic-widgets/elements/atomic-tabs/atomic-tab/atomic-tab.php:45
+#: modules/atomic-widgets/elements/atomic-tabs/atomic-tab/atomic-tab.php:47
 msgid "Tab trigger"
 msgstr "タブトリガー"
 
@@ -403,7 +504,7 @@ msgstr "タブトリガー"
 msgid "Element %1$s has more than %2$d interactions"
 msgstr "エレメント %1$s には%2$dを超える相互作用があります"
 
-#: modules/interactions/module.php:54
+#: modules/interactions/module.php:56
 msgid "Enable element interactions."
 msgstr "エレメントの相互作用を有効化します。"
 
@@ -467,11 +568,11 @@ msgstr "このファイル"
 msgid "No import sessions available to revert."
 msgstr "元に戻せるインポートセッションはありません。"
 
-#: modules/atomic-widgets/module.php:212
+#: modules/atomic-widgets/module.php:224
 msgid "Editor MCP for atomic widgets."
 msgstr "Atomic ウィジェット用エディタMCP。"
 
-#: modules/atomic-widgets/module.php:211
+#: modules/atomic-widgets/module.php:223
 msgid "Editor MCP for atomic widgets"
 msgstr "Atomic ウィジェット用エディタMCP"
 
@@ -479,11 +580,11 @@ msgstr "Atomic ウィジェット用エディタMCP"
 msgid "Unexpected error"
 msgstr "予期しないエラー"
 
-#: modules/atomic-widgets/elements/div-block/div-block.php:40
+#: modules/atomic-widgets/elements/div-block/div-block.php:43
 msgid "Div block"
 msgstr "Div ブロック"
 
-#: modules/atomic-widgets/elements/atomic-tabs/atomic-tabs/atomic-tabs.php:85
+#: modules/atomic-widgets/elements/atomic-tabs/atomic-tabs/atomic-tabs.php:87
 msgid "Menu items"
 msgstr "メニュー項目"
 
@@ -549,14 +650,14 @@ msgid "You do not have sufficient permissions to access this page."
 msgstr "このページにアクセスするための十分な権限がありません。"
 
 #: modules/components/documents/component.php:45
-#: modules/components/module.php:64
+#: modules/components/module.php:66
 #: assets/js/packages/editor-components/editor-components.js:2
 #: assets/js/packages/editor-components/editor-components.strings.js:2
 msgid "Components"
 msgstr "コンポーネント"
 
 #: modules/components/documents/component.php:41
-#: modules/components/widgets/component-instance.php:27
+#: modules/components/widgets/component-instance.php:29
 msgid "Component"
 msgstr "コンポーネント"
 
@@ -616,7 +717,7 @@ msgstr "%s として接続されています。"
 msgid "Want to disconnect for any reason?"
 msgstr "何らかの理由で接続を切断したいですか ?"
 
-#: modules/components/module.php:65
+#: modules/components/module.php:67
 msgid "Enable components."
 msgstr "コンポーネントを有効化します。"
 
@@ -638,14 +739,14 @@ msgstr "現在利用可能なサブスクリプションはありません。"
 msgid "Gain access to dozens of professionally designed templates, and connect your site to your My Elementor Dashboard."
 msgstr "プロがデザインした数10種類のテンプレートにアクセスし、サイトを My Elementor ダッシュボードに接続します。"
 
-#: modules/variables/module.php:66
+#: modules/variables/module.php:68
 msgid "Enable variables manager. (For this feature to work - Variables must be active)"
 msgstr "変数マネージャーを有効にします。(この機能が動作するには、変数がアクティブになっている必要があります)"
 
-#: modules/variables/module.php:65
+#: modules/variables/module.php:67
 #: assets/js/packages/editor-variables/editor-variables.js:2
 #: assets/js/packages/editor-variables/editor-variables.strings.js:20
-#: assets/js/packages/editor-variables/editor-variables.strings.js:58
+#: assets/js/packages/editor-variables/editor-variables.strings.js:72
 msgid "Variables Manager"
 msgstr "変数マネージャー"
 
@@ -678,15 +779,15 @@ msgstr "テーマ: %s はすでにインストールされ、有効化されて�
 msgid "Theme: %s is already used"
 msgstr "テーマ: %s はすでに使用されています"
 
-#: app/app.php:293
+#: app/app.php:295
 msgid "Enhanced import/export for website templates. Selectively include site content, templates, and settings with advanced granular control."
 msgstr "サイトテンプレートのインポート / エクスポート機能が強化されました。サイトのコンテンツ、テンプレート、設定を詳細に制御し、選択的にインポートできます。"
 
-#: includes/widgets/heading.php:518
+#: includes/widgets/heading.php:546
 msgid "Accessible structure matters"
 msgstr "アクセシブルな構造が重要"
 
-#: includes/widgets/heading.php:502
+#: includes/widgets/heading.php:530
 msgid "Make sure your page is structured with accessibility in mind. Ally helps detect and fix common issues across your site."
 msgstr "ページがアクセシビリティを考慮して構造化されていることを確認してください。Ally は、サイト全体でよくある問題を検出し、修正するのに役立ちます。"
 
@@ -788,7 +889,7 @@ msgstr "テーマ: %1$s はすでにインストールされ、有効化され�
 msgid "Theme: %1$s is already used"
 msgstr "テーマ: %1$s はすでに使用されています"
 
-#: app/app.php:292
+#: app/app.php:294
 msgid "Import/Export Customization"
 msgstr "インポート / エクスポートのカスタマイズ"
 
@@ -799,24 +900,6 @@ msgstr ".zipファイルをアップロード"
 #: app/modules/import-export-customization/module.php:153
 msgid "Apply a Website Template"
 msgstr "サイトテンプレートを適用"
-
-#: modules/atomic-widgets/elements/atomic-button/atomic-button.php:93
-#: modules/atomic-widgets/elements/atomic-divider/atomic-divider.php:70
-#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:180
-#: modules/atomic-widgets/elements/atomic-form/form-message/form-message.php:59
-#: modules/atomic-widgets/elements/atomic-heading/atomic-heading.php:126
-#: modules/atomic-widgets/elements/atomic-image/atomic-image.php:85
-#: modules/atomic-widgets/elements/atomic-paragraph/atomic-paragraph.php:108
-#: modules/atomic-widgets/elements/atomic-self-hosted-video/atomic-self-hosted-video.php:171
-#: modules/atomic-widgets/elements/atomic-svg/atomic-svg.php:80
-#: modules/atomic-widgets/elements/atomic-tabs/atomic-tabs-content-area/atomic-tabs-content-area.php:70
-#: modules/atomic-widgets/elements/atomic-tabs/atomic-tabs-menu/atomic-tabs-menu.php:74
-#: modules/atomic-widgets/elements/atomic-tabs/atomic-tabs/atomic-tabs.php:95
-#: modules/atomic-widgets/elements/atomic-youtube/atomic-youtube.php:103
-#: modules/atomic-widgets/elements/div-block/div-block.php:127
-#: modules/atomic-widgets/elements/flexbox/flexbox.php:130
-msgid "ID"
-msgstr "ID"
 
 #: core/admin/admin-notices.php:285
 msgid "Opt in"
@@ -831,12 +914,32 @@ msgid "Diamond"
 msgstr "ダイヤモンド"
 
 #: modules/atomic-widgets/elements/atomic-youtube/atomic-youtube.php:83
+#: assets/js/packages/editor-controls/editor-controls.js:78
+#: assets/js/packages/editor-controls/editor-controls.strings.js:4
 msgid "End time"
 msgstr "終了時刻"
 
 #: includes/widgets/common-base.php:180
 msgid "Octagon"
 msgstr "八角形"
+
+#: modules/atomic-widgets/elements/atomic-button/atomic-button.php:93
+#: modules/atomic-widgets/elements/atomic-divider/atomic-divider.php:70
+#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:218
+#: modules/atomic-widgets/elements/atomic-form/form-message/form-message.php:83
+#: modules/atomic-widgets/elements/atomic-heading/atomic-heading.php:126
+#: modules/atomic-widgets/elements/atomic-image/atomic-image.php:85
+#: modules/atomic-widgets/elements/atomic-paragraph/atomic-paragraph.php:108
+#: modules/atomic-widgets/elements/atomic-self-hosted-video/atomic-self-hosted-video.php:171
+#: modules/atomic-widgets/elements/atomic-svg/atomic-svg.php:80
+#: modules/atomic-widgets/elements/atomic-tabs/atomic-tabs-content-area/atomic-tabs-content-area.php:70
+#: modules/atomic-widgets/elements/atomic-tabs/atomic-tabs-menu/atomic-tabs-menu.php:74
+#: modules/atomic-widgets/elements/atomic-tabs/atomic-tabs/atomic-tabs.php:97
+#: modules/atomic-widgets/elements/atomic-youtube/atomic-youtube.php:103
+#: modules/atomic-widgets/elements/div-block/div-block.php:130
+#: modules/atomic-widgets/elements/flexbox/flexbox.php:133
+msgid "ID"
+msgstr "ID"
 
 #: modules/atomic-widgets/elements/atomic-youtube/atomic-youtube.php:87
 msgid "Lazy load"
@@ -847,6 +950,8 @@ msgid "Heptagon"
 msgstr "七角形"
 
 #: modules/atomic-widgets/elements/atomic-youtube/atomic-youtube.php:82
+#: assets/js/packages/editor-controls/editor-controls.js:78
+#: assets/js/packages/editor-controls/editor-controls.strings.js:3
 msgid "Start time"
 msgstr "開始時間"
 
@@ -882,7 +987,7 @@ msgstr "値を空にすることはできません"
 msgid "Label cannot exceed %d characters"
 msgstr "ラベルは%d文字を超えることはできません"
 
-#: modules/atomic-widgets/module.php:195
+#: modules/atomic-widgets/module.php:207
 msgid "Enable V4 Indication Popovers"
 msgstr "V4表示ポップオーバーの有効化"
 
@@ -899,11 +1004,11 @@ msgstr "ID は%d文字を超えることはできません"
 msgid "ID cannot be empty"
 msgstr "ID を空にすることはできません"
 
-#: modules/global-classes/module.php:92
+#: modules/global-classes/module.php:114
 msgid "Enforce global classes capabilities."
 msgstr "グローバルクラスの権限を強化します。"
 
-#: modules/global-classes/module.php:91
+#: modules/global-classes/module.php:113
 msgid "Enforce global classes capabilities"
 msgstr "グローバルクラス権限の強化"
 
@@ -996,7 +1101,7 @@ msgstr "Trapezoid Down"
 msgid "Export this website"
 msgstr "このサイトをエクスポート"
 
-#: modules/atomic-widgets/module.php:194
+#: modules/atomic-widgets/module.php:206
 msgid "V4 Indications Popover"
 msgstr "V4適応ポップオーバー"
 
@@ -1050,11 +1155,11 @@ msgstr "デザインと設定は .zip ファイルからインポートするこ
 msgid "You can download this website as a .zip file, or upload it to the library."
 msgstr "このサイトを .zip ファイルとしてダウンロードするか、ライブラリにアップロードすることができます。"
 
-#: modules/atomic-widgets/module.php:203
+#: modules/atomic-widgets/module.php:215
 msgid "Enforce atomic widgets capabilities."
 msgstr "Atomic ウィジェットの権限を強制します。"
 
-#: modules/atomic-widgets/module.php:202
+#: modules/atomic-widgets/module.php:214
 msgid "Enforce atomic widgets capabilities"
 msgstr "Atomic ウィジェット権限の強化"
 
@@ -1070,9 +1175,9 @@ msgstr "Atomic ウィジェット権限の強化"
 msgid "Website Templates"
 msgstr "サイトテンプレート"
 
-#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:115
+#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:145
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:8
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:77
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:78
 msgid "States"
 msgstr "ステート"
 
@@ -1099,7 +1204,9 @@ msgstr "グリッド表示"
 msgid "List view"
 msgstr "リスト表示"
 
-#: modules/variables/module.php:34 assets/js/app.js:8590 assets/js/app.js:12039
+#: modules/variables/module.php:35 assets/js/app.js:8590 assets/js/app.js:12039
+#: assets/js/packages/editor-design-system/editor-design-system.js:2
+#: assets/js/packages/editor-design-system/editor-design-system.strings.js:19
 #: assets/js/packages/editor-variables/editor-variables.js:2
 #: assets/js/packages/editor-variables/editor-variables.strings.js:18
 #: assets/js/packages/editor-variables/editor-variables.strings.js:21
@@ -1195,8 +1302,8 @@ msgstr "クラウドテンプレート"
 #: modules/atomic-widgets/elements/atomic-paragraph/atomic-paragraph.php:102
 #: modules/atomic-widgets/elements/atomic-svg/atomic-svg.php:77
 #: modules/atomic-widgets/elements/atomic-youtube/atomic-youtube.php:79
-#: modules/atomic-widgets/elements/div-block/div-block.php:121
-#: modules/atomic-widgets/elements/flexbox/flexbox.php:124
+#: modules/atomic-widgets/elements/div-block/div-block.php:124
+#: modules/atomic-widgets/elements/flexbox/flexbox.php:127
 msgid "Type or paste your URL"
 msgstr "URL を入力または貼り付け"
 
@@ -1210,7 +1317,7 @@ msgstr "アップグレードしてストレージ容量を増やすか、古い
 msgid "View Deals"
 msgstr "お得な情報を表示"
 
-#: modules/variables/module.php:35
+#: modules/variables/module.php:36
 msgid "Enable variables. (For this feature to work - Atomic Widgets must be active)"
 msgstr "変数を有効化します。(この機能が動作するには、Atomic Widgets がアクティブになっている必要があります)"
 
@@ -1232,7 +1339,7 @@ msgid "Elementor’s 9th Birthday sale!"
 msgstr "Elementor 9周年記念セール !"
 
 #. translators: %d: Maximum allowed items.
-#: modules/global-classes/global-classes-rest-api.php:193
+#: modules/global-classes/global-classes-rest-api.php:340
 msgid "Global classes limit exceeded. Maximum allowed: %d"
 msgstr "グローバルクラスの上限を超えました。許可されている最大数: %d"
 
@@ -1331,6 +1438,8 @@ msgid "Add Tab"
 msgstr "タブの追加"
 
 #: includes/elements/container.php:1457 includes/widgets/common-base.php:433
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:199
 msgid "Row Span"
 msgstr "行スパン"
 
@@ -1360,6 +1469,8 @@ msgid "Custom Gap"
 msgstr "カスタムギャップ"
 
 #: includes/elements/container.php:1413 includes/widgets/common-base.php:389
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:198
 msgid "Column Span"
 msgstr "列スパン"
 
@@ -1399,11 +1510,12 @@ msgstr "重要なメッセージを動的に強調表示します。"
 msgid "Bring Headlines to Life"
 msgstr "見出しに命を吹き込む"
 
-#: modules/global-classes/module.php:79
+#: modules/global-classes/module.php:101
 msgid "Enable global CSS classes."
 msgstr "グローバル CSS クラスを有効化します。"
 
-#: modules/global-classes/module.php:78
+#: modules/global-classes/global-class-post-type.php:20
+#: modules/global-classes/module.php:100
 msgid "Global Classes"
 msgstr "グローバルクラス"
 
@@ -1630,7 +1742,7 @@ msgstr "お知らせ"
 msgid "Floating Bar"
 msgstr "フローティングバー"
 
-#: modules/floating-buttons/module.php:45 assets/js/editor.js:53836
+#: modules/floating-buttons/module.php:45 assets/js/editor.js:54289
 msgid "Floating Bars"
 msgstr "フローティングバー"
 
@@ -1638,7 +1750,7 @@ msgstr "フローティングバー"
 msgid "Elementor - AI"
 msgstr "Elementor - AI"
 
-#: modules/atomic-widgets/module.php:179
+#: modules/atomic-widgets/module.php:191
 msgid "Atomic Widgets"
 msgstr "Atomic ウィジェット"
 
@@ -1748,13 +1860,13 @@ msgstr "コンテンツエリアが見つかりません"
 msgid "You are trying to edit the Shop Page although it is a Product Archive. Use the Theme Builder to create your Shop Archive template instead"
 msgstr "商品アーカイブなのにショップページを編集しようとしています。テーマビルダーを使ってショップアーカイブテンプレートを作成してください"
 
-#: modules/atomic-widgets/module.php:180
+#: modules/atomic-widgets/module.php:192
 msgid "Enable atomic widgets."
 msgstr "Atomic ウィジェットを有効化します。"
 
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:285
 #: assets/js/packages/editor-controls/editor-controls.js:18
-#: assets/js/packages/editor-controls/editor-controls.strings.js:258
+#: assets/js/packages/editor-controls/editor-controls.strings.js:267
 msgid "Add item"
 msgstr "項目を追加"
 
@@ -1768,7 +1880,7 @@ msgstr "インスタンス"
 
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:1545
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:163
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:169
 msgid "Dimensions"
 msgstr "サイズ"
 
@@ -1919,8 +2031,8 @@ msgstr "Waze リンクを貼り付ける"
 msgid "Buttons Spacing"
 msgstr "ボタン間隔"
 
-#: modules/floating-buttons/module.php:44 assets/js/editor.js:53838
-#: assets/js/editor.js:53840
+#: modules/floating-buttons/module.php:44 assets/js/editor.js:54291
+#: assets/js/editor.js:54293
 msgid "Floating Buttons"
 msgstr "フローティングボタン"
 
@@ -1973,11 +2085,11 @@ msgstr "会話を開始:"
 msgid "Call to Action Text"
 msgstr "Call To Action テキスト"
 
-#: core/common/modules/events-manager/module.php:63
+#: core/common/modules/events-manager/module.php:86
 msgid "Editor events processing"
 msgstr "エディターイベントの処理"
 
-#: core/common/modules/events-manager/module.php:62
+#: core/common/modules/events-manager/module.php:85
 msgid "Elementor Editor Events"
 msgstr "Elementor エディターイベント"
 
@@ -2024,7 +2136,7 @@ msgstr "SMS"
 
 #: modules/floating-buttons/base/widget-contact-button-base.php:1799
 #: assets/js/packages/editor-controls/editor-controls.js:62
-#: assets/js/packages/editor-controls/editor-controls.strings.js:88
+#: assets/js/packages/editor-controls/editor-controls.strings.js:92
 msgid "Time"
 msgstr "時刻"
 
@@ -2041,8 +2153,8 @@ msgid "Waze"
 msgstr "Waze"
 
 #: core/base/providers/social-network-provider.php:210
-#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:153
-#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:242
+#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:179
+#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:280
 #: modules/floating-buttons/base/widget-contact-button-base.php:285
 #: modules/floating-buttons/base/widget-contact-button-base.php:836
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:680
@@ -2067,7 +2179,7 @@ msgstr "Viber"
 msgid "Skype"
 msgstr "Skype"
 
-#: modules/element-cache/module.php:134
+#: modules/element-cache/module.php:134 modules/markdown-render/module.php:188
 msgid "1 Day"
 msgstr "1日"
 
@@ -2096,15 +2208,15 @@ msgstr "動作"
 msgid "TikTok"
 msgstr "TikTok"
 
-#: modules/element-cache/module.php:131
+#: modules/element-cache/module.php:131 modules/markdown-render/module.php:185
 msgid "1 Hour"
 msgstr "1時間"
 
-#: modules/element-cache/module.php:135
+#: modules/element-cache/module.php:135 modules/markdown-render/module.php:189
 msgid "3 Days"
 msgstr "3日"
 
-#: modules/element-cache/module.php:136
+#: modules/element-cache/module.php:136 modules/markdown-render/module.php:190
 msgid "1 Week"
 msgstr "1週間"
 
@@ -2132,7 +2244,7 @@ msgstr "Spotify"
 msgid "Behance"
 msgstr "Behance"
 
-#: modules/element-cache/module.php:132
+#: modules/element-cache/module.php:132 modules/markdown-render/module.php:186
 msgid "6 Hours"
 msgstr "6時間"
 
@@ -2180,7 +2292,7 @@ msgstr "WhatsApp"
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: modules/element-cache/module.php:133
+#: modules/element-cache/module.php:133 modules/markdown-render/module.php:187
 msgid "12 Hours"
 msgstr "12時間"
 
@@ -2212,17 +2324,7 @@ msgstr "Messenger"
 msgid "Telephone"
 msgstr "電話"
 
-#: modules/floating-buttons/base/widget-contact-button-base.php:305
-#: modules/floating-buttons/base/widget-contact-button-base.php:857
-#: modules/floating-buttons/base/widget-contact-button-base.php:859
-#: modules/link-in-bio/base/widget-link-in-bio-base.php:447
-#: modules/link-in-bio/base/widget-link-in-bio-base.php:458
-#: modules/link-in-bio/base/widget-link-in-bio-base.php:701
-#: modules/link-in-bio/base/widget-link-in-bio-base.php:703
-msgid "Subject"
-msgstr "件名"
-
-#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:245
+#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:283
 #: modules/floating-buttons/base/widget-contact-button-base.php:321
 #: modules/floating-buttons/base/widget-contact-button-base.php:663
 #: modules/floating-buttons/base/widget-contact-button-base.php:670
@@ -2234,9 +2336,19 @@ msgstr "件名"
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:716
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:718
 #: assets/js/packages/editor-controls/editor-controls.js:62
-#: assets/js/packages/editor-controls/editor-controls.strings.js:74
+#: assets/js/packages/editor-controls/editor-controls.strings.js:76
 msgid "Message"
 msgstr "本文"
+
+#: modules/floating-buttons/base/widget-contact-button-base.php:305
+#: modules/floating-buttons/base/widget-contact-button-base.php:857
+#: modules/floating-buttons/base/widget-contact-button-base.php:859
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:447
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:458
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:701
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:703
+msgid "Subject"
+msgstr "件名"
 
 #: modules/floating-buttons/base/widget-contact-button-base.php:681
 msgid "2:20 PM"
@@ -2246,7 +2358,7 @@ msgstr "午後2時20分"
 msgid "2 Weeks"
 msgstr "2週間"
 
-#: modules/element-cache/module.php:138
+#: modules/element-cache/module.php:138 modules/markdown-render/module.php:191
 msgid "1 Month"
 msgstr "1ヶ月"
 
@@ -2296,8 +2408,8 @@ msgstr "プロフィール画像"
 
 #: includes/widgets/traits/button-trait.php:295
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:188
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:234
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:195
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:261
 msgid "Space between"
 msgstr "間隔"
 
@@ -2715,7 +2827,7 @@ msgid "10"
 msgstr "10"
 
 #: modules/apps/module.php:27 assets/js/admin-top-bar.js:175
-#: assets/js/admin-top-bar.strings.js:2 assets/js/editor.js:40697
+#: assets/js/admin-top-bar.strings.js:2 assets/js/editor.js:40864
 msgid "Add-ons"
 msgstr "アドオン"
 
@@ -2774,17 +2886,17 @@ msgstr "今後表示しない。"
 
 #: includes/managers/controls.php:1319
 #: modules/floating-buttons/base/widget-floating-bars-base.php:1453
-#: assets/js/editor.js:55866
+#: assets/js/editor.js:56321
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:169
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:175
 msgid "Sticky"
 msgstr "先頭に固定表示"
 
-#: includes/managers/controls.php:1310 assets/js/editor.js:55851
+#: includes/managers/controls.php:1310 assets/js/editor.js:56306
 msgid "Mouse Effects"
 msgstr "マウス効果"
 
-#: includes/managers/controls.php:1301 assets/js/editor.js:55836
+#: includes/managers/controls.php:1301 assets/js/editor.js:56291
 msgid "Scrolling Effects"
 msgstr "スクロール効果"
 
@@ -2804,7 +2916,7 @@ msgstr "John Doe"
 #: core/admin/admin.php:1144 core/utils/hints.php:477
 #: includes/controls/gallery.php:159 includes/controls/gallery.php:171
 #: includes/controls/media.php:353 includes/controls/media.php:365
-#: includes/widgets/heading.php:482 includes/widgets/heading.php:504
+#: includes/widgets/heading.php:510 includes/widgets/heading.php:532
 msgid "Install now"
 msgstr "今すぐインストール"
 
@@ -2812,10 +2924,10 @@ msgstr "今すぐインストール"
 msgid "Generate Variations"
 msgstr "バリエーションを生成"
 
-#: includes/managers/controls.php:1270 modules/promotions/module.php:222
-#: assets/js/editor.js:55821
+#: includes/managers/controls.php:1270 modules/promotions/module.php:223
+#: assets/js/editor.js:56276
 #: assets/js/packages/editor-controls/editor-controls.js:18
-#: assets/js/packages/editor-controls/editor-controls.strings.js:255
+#: assets/js/packages/editor-controls/editor-controls.strings.js:273
 msgid "Display Conditions"
 msgstr "表示条件"
 
@@ -2882,7 +2994,7 @@ msgstr "グラデーションがさまざまな画面サイズに適応するよ
 #: core/admin/admin.php:1147 core/utils/hints.php:478
 #: includes/controls/gallery.php:164 includes/controls/gallery.php:175
 #: includes/controls/media.php:358 includes/controls/media.php:369
-#: includes/widgets/heading.php:492 includes/widgets/heading.php:507
+#: includes/widgets/heading.php:520 includes/widgets/heading.php:535
 #: assets/js/packages/unlock-v4-promo/unlock-v4-promo.js:2
 #: assets/js/packages/unlock-v4-promo/unlock-v4-promo.strings.js:10
 msgid "Activate now"
@@ -2916,8 +3028,8 @@ msgstr "使い方"
 #: includes/controls/groups/flex-container.php:183
 #: includes/controls/groups/flex-container.php:191
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:177
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:179
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:183
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:185
 msgid "Wrap"
 msgstr "折り返す"
 
@@ -3043,7 +3155,7 @@ msgstr "VideoPress"
 #: assets/js/packages/editor-ui/editor-ui.js:26
 #: assets/js/packages/editor-ui/editor-ui.strings.js:11
 #: assets/js/packages/editor-variables/editor-variables.js:2
-#: assets/js/packages/editor-variables/editor-variables.strings.js:83
+#: assets/js/packages/editor-variables/editor-variables.strings.js:86
 msgid "Upgrade now"
 msgstr "今すぐアップグレード"
 
@@ -3089,26 +3201,26 @@ msgstr "%2$s のうち %1$s と評価しました"
 #: includes/controls/groups/image-size.php:380
 #: modules/atomic-widgets/utils/image/image-sizes.php:39
 #: assets/js/packages/editor-controls/editor-controls.js:62
-#: assets/js/packages/editor-controls/editor-controls.strings.js:291
+#: assets/js/packages/editor-controls/editor-controls.strings.js:303
 msgid "Full"
 msgstr "全体"
 
 #: includes/controls/groups/flex-item.php:134
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:193
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:196
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:213
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:216
 msgid "Grow"
 msgstr "Grow"
 
 #: includes/controls/groups/background.php:245
 #: assets/js/packages/editor-controls/editor-controls.js:62
-#: assets/js/packages/editor-controls/editor-controls.strings.js:243
+#: assets/js/packages/editor-controls/editor-controls.strings.js:254
 msgid "Angle"
 msgstr "角度"
 
 #: includes/controls/groups/background.php:233
 #: assets/js/packages/editor-interactions/editor-interactions.js:2
-#: assets/js/packages/editor-interactions/editor-interactions.strings.js:72
+#: assets/js/packages/editor-interactions/editor-interactions.strings.js:74
 msgid "Linear"
 msgstr "線形"
 
@@ -3118,14 +3230,14 @@ msgstr "放射状"
 
 #: includes/controls/groups/flex-item.php:138
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:194
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:197
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:214
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:217
 msgid "Shrink"
 msgstr "縮小"
 
 #: includes/controls/groups/border.php:69
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:280
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:307
 msgid "Groove"
 msgstr "グルーヴ"
 
@@ -3288,7 +3400,7 @@ msgstr "ページパネル"
 #: includes/editor-templates/templates.php:396
 #: includes/editor-templates/templates.php:463 assets/js/editor.js:9132
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:8
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:88
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:89
 #: assets/js/packages/editor-global-classes/editor-global-classes.js:2
 #: assets/js/packages/editor-global-classes/editor-global-classes.strings.js:84
 #: assets/js/packages/editor-site-navigation/editor-site-navigation.js:2
@@ -3325,14 +3437,14 @@ msgstr "折りたたむ"
 msgid "%1$s of %2$s"
 msgstr "%1$s / %2$s"
 
-#: modules/interactions/module.php:53
+#: modules/interactions/module.php:55
 #: modules/nested-accordion/widgets/nested-accordion.php:341
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:8
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:21
 #: assets/js/packages/editor-interactions/editor-interactions.js:2
 #: assets/js/packages/editor-interactions/editor-interactions.strings.js:2
-#: assets/js/packages/editor-interactions/editor-interactions.strings.js:4
-#: assets/js/packages/editor-interactions/editor-interactions.strings.js:9
+#: assets/js/packages/editor-interactions/editor-interactions.strings.js:6
+#: assets/js/packages/editor-interactions/editor-interactions.strings.js:11
 msgid "Interactions"
 msgstr "インタラクション"
 
@@ -3396,7 +3508,7 @@ msgstr "AIを活用したスマートな構築"
 #: core/document-types/page-base.php:277
 #: includes/controls/groups/flex-item.php:80
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:199
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:219
 msgid "Order"
 msgstr "順序"
 
@@ -3423,7 +3535,7 @@ msgstr "項目 #3"
 #: assets/js/ai-gutenberg.js:11536 assets/js/ai-media-library.js:11318
 #: assets/js/ai-unify-product-images.js:11318 assets/js/ai.js:12870
 #: assets/js/packages/editor-controls/editor-controls.js:62
-#: assets/js/packages/editor-controls/editor-controls.strings.js:295
+#: assets/js/packages/editor-controls/editor-controls.strings.js:307
 msgid "Gradient"
 msgstr "グラデーション"
 
@@ -3523,19 +3635,25 @@ msgstr "AI"
 #: includes/controls/gaps.php:58
 #: includes/controls/groups/grid-container.php:118
 #: assets/js/packages/editor-controls/editor-controls.js:62
-#: assets/js/packages/editor-controls/editor-controls.strings.js:67
+#: assets/js/packages/editor-controls/editor-controls.strings.js:70
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:205
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:209
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:225
 msgid "Row"
 msgstr "行"
 
 #: includes/controls/groups/grid-container.php:71
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:201
 msgid "Rows"
 msgstr "行"
 
 #: includes/editor-templates/global.php:68 includes/elements/container.php:96
 #: includes/elements/container.php:104 includes/elements/container.php:381
-#: assets/js/editor.js:35462 assets/js/editor.js:45336
+#: assets/js/editor.js:35610 assets/js/editor.js:45787
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:234
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:235
 msgid "Grid"
 msgstr "グリッド"
 
@@ -3544,7 +3662,7 @@ msgstr "グリッド"
 #: includes/controls/groups/grid-container.php:96
 #: includes/elements/container.php:513
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:191
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:211
 msgid "Gaps"
 msgstr "Gaps"
 
@@ -3553,7 +3671,7 @@ msgid "Top Bar"
 msgstr "トップバー"
 
 #: includes/editor-templates/global.php:60 includes/elements/container.php:380
-#: modules/atomic-widgets/elements/flexbox/flexbox.php:40
+#: modules/atomic-widgets/elements/flexbox/flexbox.php:43
 #: modules/atomic-widgets/library/flexbox.php:54
 msgid "Flexbox"
 msgstr "Flexbox"
@@ -3582,7 +3700,7 @@ msgstr "密接な構造"
 msgid "Container Layout"
 msgstr "コンテナのレイアウト"
 
-#: includes/editor-templates/navigator.php:32 assets/js/editor.js:37631
+#: includes/editor-templates/navigator.php:32 assets/js/editor.js:37795
 msgid "Expand all elements"
 msgstr "すべてのエレメントを展開"
 
@@ -3627,7 +3745,7 @@ msgstr "タブレット縦レイアウト"
 msgid "Dismiss this notice."
 msgstr "この通知を非表示にする。"
 
-#: includes/widgets/alert.php:506 includes/widgets/alert.php:561
+#: includes/widgets/alert.php:506 includes/widgets/alert.php:582
 msgid "Dismiss this alert."
 msgstr "このアラートを閉じる。"
 
@@ -3700,7 +3818,7 @@ msgstr "タブ #%d"
 #: includes/widgets/video.php:599
 #: modules/atomic-widgets/elements/atomic-self-hosted-video/atomic-self-hosted-video.php:40
 #: assets/js/packages/editor-controls/editor-controls.js:62
-#: assets/js/packages/editor-controls/editor-controls.strings.js:86
+#: assets/js/packages/editor-controls/editor-controls.strings.js:90
 msgid "Metadata"
 msgstr "メタデータ"
 
@@ -3765,7 +3883,7 @@ msgid "Lazy Load Background Images"
 msgstr "背景画像の遅延読み込み"
 
 #: modules/apps/admin-apps-page.php:106 modules/apps/admin-apps-page.php:137
-#: assets/js/admin.js:2534 assets/js/editor-v4-opt-in.js:335
+#: assets/js/admin.js:2545 assets/js/editor-v4-opt-in.js:335
 #: assets/js/editor-v4-opt-in.strings.js:28
 msgid "Activate"
 msgstr "有効化"
@@ -3890,7 +4008,7 @@ msgstr "サイトのパフォーマンススコアを改善しましょう。"
 #. Translators: %s is the current item index.
 #: modules/nested-accordion/widgets/nested-accordion.php:94
 #: modules/nested-elements/base/widget-nested-base.php:46
-#: assets/js/editor.js:27008
+#: assets/js/editor.js:27115
 msgid "Item #%d"
 msgstr "項目 #%d"
 
@@ -4005,9 +4123,9 @@ msgstr "アップグレード"
 #: assets/js/app-packages.js:4547 assets/js/app-packages.js:4823
 #: assets/js/app.js:1264 assets/js/checklist.js:240
 #: assets/js/checklist.strings.js:9 assets/js/editor.js:6241
-#: assets/js/editor.js:11906 assets/js/editor.js:55826
-#: assets/js/editor.js:55841 assets/js/editor.js:55856
-#: assets/js/editor.js:55871
+#: assets/js/editor.js:11906 assets/js/editor.js:56281
+#: assets/js/editor.js:56296 assets/js/editor.js:56311
+#: assets/js/editor.js:56326
 #: assets/js/packages/editor-components/editor-components.js:2
 #: assets/js/packages/editor-components/editor-components.strings.js:4
 #: assets/js/packages/editor-components/editor-components.strings.js:14
@@ -4020,7 +4138,7 @@ msgstr "今すぐアップグレード"
 #: core/admin/admin-notices.php:499 assets/js/app.js:6109
 #: assets/js/app.js:13453 assets/js/app.js:16026
 #: assets/js/packages/editor-controls/editor-controls.js:62
-#: assets/js/packages/editor-controls/editor-controls.strings.js:120
+#: assets/js/packages/editor-controls/editor-controls.strings.js:131
 #: assets/js/packages/editor-variables/editor-variables.js:2
 #: assets/js/packages/editor-variables/editor-variables.strings.js:14
 msgid "Take me there"
@@ -4028,15 +4146,16 @@ msgstr "表示してください"
 
 #: includes/controls/groups/typography.php:153
 #: assets/js/packages/editor-controls/editor-controls.js:18
-#: assets/js/packages/editor-controls/editor-controls.strings.js:127
+#: assets/js/packages/editor-controls/editor-controls.strings.js:138
 msgid "Bold"
 msgstr "太字"
 
 #: core/experiments/manager.php:344 includes/elements/container.php:72
 #: includes/elements/container.php:359
 #: modules/library/documents/container.php:52 assets/js/editor.js:8814
-#: assets/js/editor.js:35462 assets/js/editor.js:41564
-#: assets/js/editor.strings.js:24
+#: assets/js/editor.js:35610 assets/js/editor.js:41741
+#: assets/js/editor.js:45499 assets/js/editor.strings.js:1
+#: assets/js/editor.strings.js:25
 msgid "Container"
 msgstr "コンテナ"
 
@@ -4061,21 +4180,21 @@ msgstr "ページネーション"
 #: includes/elements/column.php:461 includes/elements/section.php:730
 #: includes/widgets/heading.php:343
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:256
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:283
 msgid "Hue"
 msgstr "色相"
 
 #: includes/elements/column.php:460 includes/elements/section.php:729
 #: includes/widgets/heading.php:342
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:255
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:282
 msgid "Exclusion"
 msgstr "除外"
 
 #: includes/elements/column.php:459 includes/elements/section.php:728
 #: includes/widgets/heading.php:341
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:254
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:281
 msgid "Difference"
 msgstr "差異"
 
@@ -4108,7 +4227,7 @@ msgstr "システムカラー"
 msgid "Play Video about"
 msgstr "動画を再生"
 
-#: includes/editor-templates/global.php:33 assets/js/editor.js:35321
+#: includes/editor-templates/global.php:33 assets/js/editor.js:35469
 msgid "Add New Container"
 msgstr "新しいコンテナの追加"
 
@@ -4140,11 +4259,11 @@ msgstr "新規ページテンプレートを追加"
 msgid "Customize"
 msgstr "カスタマイズ"
 
-#: includes/base/element-base.php:1228 includes/base/element-base.php:1232
+#: includes/base/element-base.php:1248 includes/base/element-base.php:1252
 msgid "Flip Horizontal"
 msgstr "水平に反転"
 
-#: includes/base/element-base.php:1247 includes/base/element-base.php:1251
+#: includes/base/element-base.php:1267 includes/base/element-base.php:1271
 msgid "Flip Vertical"
 msgstr "垂直に反転"
 
@@ -4163,72 +4282,72 @@ msgstr "ログ"
 msgid "Privacy Policy"
 msgstr "プライバシーポリシー"
 
-#: includes/base/element-base.php:944
+#: includes/base/element-base.php:964
 #: assets/js/packages/editor-controls/editor-controls.js:78
-#: assets/js/packages/editor-controls/editor-controls.strings.js:277
+#: assets/js/packages/editor-controls/editor-controls.strings.js:288
 msgid "Rotate X"
 msgstr "回転 X"
 
-#: includes/base/element-base.php:967
+#: includes/base/element-base.php:987
 #: assets/js/packages/editor-controls/editor-controls.js:78
-#: assets/js/packages/editor-controls/editor-controls.strings.js:278
+#: assets/js/packages/editor-controls/editor-controls.strings.js:289
 msgid "Rotate Y"
 msgstr "回転 Y"
 
-#: includes/base/element-base.php:1170
+#: includes/base/element-base.php:1190
 #: assets/js/packages/editor-controls/editor-controls.js:78
-#: assets/js/packages/editor-controls/editor-controls.strings.js:226
-#: assets/js/packages/editor-controls/editor-controls.strings.js:231
+#: assets/js/packages/editor-controls/editor-controls.strings.js:237
+#: assets/js/packages/editor-controls/editor-controls.strings.js:242
 msgid "Skew"
 msgstr "傾斜"
 
-#: includes/base/element-base.php:1182
+#: includes/base/element-base.php:1202
 #: assets/js/packages/editor-controls/editor-controls.js:78
-#: assets/js/packages/editor-controls/editor-controls.strings.js:272
+#: assets/js/packages/editor-controls/editor-controls.strings.js:283
 msgid "Skew X"
 msgstr "スキュー X"
 
-#: includes/base/element-base.php:864
+#: includes/base/element-base.php:884
 #: assets/js/packages/editor-controls/editor-controls.js:78
-#: assets/js/packages/editor-controls/editor-controls.strings.js:221
-#: assets/js/packages/editor-controls/editor-controls.strings.js:227
-#: assets/js/packages/editor-controls/editor-controls.strings.js:267
+#: assets/js/packages/editor-controls/editor-controls.strings.js:232
+#: assets/js/packages/editor-controls/editor-controls.strings.js:238
+#: assets/js/packages/editor-controls/editor-controls.strings.js:278
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:240
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:267
 msgid "Transform"
 msgstr "変換"
 
-#: includes/base/element-base.php:1321
+#: includes/base/element-base.php:1341
 msgid "X Anchor Point"
 msgstr "X アンカーポイント"
 
-#: includes/base/element-base.php:1349
+#: includes/base/element-base.php:1369
 msgid "Y Anchor Point"
 msgstr "Y アンカーポイント"
 
-#: includes/base/element-base.php:1204
+#: includes/base/element-base.php:1224
 #: assets/js/packages/editor-controls/editor-controls.js:78
-#: assets/js/packages/editor-controls/editor-controls.strings.js:273
+#: assets/js/packages/editor-controls/editor-controls.strings.js:284
 msgid "Skew Y"
 msgstr "垂直方向の傾斜"
 
-#: includes/base/element-base.php:1124
+#: includes/base/element-base.php:1144
 #: assets/js/packages/editor-controls/editor-controls.js:78
-#: assets/js/packages/editor-controls/editor-controls.strings.js:274
+#: assets/js/packages/editor-controls/editor-controls.strings.js:285
 msgid "Scale X"
 msgstr "スケール X"
 
-#: includes/base/element-base.php:1146
+#: includes/base/element-base.php:1166
 #: assets/js/packages/editor-controls/editor-controls.js:78
-#: assets/js/packages/editor-controls/editor-controls.strings.js:275
+#: assets/js/packages/editor-controls/editor-controls.strings.js:286
 msgid "Scale Y"
 msgstr "スケール Y"
 
-#: includes/base/element-base.php:1025
+#: includes/base/element-base.php:1045
 msgid "Offset X"
 msgstr "オフセット X"
 
-#: includes/base/element-base.php:1051
+#: includes/base/element-base.php:1071
 msgid "Offset Y"
 msgstr "オフセット Y"
 
@@ -4241,13 +4360,13 @@ msgstr "テキストストローク"
 msgid "Custom Code"
 msgstr "カスタムコード"
 
-#: includes/base/element-base.php:990
+#: includes/base/element-base.php:1010
 #: assets/js/packages/editor-controls/editor-controls.js:78
-#: assets/js/packages/editor-controls/editor-controls.strings.js:268
+#: assets/js/packages/editor-controls/editor-controls.strings.js:279
 msgid "Perspective"
 msgstr "遠近法"
 
-#: includes/base/element-base.php:927
+#: includes/base/element-base.php:947
 msgid "3D Rotate"
 msgstr "3D 回転"
 
@@ -4274,7 +4393,7 @@ msgstr "安定した機能"
 msgid "Terms of Service"
 msgstr "利用規約"
 
-#: includes/base/element-base.php:1091
+#: includes/base/element-base.php:1111
 msgid "Keep Proportions"
 msgstr "比率を維持する"
 
@@ -4326,56 +4445,56 @@ msgstr "Elementor パネル → ハンバーガーメニュー → サイト設�
 #: includes/elements/column.php:462 includes/elements/container.php:872
 #: includes/elements/section.php:727 includes/widgets/heading.php:344
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:257
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:284
 msgid "Luminosity"
 msgstr "光度"
 
 #: includes/elements/column.php:457 includes/elements/container.php:870
 #: includes/elements/section.php:725 includes/widgets/heading.php:339
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:252
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:279
 msgid "Saturation"
 msgstr "彩度"
 
 #: includes/elements/column.php:455 includes/elements/container.php:868
 #: includes/elements/section.php:723 includes/widgets/heading.php:337
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:249
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:276
 msgid "Lighten"
 msgstr "比較（明）"
 
 #: includes/elements/column.php:454 includes/elements/container.php:867
 #: includes/elements/section.php:722 includes/widgets/heading.php:336
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:248
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:275
 msgid "Darken"
 msgstr "比較（暗）"
 
 #: includes/elements/column.php:453 includes/elements/container.php:866
 #: includes/elements/section.php:721 includes/widgets/heading.php:335
 #: assets/js/packages/editor-controls/editor-controls.js:62
-#: assets/js/packages/editor-controls/editor-controls.strings.js:292
+#: assets/js/packages/editor-controls/editor-controls.strings.js:304
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:247
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:274
 msgid "Overlay"
 msgstr "オーバーレイ"
 
 #: includes/elements/column.php:452 includes/elements/container.php:865
 #: includes/elements/section.php:720 includes/widgets/heading.php:334
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:246
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:273
 msgid "Screen"
 msgstr "画面"
 
 #. translators: %s: Device name.
-#: includes/base/element-base.php:1396
+#: includes/base/element-base.php:1416
 msgid "Hide On %s"
 msgstr "%sで隠す"
 
 #: includes/elements/column.php:451 includes/elements/container.php:864
 #: includes/elements/section.php:719 includes/widgets/heading.php:333
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:245
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:272
 msgid "Multiply"
 msgstr "乗算"
 
@@ -4481,20 +4600,20 @@ msgstr "機能"
 msgid "Categories"
 msgstr "カテゴリー"
 
-#: modules/editor-one/classes/editor-one-pointer.php:38 assets/js/admin.js:2017
+#: modules/editor-one/classes/editor-one-pointer.php:38 assets/js/admin.js:2028
 #: assets/js/ai-admin.js:47 assets/js/ai-gutenberg.js:47
 #: assets/js/ai-media-library.js:47 assets/js/ai-unify-product-images.js:47
 #: assets/js/ai.js:47 assets/js/checklist.js:818 assets/js/checklist.js:913
 #: assets/js/checklist.strings.js:4 assets/js/checklist.strings.js:7
-#: assets/js/common.js:431 assets/js/editor.js:20400 assets/js/editor.js:20840
-#: assets/js/editor.js:42874 assets/js/editor.strings.js:15
+#: assets/js/common.js:431 assets/js/editor.js:20458 assets/js/editor.js:20935
+#: assets/js/editor.js:43051 assets/js/editor.strings.js:16
 #: assets/js/kit-library.b768952e1d4177aa68d8.bundle.js:882
 #: assets/js/packages/editor-global-classes/editor-global-classes.js:2
 #: assets/js/packages/editor-global-classes/editor-global-classes.strings.js:64
 #: assets/js/packages/editor-ui/editor-ui.js:26
 #: assets/js/packages/editor-ui/editor-ui.strings.js:4
 #: assets/js/packages/editor-variables/editor-variables.js:2
-#: assets/js/packages/editor-variables/editor-variables.strings.js:76
+#: assets/js/packages/editor-variables/editor-variables.strings.js:79
 msgid "Got it"
 msgstr "OK"
 
@@ -4523,7 +4642,7 @@ msgid "Connect Account"
 msgstr "アカウントを接続"
 
 #: includes/settings/tools.php:431 includes/settings/tools.php:434
-#: assets/js/editor.js:30666
+#: assets/js/editor.js:30814
 msgid "Recreate Kit"
 msgstr "再作成キット"
 
@@ -4567,6 +4686,9 @@ msgstr "キットは存在しません。"
 #: assets/js/app.js:7736 assets/js/app.js:7873 assets/js/app.js:8078
 #: assets/js/app.js:14799 assets/js/app.js:18322
 #: assets/js/kit-library.b768952e1d4177aa68d8.bundle.js:5422
+#: assets/js/packages/editor-design-system/editor-design-system.js:2
+#: assets/js/packages/editor-design-system/editor-design-system.strings.js:12
+#: assets/js/packages/editor-design-system/editor-design-system.strings.js:30
 msgid "Import"
 msgstr "インポート"
 
@@ -4576,7 +4698,8 @@ msgstr "重要:"
 
 #: core/common/modules/connect/rest/rest-api.php:139
 #: modules/components/components-rest-api.php:692
-#: modules/global-classes/global-classes-rest-api.php:264
+#: modules/global-classes/global-classes-rest-api.php:440
+#: modules/wp-rest/classes/design-system-rest-api.php:75
 #: assets/js/packages/editor-global-classes/editor-global-classes.js:2
 #: assets/js/packages/editor-global-classes/editor-global-classes.strings.js:56
 msgid "Something went wrong"
@@ -4614,7 +4737,7 @@ msgstr "互換性は指定されていません"
 #: includes/controls/groups/background.php:463
 #: includes/widgets/common-base.php:1285
 #: assets/js/packages/editor-controls/editor-controls.js:62
-#: assets/js/packages/editor-controls/editor-controls.strings.js:313
+#: assets/js/packages/editor-controls/editor-controls.strings.js:325
 msgid "No-repeat"
 msgstr "繰り返しなし"
 
@@ -4644,10 +4767,10 @@ msgstr "円形"
 #: includes/controls/groups/background.php:464
 #: includes/widgets/common-base.php:1282 includes/widgets/common-base.php:1286
 #: assets/js/packages/editor-controls/editor-controls.js:62
-#: assets/js/packages/editor-controls/editor-controls.strings.js:310
-#: assets/js/packages/editor-controls/editor-controls.strings.js:314
+#: assets/js/packages/editor-controls/editor-controls.strings.js:322
+#: assets/js/packages/editor-controls/editor-controls.strings.js:326
 #: assets/js/packages/editor-interactions/editor-interactions.js:2
-#: assets/js/packages/editor-interactions/editor-interactions.strings.js:22
+#: assets/js/packages/editor-interactions/editor-interactions.strings.js:24
 msgid "Repeat"
 msgstr "繰り返し"
 
@@ -4751,24 +4874,24 @@ msgstr "中央右"
 #: includes/controls/groups/background.php:465
 #: includes/widgets/common-base.php:1287
 #: assets/js/packages/editor-controls/editor-controls.js:62
-#: assets/js/packages/editor-controls/editor-controls.strings.js:311
+#: assets/js/packages/editor-controls/editor-controls.strings.js:323
 msgid "Repeat-x"
 msgstr "横方向に繰り返し"
 
 #: includes/controls/groups/background.php:466
 #: includes/widgets/common-base.php:1288
 #: assets/js/packages/editor-controls/editor-controls.js:62
-#: assets/js/packages/editor-controls/editor-controls.strings.js:312
+#: assets/js/packages/editor-controls/editor-controls.strings.js:324
 msgid "Repeat-y"
 msgstr "縦方向に繰り返し"
 
-#: includes/base/element-base.php:1079 includes/base/element-base.php:1102
+#: includes/base/element-base.php:1099 includes/base/element-base.php:1122
 #: includes/widgets/common-base.php:1153
 #: assets/js/packages/editor-controls/editor-controls.js:78
-#: assets/js/packages/editor-controls/editor-controls.strings.js:224
-#: assets/js/packages/editor-controls/editor-controls.strings.js:229
+#: assets/js/packages/editor-controls/editor-controls.strings.js:235
+#: assets/js/packages/editor-controls/editor-controls.strings.js:240
 #: assets/js/packages/editor-interactions/editor-interactions.js:2
-#: assets/js/packages/editor-interactions/editor-interactions.strings.js:55
+#: assets/js/packages/editor-interactions/editor-interactions.strings.js:57
 msgid "Scale"
 msgstr "縮尺変更"
 
@@ -4980,7 +5103,7 @@ msgstr "新規ユーザー「%s」を作成できませんでした。現在の�
 #: modules/ai/feature-intro/product-image-unification-intro.php:40
 #: modules/checklist/steps/step-base.php:102
 #: modules/editor-one/classes/editor-one-pointer.php:32
-#: modules/nested-elements/module.php:21
+#: modules/markdown-render/module.php:29 modules/nested-elements/module.php:21
 #: modules/shapes/widgets/text-path.php:150 assets/js/app.js:4810
 #: assets/js/app.js:8025 assets/js/app.js:9214 assets/js/app.js:9222
 #: assets/js/app.js:9228 assets/js/app.js:9236 assets/js/app.js:9242
@@ -4988,7 +5111,7 @@ msgstr "新規ユーザー「%s」を作成できませんでした。現在の�
 #: assets/js/editor-v4-opt-in-alphachip.js:186
 #: assets/js/editor-v4-opt-in-alphachip.strings.js:4
 #: assets/js/editor-v4-opt-in.js:466 assets/js/editor-v4-opt-in.strings.js:12
-#: assets/js/editor.js:29755
+#: assets/js/editor.js:29864
 #: assets/js/kit-library.b768952e1d4177aa68d8.bundle.js:5458
 #: assets/js/packages/unlock-v4-promo/unlock-v4-promo.js:2
 #: assets/js/packages/unlock-v4-promo/unlock-v4-promo.strings.js:9
@@ -5079,7 +5202,7 @@ msgid "Status: %s"
 msgstr "ステータス: %s"
 
 #: core/role-manager/role-manager.php:118
-#: includes/settings/settings-page.php:382 assets/js/editor.js:48302
+#: includes/settings/settings-page.php:382 assets/js/editor.js:48755
 #: assets/js/element-manager-admin.js:968
 #: assets/js/element-manager-admin.strings.js:24
 #: assets/js/packages/editor-app-bar/editor-app-bar.js:12
@@ -5149,7 +5272,7 @@ msgstr "プラグイン"
 #: modules/landing-pages/documents/landing-page.php:54
 #: modules/landing-pages/module.php:44 modules/landing-pages/module.php:264
 #: modules/landing-pages/module.php:276 assets/js/app.js:17232
-#: assets/js/editor.js:55585
+#: assets/js/editor.js:56040
 msgid "Landing Pages"
 msgstr "ランディングページ"
 
@@ -5223,7 +5346,7 @@ msgstr "ブレークポイント"
 
 #: core/kits/documents/tabs/global-colors.php:24
 #: core/kits/documents/tabs/global-colors.php:43 assets/js/app.js:12039
-#: assets/js/app.js:17240 assets/js/editor.js:15535 assets/js/editor.js:50556
+#: assets/js/app.js:17240 assets/js/editor.js:15535 assets/js/editor.js:51009
 #: assets/js/styleguide-app-initiator.strings.js:8
 #: assets/js/styleguide-app.36ecabae74d9b87fc5a8.bundle.js:172
 #: assets/js/styleguide.strings.js:8
@@ -5237,7 +5360,7 @@ msgstr "ダウンロード"
 #: includes/widgets/common-base.php:1139 includes/widgets/image-box.php:411
 #: includes/widgets/image.php:388
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:156
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:157
 msgid "Fill"
 msgstr "塗りつぶし"
 
@@ -5258,9 +5381,9 @@ msgstr "サイト基本情報"
 msgid "Site Logo"
 msgstr "サイトロゴ"
 
-#: core/kits/manager.php:436 includes/editor-templates/hotkeys.php:123
-#: assets/js/app.js:17238 assets/js/app.js:17735 assets/js/editor.js:50505
-#: assets/js/editor.js:50509 assets/js/editor.js:50519
+#: core/kits/manager.php:456 includes/editor-templates/hotkeys.php:123
+#: assets/js/app.js:17238 assets/js/app.js:17735 assets/js/editor.js:50958
+#: assets/js/editor.js:50962 assets/js/editor.js:50972
 #: assets/js/packages/editor-app-bar/editor-app-bar.js:12
 #: assets/js/packages/editor-app-bar/editor-app-bar.strings.js:24
 msgid "Site Settings"
@@ -5273,7 +5396,7 @@ msgid "Theme"
 msgstr "テーマ"
 
 #: core/settings/editor-preferences/model.php:38
-#: includes/editor-templates/hotkeys.php:157 assets/js/editor.js:40677
+#: includes/editor-templates/hotkeys.php:157 assets/js/editor.js:40844
 #: assets/js/packages/editor-app-bar/editor-app-bar.js:12
 #: assets/js/packages/editor-app-bar/editor-app-bar.strings.js:21
 msgid "User Preferences"
@@ -5307,11 +5430,13 @@ msgstr "名前を選択"
 msgid "Breakpoints"
 msgstr "ブレークポイント"
 
-#: modules/nested-tabs/widgets/nested-tabs.php:376 assets/js/editor.js:50921
+#: modules/nested-tabs/widgets/nested-tabs.php:376 assets/js/editor.js:51374
 msgid "Additional Settings"
 msgstr "追加設定"
 
-#: core/settings/editor-preferences/model.php:174 assets/js/editor.js:50929
+#: core/settings/editor-preferences/model.php:174 assets/js/editor.js:51382
+#: assets/js/packages/editor-design-system/editor-design-system.js:2
+#: assets/js/packages/editor-design-system/editor-design-system.strings.js:1
 msgid "Design System"
 msgstr "デザインシステム"
 
@@ -5341,7 +5466,7 @@ msgstr "`theme-color` メタタグは、対応ブラウザーと端末のみで�
 
 #: app/modules/kit-library/module.php:127
 #: core/frontend/render-mode-manager.php:152
-#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:128
+#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:158
 #: modules/compatibility-tag/compatibility-tag-report.php:172
 msgid "Error"
 msgstr "エラー"
@@ -5379,15 +5504,15 @@ msgstr "データをリセット"
 msgid "Click the media icon to upload file"
 msgstr "ファイルをアップロードするにはメディアアイコンをクリック"
 
-#: includes/settings/settings.php:248 assets/js/admin.js:2033
-#: assets/js/admin.js:2043 assets/js/ai-admin.js:63 assets/js/ai-admin.js:73
+#: includes/settings/settings.php:248 assets/js/admin.js:2044
+#: assets/js/admin.js:2054 assets/js/ai-admin.js:63 assets/js/ai-admin.js:73
 #: assets/js/ai-gutenberg.js:63 assets/js/ai-gutenberg.js:73
 #: assets/js/ai-media-library.js:63 assets/js/ai-media-library.js:73
 #: assets/js/ai-unify-product-images.js:63
 #: assets/js/ai-unify-product-images.js:73 assets/js/ai.js:63
 #: assets/js/ai.js:73 assets/js/common.js:447 assets/js/common.js:457
-#: assets/js/editor.js:42890 assets/js/editor.js:42900
-#: assets/js/editor.strings.js:16 assets/js/editor.strings.js:19
+#: assets/js/editor.js:43067 assets/js/editor.js:43077
+#: assets/js/editor.strings.js:17 assets/js/editor.strings.js:20
 msgid "Enable Unfiltered File Uploads"
 msgstr "フィルタリングされていないファイルのアップロードを有効化"
 
@@ -5406,9 +5531,9 @@ msgstr "ボタン"
 msgid "Label"
 msgstr "ラベル"
 
-#: includes/managers/controls.php:1204 modules/promotions/module.php:216
+#: includes/managers/controls.php:1204 modules/promotions/module.php:217
 #: assets/js/packages/editor-controls/editor-controls.js:18
-#: assets/js/packages/editor-controls/editor-controls.strings.js:256
+#: assets/js/packages/editor-controls/editor-controls.strings.js:274
 msgid "Attributes"
 msgstr "属性"
 
@@ -5416,7 +5541,7 @@ msgstr "属性"
 #: includes/editor-templates/templates.php:259 assets/js/ai-admin.js:9559
 #: assets/js/ai-gutenberg.js:9777 assets/js/ai-media-library.js:9559
 #: assets/js/ai-unify-product-images.js:9559 assets/js/ai.js:11111
-#: assets/js/app.js:7778 assets/js/app.js:13875 assets/js/editor.js:50817
+#: assets/js/app.js:7778 assets/js/app.js:13875 assets/js/editor.js:51270
 msgid "Back"
 msgstr "戻る"
 
@@ -5482,8 +5607,8 @@ msgstr "フォーカス"
 msgid "Elementor Dynamic Content"
 msgstr "Elementor 動的コンテンツ"
 
-#: core/isolation/elementor-adapter.php:28 core/kits/manager.php:156
-#: core/kits/manager.php:174
+#: core/isolation/elementor-adapter.php:28 core/kits/manager.php:176
+#: core/kits/manager.php:194
 msgid "Default Kit"
 msgstr "デフォルトキット"
 
@@ -5591,9 +5716,9 @@ msgstr "設定"
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:923
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:978
 #: assets/js/packages/editor-controls/editor-controls.js:62
-#: assets/js/packages/editor-controls/editor-controls.strings.js:306
+#: assets/js/packages/editor-controls/editor-controls.strings.js:318
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:157
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:158
 msgid "Cover"
 msgstr "カバー"
 
@@ -5604,10 +5729,10 @@ msgstr "カバー"
 #: includes/widgets/video.php:600
 #: modules/atomic-widgets/elements/atomic-self-hosted-video/atomic-self-hosted-video.php:39
 #: assets/js/packages/editor-controls/editor-controls.js:62
-#: assets/js/packages/editor-controls/editor-controls.strings.js:105
-#: assets/js/packages/editor-controls/editor-controls.strings.js:305
+#: assets/js/packages/editor-controls/editor-controls.strings.js:116
+#: assets/js/packages/editor-controls/editor-controls.strings.js:317
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:154
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:155
 msgid "Auto"
 msgstr "自動"
 
@@ -5616,9 +5741,9 @@ msgstr "自動"
 #: includes/controls/groups/background.php:691
 #: includes/widgets/image-box.php:413 includes/widgets/image.php:390
 #: assets/js/packages/editor-controls/editor-controls.js:62
-#: assets/js/packages/editor-controls/editor-controls.strings.js:307
+#: assets/js/packages/editor-controls/editor-controls.strings.js:319
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:158
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:159
 msgid "Contain"
 msgstr "含む"
 
@@ -5649,9 +5774,9 @@ msgstr "ログを消去"
 
 #: includes/controls/groups/background.php:645
 #: assets/js/packages/editor-controls/editor-controls.js:78
-#: assets/js/packages/editor-controls/editor-controls.strings.js:153
+#: assets/js/packages/editor-controls/editor-controls.strings.js:164
 #: assets/js/packages/editor-interactions/editor-interactions.js:2
-#: assets/js/packages/editor-interactions/editor-interactions.strings.js:24
+#: assets/js/packages/editor-interactions/editor-interactions.strings.js:26
 msgid "Duration"
 msgstr "期間"
 
@@ -5743,8 +5868,8 @@ msgstr "矢印"
 
 #: includes/controls/groups/background.php:754
 #: assets/js/packages/editor-interactions/editor-interactions.js:2
-#: assets/js/packages/editor-interactions/editor-interactions.strings.js:64
-#: assets/js/packages/editor-interactions/editor-interactions.strings.js:65
+#: assets/js/packages/editor-interactions/editor-interactions.strings.js:66
+#: assets/js/packages/editor-interactions/editor-interactions.strings.js:67
 msgid "Out"
 msgstr "外"
 
@@ -5755,7 +5880,7 @@ msgstr "次"
 
 #: includes/widgets/divider.php:667
 #: assets/js/packages/editor-controls/editor-controls.js:62
-#: assets/js/packages/editor-controls/editor-controls.strings.js:233
+#: assets/js/packages/editor-controls/editor-controls.strings.js:244
 msgid "Amount"
 msgstr "金額"
 
@@ -5775,8 +5900,8 @@ msgstr "動画を読み込めなかった場合、このカバー画像に置き
 
 #: includes/controls/groups/background.php:753
 #: assets/js/packages/editor-interactions/editor-interactions.js:2
-#: assets/js/packages/editor-interactions/editor-interactions.strings.js:62
-#: assets/js/packages/editor-interactions/editor-interactions.strings.js:63
+#: assets/js/packages/editor-interactions/editor-interactions.strings.js:64
+#: assets/js/packages/editor-interactions/editor-interactions.strings.js:65
 msgid "In"
 msgstr "カテゴリー:"
 
@@ -5835,8 +5960,8 @@ msgstr "ファイルパス: %s"
 #: assets/js/packages/editor-controls/editor-controls.js:62
 #: assets/js/packages/editor-controls/editor-controls.js:78
 #: assets/js/packages/editor-controls/editor-controls.strings.js:2
-#: assets/js/packages/editor-controls/editor-controls.strings.js:8
-#: assets/js/packages/editor-controls/editor-controls.strings.js:52
+#: assets/js/packages/editor-controls/editor-controls.strings.js:10
+#: assets/js/packages/editor-controls/editor-controls.strings.js:54
 msgid "Upload"
 msgstr "アップロード"
 
@@ -5856,7 +5981,7 @@ msgstr "関連するセキュリティリスクを理解している場合のみ
 msgid "Template not exist."
 msgstr "テンプレートが存在しません。"
 
-#: core/experiments/manager.php:664 includes/base/widget-base.php:1019
+#: core/experiments/manager.php:664 includes/base/widget-base.php:1027
 msgid "Deprecated"
 msgstr "非推奨"
 
@@ -5915,6 +6040,8 @@ msgid "All Icons"
 msgstr "アイコン一覧"
 
 #: core/editor/editor.php:201
+#: modules/mcp/abilities/get-structure-ability.php:100
+#: modules/mcp/abilities/update-settings-ability.php:72
 msgid "Document not found."
 msgstr "文書が見つかりません。"
 
@@ -5957,7 +6084,7 @@ msgid "Elementor will try to sanitize the unfiltered files, removing potential m
 msgstr "Elementor はフィルタリングされていないファイルをサニタイズし、潜在的な悪意のあるコードやスクリプトを除去しようとします。"
 
 #: includes/admin-templates/beta-tester.php:37
-#: assets/js/admin-feedback.strings.js:26 assets/js/admin-modules.strings.js:27
+#: assets/js/admin-feedback.strings.js:27 assets/js/admin-modules.strings.js:27
 #: assets/js/admin.strings.js:27 assets/js/beta-tester.js:63
 #: assets/js/beta-tester.strings.js:1 assets/js/gutenberg.strings.js:27
 msgid "Sign Up"
@@ -5981,7 +6108,7 @@ msgstr "レスポンシブな表示は、%1$s プレビュー モード %2$s ま
 msgid "Super Admin"
 msgstr "特権管理者"
 
-#: includes/base/element-base.php:1013 includes/elements/container.php:1584
+#: includes/base/element-base.php:1033 includes/elements/container.php:1584
 #: includes/elements/container.php:1622 includes/elements/container.php:1684
 #: includes/elements/container.php:1721 includes/widgets/common-base.php:599
 #: includes/widgets/common-base.php:637 includes/widgets/common-base.php:699
@@ -5993,13 +6120,13 @@ msgstr "オフセット"
 
 #: includes/elements/container.php:1539 includes/widgets/common-base.php:559
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:167
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:173
 msgid "Absolute"
 msgstr "絶対"
 
 #: includes/elements/container.php:564 includes/elements/section.php:453
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:153
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:154
 msgid "Hidden"
 msgstr "非表示"
 
@@ -6023,9 +6150,9 @@ msgstr "垂直方向"
 
 #: includes/elements/container.php:1540 includes/widgets/common-base.php:560
 #: assets/js/packages/editor-controls/editor-controls.js:62
-#: assets/js/packages/editor-controls/editor-controls.strings.js:326
+#: assets/js/packages/editor-controls/editor-controls.strings.js:338
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:168
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:174
 msgid "Fixed"
 msgstr "固定"
 
@@ -6040,7 +6167,7 @@ msgstr "均等に配置"
 
 #: includes/elements/container.php:559 includes/elements/section.php:448
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:151
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:152
 msgid "Overflow"
 msgstr "オーバーフロー"
 
@@ -6128,7 +6255,7 @@ msgstr "ポップアップ"
 #: core/admin/editor-one-menu/elementor-one-menu-manager.php:91
 #: core/common/modules/finder/categories/general.php:72
 #: includes/template-library/sources/local.php:1868
-#: assets/js/app-packages.js:4880 assets/js/editor.js:50530
+#: assets/js/app-packages.js:4880 assets/js/editor.js:50983
 #: assets/js/packages/editor-app-bar/editor-app-bar.js:12
 #: assets/js/packages/editor-app-bar/editor-app-bar.strings.js:22
 msgid "Theme Builder"
@@ -6348,8 +6475,8 @@ msgid "Future"
 msgstr "将来"
 
 #: includes/editor-templates/hotkeys.php:107 assets/js/admin-top-bar.js:179
-#: assets/js/admin-top-bar.strings.js:3 assets/js/common.js:3603
-#: assets/js/editor.js:40689
+#: assets/js/admin-top-bar.strings.js:3 assets/js/common.js:3716
+#: assets/js/editor.js:40856
 #: assets/js/packages/editor-app-bar/editor-app-bar.js:12
 #: assets/js/packages/editor-app-bar/editor-app-bar.strings.js:34
 msgid "Finder"
@@ -6401,9 +6528,9 @@ msgid "Type to find anything in Elementor"
 msgstr "入力して Elementor 内を全検索"
 
 #: core/common/modules/finder/categories/create.php:27 assets/js/editor.js:9251
-#: assets/js/editor.js:49103
+#: assets/js/editor.js:49556
 #: assets/js/packages/editor-variables/editor-variables.js:2
-#: assets/js/packages/editor-variables/editor-variables.strings.js:54
+#: assets/js/packages/editor-variables/editor-variables.strings.js:56
 msgid "Create"
 msgstr "生成"
 
@@ -6453,7 +6580,7 @@ msgstr "通知を非表示"
 msgid "Enter your URL"
 msgstr "URL を入力"
 
-#: includes/widgets/inner-section.php:35 assets/js/editor.js:29769
+#: includes/widgets/inner-section.php:35 assets/js/editor.js:29878
 msgid "Inner Section"
 msgstr "内部セクション"
 
@@ -6524,7 +6651,7 @@ msgid "WooCommerce"
 msgstr "WooCommerce"
 
 #: app/modules/site-editor/module.php:32
-#: core/common/modules/finder/categories/site.php:26 core/kits/manager.php:437
+#: core/common/modules/finder/categories/site.php:26 core/kits/manager.php:457
 #: includes/managers/elements.php:325 modules/admin-bar/module.php:149
 msgid "Site"
 msgstr "サイト"
@@ -6543,7 +6670,7 @@ msgid "Artwork"
 msgstr "アートワーク"
 
 #: includes/editor-templates/hotkeys.php:38 assets/js/editor.js:8906
-#: assets/js/editor.js:8924 assets/js/editor.js:32438
+#: assets/js/editor.js:8924 assets/js/editor.js:32586
 msgid "Copy"
 msgstr "コピー"
 
@@ -6638,7 +6765,7 @@ msgstr "IDが一意であり、ページ内の他の場所で使用されてい�
 
 #: core/admin/admin.php:247 assets/js/admin-feedback.strings.js:2
 #: assets/js/admin-feedback.strings.js:6 assets/js/admin-modules.strings.js:2
-#: assets/js/admin-modules.strings.js:6 assets/js/admin.js:3833
+#: assets/js/admin-modules.strings.js:6 assets/js/admin.js:3844
 #: assets/js/admin.strings.js:2 assets/js/admin.strings.js:6
 #: assets/js/gutenberg.js:146 assets/js/gutenberg.strings.js:2
 #: assets/js/gutenberg.strings.js:6
@@ -6673,9 +6800,9 @@ msgstr "新規%sを追加"
 #: modules/floating-buttons/base/widget-floating-bars-base.php:1010
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:1502
 #: assets/js/packages/editor-controls/editor-controls.js:78
-#: assets/js/packages/editor-controls/editor-controls.strings.js:216
+#: assets/js/packages/editor-controls/editor-controls.strings.js:227
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:237
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:264
 msgid "Opacity"
 msgstr "不透明度"
 
@@ -6684,7 +6811,7 @@ msgid "Max Width"
 msgstr "幅の上限"
 
 #: includes/template-library/sources/local.php:247
-#: assets/js/admin-feedback.strings.js:28 assets/js/admin-modules.strings.js:25
+#: assets/js/admin-feedback.strings.js:25 assets/js/admin-modules.strings.js:25
 #: assets/js/admin.strings.js:25 assets/js/gutenberg.strings.js:25
 #: assets/js/new-template.js:146 assets/js/new-template.strings.js:1
 msgid "New Template"
@@ -6705,13 +6832,13 @@ msgstr "新規テンプレート"
 #: modules/nested-tabs/widgets/nested-tabs.php:862
 #: assets/js/packages/editor-controls/editor-controls.js:62
 #: assets/js/packages/editor-controls/editor-controls.js:78
-#: assets/js/packages/editor-controls/editor-controls.strings.js:98
-#: assets/js/packages/editor-controls/editor-controls.strings.js:190
-#: assets/js/packages/editor-controls/editor-controls.strings.js:325
+#: assets/js/packages/editor-controls/editor-controls.strings.js:105
+#: assets/js/packages/editor-controls/editor-controls.strings.js:201
+#: assets/js/packages/editor-controls/editor-controls.strings.js:337
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:12
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:162
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:164
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:168
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:170
 msgid "Position"
 msgstr "位置"
 
@@ -6945,12 +7072,12 @@ msgstr "説明を入力"
 msgid "Current Version"
 msgstr "現在のバージョン"
 
-#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:253
-#: assets/js/editor.js:27415
+#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:292
+#: assets/js/editor.js:27522
 #: assets/js/packages/editor-app-bar/editor-app-bar.js:2
 #: assets/js/packages/editor-app-bar/editor-app-bar.js:12
 #: assets/js/packages/editor-app-bar/editor-app-bar.strings.js:18
-#: assets/js/packages/editor-app-bar/editor-app-bar.strings.js:48
+#: assets/js/packages/editor-app-bar/editor-app-bar.strings.js:49
 msgid "Submit"
 msgstr "送信"
 
@@ -6985,13 +7112,13 @@ msgstr "作成者"
 #: assets/js/packages/editor-components/editor-components.strings.js:80
 #: assets/js/packages/editor-controls/editor-controls.js:18
 #: assets/js/packages/editor-controls/editor-controls.js:62
-#: assets/js/packages/editor-controls/editor-controls.strings.js:11
-#: assets/js/packages/editor-controls/editor-controls.strings.js:122
+#: assets/js/packages/editor-controls/editor-controls.strings.js:13
+#: assets/js/packages/editor-controls/editor-controls.strings.js:133
 #: assets/js/packages/editor-global-classes/editor-global-classes.js:6
 #: assets/js/packages/editor-global-classes/editor-global-classes.strings.js:98
 #: assets/js/packages/editor-variables/editor-variables.js:2
 #: assets/js/packages/editor-variables/editor-variables.strings.js:22
-#: assets/js/packages/editor-variables/editor-variables.strings.js:59
+#: assets/js/packages/editor-variables/editor-variables.strings.js:61
 msgid "Search"
 msgstr "検索"
 
@@ -7015,15 +7142,15 @@ msgid "Create New Page"
 msgstr "新規ページを作成"
 
 #: core/base/document.php:173 includes/editor-templates/panel.php:108
-#: assets/js/editor.js:27413
+#: assets/js/editor.js:27520
 #: assets/js/packages/editor-app-bar/editor-app-bar.js:12
-#: assets/js/packages/editor-app-bar/editor-app-bar.strings.js:47
+#: assets/js/packages/editor-app-bar/editor-app-bar.strings.js:48
 msgid "Publish"
 msgstr "公開"
 
 #: includes/editor-templates/panel.php:96
 #: assets/js/packages/editor-app-bar/editor-app-bar.js:2
-#: assets/js/packages/editor-app-bar/editor-app-bar.strings.js:49
+#: assets/js/packages/editor-app-bar/editor-app-bar.strings.js:50
 msgid "Preview Changes"
 msgstr "変更をプレビュー"
 
@@ -7040,37 +7167,41 @@ msgid "Drag & Drop"
 msgstr "ドラッグ & ドロップ"
 
 #: includes/editor-templates/panel.php:145
-#: includes/editor-templates/panel.php:147 assets/js/editor.js:38829
+#: includes/editor-templates/panel.php:147 assets/js/editor.js:38993
 msgid "Hide Panel"
 msgstr "パネルを非表示"
 
 #: includes/editor-templates/panel.php:131
 #: assets/js/packages/editor-app-bar/editor-app-bar.js:12
-#: assets/js/packages/editor-app-bar/editor-app-bar.strings.js:42
+#: assets/js/packages/editor-app-bar/editor-app-bar.strings.js:43
 msgid "Save as Template"
 msgstr "テンプレートとして保存"
-
-#: includes/editor-templates/hotkeys.php:70
-#: includes/editor-templates/repeater.php:18 assets/js/editor.js:32423
-#: assets/js/editor.js:54285
-#: assets/js/packages/editor-controls/editor-controls.js:2
-#: assets/js/packages/editor-controls/editor-controls.js:18
-#: assets/js/packages/editor-controls/editor-controls.strings.js:259
-#: assets/js/packages/editor-controls/editor-controls.strings.js:302
-#: assets/js/packages/editor-site-navigation/editor-site-navigation.js:2
-#: assets/js/packages/editor-site-navigation/editor-site-navigation.strings.js:20
-msgid "Duplicate"
-msgstr "複製"
 
 #: includes/editor-templates/templates.php:12
 #: includes/editor-templates/templates.php:14
 msgid "Import Template"
 msgstr "テンプレートをインポート"
 
+#: includes/editor-templates/hotkeys.php:70
+#: includes/editor-templates/repeater.php:18 assets/js/editor.js:32571
+#: assets/js/editor.js:54738
+#: assets/js/packages/editor-controls/editor-controls.js:2
+#: assets/js/packages/editor-controls/editor-controls.js:18
+#: assets/js/packages/editor-controls/editor-controls.strings.js:268
+#: assets/js/packages/editor-controls/editor-controls.strings.js:314
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:8
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:60
+#: assets/js/packages/editor-site-navigation/editor-site-navigation.js:2
+#: assets/js/packages/editor-site-navigation/editor-site-navigation.strings.js:20
+#: assets/js/packages/editor-variables/editor-variables.js:2
+#: assets/js/packages/editor-variables/editor-variables.strings.js:59
+msgid "Duplicate"
+msgstr "複製"
+
 #: includes/editor-templates/panel.php:113
 #: assets/js/packages/editor-app-bar/editor-app-bar.js:12
-#: assets/js/packages/editor-app-bar/editor-app-bar.strings.js:45
 #: assets/js/packages/editor-app-bar/editor-app-bar.strings.js:46
+#: assets/js/packages/editor-app-bar/editor-app-bar.strings.js:47
 msgid "Save Options"
 msgstr "設定を保存"
 
@@ -7093,10 +7224,10 @@ msgstr "取消線"
 #: assets/js/kit-library.b768952e1d4177aa68d8.bundle.js:608
 #: assets/js/packages/editor-controls/editor-controls.js:2
 #: assets/js/packages/editor-controls/editor-controls.js:18
-#: assets/js/packages/editor-controls/editor-controls.strings.js:262
-#: assets/js/packages/editor-controls/editor-controls.strings.js:301
+#: assets/js/packages/editor-controls/editor-controls.strings.js:271
+#: assets/js/packages/editor-controls/editor-controls.strings.js:313
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:8
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:83
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:84
 msgid "Remove"
 msgstr "削除"
 
@@ -7191,7 +7322,7 @@ msgstr "抜粋"
 
 #: includes/editor-templates/panel.php:127
 #: assets/js/packages/editor-app-bar/editor-app-bar.js:12
-#: assets/js/packages/editor-app-bar/editor-app-bar.strings.js:43
+#: assets/js/packages/editor-app-bar/editor-app-bar.strings.js:44
 msgid "Save Draft"
 msgstr "下書き保存"
 
@@ -7203,13 +7334,13 @@ msgstr "デフォルトに戻す"
 #: includes/editor-templates/templates.php:89
 #: includes/editor-templates/templates.php:132
 #: includes/editor-templates/templates.php:787
-#: modules/atomic-widgets/module.php:432
-#: assets/js/atomic-widgets-editor.js:1548
-#: assets/js/atomic-widgets-editor.strings.js:2 assets/js/editor.js:35309
-#: assets/js/editor.js:35812
+#: modules/atomic-widgets/module.php:469
+#: assets/js/atomic-widgets-editor.js:1315
+#: assets/js/atomic-widgets-editor.strings.js:2 assets/js/editor.js:35457
+#: assets/js/editor.js:35960
 #: assets/js/kit-library.b768952e1d4177aa68d8.bundle.js:5675
 #: assets/js/packages/editor-app-bar/editor-app-bar.js:2
-#: assets/js/packages/editor-app-bar/editor-app-bar.strings.js:54
+#: assets/js/packages/editor-app-bar/editor-app-bar.strings.js:55
 #: assets/js/packages/unlock-v4-promo/unlock-v4-promo.js:2
 #: assets/js/packages/unlock-v4-promo/unlock-v4-promo.strings.js:4
 msgid "New"
@@ -7265,13 +7396,15 @@ msgstr "デフォルトフォントを無効化"
 #: modules/nested-tabs/widgets/nested-tabs.php:289
 #: modules/nested-tabs/widgets/nested-tabs.php:359
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:120
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:187
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:223
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:228
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:233
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:121
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:194
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:205
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:245
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:250
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:255
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:260
 #: assets/js/packages/editor-interactions/editor-interactions.js:2
-#: assets/js/packages/editor-interactions/editor-interactions.strings.js:27
+#: assets/js/packages/editor-interactions/editor-interactions.strings.js:29
 msgid "End"
 msgstr "終了"
 
@@ -7310,13 +7443,15 @@ msgstr "終了"
 #: modules/nested-tabs/widgets/nested-tabs.php:281
 #: modules/nested-tabs/widgets/nested-tabs.php:351
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:118
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:185
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:221
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:226
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:231
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:119
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:192
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:203
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:243
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:248
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:253
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:258
 #: assets/js/packages/editor-interactions/editor-interactions.js:2
-#: assets/js/packages/editor-interactions/editor-interactions.strings.js:26
+#: assets/js/packages/editor-interactions/editor-interactions.strings.js:28
 msgid "Start"
 msgstr "開始"
 
@@ -7344,7 +7479,7 @@ msgid "https://elementor.com/?utm_source=wp-plugins&utm_campaign=plugin-uri&utm_
 msgstr "https://elementor.com/?utm_source=wp-plugins&utm_campaign=plugin-uri&utm_medium=wp-dash"
 
 #: modules/history/views/history-panel-template.php:10
-#: assets/js/editor.js:54015
+#: assets/js/editor.js:54468
 msgid "Revisions"
 msgstr "リビジョン"
 
@@ -7352,7 +7487,7 @@ msgstr "リビジョン"
 #: includes/editor-templates/panel.php:90 assets/js/ai-admin.js:2057
 #: assets/js/ai-gutenberg.js:2195 assets/js/ai-media-library.js:2057
 #: assets/js/ai-unify-product-images.js:2057 assets/js/ai.js:2845
-#: assets/js/editor.js:54607
+#: assets/js/editor.js:55062
 #: assets/js/packages/editor-app-bar/editor-app-bar.js:12
 #: assets/js/packages/editor-app-bar/editor-app-bar.strings.js:32
 msgid "History"
@@ -7377,7 +7512,7 @@ msgstr "作業を開始後、エディターで行った動作の「繰り返し
 
 #: includes/editor-templates/hotkeys.php:16
 #: includes/editor-templates/templates.php:238
-#: modules/history/views/history-panel-template.php:9 assets/js/editor.js:54012
+#: modules/history/views/history-panel-template.php:9 assets/js/editor.js:54465
 #: assets/js/kit-library.b768952e1d4177aa68d8.bundle.js:1257
 msgid "Actions"
 msgstr "操作"
@@ -7443,7 +7578,7 @@ msgstr "連携"
 
 #: includes/rollback.php:165 includes/settings/tools.php:184
 #: includes/settings/tools.php:368 assets/js/admin-feedback.strings.js:14
-#: assets/js/admin-modules.strings.js:14 assets/js/admin.js:4031
+#: assets/js/admin-modules.strings.js:14 assets/js/admin.js:4042
 #: assets/js/admin.strings.js:14 assets/js/gutenberg.strings.js:14
 msgid "Rollback to Previous Version"
 msgstr "以前のバージョンにロールバックする"
@@ -7453,18 +7588,9 @@ msgstr "以前のバージョンにロールバックする"
 msgid "Widgets Space"
 msgstr "ウィジェットスペース"
 
-#: includes/controls/url.php:116
-msgid "Add nofollow"
-msgstr "Nofollow を追加"
-
-#: includes/controls/groups/box-shadow.php:72
-msgctxt "Box Shadow Control"
-msgid "Outline"
-msgstr "アウトライン"
-
 #: core/kits/documents/tabs/theme-style-form-fields.php:137
 #: core/kits/documents/tabs/theme-style-images.php:203
-#: includes/base/element-base.php:1267
+#: includes/base/element-base.php:1287
 #: includes/controls/groups/background.php:673 includes/elements/column.php:361
 #: includes/elements/column.php:521 includes/elements/column.php:629
 #: includes/elements/container.php:737 includes/elements/container.php:951
@@ -7485,6 +7611,15 @@ msgstr "アウトライン"
 #: modules/shapes/widgets/text-path.php:638
 msgid "Transition Duration"
 msgstr "トランジション所要時間"
+
+#: includes/controls/url.php:116
+msgid "Add nofollow"
+msgstr "Nofollow を追加"
+
+#: includes/controls/groups/box-shadow.php:72
+msgctxt "Box Shadow Control"
+msgid "Outline"
+msgstr "アウトライン"
 
 #: includes/settings/tools.php:389
 msgid "Warning: Please backup your database before making the rollback."
@@ -7518,11 +7653,11 @@ msgstr "ベータテスター機能を有効化して、新しいベータ版の
 #. translators: %s: Element type title.
 #: core/document-types/page-base.php:194
 #: includes/template-library/sources/local.php:403
-#: assets/js/atomic-widgets-editor.js:1767
-#: assets/js/atomic-widgets-editor.strings.js:7 assets/js/editor.js:32217
-#: assets/js/editor.js:32410 assets/js/editor.js:34881
-#: assets/js/editor.js:35357 assets/js/editor.js:35458
-#: assets/js/editor.js:35790 assets/js/editor.js:39422
+#: assets/js/atomic-widgets-editor.js:1534
+#: assets/js/atomic-widgets-editor.strings.js:7 assets/js/editor.js:32365
+#: assets/js/editor.js:32558 assets/js/editor.js:35029
+#: assets/js/editor.js:35505 assets/js/editor.js:35606
+#: assets/js/editor.js:35938 assets/js/editor.js:39586
 #: assets/js/packages/editor-components/editor-components.js:2
 #: assets/js/packages/editor-components/editor-components.strings.js:33
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:8
@@ -7571,7 +7706,7 @@ msgstr "サーバー設定との相性問題のトラブルシューティング
 #: includes/settings/settings.php:331 includes/settings/settings.php:348
 #: includes/settings/settings.php:360 includes/settings/settings.php:372
 #: includes/settings/tools.php:417 modules/element-cache/module.php:130
-#: modules/generator-tag/module.php:82
+#: modules/generator-tag/module.php:82 modules/markdown-render/module.php:184
 #: modules/nested-tabs/widgets/nested-tabs.php:386
 #: modules/safe-mode/module.php:47
 msgid "Disable"
@@ -7583,14 +7718,14 @@ msgstr "無効化"
 #: includes/settings/settings.php:359 includes/settings/settings.php:371
 #: includes/settings/tools.php:418 modules/generator-tag/module.php:81
 #: modules/nested-tabs/widgets/nested-tabs.php:387
-#: modules/safe-mode/module.php:48 assets/js/admin.js:2033
+#: modules/safe-mode/module.php:48 assets/js/admin.js:2044
 #: assets/js/ai-admin.js:63 assets/js/ai-gutenberg.js:63
 #: assets/js/ai-media-library.js:63 assets/js/ai-unify-product-images.js:63
 #: assets/js/ai.js:63 assets/js/app-packages.js:1360 assets/js/app.js:1827
-#: assets/js/common.js:447 assets/js/editor.js:42890
-#: assets/js/editor.strings.js:18
+#: assets/js/common.js:447 assets/js/editor.js:43067
+#: assets/js/editor.strings.js:19
 #: assets/js/packages/editor-controls/editor-controls.js:18
-#: assets/js/packages/editor-controls/editor-controls.strings.js:145
+#: assets/js/packages/editor-controls/editor-controls.strings.js:156
 msgid "Enable"
 msgstr "有効化"
 
@@ -7635,7 +7770,7 @@ msgid "Select"
 msgstr "選択"
 
 #: core/common/modules/finder/categories/edit.php:118 assets/js/editor.js:11628
-#: assets/js/editor.js:20992
+#: assets/js/editor.js:21087
 msgid "Template"
 msgstr "テンプレート"
 
@@ -7692,7 +7827,7 @@ msgid "Drop Cap"
 msgstr "ドロップキャップ"
 
 #: core/kits/documents/kit.php:154 includes/maintenance-mode.php:215
-#: assets/js/editor.js:54284
+#: assets/js/editor.js:54737
 msgid "Disabled"
 msgstr "無効"
 
@@ -7713,7 +7848,7 @@ msgstr "Lightbox"
 
 #: includes/elements/container.php:1317 includes/elements/section.php:1096
 #: assets/js/packages/editor-controls/editor-controls.js:62
-#: assets/js/packages/editor-controls/editor-controls.strings.js:245
+#: assets/js/packages/editor-controls/editor-controls.strings.js:256
 msgid "Invert"
 msgstr "反転"
 
@@ -7852,7 +7987,7 @@ msgstr "# なしでタグの ID を追加します。例:  my-id"
 #: core/kits/documents/tabs/theme-style-buttons.php:166
 #: core/kits/documents/tabs/theme-style-images.php:134
 #: core/kits/documents/tabs/theme-style-typography.php:148
-#: includes/base/element-base.php:886 includes/elements/column.php:346
+#: includes/base/element-base.php:906 includes/elements/column.php:346
 #: includes/elements/column.php:475 includes/elements/column.php:594
 #: includes/elements/container.php:722 includes/elements/container.php:903
 #: includes/elements/container.php:1064 includes/elements/section.php:602
@@ -7983,14 +8118,14 @@ msgstr "メモリを少なくとも %1$s に設定することを推奨します
 msgid "Thousand Separator"
 msgstr "3桁ごとの区切り文字"
 
-#: includes/base/element-base.php:930 includes/base/element-base.php:1094
+#: includes/base/element-base.php:950 includes/base/element-base.php:1114
 #: includes/widgets/common-base.php:1092 includes/widgets/icon-list.php:289
 #: includes/widgets/icon.php:334 includes/widgets/text-editor.php:150
 #: includes/widgets/video.php:736 modules/shapes/widgets/text-path.php:220
 msgid "Off"
 msgstr "オフ"
 
-#: includes/base/element-base.php:929 includes/base/element-base.php:1093
+#: includes/base/element-base.php:949 includes/base/element-base.php:1113
 #: includes/widgets/common-base.php:1091 includes/widgets/icon-list.php:290
 #: includes/widgets/icon.php:335 includes/widgets/text-editor.php:151
 #: includes/widgets/video.php:737 modules/shapes/widgets/text-path.php:219
@@ -8051,7 +8186,7 @@ msgstr "Elementor を改善する"
 msgid "Invalid Data: The Template ID cannot be the same as the currently edited template. Please choose a different one."
 msgstr "無効なデータ：テンプレートIDは現在のテンプレートと同じものは使用できません。違うものを選択してください。"
 
-#: modules/atomic-widgets/elements/atomic-tabs/atomic-tab-content/atomic-tab-content.php:42
+#: modules/atomic-widgets/elements/atomic-tabs/atomic-tab-content/atomic-tab-content.php:44
 msgid "Tab content"
 msgstr "タブコンテンツ"
 
@@ -8129,6 +8264,8 @@ msgstr "テンプレートライブラリー"
 #: includes/template-library/sources/local.php:1253 assets/js/app.js:5963
 #: assets/js/app.js:6161 assets/js/app.js:6245 assets/js/app.js:11049
 #: assets/js/app.js:18322
+#: assets/js/packages/editor-design-system/editor-design-system.js:2
+#: assets/js/packages/editor-design-system/editor-design-system.strings.js:31
 msgid "Export"
 msgstr "エクスポート"
 
@@ -8142,11 +8279,13 @@ msgstr "エクスポート"
 #: assets/js/app-packages.js:2581 assets/js/app-packages.js:3140
 #: assets/js/app.js:698 assets/js/app.js:2960 assets/js/app.js:3383
 #: assets/js/app.js:7640 assets/js/app.js:11086 assets/js/app.js:18159
-#: assets/js/editor.js:50820 assets/js/import-export-admin.js:321
+#: assets/js/editor.js:51273 assets/js/import-export-admin.js:321
 #: assets/js/import-export-customization-admin.js:409
 #: assets/js/nested-elements.strings.js:1
 #: assets/js/packages/editor-components/editor-components.js:2
 #: assets/js/packages/editor-components/editor-components.strings.js:21
+#: assets/js/packages/editor-design-system/editor-design-system.js:2
+#: assets/js/packages/editor-design-system/editor-design-system.strings.js:18
 #: assets/js/packages/editor-starter/editor-starter.js:2
 #: assets/js/packages/editor-starter/editor-starter.strings.js:1
 #: assets/js/packages/editor-widget-creation/editor-widget-creation.js:2
@@ -8262,7 +8401,7 @@ msgstr "テーマのソースコードを変更する場合は、<a href=\"%s\">
 
 #: core/kits/documents/tabs/global-typography.php:28
 #: core/kits/documents/tabs/global-typography.php:47 assets/js/app.js:12039
-#: assets/js/app.js:17240 assets/js/editor.js:17672 assets/js/editor.js:50565
+#: assets/js/app.js:17240 assets/js/editor.js:17672 assets/js/editor.js:51018
 #: assets/js/styleguide-app-initiator.strings.js:5
 #: assets/js/styleguide-app.36ecabae74d9b87fc5a8.bundle.js:221
 #: assets/js/styleguide.strings.js:5
@@ -8276,16 +8415,16 @@ msgstr "グローバルフォント"
 #: assets/js/app-packages.js:4737 assets/js/app.js:1698 assets/js/app.js:13703
 #: assets/js/app.js:14025 assets/js/app.js:15074 assets/js/app.js:16611
 #: assets/js/app.js:16941 assets/js/app.js:16987 assets/js/app.js:18158
-#: assets/js/editor.js:16595 assets/js/editor.js:30314
-#: assets/js/editor.js:30345 assets/js/editor.js:43609
-#: assets/js/editor.strings.js:6 assets/js/element-manager-admin.js:306
+#: assets/js/editor.js:16595 assets/js/editor.js:30423
+#: assets/js/editor.js:30454 assets/js/editor.js:43786
+#: assets/js/editor.strings.js:7 assets/js/element-manager-admin.js:306
 #: assets/js/element-manager-admin.strings.js:2
 #: assets/js/kit-library.b768952e1d4177aa68d8.bundle.js:4698
 #: assets/js/kit-library.b768952e1d4177aa68d8.bundle.js:5752
 #: assets/js/packages/editor-app-bar/editor-app-bar.js:2
-#: assets/js/packages/editor-app-bar/editor-app-bar.strings.js:56
+#: assets/js/packages/editor-app-bar/editor-app-bar.strings.js:57
 #: assets/js/packages/editor-controls/editor-controls.js:62
-#: assets/js/packages/editor-controls/editor-controls.strings.js:111
+#: assets/js/packages/editor-controls/editor-controls.strings.js:122
 msgid "Learn More"
 msgstr "さらに詳しく"
 
@@ -8328,22 +8467,22 @@ msgstr "ゆっくり"
 #: includes/controls/box-shadow.php:73 includes/controls/text-shadow.php:76
 #: includes/widgets/tabs.php:189
 #: assets/js/packages/editor-controls/editor-controls.js:62
-#: assets/js/packages/editor-controls/editor-controls.strings.js:102
+#: assets/js/packages/editor-controls/editor-controls.strings.js:109
 msgid "Vertical"
 msgstr "垂直"
 
 #: includes/controls/box-shadow.php:68 includes/controls/text-shadow.php:71
 #: includes/widgets/tabs.php:193
 #: assets/js/packages/editor-controls/editor-controls.js:62
-#: assets/js/packages/editor-controls/editor-controls.strings.js:101
+#: assets/js/packages/editor-controls/editor-controls.strings.js:108
 msgid "Horizontal"
 msgstr "水平"
 
 #: includes/controls/box-shadow.php:78 includes/controls/text-shadow.php:66
 #: assets/js/packages/editor-controls/editor-controls.js:62
-#: assets/js/packages/editor-controls/editor-controls.strings.js:103
-#: assets/js/packages/editor-controls/editor-controls.strings.js:237
-#: assets/js/packages/editor-controls/editor-controls.strings.js:286
+#: assets/js/packages/editor-controls/editor-controls.strings.js:110
+#: assets/js/packages/editor-controls/editor-controls.strings.js:248
+#: assets/js/packages/editor-controls/editor-controls.strings.js:298
 msgid "Blur"
 msgstr "ぼかし"
 
@@ -8366,7 +8505,7 @@ msgstr "開始アニメーション"
 
 #: includes/controls/box-shadow.php:83
 #: assets/js/packages/editor-controls/editor-controls.js:62
-#: assets/js/packages/editor-controls/editor-controls.strings.js:104
+#: assets/js/packages/editor-controls/editor-controls.strings.js:111
 msgid "Spread"
 msgstr "スプレッド"
 
@@ -8450,7 +8589,7 @@ msgstr "拡張"
 #: modules/floating-buttons/base/widget-floating-bars-base.php:981
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:1483
 #: assets/js/packages/editor-controls/editor-controls.js:62
-#: assets/js/packages/editor-controls/editor-controls.strings.js:293
+#: assets/js/packages/editor-controls/editor-controls.strings.js:305
 msgid "Background Overlay"
 msgstr "背景オーバーレイ"
 
@@ -8463,7 +8602,7 @@ msgid "Quick Feedback"
 msgstr "クイックフィードバック"
 
 #: core/admin/admin-notices.php:149 core/admin/admin-notices.php:157
-#: core/base/db-upgrades-manager.php:97 assets/js/atomic-widgets-editor.js:1594
+#: core/base/db-upgrades-manager.php:97 assets/js/atomic-widgets-editor.js:1361
 #: assets/js/atomic-widgets-editor.strings.js:5
 #: assets/js/packages/editor-components/editor-components.js:2
 #: assets/js/packages/editor-components/editor-components.strings.js:6
@@ -8533,10 +8672,10 @@ msgstr "カスタム URL"
 #: assets/js/ai-media-library.js:11314
 #: assets/js/ai-unify-product-images.js:11314 assets/js/ai.js:12866
 #: assets/js/packages/editor-controls/editor-controls.js:78
-#: assets/js/packages/editor-controls/editor-controls.strings.js:206
+#: assets/js/packages/editor-controls/editor-controls.strings.js:217
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:14
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:303
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:330
 msgid "Background"
 msgstr "背景"
 
@@ -8553,9 +8692,9 @@ msgstr "一般"
 msgid "Wider"
 msgstr "さらに幅広"
 
-#: includes/editor-templates/hotkeys.php:46 assets/js/editor.js:32450
-#: assets/js/editor.js:34810 assets/js/editor.js:45215
-#: assets/js/editor.js:46314
+#: includes/editor-templates/hotkeys.php:46 assets/js/editor.js:32598
+#: assets/js/editor.js:34958 assets/js/editor.js:45666
+#: assets/js/editor.js:46765
 msgid "Paste"
 msgstr "貼り付け"
 
@@ -8624,10 +8763,10 @@ msgstr "間隔"
 #: includes/widgets/image-carousel.php:545
 #: modules/nested-tabs/widgets/nested-tabs.php:196
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:108
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:204
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:109
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:224
 #: assets/js/packages/editor-interactions/editor-interactions.js:2
-#: assets/js/packages/editor-interactions/editor-interactions.strings.js:21
+#: assets/js/packages/editor-interactions/editor-interactions.strings.js:23
 msgid "Direction"
 msgstr "方向"
 
@@ -8688,13 +8827,13 @@ msgstr "フル"
 
 #: includes/widgets/image-carousel.php:522
 #: assets/js/packages/editor-interactions/editor-interactions.js:2
-#: assets/js/packages/editor-interactions/editor-interactions.strings.js:53
+#: assets/js/packages/editor-interactions/editor-interactions.strings.js:55
 msgid "Fade"
 msgstr "フェード"
 
 #: includes/widgets/image-carousel.php:517
 #: assets/js/packages/editor-interactions/editor-interactions.js:2
-#: assets/js/packages/editor-interactions/editor-interactions.strings.js:18
+#: assets/js/packages/editor-interactions/editor-interactions.strings.js:20
 msgid "Effect"
 msgstr "エフェクト"
 
@@ -8744,20 +8883,20 @@ msgid "The list of fonts used if the chosen font is not available."
 msgstr "選択されているフォントが使用できない場合に使用されるフォントの一覧です。"
 
 #: includes/widgets/wordpress.php:242
-#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:92
+#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:115
 #: modules/promotions/widgets/atomic-form-widget-promotion.php:37
 msgid "Form"
 msgstr "フォーム"
 
-#: includes/editor-templates/panel-elements.php:15 assets/js/editor.js:21683
-#: assets/js/editor.js:23594 assets/js/editor.js:24002
-#: assets/js/editor.js:39584
+#: includes/editor-templates/panel-elements.php:15 assets/js/editor.js:21778
+#: assets/js/editor.js:23689 assets/js/editor.js:24109
+#: assets/js/editor.js:39748
 #: assets/js/packages/editor-app-bar/editor-app-bar.js:12
 #: assets/js/packages/editor-app-bar/editor-app-bar.strings.js:35
 #: assets/js/packages/editor-canvas/editor-canvas.js:2
 #: assets/js/packages/editor-canvas/editor-canvas.strings.js:6
 #: assets/js/packages/editor-interactions/editor-interactions.js:2
-#: assets/js/packages/editor-interactions/editor-interactions.strings.js:36
+#: assets/js/packages/editor-interactions/editor-interactions.strings.js:38
 msgid "Elements"
 msgstr "要素"
 
@@ -8768,25 +8907,25 @@ msgstr "要素"
 #: includes/settings/admin-menu-items/editor-one-settings-menu.php:33
 #: modules/atomic-widgets/elements/atomic-button/atomic-button.php:81
 #: modules/atomic-widgets/elements/atomic-divider/atomic-divider.php:61
-#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:176
-#: modules/atomic-widgets/elements/atomic-form/form-message/form-message.php:55
+#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:214
+#: modules/atomic-widgets/elements/atomic-form/form-message/form-message.php:79
 #: modules/atomic-widgets/elements/atomic-heading/atomic-heading.php:83
 #: modules/atomic-widgets/elements/atomic-image/atomic-image.php:73
 #: modules/atomic-widgets/elements/atomic-paragraph/atomic-paragraph.php:81
 #: modules/atomic-widgets/elements/atomic-self-hosted-video/atomic-self-hosted-video.php:162
 #: modules/atomic-widgets/elements/atomic-svg/atomic-svg.php:68
-#: modules/atomic-widgets/elements/atomic-tabs/atomic-tab-content/atomic-tab-content.php:69
-#: modules/atomic-widgets/elements/atomic-tabs/atomic-tab/atomic-tab.php:71
+#: modules/atomic-widgets/elements/atomic-tabs/atomic-tab-content/atomic-tab-content.php:71
+#: modules/atomic-widgets/elements/atomic-tabs/atomic-tab/atomic-tab.php:73
 #: modules/atomic-widgets/elements/atomic-tabs/atomic-tabs-content-area/atomic-tabs-content-area.php:66
 #: modules/atomic-widgets/elements/atomic-tabs/atomic-tabs-menu/atomic-tabs-menu.php:70
-#: modules/atomic-widgets/elements/atomic-tabs/atomic-tabs/atomic-tabs.php:91
+#: modules/atomic-widgets/elements/atomic-tabs/atomic-tabs/atomic-tabs.php:93
 #: modules/atomic-widgets/elements/atomic-youtube/atomic-youtube.php:94
-#: modules/atomic-widgets/elements/div-block/div-block.php:86
-#: modules/atomic-widgets/elements/flexbox/flexbox.php:89
+#: modules/atomic-widgets/elements/div-block/div-block.php:89
+#: modules/atomic-widgets/elements/flexbox/flexbox.php:92
 #: modules/usage/settings-reporter.php:13 assets/js/editor.js:7537
-#: assets/js/editor.js:40673 assets/js/editor.js:50937
+#: assets/js/editor.js:40840 assets/js/editor.js:51390
 #: assets/js/packages/editor-interactions/editor-interactions.js:2
-#: assets/js/packages/editor-interactions/editor-interactions.strings.js:14
+#: assets/js/packages/editor-interactions/editor-interactions.strings.js:16
 msgid "Settings"
 msgstr "設定"
 
@@ -8815,63 +8954,6 @@ msgctxt "Typography Control"
 msgid "Capitalize"
 msgstr "先頭大文字"
 
-#: core/experiments/manager.php:392
-#: core/kits/documents/tabs/settings-background.php:78
-#: includes/base/widget-base.php:297 includes/controls/animation.php:154
-#: includes/controls/font.php:66 includes/controls/groups/background.php:319
-#: includes/controls/groups/background.php:432
-#: includes/controls/groups/background.php:462
-#: includes/controls/groups/background.php:483
-#: includes/controls/groups/background.php:688
-#: includes/controls/groups/background.php:707
-#: includes/controls/groups/border.php:63
-#: includes/controls/groups/flex-item.php:23
-#: includes/controls/groups/typography.php:151
-#: includes/controls/groups/typography.php:164
-#: includes/controls/groups/typography.php:177
-#: includes/controls/groups/typography.php:189
-#: includes/editor-templates/panel.php:248 includes/elements/column.php:187
-#: includes/elements/column.php:215 includes/elements/column.php:258
-#: includes/elements/container.php:563 includes/elements/container.php:586
-#: includes/elements/container.php:1538 includes/elements/section.php:287
-#: includes/elements/section.php:325 includes/elements/section.php:365
-#: includes/elements/section.php:424 includes/elements/section.php:452
-#: includes/elements/section.php:492 includes/settings/settings.php:282
-#: includes/widgets/common-base.php:341 includes/widgets/common-base.php:558
-#: includes/widgets/divider.php:835 includes/widgets/heading.php:217
-#: includes/widgets/icon-box.php:133 includes/widgets/icon-list.php:122
-#: includes/widgets/icon.php:134 includes/widgets/image-box.php:410
-#: includes/widgets/image-carousel.php:188
-#: includes/widgets/image-carousel.php:206
-#: includes/widgets/image-carousel.php:397
-#: includes/widgets/image-carousel.php:774
-#: includes/widgets/image-gallery.php:210
-#: includes/widgets/image-gallery.php:266
-#: includes/widgets/image-gallery.php:289 includes/widgets/image.php:235
-#: includes/widgets/image.php:387 includes/widgets/progress.php:171
-#: includes/widgets/text-editor.php:181 includes/widgets/text-editor.php:429
-#: includes/widgets/traits/button-trait.php:71
-#: modules/element-cache/module.php:107
-#: modules/floating-buttons/base/widget-contact-button-base.php:1213
-#: modules/floating-buttons/base/widget-contact-button-base.php:1265
-#: modules/floating-buttons/base/widget-contact-button-base.php:1352
-#: modules/floating-buttons/base/widget-contact-button-base.php:1561
-#: modules/floating-buttons/base/widget-contact-button-base.php:1727
-#: modules/floating-buttons/base/widget-contact-button-base.php:2291
-#: modules/floating-buttons/base/widget-contact-button-base.php:2617
-#: modules/floating-buttons/base/widget-contact-button-base.php:2686
-#: modules/floating-buttons/base/widget-contact-button-base.php:2817
-#: modules/link-in-bio/base/widget-link-in-bio-base.php:179
-#: modules/page-templates/module.php:299
-#: modules/shapes/widgets/text-path.php:203 assets/js/editor.js:48921
-#: assets/js/editor.js:48932
-#: assets/js/packages/editor-controls/editor-controls.js:78
-#: assets/js/packages/editor-controls/editor-controls.strings.js:160
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:18
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:96
-msgid "Default"
-msgstr "デフォルト"
-
 #: core/base/providers/social-network-provider.php:138
 #: includes/widgets/video.php:159
 #: modules/atomic-widgets/elements/atomic-youtube/atomic-youtube.php:39
@@ -8880,7 +8962,7 @@ msgstr "YouTube"
 
 #: includes/widgets/video.php:759
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:149
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:150
 msgid "Aspect Ratio"
 msgstr "縦横比"
 
@@ -8908,101 +8990,6 @@ msgstr "Elementor.com"
 msgid "Tab #1"
 msgstr "タブ #1"
 
-#: includes/base/element-base.php:1353 includes/controls/dimensions.php:82
-#: includes/elements/column.php:188 includes/elements/container.php:1185
-#: includes/elements/container.php:1666 includes/elements/section.php:406
-#: includes/elements/section.php:425 includes/elements/section.php:964
-#: includes/widgets/common-base.php:681 includes/widgets/counter.php:345
-#: includes/widgets/icon-box.php:251 includes/widgets/icon-box.php:280
-#: includes/widgets/image-box.php:221 includes/widgets/image-box.php:244
-#: includes/widgets/testimonial.php:224 includes/widgets/video.php:979
-#: modules/floating-buttons/base/widget-contact-button-base.php:2994
-#: modules/floating-buttons/base/widget-floating-bars-base.php:1437
-#: assets/js/packages/editor-controls/editor-controls.js:62
-#: assets/js/packages/editor-controls/editor-controls.js:78
-#: assets/js/packages/editor-controls/editor-controls.strings.js:27
-#: assets/js/packages/editor-controls/editor-controls.strings.js:191
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:175
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:261
-msgid "Top"
-msgstr "上"
-
-#: includes/base/element-base.php:1333 includes/controls/dimensions.php:83
-#: includes/elements/container.php:1551 includes/widgets/common-base.php:568
-#: includes/widgets/common-base.php:569 includes/widgets/divider.php:482
-#: includes/widgets/divider.php:778 includes/widgets/divider.php:944
-#: includes/widgets/icon-list.php:558 includes/widgets/image-box.php:225
-#: includes/widgets/image-carousel.php:550
-#: includes/widgets/social-icons.php:333
-#: includes/widgets/traits/button-trait.php:262
-#: modules/floating-buttons/base/widget-contact-button-base.php:1140
-#: modules/floating-buttons/base/widget-contact-button-base.php:2406
-#: modules/floating-buttons/base/widget-contact-button-base.php:2948
-#: modules/floating-buttons/base/widget-floating-bars-base.php:456
-#: modules/floating-buttons/base/widget-floating-bars-base.php:1057
-#: modules/shapes/widgets/text-path.php:185
-#: assets/js/packages/editor-controls/editor-controls.js:62
-#: assets/js/packages/editor-controls/editor-controls.js:78
-#: assets/js/packages/editor-controls/editor-controls.strings.js:31
-#: assets/js/packages/editor-controls/editor-controls.strings.js:39
-#: assets/js/packages/editor-controls/editor-controls.strings.js:192
-#: assets/js/packages/editor-controls/editor-controls.strings.js:195
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:171
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:174
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:264
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:269
-msgid "Right"
-msgstr "右"
-
-#: includes/base/element-base.php:1361 includes/controls/dimensions.php:84
-#: includes/elements/column.php:190 includes/elements/container.php:1186
-#: includes/elements/container.php:1670 includes/elements/section.php:408
-#: includes/elements/section.php:427 includes/elements/section.php:965
-#: includes/widgets/common-base.php:685 includes/widgets/counter.php:353
-#: includes/widgets/icon-box.php:255 includes/widgets/icon-box.php:288
-#: includes/widgets/image-box.php:252
-#: modules/floating-buttons/base/widget-contact-button-base.php:3002
-#: modules/floating-buttons/base/widget-floating-bars-base.php:1441
-#: assets/js/packages/editor-controls/editor-controls.js:62
-#: assets/js/packages/editor-controls/editor-controls.js:78
-#: assets/js/packages/editor-controls/editor-controls.strings.js:36
-#: assets/js/packages/editor-controls/editor-controls.strings.js:196
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:176
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:267
-msgid "Bottom"
-msgstr "下"
-
-#: includes/base/element-base.php:1325 includes/controls/dimensions.php:85
-#: includes/elements/container.php:1550 includes/widgets/common-base.php:568
-#: includes/widgets/common-base.php:569 includes/widgets/divider.php:474
-#: includes/widgets/divider.php:770 includes/widgets/divider.php:936
-#: includes/widgets/icon-list.php:550 includes/widgets/image-box.php:217
-#: includes/widgets/image-carousel.php:549
-#: includes/widgets/social-icons.php:325
-#: includes/widgets/traits/button-trait.php:254
-#: modules/floating-buttons/base/widget-contact-button-base.php:1136
-#: modules/floating-buttons/base/widget-contact-button-base.php:2402
-#: modules/floating-buttons/base/widget-contact-button-base.php:2940
-#: modules/floating-buttons/base/widget-floating-bars-base.php:452
-#: modules/floating-buttons/base/widget-floating-bars-base.php:1053
-#: modules/shapes/widgets/text-path.php:177
-#: assets/js/packages/editor-controls/editor-controls.js:62
-#: assets/js/packages/editor-controls/editor-controls.js:78
-#: assets/js/packages/editor-controls/editor-controls.strings.js:30
-#: assets/js/packages/editor-controls/editor-controls.strings.js:40
-#: assets/js/packages/editor-controls/editor-controls.strings.js:193
-#: assets/js/packages/editor-controls/editor-controls.strings.js:194
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:172
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:173
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:263
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:270
-msgid "Left"
-msgstr "左"
-
 #: includes/fonts.php:71
 #: modules/system-info/admin-menu-items/editor-one-system-menu.php:27
 msgid "System"
@@ -9017,106 +9004,10 @@ msgctxt "Background Control"
 msgid "Scroll"
 msgstr "スクロール"
 
-#: core/kits/documents/tabs/theme-style-typography.php:109
-#: includes/elements/container.php:613 includes/widgets/audio.php:111
-#: includes/widgets/heading.php:200 includes/widgets/icon-box.php:195
-#: includes/widgets/icon-list.php:169 includes/widgets/icon.php:164
-#: includes/widgets/image-box.php:170 includes/widgets/image-carousel.php:358
-#: includes/widgets/image-carousel.php:372
-#: includes/widgets/image-gallery.php:186 includes/widgets/image.php:192
-#: includes/widgets/image.php:209 includes/widgets/social-icons.php:194
-#: includes/widgets/testimonial.php:204
-#: includes/widgets/traits/button-trait.php:99 includes/widgets/video.php:172
-#: includes/widgets/video.php:197 includes/widgets/video.php:221
-#: modules/atomic-widgets/elements/atomic-button/atomic-button.php:91
-#: modules/atomic-widgets/elements/atomic-heading/atomic-heading.php:121
-#: modules/atomic-widgets/elements/atomic-image/atomic-image.php:83
-#: modules/atomic-widgets/elements/atomic-paragraph/atomic-paragraph.php:103
-#: modules/atomic-widgets/elements/atomic-svg/atomic-svg.php:78
-#: modules/atomic-widgets/elements/div-block/div-block.php:122
-#: modules/atomic-widgets/elements/flexbox/flexbox.php:125
-#: modules/floating-buttons/base/widget-contact-button-base.php:418
-#: modules/floating-buttons/base/widget-contact-button-base.php:933
-#: modules/floating-buttons/base/widget-contact-button-base.php:1061
-#: modules/floating-buttons/base/widget-floating-bars-base.php:164
-#: modules/floating-buttons/base/widget-floating-bars-base.php:350
-#: modules/floating-buttons/base/widget-floating-bars-base.php:568
-#: modules/link-in-bio/base/widget-link-in-bio-base.php:264
-#: modules/link-in-bio/base/widget-link-in-bio-base.php:407
-#: modules/link-in-bio/base/widget-link-in-bio-base.php:643
-#: modules/link-in-bio/base/widget-link-in-bio-base.php:1099
-#: modules/shapes/widgets/text-path.php:158
-#: assets/js/packages/editor-controls/editor-controls.js:18
-#: assets/js/packages/editor-controls/editor-controls.js:62
-#: assets/js/packages/editor-controls/editor-controls.strings.js:45
-#: assets/js/packages/editor-controls/editor-controls.strings.js:133
-msgid "Link"
-msgstr "リンク"
-
 #: includes/controls/groups/typography.php:173
 msgctxt "Typography Control"
 msgid "Style"
 msgstr "スタイル"
-
-#: core/kits/manager.php:139 includes/controls/groups/background.php:329
-#: includes/controls/groups/background.php:487
-#: includes/controls/groups/flex-item.php:24
-#: includes/controls/groups/flex-item.php:93
-#: includes/controls/groups/flex-item.php:142
-#: includes/controls/groups/image-size.php:383
-#: includes/elements/container.php:1440 includes/elements/container.php:1484
-#: includes/elements/section.php:293 includes/maintenance-mode.php:238
-#: includes/widgets/common-base.php:344 includes/widgets/common-base.php:416
-#: includes/widgets/common-base.php:460 includes/widgets/common-base.php:1140
-#: includes/widgets/common-base.php:1197
-#: includes/widgets/image-carousel.php:775
-#: includes/widgets/image-gallery.php:290 includes/widgets/social-icons.php:213
-#: includes/widgets/social-icons.php:363
-#: modules/floating-buttons/base/widget-contact-button-base.php:1214
-#: modules/floating-buttons/base/widget-contact-button-base.php:1266
-#: modules/floating-buttons/base/widget-contact-button-base.php:1353
-#: modules/floating-buttons/base/widget-contact-button-base.php:1562
-#: modules/floating-buttons/base/widget-contact-button-base.php:1728
-#: modules/floating-buttons/base/widget-contact-button-base.php:2292
-#: modules/floating-buttons/base/widget-contact-button-base.php:2618
-#: modules/floating-buttons/base/widget-contact-button-base.php:2687
-#: modules/floating-buttons/base/widget-contact-button-base.php:2818
-#: modules/shapes/module.php:52 assets/js/editor.js:48929
-#: assets/js/packages/editor-controls/editor-controls.js:62
-#: assets/js/packages/editor-controls/editor-controls.strings.js:21
-#: assets/js/packages/editor-controls/editor-controls.strings.js:106
-#: assets/js/packages/editor-controls/editor-controls.strings.js:308
-#: assets/js/packages/editor-controls/editor-controls.strings.js:324
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:195
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:202
-#: assets/js/packages/editor-interactions/editor-interactions.js:2
-#: assets/js/packages/editor-interactions/editor-interactions.strings.js:56
-msgid "Custom"
-msgstr "カスタム"
-
-#: core/kits/views/trash-kit-confirmation.php:30
-#: includes/editor-templates/hotkeys.php:63
-#: includes/editor-templates/templates.php:367
-#: includes/editor-templates/templates.php:402
-#: includes/editor-templates/templates.php:469 assets/js/editor.js:9305
-#: assets/js/editor.js:9324 assets/js/editor.js:9501 assets/js/editor.js:30033
-#: assets/js/editor.js:32533 assets/js/editor.js:51128
-#: assets/js/import-export-admin.js:280
-#: assets/js/import-export-customization-admin.js:345
-#: assets/js/kit-library.b768952e1d4177aa68d8.bundle.js:1061
-#: assets/js/kit-library.b768952e1d4177aa68d8.bundle.js:1205
-#: assets/js/packages/editor-global-classes/editor-global-classes.js:2
-#: assets/js/packages/editor-global-classes/editor-global-classes.strings.js:87
-#: assets/js/packages/editor-site-navigation/editor-site-navigation.js:2
-#: assets/js/packages/editor-site-navigation/editor-site-navigation.strings.js:21
-#: assets/js/packages/editor-site-navigation/editor-site-navigation.strings.js:29
-#: assets/js/packages/editor-ui/editor-ui.js:11
-#: assets/js/packages/editor-ui/editor-ui.strings.js:8
-#: assets/js/packages/editor-variables/editor-variables.js:2
-#: assets/js/packages/editor-variables/editor-variables.strings.js:57
-msgid "Delete"
-msgstr "削除"
 
 #: includes/editor-templates/global.php:34
 msgid "Add New Section"
@@ -9135,13 +9026,120 @@ msgstr "メニュー"
 msgid "Go To Dashboard"
 msgstr "ダッシュボードへ"
 
+#: core/experiments/manager.php:392
+#: core/kits/documents/tabs/settings-background.php:78
+#: includes/base/widget-base.php:297 includes/controls/animation.php:154
+#: includes/controls/font.php:66 includes/controls/groups/background.php:319
+#: includes/controls/groups/background.php:432
+#: includes/controls/groups/background.php:462
+#: includes/controls/groups/background.php:483
+#: includes/controls/groups/background.php:688
+#: includes/controls/groups/background.php:707
+#: includes/controls/groups/border.php:63
+#: includes/controls/groups/flex-item.php:23
+#: includes/controls/groups/typography.php:151
+#: includes/controls/groups/typography.php:164
+#: includes/controls/groups/typography.php:177
+#: includes/controls/groups/typography.php:189
+#: includes/editor-templates/panel.php:248 includes/elements/column.php:187
+#: includes/elements/column.php:215 includes/elements/column.php:258
+#: includes/elements/container.php:563 includes/elements/container.php:586
+#: includes/elements/container.php:1416 includes/elements/container.php:1460
+#: includes/elements/container.php:1538 includes/elements/section.php:287
+#: includes/elements/section.php:325 includes/elements/section.php:365
+#: includes/elements/section.php:424 includes/elements/section.php:452
+#: includes/elements/section.php:492 includes/settings/settings.php:282
+#: includes/widgets/common-base.php:341 includes/widgets/common-base.php:392
+#: includes/widgets/common-base.php:436 includes/widgets/common-base.php:558
+#: includes/widgets/divider.php:835 includes/widgets/heading.php:217
+#: includes/widgets/icon-box.php:133 includes/widgets/icon-list.php:122
+#: includes/widgets/icon.php:134 includes/widgets/image-box.php:410
+#: includes/widgets/image-carousel.php:188
+#: includes/widgets/image-carousel.php:206
+#: includes/widgets/image-carousel.php:397
+#: includes/widgets/image-carousel.php:774
+#: includes/widgets/image-gallery.php:210
+#: includes/widgets/image-gallery.php:266
+#: includes/widgets/image-gallery.php:289 includes/widgets/image.php:235
+#: includes/widgets/image.php:387 includes/widgets/progress.php:171
+#: includes/widgets/text-editor.php:181 includes/widgets/text-editor.php:429
+#: includes/widgets/traits/button-trait.php:71
+#: modules/element-cache/module.php:107
+#: modules/floating-buttons/base/widget-contact-button-base.php:1213
+#: modules/floating-buttons/base/widget-contact-button-base.php:1265
+#: modules/floating-buttons/base/widget-contact-button-base.php:1352
+#: modules/floating-buttons/base/widget-contact-button-base.php:1561
+#: modules/floating-buttons/base/widget-contact-button-base.php:1727
+#: modules/floating-buttons/base/widget-contact-button-base.php:2291
+#: modules/floating-buttons/base/widget-contact-button-base.php:2617
+#: modules/floating-buttons/base/widget-contact-button-base.php:2686
+#: modules/floating-buttons/base/widget-contact-button-base.php:2817
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:179
+#: modules/page-templates/module.php:299
+#: modules/shapes/widgets/text-path.php:203 assets/js/editor.js:49374
+#: assets/js/editor.js:49385
+#: assets/js/packages/editor-controls/editor-controls.js:78
+#: assets/js/packages/editor-controls/editor-controls.strings.js:171
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:18
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:97
+msgid "Default"
+msgstr "デフォルト"
+
+#: includes/base/element-base.php:1373 includes/controls/dimensions.php:82
+#: includes/elements/column.php:188 includes/elements/container.php:1185
+#: includes/elements/container.php:1666 includes/elements/section.php:406
+#: includes/elements/section.php:425 includes/elements/section.php:964
+#: includes/widgets/common-base.php:681 includes/widgets/counter.php:345
+#: includes/widgets/icon-box.php:251 includes/widgets/icon-box.php:280
+#: includes/widgets/image-box.php:221 includes/widgets/image-box.php:244
+#: includes/widgets/testimonial.php:224 includes/widgets/video.php:979
+#: modules/floating-buttons/base/widget-contact-button-base.php:2994
+#: modules/floating-buttons/base/widget-floating-bars-base.php:1437
+#: assets/js/packages/editor-controls/editor-controls.js:62
+#: assets/js/packages/editor-controls/editor-controls.js:78
+#: assets/js/packages/editor-controls/editor-controls.strings.js:29
+#: assets/js/packages/editor-controls/editor-controls.strings.js:202
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:181
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:288
+msgid "Top"
+msgstr "上"
+
+#: includes/base/element-base.php:1353 includes/controls/dimensions.php:83
+#: includes/elements/container.php:1551 includes/widgets/common-base.php:568
+#: includes/widgets/common-base.php:569 includes/widgets/divider.php:482
+#: includes/widgets/divider.php:778 includes/widgets/divider.php:944
+#: includes/widgets/icon-list.php:558 includes/widgets/image-box.php:225
+#: includes/widgets/image-carousel.php:550
+#: includes/widgets/social-icons.php:333
+#: includes/widgets/traits/button-trait.php:262
+#: modules/floating-buttons/base/widget-contact-button-base.php:1140
+#: modules/floating-buttons/base/widget-contact-button-base.php:2406
+#: modules/floating-buttons/base/widget-contact-button-base.php:2948
+#: modules/floating-buttons/base/widget-floating-bars-base.php:456
+#: modules/floating-buttons/base/widget-floating-bars-base.php:1057
+#: modules/shapes/widgets/text-path.php:185
+#: assets/js/packages/editor-controls/editor-controls.js:62
+#: assets/js/packages/editor-controls/editor-controls.js:78
+#: assets/js/packages/editor-controls/editor-controls.strings.js:33
+#: assets/js/packages/editor-controls/editor-controls.strings.js:41
+#: assets/js/packages/editor-controls/editor-controls.strings.js:203
+#: assets/js/packages/editor-controls/editor-controls.strings.js:206
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:177
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:180
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:291
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:296
+msgid "Right"
+msgstr "右"
+
 #: includes/editor-templates/hotkeys.php:176
 #: includes/editor-templates/panel.php:93
 msgid "Responsive Mode"
 msgstr "レスポンジブモード"
 
 #: core/base/traits/shared-widget-controls-trait.php:270
-#: includes/base/element-base.php:1389 includes/editor-templates/panel.php:277
+#: includes/base/element-base.php:1409 includes/editor-templates/panel.php:277
 #: assets/js/kit-library.b768952e1d4177aa68d8.bundle.js:6239
 #: assets/js/packages/editor-responsive/editor-responsive.js:2
 #: assets/js/packages/editor-responsive/editor-responsive.strings.js:1
@@ -9157,6 +9155,89 @@ msgstr "タブ #2"
 #: includes/widgets/text-editor.php:250
 msgid "Text Editor"
 msgstr "テキストエディター"
+
+#: includes/base/element-base.php:1381 includes/controls/dimensions.php:84
+#: includes/elements/column.php:190 includes/elements/container.php:1186
+#: includes/elements/container.php:1670 includes/elements/section.php:408
+#: includes/elements/section.php:427 includes/elements/section.php:965
+#: includes/widgets/common-base.php:685 includes/widgets/counter.php:353
+#: includes/widgets/icon-box.php:255 includes/widgets/icon-box.php:288
+#: includes/widgets/image-box.php:252
+#: modules/floating-buttons/base/widget-contact-button-base.php:3002
+#: modules/floating-buttons/base/widget-floating-bars-base.php:1441
+#: assets/js/packages/editor-controls/editor-controls.js:62
+#: assets/js/packages/editor-controls/editor-controls.js:78
+#: assets/js/packages/editor-controls/editor-controls.strings.js:38
+#: assets/js/packages/editor-controls/editor-controls.strings.js:207
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:182
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:294
+msgid "Bottom"
+msgstr "下"
+
+#: includes/base/element-base.php:1345 includes/controls/dimensions.php:85
+#: includes/elements/container.php:1550 includes/widgets/common-base.php:568
+#: includes/widgets/common-base.php:569 includes/widgets/divider.php:474
+#: includes/widgets/divider.php:770 includes/widgets/divider.php:936
+#: includes/widgets/icon-list.php:550 includes/widgets/image-box.php:217
+#: includes/widgets/image-carousel.php:549
+#: includes/widgets/social-icons.php:325
+#: includes/widgets/traits/button-trait.php:254
+#: modules/floating-buttons/base/widget-contact-button-base.php:1136
+#: modules/floating-buttons/base/widget-contact-button-base.php:2402
+#: modules/floating-buttons/base/widget-contact-button-base.php:2940
+#: modules/floating-buttons/base/widget-floating-bars-base.php:452
+#: modules/floating-buttons/base/widget-floating-bars-base.php:1053
+#: modules/shapes/widgets/text-path.php:177
+#: assets/js/packages/editor-controls/editor-controls.js:62
+#: assets/js/packages/editor-controls/editor-controls.js:78
+#: assets/js/packages/editor-controls/editor-controls.strings.js:32
+#: assets/js/packages/editor-controls/editor-controls.strings.js:42
+#: assets/js/packages/editor-controls/editor-controls.strings.js:204
+#: assets/js/packages/editor-controls/editor-controls.strings.js:205
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:178
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:179
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:290
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:297
+msgid "Left"
+msgstr "左"
+
+#: core/kits/documents/tabs/theme-style-typography.php:109
+#: includes/elements/container.php:613 includes/widgets/audio.php:111
+#: includes/widgets/heading.php:200 includes/widgets/icon-box.php:195
+#: includes/widgets/icon-list.php:169 includes/widgets/icon.php:164
+#: includes/widgets/image-box.php:170 includes/widgets/image-carousel.php:358
+#: includes/widgets/image-carousel.php:372
+#: includes/widgets/image-gallery.php:186 includes/widgets/image.php:192
+#: includes/widgets/image.php:209 includes/widgets/social-icons.php:194
+#: includes/widgets/testimonial.php:204
+#: includes/widgets/traits/button-trait.php:99 includes/widgets/video.php:172
+#: includes/widgets/video.php:197 includes/widgets/video.php:221
+#: modules/atomic-widgets/elements/atomic-button/atomic-button.php:91
+#: modules/atomic-widgets/elements/atomic-heading/atomic-heading.php:121
+#: modules/atomic-widgets/elements/atomic-image/atomic-image.php:83
+#: modules/atomic-widgets/elements/atomic-paragraph/atomic-paragraph.php:103
+#: modules/atomic-widgets/elements/atomic-svg/atomic-svg.php:78
+#: modules/atomic-widgets/elements/div-block/div-block.php:125
+#: modules/atomic-widgets/elements/flexbox/flexbox.php:128
+#: modules/floating-buttons/base/widget-contact-button-base.php:418
+#: modules/floating-buttons/base/widget-contact-button-base.php:933
+#: modules/floating-buttons/base/widget-contact-button-base.php:1061
+#: modules/floating-buttons/base/widget-floating-bars-base.php:164
+#: modules/floating-buttons/base/widget-floating-bars-base.php:350
+#: modules/floating-buttons/base/widget-floating-bars-base.php:568
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:264
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:407
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:643
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:1099
+#: modules/shapes/widgets/text-path.php:158
+#: assets/js/packages/editor-controls/editor-controls.js:18
+#: assets/js/packages/editor-controls/editor-controls.js:62
+#: assets/js/packages/editor-controls/editor-controls.strings.js:47
+#: assets/js/packages/editor-controls/editor-controls.strings.js:144
+msgid "Link"
+msgstr "リンク"
 
 #: includes/widgets/image-carousel.php:237
 #: includes/widgets/image-carousel.php:571
@@ -9175,33 +9256,14 @@ msgstr "モバイル縦向き"
 msgid "Help"
 msgstr "ヘルプ"
 
-#: includes/editor-templates/hotkeys.php:78
-#: includes/editor-templates/templates.php:21
-#: includes/editor-templates/templates.php:23
-#: includes/editor-templates/templates.php:518
-#: includes/editor-templates/templates.php:530
-#: includes/editor-templates/templates.php:605
-#: includes/editor-templates/templates.php:617 assets/js/e-home-screen.js:1873
-#: assets/js/e-home-screen.strings.js:9 assets/js/editor.js:8777
-#: assets/js/editor.js:48309 assets/js/element-manager-admin.js:411
-#: assets/js/element-manager-admin.strings.js:45
-#: assets/js/kit-elements-defaults-editor.js:596
-#: assets/js/kit-elements-defaults-editor.strings.js:4
-#: assets/js/packages/editor-variables/editor-variables.js:2
-#: assets/js/packages/editor-variables/editor-variables.strings.js:49
-#: assets/js/packages/editor-variables/editor-variables.strings.js:69
-#: assets/js/packages/editor-variables/editor-variables.strings.js:111
-msgid "Save"
-msgstr "保存"
-
 #: core/editor/loader/v1/templates/editor-body-v1-view.php:35
 #: core/editor/loader/v2/templates/editor-body-v2-view.php:37
 #: includes/editor-templates/templates.php:321 assets/js/ai-admin.js:7564
 #: assets/js/ai-gutenberg.js:7782 assets/js/ai-layout.js:3451
 #: assets/js/ai-media-library.js:7564 assets/js/ai-unify-product-images.js:7564
-#: assets/js/ai.js:9116 assets/js/editor.js:29972
+#: assets/js/ai.js:9116 assets/js/editor.js:30081
 #: assets/js/packages/editor-interactions/editor-interactions.js:2
-#: assets/js/packages/editor-interactions/editor-interactions.strings.js:10
+#: assets/js/packages/editor-interactions/editor-interactions.strings.js:12
 msgid "Preview"
 msgstr "プレビュー"
 
@@ -9210,11 +9272,11 @@ msgid "Reset"
 msgstr "リセット"
 
 #: modules/history/views/revisions-panel-template.php:11
-#: assets/js/editor.js:48310
+#: assets/js/editor.js:48763
 #: assets/js/packages/editor-global-classes/editor-global-classes.js:2
-#: assets/js/packages/editor-global-classes/editor-global-classes.strings.js:54
+#: assets/js/packages/editor-global-classes/editor-global-classes.strings.js:53
 #: assets/js/packages/editor-variables/editor-variables.js:2
-#: assets/js/packages/editor-variables/editor-variables.strings.js:68
+#: assets/js/packages/editor-variables/editor-variables.strings.js:70
 msgid "Discard"
 msgstr "破棄"
 
@@ -9222,24 +9284,105 @@ msgstr "破棄"
 #: includes/editor-templates/panel.php:169
 #: includes/editor-templates/templates.php:487
 #: modules/history/views/revisions-panel-template.php:14
-#: assets/js/editor.js:8412 assets/js/editor.js:40754
+#: assets/js/editor.js:8412 assets/js/editor.js:40921
 #: assets/js/kit-library.b768952e1d4177aa68d8.bundle.js:712
 #: assets/js/kit-library.b768952e1d4177aa68d8.bundle.js:743
 #: assets/js/kit-library.b768952e1d4177aa68d8.bundle.js:1287
 msgid "Apply"
 msgstr "適用"
 
+#: core/kits/manager.php:139 includes/controls/groups/background.php:329
+#: includes/controls/groups/background.php:487
+#: includes/controls/groups/flex-item.php:24
+#: includes/controls/groups/flex-item.php:93
+#: includes/controls/groups/flex-item.php:142
+#: includes/controls/groups/image-size.php:383
+#: includes/elements/container.php:1429 includes/elements/container.php:1440
+#: includes/elements/container.php:1473 includes/elements/container.php:1484
+#: includes/elements/section.php:293 includes/maintenance-mode.php:238
+#: includes/widgets/common-base.php:344 includes/widgets/common-base.php:405
+#: includes/widgets/common-base.php:416 includes/widgets/common-base.php:449
+#: includes/widgets/common-base.php:460 includes/widgets/common-base.php:1140
+#: includes/widgets/common-base.php:1197
+#: includes/widgets/image-carousel.php:775
+#: includes/widgets/image-gallery.php:290 includes/widgets/social-icons.php:213
+#: includes/widgets/social-icons.php:363
+#: modules/floating-buttons/base/widget-contact-button-base.php:1214
+#: modules/floating-buttons/base/widget-contact-button-base.php:1266
+#: modules/floating-buttons/base/widget-contact-button-base.php:1353
+#: modules/floating-buttons/base/widget-contact-button-base.php:1562
+#: modules/floating-buttons/base/widget-contact-button-base.php:1728
+#: modules/floating-buttons/base/widget-contact-button-base.php:2292
+#: modules/floating-buttons/base/widget-contact-button-base.php:2618
+#: modules/floating-buttons/base/widget-contact-button-base.php:2687
+#: modules/floating-buttons/base/widget-contact-button-base.php:2818
+#: modules/shapes/module.php:52 assets/js/editor.js:49382
+#: assets/js/packages/editor-controls/editor-controls.js:62
+#: assets/js/packages/editor-controls/editor-controls.strings.js:23
+#: assets/js/packages/editor-controls/editor-controls.strings.js:117
+#: assets/js/packages/editor-controls/editor-controls.strings.js:320
+#: assets/js/packages/editor-controls/editor-controls.strings.js:336
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:215
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:222
+#: assets/js/packages/editor-interactions/editor-interactions.js:2
+#: assets/js/packages/editor-interactions/editor-interactions.strings.js:58
+msgid "Custom"
+msgstr "カスタム"
+
+#: core/kits/views/trash-kit-confirmation.php:30
+#: includes/editor-templates/hotkeys.php:63
+#: includes/editor-templates/templates.php:367
+#: includes/editor-templates/templates.php:402
+#: includes/editor-templates/templates.php:469 assets/js/editor.js:9305
+#: assets/js/editor.js:9324 assets/js/editor.js:9501 assets/js/editor.js:30142
+#: assets/js/editor.js:32681 assets/js/editor.js:51581
+#: assets/js/import-export-admin.js:280
+#: assets/js/import-export-customization-admin.js:345
+#: assets/js/kit-library.b768952e1d4177aa68d8.bundle.js:1061
+#: assets/js/kit-library.b768952e1d4177aa68d8.bundle.js:1205
+#: assets/js/packages/editor-global-classes/editor-global-classes.js:2
+#: assets/js/packages/editor-global-classes/editor-global-classes.strings.js:87
+#: assets/js/packages/editor-site-navigation/editor-site-navigation.js:2
+#: assets/js/packages/editor-site-navigation/editor-site-navigation.strings.js:21
+#: assets/js/packages/editor-site-navigation/editor-site-navigation.strings.js:29
+#: assets/js/packages/editor-ui/editor-ui.js:11
+#: assets/js/packages/editor-ui/editor-ui.strings.js:8
+#: assets/js/packages/editor-variables/editor-variables.js:2
+#: assets/js/packages/editor-variables/editor-variables.strings.js:60
+msgid "Delete"
+msgstr "削除"
+
+#: includes/editor-templates/hotkeys.php:78
+#: includes/editor-templates/templates.php:21
+#: includes/editor-templates/templates.php:23
+#: includes/editor-templates/templates.php:518
+#: includes/editor-templates/templates.php:530
+#: includes/editor-templates/templates.php:605
+#: includes/editor-templates/templates.php:617 assets/js/e-home-screen.js:1884
+#: assets/js/e-home-screen.strings.js:9 assets/js/editor.js:8777
+#: assets/js/editor.js:48762 assets/js/element-manager-admin.js:411
+#: assets/js/element-manager-admin.strings.js:45
+#: assets/js/kit-elements-defaults-editor.js:596
+#: assets/js/kit-elements-defaults-editor.strings.js:4
+#: assets/js/packages/editor-variables/editor-variables.js:2
+#: assets/js/packages/editor-variables/editor-variables.strings.js:51
+#: assets/js/packages/editor-variables/editor-variables.strings.js:71
+#: assets/js/packages/editor-variables/editor-variables.strings.js:114
+msgid "Save"
+msgstr "保存"
+
 #: includes/widgets/tabs.php:46 includes/widgets/tabs.php:118
 #: includes/widgets/tabs.php:268
-#: modules/atomic-widgets/elements/atomic-tabs/atomic-tabs/atomic-tabs.php:56
+#: modules/atomic-widgets/elements/atomic-tabs/atomic-tabs/atomic-tabs.php:58
 #: modules/nested-tabs/widgets/nested-tabs.php:34
 #: modules/nested-tabs/widgets/nested-tabs.php:112
 #: modules/nested-tabs/widgets/nested-tabs.php:449
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:18
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:93
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:94
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:95
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:97
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:96
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:98
 msgid "Tabs"
 msgstr "タブ"
 
@@ -9266,9 +9409,9 @@ msgstr "メニューアンカー"
 #: assets/js/admin-feedback.strings.js:21 assets/js/admin-modules.strings.js:4
 #: assets/js/admin-modules.strings.js:8 assets/js/admin-modules.strings.js:13
 #: assets/js/admin-modules.strings.js:17 assets/js/admin-modules.strings.js:21
-#: assets/js/admin.js:2235 assets/js/admin.js:2535 assets/js/admin.js:2557
-#: assets/js/admin.js:3836 assets/js/admin.js:3976 assets/js/admin.js:4035
-#: assets/js/admin.js:4051 assets/js/admin.strings.js:4
+#: assets/js/admin.js:2246 assets/js/admin.js:2546 assets/js/admin.js:2568
+#: assets/js/admin.js:3847 assets/js/admin.js:3987 assets/js/admin.js:4046
+#: assets/js/admin.js:4062 assets/js/admin.strings.js:4
 #: assets/js/admin.strings.js:8 assets/js/admin.strings.js:13
 #: assets/js/admin.strings.js:17 assets/js/admin.strings.js:21
 #: assets/js/ai-admin.js:8630 assets/js/ai-admin.js:11036
@@ -9279,14 +9422,14 @@ msgstr "メニューアンカー"
 #: assets/js/ai-unify-product-images.js:11036 assets/js/ai.js:10182
 #: assets/js/ai.js:12588 assets/js/app.js:9301 assets/js/app.js:9773
 #: assets/js/app.js:10406 assets/js/app.js:11255 assets/js/app.js:15192
-#: assets/js/common.js:3534 assets/js/e-home-screen.js:1869
+#: assets/js/common.js:3647 assets/js/e-home-screen.js:1880
 #: assets/js/e-home-screen.strings.js:8 assets/js/editor-v4-opt-in.js:336
 #: assets/js/editor-v4-opt-in.js:342 assets/js/editor-v4-opt-in.strings.js:29
 #: assets/js/editor-v4-opt-in.strings.js:34 assets/js/editor.js:16263
-#: assets/js/editor.js:30034 assets/js/editor.js:43573
-#: assets/js/editor.js:47450 assets/js/editor.js:48257
-#: assets/js/editor.js:49104 assets/js/editor.js:51129
-#: assets/js/editor.strings.js:3 assets/js/element-manager-admin.js:407
+#: assets/js/editor.js:30143 assets/js/editor.js:43750
+#: assets/js/editor.js:47901 assets/js/editor.js:48710
+#: assets/js/editor.js:49557 assets/js/editor.js:51582
+#: assets/js/editor.strings.js:4 assets/js/element-manager-admin.js:407
 #: assets/js/element-manager-admin.strings.js:44 assets/js/gutenberg.js:149
 #: assets/js/gutenberg.strings.js:4 assets/js/gutenberg.strings.js:8
 #: assets/js/gutenberg.strings.js:13 assets/js/gutenberg.strings.js:17
@@ -9297,7 +9440,9 @@ msgstr "メニューアンカー"
 #: assets/js/kit-library.b768952e1d4177aa68d8.bundle.js:342
 #: assets/js/kit-library.b768952e1d4177aa68d8.bundle.js:1059
 #: assets/js/packages/editor-controls/editor-controls.js:18
-#: assets/js/packages/editor-controls/editor-controls.strings.js:144
+#: assets/js/packages/editor-controls/editor-controls.strings.js:155
+#: assets/js/packages/editor-design-system/editor-design-system.js:2
+#: assets/js/packages/editor-design-system/editor-design-system.strings.js:11
 #: assets/js/packages/editor-global-classes/editor-global-classes.js:2
 #: assets/js/packages/editor-global-classes/editor-global-classes.js:6
 #: assets/js/packages/editor-global-classes/editor-global-classes.strings.js:10
@@ -9305,7 +9450,7 @@ msgstr "メニューアンカー"
 #: assets/js/packages/editor-site-navigation/editor-site-navigation.js:2
 #: assets/js/packages/editor-site-navigation/editor-site-navigation.strings.js:28
 #: assets/js/packages/editor-variables/editor-variables.js:2
-#: assets/js/packages/editor-variables/editor-variables.strings.js:75
+#: assets/js/packages/editor-variables/editor-variables.strings.js:78
 msgid "Cancel"
 msgstr "キャンセル"
 
@@ -9350,7 +9495,7 @@ msgstr "アイコンリスト"
 #: includes/widgets/icon-list.php:301 assets/js/ai-admin.js:10497
 #: assets/js/ai-gutenberg.js:10715 assets/js/ai-media-library.js:10497
 #: assets/js/ai-unify-product-images.js:10497 assets/js/ai.js:12049
-#: assets/js/editor.js:7540 assets/js/editor.js:39389
+#: assets/js/editor.js:7540 assets/js/editor.js:39553
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:8
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:18
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:2
@@ -9395,7 +9540,7 @@ msgstr "アイコン色"
 
 #: includes/widgets/html.php:42
 #: assets/js/packages/editor-controls/editor-controls.js:62
-#: assets/js/packages/editor-controls/editor-controls.strings.js:93
+#: assets/js/packages/editor-controls/editor-controls.strings.js:97
 msgid "HTML"
 msgstr "HTML"
 
@@ -9435,10 +9580,10 @@ msgstr "タイトルを入力"
 #: includes/elements/column.php:264 includes/elements/container.php:592
 #: includes/elements/section.php:498 includes/widgets/divider.php:538
 #: includes/widgets/heading.php:234
-#: modules/atomic-widgets/elements/div-block/div-block.php:119
-#: modules/atomic-widgets/elements/flexbox/flexbox.php:119
+#: modules/atomic-widgets/elements/div-block/div-block.php:122
+#: modules/atomic-widgets/elements/flexbox/flexbox.php:122
 #: assets/js/packages/editor-controls/editor-controls.js:62
-#: assets/js/packages/editor-controls/editor-controls.strings.js:55
+#: assets/js/packages/editor-controls/editor-controls.strings.js:58
 msgid "HTML Tag"
 msgstr "HTML タグ"
 
@@ -9465,8 +9610,8 @@ msgstr "画像の追加"
 #: modules/atomic-widgets/elements/atomic-image/atomic-image.php:70
 #: modules/atomic-widgets/elements/atomic-self-hosted-video/atomic-self-hosted-video.php:159
 #: assets/js/packages/editor-controls/editor-controls.js:62
-#: assets/js/packages/editor-controls/editor-controls.strings.js:53
-#: assets/js/packages/editor-controls/editor-controls.strings.js:294
+#: assets/js/packages/editor-controls/editor-controls.strings.js:56
+#: assets/js/packages/editor-controls/editor-controls.strings.js:306
 msgid "Image"
 msgstr "画像"
 
@@ -9518,6 +9663,23 @@ msgstr "ボタン"
 msgid "Small"
 msgstr "小"
 
+#: core/common/modules/finder/categories/edit.php:30
+#: includes/controls/popover-toggle.php:68 assets/js/ai-admin.js:2331
+#: assets/js/ai-admin.js:10192 assets/js/ai-admin.js:10199
+#: assets/js/ai-gutenberg.js:2469 assets/js/ai-gutenberg.js:10410
+#: assets/js/ai-gutenberg.js:10417 assets/js/ai-media-library.js:2331
+#: assets/js/ai-media-library.js:10192 assets/js/ai-media-library.js:10199
+#: assets/js/ai-unify-product-images.js:2331
+#: assets/js/ai-unify-product-images.js:10192
+#: assets/js/ai-unify-product-images.js:10199 assets/js/ai.js:3119
+#: assets/js/ai.js:11744 assets/js/ai.js:11751 assets/js/app.js:10005
+#: assets/js/app.js:10017 assets/js/element-manager-admin.js:693
+#: assets/js/element-manager-admin.js:758
+#: assets/js/element-manager-admin.strings.js:27
+#: assets/js/element-manager-admin.strings.js:29
+msgid "Edit"
+msgstr "編集"
+
 #: includes/widgets/heading.php:219 includes/widgets/traits/button-trait.php:36
 #: modules/floating-buttons/base/widget-contact-button-base.php:1121
 #: modules/floating-buttons/base/widget-contact-button-base.php:1546
@@ -9535,23 +9697,6 @@ msgstr "中"
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:1409
 msgid "Large"
 msgstr "大"
-
-#: core/common/modules/finder/categories/edit.php:30
-#: includes/controls/popover-toggle.php:68 assets/js/ai-admin.js:2331
-#: assets/js/ai-admin.js:10192 assets/js/ai-admin.js:10199
-#: assets/js/ai-gutenberg.js:2469 assets/js/ai-gutenberg.js:10410
-#: assets/js/ai-gutenberg.js:10417 assets/js/ai-media-library.js:2331
-#: assets/js/ai-media-library.js:10192 assets/js/ai-media-library.js:10199
-#: assets/js/ai-unify-product-images.js:2331
-#: assets/js/ai-unify-product-images.js:10192
-#: assets/js/ai-unify-product-images.js:10199 assets/js/ai.js:3119
-#: assets/js/ai.js:11744 assets/js/ai.js:11751 assets/js/app.js:10005
-#: assets/js/app.js:10017 assets/js/element-manager-admin.js:693
-#: assets/js/element-manager-admin.js:758
-#: assets/js/element-manager-admin.strings.js:27
-#: assets/js/element-manager-admin.strings.js:29
-msgid "Edit"
-msgstr "編集"
 
 #: includes/controls/groups/flex-item.php:125 includes/widgets/alert.php:353
 #: includes/widgets/common-base.php:1135 includes/widgets/divider.php:639
@@ -9575,8 +9720,8 @@ msgstr "編集"
 #: modules/shapes/widgets/text-path.php:251
 #: assets/js/packages/editor-controls/editor-controls.js:62
 #: assets/js/packages/editor-controls/editor-controls.js:78
-#: assets/js/packages/editor-controls/editor-controls.strings.js:183
-#: assets/js/packages/editor-controls/editor-controls.strings.js:309
+#: assets/js/packages/editor-controls/editor-controls.strings.js:194
+#: assets/js/packages/editor-controls/editor-controls.strings.js:321
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:11
 msgid "Size"
@@ -9616,7 +9761,41 @@ msgstr "アイコン"
 msgid "Icon Position"
 msgstr "アイコンの位置"
 
-#: includes/base/element-base.php:1403
+#: includes/widgets/alert.php:123 includes/widgets/progress.php:173
+#: includes/widgets/traits/button-trait.php:73
+#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:155
+msgid "Success"
+msgstr "成功"
+
+#: includes/widgets/alert.php:125 includes/widgets/progress.php:175
+#: includes/widgets/traits/button-trait.php:75
+msgid "Danger"
+msgstr "危険"
+
+#: includes/widgets/accordion.php:46 includes/widgets/accordion.php:123
+#: includes/widgets/accordion.php:273
+#: modules/nested-accordion/widgets/nested-accordion.php:43
+#: modules/nested-accordion/widgets/nested-accordion.php:402
+msgid "Accordion"
+msgstr "アコーディオン"
+
+#: includes/widgets/accordion.php:165
+msgid "Accordion Items"
+msgstr "アコーディオンアイテム"
+
+#: includes/widgets/accordion.php:170
+msgid "Accordion #1"
+msgstr "アコーディオン #1"
+
+#: includes/widgets/accordion.php:174
+msgid "Accordion #2"
+msgstr "アコーディオン #2"
+
+#: includes/widgets/accordion.php:134
+msgid "Accordion Title"
+msgstr "アコーディオンのタイトル"
+
+#: includes/base/element-base.php:1423
 #: includes/controls/groups/grid-container.php:33
 #: includes/widgets/alert.php:163 includes/widgets/audio.php:163
 #: includes/widgets/audio.php:174 includes/widgets/audio.php:185
@@ -9639,32 +9818,10 @@ msgstr "アイコンの位置"
 #: assets/js/element-manager-admin.strings.js:12
 #: assets/js/packages/editor-controls/editor-controls.js:2
 #: assets/js/packages/editor-controls/editor-controls.js:18
-#: assets/js/packages/editor-controls/editor-controls.strings.js:260
-#: assets/js/packages/editor-controls/editor-controls.strings.js:303
+#: assets/js/packages/editor-controls/editor-controls.strings.js:269
+#: assets/js/packages/editor-controls/editor-controls.strings.js:315
 msgid "Show"
 msgstr "表示"
-
-#: includes/widgets/alert.php:123 includes/widgets/progress.php:173
-#: includes/widgets/traits/button-trait.php:73
-#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:125
-msgid "Success"
-msgstr "成功"
-
-#: includes/widgets/alert.php:125 includes/widgets/progress.php:175
-#: includes/widgets/traits/button-trait.php:75
-msgid "Danger"
-msgstr "危険"
-
-#: includes/widgets/accordion.php:46 includes/widgets/accordion.php:123
-#: includes/widgets/accordion.php:273
-#: modules/nested-accordion/widgets/nested-accordion.php:43
-#: modules/nested-accordion/widgets/nested-accordion.php:402
-msgid "Accordion"
-msgstr "アコーディオン"
-
-#: includes/widgets/accordion.php:165
-msgid "Accordion Items"
-msgstr "アコーディオンアイテム"
 
 #: core/base/document.php:1991
 #: core/kits/documents/tabs/settings-lightbox.php:96
@@ -9732,18 +9889,6 @@ msgstr "タイトル"
 msgid "Background Color"
 msgstr "背景色"
 
-#: includes/widgets/accordion.php:170
-msgid "Accordion #1"
-msgstr "アコーディオン #1"
-
-#: includes/widgets/accordion.php:174
-msgid "Accordion #2"
-msgstr "アコーディオン #2"
-
-#: includes/widgets/accordion.php:134
-msgid "Accordion Title"
-msgstr "アコーディオンのタイトル"
-
 #: includes/widgets/accordion.php:147
 msgid "Accordion Content"
 msgstr "アコーディオンのコンテンツ"
@@ -9782,30 +9927,11 @@ msgstr "WordPress"
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:1094
 #: assets/js/editor.js:12425
 #: assets/js/packages/editor-controls/editor-controls.js:78
-#: assets/js/packages/editor-controls/editor-controls.strings.js:152
+#: assets/js/packages/editor-controls/editor-controls.strings.js:163
 #: assets/js/packages/editor-interactions/editor-interactions.js:2
-#: assets/js/packages/editor-interactions/editor-interactions.strings.js:20
+#: assets/js/packages/editor-interactions/editor-interactions.strings.js:22
 msgid "Type"
 msgstr "タイプ"
-
-#: includes/widgets/alert.php:46 includes/widgets/alert.php:111
-#: includes/widgets/alert.php:210
-msgid "Alert"
-msgstr "アラート"
-
-#: core/kits/documents/tabs/settings-layout.php:24
-#: includes/elements/column.php:118 includes/elements/container.php:1372
-#: includes/elements/section.php:231 includes/managers/controls.php:338
-#: includes/managers/elements.php:299 includes/widgets/common-base.php:292
-#: includes/widgets/icon-list.php:117
-#: modules/floating-buttons/base/widget-contact-button-base.php:2928
-#: modules/floating-buttons/base/widget-floating-bars-base.php:1425
-#: modules/nested-accordion/widgets/nested-accordion.php:116
-#: assets/js/editor.js:39395
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:9
-msgid "Layout"
-msgstr "レイアウト"
 
 #: core/base/traits/shared-widget-controls-trait.php:158
 #: core/settings/editor-preferences/model.php:118
@@ -9829,7 +9955,7 @@ msgstr "レイアウト"
 #: modules/nested-accordion/widgets/nested-accordion.php:318
 #: modules/styleguide/module.php:132 assets/js/app.js:15799
 #: assets/js/packages/editor-interactions/editor-interactions.js:2
-#: assets/js/packages/editor-interactions/editor-interactions.strings.js:46
+#: assets/js/packages/editor-interactions/editor-interactions.strings.js:48
 msgid "Yes"
 msgstr "はい"
 
@@ -9855,9 +9981,28 @@ msgstr "はい"
 #: modules/nested-accordion/widgets/nested-accordion.php:319
 #: modules/styleguide/module.php:131
 #: assets/js/packages/editor-interactions/editor-interactions.js:2
-#: assets/js/packages/editor-interactions/editor-interactions.strings.js:45
+#: assets/js/packages/editor-interactions/editor-interactions.strings.js:47
 msgid "No"
 msgstr "いいえ"
+
+#: includes/widgets/alert.php:46 includes/widgets/alert.php:111
+#: includes/widgets/alert.php:210
+msgid "Alert"
+msgstr "アラート"
+
+#: core/kits/documents/tabs/settings-layout.php:24
+#: includes/elements/column.php:118 includes/elements/container.php:1372
+#: includes/elements/section.php:231 includes/managers/controls.php:338
+#: includes/managers/elements.php:299 includes/widgets/common-base.php:292
+#: includes/widgets/icon-list.php:117
+#: modules/floating-buttons/base/widget-contact-button-base.php:2928
+#: modules/floating-buttons/base/widget-floating-bars-base.php:1425
+#: modules/nested-accordion/widgets/nested-accordion.php:116
+#: assets/js/editor.js:39559
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:9
+msgid "Layout"
+msgstr "レイアウト"
 
 #: includes/elements/section.php:288
 msgid "No Gap"
@@ -9870,9 +10015,9 @@ msgstr "すき間なし"
 #: includes/widgets/image-box.php:395 includes/widgets/image.php:359
 #: includes/widgets/progress.php:331
 #: assets/js/packages/editor-controls/editor-controls.js:78
-#: assets/js/packages/editor-controls/editor-controls.strings.js:185
+#: assets/js/packages/editor-controls/editor-controls.strings.js:196
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:144
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:145
 msgid "Height"
 msgstr "高さ"
 
@@ -9883,23 +10028,6 @@ msgstr "画面幅に合わせる"
 #: includes/elements/section.php:401
 msgid "Column Position"
 msgstr "カラム位置"
-
-#: includes/controls/groups/flex-container.php:145
-#: includes/controls/groups/flex-item.php:67
-#: includes/controls/groups/grid-container.php:147
-#: includes/controls/groups/grid-container.php:175
-#: includes/elements/section.php:405 includes/widgets/counter.php:402
-#: includes/widgets/tabs.php:222 includes/widgets/tabs.php:252
-#: includes/widgets/traits/button-trait.php:266
-#: modules/floating-buttons/base/widget-floating-bars-base.php:1201
-#: modules/nested-accordion/widgets/nested-accordion.php:194
-#: modules/nested-tabs/widgets/nested-tabs.php:251
-#: modules/nested-tabs/widgets/nested-tabs.php:293
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:224
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:229
-msgid "Stretch"
-msgstr "ストレッチ"
 
 #: includes/controls/groups/flex-container.php:214
 #: includes/controls/groups/grid-container.php:196
@@ -9943,6 +10071,25 @@ msgstr "情報"
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:1351
 msgid "Description"
 msgstr "説明"
+
+#: includes/controls/groups/flex-container.php:145
+#: includes/controls/groups/flex-item.php:67
+#: includes/controls/groups/grid-container.php:147
+#: includes/controls/groups/grid-container.php:175
+#: includes/elements/section.php:405 includes/widgets/counter.php:402
+#: includes/widgets/tabs.php:222 includes/widgets/tabs.php:252
+#: includes/widgets/traits/button-trait.php:266
+#: modules/floating-buttons/base/widget-floating-bars-base.php:1201
+#: modules/nested-accordion/widgets/nested-accordion.php:194
+#: modules/nested-tabs/widgets/nested-tabs.php:251
+#: modules/nested-tabs/widgets/nested-tabs.php:293
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:206
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:246
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:251
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:256
+msgid "Stretch"
+msgstr "ストレッチ"
 
 #: includes/widgets/accordion.php:419 includes/widgets/divider.php:470
 #: includes/widgets/heading.php:266 includes/widgets/icon-box.php:311
@@ -10008,15 +10155,15 @@ msgstr "配置"
 #: modules/shapes/widgets/text-path.php:508
 #: modules/shapes/widgets/text-path.php:528
 #: modules/shapes/widgets/text-path.php:579
-#: modules/shapes/widgets/text-path.php:599 assets/js/editor.js:51075
-#: assets/js/editor.js:51118
+#: modules/shapes/widgets/text-path.php:599 assets/js/editor.js:51528
+#: assets/js/editor.js:51571
 #: assets/js/packages/editor-controls/editor-controls.js:62
-#: assets/js/packages/editor-controls/editor-controls.strings.js:97
-#: assets/js/packages/editor-controls/editor-controls.strings.js:253
-#: assets/js/packages/editor-controls/editor-controls.strings.js:287
-#: assets/js/packages/editor-controls/editor-controls.strings.js:296
+#: assets/js/packages/editor-controls/editor-controls.strings.js:104
+#: assets/js/packages/editor-controls/editor-controls.strings.js:264
+#: assets/js/packages/editor-controls/editor-controls.strings.js:299
+#: assets/js/packages/editor-controls/editor-controls.strings.js:308
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:253
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:280
 msgid "Color"
 msgstr "色"
 
@@ -10091,7 +10238,7 @@ msgstr "バーの背景色"
 msgid "Boxed"
 msgstr "ボックス"
 
-#: includes/base/element-base.php:1329 includes/base/element-base.php:1357
+#: includes/base/element-base.php:1349 includes/base/element-base.php:1377
 #: includes/controls/groups/flex-container.php:101
 #: includes/controls/groups/flex-container.php:137
 #: includes/controls/groups/flex-item.php:59
@@ -10123,11 +10270,13 @@ msgstr "ボックス"
 #: modules/nested-tabs/widgets/nested-tabs.php:355
 #: modules/shapes/widgets/text-path.php:181
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:119
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:186
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:222
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:227
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:232
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:120
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:193
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:204
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:244
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:249
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:254
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:259
 msgid "Center"
 msgstr "中央"
 
@@ -10145,7 +10294,7 @@ msgstr "クールな番号"
 #: includes/controls/groups/border.php:68 includes/widgets/divider.php:345
 #: includes/widgets/icon-list.php:307
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:277
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:304
 msgid "Dashed"
 msgstr "破線"
 
@@ -10156,23 +10305,6 @@ msgstr "破線"
 #: assets/js/e-wc-product-editor.strings.js:1
 msgid "Edit with Elementor"
 msgstr "Elementor で編集"
-
-#. Plugin Name of the plugin
-#: elementor.php app/view.php:23 core/admin/admin.php:320
-#: core/admin/admin.php:437 core/admin/admin.php:515
-#: core/admin/menu/main.php:13 core/admin/menu/main.php:14
-#: core/documents-manager.php:384 core/upgrade/custom-tasks-manager.php:29
-#: core/upgrade/manager.php:47 includes/editor-templates/navigator.php:94
-#: includes/editor-templates/panel-elements.php:131
-#: includes/editor-templates/panel.php:202
-#: includes/editor-templates/templates.php:247 includes/plugin.php:838
-#: includes/settings/settings.php:80 includes/settings/settings.php:81
-#: includes/settings/settings.php:395 modules/compatibility-tag/module.php:36
-#: modules/history/views/history-panel-template.php:23
-#: modules/history/views/revisions-panel-template.php:38
-#: assets/js/app-packages.js:319 assets/js/app.js:492
-msgid "Elementor"
-msgstr "Elementor"
 
 #: includes/widgets/menu-anchor.php:120
 msgid "For Example: About"
@@ -10217,10 +10349,27 @@ msgstr "内部テキスト"
 msgid "Justified"
 msgstr "均等割付"
 
+#. Plugin Name of the plugin
+#: elementor.php app/view.php:23 core/admin/admin.php:320
+#: core/admin/admin.php:437 core/admin/admin.php:515
+#: core/admin/menu/main.php:13 core/admin/menu/main.php:14
+#: core/documents-manager.php:384 core/upgrade/custom-tasks-manager.php:29
+#: core/upgrade/manager.php:47 includes/editor-templates/navigator.php:94
+#: includes/editor-templates/panel-elements.php:131
+#: includes/editor-templates/panel.php:202
+#: includes/editor-templates/templates.php:247 includes/plugin.php:839
+#: includes/settings/settings.php:80 includes/settings/settings.php:81
+#: includes/settings/settings.php:395 modules/compatibility-tag/module.php:36
+#: modules/history/views/history-panel-template.php:23
+#: modules/history/views/revisions-panel-template.php:38
+#: modules/mcp/module.php:59 assets/js/app-packages.js:319 assets/js/app.js:492
+msgid "Elementor"
+msgstr "Elementor"
+
 #: modules/nested-tabs/widgets/nested-tabs.php:235
 #: modules/nested-tabs/widgets/nested-tabs.php:277
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:121
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:122
 msgid "Justify"
 msgstr "均等割付"
 
@@ -10242,9 +10391,9 @@ msgstr "ロンドン・アイ、ロンドン (イギリス)"
 #: includes/elements/container.php:1380 includes/elements/section.php:1232
 #: includes/widgets/common-base.php:310
 #: assets/js/packages/editor-controls/editor-controls.js:78
-#: assets/js/packages/editor-controls/editor-controls.strings.js:162
+#: assets/js/packages/editor-controls/editor-controls.strings.js:173
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:141
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:142
 msgid "Margin"
 msgstr "マージン"
 
@@ -10264,8 +10413,8 @@ msgstr "最小の高さ"
 #: includes/controls/groups/flex-item.php:130
 #: includes/controls/groups/typography.php:193
 #: includes/controls/hover-animation.php:129 includes/controls/icons.php:108
-#: includes/controls/icons.php:194 includes/widgets/divider.php:501
-#: includes/widgets/image-carousel.php:239
+#: includes/controls/icons.php:194 includes/managers/controls.php:1364
+#: includes/widgets/divider.php:501 includes/widgets/image-carousel.php:239
 #: includes/widgets/image-carousel.php:362
 #: includes/widgets/image-carousel.php:414
 #: includes/widgets/image-gallery.php:174
@@ -10292,12 +10441,12 @@ msgstr "最小の高さ"
 #: assets/js/ai.js:12845 assets/js/ai.js:12857 assets/js/ai.js:12868
 #: assets/js/ai.js:12879 assets/js/ai.js:12890 assets/js/ai.js:12906
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:103
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:112
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:159
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:216
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:217
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:275
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:104
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:113
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:160
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:240
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:241
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:302
 msgid "None"
 msgstr "なし"
 
@@ -10327,19 +10476,6 @@ msgstr "タブ項目"
 msgid "The ID of Menu Anchor."
 msgstr "メニューアンカーの ID。"
 
-#: includes/widgets/toggle.php:46 includes/widgets/toggle.php:123
-#: includes/widgets/toggle.php:276
-msgid "Toggle"
-msgstr "切り替え"
-
-#: includes/widgets/toggle.php:173
-msgid "Toggle #1"
-msgstr "切り替え #1"
-
-#: includes/widgets/toggle.php:177
-msgid "Toggle #2"
-msgstr "切り替え #2"
-
 #: core/document-types/page-base.php:144
 #: core/kits/documents/tabs/theme-style-buttons.php:243
 #: core/kits/documents/tabs/theme-style-form-fields.php:159
@@ -10363,9 +10499,9 @@ msgstr "切り替え #2"
 #: modules/nested-tabs/widgets/nested-tabs.php:706
 #: modules/nested-tabs/widgets/nested-tabs.php:1056
 #: assets/js/packages/editor-controls/editor-controls.js:78
-#: assets/js/packages/editor-controls/editor-controls.strings.js:170
+#: assets/js/packages/editor-controls/editor-controls.strings.js:181
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:142
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:143
 msgid "Padding"
 msgstr "パディング"
 
@@ -10388,9 +10524,22 @@ msgstr "パディング"
 #: assets/js/ai-gutenberg.js:3733 assets/js/ai-media-library.js:3595
 #: assets/js/ai-unify-product-images.js:3595 assets/js/ai.js:4416
 #: assets/js/packages/editor-controls/editor-controls.js:62
-#: assets/js/packages/editor-controls/editor-controls.strings.js:252
+#: assets/js/packages/editor-controls/editor-controls.strings.js:263
 msgid "Text"
 msgstr "テキスト"
+
+#: includes/widgets/toggle.php:46 includes/widgets/toggle.php:123
+#: includes/widgets/toggle.php:276
+msgid "Toggle"
+msgstr "切り替え"
+
+#: includes/widgets/toggle.php:173
+msgid "Toggle #1"
+msgstr "切り替え #1"
+
+#: includes/widgets/toggle.php:177
+msgid "Toggle #2"
+msgstr "切り替え #2"
 
 #: includes/widgets/toggle.php:147
 msgid "Toggle Content"
@@ -10446,9 +10595,9 @@ msgstr "この ID は1ページ内で使う CSS ID になります。# は含め
 #: modules/shapes/widgets/text-path.php:540
 #: modules/shapes/widgets/text-path.php:611
 #: assets/js/packages/editor-controls/editor-controls.js:78
-#: assets/js/packages/editor-controls/editor-controls.strings.js:184
+#: assets/js/packages/editor-controls/editor-controls.strings.js:195
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:143
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:144
 msgid "Width"
 msgstr "幅"
 
@@ -10458,7 +10607,7 @@ msgstr "自動再生速度"
 
 #: includes/widgets/image-carousel.php:521
 #: assets/js/packages/editor-interactions/editor-interactions.js:2
-#: assets/js/packages/editor-interactions/editor-interactions.strings.js:54
+#: assets/js/packages/editor-interactions/editor-interactions.strings.js:56
 msgid "Slide"
 msgstr "スライド"
 
@@ -10470,10 +10619,10 @@ msgstr "スライド"
 #: modules/floating-buttons/base/widget-contact-button-base.php:1737
 #: assets/js/app.js:13596 assets/js/editor.js:12424
 #: assets/js/packages/editor-variables/editor-variables.js:2
-#: assets/js/packages/editor-variables/editor-variables.strings.js:41
-#: assets/js/packages/editor-variables/editor-variables.strings.js:47
-#: assets/js/packages/editor-variables/editor-variables.strings.js:52
-#: assets/js/packages/editor-variables/editor-variables.strings.js:55
+#: assets/js/packages/editor-variables/editor-variables.strings.js:43
+#: assets/js/packages/editor-variables/editor-variables.strings.js:49
+#: assets/js/packages/editor-variables/editor-variables.strings.js:54
+#: assets/js/packages/editor-variables/editor-variables.strings.js:57
 msgid "Name"
 msgstr "名前"
 
@@ -10531,7 +10680,7 @@ msgstr "警告"
 msgid "Exclude Roles"
 msgstr "権限グループの除外"
 
-#: includes/base/element-base.php:1402
+#: includes/base/element-base.php:1422
 #: includes/controls/groups/grid-container.php:34
 #: includes/widgets/alert.php:164 includes/widgets/audio.php:162
 #: includes/widgets/audio.php:173 includes/widgets/audio.php:184
@@ -10552,8 +10701,8 @@ msgstr "権限グループの除外"
 #: modules/floating-buttons/base/widget-floating-bars-base.php:298
 #: assets/js/packages/editor-controls/editor-controls.js:2
 #: assets/js/packages/editor-controls/editor-controls.js:18
-#: assets/js/packages/editor-controls/editor-controls.strings.js:261
-#: assets/js/packages/editor-controls/editor-controls.strings.js:304
+#: assets/js/packages/editor-controls/editor-controls.strings.js:270
+#: assets/js/packages/editor-controls/editor-controls.strings.js:316
 msgid "Hide"
 msgstr "非表示"
 
@@ -10571,7 +10720,8 @@ msgstr "フレームつき"
 #: includes/widgets/image-gallery.php:160 includes/widgets/social-icons.php:295
 #: includes/widgets/text-editor.php:177
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:140
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:141
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:200
 msgid "Columns"
 msgstr "カラム"
 
@@ -10602,7 +10752,7 @@ msgstr "更新前"
 #: includes/elements/section.php:831 includes/widgets/common-base.php:966
 #: modules/floating-buttons/base/widget-floating-bars-base.php:761
 #: assets/js/packages/editor-controls/editor-controls.js:78
-#: assets/js/packages/editor-controls/editor-controls.strings.js:210
+#: assets/js/packages/editor-controls/editor-controls.strings.js:221
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:15
 msgid "Border"
@@ -10629,7 +10779,7 @@ msgstr "読み込み中"
 #: includes/controls/groups/border.php:65 includes/widgets/divider.php:342
 #: includes/widgets/icon-list.php:304 includes/widgets/star-rating.php:188
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:276
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:303
 msgid "Solid"
 msgstr "単色"
 
@@ -10653,7 +10803,7 @@ msgstr "番号接頭辞"
 #: modules/floating-buttons/base/widget-floating-bars-base.php:1419
 #: modules/floating-buttons/module.php:71
 #: modules/floating-buttons/module.php:76 assets/js/editor.js:7543
-#: assets/js/editor.js:39392
+#: assets/js/editor.js:39556
 #: assets/js/kit-library.b768952e1d4177aa68d8.bundle.js:4369
 #: assets/js/kit-library.b768952e1d4177aa68d8.bundle.js:4373
 msgid "Advanced"
@@ -10669,9 +10819,9 @@ msgstr "太字"
 #: core/kits/documents/tabs/theme-style-typography.php:37
 #: includes/controls/groups/typography.php:436 includes/elements/column.php:674
 #: includes/elements/section.php:1131 assets/js/editor-modules.js:1431
-#: assets/js/editor.js:45985
+#: assets/js/editor.js:46436
 #: assets/js/packages/editor-controls/editor-controls.js:78
-#: assets/js/packages/editor-controls/editor-controls.strings.js:198
+#: assets/js/packages/editor-controls/editor-controls.strings.js:209
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:13
 msgid "Typography"
@@ -10709,7 +10859,7 @@ msgstr "テキストの配置"
 #: includes/editor-templates/hotkeys.php:131
 #: includes/editor-templates/navigator.php:35
 #: includes/editor-templates/panel.php:86 includes/elements/section.php:511
-#: includes/elements/section.php:519 assets/js/editor.js:33727
+#: includes/elements/section.php:519 assets/js/editor.js:33875
 #: assets/js/packages/editor-app-bar/editor-app-bar.js:12
 #: assets/js/packages/editor-app-bar/editor-app-bar.strings.js:23
 msgid "Structure"
@@ -10731,7 +10881,7 @@ msgstr "アイコンを選択"
 #: includes/controls/groups/border.php:66 includes/widgets/divider.php:343
 #: includes/widgets/icon-list.php:305
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:279
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:306
 msgid "Double"
 msgstr "ダブル"
 
@@ -10763,20 +10913,6 @@ msgstr "枠線の色"
 msgid "Border Width"
 msgstr "枠線の幅"
 
-#: includes/controls/gaps.php:57
-#: includes/controls/groups/grid-container.php:119
-#: includes/elements/column.php:61
-#: assets/js/packages/editor-controls/editor-controls.js:62
-#: assets/js/packages/editor-controls/editor-controls.strings.js:65
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:206
-msgid "Column"
-msgstr "カラム"
-
-#: includes/elements/section.php:283 includes/widgets/text-editor.php:202
-msgid "Columns Gap"
-msgstr "カラムギャップ"
-
 #: core/kits/documents/tabs/theme-style-buttons.php:152
 #: core/kits/documents/tabs/theme-style-buttons.php:227
 #: core/kits/documents/tabs/theme-style-form-fields.php:233
@@ -10800,12 +10936,27 @@ msgstr "カラムギャップ"
 msgid "Border Radius"
 msgstr "枠線の丸み"
 
-#: includes/base/element-base.php:893 includes/base/element-base.php:905
+#: includes/controls/gaps.php:57
+#: includes/controls/groups/grid-container.php:119
+#: includes/elements/column.php:61
+#: assets/js/packages/editor-controls/editor-controls.js:62
+#: assets/js/packages/editor-controls/editor-controls.strings.js:68
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:210
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:226
+msgid "Column"
+msgstr "カラム"
+
+#: includes/elements/section.php:283 includes/widgets/text-editor.php:202
+msgid "Columns Gap"
+msgstr "カラムギャップ"
+
+#: includes/base/element-base.php:913 includes/base/element-base.php:925
 #: includes/widgets/divider.php:981 includes/widgets/icon-box.php:585
 #: includes/widgets/icon.php:376 modules/shapes/widgets/text-path.php:283
 #: assets/js/packages/editor-controls/editor-controls.js:78
-#: assets/js/packages/editor-controls/editor-controls.strings.js:225
-#: assets/js/packages/editor-controls/editor-controls.strings.js:230
+#: assets/js/packages/editor-controls/editor-controls.strings.js:236
+#: assets/js/packages/editor-controls/editor-controls.strings.js:241
 msgid "Rotate"
 msgstr "回転"
 
@@ -10814,6 +10965,14 @@ msgstr "回転"
 #: modules/nested-tabs/widgets/nested-tabs.php:121
 msgid "Tab Title"
 msgstr "タブタイトル"
+
+#: includes/elements/container.php:1887 includes/elements/section.php:1395
+msgid "Visibility"
+msgstr "表示状態"
+
+#: includes/elements/section.php:291
+msgid "Wide"
+msgstr "幅広"
 
 #: core/kits/documents/tabs/settings-lightbox.php:163
 #: core/kits/documents/tabs/theme-style-buttons.php:98
@@ -10851,14 +11010,6 @@ msgstr "タブタイトル"
 msgid "Text Color"
 msgstr "文字色"
 
-#: includes/elements/container.php:1887 includes/elements/section.php:1395
-msgid "Visibility"
-msgstr "表示状態"
-
-#: includes/elements/section.php:291
-msgid "Wide"
-msgstr "幅広"
-
 #: includes/managers/controls.php:334 includes/widgets/accordion.php:145
 #: includes/widgets/accordion.php:488 includes/widgets/alert.php:148
 #: includes/widgets/icon-box.php:640 includes/widgets/image-box.php:597
@@ -10866,18 +11017,18 @@ msgstr "幅広"
 #: includes/widgets/testimonial.php:139 includes/widgets/testimonial.php:276
 #: includes/widgets/toggle.php:145 includes/widgets/toggle.php:512
 #: modules/atomic-widgets/elements/atomic-button/atomic-button.php:74
-#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:139
+#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:169
 #: modules/atomic-widgets/elements/atomic-heading/atomic-heading.php:73
 #: modules/atomic-widgets/elements/atomic-image/atomic-image.php:67
 #: modules/atomic-widgets/elements/atomic-paragraph/atomic-paragraph.php:74
 #: modules/atomic-widgets/elements/atomic-self-hosted-video/atomic-self-hosted-video.php:134
 #: modules/atomic-widgets/elements/atomic-svg/atomic-svg.php:62
-#: modules/atomic-widgets/elements/atomic-tabs/atomic-tabs/atomic-tabs.php:81
+#: modules/atomic-widgets/elements/atomic-tabs/atomic-tabs/atomic-tabs.php:83
 #: modules/atomic-widgets/elements/atomic-youtube/atomic-youtube.php:76
 #: modules/nested-accordion/widgets/nested-accordion.php:501
 #: modules/nested-tabs/widgets/nested-tabs.php:995 assets/js/app.js:6076
 #: assets/js/app.js:7600 assets/js/app.js:12015 assets/js/app.js:17230
-#: assets/js/app.js:17739 assets/js/editor.js:39386
+#: assets/js/app.js:17739 assets/js/editor.js:39550
 msgid "Content"
 msgstr "コンテンツ"
 
@@ -10892,7 +11043,7 @@ msgstr "XXL"
 #: modules/nested-accordion/widgets/nested-accordion.php:739
 #: modules/nested-tabs/widgets/nested-tabs.php:634
 #: modules/nested-tabs/widgets/nested-tabs.php:814
-#: modules/nested-tabs/widgets/nested-tabs.php:976 assets/js/editor.js:29751
+#: modules/nested-tabs/widgets/nested-tabs.php:976 assets/js/editor.js:29860
 #: assets/js/element-manager-admin.js:921
 #: assets/js/element-manager-admin.strings.js:19
 msgid "Active"
@@ -10927,7 +11078,7 @@ msgstr "区切り"
 #: includes/controls/groups/border.php:67 includes/widgets/divider.php:344
 #: includes/widgets/icon-list.php:306
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:278
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:305
 msgid "Dotted"
 msgstr "点線"
 
@@ -10941,7 +11092,7 @@ msgid "Icon Spacing"
 msgstr "アイコン間隔"
 
 #: core/experiments/manager.php:394 core/experiments/manager.php:687
-#: modules/element-cache/module.php:108 assets/js/editor.js:29749
+#: modules/element-cache/module.php:108 assets/js/editor.js:29858
 #: assets/js/element-manager-admin.js:923
 #: assets/js/element-manager-admin.strings.js:20
 msgid "Inactive"
@@ -10963,16 +11114,11 @@ msgstr "リスト項目1"
 msgid "List Item #2"
 msgstr "リスト項目2"
 
-#: includes/widgets/progress.php:45 includes/widgets/progress.php:110
-#: includes/widgets/progress.php:236
-msgid "Progress Bar"
-msgstr "進行状況バー"
-
 #: core/kits/documents/tabs/theme-style-buttons.php:91
 #: core/kits/documents/tabs/theme-style-form-fields.php:117
 #: core/kits/documents/tabs/theme-style-images.php:63
 #: core/kits/documents/tabs/theme-style-typography.php:119
-#: includes/base/element-base.php:886
+#: includes/base/element-base.php:906
 #: includes/controls/groups/typography.php:152
 #: includes/controls/groups/typography.php:168
 #: includes/controls/groups/typography.php:178 includes/elements/column.php:286
@@ -10992,7 +11138,7 @@ msgstr "進行状況バー"
 #: includes/widgets/image-box.php:494 includes/widgets/image-box.php:643
 #: includes/widgets/image.php:439 includes/widgets/text-editor.php:341
 #: includes/widgets/traits/button-trait.php:336
-#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:122
+#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:152
 #: modules/floating-buttons/base/widget-contact-button-base.php:1201
 #: modules/floating-buttons/base/widget-contact-button-base.php:1407
 #: modules/floating-buttons/base/widget-contact-button-base.php:1979
@@ -11010,10 +11156,15 @@ msgstr "進行状況バー"
 #: modules/shapes/widgets/text-path.php:409
 #: modules/shapes/widgets/text-path.php:501
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:15
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:135
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:244
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:136
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:271
 msgid "Normal"
 msgstr "普通"
+
+#: includes/widgets/progress.php:45 includes/widgets/progress.php:110
+#: includes/widgets/progress.php:236
+msgid "Progress Bar"
+msgstr "進行状況バー"
 
 #: includes/elements/column.php:929 includes/elements/container.php:1879
 #: includes/elements/section.php:1371 includes/managers/controls.php:337
