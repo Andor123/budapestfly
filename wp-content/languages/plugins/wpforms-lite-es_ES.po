@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WPForms &#8211; Easy Form Builder for WordPress &#8211; Contact Forms, Payment Forms, Surveys, &amp; More - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-05-24 12:43:10+0000\n"
+"PO-Revision-Date: 2026-05-26 19:05:30+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -349,6 +349,18 @@ msgstr "Por favor, introduce el nombre del titular de la tarjeta."
 msgid "Please enter the CVV number."
 msgstr "Por favor, introduce el número CVV."
 
+#: src/Integrations/PayPalCommerce/Frontend/Frontend.php:236
+msgid "This payment cannot be processed because the payment amount is not set, or is set to an invalid amount."
+msgstr "Este pago no se puede procesar porque el importe del pago no está establecido o tiene un valor no válido."
+
+#: src/Integrations/PayPalCommerce/Fields/PayPalCommerce.php:1401
+msgid "PayPal Commerce payments are disabled. Please enable at least one payment method in the form settings."
+msgstr "Los pagos de PayPal Commerce están desactivados. Activa al menos un método de pago en los ajustes del formulario."
+
+#: src/Integrations/PayPalCommerce/Api/WebhookRoute.php:157
+msgid "It seems to be request to PayPal PHP Listener method handler but the site is not configured to use it."
+msgstr "Parece que se está intentando usar el método del receptor PHP de PayPal, pero el sitio no está configurado para ello."
+
 #: src/Integrations/PayPalCommerce/Admin/WebhookSettings.php:120
 #: src/Integrations/PayPalCommerce/Admin/WebhookSettings.php:129
 msgid "PayPal Commerce webhook ID created for the app. Created and configured automatically."
@@ -422,6 +434,91 @@ msgstr "Cuota de socios"
 msgid "Billing Agreements"
 msgstr "Acuerdos de facturación"
 
+#. translators: %s - WPForms.com PayPal Commerce webhooks documentation url.
+#: src/Integrations/PayPalCommerce/Admin/WebhookSettings.php:102
+msgid "This is the endpoint WPForms expects PayPal to deliver events to. See <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">our PayPal webhooks guide</a> for details."
+msgstr "Este es el endpoint al que WPForms espera que PayPal entregue los eventos. Consulta <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">nuestra guía de webhooks de PayPal</a> para más detalles."
+
+#. translators: %s - WPForms.com URL for PayPal Commerce webhooks
+#. documentation.
+#: src/Integrations/PayPalCommerce/Admin/WebhookSettings.php:79
+msgid "Choose how PayPal delivers events to WPForms. If REST API support is disabled for WordPress, use the PHP listener fallback. <a href=\"%s\" rel=\"nofollow noopener\" target=\"_blank\">Learn more</a>."
+msgstr "Elige cómo PayPal entrega los eventos a WPForms. Si la compatibilidad con la API REST está desactivada para WordPress, usa el listener de PHP como alternativa. <a href=\"%s\" rel=\"nofollow noopener\" target=\"_blank\">Más información</a>."
+
+#. translators: %s - PayPal Commerce Mode.
+#: src/Integrations/PayPalCommerce/Admin/Settings.php:461
+msgid "Connected to PayPal in <strong>%s</strong> mode."
+msgstr "Conectado a PayPal en modo <strong>%s</strong>."
+
+#: src/Integrations/PayPalCommerce/Admin/Settings.php:427
+msgid "Your account is currently not approved for vaulting, please review your account settings."
+msgstr "Tu cuenta no está aprobada actualmente para el almacenamiento en bóveda. Revisa los ajustes de tu cuenta."
+
+#: src/Integrations/PayPalCommerce/Admin/Settings.php:423
+msgid "Your Vaulting application is currently under review by PayPal, we will notify you once vaulting is approved or additional information is needed."
+msgstr "Tu solicitud de almacenamiento en bóveda está siendo revisada por PayPal. Te notificaremos cuando se apruebe o si se necesita información adicional."
+
+#: src/Integrations/PayPalCommerce/Admin/Settings.php:419
+msgid "PayPal needs more info please go to account settings and complete the requested details to finish your vaulting application."
+msgstr "PayPal necesita más información. Ve a los ajustes de tu cuenta y completa los datos solicitados para finalizar tu solicitud de almacenamiento en bóveda."
+
+#: src/Integrations/PayPalCommerce/Admin/Payments/SingleActionsHandler.php:163
+msgid "Unable to fetch subscription details from PayPal. Please try again later."
+msgstr "No se han podido obtener los detalles de la suscripción de PayPal. Inténtalo de nuevo más tarde."
+
+#: src/Integrations/PayPalCommerce/Admin/Payments/SingleActionsHandler.php:130
+msgid "Missing or invalid subscription information."
+msgstr "Información de suscripción incorrecta o no válida."
+
+#: src/Integrations/PayPalCommerce/Admin/Settings.php:543
+msgid "Braintree – Vault access"
+msgstr "Braintree – Acceso al almacén seguro"
+
+#: src/Integrations/PayPalCommerce/Admin/Settings.php:542
+msgid "Vault – Manage payment tokens"
+msgstr "Almacén seguro – Gestionar tokens de pago"
+
+#: src/Integrations/PayPalCommerce/Admin/Settings.php:541
+msgid "Vault – Read payment tokens"
+msgstr "Almacén seguro – Leer tokens de pago"
+
+#: src/Integrations/PayPalCommerce/Admin/Settings.php:538
+msgid "Payments – Refunds"
+msgstr "Pagos – Reembolsos"
+
+#: src/Integrations/PayPalCommerce/Admin/Settings.php:537
+msgid "Payments – Authorize & Capture"
+msgstr "Pagos – Autorizar y capturar"
+
+#: src/Integrations/PayPalCommerce/Admin/Settings.php:536
+msgid "Payments – Create / Capture"
+msgstr "Pagos – Crear / Capturar"
+
+#. translators: %s - PayPal Commerce Connected Merchant Vaulting Status.
+#: src/Integrations/PayPalCommerce/Admin/Settings.php:406
+msgid "Vaulting Status: <strong>%s</strong>"
+msgstr "Estado del almacenamiento seguro: <strong>%s</strong>"
+
+#. translators: %s - WPForms.com PayPal Commerce documentation article URL.
+#: src/Integrations/PayPalCommerce/Admin/Settings.php:226
+msgid "Easily collect PayPal Checkout and credit card payments with PayPal Commerce. To get started, see our <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">PayPal Commerce documentation</a>."
+msgstr "Cobra fácilmente pagos a través de PayPal Checkout y con tarjeta de crédito con PayPal Commerce. Para empezar, consulta nuestra <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">documentación de PayPal Commerce</a>."
+
+#. translators: %s - WPForms.com URL for PayPal Commerce payment with more
+#. details.
+#: src/Integrations/PayPalCommerce/Admin/Settings.php:191
+msgid "Prevent PayPal Commerce from processing live transactions. <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"wpforms-learn-more\">Learn More</a>"
+msgstr "Evita que PayPal Commerce procese transacciones en tiempo real. <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"wpforms-learn-more\">Más información</a>"
+
+#. translators: %s - general admin settings page URL.
+#: src/Integrations/PayPalCommerce/Admin/Notices.php:178
+msgid "<strong>Pay-as-you-go Pricing</strong><br> 3%% fee per-transaction + PayPal Commerce fees. <a href=\"%s\">Renew your license</a> to remove additional fees and unlock powerful features."
+msgstr "<strong>Precios de pago por uso</strong><br>3%% de cuota por transacción + cuotas de PayPal Commerce. <a href=\"%s\">Renueva tu licencia</a> para eliminar las cuotas adicionales y desbloquear funciones avanzadas."
+
+#: src/Integrations/PayPalCommerce/Admin/Settings.php:738
+msgid "PayPal Checkout support is disabled."
+msgstr "La compatibilidad de pago de PayPal está desactivada."
+
 #: src/Integrations/PayPalCommerce/Admin/Builder/Traits/Content.php:605
 msgid "PayPalCommerce Pro"
 msgstr "PayPalCommerce Pro"
@@ -434,6 +531,117 @@ msgstr "Correo electrónico de envío"
 #: src/Integrations/PayPalCommerce/Admin/Builder/Traits/Content.php:69
 msgid "Connect to PayPal"
 msgstr "Conectar con PayPal"
+
+#: src/Integrations/PayPalCommerce/Admin/Notices.php:83
+msgid "Heads up! Your connection to PayPal Commerce is not valid. Please reconnect your PayPal Commerce account."
+msgstr "¡Atención! Tu conexión con PayPal Commerce no es válida. Vuelve a conectar tu cuenta de PayPal Commerce."
+
+#: src/Integrations/PayPalCommerce/Admin/Notices.php:77
+msgid "Heads up! Your connection to PayPal Commerce is not complete. Please reconnect your PayPal Commerce account."
+msgstr "¡Atención! Tu conexión con PayPal Commerce no está completa. Vuelve a conectar tu cuenta de PayPal Commerce."
+
+#: src/Integrations/PayPalCommerce/Admin/Notices.php:71
+msgid "Heads up! An error occurred while disconnecting your PayPal account. Please try again."
+msgstr "¡Atención! Se ha producido un error al desconectar tu cuenta de PayPal. Inténtalo de nuevo."
+
+#: src/Integrations/PayPalCommerce/Admin/Builder/Traits/Content.php:737
+msgid "Learn more about our PayPal Commerce integration."
+msgstr "Más información sobre nuestra integración con PayPal Commerce."
+
+#: src/Integrations/PayPalCommerce/Admin/Builder/Traits/Content.php:721
+msgid "Connect WPForms to PayPal Commerce."
+msgstr "Conecta WPForms con PayPal Commerce."
+
+#: src/Integrations/PayPalCommerce/Admin/Builder/Traits/Content.php:695
+msgid "Select the field that contains the buyer's address. This setting is optional."
+msgstr "Selecciona el campo que contiene la dirección del comprador. Este ajuste es opcional."
+
+#: src/Integrations/PayPalCommerce/Admin/Builder/Traits/Content.php:694
+msgid "Select the field that contains the buyer's shipping address. This setting is optional."
+msgstr "Selecciona el campo que contiene la dirección de envío del comprador. Este ajuste es opcional."
+
+#: src/Integrations/PayPalCommerce/Admin/Builder/Traits/Content.php:567
+msgid "It's not possible to process multiple plans at the same time. If your conditional logic matches more than one plan, the form will process the first plan that matches your conditions."
+msgstr "No es posible procesar varios planes al mismo tiempo. Si tu lógica condicional coincide con más de un plan, el formulario procesará el primero que coincida con tus condiciones."
+
+#: src/Integrations/PayPalCommerce/Admin/Builder/Traits/Content.php:558
+msgid "Fastlane, alternative payment methods and credit card fields are not supported for subscriptions and will not display on your form."
+msgstr "Fastlane, los métodos de pago alternativos y los campos de tarjeta de crédito no son compatibles con las suscripciones y no se mostrarán en tu formulario."
+
+#: src/Integrations/PayPalCommerce/Admin/Builder/Traits/Content.php:120
+msgid "To use PayPal Commerce, first add the PayPal Commerce field to your form."
+msgstr "Para usar PayPal Commerce, primero añade el campo de PayPal Commerce a tu formulario."
+
+#. translators: %s - the WPForms Payments settings page URL.
+#: src/Integrations/PayPalCommerce/Admin/Builder/Traits/Content.php:85
+msgid "Heads up! PayPal Commerce payments can't be processed because there's a problem with the connection to PayPal. Please visit the <a href='%2$s'>WPForms Settings</a> page to resolve the issue before trying again."
+msgstr "¡Atención! Los pagos de PayPal Commerce no se pueden procesar porque hay un problema con la conexión a PayPal. Visita la página de <a href='%2$s'>Ajustes de WPForms</a> para resolver el problema antes de volver a intentarlo."
+
+#: src/Integrations/PayPalCommerce/Admin/Builder/Traits/Content.php:63
+msgid "Connect to your PayPal account and start receiving payments today."
+msgstr "Conecta tu cuenta de PayPal y empieza a recibir pagos hoy mismo."
+
+#: src/Integrations/PayPalCommerce/Admin/Builder/Traits/Content.php:138
+msgid "The PayPal Commerce addon can't be activated while PayPal Standard is in use. Please deactivate the PayPal Standard addon and try again."
+msgstr "La extensión de PayPal Commerce no se puede activar mientras PayPal Standard está en uso. Desactiva la extensión de PayPal Standard e inténtalo de nuevo."
+
+#. translators: %s - general admin settings page URL.
+#: src/Integrations/PayPalCommerce/Admin/Notices.php:162
+msgid "<strong>Pay-as-you-go Pricing</strong><br>3%% fee per-transaction + PayPal Commerce fees. <a href=\"%s\">Activate your license</a> to remove additional fees and unlock powerful features."
+msgstr "<strong>Precios de pago por uso</strong><br>3%% de cuota por transacción + cuotas de PayPal Commerce. <a href=\"%s\">Activa tu licencia</a> para eliminar las cuotas adicionales y desbloquear funciones avanzadas."
+
+#. translators: %1$s - Selected currency on the WPForms Settings admin page.
+#: src/Integrations/PayPalCommerce/Admin/Notices.php:95
+msgid "<strong>Payments Cannot Be Processed</strong><br>The currency you have set (%1$s) is not supported by PayPal Commerce. Please choose a different currency, or consider switching your payment gateway to Stripe."
+msgstr "<strong>Los pagos no pueden procesarse</strong><br>La moneda que has configurado (%1$s) no es compatible con PayPal Commerce. Elige una moneda diferente o considera cambiar tu pasarela de pago a Stripe."
+
+#: src/Integrations/PayPalCommerce/Admin/Builder/Traits/Content.php:434
+msgid "Select the field that contains the buyer's shipping email. This setting is optional."
+msgstr "Selecciona el campo que contiene el correo electrónico de envío del comprador. Este ajuste es opcional."
+
+#: src/Integrations/PayPalCommerce/Admin/Builder/Settings.php:274
+msgid "The PayPalCommerce Pro addon is required to enable conditional logic for payments. Would you like to activate it?"
+msgstr "La extensión PayPalCommerce Pro es necesaria para activar la lógica condicional para pagos. ¿Quieres activarla?"
+
+#: src/Integrations/PayPalCommerce/Admin/Builder/Settings.php:264
+msgid "The PayPalCommerce Pro addon is required to enable conditional logic for payments. Would you like to install and activate it?"
+msgstr "La extensión PayPalCommerce Pro es necesaria para activar la lógica condicional para pagos. ¿Quieres instalarla y activarla?"
+
+#: src/Integrations/PayPalCommerce/Admin/Builder/Notifications.php:132
+msgid "Notification for PayPal Commerce Completed Payments"
+msgstr "Aviso de pagos completados de PayPal Commerce"
+
+#: src/Integrations/PayPalCommerce/Admin/Builder/Notifications.php:124
+msgid "The PayPal Commerce Pro addon is required to enable notification for completed payments. Would you like to activate it?"
+msgstr "La extensión PayPalCommerce Pro es necesaria para activar los avisos de pagos completados. ¿Quieres activarla?"
+
+#: src/Integrations/PayPalCommerce/Admin/Builder/Notifications.php:114
+msgid "The PayPal Commerce Pro addon is required to enable notification for completed payments. Would you like to install and activate it?"
+msgstr "La extensión PayPalCommerce Pro es necesaria para activar los avisos de pagos completados. ¿Quieres instalarla y activarla?"
+
+#: src/Integrations/PayPalCommerce/Admin/Builder/Notifications.php:60
+msgid "Enable for PayPalCommerce completed payments"
+msgstr "Activar para pagos completados de PayPalCommerce"
+
+#: src/Integrations/PayPalCommerce/Admin/Builder/Enqueues.php:108
+msgid "Credit Card and Fastlane cannot be enabled at the same time."
+msgstr "La tarjeta de crédito y Fastlane no pueden activarse al mismo tiempo."
+
+#: src/Integrations/PayPalCommerce/Admin/Builder/Enqueues.php:107
+msgid "The recurring plan can’t be changed once you save it. Please create a new plan."
+msgstr "El plan periódico no puede modificarse una vez guardado. Crea un nuevo plan."
+
+#: src/Integrations/PayPalCommerce/Admin/Builder/Enqueues.php:106
+msgid "The product type can’t be changed once you save it. Please create a new plan."
+msgstr "Una vez guardado, no se puede cambiar el tipo de producto. Por favor, crea un nuevo plan."
+
+#: src/Integrations/PayPalCommerce/Admin/Builder/Enqueues.php:105
+msgid "The plan name can’t be changed once you save it. Please create a new plan."
+msgstr "El nombre del plan no se puede cambiar una vez guardado. Por favor, crea un nuevo plan."
+
+#: src/Integrations/PayPalCommerce/Admin/Builder/Enqueues.php:98
+msgid "<p>AJAX form submissions are required when using the PayPal Commerce field.</p><p>To proceed, please go to <strong>Settings » General</strong> and check <strong>Enable AJAX form submission</strong>.</p>"
+msgstr "<p>Es necesario enviar los formularios mediante AJAX cuando se utiliza el campo PayPal Commerce.</p><p>Para continuar, ve a <strong>Ajustes » General</strong> y marca la casilla <strong>Activar el envío de formularios mediante AJAX</strong>.</p>"
 
 #: src/Forms/Fields/Addons/Map/Field.php:798
 msgid "100 km"
@@ -531,6 +739,22 @@ msgstr "Opción desactivada"
 msgid "Interactive Settings"
 msgstr "Ajustes interactivos"
 
+#: src/Forms/Fields/Addons/Map/Field.php:815
+msgid "100 mi"
+msgstr "100 mi"
+
+#: src/Forms/Fields/Addons/Map/Field.php:814
+msgid "50 mi"
+msgstr "50 mi"
+
+#: src/Forms/Fields/Addons/Map/Field.php:813
+msgid "25 mi"
+msgstr "25 mi"
+
+#: src/Forms/Fields/Addons/Map/Field.php:812
+msgid "10 mi"
+msgstr "10 mi"
+
 #: src/Lite/Integrations/Abilities/Abilities.php:39
 msgid "Get Form Stats"
 msgstr "Obtener estadísticas del formulario"
@@ -539,9 +763,41 @@ msgstr "Obtener estadísticas del formulario"
 msgid "Your Form Uses the Quiz Addon"
 msgstr "Tu formulario utiliza la extensión del cuestionario"
 
+#: src/Lite/Integrations/Abilities/Abilities.php:48
+msgid "The ID of the form to get stats for."
+msgstr "El ID del formulario del que se obtendrán las estadísticas."
+
+#: src/Lite/Integrations/Abilities/Abilities.php:40
+msgid "Get basic statistics for a WPForms form. Upgrade to Pro for detailed entry data."
+msgstr "Obtén estadísticas básicas de un formulario de WPForms. Actualiza a Pro para obtener datos detallados de entradas."
+
+#: src/Lite/Integrations/Abilities/Abilities.php:113
+msgid "Entry statistics require WPForms Pro. Upgrade to access detailed form submission data."
+msgstr "Para ver las estadísticas de entradas necesitas WPForms Pro. Actualiza tu cuenta para acceder a los datos detallados de los envíos de formularios."
+
+#: src/Integrations/AI/Admin/Builder/Forms.php:358
+msgid "Create a weighted quiz on the topic of \"How prepared are you to start a business?\" with 10 questions and 3 answers each. Collect the user's name and email address. Create 3 outcomes set to Weighted Quiz type for greater than 74%, less than 75% and greater than 49%, and less than 50%."
+msgstr "Crea un cuestionario ponderado sobre el tema «¿Estás preparado para crear una empresa?», con 10 preguntas y 3 respuestas cada una. Recoge el nombre y la dirección de correo electrónico del usuario. Crea 3 resultados configurados como «Cuestionario ponderado» para puntuaciones superiores al 74 %, inferiores al 75 %, superiores al 49 % e inferiores al 50 %."
+
 #: src/Integrations/AI/Admin/Builder/Forms.php:352
 msgid "What is your ideal learning style?"
 msgstr "¿Cuál es tu estilo de aprendizaje ideal?"
+
+#: src/Integrations/AI/Admin/Builder/Forms.php:357
+msgid "How prepared are you to start a business?"
+msgstr "¿Estás preparado para montar un negocio?"
+
+#: src/Integrations/AI/Admin/Builder/Forms.php:347
+msgid "How well do you know world capitals?"
+msgstr "¿Qué tal conoces las capitales del mundo?"
+
+#: src/Integrations/AI/Admin/Builder/Forms.php:353
+msgid "Create a personality quiz on the topic of \"What is your ideal learning style?\" with 10 questions and 4 answers each. The personalities are Visual, Auditory, Reading/Writing, and Kinesthetic. Collect the user's name and email address. Create 4 outcomes set to Personality Quiz type with neutral text and utilize the available smart tags."
+msgstr "Crea un test de personalidad sobre el tema «¿Cuál es tu estilo de aprendizaje ideal?» con 10 preguntas y 4 respuestas cada una. Los tipos de personalidad son: visual, auditivo, lectura/escritura y cinestésico. Recoge el nombre y la dirección de correo electrónico del usuario. Crea 4 resultados del tipo «Test de personalidad» con texto neutro y utiliza las etiquetas inteligentes disponibles."
+
+#: src/Integrations/AI/Admin/Builder/Forms.php:348
+msgid "Create a graded quiz on the topic of \"How well do you know world capitals?\" with 10 questions and 3 answers each. Randomize the choices. Collect the user's name and email address. Create 4 outcomes set to Graded Quiz type with appropriate text for each grade and utilize the available smart tags. The graded outcomes should be if Quiz Grade is A, if Quiz Grade is B, if Quiz Grade is C, if Quiz Grade is D, and if Quiz Grade is F."
+msgstr "Crea un cuestionario calificado sobre el tema «¿Qué tal conoces las capitales del mundo?», con 10 preguntas y 3 respuestas cada una. Mezcla las opciones al azar. Recoge el nombre y la dirección de correo electrónico del usuario. Crea 4 resultados configurados como «Cuestionario calificado» con el texto adecuado para cada nota y utiliza las etiquetas inteligentes disponibles. Los resultados calificados deben ser: si la nota del cuestionario es A, si la nota del cuestionario es B, si la nota del cuestionario es C, si la nota del cuestionario es D y si la nota del cuestionario es F."
 
 #: src/Integrations/AI/Admin/Builder/Forms.php:209
 msgid "Addon Activated"
@@ -826,6 +1082,52 @@ msgstr "Captura de pantalla de Sugar Calendar"
 msgid "WPForms ♥ Sugar Calendar"
 msgstr "WPForms ♥ Sugar Calendar"
 
+#: src/Admin/Pages/SugarCalendar.php:115
+msgid "Sell tickets with Stripe or WooCommerce integration."
+msgstr "Vende entradas con la integración de Stripe o WooCommerce."
+
+#: src/Admin/Pages/SugarCalendar.php:98
+msgid "WPForms collects the \"yes.\" Sugar Calendar shows the \"when and where.\""
+msgstr "WPForms recoge el «sí». Sugar Calendar muestra el «cuándo y dónde»."
+
+#: src/Admin/Pages/SugarCalendar.php:73
+msgid "Taking Bookings? Put Them on a Calendar"
+msgstr "¿Gestionas reservas? Ponlas en un calendario"
+
+#: src/Admin/Pages/Duplicator.php:485
+msgid "Duplicator Pro Installed & Activated"
+msgstr "Duplicator Pro instalado y activado"
+
+#: src/Admin/Pages/Duplicator.php:365
+msgid "Install and Activate Duplicator"
+msgstr "Instalar y activar Duplicator"
+
+#: src/Admin/Pages/Duplicator.php:221
+msgid "Set Up Cloud Backups"
+msgstr "Configurar copias de seguridad en la nube"
+
+#: src/Admin/Pages/Duplicator.php:202
+msgid "Because the data you collect with WPForms is too valuable to lose."
+msgstr "Porque los datos que recopilas con WPForms son demasiado valiosos para perderlos."
+
+#: src/Admin/Pages/Duplicator.php:163
+msgid "Keep your data safe forever with automatic daily backups to Google Drive, Dropbox, or Amazon S3."
+msgstr "Mantén tus datos seguros para siempre con copias de seguridad diarias automáticas en Google Drive, Dropbox o Amazon S3."
+
+#: src/Admin/Pages/Duplicator.php:233
+msgid "Cloud Backups Set Up"
+msgstr "Configuración de las copias de seguridad en la nube"
+
+#. translators: %1$s - Plugins page URL.
+#: src/Admin/Pages/Page.php:449
+msgid "Could not activate the plugin. Please activate it on the <a href=\"%1$s\">Plugins page</a>."
+msgstr "No se ha podido activar el plugin. Actívalo en la <a href=\"%1$s\">página de plugins</a>."
+
+#. translators: %1$s - Lite plugin download URL.
+#: src/Admin/Pages/Page.php:437
+msgid "Could not install the plugin automatically. Please <a href=\"%1$s\">download</a> it and install it manually."
+msgstr "No se ha podido instalar el plugin automáticamente. Por favor, <a href=\"%1$s\">descárgalo</a> e instálalo manualmente."
+
 #: src/Integrations/Stripe/Admin/Builder/Enqueues.php:53
 msgid "In order to complete your form's Stripe One-Time Payments and Recurring Subscription Payments, please check that all required (*) fields have been filled out."
 msgstr "Para completar los pagos únicos y los pagos recurrentes por suscripción de Stripe en tu formulario, comprueba que se hayan rellenado todos los campos obligatorios (*)."
@@ -1059,6 +1361,62 @@ msgstr "Introduce el texto para el enlace."
 msgid "Enter the text for the button link."
 msgstr "Introduce el texto para el enlace del botón."
 
+#: lite/wpforms-lite.php:598
+msgid "URL Parameters"
+msgstr "Parámetros de URL"
+
+#: includes/fields/class-email.php:468
+msgid "Prevent email suggestions for common typos. Enable this if you find the suggestions distracting."
+msgstr "Evita las sugerencias de correo electrónico para errores tipográficos comunes. Activa esta opción si las sugerencias te resultan molestas."
+
+#: includes/fields/class-email.php:467
+msgid "Disable Suggestions"
+msgstr "Desactivar sugerencias"
+
+#: includes/admin/ajax-actions.php:934 includes/admin/builder/functions.php:752
+msgid "Back to Previous Page (Referrer) "
+msgstr "Volver a la página previa (referente) "
+
+#. translators: %1$s: Choose File to Upload opening tag, %2$s: Closing tag,
+#. %3$s: Capture With Camera opening tag.
+#: src/Forms/Fields/FileUpload/Field.php:403
+#: templates/fields/file-upload/file-upload-backend.php:19
+msgid "Drag & Drop File, %1$sChoose File to Upload%2$s, or %3$sCapture With Camera%2$s"
+msgid_plural "Drag & Drop Files, %1$sChoose Files to Upload%2$s, or %3$sCapture With Camera%2$s"
+msgstr[0] "Arrastra y suelta un archivo, %1$selige un archivo para subir%2$s o %3$scaptura con la cámara%2$s"
+msgstr[1] "Arrastra y suelta archivos, %1$selige archivos para subir%2$s o %3$scaptura con la cámara%2$s"
+
+#: src/Forms/Fields/Camera/Field.php:99
+msgid "Missing Link Text"
+msgstr "Falta el texto del enlace"
+
+#. translators: %1$s: Choose Files to Upload opening tag, %2$s: Choose Files to
+#. Upload closing tag.
+#: src/Forms/Fields/FileUpload/Field.php:397
+msgid "Drag & Drop Files or %1$sChoose Files to Upload%2$s"
+msgstr "Arrastra y suelta un archivo o %1$selige un archivo para subir%2$s"
+
+#. translators: %1$s: Choose File to Upload opening tag, %2$s: Choose File to
+#. Upload closing tag.
+#: src/Forms/Fields/FileUpload/Field.php:391
+#: templates/fields/file-upload/file-upload-backend.php:23
+msgid "Drag & Drop File or %1$sChoose File to Upload%2$s"
+msgid_plural "Drag & Drop Files or %1$sChoose Files to Upload%2$s"
+msgstr[0] "Arrastra y suelta un archivo o %1$selige un archivo para subir%2$s"
+msgstr[1] "Arrastra y suelta archivos o %1$selige archivos para subir%2$s"
+
+#: src/Forms/Fields/Camera/Field.php:98
+msgid "Camera field with Link style cannot have empty Link Text. Please enter text or change style to Button."
+msgstr "El campo cámara con estilo enlace no puede tener vacío el texto del enlace. Introduce un texto o cambia el estilo a Botón."
+
+#: lite/wpforms-lite.php:604
+msgid "Add query string parameters to append to the URL when the form is submitted. Separate multiple parameters with an ampersand (&)."
+msgstr "Añade los parámetros de la cadena de consulta que se añadirán a la URL cuando se envíe el formulario. Separa los parámetros múltiples con un símbolo «&»."
+
+#: src/Admin/Builder/Settings/Themes.php:256
+msgid "Sorry, your user role doesn't have permission to access this feature."
+msgstr "Lo siento, tu perfil de usuario no tiene permiso para acceder a esta función."
+
 #: src/Admin/Pages/PrivacyCompliance.php:419
 msgid "Activate WPConsent"
 msgstr "Activar WPConsent"
@@ -1103,6 +1461,133 @@ msgstr "Valor mínimo"
 #: includes/admin/class-menu.php:551
 msgid "Privacy Compliance"
 msgstr "Cumplimiento de la privacidad"
+
+#: src/Admin/Pages/PrivacyCompliance.php:443
+msgid "WPConsent has an intuitive setup wizard to guide you through the cookie consent configuration process."
+msgstr "WPConsent tiene un asistente de configuración intuitivo para guiarte a través del proceso de configuración del consentimiento de cookies."
+
+#: src/Admin/Pages/PrivacyCompliance.php:431
+msgid "Set Up WPConsent"
+msgstr "Configurar WPConsent"
+
+#: src/Admin/Pages/PrivacyCompliance.php:128
+msgid "Self-hosted. Your data remains on your site."
+msgstr "Alojado en tu propio servidor. Tus datos permanecen en tu sitio."
+
+#: src/Admin/Pages/PrivacyCompliance.php:127
+msgid "Peace of mind knowing you’re aligned with global laws."
+msgstr "Tranquilidad al saber que cumples con las leyes globales."
+
+#: src/Admin/Pages/PrivacyCompliance.php:126
+msgid "Tools like Google Analytics and Facebook Pixel paused until consent."
+msgstr "Herramientas como Google Analytics y Facebook Pixel se pausan hasta obtener el consentimiento."
+
+#: src/Admin/Pages/PrivacyCompliance.php:125
+msgid "A professional banner that fits your site."
+msgstr "Un banner profesional que se adapta a tu sitio."
+
+#: src/Admin/Education/Builder/PDF.php:240
+msgid "WPForms PDF Addon"
+msgstr "Extensión WPForms PDF"
+
+#: src/Admin/Pages/PrivacyCompliance.php:212
+#: src/Admin/Pages/PrivacyCompliance.php:479
+msgid "WPConsent Pro Installed & Activated"
+msgstr "WPConsent Pro instalado y activado"
+
+#: src/Admin/Pages/PrivacyCompliance.php:407
+msgid "WPConsent Installed & Activated"
+msgstr "WPConsent instalado y activado"
+
+#: src/Admin/Education/Builder/PDF.php:155
+msgid "PDF Addon"
+msgstr "Extensión PDF"
+
+#. translators: %s - value to compare with.
+#: includes/admin/class-settings.php:569
+msgid "Please enter a value less than or equal to %s."
+msgstr "Introduce un valor menor o igual que %s."
+
+#: includes/admin/builder/functions.php:879
+msgid "No image selected"
+msgstr "No se ha seleccionado ninguna imagen"
+
+#: includes/admin/builder/functions.php:879
+msgid "Preview of selected image"
+msgstr "Vista previa de la imagen seleccionada"
+
+#: includes/admin/builder/functions.php:912
+msgid "Upload an image"
+msgstr "Subir una imagen"
+
+#: includes/admin/builder/functions.php:918
+msgid "Remove the selected image"
+msgstr "Quitar la imagen seleccionada"
+
+#: templates/admin/splash/modal.php:35
+msgid "Awesome new features are waiting for you!"
+msgstr "¡Hay nuevas funciones increíbles esperándote!"
+
+#: templates/admin/splash/modal.php:34
+msgid "Update WPForms"
+msgstr "Actualizar WPForms"
+
+#: src/Integrations/Stripe/Frontend.php:174
+msgid "The security token has expired. Please resubmit the form."
+msgstr "El token de seguridad ha caducado. Vuelve a enviar el formulario."
+
+#: src/Frontend/Frontend.php:1881
+msgid "Please enter a value less than or equal to {0}."
+msgstr "Introduce un valor menor o igual a {0}."
+
+#: src/Frontend/Frontend.php:1880
+msgid "Please enter a value greater than or equal to {0}."
+msgstr "Introduce un valor mayor o igual a {0}."
+
+#: src/Forms/Fields/Pagebreak/Field.php:401
+msgid "Enter text to show the user's progress. You can use {current_page} and {last_page} to indicate the current and last steps."
+msgstr "Introduce un texto para mostrar el progreso del usuario. Puedes usar {current_page} y {last_page} para indicar el paso actual y el último."
+
+#: src/Forms/Fields/Pagebreak/Field.php:390
+msgid "Enter text for the progress indicator."
+msgstr "Introduce un texto para el indicador de progreso."
+
+#: src/Forms/Fields/Pagebreak/Field.php:389
+msgid "Progress Text"
+msgstr "Texto de progreso"
+
+#: src/Admin/Builder/Settings/Themes.php:340
+msgid "Preview only"
+msgstr "Solo vista previa"
+
+#: src/Admin/Builder/Settings/Themes.php:404
+msgid "Back to Settings"
+msgstr "Volver a los ajustes"
+
+#: src/Admin/Blocks/Links.php:114
+msgid "What’s New"
+msgstr "Novedades"
+
+#: src/Admin/Blocks/Links.php:107
+msgid "Support Forum"
+msgstr "Foro de soporte"
+
+#: src/Admin/Blocks/Links.php:97
+msgid "Videos"
+msgstr "Vídeos"
+
+#. translators: %s - WPForms contact support link.
+#: includes/admin/builder/panels/class-base.php:445
+msgid "If the issue persists, <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">please contact support</a>."
+msgstr "Si el problema persiste, <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">contacta con soporte</a>."
+
+#: includes/admin/builder/panels/class-base.php:421
+msgid "Corrupted Form Data"
+msgstr "Datos del formulario corruptos"
+
+#: includes/admin/builder/class-builder.php:981
+msgid "Please contact support if this behavior persists."
+msgstr "Si el problema persiste, ponte en contacto con el servicio de asistencia."
 
 #: src/Admin/Education/Admin/Tools/EntryAutomation.php:58
 msgid "Automated Deletions"

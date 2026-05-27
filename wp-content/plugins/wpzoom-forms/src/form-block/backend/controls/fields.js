@@ -17,28 +17,28 @@ const FieldsControls = ({ attributes, setAttributes }) => {
 			value: fieldTextColor,
 			onChange: (value) => setAttributes({ fieldTextColor: value }),
 			isShownByDefault: true,
-			label: __("Text Color", "wpzoom-blocks"),
+			label: __("Text Color", "wpzoom-forms"),
 			resetAllFilter: () => setAttributes({ fieldTextColor: undefined })
 		},
 		{
 			value: labelTextColor,
 			onChange: (value) => setAttributes({ labelTextColor: value }),
 			isShownByDefault: true,
-			label: __("Label Color", "wpzoom-blocks"),
+			label: __("Label Color", "wpzoom-forms"),
 			resetAllFilter: () => setAttributes({ labelTextColor: undefined }),
 		},
 		{
 			value: fieldBrdColor,
 			onChange: (value) => setAttributes({ fieldBrdColor: value }),
 			isShownByDefault: true,
-			label: __("Border Color", "wpzoom-blocks"),
+			label: __("Border Color", "wpzoom-forms"),
 			resetAllFilter: () => setAttributes({ fieldBrdColor: undefined }),
 		},
 		{
 			value: fieldBgColor,
 			onChange: (value) => setAttributes({ fieldBgColor: value }),
 			isShownByDefault: true,
-			label: __("Background Color", "wpzoom-blocks"),
+			label: __("Background Color", "wpzoom-forms"),
 			resetAllFilter: () => setAttributes({ fieldBgColor: undefined }),
 		},
 	];
@@ -48,7 +48,7 @@ const FieldsControls = ({ attributes, setAttributes }) => {
 
 	return (
 		<ToolsPanel
-			label={__("Fields", "wpzoom-blocks")}
+			label={__("Fields", "wpzoom-forms")}
 			resetAll={() => setAttributes(
 				{
 					fieldTextColor: '',
@@ -94,7 +94,7 @@ const FieldsControls = ({ attributes, setAttributes }) => {
 
 			<ToolsPanelItem
 				hasValue={() => fieldBrdStyle !== 'default' || !!fieldBrdWidth}
-				label={__("Border", "wpzoom-blocks")}
+				label={__("Border", "wpzoom-forms")}
 				onDeselect={() => setAttributes({ fieldBrdStyle: undefined, fieldBrdWidth: undefined })}
 				onSelect={() => setAttributes({ fieldBrdStyle: 'solid', fieldBrdWidth: 1 })}
 				style={{ marginTop: '16px' }}
@@ -134,7 +134,7 @@ const FieldsControls = ({ attributes, setAttributes }) => {
 
 			<ToolsPanelItem
 				hasValue={() => !!fieldBrdRadius}
-				label={__("Border Radius", "wpzoom-blocks")}
+				label={__("Border Radius", "wpzoom-forms")}
 				onDeselect={() => setAttributes({ fieldBrdRadius: undefined })}
 				onSelect={() => setAttributes({ fieldBrdRadius: undefined })}
 				style={{ marginTop: '16px' }}

@@ -31,7 +31,6 @@
 
     input[type=checkbox],
     input[type=radio] {
-        margin-right: 10px;
         vertical-align: middle;
     }
 
@@ -39,12 +38,11 @@
         display: block;
         float: left;
         position: relative;
-        top: 10px;
     }
 
     input[type=checkbox] + label {
         display: block !important;
-        clear: right !important; 
+        clear: right !important;
     }
 
     input[type=date],
@@ -176,4 +174,553 @@
 			margin: 0;
 		}
 	}
+}
+
+/* ──────────────────────────────────────────────────────────────────────────────
+   WPZOOM Forms — frontend styles
+   ──────────────────────────────────────────────────────────────────────────────
+   The base layer is intentionally MINIMAL: only structure (grid, honeypot,
+   notice positioning, error state). Visual styling is opt-in via the form's
+   "Form Style" setting and lives under `.wpzf-theme-*` modifiers below.
+
+   This way the "Default" theme = let the site's WordPress theme style every
+   input naturally, matching the legacy behaviour controlled by the existing
+   "Load default styling for forms" plugin setting.
+   ──────────────────────────────────────────────────────────────────────────── */
+
+/* ─── base structure (always loaded) ───────────────────────────────────────── */
+.wpzf-form {
+	max-width: 100%;
+	*, *::before, *::after { box-sizing: border-box; }
+}
+
+.wpzf-honeypot {
+	position: absolute !important;
+	left: -9999px !important; top: -9999px !important;
+	width: 1px !important; height: 1px !important;
+	overflow: hidden !important;
+}
+
+.wpzf-fields {
+	display: flex; flex-wrap: wrap;
+	gap: 16px;
+}
+
+.wpzf-field {
+	flex-basis: 100%; min-width: 0;
+	&--width-half       { flex-basis: calc(50% - 8px); }
+	&--width-third      { flex-basis: calc(33.333% - 11px); }
+	&--width-two-thirds { flex-basis: calc(66.667% - 6px); }
+}
+@media (max-width: 540px) {
+	.wpzf-field[class*="--width-"] { flex-basis: 100%; }
+}
+
+/* Submit alignment helpers (structural only — no button colors) */
+.wpzf-submit { margin-top: 1.25em; }
+.wpzf-submit--align-center { text-align: center; }
+.wpzf-submit--align-right  { text-align: right; }
+.wpzf-submit--align-full   { display: block; .wpzf-submit__btn { width: 100%; } }
+
+/* Inline notices — neutral structure, themes recolor them. */
+.wpzf-notice {
+	margin-bottom: 1em;
+	padding: 0.75em 1em;
+	border-radius: 4px;
+	font-size: 14px;
+	&[data-status="success"] { background: #ecfdf5; border: 1px solid #bbf7d0; color: #065f46; }
+	&[data-status="error"]   { background: #fef2f2; border: 1px solid #fecaca; color: #991b1b; }
+}
+
+.wpzf-field--has-error .wpzf-input,
+.wpzf-field--has-error .wpzf-input:focus {
+	border-color: #d63638 !important;
+	box-shadow: 0 0 0 3px rgba(214,54,56,.18) !important;
+}
+.wpzf-field-error {
+	display: block; margin-top: 4px;
+	font-size: 12px; color: #d63638;
+}
+
+.wpzf-form.is-submitting .wpzf-submit__btn { opacity: 0.65; pointer-events: none; }
+.wpzf-form.is-submitting .wpzf-input       { pointer-events: none; opacity: 0.8; }
+
+.wpzf-required { color: #d63638; }
+
+.wpzf-choices  { display: flex; flex-direction: column; gap: 0.3em; padding-top: 4px; }
+.wpzf-choice   { display: inline-flex; align-items: center; gap: 0.5em; cursor: pointer; }
+
+/* Label-position layout helpers (still structural only) */
+.wpzf-labels-hidden .wpzf-label { display: none; }
+.wpzf-labels-left .wpzf-field--type-text,
+.wpzf-labels-left .wpzf-field--type-name,
+.wpzf-labels-left .wpzf-field--type-email,
+.wpzf-labels-left .wpzf-field--type-tel,
+.wpzf-labels-left .wpzf-field--type-url,
+.wpzf-labels-left .wpzf-field--type-number,
+.wpzf-labels-left .wpzf-field--type-date,
+.wpzf-labels-left .wpzf-field--type-select {
+	display: grid;
+	grid-template-columns: 160px 1fr;
+	gap: 12px;
+	align-items: center;
+	.wpzf-label { margin-bottom: 0; }
+}
+
+/* ─── layout: horizontal ────────────────────────────────────────────────────── */
+// Fields + submit button sit side-by-side in a flex row.
+// Best for simple forms: one email input + submit (newsletter-style).
+.wpzf-layout-horizontal {
+	.wpzf-form__inner {
+		display: flex;
+		align-items: flex-start;
+		gap: 8px;
+	}
+	.wpzf-fields {
+		flex: 1;
+		min-width: 0;
+	}
+	.wpzf-submit {
+		margin-top: 0;
+		flex-shrink: 0;
+		.wpzf-submit__btn{
+			margin-top: 0px;
+		}
+	}
+	@media (max-width: 600px) {
+		.wpzf-form__inner {
+			flex-direction: column;
+			align-items: stretch;
+		}
+		.wpzf-submit__btn { width: 100%; }
+	}
+}
+
+/* ─── layout: compact ───────────────────────────────────────────────────────── */
+// Tighter vertical rhythm — useful inside modals, sidebars, or narrow columns.
+.wpzf-layout-compact {
+	.wpzf-fields  { gap: 4px; }
+	.wpzf-submit  { margin-top: 6px; }
+}
+
+/* ─── shared input baseline (used by themes) ───────────────────────────────── */
+%wpzf-input-base {
+	width: 100%; box-sizing: border-box;
+	padding: 10px 12px;
+	font: inherit;
+	line-height: 1.4;
+}
+
+/* ─── custom checkbox / radio / select ─────────────────────────────────────── */
+// Replaces native controls with fully branded ones.
+// Include inside each .wpzf-theme-* block; CSS variables supply the colours.
+// $arrow-fill: URL-encoded hex for the select chevron (e.g. '%236b7280' = #6b7280).
+// --wpzf-check-radius: controls checkbox corner rounding (radio is always 50%).
+@mixin wpzf-custom-controls($arrow-fill: '%236b7280') {
+
+	// ── Select: hide native arrow, draw custom chevron via background-image ──
+	.wpzf-input--select {
+		appearance: none;
+		-webkit-appearance: none;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='#{$arrow-fill}'/%3E%3C/svg%3E");
+		background-repeat: no-repeat;
+		background-position: right 12px center;
+		padding-right: 32px;
+		// Prevent background-position from being animated (causes arrow to slide in from the left on dropdown close)
+		transition: border-color .15s, box-shadow .15s;
+
+		// On focus: flip to an upward chevron (theme :focus rules use the `background` shorthand
+		// which resets background-image to none — this re-applies it so the arrow never disappears)
+		&:focus {
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M0 6l5-6 5 6z' fill='#{$arrow-fill}'/%3E%3C/svg%3E");
+			background-repeat: no-repeat;
+			background-position: right 12px center;
+		}
+	}
+
+	// ── Shared reset for checkbox + radio ────────────────────────────────────
+	.wpzf-choice input[type="checkbox"],
+	.wpzf-choice input[type="radio"] {
+		appearance: none;
+		-webkit-appearance: none;
+		position: relative;
+		flex-shrink: 0;
+		width: 18px; height: 18px;
+		margin: 0;
+		border: 1px solid var(--wpzf-border, #d1d5db);
+		background: var(--wpzf-bg, #fff);
+		cursor: pointer;
+		transition: border-color .15s, background .15s, box-shadow .15s;
+		vertical-align: middle;
+
+		&::after {
+			content: '';
+			position: absolute;
+			opacity: 0;
+			transition: opacity .1s, transform .12s;
+		}
+
+		&:checked {
+			background: var(--wpzf-accent);
+			border-color: var(--wpzf-accent);
+			&::after { opacity: 1; }
+		}
+
+		&:focus-visible {
+			outline: 2px solid var(--wpzf-accent);
+			outline-offset: 2px;
+		}
+	}
+
+	// ── Checkbox: border-trick checkmark ─────────────────────────────────────
+	.wpzf-choice input[type="checkbox"] {
+		border-radius: var(--wpzf-check-radius, 4px);
+
+		&::after {
+			top: 2px; left: 5px;
+			width: 5px; height: 9px;
+			border: 2px solid #fff;
+			border-top: 0; border-left: 0;
+			transform: rotate(45deg) scale(.7);
+		}
+		&:checked::after { transform: rotate(45deg) scale(1); }
+	}
+
+	// ── Radio: filled dot ─────────────────────────────────────────────────────
+	.wpzf-choice input[type="radio"] {
+		border-radius: 50%;
+
+		&::after {
+			top: 50%; left: 50%;
+			width: 7px; height: 7px;
+			background: #fff;
+			border-radius: 50%;
+			transform: translate(-50%, -50%) scale(0);
+		}
+		&:checked::after { transform: translate(-50%, -50%) scale(1); }
+	}
+}
+
+/* ──────────────────────────────────────────────────────────────────────────────
+   THEME: default
+   Clean neutral inputs. Lets the rest of the page set the typography while
+   still giving the form a consistent, polished look.
+   ──────────────────────────────────────────────────────────────────────────── */
+.wpzf-form.wpzf-theme-default {
+    --wpzf-accent: #2271b1;
+    --wpzf-text: #1e1e1e;
+    --wpzf-muted: #757575;
+    --wpzf-border: #c9c9c9;
+    --wpzf-bg: #ffffff;
+    --wpzf-radius: 2px;
+    --wpzf-check-radius: 2px;
+
+    .wpzf-label {
+        display: block;
+        margin-bottom: .35em;
+    }
+
+    .wpzf-input {
+        @extend %wpzf-input-base;
+        transition: border-color .15s, box-shadow .15s;
+
+        &::placeholder {
+            color: var(--wpzf-muted);
+        }
+
+        &:focus {
+            outline: 0;
+            border-color: var(--wpzf-accent);
+            box-shadow: 0 0 0 2px rgba(34, 113, 177, .18);
+        }
+    }
+
+    .wpzf-help {
+        margin-top: 4px;
+        font-size: 12px;
+        color: var(--wpzf-muted);
+    }
+
+    .wpzf-submit__btn {
+        cursor: pointer;
+    }
+
+    @include wpzf-custom-controls('%23757575');
+}
+
+/* ──────────────────────────────────────────────────────────────────────────────
+   THEME: minimal
+   Underlined inputs. Quiet. Lots of whitespace. Calm.
+   ──────────────────────────────────────────────────────────────────────────── */
+.wpzf-form.wpzf-theme-minimal {
+	--wpzf-accent:        #1f2937;
+	--wpzf-text:          #1f2937;
+	--wpzf-muted:         #6b7280;
+	--wpzf-border:        #d1d5db;
+	--wpzf-bg:            transparent;
+	--wpzf-check-radius:  2px;
+
+	color: var(--wpzf-text);
+
+	.wpzf-label {
+		display: block; margin-bottom: 0.35em;
+		font-size: 0.78em; font-weight: 600; letter-spacing: 0.04em;
+		text-transform: uppercase; color: var(--wpzf-muted);
+	}
+	.wpzf-input {
+		@extend %wpzf-input-base;
+		padding-left: 0; padding-right: 0;
+		background: transparent;
+		border: 0;
+		border-bottom: 1px solid var(--wpzf-border);
+		border-radius: 0;
+		transition: border-color .2s;
+		border-right-width: 0 !important;
+		border-left-width: 0 !important;
+		border-top-width: 0 !important;
+		&:focus { outline: 0; border-bottom-color: var(--wpzf-accent); box-shadow: none; }
+		&::placeholder { color: var(--wpzf-muted); }
+	}
+	.wpzf-help { margin-top: 4px; font-size: 12px; color: var(--wpzf-muted); }
+	.wpzf-submit__btn {
+		display: inline-block;
+		background: var(--wpzf-accent); color: #fff;
+		border: 0;
+		padding: 12px 32px;
+		font: inherit; font-weight: 600; letter-spacing: 0.02em;
+		text-transform: uppercase; font-size: 0.85em;
+		cursor: pointer;
+		transition: opacity .15s, transform .05s;
+		&:hover { opacity: 0.9; }
+		&:active { transform: translateY(1px); }
+	}
+
+	@include wpzf-custom-controls('%231f2937');
+
+	// Checkbox gets a solid bottom border when unchecked to match the input style.
+	.wpzf-choice input[type="checkbox"],
+	.wpzf-choice input[type="radio"] { background: #fff; }
+}
+
+/* ──────────────────────────────────────────────────────────────────────────────
+   THEME: modern
+   Clean and professional. Soft border, blue accent, simple focus ring.
+   ──────────────────────────────────────────────────────────────────────────── */
+.wpzf-form.wpzf-theme-modern {
+	--wpzf-accent:        #2563eb;
+	--wpzf-text:          #111827;
+	--wpzf-muted:         #6b7280;
+	--wpzf-border:        #d1d5db;
+	--wpzf-bg:            #ffffff;
+	--wpzf-radius:        6px;
+	--wpzf-check-radius:  4px;
+
+	color: var(--wpzf-text);
+
+	.wpzf-label {
+		display: block; margin-bottom: .4em;
+		font-size: .875em; font-weight: 500; color: var(--wpzf-muted);
+	}
+	.wpzf-input {
+		@extend %wpzf-input-base;
+		background: var(--wpzf-bg); color: var(--wpzf-text);
+		border: 1px solid var(--wpzf-border); border-radius: var(--wpzf-radius);
+		transition: border-color .15s, box-shadow .15s;
+		&::placeholder { color: var(--wpzf-muted); }
+		&:focus { outline: 0; border-color: var(--wpzf-accent); box-shadow: 0 0 0 3px rgba(37,99,235,.15); }
+	}
+	.wpzf-help { margin-top: 4px; font-size: 12px; color: var(--wpzf-muted); }
+	.wpzf-submit__btn {
+		display: inline-block;
+		padding: 11px 24px;
+		background: var(--wpzf-accent); color: #fff;
+		border: 0; border-radius: var(--wpzf-radius);
+		font: inherit; font-weight: 600;
+		cursor: pointer;
+		transition: filter .15s;
+		&:hover { filter: brightness(1.08); }
+	}
+
+	@include wpzf-custom-controls('%236b7280');
+}
+
+/* ──────────────────────────────────────────────────────────────────────────────
+   THEME: bold
+   Thick borders, strong type, orange accent on focus. Square corners.
+   ──────────────────────────────────────────────────────────────────────────── */
+.wpzf-form.wpzf-theme-bold {
+	--wpzf-accent:        #ea580c;
+	--wpzf-text:          #111827;
+	--wpzf-muted:         #6b7280;
+	--wpzf-border:        #1f2937;
+	--wpzf-bg:            #ffffff;
+	--wpzf-check-radius:  0px;
+
+	color: var(--wpzf-text);
+
+	.wpzf-label {
+		display: block; margin-bottom: .4em;
+		font-size: .875em; font-weight: 700; color: var(--wpzf-text);
+	}
+	.wpzf-input {
+		@extend %wpzf-input-base;
+		background: var(--wpzf-bg); color: var(--wpzf-text);
+		border: 2px solid var(--wpzf-border); border-radius: 0;
+		transition: border-color .15s;
+		&::placeholder { color: var(--wpzf-muted); }
+		&:focus { outline: 0; border-color: var(--wpzf-accent); }
+	}
+	.wpzf-help { margin-top: 4px; font-size: 12px; color: var(--wpzf-muted); }
+	.wpzf-submit__btn {
+		display: inline-block;
+		padding: 11px 28px;
+		background: var(--wpzf-text); color: #fff;
+		border: 2px solid var(--wpzf-text); border-radius: 0;
+		font: inherit; font-size: .875em; font-weight: 700;
+		text-transform: uppercase; letter-spacing: .05em;
+		cursor: pointer;
+		transition: background .15s, border-color .15s;
+		&:hover { background: var(--wpzf-accent); border-color: var(--wpzf-accent); }
+	}
+
+	@include wpzf-custom-controls('%231f2937');
+
+	// Match the bold 2px input border weight.
+	.wpzf-choice input[type="checkbox"],
+	.wpzf-choice input[type="radio"] { border-width: 2px; }
+}
+
+/* ──────────────────────────────────────────────────────────────────────────────
+   THEME: rounded
+   Pill-shaped inputs and button. Clean border, purple accent.
+   ──────────────────────────────────────────────────────────────────────────── */
+.wpzf-form.wpzf-theme-rounded {
+	--wpzf-accent:        #7c3aed;
+	--wpzf-text:          #1f2937;
+	--wpzf-muted:         #6b7280;
+	--wpzf-border:        #e5e7eb;
+	--wpzf-bg:            #ffffff;
+	--wpzf-check-radius:  6px;
+
+	color: var(--wpzf-text);
+
+	.wpzf-label {
+		display: block; margin-bottom: .4em;
+		font-size: .875em; font-weight: 500; color: var(--wpzf-muted);
+	}
+	.wpzf-input {
+		@extend %wpzf-input-base;
+		padding-left: 16px; padding-right: 16px;
+		background: var(--wpzf-bg); color: var(--wpzf-text);
+		border: 1.5px solid var(--wpzf-border); border-radius: 9999px;
+		transition: border-color .15s, box-shadow .15s;
+		&::placeholder { color: var(--wpzf-muted); }
+		&:focus { outline: 0; border-color: var(--wpzf-accent); box-shadow: 0 0 0 3px rgba(124,58,237,.12); }
+	}
+	textarea.wpzf-input { border-radius: 16px; }
+	.wpzf-help { margin-top: 4px; font-size: 12px; color: var(--wpzf-muted); }
+	.wpzf-submit__btn {
+		display: inline-block;
+		padding: 11px 28px;
+		background: var(--wpzf-accent); color: #fff;
+		border: 0; border-radius: 9999px;
+		font: inherit; font-weight: 600;
+		cursor: pointer;
+		transition: filter .15s;
+		&:hover { filter: brightness(1.08); }
+	}
+
+	@include wpzf-custom-controls('%236b7280');
+}
+
+/* ──────────────────────────────────────────────────────────────────────────────
+   THEME: flat
+   Borderless inputs with a soft grey fill. Clean, minimal, no visible outline.
+   ──────────────────────────────────────────────────────────────────────────── */
+.wpzf-form.wpzf-theme-flat {
+	--wpzf-accent:        #374151;
+	--wpzf-text:          #374151;
+	--wpzf-muted:         #6b7280;
+	--wpzf-bg:            #f3f4f6;
+	--wpzf-radius:        2px;
+	--wpzf-check-radius:  2px;
+
+	.wpzf-label {
+		display: block; margin-bottom: .4em;
+		font-size: .875em; font-weight: 600; color: var(--wpzf-text);
+	}
+	.wpzf-input {
+		@extend %wpzf-input-base;
+		background: var(--wpzf-bg); color: var(--wpzf-text);
+		border: 0; border-radius: var(--wpzf-radius);
+		box-shadow: none;
+		transition: background .15s;
+		&::placeholder { color: var(--wpzf-muted); }
+		&:focus { outline: 0; background: #e2e8f0; box-shadow: none; }
+	}
+	.wpzf-help { margin-top: 4px; font-size: 12px; color: var(--wpzf-muted); }
+	.wpzf-heading { color: var(--wpzf-text); }
+	.wpzf-paragraph { color: var(--wpzf-muted); }
+	.wpzf-divider { border-top-color: #e2e8f0; }
+	.wpzf-required { color: #ef4444; }
+	.wpzf-submit__btn {
+		display: inline-block;
+		padding: 11px 24px;
+		background: var(--wpzf-accent); color: #ffffff;
+		border: 0; border-radius: var(--wpzf-radius);
+		font: inherit; font-weight: 700;
+		cursor: pointer;
+		transition: filter .15s;
+		&:hover { filter: brightness(1.1); }
+	}
+	.wpzf-notice[data-status="success"] { background: #f0fdf4; border-color: #86efac; color: #166534; border-radius: var(--wpzf-radius); }
+	.wpzf-notice[data-status="error"]   { background: #fef2f2; border-color: #fca5a5; color: #991b1b; border-radius: var(--wpzf-radius); }
+
+	@include wpzf-custom-controls('%23374151');
+}
+
+/* ──────────────────────────────────────────────────────────────────────────────
+   THEME: outline  (PRO)
+   Transparent inputs with a visible border. Ghost submit button.
+   ──────────────────────────────────────────────────────────────────────────── */
+.wpzf-form.wpzf-theme-outline {
+	--wpzf-accent:        #2563eb;
+	--wpzf-text:          #111827;
+	--wpzf-muted:         #9ca3af;
+	--wpzf-border:        #d1d5db;
+	--wpzf-bg:            transparent;
+	--wpzf-radius:        6px;
+	--wpzf-check-radius:  4px;
+
+	color: var(--wpzf-text);
+
+	.wpzf-label {
+		display: block; margin-bottom: .4em;
+		font-size: .875em; font-weight: 500; color: var(--wpzf-text);
+	}
+	.wpzf-input {
+		@extend %wpzf-input-base;
+		background: transparent; color: var(--wpzf-text);
+		border: 1.5px solid var(--wpzf-border); border-radius: var(--wpzf-radius);
+		transition: border-color .15s;
+		&::placeholder { color: var(--wpzf-muted); }
+		&:focus { outline: 0; border-color: var(--wpzf-accent); }
+	}
+	.wpzf-help { margin-top: 4px; font-size: 12px; color: var(--wpzf-muted); }
+	.wpzf-submit__btn {
+		display: inline-block;
+		padding: 9px 24px;
+		background: transparent; color: var(--wpzf-accent);
+		border: 1.5px solid var(--wpzf-accent); border-radius: var(--wpzf-radius);
+		font: inherit; font-weight: 600;
+		cursor: pointer;
+		transition: background .15s, color .15s;
+		&:hover { background: var(--wpzf-accent); color: #fff; }
+	}
+
+	@include wpzf-custom-controls('%236b7280');
+
+	// Transparent bg when unchecked; accent fill on check.
+	.wpzf-choice input[type="checkbox"],
+	.wpzf-choice input[type="radio"] { background: transparent; }
 }

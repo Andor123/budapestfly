@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Elementor Website Builder &#8211; more than just a page builder - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-05-26 09:22:43+0000\n"
+"PO-Revision-Date: 2026-05-26 11:57:22+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -61,6 +61,22 @@ msgstr "Esta publicación no está construida con Elementor."
 msgid "Sorry, you are not allowed to edit this document."
 msgstr "Lo siento, no tienes permiso para editar este documento."
 
+#: modules/mcp/module.php:31
+msgid "Enable Elementor MCP WP Abilities API. Requirements: 1. WordPress 7.0 or higher. 2. Create an application password for your agent user. 3. Add to your MCP config: {url: \"https://<your-site-url>/wp-json/elementor/mcp\", headers: {Authorization: \"Basic <base64(user:application-password)>\"}}"
+msgstr "Activar la API de habilidades WP de Elementor MCP. Requisitos: 1. WordPress 7.0 o superior. 2. Crea una contraseña de aplicación para tu usuario agente. 3. Añade a tu configuración MCP: {url: \"https://<url-de-tu-sitio>/wp-json/elementor/mcp\", headers: {Authorization: \"Basic <base64(usuario:contraseña-de-aplicación)>\"}}"
+
+#: modules/mcp/abilities/list-pages-ability.php:18
+msgid "Returns pages and posts built with Elementor on this WordPress site. Each item includes ID, title, status (publish/draft), URL, and post type. Use this first to discover which pages exist before fetching their structure or modifying settings."
+msgstr "Devuelve las páginas y entradas construidas con Elementor en este sitio de WordPress. Cada elemento incluye el ID, el título, el estado (publicado/borrador), la URL y el tipo de entrada. Úsalo primero para descubrir qué páginas existen antes de obtener su estructura o modificar sus ajustes."
+
+#: modules/mcp/abilities/get-structure-ability.php:20
+msgid "Returns the Elementor element tree (widgets, containers, and nested content) for a single post or page ID. Use after list-pages when you need the live JSON structure to reason about layout, widget types, or to plan edits. Only works for posts that were saved with Elementor."
+msgstr "Devuelve el árbol de elementos de Elementor (widgets, contenedores y contenido anidado) para el ID de una única entrada o página. Úsalo después de listar-páginas cuando necesites la estructura JSON en tiempo real para analizar el diseño, los tipos de widgets o para planificar ediciones. Solo funciona para entradas guardadas con Elementor."
+
+#: modules/mcp/abilities/update-settings-ability.php:20
+msgid "Updates Elementor document-level settings for a post (for example page layout, title visibility, or custom page settings). Pass only the keys you want to change. Use list-pages to resolve IDs and get-page-structure when you also need the element tree. Requires permission to edit the target post."
+msgstr "Actualiza los ajustes a nivel de documento de Elementor para una entrada (por ejemplo, diseño de página, visibilidad del título o ajustes de página personalizados). Pasa solo las claves que quieras cambiar. Usa listar-páginas para resolver los ID y obtener-estructura-de-página cuando también necesites el árbol de elementos. Requiere permiso para editar la entrada de destino."
+
 #: modules/mcp/abilities/get-structure-ability.php:19
 msgid "Get Elementor Page Structure"
 msgstr "Obtener la estructura de página de Elementor"
@@ -94,6 +110,66 @@ msgstr "Maquetador del sitio"
 #: app/modules/site-builder/module.php:43
 msgid "Enable Site Builder."
 msgstr "Activar el maquetador del sitio."
+
+#: modules/atomic-widgets/module.php:242
+msgid "Enable CSS Grid layout for containers."
+msgstr "Activar el diseño de cuadrícula CSS para los contenedores."
+
+#: modules/atomic-widgets/module.php:241
+msgid "CSS Grid"
+msgstr "Cuadrícula CSS"
+
+#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:210
+msgid "https://your-webhook-url.com"
+msgstr "https://your-webhook-url.com"
+
+#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:187
+msgid "Webhook"
+msgstr "Gancho web"
+
+#: modules/mcp/abilities/get-globals-ability.php:24
+msgid "Returns site-wide Elementor design data: global classes (shared CSS classes from the kit) and variables (design tokens such as colors and fonts tied to the active kit). Use when you need kit-level styling context, not a single page tree."
+msgstr "Devuelve los datos de diseño globales de Elementor: clases globales (clases CSS compartidas del kit) y variables (tokens de diseño como colores y fuentes vinculados al kit activo). Úsalo cuando necesites el contexto de estilo a nivel de kit, no el árbol de una sola página."
+
+#: modules/mcp/abilities/get-globals-ability.php:23
+msgid "Get Elementor Globals"
+msgstr "Obtener los elementos globales de Elementor"
+
+#: modules/mcp/abilities/create-page-ability.php:123
+msgid "Document could not be loaded."
+msgstr "No se ha podido cargar el documento."
+
+#: modules/mcp/abilities/create-page-ability.php:107
+msgid "Elementor Draft"
+msgstr "Borrador de Elementor"
+
+#: modules/mcp/abilities/create-page-ability.php:96
+msgid "Sorry, you are not allowed to create posts of this type."
+msgstr "Lo sentimos, no tienes permiso para crear entradas de este tipo."
+
+#: modules/mcp/abilities/create-page-ability.php:82
+msgid "This post type does not support Elementor."
+msgstr "Este tipo de entrada no es compatible con Elementor."
+
+#: modules/mcp/abilities/create-page-ability.php:20
+msgid "Creates a new draft post or page and marks it as built with Elementor (blank canvas in the editor). Use when the user wants a new layout shell to design in Elementor. Returns the new post ID and edit URL."
+msgstr "Crea una nueva entrada o página en borrador y la marca como construida con Elementor (lienzo en blanco en el editor). Úsalo cuando el usuario quiera una nueva estructura de diseño en Elementor. Devuelve el ID de la nueva entrada y la URL de edición."
+
+#: modules/mcp/abilities/create-page-ability.php:19
+msgid "Create Elementor Page"
+msgstr "Crear página de Elementor"
+
+#: modules/markdown-render/module.php:178
+msgid "Markdown Cache"
+msgstr "Caché de markdown"
+
+#: modules/markdown-render/module.php:28
+msgid "Serve your pages as Markdown files so AI agents can ingest and understand your content more efficiently."
+msgstr "Sirve tus páginas como archivos markdown para que los agentes de IA puedan ingerir y comprender tu contenido de forma más eficiente."
+
+#: modules/markdown-render/module.php:193
+msgid "Specify the duration for which Markdown output is cached. This cache is served to AI crawlers requesting text/markdown content."
+msgstr "Especifica la duración durante la cual se almacena en caché la salida markdown. Esta caché se sirve a los rastreadores de IA que solicitan contenido text/markdown."
 
 #: modules/widget-creation/module.php:81
 msgid "Custom Widget"

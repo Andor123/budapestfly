@@ -829,6 +829,10 @@ class WPZOOM_Forms_Settings {
 	public function reset_settings() {
 		check_ajax_referer( 'wpzoom-reset-settings-nonce', 'security' );
 
+		if ( ! current_user_can( 'manage_options' ) ) {
+			wp_send_json_error( array( 'status' => '403', 'message' => 'FORBIDDEN' ), 403 );
+		}
+
 		$defaults = self::get_defaults();
 
 		if ( empty( $defaults ) ) {

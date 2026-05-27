@@ -10,10 +10,10 @@
  * @wordpress-plugin
  * Plugin Name: WPZOOM Forms
  * Plugin URI:  https://www.wpzoom.com/plugins/wpzoom-forms
- * Description: Simple, user-friendly contact form plugin for WordPress that utilizes Gutenberg blocks for easy form building and customization.
+ * Description: Simple, user-friendly contact form plugin for WordPress with a dedicated drag-and-drop builder.
  * Author:      WPZOOM
  * Author URI:  https://www.wpzoom.com
- * Version:     1.3.9
+ * Version:     2.0.1
  * License:     GPL2+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  */
@@ -901,7 +901,7 @@ class WPZOOM_Forms {
 	 * @return array
 	 * @since  1.3.7
 	 */
-	private function get_spam_protection_config() {
+	public function get_spam_protection_config() {
 		$service = sanitize_text_field( (string) WPZOOM_Forms_Settings::get( 'wpzf_global_captcha_service' ) );
 		$type    = sanitize_text_field( (string) WPZOOM_Forms_Settings::get( 'wpzf_global_captcha_type' ) );
 
@@ -959,39 +959,41 @@ class WPZOOM_Forms {
 		$captcha_type  = $captcha['type'];
 		$active_method = $captcha['active_service'];
 
-		if ( 'recaptcha' === $active_method ) {
-			$site_key = ( 'v3' === $captcha_type ) ? $captcha['recaptcha_v3_site_key'] : $captcha['recaptcha_v2_site_key'];
+		if ( ! is_admin() ) {
+			if ( 'recaptcha' === $active_method ) {
+				$site_key = ( 'v3' === $captcha_type ) ? $captcha['recaptcha_v3_site_key'] : $captcha['recaptcha_v2_site_key'];
 
-			if ( 'v2' === $captcha_type ) {
+				if ( 'v2' === $captcha_type ) {
+					wp_register_script(
+						'google-recaptcha',
+						'https://www.google.com/recaptcha/api.js',
+						array(),
+						WPZOOM_FORMS_VERSION,
+						true
+					);
+				}
+				elseif ( 'v3' === $captcha_type ) {
+					wp_register_script(
+						'google-recaptcha',
+						"https://www.google.com/recaptcha/api.js?render={$site_key}",
+						array(),
+						WPZOOM_FORMS_VERSION,
+						true
+					);
+				}
+
+				$depends[] = 'google-recaptcha';
+			} elseif ( 'turnstile' === $active_method ) {
 				wp_register_script(
-					'google-recaptcha',
-					'https://www.google.com/recaptcha/api.js',
+					'turnstile-recaptcha',
+					'https://challenges.cloudflare.com/turnstile/v0/api.js',
 					array(),
-					WPZOOM_FORMS_VERSION,
-					true
+					null,
+					array( 'strategy' => 'defer' ),
 				);
-			}
-			elseif ( 'v3' === $captcha_type ) {
-				wp_register_script(
-					'google-recaptcha',
-					"https://www.google.com/recaptcha/api.js?render={$site_key}",
-					array(),
-					WPZOOM_FORMS_VERSION,
-					true
-				);
-			}
 
-			$depends[] = 'google-recaptcha';
-		} elseif ( 'turnstile' === $active_method ) {
-			wp_register_script(
-				'turnstile-recaptcha',
-				'https://challenges.cloudflare.com/turnstile/v0/api.js',
-				array(),
-				null,
-				array( 'strategy' => 'defer' ),
-			);
-
-			$depends[] = 'turnstile-recaptcha';
+				$depends[] = 'turnstile-recaptcha';
+			}
 		}
 		
 		wp_register_script(
@@ -1864,7 +1866,9 @@ class WPZOOM_Forms {
 
 		$current_screen = function_exists( 'get_current_screen' ) ? get_current_screen() : null;
 
-		if ( is_admin() || ( ! is_null( $current_screen ) && $current_screen->is_block_editor() ) ) return '';
+		// Allow rendering during REST API requests (ServerSideRender / block preview).
+		$is_rest = defined( 'REST_REQUEST' ) && REST_REQUEST;
+		if ( ( is_admin() && ! $is_rest ) || ( ! is_null( $current_screen ) && $current_screen->is_block_editor() ) ) return '';
 
 		// Get form ID and validate form exists and is published
 		$form_id = isset( $attributes['formId'] ) ? intval( $attributes['formId'] ) : 0;
@@ -1962,6 +1966,18 @@ class WPZOOM_Forms {
 			$form_content
 		);
 
+		// If this (legacy) form actually contains a date field, make sure the
+		// datepicker assets load. We enqueue here — at render time — rather than
+		// relying solely on the page-scan in block_frontend_assets(), which only
+		// inspects a single form-block per page and misses multi-form pages,
+		// shortcode and Elementor embeds. The scripts are registered in_footer so
+		// this late enqueue still prints correctly.
+		if ( false !== strpos( $form_content, 'data-datepicker' ) ) {
+			wp_enqueue_style( 'wpzoom-forms-css-frontend-flatpickr' );
+			wp_enqueue_script( 'wpzoom-forms-js-frontend-flatpickr' );
+			wp_enqueue_script( 'wpzoom-forms-js-frontend-datepicker' );
+		}
+
 		$submitted_form_id = isset( $_GET['wpzf_submitted_form'] ) ? intval( $_GET['wpzf_submitted_form'] ) : -1;
 		$show_notice = isset( $_GET['success'] ) && ( -1 === $submitted_form_id || $submitted_form_id === intval( $attributes['formId'] ) );
 
@@ -2016,30 +2032,31 @@ class WPZOOM_Forms {
 			$content = preg_replace( '/<input([^>]*)type="submit"([^>]*)class="([^"]+)"/i', '<input $1 type="submit" data-sitekey="' . $recaptcha_site_key . '" data-callback="wpzf_submit" data-action="submit" ' . $data_badge_location . ' $2 class="$3 g-recaptcha"', $content );
 		} elseif ( 'turnstile' === $captcha_method ) {
 			$turnstile_widget = '<div class="cf-turnstile" data-theme="' . $turnstile_widget_theme . '" data-sitekey="' . $turnstile_site_key . '"></div>';
-			$content = preg_replace( '/<input([^>]*)type="submit"([^>]*)class="([^"]+)".*>/i', '<input $1 type="submit" data-callback="wpzf_submit" data-action="submit" $2 class="$3 cf-captcha">' . $turnstile_widget, $content );
+			$content = preg_replace( '/<input([^>]*)type="submit"([^>]*)class="([^"]+)"([^>]*)>/i', '<input $1 type="submit" data-callback="wpzf_submit" data-action="submit" $2 class="$3 cf-captcha" $4>' . $turnstile_widget, $content );
 		}
 
 		$style = $styleOutput = '';
 
 		// Add custom styles to the form
+		$field_sel = '#' . $form_ID . ' input:not([type="submit"]), #' . $form_ID . ' textarea, #' . $form_ID . ' select';
 		if( ! empty( $fieldBgColor ) ) {
-			$styleOutput .= sprintf( '#' . $form_ID . ' input:not([type="submit"]), #' . $form_ID . ' textarea { background-color: %s; }', $fieldBgColor );
+			$styleOutput .= sprintf( $field_sel . ' { background-color: %s; }', $fieldBgColor );
 		}
 		if( ! empty( $fieldBrdStyle ) && 'default' !== $fieldBrdStyle ) {
-			$styleOutput .= sprintf( '#' . $form_ID . ' input:not([type="submit"]), #' . $form_ID . ' textarea { border-style: %s; }', $fieldBrdStyle );
+			$styleOutput .= sprintf( $field_sel . ' { border-style: %s; }', $fieldBrdStyle );
 			if( ! empty( $fieldBrdWidth ) ) {
-				$styleOutput .= sprintf( '#' . $form_ID . ' input:not([type="submit"]), #' . $form_ID . ' textarea { border-width: %s; }', $fieldBrdWidth );
+				$styleOutput .= sprintf( $field_sel . ' { border-width: %s; }', $fieldBrdWidth );
 			}
 			if( ! empty( $fieldBrdRadius ) ) {
-				$styleOutput .= sprintf( '#' . $form_ID . ' input:not([type="submit"]), #' . $form_ID . ' textarea { border-radius: %s; }', $fieldBrdRadius );
+				$styleOutput .= sprintf( $field_sel . ' { border-radius: %s; }', $fieldBrdRadius );
 			}
 		}
 
 		if( ! empty( $fieldBrdColor ) ) {
-			$styleOutput .= sprintf( '#' . $form_ID . ' input:not([type="submit"]), #' . $form_ID . ' textarea { border-color: %s; }', $fieldBrdColor );
+			$styleOutput .= sprintf( $field_sel . ' { border-color: %s; }', $fieldBrdColor );
 		}
 		if( ! empty( $fieldTextColor ) ) {
-			$styleOutput .= sprintf( '#' . $form_ID . ' input:not([type="submit"]), #' . $form_ID . ' textarea { color: %s; }', $fieldTextColor );
+			$styleOutput .= sprintf( $field_sel . ' { color: %s; }', $fieldTextColor );
 		}
 		
 		//Label styles
@@ -2047,24 +2064,25 @@ class WPZOOM_Forms {
 			$styleOutput .= sprintf( '#' . $form_ID . ' label { color: %s; }', $labelTextColor );
 		}
 		
-		//Button styles
+		//Button styles — target both old <input type="submit"> and new builder's <button class="wpzf-submit__btn">
+		$btn_sel = '#' . $form_ID . ' input[type="submit"], #' . $form_ID . ' button.wpzf-submit__btn';
 		if( ! empty( $btnBrdStyle ) && 'default' !== $btnBrdStyle ) {
-			$styleOutput .= sprintf( '#' . $form_ID . ' input[type="submit"] { border-style: %s; }', $btnBrdStyle );
+			$styleOutput .= sprintf( $btn_sel . ' { border-style: %s; }', $btnBrdStyle );
 			if( ! empty( $btnBrdWidth ) ) {
-				$styleOutput .= sprintf( '#' . $form_ID . ' input[type="submit"] { border-width: %s; }', $btnBrdWidth );
+				$styleOutput .= sprintf( $btn_sel . ' { border-width: %s; }', $btnBrdWidth );
 			}
 			if( ! empty( $btnBrdRadius ) ) {
-				$styleOutput .= sprintf( '#' . $form_ID . ' input[type="submit"] { border-radius: %s; }', $btnBrdRadius );
+				$styleOutput .= sprintf( $btn_sel . ' { border-radius: %s; }', $btnBrdRadius );
 			}
 		}
 		if( ! empty( $btnTextColor ) ) {
-			$styleOutput .= sprintf( '#' . $form_ID . ' input[type="submit"] { color: %s; }', $btnTextColor );
+			$styleOutput .= sprintf( $btn_sel . ' { color: %s; }', $btnTextColor );
 		}
 		if( ! empty( $btnBrdColor ) ) {
-			$styleOutput .= sprintf( '#' . $form_ID . ' input[type="submit"] { border-color: %s; }', $btnBrdColor );
+			$styleOutput .= sprintf( $btn_sel . ' { border-color: %s; }', $btnBrdColor );
 		}
 		if( ! empty( $btnBgColor ) ) {
-			$styleOutput .= sprintf( '#' . $form_ID . ' input[type="submit"] { background-color: %s; }', $btnBgColor );
+			$styleOutput .= sprintf( $btn_sel . ' { background-color: %s; }', $btnBgColor );
 		}
 
 		// Add styles for the notice
@@ -2078,7 +2096,7 @@ class WPZOOM_Forms {
 			$styleOutput
 		);
 
-		$content = $style . $content;
+		$content = $content . $style;
 
 		return $content;
 	}
@@ -3317,3 +3335,189 @@ if ( ! function_exists( 'wpzoom_forms_plugin_action_links' ) ) {
 if ( defined( 'ELEMENTOR_VERSION' ) && is_callable( 'Elementor\Plugin::instance' ) ) {
 	require_once 'elementor/wpzoom-forms-elementor.php';
 }
+
+/* -------------------------------------------------------------------------- */
+/* WPZOOM Forms v2 — schema-driven builder, REST API, renderer.               */
+/* Coexists with the legacy block system: schema is the source of truth, the  */
+/* legacy renderer remains a fallback during/after migration.                 */
+/* -------------------------------------------------------------------------- */
+require_once WPZOOM_FORMS_PATH . 'classes/class-wpzoom-forms-schema.php';
+require_once WPZOOM_FORMS_PATH . 'classes/class-wpzoom-forms-migration.php';
+require_once WPZOOM_FORMS_PATH . 'classes/class-wpzoom-forms-templates.php';
+require_once WPZOOM_FORMS_PATH . 'classes/class-wpzoom-forms-option-lists.php';
+require_once WPZOOM_FORMS_PATH . 'classes/class-wpzoom-forms-rest.php';
+require_once WPZOOM_FORMS_PATH . 'classes/class-wpzoom-forms-renderer.php';
+require_once WPZOOM_FORMS_PATH . 'classes/class-wpzoom-forms-submission-handler.php';
+require_once WPZOOM_FORMS_PATH . 'classes/class-wpzoom-forms-builder-page.php';
+require_once WPZOOM_FORMS_PATH . 'classes/class-wpzoom-forms-submission-view.php';
+
+/**
+ * Shared embed helper used by the shortcode and the Elementor widget.
+ *
+ * Routes to the v2 renderer for forms saved through the new builder
+ * (_wpzf_schema postmeta present) and to the legacy block renderer for
+ * old block-based forms that have no schema yet.
+ *
+ * @param int $id Form post ID.
+ * @return string Rendered HTML.
+ */
+function wpzoom_forms_render_embed( $id ) {
+	global $wpzoom_forms;
+	$id = (int) $id;
+	if ( $id < 1 ) {
+		return '';
+	}
+
+	if ( get_post_meta( $id, WPZOOM_Forms_Schema::META_KEY, true ) ) {
+		return WPZOOM_Forms_Renderer::render( $id );
+	}
+
+	// Legacy form — fall back to the block-based renderer.
+	if ( $wpzoom_forms ) {
+		wp_enqueue_script( 'wpzoom-forms-js-frontend-formblock' );
+		wp_enqueue_style( 'wpzoom-forms-css-frontend-formblock' );
+		return $wpzoom_forms->form_block_render( array( 'formId' => $id ) );
+	}
+
+	return '';
+}
+
+add_action( 'init', function() {
+	global $wpzoom_forms;
+
+	// Take over form submission from the legacy handler.
+	if ( $wpzoom_forms ) {
+		remove_action( 'admin_post_wpzf_submit',        array( $wpzoom_forms, 'action_form_post' ), 10 );
+		remove_action( 'admin_post_nopriv_wpzf_submit', array( $wpzoom_forms, 'action_form_post' ), 10 );
+		// The legacy class whitelist-resets $wp_meta_boxes to keep ONLY its own boxes —
+		// drop that hook so our submission-detail boxes survive.
+		remove_action( 'in_admin_header', array( $wpzoom_forms, 'remove_meta_boxes' ), 100 );
+		// The legacy meta-box registration adds boxes we replace with our own.
+		remove_action( 'add_meta_boxes_wpzf-submission', array( $wpzoom_forms, 'add_meta_boxes' ), 10 );
+	}
+
+	// Disable the legacy template-picker modal — our React builder owns templates now.
+	if ( class_exists( 'WPZOOM_Forms_Template_Manager' ) ) {
+		$legacy_tm = WPZOOM_Forms_Template_Manager::instance();
+		remove_action( 'admin_enqueue_scripts', array( $legacy_tm, 'scripts' ) );
+		remove_action( 'admin_footer',          array( $legacy_tm, 'modal_window' ) );
+		remove_filter( 'default_content',       array( $legacy_tm, 'default_form_content' ), 10 );
+	}
+
+	// Register meta so REST/admin can expose it.
+	register_post_meta( 'wpzf-form', WPZOOM_Forms_Schema::META_KEY, array(
+		'type'         => 'string',
+		'single'       => true,
+		'show_in_rest' => true,
+		'auth_callback' => function() { return current_user_can( 'edit_posts' ); },
+	) );
+
+	( new WPZOOM_Forms_REST() )->register();
+	( new WPZOOM_Forms_Submission_Handler() )->register();
+	( new WPZOOM_Forms_Builder_Page() )->register();
+	( new WPZOOM_Forms_Submission_View() )->register();
+}, 11 ); // After main class init (priority 9).
+
+/**
+ * Override the legacy shortcode to route through the shared embed helper,
+ * which selects v2 or legacy renderer based on whether _wpzf_schema exists.
+ */
+add_action( 'init', function() {
+	remove_shortcode( 'wpzf_form' );
+	add_shortcode( 'wpzf_form', function( $atts ) {
+		$atts = shortcode_atts( array( 'id' => 0 ), $atts, 'wpzf_form' );
+		return wpzoom_forms_render_embed( (int) $atts['id'] );
+	} );
+}, 12 );
+
+/**
+ * For the form-block (Gutenberg block that embeds a form by id), substitute
+ * the render callback to use the new renderer. The block remains registered
+ * so existing content keeps working. We hook `render_block` (rather than
+ * patching the block type at registration time) because the main class
+ * registers the block at init:9, before our filters get a chance to attach.
+ */
+add_filter( 'render_block', function( $block_content, $block ) {
+	if ( ! isset( $block['blockName'] ) || $block['blockName'] !== 'wpzoom-forms/form-block' ) return $block_content;
+	if ( is_admin() ) return $block_content;
+	$id = isset( $block['attrs']['formId'] ) ? (int) $block['attrs']['formId'] : 0;
+	if ( $id < 1 ) return $block_content;
+
+	// Only switch to the v2 renderer when the form has been saved through the new
+	// builder (_wpzf_schema exists). Otherwise return the original block output
+	// unchanged so old forms keep all their existing styling and behaviour.
+	if ( ! get_post_meta( $id, WPZOOM_Forms_Schema::META_KEY, true ) ) {
+		return $block_content;
+	}
+
+	// The render_callback (form_block_render) already built a <style> tag containing
+	// per-form color/border overrides from the block attributes (fieldBgColor, btnBgColor, …).
+	// Preserve it so those settings actually apply to the new renderer's output.
+	$block_styles = '';
+	if ( preg_match( '/(<style\b[^>]*>.*?<\/style>)/is', $block_content, $m ) ) {
+		$block_styles = $m[1];
+	}
+
+	// Preserve the block's alignment (wide/full) on the rendered wrapper. The
+	// render callback no longer produces this output, so the align class set in
+	// the editor must be re-applied here or the frontend ignores it.
+	$align        = isset( $block['attrs']['align'] ) ? $block['attrs']['align'] : '';
+	$root_classes = ( $align && 'none' !== $align ) ? 'align' . $align : '';
+
+	return $block_styles . WPZOOM_Forms_Renderer::render( $id, $root_classes );
+}, 9, 2 );
+
+
+/**
+ * Customize the "All Forms" admin list a bit:
+ * - rename "Add New" wording, replace target link with our builder.
+ */
+add_action( 'admin_head-edit.php', function() {
+	$screen = get_current_screen();
+	if ( ! $screen || $screen->post_type !== 'wpzf-form' ) return;
+	?>
+	<style>
+		.wp-heading-inline + .page-title-action { background: #2271b1; color: #fff; border-color: #2271b1; }
+		.wp-heading-inline + .page-title-action:hover { background: #135e96; }
+	</style>
+	<script>
+		jQuery(function($){
+			var btn = $('.page-title-action').first();
+			if (btn.length) {
+				btn.attr('href', '<?php echo esc_js( admin_url( 'admin.php?page=wpzf-form-builder' ) ); ?>');
+				btn.text(<?php echo wp_json_encode( __( 'Add New Form', 'wpzoom-forms' ) ); ?>);
+			}
+		});
+	</script>
+	<?php
+} );
+
+/**
+ * Render the legacy "Upgrade to PRO" sidebar banner on the forms list page.
+ * The legacy template-manager modal used to ship this; we disabled that modal
+ * when replacing the form editor, so re-emit the banner here so the upsell
+ * isn't lost.
+ */
+add_action( 'admin_footer-edit.php', function() {
+	$screen = get_current_screen();
+	if ( ! $screen || $screen->post_type !== 'wpzf-form' ) return;
+	if ( ! class_exists( 'WPZOOM_Forms_Settings' ) ) return;
+
+	$settings_class = new WPZOOM_Forms_Settings();
+	$settings_class->upsell_banner(); // echoes the .wpzoom-forms-settings-upsell-container markup
+	?>
+	<script>
+		jQuery(function($){
+			var $banner = $('.wpzoom-forms-settings-upsell-container').last();
+			if ( ! $banner.length ) return;
+			// Drop the upsell into the right rail next to the posts table.
+			var $filter = $('#posts-filter');
+			if ( $filter.length ) {
+				$banner.css({ 'float':'right', 'margin-left':'20px', 'max-width':'340px' });
+				$filter.before( $banner );
+			}
+		});
+	</script>
+	<?php
+} );
+

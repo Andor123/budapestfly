@@ -1,0 +1,56 @@
+/* WPZOOM Forms — submission detail view (wp-admin) */
+
+body.post-type-wpzf-submission {
+	#titlediv,
+	#minor-publishing,
+	#major-publishing-actions,
+	#delete-action { /* keep delete */ }
+	#screen-meta-links { display: none; }
+	.wrap > h1 { display: flex; align-items: center; gap: 8px; }
+}
+
+.wpzf-sub-table {
+	width: 100%; border-collapse: collapse;
+	font-size: 14px;
+	th, td {
+		text-align: left;
+		padding: 12px 14px;
+		border-bottom: 1px solid #eef0f3;
+		vertical-align: top;
+	}
+	th {
+		width: 28%;
+		font-weight: 600; color: #1f2937;
+		background: #fafbfc;
+	}
+	td { color: #374151; }
+	tr:last-child th, tr:last-child td { border-bottom: 0; }
+	a { color: #2271b1; text-decoration: none; }
+	a:hover { text-decoration: underline; }
+}
+
+.wpzf-empty {
+	padding: 16px; color: #6b7280; font-style: italic; text-align: center;
+}
+
+.wpzf-sub-side {
+	margin: 0; padding: 0; list-style: none;
+	li {
+		padding: 10px 0;
+		border-bottom: 1px solid #eef0f3;
+		display: flex; flex-direction: column; gap: 2px;
+		font-size: 13px;
+		&:last-child { border-bottom: 0; }
+	}
+	strong { color: #1f2937; font-size: 12px; text-transform: uppercase; letter-spacing: 0.3px; }
+	span { color: #4b5563; word-break: break-word; }
+	.wpzf-ua { font-family: ui-monospace, monospace; font-size: 11px; color: #6b7280; }
+	.wpzf-status {
+		display: inline-flex; align-items: center;
+		padding: 2px 8px; border-radius: 10px;
+		background: #ecfdf5; color: #065f46;
+		font-size: 11px; font-weight: 600;
+		text-transform: uppercase; letter-spacing: 0.3px;
+	}
+	.wpzf-status--spam { background: #fef2f2; color: #991b1b; }
+}

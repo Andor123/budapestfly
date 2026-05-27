@@ -28,12 +28,12 @@ updateCategory( 'wpzoom-blocks', {
 registerBlockType( 'wpzoom-forms/form-block', {
 	$schema:      'https://schemas.wp.org/trunk/block.json',
 	apiVersion:   3,
-	title:       __( 'Contact Form by WPZOOM', 'wpzoom-blocks' ),
-	description: __( 'A contact form block for accepting submissions from users.', 'wpzoom-blocks' ),
+	title:       __( 'Contact Form by WPZOOM', 'wpzoom-forms' ),
+	description: __( 'A contact form block for accepting submissions from users.', 'wpzoom-forms' ),
     keywords: [
-        __( 'contact', 'wpzoom-blocks' ),
-        __( 'form', 'wpzoom-blocks' ),
-        __( 'survey', 'wpzoom-blocks' ),
+        __( 'contact', 'wpzoom-forms' ),
+        __( 'form', 'wpzoom-forms' ),
+        __( 'survey', 'wpzoom-forms' ),
     ],
 	icon:        wpzoomFormsIcon,
 	category:    'wpzoom-blocks',

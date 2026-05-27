@@ -17,21 +17,21 @@ const ButtonControls = ({ attributes, setAttributes }) => {
             value: btnTextColor,
             onChange: (value) => setAttributes({ btnTextColor: value }),
             isShownByDefault: true,
-            label: __("Text Color", "wpzoom-blocks"),
+            label: __("Text Color", "wpzoom-forms"),
             resetAllFilter: () => setAttributes({ btnTextColor: '' })
         },
         {
             value: btnBrdColor,
             onChange: (value) => setAttributes({ btnBrdColor: value }),
             isShownByDefault: true,
-            label: __("Border Color", "wpzoom-blocks"),
+            label: __("Border Color", "wpzoom-forms"),
             resetAllFilter: () => setAttributes({ btnBrdColor: '' }),
         },
         {
             value: btnBgColor,
             onChange: (value) => setAttributes({ btnBgColor: value }),
             isShownByDefault: true,
-            label: __("Background Color", "wpzoom-blocks"),
+            label: __("Background Color", "wpzoom-forms"),
             resetAllFilter: () => setAttributes({ btnBgColor: '' }),
         },
     ];
@@ -41,7 +41,7 @@ const ButtonControls = ({ attributes, setAttributes }) => {
 
     return (
         <ToolsPanel
-            label={__("Button", "wpzoom-blocks")}
+            label={__("Button", "wpzoom-forms")}
             resetAll={() => setAttributes(
                 {
                     btnTextColor: '',
@@ -86,7 +86,7 @@ const ButtonControls = ({ attributes, setAttributes }) => {
 
             <ToolsPanelItem
                 hasValue={() => btnBrdStyle !== 'default' || !!btnBrdWidth}
-                label={__("Border", "wpzoom-blocks")}
+                label={__("Border", "wpzoom-forms")}
                 onDeselect={() => setAttributes({ btnBrdStyle: undefined, btnBrdWidth: undefined })}
                 onSelect={() => setAttributes({ btnBrdStyle: 'solid', btnBrdWidth: 1 })}
                 style={{ marginTop: '16px' }}
@@ -126,7 +126,7 @@ const ButtonControls = ({ attributes, setAttributes }) => {
 
             <ToolsPanelItem
                 hasValue={() => !!btnBrdRadius}
-                label={__("Border Radius", "wpzoom-blocks")}
+                label={__("Border Radius", "wpzoom-forms")}
                 onDeselect={() => setAttributes({ btnBrdRadius: undefined })}
                 onSelect={() => setAttributes({ btnBrdRadius: undefined })}
                 style={{ marginTop: '16px' }}

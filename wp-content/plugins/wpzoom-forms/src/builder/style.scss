@@ -1,0 +1,1155 @@
+/* WPZOOM Forms — v2 Builder UI
+   ============================
+   Colors:    WP gray scale + --wp-admin-theme-color for accent
+   Elevation: WP layered box-shadow tokens
+   Radius:    WP radius scale (x-small 1 / small 2 / medium 4 / large 8 / full 9999px) */
+
+// ── WP design-system token values ───────────────────────────────────────────
+// Gray scale (@wordpress/base-styles)
+$gray-900: #1e1e1e;
+$gray-700: #757575;   // lightest gray meeting 4.5:1 text contrast
+$gray-600: #949494;   // lightest gray meeting 3:1 UI contrast
+$gray-400: #ccc;
+$gray-200: #e0e0e0;
+$gray-100: #f0f0f0;   // WP admin page background
+
+// Accent — hex used in rgba(); CSS var used in solid property values so the
+// builder honours the admin's active colour scheme (Profile → Admin Color Scheme).
+$brand:        #2271b1;
+$brand-hover:  #135e96;
+$accent:       #4f46e5;   // purple, only for pro/upsell elements
+
+// Semantic aliases
+$text:        $gray-900;
+$muted:       $gray-700;
+$border:      $gray-200;
+$border-soft: $gray-100;
+$bg:          $gray-100;
+$bg-card:     #fff;
+$danger:      #d63638;   // WP admin standard red
+$success:     #4ab866;   // WP $alert-green
+
+// Radius (WP tokens)
+$radius-x-small: 1px;
+$radius-small:   2px;
+$radius-medium:  4px;
+$radius-large:   8px;
+$radius-full:    9999px;
+$radius:         $radius-large;  // compat alias
+
+// Elevation (WP layered shadow tokens)
+$elevation-x-small:
+	0 1px 1px rgba(0,0,0,.03),
+	0 1px 2px rgba(0,0,0,.02),
+	0 3px 3px rgba(0,0,0,.02),
+	0 4px 4px rgba(0,0,0,.01);
+$elevation-small:
+	0 1px 2px rgba(0,0,0,.05),
+	0 2px 3px rgba(0,0,0,.04),
+	0 6px 6px rgba(0,0,0,.03),
+	0 8px 8px rgba(0,0,0,.02);
+$elevation-medium:
+	0 2px 3px rgba(0,0,0,.05),
+	0 4px 5px rgba(0,0,0,.04),
+	0 12px 12px rgba(0,0,0,.03),
+	0 16px 16px rgba(0,0,0,.02);
+$elevation-large:
+	0 5px 15px rgba(0,0,0,.08),
+	0 15px 27px rgba(0,0,0,.07),
+	0 30px 36px rgba(0,0,0,.04),
+	0 50px 43px rgba(0,0,0,.02);
+
+/* full-screen takeover ----------------------------------------------------- */
+body.wpzf-form_page_wpzf-form-builder,
+body.toplevel_page_wpzf-form-builder,
+body[class*="page_wpzf-form-builder"] {
+	background: $bg;
+
+	#adminmenuwrap,
+	#wpadminbar,
+	#adminmenuback { display: none !important; }
+	#wpcontent { margin-left: 0 !important; padding-left: 0; }
+	#wpbody-content { padding-bottom: 0; }
+	#wpfooter { display: none; }
+	.notice, .update-nag, .updated, .error { display: none !important; }
+	.wrap { margin: 0; }
+}
+
+#wpzf-builder-root { min-height: 100vh; margin-top: -32px;  }
+
+.wpzf-builder {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	font: 13px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	color: $text;
+
+	&--loading,
+	&--error {
+		justify-content: center;
+		align-items: center;
+		min-height: 50vh;
+	}
+}
+
+.wpzf-spinner {
+	width: 32px; height: 32px;
+	border: 3px solid $border;
+	border-top-color: var(--wp-admin-theme-color, #{$brand});
+	border-radius: 50%;
+	animation: wpzf-spin 0.9s linear infinite;
+}
+@keyframes wpzf-spin { to { transform: rotate(360deg); } }
+
+/* topbar ------------------------------------------------------------------ */
+.wpzf-topbar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: relative;
+	background: $bg-card;
+	border-bottom: 1px solid $border;
+	padding-right:16px;
+	height: 56px;
+	flex-shrink: 0;
+
+	&__exit {
+		height: 56px;
+    	min-width: 56px !important;
+		background-color: #1e1e1e !important;
+		border-radius: 0;
+	}
+
+	&__left, &__right { display: flex; align-items: center; gap: 8px; }
+
+	&__center {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		display: flex;
+		align-items: center;
+		pointer-events: none;
+		> * { pointer-events: auto; }
+	}
+
+	&__brand {
+		display: inline-flex; align-items: center; gap: 8px;
+		font-weight: 600; color: $text;
+		svg { color: var(--wp-admin-theme-color, #{$brand}); }
+	}
+
+	// WP Button used as the inline title display/trigger.
+	&__title.components-button {
+		min-width: 180px;
+		background: $border-soft;
+		border-radius: $radius-medium;
+		justify-content: center !important;
+		&:hover:not(:disabled) { 
+			background: $border;
+		}
+		.dashicon, svg:not(:root) { color: $muted; }
+	}
+
+	// Wrapper for WP TextControl used as the inline title editor.
+	&__title-wrap {
+		.components-base-control__field { margin-bottom: 0; }
+		.components-text-control__input {
+			font: inherit; min-width: 280px; height: 32px;
+		}
+	}
+}
+
+// Dirty-state glow on the WP primary Save button.
+.wpzf-topbar__right .components-button.is-dirty {
+	box-shadow: 0 0 0 2px rgba($brand, .25);
+}
+
+/* buttons ----------------------------------------------------------------- */
+.wpzf-btn {
+	display: inline-flex; align-items: center; gap: 6px;
+	padding: 7px 14px;
+	border: 1px solid $border;
+	border-radius: $radius-medium;
+	background: $bg-card; color: $text;
+	font-size: 13px; font-weight: 500;
+	cursor: pointer;
+	text-decoration: none;
+	transition: background .15s, border-color .15s, box-shadow .15s;
+
+	&:hover:not(:disabled) { background: $border-soft; border-color: $gray-400; }
+	&:disabled { opacity: .5; cursor: not-allowed; }
+
+	&--primary {
+		background: var(--wp-admin-theme-color, #{$brand});
+		color: #fff;
+		border-color: var(--wp-admin-theme-color, #{$brand});
+		&:hover:not(:disabled) {
+			background: var(--wp-admin-theme-color-darker-10, #{$brand-hover});
+			border-color: var(--wp-admin-theme-color-darker-10, #{$brand-hover});
+		}
+	}
+	&--ghost {
+		background: transparent; border-color: transparent; color: $text;
+		&:hover:not(:disabled) { background: $border-soft; }
+	}
+	&--dirty {
+		box-shadow: 0 0 0 2px rgba($brand, .2);
+	}
+	&--small { padding: 4px 10px; font-size: 12px; }
+}
+
+.wpzf-badge {
+	margin-right: 6px;
+}
+
+.wpzf-icon-btn {
+	display: inline-flex; align-items: center; justify-content: center;
+	width: 24px; height: 24px;
+	background: transparent; border: 0; padding: 0;
+	color: $muted; border-radius: $radius-small; cursor: pointer;
+	&:hover { background: $border-soft; color: $text; }
+	&--danger:hover { color: $danger; background: rgba($danger, .08); }
+}
+
+/* layout: 3-column body --------------------------------------------------- */
+.wpzf-builder__body {
+	flex: 1;
+	display: grid;
+	grid-template-columns: 280px 1fr 340px;
+	min-height: 0;
+}
+
+.wpzf-sidebar {
+	background: $bg-card;
+	overflow-y: auto;
+
+	&--left  { border-right: 1px solid $border; }
+	&--right { border-left:  1px solid $border; }
+}
+
+
+/* sidebar — palette ------------------------------------------------------- */
+.wpzf-palette {
+	padding: 16px;
+	&__group + & { margin-top: 16px; }
+	&__group { margin-bottom: 20px; }
+	&__title {
+		font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+		color: $muted; margin: 0 0 8px;
+	}
+	&__grid {
+		display: grid; grid-template-columns: 1fr 1fr; gap: 6px;
+	}
+	&__item {
+		display: flex; align-items: center; gap: 6px;
+		padding: 10px;
+		background: $bg-card; border: 1px solid $border; border-radius: $radius-medium;
+		color: $text; font-size: 12px; font-weight: 500;
+		cursor: grab; text-align: left;
+		transition: border-color .15s, background .15s, transform .05s;
+		&:hover { border-color: var(--wp-admin-theme-color, #{$brand}); background: rgba($brand, .05); }
+		&:active { transform: scale(.98); cursor: grabbing; }
+	}
+	&__icon { color: var(--wp-admin-theme-color, #{$brand}); display: inline-flex; }
+	&__label { line-height: 1.2; flex: 1; }
+	&__pro-badge {
+		font-size: 9px; font-weight: 700; letter-spacing: 0.4px;
+		color: #fff; background: #b45309;
+		border-radius: 3px; padding: 1px 4px;
+		line-height: 1.4; flex-shrink: 0;
+	}
+	&__item--pro {
+		cursor: default; opacity: 0.75;
+		&:hover { border-color: #b45309; background: rgba(#b45309, .05); }
+		&:active { transform: none; cursor: default; }
+		.wpzf-palette__icon { color: #b45309; }
+	}
+	&__group--premium &__title { color: #b45309; }
+}
+// Vertical separator between button groups in the topbar.
+.wpzf-topbar__divider {
+	width: 1px; height: 24px;
+	background: $border; flex-shrink: 0;
+}
+
+/* canvas ------------------------------------------------------------------ */
+.wpzf-canvas {
+	overflow-y: auto;
+	background: $bg;
+	&__inner {
+		max-width: 760px; margin: 0 auto;
+		padding: 32px 24px;
+	}
+}
+
+.wpzf-preview {
+	background: $bg-card;
+	border-radius: $radius-medium;
+	padding: 32px;
+	box-shadow: $elevation-small;
+}
+
+.wpzf-empty-state {
+	text-align: center;
+	padding: 48px 16px;
+	color: $muted;
+	border: 2px dashed transparent;
+	border-radius: $radius-medium;
+	transition: border-color .15s, background .15s;
+	&.is-over {
+		border-color: var(--wp-admin-theme-color, #{$brand});
+		background: rgba($brand, .03);
+	}
+	h2 { font-size: 18px; color: $text; margin: 0 0 8px; }
+	p  { margin: 0 0 20px; }
+	&__shortcuts {
+		display: inline-flex; gap: 8px;
+		button {
+			padding: 8px 14px;
+			background: $border-soft; color: $text;
+			border: 1px solid $border; border-radius: $radius-full;
+			font-size: 13px; cursor: pointer;
+			&:hover {
+				background: $bg-card;
+				border-color: var(--wp-admin-theme-color, #{$brand});
+				color: var(--wp-admin-theme-color, #{$brand});
+			}
+		}
+	}
+}
+
+.wpzf-canvas-fields {
+	display: flex; flex-wrap: wrap; gap: 4px;
+	padding-left: 24px;
+	margin-left: -30px;
+}
+
+// Drop zone rendered after the last field — accepts palette drags and reorder-to-end.
+.wpzf-canvas-drop-end {
+	flex-basis: 100%;
+	min-height: 16px;
+	border-radius: $radius-medium;
+	transition: border-color .15s, background .15s;
+	&.is-over {
+		min-height: 48px;
+		border: 2px dashed var(--wp-admin-theme-color, #{$brand});
+		background: rgba($brand, .04);
+	}
+}
+.wpzf-canvas-row {
+	flex-basis: 100%; min-width: 0;
+	position: relative;
+	&--width-half       { flex-basis: calc(50% - 2px); }
+	&--width-third      { flex-basis: calc(33.333% - 11px); }
+	&--width-two-thirds { flex-basis: calc(66.667% - 6px); }
+
+	&.is-dragging .wpzf-field-card { opacity: .4; }
+
+	&.is-drop-target--top::before,
+	&.is-drop-target--bottom::before {
+		content: '';
+		position: absolute;
+		left: 0; right: 0;
+		height: 2px;
+		background: var(--wp-admin-theme-color, #{$brand});
+		border-radius: 1px;
+		pointer-events: none;
+		z-index: 5;
+	}
+	&.is-drop-target--top::before    { top: -2px; }
+	&.is-drop-target--bottom::before { bottom: -2px; }
+}
+
+.wpzf-field-card {
+	position: relative;
+	padding: 6px 10px;
+	border: 1px solid transparent;
+	border-radius: $radius-small;
+	cursor: pointer;
+	transition: border-color .15s, box-shadow .15s, background .15s;
+
+	&:hover  { background: $bg-card; border-color: $gray-400; border-style: dotted; }
+	&.is-selected {
+		background: $bg;
+	}
+
+	&__drag {
+		position: absolute; left: -20px; top: 50%; transform: translateY(-50%);
+		color: $muted; opacity: 0; cursor: grab;
+		transition: opacity .15s;
+	}
+	&:hover &__drag,
+	&.is-selected &__drag { opacity: 1; }
+
+	&__label {
+		display: block; margin-bottom: 6px;
+		font-size: 13px; font-weight: 500; color: $text;
+	}
+	&__help { margin-top: 6px; font-size: 12px; color: $muted; }
+
+	&__actions {
+		position: absolute; top: 4px; right: 4px;
+		display: flex; gap: 4px;
+		opacity: 0; transition: opacity .15s;
+	}
+	&:hover &__actions, &.is-selected &__actions { opacity: 1; }
+
+	// inputs
+	.wpzf-input--select{
+		max-width: none;
+	}
+}
+
+input.readonly, input[readonly], textarea.readonly, textarea[readonly] {
+	background-color: transparent;
+}
+
+.wpzf-required { color: $danger; }
+
+/* preview inputs — default (no theme) look */
+.wpzf-input {
+	width: 100%; box-sizing: border-box;
+	padding: 9px 12px;
+	background: $bg-card;
+	border: 1px solid $border; border-radius: $radius-medium;
+	font: inherit; color: $text;
+}
+textarea.wpzf-input { resize: none; }
+.wpzf-choices { display: flex; flex-direction: column; gap: 10px !important; }
+.wpzf-choice  {
+	display: inline-flex; align-items: center; gap: 8px;
+	color: $text; font-size: 13px;
+}
+.wpzf-heading { margin: 0; font-weight: 600; color: $text; }
+.wpzf-paragraph { color: $text; }
+.wpzf-divider { border: 0; border-top: 1px solid $border; margin: 8px 0; }
+
+/* make all preview form controls non-interactive */
+.wpzf-preview .wpzf-input,
+.wpzf-preview .wpzf-choice input,
+.wpzf-preview .wpzf-choices { pointer-events: none; }
+
+.wpzf-preview-submit {
+	margin-left: 6px;
+	margin-right: 6px;
+	&--align-left   { text-align: left; }
+	&--align-center { text-align: center; }
+	&--align-right  { text-align: right; }
+	&--align-full .wpzf-submit__btn { width: 100%; }
+}
+
+/* canvas layout modifiers — mirror frontend layout behaviour using canvas-specific selectors */
+.wpzf-preview.wpzf-layout-horizontal {
+	display: flex;
+	align-items: flex-start;
+	gap: 8px;
+	.wpzf-canvas-fields  { flex: 1; min-width: 0; }
+	.wpzf-preview-submit { margin-top: 6px; flex-shrink: 0; }
+}
+.wpzf-preview.wpzf-layout-compact {
+	.wpzf-canvas-fields  { gap: 0px; }
+	.wpzf-preview-submit { margin-top: 6px; }
+}
+
+/* default (no theme) submit button */
+.wpzf-preview-submit__btn {
+	display: inline-block;
+	padding: 11px 28px;
+	background: var(--wp-admin-theme-color, #{$brand}); color: #fff;
+	border: 0; border-radius: $radius-medium;
+	font-size: 14px; font-weight: 600;
+	cursor: default; pointer-events: none;
+}
+
+/* inspector --------------------------------------------------------------- */
+.wpzf-inspector {
+	display: flex; flex-direction: column; height: 100%;
+
+	&__header {
+		display: flex; justify-content: space-between; align-items: center;
+		padding: 14px 16px;
+		border-bottom: 1px solid $border;
+		h3 { margin: 0; font-size: 14px; font-weight: 600; color: $text; }
+	}
+	&__type {
+		font-size: 11px; padding: 2px 8px;
+		background: $border-soft; color: $muted;
+		border-radius: $radius-full; text-transform: uppercase; letter-spacing: 0.4px;
+	}
+	&__header-right {
+		display: flex; align-items: center; gap: 4px;
+	}
+	&__body { padding: 14px 16px; overflow-y: auto; flex: 1; min-height: 0; }
+
+	&__tabs {
+		display: flex; flex-direction: column; flex: 1; overflow: hidden;
+
+		// WP TabPanel tab list
+		.components-tab-panel__tabs {
+			display: flex;
+			border-bottom: 1px solid $border;
+			gap: 0;
+			flex-shrink: 0;
+			overflow: hidden;
+		}
+
+		// WP TabPanel wraps children in this div — make it a flex column
+		// so the inner __body can grow to fill and scroll correctly.
+		.components-tab-panel__tab-content {
+			flex: 1;
+			min-height: 0;
+			overflow: hidden;
+			display: flex;
+			flex-direction: column;
+		}
+	}
+}
+
+.wpzf-notification-email-upsell {
+	margin-top: 4px;
+
+	&__btn.components-button { width: 100%; justify-content: space-between; }
+	&__badge {
+		font-size: 9px; font-weight: 700; letter-spacing: 0.4px;
+		color: var(--wp-admin-theme-color, #{$brand}); background: #fff;
+		border-radius: 3px; padding: 2px 5px; line-height: 1.4;
+	}
+	&__desc {
+		margin: 6px 0 0; font-size: 12px; color: $muted; line-height: 1.4;
+	}
+}
+
+.wpzf-conditional-logic-upsell {
+	margin-top: 20px;
+
+	&__header {
+		display: flex; align-items: center; gap: 8px; margin-bottom: 10px;
+	}
+	&__title {
+		font-size: 12px; color: $text; text-transform: uppercase;
+	}
+	&__badge {
+		font-size: 9px; font-weight: 700; letter-spacing: 0.4px;
+		color: #2563eb; background: #eff6ff;
+		border: 1px solid #dbeafe; border-radius: 3px;
+		padding: 2px 5px; line-height: 1.4;
+	}
+	&__body {
+		background: #eff6ff; border: 1px solid #dbeafe;
+		border-radius: $radius-medium; padding: 12px;
+		p { margin: 0 0 12px; font-size: 13px; color: $text; line-height: 1.5; }
+	}
+}
+
+.wpzf-inspector-empty {
+	padding: 48px 24px; text-align: center; color: $muted;
+	h3 { margin: 12px 0 4px; color: $text; font-size: 15px; }
+	p  { margin: 0 0 16px; font-size: 13px; }
+}
+
+.wpzf-inspector-tip {
+	display: flex;
+	gap: 10px;
+	margin-top: 32px;
+	padding: 14px;
+	text-align: left;
+	background: rgba($brand, .06);
+	border: 1px solid rgba($brand, .15);
+	border-radius: $radius-large;
+
+	&__icon {
+		flex-shrink: 0;
+		margin-top: 1px;
+		color: var(--wp-admin-theme-color, #{$brand});
+	}
+	&__body { min-width: 0; }
+	&__label {
+		display: block;
+		font-size: 11px; font-weight: 600;
+		text-transform: uppercase; letter-spacing: .02em;
+		color: var(--wp-admin-theme-color, #{$brand});
+		margin-bottom: 3px;
+	}
+	&__text {
+		margin: 0 !important;
+		font-size: 12px; line-height: 1.5;
+		color: $text;
+	}
+}
+
+.wpzf-row { margin-bottom: 14px;
+	&__label {
+		display: block; font-size: 11px; color: $text;
+		margin-bottom: 8px;
+		text-transform: uppercase;
+	}
+	&__control input[type="text"],
+	&__control input[type="email"],
+	&__control input[type="number"],
+	&__control input[type="url"],
+	&__control select,
+	&__control textarea {
+		width: 100%; box-sizing: border-box;
+		padding: 8px 10px;
+		border: 1px solid $border; border-radius: $radius-medium;
+		font: inherit; color: $text; background: $bg-card;
+		&:focus {
+			outline: none;
+			border-color: var(--wp-admin-theme-color, #{$brand});
+			box-shadow: 0 0 0 var(--wp-admin-border-width-focus, 2px) rgba($brand, .2);
+		}
+	}
+	&__control textarea { resize: vertical; font-family: inherit; }
+}
+
+/* style picker ------------------------------------------------------------ */
+.wpzf-style-picker {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 8px;
+	margin-top: 4px;
+	margin-bottom: 16px;
+
+	&__item {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 7px;
+		padding: 10px 8px 9px;
+		background: $bg-card;
+		border: 1px solid $border;
+		border-radius: $radius-medium;
+		cursor: pointer;
+		transition: border-color .15s, box-shadow .15s;
+		text-align: center;
+
+		&:hover { border-color: var(--wp-admin-theme-color, #{$brand}); }
+
+		&.is-selected {
+			border-color: var(--wp-admin-theme-color, #{$brand});
+			box-shadow: 0 0 0 1px var(--wp-admin-theme-color, #{$brand});
+		}
+
+		&.is-pro {
+			cursor: default;
+			&:hover { border-color: #b45309; box-shadow: none; }
+		}
+	}
+
+	&__swatches {
+		display: flex;
+		gap: 3px;
+		align-items: center;
+	}
+
+	&__swatch {
+		width: 16px;
+		height: 16px;
+		border-radius: 50%;
+		border: 1px solid rgba(0,0,0,.1);
+		flex-shrink: 0;
+	}
+
+	&__name {
+		font-size: 10px;
+		font-weight: 600;
+		letter-spacing: .05em;
+		text-transform: uppercase;
+		color: $text;
+		line-height: 1.2;
+	}
+
+	&__pro-badge {
+		position: absolute;
+		top: 5px;
+		right: 5px;
+		font-size: 8px;
+		font-weight: 700;
+		letter-spacing: .04em;
+		text-transform: uppercase;
+		color: #b45309;
+		background: rgba(#b45309, .1);
+		padding: 1px 4px;
+		border-radius: 3px;
+		line-height: 1.5;
+	}
+
+	&__custom-preview {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 88px;
+		height: 16px;
+		border-radius: 8px;
+		opacity: .85;
+	}
+}
+
+.wpzf-toggle {
+	display: inline-flex; align-items: center; gap: 8px;
+	font-size: 13px; color: $text; cursor: pointer;
+	input[type="checkbox"] { margin: 0; }
+}
+
+.wpzf-segmented {
+	display: inline-flex;
+	border: 1px solid $border; border-radius: $radius-medium; overflow: hidden;
+	button {
+		padding: 6px 12px; border: 0; background: $bg-card; color: $text;
+		font-size: 12px; cursor: pointer;
+		&:hover { background: $border-soft; }
+		&.is-active { background: var(--wp-admin-theme-color, #{$brand}); color: #fff; }
+		& + button { border-left: 1px solid $border; }
+	}
+}
+
+.wpzf-options { display: flex; flex-direction: column; gap: 6px; }
+.wpzf-option {
+	display: grid; grid-template-columns: 1fr 100px 24px; gap: 6px;
+	input[type="text"] {
+		width: 100%; box-sizing: border-box; padding: 6px 8px;
+		border: 1px solid $border; border-radius: $radius-small; font-size: 12px;
+	}
+}
+
+.wpzf-method-list { display: flex; flex-direction: column; gap: 6px; }
+.wpzf-method {
+	display: grid; grid-template-columns: auto 1fr; gap: 4px 10px;
+	padding: 10px 12px;
+	border: 1px solid $border; border-radius: $radius-medium;
+	cursor: pointer;
+	&:hover { border-color: $gray-400; }
+	&.is-active { border-color: var(--wp-admin-theme-color, #{$brand}); background: rgba($brand, .04); }
+	input[type="radio"] { grid-row: span 2; margin-top: 3px; }
+	&__name { font-weight: 600; font-size: 13px; }
+	&__hint { color: $muted; font-size: 12px; }
+}
+
+/* notices ----------------------------------------------------------------- */
+.wpzf-notices {
+	position: fixed; bottom: 24px; right: 24px;
+	display: flex; flex-direction: column; gap: 8px;
+	z-index: 9999;
+}
+.wpzf-notice-toast {
+	display: inline-flex; align-items: center; gap: 12px;
+	padding: 10px 14px;
+	background: $text; color: #fff;
+	border-radius: $radius-medium;
+	box-shadow: $elevation-medium;
+	font-size: 13px;
+	button { background: transparent; color: rgba(255,255,255,.7); border: 0; cursor: pointer; font-size: 16px; }
+	&--success { background: $success; }
+	&--error   { background: $danger; }
+}
+
+/* modal ------------------------------------------------------------------ */
+.wpzf-modal {
+	position: fixed; inset: 0;
+	background: rgba(0,0,0,.4);
+	display: flex; align-items: center; justify-content: center;
+	z-index: 10000;
+	&__inner {
+		background: $bg-card; border-radius: $radius-large;
+		min-width: 480px; max-width: 90vw;
+		box-shadow: $elevation-large;
+	}
+	&__header {
+		display: flex; justify-content: space-between; align-items: center;
+		padding: 14px 18px; border-bottom: 1px solid $border;
+		h2 { margin: 0; font-size: 16px; }
+	}
+	&__body { padding: 18px; }
+}
+
+.wpzf-embed-code {
+	display: flex; align-items: center; gap: 8px;
+	padding: 10px 12px;
+	background: $bg; border: 1px solid $border; border-radius: $radius-medium;
+	code {
+		flex: 1; font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+		color: $text; background: transparent;
+		font-size: 13px; user-select: all;
+	}
+}
+.wpzf-hint { color: $muted; font-size: 12px; margin-top: 10px; }
+
+.wpzf-pro-modal__actions {
+	display: flex; align-items: center; gap: 8px; margin-top: 20px;
+}
+
+/* template picker --------------------------------------------------------- */
+.wpzf-builder--picker { background: $bg; }
+
+.wpzf-picker {
+	display: flex; flex-direction: column;
+	height: 100vh;
+	overflow: hidden;
+
+	&__header {
+		display: flex; align-items: center; gap: 12px;
+		padding: 20px 28px;
+		background: $bg-card;
+		border-bottom: 1px solid $border;
+		flex-shrink: 0;
+		box-shadow: $elevation-x-small;
+		.wpzf-topbar__exit{
+			color: white;
+			height: 36px;
+			min-width: 36px !important;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+	}
+	&__heading {
+		h1 { margin: 0 0 4px; font-size: 18px; color: $text; }
+		p  { margin: 0; font-size: 13px; color: $muted; }
+	}
+	&__error {
+		margin: 12px 28px 0;
+		padding: 10px 14px;
+		background: #fef2f2; border: 1px solid #fecaca; color: #991b1b;
+		border-radius: $radius-medium;
+	}
+
+	&__ai-upsell {
+		display: flex; align-items: center; gap: 14px;
+		margin-left: auto;
+		padding: 10px 16px;
+		background: linear-gradient(135deg, #eef2ff, #f5f3ff);
+		border: 1px solid #c7d2fe;
+		border-radius: $radius-medium;
+
+		&-icon {
+			display: inline-flex; align-items: center; justify-content: center;
+			width: 36px; height: 36px;
+			background: $bg-card; border-radius: $radius-medium;
+			color: $accent;
+			flex-shrink: 0;
+		}
+		&-text {
+			flex: 1; display: flex; flex-direction: column; gap: 2px;
+			strong { color: #1e1b4b; font-size: 14px; }
+			span   { color: #4338ca; font-size: 13px; }
+		}
+	}
+
+	&__pro-badge {
+		display: inline-block;
+		margin-left: 6px;
+		padding: 1px 6px;
+		background: $accent; color: #fff;
+		border-radius: $radius-small;
+		font-size: 10px; font-weight: 700; letter-spacing: 0.06em;
+		vertical-align: middle;
+	}
+
+	&__pro-placeholder {
+		max-width: 480px; margin: 60px auto;
+		padding: 36px 32px;
+		background: $bg-card;
+		border: 1px dashed $border;
+		border-radius: $radius-medium;
+		text-align: center;
+		color: $text;
+		h3 { margin: 12px 0 6px; font-size: 18px; }
+		p  { margin: 0 0 14px; color: $muted; }
+		&-icon {
+			display: inline-flex; align-items: center; justify-content: center;
+			width: 48px; height: 48px;
+			background: rgba($accent, .08); color: $accent;
+			border-radius: $radius-medium;
+		}
+		&-hint { font-size: 13px; }
+	}
+
+	&__split {
+		flex: 1;
+		display: grid;
+		grid-template-columns: 320px 1fr;
+		min-height: 0;
+	}
+
+	&__list {
+		background: $bg-card;
+		border-right: 1px solid $border;
+		overflow-y: auto;
+		padding: 12px;
+		min-height: 0;
+	}
+	&__item {
+		display: grid; grid-template-columns: 36px 1fr; gap: 12px;
+		width: 100%;
+		padding: 12px;
+		background: transparent;
+		border: 1px solid transparent; border-radius: $radius-medium;
+		text-align: left; cursor: pointer;
+		color: $text;
+		text-decoration: none;
+		transition: background .12s, border-color .12s;
+
+		& + & { margin-top: 4px; }
+		&:hover { background: $border-soft; }
+		&.is-selected {
+			background: rgba($brand, .07);
+			border-color: rgba($brand, .35);
+		}
+		&.is-pro {
+			.wpzf-picker__item-icon { opacity: .85; }
+		}
+		&--cta {
+			margin-top: 8px !important;
+			border-top: 1px solid $border;
+			border-radius: 0 0 $radius-medium $radius-medium;
+			padding-top: 16px;
+			color: var(--wp-admin-theme-color, #{$brand});
+			.wpzf-picker__item-icon { background: rgba($brand, .08); color: var(--wp-admin-theme-color, #{$brand}); }
+			&:hover { background: rgba($brand, .06); }
+		}
+	}
+	&__item-icon {
+		display: inline-flex; align-items: center; justify-content: center;
+		width: 36px; height: 36px;
+		background: $border-soft; border-radius: $radius-medium;
+		color: $text;
+		svg { width: 20px; height: 20px; }
+	}
+	&__item-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+	&__item-name { font-size: 13px; font-weight: 600; line-height: 1.3; }
+	&__item-desc { font-size: 12px; color: $muted; line-height: 1.4;
+		display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+
+	&__preview {
+		display: flex; flex-direction: column;
+		min-width: 0;
+		min-height: 0;
+		background: $bg;
+	}
+	&__preview-header {
+		display: flex; align-items: center; justify-content: space-between; gap: 12px;
+		padding: 18px 28px;
+		background: $bg-card;
+		border-bottom: 1px solid $border;
+		flex-shrink: 0;
+		h2 { margin: 0 0 4px; font-size: 16px; color: $text; }
+		p  { margin: 0; font-size: 13px; color: $muted; }
+	}
+	&__preview-canvas {
+		flex: 1; overflow-y: auto;
+		padding: 32px;
+		display: flex; justify-content: center; align-items: flex-start;
+	}
+	&__empty {
+		color: $muted; font-size: 13px;
+		padding: 60px 20px; text-align: center;
+		max-width: 480px;
+	}
+
+	&--loading, &--error {
+		justify-content: center; align-items: center;
+	}
+}
+
+/* live form preview inside the picker ------------------------------------- */
+.wpzf-preview-form {
+	width: 100%; max-width: 640px;
+	background: $bg-card;
+	border: 1px solid $border;
+	border-radius: $radius-medium;
+	padding: 28px;
+	box-shadow: $elevation-x-small;
+	color: $text;
+
+	&__fields { display: flex; flex-wrap: wrap; gap: 16px; }
+	&__row {
+		flex-basis: 100%; min-width: 0;
+		&--w-half       { flex-basis: calc(50% - 8px); }
+		&--w-third      { flex-basis: calc(33.333% - 11px); }
+		&--w-two-thirds { flex-basis: calc(66.667% - 6px); }
+	}
+	&__label {
+		display: block; margin-bottom: 6px;
+		font-size: 13px; font-weight: 500;
+	}
+	&__input {
+		width: 100%; box-sizing: border-box;
+		padding: 9px 12px;
+		background: $bg-card;
+		border: 1px solid $border; border-radius: $radius-medium;
+		font: inherit; color: $text;
+		pointer-events: none;
+		min-height: 38px;
+	}
+	textarea.wpzf-preview-form__input { resize: none; min-height: 0; }
+
+	&__choices { display: flex; flex-direction: column; gap: 6px; }
+	&__choice  { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; }
+	&__choice--single { padding-top: 4px; }
+
+	&__heading   { margin: 0; font-weight: 600; }
+	&__paragraph { color: $muted; }
+	&__divider   { border: 0; border-top: 1px solid $border; margin: 8px 0; }
+
+	&__submit {
+		margin-top: 24px;
+		&--center { text-align: center; }
+		&--right  { text-align: right; }
+		&--full   { .wpzf-preview-form__btn { width: 100%; } }
+	}
+	&__btn {
+		padding: 11px 28px;
+		background: var(--wp-admin-theme-color, #{$brand}); color: #fff;
+		border: 0; border-radius: $radius-medium;
+		font-size: 14px; font-weight: 600;
+		cursor: default; pointer-events: none;
+	}
+}
+
+/* options editor — handle + drag state ------------------------------------ */
+.wpzf-options .wpzf-option {
+	grid-template-columns: 16px 20px 1fr 32px 32px;
+	align-items: center;
+	input[type=radio]{
+		margin: 0;
+	}
+}
+.wpzf-option__default {
+	margin: 0;
+	cursor: pointer;
+	accent-color: var(--wp-admin-theme-color, #{$brand});
+}
+.wpzf-option__handle {
+	display: inline-flex; align-items: center; justify-content: center;
+	width: 16px; height: 22px; color: $muted; cursor: grab;
+	&:active { cursor: grabbing; }
+}
+.wpzf-option.is-dragging { opacity: .4; }
+
+.wpzf-row__label-row {
+	display: flex; align-items: center; justify-content: space-between;
+	margin-bottom: 4px;
+}
+.wpzf-link-btn {
+	background: transparent; border: 0; padding: 0;
+	color: var(--wp-admin-theme-color, #{$brand}); font-size: 12px; cursor: pointer;
+	&:hover { text-decoration: underline; }
+}
+
+/* bulk options modal ------------------------------------------------------ */
+.wpzf-modal__inner--wide { min-width: 560px; }
+.wpzf-bulk__textarea {
+	width: 100%; box-sizing: border-box;
+	padding: 10px 12px;
+	border: 1px solid $border; border-radius: $radius-medium;
+	font: 13px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
+	color: $text;
+	resize: vertical;
+	&:focus {
+		outline: none;
+		border-color: var(--wp-admin-theme-color, #{$brand});
+		box-shadow: 0 0 0 var(--wp-admin-border-width-focus, 2px) rgba($brand, .2);
+	}
+}
+.wpzf-bulk__lists {
+	display: flex; align-items: center; flex-wrap: wrap; gap: 6px;
+	margin-top: 12px;
+	&-label { color: $muted; font-size: 12px; margin-right: 4px; }
+}
+.wpzf-modal__footer {
+	display: flex; justify-content: flex-end; gap: 8px;
+}
+
+/* @wordpress/components integration ---------------------------------------- */
+
+// Normalize WP component spacing inside the inspector panel.
+.wpzf-inspector__body {
+	.components-base-control { margin-bottom: 16px; }
+	// ButtonGroup sits flush under its BaseControl label.
+	.components-base-control__field { margin-bottom: 0; }
+}
+
+// Widen WP components inputs to fill the sidebar.
+.wpzf-inspector__body .components-text-control__input,
+.wpzf-inspector__body .components-textarea-control__input,
+.wpzf-inspector__body .components-select-control__input {
+	width: 100%;
+}
+
+// Embed-code and hint inside WP Modal.
+.components-modal__content {
+	.wpzf-embed-code { margin-top: 8px; }
+	.wpzf-hint { margin-top: 12px; }
+}
+
+// Canvas equivalent of the frontend .wpzf-labels-left grid layout.
+// The frontend targets .wpzf-field--type-* but the canvas uses
+// .wpzf-field-card--type-* with a __body wrapper, so the rules don't match.
+.wpzf-labels-left .wpzf-field-card--type-text,
+.wpzf-labels-left .wpzf-field-card--type-name,
+.wpzf-labels-left .wpzf-field-card--type-email,
+.wpzf-labels-left .wpzf-field-card--type-tel,
+.wpzf-labels-left .wpzf-field-card--type-url,
+.wpzf-labels-left .wpzf-field-card--type-number,
+.wpzf-labels-left .wpzf-field-card--type-date,
+.wpzf-labels-left .wpzf-field-card--type-select {
+	.wpzf-field-card__body {
+		display: grid;
+		grid-template-columns: 160px 1fr;
+		gap: 12px;
+		align-items: center;
+		.wpzf-label { margin-bottom: 0; }
+		.wpzf-help { grid-column: 1 / -1; }
+	}
+}
+
+// The canvas card always keeps its own padding regardless of what the
+// theme sets on .wpzf-form, so the card chrome doesn't collapse.
+.wpzf-preview.wpzf-form {
+	padding: 32px;
+	box-shadow: $elevation-small;
+}
+
+// Theme-themed submit button overrides the default builder button look
+// but stays non-interactive.
+.wpzf-preview .wpzf-submit__btn {
+	cursor: default !important;
+	pointer-events: none !important;
+}
+
+/* welcome guide ------------------------------------------------------------ */
+.wpzf-welcome-guide {
+	.components-guide__page
+	{
+		max-width: 320px;
+		img {
+			display: block;
+			width: 100%;
+			// max-height: 260px;
+			object-fit: cover;
+			border-radius: $radius-large $radius-large 0 0;
+		}
+	}
+}
+
+.wpzf-welcome-guide__page {
+	padding: 16px 24px 8px;
+}
+
+.wpzf-welcome-guide__heading {
+	margin: 0 0 10px;
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 1.3;
+	color: $text;
+}
+
+.wpzf-welcome-guide__text {
+	margin: 0;
+	font-size: 14px;
+	line-height: 1.6;
+	color: $muted;
+}

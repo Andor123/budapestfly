@@ -14,8 +14,8 @@ import {
 	__experimentalHStack as HStack
 } from '@wordpress/components';
 import { useSelect } from '@wordpress/data';
-import { Fragment, useEffect } from '@wordpress/element';
-import { InspectorControls, PanelColorSettings } from '@wordpress/block-editor';
+import { useEffect } from '@wordpress/element';
+import { InspectorControls, PanelColorSettings, useBlockProps } from '@wordpress/block-editor';
 
 /**
  * Internal dependencies.
@@ -36,6 +36,8 @@ const wpzoomFormsIcon = (
  */
 export default function Edit({ attributes, setAttributes, clientId }) {
 	const { formId } = attributes;
+
+	const blockProps = useBlockProps();
 
 
 	const _formId = formId && String(formId).trim() != '' ? String(formId) : '-1';
@@ -109,12 +111,14 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 			</InspectorControls>
 
 
-			<Fragment>
+			<div {...blockProps}>
 				{'-1' != _formId
-					? <ServerSideRender
-						block="wpzoom-forms/form-block"
-						attributes={attributes}
-					/>
+					? <div className="wpzf-form-preview" style={{ pointerEvents: 'none' }}>
+						<ServerSideRender
+							block="wpzoom-forms/form-block"
+							attributes={attributes}
+						/>
+					</div>
 					: <Placeholder
 						icon={wpzoomFormsIcon}
 						label={__('Contact Form by WPZOOM', 'wpzoom-forms')}
@@ -122,7 +126,7 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 						{forms.length > 0 ? formSelect : <Disabled>{formSelect}</Disabled>}
 					</Placeholder>
 				}
-			</Fragment>
+			</div>
 		</>
 	);
 }

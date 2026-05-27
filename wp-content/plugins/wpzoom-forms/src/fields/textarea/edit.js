@@ -34,7 +34,7 @@ const Edit = props => {
 				/>
 
 				<RangeControl
-					label={ __( 'Columns', 'wpzoom-blocks' ) }
+					label={ __( 'Columns', 'wpzoom-forms' ) }
 					max={ 500 }
 					min={ 1 }
 					value={ Number( cols ) }
@@ -44,7 +44,7 @@ const Edit = props => {
 				/>
 
 				<RangeControl
-					label={ __( 'Rows', 'wpzoom-blocks' ) }
+					label={ __( 'Rows', 'wpzoom-forms' ) }
 					max={ 100 }
 					min={ 1 }
 					value={ Number( rows ) }

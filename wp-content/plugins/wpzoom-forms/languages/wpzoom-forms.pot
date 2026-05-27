@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WPZOOM Forms\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-13 12:32+0000\n"
+"POT-Creation-Date: 2026-05-26 18:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -16,21 +16,13 @@ msgstr ""
 "X-Loco-Version: 2.6.6; wp-6.3.2\n"
 "X-Domain: wpzoom-forms"
 
-#: wpzoom-forms.php:2538
+#. %s: original form title
+#: classes/class-wpzoom-forms-rest.php:336
 #, php-format
-msgid " - %s"
+msgid "%s (Copy)"
 msgstr ""
 
-#: wpzoom-forms.php:480
-#, php-format
-msgid "%1$s at %2$s"
-msgstr ""
-
-#: wpzoom-forms.php:1303 wpzoom-forms.php:1317 wpzoom-forms.php:1479
-msgid "[Unknown]"
-msgstr ""
-
-#: classes/class-wpzoom-forms-settings-page.php:829
+#: classes/class-wpzoom-forms-settings-page.php:1048
 msgid ""
 "A privacy-first alternative to reCAPTCHA. No cookies or tracking involved. "
 "Works invisibly and only challenges users when necessary. To use Turnstile, "
@@ -38,44 +30,66 @@ msgid ""
 "your form."
 msgstr ""
 
-#: wpzoom-forms.php:188
-msgid "Add New Form"
+#: classes/class-wpzoom-forms-submission-view.php:48
+msgid "About this submission"
 msgstr ""
 
-#: wpzoom-forms.php:1438 wpzoom-forms.php:1886
-msgid "Add new form"
+#: classes/class-wpzoom-forms-settings-page.php:905
+msgid "Advanced Akismet Integration"
 msgstr ""
 
-#: wpzoom-forms.php:232
-msgid "Add New Submission"
-msgstr ""
-
-#: classes/class-wpzoom-forms-settings-page.php:442
+#: classes/class-wpzoom-forms-settings-page.php:450
 msgid "AJAX [PRO]"
 msgstr ""
 
-#: classes/class-wpzoom-forms-settings-page.php:448
+#: classes/class-wpzoom-forms-settings-page.php:456
 msgid "AJAX Form Submission"
 msgstr ""
 
-#: wpzoom-forms.php:196 wpzoom-forms.php:1207
-msgid "All Forms"
+#: classes/class-wpzoom-forms-settings-page.php:911
+msgid ""
+"Akismet is installed and configured on your site. Upgrade to WPZOOM Forms "
+"PRO to enable automatic spam filtering on all form submissions."
 msgstr ""
 
-#: classes/class-wpzoom-forms-settings-page.php:454
+#: classes/class-wpzoom-forms-settings-page.php:909
+#, php-format
+msgid ""
+"Akismet is installed but not configured. <a href=\"%s\">Enter your API "
+"key</a> to prepare for spam protection, then upgrade to WPZOOM Forms PRO to "
+"enable the integration."
+msgstr ""
+
+#: classes/class-wpzoom-forms-settings-page.php:907
+#, php-format
+msgid ""
+"Akismet is the best way to protect your forms from spam. <a href=\"%s\" "
+"target=\"_blank\">Install and activate Akismet</a> first, then upgrade to "
+"WPZOOM Forms PRO to enable automatic spam filtering."
+msgstr ""
+
+#: classes/class-wpzoom-forms-settings-page.php:462
 msgid "Allows users to submit forms without reloading the page."
 msgstr ""
 
-#: classes/class-wpzoom-forms-settings-page.php:430
+#: classes/class-wpzoom-forms-settings-page.php:438
 msgid "Auto"
 msgstr ""
 
-#: elementor/widgets/wpzoom-forms-cpt/wpzoom-forms-cpt.php:288
-#: elementor/widgets/wpzoom-forms-cpt/wpzoom-forms-cpt.php:369
+#: classes/class-wpzoom-forms-settings-page.php:914
+msgid "Automatic spam detection on all submissions"
+msgstr ""
+
+#: classes/class-wpzoom-forms-settings-page.php:768
+msgid "Automatically add form submissions to your Mailchimp audiences"
+msgstr ""
+
+#: elementor/widgets/wpzoom-forms-cpt/wpzoom-forms-cpt.php:290
+#: elementor/widgets/wpzoom-forms-cpt/wpzoom-forms-cpt.php:371
 msgid "Background Color"
 msgstr ""
 
-#: classes/class-wpzoom-forms-settings-page.php:373
+#: classes/class-wpzoom-forms-settings-page.php:381
 msgid "Badge Location"
 msgstr ""
 
@@ -373,233 +387,209 @@ msgctxt "block title"
 msgid "Website"
 msgstr ""
 
-#: wpzoom-forms.php:2194
-msgid "Blog"
-msgstr ""
-
-#: elementor/widgets/wpzoom-forms-cpt/wpzoom-forms-cpt.php:262
-#: elementor/widgets/wpzoom-forms-cpt/wpzoom-forms-cpt.php:343
+#: elementor/widgets/wpzoom-forms-cpt/wpzoom-forms-cpt.php:264
+#: elementor/widgets/wpzoom-forms-cpt/wpzoom-forms-cpt.php:345
 msgid "Border Radius"
 msgstr ""
 
-#: classes/class-wpzoom-forms-settings-page.php:382
+#: classes/class-wpzoom-forms-settings-page.php:390
 msgid "Bottom Left"
 msgstr ""
 
-#: classes/class-wpzoom-forms-settings-page.php:381
+#: classes/class-wpzoom-forms-settings-page.php:389
 msgid "Bottom Right"
 msgstr ""
 
-#: elementor/widgets/wpzoom-forms-cpt/wpzoom-forms-cpt.php:327
+#: elementor/widgets/wpzoom-forms-cpt/wpzoom-forms-cpt.php:329
 msgid "Button"
 msgstr ""
 
-#: classes/class-wpzoom-forms-template-manager.php:195
+#: classes/class-wpzoom-forms-template-manager.php:225
 msgid "Cancel"
 msgstr ""
 
-#: wpzoom-forms.php:2187
-msgid "Check out our plugins"
+#: classes/class-wpzoom-forms-submission-handler.php:75
+msgid "CAPTCHA verification failed. Please try again."
 msgstr ""
 
-#: wpzoom-forms.php:2181
-msgid "Check out our themes"
+#: classes/class-wpzoom-forms-schema.php:107
+msgid "Checkboxes"
 msgstr ""
 
-#: classes/class-wpzoom-forms-settings-page.php:294
-#: classes/class-wpzoom-forms-settings-page.php:828
+#: classes/class-wpzoom-forms-settings-page.php:770
+msgid "Choose which forms send data to Mailchimp"
+msgstr ""
+
+#: classes/class-wpzoom-forms-settings-page.php:302
+#: classes/class-wpzoom-forms-settings-page.php:1047
 msgid "Cloudflare Turnstile"
 msgstr ""
 
-#: elementor/widgets/wpzoom-forms-cpt/wpzoom-forms-cpt.php:275
-#: elementor/widgets/wpzoom-forms-cpt/wpzoom-forms-cpt.php:312
-#: elementor/widgets/wpzoom-forms-cpt/wpzoom-forms-cpt.php:356
+#: elementor/widgets/wpzoom-forms-cpt/wpzoom-forms-cpt.php:277
+#: elementor/widgets/wpzoom-forms-cpt/wpzoom-forms-cpt.php:314
+#: elementor/widgets/wpzoom-forms-cpt/wpzoom-forms-cpt.php:358
 msgid "Color"
 msgstr ""
 
-#: classes/class-wpzoom-forms-settings-page.php:227
+#: classes/class-wpzoom-forms-settings-page.php:235
 msgid "Coming Soon"
 msgstr ""
 
-#: wpzoom-forms.php:1581
-#, php-format
-msgid ""
-"Contact form \"%s\" is in trash (ID: %d). Please restore it or select a "
-"different form."
+#: classes/class-wpzoom-forms-settings-page.php:767
+msgid "Connect to Mailchimp with API key authentication"
 msgstr ""
 
-#: wpzoom-forms.php:1587
-#, php-format
+#: classes/class-wpzoom-forms-settings-page.php:1068
 msgid ""
-"Contact form \"%s\" is not published (ID: %d). Please publish it or select a "
-"different form."
+"Connect your forms to email marketing services and automatically grow your "
+"subscriber list"
+msgstr ""
+
+#: classes/class-wpzoom-forms-settings-page.php:765
+msgid ""
+"Connect your forms to Mailchimp and automatically grow your email list. "
+"Every form submission can instantly add subscribers to your audiences."
+msgstr ""
+
+#: classes/class-wpzoom-forms-settings-page.php:537
+msgid ""
+"Connect your Mailchimp account to automatically add form submissions to your "
+"audiences."
 msgstr ""
 
 #: elementor/widgets/wpzoom-forms-cpt/wpzoom-forms-cpt.php:67
 msgid "Contact Form by WPZOOM"
 msgstr ""
 
-#: wpzoom-forms.php:1571
-msgid ""
-"Contact form not found (ID: %d). Please select a different form or create a "
-"new one."
+#: classes/class-wpzoom-forms-rest.php:205
+msgid "Could not create form."
 msgstr ""
 
-#: classes/class-wpzoom-forms-settings-page.php:803
+#: classes/class-wpzoom-forms-rest.php:320
+msgid "Could not delete form."
+msgstr ""
+
+#: classes/class-wpzoom-forms-rest.php:341
+msgid "Could not duplicate form."
+msgstr ""
+
+#: classes/class-wpzoom-forms-option-lists.php:19
+msgid "Countries"
+msgstr ""
+
+#: classes/class-wpzoom-forms-settings-page.php:879
 msgid "Customize how WPZOOM Forms loads styles and assets on your site."
 msgstr ""
 
-#: classes/class-wpzoom-forms-settings-page.php:432
+#: classes/class-wpzoom-forms-settings-page.php:440
 msgid "Dark"
 msgstr ""
 
-#: classes/class-wpzoom-forms-settings-page.php:696
+#: classes/class-wpzoom-forms-schema.php:95
+msgid "Date"
+msgstr ""
+
+#: classes/class-wpzoom-forms-template-manager.php:170
+msgid ""
+"Describe your form in simple words and let AI create it for you instantly."
+msgstr ""
+
+#: classes/class-wpzoom-forms-settings-page.php:898
+msgid "Detected, Not Configured"
+msgstr ""
+
+#: classes/class-wpzoom-forms-settings-page.php:738
 msgid "Display custom success & error messages"
 msgstr ""
 
-#: classes/class-wpzoom-forms-settings-page.php:826
+#: classes/class-wpzoom-forms-settings-page.php:1045
 msgid ""
 "Displays a small badge and only shows a challenge (like selecting images) "
 "when suspicious activity is detected. Requires v2 site keys — not checkbox "
 "keys. Add the CAPTCHA field manually in the form editor."
 msgstr ""
 
-#: wpzoom-forms.php:2199 wpzoom-forms.php:2200
-msgid "Documentation"
+#: classes/class-wpzoom-forms-schema.php:105
+msgid "Dropdown"
 msgstr ""
 
-#: wpzoom-forms.php:189
-msgid "Edit Form"
+#: classes/class-wpzoom-forms-builder-page.php:112
+msgid "Edit"
 msgstr ""
 
-#: classes/class-wpzoom-forms-settings-page.php:840
+#: classes/class-wpzoom-forms-schema.php:114
+msgid "Email"
+msgstr ""
+
+#: classes/class-wpzoom-forms-settings-page.php:526
+msgid "Email Marketing Integrations"
+msgstr ""
+
+#: classes/class-wpzoom-forms-settings-page.php:1059
 msgid "Enable seamless form submissions without page reloads"
 msgstr ""
 
-#: classes/class-wpzoom-forms-settings-page.php:486
+#: classes/class-wpzoom-forms-settings-page.php:536
+msgid "Enter your Mailchimp API key"
+msgstr ""
+
+#: classes/class-wpzoom-forms-settings-page.php:494
 msgid "Error Message"
 msgstr ""
 
-#: wpzoom-forms.php:398
-msgid "Example Form"
+#: classes/class-wpzoom-forms-template-manager.php:218
+msgid "Explore our complete collection of professional form templates"
 msgstr ""
 
 #: elementor/widgets/wpzoom-forms-cpt/wpzoom-forms-cpt.php:246
 msgid "Fields"
 msgstr ""
 
-#: wpzoom-forms.php:249
-msgid "Filter form submission list"
-msgstr ""
-
-#: wpzoom-forms.php:205
-msgid "Filter forms list"
-msgstr ""
-
-#: wpzoom-forms.php:1165
+#: classes/class-wpzoom-forms-submission-view.php:84
 #: elementor/widgets/wpzoom-forms-cpt/wpzoom-forms-cpt.php:200
 msgid "Form"
 msgstr ""
 
-#: wpzoom-forms.php:197
-msgid "Form Archives"
+#: classes/class-wpzoom-forms-builder-page.php:35
+#: classes/class-wpzoom-forms-builder-page.php:36
+msgid "Form Builder"
 msgstr ""
 
-#: wpzoom-forms.php:198
-msgid "Form Attributes"
+#: classes/class-wpzoom-forms-submission-handler.php:55
+#: classes/class-wpzoom-forms-rest.php:229
+#: classes/class-wpzoom-forms-rest.php:266
+#: classes/class-wpzoom-forms-rest.php:315
+#: classes/class-wpzoom-forms-rest.php:329
+#: classes/class-wpzoom-forms-renderer.php:29
+msgid "Form not found."
 msgstr ""
 
-#: wpzoom-forms.php:210
-msgid "Form reverted to draft."
-msgstr ""
-
-#: wpzoom-forms.php:209
-msgid "Form saved privately."
-msgstr ""
-
-#: wpzoom-forms.php:208
-msgid "Form saved."
-msgstr ""
-
-#: wpzoom-forms.php:211
-msgid "Form scheduled."
-msgstr ""
-
-#: wpzoom-forms.php:254
-msgid "Form Submission reverted to draft."
-msgstr ""
-
-#: wpzoom-forms.php:253
-msgid "Form Submission saved privately."
-msgstr ""
-
-#: wpzoom-forms.php:252
-msgid "Form Submission saved."
-msgstr ""
-
-#: wpzoom-forms.php:255
-msgid "Form Submission scheduled."
-msgstr ""
-
-#: wpzoom-forms.php:256
-msgid "Form Submission updated."
-msgstr ""
-
-#: wpzoom-forms.php:251
-msgid "Form Submissions list"
-msgstr ""
-
-#: wpzoom-forms.php:250
-msgid "Form Submissions list navigation"
-msgstr ""
-
-#: wpzoom-forms.php:212
-msgid "Form updated."
-msgstr ""
-
-#: wpzoom-forms.php:1491
-#, php-format
-msgid "Form: %s"
-msgstr ""
-
-#: wpzoom-forms.php:1831
-msgid "Forms"
-msgstr ""
-
-#: wpzoom-forms.php:207
-msgid "Forms list"
-msgstr ""
-
-#: wpzoom-forms.php:206
-msgid "Forms list navigation"
-msgstr ""
-
-#: wpzoom-forms.php:482
-msgid "g:i a"
-msgstr ""
-
-#: classes/class-wpzoom-forms-settings-page.php:232
+#: classes/class-wpzoom-forms-settings-page.php:240
 msgid "General"
 msgstr ""
 
-#: wpzoom-forms.php:2205
-msgid "Get support"
+#: classes/class-wpzoom-forms-template-manager.php:169
+msgid "Generate Forms with AI"
 msgstr ""
 
-#: classes/class-wpzoom-forms-settings-page.php:293
+#: classes/class-wpzoom-forms-settings-page.php:301
 msgid "Google reCAPTCHA"
 msgstr ""
 
-#: classes/class-wpzoom-forms-settings-page.php:825
+#: classes/class-wpzoom-forms-settings-page.php:1044
 msgid "Google reCAPTCHA v2 (Invisible)"
 msgstr ""
 
-#: classes/class-wpzoom-forms-settings-page.php:822
+#: classes/class-wpzoom-forms-settings-page.php:1041
 msgid "Google reCAPTCHA v3"
 msgstr ""
 
-#: wpzoom-forms.php:1874
-msgid "Hi there!"
+#: classes/class-wpzoom-forms-migration.php:159
+msgid "Heading"
+msgstr ""
+
+#: classes/class-wpzoom-forms-schema.php:131
+msgid "Hidden Field"
 msgstr ""
 
 #. Author URI of the plugin
@@ -610,198 +600,167 @@ msgstr ""
 msgid "https://www.wpzoom.com/plugins/wpzoom-forms"
 msgstr ""
 
-#: classes/class-wpzoom-forms-settings-page.php:260
+#: classes/class-wpzoom-forms-schema.php:110
+#: classes/class-wpzoom-forms-schema.php:249
+msgid "I agree"
+msgstr ""
+
+#: classes/class-wpzoom-forms-schema.php:111
+msgid "I agree to the terms"
+msgstr ""
+
+#: classes/class-wpzoom-forms-settings-page.php:268
 msgid ""
 "If you want to embed a form using shortcodes in a page builder, enable this "
 "option to ensure all the needed assets are loaded."
 msgstr ""
 
-#: classes/class-wpzoom-forms-settings-page.php:383
+#: classes/class-wpzoom-forms-settings-page.php:391
 msgid "Inline"
 msgstr ""
 
-#: wpzoom-forms.php:199
-msgid "Insert into form"
+#: classes/class-wpzoom-forms-settings-page.php:520
+msgid "Integrations [PRO]"
 msgstr ""
 
-#: wpzoom-forms.php:243
-msgid "Insert into submission"
+#: classes/class-wpzoom-forms-renderer.php:25
+msgid "Invalid form id."
 msgstr ""
 
-#: wpzoom-forms.php:1576
-msgid "Invalid form type (ID: %d). Please select a valid WPZOOM form."
-msgstr ""
-
-#: classes/class-wpzoom-forms-settings-page.php:318
+#: classes/class-wpzoom-forms-settings-page.php:326
 msgid "Invisible reCAPTCHA v2"
 msgstr ""
 
-#: wpzoom-forms.php:1878
-msgid "It appears that you haven&rsquo;t made any forms yet."
+#: classes/class-wpzoom-forms-submission-view.php:89
+msgid "IP"
 msgstr ""
 
-#: elementor/widgets/wpzoom-forms-cpt/wpzoom-forms-cpt.php:303
+#: elementor/widgets/wpzoom-forms-cpt/wpzoom-forms-cpt.php:305
 msgid "Labels"
 msgstr ""
 
-#: wpzoom-forms.php:477
-msgid "Last Modified"
-msgstr ""
-
-#: classes/class-wpzoom-forms-settings-page.php:694
+#: classes/class-wpzoom-forms-settings-page.php:736
 msgid ""
 "Let your forms submit instantly without page reloads. Improve user "
 "experience and reduce drop-offs with real-time feedback."
 msgstr ""
 
-#: classes/class-wpzoom-forms-settings-page.php:431
+#: classes/class-wpzoom-forms-settings-page.php:439
 msgid "Light"
 msgstr ""
 
-#: classes/class-wpzoom-forms-settings-page.php:244
+#: classes/class-wpzoom-forms-settings-page.php:252
 msgid "Load default styling for forms"
 msgstr ""
 
-#: classes/class-wpzoom-forms-settings-page.php:255
+#: classes/class-wpzoom-forms-settings-page.php:263
 msgid "Load plugin assets globally"
 msgstr ""
 
-#. %1$s = possible class attribute, %2$s = page url, %3$s = page name.
-#: wpzoom-forms.php:1853
-#, php-format
-msgctxt "Main menu page item"
-msgid "<li%1$s><a href=\"%2$s\">%3$s</a></li>"
+#: classes/class-wpzoom-forms-settings-page.php:532
+msgid "Mailchimp API Key"
 msgstr ""
 
-#: wpzoom-forms.php:1605
-msgid "Manage Forms"
+#: classes/class-wpzoom-forms-settings-page.php:769
+msgid "Map form fields to Mailchimp merge fields"
 msgstr ""
 
-#: classes/class-wpzoom-forms-settings-page.php:480
+#: classes/class-wpzoom-forms-settings-page.php:915
+msgid "Mark submissions as spam or not spam"
+msgstr ""
+
+#: classes/class-wpzoom-forms-settings-page.php:488
 msgid "Message displayed after successful form submission."
 msgstr ""
 
-#: classes/class-wpzoom-forms-settings-page.php:491
+#: classes/class-wpzoom-forms-settings-page.php:499
 msgid "Message displayed if form submission fails."
 msgstr ""
 
-#: classes/class-wpzoom-forms-settings-page.php:502
+#: classes/class-wpzoom-forms-settings-page.php:510
 msgid "Message displayed if required fields are not filled in."
 msgstr ""
 
-#: classes/class-wpzoom-forms-settings-page.php:469
+#: classes/class-wpzoom-forms-settings-page.php:477
 msgid "Message displayed while the form is being submitted."
 msgstr ""
 
-#: wpzoom-forms.php:190
+#: classes/class-wpzoom-forms-schema.php:124
+msgid "Name"
+msgstr ""
+
+#: classes/class-wpzoom-forms-rest.php:193
 msgid "New Form"
 msgstr ""
 
-#: wpzoom-forms.php:323 wpzoom-forms.php:433
+#: classes/class-wpzoom-forms-submission-handler.php:321
+#: classes/class-wpzoom-forms-rest.php:218
 msgid "New Form Submission"
 msgstr ""
 
-#: wpzoom-forms.php:234
-msgid "New Submission"
+#: classes/class-wpzoom-forms-submission-view.php:59
+msgid "No data was captured for this submission."
 msgstr ""
 
-#: wpzoom-forms.php:195
-msgid "No forms found in Trash."
-msgstr ""
-
-#: wpzoom-forms.php:194
-msgid "No forms found."
-msgstr ""
-
-#: classes/class-wpzoom-forms-settings-page.php:292
+#: classes/class-wpzoom-forms-settings-page.php:300
 msgid "No Protection"
 msgstr ""
 
-#: classes/class-wpzoom-forms-settings-page.php:698
+#: classes/class-wpzoom-forms-settings-page.php:740
 msgid "No reloading or redirecting after form submission"
 msgstr ""
 
-#: wpzoom-forms.php:239
-msgid "No submissions found in Trash."
+#: classes/class-wpzoom-forms-settings-page.php:896
+msgid "Not Installed"
 msgstr ""
 
-#: wpzoom-forms.php:238
-msgid "No submissions found."
+#: classes/class-wpzoom-forms-schema.php:90
+msgid "Number"
 msgstr ""
 
-#: classes/class-wpzoom-forms-settings-page.php:490
-#: classes/class-wpzoom-forms-settings-page.php:492
-msgid "Oops! Something went wrong. Please try again. Please try again."
+#: classes/class-wpzoom-forms-settings-page.php:498
+#: classes/class-wpzoom-forms-settings-page.php:500
+msgid "Oops! Something went wrong. Please try again."
 msgstr ""
 
-#: wpzoom-forms.php:2188
-msgid "Our Plugins"
+#: classes/class-wpzoom-forms-schema.php:101
+msgid "Option 1"
 msgstr ""
 
-#: wpzoom-forms.php:2182
-msgid "Our Themes"
+#: classes/class-wpzoom-forms-schema.php:102
+msgid "Option 2"
+msgstr ""
+
+#: classes/class-wpzoom-forms-schema.php:103
+msgid "Option 3"
 msgstr ""
 
 #: elementor/widgets/wpzoom-forms-cpt/wpzoom-forms-cpt.php:230
 msgid "Padding"
 msgstr ""
 
-#: classes/class-wpzoom-forms-settings-page.php:501
-#: classes/class-wpzoom-forms-settings-page.php:503
+#: classes/class-wpzoom-forms-schema.php:140
+msgid "Paragraph text describing the next section of the form."
+msgstr ""
+
+#: classes/class-wpzoom-forms-schema.php:118
+msgid "Phone"
+msgstr ""
+
+#: classes/class-wpzoom-forms-settings-page.php:509
+#: classes/class-wpzoom-forms-settings-page.php:511
 msgid "Please complete all required fields before submitting."
 msgstr ""
 
-#: wpzoom-forms.php:187 wpzoom-forms.php:231
-msgctxt "post"
-msgid "Add New"
+#: classes/class-wpzoom-forms-submission-handler.php:129
+msgid "Please enter a valid email address."
 msgstr ""
 
-#: wpzoom-forms.php:201 wpzoom-forms.php:245
-msgctxt "post"
-msgid "Featured image"
+#: classes/class-wpzoom-forms-submission-handler.php:149
+msgid "Please fix the errors below."
 msgstr ""
 
-#: wpzoom-forms.php:203 wpzoom-forms.php:247
-msgctxt "post"
-msgid "Remove featured image"
-msgstr ""
-
-#: wpzoom-forms.php:202 wpzoom-forms.php:246
-msgctxt "post"
-msgid "Set featured image"
-msgstr ""
-
-#: wpzoom-forms.php:281
-msgctxt "post"
-msgid "Spam"
-msgstr ""
-
-#: wpzoom-forms.php:204 wpzoom-forms.php:248
-msgctxt "post"
-msgid "Use as featured image"
-msgstr ""
-
-#: wpzoom-forms.php:229
-msgctxt "post type general name"
-msgid "WPZOOM Form Submissions"
-msgstr ""
-
-#: wpzoom-forms.php:185
-msgctxt "post type general name"
-msgid "WPZOOM Forms"
-msgstr ""
-
-#: wpzoom-forms.php:186
-msgctxt "post type singular name"
-msgid "Form"
-msgstr ""
-
-#: wpzoom-forms.php:230
-msgctxt "post type singular name"
-msgid "WPZOOM Form Submission"
-msgstr ""
-
-#: classes/class-wpzoom-forms-settings-page.php:226
+#: classes/class-wpzoom-forms-settings-page.php:234
 msgid "Premium"
 msgstr ""
 
@@ -809,46 +768,46 @@ msgstr ""
 msgid "Preview"
 msgstr ""
 
-#: classes/class-wpzoom-forms-template-manager.php:187
+#: classes/class-wpzoom-forms-template-manager.php:204
 msgid "PRO"
 msgstr ""
 
-#: classes/class-wpzoom-forms-template-manager.php:196
-msgid "Proceed"
-msgstr ""
-
-#: classes/class-wpzoom-forms-settings-page.php:812
+#: classes/class-wpzoom-forms-settings-page.php:888
 msgid ""
 "Protect your forms from bots, spam, and abuse using privacy-friendly "
 "verification tools. Block fake submissions while keeping the experience "
 "smooth for real users."
 msgstr ""
 
-#: classes/class-wpzoom-forms-settings-page.php:337
+#: classes/class-wpzoom-forms-settings-page.php:345
 msgid "reCaptcha v2 Secret Key"
 msgstr ""
 
-#: classes/class-wpzoom-forms-settings-page.php:325
+#: classes/class-wpzoom-forms-settings-page.php:333
 msgid "reCaptcha v2 Site Key"
 msgstr ""
 
-#: classes/class-wpzoom-forms-settings-page.php:319
+#: classes/class-wpzoom-forms-settings-page.php:327
 msgid "reCAPTCHA v3"
 msgstr ""
 
-#: classes/class-wpzoom-forms-settings-page.php:361
+#: classes/class-wpzoom-forms-settings-page.php:369
 msgid "reCaptcha v3 Secret Key"
 msgstr ""
 
-#: classes/class-wpzoom-forms-settings-page.php:349
+#: classes/class-wpzoom-forms-settings-page.php:357
 msgid "reCaptcha v3 Site Key"
 msgstr ""
 
-#: wpzoom-forms.php:1147
-msgid "Responses"
+#: classes/class-wpzoom-forms-submission-view.php:92
+msgid "Referer"
 msgstr ""
 
-#: classes/class-wpzoom-forms-settings-page.php:823
+#: classes/class-wpzoom-forms-settings-page.php:916
+msgid "Report missed spam to improve accuracy"
+msgstr ""
+
+#: classes/class-wpzoom-forms-settings-page.php:1042
 msgid ""
 "Runs silently in the background and scores each submission to detect spam. "
 "Once enabled, it applies to all forms by default. You can disable it per "
@@ -859,30 +818,16 @@ msgstr ""
 msgid "Save Changes"
 msgstr ""
 
-#: wpzoom-forms.php:456
-msgid "Saved"
-msgstr ""
-
-#: wpzoom-forms.php:457 wpzoom-forms.php:458 wpzoom-forms.php:459
-#: wpzoom-forms.php:460
-#, php-format
-msgid "Saved <span class=\"count\">(%s)</span>"
-msgstr ""
-
-#: wpzoom-forms.php:193
-msgid "Search Forms"
-msgstr ""
-
-#: wpzoom-forms.php:237
-msgid "Search Submissions"
-msgstr ""
-
-#: classes/class-wpzoom-forms-settings-page.php:410
+#: classes/class-wpzoom-forms-settings-page.php:418
 msgid "Secret Key"
 msgstr ""
 
-#: wpzoom-forms.php:2193
-msgid "See the latest updates on our blog"
+#: classes/class-wpzoom-forms-schema.php:135
+msgid "Section Name"
+msgstr ""
+
+#: classes/class-wpzoom-forms-submission-handler.php:51
+msgid "Security check failed. Please reload the page and try again."
 msgstr ""
 
 #: elementor/widgets/wpzoom-forms-cpt/wpzoom-forms-cpt.php:177
@@ -893,234 +838,220 @@ msgstr ""
 msgid "Select a Template"
 msgstr ""
 
-#: classes/class-wpzoom-forms-settings-page.php:464
+#: classes/class-wpzoom-forms-settings-page.php:472
 msgid "Sending Message"
 msgstr ""
 
-#: classes/class-wpzoom-forms-settings-page.php:468
+#: classes/class-wpzoom-forms-settings-page.php:476
 msgid "Sending your message…"
 msgstr ""
 
-#: classes/class-wpzoom-forms-settings-page.php:470
+#: classes/class-wpzoom-forms-settings-page.php:478
 msgid "Sending..."
 msgstr ""
 
-#: wpzoom-forms.php:755 wpzoom-forms.php:1840
-msgid "Settings"
-msgstr ""
-
-#: wpzoom-forms.php:1148
-msgid "Shortcode"
+#. 1: site name (linked), 2: plugin name
+#: classes/class-wpzoom-forms-submission-handler.php:339
+#, php-format
+msgid "Sent from %1$s using the %2$s plugin."
 msgstr ""
 
 #. Description of the plugin
 msgid ""
-"Simple, user-friendly contact form plugin for WordPress that utilizes "
-"Gutenberg blocks for easy form building and customization."
+"Simple, user-friendly contact form plugin for WordPress with a dedicated "
+"drag-and-drop builder."
 msgstr ""
 
-#: classes/class-wpzoom-forms-settings-page.php:398
+#: classes/class-wpzoom-forms-schema.php:106
+msgid "Single Choice"
+msgstr ""
+
+#: classes/class-wpzoom-forms-settings-page.php:406
 msgid "Site Key"
 msgstr ""
 
-#: wpzoom-forms.php:282
-#, php-format
-msgid "Spam <span class=\"count\">(%s)</span>"
-msgid_plural "Spam <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
+#: classes/class-wpzoom-forms-submission-handler.php:208
+#: classes/class-wpzoom-forms-rest.php:220
+#: classes/class-wpzoom-forms-renderer.php:58
+msgid "Sorry, something went wrong. Please try again."
+msgstr ""
 
-#: classes/class-wpzoom-forms-settings-page.php:271
-#: classes/class-wpzoom-forms-settings-page.php:277
+#: classes/class-wpzoom-forms-settings-page.php:279
+#: classes/class-wpzoom-forms-settings-page.php:285
 msgid "Spam Protection"
 msgstr ""
 
-#: classes/class-wpzoom-forms-settings-page.php:238
+#: classes/class-wpzoom-forms-submission-view.php:98
+msgid "Status"
+msgstr ""
+
+#: classes/class-wpzoom-forms-settings-page.php:893
+msgid "Status:"
+msgstr ""
+
+#: classes/class-wpzoom-forms-settings-page.php:246
 msgid "Styling"
 msgstr ""
 
-#: wpzoom-forms.php:1164 wpzoom-forms.php:1457 wpzoom-forms.php:2621
-#: wpzoom-forms.php:2624
-msgid "Submission"
+#: classes/class-wpzoom-forms-submission-view.php:40
+msgid "Submission Details"
 msgstr ""
 
-#: wpzoom-forms.php:241
-msgid "Submission Archives"
+#. %s: form title
+#: classes/class-wpzoom-forms-submission-handler.php:298
+#, php-format
+msgid "Submission for %s"
 msgstr ""
 
-#: wpzoom-forms.php:242
-msgid "Submission Attributes"
+#: classes/class-wpzoom-forms-migration.php:58
+#: classes/class-wpzoom-forms-schema.php:50
+msgid "Submit"
 msgstr ""
 
-#: wpzoom-forms.php:353 wpzoom-forms.php:435 wpzoom-forms.php:1640
-msgid "Submission failed!"
-msgstr ""
-
-#: wpzoom-forms.php:1502
-msgid "Submission is empty&hellip;"
-msgstr ""
-
-#: wpzoom-forms.php:240 wpzoom-forms.php:1835
-msgid "Submissions"
-msgstr ""
-
-#: classes/class-wpzoom-forms-settings-page.php:458
+#: classes/class-wpzoom-forms-settings-page.php:466
 msgid "Submit forms without page reload using AJAX."
 msgstr ""
 
-#: wpzoom-forms.php:510
+#: classes/class-wpzoom-forms-submission-view.php:86
 msgid "Submitted"
 msgstr ""
 
-#: classes/class-wpzoom-forms-settings-page.php:475
+#: classes/class-wpzoom-forms-settings-page.php:483
 msgid "Success Message"
 msgstr ""
 
-#: wpzoom-forms.php:2206
-msgid "Support"
+#: classes/class-wpzoom-forms-schema.php:84
+#: classes/class-wpzoom-forms-schema.php:127
+msgid "Text"
 msgstr ""
 
 #: elementor/widgets/wpzoom-forms-cpt/wpzoom-forms-cpt.php:218
 msgid "Text Color"
 msgstr ""
 
-#: classes/class-wpzoom-forms-settings-page.php:481
+#: classes/class-wpzoom-forms-settings-page.php:489
 msgid "Thank you! Your message has been sent successfully."
 msgstr ""
 
-#: classes/class-wpzoom-forms-settings-page.php:479
+#: classes/class-wpzoom-forms-settings-page.php:487
 msgid "Thank you! Your message has been sent."
 msgstr ""
 
-#: wpzoom-forms.php:337 wpzoom-forms.php:434 wpzoom-forms.php:1637
-msgid "Thanks! We've received your submission!"
+#: classes/class-wpzoom-forms-submission-handler.php:60
+#: classes/class-wpzoom-forms-submission-handler.php:181
+msgid "Thanks!"
 msgstr ""
 
-#: classes/class-wpzoom-forms-settings-page.php:691
+#: classes/class-wpzoom-forms-submission-handler.php:189
+#: classes/class-wpzoom-forms-rest.php:219
+#: classes/class-wpzoom-forms-renderer.php:57
+msgid "Thanks! We've received your submission."
+msgstr ""
+
+#: classes/class-wpzoom-forms-settings-page.php:733
+#: classes/class-wpzoom-forms-settings-page.php:762
 msgid "This feature is only available in the PRO version"
 msgstr ""
 
-#: wpzoom-forms.php:1146
-msgid "Title"
+#: classes/class-wpzoom-forms-submission-handler.php:133
+msgid "This field is required."
 msgstr ""
 
-#: classes/class-wpzoom-forms-settings-page.php:309
+#: classes/class-wpzoom-forms-renderer.php:32
+msgid "This form is not published."
+msgstr ""
+
+#: classes/class-wpzoom-forms-rest.php:186
+msgid "This template is only available in WPZOOM Forms PRO."
+msgstr ""
+
+#: classes/class-wpzoom-forms-settings-page.php:317
 msgid "Type"
 msgstr ""
 
-#: classes/class-wpzoom-forms-settings-page.php:249
+#: classes/class-wpzoom-forms-settings-page.php:257
 msgid ""
 "Uncheck this option if you want your current theme to handle the styling for "
 "forms."
 msgstr ""
 
-#: classes/class-wpzoom-forms-settings-page.php:693
+#: classes/class-wpzoom-forms-settings-page.php:735
 msgid "Unlock AJAX Submissions with WPZOOM Forms PRO"
 msgstr ""
 
-#: wpzoom-forms.php:2519 wpzoom-forms.php:2588
-msgid "Unnamed Input"
+#: classes/class-wpzoom-forms-settings-page.php:764
+msgid "Unlock Email Marketing Integrations with WPZOOM Forms PRO"
 msgstr ""
 
-#: wpzoom-forms.php:764
-msgid "UPGRADE"
+#: classes/class-wpzoom-forms-settings-page.php:900
+msgid "Upgrade to Activate"
 msgstr ""
 
-#: wpzoom-forms.php:1844 classes/class-wpzoom-forms-settings-page.php:700
+#: classes/class-wpzoom-forms-template-manager.php:174
+#: classes/class-wpzoom-forms-settings-page.php:742
+#: classes/class-wpzoom-forms-settings-page.php:772
+#: classes/class-wpzoom-forms-settings-page.php:919
 msgid "Upgrade to PRO"
 msgstr ""
 
-#: wpzoom-forms.php:200
-msgid "Uploaded to this form"
+#: classes/class-wpzoom-forms-option-lists.php:24
+msgid "US States"
 msgstr ""
 
-#: wpzoom-forms.php:244
-msgid "Uploaded to this submission"
+#: classes/class-wpzoom-forms-submission-view.php:95
+msgid "User Agent"
 msgstr ""
 
-#: wpzoom-forms.php:1816
-#, php-format
-msgid "v %s"
-msgstr ""
-
-#: classes/class-wpzoom-forms-settings-page.php:497
+#: classes/class-wpzoom-forms-settings-page.php:505
 msgid "Validation Message"
 msgstr ""
 
-#: wpzoom-forms.php:1108
-msgid "View"
+#: classes/class-wpzoom-forms-template-manager.php:217
+msgid "View All 30+ Templates"
 msgstr ""
 
-#: wpzoom-forms.php:191
-msgid "View Form"
+#: classes/class-wpzoom-forms-schema.php:121
+msgid "Website"
 msgstr ""
 
-#: wpzoom-forms.php:192
-msgid "View Forms"
-msgstr ""
-
-#: wpzoom-forms.php:235
-msgid "View Submission"
-msgstr ""
-
-#: wpzoom-forms.php:236
-msgid "View Submissions"
-msgstr ""
-
-#: classes/class-wpzoom-forms-settings-page.php:422
+#: classes/class-wpzoom-forms-settings-page.php:430
 msgid "Widget Theme"
 msgstr ""
 
-#: wpzoom-forms.php:1882
-msgid ""
-"With WPZOOM Forms, you have the ability to create contact forms, surveys, "
-"and various other types of forms effortlessly and swiftly."
-msgstr ""
-
-#: classes/class-wpzoom-forms-settings-page.php:697
+#: classes/class-wpzoom-forms-settings-page.php:739
 msgid "Works seamlessly with shortcodes and blocks"
 msgstr ""
 
+#: classes/class-wpzoom-forms-settings-page.php:917
+msgid "Works silently in the background"
+msgstr ""
+
 #. Author of the plugin
-#: wpzoom-forms.php:2175
 msgid "WPZOOM"
 msgstr ""
 
-#: wpzoom-forms.php:2174
-msgid "WPZOOM - WordPress themes with modern features and professional support"
-msgstr ""
-
-#: wpzoom-forms.php:728
-msgid "WPZOOM Blocks"
-msgstr ""
-
-#: wpzoom-forms.php:233
-msgid "WPZOOM Form Submission"
-msgstr ""
-
-#: wpzoom-forms.php:227
-msgid "WPZOOM Form Submissions"
-msgstr ""
-
 #. Name of the plugin
-#: wpzoom-forms.php:183 wpzoom-forms.php:714
 #: elementor/wpzoom-forms-elementor.php:113
 #: elementor/widgets/wpzoom-forms-cpt/wpzoom-forms-cpt.php:169
 msgid "WPZOOM Forms"
 msgstr ""
 
-#: wpzoom-forms.php:1806
-msgid "WPZOOM Forms <small>Lite</small>"
+#: classes/class-wpzoom-forms-submission-handler.php:117
+msgid "Yes"
 msgstr ""
 
-#: wpzoom-forms.php:1602
-msgid "WPZOOM Forms Admin Notice"
+#: classes/class-wpzoom-forms-schema.php:60
+msgid "Your Email"
 msgstr ""
 
-#: wpzoom-forms.php:750
-msgid "WPZOOM Forms Settings Page"
+#: classes/class-wpzoom-forms-schema.php:61
+msgid "Your Message"
 msgstr ""
 
-#: wpzoom-forms.php:481
-msgid "Y/m/d"
+#: classes/class-wpzoom-forms-schema.php:59
+msgid "Your Name"
+msgstr ""
+
+#: classes/class-wpzoom-forms-renderer.php:265
+msgid "— Select —"
 msgstr ""

@@ -758,7 +758,6 @@ registerPlugin('wpzoom-forms-document-settings', {
 										}));
 									}}
 									onClick={(event) => {
-										console.log('Quick form field clicked:', block.name);
 										event.preventDefault();
 										event.stopPropagation();
 										insertFormField(block.name, block.defaultAttributes, isDisabled, isPro);
@@ -865,8 +864,8 @@ const SortableList = SortableContainer(({ items, changeCallback, removeCallback 
 registerBlockType('wpzoom-forms/form', {
 	$schema:      'https://schemas.wp.org/trunk/block.json',
 	apiVersion:   3,
-	title: __('Contact Form', 'wpzoom-blocks'),
-	description: __('Add a simple contact form', 'wpzoom-blocks'),
+	title: __('Contact Form', 'wpzoom-forms'),
+	description: __('Add a simple contact form', 'wpzoom-forms'),
 	icon: (<svg width="40" height="40" viewBox="0 0 250 300" fill="none" xmlns="http://www.w3.org/2000/svg">
 		<path fill-rule="evenodd" clip-rule="evenodd" d="M250 0H50V50H0V300H250V0Z" fill="#083EA7" />
 		<path fill-rule="evenodd" clip-rule="evenodd" d="M100 50H200V100H100V50ZM100 150V100H50V250H100V200H150V150H100Z" fill="#1FDE91" />
@@ -1235,7 +1234,6 @@ registerBlockType('wpzoom-forms/form', {
 										}));
 									}}
 									onClick={(event) => {
-										console.log('Quick form field clicked:', block.name);
 										event.preventDefault();
 										event.stopPropagation();
 										insertFormField(block.name, block.defaultAttributes, isDisabled, isPro);
@@ -1315,10 +1313,10 @@ registerBlockType('wpzoom-forms/form', {
 												'wpzoom-forms/text-name-field',
 												{
 													'id': 'input_name',
-													'name': __('Name', 'wpzoom-blocks'),
+													'name': __('Name', 'wpzoom-forms'),
 													'type': 'text',
 													'showLabel': true,
-													'label': __('Name', 'wpzoom-blocks'),
+													'label': __('Name', 'wpzoom-forms'),
 													'required': true,
 													'replyto': true,
 													'className': 'fullwidth'
@@ -1328,10 +1326,10 @@ registerBlockType('wpzoom-forms/form', {
 												'wpzoom-forms/text-email-field',
 												{
 													'id': 'input_email',
-													'name': __('Email', 'wpzoom-blocks'),
+													'name': __('Email', 'wpzoom-forms'),
 													'type': 'email',
 													'showLabel': true,
-													'label': __('Email', 'wpzoom-blocks'),
+													'label': __('Email', 'wpzoom-forms'),
 													'required': true,
 													'replyto': true,
 													'className': 'fullwidth'
@@ -1341,10 +1339,10 @@ registerBlockType('wpzoom-forms/form', {
 												'wpzoom-forms/text-plain-field',
 												{
 													'id': 'input_subject',
-													'name': __('Subject', 'wpzoom-blocks'),
+													'name': __('Subject', 'wpzoom-forms'),
 													'type': 'text',
 													'showLabel': true,
-													'label': __('Subject', 'wpzoom-blocks'),
+													'label': __('Subject', 'wpzoom-forms'),
 													'required': true,
 													'subject': true,
 													'className': 'fullwidth'
@@ -1354,11 +1352,11 @@ registerBlockType('wpzoom-forms/form', {
 												'wpzoom-forms/textarea-field',
 												{
 													'id': 'input_message',
-													'name': __('Message', 'wpzoom-blocks'),
+													'name': __('Message', 'wpzoom-forms'),
 													'cols': '55',
 													'rows': '10',
 													'showLabel': true,
-													'label': __('Message', 'wpzoom-blocks'),
+													'label': __('Message', 'wpzoom-forms'),
 													'required': true,
 													'className': 'fullwidth'
 												}
@@ -1383,7 +1381,7 @@ registerBlockType('wpzoom-forms/form', {
 												'wpzoom-forms/submit-field',
 												{
 													'id': 'input_submit',
-													'name': __('Submit', 'wpzoom-blocks')
+													'name': __('Submit', 'wpzoom-forms')
 												}
 											]
 										]
@@ -1398,7 +1396,7 @@ registerBlockType('wpzoom-forms/form', {
 												'core/paragraph',
 												{
 													'align': 'right',
-													'content': __('Fields marked with <strong class="has-accent-color has-text-color">*</strong> are required.', 'wpzoom-blocks'),
+													'content': __('Fields marked with <strong class="has-accent-color has-text-color">*</strong> are required.', 'wpzoom-forms'),
 													'dropCap': false,
 													'style': {
 														'typography': {

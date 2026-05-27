@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Elementor Website Builder &#8211; more than just a page builder - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-05-26 09:20:59+0000\n"
+"PO-Revision-Date: 2026-05-26 16:02:58+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,10 +19,6 @@ msgstr "ドキュメントの設定を保存できませんでした。"
 msgid "The settings object is required."
 msgstr "設定オブジェクト (settings object) が必要です。"
 
-#: modules/mcp/abilities/update-settings-ability.php:20
-msgid "Updates Elementor document-level settings for a post (for example page layout, title visibility, or custom page settings). Pass only the keys you want to change. Use list-pages to resolve IDs and get-page-structure when you also need the element tree. Requires permission to edit the target post."
-msgstr "投稿に対する Elementor のドキュメントレベルの設定 (例: ページレイアウト、タイトルの表示状態、またはカスタムページ設定など) を更新します。変更したいキーのみを渡してください。ID を解決するには list-pages を、要素ツリーも必要な場合は get-page-structure を使用してください。対象の投稿を編集する権限が必要です。"
-
 #: modules/mcp/abilities/update-settings-ability.php:19
 msgid "Update Elementor Page Settings"
 msgstr "Elementor ページ設定の更新"
@@ -36,6 +32,10 @@ msgstr "このドキュメントを編集する権限がありません。"
 #: modules/mcp/abilities/update-settings-ability.php:62
 msgid "A valid post_id is required."
 msgstr "有効な post_id が必要です。"
+
+#: modules/mcp/abilities/update-settings-ability.php:20
+msgid "Updates Elementor document-level settings for a post (for example page layout, title visibility, or custom page settings). Pass only the keys you want to change. Use list-pages to resolve IDs and get-page-structure when you also need the element tree. Requires permission to edit the target post."
+msgstr "投稿に対する Elementor のドキュメントレベルの設定 (例: ページレイアウト、タイトルの表示状態、またはカスタムページ設定など) を更新します。変更したいキーのみを渡してください。ID を解決するには list-pages を、要素ツリーも必要な場合は get-page-structure を使用してください。対象の投稿を編集する権限が必要です。"
 
 #: modules/mcp/abilities/list-pages-ability.php:18
 msgid "Returns pages and posts built with Elementor on this WordPress site. Each item includes ID, title, status (publish/draft), URL, and post type. Use this first to discover which pages exist before fetching their structure or modifying settings."
@@ -901,6 +901,24 @@ msgstr ".zipファイルをアップロード"
 msgid "Apply a Website Template"
 msgstr "サイトテンプレートを適用"
 
+#: modules/atomic-widgets/elements/atomic-button/atomic-button.php:93
+#: modules/atomic-widgets/elements/atomic-divider/atomic-divider.php:70
+#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:218
+#: modules/atomic-widgets/elements/atomic-form/form-message/form-message.php:83
+#: modules/atomic-widgets/elements/atomic-heading/atomic-heading.php:126
+#: modules/atomic-widgets/elements/atomic-image/atomic-image.php:85
+#: modules/atomic-widgets/elements/atomic-paragraph/atomic-paragraph.php:108
+#: modules/atomic-widgets/elements/atomic-self-hosted-video/atomic-self-hosted-video.php:171
+#: modules/atomic-widgets/elements/atomic-svg/atomic-svg.php:80
+#: modules/atomic-widgets/elements/atomic-tabs/atomic-tabs-content-area/atomic-tabs-content-area.php:70
+#: modules/atomic-widgets/elements/atomic-tabs/atomic-tabs-menu/atomic-tabs-menu.php:74
+#: modules/atomic-widgets/elements/atomic-tabs/atomic-tabs/atomic-tabs.php:97
+#: modules/atomic-widgets/elements/atomic-youtube/atomic-youtube.php:103
+#: modules/atomic-widgets/elements/div-block/div-block.php:130
+#: modules/atomic-widgets/elements/flexbox/flexbox.php:133
+msgid "ID"
+msgstr "ID"
+
 #: core/admin/admin-notices.php:285
 msgid "Opt in"
 msgstr "オプトイン"
@@ -922,24 +940,6 @@ msgstr "終了時刻"
 #: includes/widgets/common-base.php:180
 msgid "Octagon"
 msgstr "八角形"
-
-#: modules/atomic-widgets/elements/atomic-button/atomic-button.php:93
-#: modules/atomic-widgets/elements/atomic-divider/atomic-divider.php:70
-#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:218
-#: modules/atomic-widgets/elements/atomic-form/form-message/form-message.php:83
-#: modules/atomic-widgets/elements/atomic-heading/atomic-heading.php:126
-#: modules/atomic-widgets/elements/atomic-image/atomic-image.php:85
-#: modules/atomic-widgets/elements/atomic-paragraph/atomic-paragraph.php:108
-#: modules/atomic-widgets/elements/atomic-self-hosted-video/atomic-self-hosted-video.php:171
-#: modules/atomic-widgets/elements/atomic-svg/atomic-svg.php:80
-#: modules/atomic-widgets/elements/atomic-tabs/atomic-tabs-content-area/atomic-tabs-content-area.php:70
-#: modules/atomic-widgets/elements/atomic-tabs/atomic-tabs-menu/atomic-tabs-menu.php:74
-#: modules/atomic-widgets/elements/atomic-tabs/atomic-tabs/atomic-tabs.php:97
-#: modules/atomic-widgets/elements/atomic-youtube/atomic-youtube.php:103
-#: modules/atomic-widgets/elements/div-block/div-block.php:130
-#: modules/atomic-widgets/elements/flexbox/flexbox.php:133
-msgid "ID"
-msgstr "ID"
 
 #: modules/atomic-widgets/elements/atomic-youtube/atomic-youtube.php:87
 msgid "Lazy load"
@@ -5898,13 +5898,6 @@ msgstr "長方形"
 msgid "This cover image will replace the background video in case that the video could not be loaded."
 msgstr "動画を読み込めなかった場合、このカバー画像に置き換わります。"
 
-#: includes/controls/groups/background.php:753
-#: assets/js/packages/editor-interactions/editor-interactions.js:2
-#: assets/js/packages/editor-interactions/editor-interactions.strings.js:64
-#: assets/js/packages/editor-interactions/editor-interactions.strings.js:65
-msgid "In"
-msgstr "カテゴリー:"
-
 #: includes/controls/groups/background.php:528
 msgid "YouTube/Vimeo link, or link to video file (mp4 is recommended)."
 msgstr "YouTube/Vimeo のリンクまたは動画ファイル (mp4 推奨)。"
@@ -5949,6 +5942,13 @@ msgstr "カール"
 #: includes/widgets/divider.php:340 modules/shapes/module.php:46
 msgid "Line"
 msgstr "線"
+
+#: includes/controls/groups/background.php:753
+#: assets/js/packages/editor-interactions/editor-interactions.js:2
+#: assets/js/packages/editor-interactions/editor-interactions.strings.js:64
+#: assets/js/packages/editor-interactions/editor-interactions.strings.js:65
+msgid "In"
+msgstr "In"
 
 #. translators: %s: Path to .htaccess file.
 #: core/debug/classes/htaccess.php:31

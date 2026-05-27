@@ -5,7 +5,7 @@ Author URI:        https://www.wpzoom.com/
 Requires at least: 6.5
 Requires PHP:      7.4
 Tested up to:      7.0
-Stable tag:        1.3.9
+Stable tag:        2.0.1
 License:           GNU General Public License v2
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 Tags:              contact form, form builder, contact, forms, email form
@@ -16,13 +16,13 @@ Drag & drop contact form builder for WordPress. Create contact forms, custom for
 
 = Simple & Powerful Contact Form Builder =
 
-**The easiest way to create contact forms in WordPress.** Drag & drop form builder with spam protection, email notifications, and submission management - no coding required. Works everywhere: Block Editor, Elementor, or shortcodes.
+**The easiest way to create contact forms in WordPress.** Build your forms in a dedicated drag-and-drop builder — with spam protection, email notifications, and submission management, no coding required. Then embed them anywhere: as a block, an Elementor widget, or a shortcode.
 
-[WPZOOM Forms](https://www.wpzoom.com/plugins/wpzoom-forms/) is trusted by over 20,000 active websites. Perfect for contact forms, feedback forms, email forms, appointment booking, and quote request forms.
+[WPZOOM Forms](https://www.wpzoom.com/plugins/wpzoom-forms/) is trusted by 10,000+ active websites. Perfect for contact forms, feedback forms, email forms, appointment booking, and quote request forms.
 
 ### Why Choose WPZOOM Forms?
 
-✅ **Works Everywhere** - Use with Block Editor, Elementor, Classic Editor, or any theme via shortcodes
+✅ **Build Once, Embed Anywhere** - Create forms in the dedicated builder, then embed them via a block, the Elementor widget, or a shortcode in any theme
 ✅ **Powerful Spam Protection** - reCAPTCHA v2/v3, Cloudflare Turnstile, and Akismet built-in
 ✅ **Email Notifications** - Get instant alerts when someone submits your contact form
 ✅ **Form Submissions Dashboard** - All entries saved and searchable in WordPress
@@ -39,7 +39,11 @@ Take your forms to the professional level with [**WPZOOM Forms PRO**](https://ww
 
 **Drag-and-Drop Form Builder**
 
-Build contact forms, feedback forms, and email forms effortlessly. Simply drag fields, arrange layouts, and customize styling - no coding required. Works in Block Editor and Elementor.
+Build and manage all your forms from a dedicated WPZOOM Forms section in your dashboard — a fast, standalone interface that's independent of the block editor. Simply drag fields, arrange layouts, and customize styling, no coding required. Once a form is ready, embed it anywhere via a block, the Elementor widget, or a shortcode.
+
+**Block Editor Embed**
+
+Drop your form onto any page or post with the WPZOOM Form block. Pick a form, and it's instantly embedded — no shortcodes to copy.
 
 **Ready-to-Use Form Templates**
 
@@ -59,7 +63,7 @@ Receive instant email notifications when users submit your contact form. Stay or
 
 **Elementor Widget**
 
-Full Elementor integration with a dedicated widget. Build and style your contact forms directly in Elementor - no shortcodes needed.
+Full Elementor integration with a dedicated widget. Embed and style your contact forms directly in Elementor - no shortcodes needed.
 
 **Shortcode Support**
 
@@ -75,7 +79,7 @@ All form submissions are safely stored in your WordPress dashboard. Search, filt
 
 ## ⬆️ Upgrade to WPZOOM Forms PRO
 
-**Ready for even more powerful features?** [WPZOOM Forms PRO](https://www.wpzoom.com/plugins/wpzoom-forms/) takes your form building to the next level with advanced functionality designed for professional websites and businesses.
+[WPZOOM Forms PRO](https://www.wpzoom.com/plugins/wpzoom-forms/) adds advanced functionality for professional websites and businesses:
 
 ### 🌟 PRO Features Include:
 
@@ -171,10 +175,10 @@ Jump-start your forms with industry-specific templates: business consultation, p
 
 = How do I add a contact form to my page? =
 
-You have three options:
-1. **Block Editor**: Add the "WPZOOM Form" block directly to your page
-2. **Elementor**: Use the WPZOOM Forms widget in Elementor
-3. **Shortcode**: Copy the shortcode from any form and paste it anywhere
+First, build your form in the **WPZOOM Forms** section of your WordPress dashboard. Once it's ready, embed it anywhere using one of these three options:
+1. **Block**: Add the "WPZOOM Form" block to any page or post and select your form
+2. **Elementor**: Drop in the WPZOOM Forms widget and select your form
+3. **Shortcode**: Copy the form's shortcode and paste it into any theme or page builder
 
 = Does this contact form plugin work with Elementor? =
 
@@ -206,15 +210,25 @@ Yes! Use shortcodes to embed your contact forms in the Classic Editor or any the
 
 == Screenshots ==
 
-1. Form builder block
+1. Drag-and-drop form builder
 2. Add a form in a page
-3. Add fields to forms
+3. Form Templates
 4. Form submissions
 5. Elementor widget
 6. Settings page
 
 
 == Changelog ==
+
+= 2.0.1 =
+* Minor bug fixes
+
+= 2.0.0 =
+* New: Completely rebuilt, dedicated drag-and-drop form builder — independent of the block editor, so it's faster, more reliable, and free of editor/theme conflicts.
+* New: Standalone admin interface for building and managing forms, designed to be easy for beginners.
+* New: Searchable form template library to start from a ready-made layout.
+* Improved: Cleaner, lighter frontend markup with optional form themes and wide/full alignment support.
+* Compatibility: Your existing forms are preserved and keep rendering exactly as before — they are upgraded to the new builder only when you open and save them.
 
 = 1.3.9 =
 * Added compatibility for WordPress 7.0
@@ -328,3 +342,9 @@ Yes! Use shortcodes to embed your contact forms in the Classic Editor or any the
 
 = 1.0.0 =
 * Initial plugin release
+
+
+== Upgrade Notice ==
+
+= 2.0.0 =
+⚠️ IMPORTANT: This update includes major changes. Your existing forms are preserved and keep rendering exactly as before. Please make sure to test all forms and email notifications after updating to ensure everything works correctly on your website.

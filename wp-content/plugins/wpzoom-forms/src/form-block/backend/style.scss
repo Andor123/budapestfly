@@ -1,1 +1,45 @@
 // Form block backend styles
+
+// The honeypot field is spam-protection only — it must never be visible in the editor preview.
+.wpzf-honeypot {
+	display: none !important;
+}
+
+// Layout modifiers — mirrors frontend-form/style.scss layout blocks.
+// These classes are applied by the PHP renderer but the frontend stylesheet
+// isn't loaded in the editor context, so we repeat them here.
+.wpzf-layout-horizontal {
+	.wpzf-form__inner {
+		display: flex;
+		align-items: flex-end;
+		gap: 8px;
+	}
+	.wpzf-fields {
+		flex: 1;
+		min-width: 0;
+	}
+	.wpzf-submit {
+		margin-top: 0;
+		flex-shrink: 0;
+	}
+}
+
+.wpzf-layout-compact {
+	.wpzf-fields { gap: 4px; }
+	.wpzf-submit { margin-top: 6px; }
+}
+
+// Choice/radio/checkbox groups — the structural flex rules live in frontend-form/style.css
+// which isn't loaded in the editor context, so the columns collapse without these.
+.wpzf-choices {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5em;
+	padding-top: 4px;
+}
+
+.wpzf-choice {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5em;
+}

@@ -248,11 +248,13 @@ class Wpzoom_Forms_Cpt extends Widget_Base {
 			]
 		);
 
+		$fields_selector = '{{WRAPPER}} input:not([type="submit"]), {{WRAPPER}} textarea, {{WRAPPER}} select';
+
 		$this->add_group_control(
 			\Elementor\Group_Control_Border::get_type(),
 			[
 				'name' => 'fields_border',
-				'selector' => '{{WRAPPER}} input:not([type="submit"]), {{WRAPPER}} textarea',
+				'selector' => $fields_selector,
 			]
 		);
 
@@ -263,7 +265,7 @@ class Wpzoom_Forms_Cpt extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
 				'selectors' => [
-					'{{WRAPPER}} input:not([type="submit"]), {{WRAPPER}} textarea' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					$fields_selector => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -276,7 +278,7 @@ class Wpzoom_Forms_Cpt extends Widget_Base {
 				'separator' => '',
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} input:not([type="submit"]), {{WRAPPER}} textarea' => 'color: {{VALUE}};'
+					$fields_selector => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -289,7 +291,7 @@ class Wpzoom_Forms_Cpt extends Widget_Base {
 				'separator' => '',
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} input:not([type="submit"]), {{WRAPPER}} textarea' => 'background-color: {{VALUE}};'
+					$fields_selector => 'background-color: {{VALUE}};'
 				]
 			]
 		);
@@ -333,7 +335,7 @@ class Wpzoom_Forms_Cpt extends Widget_Base {
 			\Elementor\Group_Control_Border::get_type(),
 			[
 				'name' => 'button_border',
-				'selector' => '{{WRAPPER}} input[type="submit"]',
+				'selector' => '{{WRAPPER}} input[type="submit"], {{WRAPPER}} button.wpzf-submit__btn',
 			]
 		);
 
@@ -344,7 +346,7 @@ class Wpzoom_Forms_Cpt extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
 				'selectors' => [
-					'{{WRAPPER}} input[type="submit"]' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} input[type="submit"], {{WRAPPER}} button.wpzf-submit__btn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -357,7 +359,7 @@ class Wpzoom_Forms_Cpt extends Widget_Base {
 				'separator' => '',
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} input[type="submit"]' => 'color: {{VALUE}};'
+					'{{WRAPPER}} input[type="submit"], {{WRAPPER}} button.wpzf-submit__btn' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -370,7 +372,7 @@ class Wpzoom_Forms_Cpt extends Widget_Base {
 				'separator' => '',
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} input[type="submit"]' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}} input[type="submit"], {{WRAPPER}} button.wpzf-submit__btn' => 'background-color: {{VALUE}};'
 				]
 			]
 		);
@@ -435,18 +437,14 @@ class Wpzoom_Forms_Cpt extends Widget_Base {
 
 		$form = get_post( intval( $post_id ) );
 
-		if ( has_blocks( $form->post_content ) ) {
-			$blocks = parse_blocks( $form->post_content );
+		if ( ! function_exists( 'wpzoom_forms_render_embed' ) ) {
+			return;
 		}
 
-		if ( \Elementor\Plugin::$instance->editor->is_edit_mode() ) {
-			printf( 
-				'<div class="wpzoom-forms-post">%1$s</div>',
-				do_blocks( $form->post_content )
-			);
-	   } else {
-			echo do_shortcode( '[wpzf_form id="' . $post_id . '"]' );
-	   }
+		// Route through the shared embed helper: v2 renderer for forms saved in
+		// the new builder, legacy block render for everything else.
+		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo wpzoom_forms_render_embed( intval( $post_id ) );
 
 	}
 
