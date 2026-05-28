@@ -4,7 +4,7 @@ Tags: page builder, editor, landing page, drag-and-drop, elementor,
 Requires at least: 6.8
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 4.1.0
+Stable tag: 4.1.1
 Beta tag: 4.1.0-beta3
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -354,6 +354,12 @@ You can also add a new language via [translate.wordpress.org](https://go.element
 6. **Motion Effects** - Add entrance animations and transitions to any element in your website to captivate visitors.
 
 == Changelog ==
+
+= 4.1.1 - 2026-05-27 =
+
+* Security Fix: Improved code security enforcement in content handling
+* Security Fix: Improved code security enforcement in template handling
+* Fix: Hiding one filter prevents other filters from being applied - Atomic Editor
 
 = 4.1.0 - 2026-05-26 =
 
