@@ -1,26 +1,35 @@
-=== Inspiro Starter Sites ===
+=== Inspiro Starter Sites - 20+ Free Demo Templates for Gutenberg & Elementor ===
 Contributors: 		WPZOOM
 Donate link:		http://paypal.me/wpzm/10usd
 Author URI:			https://www.wpzoom.com/  
 Requires at least: 	6.5
 Tested up to: 		7.0
 Requires PHP: 		7.4  
-Stable tag: 		1.1.0
+Stable tag: 		1.1.2
 License: 			GPLv2 or later  
 License URI: 		https://www.gnu.org/licenses/gpl-2.0.html
-Tags: 				starter templates, Gutenberg, Elementor, WooCommerce
+Tags: 				starter sites, templates, demo importer, elementor, gutenberg
 
-Import starter templates with Gutenberg Blocks, Elementor, and WooCommerce to create a new website in just a few clicks.
+Import free starter sites & demo templates for Gutenberg, Elementor and WooCommerce — build a complete WordPress website in just a few clicks.
 
 == Description ==
 
-**Inspiro Starter Sites** is a free plugin designed to simplify the process of building a website with the [Inspiro](https://wordpress.org/themes/inspiro/) theme. It provides access to a library of 19 professionally designed starter templates:
+**Inspiro Starter Sites** is a free library of **starter sites and demo templates** for WordPress. Import a complete, professionally designed website — built for the **Gutenberg block editor**, **Elementor**, and **WooCommerce** — in just a few clicks, then customize it to match your brand.
+
+No page-building from scratch and no coding required: pick a demo, run the one-click importer, and get a ready-made site with pages, images, menus, widgets and customizer settings already set up.
+
+The plugin works hand-in-hand with the free [Inspiro](https://wordpress.org/themes/inspiro/) theme and gives you access to 20+ ready-made starter templates:
+
+**[View All Demos](https://www.wpzoom.com/themes/inspiro-lite/)**
+⭐️  **[View Premium Starter Sites](https://www.wpzoom.com/themes/inspiro/starter-sites/)** ⭐️
 
 - **Business / Portfolio** | [View Demo](https://demo.wpzoom.com/inspiro-lite-blocks/)
 - **Business (Elementor)** | [View Demo](https://demo.wpzoom.com/inspiro-lite/)
 - **Business** | [View Demo](https://inspiro.wpzoom.com/business/)
 - **Video Production** | [View Demo](https://inspiro.wpzoom.com/video/)
 - **Green Energy** | [View Demo](https://inspiro.wpzoom.com/energy/)
+- **Architecture** | [View Demo](https://inspiro.wpzoom.com/architecture/)
+- **Lawyer / Legal Firm** | [View Demo](https://inspiro.wpzoom.com/lawyer/)
 - **Charity / NGO** | [View Demo](https://inspiro.wpzoom.com/charity/)
 - **Events / Conference** | [View Demo](https://inspiro.wpzoom.com/event/)
 - **Construction** | [View Demo](https://inspiro.wpzoom.com/construction/)
@@ -36,12 +45,16 @@ Import starter templates with Gutenberg Blocks, Elementor, and WooCommerce to cr
 - **Freelancer (One-page)** | [View Demo](https://demo.wpzoom.com/inspiro-lite-freelancer/)
 - **Freelancer (One-page) #2** | [View Demo](https://demo.wpzoom.com/inspiro-lite-freelancer-blocks/)
 
-Whether you're creating a blog, an online store, or a portfolio, Inspiro Starter Sites helps you get started with a professional design.
+Whether you're building a business site, an online store, a blog, or a portfolio, Inspiro Starter Sites helps you launch a professional WordPress website fast.
 
 = FEATURES =
-- Easy import of starter templates
-- Pre-designed layouts for blogs, portfolios, e-commerce, and more
-- Compatibility with the WordPress block editor and Elementor
+- **One-click demo import** of full starter sites — pages, media, widgets, menus and customizer settings
+- **20+ free website templates** for business, portfolio, WooCommerce shops, food & restaurant, medical, finance, charity, events, fitness and more
+- Demos for both the **Gutenberg block editor** and **Elementor** page builder
+- **WooCommerce-ready** starter sites for online stores
+- Filter starter sites by **page builder** and **category** to find the right demo template fast
+- Required plugins are detected and installed automatically during import
+- 100% free starter templates — no sign-up required
 
 = How does it work? =
 
@@ -78,7 +91,19 @@ This plugin incorporates code from the [One Click Demo Import](https://wordpress
 
 == Frequently Asked Questions ==
 
-= Can I use this plugin with themes other than Inspiro? =  
+= What are starter sites? =
+Starter sites (also called demo sites or website templates) are complete, pre-built WordPress websites you can import in one click. Instead of designing every page from scratch, you import a ready-made demo — pages, layouts, images and settings — and then replace the content with your own.
+
+= Are the starter templates free? =
+Yes. All 20+ starter sites and demo templates included in Inspiro Starter Sites are completely free, with no sign-up required.
+
+= Do the starter sites work with Elementor and the Gutenberg block editor? =
+Yes. Some demos are built with the Gutenberg block editor and others with Elementor. Each template clearly shows which page builder it uses, so you can pick the one you prefer.
+
+= Can I build a WooCommerce store with these demo templates? =
+Yes. Inspiro Starter Sites includes WooCommerce-ready starter sites so you can launch an online store quickly. WooCommerce is installed automatically when you import a shop demo.
+
+= Can I use this plugin with themes other than Inspiro? =
 Inspiro Starter Sites is optimized for use with the Inspiro theme, but it may work with other themes, too.
 
 = Are the templates free? =  
@@ -92,8 +117,18 @@ Yes, all templates can be customized using either Gutenberg or Elementor, depend
 
 == Screenshots ==
 1. Demo Importer
+2. 20+ Free Starter Sites for Elementor and Block Editor
+3. Choose your builder, delete imported demos
+4. Demo Imported message
 
 == Changelog ==
+
+= 1.1.2 =
+* New demo: Lawyer / Legal Firm (Elementor)
+
+= 1.1.1 =
+* New demos: Business (Elementor), Architecture (Elementor)
+* Multiple improvements to the demo importer
 
 = 1.1.0 =
 * New demos: Business, Charity, Events, Construction, Winery, Gym

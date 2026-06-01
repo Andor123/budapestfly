@@ -1,9 +1,9 @@
 <?php
 /**
- * Plugin Name:         Social Icons & Sharing Buttons by WPZOOM
+ * Plugin Name:         Social Icons, Share Buttons & Click to Chat by WPZOOM
  * Plugin URI:          https://www.wpzoom.com/plugins/social-share/
- * Description:         Add Social Icons and Share Buttons to your website easily. Link to your social media profiles or let visitors share your content on popular networks. Supports over 400 social media icons, customizable colors, and drag-and-drop sorting.
- * Version:             4.5.11
+ * Description:         Add social icons, share buttons, and a floating Click to Chat button to your website. Link to your social profiles, let visitors share your content, and connect instantly via WhatsApp, Telegram, Messenger, and Viber. Supports 400+ icons, customizable colors, and drag-and-drop sorting.
+ * Version:             4.6.0
  * Author:              WPZOOM
  * Author URI:          https://www.wpzoom.com/
  * Text Domain:         social-icons-widget-by-wpzoom
@@ -45,6 +45,7 @@ require_once plugin_dir_path( __FILE__ ) . 'includes/classes/class-zoom-social-i
 require_once plugin_dir_path( __FILE__ ) . 'includes/classes/class-wpzoom-social-icons-shortcode.php';
 require_once plugin_dir_path( __FILE__ ) . 'includes/classes/class-wpzoom-share-analytics-upsell.php';
 require_once plugin_dir_path( __FILE__ ) . 'includes/classes/class-wpzoom-floating-buttons-upsell.php';
+require_once plugin_dir_path( __FILE__ ) . 'includes/classes/class-wpzoom-click-to-chat.php';
 
 // WPZOOM Notice Center (submodule at includes/notice-center).
 $wpz_notice_center_path = WPZOOM_SOCIAL_ICONS_PLUGIN_PATH . 'includes/notice-center/';
@@ -58,6 +59,7 @@ if ( is_admin() && ! class_exists( 'WPZOOM_Notice_Center' ) && file_exists( $wpz
 }
 
 require_once plugin_dir_path( __FILE__ ) . 'includes/classes/class-wpzoom-sharing-buttons-notice.php';
+require_once plugin_dir_path( __FILE__ ) . 'includes/classes/class-wpzoom-click-to-chat-notice.php';
 require_once plugin_dir_path( __FILE__ ) . 'includes/classes/class-wpzoom-social-icons-upsell.php';
 
 $current_theme = get_template();

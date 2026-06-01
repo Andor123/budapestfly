@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WPForms &#8211; Easy Form Builder for WordPress &#8211; Contact Forms, Payment Forms, Surveys, &amp; More - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-05-29 08:53:00+0000\n"
+"PO-Revision-Date: 2026-05-29 19:01:03+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -77,6 +77,50 @@ msgstr "Activa Lite Connect hoy para comenzar a almacenar registros. Cuando est�
 #: templates/emails/summary-body.php:152
 msgid "Your entries are being backed up, but only for one year."
 msgstr "Se están haciendo copias de seguridad de tus registros, pero solo durante un año."
+
+#: templates/admin/form-embed-wizard/popup.php:144
+msgid "Copy the Form's Shortcode"
+msgstr "Copiar el shortcode del formulario"
+
+#: templates/admin/form-embed-wizard/popup.php:133
+msgid "Add to a New Page"
+msgstr "Añadir a una nueva página"
+
+#: templates/admin/form-embed-wizard/popup.php:129
+msgid "Embed in an Existing Page"
+msgstr "Insertar en una página existente"
+
+#: templates/admin/form-embed-wizard/popup.php:114
+msgid "Copy a shortcode to use anywhere."
+msgstr "Copia un shortcode para usarlo en cualquier lugar."
+
+#: templates/admin/form-embed-wizard/popup.php:95
+msgid "Create a new page for your form."
+msgstr "Crea una nueva página para tu formulario."
+
+#: templates/admin/form-embed-wizard/popup.php:94
+msgid "New Page"
+msgstr "Nueva página"
+
+#: templates/admin/form-embed-wizard/popup.php:75
+msgid "Add to a page you've already created."
+msgstr "Añádelo a una página que ya hayas creado."
+
+#: templates/admin/form-embed-wizard/popup.php:74
+msgid "Existing Page"
+msgstr "Página existente"
+
+#: templates/admin/form-embed-wizard/popup.php:64
+msgid "How Would You Like to Publish Your Form?"
+msgstr "¿Cómo deseas publicar tu formulario?"
+
+#: templates/admin/form-embed-wizard/partials/education-card.php:57
+msgid "Demo"
+msgstr "Demo"
+
+#: src/Lite/Admin/Education/Admin/Settings/Gdpr.php:91
+msgid "Disable storage IP addresses and User Agent on all forms. If unchecked, then this can be managed on a form-by-form basis inside the form builder under Settings → General"
+msgstr "Desactiva el almacenamiento de direcciones IP y del agente de usuario en todos los formularios. Si no está marcado, esto se puede gestionar formulario por formulario en el constructor de formularios en Ajustes → General."
 
 #: src/Integrations/AI/Admin/Builder/FormEditor.php:309
 msgid "Configuring conditional logic..."
@@ -186,6 +230,93 @@ msgstr "Envía un aviso por correo electrónico al cliente"
 msgid "Switching from another form plugin? Moving entries between forms? With WPForms Pro, you can import entries from any CSV file. Whether it's exported from another WordPress form plugin, pulled from your CRM, or built by hand. Map your data to the right fields, and every submission lands exactly where it belongs. No lost leads, no manual re-entry, no messy migrations. "
 msgstr "¿Te estás cambiando desde otro plugin de formularios? ¿Quieres trasladar envíos entre formularios? Con WPForms Pro, puedes importar los envíos desde cualquier archivo CSV. Da igual si lo has exportado desde otro plugin de formularios de WordPress, lo has extraído de tu CRM o lo has creado a mano. Asigna tus datos a los campos correctos y cada envío irá a parar exactamente donde debe. Sin clientes potenciales perdidos, sin tener que volver a introducir datos a mano y sin migraciones complicadas. "
 
+#: src/Lite/Admin/Education/Admin/Settings/Gdpr.php:90
+#: src/Lite/Admin/Education/Admin/Settings/Gdpr.php:97
+msgid "Disable User Details"
+msgstr "Desactivar los detalles del usuario"
+
+#: src/Lite/Admin/Education/Admin/Settings/Gdpr.php:80
+msgid "Disable user tracking cookies. This will disable the Related Entries feature and the Form Abandonment addon."
+msgstr "Desactiva las cookies de seguimiento de usuarios. Esto desactivará la función Entradas relacionadas y el complemento de abandono de formulario."
+
+#: src/Lite/Admin/Education/Admin/Settings/Gdpr.php:79
+#: src/Lite/Admin/Education/Admin/Settings/Gdpr.php:86
+msgid "Disable User Cookies"
+msgstr "Desactivar las cookies de usuario"
+
+#. translators: %s - Stripe connect URL.
+#: src/Integrations/Stripe/Admin/Settings.php:357
+msgid "<a href=\"%s\" class=\"wpforms-btn wpforms-btn-md wpforms-btn-light-grey wpforms-stripe-switch-accounts-btn\">Switch Accounts</a>"
+msgstr "<a href=\"%s\" class=\"wpforms-btn wpforms-btn-md wpforms-btn-light-grey wpforms-stripe-switch-accounts-btn\">Cambiar de cuenta</a>"
+
+#: src/Admin/Tools/Import/Views/Forms/Page.php:241
+msgid "Select previous form plugin"
+msgstr "Seleccionar el complemento de formulario anterior."
+
+#: src/Integrations/AI/Admin/Builder/FormEditor.php:258
+msgid "All set! Anything else to adjust?"
+msgstr "¡Todo listo! ¿Hay algo más que ajustar?"
+
+#: src/Integrations/AI/Admin/Builder/FormEditor.php:257
+msgid "Done! Want to make more changes?"
+msgstr "¡Hecho! ¿Quieres realizar más cambios?"
+
+#: src/Integrations/AI/Admin/Builder/FormEditor.php:256
+msgid "Changes applied! Need anything else?"
+msgstr "¡Cambios aplicados! ¿Necesitas algo más?"
+
+#: src/Integrations/AI/Admin/Builder/FormEditor.php:252
+msgid "An error occurred while editing form."
+msgstr "Se ha producido un error al editar el formulario."
+
+#: src/Integrations/AI/Admin/Builder/FormEditor.php:250
+msgid "Stop response"
+msgstr "Detener respuesta"
+
+#: src/Integrations/AI/Admin/Builder/FormEditor.php:248
+msgid "Describe the changes you would like to make..."
+msgstr "Describe los cambios que deseas realizar..."
+
+#: src/Integrations/AI/Admin/Builder/FormEditor.php:246
+msgid "What would you like to change? Describe it in plain language and we'll update your form fields, settings, and more."
+msgstr "¿Qué deseas cambiar? Descríbelo en lenguaje sencillo y actualizaremos los campos, los ajustes y más cosas de tu formulario."
+
+#: src/Integrations/AI/Admin/Builder/FormEditor.php:195
+msgid "Your AI edit didn't run because the form couldn't be saved. Please try again."
+msgstr "Tu edición de IA no se ha ejecutado porque el formulario no se ha podido guardar. Inténtalo de nuevo."
+
+#: src/Integrations/AI/Admin/Builder/FormEditor.php:194
+msgid "Restore point not saved"
+msgstr "Punto de restauración no guardado"
+
+#: src/Integrations/AI/Admin/Builder/FormEditor.php:186
+msgid "A <a href=\"#\" class=\"wpforms-panel-content-revisions-link\">revision</a> has been automatically created."
+msgstr "Se ha creado automáticamente una <a href=\"#\" class=\"wpforms-panel-content-revisions-link\">revisión</a>."
+
+#: src/Integrations/AI/Admin/Builder/FormEditor.php:184
+msgid "Changes Saved"
+msgstr "Cambios guardados"
+
+#: src/Integrations/AI/Admin/Builder/Enqueues.php:146
+#: src/Integrations/AI/Admin/Builder/Enqueues.php:243
+#: src/Integrations/AI/Admin/Builder/FormEditor.php:253
+#: src/Integrations/AI/Admin/Builder/Forms.php:277
+msgid "You've hit your daily AI request limit."
+msgstr "Has alcanzado tu límite diario de solicitudes de IA."
+
+#: src/Integrations/AI/Admin/Builder/Enqueues.php:135
+#: src/Integrations/AI/Admin/Builder/FormEditor.php:301
+msgid "Retry"
+msgstr "Reintentar"
+
+#: src/Integrations/AI/Admin/Builder/Enqueues.php:132
+msgid "Great response!"
+msgstr "¡Respuesta excelente!"
+
+#: src/Integrations/AI/Admin/Ajax/FormEditor.php:105
+msgid "Missing session ID."
+msgstr "ID de sesión no encontrado."
+
 #: src/Admin/Education/Admin/Tools/ImportEntries.php:100
 msgid "Preserve Your Complete History"
 msgstr "Conserva tu historial completo"
@@ -257,6 +388,89 @@ msgstr "Para obtener una vista previa de tu formulario en otros formatos, necesi
 #: src/Admin/Builder/PreviewDropdown.php:92
 msgid "Addons Required"
 msgstr "Extensiones necesarias"
+
+#: includes/admin/settings-api.php:248
+msgid "Remove Key"
+msgstr "Eliminar la clave"
+
+#: includes/admin/settings-api.php:242
+msgid "Paste new API key to replace"
+msgstr "Pega la nueva clave de API para reemplazarla"
+
+#: includes/admin/class-about.php:1168 includes/admin/class-about.php:1175
+#: includes/admin/class-about.php:1182
+msgid "View, Edit, Import, and Export"
+msgstr "Ver, editar, importar y exportar"
+
+#: includes/admin/builder/class-builder.php:1732
+#: includes/admin/builder/class-builder.php:1737
+msgid "More Preview Options"
+msgstr "Más opciones de vista previa"
+
+#: includes/admin/builder/class-builder.php:1496
+msgid "Standard Form Preview"
+msgstr "Vista previa estándar del formulario"
+
+#: src/Admin/Education/Admin/Tools/ImportEntries.php:98
+msgid "Map Columns to Form Fields"
+msgstr "Asigna columnas a los campos del formulario"
+
+#: src/Admin/Education/Admin/Tools/ImportEntries.php:96
+msgid "Migrate From Other Plugins"
+msgstr "Migra desde otros plugins"
+
+#: src/Admin/Education/Admin/Tools/ImportEntries.php:92
+msgid "Map Fields in Seconds"
+msgstr "Asigna campos en segundos"
+
+#: src/Admin/Education/Admin/Tools/ImportEntries.php:88
+msgid "Seamless Migration From Other Plugins"
+msgstr "Migración fluida desde otros plugins"
+
+#: src/Admin/Education/Admin/Tools/ExportEntries.php:106
+msgid "Full Control Over Your Data"
+msgstr "Control total sobre tus datos"
+
+#: src/Admin/Education/Admin/Tools/ExportEntries.php:90
+msgid "Re-import Into Any WPForms Form"
+msgstr "Vuelve a importar en cualquier formulario de WPForms"
+
+#: src/Admin/Education/Admin/Tools/ExportEntries.php:89
+msgid "Schedule Automated Exports"
+msgstr "Programa exportaciones automáticas"
+
+#: src/Admin/Education/Admin/Tools/ExportEntries.php:87
+msgid "Filter by Date Range"
+msgstr "Filtra por intervalo de fechas"
+
+#: src/Admin/Education/Admin/Tools/ExportEntries.php:86
+msgid "Choose Specific Fields to Include"
+msgstr "Elige los campos específicos que deseas incluir"
+
+#: src/Admin/Education/Admin/Tools/ExportEntries.php:85
+msgid "Export as CSV or XLSX"
+msgstr "Exporta como CSV o XLSX"
+
+#: src/Admin/Education/Admin/Tools/ExportEntries.php:34
+msgid "Export Entries"
+msgstr "Exportar entradas"
+
+#: src/Admin/Education/Admin/Tools/ImportEntries.php:34
+#: src/Admin/Education/Admin/Tools/ImportEntries.php:83
+msgid "Import Entries"
+msgstr "Importar registros"
+
+#: src/Admin/Education/Admin/Tools/ExportEntries.php:94
+msgid "Need to back up your form data, share it with your team, or move entries to another form? WPForms Pro lets you export entries from any form as a CSV or XLSX file. Choose which fields to include, filter by date range, and download a clean file ready for spreadsheets, CRMs, or re-importing into WPForms."
+msgstr "¿Necesitas hacer una copia de seguridad de los datos de tus formularios, compartirlos con tu equipo o mover entradas a otro formulario? WPForms Pro te permite exportar llos envíos de cualquier formulario como un archivo CSV o XLSX. Elige qué campos incluir, filtra por intervalo de fechas y descarga un archivo limpio listo para hojas de cálculo, CRM o para volver a importarlo en WPForms."
+
+#: src/Admin/Education/Admin/Tools/ExportEntries.php:88
+msgid "Search and Export Matching Entries"
+msgstr "Busca y exporta los registros coincidentes"
+
+#: src/Admin/Education/Admin/Tools/ImportEntries.php:97
+msgid "Import from Any CSV File"
+msgstr "Importar desde cualquier archivo CSV"
 
 #: src/Education/ActiveLayer/Helper.php:166
 msgid "Dashboard"
@@ -781,6 +995,49 @@ msgstr "La suscripción no se puede cancelar porque su estado en PayPal es %s. S
 msgid "<strong>Pay-as-you-go Pricing</strong><br> 3%% fee per-transaction + PayPal Commerce fees. <a href=\"%s\" target=\"_blank\">Upgrade to Pro</a> to remove additional fees and unlock powerful features."
 msgstr "<strong>Precios de pago por uso</strong><br> cuota del 3 %% por transacción + cuotas de PayPal Commerce. <a href=\"%s\" target=\"_blank\">Actualiza a Pro</a> para eliminar las cuotas adicionales y desbloquear funciones avanzadas."
 
+#: src/Integrations/PayPalCommerce/Admin/Settings.php:179
+msgid "Scopes Granted"
+msgstr "Permisos concedidos"
+
+#: src/Integrations/PayPalCommerce/Admin/Settings.php:171
+msgid "Account ID"
+msgstr "ID de la cuenta"
+
+#: src/Integrations/PayPalCommerce/Admin/Settings.php:163
+msgid "Primary Email"
+msgstr "Correo electrónico principal"
+
+#: src/Integrations/PayPalCommerce/Admin/Settings.php:109
+msgid "Something went wrong while performing the authorization request."
+msgstr "Se ha producido un error al realizar la solicitud de autorización."
+
+#: src/Integrations/PayPalCommerce/Admin/Settings.php:100
+msgid "<p>Switching sandbox/live modes requires PayPal Commerce account reconnection.</p><p>Press the <em>\"Connect with PayPal Commerce\"</em> button after saving the settings to reconnect.</p>"
+msgstr "<p>Cambiar entre los modos sandbox/producción requiere volver a conectar la cuenta de PayPal Commerce.</p><p>Pulsa el botón <em>«Conectar con PayPal Commerce»</em> después de guardar los ajustes para volver a conectar.</p>"
+
+#. translators: %s - PayPal API error message.
+#: src/Integrations/PayPalCommerce/Admin/Payments/SingleActionsHandler.php:255
+msgid "Unexpected error while cancelling via processor: %s"
+msgstr "Error inesperado al cancelar a través del procesador: %s"
+
+#: src/Integrations/PayPalCommerce/Admin/Payments/SingleActionsHandler.php:248
+msgid "Subscription was cancelled remotely but not updated locally."
+msgstr "La suscripción se canceló de forma remota pero no se actualizó localmente."
+
+#. translators: %s - PayPal API error message.
+#: src/Integrations/PayPalCommerce/Admin/Payments/SingleActionsHandler.php:208
+msgid "Unexpected error while cancelling subscription: %s"
+msgstr "Error inesperado al cancelar la suscripción: %s"
+
+#: src/Integrations/PayPalCommerce/Admin/Payments/SingleActionsHandler.php:201
+msgid "Subscription was cancelled on PayPal but failed to update locally."
+msgstr "La suscripción se canceló en PayPal pero no se pudo actualizar localmente."
+
+#: src/Integrations/PayPalCommerce/Admin/Payments/SingleActionsHandler.php:195
+#: src/Integrations/PayPalCommerce/Admin/Payments/SingleActionsHandler.php:242
+msgid "Subscription cancelled successfully."
+msgstr "Suscripción cancelada correctamente."
+
 #: src/Integrations/PayPalCommerce/Admin/Builder/Traits/Content.php:605
 msgid "PayPalCommerce Pro"
 msgstr "PayPalCommerce Pro"
@@ -959,6 +1216,17 @@ msgstr "Tipo de producto"
 msgid "Enter a name for the recurring plan. Leave this field blank to use the default name."
 msgstr "Introduce un nombre para el plan recurrente. Deja este campo en blanco para usar el nombre predeterminado."
 
+#: src/Integrations/PayPalCommerce/Admin/Builder/Traits/Content.php:195
+msgid "Select the field that contains the buyer's name. This setting is optional and only used when Card Holder Name is disabled."
+msgstr "Selecciona el campo que contiene el nombre del comprador. Este ajuste es opcional y solo se utiliza cuando la opción «Nombre del titular de la tarjeta» está desactivada."
+
+#: src/Integrations/PayPalCommerce/Admin/Builder/Traits/Content.php:194
+#: src/Integrations/PayPalCommerce/Admin/Builder/Traits/Content.php:379
+#: src/Integrations/PayPalCommerce/Admin/Builder/Traits/Content.php:429
+#: src/Integrations/PayPalCommerce/Admin/Builder/Traits/Content.php:682
+msgid "--- Select a Field ---"
+msgstr "--- Selecciona un campo ---"
+
 #: src/Integrations/PayPalCommerce/Admin/Builder/Enqueues.php:84
 msgid "<p>PayPal Commerce must be enabled for this form when using the PayPal Commerce field.</p><p>To proceed, go to <strong><a href=\"#\" class=\"wpforms-no-fetch-link\" data-panel=\"payments\" data-section=\"paypal_commerce\">Payments » PayPal Commerce</a></strong> and select <strong>payment type</strong>.</p>"
 msgstr "<p>PayPal Commerce debe estar activado para este formulario cuando se utilice el campo de PayPal Commerce.</p><p>Para continuar, ve a <strong><a href=\"#\" class=\"wpforms-no-fetch-link\" data-panel=\"payments\" data-section=\"paypal_commerce\">Pagos » PayPal Commerce</a></strong> y selecciona el <strong>tipo de pago</strong>.</p>"
@@ -970,6 +1238,56 @@ msgstr "<p>Debes conectarte a PayPal Commerce antes de utilizar el campo de PayP
 #: includes/admin/builder/class-builder.php:969
 msgid "Incomplete Condition"
 msgstr "Condición incompleta"
+
+#: src/Integrations/PayPalCommerce/AddonCompatibility.php:65
+msgid "The WPForms PayPal Commerce addon is out of date. To avoid payment processing issues, please upgrade the WPForms PayPal Commerce addon to the latest version."
+msgstr "La extensión PayPal Commerce de WPForms no está actualizada. Para evitar problemas de procesamiento de pagos, actualiza la extensión PayPal Commerce a la última versión."
+
+#. translators: %d - page number.
+#: src/Forms/Fields/Traits/IndicatorRendererTrait.php:42
+#: src/Forms/Fields/Traits/IndicatorRendererTrait.php:94
+msgid "Go to page %d"
+msgstr "Ir a la página %d"
+
+#. translators: %1$s - current step in multipage form, %2$d - total number of
+#. pages.
+#: src/Forms/Fields/Pagebreak/Field.php:870
+msgid "Step %1$s of %2$d"
+msgstr "Paso %1$s de %2$d"
+
+#: src/Forms/Fields/Pagebreak/Field.php:221
+msgid "Allow Page Navigation"
+msgstr "Permitir la navegación por páginas"
+
+#: src/Forms/Fields/Pagebreak/Field.php:81
+msgid "Only available when using the Circles or Connector Progress Indicator."
+msgstr "Solo está disponible si usas el indicador de progreso de círculos o el de conectores."
+
+#: src/Forms/Fields/Pagebreak/Field.php:80
+msgid "Lets visitors move between pages even if required fields are empty. Required fields are checked when the form is submitted."
+msgstr "Permite a los visitantes pasar de una página a otra aunque los campos obligatorios estén vacíos. Los campos obligatorios se comprueban al enviar el formulario."
+
+#. translators: %s - credit card expiry date.
+#: src/Admin/Payments/Views/Single.php:666
+msgid "Method: %s"
+msgstr "Método: %s"
+
+#: lite/templates/education/lite-connect-modal.php:28
+msgid "When you upgrade to WPForms Pro, we'll automatically restore the entries that you collected in WPForms Lite."
+msgstr "Cuando te pases a WPForms Pro, restauraremos automáticamente los datos que hayas recopilado en WPForms Lite."
+
+#: lite/templates/education/lite-connect-modal.php:20
+msgid "Free backups save every submission automatically, so when email notifications fail, your data is safe. Restore entries anytime with a Pro upgrade. Entry backups expire after 1 year."
+msgstr "Las copias de seguridad automáticas guardan cada envío de forma automática, así que, aunque las notificaciones por correo electrónico no lleguen, tus datos estarán a salvo. Recupera los envíos en cualquier momento con una suscripción Pro. Las copias de seguridad de los envíos caducan al cabo de un año."
+
+#: includes/admin/class-about.php:1490 includes/admin/class-about.php:1497
+#: includes/admin/class-about.php:1504
+msgid "Accept payments using PayPal Commerce, Stripe, and Square only"
+msgstr "Acepta pagos solo a través de PayPal Commerce, Stripe y Square"
+
+#: includes/admin/builder/class-builder.php:970
+msgid "You've enabled Conditional Logic but the rule is incomplete, which could affect form submission. Complete the condition or disable Conditional Logic to continue."
+msgstr "Has activado la lógica condicional, pero la regla está incompleta, lo que podría afectar al envío del formulario. Completa la condición o desactiva la lógica condicional para continuar."
 
 #: src/Forms/Fields/Addons/Map/Field.php:798
 msgid "100 km"
@@ -1286,6 +1604,11 @@ msgstr "El campo de repetición no se puede seleccionar junto con otros campos."
 msgid "Easily create interactive quizzes. Add true or false, multiple choice, or checkbox questions. Set correct answers and automatically score submissions. <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">Learn more about the Quiz Addon</a>"
 msgstr "Crea cuestionarios interactivos fácilmente. Añade preguntas de verdadero o falso, de opción múltiple o de casillas de verificación. Establece las respuestas correctas y puntúa los envíos automáticamente. <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">Más información sobre la extensión Quizz</a>"
 
+#. translators: %d - number of fields, %s - Cmd or Ctrl key.
+#: includes/admin/builder/panels/class-fields.php:104
+msgid "%1$d fields copied. Use %2$s + V to paste."
+msgstr "Se han copiado %1$d campos. Usa %2$s + V para pegarlos."
+
 #: includes/admin/builder/class-builder.php:924
 #: src/Admin/Builder/Shortcuts.php:55
 #: src/Forms/Fields/Traits/MultiFieldMenu.php:26
@@ -1551,6 +1874,22 @@ msgstr "Mostrar eventos en tu sitio"
 msgid "Set up recurring events: daily, weekly, monthly, or custom patterns."
 msgstr "Configura eventos periódicos: diarios, semanales, mensuales o con patrones personalizados."
 
+#: src/Admin/Pages/Duplicator.php:130
+msgid "Duplicator screenshot"
+msgstr "Captura de pantalla de Duplicator"
+
+#: src/Admin/Pages/Duplicator.php:100
+msgid "Trusted by over 1.5 million websites."
+msgstr "En el que confían más de 1,5 millones de sitios web"
+
+#: src/Admin/Pages/Duplicator.php:99
+msgid "Every form entry lives in your database. One bad update, one crash, and it's gone. Duplicator backs up your entire site automatically so you can restore everything with one click."
+msgstr "Cada entrada del formulario vive en tu base de datos. Una mala actualización, un fallo, y desaparece. Duplicator hace una copia de seguridad de todo tu sitio automáticamente para que puedas restaurarlo todo con un solo clic."
+
+#: src/Admin/Pages/Duplicator.php:162
+msgid "Set Up Scheduled Cloud Backups"
+msgstr "Configurar copias de seguridad programadas en la nube"
+
 #: src/Integrations/Stripe/Admin/Builder/Enqueues.php:53
 msgid "In order to complete your form's Stripe One-Time Payments and Recurring Subscription Payments, please check that all required (*) fields have been filled out."
 msgstr "Para completar los pagos únicos y los pagos recurrentes por suscripción de Stripe en tu formulario, comprueba que se hayan rellenado todos los campos obligatorios (*)."
@@ -1590,6 +1929,14 @@ msgstr "Selecciona el tamaño de la entrada «Otro»."
 #: includes/fields/class-base.php:1858
 msgid "Add Other Choice"
 msgstr "Añadir otra opción"
+
+#: includes/fields/class-base.php:1887
+msgid "Enter placeholder text for the Other input."
+msgstr "Introduce el texto de marcador de posición para el campo Otro."
+
+#: includes/fields/class-base.php:1859
+msgid "Add an Other choice so users can input their own value."
+msgstr "Añade una opción Otro para que los usuarios puedan introducir su propio valor."
 
 #. translators: %1$s - site URL, %2$s - link to Settings -> Misc tab in plugin,
 #. %3$s - link to the documentation.
@@ -1841,6 +2188,30 @@ msgstr "Lo siento, tu perfil de usuario no tiene permiso para acceder a esta fun
 #: src/Forms/Fields/FileUpload/Field.php:410
 msgid "Drag & Drop Files, %1$sChoose Files to Upload%2$s, or %3$sCapture With Camera%2$s"
 msgstr "Arrastra y suelta archivos, %1$selige archivos para subir%2$s o %3$scaptura con la cámara%2$s"
+
+#: src/Forms/Fields/Rating/Field.php:351
+msgid "This label indicates the highest score on the scale."
+msgstr "Esta etiqueta indica la puntuación más alta de la escala."
+
+#: src/Forms/Fields/Rating/Field.php:320
+msgid "This label indicates the lowest score on the scale."
+msgstr "Esta etiqueta indica la puntuación más baja de la escala."
+
+#: src/Forms/Fields/Password/Field.php:155
+msgid "Check this option to add a toggle for showing and hiding the password."
+msgstr "Marca esta opción para añadir un botón de alternancia para mostrar y ocultar la contraseña."
+
+#: src/Forms/Fields/Password/Field.php:154
+msgid "Enable Password Visibility"
+msgstr "Activar la visibilidad de la contraseña"
+
+#: src/Forms/Fields/Traits/CameraTrait.php:233
+msgid "Ratio Height"
+msgstr "Relación de altura"
+
+#: src/Forms/Fields/Traits/CameraTrait.php:215
+msgid "Ratio Width"
+msgstr "Relación de anchura"
 
 #: src/Admin/Pages/PrivacyCompliance.php:419
 msgid "Activate WPConsent"

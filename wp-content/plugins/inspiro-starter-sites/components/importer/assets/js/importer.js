@@ -10,6 +10,159 @@ jQuery( function ( $ ) {
 	// Move the admin notices inside the appropriate div.
 	$( '.js-inspiro-starter-sites-notice-wrapper' ).appendTo( '.js-inspiro-starter-sites-admin-notices-container' );
 
+	// Filter the free starter sites by editor type + category. State for the
+	// two filter rows lives on `demoFilterState` so each handler can read both.
+	var demoFilterState  = { type: 'all', category: 'all' };
+	var FILTER_OUT_MS    = 320;
+	var FILTER_STAGGER   = 22;
+
+	function applyDemoFilters() {
+		var $items = $( '.step-choose-design > form > ul > li[data-type]' );
+
+		// First pass: figure out which items match the active filters.
+		var toShow = [];
+		var toHide = [];
+		$items.each( function () {
+			var $item     = $( this );
+			var rawType   = String( $item.attr( 'data-type' ) || '' );
+			var itemTypes = rawType ? rawType.split( /\s+/ ) : [];
+			var rawCats   = String( $item.attr( 'data-categories' ) || '' );
+			var itemCats  = rawCats ? rawCats.split( /\s+/ ) : [];
+			var typeMatch = 'all' === demoFilterState.type || itemTypes.indexOf( demoFilterState.type ) !== -1;
+			var catMatch  = 'all' === demoFilterState.category || itemCats.indexOf( demoFilterState.category ) !== -1;
+
+			if ( typeMatch && catMatch ) {
+				// When filtering by a specific editor, flip grouped cards to that variant.
+				if ( 'all' !== demoFilterState.type && itemTypes.length > 1 ) {
+					switchCardVariant( $item, demoFilterState.type );
+				}
+				toShow.push( $item );
+			} else {
+				toHide.push( $item );
+			}
+		} );
+
+		// Fade-out pass — already-hidden items skip the transition.
+		$.each( toHide, function ( _, $item ) {
+			if ( 'none' === $item.css( 'display' ) ) {
+				return;
+			}
+			$item.addClass( 'is-filtering-out' );
+		} );
+
+		// After the fade-out finishes, collapse out-of-view items and then
+		// stagger the fade-in for the new set so the grid feels like it
+		// shuffles in instead of popping.
+		window.setTimeout( function () {
+			$.each( toHide, function ( _, $item ) {
+				if ( $item.hasClass( 'is-filtering-out' ) ) {
+					$item.css( 'display', 'none' );
+				}
+			} );
+
+			$.each( toShow, function ( index, $item ) {
+				var wasHidden = 'none' === $item.css( 'display' );
+				$item.removeClass( 'is-filtering-out' );
+
+				if ( wasHidden ) {
+					$item.addClass( 'is-filtering-in' ).css( 'display', '' );
+					// Two rAFs guarantee the browser paints the starting state
+					// before we transition to the resting state.
+					window.requestAnimationFrame( function () {
+						window.requestAnimationFrame( function () {
+							window.setTimeout( function () {
+								$item.removeClass( 'is-filtering-in' );
+							}, index * FILTER_STAGGER );
+						} );
+					} );
+				}
+			} );
+		}, toHide.length ? FILTER_OUT_MS : 0 );
+
+		// Refresh visible counts on category buttons to reflect the active editor type.
+		var typeKey = 'count-' + ( demoFilterState.type === 'all' ? 'all' : demoFilterState.type );
+		$( '.inspiro-starter-sites-demo-category' ).each( function () {
+			var $btn   = $( this );
+			var $count = $btn.find( '.inspiro-starter-sites-demo-category__count' );
+			if ( ! $count.length ) {
+				return;
+			}
+			var value = parseInt( $count.attr( 'data-' + typeKey ), 10 );
+			if ( isNaN( value ) ) {
+				value = 0;
+			}
+			$count.text( value );
+
+			// Hide categories that have zero items under the active type, except the "all" pill.
+			if ( 'all' !== $btn.data( 'category' ) ) {
+				$btn.closest( 'li' ).toggleClass( 'is-cat-hidden', value <= 0 );
+			}
+		} );
+	}
+
+	$( '.inspiro-starter-sites-demo-filter' ).on( 'click', '.inspiro-starter-sites-demo-filter-btn', function () {
+		var $btn = $( this );
+		$btn.siblings( '.inspiro-starter-sites-demo-filter-btn' )
+			.removeClass( 'is-active' )
+			.attr( 'aria-pressed', 'false' );
+		$btn.addClass( 'is-active' ).attr( 'aria-pressed', 'true' );
+
+		demoFilterState.type = String( $btn.data( 'filter' ) );
+		applyDemoFilters();
+	} );
+
+	$( '.inspiro-starter-sites-demo-categories' ).on( 'click', '.inspiro-starter-sites-demo-category', function () {
+		var $btn = $( this );
+		$btn.closest( '.inspiro-starter-sites-demo-categories' )
+			.find( '.inspiro-starter-sites-demo-category' )
+			.removeClass( 'is-active' )
+			.attr( 'aria-pressed', 'false' );
+		$btn.addClass( 'is-active' ).attr( 'aria-pressed', 'true' );
+
+		demoFilterState.category = String( $btn.data( 'category' ) );
+		applyDemoFilters();
+	} );
+
+	/**
+	 * Switch a grouped demo card to a given editor variant (blocks/elementor),
+	 * updating the toggle state, thumbnail, "View Demo" link, New badge and the
+	 * active Import button.
+	 */
+	function switchCardVariant( $card, variant ) {
+		var $btn = $card.find( '.inspiro-starter-sites-demo-variant-btn[data-variant="' + variant + '"]' );
+		if ( ! $btn.length || $btn.hasClass( 'is-active' ) ) {
+			return;
+		}
+
+		$card.find( '.inspiro-starter-sites-demo-variant-btn' )
+			.removeClass( 'is-active' )
+			.attr( 'aria-pressed', 'false' );
+		$btn.addClass( 'is-active' ).attr( 'aria-pressed', 'true' );
+
+		var img = $btn.data( 'img' );
+		if ( img ) {
+			$card.find( '.js-inspiro-starter-sites-variant-thumb' ).css( 'background-image', "url('" + img + "')" );
+		}
+
+		var preview = $btn.data( 'preview' );
+		if ( preview ) {
+			$card.find( '.js-inspiro-starter-sites-variant-preview' ).attr( 'href', preview );
+		}
+
+		$card.find( '.js-inspiro-starter-sites-variant-new' ).toggle( String( $btn.data( 'is-new' ) ) === '1' );
+
+		$card.find( '.js-inspiro-starter-sites-variant-action' )
+			.hide()
+			.filter( '[data-variant="' + variant + '"]' )
+			.show();
+
+		$card.attr( 'data-active-variant', variant );
+	}
+
+	$( '.step-choose-design' ).on( 'click', '.inspiro-starter-sites-demo-variant-btn', function () {
+		switchCardVariant( $( this ).closest( 'li' ), String( $( this ).data( 'variant' ) ) );
+	} );
+
 	/**
 	 * ---------------------------------------
 	 * ------------- Events ------------------
@@ -616,4 +769,262 @@ jQuery( function ( $ ) {
 		// AJAX call to import everything (content, widgets, before/after setup)
 		ajaxCall( data );
 	}
+
+	/**
+	 * ---------------------------------------
+	 * ----- "Suggest a new demo" feedback ---
+	 * ---------------------------------------
+	 *
+	 * A small multi-step survey modal. Submits to a remote collector (primary)
+	 * and keeps a local WP-option backup. Mirrors the Inspiro theme survey.
+	 */
+	(function () {
+		var config = ( typeof inspiro_starter_sites !== 'undefined' && inspiro_starter_sites.feedback ) ? inspiro_starter_sites.feedback : null;
+		if ( ! config ) {
+			return;
+		}
+
+		var t          = config.texts || {};
+		var categories = config.categories || {};
+		var site       = config.site || {};
+		var $root      = $( '.js-inspiro-starter-sites-feedback-root' );
+		if ( ! $root.length ) {
+			return;
+		}
+
+		var TOTAL_STEPS = 4;
+		var currentStep = 1;
+		var built       = false;
+
+		function esc( s ) {
+			return $( '<div>' ).text( s == null ? '' : String( s ) ).html();
+		}
+
+		function buildModal() {
+			var npsButtons = '';
+			var i;
+			for ( i = 0; i <= 10; i++ ) {
+				npsButtons += '<button type="button" class="iss-feedback-nps-btn" data-score="' + i + '">' + i + '</button>';
+			}
+
+			var categoryItems = '';
+			$.each( categories, function ( slug, label ) {
+				categoryItems += '<label class="iss-feedback-check">' +
+					'<input type="checkbox" name="iss-feedback-category" value="' + esc( slug ) + '"> ' +
+					'<span>' + esc( label ) + '</span></label>';
+			} );
+
+			var html =
+			'<div class="iss-feedback-overlay js-iss-feedback-overlay">' +
+				'<div class="iss-feedback-modal" role="dialog" aria-modal="true" aria-label="' + esc( t.title || '' ) + '">' +
+					'<button type="button" class="iss-feedback-close js-iss-feedback-close" aria-label="' + esc( t.close || 'Close' ) + '">&times;</button>' +
+					'<div class="iss-feedback-header">' +
+						'<h2>' + esc( t.title || '' ) + '</h2>' +
+						'<p class="iss-feedback-intro">' + esc( t.intro || '' ) + '</p>' +
+						'<div class="iss-feedback-progress"><span class="js-iss-feedback-progress-bar"></span></div>' +
+					'</div>' +
+					'<div class="iss-feedback-body">' +
+						'<div class="iss-feedback-step is-active" data-step="1">' +
+							'<h3>' + esc( t.q_builder || '' ) + '</h3>' +
+							'<label class="iss-feedback-radio"><input type="radio" name="iss-feedback-builder" value="gutenberg"> <span>' + esc( t.builder_gutenberg || '' ) + '</span></label>' +
+							'<label class="iss-feedback-radio"><input type="radio" name="iss-feedback-builder" value="elementor"> <span>' + esc( t.builder_elementor || '' ) + '</span></label>' +
+							'<label class="iss-feedback-radio"><input type="radio" name="iss-feedback-builder" value="other"> <span>' + esc( t.builder_other || '' ) + '</span></label>' +
+							'<input type="text" class="iss-feedback-text js-iss-feedback-builder-other" placeholder="' + esc( t.builder_other_ph || '' ) + '" style="display:none;">' +
+						'</div>' +
+						'<div class="iss-feedback-step" data-step="2">' +
+							'<h3>' + esc( t.q_satisfaction || '' ) + '</h3>' +
+							'<div class="iss-feedback-nps js-iss-feedback-nps">' + npsButtons + '</div>' +
+							'<div class="iss-feedback-nps-legend"><span>' + esc( t.nps_low || '' ) + '</span><span>' + esc( t.nps_high || '' ) + '</span></div>' +
+						'</div>' +
+						'<div class="iss-feedback-step" data-step="3">' +
+							'<h3>' + esc( t.q_categories || '' ) + '</h3>' +
+							'<p class="iss-feedback-hint">' + esc( t.categories_hint || '' ) + '</p>' +
+							'<div class="iss-feedback-checks">' + categoryItems +
+								'<label class="iss-feedback-check"><input type="checkbox" name="iss-feedback-category" value="other" class="js-iss-feedback-category-other-toggle"> <span>' + esc( t.category_other || '' ) + '</span></label>' +
+							'</div>' +
+							'<input type="text" class="iss-feedback-text js-iss-feedback-category-other" placeholder="' + esc( t.category_other_ph || '' ) + '" style="display:none;">' +
+						'</div>' +
+						'<div class="iss-feedback-step" data-step="4">' +
+							'<h3>' + esc( t.q_notify || '' ) + '</h3>' +
+							'<input type="email" class="iss-feedback-text js-iss-feedback-email" placeholder="' + esc( t.notify_ph || '' ) + '">' +
+							'<p class="iss-feedback-hint">' + esc( t.notify_hint || '' ) + '</p>' +
+						'</div>' +
+						'<div class="iss-feedback-step iss-feedback-success" data-step="success">' +
+							'<div class="iss-feedback-success-check">&#10003;</div>' +
+							'<h3>' + esc( t.thanks_title || '' ) + '</h3>' +
+							'<p>' + esc( t.thanks_text || '' ) + '</p>' +
+						'</div>' +
+					'</div>' +
+					'<div class="iss-feedback-footer">' +
+						'<button type="button" class="button iss-feedback-back js-iss-feedback-back">' + esc( t.back || 'Back' ) + '</button>' +
+						'<span class="iss-feedback-step-indicator js-iss-feedback-indicator"></span>' +
+						'<button type="button" class="button button-primary iss-feedback-next js-iss-feedback-next">' + esc( t.next || 'Next' ) + '</button>' +
+						'<button type="button" class="button iss-feedback-skip js-iss-feedback-skip" style="display:none;">' + esc( t.skip || 'Skip' ) + '</button>' +
+						'<button type="button" class="button button-primary iss-feedback-submit js-iss-feedback-submit" style="display:none;">' + esc( t.submit || 'Send' ) + '</button>' +
+					'</div>' +
+				'</div>' +
+			'</div>';
+
+			$root.html( html );
+			built = true;
+		}
+
+		function showStep( step ) {
+			currentStep = step;
+			$root.find( '.iss-feedback-step' ).removeClass( 'is-active' );
+			$root.find( '.iss-feedback-step[data-step="' + step + '"]' ).addClass( 'is-active' );
+
+			var pct = ( step / TOTAL_STEPS ) * 100;
+			$root.find( '.js-iss-feedback-progress-bar' ).css( 'width', pct + '%' );
+			$root.find( '.js-iss-feedback-indicator' ).text( step + ' / ' + TOTAL_STEPS );
+
+			// Only the final (email) step submits. It offers two actions:
+			// "Subscribe & Send" (with email) and "Skip" (without email).
+			var isLast = step === TOTAL_STEPS;
+
+			$root.find( '.js-iss-feedback-back' ).css( 'visibility', step > 1 ? 'visible' : 'hidden' );
+			$root.find( '.js-iss-feedback-next' ).toggle( ! isLast );
+			$root.find( '.js-iss-feedback-submit' ).toggle( isLast );
+			$root.find( '.js-iss-feedback-skip' ).toggle( isLast );
+		}
+
+		function openModal() {
+			if ( ! built ) {
+				buildModal();
+			}
+			showStep( 1 );
+			$root.removeAttr( 'hidden' ).addClass( 'is-open' );
+			$( 'body' ).addClass( 'iss-feedback-open' );
+		}
+
+		function closeModal() {
+			$root.removeClass( 'is-open' ).attr( 'hidden', 'hidden' );
+			$( 'body' ).removeClass( 'iss-feedback-open' );
+		}
+
+		function collectData() {
+			var builder      = $root.find( 'input[name="iss-feedback-builder"]:checked' ).val() || '';
+			var builderOther = $.trim( $root.find( '.js-iss-feedback-builder-other' ).val() || '' );
+			var score        = $root.find( '.iss-feedback-nps-btn.is-active' ).attr( 'data-score' );
+			var cats         = [];
+			$root.find( 'input[name="iss-feedback-category"]:checked' ).each( function () {
+				cats.push( $( this ).val() );
+			} );
+			var catOther = $.trim( $root.find( '.js-iss-feedback-category-other' ).val() || '' );
+			var email    = $.trim( $root.find( '.js-iss-feedback-email' ).val() || '' );
+
+			return {
+				type:                       'demo_feedback',
+				page_builder:               builder,
+				page_builder_other:         builderOther,
+				satisfaction_score:         ( typeof score !== 'undefined' ) ? score : '',
+				requested_categories:       cats.join( ', ' ),
+				requested_categories_other: catOther,
+				email:                      email,
+				domain:                     site.domain || '',
+				hostname:                   site.hostname || '',
+				plugin_version:             site.plugin_version || '',
+				wp_version:                 site.wp_version || '',
+				php_version:                site.php_version || '',
+				language:                   site.language || '',
+				user_agent:                 navigator.userAgent || '',
+				referrer:                   document.referrer || '',
+				submitted_at:               new Date().toISOString()
+			};
+		}
+
+		function submitFeedback( includeEmail ) {
+			var data = collectData();
+			if ( ! includeEmail ) {
+				data.email = '';
+			}
+
+			// (a) Remote collection (primary). FormData avoids a CORS preflight.
+			if ( config.endpoint ) {
+				var fd = new FormData();
+				var k;
+				for ( k in data ) {
+					if ( data.hasOwnProperty( k ) ) {
+						fd.append( k, data[ k ] );
+					}
+				}
+				$.ajax( {
+					url:         config.endpoint,
+					type:        'POST',
+					data:        fd,
+					processData: false,
+					contentType: false,
+					timeout:     6000
+				} );
+			}
+
+			// (b) Local backup via WP AJAX (fire and forget).
+			if ( typeof inspiro_starter_sites !== 'undefined' && inspiro_starter_sites.ajax_url ) {
+				$.post( inspiro_starter_sites.ajax_url, {
+					action:   'inspiro_starter_sites_demo_feedback',
+					security: inspiro_starter_sites.ajax_nonce,
+					payload:  JSON.stringify( data )
+				} );
+			}
+
+			// Show the thank-you screen.
+			$root.find( '.iss-feedback-step' ).removeClass( 'is-active' );
+			$root.find( '.iss-feedback-step[data-step="success"]' ).addClass( 'is-active' );
+			$root.find( '.iss-feedback-footer' ).hide();
+		}
+
+		$( document ).on( 'click', '.js-inspiro-starter-sites-suggest-demo', function ( e ) {
+			e.preventDefault();
+			openModal();
+		} );
+
+		$root.on( 'click', '.js-iss-feedback-close, .js-iss-feedback-overlay', function ( e ) {
+			if ( e.target === this ) {
+				closeModal();
+			}
+		} );
+
+		$( document ).on( 'keyup', function ( e ) {
+			if ( 27 === e.keyCode && $root.hasClass( 'is-open' ) ) {
+				closeModal();
+			}
+		} );
+
+		$root.on( 'click', '.js-iss-feedback-next', function () {
+			if ( currentStep < TOTAL_STEPS ) {
+				showStep( currentStep + 1 );
+			}
+		} );
+
+		$root.on( 'click', '.js-iss-feedback-back', function () {
+			if ( currentStep > 1 ) {
+				showStep( currentStep - 1 );
+			}
+		} );
+
+		// "Subscribe & Send" — submit with the email; "Skip" — submit without it.
+		$root.on( 'click', '.js-iss-feedback-submit', function () {
+			submitFeedback( true );
+		} );
+
+		$root.on( 'click', '.js-iss-feedback-skip', function () {
+			submitFeedback( false );
+		} );
+
+		// Page builder "Other" free-text toggle.
+		$root.on( 'change', 'input[name="iss-feedback-builder"]', function () {
+			$root.find( '.js-iss-feedback-builder-other' ).toggle( 'other' === $( this ).val() );
+		} );
+
+		// NPS selection.
+		$root.on( 'click', '.iss-feedback-nps-btn', function () {
+			$root.find( '.iss-feedback-nps-btn' ).removeClass( 'is-active' );
+			$( this ).addClass( 'is-active' );
+		} );
+
+		// Category "Other" free-text toggle.
+		$root.on( 'change', '.js-iss-feedback-category-other-toggle', function () {
+			$root.find( '.js-iss-feedback-category-other' ).toggle( $( this ).is( ':checked' ) );
+		} );
+	}());
 } );
