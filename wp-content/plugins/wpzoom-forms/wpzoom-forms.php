@@ -13,7 +13,7 @@
  * Description: Simple, user-friendly contact form plugin for WordPress with a dedicated drag-and-drop builder.
  * Author:      WPZOOM
  * Author URI:  https://www.wpzoom.com
- * Version:     2.0.1
+ * Version:     2.0.2
  * License:     GPL2+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  */
@@ -1866,9 +1866,11 @@ class WPZOOM_Forms {
 
 		$current_screen = function_exists( 'get_current_screen' ) ? get_current_screen() : null;
 
-		// Allow rendering during REST API requests (ServerSideRender / block preview).
-		$is_rest = defined( 'REST_REQUEST' ) && REST_REQUEST;
-		if ( ( is_admin() && ! $is_rest ) || ( ! is_null( $current_screen ) && $current_screen->is_block_editor() ) ) return '';
+		// Allow rendering during REST API requests (ServerSideRender / block preview)
+		// and during Elementor's AJAX-driven widget preview in the editor.
+		$is_rest           = defined( 'REST_REQUEST' ) && REST_REQUEST;
+		$is_elementor_ajax = defined( 'DOING_AJAX' ) && DOING_AJAX && isset( $_REQUEST['action'] ) && strpos( sanitize_key( wp_unslash( $_REQUEST['action'] ) ), 'elementor' ) === 0; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		if ( ( is_admin() && ! $is_rest && ! $is_elementor_ajax ) || ( ! is_null( $current_screen ) && $current_screen->is_block_editor() ) ) return '';
 
 		// Get form ID and validate form exists and is published
 		$form_id = isset( $attributes['formId'] ) ? intval( $attributes['formId'] ) : 0;
