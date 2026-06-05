@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Define Constants
  */
-define( 'INSPIRO_THEME_VERSION', '2.1.15' );
+define( 'INSPIRO_THEME_VERSION', '2.2.0' );
 define( 'INSPIRO_THEME_DIR', trailingslashit( get_template_directory() ) );
 define( 'INSPIRO_THEME_URI', trailingslashit( esc_url( get_template_directory_uri() ) ) );
 define( 'INSPIRO_THEME_ASSETS_URI', INSPIRO_THEME_URI . 'dist' );
@@ -99,6 +99,11 @@ require INSPIRO_THEME_DIR . 'inc/template-functions.php';
 require INSPIRO_THEME_DIR . 'inc/wc-custom-functions.php';
 
 /**
+ * Elementor compatibility — registers header/footer Theme Builder locations.
+ */
+require INSPIRO_THEME_DIR . 'inc/elementor-functions.php';
+
+/**
  * Editor Fonts
  */
 require INSPIRO_THEME_DIR . 'inc/editor-fonts.php';
@@ -130,6 +135,14 @@ require INSPIRO_THEME_DIR . 'inc/customizer/footer-builder/loader.php';
  * SVG icons functions and filters.
  */
 require INSPIRO_THEME_DIR . 'inc/icon-functions.php';
+
+/**
+ * Misc features — pre-footer CTA, topbar, back-to-top, preloader.
+ *
+ * @since Inspiro 2.2.0
+ */
+require INSPIRO_THEME_DIR . 'inc/inspiro-misc-functions.php';
+
 
 /**
  * Theme admin notices and info page
