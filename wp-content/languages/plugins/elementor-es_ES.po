@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Elementor Website Builder &#8211; more than just a page builder - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-06-08 17:00:05+0000\n"
+"PO-Revision-Date: 2026-06-17 21:38:04+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,6 +10,43 @@ msgstr ""
 "X-Generator: GlotPress/4.0.3\n"
 "Language: es\n"
 "Project-Id-Version: Plugins - Elementor Website Builder &#8211; more than just a page builder - Stable (latest release)\n"
+
+#: modules/promotions/widgets/birthday-easter-egg-promotion.php:82
+msgid "Birthday"
+msgstr "Cumpleaños"
+
+#: modules/promotions/pointers/birthday.php:31
+msgid "Get more capabilities for less with exclusive discounts. Limited time only."
+msgstr "Consigue más capacidades a un precio menor con descuentos exclusivos. Solo por tiempo limitado."
+
+#: modules/promotions/module.php:136
+msgid "Sale!"
+msgstr "¡Oferta!"
+
+#: modules/promotions/conversion-banner.php:201
+msgid "Get Discounts"
+msgstr "Obtén descuentos"
+
+#: modules/promotions/conversion-banner.php:197
+#: modules/promotions/conversion-banner.php:208
+msgid "Celebrate 10 years of Elementor"
+msgstr "Celebra los 10 años de Elementor"
+
+#: modules/promotions/conversion-banner.php:190
+msgid "Upgrade to Elementor Pro"
+msgstr "Mejora a Elementor Pro"
+
+#: modules/promotions/conversion-banner.php:198
+msgid "Upgrade your workflow with more capabilities for less. Offer ends June 17."
+msgstr "Optimiza tu flujo de trabajo con más funcionalidades a un precio menor. Oferta válida hasta el 17 de junio."
+
+#: modules/promotions/conversion-banner.php:180
+msgid "Unlock the theme builder, popup builder, 100+ widgets and more advanced tools to take your website to the next level."
+msgstr "Desbloquea el creador de temas, el creador de ventanas emergentes, más de 100 widgets y otras herramientas avanzadas para llevar tu sitio web al siguiente nivel."
+
+#: modules/promotions/conversion-banner.php:179
+msgid "Go Pro, Go Limitless"
+msgstr "Hazte Pro, elimina los límites"
 
 #: modules/wp-rest/classes/design-system-rest-api.php:47
 msgid "Either globalClasses or globalVariables must be provided."
@@ -65,6 +102,10 @@ msgstr "Lo siento, no tienes permiso para editar este documento."
 msgid "Enable Elementor MCP WP Abilities API. Requirements: 1. WordPress 7.0 or higher. 2. Create an application password for your agent user. 3. Add to your MCP config: {url: \"https://<your-site-url>/wp-json/elementor/mcp\", headers: {Authorization: \"Basic <base64(user:application-password)>\"}}"
 msgstr "Activar la API de habilidades WP de Elementor MCP. Requisitos: 1. WordPress 7.0 o superior. 2. Crea una contraseña de aplicación para tu usuario agente. 3. Añade a tu configuración MCP: {url: \"https://<url-de-tu-sitio>/wp-json/elementor/mcp\", headers: {Authorization: \"Basic <base64(usuario:contraseña-de-aplicación)>\"}}"
 
+#: modules/mcp/abilities/update-settings-ability.php:20
+msgid "Updates Elementor document-level settings for a post (for example page layout, title visibility, or custom page settings). Pass only the keys you want to change. Use list-pages to resolve IDs and get-page-structure when you also need the element tree. Requires permission to edit the target post."
+msgstr "Actualiza los ajustes a nivel de documento de Elementor para una entrada (por ejemplo, diseño de página, visibilidad del título o ajustes de página personalizados). Pasa solo las claves que quieras cambiar. Usa listar-páginas para resolver los ID y obtener-estructura-de-página cuando también necesites el árbol de elementos. Requiere permiso para editar la entrada de destino."
+
 #: modules/mcp/abilities/list-pages-ability.php:18
 msgid "Returns pages and posts built with Elementor on this WordPress site. Each item includes ID, title, status (publish/draft), URL, and post type. Use this first to discover which pages exist before fetching their structure or modifying settings."
 msgstr "Devuelve las páginas y entradas construidas con Elementor en este sitio de WordPress. Cada elemento incluye el ID, el título, el estado (publicado/borrador), la URL y el tipo de entrada. Úsalo primero para descubrir qué páginas existen antes de obtener su estructura o modificar sus ajustes."
@@ -72,10 +113,6 @@ msgstr "Devuelve las páginas y entradas construidas con Elementor en este sitio
 #: modules/mcp/abilities/get-structure-ability.php:20
 msgid "Returns the Elementor element tree (widgets, containers, and nested content) for a single post or page ID. Use after list-pages when you need the live JSON structure to reason about layout, widget types, or to plan edits. Only works for posts that were saved with Elementor."
 msgstr "Devuelve el árbol de elementos de Elementor (widgets, contenedores y contenido anidado) para el ID de una única entrada o página. Úsalo después de listar-páginas cuando necesites la estructura JSON en tiempo real para analizar el diseño, los tipos de widgets o para planificar ediciones. Solo funciona para entradas guardadas con Elementor."
-
-#: modules/mcp/abilities/update-settings-ability.php:20
-msgid "Updates Elementor document-level settings for a post (for example page layout, title visibility, or custom page settings). Pass only the keys you want to change. Use list-pages to resolve IDs and get-page-structure when you also need the element tree. Requires permission to edit the target post."
-msgstr "Actualiza los ajustes a nivel de documento de Elementor para una entrada (por ejemplo, diseño de página, visibilidad del título o ajustes de página personalizados). Pasa solo las claves que quieras cambiar. Usa listar-páginas para resolver los ID y obtener-estructura-de-página cuando también necesites el árbol de elementos. Requiere permiso para editar la entrada de destino."
 
 #: modules/mcp/abilities/get-structure-ability.php:19
 msgid "Get Elementor Page Structure"
@@ -614,14 +651,6 @@ msgstr "Activa el envío de comentarios en el editor."
 msgid "In-Editor Feedback"
 msgstr "Opiniones en el editor"
 
-#: modules/editor-one/classes/editor-one-pointer.php:30
-msgid "Editor tools are now grouped together for quick access. Build and grow your site with everything you need in one place."
-msgstr "Las herramientas del editor ahora están agrupadas  juntas para acceso rapido. Crea y haz crecer tu sitio web con todo lo que necesitas en un solo lugar."
-
-#: modules/editor-one/classes/editor-one-pointer.php:27
-msgid "The Editor has a new home"
-msgstr "El Editor tiene una nueva casa"
-
 #: includes/widgets/heading.php:519
 msgid "Keep your content accessible. Activate Ally, included in ONE, to scan this page."
 msgstr "Mantén tu contenido accesible. Activa Ally, incluido en ONE, para escanear esta página."
@@ -829,7 +858,7 @@ msgstr "El pedido debe ser un número entero no negativo"
 msgid "Google no longer supports the FAQ schema; however, it may still hold secondary value for AI and LLMs."
 msgstr "Google ya no es compatible con el esquema FAQ; sin embargo, aún puede tener un valor secundario para la IA y los LLM."
 
-#: modules/cloud-library/module.php:171
+#: modules/cloud-library/module.php:152
 msgid "Document not found for preview."
 msgstr "No se ha encontrado el documento para la vista previa."
 
@@ -1461,11 +1490,11 @@ msgstr "Variables"
 msgid "Global classes limit exceeded. Maximum allowed: %d"
 msgstr "Se superó el límite global de clases. Máximo permitido: %d"
 
-#: modules/cloud-library/module.php:133 assets/js/editor.js:10358
+#: modules/cloud-library/module.php:114 assets/js/editor.js:10358
 msgid "Then you can find all your templates in one convenient library."
 msgstr "Después podrás encontrar todas tus plantillas en una cómoda biblioteca."
 
-#: modules/cloud-library/module.php:132 assets/js/editor.js:10357
+#: modules/cloud-library/module.php:113 assets/js/editor.js:10357
 msgid "Connect to your Elementor account"
 msgstr "Conéctate a tu cuenta de Elementor"
 
@@ -1552,7 +1581,7 @@ msgid "Give your template a name"
 msgstr "Dale un nombre a tu plantilla"
 
 #: includes/editor-templates/templates.php:377
-#: modules/cloud-library/module.php:77
+#: modules/cloud-library/module.php:58
 msgid "Folder"
 msgstr "Carpeta"
 
@@ -3992,7 +4021,7 @@ msgid "Horizontal Alignment"
 msgstr "Alineación horizontal"
 
 #: core/admin/admin-notices.php:992 core/admin/admin.php:1170
-#: modules/promotions/conversion-banner.php:129
+#: modules/promotions/conversion-banner.php:146
 msgid "Dismiss this notice."
 msgstr "Descartar este aviso."
 
@@ -4320,7 +4349,7 @@ msgstr "Notas"
 #: modules/promotions/admin-menu-items/base-promotion-item.php:32
 #: modules/promotions/admin-menu-items/base-promotion-template.php:37
 #: modules/promotions/admin-menu-items/editor-one-popups-menu.php:25
-#: modules/promotions/conversion-banner.php:166
+#: modules/promotions/conversion-banner.php:183
 #: modules/promotions/module.php:136 modules/promotions/promotion-data.php:71
 #: modules/promotions/promotion-data.php:88
 #: modules/promotions/promotion-data.php:105
@@ -4825,23 +4854,6 @@ msgstr "Conocer las transiciones de página"
 msgid "%1$sClick here%2$s %3$sto join our first-to-know email updates.%4$s"
 msgstr "%1$sHaz clic aquí%2$s %3$spara unirte a nuestros correos electrónicos de actualizaciones en primicia.%4$s"
 
-#: modules/editor-one/classes/editor-one-pointer.php:38 assets/js/admin.js:2028
-#: assets/js/ai-admin.js:47 assets/js/ai-gutenberg.js:47
-#: assets/js/ai-media-library.js:47 assets/js/ai-unify-product-images.js:47
-#: assets/js/ai.js:47 assets/js/checklist.js:818 assets/js/checklist.js:913
-#: assets/js/checklist.strings.js:4 assets/js/checklist.strings.js:7
-#: assets/js/common.js:431 assets/js/editor.js:20458 assets/js/editor.js:20935
-#: assets/js/editor.js:43096 assets/js/editor.strings.js:16
-#: assets/js/kit-library.b768952e1d4177aa68d8.bundle.js:882
-#: assets/js/packages/editor-global-classes/editor-global-classes.js:2
-#: assets/js/packages/editor-global-classes/editor-global-classes.strings.js:64
-#: assets/js/packages/editor-ui/editor-ui.js:26
-#: assets/js/packages/editor-ui/editor-ui.strings.js:4
-#: assets/js/packages/editor-variables/editor-variables.js:2
-#: assets/js/packages/editor-variables/editor-variables.strings.js:79
-msgid "Got it"
-msgstr "Entendido"
-
 #: includes/managers/elements.php:366
 #: assets/js/kit-library.b768952e1d4177aa68d8.bundle.js:3944
 msgid "Favorites"
@@ -5229,7 +5241,6 @@ msgstr "Se produjo un error al leer el archivo WXR"
 #: includes/widgets/video.php:606
 #: modules/ai/feature-intro/product-image-unification-intro.php:40
 #: modules/checklist/steps/step-base.php:102
-#: modules/editor-one/classes/editor-one-pointer.php:32
 #: modules/markdown-render/module.php:29 modules/nested-elements/module.php:21
 #: modules/shapes/widgets/text-path.php:150 assets/js/app.js:4810
 #: assets/js/app.js:8025 assets/js/app.js:9214 assets/js/app.js:9222
@@ -6653,7 +6664,7 @@ msgstr "Leyenda del adjunto"
 #: core/common/modules/connect/connect-menu-item.php:24
 #: core/common/modules/connect/connect-menu-item.php:28
 #: includes/editor-templates/templates.php:562
-#: modules/cloud-library/module.php:134 assets/js/ai-admin.js:1072
+#: modules/cloud-library/module.php:115 assets/js/ai-admin.js:1072
 #: assets/js/ai-admin.js:6391 assets/js/ai-gutenberg.js:1210
 #: assets/js/ai-gutenberg.js:6609 assets/js/ai-layout.js:1158
 #: assets/js/ai-layout.js:2896 assets/js/ai-media-library.js:1072
