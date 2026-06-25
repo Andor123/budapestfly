@@ -279,6 +279,52 @@ class Slider extends Widget_Base {
 	}
 
 	/**
+	 * Get Featured Posts settings registered by the active theme.
+	 *
+	 * WPZOOM themes (e.g. Indigo) register a Featured Posts module via
+	 * add_theme_support( 'wpz-featured-posts-settings', [ ... ] ). This reads
+	 * that registration and returns the list of usable settings (those that
+	 * define both a post type and the meta key used to flag featured posts),
+	 * so the slider can offer the theme's featured posts as a slides source.
+	 *
+	 * @since 1.4.8
+	 * @access public
+	 * @return array List of featured posts settings; empty when unsupported.
+	 */
+	public function get_featured_posts_settings() {
+		if ( ! current_theme_supports( 'wpz-featured-posts-settings' ) ) {
+			return [];
+		}
+
+		$wrapped = get_theme_support( 'wpz-featured-posts-settings' );
+
+		if ( ! is_array( $wrapped ) || empty( $wrapped ) ) {
+			return [];
+		}
+
+		// add_theme_support() wraps the passed array in an outer array.
+		$settings = array_pop( $wrapped );
+
+		if ( ! is_array( $settings ) ) {
+			return [];
+		}
+
+		$available = [];
+
+		foreach ( $settings as $setting ) {
+			// A usable setting must define the post type and the meta key
+			// that flags a post as featured.
+			if ( empty( $setting['post_type'] ) || empty( $setting['name'] ) ) {
+				continue;
+			}
+
+			$available[] = $setting;
+		}
+
+		return $available;
+	}
+
+	/**
 	 * Register Controls.
 	 *
 	 * Registers all the controls for this widget.
@@ -308,16 +354,25 @@ class Slider extends Widget_Base {
 			]
 		);
 
+		$featured_settings = $this->get_featured_posts_settings();
+
+		$slides_source_options = [
+			'custom' => esc_html__( 'Custom', 'wpzoom-elementor-addons' ),
+			'posts' => esc_html__( 'WordPress Posts', 'wpzoom-elementor-addons' )
+		];
+
+		// Only expose the theme's Featured Posts when the active theme registers it.
+		if ( ! empty( $featured_settings ) ) {
+			$slides_source_options['featured'] = esc_html__( 'Featured Posts (Theme)', 'wpzoom-elementor-addons' );
+		}
+
 		$this->add_control(
 			'slides_source',
 			[
 				'label' => esc_html__( 'Source', 'wpzoom-elementor-addons' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'custom',
-				'options' => [
-					'custom' => esc_html__( 'Custom', 'wpzoom-elementor-addons' ),
-					'posts' => esc_html__( 'WordPress Posts', 'wpzoom-elementor-addons' )
-				],
+				'options' => $slides_source_options,
 				'separator' => 'after'
 			]
 		);
@@ -705,6 +760,75 @@ class Slider extends Widget_Base {
 			]
 		);
 
+		// Featured Posts (theme) source controls.
+		if ( ! empty( $featured_settings ) ) {
+			$featured_types = [];
+			$featured_default_type = '';
+			$featured_default_amount = 5;
+
+			foreach ( $featured_settings as $setting ) {
+				$featured_types[ $setting['post_type'] ] = ! empty( $setting['menu_title'] )
+					? $setting['menu_title']
+					: $setting['post_type'];
+
+				// Prefer the post type the theme currently exposes as featured.
+				if ( '' === $featured_default_type && ! empty( $setting['show'] ) ) {
+					$featured_default_type = $setting['post_type'];
+				}
+
+				// Use the theme's configured limit as a sensible default amount.
+				if ( 5 === $featured_default_amount && ! empty( $setting['posts_limit'] ) ) {
+					$featured_default_amount = intval( $setting['posts_limit'] );
+				}
+			}
+
+			if ( '' === $featured_default_type ) {
+				$featured_default_type = (string) key( $featured_types );
+			}
+
+			if ( count( $featured_types ) > 1 ) {
+				$this->add_control(
+					'featured_post_type',
+					[
+						'label' => esc_html__( 'Featured Type', 'wpzoom-elementor-addons' ),
+						'type' => Controls_Manager::SELECT,
+						'options' => $featured_types,
+						'default' => $featured_default_type,
+						'condition' => [
+							'slides_source' => 'featured'
+						]
+					]
+				);
+			} else {
+				// Single featured type: store it without showing a redundant dropdown.
+				$this->add_control(
+					'featured_post_type',
+					[
+						'type' => Controls_Manager::HIDDEN,
+						'default' => $featured_default_type,
+						'condition' => [
+							'slides_source' => 'featured'
+						]
+					]
+				);
+			}
+
+			$this->add_control(
+				'featured_amount',
+				[
+					'label' => esc_html__( 'Amount', 'wpzoom-elementor-addons' ),
+					'type' => Controls_Manager::NUMBER,
+					'min' => 1,
+					'step' => 1,
+					'max' => 100,
+					'default' => $featured_default_amount,
+					'condition' => [
+						'slides_source' => 'featured'
+					]
+				]
+			);
+		}
+
 		$this->add_group_control(
 			Group_Control_Image_Size::get_type(),
 			[
@@ -713,6 +837,84 @@ class Slider extends Widget_Base {
 				'separator' => 'before',
 				'exclude' => [
 					'custom'
+				]
+			]
+		);
+
+		// Elements shown when pulling slides from posts / featured posts.
+		$query_sources = [ 'posts', 'featured' ];
+
+		$this->add_control(
+			'_heading_post_elements',
+			[
+				'type' => Controls_Manager::HEADING,
+				'label' => esc_html__( 'Display Elements', 'wpzoom-elementor-addons' ),
+				'separator' => 'before',
+				'condition' => [
+					'slides_source' => $query_sources
+				]
+			]
+		);
+
+		$this->add_control(
+			'show_title',
+			[
+				'label' => esc_html__( 'Show Title', 'wpzoom-elementor-addons' ),
+				'type' => Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Yes', 'wpzoom-elementor-addons' ),
+				'label_off' => esc_html__( 'No', 'wpzoom-elementor-addons' ),
+				'return_value' => 'yes',
+				'default' => 'yes',
+				'condition' => [
+					'slides_source' => $query_sources
+				]
+			]
+		);
+
+		$this->add_control(
+			'show_excerpt',
+			[
+				'label' => esc_html__( 'Show Excerpt', 'wpzoom-elementor-addons' ),
+				'type' => Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Yes', 'wpzoom-elementor-addons' ),
+				'label_off' => esc_html__( 'No', 'wpzoom-elementor-addons' ),
+				'return_value' => 'yes',
+				'default' => 'yes',
+				'condition' => [
+					'slides_source' => $query_sources
+				]
+			]
+		);
+
+		$this->add_control(
+			'show_read_more',
+			[
+				'label' => esc_html__( 'Show Read More Button', 'wpzoom-elementor-addons' ),
+				'type' => Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Yes', 'wpzoom-elementor-addons' ),
+				'label_off' => esc_html__( 'No', 'wpzoom-elementor-addons' ),
+				'return_value' => 'yes',
+				'default' => '',
+				'condition' => [
+					'slides_source' => $query_sources
+				]
+			]
+		);
+
+		$this->add_control(
+			'read_more_text',
+			[
+				'label' => esc_html__( 'Button Text', 'wpzoom-elementor-addons' ),
+				'type' => Controls_Manager::TEXT,
+				'default' => esc_html__( 'Read More', 'wpzoom-elementor-addons' ),
+				'placeholder' => esc_html__( 'Read More', 'wpzoom-elementor-addons' ),
+				'label_block' => true,
+				'dynamic' => [
+					'active' => true,
+				],
+				'condition' => [
+					'slides_source' => $query_sources,
+					'show_read_more' => 'yes'
 				]
 			]
 		);
@@ -1104,61 +1306,28 @@ class Slider extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
-			'auto_height',
-			[
-				'label' => esc_html__( 'Automatic Height', 'wpzoom-elementor-addons' ),
-				'type' => Controls_Manager::SWITCHER,
-				'default' => 'yes'
-			]
-		);
-
 		$this->add_responsive_control(
-			'auto_height_size',
+			'slider_height',
 			[
-				'label' => esc_html__( 'Automatic Height Size', 'wpzoom-elementor-addons' ),
+				'label' => esc_html__( 'Height', 'wpzoom-elementor-addons' ),
 				'type' => Controls_Manager::SLIDER,
-				'size_units' => [ '%' ],
-				'range' => [
-					'%' => [
-						'min' => 1,
-						'max' => 100,
-					]
-				],
-				'default' => [
-					'unit' => '%',
-					'size' => 100
-				],
-				'selectors' => [
-					'{{WRAPPER}} .slick-slider' => 'height: {{SIZE}}vh;'
-				],
-				'condition' => [
-					'auto_height' => 'yes'
-				]
-			]
-		);
-
-		$this->add_responsive_control(
-			'auto_height_max',
-			[
-				'label' => esc_html__( 'Automatic Height Maximum', 'wpzoom-elementor-addons' ),
-				'type' => Controls_Manager::SLIDER,
-				'size_units' => [ 'px', '%' ],
+				'description' => esc_html__( 'Sets the height of the slider. Images fill this area and are cropped to fit (cover), so the slider stays fluid across screen sizes.', 'wpzoom-elementor-addons' ),
+				'size_units' => [ 'px', 'vh', '%' ],
 				'range' => [
 					'px' => [
-						'min' => 1,
-						'max' => 1000,
+						'min' => 100,
+						'max' => 1500,
+					],
+					'vh' => [
+						'min' => 10,
+						'max' => 100,
 					],
 					'%' => [
-						'min' => 1,
+						'min' => 10,
 						'max' => 100,
 					]
 				],
 				'default' => [
-					'unit' => 'px',
-					'size' => 550
-				],
-				'desktop_default' => [
 					'unit' => 'px',
 					'size' => 550
 				],
@@ -1171,11 +1340,8 @@ class Slider extends Widget_Base {
 					'size' => 250
 				],
 				'selectors' => [
-					'{{WRAPPER}} .slick-slider' => 'max-height: {{SIZE}}{{UNIT}};'
+					'{{WRAPPER}} .slick-slider' => 'height: {{SIZE}}{{UNIT}};'
 				],
-				'condition' => [
-					'auto_height' => 'yes'
-				]
 			]
 		);
 
@@ -1214,6 +1380,103 @@ class Slider extends Widget_Base {
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
 					'{{WRAPPER}} .wpz-slick-item' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}}; overflow: hidden;',
+				],
+			]
+		);
+
+		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'_section_style_overlay',
+			[
+				'label' => esc_html__( 'Background Overlay', 'wpzoom-elementor-addons' ),
+				'tab'   => Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_control(
+			'background_overlay_enable',
+			[
+				'label' => esc_html__( 'Enable Overlay', 'wpzoom-elementor-addons' ),
+				'type' => Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Yes', 'wpzoom-elementor-addons' ),
+				'label_off' => esc_html__( 'No', 'wpzoom-elementor-addons' ),
+				'return_value' => 'yes',
+				'default' => '',
+				'selectors' => [
+					'{{WRAPPER}} .wpz-slick-item::before' => 'display: block;',
+				],
+			]
+		);
+
+		$this->add_control(
+			'background_overlay_color',
+			[
+				'label' => esc_html__( 'Overlay Color', 'wpzoom-elementor-addons' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#000000',
+				'selectors' => [
+					'{{WRAPPER}} .wpz-slick-item::before' => 'background-color: {{VALUE}};',
+				],
+				'condition' => [
+					'background_overlay_enable' => 'yes',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'background_overlay_opacity',
+			[
+				'label' => esc_html__( 'Overlay Opacity', 'wpzoom-elementor-addons' ),
+				'type' => Controls_Manager::SLIDER,
+				'range' => [
+					'px' => [
+						'min' => 0,
+						'max' => 1,
+						'step' => 0.01,
+					],
+				],
+				'default' => [
+					'size' => 0.5,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .wpz-slick-item::before' => 'opacity: {{SIZE}};',
+				],
+				'condition' => [
+					'background_overlay_enable' => 'yes',
+				],
+			]
+		);
+
+		$this->add_control(
+			'background_overlay_blend_mode',
+			[
+				'label' => esc_html__( 'Blend Mode', 'wpzoom-elementor-addons' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'normal' => esc_html__( 'Normal', 'wpzoom-elementor-addons' ),
+					'multiply' => esc_html__( 'Multiply', 'wpzoom-elementor-addons' ),
+					'screen' => esc_html__( 'Screen', 'wpzoom-elementor-addons' ),
+					'overlay' => esc_html__( 'Overlay', 'wpzoom-elementor-addons' ),
+					'darken' => esc_html__( 'Darken', 'wpzoom-elementor-addons' ),
+					'lighten' => esc_html__( 'Lighten', 'wpzoom-elementor-addons' ),
+					'color-dodge' => esc_html__( 'Color Dodge', 'wpzoom-elementor-addons' ),
+					'color-burn' => esc_html__( 'Color Burn', 'wpzoom-elementor-addons' ),
+					'hard-light' => esc_html__( 'Hard Light', 'wpzoom-elementor-addons' ),
+					'soft-light' => esc_html__( 'Soft Light', 'wpzoom-elementor-addons' ),
+					'difference' => esc_html__( 'Difference', 'wpzoom-elementor-addons' ),
+					'exclusion' => esc_html__( 'Exclusion', 'wpzoom-elementor-addons' ),
+					'hue' => esc_html__( 'Hue', 'wpzoom-elementor-addons' ),
+					'saturation' => esc_html__( 'Saturation', 'wpzoom-elementor-addons' ),
+					'color' => esc_html__( 'Color', 'wpzoom-elementor-addons' ),
+					'luminosity' => esc_html__( 'Luminosity', 'wpzoom-elementor-addons' ),
+				],
+				'default' => 'normal',
+				'selectors' => [
+					'{{WRAPPER}} .wpz-slick-item::before' => 'mix-blend-mode: {{VALUE}};',
+				],
+				'condition' => [
+					'background_overlay_enable' => 'yes',
 				],
 			]
 		);
@@ -1434,6 +1697,151 @@ class Slider extends Widget_Base {
 			]
 		);
 */
+		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'_section_style_button',
+			[
+				'label' => esc_html__( 'Read More Button', 'wpzoom-elementor-addons' ),
+				'tab'   => Controls_Manager::TAB_STYLE,
+				'condition' => [
+					'slides_source' => [ 'posts', 'featured' ],
+					'show_read_more' => 'yes'
+				]
+			]
+		);
+
+		$this->add_responsive_control(
+			'read_more_spacing',
+			[
+				'label' => esc_html__( 'Top Spacing', 'wpzoom-elementor-addons' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px' ],
+				'range' => [
+					'px' => [ 'min' => 0, 'max' => 100 ]
+				],
+				'selectors' => [
+					'{{WRAPPER}} .wpz-slick-button' => 'margin-top: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'read_more_typography',
+				'selector' => '{{WRAPPER}} .wpz-slick-button',
+			]
+		);
+
+		$this->add_responsive_control(
+			'read_more_padding',
+			[
+				'label' => esc_html__( 'Padding', 'wpzoom-elementor-addons' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'selectors' => [
+					'{{WRAPPER}} .wpz-slick-button' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'read_more_border_radius',
+			[
+				'label' => esc_html__( 'Border Radius', 'wpzoom-elementor-addons' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%' ],
+				'selectors' => [
+					'{{WRAPPER}} .wpz-slick-button' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->start_controls_tabs( 'read_more_tabs' );
+
+		$this->start_controls_tab(
+			'read_more_tab_normal',
+			[
+				'label' => esc_html__( 'Normal', 'wpzoom-elementor-addons' )
+			]
+		);
+
+		$this->add_control(
+			'read_more_color',
+			[
+				'label' => esc_html__( 'Text Color', 'wpzoom-elementor-addons' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '#ffffff',
+				'selectors' => [
+					'{{WRAPPER}} .wpz-slick-button' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'read_more_background',
+				'types' => [ 'classic', 'gradient' ],
+				'selector' => '{{WRAPPER}} .wpz-slick-button',
+				'exclude' => [ 'image' ],
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
+			[
+				'name' => 'read_more_border',
+				'selector' => '{{WRAPPER}} .wpz-slick-button',
+			]
+		);
+
+		$this->end_controls_tab();
+
+		$this->start_controls_tab(
+			'read_more_tab_hover',
+			[
+				'label' => esc_html__( 'Hover', 'wpzoom-elementor-addons' )
+			]
+		);
+
+		$this->add_control(
+			'read_more_color_hover',
+			[
+				'label' => esc_html__( 'Text Color', 'wpzoom-elementor-addons' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .wpz-slick-button:hover' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
+			[
+				'name' => 'read_more_background_hover',
+				'types' => [ 'classic', 'gradient' ],
+				'selector' => '{{WRAPPER}} .wpz-slick-button:hover',
+				'exclude' => [ 'image' ],
+			]
+		);
+
+		$this->add_control(
+			'read_more_border_color_hover',
+			[
+				'label' => esc_html__( 'Border Color', 'wpzoom-elementor-addons' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .wpz-slick-button:hover' => 'border-color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->end_controls_tab();
+
+		$this->end_controls_tabs();
+
 		$this->end_controls_section();
 
 		$this->start_controls_section(
@@ -1861,6 +2269,61 @@ class Slider extends Widget_Base {
 	}
 
 	/**
+	 * Build the WP_Query args for the theme's Featured Posts.
+	 *
+	 * Mirrors the query WPZOOM themes use to populate their homepage featured
+	 * slideshow: posts flagged with the theme's featured meta key, ordered by
+	 * the manual order set on the theme's "Featured Posts" admin screen.
+	 *
+	 * @since 1.4.8
+	 * @access public
+	 * @param array $settings Widget settings.
+	 * @return array Query args, or empty array when featured posts aren't available.
+	 */
+	public function get_featured_query_args( $settings = [] ) {
+		$featured_settings = $this->get_featured_posts_settings();
+
+		if ( empty( $featured_settings ) ) {
+			return [];
+		}
+
+		$post_type = ! empty( $settings[ 'featured_post_type' ] ) ? $settings[ 'featured_post_type' ] : '';
+		$meta_key  = '';
+
+		// Resolve the meta key for the chosen post type.
+		foreach ( $featured_settings as $setting ) {
+			if ( $post_type === $setting[ 'post_type' ] ) {
+				$meta_key = $setting[ 'name' ];
+				break;
+			}
+		}
+
+		// Fall back to the first registered featured setting.
+		if ( '' === $meta_key ) {
+			$first     = reset( $featured_settings );
+			$post_type = $first[ 'post_type' ];
+			$meta_key  = $first[ 'name' ];
+		}
+
+		$amount = isset( $settings[ 'featured_amount' ] ) ? intval( $settings[ 'featured_amount' ] ) : 5;
+
+		if ( $amount < 1 ) {
+			$amount = 5;
+		}
+
+		return [
+			'post_type'           => $post_type,
+			'post_status'         => 'publish',
+			'orderby'             => 'menu_order date',
+			'order'               => 'DESC',
+			'meta_key'            => $meta_key,
+			'meta_value'          => 1,
+			'posts_per_page'      => $amount,
+			'ignore_sticky_posts' => 1,
+		];
+	}
+
+	/**
 	 * Get embed params.
 	 *
 	 * Retrieve video widget embed parameters.
@@ -2051,9 +2514,27 @@ class Slider extends Widget_Base {
 	protected function render() {
 		$settings = $this->get_settings_for_display();
 		$slides = [];
+		$args = [];
+
+		// The display toggles only apply to query-driven sources (posts / featured).
+		// Custom slides keep their original behavior: show whatever was entered.
+		$is_query_source = in_array( $settings[ 'slides_source' ], [ 'posts', 'featured' ], true );
+		$show_title      = ! $is_query_source || 'yes' === $settings[ 'show_title' ];
+		$show_excerpt    = ! $is_query_source || 'yes' === $settings[ 'show_excerpt' ];
+		$show_read_more  = $is_query_source && 'yes' === $settings[ 'show_read_more' ];
+		$read_more_text  = isset( $settings[ 'read_more_text' ] ) && '' !== $settings[ 'read_more_text' ]
+			? $settings[ 'read_more_text' ]
+			: esc_html__( 'Read More', 'wpzoom-elementor-addons' );
 
 		if ( 'posts' == $settings[ 'slides_source' ] ) {
 			$args = $this->get_query_args( $settings );
+		} elseif ( 'featured' == $settings[ 'slides_source' ] ) {
+			$args = $this->get_featured_query_args( $settings );
+		}
+
+		if ( 'custom' == $settings[ 'slides_source' ] ) {
+			$slides = $settings[ 'slides' ];
+		} elseif ( ! empty( $args ) ) {
 			$query = new \WP_Query( $args );
 
 			if ( $query->have_posts() ) {
@@ -2071,8 +2552,6 @@ class Slider extends Widget_Base {
 
 				wp_reset_postdata();
 			}
-		} else {
-			$slides = $settings[ 'slides' ];
 		}
 
 		if ( empty( $slides ) ) {
@@ -2154,7 +2633,7 @@ class Slider extends Widget_Base {
 					<<?php echo $item_tag; // WPCS: XSS OK. ?> <?php $this->print_render_attribute_string( $id ); ?>>
 
 						<?php if ( $image ) : ?>
-							<img class="wpz-slick-img" src="<?php echo esc_url( $image ); ?>" alt="<?php echo esc_attr( $slide[ 'title' ] ); ?>">
+							<div class="wpz-slick-img" role="img"<?php echo ! empty( $slide[ 'title' ] ) ? ' aria-label="' . esc_attr( $slide[ 'title' ] ) . '"' : ''; ?> style="background-image: url('<?php echo esc_url( $image ); ?>');"></div>
 						<?php endif; ?>
 
 						<?php /* if ( isset( $slide[ 'video_type' ] ) && ! empty( $slide[ 'video_type' ] ) && ! empty( $video_html ) ) : ?>
@@ -2170,13 +2649,21 @@ class Slider extends Widget_Base {
 							</div>
 						<?php endif; */ ?>
 
-						<?php if ( $slide[ 'title' ] || $slide[ 'subtitle' ] ) : ?>
+						<?php
+						$has_title    = $show_title && ! empty( $slide[ 'title' ] );
+						$has_subtitle = $show_excerpt && ! empty( $slide[ 'subtitle' ] );
+						$has_button   = $show_read_more && '' !== $read_more_text;
+						?>
+						<?php if ( $has_title || $has_subtitle || $has_button ) : ?>
 							<div class="wpz-slick-content">
-								<?php if ( $slide[ 'title' ] ) : ?>
+								<?php if ( $has_title ) : ?>
 									<h2 class="wpz-slick-title"><?php echo WPZOOM_Elementor_Widgets::custom_kses( $slide[ 'title' ] ); ?></h2>
 								<?php endif; ?>
-								<?php if ( $slide[ 'subtitle' ] ) : ?>
+								<?php if ( $has_subtitle ) : ?>
 									<p class="wpz-slick-subtitle"><?php echo WPZOOM_Elementor_Widgets::custom_kses( $slide[ 'subtitle' ] ); ?></p>
+								<?php endif; ?>
+								<?php if ( $has_button ) : ?>
+									<span class="wpz-slick-button"><?php echo esc_html( $read_more_text ); ?></span>
 								<?php endif; ?>
 							</div>
 						<?php endif; ?>
