@@ -180,6 +180,32 @@ function inspiro_is_blog_layout_grid() {
 }
 
 /**
+ * Return whether the featured image is enabled for single posts/pages.
+ *
+ * Used as the active_callback for the featured image position control.
+ *
+ * @since 2.2.1
+ *
+ * @return bool True if the featured image display option is enabled.
+ */
+function inspiro_is_featured_image_enabled() {
+	return (bool) inspiro_get_theme_mod( 'display_featured_image' );
+}
+
+/**
+ * Return whether the featured image is enabled and displayed above the title.
+ *
+ * Used as the active_callback for the above-title featured image size control.
+ *
+ * @since 2.2.1
+ *
+ * @return bool True if the featured image is shown above the post title.
+ */
+function inspiro_is_featured_image_above_title() {
+	return inspiro_is_featured_image_enabled() && 'above_title' === inspiro_get_theme_mod( 'featured_image_position' );
+}
+
+/**
  * Get all registered image sizes with dimensions for select options.
  *
  * @since 2.1.9

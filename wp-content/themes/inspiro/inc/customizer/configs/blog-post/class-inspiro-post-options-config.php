@@ -69,6 +69,30 @@ class Inspiro_Post_Options_Config {
                     ),
                 ),
                 array(
+                    'id'   => 'featured_image_position',
+                    'args' => array(
+                        'default'           => 'header',
+                        'sanitize_callback' => 'inspiro_sanitize_choices',
+                        'transport'         => 'refresh',
+                    ),
+                ),
+                array(
+                    'id'   => 'featured_image_above_size',
+                    'args' => array(
+                        'default'           => 'inspiro-loop',
+                        'sanitize_callback' => 'inspiro_sanitize_image_size',
+                        'transport'         => 'refresh',
+                    ),
+                ),
+                array(
+                    'id'   => 'display_post_navigation',
+                    'args' => array(
+                        'default'           => true,
+                        'sanitize_callback' => 'inspiro_sanitize_checkbox',
+                        'transport'         => 'refresh',
+                    ),
+                ),
+                array(
                     'id'   => 'blog_options_upgrade',
                     'args' => array(
                         'default' => null,
@@ -100,6 +124,47 @@ class Inspiro_Post_Options_Config {
                         'section' => 'single_post_section',
                         'type'    => 'checkbox',
                         'description' => esc_html__( 'Choose if you want to show the Featured Image in the header', 'inspiro' ),
+                    ),
+                ),
+                array(
+                    'id'   => 'featured_image_position',
+                    'args' => array(
+                        'priority'        => 2,
+                        'label'           => esc_html__( 'Featured Image Position', 'inspiro' ),
+                        'description'     => esc_html__( 'Choose where the Featured Image appears on single posts.', 'inspiro' ),
+                        'section'         => 'single_post_section',
+                        'type'            => 'select',
+                        'choices'         => array(
+                            'header'      => esc_html__( 'In the Header (background)', 'inspiro' ),
+                            'above_title' => esc_html__( 'Above the Title', 'inspiro' ),
+                        ),
+                        'active_callback' => 'inspiro_is_featured_image_enabled',
+                    ),
+                ),
+                array(
+                    'id'   => 'featured_image_above_size',
+                    'args' => array(
+                        'priority'        => 3,
+                        'label'           => esc_html__( 'Featured Image Size', 'inspiro' ),
+                        'section'         => 'single_post_section',
+                        'type'            => 'select',
+                        'choices'         => inspiro_get_image_sizes_choices(),
+                        'description'     => sprintf(
+                            /* translators: %s: link to regenerate thumbnails documentation */
+                            esc_html__( 'Image size used when the Featured Image is shown above the title. If images don\'t appear correctly cropped, you may need to %s.', 'inspiro' ),
+                            '<a href="https://wp.md/regenerate" target="_blank">' . esc_html__( 'regenerate thumbnails', 'inspiro' ) . '</a>'
+                        ),
+                        'active_callback' => 'inspiro_is_featured_image_above_title',
+                    ),
+                ),
+                array(
+                    'id'   => 'display_post_navigation',
+                    'args' => array(
+                        'priority'    => 4,
+                        'label'       => esc_html__( 'Display the Previous Post Banner', 'inspiro' ),
+                        'section'     => 'single_post_section',
+                        'type'        => 'checkbox',
+                        'description' => esc_html__( 'Show the large banner with the previous post\'s featured image at the bottom of single posts.', 'inspiro' ),
                     ),
                 ),
                 array(

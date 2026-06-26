@@ -57,15 +57,23 @@ function inspiro_body_classes( $classes ) {
 		}
 	}
 
-	// Add class if is single page and has post thumbnail.
-	if ( is_page()  && has_post_thumbnail() ) {
+    $featured_image_show     = inspiro_get_theme_mod( 'display_featured_image' );
+    $featured_image_position = inspiro_get_theme_mod( 'featured_image_position' );
+
+    // The featured image only acts as a transparent header cover when it isn't
+    // displayed above the title. When it's above the title, the header stays
+    // solid, exactly like when the featured image is disabled.
+    $featured_image_as_cover = 'above_title' !== $featured_image_position;
+
+	// Add class if the page actually renders the Featured Image as a header cover.
+	// Only templates that output the cover should get the transparent header; other
+	// templates (e.g. "Without Page Title") leave the header solid even with a thumbnail.
+	if ( inspiro_page_uses_featured_cover_template() && has_post_thumbnail() && $featured_image_as_cover && inspiro_page_featured_header_enabled() ) {
 		$classes[] = 'has-header-image';
 	}
 
-    $featured_image_show = inspiro_get_theme_mod( 'display_featured_image' );
-
     // Add class if is single post and has post thumbnail.
-    if ( ( ( is_single() && 'post' === get_post_type() ) || ( is_single() && 'portfolio_item' === get_post_type() ) ) && has_post_thumbnail() && $featured_image_show ) {
+    if ( ( ( is_single() && 'post' === get_post_type() ) || ( is_single() && 'portfolio_item' === get_post_type() ) ) && has_post_thumbnail() && $featured_image_show && $featured_image_as_cover ) {
         $classes[] = 'has-header-image';
     }
 
@@ -247,6 +255,59 @@ function inspiro_remove_first_and_last_p_tags( $content ) {
  */
 function inspiro_is_frontpage() {
 	return ( is_front_page() && ! is_home() );
+}
+
+/**
+ * Whether the Featured Image is allowed to display as a header cover on a page.
+ *
+ * Reflects the global "Display Featured Image in Page Header" Customizer option
+ * and the per-page "Hide Featured Image" override. It does NOT check whether the
+ * page actually has a Featured Image — callers combine it with has_post_thumbnail().
+ *
+ * @since 2.2.1
+ *
+ * @param int|null $post_id Optional. Page ID. Defaults to the queried object.
+ * @return bool
+ */
+function inspiro_page_featured_header_enabled( $post_id = null ) {
+	// Global Customizer toggle.
+	if ( ! inspiro_get_theme_mod( 'display_page_featured_image' ) ) {
+		return false;
+	}
+
+	if ( null === $post_id ) {
+		$post_id = get_queried_object_id();
+	}
+
+	// Per-page override.
+	if ( $post_id && get_post_meta( $post_id, 'inspiro_hide_featured_image', true ) ) {
+		return false;
+	}
+
+	return true;
+}
+
+/**
+ * Whether the current page uses a template that renders the Featured Image as a
+ * header cover.
+ *
+ * Only the Default template (page.php) and the "Full-width (Page Builder)"
+ * template load template-parts/page/content-page.php, which outputs the cover.
+ * Other custom page templates (no-title, page-builder, transparent, homepage,
+ * etc.) render the content directly and never display the cover, so they must
+ * not receive the transparent "has-header-image" body class on their own.
+ *
+ * @since 2.2.1
+ *
+ * @return bool
+ */
+function inspiro_page_uses_featured_cover_template() {
+	if ( ! is_page() || inspiro_is_frontpage() ) {
+		return false;
+	}
+
+	// Default template (no custom template assigned) or the Page Builder full-width one.
+	return ! is_page_template() || is_page_template( 'page-templates/full-width-builder-bb.php' );
 }
 
 /**
