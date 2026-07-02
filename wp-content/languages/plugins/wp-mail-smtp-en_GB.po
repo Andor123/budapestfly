@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WP Mail SMTP by WPForms &#8211; The Most Popular SMTP and Email Log Plugin - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-06-25 13:42:32+0000\n"
+"PO-Revision-Date: 2026-06-30 20:33:04+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,6 +10,2025 @@ msgstr ""
 "X-Generator: GlotPress/4.0.3\n"
 "Language: en_GB\n"
 "Project-Id-Version: Plugins - WP Mail SMTP by WPForms &#8211; The Most Popular SMTP and Email Log Plugin - Stable (latest release)\n"
+
+#. translators: %1$s is the dotted CLI flag with a -file suffix (e.g.
+#. smtp.pass-file). %2$s is the absolute file path that could not be read.
+#: src/WPCLI/Options/Writer.php:395
+msgid "Cannot read --%1$s file: %2$s"
+msgstr "Cannot read --%1$s file: %2$s"
+
+#. translators: %s is the dotted CLI flag whose underlying option is overridden
+#. by a wp-config constant (e.g. smtp.host). The flag itself is not translated.
+#: src/WPCLI/Options/Writer.php:314
+msgid "A wp-config constant is defined for %s. The value was not stored. Remove the constant first, then re-run this command."
+msgstr "A wp-config constant is defined for %s. The value was not stored. Remove the constant first, then re-run this command."
+
+#: src/WPCLI/Options/Writer.php:194
+msgid "Configuration errors:"
+msgstr "Configuration errors:"
+
+#. translators: %1$s is the dotted CLI flag (e.g. smtp.port). %2$s is the value
+#. the operator provided. The flag is not translated.
+#: src/WPCLI/Options/Writer.php:186 src/WPCLI/Options/Writer.php:250
+msgid "Invalid integer for --%1$s: %2$s"
+msgstr "Invalid integer for --%1$s: %2$s"
+
+#. translators: %1$s is the dotted CLI flag (e.g. mail.from_email). %2$s is the
+#. value the operator provided. The flag is not translated.
+#: src/WPCLI/Options/Writer.php:176 src/WPCLI/Options/Writer.php:239
+msgid "Invalid email for --%1$s: %2$s"
+msgstr "Invalid email for --%1$s: %2$s"
+
+#. translators: %1$s is the dotted CLI flag (e.g. mail.mailer). %2$s is the
+#. value the operator provided. %3$s is a comma-separated list of allowed
+#. values. Flags and values are not translated.
+#: src/WPCLI/Options/Writer.php:165 src/WPCLI/Options/Writer.php:227
+msgid "Invalid value for --%1$s: %2$s (allowed: %3$s)"
+msgstr "Invalid value for --%1$s: %2$s (allowed: %3$s)"
+
+#. translators: %s is the dotted CLI flag that is missing (e.g. smtp.auth). The
+#. flag itself is not translated.
+#: src/WPCLI/Options/Writer.php:150
+msgid "Missing required flag: --%s (needed to fully specify the configuration when other gating flags are set)"
+msgstr "Missing required flag: --%s (needed to fully specify the configuration when other gating flags are set)"
+
+#. translators: %1$s is the dotted CLI flag that is missing (e.g. smtp.host).
+#. %2$s is a human-readable condition (e.g. "--mail.mailer=smtp"). Flags and
+#. values are not translated.
+#: src/WPCLI/Options/Writer.php:131
+msgid "Missing required flag: --%1$s (required when %2$s)"
+msgstr "Missing required flag: --%1$s (required when %2$s)"
+
+#. translators: %s is the dotted CLI flag (e.g. mail.from_email). The flag
+#. itself is not translated.
+#: src/WPCLI/Options/Writer.php:117
+msgid "Missing required flag: --%s"
+msgstr "Missing required flag: --%s"
+
+#: src/WPCLI/Options/Registry.php:627
+msgid "Mandrill API key."
+msgstr "Mandrill API key."
+
+#: src/WPCLI/Options/Registry.php:605
+msgid "AWS region (e.g. us-east-1)."
+msgstr "AWS region (e.g. us-east-1)."
+
+#: src/WPCLI/Options/Registry.php:599
+msgid "AWS secret access key."
+msgstr "AWS secret access key."
+
+#: src/WPCLI/Options/Registry.php:591
+msgid "AWS access key ID."
+msgstr "AWS access key ID."
+
+#: src/WPCLI/Options/Registry.php:568
+msgid "Elastic Email API key."
+msgstr "Elastic Email API key."
+
+#: src/WPCLI/Options/Registry.php:546
+msgid "Optional Brevo sending domain."
+msgstr "Optional Brevo sending domain."
+
+#: src/WPCLI/Options/Registry.php:540
+msgid "Brevo (formerly Sendinblue) API key."
+msgstr "Brevo (formerly Sendinblue) API key."
+
+#: src/WPCLI/Options/Registry.php:517
+msgid "Set if your MailerSend account is on a paid plan."
+msgstr "Set if your MailerSend account is on a paid plan."
+
+#: src/WPCLI/Options/Registry.php:511
+msgid "MailerSend API key."
+msgstr "MailerSend API key."
+
+#: src/WPCLI/Options/Registry.php:489
+msgid "Mailjet secret key."
+msgstr "Mailjet secret key."
+
+#: src/WPCLI/Options/Registry.php:482
+msgid "Mailjet API key."
+msgstr "Mailjet API key."
+
+#: src/WPCLI/Options/Registry.php:460
+msgid "SparkPost region (US or EU)."
+msgstr "SparkPost region (US or EU)."
+
+#: src/WPCLI/Options/Registry.php:454
+msgid "SparkPost API key."
+msgstr "SparkPost API key."
+
+#: src/WPCLI/Options/Registry.php:432
+msgid "SMTP2GO API key."
+msgstr "SMTP2GO API key."
+
+#: src/WPCLI/Options/Registry.php:410
+msgid "SMTP.com sender channel name."
+msgstr "SMTP.com sender channel name."
+
+#: src/WPCLI/Options/Registry.php:404
+msgid "SMTP.com API key."
+msgstr "SMTP.com API key."
+
+#: src/WPCLI/Options/Registry.php:382
+msgid "Resend API key."
+msgstr "Resend API key."
+
+#: src/WPCLI/Options/Registry.php:360
+msgid "SendLayer API key."
+msgstr "SendLayer API key."
+
+#: src/WPCLI/Options/Registry.php:338
+msgid "Optional Postmark message stream."
+msgstr "Optional Postmark message stream."
+
+#: src/WPCLI/Options/Registry.php:333
+msgid "Postmark server API token."
+msgstr "Postmark server API token."
+
+#: src/WPCLI/Options/Registry.php:310
+msgid "Mailgun region (US or EU)."
+msgstr "Mailgun region (US or EU)."
+
+#: src/WPCLI/Options/Registry.php:304
+msgid "Mailgun sending domain."
+msgstr "Mailgun sending domain."
+
+#: src/WPCLI/Options/Registry.php:298
+msgid "Mailgun API key."
+msgstr "Mailgun API key."
+
+#: src/WPCLI/Options/Registry.php:276
+msgid "Optional sending domain."
+msgstr "Optional sending domain."
+
+#: src/WPCLI/Options/Registry.php:271
+msgid "SendGrid API key."
+msgstr "SendGrid API key."
+
+#: src/WPCLI/Options/Registry.php:249
+msgid "SMTP password."
+msgstr "SMTP password."
+
+#: src/WPCLI/Options/Registry.php:242
+msgid "SMTP username."
+msgstr "SMTP username."
+
+#: src/WPCLI/Options/Registry.php:236
+msgid "Whether the SMTP server requires authentication."
+msgstr "Whether the SMTP server requires authentication."
+
+#: src/WPCLI/Options/Registry.php:231
+msgid "Auto TLS when supported by server."
+msgstr "Auto TLS when supported by server."
+
+#: src/WPCLI/Options/Registry.php:226
+msgid "Encryption: none, ssl, or tls."
+msgstr "Encryption: none, ssl, or tls."
+
+#: src/WPCLI/Options/Registry.php:220
+msgid "SMTP server port (e.g. 25, 465, 587)."
+msgstr "SMTP server port (e.g. 25, 465, 587)."
+
+#: src/WPCLI/Options/Registry.php:214
+msgid "SMTP server hostname."
+msgstr "SMTP server hostname."
+
+#: src/WPCLI/Options/Registry.php:189
+msgid "Hide Awesome Motive product notifications."
+msgstr "Hide Awesome Motive product notifications."
+
+#: src/WPCLI/Options/Registry.php:183
+msgid "Disable all outgoing email."
+msgstr "Disable all outgoing email."
+
+#: src/WPCLI/Options/Registry.php:165
+msgid "Force From name on every outgoing message."
+msgstr "Force From name on every outgoing message."
+
+#: src/WPCLI/Options/Registry.php:160
+msgid "Force From email on every outgoing message."
+msgstr "Force From email on every outgoing message."
+
+#: src/WPCLI/Options/Registry.php:155
+msgid "Set Return-Path to match From email."
+msgstr "Set Return-Path to match From email."
+
+#. translators: %s is a comma-separated list of supported mailer slugs (e.g.
+#. "mail, smtp, sendgrid"). The slugs themselves are not translated.
+#: src/WPCLI/Options/Registry.php:148
+msgid "Mailer to use. One of: %s."
+msgstr "Mailer to use. One of: %s."
+
+#: src/WPCLI/Options/Registry.php:138
+msgid "From name."
+msgstr "From name."
+
+#: src/WPCLI/Options/Registry.php:132
+msgid "From email address."
+msgstr "From email address."
+
+#: src/WPCLI/Options/Help.php:203
+msgid "Rate Limiting"
+msgstr "Rate Limiting"
+
+#. translators: %1$s is the dotted CLI flag (e.g. smtp.pass). %2$s is the
+#. matching environment variable name (e.g. WPMS_SMTP_PASS). Flag and env var
+#. name are not translated.
+#: src/WPCLI/Options/Help.php:161
+msgid "Sensitive: also accepts --%1$s-file=<path> or env var %2$s."
+msgstr "Sensitive: also accepts --%1$s-file=<path> or env var %2$s."
+
+#: src/WPCLI/Options/Help.php:151
+msgid "and"
+msgstr "and"
+
+#. translators: %s is a list of "--flag=value" conditions joined by " and "
+#. (e.g. "--mail.mailer=smtp and --smtp.auth=true"). Flags and values are not
+#. translated.
+#: src/WPCLI/Options/Help.php:150
+msgid "Required when %s."
+msgstr "Required when %s."
+
+#: src/WPCLI/Options/Help.php:83
+msgid "These flags accept their value as a literal (--flag=value), from a file (--flag-file=<path>), or from an environment variable (WPMS_<UPPER>)."
+msgstr "These flags accept their value as a literal (--flag=value), from a file (--flag-file=<path>), or from an environment variable (WPMS_<UPPER>)."
+
+#: src/WPCLI/Options/Help.php:81
+msgid "CONFIGURATION FLAGS"
+msgstr "CONFIGURATION FLAGS"
+
+#. translators: %s is the underlying error message returned by wp_mail() / the
+#. mailer (already localized or quoted verbatim from the mailer response).
+#: src/WPCLI/Commands/Test.php:86
+msgid "Test email failed: %s"
+msgstr "Test email failed: %s"
+
+#: src/WPCLI/Commands/Test.php:81
+msgid "wp_mail() returned false (no further detail available)."
+msgstr "wp_mail() returned false (no further detail available)."
+
+#. translators: %1$s is the recipient email address. %2$s is the mailer slug
+#. (e.g. smtp, sendgrid). Recipient and mailer slug are not translated.
+#: src/WPCLI/Commands/Test.php:70
+msgid "Test email sent to %1$s via mailer \"%2$s\"."
+msgstr "Test email sent to %1$s via mailer \"%2$s\"."
+
+#: src/WPCLI/Commands/Test.php:50
+msgid "No mailer is configured. Run `wp wp-mail-smtp setup ...` first."
+msgstr "No mailer is configured. Run `wp wp-mail-smtp setup ...` first."
+
+#: src/WPCLI/Commands/Test.php:44
+msgid "Pass a valid recipient: wp wp-mail-smtp test <recipient>"
+msgstr "Pass a valid recipient: wp wp-mail-smtp test <recipient>"
+
+#. translators: %s is the configured mailer slug (e.g. smtp, sendgrid). The
+#. slug is not translated.
+#: src/WPCLI/Commands/Setup.php:119
+msgid "Configured WP Mail SMTP (mailer: %s). Run `wp wp-mail-smtp test <recipient>` to verify."
+msgstr "Configured WP Mail SMTP (mailer: %s). Run `wp wp-mail-smtp test <recipient>` to verify."
+
+#: src/WPCLI/Commands/Setup.php:108
+msgid "No settings were stored — every flag passed was shadowed by a wp-config constant. Remove the constants and re-run, or pass flags for non-shadowed settings."
+msgstr "No settings were stored — every flag passed was shadowed by a wp-config constant. Remove the constants and re-run, or pass flags for non-shadowed settings."
+
+#: src/WPCLI/Commands/Setup.php:100
+msgid "No configuration flags provided. Pass at least --mail.from_email, --mail.from_name, and --mail.mailer (plus the credentials for that mailer)."
+msgstr "No configuration flags provided. Pass at least --mail.from_email, --mail.from_name, and --mail.mailer (plus the credentials for that mailer)."
+
+#. translators: %s is the currently configured mailer slug (e.g. smtp,
+#. sendgrid). The slug is not translated.
+#: src/WPCLI/Commands/Setup.php:91
+msgid ""
+"WP Mail SMTP is already configured (mailer: %s).\n"
+"Use `wp wp-mail-smtp option set <group>.<key> <value>` to change individual settings, or pass --force to override this check."
+msgstr ""
+"WP Mail SMTP is already configured (mailer: %s).\n"
+"Use `wp wp-mail-smtp option set <group>.<key> <value>` to change individual settings, or pass --force to override this check."
+
+#: src/WPCLI/Commands/Setup.php:45
+msgid "Skip the refusal that fires when the plugin is already configured. Does NOT wipe existing settings — only flags you pass are written."
+msgstr "Skip the refusal that fires when the plugin is already configured. Does NOT wipe existing settings — only flags you pass are written."
+
+#: src/WPCLI/Commands/Setup.php:29
+msgid "Configure WP Mail SMTP from the command line."
+msgstr "Configure WP Mail SMTP from the command line."
+
+#. translators: %s is the dotted CLI flag that was updated (e.g. smtp.host).
+#. The flag itself is not translated.
+#: src/WPCLI/Commands/Option.php:263
+msgid "Updated %s."
+msgstr "Updated %s."
+
+#. translators: %s is the dotted CLI flag whose underlying option is overridden
+#. by a wp-config constant (e.g. smtp.host). The flag itself is not translated.
+#: src/WPCLI/Commands/Option.php:254
+msgid "Could not store %s — value is shadowed by a wp-config constant."
+msgstr "Could not store %s — value is shadowed by a wp-config constant."
+
+#. translators: %1$s is the dotted CLI flag (e.g. smtp.host). %2$s is the
+#. environment variable name the operator can use (e.g. WPMS_SMTP_HOST). Flag
+#. and env var name are not translated.
+#: src/WPCLI/Commands/Option.php:236
+msgid "No value provided for --%1$s (positional, --value-file, or env var %2$s)."
+msgstr "No value provided for --%1$s (positional, --value-file, or env var %2$s)."
+
+#: src/WPCLI/Commands/Option.php:204
+msgid "Usage: wp wp-mail-smtp option set <group>.<key> <value>"
+msgstr "Usage: wp wp-mail-smtp option set <group>.<key> <value>"
+
+#: src/WPCLI/Commands/Option.php:171
+msgid "(not set)"
+msgstr "(not set)"
+
+#. translators: %s is the unknown dotted CLI flag (e.g. smtp.host). The flag
+#. itself is not translated.
+#: src/WPCLI/Commands/Option.php:158 src/WPCLI/Commands/Option.php:214
+#: src/WPCLI/Options/Writer.php:83 src/WPCLI/Options/Writer.php:217
+msgid "Unknown flag: %s"
+msgstr "Unknown flag: %s"
+
+#: src/WPCLI/Commands/Option.php:148
+msgid "Usage: wp wp-mail-smtp option get <group>.<key>"
+msgstr "Usage: wp wp-mail-smtp option get <group>.<key>"
+
+#: src/WPCLI/Commands/Option.php:125
+msgid "Action must be one of: get, set, list."
+msgstr "Action must be one of: get, set, list."
+
+#: src/WPCLI/Commands/Option.php:63
+msgid "Output format for `list`. table | json | yaml. Default: table."
+msgstr "Output format for `list`. table | json | yaml. Default: table."
+
+#: src/WPCLI/Commands/Option.php:62
+msgid "Show sensitive values instead of masking them."
+msgstr "Show sensitive values instead of masking them."
+
+#: src/WPCLI/Commands/Option.php:61
+msgid "Read a sensitive value from a file."
+msgstr "Read a sensitive value from a file."
+
+#: src/WPCLI/Commands/Option.php:60
+msgid "Value (required for set; can also be supplied via --value-file or env var)."
+msgstr "Value (required for set; can also be supplied via --value-file or env var)."
+
+#: src/Admin/Recommendations/Pages/WPVibe.php:335
+msgid "Open WPVibe and authorize your AI client in one click."
+msgstr "Open WPVibe and authorise your AI client in one click."
+
+#: src/WPCLI/Commands/Option.php:59
+msgid "Dotted flag (e.g. smtp.host). Required for get and set."
+msgstr "Dotted flag (e.g. smtp.host). Required for get and set."
+
+#: src/WPCLI/Commands/Option.php:58
+msgid "One of: get, set, list."
+msgstr "One of: get, set, list."
+
+#: src/WPCLI/Commands/Option.php:42
+msgid "Read and write individual WP Mail SMTP settings."
+msgstr "Read and write individual WP Mail SMTP settings."
+
+#. translators: %s - upgrade URL.
+#: src/Providers/Sendlayer/QuickConnectUsage.php:578
+msgid "You've reached your free SendLayer limit. Emails are failing and won't be delivered! <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">Upgrade your plan</a> to start sending again."
+msgstr "You've reached your free SendLayer limit. Emails are failing and won't be delivered! <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">Upgrade your plan</a> to start sending again."
+
+#. translators: %1$d - emails used; %2$d - free sending limit; %3$s - upgrade
+#. URL.
+#: src/Providers/Sendlayer/QuickConnectUsage.php:549
+msgid "You've used %1$d of your %2$d free SendLayer emails. <a href=\"%3$s\" target=\"_blank\" rel=\"noopener noreferrer\">Upgrade your plan</a> to keep your emails flowing without interruption."
+msgstr "You've used %1$d of your %2$d free SendLayer emails. <a href=\"%3$s\" target=\"_blank\" rel=\"noopener noreferrer\">Upgrade your plan</a> to keep your emails flowing without interruption."
+
+#. translators: %1$s - SendLayer dashboard URL; %2$s - custom domain
+#. documentation URL.
+#: src/Providers/Sendlayer/QuickConnectUsage.php:519
+msgid "You're sending through a shared SendLayer domain. For better deliverability, add your own domain on the <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">SendLayer dashboard</a> and follow our <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">custom domain guide</a>."
+msgstr "You're sending through a shared SendLayer domain. For better deliverability, add your own domain on the <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">SendLayer dashboard</a> and follow our <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">custom domain guide</a>."
+
+#: src/Providers/Sendlayer/QuickConnect.php:516
+msgid "SendLayer is now set up as your Backup Connection. Emails that fail to send with your primary connection will be sent via SendLayer."
+msgstr "SendLayer is now set up as your Backup Connection. Emails that fail to send with your primary connection will be sent via SendLayer."
+
+#: src/Providers/Sendlayer/QuickConnect.php:401
+msgid "Backup"
+msgstr "Backup"
+
+#: src/MailCatcherTrait.php:336
+msgid "SMTP Debug:"
+msgstr "SMTP Debug:"
+
+#. translators: 1: count of failed recipients, 2: comma-separated email
+#. addresses.
+#: src/MailCatcherTrait.php:286
+msgid "The mail transport accepted the message but rejected %1$d recipient address: %2$s. Other recipients in the same email have been sent."
+msgid_plural "The mail transport accepted the message but rejected %1$d recipient addresses: %2$s. Other recipients in the same email have been sent."
+msgstr[0] "The mail transport accepted the message but rejected %1$d recipient address: %2$s. Other recipients in the same email have been sent."
+msgstr[1] "The mail transport accepted the message but rejected %1$d recipient addresses: %2$s. Other recipients in the same email have been sent."
+
+#: src/Integrations/WPCode/SnippetsProvider.php:287
+msgid "Install WPCode to use this snippet."
+msgstr "Install WPCode to use this snippet."
+
+#: src/EmailSendingDebug.php:179
+msgid "Unknown"
+msgstr "Unknown"
+
+#. translators: %1$s - Plugin name causing conflict.
+#: src/Conflicts.php:580
+msgid "Deactivate %1$s"
+msgstr "Deactivate %1$s"
+
+#: src/Admin/WooCommerceActiveLayerEducation.php:395
+msgid "Could not dismiss the section. Please reload the page and try again."
+msgstr "Could not dismiss the section. Please reload the page and try again."
+
+#: src/Admin/WooCommerceActiveLayerEducation.php:382
+msgid "Could not activate ActiveLayer. Please activate it from the Plugins page."
+msgstr "Could not activate ActiveLayer. Please activate it from the Plugins page."
+
+#: src/Admin/WooCommerceActiveLayerEducation.php:381
+msgid "Could not install ActiveLayer. Please download it from WordPress.org and install manually."
+msgstr "Could not install ActiveLayer. Please download it from WordPress.org and install manually."
+
+#: src/Admin/WooCommerceActiveLayerEducation.php:323
+msgid "Blocks bot signups and review spam on My Account, checkout, and product reviews. No CAPTCHA anywhere on the path to purchase. Free plugin from WordPress.org, with 1,000 free spam checks and no credit card required."
+msgstr "Blocks bot signups and review spam on My Account, checkout, and product reviews. No CAPTCHA anywhere on the path to purchase. Free plugin from WordPress.org, with 1,000 free spam checks and no credit card required."
+
+#: src/Admin/WooCommerceActiveLayerEducation.php:318
+#: src/Admin/WooCommerceActiveLayerEducation.php:380
+msgid "Get ActiveLayer"
+msgstr "Get ActiveLayer"
+
+#: src/Admin/WooCommerceActiveLayerEducation.php:299
+msgid "View ActiveLayer Settings"
+msgstr "View ActiveLayer Settings"
+
+#: src/Admin/WooCommerceActiveLayerEducation.php:296
+msgid "ActiveLayer is protecting customer registration and product reviews."
+msgstr "ActiveLayer is protecting customer registration and product reviews."
+
+#: src/Admin/WooCommerceActiveLayerEducation.php:285
+#: src/Admin/WooCommerceActiveLayerEducation.php:379
+msgid "Connect Your Free Account"
+msgstr "Connect Your Free Account"
+
+#: src/Admin/WooCommerceActiveLayerEducation.php:279
+msgid "ActiveLayer is active. Connect your free account to start blocking fake registrations and review spam."
+msgstr "ActiveLayer is active. Connect your free account to start blocking fake registrations and review spam."
+
+#: src/Admin/WooCommerceActiveLayerEducation.php:259
+msgid "Stop Fake Customer Registrations and Review Spam"
+msgstr "Stop Fake Customer Registrations and Review Spam"
+
+#: src/Admin/WooCommerceActiveLayerEducation.php:251
+msgid "Dismiss this section"
+msgstr "Dismiss this section"
+
+#: src/Admin/Recommendations/RecommendedPlugins.php:165
+msgid "Translations"
+msgstr "Translations"
+
+#: src/Admin/Recommendations/RecommendedPlugins.php:148
+msgid "Backups"
+msgstr "Backups"
+
+#: src/Admin/Recommendations/RecommendedPlugins.php:140
+msgid "Spam Protection"
+msgstr "Spam Protection"
+
+#: src/Admin/Recommendations/RecommendedPlugins.php:131
+msgid "Privacy Compliance"
+msgstr "Privacy Compliance"
+
+#: src/Admin/Recommendations/Pages/WPVibe.php:347
+msgid "Open WPVibe"
+msgstr "Open WPVibe"
+
+#: src/Admin/Recommendations/Pages/WPVibe.php:323
+msgid "Connect Your AI Assistant"
+msgstr "Connect Your AI Assistant"
+
+#: src/Admin/Recommendations/Pages/WPVibe.php:299
+#: src/Admin/Recommendations/Pages/WPVibe.php:371
+msgid "WPVibe Installed & Activated"
+msgstr "WPVibe Installed & Activated"
+
+#: src/Admin/Recommendations/Pages/WPVibe.php:287
+msgid "Install WPVibe"
+msgstr "Install WPVibe"
+
+#: src/Admin/Recommendations/Pages/WPVibe.php:275
+msgid "WPVibe"
+msgstr "WPVibe"
+
+#: src/Admin/Recommendations/Pages/WPVibe.php:263
+msgid "Install WPVibe from the WordPress.org plugin repository."
+msgstr "Install WPVibe from the WordPress.org plugin repository."
+
+#: src/Admin/Recommendations/Pages/WPVibe.php:171
+msgid "View Docs"
+msgstr "View Docs"
+
+#: src/Admin/Recommendations/Pages/WPVibe.php:151
+msgid "WPVibe is free to use. Explore the docs to see every ability your AI assistant now has for your WordPress site."
+msgstr "WPVibe is free to use. Explore the docs to see every ability your AI assistant now has for your WordPress site."
+
+#: src/Admin/Recommendations/Pages/WPVibe.php:150
+msgid "See What Your AI Can Do"
+msgstr "See What Your AI Can Do"
+
+#: src/Admin/Recommendations/Pages/WPVibe.php:117
+msgid "WPVibe screenshot"
+msgstr "WPVibe screenshot"
+
+#: src/Admin/Recommendations/Pages/WPVibe.php:104
+msgid "One-click setup in about a minute."
+msgstr "One-click setup in about a minute."
+
+#: src/Admin/Recommendations/Pages/WPVibe.php:103
+msgid "Run 40+ WP-CLI commands without leaving your AI chat."
+msgstr "Run 40+ WP-CLI commands without leaving your AI chat."
+
+#: src/Admin/Recommendations/Pages/WPVibe.php:102
+msgid "Create and edit posts, pages, media, and users through conversation."
+msgstr "Create and edit posts, pages, media, and users through conversation."
+
+#: src/Admin/Recommendations/Pages/WPVibe.php:101
+msgid "Works with Claude, ChatGPT, Cursor, and any MCP client."
+msgstr "Works with Claude, ChatGPT, Cursor, and any MCP client."
+
+#: src/Admin/Recommendations/Pages/WPVibe.php:87
+msgid "Manage WordPress through conversation, not clicking."
+msgstr "Manage WordPress through conversation, not clicking."
+
+#: src/Admin/Recommendations/Pages/WPVibe.php:86
+msgid "WPVibe connects your AI assistant straight to your WordPress site, so you can create posts, manage plugins, and run tasks just by asking. Built-in guardrails keep your site safe."
+msgstr "WPVibe connects your AI assistant straight to your WordPress site, so you can create posts, manage plugins, and run tasks just by asking. Built-in guardrails keep your site safe."
+
+#: src/Admin/Recommendations/Pages/ActiveLayer.php:101
+msgid "AI detection using content, sender reputation, and behavior signals."
+msgstr "AI detection using content, sender reputation, and behaviour signals."
+
+#: src/Admin/Recommendations/Pages/WPCode.php:359
+msgid "Open WPCode to create your first snippet and start customizing your site safely."
+msgstr "Open WPCode to create your first snippet and start customising your site safely."
+
+#: src/Admin/Recommendations/Pages/WPVibe.php:73
+msgid "WP Mail SMTP ♥ WPVibe"
+msgstr "WP Mail SMTP ♥ WPVibe"
+
+#: src/Admin/Recommendations/Pages/WPVibe.php:61
+msgid "Your AI Just Learned WordPress"
+msgstr "Your AI Just Learned WordPress"
+
+#: src/Admin/Recommendations/Pages/WPConsent.php:436
+msgid "Run Setup Wizard"
+msgstr "Run Setup Wizard"
+
+#: src/Admin/Recommendations/Pages/WPConsent.php:424
+msgid "WPConsent has an intuitive setup wizard to guide you through the cookie consent configuration process."
+msgstr "WPConsent has an intuitive setup wizard to guide you through the cookie consent configuration process."
+
+#: src/Admin/Recommendations/Pages/WPConsent.php:412
+msgid "Set Up WPConsent"
+msgstr "Set Up WPConsent"
+
+#: src/Admin/Recommendations/Pages/WPConsent.php:400
+msgid "Activate WPConsent"
+msgstr "Activate WPConsent"
+
+#: src/Admin/Recommendations/Pages/WPConsent.php:388
+msgid "WPConsent Installed & Activated"
+msgstr "WPConsent Installed & Activated"
+
+#: src/Admin/Recommendations/Pages/WPConsent.php:376
+msgid "Install WPConsent"
+msgstr "Install WPConsent"
+
+#: src/Admin/Recommendations/Pages/WPConsent.php:352
+msgid "Install WPConsent from the WordPress.org plugin repository."
+msgstr "Install WPConsent from the WordPress.org plugin repository."
+
+#: src/Admin/Recommendations/Pages/WPConsent.php:340
+msgid "Install & Activate WPConsent"
+msgstr "Install & Activate WPConsent"
+
+#: src/Admin/Recommendations/Pages/WPConsent.php:205
+#: src/Admin/Recommendations/Pages/WPConsent.php:460
+msgid "WPConsent Pro Installed & Activated"
+msgstr "WPConsent Pro Installed & Activated"
+
+#: src/Admin/Recommendations/Pages/WPConsent.php:168
+msgid "With WPConsent Pro you can access advanced features like geolocation, popup layout, records of consent, multilanguage support, and more."
+msgstr "With WPConsent Pro you can access advanced features like geolocation, popup layout, records of consent, multilanguage support, and more."
+
+#: src/Admin/Recommendations/Pages/WPConsent.php:167
+msgid "Get Advanced Cookie Consent Features"
+msgstr "Get Advanced Cookie Consent Features"
+
+#: src/Admin/Recommendations/Pages/WPConsent.php:134
+msgid "WPConsent screenshot"
+msgstr "WPConsent screenshot"
+
+#: src/Admin/Recommendations/Pages/WPConsent.php:121
+msgid "Self-hosted. Your data remains on your site."
+msgstr "Self-hosted. Your data remains on your site."
+
+#: src/Admin/Recommendations/Pages/WPConsent.php:120
+msgid "Peace of mind knowing you’re aligned with global laws."
+msgstr "Peace of mind knowing you’re aligned with global laws."
+
+#: src/Admin/Recommendations/Pages/WPConsent.php:119
+msgid "Tools like Google Analytics and Facebook Pixel paused until consent."
+msgstr "Tools like Google Analytics and Facebook Pixel paused until consent."
+
+#: src/Admin/Recommendations/Pages/WPConsent.php:118
+msgid "A professional banner that fits your site."
+msgstr "A professional banner that fits your site."
+
+#: src/Admin/Recommendations/Pages/WPConsent.php:104
+msgid "Built for transparency. Designed for ease."
+msgstr "Built for transparency. Designed for ease."
+
+#: src/Admin/Recommendations/Pages/WPConsent.php:103
+msgid "Build trust with clear, compliant privacy practices. WPConsent adds clean, professional banners and handles the technical side for you."
+msgstr "Build trust with clear, compliant privacy practices. WPConsent adds clean, professional banners and handles the technical side for you."
+
+#: src/Admin/Recommendations/Pages/WPConsent.php:90
+msgid "WP Mail SMTP ♥ WPConsent"
+msgstr "WP Mail SMTP ♥ WPConsent"
+
+#: src/Admin/Recommendations/Pages/WPConsent.php:78
+msgid "Make Your Website Privacy-Compliant in Minutes"
+msgstr "Make Your Website Privacy-Compliant in Minutes"
+
+#: src/Admin/Recommendations/Pages/WPCode.php:371
+msgid "Open WPCode"
+msgstr "Open WPCode"
+
+#: src/Admin/Recommendations/Pages/WPCode.php:347
+msgid "Set Up WPCode"
+msgstr "Set Up WPCode"
+
+#: src/Admin/Recommendations/Pages/WPCode.php:323
+msgid "WPCode Installed & Activated"
+msgstr "WPCode Installed & Activated"
+
+#: src/Admin/Recommendations/Pages/WPCode.php:311
+msgid "Install WPCode"
+msgstr "Install WPCode"
+
+#: src/Admin/Recommendations/Pages/WPCode.php:299
+msgid "WPCode"
+msgstr "WPCode"
+
+#: src/Admin/Recommendations/Pages/WPCode.php:287
+msgid "Install WPCode from the WordPress.org plugin repository."
+msgstr "Install WPCode from the WordPress.org plugin repository."
+
+#: src/Admin/Recommendations/Pages/WPCode.php:181
+#: src/Admin/Recommendations/Pages/WPCode.php:395
+msgid "WPCode Pro Installed & Activated"
+msgstr "WPCode Pro Installed & Activated"
+
+#: src/Admin/Recommendations/Pages/WPCode.php:151
+msgid "WPCode Pro adds conditional logic, a cloud snippet library, revisions, and conversion pixels to your workflow."
+msgstr "WPCode Pro adds conditional logic, a cloud snippet library, revisions, and conversion pixels to your workflow."
+
+#: src/Admin/Recommendations/Pages/WPCode.php:150
+msgid "Get Advanced Code Snippet Features"
+msgstr "Get Advanced Code Snippet Features"
+
+#: src/Admin/Recommendations/Pages/WPCode.php:117
+msgid "WPCode screenshot"
+msgstr "WPCode screenshot"
+
+#: src/Admin/Recommendations/Pages/WPCode.php:104
+msgid "Auto-insert and one-click toggle for every snippet."
+msgstr "Auto-insert and one-click toggle for every snippet."
+
+#: src/Admin/Recommendations/Pages/WPCode.php:103
+msgid "100+ ready-made snippets for common tasks."
+msgstr "100+ ready-made snippets for common tasks."
+
+#: src/Admin/Recommendations/Pages/WPCode.php:102
+msgid "PHP, JavaScript, CSS, and HTML all supported."
+msgstr "PHP, JavaScript, CSS, and HTML all supported."
+
+#: src/Admin/Recommendations/Pages/WPCode.php:101
+msgid "Add snippets without editing theme files."
+msgstr "Add snippets without editing theme files."
+
+#: src/Admin/Recommendations/Pages/WPCode.php:87
+msgid "Trusted by over 3 million websites."
+msgstr "Trusted by over 3 million websites."
+
+#: src/Admin/Recommendations/Pages/WPCode.php:86
+msgid "WPCode lets you safely add PHP, JavaScript, CSS, and HTML snippets with no theme edits and no risk of losing changes when your theme updates. Built-in error handling keeps your site from breaking."
+msgstr "WPCode lets you safely add PHP, JavaScript, CSS, and HTML snippets with no theme edits and no risk of losing changes when your theme updates. Built-in error handling keeps your site from breaking."
+
+#: src/Admin/Recommendations/Pages/WPCode.php:73
+msgid "WP Mail SMTP ♥ WPCode"
+msgstr "WP Mail SMTP ♥ WPCode"
+
+#: src/Admin/Recommendations/Pages/WPCode.php:61
+msgid "Add Custom Code to WordPress Without Breaking Your Site"
+msgstr "Add Custom Code to WordPress Without Breaking Your Site"
+
+#: src/Admin/Recommendations/Pages/Universally.php:335
+msgid "Add your API key on the settings page and choose the languages for your site."
+msgstr "Add your API key on the settings page and choose the languages for your site."
+
+#: src/Admin/Recommendations/Pages/Universally.php:323
+msgid "Connect Universally"
+msgstr "Connect Universally"
+
+#: src/Admin/Recommendations/Pages/Universally.php:311
+msgid "Activate Universally"
+msgstr "Activate Universally"
+
+#: src/Admin/Recommendations/Pages/Universally.php:299
+#: src/Admin/Recommendations/Pages/Universally.php:371
+msgid "Universally Installed & Activated"
+msgstr "Universally Installed & Activated"
+
+#: src/Admin/Recommendations/Pages/Universally.php:287
+msgid "Install Universally"
+msgstr "Install Universally"
+
+#: src/Admin/Recommendations/Pages/Universally.php:263
+msgid "Install Universally from the WordPress.org plugin repository."
+msgstr "Install Universally from the WordPress.org plugin repository."
+
+#: src/Admin/Recommendations/Pages/Universally.php:251
+msgid "Install & Activate Universally"
+msgstr "Install & Activate Universally"
+
+#: src/Admin/Recommendations/Pages/Universally.php:151
+msgid "Upgrade your plan for more languages and higher translation limits."
+msgstr "Upgrade your plan for more languages and higher translation limits."
+
+#: src/Admin/Recommendations/Pages/Universally.php:150
+msgid "Reach Even More of the World"
+msgstr "Reach Even More of the World"
+
+#: src/Admin/Recommendations/Pages/Universally.php:117
+msgid "Universally screenshot"
+msgstr "Universally screenshot"
+
+#: src/Admin/Recommendations/Pages/Universally.php:104
+msgid "Exclude specific pages, classes, or IDs from translation."
+msgstr "Exclude specific pages, classes, or IDs from translation."
+
+#: src/Admin/Recommendations/Pages/Universally.php:103
+msgid "Auto-translates new content when you publish."
+msgstr "Auto-translates new content when you publish."
+
+#: src/Admin/Recommendations/Pages/Universally.php:102
+msgid "Multilingual SEO with translated URLs and meta."
+msgstr "Multilingual SEO with translated URLs and meta."
+
+#: src/Admin/Recommendations/Pages/Universally.php:101
+msgid "AI translation into 110+ languages."
+msgstr "AI translation into 110+ languages."
+
+#: src/Admin/Recommendations/Pages/Universally.php:87
+msgid "Built for global reach. Designed for everyone."
+msgstr "Built for global reach. Designed for everyone."
+
+#: src/Admin/Recommendations/Pages/Universally.php:86
+msgid "Universally uses AI to translate your entire WordPress site into 110+ languages in minutes, understanding context and keeping your brand voice intact. No coding required."
+msgstr "Universally uses AI to translate your entire WordPress site into 110+ languages in minutes, understanding context and keeping your brand voice intact. No coding required."
+
+#: src/Admin/Recommendations/Pages/Universally.php:73
+msgid "WP Mail SMTP ♥ Universally"
+msgstr "WP Mail SMTP ♥ Universally"
+
+#: src/Admin/Recommendations/Pages/Universally.php:61
+msgid "Translate Your Website and Go Global in Minutes"
+msgstr "Translate Your Website and Go Global in Minutes"
+
+#: src/Admin/Recommendations/Pages/Duplicator.php:479
+msgid "Duplicator Pro Installed & Activated"
+msgstr "Duplicator Pro Installed & Activated"
+
+#: src/Admin/Recommendations/Pages/Duplicator.php:467
+msgid "Backup Created"
+msgstr "Backup Created"
+
+#: src/Admin/Recommendations/Pages/Duplicator.php:455
+msgid "Create First Backup"
+msgstr "Create First Backup"
+
+#: src/Admin/Recommendations/Pages/Duplicator.php:443
+msgid "Back up your site, in just one click."
+msgstr "Back up your site, in just one click."
+
+#: src/Admin/Recommendations/Pages/Duplicator.php:431
+msgid "Create Your First Backup"
+msgstr "Create Your First Backup"
+
+#: src/Admin/Recommendations/Pages/Duplicator.php:419
+msgid "Activate Duplicator"
+msgstr "Activate Duplicator"
+
+#: src/Admin/Recommendations/Pages/Duplicator.php:407
+msgid "Duplicator Installed & Activated"
+msgstr "Duplicator Installed & Activated"
+
+#: src/Admin/Recommendations/Pages/Duplicator.php:395
+msgid "Install Duplicator"
+msgstr "Install Duplicator"
+
+#: src/Admin/Recommendations/Pages/Duplicator.php:371
+msgid "Your first step toward bulletproof backups."
+msgstr "Your first step toward bulletproof backups."
+
+#: src/Admin/Recommendations/Pages/Duplicator.php:359
+msgid "Install & Activate Duplicator"
+msgstr "Install & Activate Duplicator"
+
+#: src/Admin/Recommendations/Pages/Duplicator.php:183
+msgid "Cloud Backups Set Up"
+msgstr "Cloud Backups Set Up"
+
+#: src/Admin/Recommendations/Pages/Duplicator.php:173
+msgid "Set Up Cloud Backups"
+msgstr "Set Up Cloud Backups"
+
+#: src/Admin/Recommendations/Pages/Duplicator.php:151
+msgid "Keep your data safe forever with automatic daily backups to Google Drive, Dropbox, or Amazon S3."
+msgstr "Keep your data safe forever with automatic daily backups to Google Drive, Dropbox, or Amazon S3."
+
+#: src/Admin/Recommendations/Pages/Duplicator.php:150
+msgid "Set Up Scheduled Cloud Backups"
+msgstr "Set Up Scheduled Cloud Backups"
+
+#: src/Admin/Recommendations/Pages/Duplicator.php:117
+msgid "Duplicator screenshot"
+msgstr "Duplicator screenshot"
+
+#: src/Admin/Recommendations/Pages/Duplicator.php:104
+msgid "Schedule daily backups so you never have to think about it."
+msgstr "Schedule daily backups so you never have to think about it."
+
+#: src/Admin/Recommendations/Pages/Duplicator.php:103
+msgid "Store backups safely in Google Drive, Dropbox, or Amazon S3."
+msgstr "Store backups safely in Google Drive, Dropbox, or Amazon S3."
+
+#: src/Admin/Recommendations/Pages/Duplicator.php:102
+msgid "Restore your site with one click if anything goes wrong."
+msgstr "Restore your site with one click if anything goes wrong."
+
+#: src/Admin/Recommendations/Pages/Duplicator.php:101
+msgid "Back up your entire site automatically."
+msgstr "Back up your entire site automatically."
+
+#: src/Admin/Recommendations/Pages/Duplicator.php:87
+msgid "Trusted by over 1.5 million websites."
+msgstr "Trusted by over 1.5 million websites."
+
+#: src/Admin/Recommendations/Pages/Duplicator.php:86
+msgid "Your email settings and sender reputation live in your database. One bad update, one crash, and everything is gone. Duplicator backs up your entire WordPress site automatically so you can restore with one click."
+msgstr "Your email settings and sender reputation live in your database. One bad update, one crash, and everything is gone. Duplicator backs up your entire WordPress site automatically so you can restore with one click."
+
+#: src/Admin/Recommendations/Pages/Duplicator.php:73
+msgid "WP Mail SMTP ♥ Duplicator"
+msgstr "WP Mail SMTP ♥ Duplicator"
+
+#: src/Admin/Recommendations/Pages/Duplicator.php:61
+msgid "WP Mail SMTP Delivers It. Duplicator Protects It."
+msgstr "WP Mail SMTP Delivers It. Duplicator Protects It."
+
+#: src/Admin/Recommendations/Pages/ActiveLayer.php:361
+#: src/Admin/Recommendations/Pages/Universally.php:359
+#: src/Admin/Recommendations/Pages/WPCode.php:383
+#: src/Admin/Recommendations/Pages/WPConsent.php:448
+#: src/Admin/Recommendations/Pages/WPVibe.php:359
+msgid "Setup Complete"
+msgstr "Setup Complete"
+
+#: src/Admin/Recommendations/Pages/ActiveLayer.php:349
+#: src/Admin/Recommendations/Pages/Universally.php:347
+msgid "Open Settings"
+msgstr "Open Settings"
+
+#: src/Admin/Recommendations/Pages/ActiveLayer.php:337
+msgid "Add your free API key on the settings page to switch on protection."
+msgstr "Add your free API key on the settings page to switch on protection."
+
+#: src/Admin/Recommendations/Pages/ActiveLayer.php:325
+msgid "Connect ActiveLayer"
+msgstr "Connect ActiveLayer"
+
+#: src/Admin/Recommendations/Pages/ActiveLayer.php:313
+#: src/Admin/WooCommerceActiveLayerEducation.php:314
+msgid "Activate ActiveLayer"
+msgstr "Activate ActiveLayer"
+
+#: src/Admin/Recommendations/Pages/ActiveLayer.php:301
+#: src/Admin/Recommendations/Pages/ActiveLayer.php:373
+msgid "ActiveLayer Installed & Activated"
+msgstr "ActiveLayer Installed & Activated"
+
+#: src/Admin/Recommendations/Pages/ActiveLayer.php:289
+msgid "Install ActiveLayer"
+msgstr "Install ActiveLayer"
+
+#: src/Admin/Recommendations/Pages/ActiveLayer.php:265
+msgid "Install ActiveLayer from the WordPress.org plugin repository."
+msgstr "Install ActiveLayer from the WordPress.org plugin repository."
+
+#: src/Admin/Recommendations/Pages/ActiveLayer.php:253
+#: src/Admin/WooCommerceActiveLayerEducation.php:310
+msgid "Install & Activate ActiveLayer"
+msgstr "Install & Activate ActiveLayer"
+
+#: src/Admin/Recommendations/Pages/ActiveLayer.php:151
+msgid "Upgrade your plan for higher limits and advanced controls across all your forms, comments, and reviews."
+msgstr "Upgrade your plan for higher limits and advanced controls across all your forms, comments, and reviews."
+
+#: src/Admin/Recommendations/Pages/ActiveLayer.php:150
+msgid "Protect Even More of Your Site"
+msgstr "Protect Even More of Your Site"
+
+#: src/Admin/Recommendations/Pages/ActiveLayer.php:149
+#: src/Admin/Recommendations/Pages/Duplicator.php:149
+#: src/Admin/Recommendations/Pages/Universally.php:149
+#: src/Admin/Recommendations/Pages/WPCode.php:149
+#: src/Admin/Recommendations/Pages/WPConsent.php:166
+#: src/Admin/Recommendations/Pages/WPVibe.php:149
+msgid "Step 3"
+msgstr "Step 3"
+
+#: src/Admin/Recommendations/Pages/ActiveLayer.php:117
+msgid "ActiveLayer screenshot"
+msgstr "ActiveLayer screenshot"
+
+#: src/Admin/Recommendations/Pages/ActiveLayer.php:104
+msgid "Works with 9+ popular form plugins out of the box."
+msgstr "Works with 9+ popular form plugins out of the box."
+
+#: src/Admin/Recommendations/Pages/ActiveLayer.php:103
+msgid "Millisecond verdicts, invisible to legitimate users."
+msgstr "Millisecond verdicts, invisible to legitimate users."
+
+#: src/Admin/Recommendations/Pages/ActiveLayer.php:102
+msgid "No CAPTCHAs, no friction for real visitors."
+msgstr "No CAPTCHAs, no friction for real visitors."
+
+#: src/Admin/Recommendations/Pages/ActiveLayer.php:87
+msgid "Smarter protection for your forms, comments, and reviews."
+msgstr "Smarter protection for your forms, comments, and reviews."
+
+#: src/Admin/Recommendations/Pages/ActiveLayer.php:86
+msgid "ActiveLayer uses server-side AI to catch spam in milliseconds, invisible to your real visitors and deadly to bots. No CAPTCHAs, no friction, no lost conversions."
+msgstr "ActiveLayer uses server-side AI to catch spam in milliseconds, invisible to your real visitors and deadly to bots. No CAPTCHAs, no friction, no lost conversions."
+
+#: src/Admin/Recommendations/Pages/ActiveLayer.php:73
+msgid "WP Mail SMTP ♥ ActiveLayer"
+msgstr "WP Mail SMTP ♥ ActiveLayer"
+
+#: src/Admin/Recommendations/Pages/ActiveLayer.php:61
+msgid "Block Spam Without Blocking Real Visitors"
+msgstr "Block Spam Without Blocking Real Visitors"
+
+#: src/Admin/Recommendations/PageAbstract.php:453
+msgid "Go to Plugins page"
+msgstr "Go to Plugins page"
+
+#: src/Admin/Recommendations/PageAbstract.php:452
+msgid "Download Now"
+msgstr "Download Now"
+
+#: src/Admin/Recommendations/PageAbstract.php:451
+msgid "Activate Now"
+msgstr "Activate Now"
+
+#: src/Admin/Recommendations/PageAbstract.php:450
+#: src/Admin/Recommendations/Pages/WPCode.php:182
+#: src/Admin/Recommendations/Pages/WPConsent.php:206
+msgid "Install Now"
+msgstr "Install Now"
+
+#: src/Admin/Recommendations/PageAbstract.php:447
+#: src/Admin/WooCommerceActiveLayerEducation.php:378
+msgid "Activating..."
+msgstr "Activating..."
+
+#: src/Admin/Recommendations/PageAbstract.php:446
+#: src/Admin/WooCommerceActiveLayerEducation.php:377
+msgid "Installing..."
+msgstr "Installing..."
+
+#. translators: %1$s - Plugins page URL.
+#: src/Admin/Recommendations/PageAbstract.php:435
+msgid "Could not activate the plugin. Please activate it on the <a href=\"%1$s\">Plugins page</a>."
+msgstr "Could not activate the plugin. Please activate it on the <a href=\"%1$s\">Plugins page</a>."
+
+#. translators: %1$s - Lite plugin download URL.
+#: src/Admin/Recommendations/PageAbstract.php:423
+msgid "Could not install the plugin automatically. Please <a href=\"%1$s\">download</a> it and install it manually."
+msgstr "Could not install the plugin automatically. Please <a href=\"%1$s\">download</a> it and install it manually."
+
+#: src/Admin/Recommendations/PageAbstract.php:372
+msgid "Plugin unavailable."
+msgstr "Plugin unavailable."
+
+#: src/Admin/Recommendations/PageAbstract.php:364
+msgid "You do not have permission."
+msgstr "You do not have permission."
+
+#: src/Admin/Recommendations/PageAbstract.php:245
+msgid "Step 2"
+msgstr "Step 2"
+
+#: src/Admin/Recommendations/PageAbstract.php:209
+msgid "Step 1"
+msgstr "Step 1"
+
+#: src/Admin/Pages/TestTab.php:603
+msgid "Protect your site with automated backups"
+msgstr "Protect your site with automated backups"
+
+#: src/Admin/Pages/TestTab.php:602
+msgid "Automated, encrypted backups with 1-click restore to keep your site safe."
+msgstr "Automated, encrypted backups with 1-click restore to keep your site safe."
+
+#: src/Admin/Pages/TestTab.php:601
+msgid "Add Secure WordPress Backups"
+msgstr "Add Secure WordPress Backups"
+
+#: src/Admin/Pages/TestTab.php:579
+msgid "Stay GDPR & Privacy compliant"
+msgstr "Stay GDPR & Privacy compliant"
+
+#: src/Admin/Pages/TestTab.php:578
+msgid "Add a cookie consent banner to your site and meet privacy laws in minutes."
+msgstr "Add a cookie consent banner to your site and meet privacy laws in minutes."
+
+#: src/Admin/Pages/TestTab.php:577
+msgid "Stay GDPR & Privacy Compliant"
+msgstr "Stay GDPR & Privacy Compliant"
+
+#: src/Admin/Pages/TestTab.php:558
+msgid "Stop spam at the door"
+msgstr "Stop spam at the door"
+
+#: src/Admin/Pages/TestTab.php:557
+msgid "Catch spam in milliseconds with AI, invisible to your real visitors."
+msgstr "Catch spam in milliseconds with AI, invisible to your real visitors."
+
+#: src/Admin/Pages/TestTab.php:556
+msgid "Smarter Spam Protection for WordPress"
+msgstr "Smarter Spam Protection for WordPress"
+
+#: src/Admin/Pages/TestTab.php:517
+msgid "settings page"
+msgstr "settings page"
+
+#. translators: %1$s - plugin name (bold). %2$s - settings-page hyperlink.
+#: src/Admin/Pages/TestTab.php:515
+msgid "%1$s was installed and activated, please visit their %2$s to configure it."
+msgstr "%1$s was installed and activated, please visit their %2$s to configure it."
+
+#. translators: %s - product name (e.g. WPConsent).
+#: src/Admin/Pages/TestTab.php:506
+msgid "Install %s (Free)"
+msgstr "Install %s (Free)"
+
+#. translators: %s - product name wrapped in <strong>, e.g. WPConsent.
+#: src/Admin/Pages/TestTab.php:491
+msgid "%1$s with our sister plugin %2$s"
+msgstr "%1$s with our sister plugin %2$s"
+
+#: src/Admin/Pages/TestTab.php:486
+msgid "Pro Tip:"
+msgstr "Pro Tip:"
+
+#: src/Admin/Pages/TestTab.php:438
+msgid "A person celebrating after sending an email."
+msgstr "A person celebrating after sending an email."
+
+#: src/Admin/Pages/TestTab.php:431
+msgid "for WP Mail SMTP users, applied at checkout."
+msgstr "for WP Mail SMTP users, applied at checkout."
+
+#: src/Admin/Pages/TestTab.php:417
+msgid "...and much more!"
+msgstr "...and much more!"
+
+#: src/Admin/Pages/TestTab.php:414
+msgid "Priority support from our email deliverability experts"
+msgstr "Priority support from our email deliverability experts"
+
+#. translators: %s - "Pro" wrapped in a bold tag highlighting the WP Mail SMTP
+#. Pro tier.
+#: src/Admin/Pages/TestTab.php:395
+msgid "Level Up Your Email Game! Unlock these %s features and get even more from WP Mail SMTP."
+msgstr "Level Up Your Email Game! Unlock these %s features and get even more from WP Mail SMTP."
+
+#: src/Admin/Pages/TestTab.php:387
+msgid "Test email sent successfully! Check your inbox to confirm delivery."
+msgstr "Test email sent successfully! Check your inbox to confirm delivery."
+
+#: src/Admin/Pages/TestTab.php:375
+msgid "Never miss an email with an automatic backup mailer"
+msgstr "Never miss an email with an automatic backup mailer"
+
+#: src/Admin/Pages/TestTab.php:374
+msgid "Get instant failure alerts via Email, Slack, SMS, Discord, etc"
+msgstr "Get instant failure alerts via Email, Slack, SMS, Discord, etc"
+
+#: src/Admin/Pages/TestTab.php:373
+msgid "Log, track, and resend any email your site sends"
+msgstr "Log, track, and resend any email your site sends"
+
+#: src/Admin/Pages/GetProTab.php:530
+msgid "Connect WP Mail SMTP to multiple providers, then route emails through your preferred provider based on custom conditional logic rules."
+msgstr "Connect WP Mail SMTP to multiple providers, then route emails through your preferred provider based on custom conditional logic rules."
+
+#: src/Admin/Pages/GetProTab.php:529
+msgid "Send emails through more than one SMTP provider."
+msgstr "Send emails through more than one SMTP provider."
+
+#: src/Admin/Pages/GetProTab.php:521
+msgid "Includes total number of emails sent, emails delivered, failed emails, opened emails, links clicked."
+msgstr "Includes total number of emails sent, emails delivered, failed emails, opened emails, links clicked."
+
+#: src/Admin/Pages/GetProTab.php:520
+msgid "View advanced email reports in your WordPress dashboard."
+msgstr "View advanced email reports in your WordPress dashboard."
+
+#: src/Admin/Pages/GetProTab.php:511
+msgid "Monitor email open and click-through rates."
+msgstr "Monitor email open and click-through rates."
+
+#: src/Admin/Pages/GetProTab.php:507
+msgid "Open & Click Tracking"
+msgstr "Open & Click Tracking"
+
+#: src/Admin/Pages/GetProTab.php:502
+msgid "Choose which default WordPress email notifications your site sends."
+msgstr "Choose which default WordPress email notifications your site sends."
+
+#: src/Admin/Pages/GetProTab.php:498
+msgid "Manage Email Notifications"
+msgstr "Manage Email Notifications"
+
+#: src/Admin/Pages/GetProTab.php:494
+msgid "Choose one primary connection, then select another connection as a backup. If an email fails to send via your primary connection, it will automatically be resent using your backup connection."
+msgstr "Choose one primary connection, then select another connection as a backup. If an email fails to send via your primary connection, it will automatically be resent using your backup connection."
+
+#: src/Admin/Pages/AiMcpTab.php:265
+msgid "Use WP Mail SMTP With Your Favorite AI"
+msgstr "Use WP Mail SMTP With Your Favourite AI"
+
+#: src/Admin/Pages/GetProTab.php:493
+msgid "Connect to multiple SMTP providers."
+msgstr "Connect to multiple SMTP providers."
+
+#: src/Admin/Pages/GetProTab.php:485
+msgid "Email, Slack, SMS via Twilio, Microsoft Teams, Discord, or custom webhooks."
+msgstr "Email, Slack, SMS via Twilio, Microsoft Teams, Discord, or custom webhooks."
+
+#: src/Admin/Pages/GetProTab.php:484
+msgid "Receive an alert via your preferred channel whenever an email fails to send."
+msgstr "Receive an alert via your preferred channel whenever an email fails to send."
+
+#: src/Admin/Pages/GetProTab.php:476
+msgid "Includes delivery status, email content, attachments, source, and technical details, plus the option to resend the email."
+msgstr "Includes delivery status, email content, attachments, source, and technical details, plus the option to resend the email."
+
+#: src/Admin/Pages/GetProTab.php:475
+msgid "View detailed email logs in your WordPress dashboard."
+msgstr "View detailed email logs in your WordPress dashboard."
+
+#: src/Admin/Pages/GetProTab.php:471
+msgid "Email Logging"
+msgstr "Email Logging"
+
+#: src/Admin/Pages/GetProTab.php:466
+msgid "Access Outlook immediately with Outlook One Click Setup"
+msgstr "Access Outlook immediately with Outlook One Click Setup"
+
+#: src/Admin/Pages/GetProTab.php:457
+msgid "Access your Google Workspace immediately with Gmail One Click Setup"
+msgstr "Access your Google Workspace immediately with Gmail One Click Setup"
+
+#: src/Admin/Pages/GetProTab.php:452
+msgid "Manually connect to your account with Google Workspace/ Gmail mailer"
+msgstr "Manually connect to your account with Google Workspace/ Gmail mailer"
+
+#: src/Admin/Pages/GetProTab.php:449
+msgid "Google Workspace"
+msgstr "Google Workspace"
+
+#: src/Admin/Pages/GetProTab.php:439 src/Admin/Pages/GetProTab.php:444
+msgid "View email sending errors in your WordPress dashboard."
+msgstr "View email sending errors in your WordPress dashboard."
+
+#: src/Admin/Pages/GetProTab.php:431
+msgid "Receive a detailed report of your total and previous week's metrics for emails sent, failed, and delivered, plus statistics for your top 5 popular emails."
+msgstr "Receive a detailed report of your total and previous week's metrics for emails sent, failed, and delivered, plus statistics for your top 5 popular emails."
+
+#: src/Admin/Pages/GetProTab.php:426
+msgid "Receive a basic report of your total emails sent including a summary of the previous week's sent emails."
+msgstr "Receive a basic report of your total emails sent including a summary of the previous week's sent emails."
+
+#: src/Admin/Pages/GetProTab.php:423
+msgid "Weekly Email Summaries"
+msgstr "Weekly Email Summaries"
+
+#: src/Admin/Pages/GetProTab.php:419
+msgid "Amazon SES, Microsoft 365 / Outlook, and Zoho Mail."
+msgstr "Amazon SES, Microsoft 365 / Outlook, and Zoho Mail."
+
+#: src/Admin/Pages/GetProTab.php:418
+msgid "Connect your WordPress site to any of our Lite SMTP providers, as well as:"
+msgstr "Connect your WordPress site to any of our Lite SMTP providers, as well as:"
+
+#: src/Admin/Pages/GetProTab.php:414
+msgid "SendLayer, SMTP.com, Brevo, Google Workspace / Gmail, Mailgun, Postmark, SendGrid, SMTP2GO, Sparkpost, and any other SMTP provider using your SMTP credentials."
+msgstr "SendLayer, SMTP.com, Brevo, Google Workspace / Gmail, Mailgun, Postmark, SendGrid, SMTP2GO, Sparkpost, and any other SMTP provider using your SMTP credentials."
+
+#: src/Admin/Pages/GetProTab.php:413
+msgid "Connect your WordPress site to any of the following SMTP providers:"
+msgstr "Connect your WordPress site to any of the following SMTP providers:"
+
+#: src/Admin/Pages/GetProTab.php:388
+msgid "Connect with top providers like Amazon SES, Microsoft 365 / Outlook, and Zoho Mail."
+msgstr "Connect with top providers like Amazon SES, Microsoft 365 / Outlook, and Zoho Mail."
+
+#: src/Admin/Pages/GetProTab.php:387
+msgid "Advanced mailers"
+msgstr "Advanced mailers"
+
+#: src/Admin/Pages/GetProTab.php:383
+msgid "Use conditional logic to send emails through different providers."
+msgstr "Use conditional logic to send emails through different providers."
+
+#: src/Admin/Pages/GetProTab.php:378
+msgid "An easy and secure way to configure your Gmail and Outlook mailers."
+msgstr "An easy and secure way to configure your Gmail and Outlook mailers."
+
+#: src/Admin/Pages/GetProTab.php:377
+msgid "One-Click Mailer Setups"
+msgstr "One-Click Mailer Setups"
+
+#: src/Admin/Pages/GetProTab.php:373
+msgid "Set up a secondary email provider in case your primary provider fails."
+msgstr "Set up a secondary email provider in case your primary provider fails."
+
+#: src/Admin/Pages/GetProTab.php:372 src/Admin/Pages/GetProTab.php:489
+msgid "Backup Connections"
+msgstr "Backup Connections"
+
+#: src/Admin/Pages/GetProTab.php:368
+msgid "Receive immediate alerts for email failures to quickly address issues."
+msgstr "Receive immediate alerts for email failures to quickly address issues."
+
+#: src/Admin/Pages/GetProTab.php:367
+msgid "Email Failure Alerts"
+msgstr "Email Failure Alerts"
+
+#: src/Admin/Pages/GetProTab.php:363
+msgid "Save details about every email sent from your WordPress site."
+msgstr "Save details about every email sent from your WordPress site."
+
+#: src/Admin/Pages/GetProTab.php:344
+msgid "for WP Mail SMTP Lite users"
+msgstr "for WP Mail SMTP Lite users"
+
+#: src/Admin/Pages/GetProTab.php:343 src/Admin/Pages/TestTab.php:430
+msgid "$50 OFF"
+msgstr "$50 OFF"
+
+#: src/Admin/Pages/GetProTab.php:286 src/Admin/Pages/GetProTab.php:404
+msgid "Not available"
+msgstr "Not available"
+
+#: src/Admin/Pages/GetProTab.php:285
+msgid "Partially available"
+msgstr "Partially available"
+
+#: src/Admin/Pages/GetProTab.php:284
+msgid "Available"
+msgstr "Available"
+
+#: src/Admin/Pages/GetProTab.php:218
+msgid "Lite"
+msgstr "Lite"
+
+#: src/Admin/Pages/GetProTab.php:177
+msgid "Lite vs Pro: What's the Difference?"
+msgstr "Lite vs Pro: What's the Difference?"
+
+#: src/Admin/Pages/GetProTab.php:131
+msgid "Features you'll love with Pro"
+msgstr "Features you'll love with Pro"
+
+#: src/Admin/Pages/GetProTab.php:100
+msgid "Compare Lite vs Pro features"
+msgstr "Compare Lite vs Pro features"
+
+#: src/Admin/Pages/GetProTab.php:90
+msgid "Get email logs, delivery tracking, backup connections, and instant failure alerts so you catch issues before your customers do."
+msgstr "Get email logs, delivery tracking, backup connections, and instant failure alerts so you catch issues before your customers do."
+
+#: src/Admin/Pages/GetProTab.php:86
+msgid "Take complete control of your WordPress emails"
+msgstr "Take complete control of your WordPress emails"
+
+#: src/Admin/Pages/GetProTab.php:41
+msgid "Get Pro"
+msgstr "Get Pro"
+
+#: src/Admin/Pages/CodeSnippetsTab.php:471
+msgid "View"
+msgstr "View"
+
+#: src/Admin/Pages/CodeSnippetsTab.php:442
+msgid "Edit Snippet"
+msgstr "Edit Snippet"
+
+#: src/Admin/Pages/CodeSnippetsTab.php:310
+msgid "Sorry, we didn't find any snippets that match your criteria."
+msgstr "Sorry, we didn't find any snippets that match your criteria."
+
+#: src/Admin/Pages/CodeSnippetsTab.php:299
+msgid "Search Snippets"
+msgstr "Search Snippets"
+
+#. translators: %s - WPCode library website URL.
+#: src/Admin/Pages/CodeSnippetsTab.php:282
+msgid "Using WPCode, you can install WP Mail SMTP code snippets with 1 click directly from this page or the <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">WPCode library</a>."
+msgstr "Using WPCode, you can install WP Mail SMTP code snippets with 1 click directly from this page or the <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">WPCode library</a>."
+
+#: src/Admin/Pages/CodeSnippetsTab.php:138
+msgid "Activate it manually."
+msgstr "Activate it manually."
+
+#: src/Admin/Pages/CodeSnippetsTab.php:137
+msgid "WPCode was installed but could not be activated."
+msgstr "WPCode was installed but could not be activated."
+
+#: src/Admin/Pages/CodeSnippetsTab.php:136
+msgid "WPCode could not be installed. Please try again."
+msgstr "WPCode could not be installed. Please try again."
+
+#: src/Admin/Pages/CodeSnippetsTab.php:135
+#: src/Admin/Recommendations/Pages/WPCode.php:335
+msgid "Activate WPCode"
+msgstr "Activate WPCode"
+
+#: src/Admin/Pages/CodeSnippetsTab.php:134
+msgid "WPCode is installed but not active. Activate it to install WP Mail SMTP code snippets with 1 click right from this page."
+msgstr "WPCode is installed but not active. Activate it to install WP Mail SMTP code snippets with 1 click right from this page."
+
+#: src/Admin/Pages/CodeSnippetsTab.php:133
+msgid "Please Activate WPCode to Use the Snippet Library"
+msgstr "Please Activate WPCode to Use the Snippet Library"
+
+#: src/Admin/Pages/CodeSnippetsTab.php:130
+#: src/Admin/Pages/CodeSnippetsTab.php:328
+msgid "Learn more about WPCode"
+msgstr "Learn more about WPCode"
+
+#: src/Admin/Pages/CodeSnippetsTab.php:129
+#: src/Admin/Pages/CodeSnippetsTab.php:326
+#: src/Admin/Recommendations/Pages/WPCode.php:275
+msgid "Install & Activate WPCode"
+msgstr "Install & Activate WPCode"
+
+#: src/Admin/Pages/CodeSnippetsTab.php:128
+#: src/Admin/Pages/CodeSnippetsTab.php:322
+msgid "Using WPCode, you can install WP Mail SMTP code snippets with 1 click right from this page."
+msgstr "Using WPCode, you can install WP Mail SMTP code snippets with 1 click right from this page."
+
+#: src/Admin/Pages/CodeSnippetsTab.php:127
+#: src/Admin/Pages/CodeSnippetsTab.php:319
+msgid "Please Install WPCode to Use the Snippet Library"
+msgstr "Please Install WPCode to Use the Snippet Library"
+
+#: src/Admin/Pages/CodeSnippetsTab.php:126
+msgid "Could not load this snippet. Please try again."
+msgstr "Could not load this snippet. Please try again."
+
+#: src/Admin/Pages/CodeSnippetsTab.php:125
+msgid "Loading snippet…"
+msgstr "Loading snippet…"
+
+#: src/Admin/Pages/CodeSnippetsTab.php:124
+msgid "Installing…"
+msgstr "Installing…"
+
+#: src/Admin/Pages/CodeSnippetsTab.php:123
+#: src/Admin/Pages/CodeSnippetsTab.php:449
+#: src/Admin/Pages/CodeSnippetsTab.php:456
+#: src/Admin/Pages/CodeSnippetsTab.php:463
+msgid "Install Snippet"
+msgstr "Install Snippet"
+
+#: src/Admin/Pages/CodeSnippetsTab.php:53
+#: src/Admin/Pages/CodeSnippetsTab.php:277
+#: src/Admin/Recommendations/RecommendedPlugins.php:173
+msgid "Code Snippets"
+msgstr "Code Snippets"
+
+#: src/Admin/Pages/AiMcpTab.php:349
+msgid "Pro feature"
+msgstr "Pro feature"
+
+#: src/Admin/Pages/AiMcpTab.php:320
+msgid "View Abilities API Documentation"
+msgstr "View Abilities API Documentation"
+
+#: src/Admin/Pages/AiMcpTab.php:313
+msgid "Everything WP Mail SMTP Can Do With AI"
+msgstr "Everything WP Mail SMTP Can Do With AI"
+
+#: src/Admin/Pages/AiMcpTab.php:295
+msgid "Your site is configured to disallow plugin installation from the dashboard."
+msgstr "Your site is configured to disallow plugin installation from the dashboard."
+
+#. translators: %s - WPVibe.ai inline link.
+#: src/Admin/Pages/AiMcpTab.php:271
+msgid "Connect your WordPress site and WP Mail SMTP to AI assistants like Claude, ChatGPT, Cursor, and more. Ask them to review your email logs, sending stats, and debug events in plain English. No copy-pasting, no exports. Connect them with the free %s plugin."
+msgstr "Connect your WordPress site and WP Mail SMTP to AI assistants like Claude, ChatGPT, Cursor, and more. Ask them to review your email logs, sending stats, and debug events in plain English. No copy-pasting, no exports. Connect them with the free %s plugin."
+
+#: src/Admin/Pages/AiMcpTab.php:264
+msgid "WordPress Abilities API + WP Mail SMTP"
+msgstr "WordPress Abilities API + WP Mail SMTP"
+
+#: src/Admin/Pages/AiMcpTab.php:251
+msgid "List recorded send errors and debug entries"
+msgstr "List recorded send errors and debug entries"
+
+#: src/Admin/Pages/AiMcpTab.php:243
+msgid "Scope stats to a single mailer and check the success rate"
+msgstr "Scope stats to a single mailer and check the success rate"
+
+#: src/Admin/Pages/AiMcpTab.php:242
+msgid "See aggregate sending stats for any period or date range"
+msgstr "See aggregate sending stats for any period or date range"
+
+#: src/Admin/Pages/AiMcpTab.php:240
+msgid "Email Stats"
+msgstr "Email Stats"
+
+#: src/Admin/Pages/AiMcpTab.php:234
+msgid "Get a single email's full details and content"
+msgstr "Get a single email's full details and content"
+
+#: src/Admin/Pages/AiMcpTab.php:233
+msgid "Browse and filter logged emails by status, mailer, date, and recipient"
+msgstr "Browse and filter logged emails by status, mailer, date, and recipient"
+
+#: src/Admin/Pages/AiMcpTab.php:200
+msgid "Install from WordPress.org"
+msgstr "Install from WordPress.org"
+
+#: src/Admin/Pages/AiMcpTab.php:187
+#: src/Admin/Recommendations/Pages/WPVibe.php:251
+msgid "Install & Activate WPVibe"
+msgstr "Install & Activate WPVibe"
+
+#: src/Admin/Pages/AiMcpTab.php:174
+#: src/Admin/Recommendations/Pages/WPVibe.php:311
+msgid "Activate WPVibe"
+msgstr "Activate WPVibe"
+
+#: src/Admin/Pages/AiMcpTab.php:161
+msgid "Set Up WPVibe"
+msgstr "Set Up WPVibe"
+
+#: src/Admin/Pages/AiMcpTab.php:113
+msgid "Something went wrong. Please try again."
+msgstr "Something went wrong. Please try again."
+
+#: src/Admin/Pages/AiMcpTab.php:69
+#: src/Admin/Recommendations/RecommendedPlugins.php:157
+msgid "AI MCP"
+msgstr "AI MCP"
+
+#: src/Admin/Pages/AboutTab.php:539
+msgid "Make your WordPress site accessible to everyone. Automatic accessibility fixes and a visitor widget, no coding required."
+msgstr "Make your WordPress site accessible to everyone. Automatic accessibility fixes and a visitor widget, no coding required."
+
+#: src/Admin/Pages/AboutTab.php:538
+#: src/Admin/Recommendations/Pages/Universally.php:275
+msgid "Universally"
+msgstr "Universally"
+
+#: src/Admin/Pages/AboutTab.php:532
+msgid "AI-powered tools for WordPress. Work faster and smarter with automation built for your WordPress workflow."
+msgstr "AI-powered tools for WordPress. Work faster and smarter with automation built for your WordPress workflow."
+
+#: src/Admin/Pages/AboutTab.php:531
+msgid "Vibe AI"
+msgstr "Vibe AI"
+
+#: src/Admin/Pages/AboutTab.php:525
+msgid "Stay GDPR & privacy compliant. Add a cookie consent banner to your site and meet privacy laws in minutes."
+msgstr "Stay GDPR & privacy compliant. Add a cookie consent banner to your site and meet privacy laws in minutes."
+
+#: src/Admin/Pages/AboutTab.php:524
+#: src/Admin/Recommendations/Pages/WPConsent.php:364
+msgid "WPConsent"
+msgstr "WPConsent"
+
+#: src/Admin/Pages/AboutTab.php:518
+msgid "Smarter spam protection for WordPress. Catch spam in milliseconds with AI, invisible to your real visitors."
+msgstr "Smarter spam protection for WordPress. Catch spam in milliseconds with AI, invisible to your real visitors."
+
+#: src/Admin/Pages/AboutTab.php:517
+#: src/Admin/Recommendations/Pages/ActiveLayer.php:277
+msgid "ActiveLayer"
+msgstr "ActiveLayer"
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1579
+msgid "Additional Connection Settings"
+msgstr "Additional Connection Settings"
+
+#. translators: %s - link to the Additional Connection Settings page.
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1575
+msgid "Manage it on the %s page."
+msgstr "Manage it on the %s page."
+
+#. translators: %s: connection display name.
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1567
+msgid "The last email your site attempted to send via %s was unsuccessful."
+msgstr "The last email your site attempted to send via %s was unsuccessful."
+
+#. translators: %1$s: literal word "test", bolded. %2$s: connection display
+#. name.
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1561
+msgid "The last %1$s email your site attempted to send via %2$s was unsuccessful."
+msgstr "The last %1$s email your site attempted to send via %2$s was unsuccessful."
+
+#. translators: %s: connection display name.
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1556
+msgid "%s failed to send the last email. Your backup connection sent it successfully."
+msgstr "%s failed to send the last email. Your backup connection sent it successfully."
+
+#. translators: %s: connection name, bolded.
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1549
+msgid "your backup connection %s"
+msgstr "your backup connection %s"
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1546
+msgid "test"
+msgstr "test"
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1500
+msgid "Need Help?"
+msgstr "Need Help?"
+
+#. translators: %1$s - wordpress.org support forum URL, %2$s - upgrade-to-Pro
+#. URL.
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1488
+msgid "Still stuck? Get priority support by <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">Upgrading to Pro</a> or <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">create a support thread</a> along with the error log on WordPress.org forums. "
+msgstr "Still stuck? Get priority support by <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">Upgrading to Pro</a> or <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">create a support thread</a> along with the error log on WordPress.org forums. "
+
+#. translators: %s - WPMailSMTP.com support URL.
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1480
+msgid "Still stuck? Please log in to your <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">WP Mail SMTP account</a> and submit a support ticket with the error log."
+msgstr "Still stuck? Please log in to your <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">WP Mail SMTP account</a> and submit a support ticket with the error log."
+
+#. translators: %s - White Glove Setup URL.
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1469
+msgid "Need hands-on help? Our <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">White Glove Setup</a> handles everything for you, just share your site details and we’ll do the rest."
+msgstr "Need hands-on help? Our <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">White Glove Setup</a> handles everything for you, just share your site details and we’ll do the rest."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1462
+msgid "Resolve your email sending issues with <a href=\"#\" class=\"js-wp-mail-smtp-sendlayer-quick-connect-link wpms:focus:outline-none! wpms:focus:shadow-none!\">SendLayer</a>, and send your <strong>first 200 emails for free</strong> with just a few clicks!"
+msgstr "Resolve your email sending issues with <a href=\"#\" class=\"js-wp-mail-smtp-sendlayer-quick-connect-link wpms:focus:outline-none! wpms:focus:shadow-none!\">SendLayer</a>, and send your <strong>first 200 emails for free</strong> with just a few clicks!"
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1399
+msgid "Triple-check your plugin settings, reconfigure if needed to make sure everything is correct."
+msgstr "Triple-check your plugin settings, reconfigure if needed to make sure everything is correct."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1093
+msgid "On the Google authorization screen, click \"Allow\" to grant the plugin permission to send emails on your behalf."
+msgstr "On the Google authorisation screen, click \"Allow\" to grant the plugin permission to send emails on your behalf."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1088
+msgid "Gmail authorization has not been completed."
+msgstr "Gmail authorisation has not been completed."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1140
+msgid "The Google authorization code has already been used."
+msgstr "The Google authorisation code has already been used."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1344
+msgid "As a temporary workaround, you can downgrade to PHP 7.3 on your server."
+msgstr "As a temporary workaround, you can downgrade to PHP 7.3 on your server."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1343
+msgid "Contact your web hosting provider and inform them you are having issues with the libpcre2 library on PHP 7.4. They should be able to resolve this."
+msgstr "Contact your web hosting provider and inform them you are having issues with the libpcre2 library on PHP 7.4. They should be able to resolve this."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1340
+msgid "Your server is running PHP 7.4.x with an outdated libpcre2 library (version 10.32 or earlier) that fails email address validation."
+msgstr "Your server is running PHP 7.4.x with an outdated libpcre2 library (version 10.32 or earlier) that fails email address validation."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1314
+msgid "Your SparkPost account region is incorrect."
+msgstr "Your SparkPost account region is incorrect."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1286
+msgid "Your SparkPost API key is missing the \"Transmissions: Read/Write\" permission."
+msgstr "Your SparkPost API key is missing the \"Transmissions: Read/Write\" permission."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1285
+msgid "Your SparkPost API key is incorrect."
+msgstr "Your SparkPost API key is incorrect."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1274
+msgid "If you cannot edit php.ini yourself, share the Error Log below with your hosting support and ask them to make this change."
+msgstr "If you cannot edit php.ini yourself, share the Error Log below with your hosting support and ask them to make this change."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1273
+msgid "(Or) Enable allow_url_fopen by adding allow_url_fopen = On to php.ini."
+msgstr "(Or) Enable allow_url_fopen by adding allow_url_fopen = On to php.ini."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1272
+msgid "(Recommended) Enable the cURL PHP extension by adding extension=curl to php.ini."
+msgstr "(Recommended) Enable the cURL PHP extension by adding extension=curl to php.ini."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1268
+msgid "The allow_url_fopen PHP setting is disabled on your server."
+msgstr "The allow_url_fopen PHP setting is disabled on your server."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1267
+msgid "The cURL PHP extension is disabled on your server."
+msgstr "The cURL PHP extension is disabled on your server."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1253
+msgid "Your SMTP.com Sender Name is incorrect."
+msgstr "Your SMTP.com Sender Name is incorrect."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1242
+msgid "In Google Cloud Console, re-enable the disabled OAuth client, or create a new OAuth client and update the plugin settings with the new Client ID/Secret."
+msgstr "In Google Cloud Console, re-enable the disabled OAuth client, or create a new OAuth client and update the plugin settings with the new Client ID/Secret."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1241
+msgid "Make sure your Client ID/Secret corresponds to a project that has the Gmail API enabled."
+msgstr "Make sure your Client ID/Secret corresponds to a project that has the Gmail API enabled."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1238
+msgid "Your Google OAuth client has been disabled."
+msgstr "Your Google OAuth client has been disabled."
+
+#. translators: %s - Gmail documentation URL.
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1217
+msgid "Follow our <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">Gmail tutorial</a> to ensure your project and credentials are configured correctly."
+msgstr "Follow our <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">Gmail tutorial</a> to ensure your project and credentials are configured correctly."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1214
+msgid "Make sure the Client ID/Secret in your settings corresponds to a project that has the Gmail API enabled."
+msgstr "Make sure the Client ID/Secret in your settings corresponds to a project that has the Gmail API enabled."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1211
+msgid "The Gmail API is not enabled on the project."
+msgstr "The Gmail API is not enabled on the project."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1210
+msgid "The Google Cloud project linked to your Client ID/Secret no longer exists."
+msgstr "The Google Cloud project linked to your Client ID/Secret no longer exists."
+
+#. translators: %s - Google Cloud Console URL.
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1189
+msgid "Enable the Gmail API in your project from <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">Google Cloud Console</a>."
+msgstr "Enable the Gmail API in your project from <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">Google Cloud Console</a>."
+
+#. translators: %s - Google Workspace Admin area URL.
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1176
+msgid "In the Apps list of <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">Google Workspace Admin</a>, confirm that Gmail is enabled."
+msgstr "In the Apps list of <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">Google Workspace Admin</a>, confirm that Gmail is enabled."
+
+#. translators: %s - Google Workspace Admin area URL.
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1163
+msgid "Verify in <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">Google Workspace Admin</a> that your trial period has not expired."
+msgstr "Verify in <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">Google Workspace Admin</a> that your trial period has not expired."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1158
+msgid "The Gmail API is not enabled in your Google Cloud project."
+msgstr "The Gmail API is not enabled in your Google Cloud project."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1157
+msgid "Gmail is not enabled in your Google Workspace account."
+msgstr "Gmail is not enabled in your Google Workspace account."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1156
+msgid "Your Google Workspace trial period has expired."
+msgstr "Your Google Workspace trial period has expired."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1145
+msgid "Make sure there is no aggressive caching on admin pages, or clear the cache between attempts."
+msgstr "Make sure there is no aggressive caching on admin pages, or clear the cache between attempts."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1143
+msgid "Do not manually clean up the plugin options to retry the \"Allow...\" step."
+msgstr "Do not manually clean up the plugin options to retry the \"Allow...\" step."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1129
+msgid "Then click the \"Allow plugin to send emails using your Google account\" button and re-enable access."
+msgstr "Then click the \"Allow plugin to send emails using your Google account\" button and re-enable access."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1128
+msgid "Go to the WP Mail SMTP plugin Settings page and click the \"Remove OAuth Connection\" button."
+msgstr "Go to the WP Mail SMTP plugin Settings page and click the \"Remove OAuth Connection\" button."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1125
+msgid "Access was revoked from your Google account."
+msgstr "Access was revoked from your Google account."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1124
+msgid "Your Gmail OAuth refresh token has expired."
+msgstr "Your Gmail OAuth refresh token has expired."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1113
+msgid "If you are generating the email yourself, make sure it includes a TO header."
+msgstr "If you are generating the email yourself, make sure it includes a TO header."
+
+#. translators: 1 - correct email address example. 2 - incorrect email address
+#. example.
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1109
+msgid "It should look like %1$s. These are invalid: %2$s."
+msgstr "It should look like %1$s. These are invalid: %2$s."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1107
+msgid "Check the \"Send To\" email address and confirm it is valid and not empty."
+msgstr "Check the \"Send To\" email address and confirm it is valid and not empty."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1104
+msgid "The recipient email address is empty or invalid."
+msgstr "The recipient email address is empty or invalid."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1092
+msgid "Click the \"Allow plugin to send emails using your Google account\" button."
+msgstr "Click the \"Allow plugin to send emails using your Google account\" button."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1061
+msgid "Your Mailgun account is still on the free trial plan."
+msgstr "Your Mailgun account is still on the free trial plan."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1060
+msgid "Your Mailgun domain has not been verified."
+msgstr "Your Mailgun domain has not been verified."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1020
+msgid "Your Mailgun region is incorrect."
+msgstr "Your Mailgun region is incorrect."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1019
+msgid "Your Mailgun domain name is incorrect."
+msgstr "Your Mailgun domain name is incorrect."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1018
+msgid "Your Mailgun API key is incorrect."
+msgstr "Your Mailgun API key is incorrect."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1007
+msgid "If you do not see the activation email, go to your Mailgun control panel and resend it."
+msgstr "If you do not see the activation email, go to your Mailgun control panel and resend it."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1003
+msgid "Your Mailgun account has not been activated."
+msgstr "Your Mailgun account has not been activated."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:984
+msgid "Triple-check your SMTP settings: host, email, password, port, and security."
+msgstr "Triple-check your SMTP settings: host, email, password, port, and security."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:980
+msgid "Your web server is blocking the outbound connection."
+msgstr "Your web server is blocking the outbound connection."
+
+#. translators: %s - URL to the PHP openssl manual.
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:958
+msgid "Contact your hosting support and share the Error Log below along with this <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">link</a>."
+msgstr "Contact your hosting support and share the Error Log below along with this <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">link</a>."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:952
+msgid "Your server's OpenSSL CA bundle is outdated."
+msgstr "Your server's OpenSSL CA bundle is outdated."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:951
+msgid "The SMTP host's SSL certificate is misconfigured or expired."
+msgstr "The SMTP host's SSL certificate is misconfigured or expired."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:937
+msgid "Enable Authentication."
+msgstr "Enable Authentication."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:933
+msgid "Your SMTP host requires authentication, but it is disabled in the plugin settings."
+msgstr "Your SMTP host requires authentication, but it is disabled in the plugin settings."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:920
+msgid "Install an email-logging plugin to inspect your TO, CC, and BCC recipients."
+msgstr "Install an email-logging plugin to inspect your TO, CC, and BCC recipients."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:919
+msgid "Reduce the recipient count per email: keep single emails to under 10 recipients."
+msgstr "Reduce the recipient count per email: keep single emails to under 10 recipients."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:916
+msgid "Your message was flagged as spam by the SMTP host."
+msgstr "Your message was flagged as spam by the SMTP host."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:915
+msgid "You are sending more emails than your SMTP host allows."
+msgstr "You are sending more emails than your SMTP host allows."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:886
+msgid "Your SMTP host requires a different authentication method."
+msgstr "Your SMTP host requires a different authentication method."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:885
+msgid "Your SMTP username or password is incorrect."
+msgstr "Your SMTP username or password is incorrect."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:870
+msgid "Your hosting provider is blocking the request."
+msgstr "Your hosting provider is blocking the request."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:869
+msgid "Your server is unable to make outbound HTTP connections."
+msgstr "Your server is unable to make outbound HTTP connections."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:852
+msgid "Your SendGrid API key is invalid or has been revoked."
+msgstr "Your SendGrid API key is invalid or has been revoked."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:841
+msgid "If using the \"Other SMTP\" Mailer, triple-check your SMTP settings (host, email, password) and confirm with your SMTP host that they accept outside connections using those settings."
+msgstr "If using the \"Other SMTP\" Mailer, triple-check your SMTP settings (host, email, password) and confirm with your SMTP host that they accept outside connections using those settings."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:840
+msgid "Contact your web hosting provider and ask them to verify your server can make outbound connections, and whether a firewall or security policy may be blocking them."
+msgstr "Contact your web hosting provider and ask them to verify your server can make outbound connections, and whether a firewall or security policy may be blocking them."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:836
+msgid "Your web server is blocking outbound connections."
+msgstr "Your web server is blocking outbound connections."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:824
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:874
+msgid "Share the Error Log below with them so they can resolve the issue."
+msgstr "Share the Error Log below with them so they can resolve the issue."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:820
+msgid "Your server's CA certificate bundle is outdated."
+msgstr "Your server's CA certificate bundle is outdated."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:819
+msgid "Your server cannot establish secure HTTPS connections."
+msgstr "Your server cannot establish secure HTTPS connections."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:597
+msgid "Hide Error Log"
+msgstr "Hide Error Log"
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:596
+msgid "View Error Log"
+msgstr "View Error Log"
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:520
+msgid "No structured error code was recorded for this failure. The diagnostic from the mailer is below."
+msgstr "No structured error code was recorded for this failure. The diagnostic from the mailer is below."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:488
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:505
+msgid "Send Test Email"
+msgstr "Send Test Email"
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:482
+msgid "Open Troubleshoot Guide"
+msgstr "Open Troubleshoot Guide"
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:475
+msgid "We've identified your error as a known issue and have a clear, step-by-step solution ready for you! Just refer our troubleshoot guide to get started."
+msgstr "We've identified your error as a known issue and have a clear, step-by-step solution ready for you! Just refer our troubleshoot guide to get started."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:393
+msgid "Heads up! The last email your site attempted to send was unsuccessful"
+msgstr "Heads up! The last email your site attempted to send was unsuccessful"
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:390
+msgid "Heads up! The last test email your site attempted to send was unsuccessful"
+msgstr "Heads up! The last test email your site attempted to send was unsuccessful"
+
+#. translators: %s: the additional connection name, bolded.
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:384
+msgid "Heads up! The last email your site attempted to send via %s was unsuccessful"
+msgstr "Heads up! The last email your site attempted to send via %s was unsuccessful"
+
+#. translators: %s: connection name, bolded.
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:380
+msgid "Heads up! The last test email your site attempted to send via %s was unsuccessful"
+msgstr "Heads up! The last test email your site attempted to send via %s was unsuccessful"
+
+#. translators: %s: the connection name, bolded.
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:372
+msgid "Heads up! %s failed to send the last email. Your backup connection sent it successfully"
+msgstr "Heads up! %s failed to send the last email. Your backup connection sent it successfully"
+
+#. translators: %s: the connection name, bolded.
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:368
+msgid "Heads up! %s failed to send the last test email. Your backup connection sent it successfully"
+msgstr "Heads up! %s failed to send the last test email. Your backup connection sent it successfully"
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:362
+msgid "Heads up! Your primary connection failed to send the last email. Your backup connection sent it successfully"
+msgstr "Heads up! Your primary connection failed to send the last email. Your backup connection sent it successfully"
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:361
+msgid "Heads up! Your primary connection failed to send the last test email. Your backup connection sent it successfully"
+msgstr "Heads up! Your primary connection failed to send the last test email. Your backup connection sent it successfully"
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:307
+msgid "Warning"
+msgstr "Warning"
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:284
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1525
+msgid "an additional connection"
+msgstr "an additional connection"
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:226
+msgid "Missing connection identifier."
+msgstr "Missing connection identifier."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:220
+msgid "You don't have permission to perform this action."
+msgstr "You don't have permission to perform this action."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:216
+msgid "Security check failed. Please reload the page and try again."
+msgstr "Security check failed. Please reload the page and try again."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:204
+msgid "View details"
+msgstr "View details"
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:202
+msgid "WP Mail SMTP: One or more emails recently failed to send."
+msgstr "WP Mail SMTP: One or more emails recently failed to send."
+
+#: src/Admin/Area.php:631
+msgid "<p>Hiding email delivery errors means you will no longer be warned when emails fail to send. This is not recommended and should only be used on staging or development sites.</p>"
+msgstr "<p>Hiding email delivery errors means you will no longer be warned when emails fail to send. This is not recommended and should only be used on staging or development sites.</p>"
+
+#: src/Admin/Area.php:629
+msgid "Are you sure?"
+msgstr "Are you sure?"
+
+#: src/Admin/Area.php:627
+msgid "Could not dismiss the notice. Please try again."
+msgstr "Could not dismiss the notice. Please try again."
+
+#: src/Admin/Area.php:622
+msgid "Setup Now"
+msgstr "Setup Now"
+
+#: src/Abilities/DebugEvents/GetDebugEventsAbility.php:82
+msgid "Filter events by severity."
+msgstr "Filter events by severity."
+
+#: src/Abilities/DebugEvents/GetDebugEventsAbility.php:76
+msgid "Number of events to skip."
+msgstr "Number of events to skip."
+
+#: src/Abilities/DebugEvents/GetDebugEventsAbility.php:69
+msgid "Maximum number of events to return."
+msgstr "Maximum number of events to return."
+
+#: src/Abilities/DebugEvents/GetDebugEventsAbility.php:53
+msgid "List recorded WP Mail SMTP debug events (errors and debug entries)."
+msgstr "List recorded WP Mail SMTP debug events (errors and debug entries)."
+
+#: src/Abilities/DebugEvents/GetDebugEventsAbility.php:41
+msgid "Get Debug Events"
+msgstr "Get Debug Events"
+
+#: src/Abilities/AbstractAbility.php:208
+msgid "Number of records to skip."
+msgstr "Number of records to skip."
+
+#: src/Abilities/AbstractAbility.php:190
+msgid "Maximum number of records to return."
+msgstr "Maximum number of records to return."
+
+#: src/Abilities/AbstractAbility.php:175
+msgid "You do not have permission to access this data."
+msgstr "You do not have permission to access this data."
+
+#: src/Abilities/AbilityRegistrar.php:131
+msgid "Read-only access to WP Mail SMTP email logs, statistics, and debug events."
+msgstr "Read-only access to WP Mail SMTP email logs, statistics, and debug events."
 
 #. translators: %1$s - URL to SendLayer app; %2$s - URL to documentation.
 #: src/Providers/Sendlayer/QuickConnect.php:769
@@ -504,6 +2523,11 @@ msgstr "Mailjet"
 msgid "To get started, read our <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">Mailjet documentation</a>."
 msgstr "To get started, read our <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">Mailjet documentation</a>."
 
+#. translators: %1$s - URL to Mailjet.com site.
+#: src/Providers/Mailjet/Options.php:37
+msgid "<a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">Mailjet</a> is a cloud-based email service platform that enables businesses to send marketing and transactional emails, offering features like email automation, real-time analytics, and responsive design templates. If you're just starting out, you can send up to 200 emails per day without a credit card."
+msgstr "<a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">Mailjet</a> is a cloud-based email service platform that enables businesses to send marketing and transactional emails, offering features like email automation, real-time analytics, and responsive design templates. If you're just starting out, you can send up to 200 emails per day without a credit card."
+
 #: src/Providers/ElasticEmail/Options.php:111
 #: src/Providers/MailerSend/Options.php:106
 #: src/Providers/Mailgun/Options.php:78 src/Providers/Mailjet/Options.php:111
@@ -527,11 +2551,6 @@ msgstr "Discord Alerts"
 #: src/Admin/Pages/AlertsTab.php:194
 msgid "Paste in the Discord webhook URL you’d like to use to receive alerts when email sending fails. Read our documentation on setting up Discord alerts."
 msgstr "Paste in the Discord webhook URL you’d like to use to receive alerts when email sending fails. Read our documentation on setting up Discord alerts."
-
-#. translators: %1$s - URL to Mailjet.com site.
-#: src/Providers/Mailjet/Options.php:37
-msgid "<a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">Mailjet</a> is a cloud-based email service platform that enables businesses to send marketing and transactional emails, offering features like email automation, real-time analytics, and responsive design templates. If you're just starting out, you can send up to 200 emails per day without a credit card."
-msgstr "<a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">Mailjet</a> is a cloud-based email service platform that enables businesses to send marketing and transactional emails, offering features like email automation, real-time analytics, and responsive design templates. If you're just starting out, you can send up to 200 emails per day without a credit card."
 
 #: src/Admin/Pages/AlertsTab.php:193
 msgid "Discord"
@@ -1168,6 +3187,12 @@ msgstr "create the missing DB tables by clicking on this link"
 msgid "Go to WP Mail SMTP settings page."
 msgstr "Go to WP Mail SMTP settings page."
 
+#. translators: %1$s - Settings Page URL; %2$s - The aria label; %3$s - The
+#. text that will appear on the link.
+#: src/SiteHealth.php:293
+msgid "WP Mail SMTP is using custom database tables for some of its features. In order to work properly, the custom tables should be created, and it seems they are missing. Please try to <a href=\"%1$s\" target=\"_self\" aria-label=\"%2$s\" rel=\"noopener noreferrer\">%3$s</a>. If this issue persists, please contact our support."
+msgstr "WP Mail SMTP is using custom database tables for some of its features. In order to work properly, the custom tables should be created, and it seems they are missing. Please try to <a href=\"%1$s\" target=\"_self\" aria-label=\"%2$s\" rel=\"noopener noreferrer\">%3$s</a>. If this issue persists, please contact our support."
+
 #: src/DBRepair.php:217
 msgid "Some DB Tables are still missing."
 msgstr "Some DB tables are still missing."
@@ -1214,12 +3239,6 @@ msgstr "Debug events older than the selected period will be permanently deleted 
 #: src/Admin/Pages/DebugEventsTab.php:262
 msgid "Forever"
 msgstr "Forever"
-
-#. translators: %1$s - Settings Page URL; %2$s - The aria label; %3$s - The
-#. text that will appear on the link.
-#: src/SiteHealth.php:293
-msgid "WP Mail SMTP is using custom database tables for some of its features. In order to work properly, the custom tables should be created, and it seems they are missing. Please try to <a href=\"%1$s\" target=\"_self\" aria-label=\"%2$s\" rel=\"noopener noreferrer\">%3$s</a>. If this issue persists, please contact our support."
-msgstr "WP Mail SMTP is using custom database tables for some of its features. In order to work properly, the custom tables should be created, and it seems they are missing. Please try to <a href=\"%1$s\" target=\"_self\" aria-label=\"%2$s\" rel=\"noopener noreferrer\">%3$s</a>. If this issue persists, please contact our support."
 
 #: src/Admin/Pages/DebugEventsTab.php:256
 msgid "Events Retention Period"
@@ -3747,13 +5766,13 @@ msgstr "Connect"
 msgid "Paste license key here"
 msgstr "Paste license key here"
 
-#: src/Admin/Pages/SettingsTab.php:164
-msgid "Already purchased? Simply enter your license key below to connect with WP Mail SMTP Pro!"
-msgstr "Already purchased? Simply enter your license key below to connect with WP Mail SMTP Pro!"
-
 #: src/Admin/EmailSendingErrors/EmailSendingErrors.php:850
 msgid "Invalid SendGrid API key."
 msgstr "Invalid SendGrid API key."
+
+#: src/Admin/Pages/SettingsTab.php:164
+msgid "Already purchased? Simply enter your license key below to connect with WP Mail SMTP Pro!"
+msgstr "Already purchased? Simply enter your licence key below to connect with WP Mail SMTP Pro!"
 
 #: src/Connect.php:302
 msgid "Pro version installed but needs to be activated on the Plugins page."
@@ -4252,6 +6271,10 @@ msgstr "Amazon SES"
 #: src/Providers/Outlook/Options.php:39
 msgid "We're sorry, the Microsoft Outlook mailer is not available on your plan. Please upgrade to the PRO plan to unlock all these awesome features."
 msgstr "We're sorry, the Microsoft Outlook mailer is not available on your plan. Please upgrade to the PRO plan to unlock all these awesome features."
+
+#: src/Admin/Pages/GetProTab.php:462
+msgid "Outlook"
+msgstr "Outlook"
 
 #: src/Admin/Area.php:592 src/Admin/SetupWizard.php:267
 msgid "Already purchased?"
@@ -5061,6 +7084,19 @@ msgstr "Your SMTP settings are incorrect (wrong port, security setting, or host)
 #: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1394
 msgid "Your plugin settings are incorrect (wrong SMTP settings, invalid Mailer configuration, etc.)."
 msgstr "Your plugin settings are incorrect (wrong SMTP settings, invalid Mailer configuration, etc.)."
+
+#. translators: %s - plugin name (e.g. WPConsent).
+#: src/Admin/Area.php:621
+msgid "Activate %s"
+msgstr "Activate %s"
+
+#: src/WPCLI/Options/Help.php:138
+msgid "Required."
+msgstr "Required."
+
+#: src/WPCLI/Options/Help.php:185
+msgid "Mail"
+msgstr "Mail"
 
 #: src/Admin/DashboardWidget.php:587
 msgid "Save Changes"
