@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WP Mail SMTP by WPForms &#8211; The Most Popular SMTP and Email Log Plugin - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-06-25 18:28:25+0000\n"
+"PO-Revision-Date: 2026-07-05 15:16:19+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,6 +10,247 @@ msgstr ""
 "X-Generator: GlotPress/4.0.3\n"
 "Language: es\n"
 "Project-Id-Version: Plugins - WP Mail SMTP by WPForms &#8211; The Most Popular SMTP and Email Log Plugin - Stable (latest release)\n"
+
+#. translators: %1$s is the dotted CLI flag with a -file suffix (e.g.
+#. smtp.pass-file). %2$s is the absolute file path that could not be read.
+#: src/WPCLI/Options/Writer.php:395
+msgid "Cannot read --%1$s file: %2$s"
+msgstr "No se puede leer --%1$s archivo: %2$s"
+
+#. translators: %s is the dotted CLI flag whose underlying option is overridden
+#. by a wp-config constant (e.g. smtp.host). The flag itself is not translated.
+#: src/WPCLI/Options/Writer.php:314
+msgid "A wp-config constant is defined for %s. The value was not stored. Remove the constant first, then re-run this command."
+msgstr "Se define una constante de wp-config para %s. El valor no fue almacenado. Retire la constante primero y vuelva a ejecutar este comando."
+
+#: src/WPCLI/Options/Writer.php:194
+msgid "Configuration errors:"
+msgstr "Errores de configuración:"
+
+#. translators: %1$s is the dotted CLI flag (e.g. smtp.port). %2$s is the value
+#. the operator provided. The flag is not translated.
+#: src/WPCLI/Options/Writer.php:186 src/WPCLI/Options/Writer.php:250
+msgid "Invalid integer for --%1$s: %2$s"
+msgstr "Número entero no válido para --%1$s: %2$s"
+
+#. translators: %1$s is the dotted CLI flag (e.g. mail.from_email). %2$s is the
+#. value the operator provided. The flag is not translated.
+#: src/WPCLI/Options/Writer.php:176 src/WPCLI/Options/Writer.php:239
+msgid "Invalid email for --%1$s: %2$s"
+msgstr "Correo electrónico no válido para --%1$s: %2$s"
+
+#. translators: %1$s is the dotted CLI flag (e.g. mail.mailer). %2$s is the
+#. value the operator provided. %3$s is a comma-separated list of allowed
+#. values. Flags and values are not translated.
+#: src/WPCLI/Options/Writer.php:165 src/WPCLI/Options/Writer.php:227
+msgid "Invalid value for --%1$s: %2$s (allowed: %3$s)"
+msgstr "Valor no válido para --%1$s: %2$s (permitido: %3$s)"
+
+#. translators: %s is the dotted CLI flag that is missing (e.g. smtp.auth). The
+#. flag itself is not translated.
+#: src/WPCLI/Options/Writer.php:150
+msgid "Missing required flag: --%s (needed to fully specify the configuration when other gating flags are set)"
+msgstr "Falta el indicador requerido: --%s (es necesario especificar completamente la configuración cuando se establecen otros indicadores de puerta)"
+
+#. translators: %1$s is the dotted CLI flag that is missing (e.g. smtp.host).
+#. %2$s is a human-readable condition (e.g. "--mail.mailer=smtp"). Flags and
+#. values are not translated.
+#: src/WPCLI/Options/Writer.php:131
+msgid "Missing required flag: --%1$s (required when %2$s)"
+msgstr "Bandera requerida faltante: --%1$s (requerido cuando %2$s)"
+
+#. translators: %s is the dotted CLI flag (e.g. mail.from_email). The flag
+#. itself is not translated.
+#: src/WPCLI/Options/Writer.php:117
+msgid "Missing required flag: --%s"
+msgstr "Bandera requerida faltante: --%s"
+
+#: src/WPCLI/Options/Registry.php:627
+msgid "Mandrill API key."
+msgstr "Clave API de Mandrill."
+
+#: src/WPCLI/Options/Registry.php:605
+msgid "AWS region (e.g. us-east-1)."
+msgstr "Región de AWS (por ejemplo, us-east-1)."
+
+#: src/WPCLI/Options/Registry.php:599
+msgid "AWS secret access key."
+msgstr "Clave de acceso secreto de AWS."
+
+#: src/WPCLI/Options/Registry.php:591
+msgid "AWS access key ID."
+msgstr "ID de clave de acceso de AWS."
+
+#: src/WPCLI/Options/Registry.php:568
+msgid "Elastic Email API key."
+msgstr "Clave de API de correo electrónico elástico."
+
+#: src/WPCLI/Options/Registry.php:546
+msgid "Optional Brevo sending domain."
+msgstr "Dominio de envío de Brevo opcional."
+
+#: src/WPCLI/Options/Registry.php:540
+msgid "Brevo (formerly Sendinblue) API key."
+msgstr "Clave API Brevo (anteriormente Sendinblue)."
+
+#: src/WPCLI/Options/Registry.php:517
+msgid "Set if your MailerSend account is on a paid plan."
+msgstr "Establezca si su cuenta de MailerSend está en un plan de pago."
+
+#: src/WPCLI/Options/Registry.php:511
+msgid "MailerSend API key."
+msgstr "Clave API de MailerSend."
+
+#: src/WPCLI/Options/Registry.php:489
+msgid "Mailjet secret key."
+msgstr "Clave secreta de Mailjet."
+
+#: src/WPCLI/Options/Registry.php:482
+msgid "Mailjet API key."
+msgstr "Clave API de Mailjet."
+
+#: src/WPCLI/Options/Registry.php:460
+msgid "SparkPost region (US or EU)."
+msgstr "Región de SparkPost (EEUU o la UE)."
+
+#: src/WPCLI/Options/Registry.php:454
+msgid "SparkPost API key."
+msgstr "Clave API de SparkPost."
+
+#: src/WPCLI/Options/Registry.php:432
+msgid "SMTP2GO API key."
+msgstr "Clave API SMTP2GO."
+
+#: src/WPCLI/Options/Registry.php:410
+msgid "SMTP.com sender channel name."
+msgstr "Nombre del canal del remitente de SMTP.com."
+
+#: src/WPCLI/Options/Registry.php:404
+msgid "SMTP.com API key."
+msgstr "Clave API de SMTP.com."
+
+#: src/WPCLI/Options/Registry.php:382
+msgid "Resend API key."
+msgstr "Reenviar la clave API."
+
+#: src/WPCLI/Options/Registry.php:360
+msgid "SendLayer API key."
+msgstr "Tecla API de SendLayer."
+
+#: src/WPCLI/Options/Registry.php:338
+msgid "Optional Postmark message stream."
+msgstr "Flujo de mensajes de Postmark opcional."
+
+#: src/WPCLI/Options/Registry.php:333
+msgid "Postmark server API token."
+msgstr "Token API del servidor Postmark."
+
+#: src/WPCLI/Options/Registry.php:310
+msgid "Mailgun region (US or EU)."
+msgstr "Región de Mailgun (EEUU o UE)."
+
+#: src/WPCLI/Options/Registry.php:304
+msgid "Mailgun sending domain."
+msgstr "Dominio de envío de Mailgun."
+
+#: src/WPCLI/Options/Registry.php:298
+msgid "Mailgun API key."
+msgstr "Clave API de Mailgun."
+
+#: src/WPCLI/Options/Registry.php:276
+msgid "Optional sending domain."
+msgstr "Dominio de envío opcional."
+
+#: src/WPCLI/Options/Registry.php:271
+msgid "SendGrid API key."
+msgstr "Clave API de SendGrid."
+
+#: src/WPCLI/Options/Registry.php:249
+msgid "SMTP password."
+msgstr "Contraseña SMTP."
+
+#: src/WPCLI/Options/Registry.php:242
+msgid "SMTP username."
+msgstr "Nombre de usuario SMTP."
+
+#: src/WPCLI/Options/Registry.php:236
+msgid "Whether the SMTP server requires authentication."
+msgstr "Si el servidor SMTP requiere autenticación."
+
+#: src/WPCLI/Options/Registry.php:231
+msgid "Auto TLS when supported by server."
+msgstr "Auto TLS cuando es compatible con el servidor."
+
+#: src/WPCLI/Options/Registry.php:226
+msgid "Encryption: none, ssl, or tls."
+msgstr "Encriptación: ninguno, SSL, o TLS."
+
+#: src/WPCLI/Options/Registry.php:220
+msgid "SMTP server port (e.g. 25, 465, 587)."
+msgstr "Puerto de servidor SMTP (p. ej. 25, 465, 587)."
+
+#: src/WPCLI/Options/Registry.php:214
+msgid "SMTP server hostname."
+msgstr "Nombre de host del servidor SMTP."
+
+#: src/WPCLI/Options/Registry.php:189
+msgid "Hide Awesome Motive product notifications."
+msgstr "Ocultar notificaciones de productos de Awesome Motive."
+
+#: src/WPCLI/Options/Registry.php:183
+msgid "Disable all outgoing email."
+msgstr "Desactive todo el correo electrónico saliente."
+
+#: src/WPCLI/Options/Registry.php:165
+msgid "Force From name on every outgoing message."
+msgstr "Incluir el nombre del remitente en todos los mensajes salientes."
+
+#: src/WPCLI/Options/Registry.php:160
+msgid "Force From email on every outgoing message."
+msgstr "Enviar correo electrónico como remitente obligatorio en todos los mensajes salientes."
+
+#. translators: %1$s is the dotted CLI flag (e.g. smtp.pass). %2$s is the
+#. matching environment variable name (e.g. WPMS_SMTP_PASS). Flag and env var
+#. name are not translated.
+#: src/WPCLI/Options/Help.php:161
+msgid "Sensitive: also accepts --%1$s-file=<path> or env var %2$s."
+msgstr "Sensible: también acepta --%1$s-file=<path> o variable de entorno %2$s."
+
+#: src/WPCLI/Options/Help.php:151
+msgid "and"
+msgstr "y"
+
+#: src/WPCLI/Options/Help.php:83
+msgid "These flags accept their value as a literal (--flag=value), from a file (--flag-file=<path>), or from an environment variable (WPMS_<UPPER>)."
+msgstr "Estos indicadores aceptan su valor como un valor literal (--flag=value), de un archivo (--flag-file=<path>), o de una variable de entorno (WPMS_<UPPER>)."
+
+#. translators: %1$s is the dotted CLI flag (e.g. smtp.host). %2$s is the
+#. environment variable name the operator can use (e.g. WPMS_SMTP_HOST). Flag
+#. and env var name are not translated.
+#: src/WPCLI/Commands/Option.php:236
+msgid "No value provided for --%1$s (positional, --value-file, or env var %2$s)."
+msgstr "No se proporcionó ningún valor para --%1$s (posicional, --value-file o variable de entorno %2$s)."
+
+#. translators: %s is the unknown dotted CLI flag (e.g. smtp.host). The flag
+#. itself is not translated.
+#: src/WPCLI/Commands/Option.php:158 src/WPCLI/Commands/Option.php:214
+#: src/WPCLI/Options/Writer.php:83 src/WPCLI/Options/Writer.php:217
+msgid "Unknown flag: %s"
+msgstr "Parámetro desconocido: %s"
+
+#: src/WPCLI/Options/Help.php:81
+msgid "CONFIGURATION FLAGS"
+msgstr "PARÁMETROS DE CONFIGURACIÓN"
+
+#. translators: %s is the underlying error message returned by wp_mail() / the
+#. mailer (already localized or quoted verbatim from the mailer response).
+#: src/WPCLI/Commands/Test.php:86
+msgid "Test email failed: %s"
+msgstr "El correo de prueba ha fallado: %s"
+
+#: src/Providers/Sendlayer/QuickConnect.php:401
+msgid "Backup"
+msgstr "Copia de seguridad"
 
 #: src/Admin/Pages/TestTab.php:457 src/Admin/Pages/TestTab.php:458
 #: src/Providers/Sendlayer/QuickConnect.php:696
@@ -24,14 +265,14 @@ msgstr "Configurar SendLayer"
 msgid "Something went wrong while connecting to SendLayer. Please try again, or contact support and provide the error code."
 msgstr "Algo salió mal al conectar con SendLayer. Inténtalo de nuevo o contacta con el soporte proporcionando el código de error."
 
-#: src/Providers/Sendlayer/QuickConnect.php:744
-msgid "From Email Address"
-msgstr "Dirección de correo electrónico del remitente"
-
 #. translators: %1$s - URL to SendLayer app; %2$s - URL to documentation.
 #: src/Providers/Sendlayer/QuickConnect.php:769
 msgid "You can customize your From Email by adding your own domain first on the <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">SendLayer dashboard</a>. Check our <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">documentation</a> on how to add a custom domain."
 msgstr "Puedes personalizar tu dirección de correo electrónico del remitente añadiendo primero tu propio dominio en el <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">escritorio de SendLayer</a>. Consulta nuestra <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">documentación</a> sobre cómo añadir un dominio personalizado."
+
+#: src/Providers/Sendlayer/QuickConnect.php:744
+msgid "From Email Address"
+msgstr "Dirección de correo electrónico del remitente"
 
 #. translators: %s - URL to SendLayer.
 #: src/Providers/Sendlayer/QuickConnect.php:668
@@ -433,6 +674,11 @@ msgstr "Elastic Email"
 msgid "To get started, read our <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">Elastic Email documentation</a>."
 msgstr "Para empezar lee nuestra <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">documentación de Elastic Email</a>."
 
+#. translators: %1$s - URL to ElasticEmail.com site.
+#: src/Providers/ElasticEmail/Options.php:37
+msgid "<a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">Elastic Email</a> is a cloud-based email marketing platform offering tools for email campaigns, automation, transactional emails, and analytics, designed for businesses of all sizes.<br><br>If you're just starting out, you can use Elastic Email's free plan to send emails to your account address from one of your verified email addresses. You don't need to use a credit card to try it out. When you're ready, you can upgrade to a higher plan."
+msgstr "<a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">Elastic Email</a> es una plataforma de marketing por correo electrónico basada en la nube que ofrece herramientas para campañas por correo electrónico, automatización, correos electrónicos transacionales y analítica, y está diseñada para negocios de todos los tamaños.<br><br>Si acabas de empezar, puedes usar el plan gratuito de Elastic Email para enviar correos electrónicos a las direcciones de tu cuenta desde una de tus direcciones de correo electrónico verificadas. No necesitas usar una tarjeta de crédito para probarlo. Cuando quieras puedes actualizar a un plan superior."
+
 #. translators: %s - link to get an API Key.
 #: src/Providers/ElasticEmail/Options.php:120
 msgid "Follow this link to get an API Key from Elastic Email: %s."
@@ -442,11 +688,6 @@ msgstr "Sigue este enlace para conseguir una clave API en Elastic Email: %s."
 #: src/Providers/Outlook/Provider.php:56
 msgid "<strong>%1$s</strong><br>Heads up! Microsoft is <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">discontinuing support for basic SMTP connections</a>. To continue using Outlook or Hotmail, switch to our Outlook mailer for uninterrupted email sending."
 msgstr "<strong>%1$s</strong><br>¡Ojo! Microsoft está <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">abandonando la compatibilidad con conexiones básicas SMTP</a>. Para seguir usando Outlook o Hotmail, cambiar a nuestro servicio de envío con Outlook para seguir en viando correos electrónicos de manera ininterrumpida."
-
-#. translators: %1$s - URL to ElasticEmail.com site.
-#: src/Providers/ElasticEmail/Options.php:37
-msgid "<a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">Elastic Email</a> is a cloud-based email marketing platform offering tools for email campaigns, automation, transactional emails, and analytics, designed for businesses of all sizes.<br><br>If you're just starting out, you can use Elastic Email's free plan to send emails to your account address from one of your verified email addresses. You don't need to use a credit card to try it out. When you're ready, you can upgrade to a higher plan."
-msgstr "<a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">Elastic Email</a> es una plataforma de marketing por correo electrónico basada en la nube que ofrece herramientas para campañas por correo electrónico, automatización, correos electrónicos transacionales y analítica, y está diseñada para negocios de todos los tamaños.<br><br>Si acabas de empezar, puedes usar el plan gratuito de Elastic Email para enviar correos electrónicos a las direcciones de tu cuenta desde una de tus direcciones de correo electrónico verificadas. No necesitas usar una tarjeta de crédito para probarlo. Cuando quieras puedes actualizar a un plan superior."
 
 #: assets/languages/wp-mail-smtp-vue.php:1043
 msgid "Sign in with Outlook"
@@ -504,6 +745,11 @@ msgstr "Mailjet"
 msgid "To get started, read our <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">Mailjet documentation</a>."
 msgstr "Para empezar, lee nuestra <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">documentación de Mailjet</a>."
 
+#. translators: %1$s - URL to Mailjet.com site.
+#: src/Providers/Mailjet/Options.php:37
+msgid "<a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">Mailjet</a> is a cloud-based email service platform that enables businesses to send marketing and transactional emails, offering features like email automation, real-time analytics, and responsive design templates. If you're just starting out, you can send up to 200 emails per day without a credit card."
+msgstr "<a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">Mailjet</a> es una plataforma de servicio de correo electrónico basado en la nube que permite a los negocios enviar correos de marketing y transacionales, y que ofrece características como automatización de correos electrónicos, analítica en tiempo real, y plantillas de diseño adaptable. Si estás empezando puedes enviar hasta 200 correos al día sin tarjeta de crédito."
+
 #: src/Providers/ElasticEmail/Options.php:111
 #: src/Providers/MailerSend/Options.php:106
 #: src/Providers/Mailgun/Options.php:78 src/Providers/Mailjet/Options.php:111
@@ -527,11 +773,6 @@ msgstr "Descartar alertas"
 #: src/Admin/Pages/AlertsTab.php:194
 msgid "Paste in the Discord webhook URL you’d like to use to receive alerts when email sending fails. Read our documentation on setting up Discord alerts."
 msgstr "Pega la URL del webhook de Discord que te gustaría usar para recibir alertas cuando falle el envío de correos electrónicos. Lee nuestra documentación sobre cómo configurar alertas de Discord."
-
-#. translators: %1$s - URL to Mailjet.com site.
-#: src/Providers/Mailjet/Options.php:37
-msgid "<a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">Mailjet</a> is a cloud-based email service platform that enables businesses to send marketing and transactional emails, offering features like email automation, real-time analytics, and responsive design templates. If you're just starting out, you can send up to 200 emails per day without a credit card."
-msgstr "<a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">Mailjet</a> es una plataforma de servicio de correo electrónico basado en la nube que permite a los negocios enviar correos de marketing y transacionales, y que ofrece características como automatización de correos electrónicos, analítica en tiempo real, y plantillas de diseño adaptable. Si estás empezando puedes enviar hasta 200 correos al día sin tarjeta de crédito."
 
 #: src/Admin/Pages/AlertsTab.php:193
 msgid "Discord"
@@ -1247,12 +1488,6 @@ msgstr "Conoce qué correos electrónicos han sido abiertos por los destinatario
 msgid "Events Retention Period"
 msgstr "Periodo de retención de eventos"
 
-#. translators: %1$s - Settings Page URL; %2$s - The aria label; %3$s - The
-#. text that will appear on the link.
-#: src/SiteHealth.php:293
-msgid "WP Mail SMTP is using custom database tables for some of its features. In order to work properly, the custom tables should be created, and it seems they are missing. Please try to <a href=\"%1$s\" target=\"_self\" aria-label=\"%2$s\" rel=\"noopener noreferrer\">%3$s</a>. If this issue persists, please contact our support."
-msgstr "WP Mail SMTP está usando tablas personalizadas en la base de datos para algunas de sus características. Para que funcione correctamente deben crearse las tablas personalizadas, y parece que faltan. Por favor, prueba a <a href=\"%1$s\" target=\"_self\" aria-label=\"%2$s\" rel=\"noopener noreferrer\">%3$s</a>. Si persiste el problema, por favor, contacta con nuestro soporte."
-
 #: src/DBRepair.php:191
 msgid "Missing DB tables were created successfully."
 msgstr "Las tablas de la BD que faltaban se han creado correctamente."
@@ -1282,6 +1517,12 @@ msgstr "Consigue avisos por correo electrónico, SMS, Slack o webhook cuando no 
 #: assets/languages/wp-mail-smtp-vue.php:430
 msgid "Enable these powerful logging features for more control of your WordPress emails."
 msgstr "Activa estas potentes características de registro para tener más control de tus correos electrónicos de WordPress."
+
+#. translators: %1$s - Settings Page URL; %2$s - The aria label; %3$s - The
+#. text that will appear on the link.
+#: src/SiteHealth.php:293
+msgid "WP Mail SMTP is using custom database tables for some of its features. In order to work properly, the custom tables should be created, and it seems they are missing. Please try to <a href=\"%1$s\" target=\"_self\" aria-label=\"%2$s\" rel=\"noopener noreferrer\">%3$s</a>. If this issue persists, please contact our support."
+msgstr "WP Mail SMTP está usando tablas personalizadas en la base de datos para algunas de sus características. Para que funcione correctamente deben crearse las tablas personalizadas, y parece que faltan. Por favor, prueba a <a href=\"%1$s\" target=\"_self\" aria-label=\"%2$s\" rel=\"noopener noreferrer\">%3$s</a>. Si persiste el problema, por favor, contacta con nuestro soporte."
 
 #: src/SiteHealth.php:295
 msgid "Go to WP Mail SMTP settings page."
@@ -3523,11 +3764,6 @@ msgstr "%1$sSigue este enlace%2$s para conseguir una clave de API de Brevo."
 msgid "Return to Mailer Settings"
 msgstr "Volver a los ajustes de los servicios de envío"
 
-#. Translators: Current PHP version and recommended PHP version.
-#: assets/languages/wp-mail-smtp-vue.php:41
-msgid "WP Mail SMTP has detected that your site is running an outdated, insecure version of PHP (%1$s). Some mailers require at least PHP version 5.6. Updating to the recommended version (PHP %2$s) only takes a few minutes and will make your website significantly faster and more secure."
-msgstr "WP Mail SMTP ha detectado que tu sitio está ejecutando una versión anticuada e insegura de PHP (%1$s). Algunos servicios de envío requieren al menos la versión 5.6 de PHP. La actualización a la versión recomendada (PHP %2$s) sólo toma unos minutos y hará que tu sitio sea significativamente más rápido y seguro."
-
 #: assets/languages/wp-mail-smtp-vue.php:61
 msgid "It looks like we can't load oAuth connected data."
 msgstr "Parece que no podemos cargar los datos de conexión de oAuth."
@@ -3540,6 +3776,11 @@ msgstr "Parece que no podemos realizar la comprobación de configuración del se
 #: assets/languages/wp-mail-smtp-vue.php:237
 msgid "Define which endpoint you want to use for sending messages. If you are operating under EU laws, you may be required to use EU region. %1$sMore information%2$s on Mailgun.com."
 msgstr "Define qué variable quieres usar para enviar mensajes. Si estás operando bajo las leyes de los EEUU, puede que sea obligatorio que uses una región de los EEUU. %1$sMás información%2$s en Mailgun.com."
+
+#. Translators: Current PHP version and recommended PHP version.
+#: assets/languages/wp-mail-smtp-vue.php:41
+msgid "WP Mail SMTP has detected that your site is running an outdated, insecure version of PHP (%1$s). Some mailers require at least PHP version 5.6. Updating to the recommended version (PHP %2$s) only takes a few minutes and will make your website significantly faster and more secure."
+msgstr "WP Mail SMTP ha detectado que tu sitio está ejecutando una versión anticuada e insegura de PHP (%1$s). Algunos servicios de envío requieren al menos la versión 5.6 de PHP. La actualización a la versión recomendada (PHP %2$s) sólo toma unos minutos y hará que tu sitio sea significativamente más rápido y seguro."
 
 #: assets/languages/wp-mail-smtp-vue.php:262
 msgid "If enabled, the From Name setting above will be used for all emails, ignoring values set by other plugins."
@@ -4626,10 +4867,6 @@ msgstr "Falló Mailgun."
 msgid "Your SMTP host is rejecting the connection."
 msgstr "Tu host SMTP está rechazando la conexión."
 
-#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:986
-msgid "Contact your web hosting provider and ask them to verify your server can connect to your SMTP host on the configured port and encryption, and whether a firewall or security policy may be blocking the connection. Many shared hosts block certain ports. <strong>Note: this is the most common cause of this issue.</strong>"
-msgstr "Contacta con tu proveedor de alojamiento y pídele que compruebe si tu servidor puede conectar con %1$s en el puerto %2$s usando cifrado %3$s. Adicionalmente, pregúntale si hay algún cortafuegos o política de seguridad que pueda estar impidiendo la conexión - muchos alojamientos compartidos bloquean ciertos puertos.<br><strong>Nota: esta es la causa más común de este problema.</strong>"
-
 #: src/Admin/EmailSendingErrors/EmailSendingErrors.php:1395
 msgid "Your web server is blocking the connection."
 msgstr "Su servidor web está bloqueando la conexión."
@@ -4637,6 +4874,10 @@ msgstr "Su servidor web está bloqueando la conexión."
 #: src/Admin/EmailSendingErrors/EmailSendingErrors.php:979
 msgid "Your SMTP settings are incorrect (wrong port, security setting, or host)."
 msgstr "Los ajustes SMTP son incorrectos (puerto incorrecto, ajustes de seguridad, host incorrecto)."
+
+#: src/Admin/EmailSendingErrors/EmailSendingErrors.php:986
+msgid "Contact your web hosting provider and ask them to verify your server can connect to your SMTP host on the configured port and encryption, and whether a firewall or security policy may be blocking the connection. Many shared hosts block certain ports. <strong>Note: this is the most common cause of this issue.</strong>"
+msgstr "Contacta con tu proveedor de alojamiento y pídele que compruebe si tu servidor puede conectar con %1$s en el puerto %2$s usando cifrado %3$s. Adicionalmente, pregúntale si hay algún cortafuegos o política de seguridad que pueda estar impidiendo la conexión - muchos alojamientos compartidos bloquean ciertos puertos.<br><strong>Nota: esta es la causa más común de este problema.</strong>"
 
 #: src/Admin/EmailSendingErrors/EmailSendingErrors.php:783
 msgid "Typically this error is returned for one of the following reasons:"
