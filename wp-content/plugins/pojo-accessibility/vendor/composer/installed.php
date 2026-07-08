@@ -3,7 +3,7 @@
         'name' => 'elementor/pojo-accessibility',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '9db328f7ab39209caaeef0372dc1046b8791a639',
+        'reference' => '44c29d85dab65a2b431b4bcf3b22dee18609e943',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'elementor/pojo-accessibility' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '9db328f7ab39209caaeef0372dc1046b8791a639',
+            'reference' => '44c29d85dab65a2b431b4bcf3b22dee18609e943',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -29,8 +29,8 @@
             'dev_requirement' => false,
         ),
         'elementor/wp-one-package' => array(
-            'pretty_version' => '1.0.62',
-            'version' => '1.0.62.0',
+            'pretty_version' => '1.0.66',
+            'version' => '1.0.66.0',
             'reference' => null,
             'type' => 'library',
             'install_path' => __DIR__ . '/../elementor/wp-one-package',
