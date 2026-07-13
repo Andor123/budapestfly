@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WPForms &#8211; AI Form Builder for WordPress &#8211; Contact Forms, Payment Forms, Survey Form, Quiz &amp; More - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-06-29 04:04:02+0000\n"
+"PO-Revision-Date: 2026-07-10 18:54:41+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -2671,6 +2671,14 @@ msgstr "Übersetzung"
 msgid "Minimum Price: %1$s"
 msgstr "Mindestpreis: %1$s"
 
+#. translators: %1$s - addon download URL, %2$s - link to manual installation
+#. guide, %3$s - link to contact support.
+#. translators: %1$s - addon download URL, %2$s - link to a manual installation
+#. guide, %3$s - link to contact support.
+#: includes/admin/admin.php:213 includes/admin/ajax-actions.php:906
+msgid "Could not install the addon. Please <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">download it from wpforms.com</a> and <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">install it manually</a>, or <a href=\"%3$s\" target=\"_blank\" rel=\"noopener noreferrer\">contact support</a> for assistance."
+msgstr "Das Add-on konnte nicht installiert werden. Bitte <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">lade es von wpforms.com</a> herunter und <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">installiere es manuell</a> oder <a href=\"%3$s\" target=\"_blank\" rel=\"noopener noreferrer\">kontaktiere den Support</a> für Hilfe."
+
 #: includes/admin/admin.php:233
 msgid "Change columns to display"
 msgstr "Anzuzeigende Spalten ändern"
@@ -2690,14 +2698,6 @@ msgstr "Bist du sicher, dass du diesen Eintrag löschen willst? Dadurch werden a
 #: includes/admin/admin.php:237
 msgid "Are you sure you want to delete ALL entries? This will also remove all associated files, notes, and logs."
 msgstr "Bist du sicher, dass du ALLE Einträge löschen willst? Dadurch werden auch alle zugehörigen Dateien, Notizen und Protokolle gelöscht."
-
-#. translators: %1$s - addon download URL, %2$s - link to manual installation
-#. guide, %3$s - link to contact support.
-#. translators: %1$s - addon download URL, %2$s - link to a manual installation
-#. guide, %3$s - link to contact support.
-#: includes/admin/admin.php:213 includes/admin/ajax-actions.php:906
-msgid "Could not install the addon. Please <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">download it from wpforms.com</a> and <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">install it manually</a>, or <a href=\"%3$s\" target=\"_blank\" rel=\"noopener noreferrer\">contact support</a> for assistance."
-msgstr "Das Add-on konnte nicht installiert werden. Bitte <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">lade es von wpforms.com</a> herunter und <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">installiere es manuell</a> oder <a href=\"%3$s\" target=\"_blank\" rel=\"noopener noreferrer\">kontaktiere den Support</a> für Hilfe."
 
 #. translators: %s - entry count.
 #: includes/admin/admin.php:239
@@ -3102,14 +3102,14 @@ msgstr "Berechnung aktivieren"
 msgid "AI Calculations Are Here!"
 msgstr "KI-Berechnungen sind jetzt verfügbar!"
 
+#: src/Lite/Admin/Connect.php:87
+msgid "There must be a non-developer Lite version installed to upgrade."
+msgstr "Für das Upgrade muss eine Nicht-Entwickler-Lite-Version installiert sein."
+
 #. translators: %s - WPForms.com URL for Stripe webhooks documentation.
 #: src/Integrations/Stripe/WebhooksHealthCheck.php:227
 msgid "Heads up! Looks like you have a problem with your webhooks configuration. Please check and confirm that you've configured the WPForms webhooks in your Stripe account. This notice will disappear automatically when a new Stripe request comes in. See our <a href=\"%1$s\" rel=\"nofollow noopener\" target=\"_blank\">documentation</a> for more information."
 msgstr "Achtung! Du scheinst ein Problem mit deiner Webhook-Konfiguration zu haben. Bitte überprüfe und bestätige, dass du die WPForms-Webhooks in deinem Stripe-Konto konfiguriert hast. Dieser Hinweis verschwindet automatisch, wenn eine neue Stripe-Anfrage eingeht. Weitere Informationen findest du in unserer <a href=\"%1$s\" rel=\"nofollow noopener\" target=\"_blank\">Dokumentation</a>."
-
-#: src/Lite/Admin/Connect.php:87
-msgid "There must be a non-developer Lite version installed to upgrade."
-msgstr "Für das Upgrade muss eine Nicht-Entwickler-Lite-Version installiert sein."
 
 #: templates/admin/challenge/embed.php:97
 msgid "Do you need more help?"
@@ -5772,6 +5772,10 @@ msgstr "Jetzt teilnehmen"
 msgid "Want to Be a VIP? Join Now!"
 msgstr "Willst du ein VIP sein? Werde jetzt Mitglied!"
 
+#: src/Admin/Notifications/EventDriven.php:579
+msgid "Did you know that many WordPress sites are not properly configured to send emails? With the free WP Mail SMTP plugin, you can easily optimize your site to send emails, avoid the spam folder, and make sure your emails land in the recipient’s inbox every time."
+msgstr "Wusstest du, dass viele WordPress-Websites nicht richtig für den E-Mail-Versand konfiguriert sind? Mit dem kostenlosen Plugin WP Mail SMTP kannst du deine Website ganz einfach für den E-Mail-Versand optimieren, den Spam-Ordner vermeiden und sicherstellen, dass deine E-Mails jedes Mal im Posteingang des Empfängers landen."
+
 #: src/Admin/Notifications/EventDriven.php:666
 msgid "Are your forms converting fewer visitors than you hoped? Often, visitors quit forms partway through. That can prevent you from getting all the leads you deserve to capture. With our Form Abandonment addon, you can capture partial entries even if your visitor didn’t hit Submit! From there, it’s easy to follow up with leads and turn them into loyal customers."
 msgstr "Konvertieren deine Formulare weniger Besucher als du gehofft hast? Oft brechen Besucher Formulare auf halbem Weg ab. Das kann dazu führen, dass du nicht alle Leads bekommst, die du eigentlich erfassen wolltest. Mit unserem Form-Abandonment-Add-on kannst du Teileinträge erfassen, auch wenn dein Besucher nicht auf Absenden geklickt hat! Danach ist es ganz einfach, die Leads weiterzuverfolgen und sie in treue Kunden zu verwandeln."
@@ -5783,10 +5787,6 @@ msgstr "Nichts ist besser als echtes Feedback von deinen Kunden und Besuchern. D
 #: src/Admin/Notifications/EventDriven.php:600
 msgid "Running a WordPress site can be challenging. But help is just around the corner! Our Facebook group contains tons of tips and help to get your business growing! When you join our VIP Circle, you’ll get instant access to tips, tricks, and answers from a community of loyal WPForms users. Best of all, membership is 100% free!"
 msgstr "Der Betrieb einer WordPress-Website kann eine Herausforderung sein. Aber Hilfe ist in der Nähe! In unserer Facebook-Gruppe findest du jede Menge Tipps und Hilfe, damit dein Unternehmen wächst! Wenn du unserem VIP-Kreis beitrittst, bekommst du sofortigen Zugang zu Tipps, Tricks und Antworten von einer Gemeinschaft treuer WPForms-Nutzer. Und das Beste ist, dass die Mitgliedschaft 100% kostenlos ist!"
-
-#: src/Admin/Notifications/EventDriven.php:579
-msgid "Did you know that many WordPress sites are not properly configured to send emails? With the free WP Mail SMTP plugin, you can easily optimize your site to send emails, avoid the spam folder, and make sure your emails land in the recipient’s inbox every time."
-msgstr "Wusstest du, dass viele WordPress-Websites nicht richtig für den E-Mail-Versand konfiguriert sind? Mit dem kostenlosen Plugin WP Mail SMTP kannst du deine Website ganz einfach für den E-Mail-Versand optimieren, den Spam-Ordner vermeiden und sicherstellen, dass deine E-Mails jedes Mal im Posteingang des Empfängers landen."
 
 #: src/Admin/Notifications/EventDriven.php:578
 msgid "Don’t Miss Your Form Notification Emails!"
@@ -8935,13 +8935,13 @@ msgstr "Armenien"
 msgid "Aruba"
 msgstr "Aruba"
 
-#: includes/admin/settings-api.php:151
-msgid "As a valued WPForms Lite user you receive <strong>50% off</strong>, automatically applied at checkout!"
-msgstr "Als geschätzter Benutzer von WPForms Lite erhältst du <strong>50% Rabatt</strong>, dieser wird automatisch an der Kasse abgezogen!"
-
 #: includes/admin/class-welcome.php:353
 msgid "As a business owner, time is my most valuable asset. WPForms allow me to create smart online forms with just a few clicks. With their pre-built form templates and the drag & drop builder, I can create a new form that works in less than 2 minutes without writing a single line of code. Well worth the investment."
 msgstr "Als Geschäftsinhaber ist Zeit die wertvollste Ressource. WPForms ermöglicht es mir, intelligente Online-Formulare mit nur ein paar Klicks zu erstellen. Mit den vorgefertigten Formular-Templates und dem Drag-and-drop-Builder kann ich ein neues Formular innerhalb von 2 Minuten erstellen, ohne eine Zeile Code zu schreiben. Das ist eine gute Investition."
+
+#: includes/admin/settings-api.php:151
+msgid "As a valued WPForms Lite user you receive <strong>50% off</strong>, automatically applied at checkout!"
+msgstr "Als geschätzter Benutzer von WPForms Lite erhältst du <strong>50% Rabatt</strong>, dieser wird automatisch an der Kasse abgezogen!"
 
 #: includes/functions/data-presets.php:356
 msgid "August"
@@ -10672,10 +10672,6 @@ msgstr "Bitte gib einen Formularnamen ein."
 msgid "Please enter a valid credit card number."
 msgstr "Bitte gib eine gültige Kreditkartennummer ein."
 
-#: includes/admin/class-settings.php:499 src/Frontend/Frontend.php:1849
-msgid "Please enter a valid email address."
-msgstr "Bitte gib eine gültige E-Mail-Adresse an."
-
 #: includes/admin/class-settings.php:520 includes/fields/class-number.php:226
 #: src/Frontend/Frontend.php:1859
 msgid "Please enter a valid number."
@@ -10881,10 +10877,6 @@ msgstr "Reibungsloses Hinzufügen neuer Kontakte zu deiner E-Mail-Liste"
 #: includes/admin/admin.php:227
 msgid "Searching Addons"
 msgstr "Add-ons durchsuchen"
-
-#: lite/wpforms-lite.php:807 src/Admin/Forms/BulkActions.php:345
-msgid "Security check failed. Please try again."
-msgstr "Sicherheitsprüfung fehlgeschlagen. Bitte erneut versuchen."
 
 #: includes/admin/class-welcome.php:292
 msgid "See All Features"
@@ -11759,15 +11751,15 @@ msgstr "Der %1$s %2$s enthält über %3$s Einträge (%4$s). Dies kann dazu führ
 msgid "Loading"
 msgstr "Wird geladen"
 
-#: includes/admin/class-welcome.php:284
-msgid "Our smart captcha and spam protection automatically prevents spam submissions."
-msgstr "Unser intelligenter Captcha und Spam-Schutz verhindern automatisch Spam-Einsendungen."
-
 #. translators: %1$s - WPBeginner URL, %2$s - OptinMonster URL, %3$s -
 #. MonsterInsights URL.
 #: includes/admin/class-about.php:282
 msgid "WPForms is brought to you by the same team that’s behind the largest WordPress resource site, <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">WPBeginner</a>, the most popular lead-generation software, <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">OptinMonster</a>, the best WordPress analytics plugin, <a href=\"%3$s\" target=\"_blank\" rel=\"noopener noreferrer\">MonsterInsights</a>, and more!"
 msgstr "WPForms stammt vom selben Team, das auch hinter <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">WPBeginner</a>, der größten Website für WordPress-Ressourcen, <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">OptinMonster</a>, der beliebtesten Software für die Lead-Generierung, und <a href=\"%3$s\" target=\"_blank\" rel=\"noopener noreferrer\">MonsterInsights</a>, dem besten Analytics-Plugins für WordPress, steht."
+
+#: includes/admin/class-welcome.php:284
+msgid "Our smart captcha and spam protection automatically prevents spam submissions."
+msgstr "Unser intelligenter Captcha und Spam-Schutz verhindern automatisch Spam-Einsendungen."
 
 #: includes/functions/data-presets.php:320
 msgid "United States Minor Outlying Islands"
@@ -12243,10 +12235,6 @@ msgstr "Es wurden keine Formulare gefunden."
 msgid "Kyrgyzstan"
 msgstr "Kirgisistan"
 
-#: includes/functions/data-presets.php:180
-msgid "Heard Island and McDonald Islands"
-msgstr "Heard und McDonaldinseln"
-
 #: includes/functions/data-presets.php:154
 msgid "Ethiopia"
 msgstr "Äthiopien"
@@ -12276,6 +12264,18 @@ msgstr "Keine Ergebnisse gefunden"
 #: includes/functions/data-presets.php:272
 msgid "Saint Martin (French part)"
 msgstr "Saint Martin (französischer Teil)"
+
+#: lite/wpforms-lite.php:807 src/Admin/Forms/BulkActions.php:345
+msgid "Security check failed. Please try again."
+msgstr "Die Sicherheitsprüfung ist fehlgeschlagen. Bitte versuche es erneut."
+
+#: includes/admin/class-settings.php:499 src/Frontend/Frontend.php:1849
+msgid "Please enter a valid email address."
+msgstr "Bitte gib eine gültige E-Mail-Adresse ein."
+
+#: includes/functions/data-presets.php:180
+msgid "Heard Island and McDonald Islands"
+msgstr "Heard- und McDonaldinseln"
 
 #: src/Integrations/Gutenberg/FormSelector.php:435
 msgid "Select a Form"
@@ -13580,21 +13580,6 @@ msgstr "Du hast keine Berechtigung, diese Aktion durchzuführen."
 msgid "Upgrade Now"
 msgstr "Jetzt upgraden"
 
-#: includes/admin/builder/panels/class-setup.php:77
-#: src/Admin/Tools/Export/Views/Templates/Page.php:212
-#: templates/admin/challenge/builder.php:21
-#: templates/admin/challenge/modal.php:39
-msgid "Select a Template"
-msgstr "Template auswählen"
-
-#: lite/wpforms-lite.php:266
-msgid "From Name"
-msgstr "Absendername"
-
-#: lite/wpforms-lite.php:299
-msgid "From Email"
-msgstr "E-Mail-Adresse des Absenders"
-
 #: includes/admin/builder/panels/class-fields.php:621
 #: includes/admin/class-settings.php:130
 #: includes/fields/class-internal-information.php:302
@@ -13615,3 +13600,18 @@ msgstr "E-Mail-Adresse des Absenders"
 #: src/Lite/Admin/Education/Admin/DidYouKnow.php:136
 msgid "Learn More"
 msgstr "Mehr erfahren"
+
+#: includes/admin/builder/panels/class-setup.php:77
+#: src/Admin/Tools/Export/Views/Templates/Page.php:212
+#: templates/admin/challenge/builder.php:21
+#: templates/admin/challenge/modal.php:39
+msgid "Select a Template"
+msgstr "Template auswählen"
+
+#: lite/wpforms-lite.php:266
+msgid "From Name"
+msgstr "Absendername"
+
+#: lite/wpforms-lite.php:299
+msgid "From Email"
+msgstr "E-Mail-Adresse des Absenders"
