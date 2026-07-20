@@ -269,6 +269,13 @@ class WPZOOM_Forms_REST {
 		$body = $req->get_json_params();
 		if ( ! is_array( $body ) ) $body = $req->get_params();
 
+		// The v2 builder has no draft concept — every Save publishes the form.
+		// This also rescues legacy drafts left over from the pre-2.0 editor,
+		// which otherwise have no way back to "publish" (and won't render on the frontend).
+		if ( ! in_array( $post->post_status, array( 'publish', 'trash' ), true ) ) {
+			wp_update_post( array( 'ID' => $id, 'post_status' => 'publish' ) );
+		}
+
 		// Update title
 		if ( isset( $body['title'] ) ) {
 			wp_update_post( array(

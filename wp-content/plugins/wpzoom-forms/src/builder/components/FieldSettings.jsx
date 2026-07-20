@@ -382,7 +382,8 @@ function OptionsEditor({ options, onChange, fieldType, defaultValue, onChangeDef
 							type={ isMulti ? 'checkbox' : 'radio' }
 							className="wpzf-option__default"
 							checked={ isDefault( o.value ) }
-							onChange={ () => toggleDefault( o.value ) }
+							onChange={ isMulti ? () => toggleDefault( o.value ) : () => {} }
+							onClick={ ! isMulti ? () => toggleDefault( o.value ) : undefined }
 							title={ __( 'Set as default', 'wpzoom-forms' ) }
 						/>
 						<input

@@ -13,7 +13,7 @@
  * Description: Simple, user-friendly contact form plugin for WordPress with a dedicated drag-and-drop builder.
  * Author:      WPZOOM
  * Author URI:  https://www.wpzoom.com
- * Version:     2.0.2
+ * Version:     2.0.3
  * License:     GPL2+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  */
@@ -1001,7 +1001,10 @@ class WPZOOM_Forms {
 			trailingslashit( $this->dist_dir_url ) . 'assets/frontend/js/script.js',
 			$depends,
 			WPZOOM_FORMS_VERSION,
-			true
+			array(
+				'in_footer' => true,
+				'strategy'  => 'defer',
+			)
 		);
 
 		$use_theme_style = boolval( WPZOOM_Forms_Settings::get( 'wpzf_use_theme_styles' ) );
@@ -1027,7 +1030,10 @@ class WPZOOM_Forms {
 			trailingslashit( $this->dist_dir_url ) . 'assets/frontend/flatpickr/js/flatpickr.js',
 			array( 'jquery' ),
 			WPZOOM_FORMS_VERSION,
-			true
+			array(
+				'in_footer' => true,
+				'strategy'  => 'defer',
+			)
 		);
 
 		wp_register_script(
@@ -1035,7 +1041,10 @@ class WPZOOM_Forms {
 			trailingslashit( $this->dist_dir_url ) . 'assets/frontend/js/datepicker.js',
 			array( 'wpzoom-forms-js-frontend-flatpickr' ),
 			WPZOOM_FORMS_VERSION,
-			true
+			array(
+				'in_footer' => true,
+				'strategy'  => 'defer',
+			)
 		);
 	}
 

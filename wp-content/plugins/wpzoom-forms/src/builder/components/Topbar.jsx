@@ -9,8 +9,13 @@ const BellIcon = () => (
 	</svg>
 );
 
-const WPZform = (
-	<svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fillRule="evenodd" clipRule="evenodd" d="M7.33 2h13.34v20H4V5.33h3.33V2zm10 3.33h-6.66v3.34H7.33v10h3.34v-3.34H14V12h-3.33V8.67h6.66V5.33z" /></svg>
+// Exit button icons: the WPZOOM logo crossfades into a back arrow on hover,
+// mirroring the WordPress fullscreen-editor site-icon → back-arrow animation.
+const ExitIcons = (
+	<span className="wpzf-topbar__exit-icons" aria-hidden="true">
+		<svg className="wpzf-topbar__exit-icon wpzf-topbar__exit-icon--logo" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path fillRule="evenodd" clipRule="evenodd" d="M7.33 2h13.34v20H4V5.33h3.33V2zm10 3.33h-6.66v3.34H7.33v10h3.34v-3.34H14V12h-3.33V8.67h6.66V5.33z" /></svg>
+		<svg className="wpzf-topbar__exit-icon wpzf-topbar__exit-icon--arrow" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M14 6H6v8h1.5V8.5L17 18l1-1-9.5-9.5H14V6Z" /></svg>
+	</span>
 )
 
 export default function Topbar({
@@ -33,13 +38,13 @@ export default function Topbar({
 			<div className="wpzf-topbar__left">
 				<Button
 					variant="primary"
-					className="wpzf-topbar__exit"
+					className="wpzf-topbar__exit has-icon"
 					href={ exitUrl }
 					label={ __( 'Back to forms', 'wpzoom-forms' ) }
-					icon={WPZform}
-					iconSize={ 28 }
 					showTooltip
-				/>
+				>
+					{ ExitIcons }
+				</Button>
 				<Button
 					size="compact"
 					href={ submissionsUrl }

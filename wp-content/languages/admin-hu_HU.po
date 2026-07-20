@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 7.0.x - Development - Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-01-26 09:01:24+0000\n"
+"PO-Revision-Date: 2026-07-17 09:46:40+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -36,6 +36,18 @@ msgstr "1"
 msgctxt "default GMT offset or timezone string"
 msgid "0"
 msgstr "Europe/Budapest"
+
+#: wp-admin/about.php:146
+msgid "The Connectors screen introduces a single hub for managing a range of external service integrations, including AI providers. Opt in by connecting your preferred AI provider, then put it to work across your site. The optional AI plugin adds a growing set of tools directly into the editor: create titles and excerpts, generate and edit images, and suggest alt text. Any plugin that needs to connect to an outside service can tap into this standardized connection management system, making it easy for users and developers alike."
+msgstr "A Connectorok képernyő egy központ, ahol egy sor külső szolgáltatás integrálható és menedzselhető, beleértve az AI szolgáltatókat is. Csatlakozzunk be a kedvelt AI szolgáltatónk által és tegyük használhatóvá az oldalunkon. Az opcionális AI bővítmény egy egyre növekvő eszközkészletet tesz elérhetővé közvetlenül a szerkesztőben: címeket és összefoglalókat készít, képeket generál és szerkeszt, valamint alternatív szöveget javasol hozzájuk. Bármely bővítmény, amely külső szolgáltatáshoz igényel kapcsolatot, be tud csatlakozni ide, ebbe a szabványosított rendszerbe, így könnyebbé téve a felhasználók és a fejlesztők dolgát egyaránt."
+
+#: wp-admin/options-connectors.php:24
+msgid "The Connectors page requires build files. Please run <code>npm install</code> to build the necessary files."
+msgstr "A Connectors oldalnak fájlok felépítésére van szüksége. Kérem futtassuk le a <code>npm install</code> parancsot a szükséges fájlok felépítésére."
+
+#: wp-admin/options-connectors.php:23
+msgid "Connectors are not available."
+msgstr "A Connectorok nem elérhetőek."
 
 #: wp-admin/theme-editor.php:257
 msgid "It is likely that this unminified stylesheet will not be served to visitors."
@@ -201,6 +213,11 @@ msgstr "Nem létezik"
 #: wp-admin/includes/class-wp-debug-data.php:607
 msgid "robots.txt"
 msgstr "robots.txt"
+
+#. translators: %s: robots.txt
+#: wp-admin/includes/class-wp-debug-data.php:602
+msgid "WordPress cannot dynamically serve a %s file due to a lack of rewrite rule support."
+msgstr "A WordPress nem tud dinamikusan kiszolgálni egy %s fájlt a rewrite szabályok támogatásának hiánya miatt."
 
 #. translators: %s: robots.txt
 #: wp-admin/includes/class-wp-debug-data.php:596
@@ -381,12 +398,12 @@ msgid "Skip to Editor"
 msgstr "Ugrás a Szerkesztőhöz"
 
 #. translators: %s: WordPress version number.
-#: wp-admin/about.php:276
+#: wp-admin/about.php:296
 msgid "WordPress %s Field Guide"
 msgstr "WordPress %s mező útmutató"
 
 #. translators: %s: WordPress version number.
-#: wp-admin/about.php:249
+#: wp-admin/about.php:269
 msgid "WordPress %s Release Notes"
 msgstr "WordPress %s megjelenési megjegyzések"
 
@@ -545,7 +562,7 @@ msgstr "Ha Ön plugin-szerző, többet megtudhat arról, <a href=\"https://devel
 msgid "If you are a plugin author, you can learn more about <a href=\"https://developer.wordpress.org/plugins/privacy/adding-the-personal-data-eraser-to-your-plugin/\">how to add the Personal Data Eraser to a plugin</a>."
 msgstr "Ha Ön plugin-szerző, többet megtudhat arról, <a href=\"https://developer.wordpress.org/plugins/privacy/adding-the-personal-data-eraser-to-your-plugin/\">hogyan hogy hozzáadja a Személyes adatok Radírt egy bővítményhez</a>."
 
-#: wp-admin/about.php:202
+#: wp-admin/about.php:222
 msgid "See everything new"
 msgstr "Minden újdonság megtekintése"
 
@@ -555,11 +572,11 @@ msgid "https://wordpress.org/download/releases/%s/"
 msgstr "https://wordpress.org/download/releases/%s/"
 
 #. translators: %s: Version number.
-#: wp-admin/about.php:194
+#: wp-admin/about.php:214
 msgid "For a comprehensive overview of all the new features and enhancements in WordPress %s, please visit the feature-showcase website."
 msgstr "Ha átfogó áttekintést szeretnénk kapni a WordPress %s összes új funkciójáról és fejlesztéséről, látogassunk el a funkciókat bemutató webhelyre."
 
-#: wp-admin/about.php:188
+#: wp-admin/about.php:208
 msgid "And much more"
 msgstr "És még sok más"
 
@@ -765,12 +782,12 @@ msgid "When using Bulk Edit, you can change the metadata (categories, author, et
 msgstr "Lehetőség van több bejegyzés metaadatok (kategóriák, szerzők stb.) cseréjére is, a jelölődobozzal kiválasztott bejegyzéseknél egyszerre. Egy bejegyzést a Csoportok műveletekből eltávolítani egyszerű, csak a Csoportos műveletek területén %s<span class=\"screen-reader-text\">eltávolítás</span> gombra kell kattintani."
 
 #. translators: %s: WordPress version number.
-#: wp-admin/about.php:259
+#: wp-admin/about.php:279
 msgid "Read the WordPress %s Release Notes for information on installation, enhancements, fixed issues, release contributors, learning resources, and the list of file changes."
 msgstr "Olvassuk el a WordPress %s kiadási megjegyzéseket, ha érdekelnek a telepítési információk, újdonságok, hibajavítások, a kiadáshoz hozzájárulók listája, a tanulási források és a megváltozott fájlok listája."
 
 #. translators: %s: WordPress version number.
-#: wp-admin/about.php:286
+#: wp-admin/about.php:306
 msgid "Explore the WordPress %s Field Guide. Learn about the changes in this release with detailed developer notes to help you build with WordPress."
 msgstr "Fedezzük fel a WordPress %s mező útmutatóját. Nézzük át a kiadás változásait, és a részletes fejlesztői megjegyzéseket, amelyek segíthetnek WordPress oldalt építeni."
 
@@ -1253,7 +1270,7 @@ msgid "Be the future of WordPress"
 msgstr "Legyél a WordPress jövője."
 
 #. translators: 1: Learn WordPress link, 2: Workshops link.
-#: wp-admin/about.php:227
+#: wp-admin/about.php:247
 msgid "<a href=\"%1$s\">Learn WordPress</a> is a free resource for new and experienced WordPress users. Learn is stocked with how-to videos on using various features in WordPress, <a href=\"%2$s\">interactive workshops</a> for exploring topics in-depth, and lesson plans for diving deep into specific areas of WordPress."
 msgstr "A <a href=\"%1$s\">Learn WordPress</a> egy ingyenes forrás új és tapasztalt WordPress felhasználók számára. A Learn felület tömve van how-to videókkal, a WordPress különböző funkcióiról, <a href=\"%2$s\">interaktív workshopok</a> segítenek az egyes témák mélyreható megismerésében, és óratervek segítenek elmélyülni a WordPress különleges területeiben."
 
@@ -1399,12 +1416,12 @@ msgid "<a href=\"https://wordpress.org/documentation/article/customizer/\">Docum
 msgstr "<a href=\"https://wordpress.org/documentation/article/customizer/\">A Testreszabó dokumentációja</a>"
 
 #. translators: The localized WordPress download URL.
-#: wp-admin/about.php:367
+#: wp-admin/about.php:387
 msgid "https://wordpress.org/download/"
 msgstr "https://wordpress.org/download/"
 
 #. translators: %s: The major version of WordPress for this branch.
-#: wp-admin/about.php:364
+#: wp-admin/about.php:384
 msgid "This is the final release of WordPress %s"
 msgstr "Ez a WordPress %s legutóbbi verziója"
 
@@ -1724,12 +1741,12 @@ msgid "Reach out to WordPress Core developers to ensure you'll never have this p
 msgstr "Forduljunk a WordPress Core fejlesztőihez, hogy soha többé ne fordulhasson elő ez a probléma."
 
 #. translators: 1: WordPress version number, 2: Link to update WordPress
-#: wp-admin/about.php:361
+#: wp-admin/about.php:381
 msgid "Important! Your version of WordPress (%1$s) will stop receiving security updates in the near future. To keep your site secure, please <a href=\"%2$s\">update to the latest version of WordPress</a>."
 msgstr "Fontos! A WordPress (%1$s) verziója a közeljövőben nem kap több biztonsági frissítést. A webhelye biztonságának megőrzése érdekében, a <a href=\"%2$s\">WordPress legújabb verziójára kell frissíteni</a>."
 
 #. translators: 1: WordPress version number, 2: Link to update WordPress
-#: wp-admin/about.php:358
+#: wp-admin/about.php:378
 msgid "Important! Your version of WordPress (%1$s) is no longer supported, you will not receive any security updates for your website. To keep your site secure, please <a href=\"%2$s\">update to the latest version of WordPress</a>."
 msgstr "Fontos! A WordPress (%1$s) verziója már nem támogatott, nem fog biztonsági frissítéseket kapni a weboldal. A webhely biztonságának megőrzése érdekében, tanácsos <a href=\"%2$s\">frissíteni a WordPress legújabb verziójára</a>."
 
@@ -1739,7 +1756,7 @@ msgid "https://make.wordpress.org/core/wordpress-%s-field-guide/"
 msgstr "https://make.wordpress.org/core/wordpress-%s-field-guide/"
 
 #. translators: %s: Version number.
-#: wp-admin/about.php:218
+#: wp-admin/about.php:238
 msgid "Learn more about WordPress %s"
 msgstr "Bővebben a WordPress %s verzióról"
 
@@ -1863,7 +1880,7 @@ msgstr "Megpróbáltuk, de a webhelyet nem sikerült automatikusan frissíteni."
 
 #: wp-admin/includes/class-core-upgrader.php:166
 #: wp-admin/includes/class-wp-upgrader.php:206
-#: wp-admin/includes/update-core.php:1158
+#: wp-admin/includes/update-core.php:1163
 msgid "The update cannot be installed because some files could not be copied. This is usually due to inconsistent file permissions."
 msgstr "A frissítés nem került telepítésre, mivel néhány fájlt nem lehetett átmásolni. Ez általában akkor fordul elő, ha nem megfelelőek (nem következetesek) a fájl hozzáférési engedélyek."
 
@@ -2640,7 +2657,7 @@ msgstr "Alkalmazás-jelszó hozzáadása"
 msgid "Required to create an Application Password, but not to update the user."
 msgstr "Alkalmazás jelszó létrehozása szükséges, a felhasználó frissítése nélkül."
 
-#: wp-admin/about.php:302
+#: wp-admin/about.php:322
 msgid "Go to Updates"
 msgstr "Irány a frissítésekhez"
 
@@ -3893,7 +3910,7 @@ msgid "The seventh parameter passed to %s should be numeric representing menu po
 msgstr "A hetedik %s funkciónak átadott paraméternek számnak kell lennie, amely a menü pozíciót jelöli."
 
 #. translators: 1: WordPress version number, 2: The PHP extension name needed.
-#: wp-admin/includes/update-core.php:1264
+#: wp-admin/includes/update-core.php:1269
 msgid "The update cannot be installed because WordPress %1$s requires the %2$s PHP extension."
 msgstr "A frissítést nem lehet telepíteni, mert a WordPress %1$s használatához %2$s PHP kiterjesztés szükséges."
 
@@ -4539,7 +4556,7 @@ msgstr "https://make.wordpress.org/hosting/handbook/handbook/server-environment/
 msgid "The WordPress Hosting Team maintains a list of those modules, both recommended and required, in <a href=\"%1$s\" %2$s>the team handbook%3$s</a>."
 msgstr "A WordPress tárhely csapata karbantart egy ilyen modul listát, mind az ajánlott és a szükséges modulokra nézve, a lista elérhető a <a href=\"%1$s\" %2$s>csapat kézikönyvében%3$s</a>."
 
-#: wp-admin/about.php:171 wp-admin/includes/class-wp-site-health.php:259
+#: wp-admin/about.php:191 wp-admin/includes/class-wp-site-health.php:259
 #: wp-admin/includes/class-wp-site-health.php:737
 #: wp-admin/includes/class-wp-site-health.php:908
 #: wp-admin/includes/class-wp-site-health.php:1147
@@ -5788,9 +5805,9 @@ msgstr "Ez a bővítmény nem működik a WordPress és a PHP verziónkkal."
 
 #. translators: %s: WordPress version number.
 #. translators: %s: WordPress version.
-#: wp-admin/about.php:21 wp-admin/about.php:85 wp-admin/includes/update.php:321
-#: wp-admin/index.php:119 wp-admin/install.php:242 wp-admin/update-core.php:94
-#: wp-admin/upgrade.php:96
+#: wp-admin/about.php:21 wp-admin/about.php:80 wp-admin/about.php:105
+#: wp-admin/includes/update.php:321 wp-admin/index.php:119
+#: wp-admin/install.php:242 wp-admin/update-core.php:94 wp-admin/upgrade.php:96
 msgid "https://wordpress.org/documentation/wordpress-version/version-%s/"
 msgstr "https://wordpress.org/documentation/wordpress-version/version-%s/"
 
@@ -7267,6 +7284,11 @@ msgctxt "Background Repeat"
 msgid "Repeat"
 msgstr "Ismétlés"
 
+#. translators: 1: Used memory, 2: Total memory
+#: wp-admin/includes/class-wp-debug-data.php:496
+msgid "%1$s of %2$s"
+msgstr "%1$s / %2$s"
+
 #: wp-admin/plugin-install.php:103
 msgid "You can find new plugins to install by searching or browsing the directory right here in your own Plugins section."
 msgstr "A telepítéshez új bővítményeket találhatunk kereséssel, vagy itt, a saját bővítmények résznél, tallózással."
@@ -7567,6 +7589,10 @@ msgstr "Sajnáljuk, nincs megfelelő jogosultság ezen a honlapon a hivatkozáso
 msgid "Sorry, you are not allowed to manage privacy options on this site."
 msgstr "Sajnáljuk, a weboldal adatainak kezeléséhez nincs elegendő felhatalmazása."
 
+#: wp-admin/options-connectors.php:16
+msgid "Sorry, you are not allowed to manage connectors on this site."
+msgstr "Sajnáljuk, nincs megfelelő jogosultság ezen a honlapon a connectorok kezeléséhez."
+
 #: wp-admin/includes/ajax-actions.php:4787
 msgid "Plugin could not be deleted."
 msgstr "A bővítmény nem törölhető."
@@ -7578,7 +7604,7 @@ msgstr "Sajnáljuk, nincs megfelelő jogosultság ezen a honlapon a bővítmény
 
 #: wp-admin/includes/ajax-actions.php:4587
 msgid "Sorry, you are not allowed to activate plugins on this site."
-msgstr "Elnézést, nincs megfelelő jogosultság ezen a honlapon a bővítmények bekapcsolásához."
+msgstr "Sajnáljuk, nincs megfelelő jogosultság ezen a honlapon a bővítmények bekapcsolásához."
 
 #: wp-admin/includes/ajax-actions.php:4443
 msgid "Theme could not be deleted."
@@ -8059,7 +8085,7 @@ msgid "(Currently set to: %s)"
 msgstr "(Jelenlegi beállítás: %s)"
 
 #. translators: %s: WordPress version number.
-#: wp-admin/about.php:332
+#: wp-admin/about.php:352
 msgid "<strong>Version %s</strong> addressed one security issue."
 msgstr "<strong>%s verzió</strong> egy biztonsági problémát javított."
 
@@ -8072,15 +8098,15 @@ msgstr "https://gravatar.com/"
 msgid "Profile Picture"
 msgstr "Adatlap-kép"
 
-#: wp-admin/about.php:329
+#: wp-admin/about.php:65 wp-admin/about.php:349
 msgid "Maintenance and Security Releases"
 msgstr "Hibajavító- és biztonsági frissítések"
 
-#: wp-admin/about.php:326
+#: wp-admin/about.php:346
 msgid "Security Releases"
 msgstr "Biztonsági frissítések"
 
-#: wp-admin/about.php:323
+#: wp-admin/about.php:343
 msgid "Maintenance Releases"
 msgstr "Hibajavító frissítések"
 
@@ -9752,8 +9778,8 @@ msgstr "A honlap %1$s verziója kritikus hibát észlelt a WordPress %2$s verzi�
 msgid "WordPress %s is also now available."
 msgstr "Már elérhető a WordPress %s verziója."
 
-#: wp-admin/includes/update-core.php:1354
-#: wp-admin/includes/update-core.php:1390
+#: wp-admin/includes/update-core.php:1359
+#: wp-admin/includes/update-core.php:1395
 msgid "The update cannot be installed because your site is unable to copy some files. This is usually due to inconsistent file permissions."
 msgstr "A frissítés nem került telepítésre, mivel néhány fájlt nem lehetett átmásolni. Ez általában akkor fordul elő, ha nem megfelelőek (nem következetesek) a fájl hozzáférési engedélyek."
 
@@ -9868,7 +9894,7 @@ msgstr "Fordítások frissítése"
 msgid "Background updates"
 msgstr "Háttérfrissítések"
 
-#: wp-admin/includes/update-core.php:1457
+#: wp-admin/includes/update-core.php:1462
 msgid "There is not enough free disk space to complete the update."
 msgstr "Nincs elegendő szabad tárhely a frissítés elvégzéséhez."
 
@@ -9948,11 +9974,11 @@ msgstr "A felhasználónév meg nem engedett karaktereket tartalmaz."
 msgid "Please provide a valid username."
 msgstr "Érvényes felhasználónevet kell megadni."
 
-#: wp-admin/includes/update-core.php:1371
+#: wp-admin/includes/update-core.php:1376
 msgid "Copying the required files&#8230;"
 msgstr "A szükséges fájlok másolása&#8230;"
 
-#: wp-admin/includes/update-core.php:1278
+#: wp-admin/includes/update-core.php:1283
 msgid "Preparing to install the latest version&#8230;"
 msgstr "A legutóbbi verzió előkészítése a telepítésre&#8230;"
 
@@ -10280,6 +10306,18 @@ msgstr "Menü megjelenési helyek kezelése"
 msgid "Edit Menus"
 msgstr "Menük kezelése"
 
+#: wp-admin/nav-menus.php:762
+msgid "To add a new menu instead of assigning an existing one, <strong>click the &#8217;Use new menu&#8217; link</strong>. Your new menu will be automatically assigned to that location in the theme."
+msgstr "A meglévő menü kiválasztása helyett új menüt is adhatunk hozzá az <strong> &#8217;Új menü&#8217; hivatkozás</strong> használatával. Az új menü automatikusan hozzá lesz rendelve ehhez a sablonhelyhez."
+
+#: wp-admin/nav-menus.php:761
+msgid "To edit a menu currently assigned to a theme menu location, <strong>click the adjacent &#8217;Edit&#8217; link</strong>"
+msgstr "Egy már sablonhelyhez hozzárendelt menü szerkesztéséhez, <strong>kattintsunk a szomszédos &#8217;Szerkesztés&#8217; hivatkozásra</strong>"
+
+#: wp-admin/nav-menus.php:760
+msgid "To assign menus to one or more theme menu locations, <strong>select a menu from each location&#8217;s dropdown</strong>. When you are finished, <strong>click Save Changes</strong>"
+msgstr "A menük egy vagy több megjelenési helyhez történő kijelöléséhez <strong>válasszunk ki egy menüt minden legördülő listából</strong>. Amikor végeztünk, ne feledjünk kattintani a <strong>Változások mentése</strong> feliratra."
+
 #: wp-admin/nav-menus.php:759
 msgid "This screen is used for globally assigning menus to locations defined by your theme."
 msgstr "Ez a képernyő arra való, hogy menüket rendeljünk a sablonban definiált helyekhez."
@@ -10307,6 +10345,10 @@ msgstr "Minden egyes menü oldalak hivatkozásait, kategóriákat, egyéni hivat
 #: wp-admin/nav-menus.php:739
 msgid "Menu Management"
 msgstr "Menü kezelő"
+
+#: wp-admin/nav-menus.php:734
+msgid "You can assign individual menus to the theme&#8217;s menu locations by <strong>selecting the desired settings</strong> at the bottom of the menu editor. To assign menus to all theme menu locations at once, <strong>visit the Manage Locations tab</strong> at the top of the screen."
+msgstr "Bármely önálló menü hozzárendelhető a sablon menü helyéhez a <strong>kívánt beállítások kiválasztása</strong> révén a menüszerkesztő alatt. Az összes sablonhely egyidejű kijelöléséhez a képernyő tetején lévő <strong>Helyek kezelése fül</strong> részt használjuk."
 
 #: wp-admin/nav-menus.php:732
 msgid "To edit an existing menu, <strong>choose a menu from the dropdown and click Select</strong>"
@@ -10622,7 +10664,7 @@ msgid "Search engine visibility"
 msgstr "Keresőmotor láthatóság"
 
 #. translators: 1: WordPress version, 2: URL to About screen.
-#: wp-admin/includes/update-core.php:1759 wp-admin/update-core.php:923
+#: wp-admin/includes/update-core.php:1764 wp-admin/update-core.php:923
 msgid "Welcome to WordPress %1$s. You will be redirected to the About WordPress screen. If not, click <a href=\"%2$s\">here</a>."
 msgstr "Üdvözöl a WordPress %1$s verzió! Most átirányításra kerülünk az 'Bővebben' képernyőre. Ha ez mégsem történne meg, kattintsunk <a href=\"%2$s\">ide</a>."
 
@@ -11334,13 +11376,13 @@ msgstr "Eszköztár mutatása az oldal megtekintésekor"
 
 #. translators: %s: HelpHub URL.
 #. translators: %s: Documentation URL.
-#: wp-admin/about.php:82 wp-admin/about.php:355
+#: wp-admin/about.php:77 wp-admin/about.php:102 wp-admin/about.php:375
 msgid "For more information, see <a href=\"%s\">the release notes</a>."
 msgstr "Bővebben: <a href=\"%s\">Verzió információk</a>."
 
 #. translators: 1: WordPress version number, 2: Plural number of bugs. More
 #. than one security issue.
-#: wp-admin/about.php:349
+#: wp-admin/about.php:369
 msgid "<strong>Version %1$s</strong> addressed some security issues and fixed %2$s bug."
 msgid_plural "<strong>Version %1$s</strong> addressed some security issues and fixed %2$s bugs."
 msgstr[0] "<strong>%1$s verzió</strong> biztonsági problémát, és %2$s hibát javított."
@@ -11348,33 +11390,34 @@ msgstr[1] "<strong>%1$s verzió</strong> biztonsági problémát, és %2$s hibá
 
 #. translators: 1: WordPress version number, 2: Plural number of bugs. Singular
 #. security issue.
-#: wp-admin/about.php:343
+#: wp-admin/about.php:363
 msgid "<strong>Version %1$s</strong> addressed a security issue and fixed %2$s bug."
 msgid_plural "<strong>Version %1$s</strong> addressed a security issue and fixed %2$s bugs."
 msgstr[0] "<strong>%1$s verzió</strong> egy biztonsági problémát, és %2$s hibát javított."
 msgstr[1] "<strong>%1$s verzió</strong> egy biztonsági problémát, és %2$s hibát javított."
 
 #. translators: 1: WordPress version number, 2: Plural number of bugs.
-#: wp-admin/about.php:70 wp-admin/about.php:337
+#: wp-admin/about.php:90 wp-admin/about.php:357
 msgid "<strong>Version %1$s</strong> addressed %2$s bug."
 msgid_plural "<strong>Version %1$s</strong> addressed %2$s bugs."
 msgstr[0] "<strong>%1$s verzió</strong> %2$s hibát javít."
 msgstr[1] "<strong>%1$s verzió</strong> %2$s hibát javít."
 
+#. translators: %s: WordPress version.
 #. translators: %s: WordPress version number.
-#: wp-admin/about.php:334
+#: wp-admin/about.php:70 wp-admin/about.php:354
 msgid "<strong>Version %s</strong> addressed some security issues."
 msgstr "A(z) <strong>%s verzió</strong> néhány biztonsági problémát javít."
 
-#: wp-admin/about.php:328
+#: wp-admin/about.php:348
 msgid "Maintenance and Security Release"
 msgstr "Karbantartó és biztonsági frissítés"
 
-#: wp-admin/about.php:325
+#: wp-admin/about.php:345
 msgid "Security Release"
 msgstr "Biztonsági frissítés"
 
-#: wp-admin/about.php:65 wp-admin/about.php:322
+#: wp-admin/about.php:342
 msgid "Maintenance Release"
 msgstr "Hibajavító frissítés"
 
@@ -11388,7 +11431,7 @@ msgid "This screen allows you to choose your permalink structure. You can choose
 msgstr "Ezen a képernyőn lehetőségünk van a közvetlen hivatkozások struktúráját kiválasztani. Lehetséges általánosan elterjedt struktúrák közül választani, vagy teljesen sajátot létrehozni."
 
 #. translators: 1: WordPress version, 2: URL to About screen.
-#: wp-admin/includes/update-core.php:1767 wp-admin/update-core.php:931
+#: wp-admin/includes/update-core.php:1772 wp-admin/update-core.php:931
 msgid "Welcome to WordPress %1$s. <a href=\"%2$s\">Learn more</a>."
 msgstr "Üdvözlet a WordPress %1$s verziójától! <a href=\"%2$s\" target=\"_blank\">További tudnivalók</a>."
 
@@ -11647,11 +11690,15 @@ msgstr "A <strong>Szerkesztés</strong> link a bejegyzés szerkesztő képernyő
 msgid "Because this is a multisite installation, you may add accounts that already exist on the Network by specifying a username or email, and defining a role. For more options, such as specifying a password, you have to be a Network Administrator and use the hover link under an existing user&#8217;s name to Edit the user profile under Network Admin > All Users."
 msgstr "Mivel ez egy Multisite telepítés, lehetséges a hálózaton már létező felhasználókat hozzáadni, a felhasználónevük, vagy e-mail címük megadásával, és egy szerepkör meghatározásával. További lehetőségekhez, mint például jelszó megadáshoz Hálózat Adminisztrátornak kell lenni, és Hálózat-kezelő > Összes felhasználó oldalon a felhasználó neve fölé mozgatva az egeret a Szerkesztés lehetőséget választani."
 
-#: wp-admin/about.php:309
+#: wp-admin/about.php:116
+msgid "Welcome to WordPress 7.0"
+msgstr "Üdvözöl a WordPress 7.0"
+
+#: wp-admin/about.php:329
 msgid "Go to Dashboard &rarr; Home"
 msgstr "Irány a Vezérlőpult &rarr; Kezdőlaphoz"
 
-#: wp-admin/about.php:302
+#: wp-admin/about.php:322
 msgid "Go to Dashboard &rarr; Updates"
 msgstr "Irány a Vezérlőpult &rarr; Frissítésekhez"
 
@@ -13321,7 +13368,7 @@ msgid "User already exists. Password inherited."
 msgstr "A felhasználó már létezik. A jelszó öröklődött."
 
 #: wp-admin/includes/class-wp-automatic-updater.php:529
-#: wp-admin/includes/update-core.php:1753 wp-admin/update-core.php:919
+#: wp-admin/includes/update-core.php:1758 wp-admin/update-core.php:919
 msgid "WordPress updated successfully."
 msgstr "WordPress frissítése sikeres."
 
@@ -13350,7 +13397,7 @@ msgstr "WordPress frissítés"
 msgid "Edit menu item"
 msgstr "Menütétel szerkesztése"
 
-#: wp-admin/about.php:309
+#: wp-admin/about.php:329
 msgid "Go to Dashboard"
 msgstr "Irány a Vezérlőpultra"
 
@@ -13725,6 +13772,11 @@ msgstr "Bővítmény újraaktiválása"
 #: wp-admin/js/updates.js:1891
 msgid "Installation failed."
 msgstr "Telepítési hiba."
+
+#. translators: %s: WordPress version.
+#: wp-admin/update-core.php:529 wp-admin/update-core.php:538
+msgid "Compatibility with WordPress %s: Yes (according to its author)"
+msgstr "WordPress %s kompatibilitás: Igen (a szerző szerint)"
 
 #: wp-admin/update-core.php:211
 msgid "Hide hidden updates"
@@ -14453,34 +14505,34 @@ msgstr "Frissítés %s verzióra"
 msgid "You are using a development version (%1$s). Cool! Please <a href=\"%2$s\">stay updated</a>."
 msgstr "%1$s fejlesztői verzió. Remek! Nem ártana a <a href=\"%2$s\"> frissítés</a>! :)"
 
-#: wp-admin/includes/update-core.php:1626
+#: wp-admin/includes/update-core.php:1631
 msgid "Upgrading database&#8230;"
 msgstr "Adatbázis frissítése&#8230;"
 
-#: wp-admin/includes/update-core.php:1142
+#: wp-admin/includes/update-core.php:1147
 msgid "The update could not be unpacked"
 msgstr "A frissítést nem lehet kicsomagolni"
 
-#: wp-admin/includes/update-core.php:1124
+#: wp-admin/includes/update-core.php:1129
 msgid "Verifying the unpacked files&#8230;"
 msgstr "Kicsomagolt fájlok ellenőrzése&#8230;"
 
 #. translators: 1: WordPress version number, 2: Minimum required MySQL version
 #. number, 3: Current MySQL version number.
-#: wp-admin/includes/update-core.php:1244
+#: wp-admin/includes/update-core.php:1249
 msgid "The update cannot be installed because WordPress %1$s requires MySQL version %2$s or higher. You are running version %3$s."
 msgstr "A frissítést nem lehet telepíteni, mivel a WordPresshez %1$s legalább MySQL %2$s verzió vagy újabb szükséges. A szerveren futó verzió, pedig %3$s."
 
 #. translators: 1: WordPress version number, 2: Minimum required PHP version
 #. number, 3: Current PHP version number.
-#: wp-admin/includes/update-core.php:1233
+#: wp-admin/includes/update-core.php:1238
 msgid "The update cannot be installed because WordPress %1$s requires PHP version %2$s or higher. You are running version %3$s."
 msgstr "A frissítést nem lehet telepíteni, mivel a WordPresshez %1$s legalább PHP %2$s verzió vagy újabb szükséges. A szerveren, pedig %3$s verzió található."
 
 #. translators: 1: WordPress version number, 2: Minimum required PHP version
 #. number, 3: Minimum required MySQL version number, 4: Current PHP version
 #. number, 5: Current MySQL version number.
-#: wp-admin/includes/update-core.php:1220
+#: wp-admin/includes/update-core.php:1225
 msgid "The update cannot be installed because WordPress %1$s requires PHP version %2$s or higher and MySQL version %3$s or higher. You are running PHP version %4$s and MySQL version %5$s."
 msgstr "A frissítést nem lehet telepíteni, mivel a WordPresshez %1$s legalább PHP %2$s verzió vagy újabb és MySQL %3$s verzió vagy újabb szükséges. A szerveren, pedig PHP %4$s és MySQL %5$s található."
 
@@ -15326,7 +15378,7 @@ msgid "Empty archive."
 msgstr "Üres archívum."
 
 #: wp-admin/includes/file.php:1825 wp-admin/includes/file.php:1984
-#: wp-admin/includes/file.php:2042 wp-admin/includes/update-core.php:1564
+#: wp-admin/includes/file.php:2042 wp-admin/includes/update-core.php:1569
 msgid "Could not copy file."
 msgstr "A fájl másolása nem lehetséges."
 
@@ -15631,12 +15683,12 @@ msgid "The plugin is at the latest version."
 msgstr "A bővítmény naprakész."
 
 #: wp-admin/includes/class-wp-upgrader.php:210
-#: wp-admin/includes/update-core.php:1511
+#: wp-admin/includes/update-core.php:1516
 msgid "Disabling Maintenance mode&#8230;"
 msgstr "Karbantartás üzemmód kikapcsolása&#8230;"
 
 #: wp-admin/includes/class-wp-upgrader.php:209
-#: wp-admin/includes/update-core.php:1362
+#: wp-admin/includes/update-core.php:1367
 msgid "Enabling Maintenance mode&#8230;"
 msgstr "Karbantartás üzemmód bekapcsolása&#8230;"
 
