@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WP Mail SMTP by WPForms &#8211; The Most Popular SMTP and Email Log Plugin - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-07-09 18:28:11+0000\n"
+"PO-Revision-Date: 2026-07-20 18:20:24+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -285,6 +285,92 @@ msgstr "Introduce un destinatario válido: wp wp-mail-smtp test <recipient>"
 msgid "Configured WP Mail SMTP (mailer: %s). Run `wp wp-mail-smtp test <recipient>` to verify."
 msgstr "Se ha configurado WP Mail SMTP (servicio de correo: %s). Ejecuta `wp wp-mail-smtp test <recipient>` para comprobarlo."
 
+#: src/WPCLI/Options/Registry.php:155
+msgid "Set Return-Path to match From email."
+msgstr "Configura el campo «Return-Path» para que coincida con la dirección de correo del campo «From»."
+
+#: src/WPCLI/Options/Registry.php:138
+msgid "From name."
+msgstr "Nombre del remitente."
+
+#: src/WPCLI/Options/Registry.php:132
+msgid "From email address."
+msgstr "Dirección de correo del remitente."
+
+#: src/WPCLI/Options/Help.php:203
+msgid "Rate Limiting"
+msgstr "Límite de frecuencia"
+
+#: src/WPCLI/Commands/Setup.php:108
+msgid "No settings were stored — every flag passed was shadowed by a wp-config constant. Remove the constants and re-run, or pass flags for non-shadowed settings."
+msgstr "No se ha guardado ningún ajuste: todas las opciones pasadas han sido sobrescritas por una constante de wp-config. Quita las constantes y vuelve a ejecutarlo, o pasa opciones para los ajustes que no hayan sido sobrescritas."
+
+#: src/WPCLI/Commands/Setup.php:100
+msgid "No configuration flags provided. Pass at least --mail.from_email, --mail.from_name, and --mail.mailer (plus the credentials for that mailer)."
+msgstr "No se han especificado opciones de configuración. Indica al menos --mail.from_email, --mail.from_name y --mail.mailer (además de las credenciales de ese programa de correo)."
+
+#. translators: %s is the currently configured mailer slug (e.g. smtp,
+#. sendgrid). The slug is not translated.
+#: src/WPCLI/Commands/Setup.php:91
+msgid ""
+"WP Mail SMTP is already configured (mailer: %s).\n"
+"Use `wp wp-mail-smtp option set <group>.<key> <value>` to change individual settings, or pass --force to override this check."
+msgstr ""
+"WP Mail SMTP ya está configurado (servidor de correo: %s).\n"
+"Usa `wp wp-mail-smtp option set <group>.<key> <value>` para cambiar ajustes concretos, o añade el parámetro --force para saltarte esta comprobación."
+
+#: src/WPCLI/Commands/Setup.php:45
+msgid "Skip the refusal that fires when the plugin is already configured. Does NOT wipe existing settings — only flags you pass are written."
+msgstr "Omite el mensaje de error que aparece cuando el complemento ya está configurado. NO borra la configuración existente; solo se guardan los parámetros que le pases."
+
+#: src/WPCLI/Commands/Setup.php:29
+msgid "Configure WP Mail SMTP from the command line."
+msgstr "Configura WP Mail SMTP desde la línea de comandos."
+
+#. translators: %s is the dotted CLI flag that was updated (e.g. smtp.host).
+#. The flag itself is not translated.
+#: src/WPCLI/Commands/Option.php:263
+msgid "Updated %s."
+msgstr "Actualizado %s."
+
+#. translators: %s is the dotted CLI flag whose underlying option is overridden
+#. by a wp-config constant (e.g. smtp.host). The flag itself is not translated.
+#: src/WPCLI/Commands/Option.php:254
+msgid "Could not store %s — value is shadowed by a wp-config constant."
+msgstr "No se ha podido guardar %s: el valor está enmascarado por una constante de wp-config."
+
+#: src/WPCLI/Commands/Option.php:204
+msgid "Usage: wp wp-mail-smtp option set <group>.<key> <value>"
+msgstr "Uso: wp wp-mail-smtp option set <group>.<key> <value>"
+
+#: src/WPCLI/Commands/Option.php:171
+msgid "(not set)"
+msgstr "(no establecido)"
+
+#: src/WPCLI/Commands/Option.php:148
+msgid "Usage: wp wp-mail-smtp option get <group>.<key>"
+msgstr "Uso: wp wp-mail-smtp option get <group>.<key>"
+
+#: src/WPCLI/Commands/Option.php:125
+msgid "Action must be one of: get, set, list."
+msgstr "La acción debe ser una de estas: get, set o list."
+
+#: src/WPCLI/Commands/Option.php:63
+msgid "Output format for `list`. table | json | yaml. Default: table."
+msgstr "Formato de salida para `list`. table | json | yaml. Por defecto: table."
+
+#: src/WPCLI/Commands/Option.php:62
+msgid "Show sensitive values instead of masking them."
+msgstr "Muestra los valores confidenciales en lugar de ocultarlos."
+
+#: src/WPCLI/Commands/Option.php:61
+msgid "Read a sensitive value from a file."
+msgstr "Lee un valor confidencial de un archivo."
+
+#: src/WPCLI/Commands/Option.php:60
+msgid "Value (required for set; can also be supplied via --value-file or env var)."
+msgstr "Valor (obligatorio para la configuración; también se puede indicar mediante --value-file o una variable de entorno)."
+
 #: src/Providers/Sendlayer/QuickConnect.php:401
 msgid "Backup"
 msgstr "Copia de seguridad"
@@ -350,6 +436,102 @@ msgstr "Descubre lo que puede hacer tu IA"
 msgid "WPVibe screenshot"
 msgstr "Captura de pantalla de WPVibe"
 
+#: src/WPCLI/Commands/Option.php:59
+msgid "Dotted flag (e.g. smtp.host). Required for get and set."
+msgstr "Indicador con puntos (p. ej., smtp.host). Es obligatorio para las funciones «get» y «set»."
+
+#: src/WPCLI/Commands/Option.php:58
+msgid "One of: get, set, list."
+msgstr "Una de estas opciones: get, set, list."
+
+#: src/WPCLI/Commands/Option.php:42
+msgid "Read and write individual WP Mail SMTP settings."
+msgstr "Lee y modifica la configuración individual de WP Mail SMTP."
+
+#. translators: %s - upgrade URL.
+#: src/Providers/Sendlayer/QuickConnectUsage.php:578
+msgid "You've reached your free SendLayer limit. Emails are failing and won't be delivered! <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">Upgrade your plan</a> to start sending again."
+msgstr "Has alcanzado tu límite gratuito de SendLayer. ¡Los correos no se están enviando y no se entregarán! <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">Mejora tu plan</a> para volver a enviar correos."
+
+#: src/EmailSendingDebug.php:179
+msgid "Unknown"
+msgstr "Desconocido"
+
+#. translators: %1$s - Plugin name causing conflict.
+#: src/Conflicts.php:580
+msgid "Deactivate %1$s"
+msgstr "Desactivar %1$s"
+
+#: src/Admin/WooCommerceActiveLayerEducation.php:395
+msgid "Could not dismiss the section. Please reload the page and try again."
+msgstr "No se ha podido cerrar la sección. Vuelve a cargar la página e inténtalo de nuevo."
+
+#: src/Admin/WooCommerceActiveLayerEducation.php:382
+msgid "Could not activate ActiveLayer. Please activate it from the Plugins page."
+msgstr "No se ha podido activar ActiveLayer. Actívalo desde la página «Plugins»."
+
+#: src/Admin/WooCommerceActiveLayerEducation.php:381
+msgid "Could not install ActiveLayer. Please download it from WordPress.org and install manually."
+msgstr "No se ha podido instalar ActiveLayer. Descárgalo de WordPress.org e instálalo a mano."
+
+#: src/Admin/WooCommerceActiveLayerEducation.php:323
+msgid "Blocks bot signups and review spam on My Account, checkout, and product reviews. No CAPTCHA anywhere on the path to purchase. Free plugin from WordPress.org, with 1,000 free spam checks and no credit card required."
+msgstr "Bloquea los registros de bots y el spam en «Mi cuenta», el proceso de pago y las reseñas de productos. No hay CAPTCHA en ningún momento del proceso de compra. Complemento gratuito de WordPress.org, con 1.000 comprobaciones de spam gratis y sin necesidad de tarjeta de crédito."
+
+#: src/Admin/WooCommerceActiveLayerEducation.php:318
+#: src/Admin/WooCommerceActiveLayerEducation.php:380
+msgid "Get ActiveLayer"
+msgstr "Consigue ActiveLayer"
+
+#: src/Admin/WooCommerceActiveLayerEducation.php:299
+msgid "View ActiveLayer Settings"
+msgstr "Ver los ajustes de ActiveLayer"
+
+#: src/Admin/WooCommerceActiveLayerEducation.php:296
+msgid "ActiveLayer is protecting customer registration and product reviews."
+msgstr "ActiveLayer protege los datos de registro de los clientes y las reseñas de los productos."
+
+#: src/Admin/WooCommerceActiveLayerEducation.php:285
+#: src/Admin/WooCommerceActiveLayerEducation.php:379
+msgid "Connect Your Free Account"
+msgstr "Conecta tu cuenta gratuita"
+
+#: src/Admin/WooCommerceActiveLayerEducation.php:279
+msgid "ActiveLayer is active. Connect your free account to start blocking fake registrations and review spam."
+msgstr "ActiveLayer está activo. Conecta tu cuenta gratuita para empezar a bloquear registros falsos y revisar el spam."
+
+#: src/Admin/WooCommerceActiveLayerEducation.php:259
+msgid "Stop Fake Customer Registrations and Review Spam"
+msgstr "Acaba con los registros falsos de clientes y el spam en las reseñas"
+
+#: src/Admin/WooCommerceActiveLayerEducation.php:251
+msgid "Dismiss this section"
+msgstr "Omitir esta sección"
+
+#: src/Admin/Recommendations/Pages/WPVibe.php:104
+msgid "One-click setup in about a minute."
+msgstr "Configuración con un solo clic en aproximadamente un minuto."
+
+#: src/Admin/Recommendations/Pages/WPVibe.php:103
+msgid "Run 40+ WP-CLI commands without leaving your AI chat."
+msgstr "Ejecuta más de 40 comandos de WP-CLI sin salir de tu chat de IA."
+
+#: src/Admin/Recommendations/Pages/WPVibe.php:102
+msgid "Create and edit posts, pages, media, and users through conversation."
+msgstr "Crea y edita entradas, páginas, archivos multimedia y usuarios a través de la conversación."
+
+#: src/Admin/Recommendations/Pages/WPVibe.php:101
+msgid "Works with Claude, ChatGPT, Cursor, and any MCP client."
+msgstr "Funciona con Claude, ChatGPT, Cursor y cualquier cliente MCP."
+
+#: src/Admin/Recommendations/Pages/WPVibe.php:87
+msgid "Manage WordPress through conversation, not clicking."
+msgstr "Gestiona WordPress a través de la conversación, sin tener que hacer clics."
+
+#: src/Admin/Recommendations/Pages/WPVibe.php:86
+msgid "WPVibe connects your AI assistant straight to your WordPress site, so you can create posts, manage plugins, and run tasks just by asking. Built-in guardrails keep your site safe."
+msgstr "WPVibe conecta tu asistente de IA directamente a tu sitio de WordPress, para que puedas crear entradas, gestionar plugins y realizar tareas con solo pedirlo. Los mecanismos de seguridad integrados mantienen tu sitio a salvo."
+
 #: src/Admin/Recommendations/Pages/WPConsent.php:412
 msgid "Set Up WPConsent"
 msgstr "Configurar WPConsent"
@@ -357,6 +539,14 @@ msgstr "Configurar WPConsent"
 #: src/Admin/Recommendations/Pages/WPConsent.php:400
 msgid "Activate WPConsent"
 msgstr "Activar WPConsent"
+
+#: src/Admin/Recommendations/Pages/WPVibe.php:73
+msgid "WP Mail SMTP ♥ WPVibe"
+msgstr "WP Mail SMTP ♥ WPVibe"
+
+#: src/Admin/Recommendations/Pages/WPVibe.php:61
+msgid "Your AI Just Learned WordPress"
+msgstr "Tu IA acaba de aprender a usar WordPress"
 
 #: src/Admin/Pages/GetProTab.php:449
 msgid "Google Workspace"
