@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 7.0.x - Development package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-07-19 03:30:54+0000\n"
+"PO-Revision-Date: 2026-07-21 20:50:55+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -3546,10 +3546,6 @@ msgstr "Schriftarten"
 msgid "Entries in dependencies array must be either strings or arrays with an id key."
 msgstr "Einträge im Abhängigkeitsarray müssen Zeichenfolgen oder Arrays mit einem ID-Schlüssel sein."
 
-#: wp-includes/class-wp-script-modules.php:144
-msgid "Missing required id key in entry among dependencies array."
-msgstr "Fehlender erforderlicher ID-Schlüssel in Eintrag unter Abhängigkeitsarray."
-
 #. translators: %s: Font collection URL.
 #: wp-includes/fonts/class-wp-font-collection.php:188
 msgid "Error fetching the font collection data from \"%s\"."
@@ -3750,6 +3746,10 @@ msgstr "Einige der Werte für %1$s %2$s sind ungültig"
 #: wp-admin/options-general.php:215
 msgid "The Site Icon is what you see in browser tabs, bookmark bars, and within the WordPress mobile apps. It should be square and at least <code>%1$s by %2$s</code> pixels."
 msgstr "Das Website-Icon ist in Browser-Tabs, Lesezeichenleisten und in den WordPress Mobile Apps zu sehen. Es sollte quadratisch und mindestens <code>%1$s × %2$s</code> Pixel groß sein."
+
+#: wp-includes/class-wp-script-modules.php:144
+msgid "Missing required id key in entry among dependencies array."
+msgstr "Erforderlicher ID-Schlüssel fehlt in einem Eintrag des Abhängigkeits-Arrays."
 
 #: wp-includes/block-patterns.php:211
 msgctxt "Block pattern category"
@@ -16864,6 +16864,36 @@ msgstr "<strong>Datenbanktabellen fehlen.</strong> Das heißt, dass der Datenban
 msgid "<strong>Could not find site %1$s.</strong> Searched for table %2$s in database %3$s. Is that right?"
 msgstr "<strong>Die Website %1$s wurde nicht gefunden.</strong> Es wurde nach der Tabelle %2$s in der Datenbank %3$s gesucht. Ist das richtig?"
 
+#. translators: Do not translate USERNAME, PASSWORD, LOGINLINK, SITE_NAME:
+#. those are placeholders.
+#: wp-includes/ms-functions.php:2399
+msgid ""
+"Howdy USERNAME,\n"
+"\n"
+"Your new account is set up.\n"
+"\n"
+"You can log in with the following information:\n"
+"Username: USERNAME\n"
+"Password: PASSWORD\n"
+"LOGINLINK\n"
+"\n"
+"Thanks!\n"
+"\n"
+"--The Team @ SITE_NAME"
+msgstr ""
+"Hallo USERNAME,\n"
+"\n"
+"dein neues Konto wurde eingerichtet.\n"
+"\n"
+"Du kannst dich mit folgenden Angaben anmelden:\n"
+"Benutzername: USERNAME\n"
+"Passwort: PASSWORD\n"
+"LOGINLINK\n"
+"\n"
+"Vielen Dank!\n"
+"\n"
+"-- Das Team von SITE_NAME"
+
 #. translators: Do not translate USERNAME, SITE_NAME, BLOG_URL, PASSWORD: those
 #. are placeholders.
 #: wp-includes/ms-functions.php:1672 wp-admin/includes/schema.php:1294
@@ -16895,36 +16925,6 @@ msgstr ""
 "Melde dich hier an: BLOG_URLwp-login.php\n"
 "\n"
 "Wir hoffen, dir gefällt deine neue Website. Vielen Dank!\n"
-"\n"
-"-- Das Team von SITE_NAME"
-
-#. translators: Do not translate USERNAME, PASSWORD, LOGINLINK, SITE_NAME:
-#. those are placeholders.
-#: wp-includes/ms-functions.php:2399
-msgid ""
-"Howdy USERNAME,\n"
-"\n"
-"Your new account is set up.\n"
-"\n"
-"You can log in with the following information:\n"
-"Username: USERNAME\n"
-"Password: PASSWORD\n"
-"LOGINLINK\n"
-"\n"
-"Thanks!\n"
-"\n"
-"--The Team @ SITE_NAME"
-msgstr ""
-"Hallo USERNAME,\n"
-"\n"
-"dein neues Konto wurde eingerichtet.\n"
-"\n"
-"Du kannst dich mit folgenden Angaben anmelden:\n"
-"Benutzername: USERNAME\n"
-"Passwort: PASSWORD\n"
-"LOGINLINK\n"
-"\n"
-"Vielen Dank!\n"
 "\n"
 "-- Das Team von SITE_NAME"
 
@@ -20888,20 +20888,6 @@ msgstr "Neuen Benutzern erlauben, sich zu registrieren"
 msgid "Sorry, you are not allowed to access details of this post."
 msgstr "Du bist leider nicht berechtigt, auf Details dieses Beitrags zuzugreifen."
 
-#: wp-includes/class-wp-xmlrpc-server.php:3679
-#: wp-includes/class-wp-xmlrpc-server.php:3843
-msgid "Invalid comment status."
-msgstr "Der Kommentarstatus ist ungültig."
-
-#: wp-includes/class-wp-xmlrpc-server.php:3622
-#: wp-includes/class-wp-xmlrpc-server.php:3757
-#: wp-includes/class-wp-xmlrpc-server.php:3825 wp-includes/comment.php:2618
-#: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:397
-#: wp-admin/comment.php:81 wp-admin/comment.php:293
-#: wp-admin/edit-comments.php:297
-msgid "Invalid comment ID."
-msgstr "Die Kommentar-ID ist ungültig."
-
 #: wp-includes/class-wp-customize-nav-menus.php:957
 #: wp-includes/class-wp-xmlrpc-server.php:1459
 #: wp-includes/class-wp-xmlrpc-server.php:2016
@@ -20946,6 +20932,20 @@ msgstr "Der Inhaltstyp ist ungültig."
 #: wp-includes/revision.php:362
 msgid "Invalid post ID."
 msgstr "Die Beitrags-ID ist ungültig."
+
+#: wp-includes/class-wp-xmlrpc-server.php:3679
+#: wp-includes/class-wp-xmlrpc-server.php:3843
+msgid "Invalid comment status."
+msgstr "Der Kommentarstatus ist ungültig."
+
+#: wp-includes/class-wp-xmlrpc-server.php:3622
+#: wp-includes/class-wp-xmlrpc-server.php:3757
+#: wp-includes/class-wp-xmlrpc-server.php:3825 wp-includes/comment.php:2618
+#: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:397
+#: wp-admin/comment.php:81 wp-admin/comment.php:293
+#: wp-admin/edit-comments.php:297
+msgid "Invalid comment ID."
+msgstr "Die Kommentar-ID ist ungültig."
 
 #. translators: 1: File name, 2: Error message.
 #: wp-includes/class-wp-xmlrpc-server.php:6499
@@ -23960,19 +23960,6 @@ msgstr "Hinzufügen"
 msgid "Install"
 msgstr "Installieren"
 
-#: wp-includes/js/dist/block-editor.js:50294
-#: wp-includes/js/dist/block-editor.js:53419
-#: wp-includes/js/dist/block-library.js:24081
-#: wp-admin/includes/dashboard.php:1413 wp-admin/setup-config.php:273
-msgid "Submit"
-msgstr "Absenden"
-
-#: wp-includes/class-wp-customize-manager.php:4868
-#: wp-includes/script-loader.php:1309 wp-admin/includes/dashboard.php:614
-#: wp-admin/includes/meta-boxes.php:56 wp-admin/js/post.js:863
-msgid "Save Draft"
-msgstr "Entwurf speichern"
-
 #: wp-includes/class-wp-customize-widgets.php:805
 #: wp-includes/class-wp-editor.php:1396 wp-includes/media.php:5063
 #: wp-includes/js/dist/block-editor.js:22400
@@ -23994,6 +23981,19 @@ msgstr "Entwurf speichern"
 #: wp-admin/includes/class-wp-screen.php:1097
 msgid "Apply"
 msgstr "Anwenden"
+
+#: wp-includes/js/dist/block-editor.js:50294
+#: wp-includes/js/dist/block-editor.js:53419
+#: wp-includes/js/dist/block-library.js:24081
+#: wp-admin/includes/dashboard.php:1413 wp-admin/setup-config.php:273
+msgid "Submit"
+msgstr "Absenden"
+
+#: wp-includes/class-wp-customize-manager.php:4868
+#: wp-includes/script-loader.php:1309 wp-admin/includes/dashboard.php:614
+#: wp-admin/includes/meta-boxes.php:56 wp-admin/js/post.js:863
+msgid "Save Draft"
+msgstr "Entwurf speichern"
 
 #. translators: %s: Note author email.
 #. translators: %s: Comment author email.
