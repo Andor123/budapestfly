@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - W3 Total Cache - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-03-27 17:35:42+0000\n"
+"PO-Revision-Date: 2026-07-27 10:07:55+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1004,14 +1004,14 @@ msgstr "%1$sSNS%2$s トピックを指定します。"
 msgid "Specify the IP addresses of your varnish instances above. The %1$sVCL%2$s's %3$sACL%4$s must allow this request."
 msgstr "上記のワニス インスタンスの IP アドレスを指定します。 %1$sVCL%2$s の %3$sACL%4$s は、この要求を許可する必要があります。"
 
-#: inc/options/general.php:658
-msgid "Varnish Configuration Language"
-msgstr "ワニス設定言語"
-
 #. translators: 1 opening HTML acronym tag, 2 closing HTML acronym tag.
 #: inc/options/general.php:519
 msgid "Enable %1$sHTTP%2$s compression and add headers to reduce server load and decrease file load time."
 msgstr "%1$sHTTP%2$s 圧縮を有効にし、ヘッダーを追加して、サーバーの負荷を軽減し、ファイルの読み込み時間を短縮します。"
+
+#: inc/options/general.php:658
+msgid "Varnish Configuration Language"
+msgstr "Varnish Configuration Language"
 
 #: inc/options/dbcache.php:145 inc/options/install.php:83
 #: PageSpeed_Instructions.php:381 PageSpeed_Instructions.php:548
@@ -1494,6 +1494,11 @@ msgstr "%1$s は書き込み可能です。プラグインのインストール�
 msgid "Don't optimize videos for logged in users"
 msgstr "ログインしたユーザー向けに動画を最適化しない"
 
+#. translators: 3 closing HTML a tag, 4 closing HTML em tag.
+#: Extension_NewRelic_Page_View_Apm.php:380
+msgid "Enable this if you want to record the metric and transaction data (until the name is changed using PHP function), specify a value of true for this argument to make the agent send the transaction to the daemon. There is a slight performance impact as it takes a few milliseconds for the agent to dump its data. %1$sFrom %2$sNew Relic PHP API doc%3$s%4$s"
+msgstr "メトリクスとトランザクション データを (PHP 関数を使用して名前が変更されるまで) 記録する場合は、これを有効にし、この引数に true の値を指定して、エージェントがトランザクションをデーモンに送信するようにします。エージェントがデータをダンプするのに数ミリ秒かかるため、パフォーマンスにわずかな影響があります。 %1$s%2$sからNew Relic PHP APIドキュメント%3$s%4$s"
+
 #: Extension_Swarmify_Page_View.php:74
 msgid "Only unauthenticated users will view optimized version of a given page."
 msgstr "特定のページの最適化されたバージョンを表示できるのは、認証されていないユーザーのみです。"
@@ -1515,11 +1520,6 @@ msgstr "JWPlayer スクリプトを使用して配信されたビデオを最適
 #: Generic_AdminNotes.php:175
 msgid "Preview mode is active: Changed settings will not take effect until preview mode is %1$s or %2$s. %3$sTo preview any changed settings (without deploying): %4$s"
 msgstr "プレビュー モードがアクティブです: 変更された設定は、プレビュー モードが %1$s または %2$s になるまで有効になりません。 %3$s(デプロイせずに)変更された設定をプレビューするには: %4$s"
-
-#. translators: 3 closing HTML a tag, 4 closing HTML em tag.
-#: Extension_NewRelic_Page_View_Apm.php:380
-msgid "Enable this if you want to record the metric and transaction data (until the name is changed using PHP function), specify a value of true for this argument to make the agent send the transaction to the daemon. There is a slight performance impact as it takes a few milliseconds for the agent to dump its data. %1$sFrom %2$sNew Relic PHP API doc%3$s%4$s"
-msgstr "メトリクスとトランザクション データを (PHP 関数を使用して名前が変更されるまで) 記録する場合は、これを有効にし、この引数に true の値を指定して、エージェントがトランザクションをデーモンに送信するようにします。エージェントがデータをダンプするのに数ミリ秒かかるため、パフォーマンスにわずかな影響があります。 %1$s%2$sからNew Relic PHP APIドキュメント%3$s%4$s"
 
 #: Extension_Swarmify_Page_View.php:37
 msgid "Swarmify API Key required in order to start optimizing your videos experience"
@@ -1692,17 +1692,17 @@ msgstr "%1$sRUM%2$s ApDex しきい値:"
 msgid "Application ApDex Threshold:"
 msgstr "アプリケーション ApDex しきい値:"
 
-#. translators: 7 opening HTML a tag to Cloudflare help page, 8 closing HTML a
-#. tag.
-#: Extension_CloudFlare_Plugin_Admin.php:65
-msgid "Cloudflare protects and accelerates websites. %1$sSign up now for free%2$s to get started, or if you have an account simply log in to obtain your %3$sAPI%4$s token / global key from the %5$saccount page%6$s to enter it on the General Settings box that appears after plugin activation. Contact the Cloudflare %7$ssupport team%8$s with any questions."
-msgstr "CloudFlare は Web サイトを保護し、高速化します。 %1$s 今すぐ無料でサインアップ %2$s して開始するか、アカウントをお持ちの場合は、ログインして %5$s アカウント ページ %6$s から %3$s API %4$s トークン/グローバル キーを取得し、プラグインの有効化後に表示される [一般設定] ボックスに入力します。ご不明な点がございましたら、CloudFlare %7$s サポート チーム %8$s にお問い合わせください。"
-
 #. translators: 3 opening HTML a tag to NewRelic documentation for PHP, 4
 #. closing HTML a tag.
 #: Extension_NewRelic_GeneralPage_View.php:39
 msgid "New Relic may not be installed or not active on this server. %1$sSign up for a (free) account%2$s. Visit %3$sNew Relic%4$s for installation instructions."
 msgstr "New Relic がこのサーバーにインストールされていないか、アクティブになっていない可能性があります。 %1$s（無料）アカウントにサインアップ%2$s。インストール手順については、%3$sNew Relic%4$s にアクセスしてください。"
+
+#. translators: 7 opening HTML a tag to Cloudflare help page, 8 closing HTML a
+#. tag.
+#: Extension_CloudFlare_Plugin_Admin.php:65
+msgid "Cloudflare protects and accelerates websites. %1$sSign up now for free%2$s to get started, or if you have an account simply log in to obtain your %3$sAPI%4$s token / global key from the %5$saccount page%6$s to enter it on the General Settings box that appears after plugin activation. Contact the Cloudflare %7$ssupport team%8$s with any questions."
+msgstr "CloudFlare は Web サイトを保護し、高速化します。 %1$s 今すぐ無料でサインアップ %2$s して開始するか、アカウントをお持ちの場合は、ログインして %5$s アカウント ページ %6$s から %3$s API %4$s トークン/グローバル キーを取得し、プラグインの有効化後に表示される [一般設定] ボックスに入力します。ご不明な点がございましたら、CloudFlare %7$s サポート チーム %8$s にお問い合わせください。"
 
 #: Extension_ImageService_Page_View.php:99
 msgid "Show converted image attachments in the Media Library."
@@ -1807,13 +1807,13 @@ msgstr "ブラウザの整合性チェック:"
 msgid "Web application firewall:"
 msgstr "Web アプリケーション ファイアウォール:"
 
-#: Extension_CloudFlare_Page_View.php:526
-msgid "Browser Integrity Check is similar to Bad Behavior and looks for common HTTP headers abused most commonly by spammers and denies access to your page. It will also challenge visitors that do not have a user agent or a non standard user agent (also commonly used by abuse bots, crawlers or visitors)."
-msgstr "Browser Integrity Check は Bad Behavior に似ており、スパマーによって最も一般的に悪用される一般的な HTTP ヘッダーを探し、ページへのアクセスを拒否します。また、ユーザー エージェントまたは非標準のユーザー エージェントを持っていない訪問者にも挑戦します (悪用ボット、クローラー、または訪問者によっても一般的に使用されます)。"
-
 #: Extension_CloudFlare_Page_View.php:542
 msgid "The Web Application Firewall (WAF) examines HTTP requests to your website. It inspects both GET and POST requests and applies rules to help filter out illegitimate traffic from legitimate website visitors."
 msgstr "Web アプリケーション ファイアウォール (WAF) は、Web サイトへの HTTP 要求を調べます。 GET と POST の両方のリクエストを検査し、ルールを適用して、正当な Web サイト訪問者からの不正なトラフィックを除外します。"
+
+#: Extension_CloudFlare_Page_View.php:526
+msgid "Browser Integrity Check is similar to Bad Behavior and looks for common HTTP headers abused most commonly by spammers and denies access to your page. It will also challenge visitors that do not have a user agent or a non standard user agent (also commonly used by abuse bots, crawlers or visitors)."
+msgstr "Browser Integrity Check は Bad Behavior に似ており、スパマーによって最も一般的に悪用される一般的な HTTP ヘッダーを探し、ページへのアクセスを拒否します。また、ユーザー エージェントまたは非標準のユーザー エージェントを持っていない訪問者にも挑戦します (悪用ボット、クローラー、または訪問者によっても一般的に使用されます)。"
 
 #: Extension_CloudFlare_Page_View.php:534
 msgid "When enabled, Always Online will serve pages from our cache if your server is offline"
@@ -1982,10 +1982,6 @@ msgstr "チャレンジ (CAPTCHA など) を正常に完了した後、訪問者
 msgid "Encrypt email adresses on your web page from bots, while keeping them visible to humans. "
 msgstr "Web ページの電子メール アドレスをボットから暗号化し、人間に見えるようにします。"
 
-#: Extension_CloudFlare_GeneralPage_View.php:46
-msgid "Last month"
-msgstr "先月"
-
 #: Cdn_ConfigLabels.php:111 Cdn_GeneralPage_View.php:110
 #: Extension_CloudFlare_Page_View.php:344 inc/options/browsercache.php:436
 #: inc/options/cdn.php:381 inc/options/cdn/s3_compatible.php:33
@@ -2001,6 +1997,10 @@ msgstr "先月"
 #: Util_Ui.php:2214 Util_Ui.php:2287
 msgid "JavaScript"
 msgstr "JavaScript"
+
+#: Extension_CloudFlare_GeneralPage_View.php:46
+msgid "Last month"
+msgstr "先月"
 
 #: Extension_CloudFlare_GeneralPage_View.php:45
 msgid "Last week"
@@ -2161,11 +2161,6 @@ msgstr "各投稿タイトルに接尾辞を追加するかどうかを確認し
 msgid "currently set to %1$s%2$s%3$s will be changed to %4$s%5$s%6$s"
 msgstr "現在 %1$s%2$s%3$s に設定されていますが、%4$s%5$s%6$s に変更されます"
 
-#. translators: 7 opening HTML acronym tag, 8 closing HTML acronym tag.
-#: Cdnfsd_CloudFront_Popup_View_Distribution.php:40
-msgid "Create an apex %1$sDNS%2$s record pointing to your WordPress host %3$sIP%4$s.%5$sCloudFront will use this host to mirror your site.%6$sTip: If your real domain name is domain.com, then the host for the apex record should be origin.domain.com with the host %7$sIP%8$s of domain.com, e.g.:"
-msgstr "WordPress ホスト %3$sIP%4$s を指す頂点 %1$sDNS%2$s レコードを作成します。%5$sCloudFront はこのホストを使用してサイトをミラーリングします。%6$sヒント: 実際のドメイン名がdomain.com の場合、apex レコードのホストは、domain.com のホスト %7$sIP%8$s を持つ origin.domain.com である必要があります。例:"
-
 #: Extension_CloudFlare_GeneralPage_View.php:66
 msgid "Enable when you have html pages cached on Cloudflare level."
 msgstr "CloudFlare レベルでキャッシュされた html ページがある場合に有効にします。"
@@ -2195,6 +2190,11 @@ msgstr "スクリプト タグに data-cfasync=\"false\" を追加すること�
 #: ConfigDbStorage.php:439
 msgid "Failed to connect to mysql server"
 msgstr "mysql サーバーへの接続に失敗しました"
+
+#. translators: 7 opening HTML acronym tag, 8 closing HTML acronym tag.
+#: Cdnfsd_CloudFront_Popup_View_Distribution.php:40
+msgid "Create an apex %1$sDNS%2$s record pointing to your WordPress host %3$sIP%4$s.%5$sCloudFront will use this host to mirror your site.%6$sTip: If your real domain name is domain.com, then the host for the apex record should be origin.domain.com with the host %7$sIP%8$s of domain.com, e.g.:"
+msgstr "WordPress ホスト %3$sIP%4$s を指す頂点 %1$sDNS%2$s レコードを作成します。%5$sCloudFront はこのホストを使用してサイトをミラーリングします。%6$sヒント: 実際のドメイン名がdomain.com の場合、apex レコードのホストは、domain.com のホスト %7$sIP%8$s を持つ origin.domain.com である必要があります。例:"
 
 #: Extension_CloudFlare_GeneralPage_View.php:65
 msgid "Flush Cloudflare on Post Modifications"
@@ -2253,6 +2253,10 @@ msgstr "テーマ ファイル、メディア ライブラリの添付ファイ�
 msgid "Cloudflare extension is currently "
 msgstr "CloudFlare 拡張機能は現在"
 
+#: PgCache_ConfigLabels.php:40
+msgid "HyperText Transfer Protocol over SSL"
+msgstr "SSL 経由のハイパーテキスト転送プロトコル"
+
 #: Cdnfsd_BunnyCdn_Page_View.php:119 Cdnfsd_CloudFront_Page_View.php:52
 #: Cdn_RackSpaceCdn_Page_View.php:61 Cdn_RackSpaceCdn_Page_View.php:131
 #: Cdn_RackSpaceCdn_Popup_View_ConfigureDomains.php:30
@@ -2309,14 +2313,14 @@ msgid "Specifies valid sources for %1$sCSS%2$s stylesheets."
 msgstr "%1$sCSS%2$s スタイルシートの有効なソースを指定します。"
 
 #. translators: 3 opening HTML acronym tag, 4 closing HTML acronym tag.
-#: BrowserCache_Page_View_SectionSecurity.php:446
-msgid "This field is %1$salso required%2$s and represents your backup %3$sSPKI%4$s fingerprint. This pin is any public key not in your current certificate chain and serves as a backup in case your certificate expires or has to be revoked."
-msgstr "このフィールドは%1$sまた必須%2$sであり、バックアップ %3$sSPKI%4$s フィンガープリントを表します。この PIN は、現在の証明書チェーンにない公開鍵であり、証明書の有効期限が切れた場合や取り消す必要がある場合のバックアップとして機能します。"
-
-#. translators: 3 opening HTML acronym tag, 4 closing HTML acronym tag.
 #: BrowserCache_Page_View_SectionSecurity.php:567
 msgid "The Content Security Policy (%1$sCSP%2$s) header reduces the risk of %3$sXSS%4$s attacks by allowing you to define where resources can be retrieved from, preventing browsers from loading data from any other locations. This makes it harder for an attacker to inject malicious code into your site."
 msgstr "Content Security Policy (%1$sCSP%2$s) ヘッダーは、リソースを取得できる場所を定義できるようにすることで %3$sXSS%4$s 攻撃のリスクを軽減し、ブラウザーが他の場所からデータをロードするのを防ぎます。これにより、攻撃者が悪意のあるコードをサイトに挿入することが難しくなります。"
+
+#. translators: 3 opening HTML acronym tag, 4 closing HTML acronym tag.
+#: BrowserCache_Page_View_SectionSecurity.php:446
+msgid "This field is %1$salso required%2$s and represents your backup %3$sSPKI%4$s fingerprint. This pin is any public key not in your current certificate chain and serves as a backup in case your certificate expires or has to be revoked."
+msgstr "このフィールドは%1$sまた必須%2$sであり、バックアップ %3$sSPKI%4$s フィンガープリントを表します。この PIN は、現在の証明書チェーンにない公開鍵であり、証明書の有効期限が切れた場合や取り消す必要がある場合のバックアップとして機能します。"
 
 #. translators: 1 opening HTML acronym tag, 2 closing HTML acronym tag.
 #: BrowserCache_Page_View_SectionSecurity.php:495
@@ -2411,6 +2415,11 @@ msgstr "ユニフォームリソースロケータ"
 msgid "%1$sHTTP%2$s security headers provide another layer of protection for your website by helping to mitigate attacks and security vulnerabilities."
 msgstr "%1$sHTTP%2$s セキュリティ ヘッダーは、攻撃やセキュリティの脆弱性を軽減することで、Web サイトにもう 1 つの保護層を提供します。"
 
+#. translators: 1 opening HTML acronym tag, 2 closing HTML acronym tag.
+#: BrowserCache_Page_View_SectionSecurity.php:198
+msgid "This setting prevents attacks that are caused by passing session IDs in %1$sURL%2$ss."
+msgstr "この設定により、%1$sURL%2$ss でセッション ID を渡すことによって引き起こされる攻撃が防止されます。"
+
 #: BrowserCache_ConfigLabels.php:60 BrowserCache_ConfigLabels.php:76
 #: BrowserCache_ConfigLabels.php:102 BrowserCache_ConfigLabels.php:118
 #: BrowserCache_ConfigLabels.php:141 BrowserCache_ConfigLabels.php:157
@@ -2429,11 +2438,6 @@ msgstr "%1$sHTTP%2$s セキュリティ ヘッダーは、攻撃やセキュリ�
 #: PgCache_ConfigLabels.php:130
 msgid "Hypertext Transfer Protocol"
 msgstr "ハイパーテキスト転送プロトコル"
-
-#. translators: 1 opening HTML acronym tag, 2 closing HTML acronym tag.
-#: BrowserCache_Page_View_SectionSecurity.php:198
-msgid "This setting prevents attacks that are caused by passing session IDs in %1$sURL%2$ss."
-msgstr "この設定により、%1$sURL%2$ss でセッション ID を渡すことによって引き起こされる攻撃が防止されます。"
 
 #: Extension_ImageService_Plugin_Admin.php:610
 msgid "Submitted"
@@ -3166,14 +3170,14 @@ msgstr "オブジェクトを永続的に保存することにより、動的ペ
 msgid "WordPress caches objects used to build pages, but does not reuse them for future page requests."
 msgstr "WordPress は、ページの構築に使用されるオブジェクトをキャッシュしますが、将来のページ リクエストでそれらを再利用しません。"
 
+#: SetupGuide_Plugin_Admin.php:1463
+msgid "Many database queries are made in every dynamic page request.  A database cache may speed up the generation of dynamic pages.  Database Cache serves query results directly from a storage engine."
+msgstr "動的なページ要求ごとに、多くのデータベース クエリが実行されます。データベース キャッシュは、動的ページの生成を高速化する場合があります。データベース キャッシュは、ストレージ エンジンから直接クエリ結果を提供します。"
+
 #. translators: 1: Anchor/link open tag, 2: Anchor/link close tag.
 #: SetupGuide_Plugin_Admin.php:1397
 msgid "By allowing us to collect data about how W3 Total Cache is used, we can improve our features and experience for everyone. This data will not include any personally identifiable information.  Feel free to review our %1$sterms of use and privacy policy%2$s."
 msgstr "W3 Total Cache の使用方法に関するデータを収集できるようにすることで、すべてのユーザーの機能とエクスペリエンスを向上させることができます。このデータには、個人を特定できる情報は含まれません。 %1$s利用規約とプライバシー ポリシー%2$sをご確認ください。"
-
-#: SetupGuide_Plugin_Admin.php:1463
-msgid "Many database queries are made in every dynamic page request.  A database cache may speed up the generation of dynamic pages.  Database Cache serves query results directly from a storage engine."
-msgstr "動的なページ要求ごとに、多くのデータベース クエリが実行されます。データベース キャッシュは、動的ページの生成を高速化する場合があります。データベース キャッシュは、ストレージ エンジンから直接クエリ結果を提供します。"
 
 #. translators: 1: HTML emphesis open tag, 2: HTML emphesis close tag.
 #: SetupGuide_Plugin_Admin.php:1415
@@ -6922,6 +6926,10 @@ msgstr "サイトの .htaccess ファイルで使用する永続的な (301) リ
 msgid "No groups added. All referrers receive the same page and minify cache results."
 msgstr "グループが追加されていません。すべてのリファラーは同じページを受け取り、キャッシュ結果を縮小します。"
 
+#: CacheGroups_Plugin_Admin_View.php:161
+msgid "of referrers by specifying names in the referrers field. Assign a set of referrers to use a specific theme, redirect them to another domain, create referrer groups to ensure that a unique cache is created for each referrer group. Drag and drop groups into order (if needed) to determine their priority (top -&gt; down)."
+msgstr "referrers フィールドに名前を指定してリファラーを指定します。特定のテーマを使用するリファラーのセットを割り当て、それらを別のドメインにリダイレクトし、リファラー グループを作成して、リファラー グループごとに一意のキャッシュが作成されるようにします。グループを順番にドラッグ アンド ドロップして (必要な場合)、優先順位を決定します (上 -&gt; 下)。"
+
 #: inc/options/support.php:15
 msgid "Request premium services, suggest a feature or submit a bug using the form below:"
 msgstr "以下のフォームを使用して、プレミアム サービスのリクエスト、機能の提案、またはバグの送信を行います。"
@@ -6929,10 +6937,6 @@ msgstr "以下のフォームを使用して、プレミアム サービスの�
 #: CacheGroups_Plugin_Admin_View.php:222
 msgid "Specify the referrers for this group. Remember to escape special characters like spaces, dots or dashes with a backslash. Regular expressions are also supported."
 msgstr "このグループのリファラーを指定します。スペース、ドット、ダッシュなどの特殊文字は必ずバックスラッシュでエスケープしてください。正規表現もサポートされています。"
-
-#: CacheGroups_Plugin_Admin_View.php:161
-msgid "of referrers by specifying names in the referrers field. Assign a set of referrers to use a specific theme, redirect them to another domain, create referrer groups to ensure that a unique cache is created for each referrer group. Drag and drop groups into order (if needed) to determine their priority (top -&gt; down)."
-msgstr "referrers フィールドに名前を指定してリファラーを指定します。特定のテーマを使用するリファラーのセットを割り当て、それらを別のドメインにリダイレクトし、リファラー グループを作成して、リファラー グループごとに一意のキャッシュが作成されるようにします。グループを順番にドラッグ アンド ドロップして (必要な場合)、優先順位を決定します (上 -&gt; 下)。"
 
 #: inc/popup/cdn_purge.php:36
 msgid "the directory itself (only when accessed directly without any file)."
@@ -7009,6 +7013,10 @@ msgstr "このオプションが有効になっている場合、認証された
 msgid "Both Admin &amp; Email Notification"
 msgstr "管理者通知とメール通知の両方"
 
+#: CacheGroups_Plugin_Admin_View.php:91
+msgid "Assign this group of user agents to a specific theme. Selecting \"Pass-through\" allows any plugin(s) (e.g. mobile plugins) to properly handle requests for these user agents. If the \"redirect users to\" field is not empty, this setting is ignored."
+msgstr "このユーザー エージェントのグループを特定のテーマに割り当てます。 「パススルー」を選択すると、すべてのプラグイン (モバイル プラグインなど) がこれらのユーザー エージェントの要求を適切に処理できるようになります。 「ユーザーのリダイレクト先」フィールドが空でない場合、この設定は無視されます。"
+
 #: inc/options/pgcache.php:137
 msgid "By default the front page is cached when using static front page in reading settings."
 msgstr "デフォルトでは、読み取り設定で静的フロント ページを使用すると、フロント ページがキャッシュされます。"
@@ -7024,10 +7032,6 @@ msgstr "末尾にスラッシュがない場合でも、指定されたページ
 #: inc/options/install.php:386
 msgid "Consider using memcached for objects that must persist across web server restarts or that you wish to share amongst your server pool, e.g.: database objects or page cache."
 msgstr "データベース オブジェクトやページ キャッシュなど、Web サーバーの再起動後も維持する必要があるオブジェクトや、サーバー プール間で共有したいオブジェクトには、memcached の使用を検討してください。"
-
-#: CacheGroups_Plugin_Admin_View.php:91
-msgid "Assign this group of user agents to a specific theme. Selecting \"Pass-through\" allows any plugin(s) (e.g. mobile plugins) to properly handle requests for these user agents. If the \"redirect users to\" field is not empty, this setting is ignored."
-msgstr "このユーザー エージェントのグループを特定のテーマに割り当てます。 「パススルー」を選択すると、すべてのプラグイン (モバイル プラグインなど) がこれらのユーザー エージェントの要求を適切に処理できるようになります。 「ユーザーのリダイレクト先」フィールドが空でない場合、この設定は無視されます。"
 
 #: inc/options/minify.php:272
 msgid "Do not remove comments that contain these terms."
@@ -7053,10 +7057,6 @@ msgstr "多くのブログでは、これが最もアクセス数の多いペー
 msgid "Files are minified by template. First select the theme to manage, then add scripts used in all templates to the \"All Templates\" group. Use the menu above to manage scripts unique to a specific template. If necessary drag &amp; drop to resolve dependency issues (due to incorrect order)."
 msgstr "ファイルはテンプレートによって縮小されます。最初に管理するテーマを選択してから、すべてのテンプレートで使用されるスクリプトを「すべてのテンプレート」グループに追加します。上のメニューを使用して、特定のテンプレートに固有のスクリプトを管理します。必要に応じて、ドラッグ アンド ドロップして依存関係の問題を解決します (順序が正しくないため)。"
 
-#: inc/options/minify.php:816
-msgid "Files are minified by template. First select the theme to manage, then add style sheets used in all templates to the \"All Templates\" group. Use the menu above to manage style sheets unique to a specific template. If necessary drag &amp; drop to resolve dependency issues (due to incorrect order)."
-msgstr "ファイルはテンプレートによって縮小されます。最初に管理するテーマを選択し、すべてのテンプレートで使用されるスタイル シートを [すべてのテンプレート] グループに追加します。上のメニューを使用して、特定のテンプレートに固有のスタイル シートを管理します。必要に応じて、ドラッグ アンド ドロップして依存関係の問題を解決します (順序が正しくないため)。"
-
 #: inc/options/objectcache.php:111
 msgid "Groups shared amongst sites in network mode."
 msgstr "ネットワーク モードでサイト間で共有されるグループ。"
@@ -7080,6 +7080,10 @@ msgstr "New Relic から取得したデータを何分保存するか。最小�
 #: inc/options/install.php:384
 msgid "In the case where Apache is not used, the .htaccess file located in the root directory of the WordPress installation, wp-content/w3tc/pgcache/.htaccess and wp-content/w3tc/min/.htaccess contain directives that must be manually created for your web server software."
 msgstr "Apache を使用しない場合、WordPress インストールのルート ディレクトリにある .htaccess ファイル、wp-content/w3tc/pgcache/.htaccess および wp-content/w3tc/min/.htaccess には、手動で行う必要があるディレクティブが含まれています。 Web サーバー ソフトウェア用に作成されます。"
+
+#: inc/options/minify.php:816
+msgid "Files are minified by template. First select the theme to manage, then add style sheets used in all templates to the \"All Templates\" group. Use the menu above to manage style sheets unique to a specific template. If necessary drag &amp; drop to resolve dependency issues (due to incorrect order)."
+msgstr "ファイルはテンプレートによって縮小されます。最初に管理するテーマを選択し、すべてのテンプレートで使用されるスタイル シートを [すべてのテンプレート] グループに追加します。上のメニューを使用して、特定のテンプレートに固有のスタイル シートを管理します。必要に応じて、ドラッグ アンド ドロップして依存関係の問題を解決します (順序が正しくないため)。"
 
 #: inc/options/pgcache.php:359
 msgid "Limit the number of pages to create per batch. Fewer pages may be better for under-powered servers."
@@ -8865,15 +8869,15 @@ msgstr "通常、広告主コード、分析/統計、またはその他のタ�
 msgid "Whenever settings are changed, a new query string will be generated and appended to objects allowing the new policy to be applied."
 msgstr "設定が変更されるたびに、新しいクエリ文字列が生成され、オブジェクトに追加され、新しいポリシーを適用できるようになります。"
 
+#: inc/options/about.php:239
+msgid "Your users have less data to download, you can now serve more visitors at once without upgrading your hardware and you don't have to change how you do anything; just set it and forget it."
+msgstr "ユーザーがダウンロードするデータが少なくなり、ハードウェアをアップグレードせずに一度により多くの訪問者にサービスを提供できるようになり、操作方法を変更する必要がなくなります。設定して忘れてください。"
+
 #. translators: 1 HTML a tag to memcached.org, 2 HTML acronym open tag, 3 HTML
 #. acronym and close tag.
 #: inc/options/about.php:16
 msgid "User experience is an important aspect of every web site and all web sites can benefit from effective caching and file size reduction. We have applied web site optimization methods typically used with high traffic sites and simplified their implementation. Coupling these methods either %1$s and/or opcode caching and the %2$sCDN%3$s of your choosing to provide the following features and benefits:"
 msgstr "ユーザー エクスペリエンスはすべての Web サイトの重要な側面であり、すべての Web サイトは効果的なキャッシュとファイル サイズの縮小からメリットを得ることができます。トラフィックの多いサイトで一般的に使用される Web サイトの最適化手法を適用し、実装を簡素化しました。これらの方法を %1$s および/またはオペコード キャッシングと選択した %2$sCDN%3$s のいずれかと組み合わせて、次の機能と利点を提供します。"
-
-#: inc/options/about.php:239
-msgid "Your users have less data to download, you can now serve more visitors at once without upgrading your hardware and you don't have to change how you do anything; just set it and forget it."
-msgstr "ユーザーがダウンロードするデータが少なくなり、ハードウェアをアップグレードせずに一度により多くの訪問者にサービスを提供できるようになり、操作方法を変更する必要がなくなります。設定して忘れてください。"
 
 #: Extension_CloudFlare_GeneralPage_View.php:15
 msgid "Network Performance &amp; Security powered by Cloudflare"
