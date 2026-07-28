@@ -1,17 +1,17 @@
-# Translation of Plugins - Ally &#8211; Web Accessibility &amp; Usability - Stable (latest release) in German
-# This file is distributed under the same license as the Plugins - Ally &#8211; Web Accessibility &amp; Usability - Stable (latest release) package.
+# Translation of Plugins - Web Accessibility (formally known as Ally) &#8211; WCAG Scanning, Guided Fixes, Usability Widget - Stable (latest release) in German
+# This file is distributed under the same license as the Plugins - Web Accessibility (formally known as Ally) &#8211; WCAG Scanning, Guided Fixes, Usability Widget - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-05-17 02:57:12+0000\n"
+"PO-Revision-Date: 2026-07-27 22:03:16+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: GlotPress/4.0.3\n"
 "Language: de\n"
-"Project-Id-Version: Plugins - Ally &#8211; Web Accessibility &amp; Usability - Stable (latest release)\n"
+"Project-Id-Version: Plugins - Web Accessibility (formally known as Ally) &#8211; WCAG Scanning, Guided Fixes, Usability Widget - Stable (latest release)\n"
 
-#: modules/settings/banners/onboarding-banner.php:73
+#: modules/settings/banners/onboarding-banner.php:77
 msgid "Try it now"
 msgstr "Jetzt ausprobieren"
 
@@ -39,13 +39,9 @@ msgstr "Überspringen & deaktivieren"
 msgid "I no longer need this plugin"
 msgstr "Ich benötige dieses Plugin nicht mehr"
 
-#: modules/settings/banners/onboarding-banner.php:70
+#: modules/settings/banners/onboarding-banner.php:74
 msgid "Scan your site for accessibility issues and start fixing them with ease. It's already part of your plan."
 msgstr "Überprüfe deine Website auf Probleme mit der Barrierefreiheit und fange an, sie zu beheben. Das ist bereits Teil deines Plans."
-
-#: modules/settings/banners/onboarding-banner.php:67
-msgid "New in Ally: Accessibility Assistant"
-msgstr "Neu bei Ally: Assistent für Barrierefreiheit"
 
 #: modules/scanner/components/top-bar-link.php:37
 msgid "Scan page"
@@ -95,10 +91,6 @@ msgstr "Das Plugin hat nicht die Ergebnisse geliefert, die ich mir erhofft hatte
 msgid "It's too expensive"
 msgstr "Es ist zu teuer"
 
-#: modules/deactivation/module.php:78
-msgid "If you have a moment, please share why you are deactivating Ally:"
-msgstr "Wenn du einen Moment Zeit hast, teile bitte mit, warum du Ally deaktivierst:"
-
 #: modules/scanner/components/list-column.php:107
 msgid "Fix"
 msgstr "Fix"
@@ -124,8 +116,8 @@ msgstr "Alle Probleme mit der Barrierefreiheit sind gelöst"
 msgid "Scan"
 msgstr "Überprüfen"
 
-#: modules/dashboard/widgets/ally-dashboard-widget.php:68
-#: assets/build/chunk-page-accessibility-scans.js:133
+#: modules/dashboard/widgets/ally-dashboard-widget.php:69
+#: assets/build/chunk-page-accessibility-scans.js:67
 #: modules/settings/assets/js/pages/assistant/empty-state.js:50
 msgid "Scan home page"
 msgstr "Startseite scannen"
@@ -134,8 +126,8 @@ msgstr "Startseite scannen"
 msgid "Blog"
 msgstr "Blog"
 
-#: modules/scanner/components/top-bar-link.php:31 assets/build/scanner.js:675
-#: assets/build/scanner.js:939
+#: modules/scanner/components/top-bar-link.php:31 assets/build/scanner.js:671
+#: assets/build/scanner.js:934
 #: modules/scanner/assets/js/components/header/title/app-title.js:12
 #: modules/scanner/assets/js/index.js:83
 msgid "Accessibility Assistant"
@@ -150,8 +142,6 @@ msgid "Home"
 msgstr "Start"
 
 #: modules/widget/components/ally-trigger.php:18
-#: assets/build/gutenberg-custom-link.js:1
-#: modules/widget/assets/js/ally-gutenberg-block.js:33
 msgid "Ally Widget Trigger"
 msgstr "Ally Widget Auslöser"
 
@@ -163,14 +153,10 @@ msgstr "Diese Datei ist aus Sicherheitsgründen nicht erlaubt."
 msgid "Bad request."
 msgstr "Fehlerhafte Anfrage."
 
-#: modules/deactivation/module.php:135 assets/build/admin.js:399
-#: assets/build/chunk-charts-assistant.js:15
-#: assets/build/chunk-page-accessibility-scans.js:67
-#: assets/build/chunk-page-accessibility-scans.js:343
-#: assets/build/chunk-page-accessibility-statement.js:240
-#: assets/build/chunk-page-analytics.js:67
-#: assets/build/chunk-page-capabilities.js:237
-#: assets/build/chunk-page-design.js:240
+#: modules/deactivation/module.php:135 assets/build/866.js:6
+#: assets/build/chunk-charts-assistant.js:1
+#: assets/build/chunk-page-accessibility-scans.js:275
+#: assets/build/chunk-page-analytics.js:1
 #: modules/settings/assets/js/constants/index.js:135
 #: modules/settings/assets/js/constants/index.js:136
 #: modules/settings/assets/js/pages/assistant/stats/issues-by-category/issue-list.js:53
@@ -183,11 +169,6 @@ msgstr "Andere"
 #: modules/settings/notices/quota-100.php:39
 msgid "Upgrade Now"
 msgstr "Jetzt upgraden"
-
-#. Plugin Name of the plugin
-#: pojo-accessibility.php
-msgid "Ally - Web Accessibility & Usability"
-msgstr "Ally - Barrierefreiheit & Benutzerfreundlichkeit im Web"
 
 #: modules/core/components/revert-to-legacy.php:41
 msgid "Revert to legacy"
@@ -209,15 +190,17 @@ msgid "Something went wrong."
 msgstr "Ein Fehler ist aufgetreten."
 
 #: modules/legacy/components/upgrade.php:213
-#: assets/build/chunk-page-analytics.js:67 assets/build/reviews.js:101
-#: assets/build/scanner.js:906 assets/build/scanner.js:909
-#: assets/build/scanner.js:912 assets/build/scanner.js:915
-#: modules/reviews/assets/src/components/dismiss-button.js:49
+#: assets/build/chunk-modal-migration.js:22
+#: assets/build/chunk-page-analytics.js:1 assets/build/reviews.js:101
+#: assets/build/scanner.js:901 assets/build/scanner.js:904
+#: assets/build/scanner.js:907 assets/build/scanner.js:910
+#: modules/reviews/assets/src/components/dismiss-button.js:123
 #: modules/scanner/assets/js/components/remediation-confirmation-modal/delete-global-remediation-modal.js:29
 #: modules/scanner/assets/js/components/remediation-confirmation-modal/delete-page-remediation-modal.js:33
 #: modules/scanner/assets/js/components/remediation-confirmation-modal/disable-global-remediation-modal.js:25
 #: modules/scanner/assets/js/components/remediation-confirmation-modal/enable-global-remediation-modal.js:25
 #: modules/settings/assets/js/components/analytics/analytics-toggle.js:118
+#: modules/settings/assets/js/components/migration-modal/index.js:164
 msgid "Not now"
 msgstr "Jetzt nicht"
 
@@ -237,15 +220,10 @@ msgstr "Mehr erfahren"
 msgid "View more details"
 msgstr "Weitere Details anzeigen"
 
-#: modules/core/module.php:51 assets/build/chunk-modal-url-mismatch.js:1
+#: modules/core/module.php:52 assets/build/chunk-modal-url-mismatch.js:1
 #: modules/settings/assets/js/components/url-mismatch-modal/index.js:145
 msgid "Connect"
 msgstr "Verbinden"
-
-#: modules/legacy/components/upgrade.php:214
-#: modules/legacy/notices/sticky-deprecated-nag.php:29
-msgid "Switch to Ally"
-msgstr "Zu Ally wechseln"
 
 #: classes/rest/route.php:375
 msgid "Invalid nonce"
@@ -256,10 +234,6 @@ msgstr "Ungültige Nonce"
 msgid "Learn More"
 msgstr "Weitere Informationen"
 
-#: modules/scanner/components/list-column.php:34
-msgid "Ally"
-msgstr "Ally"
-
 #: modules/settings/components/settings-pointer.php:43
 msgid "Get Started"
 msgstr "Starte jetzt durch"
@@ -268,30 +242,9 @@ msgstr "Starte jetzt durch"
 msgid "Start setting up and customizing your site's accessibility widget."
 msgstr "Beginne mit der Einrichtung und Anpassung des Widgets für die Barrierefreiheit deiner Website."
 
-#: modules/settings/components/settings-pointer.php:37
-#: modules/settings/module.php:64
-msgid "Ally - Web Accessibility"
-msgstr "Ally - Barrierefreiheit im Internet"
-
-#: modules/legacy/notices/sticky-deprecated-nag.php:25
-msgid "Your current plugin is no longer supported. Switch to Ally - Web Accessibility now to access more customization, control, and tools for a more inclusive site."
-msgstr "Ihr aktuelles Plugin wird nicht mehr unterstützt. Wechsle jetzt zu Ally - Barrierefreiheit im Web, um mehr Anpassungsmöglichkeiten, Kontrolle und Tools für eine integrative Website zu erhalten."
-
 #: modules/legacy/notices/sticky-deprecated-nag.php:24
 msgid "New accessibility plugin available!"
 msgstr "Neues Plugin für Barrierefreiheit verfügbar!"
-
-#: modules/legacy/notices/dismissible-deprecated-nag.php:34
-msgid "Switch To Ally - Web Accessibility"
-msgstr "Zu Ally wechseln - Barrierefreiheit im Web"
-
-#: modules/legacy/notices/dismissible-deprecated-nag.php:30
-msgid "Time to take your site’s accessibility to the next level with Ally - Web Accessibility, our newest plugin packed with advanced widget customization, flexible feature controls, and a built-in statement generator. Want more details before switching?"
-msgstr "Es ist an der Zeit, die Barrierefreiheit deiner Website auf die nächste Stufe zu heben - mit Ally - Barrierefreiheit im Web, unserem neuesten Plugin mit fortschrittlicher Widget-Anpassung, flexiblen Funktionssteuerungen und einem integrierten Erklärungsgenerator. Möchtest du mehr Details erfahren, bevor du umsteigst?"
-
-#: modules/legacy/components/upgrade.php:595
-msgid "Our new, improved accessibility plugin is now available! Ally - Web Accessibility is packed with advanced styling options, improved feature controls, and so much more."
-msgstr "Unser neues, verbessertes Zugänglichkeits-Plugin ist jetzt verfügbar! Ally - Barrierefreiheit im Web ist vollgepackt mit erweiterten Styling-Optionen, verbesserten Funktionskontrollen und vielem mehr."
 
 #: modules/legacy/components/upgrade.php:393
 msgid "Confirm and switch"
@@ -300,14 +253,6 @@ msgstr "Bestätigen und wechseln"
 #: modules/legacy/components/upgrade.php:392
 msgid "Keep Current"
 msgstr "Aktuell halten"
-
-#: modules/legacy/components/upgrade.php:390
-msgid "You’re about to switch from One click accessibility, which we no longer support, to Ally - Web Accessibility. Any previous settings will be removed, and this action cannot be undone."
-msgstr "Du bist dabei, von der Ein-Klick-Barrierefreiheit, die wir nicht mehr unterstützen, zu Ally - Barrierefreiheit im Web zu wechseln. Alle vorherigen Einstellungen werden entfernt, und dieser Vorgang kann nicht rückgängig gemacht werden."
-
-#: modules/legacy/components/upgrade.php:389
-msgid "Confirm switching to Ally"
-msgstr "Bestätige den Wechsel zu Ally"
 
 #: modules/legacy/components/upgrade.php:211
 msgid "Learn more about the changes"
@@ -324,10 +269,6 @@ msgstr "Entscheide und verwalte, welche Funktionen du angezeigt bekommen möchte
 #: modules/legacy/components/upgrade.php:203
 msgid "Personalize colors, styles, and layouts to match your brand"
 msgstr "Personalisiere Farben, Stile und Layouts passend zu deiner Marke"
-
-#: modules/legacy/components/upgrade.php:199
-msgid "Ally - Web Accessibility is our new and improved accessibility plugin. Get advanced customization, control, and customer support with one simple switch."
-msgstr "Ally - Barrierefreiheit im Web ist unser neues und verbessertes Barrierefreiheits-Plugin. Hole dir erweiterte Anpassungen, Kontrolle und Kundenunterstützung mit einem einfachen Schalter."
 
 #: modules/legacy/components/upgrade.php:198
 msgid "Switch to our new accessibility widget"
@@ -410,6 +351,7 @@ msgid "Set Toolbar Position"
 msgstr "Werkzeugleistenposition einstellen"
 
 #: modules/legacy/components/customizer.php:173
+#: modules/legacy/components/frontend.php:117
 #: modules/legacy/components/settings.php:647
 msgid "Accessibility Toolbar"
 msgstr "Barrierefreiheit-Werkzeugleiste"
@@ -430,7 +372,7 @@ msgstr "Jetzt kostenlos installieren!"
 msgid "Learn more about Elementor"
 msgstr "Mehr über Elementor erfahren"
 
-#: modules/core/module.php:36 modules/legacy/components/settings.php:640
+#: modules/core/module.php:37 modules/legacy/components/settings.php:640
 #: modules/legacy/components/settings.php:665
 msgid "Settings"
 msgstr "Einstellungen"
@@ -542,14 +484,6 @@ msgstr "1 Woche"
 msgid "12 Hours"
 msgstr "12 Stunden"
 
-#: modules/legacy/components/settings.php:405
-msgid "3 Days"
-msgstr "3 Tage"
-
-#: modules/legacy/components/settings.php:404
-msgid "2 Days"
-msgstr "2 Tage"
-
 #: modules/legacy/components/settings.php:403
 msgid "1 Day"
 msgstr "1 Tag"
@@ -574,6 +508,14 @@ msgstr "Seitenweite Barrierefreiheit"
 msgid "1 Hour"
 msgstr "1 Stunde"
 
+#: modules/legacy/components/settings.php:404
+msgid "2 Days"
+msgstr "2 Tage"
+
+#: modules/legacy/components/settings.php:405
+msgid "3 Days"
+msgstr "3 Tage"
+
 #: modules/legacy/components/settings.php:306
 msgid "Style Settings"
 msgstr "Design-Einstellungen"
@@ -584,20 +526,13 @@ msgstr "Design-Einstellungen"
 msgid "Help"
 msgstr "Hilfe"
 
-#: modules/legacy/components/settings.php:280 assets/build/admin.js:524
-#: assets/build/chunk-page-accessibility-statement.js:365
-#: assets/build/chunk-page-capabilities.js:362
-#: assets/build/chunk-page-design.js:365
+#: modules/legacy/components/settings.php:280 assets/build/5641.js:114
 #: modules/settings/assets/js/helpers/accessibility-statement.js:27
 msgid "Feedback"
 msgstr "Feedback"
 
-#: modules/legacy/components/settings.php:240 assets/build/admin.js:399
-#: assets/build/chunk-page-accessibility-scans.js:67
-#: assets/build/chunk-page-accessibility-statement.js:240
-#: assets/build/chunk-page-analytics.js:67
-#: assets/build/chunk-page-capabilities.js:237
-#: assets/build/chunk-page-design.js:240
+#: modules/legacy/components/settings.php:240 assets/build/866.js:6
+#: assets/build/chunk-page-analytics.js:1
 #: modules/settings/assets/js/constants/index.js:83
 #: modules/settings/assets/js/constants/index.js:84
 msgid "Sitemap"
@@ -673,25 +608,25 @@ msgid "Show on all devices"
 msgstr "Auf allen Geräten anzeigen"
 
 #: modules/legacy/components/frontend.php:198
-#: modules/legacy/components/frontend.php:199 assets/build/scanner.js:875
-#: assets/build/scanner.js:879
+#: modules/legacy/components/frontend.php:199 assets/build/scanner.js:870
+#: assets/build/scanner.js:874
 #: modules/scanner/assets/js/components/color-contrast-form/color-set-disabled.js:77
 #: modules/scanner/assets/js/components/color-contrast-form/color-set.js:115
 msgid "Reset"
 msgstr "Zurücksetzen"
 
-#: modules/dashboard/widgets/ally-dashboard-widget.php:104
+#: modules/dashboard/widgets/ally-dashboard-widget.php:105
 #: modules/legacy/components/customizer.php:27
 #: modules/legacy/components/customizer.php:177
 #: modules/legacy/components/settings.php:630
 #: modules/legacy/components/settings.php:631
 #: modules/legacy/components/upgrade.php:594 modules/settings/module.php:65
-#: assets/build/admin.js:433 assets/build/chunk-modal-get-started.js:1
-#: assets/build/chunk-page-accessibility-statement.js:274
-#: assets/build/chunk-page-capabilities.js:271
-#: assets/build/chunk-page-design.js:274
+#: assets/build/admin.js:18 assets/build/chunk-modal-get-started.js:1
+#: assets/build/chunk-page-accessibility-statement.js:1
+#: assets/build/chunk-page-capabilities.js:1
+#: assets/build/chunk-page-design.js:1
 #: modules/settings/assets/js/components/help-menu/get-started-modal.js:70
-#: modules/settings/assets/js/components/sidebar-heading/index.js:18
+#: modules/settings/assets/js/components/sidebar-heading/index.js:21
 msgid "Accessibility"
 msgstr "Barrierefreiheit"
 
