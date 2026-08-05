@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - W3 Total Cache - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-08-03 19:37:53+0000\n"
+"PO-Revision-Date: 2026-08-05 07:40:54+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,6 +18,30 @@ msgstr "No tienes permisos para acceder a esta imagen."
 #: Extension_ImageService_Plugin_Admin.php:2146
 msgid "You do not have permission to perform bulk reverts."
 msgstr "No tienes permiso para realizar reversiones por lotes."
+
+#: Extension_ImageService_Plugin_Admin.php:2109
+msgid "You do not have permission to perform bulk conversions."
+msgstr "No tienes permiso para realizar conversiones por lotes."
+
+#: Extension_ImageService_Plugin_Admin.php:2182
+msgid "You do not have permission to view image counts."
+msgstr "No tienes permiso para ver el recuento de imágenes."
+
+#: Extension_ImageService_Plugin_Admin.php:2205
+msgid "You do not have permission to view API usage."
+msgstr "No tienes permiso para ver el uso de la API."
+
+#: Extension_ImageService_Plugin_Admin.php:1808
+msgid "You do not have permission to convert this image."
+msgstr "No tienes permiso para convertir esta imagen."
+
+#: Extension_ImageService_Plugin_Admin.php:2054
+msgid "You do not have permission to revert this image."
+msgstr "No tienes permiso para revertir esta imagen."
+
+#: Extension_ImageService_Page_View.php:179
+msgid "In one recent test, converting images to modern formats like WebP or AVIF added over 9 points to the Google PageSpeed score!"
+msgstr "En una prueba reciente, convertir imágenes a formatos modernos como WebP o AVIF añadió más de 9 puntos a la puntuación de Google PageSpeed."
 
 #: Util_PageSpeed.php:799
 msgid "(unknown request)"
@@ -73,6 +97,195 @@ msgstr "%s conversiones por hora"
 #: SetupGuide_Plugin_Admin.php:1696
 msgid "%1$sImage Converter%2$s enabled? %1$s%3$s%2$s"
 msgstr "¿Está activado %1$sImage Converter%2$s? %1$s%3$s%2$s"
+
+#: Util_PageSpeed.php:1011
+msgid "Fail"
+msgstr "Fallo"
+
+#: Util_PageSpeed.php:1011
+msgid "Pass"
+msgstr "Correcto"
+
+#: Util_PageSpeed.php:1009
+msgid "Document Request"
+msgstr "Solicitud de documento"
+
+#. translators: %d – duration in milliseconds.
+#: Util_PageSpeed.php:784
+msgid "%d ms"
+msgstr "%d ms"
+
+#. translators: %s – transfer size.
+#: Util_PageSpeed.php:776
+msgid "%s transferred"
+msgstr "%s transferido"
+
+#: Util_PageSpeed.php:881
+msgid "No additional data provided by PageSpeed."
+msgstr "PageSpeed no ha proporcionado datos adicionales."
+
+#. translators: 1 W3TC plugin name, 2 opening HTML a tag to W3TC extensions, 3
+#. closing HTML a tag.
+#: PageSpeed_Instructions.php:518
+msgid "Optimize your image delivery by sizing them properly and compressing them for smaller sizes. Use modern format conversion (e.g., WebP or AVIF) via the %1$s %2$sImage Converter%3$s extension."
+msgstr "Optimiza la entrega de tus imágenes ajustando correctamente su tamaño y comprimiéndolas para reducir su peso. Utiliza la conversión a formatos modernos (p. ej., WebP o AVIF) mediante la extensión %2$sImage Converter%3$s para %1$s."
+
+#: Util_PageSpeed.php:747
+msgid "No critical request chains were provided for this audit."
+msgstr "No se han proporcionado cadenas de solicitud críticas para esta auditoría."
+
+#: Util_PageSpeed.php:699
+msgid "Preconnect candidates"
+msgstr "Candidatos de preconexión"
+
+#: SetupGuide_Plugin_Admin.php:1570 SetupGuide_Plugin_Admin.php:1584
+msgid "Your rate limits"
+msgstr "Tus límites de uso"
+
+#: SetupGuide_Plugin_Admin.php:1565
+msgid "AVIF format"
+msgstr "Formato AVIF"
+
+#: SetupGuide_Plugin_Admin.php:1564
+msgid "WebP format"
+msgstr "Formato WebP"
+
+#: SetupGuide_Plugin_Admin.php:1562
+msgid "Conversion types"
+msgstr "Tipos de conversión"
+
+#: SetupGuide_Plugin_Admin.php:1528
+msgid "Test several times to account for variability and pick the setting with the best average."
+msgstr "Haz varias pruebas para tener en cuenta la variabilidad y elige el ajuste con el mejor promedio."
+
+#: SetupGuide_Plugin_Admin.php:1480
+msgid "Run the test multiple times to smooth out variability and rely on the Average column when choosing your setting."
+msgstr "Realiza la prueba varias veces para suavizar la variabilidad y confía en la columna Promedio al elegir el ajuste."
+
+#: SetupGuide_Plugin_Admin.php:1452 SetupGuide_Plugin_Admin.php:1489
+#: SetupGuide_Plugin_Admin.php:1537
+msgid "Latest (ms)"
+msgstr "Último (ms)"
+
+#: SetupGuide_Plugin_Admin.php:1433 SetupGuide_Plugin_Admin.php:1468
+#: SetupGuide_Plugin_Admin.php:1516
+msgid "Individual test runs can vary. Run the test a few times and use the Average column to choose the best option for your site."
+msgstr "Las ejecuciones individuales de la prueba pueden variar. Realiza la prueba varias veces y usa la columna Promedio para elegir la mejor opción para tu sitio."
+
+#: PgCache_ConfigLabels.php:170
+msgid "Additional home URLs:"
+msgstr "URL adicionales de la página de inicio:"
+
+#. translators: 1: opening acronym tag for UTF, 2: closing acronym tag.
+#: PgCache_ConfigLabels.php:156
+msgid "Handle %1$sXML%2$s mime type"
+msgstr "Gestionar el tipo MIME %1$sXML%2$s"
+
+#. translators: 1: opening acronym tag for HTTP, 2: closing acronym tag.
+#: PgCache_ConfigLabels.php:126
+msgid " Disable caching of HEAD %1$sHTTP%2$s requests"
+msgstr " Desactivar el almacenamiento en caché de las solicitudes HEAD %1$sHTTP%2$s"
+
+#: PgCache_ConfigLabels.php:113 PgCache_ConfigLabels.php:160
+msgid "Unicode Transformation Format"
+msgstr "Formato de transformación Unicode"
+
+#. translators: 1: opening acronym tag for UTF, 2: closing acronym tag.
+#: PgCache_ConfigLabels.php:109
+msgid "Disable %1$sUTF%2$s-8 blog charset support"
+msgstr "Desactivar la compatibilidad con el conjunto de caracteres del blog %1$sUTF%2$s‑8"
+
+#. translators: 1: opening acronym tag for URL, 2: closing acronym tag.
+#: PgCache_ConfigLabels.php:73
+msgid "Sitemap %1$sURL%2$s:"
+msgstr "%1$sURL%2$s del mapa del sitio :"
+
+#. translators: 1: opening acronym tag for URI, 2: closing acronym tag.
+#: PgCache_ConfigLabels.php:51
+msgid "Cache %1$sURI%2$s with query string variables"
+msgstr "Almacenar en caché la %1$sURI%2$s con variables de cadena de consulta"
+
+#. translators: 1: opening acronym tag for SSL, 2: opening acronym tag for
+#. HTTPS, 3: closing acronym tag.
+#: PgCache_ConfigLabels.php:34
+msgid "Cache %1$sSSL%3$s (%2$sHTTPS%3$s>) requests"
+msgstr "Almacenar en caché solicitudes %1$sSSL%3$s (%2$sHTTPS%3$s>)"
+
+#. translators: 1 opening HTML a tag to W3TC User Experience page, 2 closing
+#. HTML a tag.
+#: PageSpeed_Instructions.php:165
+msgid "Enable %1$sLazy Load%2$s to defer offscreen media and configure Exclude Words or placeholders so hero images keep their layout space."
+msgstr "Activa la %1$scarga diferida%2$s para aplazar los medios fuera de pantalla y configura palabras de exclusión o los marcadores de posición para que las imágenes destacadas conserven su espacio de diseño."
+
+#. translators: 1 opening HTML a tag to Browser Cache settings, 2 closing HTML
+#. a tag.
+#: PageSpeed_Instructions.php:178
+msgid "Pair those optimizations with %1$sBrowser Cache%2$s (and your CDN) so optimized assets stay cached close to visitors."
+msgstr "Combina esas optimizaciones con la %1$scaché del navegador%2$s (y tu CDN) para que los recursos optimizados permanezcan en caché cerca de los visitantes."
+
+#. translators: 1 opening HTML a tag to Page Cache setting, 2 closing HTML a
+#. tag, 3 opening HTML a tag to Minify setting, 4 closing HTML a tag.
+#: PageSpeed_Instructions.php:195
+msgid "Serve prerendered markup via %1$sPage Cache%2$s and trim script payloads with %3$sMinify%4$s so less JavaScript runs before each interaction."
+msgstr "Sirve el marcado prerenderizado mediante la %1$scaché de página%2$s y reduce la carga de scripts con %3$sMinify%4$s para que se ejecute menos JavaScript antes de cada interacción."
+
+#. translators: 1 opening HTML a tag to W3TC User Experience page, 2 closing
+#. HTML a tag.
+#: PageSpeed_Instructions.php:210
+msgid "Delay analytics, marketing tags, or other non-critical handlers with %1$sDefer JavaScript and Lazy Load%2$s so taps and key presses stay under the 200&nbsp;ms target."
+msgstr "Retrasa la analítica, las etiquetas de marketing u otros controladores no críticos con %1$saplazar JavaScript y carga diferida%2$s para que los toques y las pulsaciones de teclas se mantengan por debajo del objetivo de 200&nbsp;ms."
+
+#: PageSpeed_Instructions.php:219
+msgid "Break any remaining long tasks into smaller chunks (requestIdleCallback, Web Workers, or scheduled timeouts) so the main thread is free when users interact."
+msgstr "Divide las tareas largas restantes en fragmentos más pequeños (requestIdleCallback, Web Workers o temporizadores programados) para que el hilo principal esté libre cuando los usuarios interactúen."
+
+#: PageSpeed_Instructions.php:190
+msgid "INP highlights the slowest user interactions on the page, so reduce the main-thread work performed by the scripts listed in this breakdown."
+msgstr "INP resalta las interacciones de usuario más lentas de la página, así que reduce el trabajo del hilo principal que realizan los scripts enumerados en este desglose."
+
+#. translators: 1 W3TC plugin name, 2 opening HTML a tag to Image Service
+#. extension, 3 closing HTML a tag.
+#: PageSpeed_Instructions.php:151
+msgid "Use %1$s %2$sImage Converter%3$s to automatically create next-gen versions of Media Library uploads and serve them when supported."
+msgstr "Utiliza %1$s %2$sImage Converter%3$s para crear automáticamente versiones de nueva generación de las subidas de la Biblioteca de medios y servirlas cuando sean compatibles."
+
+#: PageSpeed_Instructions.php:146
+msgid "Deliver responsive images that match their rendered dimensions, use srcset or picture markup, and compress files before uploading so PageSpeed does not flag oversized assets."
+msgstr "Entrega imágenes adaptables que coincidan con sus dimensiones mostradas, utiliza el marcado srcset o picture y comprime los archivos antes de la subida para que PageSpeed no marque recursos con un tamaño excesivo."
+
+#: PageSpeed_Instructions.php:142
+msgid "Split any remaining long tasks with requestAnimationFrame, requestIdleCallback, or Web Workers so user input stays responsive."
+msgstr "Divide las tareas largas restantes con requestAnimationFrame, requestIdleCallback o Web Workers para que la entrada del usuario siga siendo adaptable."
+
+#. translators: 1 opening HTML a tag to Minify JS admin page, 2 closing HTML a
+#. tag, 3 opening HTML a tag to Defer JS settings, 4 closing HTML a tag.
+#: PageSpeed_Instructions.php:131
+msgid "Reduce render-blocking work with %1$sMinify%2$s and schedule non-critical scripts through the %3$sDefer JavaScript%4$s option (PRO) so they execute after the initial paint."
+msgstr "Reduce el trabajo que bloquea el renderizado con %1$sMinimizar%2$s y programa los scripts no críticos mediante la opción %3$saplazar JavaScript%4$s (PRO) para que se ejecuten después del renderizado inicial."
+
+#: PageSpeed_Instructions.php:126
+msgid "Forced reflows happen when scripts read layout data immediately after mutating the DOM. Batch reads and writes, move animations to transform or opacity, and keep heavy logic out of scroll or resize handlers."
+msgstr "Los reflujos forzados ocurren cuando los scripts leen datos de disposición inmediatamente después de modificar el DOM. Agrupa las operaciones de lectura y escritura, mueve las animaciones a transform u opacity y mantén la lógica pesada fuera de los controladores de desplazamiento o cambio de tamaño."
+
+#: PageSpeed_Instructions.php:87
+msgid "Where possible, collapse redirect chains so visitors reach the cached HTML in a single round trip."
+msgstr "Cuando sea posible, reduce las cadenas de redirección para que los visitantes lleguen al HTML almacenado en caché en un único viaje de ida y vuelta."
+
+#. translators: 1 W3TC plugin name, 2 opening HTML a tag to Browser Cache
+#. setting, 3 closing HTML a tag.
+#: PageSpeed_Instructions.php:79
+msgid "Enable gzip or Brotli compression in %1$s %2$sBrowser Cache%3$s so the initial document downloads faster."
+msgstr "Activa la compresión gzip o Brotli en la %2$scaché del navegador%3$s de %1$s para que el documento inicial se descargue más rápido."
+
+#. translators: 1 W3TC plugin name, 2 opening HTML a tag to Page Cache setting,
+#. 3 closing HTML a tag.
+#: PageSpeed_Instructions.php:69
+msgid "Serve the main HTML as quickly as possible by enabling %1$s %2$sPage Caching%3$s (fastest module)."
+msgstr "Sirve el HTML principal lo más rápido posible activando %2$sla caché de página%3$s de %1$s (el módulo más rápido)."
+
+#: PageSpeed_Instructions.php:63
+msgid "Combine those structural fixes with predictable font loading (see the Font Display insight) to keep layout shifts under the target."
+msgstr "Combina esas correcciones estructurales con una carga de fuentes predecible (consulta la información de Font Display) para mantener los cambios de disposición por debajo del objetivo."
 
 #. Translators: 1 path, 2 starting line, 3 ending line, 4 opening HTML strong
 #. tag, 5 closing HTML strong tag.
