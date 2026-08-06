@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Elementor Website Builder &#8211; more than just a page builder - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-07-29 16:50:47+0000\n"
+"PO-Revision-Date: 2026-08-06 02:45:32+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -106,7 +106,7 @@ msgstr "프로가 되어, 한계를 넘어"
 
 #: core/admin/admin.php:377
 msgid "Sale! Upgrade Now"
-msgstr "세일! 지금 업그레이드"
+msgstr "세일! 지금 업그레이드하기"
 
 #: modules/wp-rest/classes/design-system-rest-api.php:47
 msgid "Either globalClasses or globalVariables must be provided."
@@ -136,10 +136,6 @@ msgstr "문서 설정을 저장할 수 없습니다."
 msgid "The settings object is required."
 msgstr "설정 객체는 필수입니다."
 
-#: modules/mcp/abilities/update-settings-ability.php:20
-msgid "Updates Elementor document-level settings for a post (for example page layout, title visibility, or custom page settings). Pass only the keys you want to change. Use list-pages to resolve IDs and get-page-structure when you also need the element tree. Requires permission to edit the target post."
-msgstr "게시물의 Elementor 문서 수준 설정(예: 페이지 레이아웃, 제목 표시 여부 또는 사용자 정의 페이지 설정)을 업데이트합니다. 변경하려는 키만 전달하세요. ID를 확인하려면 list-pages를 사용하고, 요소 트리도 필요할 경우 get-page-structure를 사용하세요. 대상 게시물을 편집할 권한이 필요합니다."
-
 #: modules/mcp/abilities/update-settings-ability.php:19
 msgid "Update Elementor Page Settings"
 msgstr "Elementor 페이지 설정 업데이트"
@@ -147,6 +143,10 @@ msgstr "Elementor 페이지 설정 업데이트"
 #: modules/mcp/abilities/list-pages-ability.php:18
 msgid "Returns pages and posts built with Elementor on this WordPress site. Each item includes ID, title, status (publish/draft), URL, and post type. Use this first to discover which pages exist before fetching their structure or modifying settings."
 msgstr "이 워드프레스 사이트에서 Elementor로 만든 페이지와 글을 반환합니다. 각 항목에는 ID, 제목, 상태(공개/임시글), URL, 그리고 게시물 유형이 포함됩니다. 구조를 가져오거나 설정을 수정하기 전에, 먼저 이것을 사용해 어떤 페이지가 있는지 확인하세요."
+
+#: modules/mcp/abilities/update-settings-ability.php:20
+msgid "Updates Elementor document-level settings for a post (for example page layout, title visibility, or custom page settings). Pass only the keys you want to change. Use list-pages to resolve IDs and get-page-structure when you also need the element tree. Requires permission to edit the target post."
+msgstr "게시물의 Elementor 문서 수준 설정(예: 페이지 레이아웃, 제목 표시 여부 또는 사용자 정의 페이지 설정)을 업데이트합니다. 변경하려는 키만 전달하세요. ID를 확인하려면 list-pages를 사용하고, 요소 트리도 필요할 경우 get-page-structure를 사용하세요. 대상 게시물을 편집할 권한이 필요합니다."
 
 #: modules/mcp/abilities/list-pages-ability.php:17
 msgid "List Elementor Pages"
@@ -244,14 +244,14 @@ msgstr "글로벌 클래스"
 msgid "Site Builder"
 msgstr "사이트 빌더"
 
-#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:221
-msgid "Webhook URL"
-msgstr "Webhook URL"
-
 #: modules/atomic-widgets/elements/atomic-form/atomic-form.php:186
 #: modules/atomic-widgets/elements/atomic-form/atomic-form.php:217
 msgid "Webhook"
-msgstr "Webhook"
+msgstr "웹훅"
+
+#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:221
+msgid "Webhook URL"
+msgstr "웹후크 URL"
 
 #: modules/widget-creation/module.php:81
 msgid "Custom Widget"
@@ -349,11 +349,6 @@ msgstr "성공 메시지"
 #: modules/atomic-widgets/elements/atomic-form/form-success-message/form-success-message.php:35
 msgid "Great! We’ve received your information."
 msgstr "좋습니다! 정보를 잘 받았습니다."
-
-#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:309
-#: modules/promotions/widgets/atomic-form-widget-promotion.php:74
-msgid "Checkbox"
-msgstr "선택 상자"
 
 #: modules/atomic-widgets/elements/atomic-form/atomic-form.php:306
 msgid "Your message"
@@ -559,7 +554,12 @@ msgstr "Form 이름"
 #: modules/atomic-widgets/elements/atomic-form/atomic-form.php:75
 #: modules/promotions/widgets/atomic-form-widget-promotion.php:83
 msgid "Atomic form"
-msgstr "Atomic form"
+msgstr "Atomic 양식"
+
+#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:309
+#: modules/promotions/widgets/atomic-form-widget-promotion.php:74
+msgid "Checkbox"
+msgstr "선택상자"
 
 #: core/files/uploads-manager.php:144 core/files/uploads-manager.php:152
 msgid "Invalid temporary file path."
@@ -669,7 +669,7 @@ msgstr "구성 요소는 Atomic 구성 요소만 필요로 합니다. 위젯을 
 #: modules/atomic-widgets/library/atomic-form.php:54
 #: modules/promotions/widgets/atomic-form-widget-promotion.php:44
 msgid "Atomic Form"
-msgstr "Atomic Form"
+msgstr "Atomic 양식"
 
 #: modules/editor-one/components/top-bar-handler.php:59
 msgid "website builder"
@@ -957,11 +957,6 @@ msgstr "강력한 디자인 도구와 고급 기능을 잠금 해제하려면 Pr
 msgid "Want to disconnect for any reason?"
 msgstr "어떤 이유로든 연결을 끊고 싶으신가요?"
 
-#. translators: %s: Connected user.
-#: modules/pro-install/connect-page-renderer.php:94
-msgid "You're connected as %s."
-msgstr "%s로 연결되었습니다."
-
 #: modules/pro-install/connect-page-renderer.php:81
 msgid "My Account"
 msgstr "내 계정"
@@ -1072,6 +1067,11 @@ msgstr "구성 요소를 활성화하세요."
 #: modules/pro-install/connect.php:17
 msgid "pro-install"
 msgstr "pro-install"
+
+#. translators: %s: Connected user.
+#: modules/pro-install/connect-page-renderer.php:94
+msgid "You're connected as %s."
+msgstr "%s(으)로 연결되었습니다."
 
 #: includes/widgets/heading.php:546
 msgid "Accessible structure matters"
@@ -1236,6 +1236,25 @@ msgstr "종료 시간"
 msgid "Start time"
 msgstr "시작 시간"
 
+#: modules/atomic-widgets/elements/atomic-button/atomic-button.php:95
+#: modules/atomic-widgets/elements/atomic-divider/atomic-divider.php:70
+#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:228
+#: modules/atomic-widgets/elements/atomic-form/form-message/form-message.php:83
+#: modules/atomic-widgets/elements/atomic-heading/atomic-heading.php:128
+#: modules/atomic-widgets/elements/atomic-image/atomic-image.php:86
+#: modules/atomic-widgets/elements/atomic-paragraph/atomic-paragraph.php:110
+#: modules/atomic-widgets/elements/atomic-self-hosted-video/atomic-self-hosted-video.php:173
+#: modules/atomic-widgets/elements/atomic-svg/atomic-svg.php:81
+#: modules/atomic-widgets/elements/atomic-tabs/atomic-tabs-content-area/atomic-tabs-content-area.php:70
+#: modules/atomic-widgets/elements/atomic-tabs/atomic-tabs-menu/atomic-tabs-menu.php:74
+#: modules/atomic-widgets/elements/atomic-tabs/atomic-tabs/atomic-tabs.php:97
+#: modules/atomic-widgets/elements/atomic-youtube/atomic-youtube.php:105
+#: modules/atomic-widgets/elements/div-block/div-block.php:130
+#: modules/atomic-widgets/elements/flexbox/flexbox.php:133
+#: modules/atomic-widgets/elements/grid/grid.php:135
+msgid "ID"
+msgstr "ID"
+
 #: includes/widgets/common-base.php:208
 msgid "Hexagon Donut"
 msgstr "육각 도넛"
@@ -1279,25 +1298,6 @@ msgstr "데이터 공유"
 #: core/settings/editor-preferences/model.php:166
 msgid "These will guide you through the first steps of creating your site."
 msgstr "이것들이 사이트 생성의 첫 단계를 안내할 것입니다."
-
-#: modules/atomic-widgets/elements/atomic-button/atomic-button.php:95
-#: modules/atomic-widgets/elements/atomic-divider/atomic-divider.php:70
-#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:228
-#: modules/atomic-widgets/elements/atomic-form/form-message/form-message.php:83
-#: modules/atomic-widgets/elements/atomic-heading/atomic-heading.php:128
-#: modules/atomic-widgets/elements/atomic-image/atomic-image.php:86
-#: modules/atomic-widgets/elements/atomic-paragraph/atomic-paragraph.php:110
-#: modules/atomic-widgets/elements/atomic-self-hosted-video/atomic-self-hosted-video.php:173
-#: modules/atomic-widgets/elements/atomic-svg/atomic-svg.php:81
-#: modules/atomic-widgets/elements/atomic-tabs/atomic-tabs-content-area/atomic-tabs-content-area.php:70
-#: modules/atomic-widgets/elements/atomic-tabs/atomic-tabs-menu/atomic-tabs-menu.php:74
-#: modules/atomic-widgets/elements/atomic-tabs/atomic-tabs/atomic-tabs.php:97
-#: modules/atomic-widgets/elements/atomic-youtube/atomic-youtube.php:105
-#: modules/atomic-widgets/elements/div-block/div-block.php:130
-#: modules/atomic-widgets/elements/flexbox/flexbox.php:133
-#: modules/atomic-widgets/elements/grid/grid.php:135
-msgid "ID"
-msgstr "ID"
 
 #: core/settings/editor-preferences/model.php:161
 msgid "Show launchpad checklist"
@@ -1483,10 +1483,6 @@ msgstr "변수"
 msgid "View Deals"
 msgstr "할인 보기"
 
-#: modules/cloud-library/module.php:114 assets/js/editor.js:10393
-msgid "Then you can find all your templates in one convenient library."
-msgstr "그러면 모든 템플릿을 한 곳의 편리한 라이브러리에서 찾을 수 있습니다."
-
 #: modules/cloud-library/documents/cloud-template-preview.php:44
 msgid "Cloud Template Previews"
 msgstr "클라우드 템플릿 미리보기"
@@ -1574,10 +1570,6 @@ msgstr "권한 없음"
 msgid "Global classes limit exceeded. Maximum allowed: %d"
 msgstr "전역 클래스 제한 초과. 최대 허용량: %d"
 
-#: modules/cloud-library/module.php:113 assets/js/editor.js:10392
-msgid "Connect to your Elementor account"
-msgstr "Elementor 계정에 연결하세요"
-
 #: modules/atomic-widgets/opt-in/opt-in.php:46
 msgid "Enable Editor V4."
 msgstr "편집기 V4를 활성화하세요."
@@ -1649,6 +1641,14 @@ msgstr "엘리멘터 10주년 기념 세일!"
 #: core/admin/admin-notices.php:569
 msgid "Create a more inclusive site experience for all your visitors. With Web Accessibility, it's easy to add your statement page in just a few clicks."
 msgstr "모든 방문자에게 더 포용적인 사이트 경험을 만들어 보세요. 웹 접근성을 사용하면 몇 번의 클릭만으로 선언문 페이지를 쉽게 추가할 수 있습니다."
+
+#: modules/cloud-library/module.php:113 assets/js/editor.js:10392
+msgid "Connect to your Elementor account"
+msgstr "Elementor 계정에 연결"
+
+#: modules/cloud-library/module.php:114 assets/js/editor.js:10393
+msgid "Then you can find all your templates in one convenient library."
+msgstr "그러면 모든 템플릿을 하나의 편리한 라이브러리에서 찾을 수 있습니다."
 
 #. translators: %1$s Link open tag, %2$s: Link close tag.
 #: modules/floating-buttons/module.php:352 modules/landing-pages/module.php:206
@@ -1734,11 +1734,6 @@ msgstr "사이트를 사이트 플래너에 연결하려면 앱 비밀번호를 
 msgid "Connect to Site Planner"
 msgstr "사이트 플래너에 연결"
 
-#: includes/widgets/video.php:438
-#: modules/atomic-widgets/elements/atomic-youtube/atomic-youtube.php:91
-msgid "Captions"
-msgstr "자막"
-
 #: includes/widgets/image-gallery.php:303
 msgid "Custom Gap"
 msgstr "사용자 정의 간격"
@@ -1779,6 +1774,11 @@ msgstr "죄송합니다. 그렇게 할 권한이 없습니다."
 msgid "Hello+"
 msgstr "Hello+"
 
+#: includes/widgets/video.php:438
+#: modules/atomic-widgets/elements/atomic-youtube/atomic-youtube.php:91
+msgid "Captions"
+msgstr "캡션"
+
 #: modules/promotions/promotion-data.php:135
 msgid "Display reviews in a rotating carousel."
 msgstr "회전하는 캐러셀에 리뷰를 표시합니다."
@@ -1798,10 +1798,6 @@ msgstr "캐러셀 이름"
 #: modules/promotions/promotion-data.php:133
 msgid "Upgrade Your Testimonials"
 msgstr "추천글 업그레이드"
-
-#: includes/widgets/image-carousel.php:664
-msgid "Space Between Dots"
-msgstr "점과 점 사이의 간격"
 
 #: modules/ai/feature-intro/product-image-unification-intro.php:35
 msgid "Now you can process images in bulk and standardized the background and ratio - no manual editing required!"
@@ -1898,6 +1894,10 @@ msgstr "주요 메시지를 동적으로 강조 표시하세요."
 msgid "New! Unify pack-shots with Elementor AI"
 msgstr "새로운 기능! Elementor AI로 상품 이미지를 통합하세요"
 
+#: includes/widgets/image-carousel.php:664
+msgid "Space Between Dots"
+msgstr "점 사이의 간격"
+
 #: core/admin/admin-notices.php:698
 msgid "Improve Transactional Email Deliverability"
 msgstr "트랜잭션 이메일 전달성을 개선하세요"
@@ -1972,10 +1972,6 @@ msgstr "코드"
 msgid "Floating Bar CTA"
 msgstr "플로팅 바 CTA"
 
-#: modules/floating-buttons/module.php:45 assets/js/editor.js:54428
-msgid "Floating Bars"
-msgstr "플로팅 바"
-
 #: modules/floating-buttons/documents/floating-buttons.php:203
 #: modules/floating-buttons/module.php:342
 msgid "Floating Element"
@@ -2014,15 +2010,6 @@ msgstr "일시 정지 아이콘"
 msgid "Pause and Play"
 msgstr "일시 정지 및 재생"
 
-#: modules/floating-buttons/base/widget-floating-bars-base.php:219
-#: modules/floating-buttons/base/widget-floating-bars-base.php:1173
-msgid "Floating Bar"
-msgstr "플로팅 바"
-
-#: modules/floating-buttons/base/widget-floating-bars-base.php:199
-msgid "Accessible Name"
-msgstr "접근 가능한 이름"
-
 #: modules/floating-buttons/base/widget-floating-bars-base.php:157
 msgid "Shop now"
 msgstr "지금 쇼핑하기"
@@ -2041,10 +2028,6 @@ msgstr "CTA 버튼"
 #: modules/floating-buttons/base/widget-floating-bars-base.php:391
 msgid "Announcement"
 msgstr "공지 사항"
-
-#: modules/floating-buttons/base/widget-floating-bars-base.php:69
-msgid "Banner"
-msgstr "배너"
 
 #: modules/floating-buttons/base/widget-floating-bars-base.php:64
 msgid "Just in! Cool summer tees"
@@ -2103,10 +2086,6 @@ msgstr "플로팅 요소로 %1$s효율적인 작업 %2$s에 도움"
 msgid "Jumpstart your creation with professional designs from the Template Library or start from scratch."
 msgstr "템플릿 라이브러리에서 전문적인 디자인으로 바로 제작을 시작하거나 처음부터 다시 시작하세요."
 
-#: modules/floating-buttons/base/widget-floating-bars-base.php:131
-msgid "Enter your text here"
-msgstr "여기에 텍스트를 입력하세요"
-
 #: modules/ai/preferences.php:73
 msgid "Enable Elementor AI functionality"
 msgstr "Elementor AI 기능 활성화"
@@ -2138,6 +2117,27 @@ msgstr "Atomic 위젯을 활성화하세요."
 #: modules/atomic-widgets/module.php:201
 msgid "Atomic Widgets"
 msgstr "Atomic 위젯"
+
+#: modules/floating-buttons/base/widget-floating-bars-base.php:199
+msgid "Accessible Name"
+msgstr "접근 가능 이름"
+
+#: modules/floating-buttons/base/widget-floating-bars-base.php:69
+msgid "Banner"
+msgstr "기치"
+
+#: modules/floating-buttons/base/widget-floating-bars-base.php:131
+msgid "Enter your text here"
+msgstr "여기에 텍스트 입력"
+
+#: modules/floating-buttons/base/widget-floating-bars-base.php:219
+#: modules/floating-buttons/base/widget-floating-bars-base.php:1173
+msgid "Floating Bar"
+msgstr "플로팅 표시줄"
+
+#: modules/floating-buttons/module.php:45 assets/js/editor.js:54428
+msgid "Floating Bars"
+msgstr "플로팅 표시줄"
 
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:1545
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:6118
@@ -2186,10 +2186,6 @@ msgstr "전체 사이트로 설정"
 msgid "Remove From Entire Site"
 msgstr "전체 사이트에서 제거"
 
-#: modules/floating-buttons/documents/floating-buttons.php:32
-msgid "After publishing this widget, you will be able to set it as visible on the entire site in the Admin Table."
-msgstr "이 위젯을 게시한 후에는 관리자 테이블에서 전체 사이트에 표시되도록 설정할 수 있습니다."
-
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:285
 #: assets/js/packages/editor-controls/editor-controls.js:41655
 #: assets/js/packages/editor-controls/editor-controls.strings.js:275
@@ -2199,6 +2195,10 @@ msgstr "항목 추가"
 #: modules/link-in-bio/widgets/link-in-bio.php:28
 msgid "Minimalist"
 msgstr "Minimalist"
+
+#: modules/floating-buttons/documents/floating-buttons.php:32
+msgid "After publishing this widget, you will be able to set it as visible on the entire site in the Admin Table."
+msgstr "이 위젯을 게시한 후 관리자 표에서 전체 사이트에 표시되도록 설정할 수 있습니다."
 
 #: modules/floating-buttons/classes/render/contact-buttons-core-render.php:58
 msgid "Links window"
@@ -2365,10 +2365,6 @@ msgstr "대화 시작:"
 msgid "Call to Action Text"
 msgstr "행동 유도 텍스트"
 
-#: modules/floating-buttons/base/widget-contact-button-base.php:537
-msgid "Call to Action"
-msgstr "행동 유도"
-
 #: includes/controls/repeater.php:194
 msgid "In a Repeater control, if you specify a minimum number of items, you must also specify a default value that contains at least that number of items."
 msgstr "리피터 제어에서 최소 항목 수를 지정하는 경우 해당 항목 수 이상을 포함하는 기본값도 지정해야 합니다."
@@ -2389,6 +2385,10 @@ msgstr "버블 배경 색상"
 #: modules/floating-buttons/base/widget-contact-button-base.php:626
 msgid "Active Dot"
 msgstr "활성 점"
+
+#: modules/floating-buttons/base/widget-contact-button-base.php:537
+msgid "Call to Action"
+msgstr "반응 유도"
 
 #: modules/element-cache/module.php:139
 msgid "1 Year"
@@ -2438,10 +2438,6 @@ msgstr "연락처 버튼"
 msgid "Icons Per Row"
 msgstr "행별 아이콘"
 
-#: core/base/providers/social-network-provider.php:228
-msgid "SMS"
-msgstr "SMS"
-
 #: core/base/providers/social-network-provider.php:222
 msgid "File Download"
 msgstr "파일 다운로드"
@@ -2453,10 +2449,6 @@ msgstr "전화"
 #: core/base/providers/social-network-provider.php:198
 msgid "Messenger"
 msgstr "메신저"
-
-#: core/base/providers/social-network-provider.php:192
-msgid "Waze"
-msgstr "Waze"
 
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:1738
 msgid "Bottom Border"
@@ -2471,18 +2463,9 @@ msgstr "이미지 높이"
 msgid "Image Shape"
 msgstr "이미지 모양"
 
-#: modules/link-in-bio/base/widget-link-in-bio-base.php:977
-msgid "Profile"
-msgstr "프로필"
-
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:973
 msgid "Image style"
 msgstr "이미지 스타일"
-
-#: modules/link-in-bio/base/widget-link-in-bio-base.php:914
-#: modules/link-in-bio/base/widget-link-in-bio-base.php:1247
-msgid "Identity"
-msgstr "정체성"
 
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:886
 msgid "About Me"
@@ -2492,19 +2475,10 @@ msgstr "내 소개"
 msgid "About"
 msgstr "소개"
 
-#: modules/link-in-bio/base/widget-link-in-bio-base.php:880
-msgid "About Heading"
-msgstr "제목 소개"
-
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:864
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:1323
 msgid "Title or Tagline"
 msgstr "제목 또는 태그 라인"
-
-#: modules/link-in-bio/base/widget-link-in-bio-base.php:841
-#: modules/link-in-bio/base/widget-link-in-bio-base.php:1287
-msgid "Bio"
-msgstr "소개"
 
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:1629
 msgid "Apply Full Screen Height on"
@@ -2541,10 +2515,6 @@ msgstr "아이콘"
 msgid "Add CTA Link"
 msgstr "CTA 링크 추가"
 
-#: modules/link-in-bio/base/widget-link-in-bio-base.php:495
-msgid "Enter your number"
-msgstr "전화번호 입력"
-
 #: modules/floating-buttons/base/widget-contact-button-base.php:838
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:440
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:682
@@ -2580,14 +2550,6 @@ msgstr "건강한 생활 리소스"
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:94
 msgid "Meal Prep"
 msgstr "식사 준비"
-
-#: modules/link-in-bio/base/widget-link-in-bio-base.php:91
-msgid "Top 10 Recipes"
-msgstr "상위 10가지 레시피"
-
-#: modules/link-in-bio/base/widget-link-in-bio-base.php:88
-msgid "Get Healthy"
-msgstr "건강한 생활"
 
 #: modules/floating-buttons/base/widget-contact-button-base.php:2776
 msgid "Close Animation"
@@ -2677,16 +2639,24 @@ msgstr "여기에 제목을 입력하세요"
 msgid "Rob Jones"
 msgstr "Rob Jones"
 
-#: modules/floating-buttons/base/widget-contact-button-base.php:380
-#: modules/floating-buttons/base/widget-contact-button-base.php:982
-msgid "Action"
-msgstr "작업"
-
 #: modules/floating-buttons/base/widget-contact-button-base.php:342
 #: modules/floating-buttons/base/widget-contact-button-base.php:896
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:737
 msgid "+"
 msgstr "+"
+
+#: modules/floating-buttons/base/widget-contact-button-base.php:294
+msgid "@"
+msgstr "@"
+
+#: core/base/providers/social-network-provider.php:210
+#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:302
+#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:496
+#: modules/floating-buttons/base/widget-contact-button-base.php:285
+#: modules/floating-buttons/base/widget-contact-button-base.php:836
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:680
+msgid "Email"
+msgstr "이메일"
 
 #: modules/atomic-widgets/elements/atomic-form/atomic-form.php:305
 #: modules/floating-buttons/base/widget-contact-button-base.php:321
@@ -2703,29 +2673,6 @@ msgstr "+"
 #: assets/js/packages/editor-controls/editor-controls.strings.js:230
 msgid "Message"
 msgstr "메시지"
-
-#: modules/floating-buttons/base/widget-contact-button-base.php:305
-#: modules/floating-buttons/base/widget-contact-button-base.php:857
-#: modules/floating-buttons/base/widget-contact-button-base.php:859
-#: modules/link-in-bio/base/widget-link-in-bio-base.php:447
-#: modules/link-in-bio/base/widget-link-in-bio-base.php:458
-#: modules/link-in-bio/base/widget-link-in-bio-base.php:701
-#: modules/link-in-bio/base/widget-link-in-bio-base.php:703
-msgid "Subject"
-msgstr "주제"
-
-#: modules/floating-buttons/base/widget-contact-button-base.php:294
-msgid "@"
-msgstr "@"
-
-#: core/base/providers/social-network-provider.php:210
-#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:302
-#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:496
-#: modules/floating-buttons/base/widget-contact-button-base.php:285
-#: modules/floating-buttons/base/widget-contact-button-base.php:836
-#: modules/link-in-bio/base/widget-link-in-bio-base.php:680
-msgid "Email"
-msgstr "이메일"
 
 #: modules/floating-buttons/base/widget-contact-button-base.php:479
 #: modules/floating-buttons/base/widget-contact-button-base.php:779
@@ -2744,14 +2691,6 @@ msgstr "설치할 수 없음"
 #: modules/apps/admin-apps-page.php:109 modules/apps/admin-apps-page.php:140
 msgid "Cannot Activate"
 msgstr "활성화할 수 없음"
-
-#: includes/widgets/traits/button-trait.php:295
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:3825
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:5383
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:221
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:298
-msgid "Space between"
-msgstr "공백 사이"
 
 #: includes/settings/settings.php:350
 msgid "Reduce unnecessary render-blocking loads by dequeuing unused Gutenberg block editor scripts and styles."
@@ -2801,10 +2740,6 @@ msgstr "Spotify"
 #: core/base/providers/social-network-provider.php:156
 msgid "Apple Music"
 msgstr "Apple Music"
-
-#: core/base/providers/social-network-provider.php:150
-msgid "WhatsApp"
-msgstr "WhatsApp"
 
 #: core/base/providers/social-network-provider.php:144
 msgid "TikTok"
@@ -2860,10 +2795,6 @@ msgstr "사용자 정의 아이콘으로 창의적인 자유 %s를 즐기세요"
 msgid "Skype"
 msgstr "Skype"
 
-#: core/base/providers/social-network-provider.php:234
-msgid "Viber"
-msgstr "Viber"
-
 #: modules/floating-buttons/base/widget-contact-button-base.php:130
 msgid "Store Manager"
 msgstr "상점 관리자"
@@ -2871,11 +2802,6 @@ msgstr "상점 관리자"
 #: modules/element-cache/module.php:141
 msgid "Specify the duration for which data is stored in the cache. Elements caching speeds up loading by serving pre-rendered copies of elements, rather than rendering them fresh each time. This control ensures efficient performance and up-to-date content."
 msgstr "데이터가 캐시에 저장되는 기간을 지정하세요. 요소 캐싱은 요소를 매번 새로 렌더링하지 않고 미리 렌더링된 사본을 제공함으로써 로딩 속도를 높입니다. 이 제어는 효율적인 성능과 최신 내용을 보장합니다."
-
-#: modules/floating-buttons/base/widget-contact-button-base.php:2525
-#: modules/link-in-bio/base/widget-link-in-bio-base.php:1199
-msgid "Dividers"
-msgstr "구분선"
 
 #: modules/floating-buttons/base/widget-contact-button-base.php:2766
 msgid "Open Animation"
@@ -2904,6 +2830,80 @@ msgstr "킷chen Chronicles"
 #: modules/promotions/admin-menu-items/editor-one-submissions-menu.php:53
 msgid "Create Forms and Collect Leads %s with Elementor Pro"
 msgstr "Elementor Pro로 Form을 만들고 %s 잠재고객 정보를 수집하기"
+
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:880
+msgid "About Heading"
+msgstr "제목에 대하여"
+
+#: modules/floating-buttons/base/widget-contact-button-base.php:380
+#: modules/floating-buttons/base/widget-contact-button-base.php:982
+msgid "Action"
+msgstr "동작"
+
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:841
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:1287
+msgid "Bio"
+msgstr "바이오"
+
+#: modules/floating-buttons/base/widget-contact-button-base.php:2525
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:1199
+msgid "Dividers"
+msgstr "구분자"
+
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:495
+msgid "Enter your number"
+msgstr "번호 입력"
+
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:88
+msgid "Get Healthy"
+msgstr "건강해지기"
+
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:914
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:1247
+msgid "Identity"
+msgstr "신원"
+
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:977
+msgid "Profile"
+msgstr "프로파일"
+
+#: core/base/providers/social-network-provider.php:228
+msgid "SMS"
+msgstr "문자 메시지"
+
+#: includes/widgets/traits/button-trait.php:295
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:3825
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:5383
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:221
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:298
+msgid "Space between"
+msgstr "사이의 공간"
+
+#: modules/floating-buttons/base/widget-contact-button-base.php:305
+#: modules/floating-buttons/base/widget-contact-button-base.php:857
+#: modules/floating-buttons/base/widget-contact-button-base.php:859
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:447
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:458
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:701
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:703
+msgid "Subject"
+msgstr "제목"
+
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:91
+msgid "Top 10 Recipes"
+msgstr "상위 10개 레시피"
+
+#: core/base/providers/social-network-provider.php:234
+msgid "Viber"
+msgstr "바이버"
+
+#: core/base/providers/social-network-provider.php:192
+msgid "Waze"
+msgstr "웨이즈"
+
+#: core/base/providers/social-network-provider.php:150
+msgid "WhatsApp"
+msgstr "왓츠앱"
 
 #: core/settings/editor-preferences/model.php:132
 msgid "This only applies while you’re working in the editor. The front end won’t be affected."
@@ -3033,14 +3033,6 @@ msgstr "현재 사용자가 이 글을 편집하거나 삭제할 수 있는지 �
 msgid "Expand your icon library beyond FontAwesome and add icon %s libraries of your choice"
 msgstr "Font Awesome을 넘어 아이콘 라이브러리를 확장하고 원하는 아이콘 %s 라이브러리를 추가하세요"
 
-#: modules/promotions/admin-menu-items/editor-one-custom-code-menu.php:49
-msgid "Leverage Elementor AI to instantly generate Custom Code for Elementor"
-msgstr "Elementor AI를 활용하여 Elementor용 사용자 정의 코드를 즉시 생성하세요"
-
-#: modules/promotions/admin-menu-items/editor-one-custom-code-menu.php:48
-msgid "Use Custom Code to create sophisticated custom interactions to engage visitors"
-msgstr "사용자 정의 코드를 사용하여 정교한 사용자 정의 상호 작용을 만들어 방문자의 참여를 유도하세요"
-
 #: modules/shapes/widgets/text-path.php:149
 msgid "Want to create custom text paths with SVG?"
 msgstr "SVG로 사용자 정의 텍스트 경로를 만들고 싶으신가요?"
@@ -3061,6 +3053,14 @@ msgstr "글꼴을 업로드하여 브랜드에 어울리는 웹사이트를 만�
 #: modules/promotions/admin-menu-items/editor-one-custom-code-menu.php:47
 msgid "Add Custom Code snippets anywhere on your website, including the header or footer to measure your page's performance*"
 msgstr "웹사이트의 헤더나 푸터를 포함한 어디에든 사용자 정의 코드 스니펫을 추가하여 페이지 성능을 측정할 수 있습니다*"
+
+#: modules/promotions/admin-menu-items/editor-one-custom-code-menu.php:49
+msgid "Leverage Elementor AI to instantly generate Custom Code for Elementor"
+msgstr "Elementor AI를 활용하여 Elementor용 사용자 정의 코드를 즉시 생성합니다."
+
+#: modules/promotions/admin-menu-items/editor-one-custom-code-menu.php:48
+msgid "Use Custom Code to create sophisticated custom interactions to engage visitors"
+msgstr "사용자 정의 코드를 사용하여 방문자의 참여를 유도하는 정교한 맞춤형 상호작용을 만들어 보세요"
 
 #: includes/widgets/text-editor.php:182
 msgid "1"
@@ -3172,11 +3172,6 @@ msgstr "스크롤 효과"
 msgid "Sticky"
 msgstr "고정"
 
-#: modules/promotions/admin-menu-items/editor-one-custom-code-menu.php:54
-#: modules/promotions/admin-menu-items/editor-one-submissions-menu.php:76
-msgid "* Requires an Advanced subscription or higher"
-msgstr "* 고급 구독 이상 필요"
-
 #: includes/widgets/button.php:104
 msgid "Convert visitors into customers"
 msgstr "방문자를 고객으로 전환"
@@ -3188,13 +3183,6 @@ msgstr "방문자의 참여와 전환을 유도하는 단일 또는 다단계 �
 #: includes/widgets/testimonial.php:197
 msgid "Designer"
 msgstr "디자이너"
-
-#: includes/managers/controls.php:1270 modules/promotions/module.php:258
-#: assets/js/editor.js:56428
-#: assets/js/packages/editor-controls/editor-controls.js:41265
-#: assets/js/packages/editor-controls/editor-controls.strings.js:272
-msgid "Display Conditions"
-msgstr "표시 조건"
 
 #: includes/editor-templates/templates.php:498
 msgid "Generate Variations"
@@ -3268,9 +3256,21 @@ msgstr "즐겨 찾는 마케팅 소프트웨어를 통합하세요*"
 msgid "Activate now"
 msgstr "지금 활성화"
 
+#: modules/promotions/admin-menu-items/editor-one-custom-code-menu.php:54
+#: modules/promotions/admin-menu-items/editor-one-submissions-menu.php:76
+msgid "* Requires an Advanced subscription or higher"
+msgstr "* Advanced 구독 이상 필요"
+
+#: includes/managers/controls.php:1270 modules/promotions/module.php:258
+#: assets/js/editor.js:56428
+#: assets/js/packages/editor-controls/editor-controls.js:41265
+#: assets/js/packages/editor-controls/editor-controls.strings.js:272
+msgid "Display Conditions"
+msgstr "디스플레이 조건"
+
 #: includes/widgets/testimonial.php:182
 msgid "John Doe"
-msgstr "John Doe"
+msgstr "홍길동"
 
 #: core/role-manager/role-manager.php:193
 msgid "Giving broad access to upload JSON files can pose a security risk to your website because such files may contain malicious scripts, etc."
@@ -3457,10 +3457,6 @@ msgstr "지금 업그레이드"
 msgid "Elementor Full Width"
 msgstr "Elementor 전체 너비"
 
-#: modules/page-templates/module.php:155
-msgid "Elementor Canvas"
-msgstr "Elementor Canvas"
-
 #: includes/widgets/video.php:313
 msgid "VideoPress URL"
 msgstr "VideoPress URL"
@@ -3472,6 +3468,10 @@ msgstr "VideoPress"
 #: includes/widgets/star-rating.php:129
 msgid "You are currently editing a Star Rating widget in its old version. Drag a new Rating widget onto your page to use a newer version, providing better capabilities."
 msgstr "현재 이전 버전의 별점 위젯을 편집하고 있습니다. 더 나은 기능을 제공하는 최신 버전을 사용하려면 새 평점 위젯을 페이지로 끌어오세요."
+
+#: modules/page-templates/module.php:155
+msgid "Elementor Canvas"
+msgstr "Elementor 캔버스"
 
 #: includes/controls/groups/flex-container.php:128
 #: includes/controls/groups/grid-container.php:159
@@ -3659,19 +3659,19 @@ msgstr "탭을 클릭하세요. Enter 또는 스페이스로 항목을 열고, E
 msgid "View %s"
 msgstr "%s 보기"
 
-#: modules/nested-tabs/widgets/nested-tabs.php:204
-#: modules/nested-tabs/widgets/nested-tabs.php:874
-msgid "Below"
-msgstr "아래"
+#: modules/site-navigation/module.php:70
+msgid "Pages Panel"
+msgstr "페이지 패널"
 
 #: modules/nested-tabs/widgets/nested-tabs.php:200
 #: modules/nested-tabs/widgets/nested-tabs.php:866
 msgid "Above"
-msgstr "위"
+msgstr "위에"
 
-#: modules/site-navigation/module.php:70
-msgid "Pages Panel"
-msgstr "페이지 패널"
+#: modules/nested-tabs/widgets/nested-tabs.php:204
+#: modules/nested-tabs/widgets/nested-tabs.php:874
+msgid "Below"
+msgstr "아래에"
 
 #: includes/editor-templates/templates.php:361
 #: includes/editor-templates/templates.php:396
@@ -3684,14 +3684,6 @@ msgstr "페이지 패널"
 #: assets/js/packages/editor-site-navigation/editor-site-navigation.strings.js:19
 msgid "Rename"
 msgstr "이름 변경"
-
-#: modules/nested-accordion/widgets/nested-accordion.php:410
-msgid "Space between Items"
-msgstr "항목 사이의 공백"
-
-#: modules/nested-accordion/widgets/nested-accordion.php:366
-msgid "Multiple"
-msgstr "복수"
 
 #: modules/nested-accordion/widgets/nested-accordion.php:365
 msgid "One"
@@ -3709,34 +3701,9 @@ msgstr "첫 번째 확장"
 msgid "Default State"
 msgstr "기본 상태"
 
-#: modules/interactions/module.php:55
-#: modules/nested-accordion/widgets/nested-accordion.php:341
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:2553
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:21
-#: assets/js/packages/editor-interactions/editor-interactions.js:1322
-#: assets/js/packages/editor-interactions/editor-interactions.js:1357
-#: assets/js/packages/editor-interactions/editor-interactions.js:2449
-#: assets/js/packages/editor-interactions/editor-interactions.strings.js:2
-#: assets/js/packages/editor-interactions/editor-interactions.strings.js:6
-#: assets/js/packages/editor-interactions/editor-interactions.strings.js:11
-msgid "Interactions"
-msgstr "상호 작용"
-
 #: modules/nested-accordion/widgets/nested-accordion.php:261
 msgid "Collapse"
 msgstr "접기"
-
-#: modules/nested-accordion/widgets/nested-accordion.php:247
-#: assets/js/ai-admin.js:8950 assets/js/ai-gutenberg.js:9168
-#: assets/js/ai-layout.js:5320 assets/js/ai-media-library.js:8950
-#: assets/js/ai-unify-product-images.js:8950 assets/js/ai.js:10502
-msgid "Expand"
-msgstr "펼치기"
-
-#. translators: 1: Slide count, 2: Total slides count.
-#: includes/widgets/image-carousel.php:985
-msgid "%1$s of %2$s"
-msgstr "%2$s 의 %1$s"
 
 #: core/admin/admin.php:656
 msgid "Build Smart with AI"
@@ -3784,6 +3751,39 @@ msgstr "창의력을 발휘하고 생산성을 높이며 Elementor 기반 웹사
 msgid "Changes will be reflected only after %1$s saving %3$s and %2$s reloading %3$s preview."
 msgstr "변경 사항은 %1$s 을(를) 저장하고 %2$s 과 %3$s 미리 보기를 %3$s 다시 로드한 후에만 반영됩니다."
 
+#. translators: 1: Slide count, 2: Total slides count.
+#: includes/widgets/image-carousel.php:985
+msgid "%1$s of %2$s"
+msgstr "%1$s번, 총 %2$s개"
+
+#: modules/nested-accordion/widgets/nested-accordion.php:247
+#: assets/js/ai-admin.js:8950 assets/js/ai-gutenberg.js:9168
+#: assets/js/ai-layout.js:5320 assets/js/ai-media-library.js:8950
+#: assets/js/ai-unify-product-images.js:8950 assets/js/ai.js:10502
+msgid "Expand"
+msgstr "확장"
+
+#: modules/interactions/module.php:55
+#: modules/nested-accordion/widgets/nested-accordion.php:341
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:2553
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:21
+#: assets/js/packages/editor-interactions/editor-interactions.js:1322
+#: assets/js/packages/editor-interactions/editor-interactions.js:1357
+#: assets/js/packages/editor-interactions/editor-interactions.js:2449
+#: assets/js/packages/editor-interactions/editor-interactions.strings.js:2
+#: assets/js/packages/editor-interactions/editor-interactions.strings.js:6
+#: assets/js/packages/editor-interactions/editor-interactions.strings.js:11
+msgid "Interactions"
+msgstr "상호작용"
+
+#: modules/nested-accordion/widgets/nested-accordion.php:366
+msgid "Multiple"
+msgstr "다중"
+
+#: modules/nested-accordion/widgets/nested-accordion.php:410
+msgid "Space between Items"
+msgstr "항목 간 공간"
+
 #: includes/frontend.php:1444
 msgid "Go to slide"
 msgstr "슬라이드로 이동"
@@ -3796,21 +3796,9 @@ msgstr "다음 슬라이드"
 msgid "Previous slide"
 msgstr "이전 슬라이드"
 
-#: includes/controls/groups/background.php:99 assets/js/ai-admin.js:10885
-#: assets/js/ai-gutenberg.js:11103 assets/js/ai-media-library.js:10885
-#: assets/js/ai-unify-product-images.js:10885 assets/js/ai.js:12437
-#: assets/js/packages/editor-controls/editor-controls.js:44078
-#: assets/js/packages/editor-controls/editor-controls.strings.js:294
-msgid "Gradient"
-msgstr "그래디언트"
-
 #: modules/nested-tabs/widgets/nested-tabs.php:384
 msgid "Note: Scroll tabs if they don’t fit into their parent container."
 msgstr "참고: 탭이 상위 컨테이너에 맞지 않는 경우 스크롤하세요."
-
-#: modules/nested-tabs/widgets/nested-tabs.php:382
-msgid "Horizontal Scroll"
-msgstr "가로 스크롤"
 
 #: includes/widgets/icon.php:331
 msgid "Fit to Size"
@@ -3827,27 +3815,6 @@ msgstr "패널"
 #: core/document-types/page-base.php:289
 msgid "Allow Comments"
 msgstr "댓글 허용"
-
-#: modules/floating-buttons/base/widget-floating-bars-base.php:370
-#: modules/nested-accordion/widgets/nested-accordion.php:160
-msgid "Item #1"
-msgstr "항목 #1"
-
-#: modules/floating-buttons/base/widget-floating-bars-base.php:373
-#: modules/nested-accordion/widgets/nested-accordion.php:163
-msgid "Item #2"
-msgstr "항목 #2"
-
-#: modules/floating-buttons/base/widget-floating-bars-base.php:376
-#: modules/nested-accordion/widgets/nested-accordion.php:166
-msgid "Item #3"
-msgstr "항목 #3"
-
-#: modules/floating-buttons/base/widget-floating-bars-base.php:340
-#: modules/nested-accordion/widgets/nested-accordion.php:126
-#: modules/nested-accordion/widgets/nested-accordion.php:127
-msgid "Item Title"
-msgstr "항목 제목"
 
 #: includes/widgets/image-box.php:428 includes/widgets/image.php:403
 msgid "Object Position"
@@ -3886,12 +3853,45 @@ msgstr "현재 이전 버전의 아코디언 위젯을 편집하고 있습니다
 msgid "You are currently editing a Toggle widget in its old version. Drag a new Accordion widget onto your page to use a newer version, providing nested capabilities."
 msgstr "현재 이전 버전의 펼치기/접기 위젯을 편집하고 있습니다. 새 아코디언 위젯을 페이지로 끌어와 중첩된 기능을 제공하는 최신 버전을 사용하세요."
 
+#: includes/controls/groups/background.php:99 assets/js/ai-admin.js:10885
+#: assets/js/ai-gutenberg.js:11103 assets/js/ai-media-library.js:10885
+#: assets/js/ai-unify-product-images.js:10885 assets/js/ai.js:12437
+#: assets/js/packages/editor-controls/editor-controls.js:44078
+#: assets/js/packages/editor-controls/editor-controls.strings.js:294
+msgid "Gradient"
+msgstr "그라디언트"
+
+#: modules/nested-tabs/widgets/nested-tabs.php:382
+msgid "Horizontal Scroll"
+msgstr "수평 스크롤"
+
+#: modules/floating-buttons/base/widget-floating-bars-base.php:370
+#: modules/nested-accordion/widgets/nested-accordion.php:160
+msgid "Item #1"
+msgstr "품목 #1"
+
+#: modules/floating-buttons/base/widget-floating-bars-base.php:373
+#: modules/nested-accordion/widgets/nested-accordion.php:163
+msgid "Item #2"
+msgstr "품목 #2"
+
+#: modules/floating-buttons/base/widget-floating-bars-base.php:376
+#: modules/nested-accordion/widgets/nested-accordion.php:166
+msgid "Item #3"
+msgstr "품목 #3"
+
+#: modules/floating-buttons/base/widget-floating-bars-base.php:340
+#: modules/nested-accordion/widgets/nested-accordion.php:126
+#: modules/nested-accordion/widgets/nested-accordion.php:127
+msgid "Item Title"
+msgstr "품목 제목"
+
 #: core/document-types/page-base.php:277
 #: includes/controls/groups/flex-item.php:80
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:4377
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:256
 msgid "Order"
-msgstr "순서"
+msgstr "주문"
 
 #: includes/template-library/sources/local.php:503
 msgid "Invalid template type."
@@ -3994,17 +3994,6 @@ msgstr "Elementor로 \"%s\" 편집"
 msgid "Top Bar"
 msgstr "상단 표시줄"
 
-#: includes/controls/gaps.php:58
-#: includes/controls/groups/grid-container.php:118
-#: assets/js/packages/editor-controls/editor-controls.js:46747
-#: assets/js/packages/editor-controls/editor-controls.strings.js:75
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:4283
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:4805
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:246
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:262
-msgid "Row"
-msgstr "행"
-
 #. translators: 1: Link open tag, 2: Link close tag.
 #: core/document-types/page-base.php:100
 msgid "Set a different selector for the title in the %1$sLayout panel%2$s."
@@ -4015,6 +4004,17 @@ msgstr "%1$s레이아웃 패널%2$s에서 제목에 대해 다른 선택기를 �
 #: includes/widgets/image-gallery.php:204 includes/widgets/image.php:229
 msgid "Manage your site’s lightbox settings in the %1$sLightbox panel%2$s."
 msgstr "%1$s라이트박스 패널%2$s에서 사이트의 라이트박스 설정을 관리하세요."
+
+#: includes/controls/gaps.php:58
+#: includes/controls/groups/grid-container.php:118
+#: assets/js/packages/editor-controls/editor-controls.js:46747
+#: assets/js/packages/editor-controls/editor-controls.strings.js:75
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:4283
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:4805
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:246
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:262
+msgid "Row"
+msgstr "열"
 
 #: core/breakpoints/manager.php:329
 msgid "Tablet Landscape"
@@ -4081,11 +4081,6 @@ msgstr "강조 색상"
 msgid "Editor V4"
 msgstr "편집기 V4"
 
-#. translators: 1: Breakpoint label, 2: `>` character, 3: Breakpoint value.
-#: modules/nested-tabs/widgets/nested-tabs.php:427
-msgid "%1$s (%2$s %3$dpx)"
-msgstr "%1$s(%2$s %3$dpx)"
-
 #: includes/widgets/video.php:865
 msgid "Shadow"
 msgstr "그림자"
@@ -4141,11 +4136,6 @@ msgstr "Google Fonts가 로드되지 않도록 하려면 이 옵션을 비활성
 msgid "Google Fonts"
 msgstr "Google Fonts"
 
-#: modules/nested-accordion/widgets/nested-accordion.php:436
-#: modules/nested-tabs/widgets/nested-tabs.php:474
-msgid "Distance from content"
-msgstr "내용으로부터의 거리"
-
 #: modules/nested-tabs/widgets/nested-tabs.php:439
 msgid "Note: Choose at which breakpoint tabs will automatically switch to a vertical (“accordion”) layout."
 msgstr "참고: 어떤 중단점 탭이 세로(\"아코디언\") 레이아웃으로 자동 전환되는지 선택하세요."
@@ -4157,6 +4147,16 @@ msgstr "현재 이전 버전에서 탭 위젯을 편집하고 있습니다. 표�
 #: modules/nested-elements/module.php:20
 msgid "Create a rich user experience by layering widgets together inside \"Nested\" Tabs, etc. When turned on, we’ll automatically enable new nested features. Your old widgets won’t be affected."
 msgstr "'중첩' 탭 등에 위젯을 레이어링하여 풍부한 사용자 경험을 만들어보세요. 이 기능을 켜면 새로운 중첩 기능이 자동으로 활성화됩니다. 기존 위젯은 영향을 받지 않습니다."
+
+#. translators: 1: Breakpoint label, 2: `>` character, 3: Breakpoint value.
+#: modules/nested-tabs/widgets/nested-tabs.php:427
+msgid "%1$s (%2$s %3$dpx)"
+msgstr "%1$s (%2$s %3$dpx)"
+
+#: modules/nested-accordion/widgets/nested-accordion.php:436
+#: modules/nested-tabs/widgets/nested-tabs.php:474
+msgid "Distance from content"
+msgstr "내용와의 거리"
 
 #: includes/elements/container.php:1943
 msgid "Note: Avoid applying transform properties on sticky containers. Doing so might cause unexpected results."
@@ -4326,16 +4326,16 @@ msgstr "이제 다음 옵션 중에서 사이트에서 가고 싶은 곳을 선�
 msgid "With our experimental speed boosting features you can go faster than ever before. Look for the Performance label on our Experiments page and activate those experiments to improve your site loading speed."
 msgstr "실험적인 속도 향상 기능을 사용하면 이전보다 더 빠르게 이동할 수 있습니다. 실험 페이지에서 성능 라벨을 찾아 해당 실험을 활성화하여 사이트 로딩 속도를 개선하세요."
 
+#: includes/widgets/alert.php:394
+#: modules/floating-buttons/base/widget-contact-button-base.php:2936
+msgid "Horizontal Position"
+msgstr "수평 위치"
+
 #: includes/widgets/alert.php:376
 #: modules/floating-buttons/base/widget-contact-button-base.php:2990
 #: modules/floating-buttons/base/widget-floating-bars-base.php:1433
 msgid "Vertical Position"
-msgstr "세로 위치"
-
-#: includes/widgets/alert.php:394
-#: modules/floating-buttons/base/widget-contact-button-base.php:2936
-msgid "Horizontal Position"
-msgstr "가로 위치"
+msgstr "수직 위치"
 
 #: core/editor/notice-bar.php:45 assets/js/element-manager-admin.js:505
 #: assets/js/element-manager-admin.strings.js:31
@@ -4419,7 +4419,7 @@ msgstr "지금 업그레이드"
 #: assets/js/notes.js:138 assets/js/notes.js:224 assets/js/notes.strings.js:1
 #: assets/js/notes.strings.js:2 assets/js/notes.strings.js:3
 msgid "Notes"
-msgstr "메모"
+msgstr "노트"
 
 #: core/admin/admin-notices.php:499 assets/js/app.js:6109
 #: assets/js/app.js:13453 assets/js/app.js:16029
@@ -4428,7 +4428,7 @@ msgstr "메모"
 #: assets/js/packages/editor-variables/editor-variables.js:6760
 #: assets/js/packages/editor-variables/editor-variables.strings.js:14
 msgid "Take me there"
-msgstr "해당 화면으로 이동"
+msgstr "나를 거기 데려다줘"
 
 #: includes/widgets/video.php:1001
 msgid "Play Video about"
@@ -4493,13 +4493,6 @@ msgstr "재정렬"
 msgid "Elementor Event Tracker"
 msgstr "Elementor 이벤트 트래커"
 
-#: elementor.php:94 elementor.php:118 assets/js/ai-admin.js:1063
-#: assets/js/ai-gutenberg.js:1201 assets/js/ai-layout.js:1199
-#: assets/js/ai-media-library.js:1063 assets/js/ai-unify-product-images.js:1063
-#: assets/js/ai.js:1851 assets/js/app.js:7706 assets/js/app.js:13447
-msgid "Show me how"
-msgstr "어떻게하는지 보여주세요"
-
 #: includes/widgets/image-carousel.php:635
 msgid "Pagination"
 msgstr "페이지 매김"
@@ -4508,12 +4501,6 @@ msgstr "페이지 매김"
 #: includes/elements/container.php:497
 msgid "To achieve full height Container use %s."
 msgstr "전체 높이 컨테이너를 사용하려면 %s을(를) 사용하세요."
-
-#: includes/controls/groups/typography.php:153
-#: assets/js/packages/editor-controls/editor-controls.js:40625
-#: assets/js/packages/editor-controls/editor-controls.strings.js:116
-msgid "Bold"
-msgstr "Bold"
 
 #: includes/elements/column.php:461 includes/elements/section.php:730
 #: includes/widgets/heading.php:343
@@ -4535,6 +4522,19 @@ msgstr "Exclusion"
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:203
 msgid "Difference"
 msgstr "Difference"
+
+#: includes/controls/groups/typography.php:153
+#: assets/js/packages/editor-controls/editor-controls.js:40625
+#: assets/js/packages/editor-controls/editor-controls.strings.js:116
+msgid "Bold"
+msgstr "용감한"
+
+#: elementor.php:94 elementor.php:118 assets/js/ai-admin.js:1063
+#: assets/js/ai-gutenberg.js:1201 assets/js/ai-layout.js:1199
+#: assets/js/ai-media-library.js:1063 assets/js/ai-unify-product-images.js:1063
+#: assets/js/ai.js:1851 assets/js/app.js:7706 assets/js/app.js:13447
+msgid "Show me how"
+msgstr "나에게 방법을 보여주세요"
 
 #: modules/library/documents/page.php:65
 msgid "Add New Page Template"
@@ -4828,15 +4828,6 @@ msgstr "최신 소식을 가장 먼저 이메일로 받으시려면, %1$s여기�
 msgid "Multiply"
 msgstr "Multiply"
 
-#: includes/elements/column.php:453 includes/elements/container.php:866
-#: includes/elements/section.php:721 includes/widgets/heading.php:335
-#: assets/js/packages/editor-controls/editor-controls.js:44039
-#: assets/js/packages/editor-controls/editor-controls.strings.js:291
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:3578
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:196
-msgid "Overlay"
-msgstr "Overlay"
-
 #: includes/elements/column.php:456 includes/elements/container.php:869
 #: includes/elements/section.php:724 includes/widgets/heading.php:338
 msgid "Color Dodge"
@@ -4877,6 +4868,15 @@ msgstr "Saturation"
 msgid "Lighten"
 msgstr "Lighten"
 
+#: includes/elements/column.php:453 includes/elements/container.php:866
+#: includes/elements/section.php:721 includes/widgets/heading.php:335
+#: assets/js/packages/editor-controls/editor-controls.js:44039
+#: assets/js/packages/editor-controls/editor-controls.strings.js:291
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:3578
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:196
+msgid "Overlay"
+msgstr "오버레이"
+
 #: includes/managers/elements.php:366
 #: assets/js/kit-library.816d964bf4c39d277a8e.bundle.js:3944
 msgid "Favorites"
@@ -4891,7 +4891,7 @@ msgstr "카테고리"
 #: core/experiments/manager.php:489
 #: assets/js/kit-library.816d964bf4c39d277a8e.bundle.js:4475
 msgid "Features"
-msgstr "기능"
+msgstr "특징"
 
 #: modules/nested-accordion/widgets/nested-accordion.php:563
 #: assets/js/app-packages.js:4293
@@ -4981,7 +4981,7 @@ msgstr "중요:"
 #: assets/js/packages/editor-global-classes/editor-global-classes.js:1871
 #: assets/js/packages/editor-global-classes/editor-global-classes.strings.js:55
 msgid "Something went wrong"
-msgstr "문제가 발생하였습니다"
+msgstr "문제가 발생했습니다"
 
 #: includes/settings/settings.php:213
 msgid "API Key"
@@ -5108,15 +5108,6 @@ msgstr "스케치"
 msgid "Blob"
 msgstr "얼룩"
 
-#: includes/controls/groups/background.php:276
-#: includes/controls/groups/background.php:328
-#: includes/controls/groups/background.php:716
-#: includes/widgets/common-base.php:1196 includes/widgets/image-box.php:439
-#: includes/widgets/image.php:414
-#: modules/link-in-bio/base/widget-link-in-bio-base.php:188
-msgid "Bottom Right"
-msgstr "오른쪽 하단"
-
 #: core/breakpoints/manager.php:339
 msgid "Widescreen"
 msgstr "와이드스크린"
@@ -5129,15 +5120,6 @@ msgstr "와이드스크린"
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:184
 msgid "Top Left"
 msgstr "왼쪽 위"
-
-#: includes/controls/groups/background.php:275
-#: includes/controls/groups/background.php:327
-#: includes/controls/groups/background.php:715
-#: includes/widgets/common-base.php:1195 includes/widgets/image-box.php:438
-#: includes/widgets/image.php:413
-#: modules/link-in-bio/base/widget-link-in-bio-base.php:187
-msgid "Bottom Left"
-msgstr "왼쪽 하단"
 
 #: includes/editor-templates/responsive-bar.php:62
 msgid "Manage Breakpoints"
@@ -5210,17 +5192,6 @@ msgstr "글꼴 표시 속성을 선택하여 Google Fonts가 로드되는 방식
 msgid "Center Center"
 msgstr "가운데 가운데"
 
-#: includes/base/element-base.php:1107 includes/base/element-base.php:1130
-#: includes/widgets/common-base.php:1153
-#: assets/js/packages/editor-controls/editor-controls.js:51983
-#: assets/js/packages/editor-controls/editor-controls.js:52105
-#: assets/js/packages/editor-controls/editor-controls.strings.js:264
-#: assets/js/packages/editor-controls/editor-controls.strings.js:269
-#: assets/js/packages/editor-interactions/editor-interactions.js:387
-#: assets/js/packages/editor-interactions/editor-interactions.strings.js:57
-msgid "Scale"
-msgstr "크기 조정"
-
 #: includes/widgets/common-base.php:1138
 msgid "Fit"
 msgstr "맞춤"
@@ -5236,6 +5207,35 @@ msgstr "Swap"
 #: includes/settings/settings.php:283
 msgid "Blocking"
 msgstr "Blocking"
+
+#: includes/controls/groups/background.php:275
+#: includes/controls/groups/background.php:327
+#: includes/controls/groups/background.php:715
+#: includes/widgets/common-base.php:1195 includes/widgets/image-box.php:438
+#: includes/widgets/image.php:413
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:187
+msgid "Bottom Left"
+msgstr "왼쪽 아래"
+
+#: includes/controls/groups/background.php:276
+#: includes/controls/groups/background.php:328
+#: includes/controls/groups/background.php:716
+#: includes/widgets/common-base.php:1196 includes/widgets/image-box.php:439
+#: includes/widgets/image.php:414
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:188
+msgid "Bottom Right"
+msgstr "오른쪽 아래"
+
+#: includes/base/element-base.php:1107 includes/base/element-base.php:1130
+#: includes/widgets/common-base.php:1153
+#: assets/js/packages/editor-controls/editor-controls.js:51983
+#: assets/js/packages/editor-controls/editor-controls.js:52105
+#: assets/js/packages/editor-controls/editor-controls.strings.js:264
+#: assets/js/packages/editor-controls/editor-controls.strings.js:269
+#: assets/js/packages/editor-interactions/editor-interactions.js:387
+#: assets/js/packages/editor-interactions/editor-interactions.strings.js:57
+msgid "Scale"
+msgstr "규모"
 
 #. translators: 1: Term taxonomy, 2: Term name.
 #. translators: 1: Post type singular label, 2: Post title.
@@ -5355,12 +5355,6 @@ msgstr "LTR"
 msgid "RTL"
 msgstr "RTL"
 
-#: modules/atomic-widgets/elements/atomic-svg/atomic-svg.php:39
-#: modules/atomic-widgets/elements/atomic-svg/atomic-svg.php:66
-#: modules/shapes/widgets/text-path.php:136
-msgid "SVG"
-msgstr "SVG"
-
 #: modules/shapes/widgets/text-path.php:520
 #: modules/shapes/widgets/text-path.php:591
 msgid "Stroke"
@@ -5438,6 +5432,12 @@ msgstr "파일이 존재하지 않습니다. 다시 시도해주세요."
 #: core/utils/import-export/parsers/wxr-parser-simple-xml.php:65
 msgid "There was an error when reading this WXR file"
 msgstr "이 WXR 파일을 읽는 동안 오류가 발생하였습니다"
+
+#: modules/atomic-widgets/elements/atomic-svg/atomic-svg.php:39
+#: modules/atomic-widgets/elements/atomic-svg/atomic-svg.php:66
+#: modules/shapes/widgets/text-path.php:136
+msgid "SVG"
+msgstr "한국어: SVG"
 
 #: modules/atomic-widgets/elements/atomic-youtube/atomic-youtube.php:92
 msgid "Privacy mode"
@@ -5754,12 +5754,6 @@ msgstr "사이트 식별"
 msgid "The latest update includes some substantial changes across different areas of the plugin. We highly recommend you %1$sbackup your site before upgrading%2$s, and make sure you first update in a staging environment"
 msgstr "최신 업데이트에는 플러그인의 여러 영역에 걸친 몇 가지 실질적인 변경 사항이 포함되어 있습니다. 업그레이드하기 전에 사이트를 %1$s백업%2$s하고 스테이징 환경에서 먼저 업데이트하는 것이 좋습니다"
 
-#: core/kits/documents/tabs/settings-layout.php:183
-#: modules/page-templates/module.php:157 assets/js/app.js:10736
-#: assets/js/app.js:10742
-msgid "Theme"
-msgstr "테마"
-
 #: includes/widgets/common-base.php:1139 includes/widgets/image-box.php:411
 #: includes/widgets/image.php:388
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:6298
@@ -5774,6 +5768,12 @@ msgstr "Object Fit"
 #: core/kits/documents/tabs/settings-background.php:67
 msgid "The `theme-color` meta tag will only be available in supported browsers and devices."
 msgstr "`theme-` 메타 태그는 지원되는 브라우저 및 장치에서만 사용할 수 있습니다."
+
+#: core/kits/documents/tabs/settings-layout.php:183
+#: modules/page-templates/module.php:157 assets/js/app.js:10736
+#: assets/js/app.js:10742
+msgid "Theme"
+msgstr "주제"
 
 #: core/common/modules/connect/apps/base-app.php:109
 msgid "Reset Data"
@@ -5860,23 +5860,6 @@ msgstr "초안"
 msgid "Share on Facebook"
 msgstr "페이스북에 공유"
 
-#: core/kits/documents/tabs/settings-lightbox.php:102
-#: core/kits/documents/tabs/settings-lightbox.php:119
-msgid "Alt"
-msgstr "Alt"
-
-#: core/experiments/manager.php:104 includes/editor-templates/global.php:27
-#: includes/editor-templates/templates.php:259 assets/js/ai-admin.js:9126
-#: assets/js/ai-gutenberg.js:9344 assets/js/ai-media-library.js:9126
-#: assets/js/ai-unify-product-images.js:9126 assets/js/ai.js:10678
-#: assets/js/app.js:7778 assets/js/app.js:13875 assets/js/editor.js:51409
-msgid "Back"
-msgstr "뒤로"
-
-#: core/kits/documents/tabs/theme-style-form-fields.php:128
-msgid "Focus"
-msgstr "초점"
-
 #: core/kits/documents/tabs/settings-lightbox.php:86 includes/frontend.php:1435
 msgid "Share"
 msgstr "공유"
@@ -5910,23 +5893,9 @@ msgstr "본문"
 msgid "Label"
 msgstr "라벨"
 
-#: core/kits/documents/tabs/theme-style-typography.php:75
-#: includes/widgets/text-editor.php:311
-msgid "Paragraph Spacing"
-msgstr "문단 간격"
-
-#. translators: %s: Widget title.
-#: core/editor/promotion.php:56
-msgid "Use %s widget and dozens more pro features to extend your toolbox and build sites faster and better."
-msgstr "%s 위젯과 수십 가지 이상의 Pro 기능을 사용하여 도구 상자를 확장하고 사이트를 더 빠르고 효과적으로 구축하세요."
-
 #: includes/editor-templates/panel.php:329
 msgid "Elementor Dynamic Content"
 msgstr "Elementor 동적 내용"
-
-#: includes/managers/controls.php:1214
-msgid "Meet Our Attributes"
-msgstr "우리의 속성을 만나세요"
 
 #: includes/controls/url.php:77
 msgid "Set custom attributes for the link element. Separate attribute keys from values using the | (pipe) character. Separate key-value pairs with a comma."
@@ -5941,10 +5910,41 @@ msgstr "기본 킷"
 msgid "Kit"
 msgstr "킷"
 
+#: core/kits/documents/tabs/settings-lightbox.php:102
+#: core/kits/documents/tabs/settings-lightbox.php:119
+msgid "Alt"
+msgstr "대체"
+
+#: core/experiments/manager.php:104 includes/editor-templates/global.php:27
+#: includes/editor-templates/templates.php:259 assets/js/ai-admin.js:9126
+#: assets/js/ai-gutenberg.js:9344 assets/js/ai-media-library.js:9126
+#: assets/js/ai-unify-product-images.js:9126 assets/js/ai.js:10678
+#: assets/js/app.js:7778 assets/js/app.js:13875 assets/js/editor.js:51409
+msgid "Back"
+msgstr "뒤쪽에"
+
+#: core/kits/documents/tabs/theme-style-form-fields.php:128
+msgid "Focus"
+msgstr "포커스"
+
 #: core/kits/documents/tabs/theme-style-form-fields.php:21
 #: core/kits/documents/tabs/theme-style-form-fields.php:60
 msgid "Form Fields"
-msgstr "Form 필드"
+msgstr "양식 필드"
+
+#: includes/managers/controls.php:1214
+msgid "Meet Our Attributes"
+msgstr "우리의 속성을 만나보세요"
+
+#: core/kits/documents/tabs/theme-style-typography.php:75
+#: includes/widgets/text-editor.php:311
+msgid "Paragraph Spacing"
+msgstr "단락 간격"
+
+#. translators: %s: Widget title.
+#: core/editor/promotion.php:56
+msgid "Use %s widget and dozens more pro features to extend your toolbox and build sites faster and better."
+msgstr "%s 위젯과 수십 가지의 전문 기능을 사용하여 도구 상자를 확장하고 사이트를 더 빠르고 더 잘 구축하세요."
 
 #: core/common/modules/connect/apps/base-app.php:161
 msgid "Already connected."
@@ -5958,21 +5958,6 @@ msgstr "기본 설정"
 msgid "Auto detect"
 msgstr "자동 감지"
 
-#: core/kits/documents/tabs/settings-background.php:80
-#: includes/controls/groups/background.php:484
-#: includes/controls/groups/background.php:689
-#: includes/elements/container.php:565 includes/widgets/social-icons.php:299
-#: includes/widgets/video.php:600
-#: modules/atomic-widgets/elements/atomic-self-hosted-video/atomic-self-hosted-video.php:39
-#: assets/js/packages/editor-controls/editor-controls.js:43069
-#: assets/js/packages/editor-controls/editor-controls.js:43810
-#: assets/js/packages/editor-controls/editor-controls.strings.js:94
-#: assets/js/packages/editor-controls/editor-controls.strings.js:323
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:6373
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:158
-msgid "Auto"
-msgstr "자동"
-
 #: includes/controls/groups/background.php:702
 msgid "Background Position"
 msgstr "배경 위치"
@@ -5985,10 +5970,6 @@ msgstr "%s로 연결됨"
 #: includes/controls/groups/background.php:683
 msgid "Background Size"
 msgstr "배경 크기"
-
-#: includes/widgets/image-carousel.php:473
-msgid "Pause on Interaction"
-msgstr "상호 작용 시 일시중지"
 
 #: core/settings/editor-preferences/model.php:152 assets/js/ai-admin.js:15473
 #: assets/js/ai-gutenberg.js:15691 assets/js/ai-layout.js:5654
@@ -6004,6 +5985,30 @@ msgstr "시작하기"
 msgid "%s Video Player"
 msgstr "%s 동영상 재생기"
 
+#: core/common/modules/connect/apps/library.php:29
+#: core/common/modules/connect/apps/library.php:56
+msgid "Connecting to the Library failed. Please try reloading the page and try again"
+msgstr "라이브러리에 연결하지 못하였습니다. 페이지를 새로고침한 후 다시 시도해주세요"
+
+#: modules/atomic-widgets/elements/atomic-self-hosted-video/atomic-self-hosted-video.php:150
+msgid "Play on mobile"
+msgstr "모바일에서 재생"
+
+#: core/kits/documents/tabs/settings-background.php:80
+#: includes/controls/groups/background.php:484
+#: includes/controls/groups/background.php:689
+#: includes/elements/container.php:565 includes/widgets/social-icons.php:299
+#: includes/widgets/video.php:600
+#: modules/atomic-widgets/elements/atomic-self-hosted-video/atomic-self-hosted-video.php:39
+#: assets/js/packages/editor-controls/editor-controls.js:43069
+#: assets/js/packages/editor-controls/editor-controls.js:43810
+#: assets/js/packages/editor-controls/editor-controls.strings.js:94
+#: assets/js/packages/editor-controls/editor-controls.strings.js:323
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:6373
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:158
+msgid "Auto"
+msgstr "자동차"
+
 #: core/kits/documents/tabs/settings-background.php:81
 #: includes/controls/groups/background.php:486
 #: includes/controls/groups/background.php:691
@@ -6013,7 +6018,7 @@ msgstr "%s 동영상 재생기"
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:6304
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:162
 msgid "Contain"
-msgstr "Contain"
+msgstr "포함"
 
 #: includes/controls/groups/background.php:485
 #: includes/controls/groups/background.php:690
@@ -6025,16 +6030,11 @@ msgstr "Contain"
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:6301
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:161
 msgid "Cover"
-msgstr "Cover"
+msgstr "커버"
 
-#: core/common/modules/connect/apps/library.php:29
-#: core/common/modules/connect/apps/library.php:56
-msgid "Connecting to the Library failed. Please try reloading the page and try again"
-msgstr "라이브러리에 연결하지 못하였습니다. 페이지를 새로고침한 후 다시 시도해주세요"
-
-#: modules/atomic-widgets/elements/atomic-self-hosted-video/atomic-self-hosted-video.php:150
-msgid "Play on mobile"
-msgstr "모바일에서 재생"
+#: includes/widgets/image-carousel.php:473
+msgid "Pause on Interaction"
+msgstr "상호작용 시 일시 정지"
 
 #: modules/promotions/admin-menu-items/editor-one-icons-menu.php:39
 msgid "Custom Icons"
@@ -6044,17 +6044,17 @@ msgstr "사용자 정의 아이콘"
 msgid "Clear Log"
 msgstr "로그 지우기"
 
-#: includes/controls/groups/background.php:655
-msgid "Transition"
-msgstr "이행"
-
 #: includes/controls/groups/background.php:645
 #: assets/js/packages/editor-controls/editor-controls.js:52889
 #: assets/js/packages/editor-controls/editor-controls.strings.js:142
 #: assets/js/packages/editor-interactions/editor-interactions.js:1006
 #: assets/js/packages/editor-interactions/editor-interactions.strings.js:26
 msgid "Duration"
-msgstr "지속"
+msgstr "지속 시간"
+
+#: includes/controls/groups/background.php:655
+msgid "Transition"
+msgstr "전환"
 
 #: includes/widgets/divider.php:310
 msgctxt "Shapes"
@@ -6100,11 +6100,6 @@ msgctxt "Shapes"
 msgid "Wavy"
 msgstr "물결선"
 
-#: includes/frontend.php:1437 assets/js/app.js:14787 assets/js/app.js:15632
-#: assets/js/app.js:16586
-msgid "Previous"
-msgstr "이전"
-
 #: includes/widgets/divider.php:340 modules/shapes/module.php:46
 msgid "Line"
 msgstr "선"
@@ -6143,11 +6138,6 @@ msgstr "정사각형"
 msgctxt "Shapes"
 msgid "Stripes"
 msgstr "스트라이프"
-
-#: includes/widgets/divider.php:140
-msgctxt "Shapes"
-msgid "Curly"
-msgstr "컬리"
 
 #: includes/widgets/divider.php:292
 msgctxt "Shapes"
@@ -6201,19 +6191,14 @@ msgstr "이 표지 이미지는 동영상를 로드할 수 없는 경우 배경 
 msgid "YouTube/Vimeo link, or link to video file (mp4 is recommended)."
 msgstr "YouTube/Vimeo 링크 또는 동영상 파일 링크(mp4 권장)."
 
-#: core/document-types/post.php:51
-#: assets/js/packages/editor-global-classes/editor-global-classes.js:3022
-#: assets/js/packages/editor-global-classes/editor-global-classes.strings.js:84
-msgid "Post"
-msgstr "글"
-
 #: includes/controls/groups/background.php:583 includes/widgets/video.php:376
 msgid "Play On Mobile"
 msgstr "모바일에서 재생"
 
-#: includes/settings/tools.php:386
-msgid "Reinstall"
-msgstr "재설치:"
+#: includes/widgets/divider.php:238
+msgctxt "Shapes"
+msgid "Dots"
+msgstr "점"
 
 #: includes/controls/groups/background.php:753
 #: assets/js/packages/editor-interactions/editor-interactions.js:339
@@ -6221,12 +6206,27 @@ msgstr "재설치:"
 #: assets/js/packages/editor-interactions/editor-interactions.strings.js:64
 #: assets/js/packages/editor-interactions/editor-interactions.strings.js:65
 msgid "In"
-msgstr "안"
+msgstr "다음 위치에서"
 
-#: includes/widgets/divider.php:238
+#: core/document-types/post.php:51
+#: assets/js/packages/editor-global-classes/editor-global-classes.js:3022
+#: assets/js/packages/editor-global-classes/editor-global-classes.strings.js:84
+msgid "Post"
+msgstr "우편"
+
+#: includes/frontend.php:1437 assets/js/app.js:14787 assets/js/app.js:15632
+#: assets/js/app.js:16586
+msgid "Previous"
+msgstr "이전의"
+
+#: includes/settings/tools.php:386
+msgid "Reinstall"
+msgstr "재설치"
+
+#: includes/widgets/divider.php:140
 msgctxt "Shapes"
-msgid "Dots"
-msgstr "점"
+msgid "Curly"
+msgstr "곱슬"
 
 #. translators: %s: Path to .htaccess file.
 #: core/debug/classes/htaccess.php:31
@@ -6407,14 +6407,6 @@ msgstr "오프셋"
 msgid "Motion Effects"
 msgstr "모션 효과"
 
-#: includes/elements/container.php:1559 includes/widgets/common-base.php:574
-msgid "Horizontal Orientation"
-msgstr "가로 방향"
-
-#: includes/elements/container.php:1660 includes/widgets/common-base.php:675
-msgid "Vertical Orientation"
-msgstr "세로 방향"
-
 #: includes/elements/container.php:1521 includes/widgets/common-base.php:542
 msgid "Please note!"
 msgstr "참고하세요!"
@@ -6463,14 +6455,22 @@ msgstr "숨김"
 msgid "Absolute"
 msgstr "절대"
 
-#: includes/elements/section.php:420 includes/widgets/common-base.php:514
-#: includes/widgets/image-carousel.php:743
-msgid "Vertical Align"
-msgstr "세로 정렬"
-
 #: includes/elements/container.php:1522 includes/widgets/common-base.php:543
 msgid "Custom positioning is not considered best practice for responsive web design and should not be used too frequently."
 msgstr "사용자 정의 위치 지정은 반응형 웹 디자인의 모범 사례로 간주되지 않으며 너무 자주 사용해서는 안됩니다."
+
+#: includes/elements/container.php:1559 includes/widgets/common-base.php:574
+msgid "Horizontal Orientation"
+msgstr "수평 방향"
+
+#: includes/elements/section.php:420 includes/widgets/common-base.php:514
+#: includes/widgets/image-carousel.php:743
+msgid "Vertical Align"
+msgstr "수직 정렬"
+
+#: includes/elements/container.php:1660 includes/widgets/common-base.php:675
+msgid "Vertical Orientation"
+msgstr "수직 방향"
 
 #: modules/safe-mode/module.php:256
 msgid "The issue was probably caused by one of your plugins or theme."
@@ -6484,11 +6484,6 @@ msgstr "Elementor를 로드하는 데 문제가 있습니까? 문제를 해결�
 #: includes/widgets/menu-anchor.php:136
 msgid "Note: The ID link ONLY accepts these chars: %s"
 msgstr "참고: ID 링크는 다음 문자만 허용합니다: %s"
-
-#: includes/controls/media.php:217
-#: modules/link-in-bio/base/widget-link-in-bio-base.php:389
-msgid "Choose File"
-msgstr "파일을 선택"
 
 #: includes/widgets/video.php:245
 msgid "External URL"
@@ -6589,14 +6584,6 @@ msgstr "안전 모드를 활성화할 수 없습니다"
 msgid "Still experiencing issues?"
 msgstr "여전히 문제가 발생합니까?"
 
-#: includes/widgets/google-maps.php:154
-#: modules/floating-buttons/base/widget-contact-button-base.php:396
-#: modules/floating-buttons/base/widget-contact-button-base.php:958
-#: modules/link-in-bio/base/widget-link-in-bio-base.php:502
-#: modules/link-in-bio/base/widget-link-in-bio-base.php:753
-msgid "Location"
-msgstr "장소"
-
 #: core/base/db-upgrades-manager.php:130
 msgid "The database update process is now complete. Thank you for updating to the latest version!"
 msgstr "이제 데이터베이스 업데이트 프로세스가 완료되었습니다. 최신 버전으로 업데이트해주셔서 감사합니다!"
@@ -6616,10 +6603,6 @@ msgstr "정렬 기준"
 #: modules/promotions/admin-menu-items/editor-one-popups-menu.php:20
 msgid "The Popup Builder lets you take advantage of all the amazing features in Elementor, so you can build beautiful & highly converting popups. Get Elementor Pro and start designing your popups today."
 msgstr "Popup Builder를 사용하면 Elementor의 모든 놀라운 기능을 활용할 수 있으므로 아름답고 전환율이 높은 팝업을 만들 수 있습니다. 지금 Elementor Pro를 구입하고 팝업 디자인을 시작하세요."
-
-#: modules/promotions/admin-menu-items/editor-one-popups-menu.php:19
-msgid "Get Popup Builder"
-msgstr "Popup Builder 얻기"
 
 #: includes/template-library/sources/local.php:1868
 #: modules/promotions/admin-menu-items/editor-one-popups-menu.php:46
@@ -6641,6 +6624,23 @@ msgstr "더 읽기 텍스트"
 #: includes/widgets/read-more.php:40 includes/widgets/read-more.php:91
 msgid "Read More"
 msgstr "더 읽기"
+
+#: includes/controls/media.php:217
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:389
+msgid "Choose File"
+msgstr "파일 선택"
+
+#: modules/promotions/admin-menu-items/editor-one-popups-menu.php:19
+msgid "Get Popup Builder"
+msgstr "팝업 빌더를 받으세요"
+
+#: includes/widgets/google-maps.php:154
+#: modules/floating-buttons/base/widget-contact-button-base.php:396
+#: modules/floating-buttons/base/widget-contact-button-base.php:958
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:502
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:753
+msgid "Location"
+msgstr "위치"
 
 #: modules/library/documents/not-supported.php:56
 msgid "Not Supported"
@@ -6689,10 +6689,6 @@ msgstr "실행 취소"
 msgid "Menus"
 msgstr "메뉴"
 
-#: core/common/modules/finder/categories/site.php:52
-msgid "Dashboard"
-msgstr "알림판"
-
 #: core/common/modules/finder/categories/site.php:46
 #: assets/js/packages/editor-site-navigation/editor-site-navigation.js:1221
 #: assets/js/packages/editor-site-navigation/editor-site-navigation.strings.js:12
@@ -6727,11 +6723,6 @@ msgstr "성공적으로 연결되었습니다."
 #: core/common/modules/connect/rest/rest-api.php:117
 msgid "Disconnected successfully."
 msgstr "성공적으로 연결이 끊어졌습니다."
-
-#: core/common/modules/connect/apps/base-app.php:87
-#: modules/pro-install/connect-page-renderer.php:105
-msgid "Disconnect"
-msgstr "연결 끊기"
 
 #: includes/widgets/image-gallery.php:175 includes/widgets/image.php:162
 msgid "Attachment Caption"
@@ -6820,6 +6811,15 @@ msgstr "미표시 스타일"
 msgid "Rating Scale"
 msgstr "평가 척도"
 
+#: core/common/modules/finder/categories/site.php:52
+msgid "Dashboard"
+msgstr "대시보드"
+
+#: core/common/modules/connect/apps/base-app.php:87
+#: modules/pro-install/connect-page-renderer.php:105
+msgid "Disconnect"
+msgstr "연결 해제"
+
 #: includes/widgets/video.php:619
 msgid "Poster"
 msgstr "포스터"
@@ -6854,23 +6854,6 @@ msgstr "쉬운 탐색이 여기 있습니다!"
 msgid "Congrats!"
 msgstr "축하해요!"
 
-#: includes/widgets/video.php:181 includes/widgets/video.php:206
-#: includes/widgets/video.php:230 includes/widgets/video.php:290
-msgid "Enter your URL"
-msgstr "URL을 입력하세요"
-
-#: includes/widgets/video.php:479
-msgid "Lazy Load"
-msgstr "지연 로드"
-
-#: modules/floating-buttons/base/widget-contact-button-base.php:951
-#: modules/floating-buttons/base/widget-floating-bars-base.php:166
-#: modules/floating-buttons/base/widget-floating-bars-base.php:352
-#: modules/link-in-bio/base/widget-link-in-bio-base.php:271
-#: modules/shapes/widgets/text-path.php:164
-msgid "Paste URL or type"
-msgstr "URL을 붙여넣거나 입력하세요"
-
 #: includes/editor-templates/navigator.php:96
 msgid "Once you fill your page with content, this window will give you an overview display of all the page elements. This way, you can easily move around any section, column, or widget."
 msgstr "내용으로 페이지를 채우면 이 창에 모든 페이지 요소의 개요가 표시됩니다. 이렇게 하면 모든 섹션, 열 또는 위젯을 쉽게 이동할 수 있습니다."
@@ -6881,14 +6864,6 @@ msgstr "내용으로 페이지를 채우면 이 창에 모든 페이지 요소�
 msgid "Empty"
 msgstr "비어 있음"
 
-#: includes/widgets/accordion.php:171 includes/widgets/accordion.php:175
-#: includes/widgets/icon-box.php:186 includes/widgets/image-box.php:161
-#: includes/widgets/tabs.php:170 includes/widgets/tabs.php:174
-#: includes/widgets/testimonial.php:145 includes/widgets/text-editor.php:142
-#: includes/widgets/toggle.php:174 includes/widgets/toggle.php:178
-msgid "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo."
-msgstr "모든 국민은 직업선택의 자유를 가진다. 정당은 법률이 정하는 바에 의하여 국가의 보호를 받으며, 국가는 법률이 정하는 바에 의하여 정당운영에 필요한 자금을 보조할 수 있다."
-
 #: core/admin/admin-notices.php:325
 msgid "You created over 10 pages with Elementor. Great job! If you can spare a minute, please help us by leaving a five star review on WordPress.org."
 msgstr "Elementor로 10개 이상의 페이지를 만들었습니다. 수고하셨습니다! 잠시 시간을 내어 WordPress.org에 별 다섯 개 리뷰를 남기셔서 도와주세요."
@@ -6896,6 +6871,31 @@ msgstr "Elementor로 10개 이상의 페이지를 만들었습니다. 수고하�
 #: core/admin/admin-notices.php:328
 msgid "Happy To Help"
 msgstr "도와주고 싶어요"
+
+#: includes/widgets/video.php:181 includes/widgets/video.php:206
+#: includes/widgets/video.php:230 includes/widgets/video.php:290
+msgid "Enter your URL"
+msgstr "URL 입력"
+
+#: includes/widgets/video.php:479
+msgid "Lazy Load"
+msgstr "레이지 로드"
+
+#: includes/widgets/accordion.php:171 includes/widgets/accordion.php:175
+#: includes/widgets/icon-box.php:186 includes/widgets/image-box.php:161
+#: includes/widgets/tabs.php:170 includes/widgets/tabs.php:174
+#: includes/widgets/testimonial.php:145 includes/widgets/text-editor.php:142
+#: includes/widgets/toggle.php:174 includes/widgets/toggle.php:178
+msgid "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo."
+msgstr "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elittellus, luctus nec ullamcorper mattis, pulvinar dapibus leo."
+
+#: modules/floating-buttons/base/widget-contact-button-base.php:951
+#: modules/floating-buttons/base/widget-floating-bars-base.php:166
+#: modules/floating-buttons/base/widget-floating-bars-base.php:352
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:271
+#: modules/shapes/widgets/text-path.php:164
+msgid "Paste URL or type"
+msgstr "URL을 붙여넣거나 입력"
 
 #: core/debug/inspector.php:57
 msgid "Debug Bar adds an admin bar menu that lists all the templates that are used on a page that is being displayed."
@@ -6909,11 +6909,11 @@ msgstr "디버그 표시줄은 표시되는 페이지에서 사용되는 모든 
 #: assets/js/ai-unify-product-images.js:9789 assets/js/ai.js:11338
 #: assets/js/ai.js:11341
 msgid "Zoom"
-msgstr "확대/축소"
+msgstr "줌"
 
 #: core/document-types/page-base.php:47
 msgid "Single"
-msgstr "단일"
+msgstr "하나의"
 
 #: includes/widgets/video.php:451
 msgid "Logo"
@@ -6933,25 +6933,9 @@ msgctxt "Filter Control"
 msgid "Contrast"
 msgstr "대비"
 
-#: core/base/providers/social-network-provider.php:216
-#: includes/widgets/video.php:277 includes/widgets/video.php:301
-msgid "URL"
-msgstr "URL"
-
 #: includes/widgets/traits/button-trait.php:203
 msgid "Button ID"
 msgstr "버튼 ID"
-
-#: app/modules/site-editor/module.php:32
-#: core/common/modules/finder/categories/site.php:26 core/kits/manager.php:462
-#: includes/managers/elements.php:325 modules/admin-bar/module.php:149
-msgid "Site"
-msgstr "사이트"
-
-#: includes/elements/column.php:447 includes/elements/container.php:860
-#: includes/elements/section.php:715 includes/widgets/heading.php:329
-msgid "Blend Mode"
-msgstr "혼합 모드"
 
 #: includes/editor-templates/hotkeys.php:38 assets/js/editor.js:8941
 #: assets/js/editor.js:8959 assets/js/editor.js:32618
@@ -6977,14 +6961,6 @@ msgstr "흐리기"
 #: modules/atomic-widgets/elements/atomic-self-hosted-video/atomic-self-hosted-video.php:145
 msgid "End Time"
 msgstr "종료 시간"
-
-#: includes/widgets/video.php:163
-msgid "Self Hosted"
-msgstr "자체 호스팅"
-
-#: includes/widgets/video.php:155
-msgid "Source"
-msgstr "소스"
 
 #: includes/managers/elements.php:332
 msgid "WooCommerce"
@@ -7035,10 +7011,34 @@ msgstr "Elementor Pro를 소유하고 있습니다"
 msgid "Artwork"
 msgstr "표지"
 
+#: includes/elements/column.php:447 includes/elements/container.php:860
+#: includes/elements/section.php:715 includes/widgets/heading.php:329
+msgid "Blend Mode"
+msgstr "블렌드 모드"
+
 #. translators: 1: `<code>` opening tag, 2: `</code>` closing tag.
 #: includes/widgets/traits/button-trait.php:215
 msgid "Please make sure the ID is unique and not used elsewhere on the page. This field allows %1$sA-z 0-9%2$s & underscore chars without spaces."
-msgstr "ID가 고유하고 페이지의 다른 곳에서 사용되지 않았는지 확인해주세요. 이 필드에는 공백 없이 %1$sA-z 0-9%2$s 및 밑줄 문자를 사용할 수 있습니다."
+msgstr "ID가 고유하고 페이지의 다른 곳에서 사용되지 않았는지 확인해주세요. 이 필드는 %1$sA-z 0-9%2$s 및 공백 없는 밑줄 문자를 허용합니다."
+
+#: includes/widgets/video.php:163
+msgid "Self Hosted"
+msgstr "셀프호스팅"
+
+#: app/modules/site-editor/module.php:32
+#: core/common/modules/finder/categories/site.php:26 core/kits/manager.php:462
+#: includes/managers/elements.php:325 modules/admin-bar/module.php:149
+msgid "Site"
+msgstr "대지"
+
+#: includes/widgets/video.php:155
+msgid "Source"
+msgstr "원천"
+
+#: core/base/providers/social-network-provider.php:216
+#: includes/widgets/video.php:277 includes/widgets/video.php:301
+msgid "URL"
+msgstr "웹 주소"
 
 #: core/admin/admin.php:247 assets/js/admin-feedback.strings.js:2
 #: assets/js/admin-feedback.strings.js:6 assets/js/admin-modules.strings.js:2
@@ -7141,11 +7141,11 @@ msgstr "테마의 기본 페이지 템플릿입니다."
 
 #: modules/page-templates/module.php:338
 msgid "No header, no footer, just Elementor"
-msgstr "헤더, 푸터가 없는 Elementor 전용"
+msgstr "헤더도 없고, 푸터도 없고, Elementor만 있습니다"
 
 #: modules/page-templates/module.php:350
 msgid "This template includes the header, full-width content and footer"
-msgstr "이 템플릿에는 헤더, 전체 너비 내용 및 푸터가 포함됩니다"
+msgstr "이 템플릿에는 헤더, 전체 너비 내용 및 바닥글이 포함되어 있습니다."
 
 #: includes/admin-templates/new-template.php:64
 msgid "Choose Template Type"
@@ -7288,26 +7288,26 @@ msgstr "본문 스타일"
 msgid "More actions"
 msgstr "더 많은 동작"
 
-#: core/role-manager/role-manager.php:235
-msgid "Want to give access only to content?"
-msgstr "내용에만 액세스 권한을 부여하고 싶으세요?"
-
 #: includes/admin-templates/new-floating-elements.php:47
 #: includes/admin-templates/new-template.php:112
 msgid "Enter template name (optional)"
 msgstr "템플릿 이름 입력 (옵션)"
 
-#: core/document-types/page-base.php:262
-msgid "Featured Image"
-msgstr "대표 이미지"
-
 #: core/dynamic-tags/tag.php:115 includes/settings/settings.php:285
 msgid "Fallback"
-msgstr "Fallback"
+msgstr "폴백"
+
+#: core/document-types/page-base.php:262
+msgid "Featured Image"
+msgstr "추천 이미지"
+
+#: core/role-manager/role-manager.php:235
+msgid "Want to give access only to content?"
+msgstr "내용에 대한 액세스 권한만 부여하시겠어요?"
 
 #: includes/widgets/image-carousel.php:204
 msgid "Set how many slides are scrolled per swipe."
-msgstr "스와이프당 스크롤되는 슬라이드 수를 설정합니다."
+msgstr "스와이프 당 스크롤되는 슬라이드 수를 설정합니다."
 
 #: includes/controls/groups/background.php:448
 msgid "Note: Attachment Fixed works only on desktop."
@@ -7439,20 +7439,9 @@ msgstr "라이브러리로 템플릿 가져오기"
 msgid "Excerpt"
 msgstr "발췌"
 
-#: includes/editor-templates/panel.php:101
-#: assets/js/packages/editor-app-bar/editor-app-bar.js:1556
-#: assets/js/packages/editor-app-bar/editor-app-bar.strings.js:48
-msgid "Preview Changes"
-msgstr "변경사항 미리보기"
-
 #: core/admin/admin.php:502
 msgid "Create New Page"
 msgstr "새 페이지 만들기"
-
-#: includes/widgets/alert.php:150 includes/widgets/icon-box.php:187
-#: includes/widgets/image-box.php:162
-msgid "Enter your description"
-msgstr "설명을 입력하세요"
 
 #: includes/widgets/traits/button-trait.php:57
 #: modules/atomic-widgets/elements/atomic-button/atomic-button.php:54
@@ -7505,6 +7494,15 @@ msgstr "프라이버시 모드"
 msgid "Search"
 msgstr "검색"
 
+#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:314
+#: assets/js/editor.js:27554
+#: assets/js/packages/editor-app-bar/editor-app-bar.js:568
+#: assets/js/packages/editor-app-bar/editor-app-bar.js:1790
+#: assets/js/packages/editor-app-bar/editor-app-bar.strings.js:18
+#: assets/js/packages/editor-app-bar/editor-app-bar.strings.js:47
+msgid "Submit"
+msgstr "제출"
+
 #: core/kits/views/panel.php:40 includes/controls/icons.php:83
 #: includes/controls/icons.php:85 includes/controls/media.php:234
 #: includes/controls/media.php:236 includes/controls/media.php:298
@@ -7525,15 +7523,6 @@ msgstr "검색"
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:70
 msgid "Remove"
 msgstr "제거"
-
-#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:314
-#: assets/js/editor.js:27554
-#: assets/js/packages/editor-app-bar/editor-app-bar.js:568
-#: assets/js/packages/editor-app-bar/editor-app-bar.js:1790
-#: assets/js/packages/editor-app-bar/editor-app-bar.strings.js:18
-#: assets/js/packages/editor-app-bar/editor-app-bar.strings.js:47
-msgid "Submit"
-msgstr "제출"
 
 #: includes/editor-templates/templates.php:283
 msgid "Favorite"
@@ -7635,6 +7624,17 @@ msgstr "만세! %s가 공개되었습니다."
 #: includes/widgets/alert.php:137
 msgid "This is an Alert"
 msgstr "이것은 경고입니다"
+
+#: includes/widgets/alert.php:150 includes/widgets/icon-box.php:187
+#: includes/widgets/image-box.php:162
+msgid "Enter your description"
+msgstr "설명 입력"
+
+#: includes/editor-templates/panel.php:101
+#: assets/js/packages/editor-app-bar/editor-app-bar.js:1556
+#: assets/js/packages/editor-app-bar/editor-app-bar.strings.js:48
+msgid "Preview Changes"
+msgstr "변경 사항 미리보기"
 
 #: includes/template-library/sources/local.php:484
 #: includes/template-library/sources/local.php:600
@@ -7862,13 +7862,6 @@ msgstr "nofollow 추가"
 msgid "Link Options"
 msgstr "링크 옵션"
 
-#: includes/elements/column.php:911 includes/elements/container.php:1854
-#: includes/elements/section.php:1352 includes/widgets/common-base.php:867
-#: modules/floating-buttons/base/widget-contact-button-base.php:1417
-#: modules/floating-buttons/base/widget-floating-bars-base.php:916
-msgid "Animation Delay"
-msgstr "애니메이션 지연"
-
 #. translators: %s: Singular label.
 #. translators: %s: Template label (singular).
 #. Translators: %s: Element Name.
@@ -7903,10 +7896,6 @@ msgstr "통합"
 #: includes/settings/tools.php:412
 msgid "Beta Tester"
 msgstr "베타 테스터"
-
-#: includes/controls/url.php:112
-msgid "Open in new window"
-msgstr "새 창에서 열기"
 
 #: core/kits/documents/tabs/settings-layout.php:101
 #: includes/elements/column.php:237
@@ -7968,9 +7957,20 @@ msgctxt "Box Shadow Control"
 msgid "Outline"
 msgstr "Outline"
 
+#: includes/elements/column.php:911 includes/elements/container.php:1854
+#: includes/elements/section.php:1352 includes/widgets/common-base.php:867
+#: modules/floating-buttons/base/widget-contact-button-base.php:1417
+#: modules/floating-buttons/base/widget-floating-bars-base.php:916
+msgid "Animation Delay"
+msgstr "움직임 지연"
+
+#: includes/controls/url.php:112
+msgid "Open in new window"
+msgstr "새창에서 열기"
+
 #: includes/settings/tools.php:389
 msgid "Warning: Please back up your database before making the rollback."
-msgstr "경고: 롤백을 수행하기 전에 데이터베이스를 백업해 주세요."
+msgstr "경고: 롤백을 하기 전에 데이터베이스를 백업하세요."
 
 #: includes/settings/settings.php:314
 msgid "External File"
@@ -8095,10 +8095,6 @@ msgstr "템플릿 편집"
 msgid "Page Title Selector"
 msgstr "페이지 제목 선택기"
 
-#: includes/maintenance-mode.php:237
-msgid "Logged In"
-msgstr "로그인 됨"
-
 #: core/common/modules/finder/categories/edit.php:118 assets/js/editor.js:11663
 #: assets/js/editor.js:21118
 msgid "Template"
@@ -8131,11 +8127,15 @@ msgstr "출시 예정은 HTTP 200 코드를 반환하며 이는 사이트를 인
 
 #: core/settings/editor-preferences/model.php:107
 msgid "Canvas"
-msgstr "표시 영역"
+msgstr "캔버스"
+
+#: includes/maintenance-mode.php:237
+msgid "Logged In"
+msgstr "로그인됨"
 
 #: includes/elements/container.php:1330 includes/elements/section.php:1109
 msgid "Bring to Front"
-msgstr "앞으로 가져 오기"
+msgstr "앞으로 가져오다"
 
 #: includes/shapes.php:219
 msgctxt "Shapes"
@@ -8236,16 +8236,6 @@ msgstr "분할"
 msgid "Shape Divider"
 msgstr "모양 구분선"
 
-#: includes/controls/groups/flex-container.php:109
-#: includes/controls/groups/flex-container.php:222
-#: includes/controls/groups/grid-container.php:204
-#: includes/controls/groups/grid-container.php:244
-#: includes/elements/column.php:191 includes/elements/column.php:219
-#: includes/elements/section.php:428 includes/widgets/icon-list.php:238
-#: includes/widgets/toggle.php:317
-msgid "Space Between"
-msgstr "사이 공간"
-
 #: includes/elements/container.php:1317 includes/elements/section.php:1096
 #: assets/js/packages/editor-controls/editor-controls.js:45777
 #: assets/js/packages/editor-controls/editor-controls.strings.js:221
@@ -8262,6 +8252,16 @@ msgstr "뒤집기"
 #: includes/widgets/video.php:733 includes/widgets/video.php:881
 msgid "Lightbox"
 msgstr "라이트박스"
+
+#: includes/controls/groups/flex-container.php:109
+#: includes/controls/groups/flex-container.php:222
+#: includes/controls/groups/grid-container.php:204
+#: includes/controls/groups/grid-container.php:244
+#: includes/elements/column.php:191 includes/elements/column.php:219
+#: includes/elements/section.php:428 includes/widgets/icon-list.php:238
+#: includes/widgets/toggle.php:317
+msgid "Space Between"
+msgstr "사이의 공간"
 
 #: includes/elements/column.php:814 includes/elements/container.php:1770
 #: includes/elements/section.php:1275 includes/widgets/common-base.php:784
@@ -8316,7 +8316,7 @@ msgstr "호버"
 #: modules/nested-accordion/widgets/nested-accordion.php:147
 #: modules/nested-tabs/widgets/nested-tabs.php:165
 msgid "Add your custom id WITHOUT the Pound key. e.g: my-id"
-msgstr "사용자 정의 ID를 파운드(#) 키 없이 추가하세요. 예: my-id"
+msgstr "파운드 키 없이 사용자 정의 ID를 추가합니다. 예: my-id"
 
 #: includes/controls/groups/background.php:230
 msgctxt "Background Control"
@@ -8435,42 +8435,34 @@ msgstr "이 기능을 사용하면 위젯을 전역으로 저장한 다음 여�
 msgid "Meet Our Global Widget"
 msgstr "전역 위젯을 만나보세요"
 
+#: includes/editor-templates/panel-elements.php:31
+msgid "Get more with Elementor Pro"
+msgstr "Elementor Pro로 더 많은 것을 얻으세요"
+
 #: modules/promotions/widgets/pro-widget-promotion.php:80
 #: assets/js/ai-admin.js:7484 assets/js/ai-gutenberg.js:7702
 #: assets/js/ai-layout.js:3854 assets/js/ai-media-library.js:7484
 #: assets/js/ai-unify-product-images.js:7484 assets/js/ai.js:9036
 msgid "Go Pro"
-msgstr "Pro 전환"
-
-#: includes/editor-templates/panel-elements.php:31
-msgid "Get more with Elementor Pro"
-msgstr "Elementor Pro로 더 많은 것을 얻으세요"
+msgstr "Pro로 전환"
 
 #: includes/managers/controls.php:1093
 msgid "Meet Our Custom CSS"
-msgstr "사용자 정의 CSS를 만나보세요"
+msgstr "당사의 맞춤형 CSS를 만나보세요"
 
 #: includes/base/element-base.php:958 includes/base/element-base.php:1122
 #: includes/widgets/common-base.php:1092 includes/widgets/icon-list.php:289
 #: includes/widgets/icon.php:334 includes/widgets/text-editor.php:150
 #: includes/widgets/video.php:736 modules/shapes/widgets/text-path.php:220
 msgid "Off"
-msgstr "Off"
+msgstr "끄기"
 
 #: includes/base/element-base.php:957 includes/base/element-base.php:1121
 #: includes/widgets/common-base.php:1091 includes/widgets/icon-list.php:290
 #: includes/widgets/icon.php:335 includes/widgets/text-editor.php:151
 #: includes/widgets/video.php:737 modules/shapes/widgets/text-path.php:219
 msgid "On"
-msgstr "On"
-
-#: includes/base/widget-base.php:312 includes/base/widget-base.php:321
-msgid "Skin"
-msgstr "스킨"
-
-#: includes/widgets/traits/button-trait.php:38
-msgid "Extra Large"
-msgstr "더 크게"
+msgstr "켜기"
 
 #: includes/settings/settings.php:193
 msgid "Improve Elementor"
@@ -8480,9 +8472,17 @@ msgstr "Elementor 개선"
 msgid "Invalid Data: The Template ID cannot be the same as the currently edited template. Please choose a different one."
 msgstr "잘못된 데이터: 템플릿 ID는 현재 편집 중인 템플릿과 같을 수 없습니다. 다른 것을 선택하세요."
 
+#: includes/widgets/traits/button-trait.php:38
+msgid "Extra Large"
+msgstr "특대"
+
 #: includes/widgets/traits/button-trait.php:34
 msgid "Extra Small"
-msgstr "더 작게"
+msgstr "특소"
+
+#: includes/base/widget-base.php:312 includes/base/widget-base.php:321
+msgid "Skin"
+msgstr "피부"
 
 #: includes/editor-templates/panel.php:172
 msgid "Update changes to page"
@@ -8601,30 +8601,6 @@ msgstr "저장된 템플릿"
 msgid "Template Library"
 msgstr "템플릿 라이브러리"
 
-#: core/base/document.php:174 includes/editor-templates/global.php:21
-#: includes/editor-templates/library-layout.php:11
-#: includes/editor-templates/responsive-bar.php:65 includes/frontend.php:1439
-#: assets/js/41d84b549e7963d0f2e0.bundle.js:649 assets/js/ai-admin.js:585
-#: assets/js/ai-gutenberg.js:723 assets/js/ai-layout.js:855
-#: assets/js/ai-media-library.js:585 assets/js/ai-unify-product-images.js:585
-#: assets/js/ai.js:1373 assets/js/app-packages.js:525
-#: assets/js/app-packages.js:2581 assets/js/app-packages.js:3140
-#: assets/js/app.js:698 assets/js/app.js:2960 assets/js/app.js:3383
-#: assets/js/app.js:7640 assets/js/app.js:11086 assets/js/app.js:18162
-#: assets/js/editor.js:51412 assets/js/import-export-admin.js:321
-#: assets/js/import-export-customization-admin.js:409
-#: assets/js/nested-elements.strings.js:1
-#: assets/js/packages/editor-components/editor-components.js:1259
-#: assets/js/packages/editor-components/editor-components.strings.js:21
-#: assets/js/packages/editor-design-system/editor-design-system.js:477
-#: assets/js/packages/editor-design-system/editor-design-system.strings.js:18
-#: assets/js/packages/editor-starter/editor-starter.js:111
-#: assets/js/packages/editor-starter/editor-starter.strings.js:1
-#: assets/js/packages/editor-widget-creation/editor-widget-creation.js:89
-#: assets/js/packages/editor-widget-creation/editor-widget-creation.strings.js:1
-msgid "Close"
-msgstr "닫기"
-
 #: includes/editor-templates/global.php:45
 msgid "Add Template"
 msgstr "템플릿 추가"
@@ -8691,6 +8667,30 @@ msgstr "Elementor 라이브러리는 매일 자동으로 업데이트됩니다. 
 msgid "Sync Library"
 msgstr "라이브러리 동기화"
 
+#: core/base/document.php:174 includes/editor-templates/global.php:21
+#: includes/editor-templates/library-layout.php:11
+#: includes/editor-templates/responsive-bar.php:65 includes/frontend.php:1439
+#: assets/js/41d84b549e7963d0f2e0.bundle.js:649 assets/js/ai-admin.js:585
+#: assets/js/ai-gutenberg.js:723 assets/js/ai-layout.js:855
+#: assets/js/ai-media-library.js:585 assets/js/ai-unify-product-images.js:585
+#: assets/js/ai.js:1373 assets/js/app-packages.js:525
+#: assets/js/app-packages.js:2581 assets/js/app-packages.js:3140
+#: assets/js/app.js:698 assets/js/app.js:2960 assets/js/app.js:3383
+#: assets/js/app.js:7640 assets/js/app.js:11086 assets/js/app.js:18162
+#: assets/js/editor.js:51412 assets/js/import-export-admin.js:321
+#: assets/js/import-export-customization-admin.js:409
+#: assets/js/nested-elements.strings.js:1
+#: assets/js/packages/editor-components/editor-components.js:1259
+#: assets/js/packages/editor-components/editor-components.strings.js:21
+#: assets/js/packages/editor-design-system/editor-design-system.js:477
+#: assets/js/packages/editor-design-system/editor-design-system.strings.js:18
+#: assets/js/packages/editor-starter/editor-starter.js:111
+#: assets/js/packages/editor-starter/editor-starter.strings.js:1
+#: assets/js/packages/editor-widget-creation/editor-widget-creation.js:89
+#: assets/js/packages/editor-widget-creation/editor-widget-creation.strings.js:1
+msgid "Close"
+msgstr "닫다"
+
 #. translators: %s: WordPress child themes documentation.
 #: modules/system-info/reporters/theme.php:207
 msgid "If you want to modify the source code of your theme, we recommend using a <a href=\"%s\">child theme</a>."
@@ -8730,7 +8730,7 @@ msgstr "전역 글꼴"
 #: assets/js/ai-media-library.js:3599 assets/js/ai-unify-product-images.js:3599
 #: assets/js/ai.js:4420
 msgid "Animation"
-msgstr "애니메이션"
+msgstr "움직임"
 
 #: core/base/traits/shared-widget-controls-trait.php:289
 #: includes/widgets/icon-box.php:513 includes/widgets/icon.php:299
@@ -8743,15 +8743,7 @@ msgstr "애니메이션"
 #: modules/nested-tabs/widgets/nested-tabs.php:606
 #: modules/shapes/widgets/text-path.php:452
 msgid "Hover Animation"
-msgstr "호버 애니메이션"
-
-#: includes/elements/column.php:897 includes/elements/container.php:1840
-#: includes/elements/section.php:1338 includes/widgets/common-base.php:853
-#: modules/floating-buttons/base/widget-contact-button-base.php:1406
-#: modules/floating-buttons/base/widget-contact-button-base.php:2789
-#: modules/floating-buttons/base/widget-floating-bars-base.php:887
-msgid "Slow"
-msgstr "느림"
+msgstr "호버 움직임"
 
 #: includes/elements/column.php:899 includes/elements/container.php:1842
 #: includes/elements/section.php:1340 includes/widgets/common-base.php:855
@@ -8759,7 +8751,15 @@ msgstr "느림"
 #: modules/floating-buttons/base/widget-contact-button-base.php:2791
 #: modules/floating-buttons/base/widget-floating-bars-base.php:889
 msgid "Fast"
-msgstr "빠름"
+msgstr "빠른"
+
+#: includes/elements/column.php:897 includes/elements/container.php:1840
+#: includes/elements/section.php:1338 includes/widgets/common-base.php:853
+#: modules/floating-buttons/base/widget-contact-button-base.php:1406
+#: modules/floating-buttons/base/widget-contact-button-base.php:2789
+#: modules/floating-buttons/base/widget-floating-bars-base.php:887
+msgid "Slow"
+msgstr "느린"
 
 #: includes/controls/box-shadow.php:83
 #: assets/js/packages/editor-controls/editor-controls.js:44516
@@ -8781,32 +8781,32 @@ msgstr "흐림"
 msgid "Disable Default Colors"
 msgstr "기본 색상 비활성화"
 
+#: includes/controls/groups/box-shadow.php:73
+msgctxt "Box Shadow Control"
+msgid "Inset"
+msgstr "Inset"
+
 #: includes/elements/column.php:884 includes/elements/container.php:1827
 #: includes/elements/section.php:1325 includes/widgets/common-base.php:840
 #: includes/widgets/video.php:929
 #: modules/floating-buttons/base/widget-contact-button-base.php:1392
 #: modules/floating-buttons/base/widget-floating-bars-base.php:873
 msgid "Entrance Animation"
-msgstr "진입 애니메이션"
-
-#: includes/controls/box-shadow.php:73 includes/controls/text-shadow.php:76
-#: includes/widgets/tabs.php:189
-#: assets/js/packages/editor-controls/editor-controls.js:44503
-#: assets/js/packages/editor-controls/editor-controls.strings.js:87
-msgid "Vertical"
-msgstr "세로"
+msgstr "입장 움직임"
 
 #: includes/controls/box-shadow.php:68 includes/controls/text-shadow.php:71
 #: includes/widgets/tabs.php:193
 #: assets/js/packages/editor-controls/editor-controls.js:44497
 #: assets/js/packages/editor-controls/editor-controls.strings.js:86
 msgid "Horizontal"
-msgstr "가로"
+msgstr "수평"
 
-#: includes/controls/groups/box-shadow.php:73
-msgctxt "Box Shadow Control"
-msgid "Inset"
-msgstr "Inset"
+#: includes/controls/box-shadow.php:73 includes/controls/text-shadow.php:76
+#: includes/widgets/tabs.php:189
+#: assets/js/packages/editor-controls/editor-controls.js:44503
+#: assets/js/packages/editor-controls/editor-controls.strings.js:87
+msgid "Vertical"
+msgstr "수직"
 
 #: includes/widgets/social-icons.php:42 includes/widgets/social-icons.php:107
 #: includes/widgets/social-icons.php:250
@@ -8832,6 +8832,10 @@ msgstr "내 기술"
 msgid "Custom Colors"
 msgstr "사용자 정의 색상"
 
+#: includes/widgets/testimonial.php:46 includes/widgets/testimonial.php:132
+msgid "Testimonial"
+msgstr "추천글"
+
 #: includes/widgets/icon-box.php:152 includes/widgets/icon.php:150
 #: includes/widgets/social-icons.php:285
 #: modules/floating-buttons/base/widget-contact-button-base.php:2086
@@ -8840,11 +8844,7 @@ msgstr "사용자 정의 색상"
 #: modules/floating-buttons/base/widget-floating-bars-base.php:845
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:119
 msgid "Rounded"
-msgstr "모서리 굴림"
-
-#: includes/widgets/testimonial.php:46 includes/widgets/testimonial.php:132
-msgid "Testimonial"
-msgstr "추천글"
+msgstr "둥근"
 
 #: includes/elements/column.php:388 includes/elements/container.php:776
 #: includes/elements/section.php:644
@@ -9025,16 +9025,6 @@ msgstr "추가 옵션"
 msgid "Inside"
 msgstr "내부"
 
-#: includes/elements/column.php:893 includes/elements/container.php:1836
-#: includes/elements/section.php:1334 includes/widgets/common-base.php:849
-#: includes/widgets/counter.php:185
-#: modules/floating-buttons/base/widget-contact-button-base.php:1402
-#: modules/floating-buttons/base/widget-contact-button-base.php:2785
-#: modules/floating-buttons/base/widget-floating-bars-base.php:883
-#: modules/nested-accordion/widgets/nested-accordion.php:376
-msgid "Animation Duration"
-msgstr "애니메이션 기간"
-
 #: includes/widgets/image-carousel.php:46
 #: includes/widgets/image-carousel.php:146
 #: includes/widgets/image-carousel.php:155
@@ -9049,11 +9039,6 @@ msgstr "화살표와 점"
 msgid "Image Stretch"
 msgstr "이미지 늘이기"
 
-#: includes/widgets/image-carousel.php:588
-#: includes/widgets/image-carousel.php:651
-msgid "Outside"
-msgstr "외부"
-
 #: includes/controls/groups/image-size.php:303
 msgid "You can crop the original image size to any custom size. You can also set a single value for height or width in order to keep the original size ratio."
 msgstr "원본 이미지 크기를 사용자 정의 크기로 자를 수 있습니다. 원래 크기 비율을 유지하기 위해 높이 또는 너비에 대한 단일 값을 설정할 수도 있습니다."
@@ -9061,6 +9046,21 @@ msgstr "원본 이미지 크기를 사용자 정의 크기로 자를 수 있습�
 #: includes/widgets/video.php:557
 msgid "Intro Byline"
 msgstr "작성자 소개 정보"
+
+#: includes/elements/column.php:893 includes/elements/container.php:1836
+#: includes/elements/section.php:1334 includes/widgets/common-base.php:849
+#: includes/widgets/counter.php:185
+#: modules/floating-buttons/base/widget-contact-button-base.php:1402
+#: modules/floating-buttons/base/widget-contact-button-base.php:2785
+#: modules/floating-buttons/base/widget-floating-bars-base.php:883
+#: modules/nested-accordion/widgets/nested-accordion.php:376
+msgid "Animation Duration"
+msgstr "움직임 지속시간"
+
+#: includes/widgets/image-carousel.php:588
+#: includes/widgets/image-carousel.php:651
+msgid "Outside"
+msgstr "밖"
 
 #: includes/widgets/accordion.php:463 includes/widgets/divider.php:790
 #: includes/widgets/divider.php:957 includes/widgets/image-carousel.php:771
@@ -9073,7 +9073,7 @@ msgstr "작성자 소개 정보"
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:7641
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:10
 msgid "Spacing"
-msgstr "공간"
+msgstr "간격"
 
 #: includes/controls/groups/background.php:103 includes/widgets/video.php:45
 #: includes/widgets/video.php:148 includes/widgets/video.php:751
@@ -9085,15 +9085,6 @@ msgstr "동영상"
 #: includes/widgets/video.php:529
 msgid "Intro Title"
 msgstr "소개 제목"
-
-#: includes/widgets/video.php:397
-#: modules/atomic-widgets/elements/atomic-collection-loop/collection-loop-promotion.php:38
-#: modules/atomic-widgets/elements/atomic-self-hosted-video/atomic-self-hosted-video.php:152
-#: modules/atomic-widgets/elements/atomic-youtube/atomic-youtube.php:88
-#: modules/promotions/widgets/collection-loop-widget-promotion.php:46
-#: modules/promotions/widgets/collection-loop-widget-promotion.php:55
-msgid "Loop"
-msgstr "반복"
 
 #: includes/widgets/video.php:543
 msgid "Intro Portrait"
@@ -9119,6 +9110,15 @@ msgstr "제어 색상"
 #: includes/controls/image-dimensions.php:81
 msgid "The server does not have ImageMagick or GD installed and/or enabled! Any of these libraries are required for WordPress to be able to resize images. Please contact your server administrator to enable this before continuing."
 msgstr "서버에 ImageMagick 또는 GD가 설치 및/또는 활성화되어 있지 않습니다! 워드프레스에서 이미지 크기를 조정할 수 있으려면 이러한 라이브러리가 필요합니다. 계속하기 전에 이를 활성화하려면 서버 관리자에게 문의하세요."
+
+#: includes/widgets/video.php:397
+#: modules/atomic-widgets/elements/atomic-collection-loop/collection-loop-promotion.php:38
+#: modules/atomic-widgets/elements/atomic-self-hosted-video/atomic-self-hosted-video.php:152
+#: modules/atomic-widgets/elements/atomic-youtube/atomic-youtube.php:88
+#: modules/promotions/widgets/collection-loop-widget-promotion.php:46
+#: modules/promotions/widgets/collection-loop-widget-promotion.php:55
+msgid "Loop"
+msgstr "루프"
 
 #: includes/widgets/image-carousel.php:517
 #: assets/js/packages/editor-interactions/editor-interactions.js:963
@@ -9180,7 +9180,7 @@ msgstr "이것은 제목입니다"
 #: modules/floating-buttons/base/widget-contact-button-base.php:3116
 #: modules/floating-buttons/base/widget-floating-bars-base.php:1522
 msgid "Add your custom class WITHOUT the dot. e.g: my-class"
-msgstr "점 없이 사용자 정의 클래스를 추가하세요. 예: my-class"
+msgstr "점 없이 사용자 정의 클래스를 추가합니다. 예: my-class"
 
 #: core/kits/documents/tabs/global-typography.php:200
 msgid "The list of fonts used if the chosen font is not available."
@@ -9201,7 +9201,7 @@ msgstr "요소"
 #: includes/widgets/wordpress.php:242
 #: modules/atomic-widgets/elements/atomic-form/atomic-form.php:113
 msgid "Form"
-msgstr "Form"
+msgstr "양식"
 
 #: core/admin/admin.php:371
 #: core/common/modules/finder/categories/settings.php:29
@@ -9277,6 +9277,39 @@ msgstr "스크롤"
 msgid "Advanced"
 msgstr "고급"
 
+#: includes/base/element-base.php:1361 includes/controls/dimensions.php:83
+#: includes/elements/container.php:1551 includes/widgets/common-base.php:568
+#: includes/widgets/common-base.php:569 includes/widgets/divider.php:482
+#: includes/widgets/divider.php:778 includes/widgets/divider.php:944
+#: includes/widgets/icon-list.php:558 includes/widgets/image-box.php:225
+#: includes/widgets/image-carousel.php:550
+#: includes/widgets/social-icons.php:333
+#: includes/widgets/traits/button-trait.php:262
+#: modules/floating-buttons/base/widget-contact-button-base.php:1140
+#: modules/floating-buttons/base/widget-contact-button-base.php:2406
+#: modules/floating-buttons/base/widget-contact-button-base.php:2948
+#: modules/floating-buttons/base/widget-floating-bars-base.php:456
+#: modules/floating-buttons/base/widget-floating-bars-base.php:1057
+#: modules/shapes/widgets/text-path.php:185
+#: assets/js/packages/editor-controls/editor-controls.js:47859
+#: assets/js/packages/editor-controls/editor-controls.js:47878
+#: assets/js/packages/editor-controls/editor-controls.js:52671
+#: assets/js/packages/editor-controls/editor-controls.js:52675
+#: assets/js/packages/editor-controls/editor-controls.strings.js:38
+#: assets/js/packages/editor-controls/editor-controls.strings.js:46
+#: assets/js/packages/editor-controls/editor-controls.strings.js:181
+#: assets/js/packages/editor-controls/editor-controls.strings.js:184
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:3503
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:3517
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:5919
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:5920
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:180
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:183
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:305
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:310
+msgid "Right"
+msgstr "오른쪽"
+
 #: includes/fonts.php:76
 msgid "Google"
 msgstr "Google"
@@ -9294,25 +9327,6 @@ msgstr "새 섹션 추가"
 #: includes/editor-templates/panel.php:77
 msgid "Widgets Panel"
 msgstr "위젯 패널"
-
-#: modules/system-info/module.php:153 modules/system-info/module.php:177
-msgid "Download System Info"
-msgstr "시스템 정보 다운로드"
-
-#: core/common/modules/finder/categories/general.php:55
-#: modules/system-info/admin-menu-items/editor-one-system-info-menu.php:29
-#: modules/system-info/module.php:150
-msgid "System Info"
-msgstr "시스템 정보"
-
-#: core/common/modules/finder/categories/site.php:64
-msgid "Themes"
-msgstr "테마"
-
-#: includes/controls/groups/typography.php:173
-msgctxt "Typography Control"
-msgid "Style"
-msgstr "스타일"
 
 #: core/experiments/manager.php:399
 #: core/kits/documents/tabs/settings-background.php:78
@@ -9373,55 +9387,6 @@ msgstr "스타일"
 msgid "Default"
 msgstr "기본"
 
-#: includes/base/element-base.php:1361 includes/controls/dimensions.php:83
-#: includes/elements/container.php:1551 includes/widgets/common-base.php:568
-#: includes/widgets/common-base.php:569 includes/widgets/divider.php:482
-#: includes/widgets/divider.php:778 includes/widgets/divider.php:944
-#: includes/widgets/icon-list.php:558 includes/widgets/image-box.php:225
-#: includes/widgets/image-carousel.php:550
-#: includes/widgets/social-icons.php:333
-#: includes/widgets/traits/button-trait.php:262
-#: modules/floating-buttons/base/widget-contact-button-base.php:1140
-#: modules/floating-buttons/base/widget-contact-button-base.php:2406
-#: modules/floating-buttons/base/widget-contact-button-base.php:2948
-#: modules/floating-buttons/base/widget-floating-bars-base.php:456
-#: modules/floating-buttons/base/widget-floating-bars-base.php:1057
-#: modules/shapes/widgets/text-path.php:185
-#: assets/js/packages/editor-controls/editor-controls.js:47859
-#: assets/js/packages/editor-controls/editor-controls.js:47878
-#: assets/js/packages/editor-controls/editor-controls.js:52671
-#: assets/js/packages/editor-controls/editor-controls.js:52675
-#: assets/js/packages/editor-controls/editor-controls.strings.js:38
-#: assets/js/packages/editor-controls/editor-controls.strings.js:46
-#: assets/js/packages/editor-controls/editor-controls.strings.js:181
-#: assets/js/packages/editor-controls/editor-controls.strings.js:184
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:3503
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:3517
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:5919
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:5920
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:180
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:183
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:305
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:310
-msgid "Right"
-msgstr "오른쪽"
-
-#: includes/controls/groups/typography.php:138
-#: includes/controls/groups/typography.php:299
-msgctxt "Typography Control"
-msgid "Weight"
-msgstr "굵기"
-
-#: includes/controls/groups/typography.php:113
-msgctxt "Typography Control"
-msgid "Size"
-msgstr "크기"
-
-#: includes/controls/groups/background.php:457
-msgctxt "Background Control"
-msgid "Repeat"
-msgstr "반복"
-
 #: includes/base/element-base.php:1353 includes/controls/dimensions.php:85
 #: includes/elements/container.php:1550 includes/widgets/common-base.php:568
 #: includes/widgets/common-base.php:569 includes/widgets/divider.php:474
@@ -9454,6 +9419,46 @@ msgstr "반복"
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:311
 msgid "Left"
 msgstr "왼쪽"
+
+#: modules/system-info/module.php:153 modules/system-info/module.php:177
+msgid "Download System Info"
+msgstr "시스템 정보 다운로드"
+
+#: core/common/modules/finder/categories/general.php:55
+#: modules/system-info/admin-menu-items/editor-one-system-info-menu.php:29
+#: modules/system-info/module.php:150
+msgid "System Info"
+msgstr "시스템 정보"
+
+#: core/common/modules/finder/categories/site.php:64
+msgid "Themes"
+msgstr "테마"
+
+#: includes/controls/groups/typography.php:173
+msgctxt "Typography Control"
+msgid "Style"
+msgstr "스타일"
+
+#: includes/controls/groups/typography.php:138
+#: includes/controls/groups/typography.php:299
+msgctxt "Typography Control"
+msgid "Weight"
+msgstr "굵기"
+
+#: includes/controls/groups/typography.php:113
+msgctxt "Typography Control"
+msgid "Size"
+msgstr "크기"
+
+#: includes/controls/groups/background.php:457
+msgctxt "Background Control"
+msgid "Repeat"
+msgstr "반복"
+
+#: includes/controls/groups/background.php:434
+msgctxt "Background Control"
+msgid "Fixed"
+msgstr "고정"
 
 #: core/kits/documents/tabs/theme-style-typography.php:109
 #: includes/elements/container.php:613 includes/widgets/audio.php:111
@@ -9510,51 +9515,6 @@ msgstr "링크"
 msgid "Name"
 msgstr "이름"
 
-#: includes/controls/groups/background.php:434
-msgctxt "Background Control"
-msgid "Fixed"
-msgstr "고정"
-
-#: core/base/traits/shared-widget-controls-trait.php:23
-#: includes/elements/column.php:264 includes/elements/container.php:592
-#: includes/elements/section.php:498 includes/widgets/divider.php:538
-#: includes/widgets/heading.php:234
-#: modules/atomic-widgets/elements/div-block/div-block.php:122
-#: modules/atomic-widgets/elements/flexbox/flexbox.php:122
-#: modules/atomic-widgets/elements/grid/grid.php:124
-#: assets/js/packages/editor-controls/editor-controls.js:46914
-#: assets/js/packages/editor-controls/editor-controls.strings.js:63
-msgid "HTML Tag"
-msgstr "HTML 태그"
-
-#: includes/elements/container.php:1887 includes/elements/section.php:1395
-msgid "Visibility"
-msgstr "가시성"
-
-#: includes/elements/section.php:401
-msgid "Column Position"
-msgstr "열 위치"
-
-#: includes/elements/section.php:337 includes/elements/section.php:377
-msgid "Minimum Height"
-msgstr "최소 높이"
-
-#: includes/elements/container.php:487 includes/elements/section.php:327
-#: includes/elements/section.php:367
-msgid "Min Height"
-msgstr "최소 높이"
-
-#: includes/elements/section.php:283 includes/widgets/text-editor.php:202
-msgid "Columns Gap"
-msgstr "열 간격"
-
-#: includes/elements/column.php:832 includes/elements/container.php:1788
-#: includes/elements/section.php:1293 includes/widgets/common-base.php:802
-#: modules/floating-buttons/base/widget-contact-button-base.php:3107
-#: modules/floating-buttons/base/widget-floating-bars-base.php:1513
-msgid "CSS Classes"
-msgstr "CSS 클래스"
-
 #: includes/editor-templates/templates.php:847
 #: assets/js/admin-feedback.strings.js:4 assets/js/admin-feedback.strings.js:8
 #: assets/js/admin-feedback.strings.js:13
@@ -9607,6 +9567,26 @@ msgstr "CSS 클래스"
 msgid "Cancel"
 msgstr "취소"
 
+#: core/base/traits/shared-widget-controls-trait.php:23
+#: includes/elements/column.php:264 includes/elements/container.php:592
+#: includes/elements/section.php:498 includes/widgets/divider.php:538
+#: includes/widgets/heading.php:234
+#: modules/atomic-widgets/elements/div-block/div-block.php:122
+#: modules/atomic-widgets/elements/flexbox/flexbox.php:122
+#: modules/atomic-widgets/elements/grid/grid.php:124
+#: assets/js/packages/editor-controls/editor-controls.js:46914
+#: assets/js/packages/editor-controls/editor-controls.strings.js:63
+msgid "HTML Tag"
+msgstr "HTML 태그"
+
+#: includes/elements/container.php:1887 includes/elements/section.php:1395
+msgid "Visibility"
+msgstr "가시성"
+
+#: includes/elements/section.php:401
+msgid "Column Position"
+msgstr "열 위치"
+
 #: includes/editor-templates/hotkeys.php:78
 #: includes/editor-templates/templates.php:21
 #: includes/editor-templates/templates.php:23
@@ -9627,49 +9607,6 @@ msgstr "취소"
 #: assets/js/packages/editor-variables/editor-variables.strings.js:114
 msgid "Save"
 msgstr "저장"
-
-#: includes/elements/column.php:731 includes/elements/section.php:1187
-msgid "Text Align"
-msgstr "텍스트 정렬"
-
-#: includes/elements/column.php:707 includes/elements/section.php:1163
-#: includes/widgets/heading.php:394 includes/widgets/text-editor.php:363
-#: includes/widgets/text-editor.php:383
-msgid "Link Color"
-msgstr "링크 색상"
-
-#: includes/elements/column.php:683 includes/elements/section.php:1139
-msgid "Heading Color"
-msgstr "제목 색상"
-
-#: core/kits/documents/tabs/theme-style-typography.php:18
-#: core/kits/documents/tabs/theme-style-typography.php:37
-#: includes/controls/groups/typography.php:436 includes/elements/column.php:674
-#: includes/elements/section.php:1131 assets/js/editor-modules.js:1431
-#: assets/js/editor.js:46575
-#: assets/js/packages/editor-controls/editor-controls.js:52688
-#: assets/js/packages/editor-controls/editor-controls.strings.js:187
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:7662
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:13
-msgid "Typography"
-msgstr "타이포그래피"
-
-#: includes/editor-templates/hotkeys.php:131
-#: includes/editor-templates/navigator.php:35
-#: includes/editor-templates/panel.php:91 includes/elements/section.php:511
-#: includes/elements/section.php:519 assets/js/editor.js:33907
-#: assets/js/packages/editor-app-bar/editor-app-bar.js:3071
-#: assets/js/packages/editor-app-bar/editor-app-bar.strings.js:21
-msgid "Structure"
-msgstr "구조"
-
-#: includes/elements/column.php:929 includes/elements/container.php:1879
-#: includes/elements/section.php:1371 includes/managers/controls.php:337
-#: includes/widgets/common-base.php:1314
-#: modules/floating-buttons/base/widget-contact-button-base.php:3061
-#: modules/floating-buttons/base/widget-floating-bars-base.php:1467
-msgid "Responsive"
-msgstr "반응형"
 
 #: core/kits/documents/tabs/theme-style-form-fields.php:78
 #: core/kits/documents/tabs/theme-style-typography.php:126
@@ -9735,6 +9672,52 @@ msgstr "반응형"
 msgid "Color"
 msgstr "색상"
 
+#: includes/elements/section.php:337 includes/elements/section.php:377
+msgid "Minimum Height"
+msgstr "최소 높이"
+
+#: includes/elements/container.php:487 includes/elements/section.php:327
+#: includes/elements/section.php:367
+msgid "Min Height"
+msgstr "최소 높이"
+
+#: includes/elements/section.php:283 includes/widgets/text-editor.php:202
+msgid "Columns Gap"
+msgstr "열 간격"
+
+#: includes/elements/column.php:832 includes/elements/container.php:1788
+#: includes/elements/section.php:1293 includes/widgets/common-base.php:802
+#: modules/floating-buttons/base/widget-contact-button-base.php:3107
+#: modules/floating-buttons/base/widget-floating-bars-base.php:1513
+msgid "CSS Classes"
+msgstr "CSS 클래스"
+
+#: includes/elements/column.php:731 includes/elements/section.php:1187
+msgid "Text Align"
+msgstr "텍스트 정렬"
+
+#: includes/elements/column.php:707 includes/elements/section.php:1163
+#: includes/widgets/heading.php:394 includes/widgets/text-editor.php:363
+#: includes/widgets/text-editor.php:383
+msgid "Link Color"
+msgstr "링크 색상"
+
+#: includes/elements/column.php:683 includes/elements/section.php:1139
+msgid "Heading Color"
+msgstr "제목 색상"
+
+#: core/kits/documents/tabs/theme-style-typography.php:18
+#: core/kits/documents/tabs/theme-style-typography.php:37
+#: includes/controls/groups/typography.php:436 includes/elements/column.php:674
+#: includes/elements/section.php:1131 assets/js/editor-modules.js:1431
+#: assets/js/editor.js:46575
+#: assets/js/packages/editor-controls/editor-controls.js:52688
+#: assets/js/packages/editor-controls/editor-controls.strings.js:187
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:7662
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:13
+msgid "Typography"
+msgstr "타이포그래피"
+
 #: core/kits/documents/tabs/settings-lightbox.php:163
 #: core/kits/documents/tabs/theme-style-buttons.php:98
 #: core/kits/documents/tabs/theme-style-buttons.php:173
@@ -9770,6 +9753,23 @@ msgstr "색상"
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:1360
 msgid "Text Color"
 msgstr "텍스트 색상"
+
+#: includes/editor-templates/hotkeys.php:131
+#: includes/editor-templates/navigator.php:35
+#: includes/editor-templates/panel.php:91 includes/elements/section.php:511
+#: includes/elements/section.php:519 assets/js/editor.js:33907
+#: assets/js/packages/editor-app-bar/editor-app-bar.js:3071
+#: assets/js/packages/editor-app-bar/editor-app-bar.strings.js:21
+msgid "Structure"
+msgstr "구조"
+
+#: includes/elements/column.php:929 includes/elements/container.php:1879
+#: includes/elements/section.php:1371 includes/managers/controls.php:337
+#: includes/widgets/common-base.php:1314
+#: modules/floating-buttons/base/widget-contact-button-base.php:3061
+#: modules/floating-buttons/base/widget-floating-bars-base.php:1467
+msgid "Responsive"
+msgstr "반응형"
 
 #: includes/widgets/video.php:682 includes/widgets/video.php:809
 #: modules/floating-buttons/base/widget-floating-bars-base.php:267
@@ -9865,21 +9865,6 @@ msgstr "자동 재생"
 msgid "Choose Image"
 msgstr "이미지 선택"
 
-#: includes/controls/groups/background.php:292
-#: includes/widgets/common-base.php:1116 includes/widgets/image-box.php:356
-#: includes/widgets/image-carousel.php:735 includes/widgets/image.php:45
-#: includes/widgets/image.php:126 includes/widgets/image.php:251
-#: includes/widgets/testimonial.php:321
-#: modules/atomic-widgets/elements/atomic-image/atomic-image.php:36
-#: modules/atomic-widgets/elements/atomic-image/atomic-image.php:71
-#: modules/atomic-widgets/elements/atomic-self-hosted-video/atomic-self-hosted-video.php:161
-#: assets/js/packages/editor-controls/editor-controls.js:44076
-#: assets/js/packages/editor-controls/editor-controls.js:46998
-#: assets/js/packages/editor-controls/editor-controls.strings.js:61
-#: assets/js/packages/editor-controls/editor-controls.strings.js:293
-msgid "Image"
-msgstr "이미지"
-
 #: includes/widgets/icon-box.php:237
 #: includes/widgets/traits/button-trait.php:139
 #: modules/floating-buttons/base/widget-contact-button-base.php:1132
@@ -9897,36 +9882,6 @@ msgstr "아이콘 위치"
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:1408
 msgid "Medium"
 msgstr "중간"
-
-#: core/kits/documents/tabs/settings-lightbox.php:103
-#: core/kits/documents/tabs/settings-lightbox.php:113
-#: core/kits/documents/tabs/settings-lightbox.php:120
-#: includes/compatibility.php:163 includes/widgets/alert.php:302
-#: includes/widgets/icon-box.php:181 includes/widgets/icon-box.php:752
-#: includes/widgets/image-box.php:156 includes/widgets/image-box.php:709
-#: includes/widgets/image-carousel.php:417
-#: modules/floating-buttons/base/widget-contact-button-base.php:2342
-#: modules/link-in-bio/base/widget-link-in-bio-base.php:895
-#: modules/link-in-bio/base/widget-link-in-bio-base.php:900
-#: modules/link-in-bio/base/widget-link-in-bio-base.php:1351
-msgid "Description"
-msgstr "설명"
-
-#: includes/widgets/alert.php:125 includes/widgets/progress.php:175
-#: includes/widgets/traits/button-trait.php:75
-msgid "Danger"
-msgstr "위험"
-
-#: includes/widgets/alert.php:124 includes/widgets/progress.php:174
-#: includes/widgets/traits/button-trait.php:74
-msgid "Warning"
-msgstr "경고"
-
-#: includes/widgets/alert.php:123 includes/widgets/progress.php:173
-#: includes/widgets/traits/button-trait.php:73
-#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:149
-msgid "Success"
-msgstr "성공"
 
 #: includes/widgets/accordion.php:185 includes/widgets/accordion.php:408
 #: includes/widgets/alert.php:173 includes/widgets/divider.php:509
@@ -9981,6 +9936,36 @@ msgstr "아이콘"
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:11
 msgid "Size"
 msgstr "크기"
+
+#: core/kits/documents/tabs/settings-lightbox.php:103
+#: core/kits/documents/tabs/settings-lightbox.php:113
+#: core/kits/documents/tabs/settings-lightbox.php:120
+#: includes/compatibility.php:163 includes/widgets/alert.php:302
+#: includes/widgets/icon-box.php:181 includes/widgets/icon-box.php:752
+#: includes/widgets/image-box.php:156 includes/widgets/image-box.php:709
+#: includes/widgets/image-carousel.php:417
+#: modules/floating-buttons/base/widget-contact-button-base.php:2342
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:895
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:900
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:1351
+msgid "Description"
+msgstr "설명"
+
+#: includes/widgets/alert.php:125 includes/widgets/progress.php:175
+#: includes/widgets/traits/button-trait.php:75
+msgid "Danger"
+msgstr "위험"
+
+#: includes/widgets/alert.php:124 includes/widgets/progress.php:174
+#: includes/widgets/traits/button-trait.php:74
+msgid "Warning"
+msgstr "경고"
+
+#: includes/widgets/alert.php:123 includes/widgets/progress.php:173
+#: includes/widgets/traits/button-trait.php:73
+#: modules/atomic-widgets/elements/atomic-form/atomic-form.php:149
+msgid "Success"
+msgstr "성공"
 
 #: includes/widgets/alert.php:122 includes/widgets/progress.php:172
 #: includes/widgets/traits/button-trait.php:72 assets/js/app-packages.js:4618
@@ -10043,19 +10028,6 @@ msgstr "워드프레스"
 msgid "Style"
 msgstr "스타일"
 
-#: includes/controls/structure.php:65
-msgid "Reset"
-msgstr "초기화"
-
-#: includes/controls/icon.php:876 includes/controls/icon.php:877
-msgid "Select Icon"
-msgstr "아이콘 선택"
-
-#: core/base/document.php:1998
-#: core/common/modules/finder/categories/settings.php:49
-msgid "General Settings"
-msgstr "일반 설정"
-
 #: core/base/traits/shared-widget-controls-trait.php:158
 #: core/settings/editor-preferences/model.php:118
 #: core/settings/editor-preferences/model.php:130
@@ -10082,6 +10054,10 @@ msgstr "일반 설정"
 msgid "Yes"
 msgstr "예"
 
+#: includes/controls/structure.php:65
+msgid "Reset"
+msgstr "초기화"
+
 #: core/kits/views/trash-kit-confirmation.php:30
 #: includes/editor-templates/hotkeys.php:63
 #: includes/editor-templates/templates.php:367
@@ -10105,6 +10081,10 @@ msgstr "예"
 #: assets/js/packages/editor-variables/editor-variables.strings.js:60
 msgid "Delete"
 msgstr "삭제"
+
+#: includes/controls/icon.php:876 includes/controls/icon.php:877
+msgid "Select Icon"
+msgstr "아이콘 선택"
 
 #: core/kits/documents/tabs/settings-background.php:79
 #: core/kits/documents/tabs/settings-lightbox.php:99
@@ -10154,6 +10134,11 @@ msgstr "삭제"
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:316
 msgid "None"
 msgstr "없음"
+
+#: core/base/document.php:1998
+#: core/common/modules/finder/categories/settings.php:49
+msgid "General Settings"
+msgstr "일반 설정"
 
 #: includes/widgets/common-base.php:136 includes/widgets/icon-box.php:153
 #: includes/widgets/icon.php:151 includes/widgets/social-icons.php:286
@@ -10250,16 +10235,6 @@ msgstr "텍스트"
 msgid "Images"
 msgstr "이미지"
 
-#: core/admin/admin.php:270
-#: core/editor/loader/v1/templates/editor-body-v1-view.php:23
-#: core/editor/loader/v2/templates/editor-body-v2-view.php:23
-#: includes/editor-templates/templates.php:66 modules/gutenberg/module.php:123
-#: assets/js/ai-admin.js:1738 assets/js/ai-gutenberg.js:1876
-#: assets/js/ai-media-library.js:1738 assets/js/ai-unify-product-images.js:1738
-#: assets/js/ai.js:2526 assets/js/app-packages.js:4230 assets/js/app.js:1220
-msgid "Loading"
-msgstr "로드 중"
-
 #: includes/controls/groups/flex-container.php:214
 #: includes/controls/groups/grid-container.php:196
 #: includes/controls/groups/grid-container.php:236
@@ -10277,14 +10252,6 @@ msgstr "내부 텍스트"
 #: includes/elements/section.php:291
 msgid "Wide"
 msgstr "넓은"
-
-#: core/base/traits/shared-widget-controls-trait.php:270
-#: includes/base/element-base.php:1417 includes/editor-templates/panel.php:290
-#: assets/js/kit-library.816d964bf4c39d277a8e.bundle.js:6251
-#: assets/js/packages/editor-responsive/editor-responsive.js:196
-#: assets/js/packages/editor-responsive/editor-responsive.strings.js:1
-msgid "Desktop"
-msgstr "데스크톱"
 
 #: includes/widgets/google-maps.php:150
 msgid "London Eye, London, United Kingdom"
@@ -10331,14 +10298,6 @@ msgstr "번호 접두사"
 msgid "Number Suffix"
 msgstr "번호 접미사"
 
-#: includes/widgets/divider.php:915 includes/widgets/icon-box.php:438
-#: includes/widgets/icon-box.php:480 includes/widgets/icon.php:242
-#: includes/widgets/icon.php:282 includes/widgets/social-icons.php:235
-#: includes/widgets/social-icons.php:385 includes/widgets/social-icons.php:543
-#: includes/widgets/text-editor.php:456
-msgid "Secondary Color"
-msgstr "보조 색상"
-
 #: core/experiments/manager.php:401 core/experiments/manager.php:694
 #: modules/element-cache/module.php:108 assets/js/editor.js:29890
 #: assets/js/element-manager-admin.js:926
@@ -10346,31 +10305,13 @@ msgstr "보조 색상"
 msgid "Inactive"
 msgstr "비활성"
 
-#: includes/base/element-base.php:1430
-#: includes/controls/groups/grid-container.php:34
-#: includes/widgets/alert.php:164 includes/widgets/audio.php:162
-#: includes/widgets/audio.php:173 includes/widgets/audio.php:184
-#: includes/widgets/audio.php:195 includes/widgets/audio.php:209
-#: includes/widgets/audio.php:220 includes/widgets/audio.php:231
-#: includes/widgets/audio.php:242 includes/widgets/counter.php:200
-#: includes/widgets/progress.php:157 includes/widgets/progress.php:207
-#: includes/widgets/video.php:411 includes/widgets/video.php:426
-#: includes/widgets/video.php:453 includes/widgets/video.php:531
-#: includes/widgets/video.php:545 includes/widgets/video.php:559
-#: includes/widgets/video.php:585 includes/widgets/video.php:644
-#: includes/widgets/video.php:685
-#: modules/floating-buttons/base/widget-contact-button-base.php:519
-#: modules/floating-buttons/base/widget-contact-button-base.php:629
-#: modules/floating-buttons/base/widget-contact-button-base.php:694
-#: modules/floating-buttons/base/widget-contact-button-base.php:2528
-#: modules/floating-buttons/base/widget-floating-bars-base.php:231
-#: modules/floating-buttons/base/widget-floating-bars-base.php:298
-#: assets/js/packages/editor-controls/editor-controls.js:39395
-#: assets/js/packages/editor-controls/editor-controls.js:41762
-#: assets/js/packages/editor-controls/editor-controls.strings.js:278
-#: assets/js/packages/editor-controls/editor-controls.strings.js:321
-msgid "Hide"
-msgstr "숨기기"
+#: includes/widgets/icon-box.php:45 includes/widgets/icon-box.php:110
+msgid "Icon Box"
+msgstr "아이콘 상자"
+
+#: includes/widgets/accordion.php:165
+msgid "Accordion Items"
+msgstr "아코디언 항목"
 
 #: core/document-types/page-base.php:144
 #: core/kits/documents/tabs/theme-style-buttons.php:243
@@ -10400,14 +10341,6 @@ msgstr "숨기기"
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:106
 msgid "Padding"
 msgstr "패딩"
-
-#: includes/widgets/icon-box.php:45 includes/widgets/icon-box.php:110
-msgid "Icon Box"
-msgstr "아이콘 상자"
-
-#: includes/widgets/accordion.php:165
-msgid "Accordion Items"
-msgstr "아코디언 항목"
 
 #: core/base/traits/shared-widget-controls-trait.php:159
 #: core/settings/editor-preferences/model.php:119
@@ -10458,14 +10391,6 @@ msgstr "열"
 msgid "For Example: About"
 msgstr "예: 정보"
 
-#: includes/widgets/divider.php:898 includes/widgets/icon-box.php:422
-#: includes/widgets/icon-box.php:463 includes/widgets/icon.php:225
-#: includes/widgets/icon.php:268 includes/widgets/social-icons.php:221
-#: includes/widgets/social-icons.php:371 includes/widgets/social-icons.php:528
-#: includes/widgets/text-editor.php:441
-msgid "Primary Color"
-msgstr "원색"
-
 #: includes/widgets/progress.php:225
 msgid "Web Designer"
 msgstr "웹 디자이너"
@@ -10494,6 +10419,10 @@ msgstr "이 ID는 # 없이 자신의 페이지에서 사용해야 하는 CSS ID�
 #: includes/widgets/image-box.php:45 includes/widgets/image-box.php:110
 msgid "Image Box"
 msgstr "이미지 상자"
+
+#: includes/elements/section.php:289
+msgid "Narrow"
+msgstr "좁은"
 
 #: core/kits/documents/tabs/theme-style-buttons.php:91
 #: core/kits/documents/tabs/theme-style-form-fields.php:117
@@ -10543,15 +10472,22 @@ msgstr "이미지 상자"
 msgid "Normal"
 msgstr "정상"
 
-#: includes/widgets/alert.php:136 includes/widgets/heading.php:192
-#: includes/widgets/icon-box.php:173 includes/widgets/image-box.php:148
-#: includes/widgets/progress.php:122
-msgid "Enter your title"
-msgstr "제목을 입력하세요"
-
-#: includes/elements/section.php:289
-msgid "Narrow"
-msgstr "좁은"
+#: includes/widgets/tabs.php:46 includes/widgets/tabs.php:118
+#: includes/widgets/tabs.php:268
+#: modules/atomic-widgets/elements/atomic-tabs/atomic-tabs/atomic-tabs.php:58
+#: modules/nested-tabs/widgets/nested-tabs.php:34
+#: modules/nested-tabs/widgets/nested-tabs.php:112
+#: modules/nested-tabs/widgets/nested-tabs.php:449
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:8670
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:8804
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:9024
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:9068
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:96
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:97
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:98
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:100
+msgid "Tabs"
+msgstr "탭"
 
 #: includes/widgets/tabs.php:169
 #: modules/nested-tabs/widgets/nested-tabs.php:177
@@ -10582,55 +10518,9 @@ msgstr "탭 항목"
 msgid "Border Width"
 msgstr "테두리 너비"
 
-#: includes/widgets/tabs.php:46 includes/widgets/tabs.php:118
-#: includes/widgets/tabs.php:268
-#: modules/atomic-widgets/elements/atomic-tabs/atomic-tabs/atomic-tabs.php:58
-#: modules/nested-tabs/widgets/nested-tabs.php:34
-#: modules/nested-tabs/widgets/nested-tabs.php:112
-#: modules/nested-tabs/widgets/nested-tabs.php:449
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:8670
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:8804
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:9024
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:9068
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:96
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:97
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:98
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:100
-msgid "Tabs"
-msgstr "탭"
-
-#: includes/controls/groups/border.php:68 includes/widgets/divider.php:345
-#: includes/widgets/icon-list.php:307
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:3429
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:318
-msgid "Dashed"
-msgstr "파선"
-
-#: includes/widgets/progress.php:204
-msgid "Display Percentage"
-msgstr "표시 비율"
-
-#: includes/elements/section.php:326 includes/elements/section.php:366
-msgid "Fit To Screen"
-msgstr "화면에 맞추기"
-
 #: includes/widgets/heading.php:222
 msgid "XXL"
 msgstr "XXL"
-
-#: core/kits/documents/tabs/settings-layout.php:24
-#: includes/elements/column.php:118 includes/elements/container.php:1372
-#: includes/elements/section.php:231 includes/managers/controls.php:338
-#: includes/managers/elements.php:299 includes/widgets/common-base.php:292
-#: includes/widgets/icon-list.php:117
-#: modules/floating-buttons/base/widget-contact-button-base.php:2928
-#: modules/floating-buttons/base/widget-floating-bars-base.php:1425
-#: modules/nested-accordion/widgets/nested-accordion.php:116
-#: assets/js/editor.js:39626
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:7634
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:9
-msgid "Layout"
-msgstr "레이아웃"
 
 #: core/kits/documents/tabs/global-colors.php:77
 #: core/kits/documents/tabs/global-typography.php:128
@@ -10641,29 +10531,6 @@ msgstr "기본"
 #: core/kits/documents/tabs/global-typography.php:135
 msgid "Secondary"
 msgstr "보조"
-
-#: includes/elements/container.php:398 includes/elements/section.php:253
-msgid "Boxed"
-msgstr "지정 너비"
-
-#: includes/elements/section.php:78 modules/library/documents/section.php:43
-#: assets/js/container-converter.js:94
-#: assets/js/container-converter.strings.js:3 assets/js/editor.js:8848
-msgid "Section"
-msgstr "섹션"
-
-#: includes/controls/image-dimensions.php:100
-#: includes/elements/container.php:1277 includes/elements/section.php:321
-#: includes/elements/section.php:361 includes/elements/section.php:1056
-#: includes/widgets/google-maps.php:192 includes/widgets/icon-list.php:367
-#: includes/widgets/image-box.php:395 includes/widgets/image.php:359
-#: includes/widgets/progress.php:331
-#: assets/js/packages/editor-controls/editor-controls.js:52643
-#: assets/js/packages/editor-controls/editor-controls.strings.js:174
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:6437
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:148
-msgid "Height"
-msgstr "높이"
 
 #: includes/elements/section.php:288
 msgid "No Gap"
@@ -10689,33 +10556,6 @@ msgstr "XL"
 #: includes/controls/icons.php:80 includes/controls/media.php:257
 msgid "Add"
 msgstr "추가"
-
-#: includes/widgets/divider.php:832 includes/widgets/icon-box.php:130
-#: includes/widgets/icon.php:131 includes/widgets/text-editor.php:426
-#: assets/js/editor.js:11670
-msgid "View"
-msgstr "보기"
-
-#: includes/base/element-base.php:1381 includes/controls/dimensions.php:82
-#: includes/elements/column.php:188 includes/elements/container.php:1185
-#: includes/elements/container.php:1666 includes/elements/section.php:406
-#: includes/elements/section.php:425 includes/elements/section.php:964
-#: includes/widgets/common-base.php:681 includes/widgets/counter.php:345
-#: includes/widgets/icon-box.php:251 includes/widgets/icon-box.php:280
-#: includes/widgets/image-box.php:221 includes/widgets/image-box.php:244
-#: includes/widgets/testimonial.php:224 includes/widgets/video.php:979
-#: modules/floating-buttons/base/widget-contact-button-base.php:2994
-#: modules/floating-buttons/base/widget-floating-bars-base.php:1437
-#: assets/js/packages/editor-controls/editor-controls.js:47851
-#: assets/js/packages/editor-controls/editor-controls.js:52667
-#: assets/js/packages/editor-controls/editor-controls.strings.js:34
-#: assets/js/packages/editor-controls/editor-controls.strings.js:180
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:3496
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:5933
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:184
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:302
-msgid "Top"
-msgstr "상단"
 
 #: includes/base/element-base.php:1431
 #: includes/controls/groups/grid-container.php:33
@@ -10745,6 +10585,23 @@ msgstr "상단"
 msgid "Show"
 msgstr "표시"
 
+#: core/common/modules/finder/categories/edit.php:30
+#: includes/controls/popover-toggle.php:68 assets/js/ai-admin.js:2331
+#: assets/js/ai-admin.js:9759 assets/js/ai-admin.js:9766
+#: assets/js/ai-gutenberg.js:2469 assets/js/ai-gutenberg.js:9977
+#: assets/js/ai-gutenberg.js:9984 assets/js/ai-media-library.js:2331
+#: assets/js/ai-media-library.js:9759 assets/js/ai-media-library.js:9766
+#: assets/js/ai-unify-product-images.js:2331
+#: assets/js/ai-unify-product-images.js:9759
+#: assets/js/ai-unify-product-images.js:9766 assets/js/ai.js:3119
+#: assets/js/ai.js:11311 assets/js/ai.js:11318 assets/js/app.js:10005
+#: assets/js/app.js:10017 assets/js/element-manager-admin.js:693
+#: assets/js/element-manager-admin.js:758
+#: assets/js/element-manager-admin.strings.js:27
+#: assets/js/element-manager-admin.strings.js:29
+msgid "Edit"
+msgstr "편집"
+
 #: core/admin/admin.php:649
 msgid "Help"
 msgstr "도움"
@@ -10765,23 +10622,6 @@ msgstr "Elementor.com"
 msgid "Apply"
 msgstr "적용"
 
-#: core/common/modules/finder/categories/edit.php:30
-#: includes/controls/popover-toggle.php:68 assets/js/ai-admin.js:2331
-#: assets/js/ai-admin.js:9759 assets/js/ai-admin.js:9766
-#: assets/js/ai-gutenberg.js:2469 assets/js/ai-gutenberg.js:9977
-#: assets/js/ai-gutenberg.js:9984 assets/js/ai-media-library.js:2331
-#: assets/js/ai-media-library.js:9759 assets/js/ai-media-library.js:9766
-#: assets/js/ai-unify-product-images.js:2331
-#: assets/js/ai-unify-product-images.js:9759
-#: assets/js/ai-unify-product-images.js:9766 assets/js/ai.js:3119
-#: assets/js/ai.js:11311 assets/js/ai.js:11318 assets/js/app.js:10005
-#: assets/js/app.js:10017 assets/js/element-manager-admin.js:693
-#: assets/js/element-manager-admin.js:758
-#: assets/js/element-manager-admin.strings.js:27
-#: assets/js/element-manager-admin.strings.js:29
-msgid "Edit"
-msgstr "편집"
-
 #: includes/fonts.php:71
 #: modules/system-info/admin-menu-items/editor-one-system-menu.php:27
 msgid "System"
@@ -10793,14 +10633,6 @@ msgstr "시스템"
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:319
 msgid "Dotted"
 msgstr "점선"
-
-#: core/dynamic-tags/tag.php:95 includes/widgets/counter.php:276
-#: modules/nested-tabs/widgets/nested-tabs.php:212
-#: modules/nested-tabs/widgets/nested-tabs.php:878
-#: assets/js/packages/editor-global-classes/editor-global-classes.js:2129
-#: assets/js/packages/editor-global-classes/editor-global-classes.strings.js:29
-msgid "Before"
-msgstr "이전"
 
 #: core/kits/documents/tabs/settings-lightbox.php:101
 #: core/kits/documents/tabs/settings-lightbox.php:118
@@ -10824,34 +10656,6 @@ msgstr "캡션"
 msgid "Preview"
 msgstr "미리보기"
 
-#: includes/elements/column.php:747 includes/elements/section.php:1203
-#: includes/widgets/heading.php:282 includes/widgets/icon-box.php:327
-#: includes/widgets/image-box.php:284 includes/widgets/image-carousel.php:860
-#: includes/widgets/image-gallery.php:383 includes/widgets/image.php:598
-#: includes/widgets/star-rating.php:231 includes/widgets/text-editor.php:274
-msgid "Justified"
-msgstr "양쪽 맞춤"
-
-#: core/base/traits/shared-widget-controls-trait.php:156
-#: includes/elements/column.php:547 includes/elements/container.php:995
-#: includes/elements/section.php:831 includes/widgets/common-base.php:966
-#: modules/floating-buttons/base/widget-floating-bars-base.php:761
-#: assets/js/packages/editor-controls/editor-controls.js:52736
-#: assets/js/packages/editor-controls/editor-controls.strings.js:199
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:7676
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:15
-msgid "Border"
-msgstr "테두리"
-
-#: includes/widgets/heading.php:49 includes/widgets/heading.php:177
-#: includes/widgets/heading.php:258
-#: modules/atomic-widgets/elements/atomic-heading/atomic-heading.php:37
-#: modules/link-in-bio/base/widget-link-in-bio-base.php:849
-#: modules/link-in-bio/base/widget-link-in-bio-base.php:854
-#: modules/link-in-bio/base/widget-link-in-bio-base.php:1295
-msgid "Heading"
-msgstr "제목"
-
 #: includes/widgets/accordion.php:419 includes/widgets/divider.php:470
 #: includes/widgets/heading.php:266 includes/widgets/icon-box.php:311
 #: includes/widgets/icon-list.php:259 includes/widgets/icon.php:185
@@ -10867,73 +10671,13 @@ msgstr "제목"
 msgid "Alignment"
 msgstr "정렬"
 
-#: includes/base/element-base.php:1357 includes/base/element-base.php:1385
-#: includes/controls/groups/flex-container.php:101
-#: includes/controls/groups/flex-container.php:137
-#: includes/controls/groups/flex-item.php:59
-#: includes/controls/groups/grid-container.php:139
-#: includes/controls/groups/grid-container.php:167
-#: includes/elements/column.php:217 includes/elements/column.php:739
-#: includes/elements/section.php:1195 includes/widgets/common-base.php:522
-#: includes/widgets/counter.php:319 includes/widgets/counter.php:394
-#: includes/widgets/counter.php:431 includes/widgets/divider.php:478
-#: includes/widgets/divider.php:774 includes/widgets/divider.php:940
-#: includes/widgets/heading.php:274 includes/widgets/icon-box.php:319
-#: includes/widgets/icon-list.php:267 includes/widgets/icon-list.php:554
-#: includes/widgets/icon-list.php:585 includes/widgets/icon.php:193
-#: includes/widgets/image-box.php:276 includes/widgets/image-carousel.php:751
-#: includes/widgets/image-carousel.php:852
-#: includes/widgets/image-gallery.php:375 includes/widgets/image.php:267
-#: includes/widgets/image.php:590 includes/widgets/rating.php:207
-#: includes/widgets/social-icons.php:329 includes/widgets/star-rating.php:223
-#: includes/widgets/tabs.php:214 includes/widgets/tabs.php:244
-#: includes/widgets/tabs.php:431 includes/widgets/testimonial.php:250
-#: includes/widgets/text-editor.php:266
-#: includes/widgets/traits/button-trait.php:258
-#: includes/widgets/traits/button-trait.php:287 includes/widgets/video.php:978
-#: modules/floating-buttons/base/widget-contact-button-base.php:2944
-#: modules/floating-buttons/base/widget-floating-bars-base.php:1193
-#: modules/nested-accordion/widgets/nested-accordion.php:186
-#: modules/nested-tabs/widgets/nested-tabs.php:243
-#: modules/nested-tabs/widgets/nested-tabs.php:285
-#: modules/nested-tabs/widgets/nested-tabs.php:355
-#: modules/shapes/widgets/text-path.php:181
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:3805
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:3920
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:4021
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:4134
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:5034
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:5363
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:6980
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:125
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:219
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:231
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:281
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:286
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:291
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:296
-msgid "Center"
-msgstr "중앙"
-
-#: includes/base/element-base.php:1389 includes/controls/dimensions.php:84
-#: includes/elements/column.php:190 includes/elements/container.php:1186
-#: includes/elements/container.php:1670 includes/elements/section.php:408
-#: includes/elements/section.php:427 includes/elements/section.php:965
-#: includes/widgets/common-base.php:685 includes/widgets/counter.php:353
-#: includes/widgets/icon-box.php:255 includes/widgets/icon-box.php:288
-#: includes/widgets/image-box.php:252
-#: modules/floating-buttons/base/widget-contact-button-base.php:3002
-#: modules/floating-buttons/base/widget-floating-bars-base.php:1441
-#: assets/js/packages/editor-controls/editor-controls.js:47870
-#: assets/js/packages/editor-controls/editor-controls.js:52679
-#: assets/js/packages/editor-controls/editor-controls.strings.js:43
-#: assets/js/packages/editor-controls/editor-controls.strings.js:185
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:3510
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:5946
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:185
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:308
-msgid "Bottom"
-msgstr "하단"
+#: includes/elements/column.php:747 includes/elements/section.php:1203
+#: includes/widgets/heading.php:282 includes/widgets/icon-box.php:327
+#: includes/widgets/image-box.php:284 includes/widgets/image-carousel.php:860
+#: includes/widgets/image-gallery.php:383 includes/widgets/image.php:598
+#: includes/widgets/star-rating.php:231 includes/widgets/text-editor.php:274
+msgid "Justified"
+msgstr "양쪽 맞춤"
 
 #: includes/editor-templates/hotkeys.php:139
 msgid "Page Settings"
@@ -10980,25 +10724,6 @@ msgstr "간격"
 msgid "Justify"
 msgstr "양쪽 맞춤"
 
-#: includes/widgets/heading.php:220 includes/widgets/traits/button-trait.php:37
-#: modules/floating-buttons/base/widget-contact-button-base.php:1122
-#: modules/floating-buttons/base/widget-contact-button-base.php:1547
-#: modules/floating-buttons/base/widget-contact-button-base.php:1929
-#: modules/floating-buttons/base/widget-contact-button-base.php:2279
-#: modules/link-in-bio/base/widget-link-in-bio-base.php:1409
-msgid "Large"
-msgstr "크게"
-
-#: core/document-types/page-base.php:132 includes/elements/column.php:777
-#: includes/elements/container.php:1380 includes/elements/section.php:1232
-#: includes/widgets/common-base.php:310
-#: assets/js/packages/editor-controls/editor-controls.js:52568
-#: assets/js/packages/editor-controls/editor-controls.strings.js:151
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:6539
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:105
-msgid "Margin"
-msgstr "여백"
-
 #: core/settings/editor-preferences/model.php:195
 #: includes/widgets/image-carousel.php:232
 #: includes/widgets/image-carousel.php:560
@@ -11014,15 +10739,6 @@ msgstr "재생기 제어"
 #: includes/editor-templates/panel.php:98
 msgid "Responsive Mode"
 msgstr "반응형 모드"
-
-#: includes/widgets/heading.php:218 includes/widgets/traits/button-trait.php:35
-#: modules/floating-buttons/base/widget-contact-button-base.php:1120
-#: modules/floating-buttons/base/widget-contact-button-base.php:1545
-#: modules/floating-buttons/base/widget-contact-button-base.php:1927
-#: modules/floating-buttons/base/widget-contact-button-base.php:2277
-#: modules/link-in-bio/base/widget-link-in-bio-base.php:1407
-msgid "Small"
-msgstr "작게"
 
 #: core/admin/admin-notices.php:244
 msgid "Sure! I'd love to help"
@@ -11123,45 +10839,13 @@ msgstr "YouTube"
 msgid "e.g. Web Designer"
 msgstr "예: 웹 디자이너"
 
-#: includes/widgets/progress.php:45 includes/widgets/progress.php:110
-#: includes/widgets/progress.php:236
-msgid "Progress Bar"
-msgstr "진행 표시줄"
-
 #: includes/widgets/spacer.php:42 includes/widgets/spacer.php:123
 msgid "Spacer"
 msgstr "공백 추가"
 
-#: includes/widgets/image-carousel.php:202
-msgid "Slides to Scroll"
-msgstr "스크롤할 슬라이드 수"
-
 #: includes/widgets/image-carousel.php:185
 msgid "Slides to Show"
 msgstr "표시할 슬라이드 수"
-
-#: core/kits/documents/tabs/theme-style-buttons.php:152
-#: core/kits/documents/tabs/theme-style-buttons.php:227
-#: core/kits/documents/tabs/theme-style-form-fields.php:233
-#: core/kits/documents/tabs/theme-style-images.php:83
-#: core/kits/documents/tabs/theme-style-images.php:154
-#: includes/elements/column.php:572 includes/elements/column.php:609
-#: includes/elements/container.php:1040 includes/elements/container.php:1091
-#: includes/elements/section.php:855 includes/elements/section.php:891
-#: includes/widgets/common-base.php:991 includes/widgets/common-base.php:1028
-#: includes/widgets/divider.php:1025 includes/widgets/icon-box.php:622
-#: includes/widgets/icon.php:412 includes/widgets/image-box.php:464
-#: includes/widgets/image-carousel.php:819
-#: includes/widgets/image-gallery.php:342 includes/widgets/image.php:545
-#: includes/widgets/progress.php:343 includes/widgets/social-icons.php:506
-#: includes/widgets/testimonial.php:359 includes/widgets/text-editor.php:534
-#: includes/widgets/traits/button-trait.php:485
-#: modules/nested-accordion/widgets/nested-accordion.php:470
-#: modules/nested-accordion/widgets/nested-accordion.php:535
-#: modules/nested-tabs/widgets/nested-tabs.php:693
-#: modules/nested-tabs/widgets/nested-tabs.php:1033
-msgid "Border Radius"
-msgstr "테두리 반경"
 
 #: includes/elements/container.php:399 includes/elements/section.php:254
 #: includes/widgets/common-base.php:342 includes/widgets/icon-list.php:216
@@ -11208,10 +10892,6 @@ msgstr "링크 호버 색상"
 #: includes/widgets/social-icons.php:520
 msgid "Icon Hover"
 msgstr "아이콘 호버"
-
-#: includes/widgets/image-carousel.php:456
-msgid "Pause on Hover"
-msgstr "호버 시 일시 중지"
 
 #: includes/widgets/google-maps.php:44 includes/widgets/google-maps.php:125
 #: includes/widgets/google-maps.php:212
@@ -11274,13 +10954,6 @@ msgstr "내용 위치"
 #: includes/widgets/tabs.php:142 includes/widgets/tabs.php:143
 msgid "Tab Content"
 msgstr "탭 내용"
-
-#: includes/widgets/divider.php:46 includes/widgets/divider.php:378
-#: includes/widgets/divider.php:528 includes/widgets/divider.php:578
-#: includes/widgets/icon-list.php:287
-#: modules/atomic-widgets/elements/atomic-divider/atomic-divider.php:38
-msgid "Divider"
-msgstr "구분선"
 
 #: includes/managers/controls.php:334 includes/widgets/accordion.php:145
 #: includes/widgets/accordion.php:488 includes/widgets/alert.php:148
@@ -11366,21 +11039,9 @@ msgstr "사용자 정의"
 msgid "Width"
 msgstr "너비"
 
-#: includes/widgets/divider.php:605 includes/widgets/icon-list.php:323
-#: modules/floating-buttons/base/widget-contact-button-base.php:2552
-#: modules/link-in-bio/base/widget-link-in-bio-base.php:1218
-msgid "Weight"
-msgstr "두께"
-
 #: includes/widgets/sidebar.php:91
 msgid "No sidebars were found"
 msgstr "사이드바를 찾을 수 없습니다"
-
-#: includes/widgets/video.php:759
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:6451
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:153
-msgid "Aspect Ratio"
-msgstr "화면 비율"
 
 #: includes/widgets/toggle.php:147
 msgid "Toggle Content"
@@ -11402,33 +11063,9 @@ msgstr "펼치기/접기 #1"
 msgid "Toggle Items"
 msgstr "항목 펼치기/접기"
 
-#: includes/widgets/toggle.php:46 includes/widgets/toggle.php:123
-#: includes/widgets/toggle.php:276
-msgid "Toggle"
-msgstr "펼치기/접기"
-
 #: modules/floating-buttons/base/widget-contact-button-base.php:1846
 msgid "Chat Background Color"
 msgstr "채팅 배경 색상"
-
-#: includes/widgets/icon-box.php:151 includes/widgets/icon.php:149
-#: includes/widgets/social-icons.php:284
-#: modules/link-in-bio/base/widget-link-in-bio-base.php:1679
-#: assets/js/ai-admin.js:10934 assets/js/ai-gutenberg.js:11152
-#: assets/js/ai-media-library.js:10934
-#: assets/js/ai-unify-product-images.js:10934 assets/js/ai.js:12486
-msgid "Square"
-msgstr "정사각"
-
-#: includes/widgets/divider.php:837 includes/widgets/icon-box.php:135
-#: includes/widgets/icon.php:136 includes/widgets/text-editor.php:431
-msgid "Framed"
-msgstr "프레임 적용"
-
-#: includes/widgets/divider.php:836 includes/widgets/icon-box.php:134
-#: includes/widgets/icon.php:135 includes/widgets/text-editor.php:430
-msgid "Stacked"
-msgstr "쌓기 적용"
 
 #: includes/widgets/counter.php:143
 msgid "Ending Number"
@@ -11437,6 +11074,20 @@ msgstr "종료 숫자"
 #: includes/widgets/counter.php:131
 msgid "Starting Number"
 msgstr "시작 숫자"
+
+#: includes/widgets/alert.php:151
+msgid "I am a description. Click the edit button to change this text."
+msgstr "설명입니다. 이 텍스트를 변경하려면 편집 버튼을 클릭하세요."
+
+#: core/kits/documents/tabs/global-colors.php:92
+#: core/kits/documents/tabs/global-typography.php:149
+msgid "Accent"
+msgstr "강조"
+
+#: includes/controls/groups/typography.php:160
+msgctxt "Typography Control"
+msgid "Transform"
+msgstr "변환"
 
 #: core/kits/documents/tabs/settings-lightbox.php:130
 #: core/kits/documents/tabs/theme-style-form-fields.php:200
@@ -11476,24 +11127,6 @@ msgstr "시작 숫자"
 msgid "Background Color"
 msgstr "배경 색상"
 
-#: includes/widgets/alert.php:151
-msgid "I am a description. Click the edit button to change this text."
-msgstr "설명입니다. 이 텍스트를 변경하려면 편집 버튼을 클릭하세요."
-
-#: core/kits/documents/tabs/global-colors.php:92
-#: core/kits/documents/tabs/global-typography.php:149
-msgid "Accent"
-msgstr "강조"
-
-#: includes/controls/groups/typography.php:160
-msgctxt "Typography Control"
-msgid "Transform"
-msgstr "변환"
-
-#: core/breakpoints/manager.php:334
-msgid "Laptop"
-msgstr "노트북"
-
 #: core/base/document.php:2006
 #: core/kits/documents/tabs/settings-lightbox.php:96
 #: core/kits/documents/tabs/settings-lightbox.php:100
@@ -11522,9 +11155,376 @@ msgstr "노트북"
 msgid "Title"
 msgstr "제목"
 
+#: core/breakpoints/manager.php:334
+msgid "Laptop"
+msgstr "노트북"
+
+#: includes/widgets/video.php:759
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:6451
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:153
+msgid "Aspect Ratio"
+msgstr "종횡비"
+
+#: core/dynamic-tags/tag.php:95 includes/widgets/counter.php:276
+#: modules/nested-tabs/widgets/nested-tabs.php:212
+#: modules/nested-tabs/widgets/nested-tabs.php:878
+#: assets/js/packages/editor-global-classes/editor-global-classes.js:2129
+#: assets/js/packages/editor-global-classes/editor-global-classes.strings.js:29
+msgid "Before"
+msgstr "전에"
+
+#: core/base/traits/shared-widget-controls-trait.php:156
+#: includes/elements/column.php:547 includes/elements/container.php:995
+#: includes/elements/section.php:831 includes/widgets/common-base.php:966
+#: modules/floating-buttons/base/widget-floating-bars-base.php:761
+#: assets/js/packages/editor-controls/editor-controls.js:52736
+#: assets/js/packages/editor-controls/editor-controls.strings.js:199
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:7676
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:15
+msgid "Border"
+msgstr "국경"
+
+#: core/kits/documents/tabs/theme-style-buttons.php:152
+#: core/kits/documents/tabs/theme-style-buttons.php:227
+#: core/kits/documents/tabs/theme-style-form-fields.php:233
+#: core/kits/documents/tabs/theme-style-images.php:83
+#: core/kits/documents/tabs/theme-style-images.php:154
+#: includes/elements/column.php:572 includes/elements/column.php:609
+#: includes/elements/container.php:1040 includes/elements/container.php:1091
+#: includes/elements/section.php:855 includes/elements/section.php:891
+#: includes/widgets/common-base.php:991 includes/widgets/common-base.php:1028
+#: includes/widgets/divider.php:1025 includes/widgets/icon-box.php:622
+#: includes/widgets/icon.php:412 includes/widgets/image-box.php:464
+#: includes/widgets/image-carousel.php:819
+#: includes/widgets/image-gallery.php:342 includes/widgets/image.php:545
+#: includes/widgets/progress.php:343 includes/widgets/social-icons.php:506
+#: includes/widgets/testimonial.php:359 includes/widgets/text-editor.php:534
+#: includes/widgets/traits/button-trait.php:485
+#: modules/nested-accordion/widgets/nested-accordion.php:470
+#: modules/nested-accordion/widgets/nested-accordion.php:535
+#: modules/nested-tabs/widgets/nested-tabs.php:693
+#: modules/nested-tabs/widgets/nested-tabs.php:1033
+msgid "Border Radius"
+msgstr "경계 반경"
+
+#: includes/base/element-base.php:1389 includes/controls/dimensions.php:84
+#: includes/elements/column.php:190 includes/elements/container.php:1186
+#: includes/elements/container.php:1670 includes/elements/section.php:408
+#: includes/elements/section.php:427 includes/elements/section.php:965
+#: includes/widgets/common-base.php:685 includes/widgets/counter.php:353
+#: includes/widgets/icon-box.php:255 includes/widgets/icon-box.php:288
+#: includes/widgets/image-box.php:252
+#: modules/floating-buttons/base/widget-contact-button-base.php:3002
+#: modules/floating-buttons/base/widget-floating-bars-base.php:1441
+#: assets/js/packages/editor-controls/editor-controls.js:47870
+#: assets/js/packages/editor-controls/editor-controls.js:52679
+#: assets/js/packages/editor-controls/editor-controls.strings.js:43
+#: assets/js/packages/editor-controls/editor-controls.strings.js:185
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:3510
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:5946
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:185
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:308
+msgid "Bottom"
+msgstr "맨 아래"
+
+#: includes/elements/container.php:398 includes/elements/section.php:253
+msgid "Boxed"
+msgstr "상자화됨"
+
+#: includes/base/element-base.php:1357 includes/base/element-base.php:1385
+#: includes/controls/groups/flex-container.php:101
+#: includes/controls/groups/flex-container.php:137
+#: includes/controls/groups/flex-item.php:59
+#: includes/controls/groups/grid-container.php:139
+#: includes/controls/groups/grid-container.php:167
+#: includes/elements/column.php:217 includes/elements/column.php:739
+#: includes/elements/section.php:1195 includes/widgets/common-base.php:522
+#: includes/widgets/counter.php:319 includes/widgets/counter.php:394
+#: includes/widgets/counter.php:431 includes/widgets/divider.php:478
+#: includes/widgets/divider.php:774 includes/widgets/divider.php:940
+#: includes/widgets/heading.php:274 includes/widgets/icon-box.php:319
+#: includes/widgets/icon-list.php:267 includes/widgets/icon-list.php:554
+#: includes/widgets/icon-list.php:585 includes/widgets/icon.php:193
+#: includes/widgets/image-box.php:276 includes/widgets/image-carousel.php:751
+#: includes/widgets/image-carousel.php:852
+#: includes/widgets/image-gallery.php:375 includes/widgets/image.php:267
+#: includes/widgets/image.php:590 includes/widgets/rating.php:207
+#: includes/widgets/social-icons.php:329 includes/widgets/star-rating.php:223
+#: includes/widgets/tabs.php:214 includes/widgets/tabs.php:244
+#: includes/widgets/tabs.php:431 includes/widgets/testimonial.php:250
+#: includes/widgets/text-editor.php:266
+#: includes/widgets/traits/button-trait.php:258
+#: includes/widgets/traits/button-trait.php:287 includes/widgets/video.php:978
+#: modules/floating-buttons/base/widget-contact-button-base.php:2944
+#: modules/floating-buttons/base/widget-floating-bars-base.php:1193
+#: modules/nested-accordion/widgets/nested-accordion.php:186
+#: modules/nested-tabs/widgets/nested-tabs.php:243
+#: modules/nested-tabs/widgets/nested-tabs.php:285
+#: modules/nested-tabs/widgets/nested-tabs.php:355
+#: modules/shapes/widgets/text-path.php:181
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:3805
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:3920
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:4021
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:4134
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:5034
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:5363
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:6980
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:125
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:219
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:231
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:281
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:286
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:291
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:296
+msgid "Center"
+msgstr "센터"
+
+#: includes/controls/groups/border.php:68 includes/widgets/divider.php:345
+#: includes/widgets/icon-list.php:307
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:3429
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:318
+msgid "Dashed"
+msgstr "점선"
+
+#: core/base/traits/shared-widget-controls-trait.php:270
+#: includes/base/element-base.php:1417 includes/editor-templates/panel.php:290
+#: assets/js/kit-library.816d964bf4c39d277a8e.bundle.js:6251
+#: assets/js/packages/editor-responsive/editor-responsive.js:196
+#: assets/js/packages/editor-responsive/editor-responsive.strings.js:1
+msgid "Desktop"
+msgstr "데스크탑"
+
+#: includes/widgets/progress.php:204
+msgid "Display Percentage"
+msgstr "표시 백분율"
+
+#: includes/widgets/divider.php:46 includes/widgets/divider.php:378
+#: includes/widgets/divider.php:528 includes/widgets/divider.php:578
+#: includes/widgets/icon-list.php:287
+#: modules/atomic-widgets/elements/atomic-divider/atomic-divider.php:38
+msgid "Divider"
+msgstr "구분자"
+
+#: includes/widgets/alert.php:136 includes/widgets/heading.php:192
+#: includes/widgets/icon-box.php:173 includes/widgets/image-box.php:148
+#: includes/widgets/progress.php:122
+msgid "Enter your title"
+msgstr "제목 입력"
+
+#: includes/elements/section.php:326 includes/elements/section.php:366
+msgid "Fit To Screen"
+msgstr "화면에 맞춤"
+
+#: includes/widgets/divider.php:837 includes/widgets/icon-box.php:135
+#: includes/widgets/icon.php:136 includes/widgets/text-editor.php:431
+msgid "Framed"
+msgstr "프레임화"
+
+#: includes/widgets/heading.php:49 includes/widgets/heading.php:177
+#: includes/widgets/heading.php:258
+#: modules/atomic-widgets/elements/atomic-heading/atomic-heading.php:37
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:849
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:854
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:1295
+msgid "Heading"
+msgstr "헤딩"
+
+#: includes/controls/image-dimensions.php:100
+#: includes/elements/container.php:1277 includes/elements/section.php:321
+#: includes/elements/section.php:361 includes/elements/section.php:1056
+#: includes/widgets/google-maps.php:192 includes/widgets/icon-list.php:367
+#: includes/widgets/image-box.php:395 includes/widgets/image.php:359
+#: includes/widgets/progress.php:331
+#: assets/js/packages/editor-controls/editor-controls.js:52643
+#: assets/js/packages/editor-controls/editor-controls.strings.js:174
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:6437
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:148
+msgid "Height"
+msgstr "키"
+
+#: includes/base/element-base.php:1430
+#: includes/controls/groups/grid-container.php:34
+#: includes/widgets/alert.php:164 includes/widgets/audio.php:162
+#: includes/widgets/audio.php:173 includes/widgets/audio.php:184
+#: includes/widgets/audio.php:195 includes/widgets/audio.php:209
+#: includes/widgets/audio.php:220 includes/widgets/audio.php:231
+#: includes/widgets/audio.php:242 includes/widgets/counter.php:200
+#: includes/widgets/progress.php:157 includes/widgets/progress.php:207
+#: includes/widgets/video.php:411 includes/widgets/video.php:426
+#: includes/widgets/video.php:453 includes/widgets/video.php:531
+#: includes/widgets/video.php:545 includes/widgets/video.php:559
+#: includes/widgets/video.php:585 includes/widgets/video.php:644
+#: includes/widgets/video.php:685
+#: modules/floating-buttons/base/widget-contact-button-base.php:519
+#: modules/floating-buttons/base/widget-contact-button-base.php:629
+#: modules/floating-buttons/base/widget-contact-button-base.php:694
+#: modules/floating-buttons/base/widget-contact-button-base.php:2528
+#: modules/floating-buttons/base/widget-floating-bars-base.php:231
+#: modules/floating-buttons/base/widget-floating-bars-base.php:298
+#: assets/js/packages/editor-controls/editor-controls.js:39395
+#: assets/js/packages/editor-controls/editor-controls.js:41762
+#: assets/js/packages/editor-controls/editor-controls.strings.js:278
+#: assets/js/packages/editor-controls/editor-controls.strings.js:321
+msgid "Hide"
+msgstr "숨김"
+
+#: includes/controls/groups/background.php:292
+#: includes/widgets/common-base.php:1116 includes/widgets/image-box.php:356
+#: includes/widgets/image-carousel.php:735 includes/widgets/image.php:45
+#: includes/widgets/image.php:126 includes/widgets/image.php:251
+#: includes/widgets/testimonial.php:321
+#: modules/atomic-widgets/elements/atomic-image/atomic-image.php:36
+#: modules/atomic-widgets/elements/atomic-image/atomic-image.php:71
+#: modules/atomic-widgets/elements/atomic-self-hosted-video/atomic-self-hosted-video.php:161
+#: assets/js/packages/editor-controls/editor-controls.js:44076
+#: assets/js/packages/editor-controls/editor-controls.js:46998
+#: assets/js/packages/editor-controls/editor-controls.strings.js:61
+#: assets/js/packages/editor-controls/editor-controls.strings.js:293
+msgid "Image"
+msgstr "영상"
+
+#: includes/widgets/heading.php:220 includes/widgets/traits/button-trait.php:37
+#: modules/floating-buttons/base/widget-contact-button-base.php:1122
+#: modules/floating-buttons/base/widget-contact-button-base.php:1547
+#: modules/floating-buttons/base/widget-contact-button-base.php:1929
+#: modules/floating-buttons/base/widget-contact-button-base.php:2279
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:1409
+msgid "Large"
+msgstr "대형"
+
+#: core/kits/documents/tabs/settings-layout.php:24
+#: includes/elements/column.php:118 includes/elements/container.php:1372
+#: includes/elements/section.php:231 includes/managers/controls.php:338
+#: includes/managers/elements.php:299 includes/widgets/common-base.php:292
+#: includes/widgets/icon-list.php:117
+#: modules/floating-buttons/base/widget-contact-button-base.php:2928
+#: modules/floating-buttons/base/widget-floating-bars-base.php:1425
+#: modules/nested-accordion/widgets/nested-accordion.php:116
+#: assets/js/editor.js:39626
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:7634
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:9
+msgid "Layout"
+msgstr "공들여 나열한 것"
+
+#: core/admin/admin.php:270
+#: core/editor/loader/v1/templates/editor-body-v1-view.php:23
+#: core/editor/loader/v2/templates/editor-body-v2-view.php:23
+#: includes/editor-templates/templates.php:66 modules/gutenberg/module.php:123
+#: assets/js/ai-admin.js:1738 assets/js/ai-gutenberg.js:1876
+#: assets/js/ai-media-library.js:1738 assets/js/ai-unify-product-images.js:1738
+#: assets/js/ai.js:2526 assets/js/app-packages.js:4230 assets/js/app.js:1220
+msgid "Loading"
+msgstr "로딩중"
+
+#: core/document-types/page-base.php:132 includes/elements/column.php:777
+#: includes/elements/container.php:1380 includes/elements/section.php:1232
+#: includes/widgets/common-base.php:310
+#: assets/js/packages/editor-controls/editor-controls.js:52568
+#: assets/js/packages/editor-controls/editor-controls.strings.js:151
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:6539
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:105
+msgid "Margin"
+msgstr "마진"
+
+#: includes/widgets/image-carousel.php:456
+msgid "Pause on Hover"
+msgstr "호버 시 일시 정지"
+
+#: includes/widgets/divider.php:898 includes/widgets/icon-box.php:422
+#: includes/widgets/icon-box.php:463 includes/widgets/icon.php:225
+#: includes/widgets/icon.php:268 includes/widgets/social-icons.php:221
+#: includes/widgets/social-icons.php:371 includes/widgets/social-icons.php:528
+#: includes/widgets/text-editor.php:441
+msgid "Primary Color"
+msgstr "기본 색상"
+
+#: includes/widgets/progress.php:45 includes/widgets/progress.php:110
+#: includes/widgets/progress.php:236
+msgid "Progress Bar"
+msgstr "진행률 표시줄"
+
+#: includes/widgets/divider.php:915 includes/widgets/icon-box.php:438
+#: includes/widgets/icon-box.php:480 includes/widgets/icon.php:242
+#: includes/widgets/icon.php:282 includes/widgets/social-icons.php:235
+#: includes/widgets/social-icons.php:385 includes/widgets/social-icons.php:543
+#: includes/widgets/text-editor.php:456
+msgid "Secondary Color"
+msgstr "2차 색상"
+
+#: includes/elements/section.php:78 modules/library/documents/section.php:43
+#: assets/js/container-converter.js:94
+#: assets/js/container-converter.strings.js:3 assets/js/editor.js:8848
+msgid "Section"
+msgstr "부분"
+
+#: includes/widgets/image-carousel.php:202
+msgid "Slides to Scroll"
+msgstr "스크롤할 슬라이드"
+
+#: includes/widgets/heading.php:218 includes/widgets/traits/button-trait.php:35
+#: modules/floating-buttons/base/widget-contact-button-base.php:1120
+#: modules/floating-buttons/base/widget-contact-button-base.php:1545
+#: modules/floating-buttons/base/widget-contact-button-base.php:1927
+#: modules/floating-buttons/base/widget-contact-button-base.php:2277
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:1407
+msgid "Small"
+msgstr "작은"
+
 #: includes/controls/groups/border.php:65 includes/widgets/divider.php:342
 #: includes/widgets/icon-list.php:304 includes/widgets/star-rating.php:188
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:3426
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:317
 msgid "Solid"
-msgstr "실선"
+msgstr "직선"
+
+#: includes/widgets/icon-box.php:151 includes/widgets/icon.php:149
+#: includes/widgets/social-icons.php:284
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:1679
+#: assets/js/ai-admin.js:10934 assets/js/ai-gutenberg.js:11152
+#: assets/js/ai-media-library.js:10934
+#: assets/js/ai-unify-product-images.js:10934 assets/js/ai.js:12486
+msgid "Square"
+msgstr "정사각형"
+
+#: includes/widgets/divider.php:836 includes/widgets/icon-box.php:134
+#: includes/widgets/icon.php:135 includes/widgets/text-editor.php:430
+msgid "Stacked"
+msgstr "쌓임"
+
+#: includes/widgets/toggle.php:46 includes/widgets/toggle.php:123
+#: includes/widgets/toggle.php:276
+msgid "Toggle"
+msgstr "전환"
+
+#: includes/base/element-base.php:1381 includes/controls/dimensions.php:82
+#: includes/elements/column.php:188 includes/elements/container.php:1185
+#: includes/elements/container.php:1666 includes/elements/section.php:406
+#: includes/elements/section.php:425 includes/elements/section.php:964
+#: includes/widgets/common-base.php:681 includes/widgets/counter.php:345
+#: includes/widgets/icon-box.php:251 includes/widgets/icon-box.php:280
+#: includes/widgets/image-box.php:221 includes/widgets/image-box.php:244
+#: includes/widgets/testimonial.php:224 includes/widgets/video.php:979
+#: modules/floating-buttons/base/widget-contact-button-base.php:2994
+#: modules/floating-buttons/base/widget-floating-bars-base.php:1437
+#: assets/js/packages/editor-controls/editor-controls.js:47851
+#: assets/js/packages/editor-controls/editor-controls.js:52667
+#: assets/js/packages/editor-controls/editor-controls.strings.js:34
+#: assets/js/packages/editor-controls/editor-controls.strings.js:180
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:3496
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:5933
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:184
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:302
+msgid "Top"
+msgstr "맨 위"
+
+#: includes/widgets/divider.php:832 includes/widgets/icon-box.php:130
+#: includes/widgets/icon.php:131 includes/widgets/text-editor.php:426
+#: assets/js/editor.js:11670
+msgid "View"
+msgstr "표"
+
+#: includes/widgets/divider.php:605 includes/widgets/icon-list.php:323
+#: modules/floating-buttons/base/widget-contact-button-base.php:2552
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:1218
+msgid "Weight"
+msgstr "무게"
