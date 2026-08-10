@@ -148,9 +148,39 @@ $platform_labels = array(
 
 ?>
 <div class="inspiro-starter-sites">
+
+<div class="iss-ai-root js-iss-ai-root" hidden></div>
+
+<?php if ( class_exists( '\Inspiro\Starter_Sites\Ai\AiDemoGenerator' ) && \Inspiro\Starter_Sites\Ai\AiDemoGenerator::is_enabled() ) : ?>
+	<div class="js-iss-ai-lite-hero" hidden>
+		<?php \Inspiro\Starter_Sites\Ai\AiDemoGenerator::get_instance()->render_hero(); ?>
+	</div>
+	<script>
+	jQuery( function ( $ ) {
+		// The importer view renders inside the theme's white card
+		// (.theme-info-wrap). Move the AI hero to the very top of the page —
+		// above the theme's intro card, standing on the page background —
+		// and fall back to showing it in place if the theme markup differs.
+		var $hero = $( '.js-iss-ai-lite-hero' );
+		var $side = $( '.wpz-onboard_content-side.plugins' ).first();
+		if ( $side.length ) {
+			$hero.prependTo( $side );
+			// The theme's intro card is replaced by the premium button in the
+			// Free Starter Sites header below — hide it to reclaim the space.
+			$side.children( '.wpz-onboard_content-side-section' ).first().hide();
+		}
+		$hero.removeAttr( 'hidden' );
+	} );
+	</script>
+<?php endif; ?>
+
 <div class="inspiro-starter-sites-demo-section">
-	<h3 class="inspiro-starter-sites-demo-section-title"><?php esc_html_e( 'Free Starter Sites', 'inspiro-starter-sites' ); ?></h3>
-	<p class="inspiro-starter-sites-demo-section-description"><?php esc_html_e( 'Import any of these starter sites directly into Inspiro Lite.', 'inspiro-starter-sites' ); ?></p>
+	<div class="inspiro-starter-sites-demo-section-header">
+		<h3 class="inspiro-starter-sites-demo-section-title"><?php esc_html_e( 'Free Starter Sites', 'inspiro-starter-sites' ); ?></h3>
+		<a href="<?php echo esc_url( 'https://www.wpzoom.com/themes/inspiro/starter-sites/?utm_source=wpadmin&utm_medium=demos-starter-sites&utm_campaign=starter-sites-inspiro' ); ?>" target="_blank" rel="noopener" class="inspiro-starter-sites-premium-link">
+			<?php esc_html_e( 'View Premium Starter Sites &rarr;', 'inspiro-starter-sites' ); ?>
+		</a>
+	</div>
 
 	<div class="inspiro-starter-sites-demo-filter" role="tablist" aria-label="<?php esc_attr_e( 'Filter starter sites by editor', 'inspiro-starter-sites' ); ?>">
 		<button type="button" class="inspiro-starter-sites-demo-filter-btn is-active" data-filter="all" aria-pressed="true">
@@ -231,9 +261,12 @@ $platform_labels = array(
 							? implode( ' ', array_map( 'sanitize_html_class', $import_file['categories'] ) )
 							: '';
 					?>
-				<li data-name="<?php echo esc_attr( strtolower( $import_file['import_file_name'] ) ); ?>" data-import-id="<?php echo esc_attr( $import_file['import_id'] ); ?>" data-type="<?php echo esc_attr( $demo_type ); ?>" data-categories="<?php echo esc_attr( $demo_categories ); ?>">
+				<li class="<?php echo $imported_demo ? 'is-imported' : ''; ?>" data-name="<?php echo esc_attr( strtolower( $import_file['import_file_name'] ) ); ?>" data-import-id="<?php echo esc_attr( $import_file['import_id'] ); ?>" data-type="<?php echo esc_attr( $demo_type ); ?>" data-categories="<?php echo esc_attr( $demo_categories ); ?>">
 					<figure title="<?php echo esc_attr( $import_file['import_file_name'] ); ?>">
 						<div class="preview-thumbnail inspiro-starter-sites-import" style="background-image:url('<?php echo esc_url( $img_src ) ?>')">
+							<?php if ( $imported_demo ) : ?>
+								<span class="inspiro-starter-sites-imported-flag"><span aria-hidden="true">&#10003;</span> <?php esc_html_e( 'Imported', 'inspiro-starter-sites' ); ?></span>
+							<?php endif; ?>
 							<a href="<?php echo esc_url( $import_file['preview_url'] ); ?>" target="_blank" class="button-select-template"><?php esc_html_e( 'View Demo', 'inspiro-starter-sites' ); ?></a></div>
 						<figcaption>
 							<div class="inspiro-starter-sites-demo-name">
@@ -330,10 +363,25 @@ $platform_labels = array(
 
 						$demo_types_attr = implode( ' ', array_map( 'sanitize_html_class', $unit_types( $unit ) ) );
 						$demo_categories = implode( ' ', array_map( 'sanitize_html_class', $unit_categories( $unit ) ) );
+
+						// The whole group counts as imported when any of its
+						// variants matches the imported demo.
+						$group_imported = false;
+						if ( $imported_demo_id ) {
+							foreach ( $variants as $vfile ) {
+								if ( isset( $vfile['import_id'] ) && $imported_demo_id == $vfile['import_id'] ) {
+									$group_imported = true;
+									break;
+								}
+							}
+						}
 					?>
-					<li class="inspiro-starter-sites-demo-card-grouped" data-name="<?php echo esc_attr( strtolower( $group_name ) ); ?>" data-import-id="<?php echo esc_attr( $active_file['import_id'] ); ?>" data-type="<?php echo esc_attr( $demo_types_attr ); ?>" data-categories="<?php echo esc_attr( $demo_categories ); ?>" data-active-variant="<?php echo esc_attr( $active_type ); ?>">
+					<li class="inspiro-starter-sites-demo-card-grouped <?php echo $group_imported ? 'is-imported' : ''; ?>" data-name="<?php echo esc_attr( strtolower( $group_name ) ); ?>" data-import-id="<?php echo esc_attr( $active_file['import_id'] ); ?>" data-type="<?php echo esc_attr( $demo_types_attr ); ?>" data-categories="<?php echo esc_attr( $demo_categories ); ?>" data-active-variant="<?php echo esc_attr( $active_type ); ?>">
 						<figure title="<?php echo esc_attr( $group_name ); ?>">
 							<div class="preview-thumbnail inspiro-starter-sites-import js-inspiro-starter-sites-variant-thumb" style="background-image:url('<?php echo esc_url( $active_img ); ?>')">
+								<?php if ( $group_imported ) : ?>
+									<span class="inspiro-starter-sites-imported-flag"><span aria-hidden="true">&#10003;</span> <?php esc_html_e( 'Imported', 'inspiro-starter-sites' ); ?></span>
+								<?php endif; ?>
 								<a href="<?php echo esc_url( $active_file['preview_url'] ); ?>" target="_blank" class="button-select-template js-inspiro-starter-sites-variant-preview"><?php esc_html_e( 'View Demo', 'inspiro-starter-sites' ); ?></a></div>
 							<figcaption>
 								<div class="inspiro-starter-sites-demo-name">

@@ -1,47 +1,47 @@
 import { useState } from '@wordpress/element';
-import { __ } from '@wordpress/i18n';
+import { __, sprintf } from '@wordpress/i18n';
 import FieldsIcons from '../icons';
 import ProModal from './ProModal';
 
 const FIELD_GROUPS = [
 	{
 		id: 'standard',
-		label: 'Standard Fields',
+		label: __( 'Standard Fields', 'wpzoom-forms' ),
 		types: [ 'text', 'name', 'email', 'tel', 'url', 'textarea' ],
 	},
 	{
 		id: 'choice',
-		label: 'Choice Fields',
+		label: __( 'Choice Fields', 'wpzoom-forms' ),
 		types: [ 'select', 'radio', 'checkboxes', 'checkbox' ],
 	},
 	{
 		id: 'advanced',
-		label: 'Advanced',
+		label: __( 'Advanced', 'wpzoom-forms' ),
 		types: [ 'date' ],
 	},
 	{
 		id: 'layout',
-		label: 'Layout',
+		label: __( 'Layout', 'wpzoom-forms' ),
 		types: [ 'heading', 'paragraph', 'divider' ],
 	},
 ];
 
 const TYPE_LABELS = {
-	text:       'Text',
-	name:       'Name',
-	email:      'Email',
-	tel:        'Phone',
-	url:        'Website',
-	number:     'Number',
-	textarea:   'Message',
-	select:     'Select',
-	radio:      'Radio',
-	checkboxes: 'Multichoice',
-	checkbox:   'Checkbox',
-	date:       'Date',
-	heading:    'Heading',
-	paragraph:  'Paragraph',
-	divider:    'Divider',
+	text:       __( 'Text', 'wpzoom-forms' ),
+	name:       __( 'Name', 'wpzoom-forms' ),
+	email:      __( 'Email', 'wpzoom-forms' ),
+	tel:        __( 'Phone', 'wpzoom-forms' ),
+	url:        __( 'Website', 'wpzoom-forms' ),
+	number:     __( 'Number', 'wpzoom-forms' ),
+	textarea:   __( 'Message', 'wpzoom-forms' ),
+	select:     __( 'Select', 'wpzoom-forms' ),
+	radio:      __( 'Radio', 'wpzoom-forms' ),
+	checkboxes: __( 'Multichoice', 'wpzoom-forms' ),
+	checkbox:   __( 'Checkbox', 'wpzoom-forms' ),
+	date:       __( 'Date', 'wpzoom-forms' ),
+	heading:    __( 'Heading', 'wpzoom-forms' ),
+	paragraph:  __( 'Paragraph', 'wpzoom-forms' ),
+	divider:    __( 'Divider', 'wpzoom-forms' ),
 };
 
 const TYPE_ICONS = {
@@ -53,11 +53,11 @@ const TYPE_ICONS = {
 };
 
 const PRO_FIELDS = [
-	{ type: 'number', label: 'Number', icon: 'number' },
-	{ type: 'hidden', label: 'Hidden', icon: 'hidden' },
-	{ type: 'upload', label: 'Upload', icon: 'upload' },
-	{ type: 'time',   label: 'Time',   icon: 'time' },
-	{ type: 'gdpr',   label: 'GDPR',   icon: 'gdpr' },
+	{ type: 'number', label: __( 'Number', 'wpzoom-forms' ), icon: 'number' },
+	{ type: 'hidden', label: __( 'Hidden', 'wpzoom-forms' ), icon: 'hidden' },
+	{ type: 'upload', label: __( 'Upload', 'wpzoom-forms' ), icon: 'upload' },
+	{ type: 'time',   label: __( 'Time', 'wpzoom-forms' ),   icon: 'time' },
+	{ type: 'gdpr',   label: __( 'GDPR', 'wpzoom-forms' ),   icon: 'gdpr' },
 ];
 
 export default function LeftSidebar({ onAddField }) {
@@ -91,7 +91,7 @@ export default function LeftSidebar({ onAddField }) {
 				) ) }
 
 				<div className="wpzf-palette__group wpzf-palette__group--premium">
-					<h3 className="wpzf-palette__title">Premium Fields</h3>
+					<h3 className="wpzf-palette__title">{ __( 'Premium Fields', 'wpzoom-forms' ) }</h3>
 					<div className="wpzf-palette__grid">
 						{ PRO_FIELDS.map( ( field ) => (
 							<button
@@ -99,7 +99,7 @@ export default function LeftSidebar({ onAddField }) {
 								className="wpzf-palette__item wpzf-palette__item--pro"
 								draggable={ false }
 								onClick={ () => setProField( field.label ) }
-								title={ field.label + ' (Pro)' }
+								title={ sprintf( /* translators: %s: field type label */ __( '%s (Pro)', 'wpzoom-forms' ), field.label ) }
 							>
 								<span className="wpzf-palette__icon">{ FieldsIcons[ field.icon ] }</span>
 								<span className="wpzf-palette__label">{ field.label }</span>
@@ -112,7 +112,7 @@ export default function LeftSidebar({ onAddField }) {
 
 			{ proField && (
 				<ProModal
-					fieldLabel={ proField + ' Field' }
+					fieldLabel={ sprintf( /* translators: %s: field type label */ __( '%s Field', 'wpzoom-forms' ), proField ) }
 
 					onClose={ () => setProField( null ) }
 				/>

@@ -13,7 +13,7 @@
  * Description: Simple, user-friendly contact form plugin for WordPress with a dedicated drag-and-drop builder.
  * Author:      WPZOOM
  * Author URI:  https://www.wpzoom.com
- * Version:     2.0.3
+ * Version:     2.0.4
  * License:     GPL2+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  */
@@ -861,6 +861,8 @@ class WPZOOM_Forms {
 				)
 			);
 
+			wp_set_script_translations( 'wpzoom-forms-js-backend-main', 'wpzoom-forms' );
+
 			wp_register_style(
 				'wpzoom-forms-css-backend-main',
 				trailingslashit( $this->main_dir_url ) . 'main/backend/style.css',
@@ -884,6 +886,8 @@ class WPZOOM_Forms {
 					'admin_email' => '' . get_site_option( 'admin_email', '' )
 				)
 			);
+
+			wp_set_script_translations( 'wpzoom-forms-js-backend-formblock', 'wpzoom-forms' );
 
 			wp_register_style(
 				'wpzoom-forms-css-backend-formblock',
@@ -1343,7 +1347,7 @@ class WPZOOM_Forms {
 	public function post_list_custom_columns_form( $column, $post_id ) {
 
 		if ( 'shortcode' == $column ) {
-			printf( '<input type="text" value="[wpzf_form id=&quot;%s&quot;]" readonly />', $post_id );
+			printf( '<input type="text" value="[wpzf_form id=&quot;%d&quot;]" readonly />', absint( $post_id ) );
 		}
 
 		if( 'responses' == $column ) {

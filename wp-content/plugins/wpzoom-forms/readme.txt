@@ -4,8 +4,8 @@ Donate link:       http://paypal.me/wpzm/10usd
 Author URI:        https://www.wpzoom.com/
 Requires at least: 6.5
 Requires PHP:      7.4
-Tested up to:      7.0
-Stable tag:        2.0.3
+Tested up to:      7.1
+Stable tag:        2.0.4
 License:           GNU General Public License v2
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 Tags:              contact form, form builder, contact, forms, email form
@@ -219,6 +219,9 @@ Yes! Use shortcodes to embed your contact forms in the Classic Editor or any the
 
 
 == Changelog ==
+
+= 2.0.4 =
+* Minor bug fix
 
 = 2.0.3 =
 * Minor bug fix

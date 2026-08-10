@@ -5,8 +5,8 @@ import { cls } from '../utils';
 
 const BLANK = {
 	id:     '',
-	name:   'Blank Form',
-	desc:   'Start from scratch with an empty canvas.',
+	name:   __( 'Blank Form', 'wpzoom-forms' ),
+	desc:   __( 'Start from scratch with an empty canvas.', 'wpzoom-forms' ),
 	icon:   '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4v16M4 12h16"/></svg>',
 	isPro:  false,
 	schema: { fields: [] },

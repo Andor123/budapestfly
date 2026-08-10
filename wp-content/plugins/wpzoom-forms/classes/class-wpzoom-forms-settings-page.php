@@ -690,8 +690,8 @@ class WPZOOM_Forms_Settings {
 				<?php do_action( 'wpzoom_forms_settings_after_main_container' ); ?>
 				
 				<div class="wpzoom-forms-settings-buttons-container">
-					<span class="wpzoom_forms_settings_save"><?php submit_button( 'Save Settings', 'primary', 'wpzoom_forms_settings_save', false ); ?></span>
-					<span class="wpzoom_forms_reset_settings"><input type="button" class="button button-secondary" name="wpzoom_forms_reset_settings" id="wpzoom_forms_reset_settings" value="Reset Settings"></span>
+					<span class="wpzoom_forms_settings_save"><?php submit_button( __( 'Save Settings', 'wpzoom-forms' ), 'primary', 'wpzoom_forms_settings_save', false ); ?></span>
+					<span class="wpzoom_forms_reset_settings"><input type="button" class="button button-secondary" name="wpzoom_forms_reset_settings" id="wpzoom_forms_reset_settings" value="<?php echo esc_attr__( 'Reset Settings', 'wpzoom-forms' ); ?>"></span>
 				</div>
 			</form>
 		</div>
@@ -1091,29 +1091,29 @@ class WPZOOM_Forms_Settings {
             	<h4><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M7.38586 8.35699C7.03068 8.14388 6.56998 8.25906 6.35687 8.61424C6.14376 8.96943 6.25893 9.43012 6.61412 9.64323L11.6141 12.6432C11.8516 12.7857 12.1484 12.7857 12.3859 12.6432L17.3859 9.64323C17.741 9.43012 17.8562 8.96943 17.6431 8.61424C17.43 8.25906 16.9693 8.14388 16.6141 8.35699L12 11.1255L7.38586 8.35699Z" fill="#242628"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M5 19.7315H19C20.519 19.7315 21.75 18.501 21.75 16.9825V7.01953C21.75 5.50032 20.5192 4.26953 19 4.26953H5C3.48079 4.26953 2.25 5.50032 2.25 7.01953V16.9815C2.25 18.5007 3.48079 19.7315 5 19.7315ZM3.75 7.01953C3.75 6.32874 4.30921 5.76953 5 5.76953H19C19.6908 5.76953 20.25 6.32874 20.25 7.01953V16.9825C20.25 17.6721 19.691 18.2315 19 18.2315H5C4.30921 18.2315 3.75 17.6723 3.75 16.9815V7.01953Z" fill="#242628"/>
-</svg> Stay Updated on WPZOOM Forms</h4>
-            	<p>Subscribe to get notified about new plugin updates and features. We’ll also send you useful tips, tutorials, and limited-time promotions.</p>
+</svg> <?php esc_html_e( 'Stay Updated on WPZOOM Forms', 'wpzoom-forms' ); ?></h4>
+            	<p><?php esc_html_e( 'Subscribe to get notified about new plugin updates and features. We’ll also send you useful tips, tutorials, and limited-time promotions.', 'wpzoom-forms' ); ?></p>
             </div>
             <form class="ml-block-form" action="https://static.mailerlite.com/webforms/submit/p0c0n3" data-code="p0c0n3" method="post" target="_blank">
             	<div class="ml-form-formContent">
             	<div class="ml-form-fieldRow ml-last-item">
             		<div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
-            		<input aria-label="email" aria-required="true" value="<?php echo esc_attr( $current_user->user_email ); ?>" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Email" autocomplete="email">
+            		<input aria-label="email" aria-required="true" value="<?php echo esc_attr( $current_user->user_email ); ?>" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="<?php echo esc_attr__( 'Email', 'wpzoom-forms' ); ?>" autocomplete="email">
             		</div>
             	</div>
             	</div>
             	<input type="hidden" name="ml-submit" value="1">
             	<div class="ml-form-embedSubmit">
-            	<button type="submit" class="button button-primary">Subscribe</button>
-            	<button disabled="disabled" style="display:none" type="button" class="loading"> <div class="ml-form-embedSubmitLoad"></div> <span class="sr-only">Loading...</span> </button>
+            	<button type="submit" class="button button-primary"><?php esc_html_e( 'Subscribe', 'wpzoom-forms' ); ?></button>
+            	<button disabled="disabled" style="display:none" type="button" class="loading"> <div class="ml-form-embedSubmitLoad"></div> <span class="sr-only"><?php esc_html_e( 'Loading...', 'wpzoom-forms' ); ?></span> </button>
             	</div>
             	<input type="hidden" name="anticsrf" value="true">
             </form>
             </div>
             <div class="ml-form-successBody row-success" style="display:none">
             <div class="ml-form-successContent">
-            	<h4>Thank you!</h4>
-            	<p>You have successfully joined our subscriber list.</p>
+            	<h4><?php esc_html_e( 'Thank you!', 'wpzoom-forms' ); ?></h4>
+            	<p><?php esc_html_e( 'You have successfully joined our subscriber list.', 'wpzoom-forms' ); ?></p>
             </div>
             </div>
             </div>
