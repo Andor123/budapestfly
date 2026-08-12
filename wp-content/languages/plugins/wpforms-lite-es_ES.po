@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WPForms &#8211; AI Form Builder for WordPress &#8211; Contact Forms, Payment Forms, Survey Form, Quiz &amp; More - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-07-28 15:48:04+0000\n"
+"PO-Revision-Date: 2026-08-11 19:55:07+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -77,12 +77,6 @@ msgstr "Posible prueba de tarjetas detectada por WPForms"
 msgid "Ask WPForms AI"
 msgstr "Pregunta a WPForms AI"
 
-#. translators: %1$s - PayPal icon, %2$s - Square icon, %3$s - Payment Settings
-#. link.
-#: templates/admin/setup-checklist/payment.php:86
-msgid "WPForms also supports other payment gateways, including %1$s PayPal, %2$s Square, and Authorize.net which can be configured from %3$s."
-msgstr "WPForms también admite otras pasarelas de pago, incluidas %1$s PayPal, %2$s Square y Authorize.net, que se pueden configurar desde %3$s."
-
 #: templates/admin/setup-checklist/payment.php:79
 msgid "Payment Settings"
 msgstr "Ajustes de pago"
@@ -134,6 +128,7 @@ msgstr "Completar la lista de verificación de configuración de WPForms"
 msgid "Plus"
 msgstr "Plus"
 
+#: src/Admin/Education/Promo/SugarCalendar/Banner.php:51
 #: templates/admin/setup-checklist/integration-card.php:18
 msgid "Free"
 msgstr "Gratuito"
@@ -644,9 +639,16 @@ msgstr "Ver analítica"
 msgid "Prefer a guided setup? Launch the %s to configure your site step-by-step."
 msgstr "¿Prefieres una configuración guiada? Inicia el %s para configurar tu sitio paso a paso."
 
-#: includes/admin/class-welcome.php:251 src/SetupWizard/Bridge.php:67
+#: includes/admin/class-welcome.php:251
+#: lite/templates/admin/setup-wizard/shell.php:27 src/SetupWizard/Bridge.php:67
 msgid "WPForms Setup Wizard"
 msgstr "Asistente de configuración de WPForms"
+
+#. translators: %1$s - PayPal icon, %2$s - Square icon, %3$s - Payment Settings
+#. link.
+#: templates/admin/setup-checklist/payment.php:86
+msgid "WPForms also supports other payment gateways, including %1$s PayPal, %2$s Square, Authorize.net, and Mercado Pago which can be configured from %3$s."
+msgstr "WPForms también es compatible con otras pasarelas de pago, incluidas %1$s PayPal, %2$s Square y Mercado Pago, que se pueden configurar desde %3$s."
 
 #: templates/admin/tools/ai-mcp.php:172
 msgid "In order for the AI MCP to be able to make changes to your form, Write Access must be enabled."
@@ -770,7 +772,7 @@ msgid "You do not have permission to change this setting."
 msgstr "No tienes permiso para cambiar este ajuste."
 
 #: src/Integrations/AI/Admin/Chat/Chat.php:438
-#: src/Integrations/AiMcp/AiMcp.php:208
+#: src/Integrations/AiMcp/AiMcp.php:208 src/Lite/SetupWizard/Screen.php:144
 msgid "Something went wrong. Please try again."
 msgstr "Algo salió mal. Vuelve a intentarlo."
 
@@ -980,12 +982,12 @@ msgstr "Los pagos con PayPal deben estar activados al usar el campo de PayPal Co
 msgid "PayPal account connection is required when using the PayPal field. Connect your PayPal account to start accepting payments."
 msgstr "Se requiere una conexión de cuenta de PayPal al usar el campo de PayPal. Conecta tu cuenta de PayPal para empezar a aceptar pagos."
 
-#: src/Admin/Payments/Views/Overview/Page.php:437
+#: src/Admin/Payments/Views/Overview/Page.php:436
 #: templates/admin/setup-checklist/integration-card.php:21
 msgid "Elite"
 msgstr "Elite"
 
-#: src/Admin/Payments/Views/Overview/Page.php:435
+#: src/Admin/Payments/Views/Overview/Page.php:434
 msgid "Accept credit cards and eChecks with enterprise-grade fraud protection."
 msgstr "Acepta tarjetas de crédito y cheques electrónicos con protección contra fraudes de nivel empresarial."
 
@@ -2712,6 +2714,7 @@ msgstr "Activar Sugar Calendar"
 msgid "Sugar Calendar Installed & Activated"
 msgstr "Sugar Calendar instalado y activado"
 
+#: src/Admin/Education/Promo/SugarCalendar/Banner.php:52
 #: src/Admin/Pages/SugarCalendar.php:406
 msgid "Install Sugar Calendar"
 msgstr "Instalar Sugar Calendar"
@@ -3130,7 +3133,7 @@ msgstr "Evita las sugerencias de correo electrónico para errores tipográficos 
 msgid "Disable Suggestions"
 msgstr "Desactivar sugerencias"
 
-#: includes/admin/ajax-actions.php:1052
+#: includes/admin/ajax-actions.php:1057
 #: includes/admin/builder/functions.php:761
 msgid "Back to Previous Page (Referrer) "
 msgstr "Volver a la página previa (referente) "
@@ -3515,14 +3518,14 @@ msgstr "A prueba de fallos"
 msgid "Powerful Automation Features"
 msgstr "Potentes funciones de automatización"
 
+#: src/Admin/Education/Admin/Tools/EntryAutomation.php:72
+msgid "Tired of manually exporting and deleting entries? Wish you could schedule these actions for optimal efficiency?"
+msgstr "¿Cansado de exportar y eliminar entradas manualmente? ¿Desearías poder programar estas acciones para una eficacia óptima?"
+
 #. translators: %1$s - WPForms.com Upgrade page URL.
 #: src/Admin/Education/Admin/Tools/EntryAutomation.php:74
 msgid "Entry Automation introduces powerful, automated task chaining, allowing you to seamlessly schedule exports and deletions, ensuring your data is managed precisely how you need it. Chain multiple tasks together for complex workflows – export to CSV, then automatically delete after a specified period, for example. We've built robust failsafes to guarantee data integrity, so you can automate with confidence, knowing your valuable entries are always protected. Take back your time and let our addon handle the heavy lifting, keeping your WPForms data organized and secure, automatically."
 msgstr "La Automatización de entradas introduce un potente encadenamiento de tareas automatizadas, que te permite programar sin problemas las exportaciones y eliminaciones, garantizando que tus datos se gestionan exactamente como los necesitas. Encadena varias tareas para crear flujos de trabajo complejos: por ejemplo, exporta a CSV y luego elimínalos automáticamente tras un periodo determinado. Hemos creado sólidos mecanismos de seguridad para garantizar la integridad de los datos, de modo que puedas automatizar con confianza, sabiendo que tus valiosas entradas están siempre protegidas. Recupera tu tiempo y deja que nuestro complemento se encargue del trabajo pesado, manteniendo tus datos WPForms organizados y seguros, automáticamente."
-
-#: src/Admin/Education/Admin/Tools/EntryAutomation.php:72
-msgid "Tired of manually exporting and deleting entries? Wish you could schedule these actions for optimal efficiency?"
-msgstr "¿Cansado de exportar y eliminar entradas manualmente? ¿Desearías poder programar estas acciones para una eficacia óptima?"
 
 #: templates/integrations/stripe/builder/custom-metadata.php:103
 msgid "--- Select Meta Value ---"
@@ -3556,12 +3559,12 @@ msgstr "Asigna meta personalizados a los valores de los campos de formulario."
 msgid "Custom Meta"
 msgstr "Metadato personalizado"
 
-#: src/Requirements/Requirements.php:1177
+#: src/Requirements/Requirements.php:1178
 msgid "Read more"
 msgstr "Leer más"
 
 #. translators: %1$s - Read More link.
-#: src/Requirements/Requirements.php:1150
+#: src/Requirements/Requirements.php:1151
 msgid "%1$s for additional information on PHP extensions."
 msgstr "%1$s para obtener información adicional sobre las extensiones PHP."
 
@@ -3598,7 +3601,7 @@ msgid "DELETE THEME"
 msgstr "ELIMINAR TEMA"
 
 #. translators: %s - WPForms documentation link.
-#: src/Integrations/Elementor/Widget.php:298
+#: src/Integrations/Elementor/Widget.php:326
 msgid "<b>Want to customize your form styles without editing CSS?</b> <p>%1$s</p> <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">Learn more</a>"
 msgstr "<b>¿Quieres personalizar los estilos de tus formularios sin editar CSS?</b> <p>%1$s</p> <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">Aprende más</a>"
 
@@ -3612,7 +3615,7 @@ msgid "Enter License Key"
 msgstr "Introduce una clave de licencia"
 
 #. translators: %1$s - Read More link.
-#: src/Requirements/Requirements.php:1144
+#: src/Requirements/Requirements.php:1145
 msgid "%1$s for additional information on PHP version."
 msgstr "%1$s para obtener información adicional sobre la versión de PHP."
 
@@ -3647,12 +3650,12 @@ msgstr "Teléfono de cliente"
 msgid "To access the %name%, please enter and activate your WPForms license key in the plugin settings."
 msgstr "Para acceder a %name%, introduce y activa tu clave de licencia de WPForms en los ajustes del plugin."
 
-#: src/Integrations/Elementor/Widget.php:289
+#: src/Integrations/Elementor/Widget.php:317
 #: templates/builder/themes/notices.php:33
 msgid "Update your forms to use base and form theme styling and unlock extensive style controls."
 msgstr "Actualiza tus formularios para que utilicen el estilo del tema base y del formulario y desbloquea amplios controles de estilo."
 
-#: src/Integrations/Elementor/Widget.php:288
+#: src/Integrations/Elementor/Widget.php:316
 #: templates/builder/themes/notices.php:31
 msgid "Upgrade your forms to use our modern markup and unlock extensive style controls."
 msgstr "Actualiza tus formularios para que utilicen nuestro moderno marcado y desbloquea amplios controles de estilo."
@@ -3963,7 +3966,7 @@ msgid "Unlock conditional logic, coupons, lower Stripe and PayPal fees, and more
 msgstr "Desbloquea la lógica condicional, los cupones, reduce las cuotas de Stripe y Square, y mucho más."
 
 #. translators: %1$s - Documentation URL.
-#: src/Providers/Provider/Settings/FormBuilder.php:785
+#: src/Providers/Provider/Settings/FormBuilder.php:829
 msgid "Something went wrong, and we can’t connect to the provider. Please check your <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">connection settings</a>."
 msgstr "Se ha producido un error y no podemos conectar con el proveedor. Comprueba los <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">ajustes de conexión</a>."
 
@@ -5215,11 +5218,11 @@ msgid "Value Range"
 msgstr "Rango de valores"
 
 #. translators: %d - templates count.
-#: src/Admin/Builder/Templates.php:1152
+#: src/Admin/Builder/Templates.php:1153
 msgid "Get Access to Our Complete Library of %d+ Form Templates"
 msgstr "Accede a nuestra completa biblioteca de %d+ plantillas de formularios"
 
-#: src/Admin/Builder/Templates.php:1155
+#: src/Admin/Builder/Templates.php:1156
 msgid "Save time and reduce effort with our pre-built form templates covering popular use-cases in business operations, customer service, feedback, marketing, registrations, event planning, non-profit, healthcare, and education."
 msgstr "Ahorra tiempo y reduce el esfuerzo con nuestras plantillas de formularios prediseñadas que cubren casos de uso populares en operaciones empresariales, atención al cliente, comentarios, marketing, inscripciones, planificación de eventos, organizaciones sin ánimo de lucro, sanidad y educación."
 
@@ -5583,7 +5586,7 @@ msgid "Qty"
 msgstr "Cant"
 
 #. translators: %1$s - requirements message.
-#: src/Requirements/Requirements.php:1062
+#: src/Requirements/Requirements.php:1063
 msgid "It requires %1$s."
 msgstr "Requiere %1$s."
 
@@ -5768,7 +5771,7 @@ msgstr "Tienes que <a href=\"#\" class=\"wpforms-panel-switch\" data-panel=\"set
 msgid "The form could not be submitted due to a security issue."
 msgstr "El formulario no se envió debido a un problema de seguridad."
 
-#: includes/functions/payments.php:123
+#: includes/functions/payments.php:147
 msgid "Indian Rupee"
 msgstr "Rupia india"
 
@@ -5897,47 +5900,47 @@ msgstr "90 días"
 msgid "Generate Choices"
 msgstr "Generar opciones"
 
-#: includes/functions/payments.php:59
+#: includes/functions/payments.php:67
 msgid "Bulgarian Lev"
 msgstr "Lev búlgaro"
 
-#: includes/functions/payments.php:75
+#: includes/functions/payments.php:83
 msgid "Costa Rican Colón"
 msgstr "Colón costarricense"
 
-#: includes/functions/payments.php:83
+#: includes/functions/payments.php:91
 msgid "Central African CFA Franc"
 msgstr "Franco CFA centroafricano"
 
-#: includes/functions/payments.php:139
+#: includes/functions/payments.php:163
 msgid "Japanese Yen"
 msgstr "Yen japonés"
 
-#: includes/functions/payments.php:195
+#: includes/functions/payments.php:227
 msgid "Romanian Leu"
 msgstr "Leu rumano"
 
-#: includes/functions/payments.php:211
+#: includes/functions/payments.php:243
 msgid "Saudi Arabian Riyal"
 msgstr "Riyal saudí"
 
-#: includes/functions/payments.php:227
+#: includes/functions/payments.php:259
 msgid "Serbian Dinar"
 msgstr "Dinar serbio"
 
-#: includes/functions/payments.php:243
+#: includes/functions/payments.php:275
 msgid "South Korean Won"
 msgstr "Won surcoreano"
 
-#: includes/functions/payments.php:251
+#: includes/functions/payments.php:283
 msgid "Sri Lankan Rupee"
 msgstr "Rupia de Sri Lanka"
 
-#: includes/functions/payments.php:291
+#: includes/functions/payments.php:323
 msgid "Turkish Lira"
 msgstr "Lira turca"
 
-#: includes/functions/payments.php:299
+#: includes/functions/payments.php:331
 msgid "United Arab Emirates Dirham"
 msgstr "Dirham de los Emiratos Árabes Unidos"
 
@@ -5954,6 +5957,7 @@ msgstr "Antes de continuar, necesitamos tu permiso para grabar lo que introduces
 msgid "WPForms AI."
 msgstr "WPForms AI."
 
+#: lite/templates/admin/setup-wizard/welcome.php:31
 #: lite/templates/education/builder/lite-connect/ai-modal.php:24
 #: lite/templates/education/lite-connect-modal.php:46
 #: src/Integrations/AI/Admin/Builder/FormEditor.php:264
@@ -6029,23 +6033,23 @@ msgstr "Más información acerca de la IA de WPForms"
 #. translators: %1$s - What is being checked (PHP, WPForms, etc.), %2$s -
 #. required version. This is used as the completion of the sentence "The {addon
 #. name} addon requires {here goes this string}".
-#: src/Requirements/Requirements.php:1433
+#: src/Requirements/Requirements.php:1434
 msgid "%1$s %2$s or below"
 msgstr "%1$s %2$s o inferior"
 
 #. translators: %1$s - What is being checked (PHP, WPForms, etc.), %2$s -
 #. required version. This is used as the completion of the sentence "The {addon
 #. name} addon requires {here goes this string}".
-#: src/Requirements/Requirements.php:1431
+#: src/Requirements/Requirements.php:1432
 msgid "%1$s %2$s or above"
 msgstr "%1$s %2$s o superior"
 
 #. translators: %1$s - WPForms addon name.
-#: src/Requirements/Requirements.php:1101
+#: src/Requirements/Requirements.php:1102
 msgid "%1$s addon"
 msgstr "Extensión %1$s"
 
-#: src/Requirements/Requirements.php:1097
+#: src/Requirements/Requirements.php:1098
 msgid "WPForms plugin"
 msgstr "Plugin WPForms"
 
@@ -6067,21 +6071,21 @@ msgstr "Recrear tablas"
 
 #. translators: %1$s - WPForms plugin or addon name, %2$d - requirements
 #. message.
-#: src/Requirements/Requirements.php:1108
+#: src/Requirements/Requirements.php:1109
 msgid "The %1$s requires %2$s."
 msgstr "%1$s necesita %2$s."
 
 #. translators: %1$s - What is being checked (PHP, WPForms, etc.), %2$s -
 #. required version. This is used as the completion of the sentence "The {addon
 #. name} addon requires {here goes this string}".
-#: src/Requirements/Requirements.php:1436
+#: src/Requirements/Requirements.php:1437
 msgid "a newer version of %1$s than %2$s"
 msgstr "una versión de %1$s más reciente que %2$s"
 
 #. translators: %1$s - What is being checked (PHP, WPForms, etc.), %2$s -
 #. required version. This is used as the completion of the sentence "The {addon
 #. name} addon requires {here goes this string}".
-#: src/Requirements/Requirements.php:1438
+#: src/Requirements/Requirements.php:1439
 msgid "an older version of %1$s than %2$s"
 msgstr "una versión de %1$s más antigua que %2$s"
 
@@ -6097,11 +6101,11 @@ msgstr "¿Estás seguro de que quieres borrar esta plantilla y todos sus envíos
 msgid "Recreating"
 msgstr "Recreando"
 
-#: includes/admin/ajax-actions.php:770
+#: includes/admin/ajax-actions.php:775
 msgid "WPForms custom database tables are recreated."
 msgstr "Se han recreado las tablas de base de datos personalizadas de WPForms."
 
-#: includes/admin/ajax-actions.php:777
+#: includes/admin/ajax-actions.php:782
 msgid "Error recreating WPForms custom database tables."
 msgstr "Error al recrear las tablas de base de datos personalizadas de WPForms."
 
@@ -6139,7 +6143,7 @@ msgid "The %1$s template requires the %2$s. Would you like to activate it?"
 msgstr "La plantilla %1$s requiere la %2$s . ¿Quieres activarla?"
 
 #. translators: %d - field ID.
-#: includes/emails/class-emails.php:716 includes/emails/class-emails.php:789
+#: includes/emails/class-emails.php:716 includes/emails/class-emails.php:793
 msgid "Field ID #%s"
 msgstr "ID de campo #%s"
 
@@ -6201,63 +6205,63 @@ msgstr "Ampliar la funcionalidad"
 msgid "Troubleshooting and Support"
 msgstr "Diagnosticar problemas y dar soporte"
 
-#: src/Admin/Builder/Templates.php:1223
+#: src/Admin/Builder/Templates.php:1224
 msgid "User Registration Form"
 msgstr "Formulario de registro de usuario"
 
-#: src/Admin/Builder/Templates.php:1229
+#: src/Admin/Builder/Templates.php:1230
 msgid "Create customized WordPress user registration forms and add them anywhere on your website."
 msgstr "Crear un formulario personalizado de registro de usuario en WordPress y añádelo donde quieras en tu web."
 
-#: src/Admin/Builder/Templates.php:1232
+#: src/Admin/Builder/Templates.php:1233
 msgid "User Login Form"
 msgstr "Formulario de acceso de usuario"
 
-#: src/Admin/Builder/Templates.php:1238
+#: src/Admin/Builder/Templates.php:1239
 msgid "Allow your users to easily log in to your site with their username and password."
 msgstr "Permitir a tus usuarios acceder a tu sitio con su nombre de usuario y contraseña."
 
-#: src/Admin/Builder/Templates.php:1241
+#: src/Admin/Builder/Templates.php:1242
 msgid "User Password Reset Form"
 msgstr "Formulario de restablecimiento de la contraseña de usuario"
 
-#: src/Admin/Builder/Templates.php:1247
+#: src/Admin/Builder/Templates.php:1248
 msgid "Allow your users to easily reset their password."
 msgstr "Permite que tus usuarios restablezcan fácilmente su contraseña."
 
-#: src/Admin/Builder/Templates.php:1267
+#: src/Admin/Builder/Templates.php:1268
 msgid "Blog Post Submission Form"
 msgstr "Formulario de envío de entradas de blog"
 
-#: src/Admin/Builder/Templates.php:1273
+#: src/Admin/Builder/Templates.php:1274
 msgid "User-submitted content made easy. Allow your users to submit guest blog posts in WordPress. You can add and remove fields as needed."
 msgstr "Contenido enviado por el usuario hecho fácil. Permite a tus usuarios enviar entradas de blogueros invitados a WordPress. Puedes añadir o quitar los campos que necesites."
 
-#: src/Admin/Builder/Templates.php:1293
+#: src/Admin/Builder/Templates.php:1294
 msgid "Survey Form"
 msgstr "Formulario de encuesta"
 
-#: src/Admin/Builder/Templates.php:1299
+#: src/Admin/Builder/Templates.php:1300
 msgid "Collect customer feedback, then generate survey reports to determine satisfaction and spot trends."
 msgstr "Recoge comentarios de los clientes y, a continuación genera informes de encuestas para determinar la satisfacción y detectar tendencias."
 
-#: src/Admin/Builder/Templates.php:1302
+#: src/Admin/Builder/Templates.php:1303
 msgid "Poll Form"
 msgstr "Formulario de cuestionario"
 
-#: src/Admin/Builder/Templates.php:1308
+#: src/Admin/Builder/Templates.php:1309
 msgid "Ask visitors a question and display the results after they provide an answer."
 msgstr "Haz una pregunta a los visitantes y muestra los resultados después de que den una respuesta."
 
-#: src/Admin/Builder/Templates.php:1311
+#: src/Admin/Builder/Templates.php:1312
 msgid "NPS Survey Simple Form"
 msgstr "Formulario simple de NPS Survey"
 
-#: src/Admin/Builder/Templates.php:1317
+#: src/Admin/Builder/Templates.php:1318
 msgid "Find out if your clients or customers would recommend you to someone else with this basic Net Promoter Score survey template."
 msgstr "Averigua si tus clientes o compradores te recomendarían a otra persona con esta plantilla de encuesta básica de Net Promoter Score."
 
-#: src/Admin/Builder/Templates.php:1320
+#: src/Admin/Builder/Templates.php:1321
 msgid "NPS Survey Enhanced Form"
 msgstr "Formulario mejorado de encuesta NPS"
 
@@ -6298,7 +6302,7 @@ msgstr "Obtener WP Mail SMTP"
 msgid "Close the notification"
 msgstr "Cerrar el aviso"
 
-#: src/Admin/Builder/Templates.php:1326
+#: src/Admin/Builder/Templates.php:1327
 msgid "Measure customer loyalty and find out exactly what they are thinking with this enhanced Net Promoter Score survey template."
 msgstr "Mida la lealtad de los clientes y averigua exactamente lo que están pensando con esta plantilla de encuesta mejorada de Net Promoter Score."
 
@@ -6860,7 +6864,7 @@ msgstr "Revisiones de plantilla de formulario"
 msgid "You cannot embed a form template"
 msgstr "No puedes incrustar una plantilla de formulario"
 
-#: includes/admin/ajax-actions.php:514
+#: includes/admin/ajax-actions.php:519
 msgid "Error Updating Template"
 msgstr "Error al actualizar la plantilla"
 
@@ -6995,7 +6999,7 @@ msgid "WPForms Announcements"
 msgstr "Anuncios de WPForms"
 
 #. translators: %1$s - payment amount; %2$d - payment quantity.
-#: includes/functions/payments.php:778
+#: includes/functions/payments.php:818
 msgid "%1$s &times; %2$d"
 msgstr "%1$s &times; %2$d"
 
@@ -7256,7 +7260,7 @@ msgstr "Cambiar columnas a mostrar"
 #. guide, %3$s - link to contact support.
 #. translators: %1$s - addon download URL, %2$s - link to a manual installation
 #. guide, %3$s - link to contact support.
-#: includes/admin/admin.php:213 includes/admin/ajax-actions.php:919
+#: includes/admin/admin.php:213 includes/admin/ajax-actions.php:924
 msgid "Could not install the addon. Please <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">download it from wpforms.com</a> and <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">install it manually</a>, or <a href=\"%3$s\" target=\"_blank\" rel=\"noopener noreferrer\">contact support</a> for assistance."
 msgstr "No se pudo instalar la extensión. Por favor, <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\"> descárgala de wpforms.com</a> e <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">instálala manualmente</a>, o <a href=\"%3$s\" target=\"_blank\" rel=\"noopener noreferrer\">contacta con soporte</a> para pedir ayuda."
 
@@ -7414,7 +7418,7 @@ msgstr "Navega por nuestra colección de plantillas de aviso por correo electró
 msgid "Export entries to Google Sheets, Excel, and CSV"
 msgstr "Exporta registros a Google Sheets, Excel y CSV"
 
-#: includes/admin/class-about.php:614 lite/wpforms-lite.php:762
+#: lite/wpforms-lite.php:762
 msgid "Take payments with Stripe, PayPal, Square, & Authorize.Net"
 msgstr "Rebie pagos con Stripe, PayPal, Square y Authorize.Net"
 
@@ -7583,20 +7587,20 @@ msgstr "Renovación de suscripciones"
 msgid "Coupons Redeemed"
 msgstr "Cupones canjeados"
 
-#: src/Admin/Payments/Views/Overview/Page.php:162
+#: src/Admin/Payments/Views/Overview/Page.php:163
 msgid "No refunds for selected period"
 msgstr "No hay devoluciones para el periodo seleccionado"
 
-#: src/Admin/Payments/Views/Overview/Page.php:163
+#: src/Admin/Payments/Views/Overview/Page.php:164
 msgid "No new subscriptions for selected period"
 msgstr "No hay nuevas suscripciones para el periodo seleccionado"
 
-#: src/Admin/Payments/Views/Overview/Page.php:164
+#: src/Admin/Payments/Views/Overview/Page.php:165
 msgid "No subscription renewals for the selected period"
 msgstr "No hay renovaciones de suscripción para el periodo seleccionado"
 
 #. translators: WPForms.com docs page URL.
-#: src/Admin/Payments/Views/Overview/Page.php:576
+#: src/Admin/Payments/Views/Overview/Page.php:627
 msgid "Deleting one or more selected payments may prevent processing of future subscription renewals. Payment filtering may also be affected. <a href=\"%1$s\" rel=\"noopener\" target=\"_blank\">Learn More</a>"
 msgstr "La eliminación de uno o más pagos seleccionados puede impedir el procesamiento de futuras renovaciones de suscripción. El filtrado de pagos también puede verse afectado. <a href=\"%1$s\" rel=\"noopener\" target=\"_blank\">Más información</a>"
 
@@ -7726,7 +7730,7 @@ msgstr "Inicia el registro de eventos relacionados con WPForms. Esto se recomien
 msgid "Copy System Information"
 msgstr "Copiar información del sistema"
 
-#: src/Db/Payments/ValueValidator.php:108
+#: src/Db/Payments/ValueValidator.php:109
 msgid "Partially Refunded"
 msgstr "Reembolsado parcialmente"
 
@@ -8062,7 +8066,7 @@ msgid "The %s is not installed. Please contact the site administrator."
 msgstr "%s no está instalado. Por favor, contacta con el administrador del sitio."
 
 #. translators: %s - URL to the documentation article.
-#: templates/integrations/elementor/no-forms.php:32
+#: templates/integrations/elementor/no-forms.php:51
 msgid "Need some help? Check out our <a href=\"%s\" class=\"wpforms-comprehensive-link\" target=\"_blank\" rel=\"noopener noreferrer\">comprehensive guide</a>."
 msgstr "¿Necesitas ayuda? Echa un vistazo a nuestra <a href=\"%s\" class=\"wpforms-comprehensive-link\" target=\"_blank\" rel=\"noopener noreferrer\">guía completa</a>."
 
@@ -8087,11 +8091,11 @@ msgstr "tienda, comercio electrónico, pagar, pago, suma"
 msgid "product, store, ecommerce, pay, payment"
 msgstr "producto, tienda, comercio electrónico, pagar, pago"
 
-#: src/Admin/Education/Fields.php:293
+#: src/Admin/Education/Fields.php:303
 msgid "captcha, spam, antispam"
 msgstr "captcha, spam, antispam"
 
-#: src/Admin/Education/Fields.php:233
+#: src/Admin/Education/Fields.php:243
 #: src/Forms/Fields/Addons/Coupon/Field.php:35
 msgid "discount, sale"
 msgstr "descuento, oferta"
@@ -8155,11 +8159,6 @@ msgstr "Lo siento, no hemos podido encontrar ningún campo que coincida con tus 
 msgid "Easy to Use, Yet Powerful"
 msgstr "Fácil de usar, pero potente"
 
-#. translators: %1$s - WPForms.com Upgrade page URL.
-#: src/Admin/Payments/Views/Coupons/Education.php:171
-msgid "With the Coupons addon, you can offer customers discounts using custom coupon codes. Create your own percentage or fixed rate discount, then add the Coupon field to any payment form. When a customer enters your unique code, they’ll receive the specified discount. You can also add limits to restrict when coupons are available and how often they can be used. The Coupons addon requires a license level of Pro or higher.%s"
-msgstr "Con la extensión de cupones, puedes ofrecer descuentos a tus clientes utilizando códigos de cupón personalizados. Crea tu propio descuento porcentual o fijo y añade el campo de cupón a cualquier formulario de pago. Cuando un cliente introduzca su código exclusivo, recibirá el descuento especificado. También puedes añadir límites para restringir cuándo están disponibles los cupones y con qué frecuencia se pueden utilizar. La extensión de cupones requiere un nivel de licencia Pro o superior.%s"
-
 #: src/Admin/Payments/Views/Coupons/Education.php:164
 msgid "Coupon Settings"
 msgstr "Ajustes del cupón"
@@ -8188,6 +8187,11 @@ msgstr "Porcentaje de descuentos fijos"
 msgid "Maximum Usage Limit"
 msgstr "Límite de uso máximo"
 
+#. translators: %1$s - WPForms.com Upgrade page URL.
+#: src/Admin/Payments/Views/Coupons/Education.php:171
+msgid "With the Coupons addon, you can offer customers discounts using custom coupon codes. Create your own percentage or fixed rate discount, then add the Coupon field to any payment form. When a customer enters your unique code, they’ll receive the specified discount. You can also add limits to restrict when coupons are available and how often they can be used. The Coupons addon requires a license level of Pro or higher.%s"
+msgstr "Con la extensión de cupones, puedes ofrecer descuentos a tus clientes utilizando códigos de cupón personalizados. Crea tu propio descuento porcentual o fijo y añade el campo de cupón a cualquier formulario de pago. Cuando un cliente introduzca su código exclusivo, recibirá el descuento especificado. También puedes añadir límites para restringir cuándo están disponibles los cupones y con qué frecuencia se pueden utilizar. La extensión de cupones requiere un nivel de licencia Pro o superior.%s"
+
 #: src/Admin/Payments/Views/Coupons/Education.php:148
 msgid "Custom Coupon Codes"
 msgstr "Códigos de cupón personalizados"
@@ -8199,26 +8203,26 @@ msgid "and"
 msgstr "y"
 
 #. translators: %s - license name(s).
-#: src/Requirements/Requirements.php:1322
+#: src/Requirements/Requirements.php:1323
 msgid "%s license"
 msgstr "Licencia %s"
 
 #. translators: %s - PHP extension name(s).
-#: src/Requirements/Requirements.php:1251
+#: src/Requirements/Requirements.php:1252
 msgid "%s PHP extension"
 msgid_plural "%s PHP extensions"
 msgstr[0] "%s extensión PHP"
 msgstr[1] "%s extensiones PHP"
 
-#: src/Admin/Payments/Views/Overview/Page.php:165
+#: src/Admin/Payments/Views/Overview/Page.php:166
 msgid "No coupons applied during the selected period"
 msgstr "No se han aplicado cupones durante el periodo seleccionado"
 
-#: src/Admin/Payments/Views/Overview/Page.php:161
+#: src/Admin/Payments/Views/Overview/Page.php:162
 msgid "No sales for selected period"
 msgstr "No hay ventas en el periodo seleccionado"
 
-#: src/Admin/Payments/Views/Overview/Page.php:80
+#: src/Admin/Payments/Views/Overview/Page.php:81
 #: templates/emails/summary-body.php:52
 msgid "Overview"
 msgstr "Resúmen"
@@ -8548,7 +8552,7 @@ msgstr "<p>Los envíos de formularios por AJAX son necesarios cuando se utiliza 
 msgid "Stripe payment stopped. Invalid PaymentIntent status."
 msgstr "Pago de Stripe detenido. Estado de PaymentIntent no válido."
 
-#: src/Admin/Payments/Views/Single.php:1040
+#: src/Admin/Payments/Views/Single.php:1036
 msgid "Empty"
 msgstr "Vacío"
 
@@ -8603,79 +8607,79 @@ msgstr "Libra Esterlina"
 msgid "Euro"
 msgstr "Euro"
 
-#: includes/functions/payments.php:43
+#: includes/functions/payments.php:51
 msgid "Australian Dollar"
 msgstr "Dólar Australiano"
 
-#: includes/functions/payments.php:51
+#: includes/functions/payments.php:59
 msgid "Brazilian Real"
 msgstr "Real Brasileño"
 
-#: includes/functions/payments.php:67
+#: includes/functions/payments.php:75
 msgid "Canadian Dollar"
 msgstr "Dólar Canadiense"
 
-#: includes/functions/payments.php:91
+#: includes/functions/payments.php:115
 msgid "Czech Koruna"
 msgstr "Corona Checa"
 
-#: includes/functions/payments.php:99
+#: includes/functions/payments.php:123
 msgid "Danish Krone"
 msgstr "Corona Danesa"
 
-#: includes/functions/payments.php:107
+#: includes/functions/payments.php:131
 msgid "Hong Kong Dollar"
 msgstr "Dólar Hong Kong"
 
-#: includes/functions/payments.php:115
+#: includes/functions/payments.php:139
 msgid "Hungarian Forint"
 msgstr "Florín Húngaro"
 
-#: includes/functions/payments.php:147
+#: includes/functions/payments.php:171
 msgid "Malaysian Ringgit"
 msgstr "Ringgit Malayo"
 
-#: includes/functions/payments.php:155
+#: includes/functions/payments.php:179
 msgid "Mexican Peso"
 msgstr "Peso Mexicano"
 
-#: includes/functions/payments.php:163
+#: includes/functions/payments.php:187
 msgid "Norwegian Krone"
 msgstr "Corona noruega"
 
-#: includes/functions/payments.php:171
+#: includes/functions/payments.php:195
 msgid "New Zealand Dollar"
 msgstr "Dólar neozelandés"
 
-#: includes/functions/payments.php:179
+#: includes/functions/payments.php:211
 msgid "Philippine Peso"
 msgstr "Peso filipino"
 
-#: includes/functions/payments.php:203
+#: includes/functions/payments.php:235
 msgid "Russian Ruble"
 msgstr "Rublo ruso"
 
-#: includes/functions/payments.php:219
+#: includes/functions/payments.php:251
 msgid "Singapore Dollar"
 msgstr "Dólar de Singapur"
 
-#: includes/functions/payments.php:235
+#: includes/functions/payments.php:267
 msgid "South African Rand"
 msgstr "Rand sudafricano"
 
-#: includes/functions/payments.php:259
+#: includes/functions/payments.php:291
 msgid "Swedish Krona"
 msgstr "Corona sueca"
 
-#: includes/functions/payments.php:267
+#: includes/functions/payments.php:299
 msgid "Swiss Franc"
 msgstr "Franco suizo"
 
-#: includes/functions/payments.php:275
+#: includes/functions/payments.php:307
 msgid "Taiwan New Dollar"
 msgstr "Dólar de Taiwán"
 
-#: includes/functions/payments.php:283
+#: includes/functions/payments.php:315
 msgid "Thai Baht"
 msgstr "Baht tailandés"
 
@@ -8743,7 +8747,7 @@ msgid "Viewing Test Data"
 msgstr "Viendo datos de prueba"
 
 #: src/Admin/Payments/Views/Overview/Chart.php:168
-#: src/Admin/Payments/Views/Overview/Page.php:160
+#: src/Admin/Payments/Views/Overview/Page.php:161
 msgid "No payments for selected period"
 msgstr "No hay pagos en el periodo seleccionado"
 
@@ -8773,7 +8777,7 @@ msgid "Gateway"
 msgstr "Pasarela"
 
 #: src/Admin/Payments/Views/Overview/Table.php:102
-#: src/Db/Payments/ValueValidator.php:158
+#: src/Db/Payments/ValueValidator.php:159
 msgid "Subscription"
 msgstr "Suscripción"
 
@@ -8864,7 +8868,7 @@ msgstr "Reembolso"
 msgid "Method"
 msgstr "Método"
 
-#: src/Admin/Education/Fields.php:232
+#: src/Admin/Education/Fields.php:242
 #: src/Admin/Payments/Views/Overview/Table.php:96
 #: src/Admin/Payments/Views/Single.php:372
 #: src/Admin/Payments/Views/Single.php:856
@@ -8918,62 +8922,62 @@ msgstr "Moneda"
 msgid "Authorize.net"
 msgstr "Authorize.net"
 
-#: src/Db/Payments/ValueValidator.php:103
+#: src/Db/Payments/ValueValidator.php:104
 msgid "Processed"
 msgstr "Procesado"
 
-#: src/Db/Payments/ValueValidator.php:104
-#: src/Db/Payments/ValueValidator.php:127 src/SetupChecklist/Page.php:266
+#: src/Db/Payments/ValueValidator.php:105
+#: src/Db/Payments/ValueValidator.php:128 src/SetupChecklist/Page.php:266
 msgid "Completed"
 msgstr "Completado"
 
-#: src/Db/Payments/ValueValidator.php:105
-#: src/Db/Payments/ValueValidator.php:126
+#: src/Db/Payments/ValueValidator.php:106
+#: src/Db/Payments/ValueValidator.php:127
 msgid "Pending"
 msgstr "Pendiente"
 
-#: src/Db/Payments/ValueValidator.php:107
+#: src/Db/Payments/ValueValidator.php:108
 msgid "Refunded"
 msgstr "Reembolsado"
 
-#: src/Db/Payments/ValueValidator.php:124
+#: src/Db/Payments/ValueValidator.php:125
 msgid "Not Synced"
 msgstr "No sincronizado"
 
-#: src/Db/Payments/ValueValidator.php:106
-#: src/Db/Payments/ValueValidator.php:125
+#: src/Db/Payments/ValueValidator.php:107
+#: src/Db/Payments/ValueValidator.php:126
 msgid "Failed"
 msgstr "Fallido"
 
-#: src/Db/Payments/ValueValidator.php:123
+#: src/Db/Payments/ValueValidator.php:124
 msgid "Cancelled"
 msgstr "Cancelado"
 
-#: src/Db/Payments/ValueValidator.php:159
+#: src/Db/Payments/ValueValidator.php:160
 msgid "Renewal"
 msgstr "Renovación"
 
-#: src/Db/Payments/ValueValidator.php:174
+#: src/Db/Payments/ValueValidator.php:175
 msgid "day"
 msgstr "día"
 
-#: src/Db/Payments/ValueValidator.php:175
+#: src/Db/Payments/ValueValidator.php:176
 msgid "week"
 msgstr "semana"
 
-#: src/Db/Payments/ValueValidator.php:176
+#: src/Db/Payments/ValueValidator.php:177
 msgid "month"
 msgstr "mes"
 
-#: src/Db/Payments/ValueValidator.php:177
+#: src/Db/Payments/ValueValidator.php:178
 msgid "quarter"
 msgstr "trimestre"
 
-#: src/Db/Payments/ValueValidator.php:178
+#: src/Db/Payments/ValueValidator.php:179
 msgid "semi-year"
 msgstr "semestre"
 
-#: src/Db/Payments/ValueValidator.php:179
+#: src/Db/Payments/ValueValidator.php:180
 msgid "year"
 msgstr "año"
 
@@ -9165,7 +9169,7 @@ msgid_plural "Found <strong>%d payments</strong>"
 msgstr[0] "Encontrado <strong>%d pago</strong>"
 msgstr[1] "Encontrados <strong>%d pagos</strong>"
 
-#: src/Db/Payments/ValueValidator.php:142
+#: src/Db/Payments/ValueValidator.php:143
 msgid "One-Time"
 msgstr "Una sola vez"
 
@@ -9267,11 +9271,11 @@ msgstr "Evita que Stripe procese transacciones en vivo. Consulta <a href=\"%s\" 
 msgid "<strong>Pay-as-you-go Pricing</strong><br> 3%% fee per-transaction + Stripe fees. <a href=\"%s\">Renew your license</a> to remove additional fees and unlock powerful features."
 msgstr "<strong>Precios de pago por uso</strong><br> 3%% de comisión por transacción + comisiones de Stripe. <a href=\"%s\">Renueva tu licencia</a> para eliminar las tarifas adicionales y desbloquear el potentes características."
 
-#: includes/functions/payments.php:131
+#: includes/functions/payments.php:155
 msgid "Israeli New Sheqel"
 msgstr "Shequel Israelí"
 
-#: includes/functions/payments.php:187
+#: includes/functions/payments.php:219
 msgid "Polish Zloty"
 msgstr "Zloty polaco"
 
@@ -9302,7 +9306,7 @@ msgstr "Añade fácilmente tu formulario de contacto"
 
 #: src/Admin/Education/Admin/EditPost.php:174
 #: src/Admin/Splash/SplashTrait.php:129 src/Integrations/Divi/Divi.php:308
-#: templates/integrations/elementor/no-forms.php:26
+#: templates/integrations/elementor/no-forms.php:44
 msgid "Get Started"
 msgstr "Primeros pasos"
 
@@ -9701,7 +9705,7 @@ msgstr "Color de icono"
 msgid "Enable this option to use icons with the choices."
 msgstr "Activa esta opción para usar iconos con las opciones."
 
-#: includes/admin/ajax-actions.php:1047 src/Admin/FormEmbedWizard.php:616
+#: includes/admin/ajax-actions.php:1052 src/Admin/FormEmbedWizard.php:616
 msgid "Incorrect usage of this operation."
 msgstr "Uso incorrecto de esta operación."
 
@@ -9931,7 +9935,7 @@ msgstr "Elige una plantilla para acelerar el proceso de crear tu formulario. Tam
 msgid "Get a Head Start With Our Pre-Made Form Templates"
 msgstr "Toma ventaja con nuestras plantillas de formularios prefabricados"
 
-#: src/Admin/Builder/Templates.php:1176
+#: src/Admin/Builder/Templates.php:1177
 msgid "Never start from scratch again! While WPForms Lite allows you to create any type of form, you can save even more time with WPForms Pro. Upgrade to access hundreds more form templates and advanced form fields."
 msgstr "¡No vuelvas a empezar desde cero! Aunque WPForms Lite te permite crear cualquier tipo de formulario, puedes ahorrar aún más tiempo con WPForms Pro. Actualiza para acceder a cientos de plantillas de formularios más y campos de formularios avanzados."
 
@@ -9949,7 +9953,7 @@ msgid "Entry CSV Attachment"
 msgstr "Adjunto CSV del envío"
 
 #. translators: %d - templates count.
-#: src/Admin/Builder/Templates.php:1173
+#: src/Admin/Builder/Templates.php:1174
 msgid "Get Access to Our Library of %d+ Pre-Made Form Templates"
 msgstr "Accede a nuestra biblioteca de %d+ plantillas de formularios prefabricadas"
 
@@ -10063,15 +10067,6 @@ msgstr "Introduce el texto para el encabezado del campo del formulario."
 msgid "Please fill out the field in required format."
 msgstr "Por favor, rellena el campo en el formato requerido."
 
-#: includes/admin/class-about.php:1523 includes/admin/class-about.php:1530
-#: includes/admin/class-about.php:1537
-msgid "Accept payments using PayPal Commerce, Stripe, Square, PayPal Standard, and Authorize.Net"
-msgstr "Acepta pagos usando PayPal Commerce, Stripe, Square, PayPal Standard y Authorize.Net"
-
-#: includes/admin/class-about.php:1516
-msgid "Accept payments using PayPal Commerce, Stripe, Square, and PayPal Standard"
-msgstr "Acepta pagos usando PayPal Commerce, Stripe, Square y PayPal Standard"
-
 #: includes/fields/class-internal-information.php:264
 msgid "Adds an expandable content area below the description."
 msgstr "Añade un área de contenido expandible debajo de la descripción."
@@ -10102,6 +10097,10 @@ msgstr "Esta función no se puede usar en este momento debido a que el plugin Ak
 msgid "This feature cannot be used at this time because the Akismet plugin <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">has not been installed</a>. For information on how to use this feature, please <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">refer to our documentation</a>."
 msgstr "Esta función no se puede usar en este momento porque el complemento Akismet <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">no se ha instalado</a>. Para obtener información sobre cómo usar esta función, <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">consulta nuestra documentación</a>."
 
+#: includes/admin/class-about.php:1516
+msgid "Accept payments using PayPal Commerce, Stripe, Square, PayPal Standard, and Mercado Pago"
+msgstr "Acepta pagos usando PayPal Commerce, Stripe, Square, PayPal Standard y Mercado Pago"
+
 #: src/Admin/Education/Admin/Settings/Geolocation.php:118
 msgid "Mapbox API"
 msgstr "API de Mapbox"
@@ -10110,7 +10109,7 @@ msgstr "API de Mapbox"
 msgid "Collect the names, emails, and messages from site visitors that need to talk to you."
 msgstr "Recoge los nombres, correos electrónicos y mensajes de los visitantes del sitio que necesitan hablar contigo."
 
-#: includes/admin/ajax-actions.php:299 includes/admin/ajax-actions.php:417
+#: includes/admin/ajax-actions.php:304 includes/admin/ajax-actions.php:422
 msgid "The template you selected is currently not available, but you can try again later. If you continue to have trouble, please reach out to support."
 msgstr "La plantilla que has seleccionado no está disponible en este momento, pero puedes volver a intentarlo más tarde. Si sigues teniendo problemas, ponte en contacto con el servicio de asistencia."
 
@@ -10146,14 +10145,14 @@ msgstr "Si pudieras añadir una sola función a WPForms, ¿cuál sería? ¡Quere
 msgid "What’s Your Dream WPForms Feature?"
 msgstr "¿Cuál es tu característica soñada de WPForms?"
 
-#: src/Admin/Notifications/EventDriven.php:722
-msgid "You just hit 100 entries&hellip; and this is just the beginning! Now it’s time to dig into the data and figure out what makes your visitors tick. The User Journey addon shows you what your visitors looked at before submitting your form. Now you can easily find which areas of your site are triggering form conversions."
-msgstr "Acabas de llegar a los 100 envíos... ¡y esto es sólo el principio! Ahora es el momento de profundizar en los datos y averiguar qué es lo que mueve a tus visitantes. La extensión User Journey te muestra lo que tus visitantes miraron antes de enviar tu formulario. Ahora puedes encontrar fácilmente qué áreas de tu web están provocando conversiones de formularios."
-
 #. translators: %s - WPForms documentation link.
 #: src/Integrations/LiteConnect/Integration.php:412
 msgid "Your form entries can’t be backed up because WPForms can’t connect to the backup server. If you’d like to back up your entries, find out how to <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">fix entry backup issues</a>."
 msgstr "No se puede hacer una copia de seguridad de los envíos de tu formulario porque WPForms no puede conectarse al servidor de copias de seguridad. Si quieres hacer una copia de seguridad de tus envíos, descubre cómo <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">solucionar los problemas de copia de seguridad de los registros</a>."
+
+#: src/Admin/Notifications/EventDriven.php:722
+msgid "You just hit 100 entries&hellip; and this is just the beginning! Now it’s time to dig into the data and figure out what makes your visitors tick. The User Journey addon shows you what your visitors looked at before submitting your form. Now you can easily find which areas of your site are triggering form conversions."
+msgstr "Acabas de llegar a los 100 envíos... ¡y esto es sólo el principio! Ahora es el momento de profundizar en los datos y averiguar qué es lo que mueve a tus visitantes. La extensión User Journey te muestra lo que tus visitantes miraron antes de enviar tu formulario. Ahora puedes encontrar fácilmente qué áreas de tu web están provocando conversiones de formularios."
 
 #: src/Logger/Log.php:206
 msgid "Record ID not found"
@@ -10163,10 +10162,6 @@ msgstr "ID de envío no encontrado"
 msgid "Get More Leads From Your Forms!"
 msgstr "¡Consigue más clientes potenciales con tus formularios!"
 
-#: src/Admin/Notifications/EventDriven.php:614
-msgid "Nothing beats real feedback from your customers and visitors. That’s why many small businesses love our awesome Surveys and Polls addon. Instantly unlock full survey reporting right in your WordPress dashboard. And don’t forget: building a survey is easy with our pre-made templates, so you could get started within a few minutes!"
-msgstr "No hay nada mejor que los comentarios reales de tus clientes y visitantes. Por eso muchas pequeñas empresas adoran nuestro impresionante complemento de Encuestas y Sondeos. Desbloquea al instante los informes completos de las encuestas directamente en tu panel de control de WordPress. Y no lo olvides: crear una encuesta es fácil con nuestras plantillas prediseñadas, ¡así que podrás empezar en pocos minutos!"
-
 #: src/Admin/Notifications/EventDriven.php:613
 msgid "Want to Know What Your Customers Really Think?"
 msgstr "¿Quieres saber lo que realmente piensan tus clientes?"
@@ -10174,10 +10169,6 @@ msgstr "¿Quieres saber lo que realmente piensan tus clientes?"
 #: src/Admin/Notifications/EventDriven.php:605
 msgid "Join Now"
 msgstr "Únete ahora"
-
-#: src/Admin/Notifications/EventDriven.php:601
-msgid "Running a WordPress site can be challenging. But help is just around the corner! Our Facebook group contains tons of tips and help to get your business growing! When you join our VIP Circle, you’ll get instant access to tips, tricks, and answers from a community of loyal WPForms users. Best of all, membership is 100% free!"
-msgstr "Dirigir un sitio de WordPress puede ser un reto. ¡Pero la ayuda está a la vuelta de la esquina! ¡Nuestro grupo de Facebook contiene toneladas de consejos y ayuda para que tu negocio crezca! Al unirte a nuestro Círculo VIP, obtendrás acceso instantáneo a consejos, trucos y respuestas de una comunidad de fieles usuarios de WPForms. ¡Lo mejor de todo es que la afiliación es 100% gratis!"
 
 #: src/Admin/Notifications/EventDriven.php:600
 msgid "Want to Be a VIP? Join Now!"
@@ -10198,6 +10189,14 @@ msgstr "Lee la guía"
 #: src/Admin/Notifications/EventDriven.php:555
 msgid "Start Building"
 msgstr "Empezar a construir"
+
+#: src/Admin/Notifications/EventDriven.php:614
+msgid "Nothing beats real feedback from your customers and visitors. That’s why many small businesses love our awesome Surveys and Polls addon. Instantly unlock full survey reporting right in your WordPress dashboard. And don’t forget: building a survey is easy with our pre-made templates, so you could get started within a few minutes!"
+msgstr "No hay nada mejor que los comentarios reales de tus clientes y visitantes. Por eso muchas pequeñas empresas adoran nuestro impresionante complemento de Encuestas y Sondeos. Desbloquea al instante los informes completos de las encuestas directamente en tu panel de control de WordPress. Y no lo olvides: crear una encuesta es fácil con nuestras plantillas prediseñadas, ¡así que podrás empezar en pocos minutos!"
+
+#: src/Admin/Notifications/EventDriven.php:601
+msgid "Running a WordPress site can be challenging. But help is just around the corner! Our Facebook group contains tons of tips and help to get your business growing! When you join our VIP Circle, you’ll get instant access to tips, tricks, and answers from a community of loyal WPForms users. Best of all, membership is 100% free!"
+msgstr "Dirigir un sitio de WordPress puede ser un reto. ¡Pero la ayuda está a la vuelta de la esquina! ¡Nuestro grupo de Facebook contiene toneladas de consejos y ayuda para que tu negocio crezca! Al unirte a nuestro Círculo VIP, obtendrás acceso instantáneo a consejos, trucos y respuestas de una comunidad de fieles usuarios de WPForms. ¡Lo mejor de todo es que la afiliación es 100% gratis!"
 
 #: src/Admin/Notifications/EventDriven.php:661
 msgid "Are your forms converting fewer visitors than you hoped? Often, visitors quit forms partway through. That can prevent you from getting all the leads you deserve to capture. With our Form Abandonment addon, you can capture partial entries even if your visitor didn’t hit Submit! From there, it’s easy to follow up with leads and turn them into loyal customers."
@@ -10363,6 +10362,7 @@ msgstr "Estilo del gráfico"
 msgid "<strong>Your form entries are not being stored in WordPress, and your entry backups are not active.</strong> If there's a problem with deliverability, you'll lose form entries. We recommend that you enable Entry Backups, especially if you're considering <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"wpforms-upgrade-modal\">upgrading to WPForms PRO</a>."
 msgstr "<strong>Los envíos de tu formulario no se están almacenando en WordPress, y las copias de seguridad de tus envíos no están activas.</strong> Si ha algún problema con las entregas, perderás los envíos de tu formulario. Te recomendamos activar las copias de seguridad de los registros, especialmente si estás planteándote <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"wpforms-upgrade-modal\">actualizar a WPForms PRO</a>."
 
+#: lite/templates/admin/setup-wizard/welcome.php:105
 #: src/Lite/Integrations/LiteConnect/LiteConnect.php:115
 msgid "Lite Connect"
 msgstr "Lite Connect"
@@ -10689,7 +10689,7 @@ msgstr "Vaciar la papelera"
 #. 2022 at 11:11 am".
 #. translators: %1$s - date, %2$s - time when item was created, e.g. "Oct 22 at
 #. 11:11am".
-#: includes/functions/date-time.php:35 src/Admin/Payments/Views/Single.php:1084
+#: includes/functions/date-time.php:35 src/Admin/Payments/Views/Single.php:1074
 #: src/Admin/Revisions.php:338 templates/admin/payments/single/log.php:34
 msgid "%1$s at %2$s"
 msgstr "%1$s a las %2$s"
@@ -10979,7 +10979,7 @@ msgstr "Mejora la entrega del correo electrónico en WordPress."
 msgid "Pro mailers: Amazon SES, Microsoft 365 / Outlook.com, Zoho Mail."
 msgstr "Gestores de correo Pro: Amazon SES, Microsoft 365 / Outlook.com, Zoho Mail."
 
-#: includes/admin/ajax-actions.php:848
+#: includes/admin/ajax-actions.php:853
 msgid "Could not activate the plugin. Please activate it on the Plugins page."
 msgstr "No se ha podido activar el plugin. Por favor, actívalo en la página de plugins."
 
@@ -11097,6 +11097,10 @@ msgstr "Sí, activar"
 msgid "Yes, Install and Activate"
 msgstr "Sí, instalar y activar"
 
+#: lite/templates/admin/setup-wizard/welcome.php:42
+msgid "Accept payments with Stripe, Square & PayPal."
+msgstr "Acepta pagos usando Stripe, Square y PayPal."
+
 #. translators: %s - search term.
 #: src/Admin/Tools/Views/ActionSchedulerList.php:71
 msgid "Search results for <strong>%s</strong>"
@@ -11193,7 +11197,7 @@ msgid "Create Blank Form"
 msgstr "Crear un formulario en blanco"
 
 #. translators: %s - provider name.
-#: src/Providers/Provider/Settings/FormBuilder.php:478
+#: src/Providers/Provider/Settings/FormBuilder.php:522
 msgid "Get the most out of WPForms &mdash; use it with an active %s account."
 msgstr "Saca el máximo partido de WPForms &mdash; úsalo con una cuenta activa de %s."
 
@@ -11424,7 +11428,7 @@ msgstr "Aumenta tus ventas y conversiones hasta un 15 % con avisos de prueba soc
 msgid "Easily display Facebook content on your WordPress site without writing any code. Comes with multiple templates, ability to embed albums, group content, reviews, live videos, comments, and reactions."
 msgstr "Muestra fácilmente contenido de Facebook en WordPress sin escribir nada de código. Viene con varias plantillas, posibilidad de incrustar álbumes, contenido de grupos, reseñas, vídeos en directo, comentarios y reacciones."
 
-#: includes/admin/ajax-actions.php:916 includes/functions/plugins.php:83
+#: includes/admin/ajax-actions.php:921 includes/functions/plugins.php:83
 #: src/Helpers/Plugin.php:56 src/Helpers/Plugin.php:118
 msgid "Could not install the plugin. Please download and install it manually."
 msgstr "No se pudo instalar el plugin. Descarga e instálalo manualmente."
@@ -11892,13 +11896,14 @@ msgstr "Haz una pregunta o busca en la documentación..."
 msgid "Something went wrong while saving the form."
 msgstr "Algo ha salido mal al guardar el formulario."
 
-#: includes/admin/ajax-actions.php:28 includes/admin/ajax-actions.php:391
+#: includes/admin/ajax-actions.php:28 includes/admin/ajax-actions.php:396
 #: includes/fields/class-base.php:3414
 #: src/Admin/Builder/Ajax/PanelLoader.php:134 src/Admin/FormEmbedWizard.php:290
 #: src/Admin/FormEmbedWizard.php:610 src/Admin/Forms/Ajax/Tags.php:200
 #: src/Admin/Forms/Ajax/Tags.php:240
 #: src/Admin/Payments/Views/Overview/Ajax.php:64
 #: src/Admin/Payments/Views/Overview/Ajax.php:129
+#: src/Integrations/Elementor/Elementor.php:432
 #: src/Integrations/PayPalCommerce/Admin/Payments/SingleActionsHandler.php:272
 #: src/Integrations/PayPalCommerce/Process/ProcessSingleAjax.php:41
 #: src/Integrations/PayPalCommerce/Process/ProcessSubscriptionAjax.php:41
@@ -11909,7 +11914,7 @@ msgstr "Algo ha salido mal al guardar el formulario."
 msgid "You are not allowed to perform this action."
 msgstr "No tienes permisos para realizar esta acción."
 
-#: includes/admin/ajax-actions.php:23 includes/admin/ajax-actions.php:1043
+#: includes/admin/ajax-actions.php:23 includes/admin/ajax-actions.php:1048
 #: includes/fields/class-base.php:3409 src/Admin/FormEmbedWizard.php:603
 #: src/Integrations/AI/Admin/Ajax/Choices.php:57
 #: src/Integrations/AI/Admin/Ajax/FormEditor.php:61
@@ -12015,11 +12020,11 @@ msgstr "--- Selecciona un campo del formulario ---"
 msgid "WordPress.org"
 msgstr "WordPress.org"
 
-#: includes/admin/ajax-actions.php:840 src/Helpers/Plugin.php:164
+#: includes/admin/ajax-actions.php:845 src/Helpers/Plugin.php:164
 msgid "Plugin activation is disabled for you on this site."
 msgstr "La activación del plugin está desactivada para ti en este sitio."
 
-#: includes/admin/ajax-actions.php:797
+#: includes/admin/ajax-actions.php:802
 msgid "Plugin deactivation is disabled for you on this site."
 msgstr "La desactivación del plugin está desactivada para ti en este sitio."
 
@@ -12048,12 +12053,12 @@ msgstr "Este correo electrónico se ha generado y enviado automáticamente desde
 msgid "Take your pick from our wide variety of fields and start building out your form!"
 msgstr "¡Haz tu elección en nuestra amplia variedad de campos y empieza a crear tu formulario!"
 
-#: includes/admin/ajax-actions.php:907
+#: includes/admin/ajax-actions.php:912
 msgid "There was an error while performing your request."
 msgstr "Ha habido un error al llevar a cabo tu solicitud."
 
-#: src/Admin/Builder/Templates.php:948
-#: src/Integrations/Elementor/Widget.php:221
+#: src/Admin/Builder/Templates.php:949
+#: src/Integrations/Elementor/Widget.php:209
 msgid "New form"
 msgstr "Nuevo formulario"
 
@@ -12061,7 +12066,7 @@ msgstr "Nuevo formulario"
 msgid "Save and Embed"
 msgstr "Guardar e incrustar"
 
-#: src/Integrations/Elementor/Widget.php:233
+#: src/Integrations/Elementor/Widget.php:222
 msgid "Display Options"
 msgstr "Opciones de visualización"
 
@@ -12070,7 +12075,7 @@ msgid "Input Mask Incomplete"
 msgstr "Máscara de entrada incompleta"
 
 #. translators: %s - WPForms documentation link.
-#: src/Integrations/Elementor/Widget.php:177
+#: src/Integrations/Elementor/Widget.php:163
 msgid "Need to make changes? <a href=\"#\">Edit the selected form.</a>"
 msgstr "¿Necesitas hacer cambios? <a href=\"#\">Edita el formulario seleccionado.</a>"
 
@@ -12078,7 +12083,7 @@ msgstr "¿Necesitas hacer cambios? <a href=\"#\">Edita el formulario seleccionad
 msgid "Your form contains unsaved changes. Would you like to save your changes first."
 msgstr "Tu formulario contiene cambios sin guardar. ¿Te gustaría guardar tus cambios primero?"
 
-#: src/Integrations/Elementor/Widget.php:425
+#: src/Integrations/Elementor/Widget.php:490
 msgid "Select a form"
 msgstr "Seleccionar un formulario"
 
@@ -12094,7 +12099,7 @@ msgstr "Por favor, rellena todos los espacios en blanco."
 msgid "Enable anti-spam protection"
 msgstr "Activar la protección antispam"
 
-#: src/Integrations/Elementor/Widget.php:149
+#: src/Integrations/Elementor/Widget.php:277
 msgid "<b>You haven't created a form yet.</b><br> What are you waiting for?"
 msgstr "<b>Aún no has creado un formulario.</b><br>¿A qué estás esperando?"
 
@@ -12109,7 +12114,7 @@ msgid "%1$s These messages are displayed to the users as they fill out a form in
 msgstr "%1$s Estos mensajes se muestran en tiempo real a los usuarios a medida que rellenan un formulario. Los mensajes pueden incluir texto sin formato y/o %2$setiquetas inteligentes%3$s."
 
 #. translators: %s - WPForms documentation link.
-#: src/Integrations/Elementor/Widget.php:193
+#: src/Integrations/Elementor/Widget.php:179
 msgid "<b>Heads up!</b> Don't forget to test your form. <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">Check out our complete guide!</a>"
 msgstr "<b>¡Atención!</b> No olvides probar tu formulario. <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">¡Echa un vistazo a nuestra guía completa!</a>"
 
@@ -12133,7 +12138,7 @@ msgid "Create a Form"
 msgstr "Crear un formulario"
 
 #: src/Integrations/Divi/Divi.php:302
-#: templates/integrations/elementor/no-forms.php:20
+#: templates/integrations/elementor/no-forms.php:37
 msgid "You can use <b>WPForms</b> to build contact forms, surveys, payment forms, and more with just a few clicks."
 msgstr "Puedes utilizar <b>WPForms</b> para crear formularios de contacto, encuestas, formularios de pago y más con solo unos pocos clics."
 
@@ -12220,7 +12225,7 @@ msgid "By allowing us to track usage data, we can better help you, as we will kn
 msgstr "Al permitirnos rastrear tus datos de uso, podemos ayudarte mejor, ya que sabremos con qué configuraciones, temas y plugins para WordPress debemos probar."
 
 #: src/Admin/Education/Fields.php:222
-#: src/Admin/Payments/Views/Overview/Page.php:434
+#: src/Admin/Payments/Views/Overview/Page.php:433
 msgid "Authorize.Net"
 msgstr "Authorize.Net"
 
@@ -12334,7 +12339,7 @@ msgstr "Ver envíos"
 msgid "Go to WPForms Settings page"
 msgstr "Ir a la página de ajustes de WPForms"
 
-#: src/Integrations/Gutenberg/FormSelector.php:863
+#: src/Integrations/Gutenberg/FormSelector.php:927
 msgid "The form cannot be displayed."
 msgstr "El formulario no se puede mostrar."
 
@@ -12426,14 +12431,14 @@ msgstr "Lo siento, no tienes permiso para editar este formulario."
 msgid "Sorry, you are not allowed to create new forms."
 msgstr "Lo siento, no tienes permiso para crear nuevos formularios."
 
-#: includes/admin/ajax-actions.php:721 includes/admin/ajax-actions.php:760
+#: includes/admin/ajax-actions.php:726 includes/admin/ajax-actions.php:765
 msgid "You do not have permission to perform this operation."
 msgstr "No tienes permiso para llevar a cabo esta operación."
 
 #: includes/admin/class-menu.php:234 includes/admin/class-menu.php:235
 #: lite/templates/education/builder/did-you-know.php:30
 #: lite/wpforms-lite.php:1025 src/Admin/Builder/AntiSpam.php:351
-#: src/Admin/Builder/Templates.php:1131 src/Admin/Education/Builder/PDF.php:224
+#: src/Admin/Builder/Templates.php:1132 src/Admin/Education/Builder/PDF.php:224
 #: src/Admin/Forms/Analytics.php:335 src/Admin/Forms/Analytics.php:452
 #: src/Forms/Fields/Traits/ProField.php:287
 #: src/Integrations/AI/Admin/Builder/Forms.php:239
@@ -12671,7 +12676,8 @@ msgstr "Instalar ahora"
 msgid "Activating..."
 msgstr "Activando..."
 
-#: src/Admin/Pages/Page.php:460 src/Integrations/AI/Admin/Builder/Forms.php:195
+#: src/Admin/Education/Promo/Banner.php:198 src/Admin/Pages/Page.php:460
+#: src/Integrations/AI/Admin/Builder/Forms.php:195
 msgid "Installing..."
 msgstr "Instalando..."
 
@@ -12738,6 +12744,7 @@ msgstr "Deslizador de número"
 #: lite/templates/education/builder/lite-connect/top-bar.php:26
 #: lite/wpforms-lite.php:153 src/Integrations/Stripe/Admin/Notices.php:173
 #: templates/education/feature-tooltip.php:24
+#: templates/education/promo-banner.php:70
 msgid "Dismiss this message."
 msgstr "Descartar este mensaje."
 
@@ -13119,6 +13126,7 @@ msgstr "No disponible"
 #: src/Admin/Education/Admin/Settings/Geolocation.php:151
 #: src/Admin/Education/Admin/Tools/ExportEntries.php:83
 #: src/Admin/Education/Admin/Tools/ImportEntries.php:84
+#: src/Admin/Payments/Views/Overview/Page.php:473
 #: src/Lite/Admin/Settings/Access.php:167
 #: templates/admin/setup-checklist/integration-card.php:20
 #: templates/admin/tools/ai-mcp.php:245
@@ -13221,6 +13229,7 @@ msgid "Surveys & Polls"
 msgstr "Sondeos y encuestas"
 
 #: includes/admin/class-about.php:1775 includes/admin/class-welcome.php:425
+#: lite/templates/admin/setup-wizard/welcome.php:41
 #: src/Admin/Builder/Help.php:108
 msgid "Payment Forms"
 msgstr "Formularios de pago"
@@ -13234,27 +13243,27 @@ msgstr "Integraciones de marketing"
 msgid "Form Fields"
 msgstr "Campos de formularios"
 
-#: includes/admin/ajax-actions.php:1004
+#: includes/admin/ajax-actions.php:1009
 msgid "Addon installed."
 msgstr "Extensión instalada."
 
-#: includes/admin/ajax-actions.php:1004
+#: includes/admin/ajax-actions.php:1009
 msgid "Plugin installed."
 msgstr "Plugin instalado."
 
-#: includes/admin/ajax-actions.php:845
+#: includes/admin/ajax-actions.php:850
 msgid "Addon activated."
 msgstr "Extensión activada."
 
-#: includes/admin/ajax-actions.php:844
+#: includes/admin/ajax-actions.php:849
 msgid "Plugin activated."
 msgstr "Plugin activado."
 
-#: includes/admin/ajax-actions.php:819
+#: includes/admin/ajax-actions.php:824
 msgid "Addon deactivated."
 msgstr "Extensión desactivada."
 
-#: includes/admin/ajax-actions.php:817
+#: includes/admin/ajax-actions.php:822
 msgid "Plugin deactivated."
 msgstr "Plugin desactivado."
 
@@ -13400,7 +13409,7 @@ msgid "No-Conflict Mode"
 msgstr "Modo sin conflictos"
 
 #. translators: %s - provider type.
-#: includes/providers/class-base.php:1151
+#: includes/providers/class-base.php:1166
 msgid "Add New %s"
 msgstr "Añadir nuevo  %s"
 
@@ -14805,7 +14814,7 @@ msgstr "Marketing"
 #: includes/admin/class-menu.php:114 includes/admin/class-menu.php:115
 #: src/Admin/AdminBarMenu.php:225 src/Admin/AdminBarMenu.php:495
 #: src/Admin/Forms/Views.php:591 src/Admin/Payments/Payments.php:173
-#: src/Admin/Payments/Views/Overview/Page.php:156
+#: src/Admin/Payments/Views/Overview/Page.php:157
 #: src/Admin/Settings/Payments.php:47 src/Admin/Settings/Payments.php:78
 msgid "Payments"
 msgstr "Pagos"
@@ -14996,7 +15005,7 @@ msgstr "Prueba Constant Contact gratis"
 msgid "Authorization Code"
 msgstr "Código de autorización"
 
-#: includes/providers/class-base.php:929
+#: includes/providers/class-base.php:944
 msgid "Available Form Fields"
 msgstr "Campos de formulario disponibles"
 
@@ -15214,7 +15223,7 @@ msgid "Form:"
 msgstr "Formulario:"
 
 #. translators: %d - field ID.
-#: src/Admin/Payments/Views/Single.php:1032
+#: src/Admin/Payments/Views/Single.php:1028
 msgid "Field ID #%d"
 msgstr "ID del campo #%d"
 
@@ -15347,16 +15356,16 @@ msgctxt "Widget"
 msgid "No forms"
 msgstr "No hay formularios"
 
-#: src/Integrations/Elementor/Widget.php:246
-#: src/Integrations/Elementor/Widget.php:260
+#: src/Integrations/Elementor/Widget.php:235
+#: src/Integrations/Elementor/Widget.php:249
 msgid "Show"
 msgstr "Mostrar"
 
 #: src/Forms/Fields/Address/Field.php:256
 #: src/Forms/Fields/Address/Field.php:384
 #: src/Forms/Fields/Address/Field.php:440
-#: src/Integrations/Elementor/Widget.php:247
-#: src/Integrations/Elementor/Widget.php:261
+#: src/Integrations/Elementor/Widget.php:236
+#: src/Integrations/Elementor/Widget.php:250
 #: templates/integrations/ai/chat.php:39
 #: templates/integrations/ai/form-editor.php:39
 msgid "Hide"
@@ -15383,6 +15392,7 @@ msgstr "Editar este formulario"
 
 #: includes/admin/class-welcome.php:74 includes/admin/class-welcome.php:75
 #: includes/admin/class-welcome.php:295
+#: lite/templates/admin/setup-wizard/welcome.php:64
 msgid "Welcome to WPForms"
 msgstr "Bienvenido a WPForms"
 
@@ -15403,6 +15413,7 @@ msgid "Duplicate this form"
 msgstr "Duplicar este formulario"
 
 #: includes/admin/class-welcome.php:399
+#: lite/templates/admin/setup-wizard/welcome.php:51
 msgid "Spam Protection"
 msgstr "Protección contra el spam"
 
@@ -15548,7 +15559,7 @@ msgstr "Nuestra meta es quitarte el miedo de crear formularios online y hacerlo 
 msgid "Hello and welcome to WPForms, the most beginner friendly drag & drop WordPress forms plugin. At WPForms, we build software that helps you create beautiful responsive online forms for your website in minutes."
 msgstr "Hola y bienvenido a WPForms, el plugin de formularios para WordPress más amigable para principiantes. En WPForms, desarrollamos software que te ayuda a crear online hermosos formularios adaptables para tu web en cuestión de minutos."
 
-#: includes/admin/ajax-actions.php:823
+#: includes/admin/ajax-actions.php:828
 msgid "Could not deactivate the addon. Please deactivate from the Plugins page."
 msgstr "No se ha podido desactivar la extensión. Por favor, desactívala desde la página de plugins."
 
@@ -15632,12 +15643,12 @@ msgstr "No se han encontrado resultados"
 msgid "How to Customize Form Fields"
 msgstr "Cómo personalizar los campos de formulario"
 
-#: includes/admin/ajax-actions.php:1024 src/Lite/Admin/Connect.php:203
+#: includes/admin/ajax-actions.php:1029 src/Lite/Admin/Connect.php:203
 #: src/Lite/Admin/Connect.php:217 src/Lite/Admin/Connect.php:278
 msgid "Plugin installed & activated."
 msgstr "Plugin instalado y activado."
 
-#: includes/admin/ajax-actions.php:1024
+#: includes/admin/ajax-actions.php:1029
 msgid "Addon installed & activated."
 msgstr "Extensión instalada y activada."
 
@@ -15646,7 +15657,7 @@ msgstr "Extensión instalada y activada."
 msgid "It seems you do not have any payment addons activated. You can head over to the <a href=\"%s\">Addons page</a> to install and activate the addon for your payment service."
 msgstr "Parece que no tienes activada ninguna extensión de pago. Puedes dirigirte a la <a href=\"%s\">página de extensiones</a> para instalar y activar la extensión para tu servicio de pago."
 
-#: includes/admin/ajax-actions.php:738
+#: includes/admin/ajax-actions.php:743
 msgid "There was an error and the connection failed. Please contact your web host with the technical details below."
 msgstr "Ha ocurrido un error y ha fallado la conexión. Por favor, contacta con tu alojamiento web con los siguientes detalles técnicos."
 
@@ -15654,7 +15665,7 @@ msgstr "Ha ocurrido un error y ha fallado la conexión. Por favor, contacta con 
 msgid "Misc"
 msgstr "Varios"
 
-#: includes/admin/ajax-actions.php:731
+#: includes/admin/ajax-actions.php:736
 msgid "Success! Your server can make SSL connections."
 msgstr "¡Correcto! Tu servidor puede hacer conexiones SSL."
 
@@ -15667,22 +15678,22 @@ msgid "Referrer URL"
 msgstr "URL del remitente"
 
 #. translators: %s - Name field label.
-#: includes/providers/class-base.php:523
+#: includes/providers/class-base.php:538
 msgid "%s (Middle)"
 msgstr "%s (segundo nombre)"
 
 #. translators: %s - Name field label.
-#: includes/providers/class-base.php:539
+#: includes/providers/class-base.php:554
 msgid "%s (Last)"
 msgstr "%s (apellidos)"
 
 #. translators: %s - Name field label.
-#: includes/providers/class-base.php:507
+#: includes/providers/class-base.php:522
 msgid "%s (First)"
 msgstr "%s (nombre)"
 
 #. translators: %s - Name field label.
-#: includes/providers/class-base.php:492
+#: includes/providers/class-base.php:507
 msgid "%s (Full)"
 msgstr "%s (nombre completo)"
 
@@ -15879,7 +15890,7 @@ msgstr "Con un poderoso servicio de marketing por correo electrónico como Const
 msgid "Seamlessly add new contacts to your email list"
 msgstr "Añade nuevos contactos a tu lista de correo electrónico sin problemas"
 
-#: includes/providers/class-base.php:860
+#: includes/providers/class-base.php:875
 msgid "We also noticed that you have some segments in your list. You can select specific list segments below if needed. This is optional."
 msgstr "También hemos notado que tienes algunos segmentos en tu lista. Si es necesario, a continuación puedes seleccionar segmentos específicos de la lista. Esto es opcional."
 
@@ -16166,27 +16177,28 @@ msgstr "No se han encontrado formularios"
 msgid "Display Form Name"
 msgstr "Mostrar el nombre del formulario"
 
-#: includes/providers/class-base.php:765
+#: includes/providers/class-base.php:780
 #: templates/integrations/constant-contact-v3/builder/connection.php:32
 #: templates/integrations/constant-contact-v3/builder/connection.php:35
 msgid "Select Account"
 msgstr "Selecciona la cuenta"
 
-#: includes/providers/class-base.php:811
+#: includes/providers/class-base.php:826
 #: src/Integrations/ConstantContact/V3/Settings/FormBuilder.php:216
 msgid "Select List"
 msgstr "Selecciona la lista"
 
-#: includes/providers/class-base.php:924 includes/providers/class-base.php:929
+#: includes/providers/class-base.php:939 includes/providers/class-base.php:944
 msgid "List Fields"
 msgstr "Lista de campos"
 
-#: includes/providers/class-base.php:1297
+#: includes/providers/class-base.php:1312
 msgid "Could not connect to the provider."
 msgstr "No se ha podido conectar con el proveedor."
 
 #: includes/providers/class-constant-contact.php:581
-#: src/Admin/Payments/Views/Overview/Page.php:423
+#: src/Admin/Payments/Views/Overview/Page.php:422
+#: src/Admin/Payments/Views/Overview/Page.php:459
 #: src/Integrations/PayPalCommerce/PayPalCommerce.php:149
 #: src/Integrations/Square/Square.php:118
 msgid "Connect"
@@ -16204,7 +16216,7 @@ msgstr "¿Te preguntas si el marketing por correo electrónico realmente merece 
 msgid "Connect your existing account"
 msgstr "Conecta con tu cuenta existente"
 
-#: includes/emails/class-emails.php:801 src/Emails/Notifications.php:480
+#: includes/emails/class-emails.php:805 src/Emails/Notifications.php:480
 msgid "An empty form was submitted."
 msgstr "Se ha enviado un formulario vacío."
 
@@ -16324,7 +16336,7 @@ msgid "Instant Notifications"
 msgstr "Avisos instantáneos"
 
 #: includes/admin/admin.php:207 includes/admin/class-about.php:423
-#: includes/functions/builder.php:19 src/Db/Payments/ValueValidator.php:122
+#: includes/functions/builder.php:19 src/Db/Payments/ValueValidator.php:123
 msgid "Active"
 msgstr "Activo"
 
@@ -16425,7 +16437,7 @@ msgstr "Debido a cambios en el formulario, las reglas lógicas condicionales se 
 msgid "Are you sure you want to delete this choice?"
 msgstr "¿Seguro que quieres borrar esta elección?"
 
-#: includes/admin/ajax-actions.php:849
+#: includes/admin/ajax-actions.php:854
 msgid "Could not activate the addon. Please activate it on the Plugins page."
 msgstr "No se ha podido activar la extensión. Por favor, actívala desde la página de plugins."
 
@@ -16529,7 +16541,7 @@ msgid "Now editing"
 msgstr "Estás editando"
 
 #: includes/admin/builder/panels/class-settings.php:174
-#: src/Integrations/Elementor/Widget.php:258
+#: src/Integrations/Elementor/Widget.php:247
 msgid "Form Description"
 msgstr "Descripción del formulario"
 
@@ -16659,7 +16671,7 @@ msgid "<strong>Please Note:</strong> Support for PHP 7.3 and below will be disco
 msgstr "<strong>Nota:</strong> La compatibilidad con PHP 7.3 e inferiores se interrumpirá en breve. Después de esto, si no se toman más medidas, la funcionalidad de WPForms se desactivará."
 
 #: includes/admin/builder/panels/class-settings.php:164
-#: src/Integrations/Elementor/Widget.php:244 src/SmartTags/SmartTags.php:117
+#: src/Integrations/Elementor/Widget.php:233 src/SmartTags/SmartTags.php:117
 msgid "Form Name"
 msgstr "Nombre de formulario"
 
@@ -16672,7 +16684,7 @@ msgstr "Cargar los activos WPForms en todo el sitio. Márcalo sólo si tu sitio 
 msgid "Yes"
 msgstr "Sí"
 
-#: includes/providers/class-base.php:858
+#: includes/providers/class-base.php:873
 msgid "Select Groups"
 msgstr "Selecciona grupos"
 
@@ -16685,15 +16697,15 @@ msgstr "Pago obligatorio."
 msgid "Install Addon"
 msgstr "Instalar la extensión"
 
-#: includes/admin/ajax-actions.php:346
+#: includes/admin/ajax-actions.php:351
 msgid "Error Creating Form"
 msgstr "Error al crear el formulario"
 
-#: includes/admin/ajax-actions.php:285
+#: includes/admin/ajax-actions.php:290
 msgid "No Form Name Provided"
 msgstr "No se ha proporcionado el nombre del formulario"
 
-#: includes/admin/ajax-actions.php:401
+#: includes/admin/ajax-actions.php:406
 msgid "No Form ID Provided"
 msgstr "No se ha proporcionado el ID de formulario"
 
@@ -16798,7 +16810,8 @@ msgid_plural "minutes"
 msgstr[0] "minuto"
 msgstr[1] "minutos"
 
-#: src/Admin/Payments/Views/Overview/Page.php:426
+#: src/Admin/Payments/Views/Overview/Page.php:425
+#: src/Admin/Payments/Views/Overview/Page.php:462
 #: src/Lite/Admin/DashboardWidget.php:435 src/SetupChecklist/Promos.php:237
 #: src/SetupChecklist/Promos.php:387
 msgid "Install"
@@ -17044,7 +17057,8 @@ msgstr "WPForms Lite"
 msgid "Thanks for contacting us! We will be in touch with you shortly."
 msgstr "¡Gracias por contactar con nosotros! Nos pondremos en contacto contigo muy pronto."
 
-#: src/Admin/Payments/Views/Overview/Page.php:429
+#: src/Admin/Payments/Views/Overview/Page.php:428
+#: src/Admin/Payments/Views/Overview/Page.php:465
 #: src/SetupChecklist/Promos.php:276 src/SetupChecklist/Promos.php:317
 msgid "Upgrade"
 msgstr "Actualizar"
@@ -17079,7 +17093,7 @@ msgid "Invalid form."
 msgstr "Formulario no valido."
 
 #. translators: %s - provider name.
-#: includes/providers/class-base.php:1367
+#: includes/providers/class-base.php:1382
 #: lite/templates/education/admin/settings/integrations-item.php:36
 #: src/Providers/Provider/Settings/PageIntegrations.php:79
 msgid "Integrate %s with WPForms"
@@ -17126,21 +17140,22 @@ msgstr "Mostrar etiquetas inteligentes"
 msgid "Duplicate Field"
 msgstr "Duplicar el campo"
 
-#: includes/admin/ajax-actions.php:661 includes/fields/class-base.php:1697
+#: includes/admin/ajax-actions.php:666 includes/fields/class-base.php:1697
 msgid "taxonomy"
 msgstr "taxonomía"
 
-#: includes/providers/class-base.php:1374
+#: includes/providers/class-base.php:1389
 #: src/Providers/Provider/Settings/PageIntegrations.php:86
 msgid "Connected"
 msgstr "Conectado"
 
-#: includes/providers/class-base.php:1250
+#: includes/providers/class-base.php:1265
 msgid "Connection missing"
 msgstr "Falta la conexión"
 
-#: includes/providers/class-base.php:168 includes/providers/class-base.php:1226
-#: includes/providers/class-base.php:1274
+#: includes/providers/class-base.php:168 includes/providers/class-base.php:185
+#: includes/providers/class-base.php:1241
+#: includes/providers/class-base.php:1289
 msgid "You do not have permission"
 msgstr "No tienes permiso"
 
@@ -17149,7 +17164,7 @@ msgstr "No tienes permiso"
 #: src/Integrations/Divi/WPFormsSelector.php:98
 #: src/Integrations/Divi/WPFormsSelectorModern.php:318
 #: src/Integrations/Elementor/Widget.php:135
-#: src/Integrations/Elementor/Widget.php:163
+#: src/Integrations/Elementor/Widget.php:149
 #: src/Integrations/Gutenberg/FormSelector.php:483
 #: templates/emails/summary-body-plain.php:49
 #: templates/emails/summary-body.php:91
@@ -17161,7 +17176,7 @@ msgstr "Formulario"
 msgid "Numbers"
 msgstr "Números"
 
-#: includes/emails/class-emails.php:710 includes/emails/class-emails.php:784
+#: includes/emails/class-emails.php:710 includes/emails/class-emails.php:788
 #: src/Emails/Notifications.php:643 src/Emails/Notifications.php:819
 #: src/SmartTags/SmartTag/FieldHtmlId.php:38
 msgid "(empty)"
@@ -17183,8 +17198,8 @@ msgstr "Tipo de confirmación"
 #: wpforms.php includes/admin/class-menu.php:64
 #: includes/admin/class-menu.php:65 includes/admin/class-menu.php:84
 #: includes/admin/class-menu.php:170 includes/class-form.php:154
-#: includes/integrations.php:49 src/Admin/PluginsCategory.php:155
-#: src/Emails/Templates/General.php:94
+#: includes/integrations.php:49 lite/templates/admin/setup-wizard/shell.php:38
+#: src/Admin/PluginsCategory.php:155 src/Emails/Templates/General.php:94
 #: src/Integrations/Abilities/Abilities.php:82
 #: src/Integrations/Divi/WPFormsSelector.php:59
 #: src/Integrations/Elementor/Widget.php:58
@@ -17532,7 +17547,7 @@ msgstr "Añadir una nueva confirmación"
 msgid "Add New Notification"
 msgstr "Añadir un nuevo aviso"
 
-#: src/Providers/Provider/Settings/FormBuilder.php:533
+#: src/Providers/Provider/Settings/FormBuilder.php:577
 msgid "Add New Connection"
 msgstr "Añadir una nueva conexión"
 
@@ -17553,7 +17568,7 @@ msgstr "Consigue WPForms Pro y desbloquea todas las potentes características"
 msgid "%s addon"
 msgstr "Extensión %s"
 
-#: includes/providers/class-base.php:1358
+#: includes/providers/class-base.php:1373
 #: src/Providers/Provider/Settings/PageIntegrations.php:70
 msgid "Show Accounts"
 msgstr "Mostrar las cuentas"
@@ -17685,7 +17700,7 @@ msgstr "Selecciona %s para usar en las opciones de llenado automático del campo
 msgid "No field type found"
 msgstr "No se ha encontrado ningún tipo de campo"
 
-#: includes/providers/class-base.php:1415
+#: includes/providers/class-base.php:1430
 #: src/Providers/Provider/Settings/PageIntegrations.php:264
 msgid "Please fill out all of the fields below to add your new provider account."
 msgstr "Por favor, rellena a continuación todos los campos para añadir la cuenta de tu nuevo proveedor."
@@ -17727,7 +17742,7 @@ msgstr "Actualizar a PRO"
 msgid "Automatically scroll to the confirmation message"
 msgstr "Hacer scroll automáticamente al mensaje de confirmación"
 
-#: includes/admin/ajax-actions.php:630 includes/fields/class-base.php:1690
+#: includes/admin/ajax-actions.php:635 includes/fields/class-base.php:1690
 msgid "post type"
 msgstr "tipo de contenido"
 
@@ -17793,8 +17808,8 @@ msgstr "Avisos"
 msgid "Multiple Choice"
 msgstr "Opciones múltiples"
 
-#: includes/providers/class-base.php:1314
-#: includes/providers/class-base.php:1397
+#: includes/providers/class-base.php:1329
+#: includes/providers/class-base.php:1412
 #: src/Integrations/PayPalCommerce/Admin/Settings.php:783
 #: src/Integrations/Square/Admin/Settings.php:524
 #: src/Providers/Provider/Settings/PageIntegrations.php:193
@@ -17802,7 +17817,7 @@ msgid "Disconnect"
 msgstr "Desconectar"
 
 #. translators: %s - provider name.
-#: includes/providers/class-base.php:1340
+#: includes/providers/class-base.php:1355
 #: src/Providers/Provider/Settings/PageIntegrations.php:294
 msgid "Connect to %s"
 msgstr "Conectar a %s"
@@ -17825,8 +17840,8 @@ msgstr "Nombre del remitente"
 msgid "Beginner friendly WordPress contact form plugin. Use our Drag & Drop form builder to create your WordPress forms."
 msgstr "El plugin de formulario de contacto para WordPress para principiantes. Usa nuestro editor de formularios de arrastrar y soltar para crear tus formularios para WordPress."
 
-#: includes/providers/class-base.php:1234
-#: includes/providers/class-base.php:1285
+#: includes/providers/class-base.php:1249
+#: includes/providers/class-base.php:1300
 msgid "Missing data"
 msgstr "No hay datos"
 
@@ -17975,11 +17990,6 @@ msgstr "Párrafo de texto"
 msgid "Enter the email address to receive form entry notifications. For multiple notifications, separate email addresses with a comma."
 msgstr "Introduce la dirección de correo electrónico para recibir avisos de envíos de formulario. Para avisos múltiples, separa las direcciones de correo electrónico con una coma."
 
-#. translators: %s - WPForms.com docs page URL.
-#: lite/wpforms-lite.php:687
-msgid "You've just turned off notification emails for this form. Since entries are not stored in WPForms Lite, notification emails are recommended for collecting entry details. For setup steps, <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">please see our notification tutorial</a>."
-msgstr "Acabas de desactivar los correos electrónicos de aviso para este formulario. Dado que los envíos no se almacenan en WPForms Lite, se recomiendan los correos electrónicos de aviso para recopilar los datos de los envíos. Para los pasos de configuración, <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">por favor, mira nuestro tutorial sobre avisos</a>."
-
 #: lite/wpforms-lite.php:725
 msgid "Thanks for being a loyal WPForms Lite user. Upgrade to WPForms Pro to unlock all the awesome features and experience why WPForms is consistently rated the best WordPress form builder."
 msgstr "Gracias por ser un usuario leal de WP Forms. Actualiza a WPForms Pro para desbloquear la fantásticas funcionalidades y experiencia por las que WPForms es valorado constantemente como el mejor constructor de formularios para WordPress."
@@ -17995,6 +18005,11 @@ msgstr "Ver y gestionar tus envíos de formulario dentro de WordPress"
 #: lite/templates/admin/entries/overview/modal.php:25
 msgid "Once you upgrade to WPForms Pro, all future form entries will be stored in your WordPress database and displayed on this Entries screen."
 msgstr "Una vez que actualices a WPForm Pro, todas las futuros envíos de formulario serán almacenados en tu base de datos de WordPress y mostrados en esta pantalla de envíos."
+
+#. translators: %s - WPForms.com docs page URL.
+#: lite/wpforms-lite.php:687
+msgid "You've just turned off notification emails for this form. Since entries are not stored in WPForms Lite, notification emails are recommended for collecting entry details. For setup steps, <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">please see our notification tutorial</a>."
+msgstr "Acabas de desactivar los correos electrónicos de aviso para este formulario. Dado que los envíos no se almacenan en WPForms Lite, se recomiendan los correos electrónicos de aviso para recopilar los datos de los envíos. Para los pasos de configuración, <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">por favor, mira nuestro tutorial sobre avisos</a>."
 
 #: lite/templates/admin/entries/overview/modal.php:29
 msgid "View Entries in Dashboard"
@@ -18032,16 +18047,16 @@ msgstr "Activar la confirmación por correo electrónico"
 msgid "Last 90 days"
 msgstr "Últimos 90 días"
 
-#: includes/providers/class-base.php:777 includes/providers/class-base.php:1407
+#: includes/providers/class-base.php:792 includes/providers/class-base.php:1422
 #: includes/providers/class-constant-contact.php:543
 #: src/Integrations/ConstantContact/V3/Settings/FormBuilder.php:186
 #: src/Integrations/ConstantContact/V3/Settings/PageIntegrations.php:91
-#: src/Providers/Provider/Settings/FormBuilder.php:539
+#: src/Providers/Provider/Settings/FormBuilder.php:583
 #: src/Providers/Provider/Settings/PageIntegrations.php:256
 msgid "Add New Account"
 msgstr "Añadir nueva cuenta"
 
-#: src/Admin/Payments/Views/Overview/Page.php:157
+#: src/Admin/Payments/Views/Overview/Page.php:158
 #: src/Providers/Provider/Settings/FormBuilder.php:249
 #: templates/admin/payments/single/details.php:79
 #: templates/builder/field-context-menu.php:44
@@ -18055,8 +18070,8 @@ msgid "Something went wrong while performing an AJAX request."
 msgstr "Algo ha salido mal al realizar una petición AJAX."
 
 #. translators: %1$s - Connection date.
-#: includes/providers/class-base.php:1309
-#: includes/providers/class-base.php:1392
+#: includes/providers/class-base.php:1324
+#: includes/providers/class-base.php:1407
 #: src/Providers/Provider/Settings/PageIntegrations.php:180
 msgid "Connected on: %1$s"
 msgstr "Conectado el: %1$s"
