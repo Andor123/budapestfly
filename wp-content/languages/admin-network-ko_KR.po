@@ -1,5 +1,5 @@
-# Translation of WordPress - 7.0.x - Development - Administration - Network Admin in Korean
-# This file is distributed under the same license as the WordPress - 7.0.x - Development - Administration - Network Admin package.
+# Translation of WordPress - 7.1.x - Development - Administration - Network Admin in Korean
+# This file is distributed under the same license as the WordPress - 7.1.x - Development - Administration - Network Admin package.
 msgid ""
 msgstr ""
 "PO-Revision-Date: 2026-03-24 02:05:24+0000\n"
@@ -7,9 +7,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: GlotPress/4.0.3\n"
+"X-Generator: GlotPress/4.1.0\n"
 "Language: ko_KR\n"
-"Project-Id-Version: WordPress - 7.0.x - Development - Administration - Network Admin\n"
+"Project-Id-Version: WordPress - 7.1.x - Development - Administration - Network Admin\n"
 
 #: wp-admin/network/sites.php:361
 msgid "Site flagged for deletion."
@@ -661,7 +661,7 @@ msgstr "경로"
 msgid "Domain"
 msgstr "도메인"
 
-#: wp-admin/network/user-new.php:29 wp-admin/network/users.php:270
+#: wp-admin/network/user-new.php:29 wp-admin/network/users.php:297
 msgid "<a href=\"https://codex.wordpress.org/Network_Admin_Users_Screen\">Documentation on Network Users</a>"
 msgstr "<a href=\"https://codex.wordpress.org/Network_Admin_Users_Screen\">네트워크 사용자의 문서</a>"
 
@@ -726,7 +726,7 @@ msgstr "다른 워드프레스 규칙을 <strong>교체하는</strong> %2$s의 %
 msgid "Confirm your action"
 msgstr "동작 확인하기"
 
-#: wp-admin/network/users.php:260
+#: wp-admin/network/users.php:287
 msgid "Hover over any user on the list to make the edit links appear. The Edit link on the left will take you to their Edit User profile page; the Edit link on the right by any site name goes to an Edit Site screen for that site."
 msgstr "목록의 사용자 위로 마우스를 가져 가면 편집 링크가 나타납니다. 왼쪽의 편집 링크를 누르면 사용자 프로필 편집하기 페이지로 갑니다. 사이트 이름 옆에 있는 오른쪽의 편집 링크 사이트 이름 옆에있는 편집 링크는 그 사이트의 사이트 편집 화면으로 갑니다."
 
@@ -1080,10 +1080,6 @@ msgstr "네트워크"
 msgid "The choice of subdirectory sites is disabled if this setup is more than a month old because of permalink problems with &#8220;/blog/&#8221; from the main site. This disabling will be addressed in a future version."
 msgstr "주 사이트의 &#8220;/blog/&#8221;에 대한 퍼머링크 문제 때문에 이 설정이 한 달 이상 지난 경우 하위 디렉터리 사이트의 선택을 활성 해제합니다. 이 활성 해제는 이후 버전에서는 해결될 것입니다."
 
-#: wp-admin/network.php:65
-msgid "Once you add this code and refresh your browser, multisite should be enabled. This screen, now in the Network Admin navigation menu, will keep an archive of the added code. You can toggle between Network Admin and Site Admin by clicking on the Network Admin or an individual site name under the My Sites dropdown in the Toolbar."
-msgstr "이 코드를 넣고 난 뒤에 브라우저를 새로고치면, 다중사이트를 활성화했어야 합니다. 이제 네트워크 관리자 탐색에 있는 이 화면은 추가한 코드의 보관함을 유지할 것입니다. 네트워크 관리자와  사이트 관리자 사이를 네트워크 관리자나 도구모음에 있는 내 사이트 드롭다운 아래의 개별 사이트 이름을 눌러 전환할 수 있습니다."
-
 #: wp-admin/network.php:63
 msgid "The next screen for Network Setup will give you individually-generated lines of code to add to your wp-config.php and .htaccess files. Make sure the settings of your FTP client make files starting with a dot visible, so that you can find .htaccess; you may have to create this file if it really is not there. Make backup copies of those two files."
 msgstr "네트워크에 대한 다음 화면은 wp-config.php와 .htaccess 파일에 개별적으로 만든 코드의 행을 넣어야 할 것입니다. FTP 클라이언트의 설정이 점으로 시작하는 파일을 보이게 하는지 확인하여, .htaccess를 찾을 수 있도록 하세요. 진짜로 없다면 이 파일을 만들어야 할 수도 있습니다. 이 두 파일의 사본을 백업하세요."
@@ -1105,7 +1101,7 @@ msgid "The Network creation panel is not for WordPress MU networks."
 msgstr "네트워크 만들기 구역은 워드프레스 MU 네트워크용이 아닙니다."
 
 #. translators: %s: User login.
-#: wp-admin/network/users.php:87 wp-admin/network/users.php:126
+#: wp-admin/network/users.php:88 wp-admin/network/users.php:127
 msgid "Warning! User cannot be modified. The user %s is a network administrator."
 msgstr "경고! 사용자를 수정할 수 없습니다. %s 사용자는 네트워크  관리자입니다."
 
@@ -1125,11 +1121,11 @@ msgstr "각 사이트 위로 마우스를 올리면 일곱 가지 옵션(주 사
 msgid "Operational settings has fields for the network&#8217;s name and admin email."
 msgstr "운영 설정은 네트워크의 이름과 관리자 이메일용 항목이 있어야 합니다."
 
-#: wp-admin/network/users.php:263
+#: wp-admin/network/users.php:290
 msgid "The bulk action will permanently delete selected users, or mark/unmark those selected as spam. Spam users will have posts removed and will be unable to sign up again with the same email addresses."
 msgstr "일괄 동작은 영구적으로 선택한 사용자를 지우거나, 스팸으로 표시하기/표시 해제할 수 있습니다. 스팸 사용자의 글을 지우고 같은 이메질 주소로 등록할 수 없게 될 것입니다."
 
-#: wp-admin/network/users.php:261
+#: wp-admin/network/users.php:288
 msgid "You can also go to the user&#8217;s profile page by clicking on the individual username."
 msgstr "개별 사용자 이름을 눌러 사용자의 프로필 페이지로 갈 수 있습니다."
 
@@ -1137,7 +1133,7 @@ msgstr "개별 사용자 이름을 눌러 사용자의 프로필 페이지로 �
 msgid "Upload settings control the size of the uploaded files and the amount of available upload space for each site. You can change the default value for specific sites when you edit a particular site. Allowed file types are also listed (space separated only)."
 msgstr "업로드 설정은 업로드한 파일의 크기와 각 사이트의 사용할 수 있는 업로드 공간의 양을 제어합니다. 특정 사이트를 편집할 때 특정 사이트용 기본 값을 바꿀 수 있습니다. 허용한 파일 유형도 나열할 수 있습니다(공백으로만 구분)."
 
-#: wp-admin/network/users.php:264
+#: wp-admin/network/users.php:291
 msgid "You can make an existing user an additional super admin by going to the Edit User profile page and checking the box to grant that privilege."
 msgstr "편집 사용자 프로필 페이지에 가고 권한을 승인하는 상자를 표시하여 존재하는 사용자를 추가 슈퍼 관리자로 만들 수 있습니다."
 
@@ -1145,11 +1141,11 @@ msgstr "편집 사용자 프로필 페이지에 가고 권한을 승인하는 �
 msgid "Users who are signed up to the network without a site are added as subscribers to the main or primary dashboard site, giving them profile pages to manage their accounts. These users will only see Dashboard and My Sites in the main navigation until a site is created for them."
 msgstr "사이트가 없이 네트워크에 등록한 사용자를 주 또는 기본 알림판 사이트에 그들의 계정을 관리할 수 있는 프로필 페이지를 제공하는 구독자로 추가합니다. 이 사용자는 사이트를 만들 때까지 알림판과 주 탐색의 내 사이트를 볼 것입니다."
 
-#: wp-admin/network/users.php:262
+#: wp-admin/network/users.php:289
 msgid "You can sort the table by clicking on any of the table headings and switch between list and excerpt views by using the icons above the users list."
 msgstr "테이블 헤딩의 어느 곳이든 눌러 테이블을 정렬할 수 있고 사용자 목록 위에 있는 아이콘을 사용하여 목록과 요약 보기 사이를 전환할 수 있습니다."
 
-#: wp-admin/network/users.php:259
+#: wp-admin/network/users.php:286
 msgid "This table shows all users across the network and the sites to which they are assigned."
 msgstr "이 테이블은 네트워크와 그들을 지정한 사이트 전체에서 모든 사용자를 보입니다."
 
@@ -1206,7 +1202,7 @@ msgstr "만약 사이트 등록에 특정 도메인을 차단하기를 원한다
 msgid "If you want to limit site registrations to certain domains. One domain per line."
 msgstr "사이트 등록을 특정 도메인에 제한하기 원한다면, 줄당 한 도메인입니다."
 
-#: wp-admin/network/users.php:294
+#: wp-admin/network/users.php:321
 msgid "Users removed from spam."
 msgstr "사용자를 스팸에서 제거했습니다."
 
@@ -1226,11 +1222,11 @@ msgstr "사이트를 스팸으로 표시했습니다."
 msgid "Sites removed from spam."
 msgstr "사이트를 스팸에서 제거했습니다."
 
-#: wp-admin/network/users.php:297
+#: wp-admin/network/users.php:324
 msgid "Users deleted."
 msgstr "사용자를 지웠습니다."
 
-#: wp-admin/network/users.php:291
+#: wp-admin/network/users.php:318
 msgid "Users marked as spam."
 msgstr "사용자를 스팸으로 표시했습니다."
 
