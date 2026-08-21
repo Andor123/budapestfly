@@ -221,6 +221,25 @@ class WPZOOM_Forms_Settings_Fields {
 	}
 
 	/**
+	 * HTML for the Turnstile live preview / key validation field.
+	 *
+	 * The widget itself is rendered by JS using the site key currently
+	 * entered in the settings form, so users get instant feedback on
+	 * whether their keys work for the current domain.
+	 *
+	 * @param array $args
+	 * @return void
+	 */
+	public function turnstile_preview( $args ) {
+		?>
+		<fieldset class="wpzoom-forms-field-turnstile-preview">
+			<div id="wpzf-turnstile-preview-widget"></div>
+			<p id="wpzf-turnstile-preview-status" class="description" aria-live="polite"></p>
+		</fieldset>
+		<?php
+	}
+
+	/**
 	 * HTML for Button field type
 	 *
 	 * @param array $args

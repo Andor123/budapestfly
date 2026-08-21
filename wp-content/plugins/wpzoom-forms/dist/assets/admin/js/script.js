@@ -177,5 +177,153 @@ jQuery(document).ready(function () {
 		$('input[name="wpzf-settings[wpzf_global_captcha_service]"]').on('change', showCaptchaOptions);
 		$('input[name="wpzf-settings[wpzf_global_captcha_type]"]').on('change', showCaptchaOptions);
 
+		// Turnstile live preview & key validation
+		(function () {
+			var $widget = $('#wpzf-turnstile-preview-widget');
+
+			if (!$widget.length) {
+				return;
+			}
+
+			var $status = $('#wpzf-turnstile-preview-status'),
+				$siteKey = $('#wpzf_global_turnstile_site_key'),
+				$secretKey = $('#wpzf_global_turnstile_secret_key'),
+				$theme = $('#wpzf_global_turnstile_widget_theme'),
+				i18n = Settings.turnstile_i18n || {},
+				widgetId = null,
+				apiRequested = false,
+				renderTimer = null;
+
+			function setStatus(state, message) {
+				$status
+					.removeClass('wpzf-ts-ok wpzf-ts-error wpzf-ts-pending')
+					.addClass(state ? 'wpzf-ts-' + state : '')
+					.text(message || '');
+			}
+
+			function isTurnstileSelected() {
+				return $('input[name="wpzf-settings[wpzf_global_captcha_service]"]:checked').val() === 'turnstile';
+			}
+
+			function loadApi() {
+				if (apiRequested) {
+					return;
+				}
+				apiRequested = true;
+				window.wpzfTurnstileApiReady = renderWidget;
+				var script = document.createElement('script');
+				script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=wpzfTurnstileApiReady';
+				script.async = true;
+				script.defer = true;
+				document.head.appendChild(script);
+			}
+
+			function verifySecret(token) {
+				var secret = $.trim($secretKey.val());
+
+				if (!secret) {
+					setStatus('ok', i18n.no_secret);
+					return;
+				}
+
+				setStatus('pending', i18n.verifying);
+
+				$.post(Settings.ajaxUrl, {
+					action: 'wpzoom_forms_verify_turnstile',
+					security: Settings.turnstile_nonce,
+					token: token,
+					secret: secret
+				}).done(function (response) {
+					if (response.success) {
+						setStatus('ok', i18n.success);
+					} else {
+						setStatus('error', (response.data && response.data.message) || i18n.request_failed);
+					}
+				}).fail(function () {
+					setStatus('error', i18n.request_failed);
+				});
+			}
+
+			function onWidgetError(code) {
+				code = String(code || '');
+
+				if (code.indexOf('1101') === 0 || code.indexOf('400') === 0) {
+					setStatus('error', i18n.invalid_site_key);
+				} else if (code.indexOf('110200') === 0) {
+					setStatus('error', i18n.invalid_domain + ' ' + window.location.hostname);
+				} else {
+					setStatus('error', (i18n.widget_error || '%s').replace('%s', code));
+				}
+
+				return true; // Error handled, don't retry.
+			}
+
+			function renderWidget() {
+				if (!isTurnstileSelected()) {
+					return;
+				}
+
+				var siteKey = $.trim($siteKey.val());
+
+				if (widgetId !== null && window.turnstile) {
+					window.turnstile.remove(widgetId);
+					widgetId = null;
+				}
+
+				if (!siteKey) {
+					setStatus('', i18n.enter_site_key);
+					return;
+				}
+
+				if (!window.turnstile) {
+					setStatus('pending', i18n.loading);
+					loadApi();
+					return;
+				}
+
+				setStatus('pending', i18n.loading);
+
+				widgetId = window.turnstile.render($widget.get(0), {
+					sitekey: siteKey,
+					theme: $theme.val() || 'auto',
+					callback: verifySecret,
+					'error-callback': onWidgetError,
+					'expired-callback': function () {
+						setStatus('', i18n.expired);
+					}
+				});
+			}
+
+			function scheduleRender() {
+				clearTimeout(renderTimer);
+				renderTimer = setTimeout(renderWidget, 600);
+			}
+
+			$siteKey.on('input', scheduleRender);
+			$theme.on('change', renderWidget);
+
+			// Re-validate the secret key with a fresh token when it changes.
+			$secretKey.on('input', function () {
+				clearTimeout(renderTimer);
+				renderTimer = setTimeout(function () {
+					if (widgetId !== null && window.turnstile) {
+						window.turnstile.reset(widgetId); // New token -> triggers callback -> re-verifies.
+					} else {
+						renderWidget();
+					}
+				}, 600);
+			});
+
+			$('input[name="wpzf-settings[wpzf_global_captcha_service]"]').on('change', function () {
+				if (isTurnstileSelected()) {
+					renderWidget();
+				}
+			});
+
+			if (isTurnstileSelected()) {
+				renderWidget();
+			}
+		})();
+
 	})(jQuery, WPZOOM_Settings);
 });

@@ -79,6 +79,7 @@ class WPZOOM_Forms_Settings {
 
 			// Do ajax request
 			add_action( 'wp_ajax_wpzoom_reset_settings', array( $this, 'reset_settings' ) );
+			add_action( 'wp_ajax_wpzoom_forms_verify_turnstile', array( $this, 'verify_turnstile_keys' ) );
 
 			// Only load if we are actually on the settings page.
 			if ( WPZOOM_FORMS_SETTINGS_PAGE === $page ) {
@@ -439,6 +440,14 @@ class WPZOOM_Forms_Settings {
 										'light' => esc_html__( 'Light', 'wpzoom-forms' ),
 										'dark'  => esc_html__( 'Dark', 'wpzoom-forms')
 									)
+								),
+							),
+							array(
+								'id'    => 'wpzf_global_turnstile_preview',
+								'title' => esc_html__( 'Widget Preview', 'wpzoom-forms' ),
+								'type'  => 'turnstile_preview',
+								'args'  => array(
+									'class' => 'wpzoom-forms-field required-turnstile',
 								),
 							),
 						),
@@ -813,8 +822,21 @@ class WPZOOM_Forms_Settings {
 				'wpzoom-forms-admin-script',
 				'WPZOOM_Settings',
 				array(
-					'ajaxUrl'    => admin_url( 'admin-ajax.php' ),
-					'ajax_nonce' => wp_create_nonce( 'wpzoom-reset-settings-nonce' ),
+					'ajaxUrl'          => admin_url( 'admin-ajax.php' ),
+					'ajax_nonce'       => wp_create_nonce( 'wpzoom-reset-settings-nonce' ),
+					'turnstile_nonce'  => wp_create_nonce( 'wpzoom-verify-turnstile-nonce' ),
+					'turnstile_i18n'   => array(
+						'enter_site_key'    => esc_html__( 'Enter your Site Key above to see a live preview of the widget.', 'wpzoom-forms' ),
+						'loading'           => esc_html__( 'Loading widget preview…', 'wpzoom-forms' ),
+						'verifying'         => esc_html__( 'Challenge passed — verifying your Secret Key with Cloudflare…', 'wpzoom-forms' ),
+						'no_secret'         => esc_html__( 'The Site Key works for this domain. Enter your Secret Key to verify it too.', 'wpzoom-forms' ),
+						'success'           => esc_html__( 'Success! Your Turnstile keys are valid for this domain.', 'wpzoom-forms' ),
+						'expired'           => esc_html__( 'The test challenge expired. Change a key or reload the page to test again.', 'wpzoom-forms' ),
+						'invalid_site_key'  => esc_html__( 'This Site Key appears to be invalid.', 'wpzoom-forms' ),
+						'invalid_domain'    => esc_html__( 'This Site Key is not configured for the current domain:', 'wpzoom-forms' ),
+						'widget_error'      => esc_html__( 'Turnstile returned an error (code %s). Check that the Site Key is correct and allowed for this domain.', 'wpzoom-forms' ),
+						'request_failed'    => esc_html__( 'Could not reach the server to verify the Secret Key. Please try again.', 'wpzoom-forms' ),
+					),
 				)
 			);
 		}
@@ -852,6 +874,67 @@ class WPZOOM_Forms_Settings {
 		self::update_option( $defaults );
 
 		wp_send_json_success( $response );
+	}
+
+	/**
+	 * Verify a Turnstile test token against the entered Secret Key.
+	 *
+	 * Used by the live widget preview on the Spam Protection settings tab so
+	 * users get instant feedback on whether their keys are valid before saving.
+	 *
+	 * @since 2.0.4
+	 * @return void
+	 */
+	public function verify_turnstile_keys() {
+		check_ajax_referer( 'wpzoom-verify-turnstile-nonce', 'security' );
+
+		if ( ! current_user_can( 'manage_options' ) ) {
+			wp_send_json_error( array( 'message' => esc_html__( 'You are not allowed to do this.', 'wpzoom-forms' ) ), 403 );
+		}
+
+		$token  = isset( $_POST['token'] ) ? sanitize_text_field( wp_unslash( $_POST['token'] ) ) : '';
+		$secret = isset( $_POST['secret'] ) ? sanitize_text_field( wp_unslash( $_POST['secret'] ) ) : '';
+
+		if ( empty( $token ) || empty( $secret ) ) {
+			wp_send_json_error( array( 'message' => esc_html__( 'Missing token or Secret Key.', 'wpzoom-forms' ) ) );
+		}
+
+		$response = wp_remote_post( 'https://challenges.cloudflare.com/turnstile/v0/siteverify', array(
+			'timeout' => 15,
+			'body'    => array(
+				'secret'   => $secret,
+				'response' => $token,
+				'remoteip' => isset( $_SERVER['REMOTE_ADDR'] ) ? sanitize_text_field( wp_unslash( $_SERVER['REMOTE_ADDR'] ) ) : '',
+			),
+		) );
+
+		if ( is_wp_error( $response ) ) {
+			wp_send_json_error( array( 'message' => esc_html__( 'Could not reach Cloudflare to verify the keys. Please try again.', 'wpzoom-forms' ) ) );
+		}
+
+		$body = json_decode( wp_remote_retrieve_body( $response ), true );
+
+		if ( ! empty( $body['success'] ) ) {
+			wp_send_json_success();
+		}
+
+		$error_codes = isset( $body['error-codes'] ) && is_array( $body['error-codes'] ) ? $body['error-codes'] : array();
+
+		if ( in_array( 'invalid-input-secret', $error_codes, true ) ) {
+			$message = esc_html__( 'The Secret Key is invalid. Double-check it in your Cloudflare dashboard.', 'wpzoom-forms' );
+		} elseif ( in_array( 'timeout-or-duplicate', $error_codes, true ) ) {
+			$message = esc_html__( 'The test challenge expired. Change a key or reload the page to test again.', 'wpzoom-forms' );
+		} elseif ( in_array( 'invalid-input-response', $error_codes, true ) ) {
+			$message = esc_html__( 'The Secret Key does not match this Site Key. Make sure both keys are from the same Turnstile widget.', 'wpzoom-forms' );
+		} else {
+			$message = sprintf(
+				/* translators: %s: error codes returned by the Cloudflare Turnstile API */
+				esc_html__( 'Cloudflare rejected the keys (%s).', 'wpzoom-forms' ),
+				esc_html( implode( ', ', $error_codes ) )
+			);
+		}
+
+		wp_send_json_error( array( 'message' => $message ) );
 	}
 
 	public function get_image_sizes() {

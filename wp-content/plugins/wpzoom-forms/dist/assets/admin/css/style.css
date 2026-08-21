@@ -423,3 +423,29 @@ div.wp-tab-panel-inactive {
 #tab-ajax + .wpzoom-forms-settings-upsell-container {
 	display:none !important;
 }
+/* Turnstile live preview & key validation */
+.wpzoom-forms-field-turnstile-preview #wpzf-turnstile-preview-widget {
+	min-height: 0;
+	margin-bottom: 4px;
+}
+.wpzoom-forms-field-turnstile-preview #wpzf-turnstile-preview-widget iframe {
+	max-width: 100%;
+}
+#wpzf-turnstile-preview-status {
+	margin: 6px 0 0;
+	font-size: 13px;
+}
+#wpzf-turnstile-preview-status.wpzf-ts-ok {
+	color: #00a32a;
+	font-weight: 500;
+}
+#wpzf-turnstile-preview-status.wpzf-ts-ok::before {
+	content: "\2713\0020";
+}
+#wpzf-turnstile-preview-status.wpzf-ts-error {
+	color: #d63638;
+	font-weight: 500;
+}
+#wpzf-turnstile-preview-status.wpzf-ts-pending {
+	color: #646970;
+}
