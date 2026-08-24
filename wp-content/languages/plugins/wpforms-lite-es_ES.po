@@ -2,14 +2,113 @@
 # This file is distributed under the same license as the Plugins - WPForms &#8211; AI Form Builder for WordPress &#8211; Contact Forms, Payment Forms, Survey Form, Quiz &amp; More - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-08-16 09:02:52+0000\n"
+"PO-Revision-Date: 2026-08-21 10:37:06+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: GlotPress/4.0.3\n"
+"X-Generator: GlotPress/4.1.0\n"
 "Language: es\n"
 "Project-Id-Version: Plugins - WPForms &#8211; AI Form Builder for WordPress &#8211; Contact Forms, Payment Forms, Survey Form, Quiz &amp; More - Stable (latest release)\n"
+
+#. translators: %d - option number.
+#: src/Forms/Fields/Addons/Ranking/Field.php:758
+msgid "Option %d"
+msgstr "Opción %d"
+
+#: src/Forms/Fields/Addons/Ranking/Field.php:461
+msgid "Arrows are always displayed on touch devices."
+msgstr "Las flechas siempre se muestran en dispositivos táctiles."
+
+#: src/Forms/Fields/Addons/Ranking/Field.php:456
+msgid "Never"
+msgstr "Nunca"
+
+#: src/Forms/Fields/Addons/Ranking/Field.php:455
+msgid "Visible"
+msgstr "Visible"
+
+#: src/Forms/Fields/Addons/Ranking/Field.php:454
+msgid "On Hover"
+msgstr "Al pasar el ratón"
+
+#: src/Forms/Fields/Addons/Ranking/Field.php:442
+msgid "Control when the reorder arrow buttons are visible."
+msgstr "Controla cuándo son visibles los botones de flecha para reordenar."
+
+#: src/Forms/Fields/Addons/Ranking/Field.php:441
+msgid "Arrows"
+msgstr "Flechas"
+
+#: src/Forms/Fields/Addons/Ranking/Field.php:394
+msgid "Number of columns to display in grid layout."
+msgstr "Número de columnas que se mostrarán en el diseño de cuadrícula."
+
+#: src/Forms/Fields/Addons/Ranking/Field.php:362
+msgid "Grid"
+msgstr "Cuadrícula"
+
+#: src/Forms/Fields/Addons/Ranking/Field.php:361
+msgid "List"
+msgstr "Lista"
+
+#: src/Forms/Fields/Addons/Ranking/Field.php:349
+msgid "Select the display layout for the ranking field."
+msgstr "Selecciona el diseño de visualización para el campo de ordenación."
+
+#: src/Forms/Fields/Addons/Ranking/Field.php:318
+msgid "Check this option to hide the label for each choice and rely on the image."
+msgstr "Marca esta opción para ocultar la etiqueta de cada opción y confiar en la imagen."
+
+#: src/Forms/Fields/Addons/Ranking/Field.php:317
+msgid "Hide Choice Label"
+msgstr "Ocultar la etiqueta de la opción"
+
+#: src/Forms/Fields/Addons/Ranking/Field.php:275
+msgid "Select the size for image choices."
+msgstr "Selecciona el tamaño para las opciones con imagen."
+
+#: src/Forms/Fields/Addons/Ranking/Field.php:274
+msgid "Image Size"
+msgstr "Tamaño de la imagen"
+
+#: src/Forms/Fields/Addons/Ranking/Field.php:81
+msgid "Put these options in order, with your most preferred first."
+msgstr "Ordena estas opciones, con tu preferida en primer lugar."
+
+#: src/Forms/Fields/Addons/Ranking/Field.php:80
+msgid "Put these options in order, with your most preferred at the top."
+msgstr "Ordena estas opciones, con tu preferida en la parte superior."
+
+#: src/Forms/Fields/Addons/Ranking/Field.php:49
+msgid "Option 3"
+msgstr "Opción 3"
+
+#: src/Forms/Fields/Addons/Ranking/Field.php:45
+msgid "Option 2"
+msgstr "Opción 2"
+
+#: src/Forms/Fields/Addons/Ranking/Field.php:41
+msgid "Option 1"
+msgstr "Opción 1"
+
+#: src/Admin/Education/Fields.php:223
+#: src/Forms/Fields/Addons/Ranking/Field.php:26
+msgid "rank, order, priority, survey"
+msgstr "clasificación, orden, prioridad, encuesta"
+
+#: src/Admin/Education/Fields.php:222
+#: src/Forms/Fields/Addons/Ranking/Field.php:25
+msgid "Ranking"
+msgstr "Ordenación"
+
+#: src/Admin/Education/Builder/Ranking.php:89
+msgid "Want to know what your visitors really prioritize? Add a Ranking Field and let them sort choices. Perfect for surveys, product feedback, and voting."
+msgstr "¿Quieres saber qué priorizan realmente tus visitantes? Añade un campo de ordenación y permite que clasifiquen las opciones. Perfecto para encuestas, comentarios sobre productos y votaciones."
+
+#: src/Admin/Education/Builder/Ranking.php:87
+msgid "Let People Rank Their Choices"
+msgstr "Permite que la gente ordene sus opciones"
 
 #: src/Lite/SetupWizard/Screen.php:103
 msgid "The Setup Wizard is disabled on this site."
@@ -71,11 +170,11 @@ msgstr "Configurar Sugar Calendar"
 msgid "Could not install the plugin. Please try again or install it manually."
 msgstr "No se pudo instalar el plugin. Inténtalo de nuevo o instálalo manualmente."
 
-#: src/Admin/Education/Fields.php:233
+#: src/Admin/Education/Fields.php:243
 msgid "store, ecommerce, credit card, pay, payment, debit card, installments, latam"
 msgstr "tienda, comercio electrónico, tarjeta de crédito, pago, tarjeta de débito, plazos, latam"
 
-#: src/Admin/Education/Fields.php:232
+#: src/Admin/Education/Fields.php:242
 #: src/Admin/Payments/Views/Overview/Page.php:470
 #: src/Db/Payments/ValueValidator.php:74
 msgid "Mercado Pago"
@@ -452,7 +551,7 @@ msgid "This will permanently dismiss the Setup Checklist, and you will not be ab
 msgstr "Esto descartará permanentemente la lista de verificación de configuración y no podrás recuperarla. Esta acción no se puede deshacer."
 
 #. translators: %d: setup checklist completion percentage.
-#: src/SetupChecklist/Menu.php:209
+#: src/SetupChecklist/Menu.php:216
 msgid "%d%% complete"
 msgstr "%d%% completado"
 
@@ -460,7 +559,7 @@ msgstr "%d%% completado"
 msgid "WPForms Setup Checklist"
 msgstr "Lista de verificación de configuración de WPForms"
 
-#: src/SetupChecklist/Menu.php:120 src/SetupChecklist/Menu.php:204
+#: src/SetupChecklist/Menu.php:120 src/SetupChecklist/Menu.php:211
 msgid "Setup Checklist"
 msgstr "Lista de verificación de configuración"
 
@@ -691,7 +790,7 @@ msgstr "Mejora el cumplimiento de GDPR, CCPA y privacidad con un banner de cooki
 msgid "Monitor views, conversions, and field-level activity to optimize performance."
 msgstr "Monitoriza las vistas, conversiones y la actividad a nivel de campo para optimizar el rendimiento."
 
-#: src/Admin/Forms/Analytics.php:468
+#: src/Admin/Education/Builder/Ranking.php:88 src/Admin/Forms/Analytics.php:468
 msgid "NEW"
 msgstr "NUEVO"
 
@@ -1642,7 +1741,7 @@ msgstr "Activar ActiveLayer"
 msgid "Install ActiveLayer"
 msgstr "Instalar ActiveLayer"
 
-#: includes/fields/class-base.php:4744
+#: includes/fields/class-base.php:4783
 msgid "The selected option is invalid."
 msgstr "La opción seleccionada no es válida."
 
@@ -3683,14 +3782,14 @@ msgstr "A prueba de fallos"
 msgid "Powerful Automation Features"
 msgstr "Potentes funciones de automatización"
 
-#: src/Admin/Education/Admin/Tools/EntryAutomation.php:72
-msgid "Tired of manually exporting and deleting entries? Wish you could schedule these actions for optimal efficiency?"
-msgstr "¿Cansado de exportar y eliminar entradas manualmente? ¿Desearías poder programar estas acciones para una eficacia óptima?"
-
 #. translators: %1$s - WPForms.com Upgrade page URL.
 #: src/Admin/Education/Admin/Tools/EntryAutomation.php:74
 msgid "Entry Automation introduces powerful, automated task chaining, allowing you to seamlessly schedule exports and deletions, ensuring your data is managed precisely how you need it. Chain multiple tasks together for complex workflows – export to CSV, then automatically delete after a specified period, for example. We've built robust failsafes to guarantee data integrity, so you can automate with confidence, knowing your valuable entries are always protected. Take back your time and let our addon handle the heavy lifting, keeping your WPForms data organized and secure, automatically."
 msgstr "La Automatización de entradas introduce un potente encadenamiento de tareas automatizadas, que te permite programar sin problemas las exportaciones y eliminaciones, garantizando que tus datos se gestionan exactamente como los necesitas. Encadena varias tareas para crear flujos de trabajo complejos: por ejemplo, exporta a CSV y luego elimínalos automáticamente tras un periodo determinado. Hemos creado sólidos mecanismos de seguridad para garantizar la integridad de los datos, de modo que puedas automatizar con confianza, sabiendo que tus valiosas entradas están siempre protegidas. Recupera tu tiempo y deja que nuestro complemento se encargue del trabajo pesado, manteniendo tus datos WPForms organizados y seguros, automáticamente."
+
+#: src/Admin/Education/Admin/Tools/EntryAutomation.php:72
+msgid "Tired of manually exporting and deleting entries? Wish you could schedule these actions for optimal efficiency?"
+msgstr "¿Cansado de exportar y eliminar entradas manualmente? ¿Desearías poder programar estas acciones para una eficacia óptima?"
 
 #: templates/integrations/stripe/builder/custom-metadata.php:103
 msgid "--- Select Meta Value ---"
@@ -5203,31 +5302,31 @@ msgid "uri, link, hyperlink"
 msgstr "uri, enlace, hipervínculo"
 
 #: src/Integrations/AI/Admin/Ajax/FormEditor.php:122
-#: src/Integrations/AI/Admin/Ajax/Forms.php:99
+#: src/Integrations/AI/Admin/Ajax/Forms.php:100
 msgid "Empty prompt."
 msgstr "Indicación vacía."
 
-#: src/Integrations/AI/Admin/Ajax/Forms.php:140
+#: src/Integrations/AI/Admin/Ajax/Forms.php:141
 msgid "Empty field data."
 msgstr "Datos del campo vacío."
 
-#: src/Integrations/AI/Admin/Ajax/Forms.php:289
+#: src/Integrations/AI/Admin/Ajax/Forms.php:290
 msgid "Empty form data."
 msgstr "Datos de formulario vacíos."
 
-#: src/Integrations/AI/Admin/Ajax/Forms.php:309
+#: src/Integrations/AI/Admin/Ajax/Forms.php:310
 msgid "Form database object not found."
 msgstr "No se ha encontrado el objeto de la base de datos del formulario."
 
-#: src/Integrations/AI/Admin/Ajax/Forms.php:376
+#: src/Integrations/AI/Admin/Ajax/Forms.php:377
 msgid "Form could not be created."
 msgstr "No se ha podido crear el formulario."
 
-#: src/Integrations/AI/Admin/Ajax/Forms.php:433
+#: src/Integrations/AI/Admin/Ajax/Forms.php:434
 msgid "Please specify an element."
 msgstr "Especifica un elemento."
 
-#: src/Integrations/AI/Admin/Ajax/Forms.php:440
+#: src/Integrations/AI/Admin/Ajax/Forms.php:441
 msgid "Sorry, you are not allowed to dismiss."
 msgstr "Lo siento, no tienes permisos para descartar."
 
@@ -5948,7 +6047,7 @@ msgstr "Seguridad y protección."
 msgid "<strong>AI features were hidden by filter or constant.</strong>"
 msgstr "<strong>Las características de la IA se ocultaron mediante un filtro o una constante.</strong>"
 
-#: src/Integrations/AI/Admin/Builder/FieldOption.php:125
+#: src/Integrations/AI/Admin/Builder/FieldOption.php:126
 #: src/Integrations/AI/Admin/Builder/FormEditor.php:212
 #: src/Integrations/AI/Admin/Builder/Forms.php:176
 #: src/Integrations/AI/Admin/Pages/Templates.php:70
@@ -6002,7 +6101,7 @@ msgstr "los 10 idiomas más hablados del mundo"
 msgid "30 household item categories for a marketplace"
 msgstr "30 categorías de artículos del hogar para una tienda"
 
-#: src/Integrations/AI/Admin/Builder/FieldOption.php:68
+#: src/Integrations/AI/Admin/Builder/FieldOption.php:69
 msgid "Open AI Modal"
 msgstr "Abrir ventana emergente de IA"
 
@@ -6061,6 +6160,7 @@ msgstr "90 días"
 
 #: includes/fields/class-checkbox.php:247 includes/fields/class-radio.php:283
 #: includes/fields/class-select.php:217
+#: src/Forms/Fields/Addons/Ranking/Field.php:147
 #: src/Integrations/AI/Admin/Builder/Enqueues.php:183
 msgid "Generate Choices"
 msgstr "Generar opciones"
@@ -6334,7 +6434,7 @@ msgid "Repeater"
 msgstr "Repetidor"
 
 #. translators: %d - choice number.
-#: includes/fields/class-base.php:4847
+#: includes/fields/class-base.php:4886
 msgid "Item %d"
 msgstr "Elemento %d"
 
@@ -7315,6 +7415,7 @@ msgstr "ID"
 
 #: src/Admin/Forms/Page.php:345
 #: src/Forms/Fields/Addons/LikertScale/Field.php:175
+#: src/Forms/Fields/Addons/Ranking/Field.php:393
 msgid "Columns"
 msgstr "Columnas"
 
@@ -7352,8 +7453,8 @@ msgstr "Logotipo de %s"
 msgid "Plugin installation is disabled for this site."
 msgstr "La instalación de plugins está desactivada en este sitio."
 
-#. translators: %s - total number of choices.
-#: includes/fields/class-base.php:3362
+#. translators: %1$s - limit, %2$s - total number of choices.
+#: includes/fields/class-base.php:5202
 msgid "Showing the first %1$s choices.<br> All %2$s choices will be displayed when viewing the form."
 msgstr "Mostrando las primeras %1$s opciones.<br> Todas las %2$s opciones se mostrarán al ver el formulario."
 
@@ -8256,16 +8357,16 @@ msgstr "tienda, comercio electrónico, pagar, pago, suma"
 msgid "product, store, ecommerce, pay, payment"
 msgstr "producto, tienda, comercio electrónico, pagar, pago"
 
-#: src/Admin/Education/Fields.php:303
+#: src/Admin/Education/Fields.php:313
 msgid "captcha, spam, antispam"
 msgstr "captcha, spam, antispam"
 
-#: src/Admin/Education/Fields.php:243
+#: src/Admin/Education/Fields.php:253
 #: src/Forms/Fields/Addons/Coupon/Field.php:35
 msgid "discount, sale"
 msgstr "descuento, oferta"
 
-#: src/Admin/Education/Fields.php:223
+#: src/Admin/Education/Fields.php:233
 #: src/Integrations/PayPalCommerce/Fields/PayPalCommerce.php:44
 #: src/Integrations/Square/Fields/Square.php:25
 #: src/Integrations/Stripe/Fields/Traits/CreditCard.php:23
@@ -8340,6 +8441,11 @@ msgstr "Estadísticas de uso"
 msgid "Start and End Dates"
 msgstr "Fechas de inicio y final"
 
+#. translators: %1$s - WPForms.com Upgrade page URL.
+#: src/Admin/Payments/Views/Coupons/Education.php:171
+msgid "With the Coupons addon, you can offer customers discounts using custom coupon codes. Create your own percentage or fixed rate discount, then add the Coupon field to any payment form. When a customer enters your unique code, they’ll receive the specified discount. You can also add limits to restrict when coupons are available and how often they can be used. The Coupons addon requires a license level of Pro or higher.%s"
+msgstr "Con la extensión de cupones, puedes ofrecer descuentos a tus clientes utilizando códigos de cupón personalizados. Crea tu propio descuento porcentual o fijo y añade el campo de cupón a cualquier formulario de pago. Cuando un cliente introduzca su código exclusivo, recibirá el descuento especificado. También puedes añadir límites para restringir cuándo están disponibles los cupones y con qué frecuencia se pueden utilizar. La extensión de cupones requiere un nivel de licencia Pro o superior.%s"
+
 #: src/Admin/Payments/Views/Coupons/Education.php:152
 msgid "Once Per Email Address Limit"
 msgstr "Límite de una vez por dirección de correo electrónico"
@@ -8351,11 +8457,6 @@ msgstr "Porcentaje de descuentos fijos"
 #: src/Admin/Payments/Views/Coupons/Education.php:151
 msgid "Maximum Usage Limit"
 msgstr "Límite de uso máximo"
-
-#. translators: %1$s - WPForms.com Upgrade page URL.
-#: src/Admin/Payments/Views/Coupons/Education.php:171
-msgid "With the Coupons addon, you can offer customers discounts using custom coupon codes. Create your own percentage or fixed rate discount, then add the Coupon field to any payment form. When a customer enters your unique code, they’ll receive the specified discount. You can also add limits to restrict when coupons are available and how often they can be used. The Coupons addon requires a license level of Pro or higher.%s"
-msgstr "Con la extensión de cupones, puedes ofrecer descuentos a tus clientes utilizando códigos de cupón personalizados. Crea tu propio descuento porcentual o fijo y añade el campo de cupón a cualquier formulario de pago. Cuando un cliente introduzca su código exclusivo, recibirá el descuento especificado. También puedes añadir límites para restringir cuándo están disponibles los cupones y con qué frecuencia se pueden utilizar. La extensión de cupones requiere un nivel de licencia Pro o superior.%s"
 
 #: src/Admin/Payments/Views/Coupons/Education.php:148
 msgid "Custom Coupon Codes"
@@ -8724,17 +8825,17 @@ msgstr "Vacío"
 #. translators: %1$s - data source name (e.g., Categories, Posts), %2$s - data
 #. source type (e.g., post type, taxonomy).
 #: includes/admin/builder/class-builder.php:877
-#: includes/fields/class-base.php:4802
+#: includes/fields/class-base.php:4841
 msgid "This field will not be displayed in your form since there are no %2$s belonging to %1$s."
 msgstr "Este campo no se mostrará en tu formulario ya que no hay %2$s que pertenezcan a %1$s."
 
 #: includes/admin/builder/class-builder.php:882
-#: includes/fields/class-base.php:4788
+#: includes/fields/class-base.php:4827
 msgid "posts"
 msgstr "publicaciones"
 
 #: includes/admin/builder/class-builder.php:883
-#: includes/fields/class-base.php:4793
+#: includes/fields/class-base.php:4832
 msgid "terms"
 msgstr "términos"
 
@@ -8752,11 +8853,11 @@ msgstr "Acceso a todos los campos estándar, avanzados y de pago"
 msgid "Limited Payment Forms"
 msgstr "Formularios de pago limitadas"
 
-#: includes/fields/class-base.php:4782
+#: includes/fields/class-base.php:4821
 msgid "Dynamic choices"
 msgstr "Seleccione dinámicas"
 
-#: includes/fields/class-base.php:4783
+#: includes/fields/class-base.php:4822
 msgid "items"
 msgstr "elementos"
 
@@ -9033,7 +9134,7 @@ msgstr "Reembolso"
 msgid "Method"
 msgstr "Método"
 
-#: src/Admin/Education/Fields.php:242
+#: src/Admin/Education/Fields.php:252
 #: src/Admin/Payments/Views/Overview/Table.php:96
 #: src/Admin/Payments/Views/Single.php:372
 #: src/Admin/Payments/Views/Single.php:856
@@ -9660,6 +9761,7 @@ msgstr "Vaya, parece que estás trabajando en una página de contacto."
 #: src/Admin/Education/Builder/Calculations.php:139
 #: src/Admin/Education/Builder/Calculations.php:178
 #: src/Admin/Education/Builder/Quiz.php:123
+#: src/Admin/Education/Builder/Ranking.php:85
 #: templates/education/admin/edit-post/classic-notice.php:27
 msgid "Dismiss this notice."
 msgstr "Descartar este aviso."
@@ -10080,6 +10182,7 @@ msgid "Available Templates"
 msgstr "Plantillas disponibles"
 
 #: src/Admin/Education/Fields.php:102
+#: src/Forms/Fields/Addons/Ranking/Field.php:348
 msgid "Layout"
 msgstr "Diseño"
 
@@ -10909,7 +11012,7 @@ msgstr "No puedes editar este formulario porque está en la papelera."
 
 #: includes/admin/builder/class-builder.php:151
 #: includes/admin/builder/class-builder.php:177
-#: src/Integrations/AI/Admin/Ajax/Forms.php:320
+#: src/Integrations/AI/Admin/Ajax/Forms.php:321
 msgid "It looks like the form you are trying to access is no longer available."
 msgstr "Parece que el formulario al que intentas acceder ya no está disponible."
 
@@ -11081,12 +11184,12 @@ msgstr "Este campo no se puede borrar."
 msgid "Security"
 msgstr "Seguridad"
 
-#: includes/fields/class-base.php:3021
+#: includes/fields/class-base.php:3101
 msgid "Label Hidden"
 msgstr "Etiqueta oculta"
 
 #: includes/admin/builder/class-builder.php:1010
-#: includes/fields/class-base.php:3020
+#: includes/fields/class-base.php:3100
 msgid "Empty Label"
 msgstr "Etiqueta vacía"
 
@@ -11128,7 +11231,7 @@ msgstr "%1$s de %2$s caracteres máximos."
 msgid "%1$s of %2$s max words."
 msgstr "%1$s de %2$s palabras máximas."
 
-#: includes/fields/class-base.php:3022
+#: includes/fields/class-base.php:3102
 msgid "To ensure your form is accessible, every field should have a descriptive label. If you'd like to hide the label, you can do so by enabling Hide Label in the Advanced Field Options tab."
 msgstr "Para asegurar que tu formulario es accesible, cada campo debería tener una etiqueta descriptiva. Si te gustaría ocultar la etiqueta, puedes hacerlo activando «Ocultar la etiqueta» en la pestaña de las opciones avanzadas del campo."
 
@@ -11149,7 +11252,7 @@ msgid "Could not activate the plugin. Please activate it on the Plugins page."
 msgstr "No se ha podido activar el plugin. Por favor, actívalo en la página de plugins."
 
 #: includes/admin/builder/panels/class-fields.php:525
-#: includes/fields/class-base.php:3558
+#: includes/fields/class-base.php:3566
 msgid "Hide Helper"
 msgstr "Ocultar el asistente"
 
@@ -11337,12 +11440,12 @@ msgid "Addon Templates"
 msgstr "Plantillas de extensión"
 
 #: includes/admin/builder/panels/class-fields.php:524
-#: includes/fields/class-base.php:3557
+#: includes/fields/class-base.php:3565
 msgid "Drag to Reorder"
 msgstr "Arrastra para reordenar"
 
 #: includes/admin/builder/panels/class-fields.php:523
-#: includes/fields/class-base.php:3556
+#: includes/fields/class-base.php:3564
 msgid "Click to Edit"
 msgstr "Haz clic para editar"
 
@@ -12062,7 +12165,7 @@ msgid "Something went wrong while saving the form."
 msgstr "Algo ha salido mal al guardar el formulario."
 
 #: includes/admin/ajax-actions.php:28 includes/admin/ajax-actions.php:396
-#: includes/fields/class-base.php:3414
+#: includes/fields/class-base.php:3422
 #: src/Admin/Builder/Ajax/PanelLoader.php:134 src/Admin/FormEmbedWizard.php:290
 #: src/Admin/FormEmbedWizard.php:610 src/Admin/Forms/Ajax/Tags.php:200
 #: src/Admin/Forms/Ajax/Tags.php:240
@@ -12080,14 +12183,14 @@ msgid "You are not allowed to perform this action."
 msgstr "No tienes permisos para realizar esta acción."
 
 #: includes/admin/ajax-actions.php:23 includes/admin/ajax-actions.php:1048
-#: includes/fields/class-base.php:3409 src/Admin/FormEmbedWizard.php:603
+#: includes/fields/class-base.php:3417 src/Admin/FormEmbedWizard.php:603
 #: src/Integrations/AI/Admin/Ajax/Choices.php:57
 #: src/Integrations/AI/Admin/Ajax/FormEditor.php:61
 #: src/Integrations/AI/Admin/Ajax/FormEditor.php:155
-#: src/Integrations/AI/Admin/Ajax/Forms.php:91
-#: src/Integrations/AI/Admin/Ajax/Forms.php:130
-#: src/Integrations/AI/Admin/Ajax/Forms.php:280
-#: src/Integrations/AI/Admin/Ajax/Forms.php:421
+#: src/Integrations/AI/Admin/Ajax/Forms.php:92
+#: src/Integrations/AI/Admin/Ajax/Forms.php:131
+#: src/Integrations/AI/Admin/Ajax/Forms.php:281
+#: src/Integrations/AI/Admin/Ajax/Forms.php:422
 msgid "Your session expired. Please reload the builder."
 msgstr "Tu sesión ha caducado. Por favor, recarga el maquetador."
 
@@ -12291,7 +12394,7 @@ msgstr "Eliminar forzosamente otras apariciones de CAPTCHA para evitar conflicto
 #. translators: %d - choice ID.
 #. translators: %d - Choice ID.
 #: includes/fields/class-base.php:607 includes/fields/class-base.php:645
-#: includes/fields/class-base.php:4847
+#: includes/fields/class-base.php:4886
 #: src/Integrations/PayPalCommerce/Process/Base.php:290
 #: src/Integrations/PayPalCommerce/Process/Process.php:1270
 #: src/Integrations/Square/Process.php:803
@@ -12389,7 +12492,7 @@ msgstr "Permitir el seguimiento de uso"
 msgid "By allowing us to track usage data, we can better help you, as we will know which WordPress configurations, themes, and plugins we should test."
 msgstr "Al permitirnos rastrear tus datos de uso, podemos ayudarte mejor, ya que sabremos con qué configuraciones, temas y plugins para WordPress debemos probar."
 
-#: src/Admin/Education/Fields.php:222
+#: src/Admin/Education/Fields.php:232
 #: src/Admin/Payments/Views/Overview/Page.php:433
 msgid "Authorize.Net"
 msgstr "Authorize.Net"
@@ -12430,11 +12533,11 @@ msgstr "Estilo"
 msgid "Classic style is the default one generated by your browser. Modern has a fresh look and displays all selected options in a single row."
 msgstr "El estilo clásico es el creado por defecto por tu navegador. El moderno tiene un aspecto fresco y muestra todas las opciones seleccionadas en una sola fila."
 
-#: includes/fields/class-base.php:4082
+#: includes/fields/class-base.php:4090
 msgid "Only unique values can be added"
 msgstr "Solo pueden añadirse valores únicos"
 
-#: includes/fields/class-base.php:4083
+#: includes/fields/class-base.php:4091
 msgid "Only values matching specific conditions can be added"
 msgstr "Solo pueden añadirse valores que coincidan con condiciones específicas"
 
@@ -12587,12 +12690,12 @@ msgid "You should enter a valid absolute address to the Confirmation Redirect UR
 msgstr "Debes introducir una dirección absoluta válida en el campo de la URL de redirección de confirmación."
 
 #: includes/admin/builder/class-builder.php:169
-#: src/Integrations/AI/Admin/Ajax/Forms.php:301
+#: src/Integrations/AI/Admin/Ajax/Forms.php:302
 msgid "Sorry, you are not allowed to edit this form."
 msgstr "Lo siento, no tienes permiso para editar este formulario."
 
 #: includes/admin/builder/class-builder.php:165
-#: src/Integrations/AI/Admin/Ajax/Forms.php:295
+#: src/Integrations/AI/Admin/Ajax/Forms.php:296
 msgid "Sorry, you are not allowed to create new forms."
 msgstr "Lo siento, no tienes permiso para crear nuevos formularios."
 
@@ -13242,7 +13345,7 @@ msgstr "MonsterInsights Pro"
 msgid "Choice Limit"
 msgstr "Límite de elección"
 
-#: includes/admin/class-settings.php:550 includes/fields/class-base.php:5121
+#: includes/admin/class-settings.php:550 includes/fields/class-base.php:5160
 #: src/Frontend/Frontend.php:1863
 msgid "You have exceeded the number of allowed selections: {#}."
 msgstr "Has excedido el número de selecciones permitidas: {#}."
@@ -13385,7 +13488,7 @@ msgid "How to Choose the Right Form Field"
 msgstr "Cómo elegir el campo de formulario adecuado"
 
 #: includes/admin/admin.php:189 includes/admin/admin.php:325
-#: includes/fields/class-base.php:4079 src/Admin/Forms/Tags.php:179
+#: includes/fields/class-base.php:4087 src/Admin/Forms/Tags.php:179
 msgid "Loading..."
 msgstr "Cargando…"
 
@@ -13481,7 +13584,7 @@ msgstr "Primeros pasos"
 msgid "Advanced Form Features"
 msgstr "Características avanzadas del formulario"
 
-#: includes/admin/admin.php:191 includes/fields/class-base.php:4081
+#: includes/admin/admin.php:191 includes/fields/class-base.php:4089
 msgid "No choices to choose from"
 msgstr "No hay opciones para elegir"
 
@@ -15800,7 +15903,7 @@ msgid "Thanks for being a loyal WPForms Lite user. <strong>Upgrade to WPForms Pr
 msgstr "Gracias por ser un usuario leal de WPForms Lite. <strong>Actualiza a WPForms Pro</strong> para desbloquear todas las impresionantes características y experiencias <br>por las que WPForms es constantemente calificado como el mejor creador de formularios para WordPress."
 
 #: includes/admin/admin.php:190 includes/admin/builder/class-builder.php:1018
-#: includes/fields/class-base.php:4080 src/Admin/Forms/Tags.php:180
+#: includes/fields/class-base.php:4088 src/Admin/Forms/Tags.php:180
 msgid "No results found"
 msgstr "No se han encontrado resultados"
 
@@ -17001,6 +17104,7 @@ msgstr "Mostrar todos los formularios"
 #: includes/fields/class-internal-information.php:456
 #: includes/fields/class-internal-information.php:684
 #: lite/templates/education/builder/did-you-know.php:27
+#: src/Admin/Education/Builder/Ranking.php:91
 #: src/Admin/Education/FeatureTooltip.php:93
 #: src/Admin/Notifications/EventDriven.php:591
 #: src/Admin/Notifications/EventDriven.php:651
@@ -17199,6 +17303,7 @@ msgid "To display all form fields, use the %s Smart Tag."
 msgstr "Para mostrar todos los campos de formulario, utiliza la etiqueta inteligente %s."
 
 #: includes/fields/class-checkbox.php:313 includes/fields/class-radio.php:358
+#: src/Forms/Fields/Addons/Ranking/Field.php:204
 msgid "Randomize Choices"
 msgstr "Respuestas aleatorias"
 
@@ -17244,6 +17349,7 @@ msgstr "Etiqueta"
 #: src/Admin/Builder/Settings/Themes.php:104
 #: src/Admin/Builder/Settings/Themes.php:967 src/Admin/Settings/Email.php:369
 #: src/Forms/Fields/Addons/Map/Field.php:750
+#: src/Forms/Fields/Addons/Ranking/Field.php:264
 #: src/Forms/Fields/Rating/Field.php:233 src/Forms/IconChoices.php:133
 #: src/Integrations/Elementor/WidgetModern.php:78
 #: src/Integrations/Elementor/WidgetModern.php:532
@@ -17269,6 +17375,7 @@ msgstr "Integrar %s con WPForms"
 #: src/Admin/Builder/Settings/Themes.php:103
 #: src/Admin/Builder/Settings/Themes.php:966 src/Admin/Settings/Email.php:368
 #: src/Forms/Fields/Addons/Map/Field.php:749
+#: src/Forms/Fields/Addons/Ranking/Field.php:265
 #: src/Forms/Fields/Password/Field.php:132
 #: src/Forms/Fields/Rating/Field.php:232 src/Forms/IconChoices.php:137
 #: src/Integrations/Elementor/WidgetModern.php:77
@@ -17301,7 +17408,7 @@ msgstr "Mostrar etiquetas inteligentes"
 
 #: includes/admin/builder/class-builder.php:942
 #: includes/admin/builder/panels/class-fields.php:502
-#: includes/fields/class-base.php:3535
+#: includes/fields/class-base.php:3543
 msgid "Duplicate Field"
 msgstr "Duplicar el campo"
 
@@ -17426,6 +17533,7 @@ msgstr "Una columna"
 #: src/Admin/Builder/Settings/Themes.php:102
 #: src/Admin/Builder/Settings/Themes.php:965 src/Admin/Settings/Email.php:367
 #: src/Forms/Fields/Addons/Map/Field.php:748
+#: src/Forms/Fields/Addons/Ranking/Field.php:266
 #: src/Forms/Fields/Rating/Field.php:231 src/Forms/IconChoices.php:141
 #: src/Integrations/Elementor/WidgetModern.php:76
 #: src/Integrations/Elementor/WidgetModern.php:530
@@ -17640,7 +17748,7 @@ msgstr "Net Promoter Score"
 #. translators: %s - choice number.
 #. translators: %s is the choice number.
 #: includes/admin/builder/class-builder.php:996
-#: includes/fields/class-base.php:4511 includes/fields/class-checkbox.php:136
+#: includes/fields/class-base.php:4550 includes/fields/class-checkbox.php:136
 #: includes/fields/class-checkbox.php:756 includes/fields/class-radio.php:183
 #: includes/fields/class-radio.php:754
 msgid "Choice %s"
@@ -17803,6 +17911,7 @@ msgid "See Geolocation Data"
 msgstr "Ver los datos de geolocalización"
 
 #: includes/fields/class-checkbox.php:314 includes/fields/class-radio.php:359
+#: src/Forms/Fields/Addons/Ranking/Field.php:205
 msgid "Check this option to randomize the order of the choices."
 msgstr "Marca esta opción para hacer aleatorio el orden de las opciones."
 
@@ -17861,7 +17970,7 @@ msgstr "Selecciona el método de llenado automático a usar."
 msgid "Select %s to use for auto-populating field choices."
 msgstr "Selecciona %s para usar en las opciones de llenado automático del campo."
 
-#: includes/fields/class-base.php:3424
+#: includes/fields/class-base.php:3432
 msgid "No field type found"
 msgstr "No se ha encontrado ningún tipo de campo"
 
@@ -17895,7 +18004,7 @@ msgstr "Subir una imagen"
 msgid "Go to URL (Redirect)"
 msgstr "Ir a la URL (redireccionar)"
 
-#: includes/fields/class-base.php:3419
+#: includes/fields/class-base.php:3427
 msgid "No form ID found"
 msgstr "No se ha encontrado ningún ID de formulario"
 
@@ -17992,7 +18101,7 @@ msgid "Add choices for the form field."
 msgstr "Añade opciones para el campo de formulario."
 
 #: includes/admin/builder/panels/class-fields.php:508
-#: includes/fields/class-base.php:3541
+#: includes/fields/class-base.php:3549
 msgid "Delete Field"
 msgstr "Borrar el campo"
 
@@ -18129,7 +18238,7 @@ msgstr "Actualiza ahora"
 #: src/Admin/Tools/Importers/NinjaForms.php:152
 #: src/Admin/Tools/Importers/NinjaForms.php:441
 #: src/Admin/Tools/Importers/PirateForms.php:467
-#: src/Integrations/AI/Admin/Ajax/Forms.php:227
+#: src/Integrations/AI/Admin/Ajax/Forms.php:228
 msgid "New Entry: %s"
 msgstr "Nuevo envío: %s"
 

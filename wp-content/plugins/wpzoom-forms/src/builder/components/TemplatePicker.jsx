@@ -27,6 +27,7 @@ export default function TemplatePicker({ presetTemplate }) {
 	const [ selectedId, setSelectedId ] = useState( null );
 	const [ creating,   setCreating ]   = useState( false );
 	const [ error,      setError ]      = useState( '' );
+	const [ query,      setQuery ]      = useState( '' );
 
 	useEffect( () => {
 		api.getTemplates()
@@ -70,9 +71,18 @@ export default function TemplatePicker({ presetTemplate }) {
 		);
 	}
 
-	const items = [ BLANK, ...templates ];
-	const selected = items.find( ( t ) => t.id === selectedId ) || items[0];
-	const proCount = templates.filter( ( t ) => t.isPro ).length;
+	// Filter templates by the search query (name + description). While searching,
+	// the Blank option is hidden so the results stay focused on matching templates.
+	const q = query.trim().toLowerCase();
+	const matchesQuery = ( t ) =>
+		! q ||
+		( t.name && t.name.toLowerCase().includes( q ) ) ||
+		( t.desc && t.desc.toLowerCase().includes( q ) );
+
+	const items     = q ? templates.filter( matchesQuery ) : [ BLANK, ...templates ];
+	const selected  = items.find( ( t ) => t.id === selectedId ) || items[0] || null;
+	const proCount  = templates.filter( ( t ) => t.isPro ).length;
+	const noResults = q && items.length === 0;
 
 	return (
 		<div className="wpzf-picker">
@@ -100,10 +110,40 @@ export default function TemplatePicker({ presetTemplate }) {
 
 			<div className="wpzf-picker__split">
 				<aside className="wpzf-picker__list">
+					<div className="wpzf-picker__search">
+						<svg className="wpzf-picker__search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+							<path d="M11 4a7 7 0 1 0 4.2 12.6l4.1 4.1 1.4-1.4-4.1-4.1A7 7 0 0 0 11 4Zm0 2a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z" fill="currentColor"/>
+						</svg>
+						<input
+							type="search"
+							className="wpzf-picker__search-input"
+							placeholder={ __( 'Search templates…', 'wpzoom-forms' ) }
+							value={ query }
+							onChange={ ( e ) => setQuery( e.target.value ) }
+							aria-label={ __( 'Search templates', 'wpzoom-forms' ) }
+						/>
+						{ query && (
+							<button
+								type="button"
+								className="wpzf-picker__search-clear"
+								onClick={ () => setQuery( '' ) }
+								aria-label={ __( 'Clear search', 'wpzoom-forms' ) }
+							>
+								<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.3 5.7 12 12l6.3 6.3-1.4 1.4L10.6 13.4 4.3 19.7 2.9 18.3 9.2 12 2.9 5.7 4.3 4.3l6.3 6.3L16.9 4.3z"/></svg>
+							</button>
+						) }
+					</div>
+
+					{ noResults && (
+						<p className="wpzf-picker__no-results">
+							{ __( 'No templates match your search.', 'wpzoom-forms' ) }
+						</p>
+					) }
+
 					{ items.map( ( t ) => (
 						<button
 							key={ t.id || 'blank' }
-							className={ cls( 'wpzf-picker__item', selected.id === t.id && 'is-selected', t.isPro && 'is-pro' ) }
+							className={ cls( 'wpzf-picker__item', selected && selected.id === t.id && 'is-selected', t.isPro && 'is-pro' ) }
 							onClick={ () => setSelectedId( t.id ) }
 							onDoubleClick={ () => ! t.isPro && create( t.id ) }
 						>
@@ -130,30 +170,38 @@ export default function TemplatePicker({ presetTemplate }) {
 				</aside>
 
 				<section className="wpzf-picker__preview">
-					<div className="wpzf-picker__preview-header">
-						<div>
-							<h2>
-								{ selected.name }
-								{ selected.isPro && <span className="wpzf-picker__pro-badge">PRO</span> }
-							</h2>
-							<p>{ selected.desc }</p>
+					{ ! selected ? (
+						<div className="wpzf-picker__empty" style={ { margin: 'auto' } }>
+							<p>{ __( 'No templates match your search. Try a different keyword.', 'wpzoom-forms' ) }</p>
 						</div>
-						{ selected.isPro ? (
-							<a className="wpzf-btn wpzf-btn--primary" href={ UPGRADE_URL } target="_blank" rel="noreferrer">
-								{ __( 'Upgrade to PRO', 'wpzoom-forms' ) }
-							</a>
-						) : (
-							<button className="wpzf-btn wpzf-btn--primary" onClick={ () => create( selected.id ) }>
-								{ selected.id ? __( 'Use This Template', 'wpzoom-forms' ) : __( 'Start Blank', 'wpzoom-forms' ) }
-							</button>
-						) }
-					</div>
-					<div className="wpzf-picker__preview-canvas">
-						{ selected.isPro
-							? <ProTemplatePlaceholder template={ selected } proCount={ proCount } />
-							: <TemplatePreview schema={ selected.schema } />
-						}
-					</div>
+					) : (
+						<>
+							<div className="wpzf-picker__preview-header">
+								<div>
+									<h2>
+										{ selected.name }
+										{ selected.isPro && <span className="wpzf-picker__pro-badge">PRO</span> }
+									</h2>
+									<p>{ selected.desc }</p>
+								</div>
+								{ selected.isPro ? (
+									<a className="wpzf-btn wpzf-btn--primary" href={ UPGRADE_URL } target="_blank" rel="noreferrer">
+										{ __( 'Upgrade to PRO', 'wpzoom-forms' ) }
+									</a>
+								) : (
+									<button className="wpzf-btn wpzf-btn--primary" onClick={ () => create( selected.id ) }>
+										{ selected.id ? __( 'Use This Template', 'wpzoom-forms' ) : __( 'Start Blank', 'wpzoom-forms' ) }
+									</button>
+								) }
+							</div>
+							<div className="wpzf-picker__preview-canvas">
+								{ selected.isPro
+									? <ProTemplatePlaceholder template={ selected } proCount={ proCount } />
+									: <TemplatePreview schema={ selected.schema } />
+								}
+							</div>
+						</>
+					) }
 				</section>
 			</div>
 		</div>

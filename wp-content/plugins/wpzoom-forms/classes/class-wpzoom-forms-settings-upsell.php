@@ -11,17 +11,17 @@ class WPZOOM_Forms_Settings_Upsell {
 		?>
 		<div id="tab-upsell">
 		<div class="wpzoom-forms-settings-upsell-page-container">
-			<img src="<?php echo WPZOOM_FORMS_URL; ?>/dist/assets/admin/images/pro-page.png" alt="Upgrade to WPZOOM Forms PRO">
+			<img src="<?php echo WPZOOM_FORMS_URL; ?>/dist/assets/admin/images/pro-page.png" alt="<?php esc_attr_e( 'Upgrade to WPZOOM Forms PRO', 'wpzoom-forms' ); ?>">
 			<div class="wpzoom-forms-settings-upsell-page-container-header">
-				<h2>Upgrade to WPZOOM Forms PRO</h2>
-				<p>Take your forms to the next level with WPZOOM Forms PRO. Enjoy advanced features designed to help you streamline submissions, improve performance, and deliver a better user experience.</p>
-				<a href="https://www.wpzoom.com/plugins/wpzoom-forms/?utm_source=wpadmin&utm_medium=wpzoom-forms-free&utm_campaign=upgrade-to-pro-upsell-page" target="_blank" class="button button-primary">Upgrade to PRO</a>
+				<h2><?php esc_html_e( 'Upgrade to WPZOOM Forms PRO', 'wpzoom-forms' ); ?></h2>
+				<p><?php esc_html_e( 'Take your forms to the next level with WPZOOM Forms PRO. Enjoy advanced features designed to help you streamline submissions, improve performance, and deliver a better user experience.', 'wpzoom-forms' ); ?></p>
+				<a href="https://www.wpzoom.com/plugins/wpzoom-forms/?utm_source=wpadmin&utm_medium=wpzoom-forms-free&utm_campaign=upgrade-to-pro-upsell-page" target="_blank" class="button button-primary"><?php esc_html_e( 'Upgrade to PRO', 'wpzoom-forms' ); ?></a>
 			</div>
 			<div class="wpzoom-forms-settings-upsell-page-container-content">
-				<h3>Unlock powerful features to build smarter, more flexible forms</h3>
+				<h3><?php esc_html_e( 'Unlock powerful features to build smarter, more flexible forms', 'wpzoom-forms' ); ?></h3>
 				<div class="wpzoom-forms-settings-upsell-grid">
 					<div class="section">
-						<span class="wpzoom-forms-pro-badge">PRO</span>
+						<span class="wpzoom-forms-pro-badge"><?php esc_html_e( 'PRO', 'wpzoom-forms' ); ?></span>
 						<h4>
 						<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path d="M17.9538 25.5626C18.2973 25.19 18.8742 25.1308 19.2884 25.4415C19.7296 25.773 19.8188 26.3996 19.4876 26.8412L19.3288 27.0404C18.5082 28.0102 17.2991 28.5742 16.0202 28.5743C14.7412 28.5743 13.5323 28.0102 12.7116 27.0404L12.5527 26.8412L12.4954 26.7566C12.2335 26.3225 12.3379 25.7523 12.752 25.4415C13.1662 25.1308 13.7431 25.1898 14.0866 25.5626L14.1517 25.6407L14.3288 25.8503C14.7666 26.3103 15.3773 26.5743 16.0202 26.5743C16.6632 26.5742 17.2725 26.3091 17.7103 25.849L17.9538 25.5626Z" fill="#242628"/>
@@ -32,120 +32,107 @@ class WPZOOM_Forms_Settings_Upsell {
 							<path d="M3.18294 3.67715C3.4701 3.24651 4.03322 3.11087 4.48112 3.34773L4.56966 3.39981L5.87565 4.2696L5.95768 4.3308C6.34855 4.65297 6.43963 5.22563 6.15299 5.65632C5.86582 6.08709 5.30147 6.22406 4.85352 5.98705L4.76628 5.93366L3.46029 5.06387L3.37826 5.00268C2.98708 4.68036 2.89574 4.10797 3.18294 3.67715Z" fill="#242628"/>
 						</svg>
 
-							Custom Email Notifications
+							<?php esc_html_e( 'Custom Email Notifications', 'wpzoom-forms' ); ?>
 						</h4>
-						<p class="about">Design and customize the notification emails you receive after each submission. Add field tags, personalize the layout, and control how submission data is displayed.</p>
+						<p class="about"><?php esc_html_e( 'Design and customize the notification emails you receive after each submission. Add field tags, personalize the layout, and control how submission data is displayed.', 'wpzoom-forms' ); ?></p>
 						<p class="section_footer">
-							<strong>Without PRO:</strong> You receive a generic email with limited formatting
+							<strong><?php esc_html_e( 'Without PRO:', 'wpzoom-forms' ); ?></strong> <?php esc_html_e( 'You receive a generic email with limited formatting', 'wpzoom-forms' ); ?>
 						</p>
 					</div>
 					<div class="section">
-						<span class="wpzoom-forms-pro-badge">PRO</span>
+						<span class="wpzoom-forms-pro-badge"><?php esc_html_e( 'PRO', 'wpzoom-forms' ); ?></span>
 						<h4>
 							<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path fill-rule="evenodd" clip-rule="evenodd" d="M13.6009 13.2956C14.3701 12.9741 15.2577 13.1461 15.8509 13.7318L24.3861 22.1576L24.4928 22.2721C25.003 22.8582 25.1441 23.687 24.8457 24.4141C24.5471 25.1412 23.8642 25.6317 23.0892 25.6901L22.9329 25.6953H18.6204L15.8444 28.4128C15.2871 28.9583 14.4742 29.1407 13.7428 28.8958L13.597 28.8411C12.8303 28.5186 12.3316 27.768 12.3314 26.9362V15.2031C12.3314 14.3696 12.832 13.6172 13.6009 13.2956ZM14.373 15.1406C14.3481 15.1511 14.3314 15.1761 14.3314 15.2031V26.9362C14.3316 26.963 14.3483 26.987 14.373 26.9974L14.4108 27.0013C14.4236 26.9989 14.4363 26.9926 14.446 26.9831L17.5124 23.9818L17.6647 23.8594C17.8264 23.7535 18.0169 23.6953 18.2129 23.6953H22.9329L22.9707 23.6849C22.9816 23.6776 22.9903 23.6663 22.9954 23.6536C23.0003 23.6414 23.0018 23.6283 22.9993 23.6159L22.9798 23.5807L14.446 15.1549C14.4268 15.136 14.3979 15.1304 14.373 15.1406Z" fill="#242628"/>
 								<path d="M25.3366 2.99479C27.3621 2.99491 29.0046 4.63848 29.0046 6.66406V14.6667C29.0042 16.6919 27.3619 18.3345 25.3366 18.3346H24.002C23.4501 18.3344 23.0023 17.8864 23.002 17.3346C23.0021 16.7827 23.45 16.3349 24.002 16.3346H25.3366C26.2574 16.3345 27.0042 15.5874 27.0046 14.6667V6.66406C27.0046 5.74305 26.2576 4.99622 25.3366 4.99609H6.66211C5.74102 4.99609 4.99414 5.74297 4.99414 6.66406V14.6667C4.99449 15.5875 5.74124 16.3346 6.66211 16.3346H9.33008L9.43164 16.3398C9.93591 16.3909 10.3299 16.8169 10.3301 17.3346C10.3297 17.8522 9.93581 18.2784 9.43164 18.3294L9.33008 18.3346H6.66211C4.63667 18.3346 2.99449 16.692 2.99414 14.6667V6.66406C2.99414 4.63841 4.63645 2.99479 6.66211 2.99479H25.3366Z" fill="#242628"/>
 							</svg>
-							AJAX Form Submissions
+							<?php esc_html_e( 'AJAX Form Submissions', 'wpzoom-forms' ); ?>
 						</h4>
-						<p class="about">Let users submit forms without reloading the page. Keep them on the same screen and show instant confirmation messages.</p>
+						<p class="about"><?php esc_html_e( 'Let users submit forms without reloading the page. Keep them on the same screen and show instant confirmation messages.', 'wpzoom-forms' ); ?></p>
 						<p class="section_footer">
-							<strong>Without PRO:</strong> Submitting a form reloads the page, disrupting the user experience.
+							<strong><?php esc_html_e( 'Without PRO:', 'wpzoom-forms' ); ?></strong> <?php esc_html_e( 'Submitting a form reloads the page, disrupting the user experience.', 'wpzoom-forms' ); ?>
 						</p>
 					</div>
 					<div class="section">
-						<span class="wpzoom-forms-pro-badge">PRO</span>
+						<span class="wpzoom-forms-pro-badge"><?php esc_html_e( 'PRO', 'wpzoom-forms' ); ?></span>
 						<h4>
 						<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path d="M12.9154 4.35156C13.5761 4.43363 14.1761 4.79501 14.556 5.35287L16.4297 8.10677L16.4831 8.16927C16.5434 8.22314 16.623 8.2539 16.7057 8.25391H25.3333L25.7083 8.27214C27.5572 8.46 28.9999 10.0222 29 11.9206V24L28.9818 24.362C28.8987 25.2016 28.5276 25.9906 27.9258 26.5924C27.324 27.1943 26.5349 27.5653 25.6953 27.6484L25.3333 27.6667H21.3333C20.781 27.6667 20.3333 27.219 20.3333 26.6667C20.3333 26.1144 20.781 25.6667 21.3333 25.6667H25.3333L25.4987 25.6589C25.8801 25.621 26.2383 25.4518 26.5117 25.1784C26.7851 24.905 26.9543 24.5468 26.9922 24.1654L27 24V11.9206C27 11.0577 26.3443 10.3472 25.5039 10.2617L25.3333 10.2539H16.7057C16.0295 10.2539 15.3917 9.95988 14.9518 9.45833L14.776 9.23177L12.9023 6.47917C12.8559 6.41092 12.7866 6.36335 12.7083 6.34375L12.6276 6.33333H6.66667C6.22468 6.33321 5.80082 6.50908 5.48828 6.82162C5.17575 7.13415 4.99988 7.55801 5 8V24L5.00781 24.1654C5.04567 24.5468 5.21489 24.905 5.48828 25.1784C5.80082 25.4909 6.22467 25.6668 6.66667 25.6667H10.6667C11.219 25.6667 11.6667 26.1144 11.6667 26.6667C11.6667 27.219 11.219 27.6667 10.6667 27.6667H6.66667C5.69415 27.6669 4.7619 27.2801 4.07422 26.5924C3.4724 25.9906 3.10135 25.2016 3.01823 24.362L3 24V8C2.99981 7.02748 3.38654 6.09523 4.07422 5.40755C4.7619 4.71987 5.69415 4.33314 6.66667 4.33333H12.6276L12.9154 4.35156Z" fill="#242628"/>
 							<path d="M16.0339 17.668C16.0425 17.6683 16.0512 17.6687 16.0599 17.6693C16.1119 17.6723 16.1627 17.6794 16.2122 17.6901C16.2566 17.6997 16.2995 17.7148 16.3424 17.7305C16.3591 17.7366 16.377 17.7392 16.3932 17.7461C16.4187 17.757 16.4415 17.7734 16.4661 17.7865C16.4979 17.8033 16.5303 17.8185 16.5599 17.8385C16.6117 17.8736 16.6612 17.9138 16.707 17.9596L19.3737 20.6263L19.4427 20.7018C19.7631 21.0946 19.7398 21.6742 19.3737 22.0404C19.0076 22.4065 18.4279 22.4298 18.0352 22.1094L17.9596 22.0404L17 21.0807V26.6667C17 27.2189 16.5523 27.6667 16 27.6667C15.4477 27.6667 15 27.2189 15 26.6667V21.0807L14.0404 22.0404C13.6498 22.4309 13.0168 22.4309 12.6263 22.0404C12.2358 21.6498 12.2358 21.0168 12.6263 20.6263L15.293 17.9596L15.3685 17.8906C15.3821 17.8795 15.3974 17.8709 15.4115 17.8607C15.4322 17.8455 15.4534 17.8313 15.4753 17.8177C15.5071 17.798 15.5395 17.7801 15.5729 17.7643C15.5972 17.7528 15.6219 17.7426 15.6471 17.7331C15.6839 17.7192 15.7213 17.7086 15.7591 17.6992C15.7859 17.6926 15.8123 17.6841 15.8398 17.6797C15.8546 17.6773 15.8693 17.6749 15.8841 17.6732C15.9221 17.6688 15.9608 17.6667 16 17.6667C16.0113 17.6667 16.0226 17.6676 16.0339 17.668Z" fill="#242628"/>
 						</svg>
-							File Upload Field
+							<?php esc_html_e( 'File Upload Field', 'wpzoom-forms' ); ?>
 						</h4>
-						<p class="about">Let visitors attach PDF files and images, through your forms — perfect for resumes, briefs, or media.</p>
+						<p class="about"><?php esc_html_e( 'Let visitors attach PDF files and images, through your forms — perfect for resumes, briefs, or media.', 'wpzoom-forms' ); ?></p>
 						<p class="section_footer">
-							<strong>Without PRO:</strong> File uploads are not supported
+							<strong><?php esc_html_e( 'Without PRO:', 'wpzoom-forms' ); ?></strong> <?php esc_html_e( 'File uploads are not supported', 'wpzoom-forms' ); ?>
 						</p>
 					</div>
 					<div class="section">
-						<span class="wpzoom-forms-pro-badge">PRO</span>
+						<span class="wpzoom-forms-pro-badge"><?php esc_html_e( 'PRO', 'wpzoom-forms' ); ?></span>
 						<h4>
 							<svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32" fill="#000000"><path d="M479.99-140q-12.76 0-21.37-8.63Q450-157.25 450-170v-237.85L282-239.23q-8.92 8.92-21.19 9.11-12.27.2-21.58-9.11-9.31-9.31-9.31-21.39 0-12.07 9.31-21.38l168.62-168H170q-12.75 0-21.37-8.63-8.63-8.63-8.63-21.38 0-12.76 8.63-21.37Q157.25-510 170-510h237.85L239.23-678q-8.92-8.92-9.11-21.38-.2-12.47 8.92-21.39 9.11-8.92 21.58-8.73 12.46.19 21.38 9.12l168 168.61V-790q0-12.75 8.63-21.37 8.63-8.63 21.38-8.63 12.76 0 21.37 8.63Q510-802.75 510-790v238.23l168.38-169q8.93-8.92 21.2-8.73 12.27.19 21.19 9.04 8.92 8.84 8.92 20.99 0 12.16-8.92 21.09L551.77-510H790q12.75 0 21.37 8.63 8.63 8.63 8.63 21.38 0 12.76-8.63 21.37Q802.75-450 790-450H551.77l169 168.38q8.92 8.93 8.92 21.2t-8.92 21.38q-8.92 9.12-21.39 8.92-12.46-.19-21.38-9.11L510-407.85V-170q0 12.75-8.63 21.37-8.63 8.63-21.38 8.63Z"/></svg>
-							AI Form Generator
+							<?php esc_html_e( 'AI Form Generator', 'wpzoom-forms' ); ?>
 						</h4>
-						<p class="about">Describe your form in simple words and let AI create it for you! Save time and build forms faster with intelligent automation.</p>
+						<p class="about"><?php esc_html_e( 'Describe your form in simple words and let AI create it for you! Save time and build forms faster with intelligent automation.', 'wpzoom-forms' ); ?></p>
 						<p class="section_footer">
-							<strong>Without PRO:</strong> Manual form building only
+							<strong><?php esc_html_e( 'Without PRO:', 'wpzoom-forms' ); ?></strong> <?php esc_html_e( 'Manual form building only', 'wpzoom-forms' ); ?>
 						</p>
 					</div>
 					<div class="section">
-						<span class="wpzoom-forms-pro-badge">PRO</span>
+						<span class="wpzoom-forms-pro-badge"><?php esc_html_e( 'PRO', 'wpzoom-forms' ); ?></span>
 						<h4>
 							<svg viewBox="0 0 24 24" width="32" height="32" fill="#000000" aria-hidden="true" focusable="false"><path d="M11.267 0C6.791-.015-1.82 10.246 1.397 12.964l.79.669a3.88 3.88 0 0 0-.22 1.792c.084.84.518 1.644 1.22 2.266.666.59 1.542.964 2.392.964 1.406 3.24 4.62 5.228 8.386 5.34 4.04.12 7.433-1.776 8.854-5.182.093-.24.488-1.316.488-2.267 0-.956-.54-1.352-.885-1.352-.01-.037-.078-.286-.172-.586-.093-.3-.19-.51-.19-.51.375-.563.382-1.065.332-1.35-.053-.353-.2-.653-.496-.964-.296-.311-.902-.63-1.753-.868l-.446-.124c-.002-.019-.024-1.053-.043-1.497-.014-.32-.042-.822-.197-1.315-.186-.668-.508-1.253-.911-1.627 1.112-1.152 1.806-2.422 1.804-3.511-.003-2.095-2.576-2.729-5.746-1.416l-.672.285A678.22 678.22 0 0 0 12.7.504C12.304.159 11.817.002 11.267 0zm.073.873c.166 0 .322.019.465.058.297.084 1.28 1.224 1.28 1.224s-1.826 1.013-3.52 2.426c-2.28 1.757-4.005 4.311-5.037 7.082-.811.158-1.526.618-1.963 1.253-.261-.218-.748-.64-.834-.804-.698-1.326.761-3.902 1.781-5.357C5.834 3.44 9.37.867 11.34.873zm3.286 3.273c.04-.002.06.05.028.074-.143.11-.299.26-.413.414a.04.04 0 0 0 .031.064c.659.004 1.587.235 2.192.574.041.023.012.103-.034.092-.915-.21-2.414-.369-3.97.01-1.39.34-2.45.863-3.224 1.426-.04.028-.086-.023-.055-.06.896-1.035 1.999-1.935 2.987-2.44.034-.018.07.019.052.052-.079.143-.23.447-.278.678-.007.035.032.063.062.042.615-.42 1.684-.868 2.622-.926zm3.023 3.205l.056.001a.896.896 0 0 1 .456.146c.534.355.61 1.216.638 1.845.015.36.059 1.229.074 1.478.034.571.184.651.487.751.17.057.33.098.563.164.706.198 1.125.4 1.39.658.157.162.23.333.253.497.083.608-.472 1.36-1.942 2.041-1.607.746-3.557.935-4.904.785l-.471-.053c-1.078-.145-1.693 1.247-1.046 2.201.417.615 1.552 1.015 2.688 1.015 2.604 0 4.605-1.111 5.35-2.072a.987.987 0 0 0 .06-.085c.036-.055.006-.085-.04-.054-.608.416-3.31 2.069-6.2 1.571 0 0-.351-.057-.672-.182-.255-.1-.788-.344-.853-.891 2.333.72 3.801.039 3.801.039a.072.072 0 0 0 .042-.072.067.067 0 0 0-.074-.06s-1.911.283-3.718-.378c.197-.64.72-.408 1.51-.345a11.045 11.045 0 0 0 3.647-.394c.818-.234 1.892-.697 2.727-1.356.281.618.38 1.299.38 1.299s.219-.04.4.073c.173.106.299.326.213.895-.176 1.063-.628 1.926-1.387 2.72a5.714 5.714 0 0 1-1.666 1.244c-.34.18-.704.334-1.087.46-2.863.935-5.794-.093-6.739-2.3a3.545 3.545 0 0 1-.189-.522c-.403-1.455-.06-3.2 1.008-4.299.065-.07.132-.153.132-.256 0-.087-.055-.179-.102-.243-.374-.543-1.669-1.466-1.409-3.254.187-1.284 1.31-2.189 2.357-2.135.089.004.177.01.266.015.453.027.85.085 1.223.1.625.028 1.187-.063 1.853-.618.225-.187.405-.35.71-.401.028-.005.092-.028.215-.028zm.022 2.18a.42.42 0 0 0-.06.005c-.335.054-.347.468-.228 1.04.068.32.187.595.32.765.175-.02.343-.022.498 0 .089-.205.104-.557.024-.942-.112-.535-.261-.872-.554-.868zm-3.66 1.546a1.724 1.724 0 0 0-1.016.326c-.16.117-.311.28-.29.378.008.032.031.056.088.063.131.015.592-.217 1.122-.25.374-.023.684.094.923.2.239.104.386.173.443.113.037-.038.026-.11-.031-.204-.118-.192-.36-.387-.618-.497a1.601 1.601 0 0 0-.621-.129zm4.082.81c-.171-.003-.313.186-.317.42-.004.236.131.43.303.432.172.003.314-.185.318-.42.004-.236-.132-.429-.304-.432zm-3.58.172c-.05 0-.102.002-.155.008-.311.05-.483.152-.593.247-.094.082-.152.173-.152.237a.075.075 0 0 0 .075.076c.07 0 .228-.063.228-.063a1.98 1.98 0 0 1 1.001-.104c.157.018.23.027.265-.026.01-.016.022-.049-.01-.1-.063-.103-.311-.269-.66-.275zm2.26.4c-.127 0-.235.051-.283.148-.075.154.035.363.246.466.21.104.443.063.52-.09.075-.155-.035-.364-.246-.467a.542.542 0 0 0-.237-.058zm-11.635.024c.048 0 .098 0 .149.003.73.04 1.806.6 2.052 2.19.217 1.41-.128 2.843-1.449 3.069-.123.02-.248.029-.374.026-1.22-.033-2.539-1.132-2.67-2.435-.145-1.44.591-2.548 1.894-2.811.117-.024.252-.04.398-.042zm-.07.927a1.144 1.144 0 0 0-.847.364c-.38.418-.439.988-.366 1.19.027.073.07.094.1.098.064.008.16-.039.22-.2a1.2 1.2 0 0 0 .017-.052 1.58 1.58 0 0 1 .157-.37.689.689 0 0 1 .955-.199c.266.174.369.5.255.81-.058.161-.154.469-.133.721.043.511.357.717.64.738.274.01.466-.143.515-.256.029-.067.005-.107-.011-.125-.043-.053-.113-.037-.18-.021a.638.638 0 0 1-.16.022.347.347 0 0 1-.294-.148c-.078-.12-.073-.3.013-.504.011-.028.025-.058.04-.092.138-.308.368-.825.11-1.317-.195-.37-.513-.602-.894-.65a1.135 1.135 0 0 0-.138-.01z"></path></svg>
-							Mailchimp Integration
+							<?php esc_html_e( 'Mailchimp Integration', 'wpzoom-forms' ); ?>
 						</h4>
-						<p class="about">Automatically add subscribers to your Mailchimp audiences when they submit your forms. Seamlessly grow your email list.</p>
+						<p class="about"><?php esc_html_e( 'Automatically add subscribers to your Mailchimp audiences when they submit your forms. Seamlessly grow your email list.', 'wpzoom-forms' ); ?></p>
 						<p class="section_footer">
-							<strong>Without PRO:</strong> No email marketing integration
+							<strong><?php esc_html_e( 'Without PRO:', 'wpzoom-forms' ); ?></strong> <?php esc_html_e( 'No email marketing integration', 'wpzoom-forms' ); ?>
 						</p>
 					</div>
 					<div class="section">
-						<span class="wpzoom-forms-pro-badge">PRO</span>
+						<span class="wpzoom-forms-pro-badge"><?php esc_html_e( 'PRO', 'wpzoom-forms' ); ?></span>
 						<h4>
 							<svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32" fill="#000000"><path d="M480-480ZM338.08-207.23 231.15-100.31q-8.92 8.92-21.07 8.81-12.16-.12-21.08-9.42-8.31-8.93-8.42-21.08-.12-12.15 8.81-21.08L296.31-250h-74.62q-12.75 0-21.37-8.63-8.63-8.63-8.63-21.38 0-12.76 8.63-21.37 8.62-8.62 21.37-8.62h140.23q15.37 0 25.76 10.39 10.4 10.4 10.4 25.76v140.23q0 12.75-8.63 21.38-8.63 8.62-21.39 8.62-12.75 0-21.37-8.62-8.61-8.63-8.61-21.38v-73.61ZM209.99-397.69q-12.76 0-21.37-8.63-8.62-8.62-8.62-21.37v-360q0-29.83 21.24-51.07Q222.48-860 252.31-860H570l210 210v477.69q0 29.83-21.24 51.07Q737.52-100 707.69-100H515.77q-12.75 0-21.38-8.63-8.62-8.63-8.62-21.38 0-12.76 8.62-21.37 8.63-8.62 21.38-8.62h191.92q5.39 0 8.85-3.46t3.46-8.85V-620H575.99q-15.3 0-25.64-10.35Q540-640.7 540-656v-144H252.31q-5.39 0-8.85 3.46t-3.46 8.85v360q0 12.75-8.63 21.37-8.63 8.63-21.38 8.63Z"/></svg>
-							Import/Export Forms
+							<?php esc_html_e( 'Import/Export Forms', 'wpzoom-forms' ); ?>
 						</h4>
-						<p class="about">Easily transfer forms between sites or back up your work. Export forms to JSON and import them on any WordPress site.</p>
+						<p class="about"><?php esc_html_e( 'Easily transfer forms between sites or back up your work. Export forms to JSON and import them on any WordPress site.', 'wpzoom-forms' ); ?></p>
 						<p class="section_footer">
-							<strong>Without PRO:</strong> No import/export functionality
+							<strong><?php esc_html_e( 'Without PRO:', 'wpzoom-forms' ); ?></strong> <?php esc_html_e( 'No import/export functionality', 'wpzoom-forms' ); ?>
 						</p>
 					</div>
 					<div class="section">
-						<span class="wpzoom-forms-pro-badge">PRO</span>
+						<span class="wpzoom-forms-pro-badge"><?php esc_html_e( 'PRO', 'wpzoom-forms' ); ?></span>
 						<h4>
 							<svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32" fill="#000000"><path d="M243.08-366.15h82.31q10.3 0 17.07-6.77t6.77-17.08q0-10.31-6.77-17.08-6.77-6.77-17.07-6.77h-70q-2.31 0-4.24-1.92-1.92-1.92-1.92-4.23v-120q0-2.31 1.92-4.23 1.93-1.92 4.24-1.92h70q10.3 0 17.07-6.77t6.77-17.08q0-10.31-6.77-17.08-6.77-6.77-17.07-6.77h-82.31q-17.39 0-29.46 12.08-12.08 12.08-12.08 29.46v144.62q0 17.38 12.08 29.46 12.07 12.08 29.46 12.08Zm176 0h82.3q17.39 0 29.47-12.08 12.07-12.08 12.07-29.46v-48.46q0-17.39-12.07-31.31-12.08-13.92-29.47-13.92h-52.3q-2.31 0-4.23-1.93-1.93-1.92-1.93-4.23V-540q0-2.31 1.93-4.23 1.92-1.92 4.23-1.92h70q10.3 0 17.07-6.77t6.77-17.08q0-10.31-6.77-17.08-6.77-6.77-17.07-6.77h-82.31q-17.38 0-29.46 12.08-12.08 12.08-12.08 29.46v48.46q0 17.39 12.08 30.7 12.08 13.3 29.46 13.3h52.31q2.31 0 4.23 1.93 1.92 1.92 1.92 4.23V-420q0 2.31-1.92 4.23-1.92 1.92-4.23 1.92h-70q-10.31 0-17.08 6.77-6.77 6.77-6.77 17.08 0 10.31 6.77 17.08 6.77 6.77 17.08 6.77Zm257.84-73.54-39.77-137.39q-2.61-7.46-8.57-12.11-5.97-4.66-14.04-4.66-11.69 0-18.46 9.2-6.77 9.19-3.54 20.5l52.23 179.3q2.61 8.23 9.35 13.46 6.73 5.24 15.57 5.24h14.46q8.85 0 15.58-5.24 6.73-5.23 9.35-13.46l52.23-179.3q3.23-11.31-3.54-20.5-6.77-9.2-18.46-9.2-8.08 0-14.04 4.66-5.96 4.65-8.58 12.11l-39.77 137.39ZM172.31-180Q142-180 121-201q-21-21-21-51.31v-455.38Q100-738 121-759q21-21 51.31-21h615.38Q818-780 839-759q21 21 21 51.31v455.38Q860-222 839-201q-21 21-51.31 21H172.31Zm0-60h615.38q4.62 0 8.46-3.85 3.85-3.84 3.85-8.46v-455.38q0-4.62-3.85-8.46-3.84-3.85-8.46-3.85H172.31q-4.62 0-8.46 3.85-3.85 3.84-3.85 8.46v455.38q0 4.62 3.85 8.46 3.84 3.85 8.46 3.85ZM160-240v-480 480Z"/></svg>
-							Export Submissions to CSV
+							<?php esc_html_e( 'Export Submissions to CSV', 'wpzoom-forms' ); ?>
 						</h4>
-						<p class="about">Download form submissions as CSV files for reporting, analysis, or integration with other tools. Perfect for data management.</p>
+						<p class="about"><?php esc_html_e( 'Download form submissions as CSV files for reporting, analysis, or integration with other tools. Perfect for data management.', 'wpzoom-forms' ); ?></p>
 						<p class="section_footer">
-							<strong>Without PRO:</strong> No CSV export available
+							<strong><?php esc_html_e( 'Without PRO:', 'wpzoom-forms' ); ?></strong> <?php esc_html_e( 'No CSV export available', 'wpzoom-forms' ); ?>
 						</p>
 					</div>
 					<div class="section">
-						<span class="wpzoom-forms-pro-badge">PRO</span>
+						<span class="wpzoom-forms-pro-badge"><?php esc_html_e( 'PRO', 'wpzoom-forms' ); ?></span>
 						<h4>
 							<svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32" fill="#000000"><path d="M160-200v-60h84l156-240-156-240h-84v-60h220v60h-64l116 178 116-178h-64v-60h220v60h-84l-156 240 156 240h84v60H524v-60h64L472-438 356-260h64v60H160Z"/></svg>
-							Conditional Logic
+							<?php esc_html_e( 'Conditional Logic', 'wpzoom-forms' ); ?>
 						</h4>
-						<p class="about">Create dynamic forms that adapt based on user input. Show or hide fields depending on previous answers to create personalized form experiences.</p>
+						<p class="about"><?php esc_html_e( 'Create dynamic forms that adapt based on user input. Show or hide fields depending on previous answers to create personalized form experiences.', 'wpzoom-forms' ); ?></p>
 						<p class="section_footer">
-							<strong>Without PRO:</strong> All fields are always visible
+							<strong><?php esc_html_e( 'Without PRO:', 'wpzoom-forms' ); ?></strong> <?php esc_html_e( 'All fields are always visible', 'wpzoom-forms' ); ?>
 						</p>
 					</div>
 
 				</div>
-				<h3>Free vs PRO</h3>
+				<h3><?php esc_html_e( 'Free vs PRO', 'wpzoom-forms' ); ?></h3>
 				<ul class="features-table">
 					<li class="t-head">
 						<div></div>
-						<div class="c">FREE</div>
-						<div class="c"><span>PRO</span></div>
+						<div class="c"><?php esc_html_e( 'FREE', 'wpzoom-forms' ); ?></div>
+						<div class="c"><span><?php esc_html_e( 'PRO', 'wpzoom-forms' ); ?></span></div>
 					</li>
 					<li class="t-row">
-						<div class="h-wrap">Drag-and-Drop Form Builder</div>
-						<div class="c">
-							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M9 0C4.03759 0 0 4.03759 0 9C0 13.9624 4.03759 18 9 18C13.9624 18 18 13.9624 18 9C18 4.03759 13.9624 0 9 0ZM14.0301 6.63158L8.2782 12.3383C7.93985 12.6767 7.3985 12.6992 7.03759 12.3609L3.99248 9.58647C3.63158 9.24812 3.60902 8.68421 3.92481 8.32331C4.26316 7.96241 4.82707 7.93985 5.18797 8.2782L7.6015 10.4887L12.7444 5.34586C13.1053 4.98496 13.6692 4.98496 14.0301 5.34586C14.391 5.70677 14.391 6.27068 14.0301 6.63158Z" fill="#3496FF"/>
-							</svg>
-						</div>
-						<div class="c">
-							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M9 0C4.03759 0 0 4.03759 0 9C0 13.9624 4.03759 18 9 18C13.9624 18 18 13.9624 18 9C18 4.03759 13.9624 0 9 0ZM14.0301 6.63158L8.2782 12.3383C7.93985 12.6767 7.3985 12.6992 7.03759 12.3609L3.99248 9.58647C3.63158 9.24812 3.60902 8.68421 3.92481 8.32331C4.26316 7.96241 4.82707 7.93985 5.18797 8.2782L7.6015 10.4887L12.7444 5.34586C13.1053 4.98496 13.6692 4.98496 14.0301 5.34586C14.391 5.70677 14.391 6.27068 14.0301 6.63158Z" fill="#3496FF"/>
-							</svg>
-						</div>
-					</li>
-					<li class="t-row">
-						<div class="h-wrap">Advanced Spam Protection</div>
+						<div class="h-wrap"><?php esc_html_e( 'Drag-and-Drop Form Builder', 'wpzoom-forms' ); ?></div>
 						<div class="c">
 							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M9 0C4.03759 0 0 4.03759 0 9C0 13.9624 4.03759 18 9 18C13.9624 18 18 13.9624 18 9C18 4.03759 13.9624 0 9 0ZM14.0301 6.63158L8.2782 12.3383C7.93985 12.6767 7.3985 12.6992 7.03759 12.3609L3.99248 9.58647C3.63158 9.24812 3.60902 8.68421 3.92481 8.32331C4.26316 7.96241 4.82707 7.93985 5.18797 8.2782L7.6015 10.4887L12.7444 5.34586C13.1053 4.98496 13.6692 4.98496 14.0301 5.34586C14.391 5.70677 14.391 6.27068 14.0301 6.63158Z" fill="#3496FF"/>
@@ -158,7 +145,7 @@ class WPZOOM_Forms_Settings_Upsell {
 						</div>
 					</li>
 					<li class="t-row">
-						<div class="h-wrap">Submission Email Alerts</div>
+						<div class="h-wrap"><?php esc_html_e( 'Advanced Spam Protection', 'wpzoom-forms' ); ?></div>
 						<div class="c">
 							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M9 0C4.03759 0 0 4.03759 0 9C0 13.9624 4.03759 18 9 18C13.9624 18 18 13.9624 18 9C18 4.03759 13.9624 0 9 0ZM14.0301 6.63158L8.2782 12.3383C7.93985 12.6767 7.3985 12.6992 7.03759 12.3609L3.99248 9.58647C3.63158 9.24812 3.60902 8.68421 3.92481 8.32331C4.26316 7.96241 4.82707 7.93985 5.18797 8.2782L7.6015 10.4887L12.7444 5.34586C13.1053 4.98496 13.6692 4.98496 14.0301 5.34586C14.391 5.70677 14.391 6.27068 14.0301 6.63158Z" fill="#3496FF"/>
@@ -171,12 +158,25 @@ class WPZOOM_Forms_Settings_Upsell {
 						</div>
 					</li>
 					<li class="t-row">
-						<div class="h-wrap">Ready-to-Use Templates</div>
+						<div class="h-wrap"><?php esc_html_e( 'Submission Email Alerts', 'wpzoom-forms' ); ?></div>
+						<div class="c">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M9 0C4.03759 0 0 4.03759 0 9C0 13.9624 4.03759 18 9 18C13.9624 18 18 13.9624 18 9C18 4.03759 13.9624 0 9 0ZM14.0301 6.63158L8.2782 12.3383C7.93985 12.6767 7.3985 12.6992 7.03759 12.3609L3.99248 9.58647C3.63158 9.24812 3.60902 8.68421 3.92481 8.32331C4.26316 7.96241 4.82707 7.93985 5.18797 8.2782L7.6015 10.4887L12.7444 5.34586C13.1053 4.98496 13.6692 4.98496 14.0301 5.34586C14.391 5.70677 14.391 6.27068 14.0301 6.63158Z" fill="#3496FF"/>
+							</svg>
+						</div>
+						<div class="c">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M9 0C4.03759 0 0 4.03759 0 9C0 13.9624 4.03759 18 9 18C13.9624 18 18 13.9624 18 9C18 4.03759 13.9624 0 9 0ZM14.0301 6.63158L8.2782 12.3383C7.93985 12.6767 7.3985 12.6992 7.03759 12.3609L3.99248 9.58647C3.63158 9.24812 3.60902 8.68421 3.92481 8.32331C4.26316 7.96241 4.82707 7.93985 5.18797 8.2782L7.6015 10.4887L12.7444 5.34586C13.1053 4.98496 13.6692 4.98496 14.0301 5.34586C14.391 5.70677 14.391 6.27068 14.0301 6.63158Z" fill="#3496FF"/>
+							</svg>
+						</div>
+					</li>
+					<li class="t-row">
+						<div class="h-wrap"><?php esc_html_e( 'Ready-to-Use Templates', 'wpzoom-forms' ); ?></div>
 						<div class="c">4</div>
 						<div class="c">30+</div>
 					</li>
 					<li class="t-row">
-						<div class="h-wrap">AI Form Generator</div>
+						<div class="h-wrap"><?php esc_html_e( 'AI Form Generator', 'wpzoom-forms' ); ?></div>
 						<div class="c">
 							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M15.364 2.63603C13.6641 0.936172 11.4039 0 9 0C6.59605 0 4.33589 0.936172 2.63603 2.63603C0.936172 4.33589 0 6.59605 0 9C0 11.4041 0.936172 13.6641 2.63603 15.364C4.33589 17.0638 6.59605 18 9 18C11.4039 18 13.6641 17.0638 15.364 15.364C17.0638 13.6641 18 11.4041 18 9C18 6.59605 17.0638 4.33589 15.364 2.63603ZM12.8927 11.6496C13.2359 11.993 13.2359 12.5494 12.8927 12.8926C12.7211 13.0643 12.4961 13.1501 12.2712 13.1501C12.0462 13.1501 11.8213 13.0643 11.6496 12.8926L9 10.243L6.35037 12.8927C6.17871 13.0643 5.95377 13.1501 5.72882 13.1501C5.50388 13.1501 5.27893 13.0643 5.10727 12.8927C4.76408 12.5494 4.76408 11.993 5.10727 11.6498L7.75703 9L5.10727 6.35037C4.76408 6.00705 4.76408 5.45059 5.10727 5.10741C5.45059 4.76408 6.00705 4.76408 6.35023 5.10741L9 7.75703L11.6496 5.10741C11.993 4.76422 12.5494 4.76408 12.8926 5.10741C13.2359 5.45059 13.2359 6.00705 12.8926 6.35037L10.243 9L12.8927 11.6496Z" fill="#81909C"></path>
@@ -189,7 +189,7 @@ class WPZOOM_Forms_Settings_Upsell {
 						</div>
 					</li>
 					<li class="t-row">
-						<div class="h-wrap">Mailchimp Integration</div>
+						<div class="h-wrap"><?php esc_html_e( 'Mailchimp Integration', 'wpzoom-forms' ); ?></div>
 						<div class="c">
 							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M15.364 2.63603C13.6641 0.936172 11.4039 0 9 0C6.59605 0 4.33589 0.936172 2.63603 2.63603C0.936172 4.33589 0 6.59605 0 9C0 11.4041 0.936172 13.6641 2.63603 15.364C4.33589 17.0638 6.59605 18 9 18C11.4039 18 13.6641 17.0638 15.364 15.364C17.0638 13.6641 18 11.4041 18 9C18 6.59605 17.0638 4.33589 15.364 2.63603ZM12.8927 11.6496C13.2359 11.993 13.2359 12.5494 12.8927 12.8926C12.7211 13.0643 12.4961 13.1501 12.2712 13.1501C12.0462 13.1501 11.8213 13.0643 11.6496 12.8926L9 10.243L6.35037 12.8927C6.17871 13.0643 5.95377 13.1501 5.72882 13.1501C5.50388 13.1501 5.27893 13.0643 5.10727 12.8927C4.76408 12.5494 4.76408 11.993 5.10727 11.6498L7.75703 9L5.10727 6.35037C4.76408 6.00705 4.76408 5.45059 5.10727 5.10741C5.45059 4.76408 6.00705 4.76408 6.35023 5.10741L9 7.75703L11.6496 5.10741C11.993 4.76422 12.5494 4.76408 12.8926 5.10741C13.2359 5.45059 13.2359 6.00705 12.8926 6.35037L10.243 9L12.8927 11.6496Z" fill="#81909C"></path>
@@ -202,7 +202,7 @@ class WPZOOM_Forms_Settings_Upsell {
 						</div>
 					</li>
 					<li class="t-row">
-						<div class="h-wrap">Import/Export Forms</div>
+						<div class="h-wrap"><?php esc_html_e( 'Import/Export Forms', 'wpzoom-forms' ); ?></div>
 						<div class="c">
 							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M15.364 2.63603C13.6641 0.936172 11.4039 0 9 0C6.59605 0 4.33589 0.936172 2.63603 2.63603C0.936172 4.33589 0 6.59605 0 9C0 11.4041 0.936172 13.6641 2.63603 15.364C4.33589 17.0638 6.59605 18 9 18C11.4039 18 13.6641 17.0638 15.364 15.364C17.0638 13.6641 18 11.4041 18 9C18 6.59605 17.0638 4.33589 15.364 2.63603ZM12.8927 11.6496C13.2359 11.993 13.2359 12.5494 12.8927 12.8926C12.7211 13.0643 12.4961 13.1501 12.2712 13.1501C12.0462 13.1501 11.8213 13.0643 11.6496 12.8926L9 10.243L6.35037 12.8927C6.17871 13.0643 5.95377 13.1501 5.72882 13.1501C5.50388 13.1501 5.27893 13.0643 5.10727 12.8927C4.76408 12.5494 4.76408 11.993 5.10727 11.6498L7.75703 9L5.10727 6.35037C4.76408 6.00705 4.76408 5.45059 5.10727 5.10741C5.45059 4.76408 6.00705 4.76408 6.35023 5.10741L9 7.75703L11.6496 5.10741C11.993 4.76422 12.5494 4.76408 12.8926 5.10741C13.2359 5.45059 13.2359 6.00705 12.8926 6.35037L10.243 9L12.8927 11.6496Z" fill="#81909C"></path>
@@ -215,7 +215,7 @@ class WPZOOM_Forms_Settings_Upsell {
 						</div>
 					</li>
 					<li class="t-row">
-						<div class="h-wrap">Export Submissions to CSV</div>
+						<div class="h-wrap"><?php esc_html_e( 'Export Submissions to CSV', 'wpzoom-forms' ); ?></div>
 						<div class="c">
 							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M15.364 2.63603C13.6641 0.936172 11.4039 0 9 0C6.59605 0 4.33589 0.936172 2.63603 2.63603C0.936172 4.33589 0 6.59605 0 9C0 11.4041 0.936172 13.6641 2.63603 15.364C4.33589 17.0638 6.59605 18 9 18C11.4039 18 13.6641 17.0638 15.364 15.364C17.0638 13.6641 18 11.4041 18 9C18 6.59605 17.0638 4.33589 15.364 2.63603ZM12.8927 11.6496C13.2359 11.993 13.2359 12.5494 12.8927 12.8926C12.7211 13.0643 12.4961 13.1501 12.2712 13.1501C12.0462 13.1501 11.8213 13.0643 11.6496 12.8926L9 10.243L6.35037 12.8927C6.17871 13.0643 5.95377 13.1501 5.72882 13.1501C5.50388 13.1501 5.27893 13.0643 5.10727 12.8927C4.76408 12.5494 4.76408 11.993 5.10727 11.6498L7.75703 9L5.10727 6.35037C4.76408 6.00705 4.76408 5.45059 5.10727 5.10741C5.45059 4.76408 6.00705 4.76408 6.35023 5.10741L9 7.75703L11.6496 5.10741C11.993 4.76422 12.5494 4.76408 12.8926 5.10741C13.2359 5.45059 13.2359 6.00705 12.8926 6.35037L10.243 9L12.8927 11.6496Z" fill="#81909C"></path>
@@ -228,19 +228,7 @@ class WPZOOM_Forms_Settings_Upsell {
 						</div>
 					</li>
 					<li class="t-row">
-						<div class="h-wrap">Email Notification Editor</div>
-						<div class="c">
-							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M15.364 2.63603C13.6641 0.936172 11.4039 0 9 0C6.59605 0 4.33589 0.936172 2.63603 2.63603C0.936172 4.33589 0 6.59605 0 9C0 11.4041 0.936172 13.6641 2.63603 15.364C4.33589 17.0638 6.59605 18 9 18C11.4039 18 13.6641 17.0638 15.364 15.364C17.0638 13.6641 18 11.4041 18 9C18 6.59605 17.0638 4.33589 15.364 2.63603ZM12.8927 11.6496C13.2359 11.993 13.2359 12.5494 12.8927 12.8926C12.7211 13.0643 12.4961 13.1501 12.2712 13.1501C12.0462 13.1501 11.8213 13.0643 11.6496 12.8926L9 10.243L6.35037 12.8927C6.17871 13.0643 5.95377 13.1501 5.72882 13.1501C5.50388 13.1501 5.27893 13.0643 5.10727 12.8927C4.76408 12.5494 4.76408 11.993 5.10727 11.6498L7.75703 9L5.10727 6.35037C4.76408 6.00705 4.76408 5.45059 5.10727 5.10741C5.45059 4.76408 6.00705 4.76408 6.35023 5.10741L9 7.75703L11.6496 5.10741C11.993 4.76422 12.5494 4.76408 12.8926 5.10741C13.2359 5.45059 13.2359 6.00705 12.8926 6.35037L10.243 9L12.8927 11.6496Z" fill="#81909C"></path>
-							</svg></div>
-						<div class="c">
-							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M9 0C4.03759 0 0 4.03759 0 9C0 13.9624 4.03759 18 9 18C13.9624 18 18 13.9624 18 9C18 4.03759 13.9624 0 9 0ZM14.0301 6.63158L8.2782 12.3383C7.93985 12.6767 7.3985 12.6992 7.03759 12.3609L3.99248 9.58647C3.63158 9.24812 3.60902 8.68421 3.92481 8.32331C4.26316 7.96241 4.82707 7.93985 5.18797 8.2782L7.6015 10.4887L12.7444 5.34586C13.1053 4.98496 13.6692 4.98496 14.0301 5.34586C14.391 5.70677 14.391 6.27068 14.0301 6.63158Z" fill="#3496FF"></path>
-							</svg>
-						</div>
-					</li>
-					<li class="t-row">
-						<div class="h-wrap">AJAX Form Submissions</div>
+						<div class="h-wrap"><?php esc_html_e( 'Email Notification Editor', 'wpzoom-forms' ); ?></div>
 						<div class="c">
 							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M15.364 2.63603C13.6641 0.936172 11.4039 0 9 0C6.59605 0 4.33589 0.936172 2.63603 2.63603C0.936172 4.33589 0 6.59605 0 9C0 11.4041 0.936172 13.6641 2.63603 15.364C4.33589 17.0638 6.59605 18 9 18C11.4039 18 13.6641 17.0638 15.364 15.364C17.0638 13.6641 18 11.4041 18 9C18 6.59605 17.0638 4.33589 15.364 2.63603ZM12.8927 11.6496C13.2359 11.993 13.2359 12.5494 12.8927 12.8926C12.7211 13.0643 12.4961 13.1501 12.2712 13.1501C12.0462 13.1501 11.8213 13.0643 11.6496 12.8926L9 10.243L6.35037 12.8927C6.17871 13.0643 5.95377 13.1501 5.72882 13.1501C5.50388 13.1501 5.27893 13.0643 5.10727 12.8927C4.76408 12.5494 4.76408 11.993 5.10727 11.6498L7.75703 9L5.10727 6.35037C4.76408 6.00705 4.76408 5.45059 5.10727 5.10741C5.45059 4.76408 6.00705 4.76408 6.35023 5.10741L9 7.75703L11.6496 5.10741C11.993 4.76422 12.5494 4.76408 12.8926 5.10741C13.2359 5.45059 13.2359 6.00705 12.8926 6.35037L10.243 9L12.8927 11.6496Z" fill="#81909C"></path>
@@ -252,7 +240,7 @@ class WPZOOM_Forms_Settings_Upsell {
 						</div>
 					</li>
 					<li class="t-row">
-						<div class="h-wrap">File Upload Field</div>
+						<div class="h-wrap"><?php esc_html_e( 'AJAX Form Submissions', 'wpzoom-forms' ); ?></div>
 						<div class="c">
 							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M15.364 2.63603C13.6641 0.936172 11.4039 0 9 0C6.59605 0 4.33589 0.936172 2.63603 2.63603C0.936172 4.33589 0 6.59605 0 9C0 11.4041 0.936172 13.6641 2.63603 15.364C4.33589 17.0638 6.59605 18 9 18C11.4039 18 13.6641 17.0638 15.364 15.364C17.0638 13.6641 18 11.4041 18 9C18 6.59605 17.0638 4.33589 15.364 2.63603ZM12.8927 11.6496C13.2359 11.993 13.2359 12.5494 12.8927 12.8926C12.7211 13.0643 12.4961 13.1501 12.2712 13.1501C12.0462 13.1501 11.8213 13.0643 11.6496 12.8926L9 10.243L6.35037 12.8927C6.17871 13.0643 5.95377 13.1501 5.72882 13.1501C5.50388 13.1501 5.27893 13.0643 5.10727 12.8927C4.76408 12.5494 4.76408 11.993 5.10727 11.6498L7.75703 9L5.10727 6.35037C4.76408 6.00705 4.76408 5.45059 5.10727 5.10741C5.45059 4.76408 6.00705 4.76408 6.35023 5.10741L9 7.75703L11.6496 5.10741C11.993 4.76422 12.5494 4.76408 12.8926 5.10741C13.2359 5.45059 13.2359 6.00705 12.8926 6.35037L10.243 9L12.8927 11.6496Z" fill="#81909C"></path>
@@ -264,7 +252,19 @@ class WPZOOM_Forms_Settings_Upsell {
 						</div>
 					</li>
 					<li class="t-row">
-						<div class="h-wrap">Conditional Logic</div>
+						<div class="h-wrap"><?php esc_html_e( 'File Upload Field', 'wpzoom-forms' ); ?></div>
+						<div class="c">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M15.364 2.63603C13.6641 0.936172 11.4039 0 9 0C6.59605 0 4.33589 0.936172 2.63603 2.63603C0.936172 4.33589 0 6.59605 0 9C0 11.4041 0.936172 13.6641 2.63603 15.364C4.33589 17.0638 6.59605 18 9 18C11.4039 18 13.6641 17.0638 15.364 15.364C17.0638 13.6641 18 11.4041 18 9C18 6.59605 17.0638 4.33589 15.364 2.63603ZM12.8927 11.6496C13.2359 11.993 13.2359 12.5494 12.8927 12.8926C12.7211 13.0643 12.4961 13.1501 12.2712 13.1501C12.0462 13.1501 11.8213 13.0643 11.6496 12.8926L9 10.243L6.35037 12.8927C6.17871 13.0643 5.95377 13.1501 5.72882 13.1501C5.50388 13.1501 5.27893 13.0643 5.10727 12.8927C4.76408 12.5494 4.76408 11.993 5.10727 11.6498L7.75703 9L5.10727 6.35037C4.76408 6.00705 4.76408 5.45059 5.10727 5.10741C5.45059 4.76408 6.00705 4.76408 6.35023 5.10741L9 7.75703L11.6496 5.10741C11.993 4.76422 12.5494 4.76408 12.8926 5.10741C13.2359 5.45059 13.2359 6.00705 12.8926 6.35037L10.243 9L12.8927 11.6496Z" fill="#81909C"></path>
+							</svg></div>
+						<div class="c">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M9 0C4.03759 0 0 4.03759 0 9C0 13.9624 4.03759 18 9 18C13.9624 18 18 13.9624 18 9C18 4.03759 13.9624 0 9 0ZM14.0301 6.63158L8.2782 12.3383C7.93985 12.6767 7.3985 12.6992 7.03759 12.3609L3.99248 9.58647C3.63158 9.24812 3.60902 8.68421 3.92481 8.32331C4.26316 7.96241 4.82707 7.93985 5.18797 8.2782L7.6015 10.4887L12.7444 5.34586C13.1053 4.98496 13.6692 4.98496 14.0301 5.34586C14.391 5.70677 14.391 6.27068 14.0301 6.63158Z" fill="#3496FF"></path>
+							</svg>
+						</div>
+					</li>
+					<li class="t-row">
+						<div class="h-wrap"><?php esc_html_e( 'Conditional Logic', 'wpzoom-forms' ); ?></div>
 						<div class="c">
 							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M15.364 2.63603C13.6641 0.936172 11.4039 0 9 0C6.59605 0 4.33589 0.936172 2.63603 2.63603C0.936172 4.33589 0 6.59605 0 9C0 11.4041 0.936172 13.6641 2.63603 15.364C4.33589 17.0638 6.59605 18 9 18C11.4039 18 13.6641 17.0638 15.364 15.364C17.0638 13.6641 18 11.4041 18 9C18 6.59605 17.0638 4.33589 15.364 2.63603ZM12.8927 11.6496C13.2359 11.993 13.2359 12.5494 12.8927 12.8926C12.7211 13.0643 12.4961 13.1501 12.2712 13.1501C12.0462 13.1501 11.8213 13.0643 11.6496 12.8926L9 10.243L6.35037 12.8927C6.17871 13.0643 5.95377 13.1501 5.72882 13.1501C5.50388 13.1501 5.27893 13.0643 5.10727 12.8927C4.76408 12.5494 4.76408 11.993 5.10727 11.6498L7.75703 9L5.10727 6.35037C4.76408 6.00705 4.76408 5.45059 5.10727 5.10741C5.45059 4.76408 6.00705 4.76408 6.35023 5.10741L9 7.75703L11.6496 5.10741C11.993 4.76422 12.5494 4.76408 12.8926 5.10741C13.2359 5.45059 13.2359 6.00705 12.8926 6.35037L10.243 9L12.8927 11.6496Z" fill="#81909C"></path>
@@ -279,7 +279,7 @@ class WPZOOM_Forms_Settings_Upsell {
 						<div class="h-wrap"></div>
 						<div class="c"></div>
 						<div class="c">
-							<a href="https://www.wpzoom.com/plugins/wpzoom-forms/?utm_source=wpadmin&utm_medium=wpzoom-forms-free&utm_campaign=upgrade-to-pro-upsell-page" target="_blank" class="button button-primary">Upgrade to PRO</a>
+							<a href="https://www.wpzoom.com/plugins/wpzoom-forms/?utm_source=wpadmin&utm_medium=wpzoom-forms-free&utm_campaign=upgrade-to-pro-upsell-page" target="_blank" class="button button-primary"><?php esc_html_e( 'Upgrade to PRO', 'wpzoom-forms' ); ?></a>
 						</div>
 					</li>		
 				</ul>

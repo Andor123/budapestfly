@@ -211,7 +211,7 @@ export default function App({ formId, presetTemplate }) {
 				onEmbed={ () => dispatch( { type: 'TOGGLE_EMBED', show: true } ) }
 				activeTab={ state.activeTab }
 				onTab={ ( tab ) => dispatch( { type: 'SET_TAB', tab } ) }
-				submissionsUrl={ window.wpzfBuilder.submissionsListUrl + '&wpzf_form=' + formId }
+				submissionsUrl={ window.wpzfBuilder.submissionsListUrl + '&form_id_filter=' + formId }
 				exitUrl={ window.wpzfBuilder.formsListUrl }
 			/>
 

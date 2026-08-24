@@ -916,6 +916,54 @@ textarea.wpzf-input { resize: none; }
 		padding: 12px;
 		min-height: 0;
 	}
+	&__search {
+		position: sticky;
+		top: -12px;
+		z-index: 1;
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		margin: -12px -12px 8px;
+		padding: 12px;
+		background: $bg-card;
+		border-bottom: 1px solid $border;
+	}
+	&__search-icon {
+		flex-shrink: 0;
+		color: $muted;
+	}
+	&__search-input {
+		flex: 1;
+		min-width: 0;
+		margin: 0;
+		padding: 6px 0;
+		border: 0;
+		background: transparent;
+		font: inherit;
+		font-size: 13px;
+		color: $text;
+		box-shadow: none;
+		&:focus { outline: none; box-shadow: none; }
+		&::placeholder { color: $muted; }
+		// Hide the native search clear control; we provide our own.
+		&::-webkit-search-cancel-button { -webkit-appearance: none; appearance: none; }
+	}
+	&__search-clear {
+		flex-shrink: 0;
+		display: inline-flex; align-items: center; justify-content: center;
+		width: 20px; height: 20px;
+		padding: 0;
+		border: 0; background: transparent;
+		color: $muted; cursor: pointer;
+		border-radius: $radius-full;
+		&:hover { color: $text; background: $border-soft; }
+	}
+	&__no-results {
+		margin: 8px 4px;
+		font-size: 13px;
+		color: $muted;
+		text-align: center;
+	}
 	&__item {
 		display: grid; grid-template-columns: 36px 1fr; gap: 12px;
 		width: 100%;

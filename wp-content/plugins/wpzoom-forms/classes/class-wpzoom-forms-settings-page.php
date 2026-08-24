@@ -310,7 +310,12 @@ class WPZOOM_Forms_Settings {
 								'type'  => 'note',
 								'args'  => array(
 									'class'       => 'wpzoom-forms-field required-recaptcha',
-									'description' => '<a target="_blank" href="https://www.google.com/recaptcha/admin/create">Click here</a> to generate your reCAPTCHA keys and enter them below.',
+									'description' => sprintf(
+										/* translators: %1$s: opening link tag, %2$s: closing link tag */
+										esc_html__( '%1$sClick here%2$s to generate your reCAPTCHA keys and enter them below.', 'wpzoom-forms' ),
+										'<a target="_blank" href="https://www.google.com/recaptcha/admin/create">',
+										'</a>'
+									),
 								),
 							),
 							array(
@@ -399,7 +404,12 @@ class WPZOOM_Forms_Settings {
 								'type'  => 'note',
 								'args'  => array(
 									'class'       => 'wpzoom-forms-field required-turnstile',
-									'description' => '<a target="_blank" href="https://www.cloudflare.com/application-services/products/turnstile/#turnstile-pricing">Click here</a> to generate your Turnstile keys and enter them below.',
+									'description' => sprintf(
+										/* translators: %1$s: opening link tag, %2$s: closing link tag */
+										esc_html__( '%1$sClick here%2$s to generate your Turnstile keys and enter them below.', 'wpzoom-forms' ),
+										'<a target="_blank" href="https://www.cloudflare.com/application-services/products/turnstile/#turnstile-pricing">',
+										'</a>'
+									),
 								),
 							),
 							array(
@@ -980,24 +990,23 @@ class WPZOOM_Forms_Settings {
                 } elseif ( ! is_callable( array( 'Akismet', 'get_api_key' ) ) || empty( \Akismet::get_api_key() ) ) {
                     echo '<span class="wpzf-status-badge wpzf-status-warning">' . esc_html__( 'Detected, Not Configured', 'wpzoom-forms' ) . '</span>';
                 } else {
-                    echo '<span class="wpzf-status-badge wpzf-status-upgrade">' . esc_html__( 'Upgrade to Activate', 'wpzoom-forms' ) . '</span>';
+                    echo '<span class="wpzf-status-badge wpzf-status-active">' . esc_html__( 'Connected & Active', 'wpzoom-forms' ) . '</span>';
                 }
                 ?>
             </div>
             <div class="wpzf-akismet-upsell-content">
-                <h4><?php esc_html_e( 'Advanced Akismet Integration', 'wpzoom-forms' ); ?> <span class="wpzf-pro-badge">PRO</span></h4>
+                <h4><?php esc_html_e( 'Akismet Anti-Spam', 'wpzoom-forms' ); ?></h4>
                 <?php if ( ! class_exists( 'Akismet' ) ) : ?>
-                    <p><?php printf( __( 'Akismet is the best way to protect your forms from spam. <a href="%s" target="_blank">Install and activate Akismet</a> first, then upgrade to WPZOOM Forms PRO to enable automatic spam filtering.', 'wpzoom-forms' ), esc_url( admin_url( 'plugin-install.php?tab=search&s=akismet' ) ) ); ?></p>
+                    <p><?php printf( __( 'Akismet is the best way to protect your forms from spam. <a href="%s" target="_blank">Install and activate Akismet</a> and WPZOOM Forms will automatically check every submission against it — no extra setup needed.', 'wpzoom-forms' ), esc_url( admin_url( 'plugin-install.php?tab=search&s=akismet' ) ) ); ?></p>
                 <?php elseif ( ! is_callable( array( 'Akismet', 'get_api_key' ) ) || empty( \Akismet::get_api_key() ) ) : ?>
-                    <p><?php printf( __( 'Akismet is installed but not configured. <a href="%s">Enter your API key</a> to prepare for spam protection, then upgrade to WPZOOM Forms PRO to enable the integration.', 'wpzoom-forms' ), esc_url( admin_url( 'admin.php?page=akismet-key-config' ) ) ); ?></p>
+                    <p><?php printf( __( 'Akismet is installed but not configured. <a href="%s">Enter your API key</a> and WPZOOM Forms will start checking every submission automatically.', 'wpzoom-forms' ), esc_url( admin_url( 'admin.php?page=akismet-key-config' ) ) ); ?></p>
                 <?php else : ?>
-                    <p><?php esc_html_e( 'Akismet is installed and configured on your site. Upgrade to WPZOOM Forms PRO to enable automatic spam filtering on all form submissions.', 'wpzoom-forms' ); ?></p>
+                    <p><?php esc_html_e( 'Akismet is connected. Every form submission is checked automatically, and anything Akismet flags is filed as spam instead of being emailed to you.', 'wpzoom-forms' ); ?></p>
                 <?php endif; ?>
+                <h4><?php esc_html_e( 'Advanced Akismet Tools', 'wpzoom-forms' ); ?> <span class="wpzf-pro-badge">PRO</span></h4>
                 <ul>
-                    <li><?php esc_html_e( 'Automatic spam detection on all submissions', 'wpzoom-forms' ); ?></li>
-                    <li><?php esc_html_e( 'Mark submissions as spam or not spam', 'wpzoom-forms' ); ?></li>
-                    <li><?php esc_html_e( 'Report missed spam to improve accuracy', 'wpzoom-forms' ); ?></li>
-                    <li><?php esc_html_e( 'Works silently in the background', 'wpzoom-forms' ); ?></li>
+                    <li><?php esc_html_e( 'Mark submissions as spam or not spam from the Submissions screen', 'wpzoom-forms' ); ?></li>
+                    <li><?php esc_html_e( 'Report missed spam and false positives back to Akismet to improve accuracy', 'wpzoom-forms' ); ?></li>
                 </ul>
                 <a href="https://www.wpzoom.com/plugins/wpzoom-forms/?utm_source=wpadmin&utm_medium=wpzoom-forms-free&utm_campaign=akismet-upsell" target="_blank" class="button button-primary"><?php esc_html_e( 'Upgrade to PRO', 'wpzoom-forms' ); ?></a>
             </div>
@@ -1043,14 +1052,21 @@ class WPZOOM_Forms_Settings {
                 color: #996800;
                 border: 1px solid #dba617;
             }
-            .wpzf-status-upgrade {
-                background: #e8f4fc;
-                color: #2271b1;
-                border: 1px solid #3496ff;
+            .wpzf-status-active {
+                background: #edfaef;
+                color: #00791b;
+                border: 1px solid #68de7c;
                 font-weight: 600;
             }
             .wpzf-akismet-upsell-content h4 {
                 margin: 0 0 10px;
+            }
+            .wpzf-akismet-upsell-content p + h4 {
+                margin-top: 18px;
+                padding-top: 14px;
+                border-top: 1px solid #f0f0f1;
+            }
+            .wpzf-akismet-upsell-content h4 {
                 font-size: 15px;
                 color: #1d2327;
                 display: flex;
@@ -1122,13 +1138,13 @@ class WPZOOM_Forms_Settings {
 		?>
 		<div class="wpzoom-forms-settings-recaptcha-after">
 			<p><strong><?php esc_html_e('Google reCAPTCHA v3', 'wpzoom-forms') ?></strong><br/>
-			<?php esc_html_e('Runs silently in the background and scores each submission to detect spam. Once enabled, it applies to all forms by default. You can disable it per form in the settings.', 'wpzoom-forms') ?></p>
+			<?php esc_html_e('Runs silently in the background and scores each submission to detect spam. Once enabled, it is applied automatically to all your forms — no extra fields or per-form setup required.', 'wpzoom-forms') ?></p>
 
 	<p><strong><?php esc_html_e('Google reCAPTCHA v2 (Invisible)', 'wpzoom-forms') ?></strong><br/>
-	<?php esc_html_e('Displays a small badge and only shows a challenge (like selecting images) when suspicious activity is detected. Requires v2 site keys — not checkbox keys. Add the CAPTCHA field manually in the form editor.', 'wpzoom-forms') ?></p>
+	<?php esc_html_e('Displays a small badge and only shows a challenge (like selecting images) when suspicious activity is detected. Requires v2 site keys — not v3 keys. Once enabled, the CAPTCHA is added automatically to all your forms.', 'wpzoom-forms') ?></p>
 
 	<p><strong><?php esc_html_e('Cloudflare Turnstile', 'wpzoom-forms') ?></strong><br/>
-	<?php esc_html_e('A privacy-first alternative to reCAPTCHA. No cookies or tracking involved. Works invisibly and only challenges users when necessary. To use Turnstile, enter your site and secret keys in the settings and add a Turnstile field to your form.', 'wpzoom-forms') ?></p>
+	<?php esc_html_e('A privacy-first alternative to reCAPTCHA. No cookies or tracking involved. Works invisibly and only challenges users when necessary. Enter your site and secret keys above and the Turnstile widget is added automatically to all your forms.', 'wpzoom-forms') ?></p>
 		</div>
 		<?php
 	}

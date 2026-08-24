@@ -5,7 +5,7 @@ Author URI:        https://www.wpzoom.com/
 Requires at least: 6.5
 Requires PHP:      7.4
 Tested up to:      7.1
-Stable tag:        2.0.5
+Stable tag:        2.0.6
 License:           GNU General Public License v2
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 Tags:              contact form, form builder, contact, forms, email form
@@ -219,6 +219,10 @@ Yes! Use shortcodes to embed your contact forms in the Classic Editor or any the
 
 
 == Changelog ==
+
+= 2.0.6 =
+* Fixed: "View Submissions" link in the builder now opens the Submissions list filtered to the current form
+* Improved: Spam Protection settings text now reflects how reCAPTCHA/Turnstile are applied (automatically to all forms) and that Akismet filtering is included in the free plugin
 
 = 2.0.5 =
 * New: Live Cloudflare Turnstile widget preview on the Spam Protection settings page — see instantly whether your Site Key works for your domain
