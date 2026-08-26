@@ -5,7 +5,7 @@ Author URI:        https://www.wpzoom.com/
 Requires at least: 6.5
 Requires PHP:      7.4
 Tested up to:      7.1
-Stable tag:        2.0.6
+Stable tag:        2.0.8
 License:           GNU General Public License v2
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 Tags:              contact form, form builder, contact, forms, email form
@@ -207,6 +207,10 @@ Navigate to Tools > Export in your Dashboard and choose "WPZOOM Submissions" to 
 
 Yes! Use shortcodes to embed your contact forms in the Classic Editor or any theme.
 
+= Where do I report security bugs found in this plugin? =
+
+Please report security bugs found in the source code of the plugin through the [Patchstack Vulnerability Disclosure Program](https://patchstack.com/database/vdp/9e5fbe1a-1039-460a-bd40-0f9e06b34d23). The Patchstack team will assist you with verification, CVE assignment, and notify the developers of this plugin.
+
 
 == Screenshots ==
 
@@ -219,6 +223,12 @@ Yes! Use shortcodes to embed your contact forms in the Classic Editor or any the
 
 
 == Changelog ==
+
+= 2.0.8 =
+* Fixed a security issue
+
+= 2.0.7 =
+* Fixed a security issue
 
 = 2.0.6 =
 * Fixed: "View Submissions" link in the builder now opens the Submissions list filtered to the current form

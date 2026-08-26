@@ -13,7 +13,7 @@
  * Description: Simple, user-friendly contact form plugin for WordPress with a dedicated drag-and-drop builder.
  * Author:      WPZOOM
  * Author URI:  https://www.wpzoom.com
- * Version:     2.0.6
+ * Version:     2.0.8
  * License:     GPL2+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  */
@@ -1938,23 +1938,35 @@ class WPZOOM_Forms {
 			return '';
 		}
 
-		$align = isset( $attributes['align'] ) && ! empty( $attributes['align'] ) ? $attributes['align'] : 'none';
+		// The align attribute is printed inside the form's class="" attribute, so it
+		// must be restricted to the known block alignment values — any other value
+		// (e.g. one containing quotes) could break out of the attribute (XSS).
+		// See CVE-2026-66639.
+		$align = isset( $attributes['align'] ) && is_scalar( $attributes['align'] ) ? (string) $attributes['align'] : 'none';
+		if ( ! in_array( $align, array( 'left', 'center', 'right', 'wide', 'full' ), true ) ) {
+			$align = 'none';
+		}
 
 		//Get styles from the block
 
-		$fieldBgColor   = isset( $attributes['fieldBgColor'] ) ? $attributes['fieldBgColor'] : '';
-		$fieldBrdStyle  = isset( $attributes['fieldBrdStyle'] ) ? $attributes['fieldBrdStyle'] : '';
-		$fieldBrdWidth  = isset( $attributes['fieldBrdWidth'] ) ? $attributes['fieldBrdWidth'] . 'px' : '';
-		$fieldBrdRadius = isset( $attributes['fieldBrdRadius'] ) ? $attributes['fieldBrdRadius'] . 'px' : '';
-		$fieldBrdColor  = isset( $attributes['fieldBrdColor'] ) ? $attributes['fieldBrdColor'] : '';
-		$fieldTextColor = isset( $attributes['fieldTextColor'] ) ? $attributes['fieldTextColor'] : '';
-		$labelTextColor = isset( $attributes['labelTextColor'] ) ? $attributes['labelTextColor'] : '';
-		$btnBrdRadius   = isset( $attributes['btnBrdRadius'] ) ? $attributes['btnBrdRadius'] . 'px' : '';
-		$btnBrdStyle    = isset( $attributes['btnBrdStyle'] ) ? $attributes['btnBrdStyle'] : '';
-		$btnTextColor   = isset( $attributes['btnTextColor'] ) ? $attributes['btnTextColor'] : '';
-		$btnBrdWidth    = isset( $attributes['btnBrdWidth'] ) ? $attributes['btnBrdWidth']. 'px' : '';
-		$btnBrdColor    = isset( $attributes['btnBrdColor'] ) ? $attributes['btnBrdColor'] : '';
-		$btnBgColor     = isset( $attributes['btnBgColor'] ) ? $attributes['btnBgColor'] : '';
+		// All style attributes are sanitized before being printed inside the inline
+		// <style> block below. Block attributes are attacker-controllable by any user
+		// who can edit the form/post (e.g. Contributor role), so unsanitized values
+		// would allow breaking out of the <style> tag and injecting scripts (XSS).
+		// See CVE-2026-66639.
+		$fieldBgColor   = isset( $attributes['fieldBgColor'] ) ? $this->sanitize_css_color( $attributes['fieldBgColor'] ) : '';
+		$fieldBrdStyle  = isset( $attributes['fieldBrdStyle'] ) ? $this->sanitize_css_border_style( $attributes['fieldBrdStyle'] ) : '';
+		$fieldBrdWidth  = isset( $attributes['fieldBrdWidth'] ) ? $this->sanitize_css_length( $attributes['fieldBrdWidth'] ) : '';
+		$fieldBrdRadius = isset( $attributes['fieldBrdRadius'] ) ? $this->sanitize_css_length( $attributes['fieldBrdRadius'] ) : '';
+		$fieldBrdColor  = isset( $attributes['fieldBrdColor'] ) ? $this->sanitize_css_color( $attributes['fieldBrdColor'] ) : '';
+		$fieldTextColor = isset( $attributes['fieldTextColor'] ) ? $this->sanitize_css_color( $attributes['fieldTextColor'] ) : '';
+		$labelTextColor = isset( $attributes['labelTextColor'] ) ? $this->sanitize_css_color( $attributes['labelTextColor'] ) : '';
+		$btnBrdRadius   = isset( $attributes['btnBrdRadius'] ) ? $this->sanitize_css_length( $attributes['btnBrdRadius'] ) : '';
+		$btnBrdStyle    = isset( $attributes['btnBrdStyle'] ) ? $this->sanitize_css_border_style( $attributes['btnBrdStyle'] ) : '';
+		$btnTextColor   = isset( $attributes['btnTextColor'] ) ? $this->sanitize_css_color( $attributes['btnTextColor'] ) : '';
+		$btnBrdWidth    = isset( $attributes['btnBrdWidth'] ) ? $this->sanitize_css_length( $attributes['btnBrdWidth'] ) : '';
+		$btnBrdColor    = isset( $attributes['btnBrdColor'] ) ? $this->sanitize_css_color( $attributes['btnBrdColor'] ) : '';
+		$btnBgColor     = isset( $attributes['btnBgColor'] ) ? $this->sanitize_css_color( $attributes['btnBgColor'] ) : '';
 
 		$form_ID = 'wpzf-' . intval( $attributes['formId'] );
 		$form_notice_id = $form_ID . '-notice';
@@ -2023,11 +2035,11 @@ class WPZOOM_Forms {
 		preg_match( '/<input(?:.*)name="([^"]+)"(?:.*)data-subject="true"/is', $content, $match2 );
 
 		if ( ! empty( $match1 ) && is_array( $match1 ) && isset( $match1[1] ) ) {
-			$content = preg_replace( '/<\/form>/is', '<input type="hidden" name="wpzf_replyto" value="' . $match1[1] . '" /></form>', $content );
+			$content = preg_replace( '/<\/form>/is', '<input type="hidden" name="wpzf_replyto" value="' . esc_attr( $match1[1] ) . '" /></form>', $content );
 		}
 
 		if ( ! empty( $match2 ) && is_array( $match2 ) && isset( $match2[1] ) ) {
-			$content = preg_replace( '/<\/form>/is', '<input type="hidden" name="wpzf_subject" value="' . $match2[1] . '" /></form>', $content );
+			$content = preg_replace( '/<\/form>/is', '<input type="hidden" name="wpzf_subject" value="' . esc_attr( $match2[1] ) . '" /></form>', $content );
 		}
 
 		$captcha_config           = $this->get_spam_protection_config();
@@ -2114,6 +2126,76 @@ class WPZOOM_Forms {
 		$content = $content . $style;
 
 		return $content;
+	}
+
+	/**
+	 * Sanitize a CSS color value coming from a block attribute.
+	 *
+	 * Block attributes can be set by any user able to edit the form/post
+	 * (including low-privilege roles such as Contributor), so these values are
+	 * untrusted. Because the value is printed inside an inline <style> element,
+	 * we must strip any character that could be used to terminate the property,
+	 * rule or the <style> tag itself (e.g. `;`, `{`, `}`, `<`, `>`, quotes).
+	 *
+	 * We allow only the characters that make up legitimate CSS color values:
+	 * hex (`#fff`), functional notation (`rgb()`, `rgba()`, `hsl()`, `hsla()`,
+	 * `var()`) and named colors. Anything else is removed.
+	 *
+	 * @access private
+	 * @param  mixed  $value The raw attribute value.
+	 * @return string        A safe CSS color value (may be empty).
+	 * @since  2.0.7
+	 */
+	private function sanitize_css_color( $value ) {
+		if ( ! is_scalar( $value ) ) {
+			return '';
+		}
+
+		$value = (string) $value;
+
+		// Keep only characters valid within CSS color values.
+		$value = preg_replace( '/[^a-zA-Z0-9#(),.%\s_-]/', '', $value );
+
+		return trim( $value );
+	}
+
+	/**
+	 * Sanitize a CSS border-style keyword coming from a block attribute.
+	 *
+	 * Only the standard CSS border-style keywords are permitted; any other
+	 * value is discarded to prevent injection into the inline <style> block.
+	 *
+	 * @access private
+	 * @param  mixed  $value The raw attribute value.
+	 * @return string        A valid border-style keyword, or empty string.
+	 * @since  2.0.7
+	 */
+	private function sanitize_css_border_style( $value ) {
+		if ( ! is_scalar( $value ) ) {
+			return '';
+		}
+
+		$allowed = array( 'none', 'hidden', 'dotted', 'dashed', 'solid', 'double', 'groove', 'ridge', 'inset', 'outset' );
+		$value   = strtolower( trim( (string) $value ) );
+
+		return in_array( $value, $allowed, true ) ? $value : '';
+	}
+
+	/**
+	 * Sanitize a CSS length coming from a numeric block attribute.
+	 *
+	 * The value is cast to a number and returned with a `px` unit, matching the
+	 * behaviour expected by the inline <style> block. This guarantees the output
+	 * contains only digits, an optional decimal point/sign and the `px` unit,
+	 * so it can never break out of the CSS context.
+	 *
+	 * @access private
+	 * @param  mixed  $value The raw attribute value.
+	 * @return string        A safe CSS length (e.g. `2px`).
+	 * @since  2.0.7
+	 */
+	private function sanitize_css_length( $value ) {
+		return floatval( $value ) . 'px';
 	}
 
 	/**
