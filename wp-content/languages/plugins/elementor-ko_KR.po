@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Elementor Website Builder &#8211; more than just a page builder - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-08-27 06:07:13+0000\n"
+"PO-Revision-Date: 2026-08-28 02:20:45+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -120,10 +120,6 @@ msgstr "다시 계산"
 msgid "Elementor page builder data, global classes, and variables."
 msgstr "Elementor 페이지 빌더 데이터, 전역 클래스, 변수."
 
-#: modules/mcp/module.php:31
-msgid "Enable Elementor MCP WP Abilities API. Requirements: 1. WordPress 7.0 or higher. 2. Create an application password for your agent user. 3. Add to your MCP config: {url: \"https://<your-site-url>/wp-json/elementor/mcp\", headers: {Authorization: \"Basic <base64(user:application-password)>\"}}"
-msgstr "Elementor MCP WP Abilities API를 활성화합니다. 요구 사항: 1. 워드프레스 7.0 이상. 2. 에이전트 사용자에 대한 애플리케이션 비밀번호를 생성합니다. 3. MCP 설정에 다음을 추가합니다: {url: \"https://<your-site-url>/wp-json/elementor/mcp\", headers: {Authorization: \"Basic <base64(사용자:애플리케이션-비밀번호)>\"}}"
-
 #: modules/mcp/abilities/update-settings-ability.php:82
 msgid "Could not save document settings."
 msgstr "문서 설정을 저장할 수 없습니다."
@@ -173,6 +169,10 @@ msgstr "이 글은 Elementor로 제작되지 않았습니다."
 #: modules/mcp/abilities/update-settings-ability.php:20
 msgid "Updates Elementor document-level settings for a post (for example page layout, title visibility, or custom page settings). Pass only the keys you want to change. Use list-pages to resolve IDs and get-page-structure when you also need the element tree. Requires permission to edit the target post."
 msgstr "글의 Elementor 문서 수준 설정(예: 페이지 레이아웃, 제목 표시 여부 또는 사용자 정의 페이지 설정)을 업데이트합니다. 변경하려는 키만 전달하세요. ID를 확인하려면 list-pages를 사용하고, 요소 트리도 필요할 경우 get-page-structure를 사용하세요. 대상 게시물을 편집할 권한이 필요합니다."
+
+#: modules/mcp/module.php:31
+msgid "Enable Elementor MCP WP Abilities API. Requirements: 1. WordPress 7.0 or higher. 2. Create an application password for your agent user. 3. Add to your MCP config: {url: \"https://<your-site-url>/wp-json/elementor/mcp\", headers: {Authorization: \"Basic <base64(user:application-password)>\"}}"
+msgstr "Elementor MCP WP Abilities API를 활성화합니다. 요구 사항: 1. 워드프레스 7.0 이상. 2. 에이전트 사용자용 애플리케이션 비밀번호를 생성하세요. 3. MCP 구성에 다음을 추가하세요: {url: “https://<your-site-url>/wp-json/elementor/mcp”, headers: {Authorization: “Basic <base64(user:application-password)>”}}"
 
 #: modules/mcp/abilities/get-structure-ability.php:19
 msgid "Get Elementor Page Structure"
@@ -11233,12 +11233,6 @@ msgstr "진행률 표시줄"
 msgid "Secondary Color"
 msgstr "2차 색상"
 
-#: includes/elements/section.php:78 modules/library/documents/section.php:43
-#: assets/js/container-converter.js:94
-#: assets/js/container-converter.strings.js:3 assets/js/editor.js:8848
-msgid "Section"
-msgstr "부분"
-
 #: includes/widgets/image-carousel.php:202
 msgid "Slides to Scroll"
 msgstr "스크롤할 슬라이드"
@@ -11515,3 +11509,9 @@ msgstr "펼치기/접기"
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:284
 msgid "Top"
 msgstr "상단"
+
+#: includes/elements/section.php:78 modules/library/documents/section.php:43
+#: assets/js/container-converter.js:94
+#: assets/js/container-converter.strings.js:3 assets/js/editor.js:8848
+msgid "Section"
+msgstr "섹션"
