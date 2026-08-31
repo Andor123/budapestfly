@@ -5,7 +5,7 @@ Author URI:        https://www.wpzoom.com/
 Requires at least: 6.5
 Requires PHP:      7.4
 Tested up to:      7.1
-Stable tag:        2.0.8
+Stable tag:        2.0.9
 License:           GNU General Public License v2
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 Tags:              contact form, form builder, contact, forms, email form
@@ -223,6 +223,9 @@ Please report security bugs found in the source code of the plugin through the [
 
 
 == Changelog ==
+
+= 2.0.9 =
+* Fixed: Form builder now fills the screen in RTL languages
 
 = 2.0.8 =
 * Fixed a security issue

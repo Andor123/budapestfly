@@ -13,7 +13,7 @@
  * Description: Simple, user-friendly contact form plugin for WordPress with a dedicated drag-and-drop builder.
  * Author:      WPZOOM
  * Author URI:  https://www.wpzoom.com
- * Version:     2.0.8
+ * Version:     2.0.9
  * License:     GPL2+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  */

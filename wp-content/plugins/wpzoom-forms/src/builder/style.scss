@@ -68,7 +68,14 @@ body[class*="page_wpzf-form-builder"] {
 	#adminmenuwrap,
 	#wpadminbar,
 	#adminmenuback { display: none !important; }
-	#wpcontent { margin-left: 0 !important; padding-left: 0; }
+	// WP core offsets #wpcontent by the admin-menu width using margin-left in
+	// LTR and margin-right in RTL — zero both so the takeover is truly full-width.
+	#wpcontent {
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+		padding-left: 0;
+		padding-right: 0;
+	}
 	#wpbody-content { padding-bottom: 0; }
 	#wpfooter { display: none; }
 	.notice, .update-nag, .updated, .error { display: none !important; }
@@ -109,7 +116,7 @@ body[class*="page_wpzf-form-builder"] {
 	position: relative;
 	background: $bg-card;
 	border-bottom: 1px solid $border;
-	padding-right:16px;
+	padding-inline-end: 16px;
 	height: 56px;
 	flex-shrink: 0;
 
@@ -236,7 +243,7 @@ body[class*="page_wpzf-form-builder"] {
 }
 
 .wpzf-badge {
-	margin-right: 6px;
+	margin-inline-end: 6px;
 }
 
 .wpzf-icon-btn {
@@ -260,8 +267,8 @@ body[class*="page_wpzf-form-builder"] {
 	background: $bg-card;
 	overflow-y: auto;
 
-	&--left  { border-right: 1px solid $border; }
-	&--right { border-left:  1px solid $border; }
+	&--left  { border-inline-end:   1px solid $border; }
+	&--right { border-inline-start: 1px solid $border; }
 }
 
 
@@ -282,7 +289,7 @@ body[class*="page_wpzf-form-builder"] {
 		padding: 10px;
 		background: $bg-card; border: 1px solid $border; border-radius: $radius-medium;
 		color: $text; font-size: 12px; font-weight: 500;
-		cursor: grab; text-align: left;
+		cursor: grab; text-align: start;
 		transition: border-color .15s, background .15s, transform .05s;
 		&:hover { border-color: var(--wp-admin-theme-color, #{$brand}); background: rgba($brand, .05); }
 		&:active { transform: scale(.98); cursor: grabbing; }
@@ -357,8 +364,8 @@ body[class*="page_wpzf-form-builder"] {
 
 .wpzf-canvas-fields {
 	display: flex; flex-wrap: wrap; gap: 4px;
-	padding-left: 24px;
-	margin-left: -30px;
+	padding-inline-start: 24px;
+	margin-inline-start: -30px;
 }
 
 // Drop zone rendered after the last field — accepts palette drags and reorder-to-end.
@@ -411,7 +418,7 @@ body[class*="page_wpzf-form-builder"] {
 	}
 
 	&__drag {
-		position: absolute; left: -20px; top: 50%; transform: translateY(-50%);
+		position: absolute; inset-inline-start: -20px; top: 50%; transform: translateY(-50%);
 		color: $muted; opacity: 0; cursor: grab;
 		transition: opacity .15s;
 	}
@@ -425,7 +432,7 @@ body[class*="page_wpzf-form-builder"] {
 	&__help { margin-top: 6px; font-size: 12px; color: $muted; }
 
 	&__actions {
-		position: absolute; top: 4px; right: 4px;
+		position: absolute; top: 4px; inset-inline-end: 4px;
 		display: flex; gap: 4px;
 		opacity: 0; transition: opacity .15s;
 	}
@@ -589,7 +596,7 @@ textarea.wpzf-input { resize: none; }
 	gap: 10px;
 	margin-top: 32px;
 	padding: 14px;
-	text-align: left;
+	text-align: start;
 	background: rgba($brand, .06);
 	border: 1px solid rgba($brand, .15);
 	border-radius: $radius-large;
@@ -700,7 +707,7 @@ textarea.wpzf-input { resize: none; }
 	&__pro-badge {
 		position: absolute;
 		top: 5px;
-		right: 5px;
+		inset-inline-end: 5px;
 		font-size: 8px;
 		font-weight: 700;
 		letter-spacing: .04em;
@@ -737,7 +744,7 @@ textarea.wpzf-input { resize: none; }
 		font-size: 12px; cursor: pointer;
 		&:hover { background: $border-soft; }
 		&.is-active { background: var(--wp-admin-theme-color, #{$brand}); color: #fff; }
-		& + button { border-left: 1px solid $border; }
+		& + button { border-inline-start: 1px solid $border; }
 	}
 }
 
@@ -765,7 +772,7 @@ textarea.wpzf-input { resize: none; }
 
 /* notices ----------------------------------------------------------------- */
 .wpzf-notices {
-	position: fixed; bottom: 24px; right: 24px;
+	position: fixed; bottom: 24px; inset-inline-end: 24px;
 	display: flex; flex-direction: column; gap: 8px;
 	z-index: 9999;
 }
@@ -853,7 +860,7 @@ textarea.wpzf-input { resize: none; }
 
 	&__ai-upsell {
 		display: flex; align-items: center; gap: 14px;
-		margin-left: auto;
+		margin-inline-start: auto;
 		padding: 10px 16px;
 		background: linear-gradient(135deg, #eef2ff, #f5f3ff);
 		border: 1px solid #c7d2fe;
@@ -875,7 +882,7 @@ textarea.wpzf-input { resize: none; }
 
 	&__pro-badge {
 		display: inline-block;
-		margin-left: 6px;
+		margin-inline-start: 6px;
 		padding: 1px 6px;
 		background: $accent; color: #fff;
 		border-radius: $radius-small;
@@ -911,7 +918,7 @@ textarea.wpzf-input { resize: none; }
 
 	&__list {
 		background: $bg-card;
-		border-right: 1px solid $border;
+		border-inline-end: 1px solid $border;
 		overflow-y: auto;
 		padding: 12px;
 		min-height: 0;
@@ -970,7 +977,7 @@ textarea.wpzf-input { resize: none; }
 		padding: 12px;
 		background: transparent;
 		border: 1px solid transparent; border-radius: $radius-medium;
-		text-align: left; cursor: pointer;
+		text-align: start; cursor: pointer;
 		color: $text;
 		text-decoration: none;
 		transition: background .12s, border-color .12s;
@@ -1142,7 +1149,7 @@ textarea.wpzf-input { resize: none; }
 .wpzf-bulk__lists {
 	display: flex; align-items: center; flex-wrap: wrap; gap: 6px;
 	margin-top: 12px;
-	&-label { color: $muted; font-size: 12px; margin-right: 4px; }
+	&-label { color: $muted; font-size: 12px; margin-inline-end: 4px; }
 }
 .wpzf-modal__footer {
 	display: flex; justify-content: flex-end; gap: 8px;
@@ -1204,7 +1211,7 @@ textarea.wpzf-input { resize: none; }
 	border: 1px solid $border;
 	border-radius: $radius-medium;
 	cursor: pointer;
-	text-align: left;
+	text-align: start;
 	width: 100%;
 	transition: border-color .15s, box-shadow .15s;
 
