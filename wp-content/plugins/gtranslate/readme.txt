@@ -3,8 +3,8 @@ Contributors: edo888
 Author: Translate AI Multilingual Solutions
 Tags: translate, translator, multilingual, translation, language
 Requires at least: 6.0.1
-Tested up to: 7.0
-Stable tag: 3.1.1
+Tested up to: 7.1
+Stable tag: 3.1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Donate link: https://gtranslate.io/?xyz=998#pricing
@@ -258,6 +258,10 @@ If you want us to translate your website professionally or provide you a proofre
 8. User Dashboard (paid)
 
 == Changelog ==
+= 3.1.2 =
+* Fixed deprecated warning in PHP 8 for paid version users
+* Added aria-label accessibility attribute for Flags with language code and Language codes widget looks
+
 = 3.1.1 =
 * Added Gutenberg block support
 * Fixed keyboard navigation issue in language selectors
