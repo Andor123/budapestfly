@@ -74,6 +74,7 @@ class AiDemoGenerator {
 		add_action( 'wp_ajax_inspiro_starter_sites_ai_build_page', array( $this, 'ajax_build_page' ) );
 		add_action( 'wp_ajax_inspiro_starter_sites_ai_finalize', array( $this, 'ajax_finalize' ) );
 		add_action( 'wp_ajax_inspiro_starter_sites_ai_delete', array( $this, 'ajax_delete' ) );
+		add_action( 'wp_ajax_inspiro_starter_sites_ai_feedback', array( $this, 'ajax_feedback' ) );
 		add_action( 'wp_ajax_inspiro_starter_sites_ai_get_css', array( $this, 'ajax_get_css' ) );
 		add_action( 'wp_ajax_inspiro_starter_sites_ai_save_css', array( $this, 'ajax_save_css' ) );
 		add_action( 'wp_ajax_inspiro_starter_sites_ai_add_page', array( $this, 'ajax_add_ai_page' ) );
@@ -116,6 +117,24 @@ class AiDemoGenerator {
 
 		// Renamed theme directory: fall back to the declared theme name.
 		return 'inspiro premium' === strtolower( trim( (string) wp_get_theme( $template )->get( 'Name' ) ) );
+	}
+
+	/**
+	 * Whether the WPZOOM Portfolio grid block can actually be rendered.
+	 *
+	 * The registered block — not post_type_exists( 'portfolio_item' ) — is the
+	 * real test: the Inspiro Premium theme registers the portfolio CPT and
+	 * taxonomy itself, so the post type exists on every premium site whether
+	 * or not the plugin is installed. Gating on the CPT made the generator
+	 * report the plugin as already active, skip installing it, tell the AI to
+	 * place <div data-block='portfolio'></div>, and then silently drop that
+	 * grid in HtmlToBlocks — leaving a work page with an intro and a CTA and
+	 * nothing between them.
+	 *
+	 * @return bool
+	 */
+	private static function portfolio_grid_available() {
+		return \WP_Block_Type_Registry::get_instance()->is_registered( 'wpzoom-blocks/portfolio' );
 	}
 
 	/**
@@ -289,6 +308,20 @@ class AiDemoGenerator {
 					},
 					$this->style_options()
 				),
+				'design_levels' => array_map(
+					static function ( $level ) {
+						return array(
+							'label' => $level['label'],
+							'hint'  => $level['hint'],
+							'pro'   => ! empty( $level['pro'] ),
+						);
+					},
+					$this->design_level_options()
+				),
+				// Premium art-direction picker. Mirrors the proxy's recipe catalog
+				// by slug; the display copy lives here so the grid renders without a
+				// round trip.
+				'art_directions' => $this->art_direction_options(),
 				'typographies' => array_map(
 					static function ( $typography ) {
 						return $typography['label'];
@@ -370,6 +403,13 @@ class AiDemoGenerator {
 					'ideas_show'       => __( 'Need inspiration? View ideas', 'inspiro-starter-sites' ),
 					'ideas_hide'       => __( 'Hide ideas', 'inspiro-starter-sites' ),
 					'style_label'      => __( 'Design style', 'inspiro-starter-sites' ),
+					'design_level_label' => __( 'How should the AI design it?', 'inspiro-starter-sites' ),
+					'design_level_badge' => __( 'Premium', 'inspiro-starter-sites' ),
+					'design_level_lock'  => __( 'Included with Inspiro Premium', 'inspiro-starter-sites' ),
+					'art_title'          => __( 'Choose an art direction', 'inspiro-starter-sites' ),
+					'art_hint'           => __( 'Choose the layout system the AI builds to — every one is a different site, not a different color.', 'inspiro-starter-sites' ),
+					'art_auto'           => __( 'Let AI choose', 'inspiro-starter-sites' ),
+					'art_auto_hint'      => __( 'The AI picks the direction that suits your business — and picks differently each time you generate.', 'inspiro-starter-sites' ),
 					'palette_label'    => __( 'Color palette', 'inspiro-starter-sites' ),
 					'typography_label' => __( 'Typography', 'inspiro-starter-sites' ),
 					'auto'             => __( 'Let AI decide', 'inspiro-starter-sites' ),
@@ -385,6 +425,7 @@ class AiDemoGenerator {
 					'forms_item'       => __( 'Contact form (WPZOOM Forms)', 'inspiro-starter-sites' ),
 					'finalize_item'    => __( 'Menu, footer & homepage setup', 'inspiro-starter-sites' ),
 					'continue'         => __( 'Continue', 'inspiro-starter-sites' ),
+					'back'             => __( 'Back', 'inspiro-starter-sites' ),
 					'enhance'          => __( 'Enhance with AI', 'inspiro-starter-sites' ),
 					'enhancing'        => __( 'Enhancing…', 'inspiro-starter-sites' ),
 					'undo'             => __( 'Undo', 'inspiro-starter-sites' ),
@@ -469,6 +510,24 @@ class AiDemoGenerator {
 					'success_text'     => __( 'The AI created the following pages, set up the menu, and assigned your new homepage.', 'inspiro-starter-sites' ),
 					'view_site'        => __( 'View site', 'inspiro-starter-sites' ),
 					'edit_pages'       => __( 'Edit pages', 'inspiro-starter-sites' ),
+					'feedback_title'   => __( 'How did the AI do?', 'inspiro-starter-sites' ),
+					'feedback_hint'    => __( 'A few quick answers go straight to the team building this feature.', 'inspiro-starter-sites' ),
+					'feedback_rating'  => __( 'How happy are you with the result?', 'inspiro-starter-sites' ),
+					/* translators: %s: number of stars */
+					'feedback_star'    => __( '%s out of 5', 'inspiro-starter-sites' ),
+					'feedback_keep'    => __( 'Will you keep this design?', 'inspiro-starter-sites' ),
+					'feedback_kept'    => __( 'Keeping it', 'inspiro-starter-sites' ),
+					'feedback_undecided' => __( 'Not sure yet', 'inspiro-starter-sites' ),
+					'feedback_discarded' => __( 'Starting over', 'inspiro-starter-sites' ),
+					'feedback_missing' => __( 'What was missing or not quite right?', 'inspiro-starter-sites' ),
+					'feedback_missing_ph' => __( 'e.g. no pricing section, the photos did not match my business…', 'inspiro-starter-sites' ),
+					'feedback_comment' => __( 'Anything else? (optional)', 'inspiro-starter-sites' ),
+					'feedback_comment_ph' => __( 'Anything else you would like us to know…', 'inspiro-starter-sites' ),
+					'feedback_send'    => __( 'Send feedback', 'inspiro-starter-sites' ),
+					'feedback_sending' => __( 'Sending…', 'inspiro-starter-sites' ),
+					'feedback_thanks'  => __( 'Thank you — this really helps us improve it.', 'inspiro-starter-sites' ),
+					'feedback_skip'    => __( 'No thanks', 'inspiro-starter-sites' ),
+					'feedback_close'   => __( 'Dismiss feedback', 'inspiro-starter-sites' ),
 					'error_title'      => __( 'Something went wrong', 'inspiro-starter-sites' ),
 					'error_generic'    => __( 'The AI service could not complete the request. Please try again in a moment.', 'inspiro-starter-sites' ),
 					'try_again'        => __( 'Try again', 'inspiro-starter-sites' ),
@@ -955,6 +1014,58 @@ class AiDemoGenerator {
 	}
 
 	/* ---------------------------------------------------------------------
+	 * AJAX: post-generation feedback survey
+	 * ------------------------------------------------------------------ */
+
+	/**
+	 * Forward one survey submission to the WPZOOM AI server. The run's
+	 * context (description, art direction, page count…) is attached here
+	 * from the local demo record rather than trusted from the browser.
+	 *
+	 * Failures are reported as success to the UI on purpose: the user has
+	 * already given us their answer, and there is nothing they can do about
+	 * a proxy hiccup — an error card in place of "thank you" would only make
+	 * the survey look broken.
+	 */
+	public function ajax_feedback() {
+		Helpers::verify_ajax_call();
+
+		$plan_id = isset( $_POST['plan_id'] ) ? sanitize_key( wp_unslash( $_POST['plan_id'] ) ) : '';
+		if ( '' === $plan_id ) {
+			wp_send_json_error( array( 'message' => esc_html__( 'Missing generation reference.', 'inspiro-starter-sites' ) ) );
+		}
+
+		$demos = get_option( self::DEMOS_OPTION, array() );
+		$demo  = ( is_array( $demos ) && isset( $demos[ $plan_id ] ) ) ? $demos[ $plan_id ] : array();
+
+		$context = isset( $demo['context'] ) && is_array( $demo['context'] ) ? $demo['context'] : array();
+		// The typed description is the single most useful column when reading
+		// answers — it says what the user was actually trying to build.
+		$context['industry'] = isset( $demo['description'] ) ? substr( (string) $demo['description'], 0, 500 ) : '';
+
+		$result = $this->proxy->feedback(
+			array(
+				'plan_id' => $plan_id,
+				'stage'   => 'post-generate',
+				'rating'  => isset( $_POST['rating'] ) ? (int) $_POST['rating'] : 0,
+				'kept'    => isset( $_POST['kept'] ) ? sanitize_key( wp_unslash( $_POST['kept'] ) ) : '',
+				'missing' => isset( $_POST['missing'] ) ? sanitize_textarea_field( wp_unslash( $_POST['missing'] ) ) : '',
+				'comment' => isset( $_POST['comment'] ) ? sanitize_textarea_field( wp_unslash( $_POST['comment'] ) ) : '',
+				'context' => $context,
+			)
+		);
+
+		// Remember locally that this demo was surveyed, so a later follow-up
+		// prompt can skip the people who already answered.
+		if ( ! is_wp_error( $result ) && isset( $demos[ $plan_id ] ) ) {
+			$demos[ $plan_id ]['feedback_at'] = current_time( 'mysql' );
+			update_option( self::DEMOS_OPTION, $demos, false );
+		}
+
+		wp_send_json_success( array( 'sent' => ! is_wp_error( $result ) ) );
+	}
+
+	/* ---------------------------------------------------------------------
 	 * AJAX: read / write the current demo's stylesheet
 	 * ------------------------------------------------------------------ */
 
@@ -1413,7 +1524,7 @@ class AiDemoGenerator {
 				'css'              => $record['css'],
 				'page'             => $page,
 				'pages'            => $pages_list,
-				'portfolio_needed' => post_type_exists( 'portfolio_item' ) && ! empty( $record['portfolio'] ),
+				'portfolio_needed' => ! empty( $record['portfolio'] ) && self::portfolio_grid_available(),
 				'posts_feed'       => ! empty( $record['posts'] ),
 				'has_contact_form' => post_type_exists( 'wpzf-form' ),
 				// Sections-only output (no hero, no h1) that continues the page.
@@ -1676,7 +1787,9 @@ class AiDemoGenerator {
 		$style_options   = $this->style_options();
 		$palette_options = $this->palette_options();
 
-		$typography_options = $this->typography_options();
+		$typography_options   = $this->typography_options();
+		$design_level_options = $this->design_level_options();
+		$art_options          = $this->art_direction_options();
 
 		$style      = isset( $_POST['style'] ) ? sanitize_key( wp_unslash( $_POST['style'] ) ) : '';
 		$palette    = isset( $_POST['palette'] ) ? sanitize_key( wp_unslash( $_POST['palette'] ) ) : '';
@@ -1685,6 +1798,28 @@ class AiDemoGenerator {
 		$style      = isset( $style_options[ $style ] ) ? $style : '';
 		$palette    = isset( $palette_options[ $palette ] ) ? $palette : '';
 		$typography = isset( $typography_options[ $typography ] ) ? $typography : '';
+
+		// Design level. Whitelisted here for the prompt vars, but the PROXY is
+		// the gate: it re-verifies the Inspiro license and silently downgrades
+		// a 'pro' request from an unlicensed site.
+		$design_level = isset( $_POST['design_level'] ) ? sanitize_key( wp_unslash( $_POST['design_level'] ) ) : '';
+		$design_level = isset( $design_level_options[ $design_level ] ) ? $design_level : 'standard';
+
+		// Art direction the user pinned in the Premium picker ('' = let the model
+		// choose from the proxy's seeded shortlist, which is the default). Only
+		// the slug travels; the proxy owns the recipe itself and ignores a pin
+		// from an unlicensed site, exactly like the design level above.
+		$art_direction = isset( $_POST['art_direction'] ) ? sanitize_key( wp_unslash( $_POST['art_direction'] ) ) : '';
+		$art_direction = isset( $art_options[ $art_direction ] ) ? $art_direction : '';
+
+		// Re-running the same description must not rebuild the same site: the
+		// seed decides which art-direction recipes the model gets to choose
+		// between. Generated here when the browser didn't send one.
+		$variant_seed = isset( $_POST['variant_seed'] ) ? preg_replace( '/[^A-Za-z0-9]/', '', (string) wp_unslash( $_POST['variant_seed'] ) ) : ''; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput
+		$variant_seed = substr( $variant_seed, 0, 32 );
+		if ( '' === $variant_seed ) {
+			$variant_seed = strtolower( wp_generate_password( 12, false, false ) );
+		}
 
 		// Pages the user approved in the review step (before this call).
 		$approved_raw   = isset( $_POST['pages'] ) ? json_decode( wp_unslash( $_POST['pages'] ), true ) : null; // phpcs:ignore WordPress.Security.ValidatedSanitized
@@ -1703,12 +1838,22 @@ class AiDemoGenerator {
 				'theme_css_var'  => self::is_premium_inspiro() ? '--color-accent' : '--inspiro-primary-color',
 				'pages'          => $approved_pages,
 				'font_families'  => array_keys( $this->font_whitelist() ),
+				'design_level'   => $design_level,
+				'art_direction'  => $art_direction,
+				'variant_seed'   => $variant_seed,
 			),
 			array( $stream, 'tick' )
 		);
 
 		if ( ! is_wp_error( $plan ) ) {
 			$plan = $this->sanitize_plan( $plan, $approved_pages );
+		}
+
+		// A pinned art direction is authoritative for the page builds — the model
+		// echoes the slug back in the plan, but a miss would silently drop the
+		// user's choice for every page after this one.
+		if ( ! is_wp_error( $plan ) && '' !== $art_direction ) {
+			$plan['art_direction'] = $art_direction;
 		}
 
 		if ( is_wp_error( $plan ) ) {
@@ -1786,6 +1931,7 @@ class AiDemoGenerator {
 				'description'    => $description,
 				'plan'           => $plan,
 				'palette'        => $palette, // chosen palette slug ('' = AI decides)
+				'design_level'   => $design_level,
 				'replace'        => $replace,
 				'created_pages'  => array(), // page index => post ID
 				'used_photo_ids' => array(),
@@ -1811,7 +1957,7 @@ class AiDemoGenerator {
 				'remaining'  => isset( $quota['remaining'] ) ? (int) $quota['remaining'] : null,
 				'portfolio'  => array(
 					'needed'        => ! empty( $plan['portfolio']['needed'] ) && ! empty( $plan['portfolio']['items'] ),
-					'plugin_active' => post_type_exists( 'portfolio_item' ),
+					'plugin_active' => self::portfolio_grid_available(),
 				),
 				'forms'      => array(
 					'needed'        => ! empty( $plan['contact_form_needed'] ),
@@ -2048,13 +2194,20 @@ class AiDemoGenerator {
 					},
 					$state['plan']['pages']
 				),
-				'portfolio_needed' => ! empty( $state['plan']['portfolio']['needed'] ) && ! empty( $state['plan']['portfolio']['items'] ),
+				// Checked at build time, like the contact form below: the
+				// WPZOOM Portfolio plugin installs right before this step.
+				'portfolio_needed' => ! empty( $state['plan']['portfolio']['needed'] ) && ! empty( $state['plan']['portfolio']['items'] ) && self::portfolio_grid_available(),
 				// The site has blog/news posts → pages may embed the native
 				// recent-posts Query Loop instead of faking article lists.
 				'posts_feed'       => ! empty( $state['plan']['blog']['needed'] ),
 				// A real WPZOOM Forms form can be placed on the contact page
 				// (checked at build time — the plugin installs right before).
 				'has_contact_form' => ! empty( $state['plan']['contact_form_needed'] ) && post_type_exists( 'wpzf-form' ),
+				// Premium: the art direction the plan committed to. The proxy
+				// re-resolves the slug and re-verifies the license, so a tampered
+				// value simply yields the standard page prompt.
+				'design_level'     => isset( $state['design_level'] ) ? $state['design_level'] : 'standard',
+				'art_direction'    => isset( $state['plan']['art_direction'] ) ? $state['plan']['art_direction'] : '',
 			),
 			array( $stream, 'tick' )
 		);
@@ -2638,6 +2791,16 @@ class AiDemoGenerator {
 		$demos[ $plan_id ] = array(
 			'site_title'  => $state['plan']['site_title'],
 			'description' => $state['description'],
+			// What the run was built from. Kept on the record (the plan
+			// transient is deleted a few lines below) so a later feedback
+			// submission can be read against the demo it is about.
+			'context'     => array(
+				'design_level'  => isset( $state['design_level'] ) ? $state['design_level'] : '',
+				'palette'       => isset( $state['palette'] ) ? $state['palette'] : '',
+				'art_direction' => isset( $state['plan']['art_direction'] ) ? $state['plan']['art_direction'] : '',
+				'page_count'    => count( $created_pages ),
+				'premium'       => class_exists( 'WPZOOM' ),
+			),
 			// Context for post-finalize page operations (add / regenerate).
 			'tagline'     => isset( $state['plan']['tagline'] ) ? $state['plan']['tagline'] : '',
 			'language'    => isset( $state['plan']['language'] ) ? $state['plan']['language'] : '',
@@ -2648,6 +2811,9 @@ class AiDemoGenerator {
 			'font_css'    => ! empty( $state['plan']['font_css'] ) ? trim( $state['plan']['font_css'] ) : '',
 			'pages'       => array_values( $created_pages ),
 			'posts'       => isset( $state['created_posts'] ) ? array_values( $state['created_posts'] ) : array(),
+			// Whether this demo shows its work through the portfolio grid, so
+			// a page regenerated later keeps the grid instead of losing it.
+			'portfolio'   => ! empty( $state['plan']['portfolio']['needed'] ) && ! empty( $state['plan']['portfolio']['items'] ),
 			'menu_id'     => $menu_id && ! is_wp_error( $menu_id ) ? (int) $menu_id : 0,
 			'widgets'     => $footer_widget_ids,
 			'created_at'  => current_time( 'mysql' ),
@@ -2687,7 +2853,7 @@ class AiDemoGenerator {
 	private function create_portfolio_items( array &$state, $plan_id, StreamingResponse $stream ) {
 		$portfolio = isset( $state['plan']['portfolio'] ) ? $state['plan']['portfolio'] : array();
 
-		if ( empty( $portfolio['needed'] ) || empty( $portfolio['items'] ) || ! post_type_exists( 'portfolio_item' ) ) {
+		if ( empty( $portfolio['needed'] ) || empty( $portfolio['items'] ) || ! post_type_exists( 'portfolio_item' ) || ! self::portfolio_grid_available() ) {
 			return;
 		}
 
@@ -3177,6 +3343,10 @@ class AiDemoGenerator {
 			'css'        => $this->sanitize_css( isset( $plan['css'] ) ? $plan['css'] : '' ),
 			'footer'     => array(),
 			'pages'      => array(),
+			// Opaque slug naming the art-direction recipe this plan committed
+			// to (Premium only, '' otherwise). The page builds hand it back to
+			// the proxy, which owns the catalog — the client never needs it.
+			'art_direction' => isset( $plan['art_direction'] ) ? substr( sanitize_key( (string) $plan['art_direction'] ), 0, 40 ) : '',
 		);
 
 		if ( ! empty( $plan['footer'] ) && is_array( $plan['footer'] ) ) {
@@ -3397,6 +3567,7 @@ class AiDemoGenerator {
 			. ".iss-ai-demo .wp-block-buttons{display:flex;flex-wrap:wrap;gap:.75rem}"
 			. ".iss-ai-demo ul.wp-block-list,.iss-ai-demo ol.wp-block-list{padding-left:1.4em;margin-bottom:1em}"
 			. ".iss-ai-demo .wp-block-quote{padding-left:1.2em}"
+			. ".iss-ai-demo .ai-card{margin-block-start:0}"
 			. ".iss-ai-demo h1,.iss-ai-demo h2,.iss-ai-demo h3,.iss-ai-demo h4{margin-top:0;margin-bottom:.5em}"
 			. ".iss-ai-demo p{margin-top:0;margin-bottom:1em}"
 			. ".iss-ai-demo p:last-child,.iss-ai-demo h2:last-child,.iss-ai-demo h3:last-child{margin-bottom:0}"
@@ -3561,6 +3732,241 @@ class AiDemoGenerator {
 			),
 			'classic'      => array(
 				'label'  => __( 'Classic Serif', 'inspiro-starter-sites' ),
+			),
+		);
+	}
+
+	/**
+	 * User-selectable generation modes: slug => [ label, hint, pro ].
+	 *
+	 * 'pro' unlocks the proxy's art-direction recipe library — concrete,
+	 * mutually distinct design specs that replace the generic prompt defaults
+	 * responsible for every generated site arriving as the same photo-cover
+	 * hero plus three equal cards. The proxy verifies the Inspiro license
+	 * itself and silently downgrades an unlicensed request, so this list only
+	 * drives the UI — it is not the gate.
+	 *
+	 * @return array[]
+	 */
+	private function design_level_options() {
+		return array(
+			'standard' => array(
+				'label' => __( 'Balanced', 'inspiro-starter-sites' ),
+				'hint'  => __( 'Faster, built on the clean layouts Inspiro demos are known for.', 'inspiro-starter-sites' ),
+				'pro'   => false,
+			),
+			'pro'      => array(
+				'label' => __( 'Creative', 'inspiro-starter-sites' ),
+				'hint'  => __( 'Slower, more creative — a distinct art direction, layout and type for every site.', 'inspiro-starter-sites' ),
+				'pro'   => true,
+			),
+		);
+	}
+
+	/**
+	 * The Premium art-direction catalog, for the picker in the modal.
+	 *
+	 * Display data ONLY. The recipes themselves — the layout, surface and
+	 * prohibition specs the prompt is actually built from — live on the AI
+	 * proxy, which resolves the slug and re-verifies the license; the client
+	 * never sees them and cannot pin one without a Premium license.
+	 *
+	 * Keys must match the proxy catalog in wpzoom-ai-recipes.php. A slug the
+	 * proxy no longer knows is ignored server-side, so a stale entry here
+	 * degrades to 'let the AI choose' rather than failing a generation.
+	 *
+	 * Per entry:
+	 *   label   — name shown on the card.
+	 *   hint    — one sentence describing what the direction actually does.
+	 *   styles  — design styles this direction suits; the others are
+	 *             de-emphasised once the user picks a style, never hidden.
+	 *   preview — drives the CSS wireframe on the card: hero shape, body
+	 *             shape, corner radius, page tone, representative accent.
+	 *
+	 * @return array[]
+	 */
+	private function art_direction_options() {
+		return array(
+			'cover-editorial' => array(
+				'label'   => __( 'Cover editorial', 'inspiro-starter-sites' ),
+				'hint'    => __( 'A full-bleed photo cover with the headline set bottom-left like a magazine, then editorial index rows divided by hairline rules.', 'inspiro-starter-sites' ),
+				'styles'  => array( 'editorial', 'luxury', 'minimal', 'corporate', 'dark' ),
+				'preview' => array(
+					'hero'   => 'cover',
+					'body'   => 'rows',
+					'radius' => '0px',
+					'tone'   => 'light',
+					'accent' => '#c2410c',
+				),
+			),
+
+			'split-asymmetric' => array(
+				'label'   => __( 'Asymmetric split', 'inspiro-starter-sites' ),
+				'hint'    => __( 'Copy on the left, one tall photograph on the right, then pairs that alternate direction down the page. Outlined, never filled.', 'inspiro-starter-sites' ),
+				'styles'  => array( 'minimal', 'corporate', 'editorial', 'luxury' ),
+				'preview' => array(
+					'hero'   => 'split',
+					'body'   => 'pairs',
+					'radius' => '4px',
+					'tone'   => 'paper',
+					'accent' => '#57534e',
+				),
+			),
+
+			'type-first' => array(
+				'label'   => __( 'Type first', 'inspiro-starter-sites' ),
+				'hint'    => __( 'No photograph in the hero at all — an oversized headline on a flat tint, with the first image arriving in the section below.', 'inspiro-starter-sites' ),
+				'styles'  => array( 'minimal', 'bold', 'editorial', 'corporate' ),
+				'preview' => array(
+					'hero'   => 'type',
+					'body'   => 'rows',
+					'radius' => '0px',
+					'tone'   => 'light',
+					'accent' => '#2563eb',
+				),
+			),
+
+			'stacked-editorial' => array(
+				'label'   => __( 'Stacked editorial', 'inspiro-starter-sites' ),
+				'hint'    => __( 'A centred masthead with a wide photograph directly beneath it, then unhurried media-and-text rows. Reads like a long-form article.', 'inspiro-starter-sites' ),
+				'styles'  => array( 'editorial', 'luxury', 'retro' ),
+				'preview' => array(
+					'hero'   => 'stack',
+					'body'   => 'pairs',
+					'radius' => '2px',
+					'tone'   => 'paper',
+					'accent' => '#7c6a58',
+				),
+			),
+
+			'bento-tiles' => array(
+				'label'   => __( 'Bento tiles', 'inspiro-starter-sites' ),
+				'hint'    => __( 'A cluster of rounded filled tiles instead of a banner, with tile weights that change from row to row.', 'inspiro-starter-sites' ),
+				'styles'  => array( 'playful', 'corporate', 'bold', 'dark' ),
+				'preview' => array(
+					'hero'   => 'bento',
+					'body'   => 'tiles',
+					'radius' => '16px',
+					'tone'   => 'light',
+					'accent' => '#0ea5e9',
+				),
+			),
+
+			'poster-brutal' => array(
+				'label'   => __( 'Poster', 'inspiro-starter-sites' ),
+				'hint'    => __( 'A dense uppercase display headline, a solid colour band, a ticker row, and four hard-bordered cells. Nothing rounded, nothing soft.', 'inspiro-starter-sites' ),
+				'styles'  => array( 'bold', 'playful', 'retro', 'dark' ),
+				'preview' => array(
+					'hero'   => 'poster',
+					'body'   => 'grid4',
+					'radius' => '0px',
+					'tone'   => 'light',
+					'accent' => '#ff4d2d',
+				),
+			),
+
+			'soft-rounded' => array(
+				'label'   => __( 'Soft rounded', 'inspiro-starter-sites' ),
+				'hint'    => __( 'Heavily rounded photography sitting as an object on the page, tinted cards with no borders, and pill-shaped buttons.', 'inspiro-starter-sites' ),
+				'styles'  => array( 'playful', 'corporate' ),
+				'preview' => array(
+					'hero'   => 'split',
+					'body'   => 'cards',
+					'radius' => '24px',
+					'tone'   => 'light',
+					'accent' => '#14b8a6',
+				),
+			),
+
+			'duotone-band' => array(
+				'label'   => __( 'Duotone bands', 'inspiro-starter-sites' ),
+				'hint'    => __( 'A photo cover washed in the accent colour, then full-bleed bands alternating deep accent, near-black and near-white.', 'inspiro-starter-sites' ),
+				'styles'  => array( 'bold', 'dark', 'editorial' ),
+				'preview' => array(
+					'hero'   => 'duotone',
+					'body'   => 'pairs',
+					'radius' => '0px',
+					'tone'   => 'accent',
+					'accent' => '#1e3a8a',
+				),
+			),
+
+			'gallery-led' => array(
+				'label'   => __( 'Gallery led', 'inspiro-starter-sites' ),
+				'hint'    => __( 'The photography is the hero: a gallery opens the page and the title sits underneath it. Quiet type, no painted colour.', 'inspiro-starter-sites' ),
+				'styles'  => array( 'minimal', 'editorial', 'luxury', 'dark' ),
+				'preview' => array(
+					'hero'   => 'gallery',
+					'body'   => 'pairs',
+					'radius' => '2px',
+					'tone'   => 'light',
+					'accent' => '#6b7280',
+				),
+			),
+
+			'centered-classic' => array(
+				'label'   => __( 'Centered classic', 'inspiro-starter-sites' ),
+				'hint'    => __( 'A centred hero framed above and below by hairline rules, then three text columns divided by vertical rules. Restrained throughout.', 'inspiro-starter-sites' ),
+				'styles'  => array( 'luxury', 'editorial', 'retro', 'minimal' ),
+				'preview' => array(
+					'hero'   => 'centered',
+					'body'   => 'ruled',
+					'radius' => '0px',
+					'tone'   => 'ivory',
+					'accent' => '#8a6d3b',
+				),
+			),
+
+			'sidebar-index' => array(
+				'label'   => __( 'Sidebar index', 'inspiro-starter-sites' ),
+				'hint'    => __( 'A narrow meta column beside the headline, then rows numbered 01, 02, 03 down the left edge. Structured by alignment alone.', 'inspiro-starter-sites' ),
+				'styles'  => array( 'minimal', 'corporate', 'editorial', 'bold', 'dark' ),
+				'preview' => array(
+					'hero'   => 'meta',
+					'body'   => 'rows',
+					'radius' => '0px',
+					'tone'   => 'light',
+					'accent' => '#2563eb',
+				),
+			),
+
+			'overlap-offset' => array(
+				'label'   => __( 'Overlap offset', 'inspiro-starter-sites' ),
+				'hint'    => __( 'The hero photograph deliberately breaks its section boundary, and paired items sit nudged up and down so no row reads flat.', 'inspiro-starter-sites' ),
+				'styles'  => array( 'playful', 'editorial', 'bold' ),
+				'preview' => array(
+					'hero'   => 'overlap',
+					'body'   => 'pairs',
+					'radius' => '12px',
+					'tone'   => 'light',
+					'accent' => '#f97316',
+				),
+			),
+
+			'mono-contrast' => array(
+				'label'   => __( 'Mono contrast', 'inspiro-starter-sites' ),
+				'hint'    => __( 'Near-black end to end with one luminous accent, a light-weight oversized headline, and cells divided by dim hairline rules.', 'inspiro-starter-sites' ),
+				'styles'  => array( 'dark', 'bold', 'minimal' ),
+				'preview' => array(
+					'hero'   => 'type',
+					'body'   => 'grid4',
+					'radius' => '0px',
+					'tone'   => 'dark',
+					'accent' => '#a3e635',
+				),
+			),
+
+			'warm-editorial' => array(
+				'label'   => __( 'Warm editorial', 'inspiro-starter-sites' ),
+				'hint'    => __( 'Cream paper, deep brown ink, and an italic serif accent word inside an otherwise plain headline. No pure white, no pure black.', 'inspiro-starter-sites' ),
+				'styles'  => array( 'retro', 'luxury', 'editorial', 'playful' ),
+				'preview' => array(
+					'hero'   => 'split',
+					'body'   => 'pairs',
+					'radius' => '4px',
+					'tone'   => 'warm',
+					'accent' => '#a1522d',
+				),
 			),
 		);
 	}
