@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 7.1.x - Development - Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-08-30 21:19:37+0000\n"
+"PO-Revision-Date: 2026-09-02 23:48:20+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1831,7 +1831,7 @@ msgstr "<strong>Anzeigen</strong> führt dich zu einer öffentlichen Anzeigeseit
 
 #: wp-admin/upload.php:384
 msgid "<strong>Delete Permanently</strong> will delete the file from the media library (as well as from any posts to which it is currently attached)."
-msgstr "<strong>Endgültig löschen</strong> löscht die Datei aus der Mediathek (und auch aus allen Beiträgen, in denen sie derzeit verwendet wird)."
+msgstr "<strong>Endgültig löschen</strong> löscht die Datei aus der Mediathek (und auch aus allen Beiträgen, mit denen sie derzeit verknüpft ist)."
 
 #: wp-admin/upload.php:383
 msgid "<strong>Edit</strong> takes you to a simple screen to edit that individual file&#8217;s metadata. You can also reach that screen by clicking on the media file name or thumbnail."
@@ -7853,7 +7853,7 @@ msgstr "Dies ersetzt den aktuellen Editor-Inhalt durch die zuletzt gespeicherte 
 #. translators: Hidden accessibility text.
 #: wp-admin/includes/template.php:2038
 msgid "Close media attachment panel"
-msgstr "„Medien hinzufügen“-Bedienfeld schließen"
+msgstr "Bedienfeld für Medienanhänge schließen"
 
 #: wp-admin/includes/ms.php:1112
 msgid "Info"
@@ -8461,7 +8461,7 @@ msgstr "Sollte die automatische Erstellung dieser Datei aus irgendeinem Grund ni
 #. translators: %s: wp-content/uploads
 #: wp-admin/options-media.php:131
 msgid "Default is %s"
-msgstr "Vorgabe ist %s"
+msgstr "Standard ist %s"
 
 #. translators: 1: .po, 2: .mo, 3: .l10n.php
 #: wp-admin/includes/class-language-pack-upgrader.php:359
@@ -9538,7 +9538,7 @@ msgstr "Du kannst deine Mediendateien in einem einfachen Raster oder als Liste m
 
 #: wp-admin/upload.php:181
 msgid "All the files you&#8217;ve uploaded are listed in the Media Library, with the most recent uploads listed first."
-msgstr "Alle Dateien, die du hochgeladen hast, werden in der Mediathek aufgelistet, die zuletzt hochgeladenen zuoberst."
+msgstr "Alle Dateien, die du hochgeladen hast, werden in der Mediathek aufgelistet, die zuletzt hochgeladenen zuerst."
 
 #: wp-admin/plugin-install.php:122
 msgid "If you just want to get an idea of what&#8217;s available, you can browse Featured and Popular plugins by using the links above the plugins list. These sections rotate regularly."
@@ -11854,7 +11854,7 @@ msgstr "Wenn du auf <strong>Dateien auswählen</strong> klickst, öffnet sich ei
 
 #: wp-admin/media-new.php:53
 msgid "<strong>Drag and drop</strong> your files into the area below. Multiple files are allowed."
-msgstr "<strong>Markiere eine Datei und ziehe sie</strong> bei gedrückter Maustaste in den Bereich unterhalb. Du kannst auch mehrere Dateien auswählen und bewegen."
+msgstr "Ziehe deine Dateien per <strong>Drag-and-drop</strong> in den Bereich unten. Mehrere Dateien sind zulässig."
 
 #: wp-admin/edit-tags.php:259
 msgid "You can assign keywords to your posts using <strong>tags</strong>. Unlike categories, tags have no hierarchy, meaning there is no relationship from one tag to another."
@@ -11874,11 +11874,11 @@ msgstr "Entfernen und Wiederverwenden"
 
 #: wp-admin/upload.php:396
 msgid "If a media file has not been attached to any content, you will see that in the Uploaded To column, and can click on Attach to launch a small popup that will allow you to search for existing content and attach the file."
-msgstr "Falls eine Datei in keinem Beitrag oder Seite verwendet wird, so wird dies in der Spalte „Hochgeladen zu“ kenntlich gemacht. Mit einem Klick auf „Verknüpfen“ kannst du Beiträge oder Seiten suchen, mit denen du die Datei verknüpfen möchtest."
+msgstr "Falls eine Datei mit keinem Beitrag und keiner Seite verknüpft ist, so wird dies in der Spalte „Hochgeladen zu“ kenntlich gemacht. Mit einem Klick auf „Verknüpfen“ kannst du Beiträge oder Seiten suchen, mit denen du die Datei verknüpfen möchtest."
 
 #: wp-admin/upload.php:371
 msgid "All the files you&#8217;ve uploaded are listed in the Media Library, with the most recent uploads listed first. You can use the Screen Options tab to customize the display of this screen."
-msgstr "Alle über die Oberfläche von WordPress hochgeladenen Dateien werden in der Mediathek angezeigt. Standardmäßig werden die zuletzt hochgeladenen Dateien zuerst angezeigt. Verwende den Tab &#8222;Ansicht anpassen&#8220;, um diese einzurichten."
+msgstr "Alle Dateien, die du hochgeladen hast, werden in der Mediathek aufgelistet, die zuletzt hochgeladenen zuerst. Verwende den Tab &#8222;Ansicht anpassen&#8220;, um diese einzurichten."
 
 #: wp-admin/edit.php:320
 msgid "You can also perform the same types of actions, including narrowing the list by using the filters, acting on a page using the action links that appear when you hover over a row, or using the Bulk actions menu to edit the metadata for multiple pages at once."
@@ -12076,7 +12076,7 @@ msgstr "<a href=\"%1$s\" class=\"update-browser-link\">Aktualisiere %2$s</a> ode
 #. translators: 1: Link start tag, 2: Link end tag, 3: Width, 4: Height.
 #: wp-admin/includes/media.php:3112
 msgid "Scale images to match the large size selected in %1$simage options%2$s (%3$d &times; %4$d)."
-msgstr "Bilder skalieren, um die maximale Bildgröße aus %1$sBildoptionen%2$s (%3$d &times; %4$d) zu erfüllen."
+msgstr "Bilder skalieren, um der in den %1$sBildoptionen%2$s festgelegten maximalen Größe (%3$d &times; %4$d) zu entsprechen."
 
 #: wp-admin/includes/media.php:2978
 msgid "Audio, Video, or Other File"
@@ -14335,7 +14335,7 @@ msgstr "Diese Einstellung ist optional. Standardmäßig sollte sie leer sein."
 
 #: wp-admin/options-media.php:138
 msgid "Full URL path to files"
-msgstr "Kompletter Pfad zu den Dateien"
+msgstr "Vollständiger URL-Pfad zu den Dateien"
 
 #: wp-admin/options-media.php:126
 msgid "Store uploads in this folder"
@@ -14371,7 +14371,7 @@ msgstr "Vorschaubilder"
 
 #: wp-admin/options-media.php:55
 msgid "Image sizes"
-msgstr "Bildgröße"
+msgstr "Bildgrößen"
 
 #: wp-admin/options-media.php:17
 msgid "Media Settings"
@@ -15314,11 +15314,11 @@ msgstr "Linktext, z. B. &#8222;Airheads – Sie haben den Beat (PDF)&#8220;"
 
 #: wp-admin/includes/media.php:3029
 msgid "Link to image"
-msgstr "Mit Bild verlinken"
+msgstr "Auf Bild verlinken"
 
 #: wp-admin/includes/media.php:3024
 msgid "Link Image To:"
-msgstr "Mit Bild verlinken:"
+msgstr "Bild verlinken mit:"
 
 #: wp-admin/includes/media.php:2908
 msgid "Filter &#187;"
@@ -15369,7 +15369,7 @@ msgstr "Bilddatei"
 
 #: wp-admin/includes/media.php:2649
 msgid "Link thumbnails to:"
-msgstr "Vorschaubilder verlinken auf:"
+msgstr "Vorschaubilder verlinken mit:"
 
 #: wp-admin/includes/media.php:2606
 msgid "Sort Order:"
