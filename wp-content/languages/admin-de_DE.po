@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 7.1.x - Development - Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-09-03 19:15:00+0000\n"
+"PO-Revision-Date: 2026-09-06 22:27:13+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -216,7 +216,7 @@ msgstr "Inline-Anmerkungen mit Erwähnungen und formatiertem Text"
 
 #: wp-admin/about.php:103
 msgid "A new media editor modal replaces the old inline cropping tool, bringing freeform and aspect-ratio cropping, flip, precise rotation, and metadata editing together in a single streamlined workflow. The familiar Crop button still gets you there, now opening a dedicated space to crop, rotate, and adjust images before publishing."
-msgstr "Ein neues Medien-Editor-Bedienfeld ersetzt das bisherige Inline-Zuschneidewerkzeug und vereint Freiform- und Seitenverhältnis-Zuschnitt, Spiegeln, präzises Drehen und die Bearbeitung von Metadaten in einem einzigen, optimierten Arbeitsablauf. Der vertraute Zuschneiden-Button führt dich weiterhin dorthin und öffnet nun einen eigenen Bereich, in dem du Bilder vor der Veröffentlichung zuschneiden, drehen und anpassen kannst."
+msgstr "Ein neuer Medien-Editor-Dialog ersetzt das bisherige Inline-Zuschneidewerkzeug und vereint Freiform- und Seitenverhältnis-Zuschnitt, Spiegeln, präzises Drehen und die Bearbeitung von Metadaten in einem einzigen, optimierten Arbeitsablauf. Der vertraute Zuschneiden-Button führt dich weiterhin dorthin und öffnet nun einen eigenen Bereich, in dem du Bilder vor der Veröffentlichung zuschneiden, drehen und anpassen kannst."
 
 #: wp-admin/about.php:102
 msgid "One dedicated workflow for editing your images."
@@ -2555,7 +2555,7 @@ msgstr "%s löschen"
 #: wp-admin/themes.php:1042 wp-admin/themes.php:1267 wp-admin/themes.php:1287
 msgctxt "theme"
 msgid "Live Preview %s"
-msgstr "Live-Vorschau %s"
+msgstr "Live-Vorschau von %s anzeigen"
 
 #. translators: %s: Theme name.
 #: wp-admin/themes.php:613 wp-admin/themes.php:1005
@@ -6282,7 +6282,7 @@ msgstr "&#8222;%s&#8220; als JSON exportieren"
 
 #: wp-admin/edit.php:386
 msgid "1 pattern not updated, somebody is editing it."
-msgstr "1 Vorlage wurde nicht aktualisiert, da sie gerade von jemandem bearbeitet wird."
+msgstr "Eine Vorlage wurde nicht aktualisiert, da sie jemand gerade bearbeitet."
 
 #. translators: %s: Number of patterns.
 #: wp-admin/edit.php:394
@@ -7296,12 +7296,12 @@ msgstr "Theme-Installation"
 #. translators: %s: User's display name.
 #: wp-admin/includes/post.php:1884
 msgid "%s is currently editing this post."
-msgstr "%s bearbeitet diesen Beitrag bereits."
+msgstr "%s bearbeitet diesen Beitrag gerade."
 
 #. translators: %s: User's display name.
 #: wp-admin/includes/post.php:1881
 msgid "%s is currently editing this post. Do you want to take over?"
-msgstr "%s bearbeitet diesen Beitrag bereits. Möchtest du übernehmen?"
+msgstr "%s bearbeitet diesen Beitrag gerade. Möchtest du übernehmen?"
 
 #: wp-admin/includes/plugin.php:505
 msgid "Custom installation script."
@@ -7782,7 +7782,7 @@ msgid ""
 "Commenter avatars come from <a href=\"%s\">Gravatar</a>."
 msgstr ""
 "Hallo, dies ist ein Kommentar.\n"
-"Um mit dem Freischalten, Bearbeiten und Löschen von Kommentaren zu beginnen, besuche bitte die Kommentare-Ansicht im Dashboard.\n"
+"Um mit dem Moderieren, Bearbeiten und Löschen von Kommentaren zu beginnen, besuche bitte die Ansicht „Kommentare“ im Dashboard.\n"
 "Die Avatare der Kommentatoren kommen von <a href=\"%s\">Gravatar</a>."
 
 #. translators: %s: Theme name.
@@ -9067,7 +9067,7 @@ msgstr[1] "%s Beiträge von diesem Autor"
 #: wp-admin/includes/class-theme-installer-skin.php:149
 #: wp-admin/includes/class-theme-upgrader-skin.php:105
 msgid "Live Preview &#8220;%s&#8221;"
-msgstr "Live-Vorschau &#8222;%s&#8220;"
+msgstr "Live-Vorschau von &#8222;%s&#8220; anzeigen"
 
 #: wp-admin/options-discussion.php:138
 msgid "last page"
@@ -9220,11 +9220,11 @@ msgstr "Plugins löschen"
 
 #: wp-admin/edit.php:373
 msgid "1 page not updated, somebody is editing it."
-msgstr "Eine Seite wurde nicht aktualisiert, da sie gerade von jemandem bearbeitet wird."
+msgstr "Eine Seite wurde nicht aktualisiert, da sie jemand gerade bearbeitet."
 
 #: wp-admin/edit.php:360
 msgid "1 post not updated, somebody is editing it."
-msgstr "Ein Beitrag wurde nicht aktualisiert, da er gerade von jemandem bearbeitet wird."
+msgstr "Ein Beitrag wurde nicht aktualisiert, da ihn jemand gerade bearbeitet."
 
 #: wp-admin/user-edit.php:64
 msgid "You can log out of other devices, such as your phone or a public computer, by clicking the Log Out Everywhere Else button."
@@ -10314,8 +10314,8 @@ msgstr[1] "%s Seiten wurden endgültig gelöscht."
 #: wp-admin/edit.php:375
 msgid "%s page not updated, somebody is editing it."
 msgid_plural "%s pages not updated, somebody is editing them."
-msgstr[0] "%s Seite wurde nicht aktualisiert, jemand bearbeitet sie gerade."
-msgstr[1] "%s Seiten wurden nicht aktualisiert, jemand bearbeitet sie gerade."
+msgstr[0] "%s Seite wurde nicht aktualisiert, da sie jemand gerade bearbeitet."
+msgstr[1] "%s Seiten wurden nicht aktualisiert, da sie jemand gerade bearbeitet."
 
 #. translators: %s: Number of pages.
 #: wp-admin/edit.php:372
@@ -10349,8 +10349,8 @@ msgstr[1] "%s Beiträge wurden endgültig gelöscht."
 #: wp-admin/edit.php:362
 msgid "%s post not updated, somebody is editing it."
 msgid_plural "%s posts not updated, somebody is editing them."
-msgstr[0] "%s Beitrag wurde nicht aktualisiert, jemand bearbeitet ihn gerade."
-msgstr[1] "%s Beiträge wurden nicht aktualisiert, jemand bearbeitet sie gerade."
+msgstr[0] "%s Beitrag wurde nicht aktualisiert, da ihn jemand gerade bearbeitet."
+msgstr[1] "%s Beiträge wurden nicht aktualisiert, da sie jemand gerade bearbeitet."
 
 #: wp-admin/includes/edit-tag-messages.php:39
 msgid "Tags deleted."
@@ -10600,7 +10600,7 @@ msgstr "In dieser Ansicht kannst du eine globale Zuordnung von Menüs vornehmen,
 
 #: wp-admin/nav-menus.php:754
 msgid "Editing Menus"
-msgstr "Menüs bearbeiten"
+msgstr "Menübearbeitung"
 
 #: wp-admin/nav-menus.php:749
 msgid "Delete a menu item by <strong>expanding it and clicking the Remove link</strong>"
@@ -10737,12 +10737,12 @@ msgstr "Entwurf erstellt am %1$s um %2$s Uhr"
 #. translators: %s: User's display name.
 #: wp-admin/post.php:269
 msgid "You cannot move this item to the Trash. %s is currently editing."
-msgstr "Dieser Beitrag kann nicht in den Papierkorb verschoben werden, da er momentan von %s bearbeitet wird."
+msgstr "Dieser Beitrag kann nicht in den Papierkorb verschoben werden, da ihn %s gerade bearbeitet."
 
 #. translators: %s: User's display name.
 #: wp-admin/includes/misc.php:1211
 msgid "%s has taken over and is currently editing."
-msgstr "%s hat übernommen und bearbeitet momentan."
+msgstr "%s hat übernommen und bearbeitet gerade."
 
 #: wp-admin/nav-menus.php:982
 msgid "Select a menu to edit:"
@@ -10797,7 +10797,7 @@ msgstr "Das unterhalb des Editors befindliche Menü „Dokumentation“ enthält
 #: wp-admin/includes/class-wp-posts-list-table.php:1186
 #: wp-admin/includes/misc.php:1158
 msgid "%s is currently editing"
-msgstr "%s bearbeitet momentan"
+msgstr "%s bearbeitet gerade"
 
 #: wp-admin/edit-form-advanced.php:354
 msgid "You can upload and insert media (images, audio, documents, etc.) by clicking the Add Media button. You can select from the images and files already uploaded to the Media Library, or upload new media to add to your page or post. To create an image gallery, select the images to add and click the &#8220;Create a new gallery&#8221; button."
@@ -12543,7 +12543,7 @@ msgstr "Dieses untergeordnete Theme greift auf Templates des übergeordneten The
 #: wp-admin/includes/class-wp-ms-themes-list-table.php:484
 #: wp-admin/includes/class-wp-ms-themes-list-table.php:609
 msgid "Network Enable"
-msgstr "Netzwerkweit aktivieren"
+msgstr "Netzwerkweit freischalten"
 
 #: wp-admin/upgrade.php:169
 msgid "Your WordPress database has been successfully updated!"
@@ -15261,7 +15261,7 @@ msgstr ""
 
 #: wp-admin/includes/meta-boxes.php:1122
 msgid "Keep this link private"
-msgstr "Diesen Link als Privat markieren"
+msgstr "Diesen Link als privat markieren"
 
 #: wp-admin/includes/meta-boxes.php:1114
 msgid "Visit Link"
@@ -16082,8 +16082,8 @@ msgstr[1] "Meine <span class=\"count\">(%s)</span>"
 #: wp-admin/edit.php:388
 msgid "%s pattern not updated, somebody is editing it."
 msgid_plural "%s patterns not updated, somebody is editing them."
-msgstr[0] "%s Vorlage wurde nicht aktualisiert, jemand bearbeitet sie gerade."
-msgstr[1] "%s Vorlagen wurden nicht aktualisiert, jemand bearbeitet sie gerade."
+msgstr[0] "%s Vorlage wurde nicht aktualisiert, da sie jemand gerade bearbeitet."
+msgstr[1] "%s Vorlagen wurden nicht aktualisiert, da sie jemand gerade bearbeitet."
 
 #. translators: %s: Number of posts.
 #: wp-admin/edit.php:359
