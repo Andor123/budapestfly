@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Elementor Website Builder &#8211; more than just a page builder - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-09-07 03:32:56+0000\n"
+"PO-Revision-Date: 2026-09-09 00:20:57+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1577,6 +1577,10 @@ msgstr "Sara Parker"
 msgid "Close Animation"
 msgstr "Animation beim Schließen"
 
+#: modules/floating-buttons/base/widget-contact-button-base.php:2766
+msgid "Open Animation"
+msgstr "Animation beim Öffnen"
+
 #: modules/atomic-widgets/elements/atomic-form/atomic-form.php:305
 #: modules/floating-buttons/base/widget-contact-button-base.php:321
 #: modules/floating-buttons/base/widget-contact-button-base.php:663
@@ -1592,10 +1596,6 @@ msgstr "Animation beim Schließen"
 #: assets/js/packages/editor-controls/editor-controls.strings.js:244
 msgid "Message"
 msgstr "Nachricht"
-
-#: modules/floating-buttons/base/widget-contact-button-base.php:2766
-msgid "Open Animation"
-msgstr "Animation beim Öffnen"
 
 #: modules/floating-buttons/base/widget-contact-button-base.php:1643
 #: modules/floating-buttons/base/widget-floating-bars-base.php:295
@@ -3703,6 +3703,15 @@ msgstr "Pfad"
 msgid "Starting Point"
 msgstr "Startpunkt"
 
+#: includes/controls/groups/typography.php:245
+#: modules/shapes/widgets/text-path.php:347
+msgid "Word Spacing"
+msgstr "Wortabstand"
+
+#: modules/shapes/widgets/text-path.php:217
+msgid "Show Path"
+msgstr "Pfad anzeigen "
+
 #: app/modules/import-export-customization/module.php:214
 #: app/modules/import-export/module.php:207 core/admin/admin-notices.php:290
 #: core/admin/admin-notices.php:418 core/admin/admin-notices.php:505
@@ -3730,15 +3739,6 @@ msgstr "Startpunkt"
 #: assets/js/packages/v4-activation-modal/v4-activation-modal.strings.js:15
 msgid "Learn more"
 msgstr "Mehr erfahren"
-
-#: includes/controls/groups/typography.php:245
-#: modules/shapes/widgets/text-path.php:347
-msgid "Word Spacing"
-msgstr "Wortabstand"
-
-#: modules/shapes/widgets/text-path.php:217
-msgid "Show Path"
-msgstr "Pfad anzeigen "
 
 #: modules/shapes/widgets/text-path.php:199
 msgid "Text Direction"
@@ -5832,6 +5832,11 @@ msgstr "Neu"
 msgid "Hide Panel"
 msgstr "Editor ausblenden"
 
+#: core/common/modules/finder/template.php:19 assets/js/editor.js:12088
+#: assets/js/kit-library.816d964bf4c39d277a8e.bundle.js:2331
+msgid "No Results Found"
+msgstr "Keine Ergebnisse gefunden"
+
 #: includes/editor-templates/templates.php:173
 #: assets/js/element-manager-admin.js:864
 #: assets/js/element-manager-admin.strings.js:13
@@ -5872,11 +5877,6 @@ msgstr "Suche"
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:87
 msgid "Remove"
 msgstr "Löschen"
-
-#: core/common/modules/finder/template.php:19 assets/js/editor.js:12088
-#: assets/js/kit-library.816d964bf4c39d277a8e.bundle.js:2331
-msgid "No Results Found"
-msgstr "Keine Ergebnisse gefunden"
 
 #: includes/editor-templates/templates.php:713
 #: assets/js/kit-library.816d964bf4c39d277a8e.bundle.js:2039
@@ -6849,13 +6849,6 @@ msgstr "Tausendertrennzeichen"
 msgid "Off"
 msgstr "Aus"
 
-#: includes/base/element-base.php:957 includes/base/element-base.php:1121
-#: includes/widgets/common-base.php:1091 includes/widgets/icon-list.php:290
-#: includes/widgets/icon.php:335 includes/widgets/text-editor.php:151
-#: includes/widgets/video.php:737 modules/shapes/widgets/text-path.php:219
-msgid "On"
-msgstr "An"
-
 #: includes/editor-templates/panel-elements.php:31
 msgid "Get more with Elementor Pro"
 msgstr "Erhalte mehr Möglichkeiten mit Elementor Pro"
@@ -6889,6 +6882,13 @@ msgstr "Wechsle zu Pro"
 #: includes/managers/controls.php:1093
 msgid "Meet Our Custom CSS"
 msgstr "Lerne unser benutzerdefiniertes CSS kennen"
+
+#: includes/base/element-base.php:957 includes/base/element-base.php:1121
+#: includes/widgets/common-base.php:1091 includes/widgets/icon-list.php:290
+#: includes/widgets/icon.php:335 includes/widgets/text-editor.php:151
+#: includes/widgets/video.php:737 modules/shapes/widgets/text-path.php:219
+msgid "On"
+msgstr "Ein"
 
 #: includes/settings/settings.php:193
 msgid "Improve Elementor"
@@ -9302,6 +9302,29 @@ msgstr "An Bildschirm anpassen"
 msgid "CSS Classes"
 msgstr "CSS-Klassen"
 
+#: core/kits/documents/tabs/theme-style-buttons.php:152
+#: core/kits/documents/tabs/theme-style-buttons.php:227
+#: core/kits/documents/tabs/theme-style-form-fields.php:233
+#: core/kits/documents/tabs/theme-style-images.php:83
+#: core/kits/documents/tabs/theme-style-images.php:154
+#: includes/elements/column.php:572 includes/elements/column.php:609
+#: includes/elements/container.php:1040 includes/elements/container.php:1091
+#: includes/elements/section.php:855 includes/elements/section.php:891
+#: includes/widgets/common-base.php:991 includes/widgets/common-base.php:1028
+#: includes/widgets/divider.php:1025 includes/widgets/icon-box.php:622
+#: includes/widgets/icon.php:412 includes/widgets/image-box.php:464
+#: includes/widgets/image-carousel.php:819
+#: includes/widgets/image-gallery.php:342 includes/widgets/image.php:545
+#: includes/widgets/progress.php:343 includes/widgets/social-icons.php:506
+#: includes/widgets/testimonial.php:359 includes/widgets/text-editor.php:534
+#: includes/widgets/traits/button-trait.php:485
+#: modules/nested-accordion/widgets/nested-accordion.php:470
+#: modules/nested-accordion/widgets/nested-accordion.php:535
+#: modules/nested-tabs/widgets/nested-tabs.php:693
+#: modules/nested-tabs/widgets/nested-tabs.php:1033
+msgid "Border Radius"
+msgstr "Eckenradius"
+
 #: includes/widgets/menu-anchor.php:115
 msgid "The ID of Menu Anchor."
 msgstr "Die ID des Menü-Ankers."
@@ -9325,29 +9348,6 @@ msgstr "Keine Seitenleisten gefunden"
 #: includes/widgets/sidebar.php:93 includes/widgets/sidebar.php:113
 msgid "Choose Sidebar"
 msgstr "Seitenleiste auswählen"
-
-#: core/kits/documents/tabs/theme-style-buttons.php:152
-#: core/kits/documents/tabs/theme-style-buttons.php:227
-#: core/kits/documents/tabs/theme-style-form-fields.php:233
-#: core/kits/documents/tabs/theme-style-images.php:83
-#: core/kits/documents/tabs/theme-style-images.php:154
-#: includes/elements/column.php:572 includes/elements/column.php:609
-#: includes/elements/container.php:1040 includes/elements/container.php:1091
-#: includes/elements/section.php:855 includes/elements/section.php:891
-#: includes/widgets/common-base.php:991 includes/widgets/common-base.php:1028
-#: includes/widgets/divider.php:1025 includes/widgets/icon-box.php:622
-#: includes/widgets/icon.php:412 includes/widgets/image-box.php:464
-#: includes/widgets/image-carousel.php:819
-#: includes/widgets/image-gallery.php:342 includes/widgets/image.php:545
-#: includes/widgets/progress.php:343 includes/widgets/social-icons.php:506
-#: includes/widgets/testimonial.php:359 includes/widgets/text-editor.php:534
-#: includes/widgets/traits/button-trait.php:485
-#: modules/nested-accordion/widgets/nested-accordion.php:470
-#: modules/nested-accordion/widgets/nested-accordion.php:535
-#: modules/nested-tabs/widgets/nested-tabs.php:693
-#: modules/nested-tabs/widgets/nested-tabs.php:1033
-msgid "Border Radius"
-msgstr "Eckenradius"
 
 #: core/admin/admin.php:270
 #: core/editor/loader/v1/templates/editor-body-v1-view.php:23
@@ -9823,6 +9823,18 @@ msgstr "Prozentsatz"
 msgid "Rotate"
 msgstr "Drehen"
 
+#: includes/widgets/alert.php:125 includes/widgets/progress.php:175
+#: includes/widgets/traits/button-trait.php:75
+msgid "Danger"
+msgstr "Gefahr"
+
+#: modules/nested-tabs/widgets/nested-tabs.php:235
+#: modules/nested-tabs/widgets/nested-tabs.php:277
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:6998
+#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:125
+msgid "Justify"
+msgstr "Ausrichten"
+
 #: includes/controls/groups/flex-container.php:145
 #: includes/controls/groups/flex-item.php:67
 #: includes/controls/groups/grid-container.php:147
@@ -9844,18 +9856,6 @@ msgstr "Drehen"
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:270
 msgid "Stretch"
 msgstr "Strecken"
-
-#: includes/widgets/alert.php:125 includes/widgets/progress.php:175
-#: includes/widgets/traits/button-trait.php:75
-msgid "Danger"
-msgstr "Gefahr"
-
-#: modules/nested-tabs/widgets/nested-tabs.php:235
-#: modules/nested-tabs/widgets/nested-tabs.php:277
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.js:6998
-#: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:125
-msgid "Justify"
-msgstr "Ausrichten"
 
 #: includes/widgets/video.php:635 includes/widgets/video.php:642
 #: includes/widgets/video.php:797
