@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WP Mail SMTP by WPForms &#8211; The Most Popular SMTP and Email Log Plugin - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-09-09 00:23:52+0000\n"
+"PO-Revision-Date: 2026-09-09 19:16:49+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -2438,6 +2438,11 @@ msgstr "Name der Verbindung"
 msgid "Push Notification Alerts"
 msgstr "Push-Benachrichtigungs-Warnmeldungen"
 
+#. translators: %1$s - URL to ElasticEmail.com site.
+#: src/Providers/ElasticEmail/Options.php:37
+msgid "<a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">Elastic Email</a> is a cloud-based email marketing platform offering tools for email campaigns, automation, transactional emails, and analytics, designed for businesses of all sizes.<br><br>If you're just starting out, you can use Elastic Email's free plan to send emails to your account address from one of your verified email addresses. You don't need to use a credit card to try it out. When you're ready, you can upgrade to a higher plan."
+msgstr "<a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">Elastic Email</a> ist eine cloud-basierte E-Mail-Marketing-Plattform, die Tools für E-Mail-Kampagnen, Automatisierung, Transaktions-E-Mails und Analysen bietet und für Unternehmen jeder Größe konzipiert ist.<br><br>Wenn du gerade erst anfängst, kannst du das kostenlose Angebot von Elastic Email nutzen, um E-Mails von einer deiner verifizierten E-Mail-Adressen an deine Account-Adresse zu senden. Du brauchst keine Kreditkarte, um es auszuprobieren. Wenn du bereit bist, kannst du ein Upgrade auf einen höheren Tarif vornehmen."
+
 #. translators: %2$s - URL to wpmailsmtp.com doc.
 #: src/Providers/ElasticEmail/Options.php:40
 msgid "To get started, read our <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">Elastic Email documentation</a>."
@@ -2456,11 +2461,6 @@ msgstr "Folge diesem Link, um einen API-Schlüssel von Elastic Email zu erhalten
 #: src/Providers/Outlook/Provider.php:80
 msgid "%1$s <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">Upgrade to Pro now for easy, one-click Outlook setup</a>."
 msgstr "%1$s <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">Jetzt auf Pro upgraden für eine einfache Outlook-Einrichtung mit einem Klick</a>."
-
-#. translators: %1$s - URL to ElasticEmail.com site.
-#: src/Providers/ElasticEmail/Options.php:37
-msgid "<a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">Elastic Email</a> is a cloud-based email marketing platform offering tools for email campaigns, automation, transactional emails, and analytics, designed for businesses of all sizes.<br><br>If you're just starting out, you can use Elastic Email's free plan to send emails to your account address from one of your verified email addresses. You don't need to use a credit card to try it out. When you're ready, you can upgrade to a higher plan."
-msgstr "<a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">Elastic Email</a> ist eine cloud-basierte E-Mail-Marketing-Plattform, die Tools für E-Mail-Kampagnen, Automatisierung, Transaktions-E-Mails und Analysen bietet und für Unternehmen jeder Größe konzipiert ist.<br><br>Wenn du gerade erst anfängst, kannst du das kostenlose Angebot von Elastic Email nutzen, um E-Mails von einer deiner verifizierten E-Mail-Adressen an deine Account-Adresse zu senden. Du brauchst keine Kreditkarte, um es auszuprobieren. Wenn du bereit bist, kannst du ein Upgrade auf einen höheren Tarif vornehmen."
 
 #. translators: %1$s - plugin name; %2$s - documentation link.
 #: src/Providers/Outlook/Provider.php:56
@@ -2699,6 +2699,11 @@ msgstr "[E-Mail-Warteschlange] Die Verarbeitung der in der Warteschlange stehend
 msgid "Optimize Email Sending"
 msgstr "E-Mail-Versand optimieren"
 
+#. translators: %1$s - Documentation URL.
+#: src/Admin/Pages/MiscTab.php:378
+msgid "Send emails asynchronously, which will make pages with email requests load faster, but may delay email delivery by a minute or two. <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">Learn More</a>"
+msgstr "E-Mails werden asynchron versendet. Dadurch werden Seiten mit E-Mail-Anfragen schneller geladen, aber die Zustellung der E-Mails kann sich um ein oder zwei Minuten verzögern. <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">Mehr erfahren</a>"
+
 #. translators: %1$s - create missing tables link; %2$s - contact support link.
 #: src/Admin/Pages/DebugEventsTab.php:500
 msgid "WP Mail SMTP is using custom database tables for some of its features. In order to work properly, the custom tables should be created, and it seems they are missing. Please try to <a href=\"%1$s\">create the missing DB tables by clicking on this link</a>. If this issue persists, please <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">contact our support</a> and provide the error message below:"
@@ -2708,11 +2713,6 @@ msgstr "WP Mail SMTP verwendet für einige seiner Funktionen individuelle Datenb
 #: src/Admin/Pages/DebugEventsTab.php:517
 msgid "WP Mail SMTP is using custom database tables for some of its features. In order to work properly, the custom tables should be created, and it seems they are missing. Please try to <a href=\"%1$s\">create the missing DB tables by clicking on this link</a>. If this issue persists, please <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">contact our support</a>."
 msgstr "WP Mail SMTP verwendet für einige seiner Funktionen individuelle Datenbanktabellen. Damit die individuellen Tabellen ordnungsgemäß funktionieren, sollten sie erstellt werden, und es scheint, dass sie fehlen. Bitte versuche, <a href=\"%1$s\">die fehlenden DB-Tabellen zu erstellen, indem du auf diesen Link klickst</a>. Wenn das Problem weiterhin besteht, wende dich bitte <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">an unseren Support</a>."
-
-#. translators: %1$s - Documentation URL.
-#: src/Admin/Pages/MiscTab.php:378
-msgid "Send emails asynchronously, which will make pages with email requests load faster, but may delay email delivery by a minute or two. <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">Learn More</a>"
-msgstr "E-Mails werden asynchron versendet. Dadurch werden Seiten mit E-Mail-Anfragen schneller geladen, aber die Zustellung der E-Mails kann sich um ein oder zwei Minuten verzögern. <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">Mehr erfahren</a>"
 
 #: src/Admin/Pages/MiscTab.php:449
 msgid "Email Rate Limiting"
@@ -4685,11 +4685,6 @@ msgid "Tools"
 msgstr "Werkzeuge"
 
 #. translators: %s: Directory path.
-#: src/Uploads.php:58
-msgid "Unable to create directory %s. Is its parent directory writable by the server?"
-msgstr "Das Verzeichnis %s konnte nicht erstellt werden. Sind die Schreibrechte für das übergeordnete Verzeichnis auf dem Server gesetzt?"
-
-#. translators: %s: Directory path.
 #: src/Uploads.php:69
 msgid "Unable to write in WPMailSMTP upload directory %s. Is it writable by the server?"
 msgstr "In das WPMailSMTP-Uploadverzeichnis %s konnte nicht geschrieben werden. Sind die Schreibrechte für das Verzeichnis auf dem Server gesetzt?"
@@ -4713,6 +4708,11 @@ msgstr "Alle Überprüfungen deiner E-Mail-Domain waren erfolgreich. Es sieht so
 #: src/SiteHealth.php:365
 msgid "Email domain issues detected"
 msgstr "Probleme mit der E-Mail-Domain gefunden"
+
+#. translators: %s: Directory path.
+#: src/Uploads.php:58
+msgid "Unable to create directory %s. Is its parent directory writable by the server?"
+msgstr "Das Verzeichnis „%s“ kann nicht erstellt werden. Ist das übergeordnete Verzeichnis für den Server beschreibbar?"
 
 #: src/Providers/Gmail/Options.php:250
 msgid "You can also send emails with different From Email addresses, by disabling the Force From Email setting and using registered aliases throughout your WordPress site as the From Email addresses."
