@@ -108,10 +108,12 @@ class WPZOOM_Click_To_Chat {
 	// -------------------------------------------------------------------------
 
 	public function add_menu_item() {
+		// "New" badge in the menu until AI Chat is connected — same treatment as the Pro badge.
+		$badge = apply_filters( 'wpzoom_ai_chat_is_connected', false ) ? '' : ' <span class="wpzoom-pro-badge wpzoom-new-badge">New</span>';
 		add_submenu_page(
 			'edit.php?post_type=wpzoom-shortcode',
-			__( 'Click to Chat', 'social-icons-widget-by-wpzoom' ),
-			__( 'Click to Chat', 'social-icons-widget-by-wpzoom' ),
+			__( 'AI Chat', 'social-icons-widget-by-wpzoom' ),
+			__( 'AI Chat', 'social-icons-widget-by-wpzoom' ) . $badge,
 			'manage_options',
 			'wpzoom-click-to-chat',
 			array( $this, 'render_admin_page' )
@@ -225,16 +227,57 @@ class WPZOOM_Click_To_Chat {
 		}
 
 		$s = self::get_settings();
+
+		// Two tabs: AI Chat (Yamidoo) and the classic Click to Chat launcher. The
+		// menu item is "AI Chat", so that tab is always the landing one; Click to
+		// Chat links carry &tab=ctc (its form posts back to the same URL).
+		$tabs = array(
+			'ai'  => __( 'AI Chat', 'social-icons-widget-by-wpzoom' ),
+			'ctc' => __( 'Click to Chat', 'social-icons-widget-by-wpzoom' ),
+		);
+		$tabs = apply_filters( 'wpzoom_chat_admin_tabs', $tabs );
+		$default_tab = 'ai';
+		$tab = isset( $_GET['tab'] ) ? sanitize_key( wp_unslash( $_GET['tab'] ) ) : $default_tab; // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- navigation only.
+		if ( ! isset( $tabs[ $tab ] ) ) {
+			$tab = $default_tab;
+		}
+		$base_url = admin_url( 'edit.php?post_type=wpzoom-shortcode&page=wpzoom-click-to-chat' );
 		?>
 		<div class="wrap wpzoom-ctc-admin-wrap">
-			<h1><?php esc_html_e( 'Click to Chat', 'social-icons-widget-by-wpzoom' ); ?></h1>
+			<h1><?php esc_html_e( 'AI Chat & Click to Chat', 'social-icons-widget-by-wpzoom' ); ?></h1>
 			<p class="wpzoom-ctc-admin-description">
-				<?php esc_html_e( 'One-tap contact buttons for WhatsApp, Telegram & Messenger — floating, always visible.', 'social-icons-widget-by-wpzoom' ); ?>
+				<?php esc_html_e( 'One floating button for every way visitors reach you: an AI chat that answers from your pages, or one-tap buttons for WhatsApp, Telegram, Messenger and Viber.', 'social-icons-widget-by-wpzoom' ); ?>
 			</p>
+
+			<nav class="nav-tab-wrapper wpzoom-chat-tabs" aria-label="<?php esc_attr_e( 'Chat settings', 'social-icons-widget-by-wpzoom' ); ?>">
+				<?php foreach ( $tabs as $key => $label ) : ?>
+					<a href="<?php echo esc_url( add_query_arg( 'tab', $key, $base_url ) ); ?>" class="nav-tab <?php echo $tab === $key ? 'nav-tab-active' : ''; ?>">
+						<?php echo esc_html( $label ); ?>
+						<?php if ( 'ai' === $key && ! apply_filters( 'wpzoom_ai_chat_is_connected', false ) ) : ?>
+							<span class="wpzoom-chat-tab-badge"><?php esc_html_e( 'New', 'social-icons-widget-by-wpzoom' ); ?></span>
+						<?php endif; ?>
+					</a>
+				<?php endforeach; ?>
+			</nav>
+
+			<?php if ( 'ctc' !== $tab ) : ?>
+				<?php
+				/**
+				 * Content of a non-default tab (AI Chat renders on 'ai').
+				 *
+				 * @param string $tab Active tab key.
+				 */
+				do_action( 'wpzoom_chat_admin_tab', $tab );
+				?>
+		</div>
+		<?php
+			return;
+		endif;
+		?>
 
 			<?php echo $notice; // phpcs:ignore -- escaped above ?>
 
-			<form method="post" action="">
+			<form method="post" action="<?php echo esc_url( add_query_arg( 'tab', 'ctc', $base_url ) ); ?>">
 				<?php wp_nonce_field( 'wpzoom_ctc_save' ); ?>
 
 				<!-- Enable toggle -->
@@ -689,9 +732,20 @@ class WPZOOM_Click_To_Chat {
 	// Frontend
 	// -------------------------------------------------------------------------
 
+	/**
+	 * Whether the floating launcher should render on this request.
+	 * `wpzoom_ctc_should_render` lets AI Chat hide it (one floating button, not two).
+	 */
+	private static function should_render( $s ) {
+		if ( empty( $s['enabled'] ) ) {
+			return false;
+		}
+		return (bool) apply_filters( 'wpzoom_ctc_should_render', true );
+	}
+
 	public function enqueue_frontend_assets() {
 		$s = self::get_settings();
-		if ( empty( $s['enabled'] ) ) {
+		if ( ! self::should_render( $s ) ) {
 			return;
 		}
 
@@ -748,7 +802,7 @@ class WPZOOM_Click_To_Chat {
 
 	public function render_frontend_widget() {
 		$s = self::get_settings();
-		if ( empty( $s['enabled'] ) ) {
+		if ( ! self::should_render( $s ) ) {
 			return;
 		}
 

@@ -3,7 +3,7 @@
 Plugin Name: GTranslate
 Plugin URI: https://gtranslate.io/?xyz=998
 Description: Translate your website and make it multilingual. For support visit <a href="https://wordpress.org/support/plugin/gtranslate">GTranslate Support Forum</a>.
-Version: 3.1.2
+Version: 5.0.1
 Author: Translate AI Multilingual Solutions
 Author URI: https://gtranslate.io
 License: GPLv2 or later
@@ -31,7 +31,7 @@ Text Domain: gtranslate
 if(!defined('ABSPATH'))
     exit;
 
-define('GTRANSLATE_VERSION', '3.1.2');
+define('GTRANSLATE_VERSION', '5.0.1');
 
 add_action('widgets_init', array('GTranslate', 'register'));
 register_activation_hook(__FILE__, array('GTranslate', 'activate'));
@@ -87,8 +87,7 @@ class GTranslate extends WP_Widget {
         $data = get_option('GTranslate');
         self::load_defaults($data);
 
-        if($data['enable_cdn'])
-            header('Link: <https://cdn.gtranslate.net/>; rel=dns-prefetch', false);
+        header('Link: <https://cdn.gtranslate.net/>; rel=dns-prefetch', false);
     }
 
     public static function enqueue_scripts() {
@@ -2561,7 +2560,7 @@ if($data['pro_version'] or $data['enterprise_version']) {
                     if(defined('CURL_IPRESOLVE_V4')) curl_setopt($ch, CURLOPT_IPRESOLVE, CURL_IPRESOLVE_V4);
                     curl_setopt($ch, CURLOPT_CAINFO, dirname(__FILE__) . '/url_addon/cacert.pem');
                     curl_setopt($ch, CURLOPT_POST, 1);
-                    curl_setopt($ch, CURLOPT_POSTFIELDS, array('body' => base64_encode(do_shortcode("<subject>$subject</subject><message>$message</message>")), 'access_key' => md5(substr(NONCE_SALT, 0, 10) . substr(NONCE_KEY, 0, 5))));
+                    curl_setopt($ch, CURLOPT_POSTFIELDS, array('body' => base64_encode("<subject>$subject</subject><message>$message</message>"), 'access_key' => md5(substr(NONCE_SALT, 0, 10) . substr(NONCE_KEY, 0, 5))));
 
                     if($data['email_translation_debug']) {
                         $fh = fopen(dirname(__FILE__) . '/url_addon/debug.txt', 'a');
@@ -2664,7 +2663,7 @@ if($data['pro_version'] or $data['enterprise_version']) {
                 if(defined('CURL_IPRESOLVE_V4')) curl_setopt($ch, CURLOPT_IPRESOLVE, CURL_IPRESOLVE_V4);
                 curl_setopt($ch, CURLOPT_CAINFO, dirname(__FILE__) . '/url_addon/cacert.pem');
                 curl_setopt($ch, CURLOPT_POST, 1);
-                curl_setopt($ch, CURLOPT_POSTFIELDS, array('body' => base64_encode(do_shortcode("<subject>PDF Invoice</subject><message>$html</message>")), 'access_key' => md5(substr(NONCE_SALT, 0, 10) . substr(NONCE_KEY, 0, 5))));
+                curl_setopt($ch, CURLOPT_POSTFIELDS, array('body' => base64_encode("<subject>PDF Invoice</subject><message>$html</message>"), 'access_key' => md5(substr(NONCE_SALT, 0, 10) . substr(NONCE_KEY, 0, 5))));
 
                 if($data['email_translation_debug']) {
                     $fh = fopen(dirname(__FILE__) . '/url_addon/debug.txt', 'a');
