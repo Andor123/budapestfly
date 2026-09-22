@@ -5,7 +5,7 @@ Tags: ai chatbot, live chat, click to chat, whatsapp, social icons
 Requires at least: 6.5
 Requires PHP: 7.4
 Tested up to: 7.1
-Stable tag: 4.7.1
+Stable tag: 4.7.3
 License: GNU General Public License v2.0 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -108,7 +108,7 @@ Upgrade to [Social Icons Widget PRO](https://www.wpzoom.com/plugins/social-share
 * **Like Button** - Add a like button to let visitors engage with your posts
 * **AI Share Buttons** - Share to ChatGPT, Claude, and Perplexity AI platforms
 * **Share Counts** - Display total and individual share counts on buttons
-* **External Share Counts** - Fetch real share counts from Facebook, Pinterest via SharedCount API
+* **Facebook Share Counts** - Fetch real Facebook share counts with your own SharedCount API key
 * **Custom SVG Icon Uploads** - Upload your own custom SVG icons
 * **Nav Menu Integration** - Add social icons directly to WordPress navigation menus
 * **Dashboard Widget** - Quick stats overview right on your WordPress dashboard
@@ -240,7 +240,7 @@ Yes! Social Icons & Sharing Buttons does not collect any information from your v
 * **Share Analytics** - Track shares across all platforms with a beautiful analytics dashboard
 * **Like Button** - Let visitors like your posts with engagement tracking
 * **AI Share Buttons** - Share content to ChatGPT, Claude, and Perplexity
-* **Share Counts** - Display share counts on buttons (both internal tracking and external via SharedCount API)
+* **Share Counts** - Display share counts on buttons, tracked by the plugin or fetched from Facebook with your own SharedCount API key
 * **Custom SVG Uploads** - Upload your own custom icons
 * **Nav Menu Integration** - Add social icons to your navigation menus
 * **Priority Support** - Get faster help with priority email support
@@ -251,18 +251,30 @@ Floating Buttons is a PRO feature that displays your social sharing icons as a f
 
 == Screenshots ==
 
-1. Social Icons & Sharing Buttons Preview
-2. Sharing Buttons in Posts & Pages
-3. Customizing Sharing Buttons
-4. Custom SVG Icons
-5. Social Sharing Block
-6. Social Icons Block
-7. Social Sharing Buttons - Outline Style
-8. Social Sharing Buttons - Minimal Style
-9. Social Sharing Buttons - One-tone Style
-10. Social Sharing Buttons - No Label Style
+1. One floating button for every channel: AI Chat, WhatsApp, Telegram, Messenger and Viber
+2. AI Chat answers visitors from your own pages and links the page the answer came from
+3. Turn on AI Chat in one click, after a free scan of what your site already answers
+4. Click to Chat settings: channels, launcher position, size, colors and icons
+5. Social Icons & Sharing Buttons Preview
+6. Sharing Buttons in Posts & Pages
+7. Social Icons Block
+8. Social Sharing Block
+9. Custom SVG Icons
+10. Customizing Sharing Buttons
 
 == Changelog ==
+
+= 4.7.3 =
+* Minor fixes
+
+= 4.7.2 =
+* NEW: AI Chat can now sit in the Click to Chat launcher alongside WhatsApp, Telegram, Messenger and Viber — visitors ask the AI first and still have a one-tap way to reach a person. Its own floating bubble hides, so there is still only one button in the corner.
+* The new channel also works when the standalone Yamidoo plugin runs the chat
+* NEW: Click to Chat buttons now show a label on hover, on the side facing the page, and each label can be edited in the settings (defaults to the platform name)
+* With AI Chat as a channel, Yamidoo's floating messages keep working (needs the current Yamidoo widget; older builds fall back to hiding the whole widget)
+* Click to Chat warns when the Yamidoo chat bubble and the launcher would both show on the front end, with a one-click way to fold the chat into the launcher
+* NEW: the AI Chat channel button can use a plain chat icon instead of the Yamidoo mark — eight to choose from, on the Click to Chat tab
+* Redrawn the Click to Chat launcher icons: a single matching set of nine open and four close icons, replacing the old Font Awesome 3 and Dashicons mix. The close icon is lighter, and the launcher no longer loads an icon font. Existing sites keep their choice and are moved to the equivalent new icon.
 
 = 4.7.1 =
 * NEW: Customer data for Easy Digital Downloads and WooCommerce — orders, licenses and subscriptions next to the conversation, and account answers for logged-in customers
