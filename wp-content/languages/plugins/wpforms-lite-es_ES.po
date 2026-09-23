@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WPForms &#8211; AI Form Builder for WordPress &#8211; Contact Forms, Payment Forms, Survey Form, Quiz &amp; More - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-09-17 13:13:29+0000\n"
+"PO-Revision-Date: 2026-09-22 12:06:56+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1622,6 +1622,10 @@ msgstr "¿Cómo deseas publicar tu formulario?"
 #: templates/admin/form-embed-wizard/partials/education-card.php:57
 msgid "Demo"
 msgstr "Demo"
+
+#: src/Lite/Admin/Education/Admin/Settings/Gdpr.php:91
+msgid "Disable storage IP addresses, User Agent, and browser language on all forms. If unchecked, then this can be managed on a form-by-form basis inside the form builder under Settings → General"
+msgstr "Desactiva el almacenamiento de direcciones IP y del agente de usuario en todos los formularios. Si no está marcado, esto se puede gestionar formulario por formulario en el constructor de formularios en Ajustes → General."
 
 #: src/Integrations/AI/Admin/Builder/FormEditor.php:332
 msgid "Configuring conditional logic..."
@@ -8005,11 +8009,6 @@ msgstr "Realiza cálculos fácilmente basados en lo que introduzca el usuario. V
 msgid "AI Calculations Are Here!"
 msgstr "¡Ya están aquí los cálculos de IA!"
 
-#. translators: %s - WPForms.com URL for Stripe webhooks documentation.
-#: src/Integrations/Stripe/WebhooksHealthCheck.php:227
-msgid "Heads up! Looks like you have a problem with your webhooks configuration. Please check and confirm that you've configured the WPForms webhooks in your Stripe account. This notice will disappear automatically when a new Stripe request comes in. See our <a href=\"%1$s\" rel=\"nofollow noopener\" target=\"_blank\">documentation</a> for more information."
-msgstr "¡Atención! Parece que tienes un problema con la configuración de tus webhooks. Por favor, comprueba y confirma que has configurado los webhooks de WPForms en tu cuenta de Stripe. Este aviso desaparecerá automáticamente cuando llegue una nueva solicitud de Stripe. Consulta nuestra <a href=\"%1$s\" rel=\"nofollow noopener\" target=\"_blank\">documentación</a> para más información."
-
 #: src/Lite/Admin/Connect.php:87
 msgid "There must be a non-developer Lite version installed to upgrade."
 msgstr "Debe haber una versión Lite no para desarrolladores instalada para actualizar."
@@ -8023,6 +8022,11 @@ msgstr "¿Necesitas más ayuda?"
 #: templates/admin/challenge/embed.php:103
 msgid "We're sorry that it took longer than %1$d %2$s to publish your form. Our goal is to create the most beginner-friendly WordPress form plugin.<br>How can we help you to be successful? Please send us your feedback. Our support team is standing by to help."
 msgstr "Sentimos que hayas tardado más de %1$d %2$s minutos en publicar tu formulario. Nuestro objetivo es crear el plugin de formularios de WordPress más fácil de usar para principiantes.<br>¿Cómo podemos ayudarte a tener éxito? Envíanos tus comentarios. Nuestro equipo de soporte está a tu disposición para ayudarte."
+
+#. translators: %s - WPForms.com URL for Stripe webhooks documentation.
+#: src/Integrations/Stripe/WebhooksHealthCheck.php:227
+msgid "Heads up! Looks like you have a problem with your webhooks configuration. Please check and confirm that you've configured the WPForms webhooks in your Stripe account. This notice will disappear automatically when a new Stripe request comes in. See our <a href=\"%1$s\" rel=\"nofollow noopener\" target=\"_blank\">documentation</a> for more information."
+msgstr "¡Atención! Parece que tienes un problema con la configuración de tus webhooks. Por favor, comprueba y confirma que has configurado los webhooks de WPForms en tu cuenta de Stripe. Este aviso desaparecerá automáticamente cuando llegue una nueva solicitud de Stripe. Consulta nuestra <a href=\"%1$s\" rel=\"nofollow noopener\" target=\"_blank\">documentación</a> para más información."
 
 #: templates/admin/payments/single/payment-history.php:26
 msgid "Subscription Renewal History Table"
@@ -8115,6 +8119,18 @@ msgstr "Renovación de suscripciones"
 #: src/Admin/Payments/Views/Overview/Chart.php:308
 msgid "Coupons Redeemed"
 msgstr "Cupones canjeados"
+
+#: src/Admin/Payments/Views/Overview/Chart.php:34
+msgid "No Refunds for Selected Period"
+msgstr "No hay devoluciones para el periodo seleccionado"
+
+#: src/Admin/Payments/Views/Overview/Chart.php:35
+msgid "No New Subscriptions for Selected Period"
+msgstr "No hay nuevas suscripciones para el periodo seleccionado"
+
+#: src/Admin/Payments/Views/Overview/Chart.php:36
+msgid "No Subscription Renewals for the Selected Period"
+msgstr "No hay renovaciones de suscripción para el periodo seleccionado"
 
 #. translators: WPForms.com docs page URL.
 #: src/Admin/Payments/Views/Overview/Page.php:620
@@ -8677,6 +8693,11 @@ msgstr "Lo siento, no hemos podido encontrar ningún campo que coincida con tus 
 msgid "Easy to Use, Yet Powerful"
 msgstr "Fácil de usar, pero potente"
 
+#. translators: %1$s - WPForms.com Upgrade page URL.
+#: src/Admin/Payments/Views/Coupons/Education.php:171
+msgid "With the Coupons addon, you can offer customers discounts using custom coupon codes. Create your own percentage or fixed rate discount, then add the Coupon field to any payment form. When a customer enters your unique code, they’ll receive the specified discount. You can also add limits to restrict when coupons are available and how often they can be used. The Coupons addon requires a license level of Pro or higher.%s"
+msgstr "Con la extensión de cupones, puedes ofrecer descuentos a tus clientes utilizando códigos de cupón personalizados. Crea tu propio descuento porcentual o fijo y añade el campo de cupón a cualquier formulario de pago. Cuando un cliente introduzca su código exclusivo, recibirá el descuento especificado. También puedes añadir límites para restringir cuándo están disponibles los cupones y con qué frecuencia se pueden utilizar. La extensión de cupones requiere un nivel de licencia Pro o superior.%s"
+
 #: src/Admin/Payments/Views/Coupons/Education.php:164
 msgid "Coupon Settings"
 msgstr "Ajustes del cupón"
@@ -8684,11 +8705,6 @@ msgstr "Ajustes del cupón"
 #: src/Admin/Payments/Views/Coupons/Education.php:159
 msgid "Coupons Overview"
 msgstr "Resumen de cupones"
-
-#. translators: %1$s - WPForms.com Upgrade page URL.
-#: src/Admin/Payments/Views/Coupons/Education.php:171
-msgid "With the Coupons addon, you can offer customers discounts using custom coupon codes. Create your own percentage or fixed rate discount, then add the Coupon field to any payment form. When a customer enters your unique code, they’ll receive the specified discount. You can also add limits to restrict when coupons are available and how often they can be used. The Coupons addon requires a license level of Pro or higher.%s"
-msgstr "Con la extensión de cupones, puedes ofrecer descuentos a tus clientes utilizando códigos de cupón personalizados. Crea tu propio descuento porcentual o fijo y añade el campo de cupón a cualquier formulario de pago. Cuando un cliente introduzca su código exclusivo, recibirá el descuento especificado. También puedes añadir límites para restringir cuándo están disponibles los cupones y con qué frecuencia se pueden utilizar. La extensión de cupones requiere un nivel de licencia Pro o superior.%s"
 
 #: src/Admin/Payments/Views/Coupons/Education.php:153
 msgid "Usage Statistics"
@@ -8731,6 +8747,14 @@ msgid "%s PHP extension"
 msgid_plural "%s PHP extensions"
 msgstr[0] "%s extensión PHP"
 msgstr[1] "%s extensiones PHP"
+
+#: src/Admin/Payments/Views/Overview/Chart.php:37
+msgid "No Coupons Applied During the Selected Period"
+msgstr "No se han aplicado cupones durante el periodo seleccionado"
+
+#: src/Admin/Payments/Views/Overview/Chart.php:33
+msgid "No Sales for Selected Period"
+msgstr "No hay ventas en el periodo seleccionado"
 
 #: src/Admin/Payments/Views/Overview/Page.php:81
 #: templates/emails/summary-body.php:52
@@ -9257,6 +9281,12 @@ msgstr "Resumen de pagos"
 #: src/Admin/Payments/Views/Overview/Chart.php:167
 msgid "Viewing Test Data"
 msgstr "Viendo datos de prueba"
+
+#: src/Admin/Payments/Views/Overview/Chart.php:32
+#: src/Admin/Payments/Views/Overview/Chart.php:188
+#: templates/admin/dashboard/widgets/payments.php:60
+msgid "No Payments for Selected Period"
+msgstr "No hay pagos en el periodo seleccionado"
 
 #: src/Admin/Payments/Views/Overview/Chart.php:189
 #: templates/admin/dashboard/widgets/payments.php:61
@@ -13296,6 +13326,10 @@ msgstr "No se ha encontrado ningún ID de formulario."
 #: src/Forms/Fields/Helpers/RequirementsAlerts.php:179
 msgid "PayPal Standard"
 msgstr "PayPal Standard"
+
+#: src/Admin/Dashboard/Widgets/Entries.php:396
+msgid "Form Names"
+msgstr "Nombres de formularios"
 
 #. translators: %s - limit words number.
 #: includes/fields/class-text.php:550 includes/fields/class-textarea.php:372
