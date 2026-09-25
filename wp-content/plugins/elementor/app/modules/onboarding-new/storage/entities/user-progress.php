@@ -1,6 +1,6 @@
 <?php
 
-namespace Elementor\App\Modules\Onboarding\Storage\Entities;
+namespace Elementor\App\Modules\OnboardingNew\Storage\Entities;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;

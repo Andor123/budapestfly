@@ -1,9 +1,10 @@
 <?php
 
-namespace Elementor\App\Modules\Onboarding\Data\Endpoints;
+namespace Elementor\App\Modules\OnboardingNew\Data\Endpoints;
 
-use Elementor\App\Modules\Onboarding\Storage\Onboarding_Progress_Manager;
-use Elementor\App\Modules\Onboarding\Validation\User_Choices_Validator;
+use Elementor\App\Modules\OnboardingNew\Module;
+use Elementor\App\Modules\OnboardingNew\Storage\Onboarding_Progress_Manager;
+use Elementor\App\Modules\OnboardingNew\Validation\User_Progress_Validator;
 use Elementor\Data\V2\Base\Endpoint as Endpoint_Base;
 use WP_REST_Server;
 
@@ -11,10 +12,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class User_Choices extends Endpoint_Base {
+class User_Progress extends Endpoint_Base {
 
 	public function get_name(): string {
-		return 'user-choices';
+		return 'user-progress';
 	}
 
 	public function get_format(): string {
@@ -34,10 +35,13 @@ class User_Choices extends Endpoint_Base {
 		}
 
 		$manager = Onboarding_Progress_Manager::instance();
-		$choices = $manager->get_choices();
+		$progress = $manager->get_progress();
 
 		return [
-			'data' => $choices->to_array(),
+			'data' => $progress->to_array(),
+			'meta' => [
+				'had_unexpected_exit' => $progress->had_unexpected_exit( Module::has_user_finished_onboarding() ),
+			],
 		];
 	}
 
@@ -49,7 +53,7 @@ class User_Choices extends Endpoint_Base {
 
 		$params = $request->get_json_params();
 
-		$validator = new User_Choices_Validator();
+		$validator = new User_Progress_Validator();
 		$validated = $validator->validate( $params ?? [] );
 
 		if ( is_wp_error( $validated ) ) {
@@ -57,11 +61,11 @@ class User_Choices extends Endpoint_Base {
 		}
 
 		$manager = Onboarding_Progress_Manager::instance();
-		$choices = $manager->update_choices( $validated );
+		$progress = $manager->update_progress( $validated );
 
 		return [
 			'data' => 'success',
-			'choices' => $choices->to_array(),
+			'progress' => $progress->to_array(),
 		];
 	}
 

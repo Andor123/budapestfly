@@ -4,7 +4,7 @@ Tags: ai, drag-and-drop, editor, landing page, mcp
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 4.3.1
+Stable tag: 4.3.2
 Beta tag: 4.3.0-beta3
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -355,6 +355,15 @@ If you want to contribute, go to our [Elementor GitHub Repository](https://githu
 6. **Motion Effects** - Add entrance animations and transitions to any element in your website to captivate visitors.
 
 == Changelog ==
+
+= 4.3.2 - 2026-09-24 =
+
+* Tweak: Improved the Editor onboarding flow for a smoother getting-started experience.
+* Fix: HTML Tags do not work correctly with Background Video ([#37393](https://github.com/elementor/elementor/issues/37393))
+* Fix: Improved compatibility with sites protected by HTTP Basic Authentication ([#37421](https://github.com/elementor/elementor/issues/37421))
+* Fix: Page styles may not load correctly after being regenerated
+* Fix: Improved code security enforcement in data handling
+* Fix: Improved update stability between Elementor Core and Pro
 
 = 4.3.1 - 2026-09-23 =
 

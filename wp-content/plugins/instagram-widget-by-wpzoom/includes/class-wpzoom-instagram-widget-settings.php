@@ -54,7 +54,7 @@ class WPZOOM_Instagram_Widget_Settings {
 		'show-account-username'           => array( 'type' => 'boolean', 'default' => true ),
 		'show-account-badge'              => array( 'type' => 'boolean', 'default' => false ),
 		'show-account-stats'              => array( 'type' => 'boolean', 'default' => true ),
-		'show-stories'                    => array( 'type' => 'boolean', 'default' => true ),
+		'show-stories'                    => array( 'type' => 'boolean', 'default' => false ), // Stories ring on the profile image (opt-in)
 		'stories-row'                     => array( 'type' => 'boolean', 'default' => false ), // Show a row of story thumbnails above the feed (PRO)
 		'stories-per-row'                 => array( 'type' => 'integer', 'default' => 5 ),     // Thumbnails per row on desktop (PRO)
 		'stories-card-ratio'              => array( 'type' => 'string',  'default' => 'portrait' ), // portrait (9:16), tall (3:4), square (PRO)
@@ -152,6 +152,7 @@ class WPZOOM_Instagram_Widget_Settings {
 		self::$settings = get_option( 'wpzoom-instagram-widget-settings', wpzoom_instagram_get_default_settings() );
 
 		add_action( 'init', array( $this, 'init' ) );
+		add_action( 'init', array( $this, 'maybe_migrate_stories_optin' ), 20 );
 
 		add_filter( 'views_edit-wpz-insta_feed', array( $this, 'views_filter' ) );
 		add_filter( 'views_edit-wpz-insta_user', array( $this, 'views_filter' ) );
@@ -1690,6 +1691,42 @@ class WPZOOM_Instagram_Widget_Settings {
 		return $out;
 	}
 
+	/**
+	 * One-time migration for the stories ring becoming a free, opt-in feature.
+	 *
+	 * While stories were PRO-only, free feeds could still save "show-stories" as on (the
+	 * locked checkbox defaulted to checked), so those are switched off to keep it opt-in.
+	 * With PRO active, feeds that never stored a value keep the old default (on).
+	 */
+	public function maybe_migrate_stories_optin() {
+		if ( get_option( 'wpz-insta_stories-optin-migrated' ) ) {
+			return;
+		}
+
+		$is_pro   = apply_filters( 'wpz-insta_is-pro', false );
+		$meta_key = '_wpz-insta_show-stories';
+		$feed_ids = get_posts(
+			array(
+				'post_type'   => 'wpz-insta_feed',
+				'post_status' => 'any',
+				'numberposts' => -1,
+				'fields'      => 'ids',
+			)
+		);
+
+		foreach ( $feed_ids as $feed_id ) {
+			if ( $is_pro ) {
+				if ( ! metadata_exists( 'post', $feed_id, $meta_key ) ) {
+					update_post_meta( $feed_id, $meta_key, '1' );
+				}
+			} else {
+				update_post_meta( $feed_id, $meta_key, '0' );
+			}
+		}
+
+		update_option( 'wpz-insta_stories-optin-migrated', 1, false );
+	}
+
 	public static function get_feed_setting_value( int $feed_id, string $setting_name ) {
 		$value = null;
 
@@ -2259,7 +2296,6 @@ class WPZOOM_Instagram_Widget_Settings {
 
 									<div class="wpz-insta_table-group">
 									<strong class="wpz-insta_table-subtitle"><?php esc_html_e( 'Stories', 'instagram-widget-by-wpzoom' ); ?></strong>
-									<?php echo $pro_toggle ? '<fieldset class="wpz-insta_feed-only-pro wpz-insta_pro-only wpz-insta_pro-only-with-bottom"><legend><strong>' . esc_html__( 'PRO', 'instagram-widget-by-wpzoom' ) . '</strong></legend>' : ''; ?>
 <label class="wpz-insta_table-row<?php echo ! $user_has_facebook_connection ? ' wpz-insta_disabled' : ''; ?>">
 											<input type="hidden" name="_wpz-insta_show-stories" value="0" />
 											<input type="checkbox" name="_wpz-insta_show-stories" value="1"<?php checked( $show_stories ); ?><?php disabled( ! $user_has_facebook_connection ); ?> />
@@ -2270,6 +2306,7 @@ class WPZOOM_Instagram_Widget_Settings {
                                             </span>
 										</label>
 
+										<?php echo $pro_toggle ? '<fieldset class="wpz-insta_feed-only-pro wpz-insta_pro-only wpz-insta_pro-only-with-bottom"><legend><strong>' . esc_html__( 'PRO', 'instagram-widget-by-wpzoom' ) . '</strong></legend>' : ''; ?>
 										<div class="wpz-insta_stories-row-options wpz-insta_sub-wrapper<?php echo ( ! $user_has_facebook_connection || ! $show_stories ) ? ' wpz-insta_disabled' : ''; ?>">
 											<label class="wpz-insta_table-row">
 												<input type="hidden" name="_wpz-insta_stories-row" value="0" />
@@ -2280,6 +2317,10 @@ class WPZOOM_Instagram_Widget_Settings {
 													<small class="help" aria-hidden="true" data-tooltip="<?php esc_html_e( 'Shows a carousel with a thumbnail for each active story, similar to Facebook. Clicking a thumbnail opens that story in the viewer.', 'instagram-widget-by-wpzoom' ); ?>"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='16' height='16'><path fill='#000' fill-rule='evenodd' clip-rule='evenodd' d='M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1 16v-2h2v2h-2zm2-3v-1.141A3.991 3.991 0 0016 10a4 4 0 00-8 0h2c0-1.103.897-2 2-2s2 .897 2 2-.897 2-2 2a1 1 0 00-1 1v2h2z'></path></svg></small>
 												</span>
 											</label>
+
+											<?php if ( $pro_toggle ) : ?>
+												<a class="wpz-insta_pro-demo-link" href="https://demo.wpzoom.com/instagram-widget/stories/?utm_source=wpadmin&amp;utm_medium=feed-settings&amp;utm_campaign=stories-row-demo" target="_blank" rel="noopener"><?php esc_html_e( 'See the stories row in action', 'instagram-widget-by-wpzoom' ); ?> <span aria-hidden="true">&#8599;</span></a>
+											<?php endif; ?>
 
 											<div class="wpz-insta_stories-row-suboptions wpz-insta_sub-wrapper<?php echo ! $stories_row ? ' wpz-insta_disabled' : ''; ?>">
 												<div class="wpz-insta_table-row">
@@ -3895,6 +3936,19 @@ class WPZOOM_Instagram_Widget_Settings {
 	}
 
 	/**
+	 * Clear the cached API data of every feed (e.g. after cached images were
+	 * regenerated, so feeds pick up the new image URLs).
+	 */
+	public static function clear_all_feed_caches() {
+		$feeds = get_posts( array( 'post_type' => 'wpz-insta_feed', 'post_status' => 'any', 'numberposts' => -1, 'fields' => 'ids' ) );
+		foreach ( $feeds as $feed_id ) {
+			self::get_instance()->clear_feed_transients( (int) $feed_id, true );
+		}
+		delete_transient( 'zoom_instagram_is_configured' );
+		delete_transient( 'zoom_instagram_user_info' );
+	}
+
+	/**
 	 * Clear all transients for a specific feed
 	 * This includes both regular and video-specific transient variants
 	 */
@@ -3908,21 +3962,36 @@ class WPZOOM_Instagram_Widget_Settings {
 		
 		// Generate the same specific transient patterns that would be used by this feed
 		// Note: Do NOT include global 'zoom_instagram_is_configured' here - that would clear cache for ALL feeds
-		$base_patterns = array(
-			'zoom_instagram_is_configured_feed_' . $post_ID,
-		);
-		
-		// Add account-specific patterns if we have the account details
+		//
+		// Mirrors the key built in Wpzoom_Instagram_Widget_API::get_items():
+		//   zoom_instagram_is_configured_feed_{id}[_acc_{hash}][_biz_{page}][_filtered_{types}][_lc][_prv]
+		// Every optional segment is enumerated so external object caches (which cannot
+		// be swept with a LIKE query) are covered too.
+		$feed_key = 'zoom_instagram_is_configured_feed_' . substr( (string) $post_ID, 0, 20 );
+		$bases    = array( $feed_key );
+
 		if ( ! empty( $user_account_token ) ) {
-			$account_hash = substr( md5( $user_account_token ), 0, 8 );
-			$base_patterns[] = 'zoom_instagram_is_configured_feed_' . $post_ID . '_acc_' . $account_hash;
-			
-			// Add business page variant if applicable
+			$acc_key = $feed_key . '_acc_' . substr( md5( $user_account_token ), 0, 8 );
+			$bases[] = $acc_key;
 			if ( ! empty( $user_business_page_id ) ) {
-				$page_suffix = substr( $user_business_page_id, 0, 10 );
-				$base_patterns[] = 'zoom_instagram_is_configured_feed_' . $post_ID . '_acc_' . $account_hash . '_page_' . $page_suffix;
+				$bases[] = $acc_key . '_biz_' . substr( $user_business_page_id, 0, 10 );
 			}
 		}
+
+		$allowed_types = (string) self::get_feed_setting_value( $post_ID, 'allowed-post-types' );
+		$filtered      = ( '' !== $allowed_types && 'IMAGE,VIDEO,CAROUSEL_ALBUM' !== $allowed_types ) ? '_filtered_' . substr( md5( $allowed_types ), 0, 8 ) : '';
+
+		$base_patterns = array();
+		foreach ( $bases as $base ) {
+			foreach ( array( '', $filtered ) as $f ) {
+				foreach ( array( '', '_lc' ) as $lc ) {
+					foreach ( array( '', '_prv' ) as $prv ) {
+						$base_patterns[] = $base . $f . $lc . $prv;
+					}
+				}
+			}
+		}
+		$base_patterns = array_values( array_unique( $base_patterns ) );
 
 		// Clear specific transients for this feed only
 		foreach ( $base_patterns as $pattern ) {

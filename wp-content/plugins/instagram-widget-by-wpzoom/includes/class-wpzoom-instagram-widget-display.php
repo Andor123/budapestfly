@@ -629,7 +629,7 @@ class Wpzoom_Instagram_Widget_Display {
 				$show_user_name = isset( $args['show-account-username'] ) && boolval( $args['show-account-username'] );
 				$show_user_badge = $this->is_pro && isset( $args['show-account-badge'] ) && boolval( $args['show-account-badge'] );
                 $show_user_stats = $this->is_pro && isset( $args['show-account-stats'] ) && boolval( $args['show-account-stats'] );
-				$show_stories = $this->is_pro && ( ! isset( $args['show-stories'] ) || boolval( $args['show-stories'] ) );
+				$show_stories = isset( $args['show-stories'] ) && boolval( $args['show-stories'] );
 				$user_name = get_the_title( $user );
 				$user_name = preg_replace( '/[\x{200B}-\x{200D}\x{FEFF}]/u', '', $user_name );
 				$user_name_display = sprintf( '@%s', $user_name );
@@ -857,14 +857,15 @@ class Wpzoom_Instagram_Widget_Display {
 					if ( ! is_array( $items ) ) {
 						return $this->get_errors( $errors );
 					} else {
-						// Stories (PRO): fetched once and shared by the header ring and the optional stories row.
+						// Stories: fetched once and shared by the header ring (free) and the optional stories row (PRO).
 						$stories                  = array();
 						$stories_data             = array();
 						$has_stories              = false;
 						$stories_trigger_rendered = false;
-						$stories_row_enabled      = $show_stories && isset( $args['stories-row'] ) && boolval( $args['stories-row'] );
+						$stories_row_enabled      = $this->is_pro && $show_stories && isset( $args['stories-row'] ) && boolval( $args['stories-row'] );
 
-						if ( $show_stories ) {
+						// Without the row, the ring is the only place stories show, so skip the API call when the profile image is hidden.
+						if ( $show_stories && ( $preview || $show_user_image || $stories_row_enabled ) ) {
 							// Single API call (cached for 1 hour in a transient).
 							$stories     = $this->api->get_stories( $user_business_page_id, $user_account_token );
 							$has_stories = ! empty( $stories );
@@ -909,6 +910,7 @@ class Wpzoom_Instagram_Widget_Display {
 									$output .= '<img src="' . esc_url( $user_image ) . '" alt="' . esc_attr( $user_name_display ) . '" width="70" />';
 									$output .= '</div>';
 									$stories_trigger_rendered = true;
+									WPZOOM_Instagram_Widget_Assets::enqueue_stories_assets();
 								} else {
 									// No stories - just show the image
 									$output .= '<img src="' . esc_url( $user_image ) . '" alt="' . esc_attr( $user_name_display ) . '" width="70" />';
@@ -1680,22 +1682,46 @@ class Wpzoom_Instagram_Widget_Display {
 		$stories = array_reverse( $stories );
 
 		foreach ( $stories as $story ) {
-			$is_video = isset( $story->media_type ) && 'VIDEO' === $story->media_type;
-			$media_url = isset( $story->media_url ) ? $story->media_url : '';
+			$item = self::build_story_item( $story );
 
-			$stories_data['items'][] = array(
-				'id'       => isset( $story->id ) ? $story->id : uniqid( 'story-' ),
-				'type'     => $is_video ? 'video' : 'photo',
-				'src'      => $media_url,
-				'preview'  => $is_video && ! empty( $story->thumbnail_url ) ? $story->thumbnail_url : $media_url,
-				'length'   => $is_video ? 0 : 5, // 0 = use video duration, 5 = 5 seconds for images
-				'link'     => isset( $story->permalink ) ? $story->permalink : '',
-				'linkText' => __( 'View on Instagram', 'instagram-widget-by-wpzoom' ),
-				'time'     => isset( $story->timestamp ) ? strtotime( $story->timestamp ) : time(),
-			);
+			if ( null !== $item ) {
+				$stories_data['items'][] = $item;
+			}
 		}
 
 		return $stories_data;
+	}
+
+	/**
+	 * Convert one Graph API story into a Zuck.js item.
+	 *
+	 * Instagram omits media_url for media with licensed audio (e.g. a song picked from its
+	 * music library), so those stories fall back to their thumbnail as a still photo instead
+	 * of an empty, black video.
+	 *
+	 * @param object $story Story object from the Graph API.
+	 * @return array|null Zuck.js item, or null when the story has nothing to show.
+	 */
+	public static function build_story_item( $story ) {
+		$media_url = ! empty( $story->media_url ) ? $story->media_url : '';
+		$thumbnail = ! empty( $story->thumbnail_url ) ? $story->thumbnail_url : '';
+		$is_video  = isset( $story->media_type ) && 'VIDEO' === $story->media_type && '' !== $media_url;
+		$src       = '' !== $media_url ? $media_url : $thumbnail;
+
+		if ( '' === $src ) {
+			return null;
+		}
+
+		return array(
+			'id'       => isset( $story->id ) ? $story->id : uniqid( 'story-' ),
+			'type'     => $is_video ? 'video' : 'photo',
+			'src'      => $src,
+			'preview'  => $is_video && '' !== $thumbnail ? $thumbnail : $src,
+			'length'   => $is_video ? 0 : 5, // 0 = use video duration, 5 = 5 seconds for images
+			'link'     => isset( $story->permalink ) ? $story->permalink : '',
+			'linkText' => __( 'View on Instagram', 'instagram-widget-by-wpzoom' ),
+			'time'     => isset( $story->timestamp ) ? strtotime( $story->timestamp ) : time(),
+		);
 	}
 
 	/**

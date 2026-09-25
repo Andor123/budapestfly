@@ -1,10 +1,10 @@
 <?php
 
-namespace Elementor\App\Modules\Onboarding\Storage;
+namespace Elementor\App\Modules\OnboardingNew\Storage;
 
-use Elementor\App\Modules\Onboarding\Module;
-use Elementor\App\Modules\Onboarding\Storage\Entities\User_Choices;
-use Elementor\App\Modules\Onboarding\Storage\Entities\User_Progress;
+use Elementor\App\Modules\OnboardingNew\Module;
+use Elementor\App\Modules\OnboardingNew\Storage\Entities\User_Choices;
+use Elementor\App\Modules\OnboardingNew\Storage\Entities\User_Progress;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Elementor\App\Modules\Onboarding\Validation;
+namespace Elementor\App\Modules\OnboardingNew\Validation;
 
 use WP_Error;
 

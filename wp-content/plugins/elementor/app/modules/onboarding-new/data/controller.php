@@ -1,12 +1,12 @@
 <?php
 
-namespace Elementor\App\Modules\Onboarding\Data;
+namespace Elementor\App\Modules\OnboardingNew\Data;
 
-use Elementor\App\Modules\Onboarding\Data\Endpoints\Install_Pro;
-use Elementor\App\Modules\Onboarding\Data\Endpoints\Install_Theme;
-use Elementor\App\Modules\Onboarding\Data\Endpoints\Pro_Install_Screen;
-use Elementor\App\Modules\Onboarding\Data\Endpoints\User_Choices;
-use Elementor\App\Modules\Onboarding\Data\Endpoints\User_Progress;
+use Elementor\App\Modules\OnboardingNew\Data\Endpoints\Install_Pro;
+use Elementor\App\Modules\OnboardingNew\Data\Endpoints\Install_Theme;
+use Elementor\App\Modules\OnboardingNew\Data\Endpoints\Pro_Install_Screen;
+use Elementor\App\Modules\OnboardingNew\Data\Endpoints\User_Choices;
+use Elementor\App\Modules\OnboardingNew\Data\Endpoints\User_Progress;
 use Elementor\Data\V2\Base\Controller as Base_Controller;
 
 if ( ! defined( 'ABSPATH' ) ) {

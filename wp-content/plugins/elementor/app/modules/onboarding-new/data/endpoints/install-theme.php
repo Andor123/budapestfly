@@ -1,6 +1,6 @@
 <?php
 
-namespace Elementor\App\Modules\Onboarding\Data\Endpoints;
+namespace Elementor\App\Modules\OnboardingNew\Data\Endpoints;
 
 use Elementor\Data\V2\Base\Endpoint as Endpoint_Base;
 use WP_REST_Server;

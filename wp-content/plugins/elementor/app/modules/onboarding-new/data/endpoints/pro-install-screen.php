@@ -1,8 +1,8 @@
 <?php
 
-namespace Elementor\App\Modules\Onboarding\Data\Endpoints;
+namespace Elementor\App\Modules\OnboardingNew\Data\Endpoints;
 
-use Elementor\App\Modules\Onboarding\Module;
+use Elementor\App\Modules\OnboardingNew\Module;
 use Elementor\Data\V2\Base\Endpoint as Endpoint_Base;
 
 if ( ! defined( 'ABSPATH' ) ) {
