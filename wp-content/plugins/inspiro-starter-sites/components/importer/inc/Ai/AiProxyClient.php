@@ -4,8 +4,9 @@
  *
  * All AI traffic goes through the WPZOOM proxy — no API keys ever live on the
  * user's site. The proxy exposes:
- *   - POST /services/v1/claude   — forwards an Anthropic Messages body (the
- *     proxy owns model selection and may remap the requested model).
+ *   - POST /services/v1/claude   — runs a server-defined AI task. The proxy
+ *     builds the prompt and picks the model (its "AI Demo Model" setting —
+ *     Claude or Grok) and always answers in the Anthropic Messages shape.
  *   - POST /services/v1/pexels   — Pexels photo search.
  *   - POST /services/v1/ai-quota — server-enforced free-generation quota,
  *     keyed by site URL (action: check | consume | refund).
@@ -27,13 +28,6 @@ class AiProxyClient {
 	 * 'demo-tailor' feature so the two free tiers are metered separately.
 	 */
 	const FEATURE = 'demo-generate';
-
-	/**
-	 * Model requested from the proxy. The proxy remaps any model that is not
-	 * on its allowlist to its configured default, so a retired model here
-	 * degrades gracefully without a plugin update.
-	 */
-	const MODEL = 'claude-sonnet-4-6';
 
 	/**
 	 * Options holding the email registration issued by the proxy's
@@ -96,68 +90,6 @@ class AiProxyClient {
 	}
 
 	/**
-	 * Ask Claude (via the proxy) for a JSON object and return it decoded.
-	 *
-	 * @param string        $system     System prompt.
-	 * @param string        $prompt     User prompt.
-	 * @param int           $max_tokens Completion cap.
-	 * @param callable|null $heartbeat  Invoked periodically while waiting on
-	 *                                  the proxy so the caller can emit
-	 *                                  keep-alive bytes (see StreamingResponse).
-	 * @return array|WP_Error Decoded JSON object.
-	 */
-	public function claude_json( $system, $prompt, $max_tokens = 12000, $heartbeat = null ) {
-		$text = $this->claude_text( $system, $prompt, $max_tokens, $heartbeat );
-
-		if ( is_wp_error( $text ) ) {
-			return $text;
-		}
-
-		// Strip markdown fences, then slice out the first brace-balanced
-		// object so stray prose before/after the JSON can't break the parse.
-		$text = preg_replace( '/^```(?:json)?\s*|\s*```$/s', '', trim( $text ) );
-		$text = $this->extract_json_object( $text );
-
-		$decoded = $this->decode_json_lenient( $text );
-
-		if ( ! is_array( $decoded ) ) {
-			return new WP_Error( 'ai_parse_error', __( 'The AI returned a malformed response. Please try again.', 'inspiro-starter-sites' ) );
-		}
-
-		return $decoded;
-	}
-
-	/**
-	 * Ask Claude (via the proxy) for raw text (e.g. an HTML document).
-	 *
-	 * @param string        $system     System prompt.
-	 * @param string        $prompt     User prompt.
-	 * @param int           $max_tokens Completion cap.
-	 * @param callable|null $heartbeat  Keep-alive callback (see claude_json()).
-	 * @return string|WP_Error Concatenated text content.
-	 */
-	public function claude_text( $system, $prompt, $max_tokens = 12000, $heartbeat = null ) {
-		$body = array(
-			'model'      => self::MODEL,
-			'max_tokens' => (int) $max_tokens,
-			'stream'     => false,
-			// No-op on Sonnet 4.6/Haiku 4.5, but keeps generation on the fast
-			// path if the proxy is switched to a model where thinking is on
-			// by default (Sonnet 5+).
-			'thinking'   => array( 'type' => 'disabled' ),
-			'system'     => $system,
-			'messages'   => array(
-				array(
-					'role'    => 'user',
-					'content' => $prompt,
-				),
-			),
-		);
-
-		return $this->request_claude( $body, $heartbeat );
-	}
-
-	/**
 	 * Run a server-defined AI task: the proxy assembles the prompt from
 	 * { task, vars } (see wpzoom-ai-prompts.php on the AI server), so no
 	 * prompt engineering ships in this plugin's source.
@@ -168,6 +100,11 @@ class AiProxyClient {
 	 * @return string|WP_Error Text response.
 	 */
 	public function claude_task( $task, array $vars, $heartbeat = null ) {
+		$local = $this->local_task_body( $task, $vars );
+		if ( null !== $local ) {
+			return is_wp_error( $local ) ? $local : $this->request_claude( $local, $heartbeat );
+		}
+
 		return $this->request_claude(
 			array(
 				'task'        => $task,
@@ -183,6 +120,95 @@ class AiProxyClient {
 				'license_key' => self::premium_license(),
 			),
 			$heartbeat
+		);
+	}
+
+	/**
+	 * Section catalog of the catalog engine (/services/v1/ai-catalog):
+	 * metadata of every section, or the full data of the given ids.
+	 *
+	 * @param string[] $ids    Sections wanted in full ([] = metadata of all).
+	 * @param string[] $blocks Versioned blocks this WordPress registers.
+	 * @return array|WP_Error [ 'version' => ..., 'sections' => [ id => ... ] ]
+	 */
+	public function catalog( array $ids, array $blocks ) {
+		$response = wp_remote_post(
+			$this->endpoint( 'ai-catalog' ),
+			array(
+				'headers' => array( 'Content-Type' => 'application/json' ),
+				'body'    => wp_json_encode(
+					array(
+						'site_key'    => (string) get_option( self::SITE_KEY_OPTION, '' ),
+						'license_key' => self::premium_license(),
+						'blocks'      => array_values( $blocks ),
+						'ids'         => array_values( $ids ),
+					)
+				),
+				'timeout' => 20,
+			)
+		);
+
+		if ( is_wp_error( $response ) ) {
+			return new WP_Error( 'ai_catalog_unreachable', $response->get_error_message() );
+		}
+
+		$data = json_decode( wp_remote_retrieve_body( $response ), true );
+		if ( 200 !== (int) wp_remote_retrieve_response_code( $response ) || ! is_array( $data ) || empty( $data['success'] ) || ! isset( $data['sections'] ) || ! is_array( $data['sections'] ) ) {
+			$msg = is_array( $data ) && isset( $data['message'] ) ? (string) $data['message'] : __( 'The section catalog is unavailable. Please try again later.', 'inspiro-starter-sites' );
+			return new WP_Error( 'ai_catalog_error', $msg );
+		}
+
+		return array(
+			'version'  => isset( $data['version'] ) ? (string) $data['version'] : '',
+			'sections' => $data['sections'],
+		);
+	}
+
+	/**
+	 * DEVELOPMENT ONLY. With INSPIRO_STARTER_SITES_AI_LOCAL_PROMPTS set to the
+	 * path of a local wpzoom-api-key-provider checkout (in wp-config.php),
+	 * task prompts are built from that checkout and sent as a plain request,
+	 * so prompt changes can be tested before the provider is deployed.
+	 * Never defined on customer sites: returns null and nothing changes.
+	 *
+	 * @param string $task Task slug.
+	 * @param array  $vars Task variables.
+	 * @return array|WP_Error|null Anthropic request body, error, or null (off).
+	 */
+	private function local_task_body( $task, array $vars ) {
+		if ( ! defined( 'INSPIRO_STARTER_SITES_AI_LOCAL_PROMPTS' ) || ! INSPIRO_STARTER_SITES_AI_LOCAL_PROMPTS ) {
+			return null;
+		}
+		$file = trailingslashit( (string) INSPIRO_STARTER_SITES_AI_LOCAL_PROMPTS ) . 'wpzoom-ai-prompts.php';
+		if ( ! class_exists( 'WPZOOM_AI_Prompts' ) ) {
+			if ( ! is_readable( $file ) ) {
+				return null;
+			}
+			require_once $file;
+		}
+
+		$built = \WPZOOM_AI_Prompts::build( $task, $vars, '' !== self::premium_license() );
+		if ( is_wp_error( $built ) ) {
+			return $built;
+		}
+
+		$prompt = isset( $built['prompt'] ) ? (string) $built['prompt'] : '';
+		if ( ! empty( $built['prompt_blocks'] ) ) {
+			$prompt = implode( "\n\n", wp_list_pluck( $built['prompt_blocks'], 'text' ) );
+		}
+
+		return array(
+			'model'      => self::MODEL,
+			'max_tokens' => isset( $built['max_tokens'] ) ? (int) $built['max_tokens'] : 8000,
+			'stream'     => false,
+			'thinking'   => array( 'type' => 'disabled' ),
+			'system'     => $built['system'],
+			'messages'   => array(
+				array(
+					'role'    => 'user',
+					'content' => $prompt,
+				),
+			),
 		);
 	}
 
@@ -210,6 +236,19 @@ class AiProxyClient {
 		}
 
 		return $decoded;
+	}
+
+	/**
+	 * Decode one JSON object from model text (fences stripped, the first
+	 * brace-balanced object taken, the repair passes applied).
+	 *
+	 * @param string $text Model text.
+	 * @return array|null
+	 */
+	public function decode_object( $text ) {
+		$text    = preg_replace( '/^```(?:json)?\s*|\s*```$/s', '', trim( (string) $text ) );
+		$decoded = $this->decode_json_lenient( $this->extract_json_object( $text ) );
+		return is_array( $decoded ) ? $decoded : null;
 	}
 
 	/**
@@ -408,9 +447,9 @@ class AiProxyClient {
 	}
 
 	/**
-	 * POST a request body to the Claude proxy and return the text content.
+	 * POST a task request to the AI proxy and return the text content.
 	 *
-	 * @param array         $body      Request body (raw Anthropic or task form).
+	 * @param array         $body      Task request body.
 	 * @param callable|null $heartbeat Keep-alive callback.
 	 * @return string|WP_Error
 	 */
@@ -436,7 +475,8 @@ class AiProxyClient {
 			return new WP_Error( 'ai_proxy_error', $msg ? $msg : ( 'HTTP ' . $code ) );
 		}
 
-		// $raw['data'] is the verbatim Anthropic Messages response object.
+		// $raw['data'] is an Anthropic Messages response object — the proxy
+		// converts other providers' replies (e.g. Grok) to this shape.
 		$claude = isset( $raw['data'] ) && is_array( $raw['data'] ) ? $raw['data'] : array();
 
 		if ( isset( $claude['stop_reason'] ) && 'max_tokens' === $claude['stop_reason'] ) {
