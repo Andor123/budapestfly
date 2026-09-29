@@ -11,7 +11,8 @@
  *   DELETE /forms/<id>                   trash form
  *   POST   /forms/<id>/duplicate         duplicate a form
  *
- * All endpoints require manage_options or edit_posts capability.
+ * Builder endpoints require edit_posts; per-form endpoints check the
+ * form's own edit_post / delete_post capability (see check_form_cap()).
  *
  * @package WPZOOM_Forms
  */
@@ -36,7 +37,7 @@ class WPZOOM_Forms_REST {
 			array(
 				'methods'             => WP_REST_Server::CREATABLE,
 				'callback'            => array( $this, 'create_form' ),
-				'permission_callback' => array( $this, 'check_manage' ),
+				'permission_callback' => array( $this, 'check_create' ),
 				'args'                => array(
 					'title' => array( 'type' => 'string', 'required' => false ),
 				),
@@ -47,24 +48,24 @@ class WPZOOM_Forms_REST {
 			array(
 				'methods'             => WP_REST_Server::READABLE,
 				'callback'            => array( $this, 'read_form' ),
-				'permission_callback' => array( $this, 'check_manage' ),
+				'permission_callback' => array( $this, 'check_read_form' ),
 			),
 			array(
 				'methods'             => WP_REST_Server::EDITABLE,
 				'callback'            => array( $this, 'update_form' ),
-				'permission_callback' => array( $this, 'check_manage' ),
+				'permission_callback' => array( $this, 'check_update_form' ),
 			),
 			array(
 				'methods'             => WP_REST_Server::DELETABLE,
 				'callback'            => array( $this, 'delete_form' ),
-				'permission_callback' => array( $this, 'check_manage' ),
+				'permission_callback' => array( $this, 'check_delete_form' ),
 			),
 		) );
 
 		register_rest_route( self::NAMESPACE_V1, '/forms/(?P<id>\d+)/duplicate', array(
 			'methods'             => WP_REST_Server::CREATABLE,
 			'callback'            => array( $this, 'duplicate_form' ),
-			'permission_callback' => array( $this, 'check_manage' ),
+			'permission_callback' => array( $this, 'check_duplicate_form' ),
 		) );
 
 		register_rest_route( self::NAMESPACE_V1, '/field-types', array(
@@ -125,8 +126,51 @@ class WPZOOM_Forms_REST {
 		return rest_ensure_response( WPZOOM_Forms_Option_Lists::all() );
 	}
 
+	/** Builder-wide endpoints (list, field types, templates, option lists). */
 	public function check_manage() {
 		return current_user_can( 'edit_posts' );
+	}
+
+	/** New forms are published immediately, so creating one needs the publish capability. */
+	public function check_create() {
+		return current_user_can( $this->form_type_cap( 'publish_posts' ) );
+	}
+
+	/** The payload includes notification settings, so reading needs edit rights on that form. */
+	public function check_read_form( $req ) {
+		return $this->check_form_cap( $req, 'edit_post' );
+	}
+
+	/** Saving always publishes the form (see update_form()). */
+	public function check_update_form( $req ) {
+		return $this->check_form_cap( $req, 'edit_post' ) && current_user_can( $this->form_type_cap( 'publish_posts' ) );
+	}
+
+	public function check_delete_form( $req ) {
+		return $this->check_form_cap( $req, 'delete_post' );
+	}
+
+	/** Duplicating copies the source's settings into a new published form. */
+	public function check_duplicate_form( $req ) {
+		return $this->check_form_cap( $req, 'edit_post' ) && current_user_can( $this->form_type_cap( 'publish_posts' ) );
+	}
+
+	/**
+	 * Per-form check via the post's meta capability, so WordPress decides
+	 * ownership (edit_others_posts, edit_published_posts, etc.).
+	 */
+	private function check_form_cap( $req, $cap ) {
+		$post = get_post( (int) $req['id'] );
+		if ( ! $post || $post->post_type !== 'wpzf-form' ) {
+			// Let the callback return its 404, but only to builder users.
+			return current_user_can( 'edit_posts' );
+		}
+		return current_user_can( $cap, $post->ID );
+	}
+
+	private function form_type_cap( $cap ) {
+		$type = get_post_type_object( 'wpzf-form' );
+		return ( $type && isset( $type->cap->$cap ) ) ? $type->cap->$cap : $cap;
 	}
 
 	public function field_types() {
@@ -134,14 +178,19 @@ class WPZOOM_Forms_REST {
 	}
 
 	public function list_forms( $req ) {
-		$q = new WP_Query( array(
+		$args = array(
 			'post_type'      => 'wpzf-form',
 			'post_status'    => array( 'publish', 'draft', 'pending', 'private' ),
 			'posts_per_page' => 200,
 			'orderby'        => 'modified',
 			'order'          => 'DESC',
 			'no_found_rows'  => true,
-		) );
+		);
+		// Users who can't edit others' forms only see their own.
+		if ( ! current_user_can( $this->form_type_cap( 'edit_others_posts' ) ) ) {
+			$args['author'] = get_current_user_id();
+		}
+		$q = new WP_Query( $args );
 		$items = array();
 		foreach ( $q->posts as $p ) {
 			$items[] = $this->summary( $p );
