@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WP Mail SMTP by WPForms &#8211; The Most Popular SMTP and Email Log Plugin - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-09-30 08:41:28+0000\n"
+"PO-Revision-Date: 2026-10-02 18:33:04+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,6 +10,292 @@ msgstr ""
 "X-Generator: GlotPress/4.1.0\n"
 "Language: es\n"
 "Project-Id-Version: Plugins - WP Mail SMTP by WPForms &#8211; The Most Popular SMTP and Email Log Plugin - Stable (latest release)\n"
+
+#: templates/setup-wizard/welcome.php:71
+msgid "Note: You will be transferred to wpmailsmtp.com to complete the setup wizard."
+msgstr "Nota: se te redirigirá a wpmailsmtp.com para completar el asistente de configuración."
+
+#: templates/setup-wizard/welcome.php:61
+msgid "The setup wizard needs JavaScript. Please enable it and reload this page."
+msgstr "El asistente de configuración necesita JavaScript. Actívalo y recarga esta página."
+
+#: templates/dashboard/widgets/version.php:49
+msgid "Update Now"
+msgstr "Actualizar ahora"
+
+#: templates/dashboard/widgets/version.php:44
+msgid "What's New"
+msgstr "Novedades"
+
+#: templates/dashboard/widgets/setup-checklist-overview.php:77
+msgid "View Complete Setup Checklist"
+msgstr "Ver la lista de comprobación de configuración completa"
+
+#. translators: %s: number of further setup steps not listed.
+#: templates/dashboard/widgets/setup-checklist-overview.php:65
+msgid "+%s More Step.."
+msgid_plural "+%s More Steps.."
+msgstr[0] "+%s paso más…"
+msgstr[1] "+%s pasos más…"
+
+#: templates/dashboard/widgets/mailer-notice.php:21
+msgid "Connect WordPress to mailers like SendLayer, Gmail, Outlook, Amazon SES, and more to start sending emails"
+msgstr "Conecta WordPress a servicios de correo como SendLayer, Gmail, Outlook, Amazon SES y más para empezar a enviar correos electrónicos"
+
+#: templates/dashboard/widgets/emails-overview.php:39
+msgid "Once your site starts sending emails, your stats will show up here. Send a test email to make sure everything works."
+msgstr "Cuando tu sitio empiece a enviar correos electrónicos, tus estadísticas aparecerán aquí. Envía un correo electrónico de prueba para asegurarte de que todo funciona."
+
+#: templates/dashboard/widgets/emails-overview.php:38
+msgid "No Emails Sent Yet"
+msgstr "Todavía no se ha enviado ningún correo electrónico"
+
+#: templates/dashboard/widgets/email-sources.php:72
+#: templates/dashboard/widgets/email-sources.php:100
+msgid "Emails"
+msgstr "Correos electrónicos"
+
+#: templates/dashboard/widgets/email-sources.php:54
+msgid "No Email Source Data Yet"
+msgstr "Todavía no hay datos de fuentes de correo electrónico"
+
+#: templates/dashboard/widgets/email-sources.php:26
+msgid "Upgrade to Pro to unlock the email log and see exactly where every email comes from."
+msgstr "Actualiza a Pro para desbloquear el registro de correos electrónicos y ver exactamente de dónde viene cada correo electrónico."
+
+#: templates/dashboard/widgets/email-sources.php:25
+msgid "See Which Plugins Send Emails"
+msgstr "Ver qué plugins envían correos electrónicos"
+
+#: templates/dashboard/widgets/email-log.php:114
+msgid "View log entry"
+msgstr "Ver la entrada del registro"
+
+#: templates/dashboard/widgets/email-log.php:107
+msgid "View email"
+msgstr "Ver el correo electrónico"
+
+#: templates/dashboard/widgets/email-log.php:73
+msgid "Date Sent"
+msgstr "Fecha de envío"
+
+#: templates/dashboard/widgets/email-log.php:58
+msgid "Once your site starts sending emails, your recent emails will show up here. Send a test email to make sure everything works."
+msgstr "Cuando tu sitio empiece a enviar correos electrónicos, tus correos recientes aparecerán aquí. Envía un correo electrónico de prueba para asegurarte de que todo funciona."
+
+#: templates/dashboard/widgets/email-log.php:57
+msgid "No Emails Logged Yet"
+msgstr "Todavía no se ha registrado ningún correo electrónico"
+
+#: templates/dashboard/widgets/email-log.php:29
+msgid "Upgrade to Pro to unlock email logging and see every email your site sends right from your dashboard."
+msgstr "Actualiza a Pro para desbloquear el registro de correos electrónicos y ver cada correo electrónico que envía tu sitio directamente desde tu escritorio."
+
+#: templates/dashboard/widgets/email-log.php:28
+msgid "View Email Logs"
+msgstr "Ver los registros de correos electrónicos"
+
+#: templates/dashboard/widget.php:63
+msgid "Widget settings"
+msgstr "Ajustes del widget"
+
+#: templates/dashboard/widget-settings.php:120
+msgid "Reset to Default Settings"
+msgstr "Restablecer los ajustes predeterminados"
+
+#: templates/dashboard/widget-overlay.php:46
+msgid "The data shown behind this popup is for example purposes only. No email data has been recorded."
+msgstr "Los datos que se muestran detrás de esta ventana emergente son solo a modo de ejemplo. No se ha registrado ningún dato de correo electrónico."
+
+#. translators: %s: percent change against the previous week, a whole number.
+#: templates/dashboard/stat-card.php:60
+msgid "%s%%"
+msgstr "%s%%"
+
+#: templates/dashboard/stat-card.php:40
+msgid "Upgrade to Unlock"
+msgstr "Actualiza para desbloquear"
+
+#. translators: %s: the discount amount, emphasised.
+#: src/SetupChecklist/Promos.php:34
+msgid "%s for WP Mail SMTP Lite users!"
+msgstr "¡%s para los usuarios de WP Mail SMTP Lite!"
+
+#: src/SetupChecklist/Page.php:524
+msgid "Not completed"
+msgstr "No completado"
+
+#: src/SetupChecklist/Page.php:524
+msgid "Completed"
+msgstr "Completado"
+
+#: src/SetupChecklist/Page.php:369
+msgid "Your email address"
+msgstr "Tu dirección de correo electrónico"
+
+#: src/SetupChecklist/Page.php:361
+msgid "Select SMTP Plugin"
+msgstr "Seleccionar el plugin de SMTP"
+
+#: src/SetupChecklist/Page.php:360
+msgid "Select the SMTP plugin to import settings from"
+msgstr "Selecciona el plugin de SMTP del que importar los ajustes"
+
+#: src/SetupChecklist/Page.php:283
+msgid "Complete Setup Checklist"
+msgstr "Lista de comprobación de configuración completa"
+
+#: src/SetupChecklist/Page.php:265
+msgid "Take your website to the next level with our sister plugins."
+msgstr "Lleva tu sitio web al siguiente nivel con nuestros plugins hermanos."
+
+#: src/SetupChecklist/Page.php:264
+msgid "Set Up Recommended Growth Tools"
+msgstr "Configurar las herramientas de crecimiento recomendadas"
+
+#: src/SetupChecklist/Page.php:222 src/SetupChecklist/Promos.php:93
+msgid "Toggle section"
+msgstr "Alternar la sección"
+
+#: src/SetupChecklist/Page.php:208
+#: templates/dashboard/widgets/setup-checklist-overview.php:25
+msgid "Incomplete"
+msgstr "Incompleto"
+
+#: src/SetupChecklist/Page.php:208
+#: templates/dashboard/widgets/setup-checklist-overview.php:25
+msgid "Complete"
+msgstr "Completo"
+
+#: src/SetupChecklist/Page.php:192
+msgid "Complete WP Mail SMTP Setup Checklist"
+msgstr "Completar la lista de comprobación de configuración de WP Mail SMTP"
+
+#: src/SetupChecklist/Page.php:140
+msgid "Something went wrong dismissing the checklist. Please try again."
+msgstr "Algo ha ido mal al descartar la lista de comprobación. Inténtalo de nuevo."
+
+#: src/SetupChecklist/Page.php:138
+msgid "Yes, dismiss"
+msgstr "Sí, descartar"
+
+#: src/SetupChecklist/Page.php:137
+msgid "This will permanently dismiss the Setup Checklist, and you will not be able to bring it back. This cannot be undone."
+msgstr "Esto descartará permanentemente la lista de comprobación de configuración y no podrás recuperarla. Esto no se puede deshacer."
+
+#. translators: %d: setup checklist completion percentage.
+#: src/SetupChecklist/Menu.php:230
+msgid "%d%% complete"
+msgstr "%d%% completado"
+
+#: src/SetupChecklist/Menu.php:155
+msgid "WP Mail SMTP Setup Checklist"
+msgstr "Lista de comprobación de configuración de WP Mail SMTP"
+
+#: src/SetupChecklist/Menu.php:150 src/SetupChecklist/Menu.php:225
+msgid "Setup Checklist"
+msgstr "Lista de comprobación de configuración"
+
+#: src/SetupChecklist/GrowthTools.php:101
+msgid "Website analytics made easy for WordPress. Form tracking, reports, and more."
+msgstr "Análisis de sitios web fácil para WordPress. Seguimiento de formularios, informes y más."
+
+#: src/SetupChecklist/GrowthTools.php:97
+msgid "Get more email subscribers & sales with the #1 CRO toolkit for WordPress."
+msgstr "Consigue más suscriptores por correo electrónico y más ventas con el kit de CRO número 1 para WordPress."
+
+#. translators: %s: the name of the detected SMTP plugin.
+#: src/SetupChecklist/Config.php:372
+msgid "Import Settings From %s"
+msgstr "Importar los ajustes desde %s"
+
+#: src/SetupChecklist/Config.php:367
+msgid "Import Settings From Existing SMTP Plugins"
+msgstr "Importar los ajustes desde los plugins de SMTP existentes"
+
+#: src/SetupChecklist/Config.php:303
+msgid "Count Me In!"
+msgstr "¡Cuenta conmigo!"
+
+#: src/SetupChecklist/Config.php:295
+msgid "Collect non-sensitive information from your website, such as the PHP version and features used, to help us fix bugs faster, make smarter decisions, and build features that actually matter to you."
+msgstr "Recopila información no sensible de tu sitio web, como la versión de PHP y las características usadas, para ayudarnos a corregir errores más rápido, tomar decisiones más inteligentes y crear características que realmente te importen."
+
+#: src/SetupChecklist/Config.php:294
+msgid "Help Improve WP Mail SMTP"
+msgstr "Ayuda a mejorar WP Mail SMTP"
+
+#: src/SetupChecklist/Config.php:286
+msgid "Sign Up for Free"
+msgstr "Regístrate gratis"
+
+#: src/SetupChecklist/Config.php:281
+msgid "Smart Recommendations from WP Mail SMTP"
+msgstr "Recomendaciones inteligentes de WP Mail SMTP"
+
+#: src/SetupChecklist/Config.php:267
+msgid "Improve GDPR, CCPA, and privacy compliance with cookie banner and consent records."
+msgstr "Mejora el cumplimiento del RGPD, la CCPA y la privacidad con un banner de cookies y registros de consentimiento."
+
+#: src/SetupChecklist/Config.php:266
+msgid "Set Up Privacy Compliance"
+msgstr "Configurar el cumplimiento de privacidad"
+
+#: src/SetupChecklist/Config.php:258
+msgid "Browse Snippets"
+msgstr "Explorar los fragmentos de código"
+
+#: src/SetupChecklist/Config.php:255
+msgid "Customize how WP Mail SMTP works with one-click, pre-built snippets powered by WPCode."
+msgstr "Personaliza cómo funciona WP Mail SMTP con fragmentos de código ya preparados y con un solo clic, impulsados por WPCode."
+
+#: src/SetupChecklist/Config.php:254
+msgid "Set Up Code Snippets"
+msgstr "Configurar fragmentos de código"
+
+#: src/SetupChecklist/Config.php:240
+msgid "Review email logs and debug sending issues with Claude, ChatGPT, and more via the free WPVibe plugin."
+msgstr "Revisa los registros de correos electrónicos y depura los problemas de envío con Claude, ChatGPT y más a través del plugin gratuito WPVibe."
+
+#: src/SetupChecklist/Config.php:225
+msgid "View Domain Report"
+msgstr "Ver el informe del dominio"
+
+#: src/SetupChecklist/Config.php:221
+msgid "We found issues with your domain's email authentication. Fix SPF, DKIM, and DMARC to keep your emails out of spam."
+msgstr "Hemos encontrado problemas con la autenticación de correo electrónico de tu dominio. Corrige SPF, DKIM y DMARC para mantener tus correos electrónicos fuera del spam."
+
+#: src/SetupChecklist/Config.php:220
+msgid "Fix Your Domain Setup"
+msgstr "Corregir la configuración de tu dominio"
+
+#: src/SetupChecklist/Config.php:197
+msgid "Set up your mailer first. Until then there is no connection to send a test email through."
+msgstr "Configura primero tu servicio de correo. Hasta entonces no hay ninguna conexión por la que enviar un correo electrónico de prueba."
+
+#: src/SetupChecklist/Config.php:191
+msgid "Test Email"
+msgstr "Correo electrónico de prueba"
+
+#: src/SetupChecklist/Config.php:174
+msgid "Confirm your site can send emails by delivering a test message to your inbox."
+msgstr "Confirma que tu sitio puede enviar correos electrónicos entregando un mensaje de prueba en tu bandeja de entrada."
+
+#: src/SetupChecklist/Config.php:173
+msgid "Successfully Send a Test Email"
+msgstr "Enviar correctamente un correo electrónico de prueba"
+
+#: src/SetupChecklist/Config.php:164
+msgid "Import Settings"
+msgstr "Importar los ajustes"
+
+#: templates/dashboard/widgets/email-sources.php:71
+msgid "Share"
+msgstr "Compartir"
+
+#: templates/dashboard/widgets/email-sources.php:55
+msgid "Sorry, there's not enough email data from this date range to show sources. Once your site sends more emails, sources will show up here."
+msgstr "Lo siento, no hay suficientes datos de correo electrónico de este intervalo de fechas para mostrar las fuentes. En cuanto tu sitio envíe más correos, aparecerán aquí las fuentes."
 
 #. translators: %1$s is the dotted CLI flag with a -file suffix (e.g.
 #. smtp.pass-file). %2$s is the absolute file path that could not be read.
