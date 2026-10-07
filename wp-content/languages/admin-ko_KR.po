@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 7.1.x - Development - Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-09-08 01:21:16+0000\n"
+"PO-Revision-Date: 2026-09-27 23:48:45+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -37,6 +37,48 @@ msgctxt "default GMT offset or timezone string"
 msgid "0"
 msgstr ""
 
+#: wp-admin/users.php:757
+msgid "Users could not be deleted because no user was selected for content reassignment."
+msgstr "콘텐츠를 재할당할 사용자를 선택하지 않았으므로 사용자를 삭제할 수 없습니다."
+
+#. translators: 1: User login. 2: User ID
+#: wp-admin/users.php:404
+msgid "%1$s (ID #%2$s): This user does not have any content."
+msgstr "%1$s (ID #%2$s): 이 사용자는 콘텐츠가 없습니다."
+
+#: wp-admin/user-edit.php:384
+msgid "Disable infinite scrolling in the Media Library grid view"
+msgstr "미디어 라이브러리 격자 보기에서 무한 스크롤 비활성화"
+
+#: wp-admin/user-edit.php:381
+msgid "Infinite Scrolling"
+msgstr "무한 스크롤"
+
+#: wp-admin/upload.php:193
+msgid "Use the buttons at the top of the dialog, or <code>alt</code>/<code>option</code> plus the left or right arrow keys on your keyboard, to navigate between media items quickly."
+msgstr "미디어 항목을 빠르게 탐색하려면 대화 상자 상단의 버튼을 누르거나 키보드의 <code>alt</code>/<code>option</code> 키와 왼쪽 또는 오른쪽 화살표 키를 함께 누르십시오."
+
+#: wp-admin/themes.php:137
+msgid "Use the buttons at the top of the dialog, or <code>alt</code>/<code>option</code> plus the left or right arrow keys on your keyboard, to navigate between themes quickly."
+msgstr "테마를 빠르게 탐색하려면 대화 상자 상단의 버튼을 누르거나 키보드의 <code>alt</code>/<code>option</code> 키와 왼쪽 또는 오른쪽 화살표 키를 함께 누르십시오."
+
+#: wp-admin/themes.php:136
+msgid "Click on a theme to open the Theme Details dialog and see the theme name, version, author, description, tags, and the Delete link."
+msgstr "테마를 클릭하여 '테마 세부 정보' 대화 상자를 열고 테마 이름, 버전, 글쓴이, 설명, 태그 및 삭제 링크를 확인하세요."
+
+#. translators: Hidden accessibility text.
+#: wp-admin/site-health.php:176
+msgid "Show or hide extra menu items"
+msgstr "추가 메뉴 항목 표시 또는 숨기기"
+
+#: wp-admin/post.php:120
+msgid "Draft created successfully."
+msgstr "임시글이 성공적으로 생성되었습니다."
+
+#: wp-admin/post.php:103
+msgid "Cannot create a draft post with empty title and content."
+msgstr "빈 제목과 콘텐츠로 임시 게시물을 생성할 수 없습니다."
+
 #: wp-admin/options-reading.php:184
 msgid "Number of recent items shown in syndication feeds"
 msgstr "RSS 피드에 표시되는 최신 항목 수"
@@ -45,6 +87,14 @@ msgstr "RSS 피드에 표시되는 최신 항목 수"
 msgid "Number of recent posts shown on archive pages"
 msgstr "아카이브 페이지에 표시되는 최근 게시물 수"
 
+#: wp-admin/options-privacy.php:86
+msgid "No Privacy Policy page is currently set."
+msgstr "현재 개인정보 처리방침 페이지가 설정되지 않았습니다."
+
+#: wp-admin/options-privacy.php:83
+msgid "Privacy Policy page removed."
+msgstr "개인정보 처리방침 페이지를 제거했습니다."
+
 #: wp-admin/options-discussion.php:187
 msgid "(A common characteristic of comment spam is a large number of hyperlinks.)"
 msgstr "(댓글 스팸의 일반적인 특징 중 하나는 하이퍼링크가 다수 포함되어 있다는 점입니다.)"
@@ -52,6 +102,10 @@ msgstr "(댓글 스팸의 일반적인 특징 중 하나는 하이퍼링크가 �
 #: wp-admin/options-discussion.php:185
 msgid "Number of links to allow in a comment before holding for moderation:"
 msgstr "댓글이 검토 대기 상태로 전환되기 전에 허용되는 링크 수:"
+
+#: wp-admin/includes/comment.php:92
+msgid "A comment cannot be a reply to itself."
+msgstr "댓글은 자기 자신에 대한 답글이 될 수 없습니다."
 
 #: wp-admin/customize.php:213 wp-admin/includes/class-custom-background.php:282
 #: wp-admin/includes/class-custom-image-header.php:553
@@ -579,12 +633,12 @@ msgid "Skip to Editor"
 msgstr "편집기로 건너뛰기"
 
 #. translators: %s: WordPress version number.
-#: wp-admin/about.php:294
+#: wp-admin/about.php:319
 msgid "WordPress %s Field Guide"
 msgstr "워드프레스 %s 필드 가이드"
 
 #. translators: %s: WordPress version number.
-#: wp-admin/about.php:267
+#: wp-admin/about.php:292
 msgid "WordPress %s Release Notes"
 msgstr "워드프레스 %s 릴리스 노트"
 
@@ -692,6 +746,11 @@ msgstr "자동 로드 옵션이 허용됩니다"
 msgid "Autoloaded options are configuration settings for plugins and themes that are automatically loaded with every page load in WordPress. Having too many autoloaded options can slow down your site."
 msgstr "자동 로드 옵션은 워드프레스의 모든 페이지 로드와 함께 자동으로 로드되는 플러그인 및 테마에 대한 구성 설정입니다. 자동 로드 옵션이 너무 많으면 사이트 속도가 느려질 수 있습니다."
 
+#. translators: Localized Support reference.
+#: wp-admin/includes/class-wp-site-health.php:2571
+msgid "https://developer.wordpress.org/advanced-administration/performance/optimization/#object-caching"
+msgstr "https://developer.wordpress.org/advanced-administration/performance/optimization/#object-caching"
+
 #: wp-admin/includes/class-wp-site-health.php:2462
 msgid "https://developer.wordpress.org/advanced-administration/performance/optimization/#caching"
 msgstr "https://developer.wordpress.org/advanced-administration/performance/optimization/#caching"
@@ -738,7 +797,7 @@ msgstr "플러그인 작성자인 경우 <a href=\"https://developer.wordpress.o
 msgid "If you are a plugin author, you can learn more about <a href=\"https://developer.wordpress.org/plugins/privacy/adding-the-personal-data-eraser-to-your-plugin/\">how to add the Personal Data Eraser to a plugin</a>."
 msgstr "플러그인 작성자인 경우 <a href=\"https://developer.wordpress.org/plugins/privacy/adding-the-personal-data-eraser-to-your-plugin/\">개인 데이터 지우개를 플러그인에 추가하는 방법</a>에서 자세히 알아볼 수 있습니다."
 
-#: wp-admin/about.php:220
+#: wp-admin/about.php:245
 msgid "See everything new"
 msgstr "새로운 기능 보기"
 
@@ -748,11 +807,11 @@ msgid "https://wordpress.org/download/releases/%s/"
 msgstr "https://wordpress.org/download/releases/%s/"
 
 #. translators: %s: Version number.
-#: wp-admin/about.php:212
+#: wp-admin/about.php:237
 msgid "For a comprehensive overview of all the new features and enhancements in WordPress %s, please visit the feature-showcase website."
 msgstr "워드프레스 %s의 모든 새로운 기능과 개선 사항에 대한 종합적인 개요를 보려면 기능 쇼케이스 웹사이트를 방문하세요."
 
-#: wp-admin/about.php:206
+#: wp-admin/about.php:231
 msgid "And much more"
 msgstr "자세히 알아보세요"
 
@@ -954,12 +1013,12 @@ msgid "When using Bulk Edit, you can change the metadata (categories, author, et
 msgstr "일괄 편집을 사용하면 선택한 모든 글에 대한 메타 데이터 (카테고리, 작성자, 등)를 한번에 변경할 수 있습니다. 그룹에서 글을 제거하려면 나타나는 일괄 편집 영역에서 해당 이름 옆의 %s<span class=\"screen-reader-text\">삭제</span> 버튼을 클릭하세요."
 
 #. translators: %s: WordPress version number.
-#: wp-admin/about.php:277
+#: wp-admin/about.php:302
 msgid "Read the WordPress %s Release Notes for information on installation, enhancements, fixed issues, release contributors, learning resources, and the list of file changes."
 msgstr "설치, 개선 사항, 수정된 문제, 릴리스 기여자, 학습 리소스 및 파일 변경 목록에 대한 정보는 워드프레스 %s 릴리스 노트에서 확인하세요."
 
 #. translators: %s: WordPress version number.
-#: wp-admin/about.php:304
+#: wp-admin/about.php:329
 msgid "Explore the WordPress %s Field Guide. Learn about the changes in this release with detailed developer notes to help you build with WordPress."
 msgstr "워드프레스 %s 필드 가이드를 살펴보세요. 워드프레스로 빌드하는 데 도움이 되는 자세한 개발자 노트와 함께 이번 릴리스의 변경 사항을 알아보세요."
 
@@ -1442,7 +1501,7 @@ msgid "Be the future of WordPress"
 msgstr "워드프레스의 미래가 되세요"
 
 #. translators: 1: Learn WordPress link, 2: Workshops link.
-#: wp-admin/about.php:245
+#: wp-admin/about.php:270
 msgid "<a href=\"%1$s\">Learn WordPress</a> is a free resource for new and experienced WordPress users. Learn is stocked with how-to videos on using various features in WordPress, <a href=\"%2$s\">interactive workshops</a> for exploring topics in-depth, and lesson plans for diving deep into specific areas of WordPress."
 msgstr "<a href=\"%1$s\">워드프레스 배우기</a>는 초보자와 숙련된 워드프레스 사용자를 위한 무료 리소스입니다. Learn에는 워드프레스의 다양한 기능을 사용하는 방법 동영상, 주제를 심도 있게 살펴볼 수 있는 <a href=\"%2$s\">대화형 워크샵</a>, 워드프레스의 특정 영역을 자세히 살펴볼 수 있는 강의 계획이 준비되어 있습니다."
 
@@ -1588,12 +1647,12 @@ msgid "<a href=\"https://wordpress.org/documentation/article/customizer/\">Docum
 msgstr "<a href=\"https://wordpress.org/documentation/article/customizer/\">사용자 정의 도구 문서</a>"
 
 #. translators: The localized WordPress download URL.
-#: wp-admin/about.php:385
+#: wp-admin/about.php:410
 msgid "https://wordpress.org/download/"
 msgstr "https://wordpress.org/download/"
 
 #. translators: %s: The major version of WordPress for this branch.
-#: wp-admin/about.php:382
+#: wp-admin/about.php:407
 msgid "This is the final release of WordPress %s"
 msgstr "워드프레스 %s의 최종 릴리스입니다"
 
@@ -1912,12 +1971,12 @@ msgid "Reach out to WordPress Core developers to ensure you'll never have this p
 msgstr "이 문제가 다시는 발생하지 않도록 워드프레스 코어 개발자에 문의하세요."
 
 #. translators: 1: WordPress version number, 2: Link to update WordPress
-#: wp-admin/about.php:379
+#: wp-admin/about.php:404
 msgid "Important! Your version of WordPress (%1$s) will stop receiving security updates in the near future. To keep your site secure, please <a href=\"%2$s\">update to the latest version of WordPress</a>."
 msgstr "중요! 사용 중인 워드프레스 버전 (%1$s)은 조만간 보안 업데이트가 중지될 것입니다. 사이트를 안정하게 지키려면 <a href=\"%2$s\">워드프레스 최신 버전으로 업데이트</a>해주세요."
 
 #. translators: 1: WordPress version number, 2: Link to update WordPress
-#: wp-admin/about.php:376
+#: wp-admin/about.php:401
 msgid "Important! Your version of WordPress (%1$s) is no longer supported, you will not receive any security updates for your website. To keep your site secure, please <a href=\"%2$s\">update to the latest version of WordPress</a>."
 msgstr "중요! 사용 중인 워드프레스 버전 (%1$s)이 더 이상 지원되지 않습니다. 더 이상 보안 업데이트를 사이트에서 받지 못합니다. 사이트를 안전하게 유지하려면 <a href=\"%2$s\">워드프레스를 최신 버전으로 업데이트 해주세요</a>."
 
@@ -1927,7 +1986,7 @@ msgid "https://make.wordpress.org/core/wordpress-%s-field-guide/"
 msgstr "https://make.wordpress.org/core/wordpress-%s-field-guide/"
 
 #. translators: %s: Version number.
-#: wp-admin/about.php:236
+#: wp-admin/about.php:261
 msgid "Learn more about WordPress %s"
 msgstr "워드프레스 %s에 대해 더 알아보기"
 
@@ -2820,7 +2879,7 @@ msgstr "애플리케이션 비밀번호 추가"
 msgid "Required to create an Application Password, but not to update the user."
 msgstr "애플리케이션 비밀번호 생성은 필수지만, 사용자 업데이트는 하지 않습니다."
 
-#: wp-admin/about.php:320
+#: wp-admin/about.php:345
 msgid "Go to Updates"
 msgstr "업데이트로 가기"
 
@@ -5905,9 +5964,10 @@ msgstr "이 플러그인은 사용하고 있는 워드프레스와 PHP 버전에
 
 #. translators: %s: WordPress version number.
 #. translators: %s: WordPress version.
-#: wp-admin/about.php:21 wp-admin/about.php:78 wp-admin/about.php:103
-#: wp-admin/includes/update.php:321 wp-admin/index.php:119
-#: wp-admin/install.php:242 wp-admin/update-core.php:94 wp-admin/upgrade.php:96
+#: wp-admin/about.php:21 wp-admin/about.php:83 wp-admin/about.php:103
+#: wp-admin/about.php:128 wp-admin/includes/update.php:321
+#: wp-admin/index.php:119 wp-admin/install.php:242 wp-admin/update-core.php:94
+#: wp-admin/upgrade.php:96
 msgid "https://wordpress.org/documentation/wordpress-version/version-%s/"
 msgstr "https://wordpress.org/documentation/wordpress-version/version-%s/"
 
@@ -7750,6 +7810,10 @@ msgstr "테마에 사용할 수 있는 콘텐츠의 요약을 옵션으로 정�
 msgid "The Code mode allows you to enter HTML along with your post text. Note that &lt;p&gt; and &lt;br&gt; tags are converted to line breaks when switching to the Code editor to make it less cluttered. When you type, a single line break can be used instead of typing &lt;br&gt;, and two line breaks instead of paragraph tags. The line breaks are converted back to tags automatically."
 msgstr "문자 모드는 글 본문와 함께 HTML을 입력할 수 있습니다. &lt;p&gt;와 &lt;br&gt; 태그를 문자 편집기로 전환할 때 줄 나눔으로 바꾸어 덜 어수선하게 합니다. 입력할 때, &lt;br&gt;을 입력하는 대신에 한 줄 나누기를 사용하고, 문단 태그 대신에 두 줄 나누기를 사용하세요. 줄 나누기는 자동으로 다시 태그로 변환합니다."
 
+#: wp-admin/edit-form-advanced.php:287
+msgid "Visual mode gives you an editor that is similar to a word processor. Click the Extended Toolbar button to get a second row of controls."
+msgstr "비주얼 모드는 워드 프로세서와 유사한 편집기를 제공합니다. 확장 도구 모음 버튼을 클릭하면 두 번째 줄의 컨트롤이 나타납니다."
+
 #: wp-admin/upload.php:117
 msgid "Error saving media file."
 msgstr "미디어 파일을 저장하는 동안 오류가 발생하였습니다."
@@ -8148,7 +8212,7 @@ msgstr "(현재 설정: %s)"
 
 #. translators: %s: WordPress version.
 #. translators: %s: WordPress version number.
-#: wp-admin/about.php:68 wp-admin/about.php:350
+#: wp-admin/about.php:93 wp-admin/about.php:375
 msgid "<strong>Version %s</strong> addressed one security issue."
 msgstr "<strong>버전 %s</strong>은(는) 보안 문제를 처리하였습니다."
 
@@ -8161,15 +8225,15 @@ msgstr "https://gravatar.com/"
 msgid "Profile Picture"
 msgstr "프로필 사진"
 
-#: wp-admin/about.php:63 wp-admin/about.php:347
+#: wp-admin/about.php:63 wp-admin/about.php:372
 msgid "Maintenance and Security Releases"
 msgstr "유지 보수 및 보안 릴리스"
 
-#: wp-admin/about.php:344
+#: wp-admin/about.php:369
 msgid "Security Releases"
 msgstr "보안 릴리스"
 
-#: wp-admin/about.php:341
+#: wp-admin/about.php:366
 msgid "Maintenance Releases"
 msgstr "유지 보수 릴리스"
 
@@ -9600,6 +9664,14 @@ msgstr "테마를 실시간 미리보기 위해 어떤 테마든 마우스를 �
 msgid "The active theme is displayed highlighted as the first theme."
 msgstr "활성 테마는 첫 테마로서 강조하여 보입니다."
 
+#: wp-admin/themes.php:135
+msgid "Click Customize for the active theme or Live Preview for any other theme to see a live preview."
+msgstr "활성 테마에 대한 사용자 정의하기를 클릭하거나 테마에 대해 실시간 미리보기를 클릭하면 실시간 미리보기 할 수 있습니다."
+
+#: wp-admin/themes.php:134
+msgid "Hover or tap to see Activate and Live Preview buttons."
+msgstr "활성화나 실시간 미리보기 버튼을 보려면 마우스를 올리거나 탭하세요."
+
 #: wp-admin/themes.php:132
 msgid "This screen is used for managing your installed themes. Aside from the default theme(s) included with your WordPress installation, themes are designed and developed by third parties."
 msgstr "이 화면은 설치한 테마를 관리하는데 사용됩니다. 워드프레스 설치에 포함된 기본 테마를 제외한 테마들은 타사가 디자인하고 개발하였습니다."
@@ -10460,6 +10532,11 @@ msgstr "%s님이 넘겨받아 현재 편집 중입니다."
 #: wp-admin/nav-menus.php:982
 msgid "Select a menu to edit:"
 msgstr "편집할 메뉴 선택:"
+
+#. translators: %s: URL to Upgrade Network screen.
+#: wp-admin/includes/ms.php:695
+msgid "Thank you for updating! Please visit the <a href=\"%s\">Upgrade Network</a> page to update all your sites."
+msgstr "업데이트에 감사합니다! <a href=\"%s\">네트워크 업그레이드</a> 페이지에 방문하여 모든 사이트를 업데이트해주세요."
 
 #: wp-admin/setup-config.php:509
 msgid "All right, sparky! You&#8217;ve made it through this part of the installation. WordPress can now communicate with your database. If you are ready, time now to&hellip;"
@@ -11356,44 +11433,46 @@ msgstr "사이트를 볼 때 도구 표시줄 표시"
 
 #. translators: %s: HelpHub URL.
 #. translators: %s: Documentation URL.
-#: wp-admin/about.php:75 wp-admin/about.php:100 wp-admin/about.php:373
+#: wp-admin/about.php:80 wp-admin/about.php:100 wp-admin/about.php:125
+#: wp-admin/about.php:398
 msgid "For more information, see <a href=\"%s\">the release notes</a>."
 msgstr "자세한 정보는 <a href=\"%s\">릴리스 안내</a>를 참고하세요."
 
+#. translators: 1: WordPress version number, 2: Plural number of bugs.
 #. translators: 1: WordPress version number, 2: Plural number of bugs. More
 #. than one security issue.
-#: wp-admin/about.php:88 wp-admin/about.php:367
+#: wp-admin/about.php:68 wp-admin/about.php:113 wp-admin/about.php:392
 msgid "<strong>Version %1$s</strong> addressed some security issues and fixed %2$s bug."
 msgid_plural "<strong>Version %1$s</strong> addressed some security issues and fixed %2$s bugs."
 msgstr[0] "<strong>버전 %1$s</strong>은(는) 몇 가지 보안 문제를 해결하고 %2$s개 버그를 수정하였습니다."
 
 #. translators: 1: WordPress version number, 2: Plural number of bugs. Singular
 #. security issue.
-#: wp-admin/about.php:361
+#: wp-admin/about.php:386
 msgid "<strong>Version %1$s</strong> addressed a security issue and fixed %2$s bug."
 msgid_plural "<strong>Version %1$s</strong> addressed a security issue and fixed %2$s bugs."
 msgstr[0] "<strong>버전 %1$s</strong>은(는) 보안 문제를 해결하고 %2$s개 버그를 수정하였습니다."
 
 #. translators: 1: WordPress version number, 2: Plural number of bugs.
-#: wp-admin/about.php:355
+#: wp-admin/about.php:380
 msgid "<strong>Version %1$s</strong> addressed %2$s bug."
 msgid_plural "<strong>Version %1$s</strong> addressed %2$s bugs."
 msgstr[0] "<strong>버전 %1$s</strong>은(는) %2$s개 버그를 처리하였습니다."
 
 #. translators: %s: WordPress version number.
-#: wp-admin/about.php:352
+#: wp-admin/about.php:377
 msgid "<strong>Version %s</strong> addressed some security issues."
 msgstr "<strong>버전 %s</strong>은(는) 보안 문제를 처리하였습니다."
 
-#: wp-admin/about.php:346
+#: wp-admin/about.php:371
 msgid "Maintenance and Security Release"
 msgstr "유지 보수 및 보안 릴리스"
 
-#: wp-admin/about.php:343
+#: wp-admin/about.php:368
 msgid "Security Release"
 msgstr "보안 릴리스"
 
-#: wp-admin/about.php:340
+#: wp-admin/about.php:365
 msgid "Maintenance Release"
 msgstr "유지 보수 릴리스"
 
@@ -11666,11 +11745,15 @@ msgstr "<strong>편집</strong>은 해당 글에 대해 편집 할 수 있도록
 msgid "Because this is a multisite installation, you may add accounts that already exist on the Network by specifying a username or email, and defining a role. For more options, such as specifying a password, you have to be a Network Administrator and use the hover link under an existing user&#8217;s name to Edit the user profile under Network Admin > All Users."
 msgstr "왜냐하면 이는 다중 사이트 설치이기 때문입니다. 사용자명이나 이메일, 그리고 정의한 역할로 네트워크에 이미 존재하는 계정을 추가할 수도 있습니다. 비밀번호를 지정하는 것과 같은 더 많은 옵션에 대해, 네트워크 관리자여야하고 네트워크 관리자 > 모든 사용자 아래에 있는 사용자 프로필을 편집할 수 있는 존재하는 사용자의 이름 아래 있는 마우스 올리기 링크를 사용해야 합니다."
 
-#: wp-admin/about.php:327
+#: wp-admin/about.php:139
+msgid "Welcome to WordPress 7.1"
+msgstr "워드프레스 7.1에 오신 것을 환영합니다"
+
+#: wp-admin/about.php:352
 msgid "Go to Dashboard &rarr; Home"
 msgstr "알림판 &rarr; 홈으로 이동하기"
 
-#: wp-admin/about.php:320
+#: wp-admin/about.php:345
 msgid "Go to Dashboard &rarr; Updates"
 msgstr "알림판 &rarr; 업데이트로 이동하기"
 
@@ -13345,7 +13428,7 @@ msgstr "워드프레스 업데이트"
 msgid "Edit menu item"
 msgstr "메뉴 항목 편집"
 
-#: wp-admin/about.php:327
+#: wp-admin/about.php:352
 msgid "Go to Dashboard"
 msgstr "알림판으로 가기"
 
