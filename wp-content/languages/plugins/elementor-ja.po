@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Elementor Website Builder &#8211; more than just a page builder - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-10-04 07:28:18+0000\n"
+"PO-Revision-Date: 2026-10-27 10:17:38+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,6 +10,29 @@ msgstr ""
 "X-Generator: GlotPress/4.1.0\n"
 "Language: ja_JP\n"
 "Project-Id-Version: Plugins - Elementor Website Builder &#8211; more than just a page builder - Stable (latest release)\n"
+
+#. translators: %s: XML tag name
+#: modules/mcp/abilities/build-composition/xml-parser.php:47
+msgid "Element <%s> is not closed."
+msgstr "Element <%s> が閉じられていません。"
+
+#. translators: %s: XML tag name
+#: modules/mcp/abilities/build-composition/xml-parser.php:42
+msgid "Closing tag </%s> has no matching opening tag."
+msgstr "閉じタグ </%s> に対応する開始タグがありません。"
+
+#. translators: %s: CSS declarations that were not saved
+#: modules/mcp/abilities/appliers/style-applier.php:120
+msgid "These CSS properties or values are not supported and were not saved: %s"
+msgstr "これらの CSS プロパティまたは値はサポートされておらず、保存されませんでした: %s"
+
+#: app/modules/onboarding/features-usage.php:44
+msgid "There was a problem saving your selected features."
+msgstr "選択した機能の保存中に問題が発生しました。"
+
+#: app/app.php:305
+msgid "New Onboarding"
+msgstr "新規オンボーディング"
 
 #. translators: %d is the index of the email action.
 #: modules/atomic-widgets/elements/atomic-form/atomic-form.php:493
@@ -55,7 +78,7 @@ msgstr "動的アセット管理"
 
 #. translators: 1: Link opening tag, 2: Link closing tag, 3: Link opening tag,
 #. 4: Link closing tag
-#: core/experiments/manager.php:358
+#: core/experiments/manager.php:376
 msgid "Create advanced layouts and responsive designs with %1$sFlexbox%2$s and %3$sGrid%4$s container elements."
 msgstr "%1$sFlexbox%2$s および %3$sGrid%4$s のコンテナ要素を使用して、高度なレイアウトやレスポンシブデザインを作成できます。"
 
@@ -67,30 +90,9 @@ msgstr "動的アセット管理 (JSおよびCSSの遅延読み込み) を有効
 msgid "Get more capabilities for less with exclusive discounts. Limited time only."
 msgstr "特別割引で、より多くの機能をよりお求めやすい価格で。期間限定です。"
 
-#: modules/promotions/module.php:137
-msgid "Sale!"
-msgstr "セール !"
-
-#: modules/promotions/conversion-banner.php:241
-msgid "Get Discounts"
-msgstr "割引を受けよう"
-
-#: modules/promotions/conversion-banner.php:237
-#: modules/promotions/conversion-banner.php:248
-msgid "Celebrate 10 years of Elementor"
-msgstr "Elementor の10周年を祝いましょう"
-
-#: modules/promotions/conversion-banner.php:230
+#: modules/promotions/conversion-banner.php:247
 msgid "Upgrade to Elementor Pro"
 msgstr "Elementor Pro にアップグレード"
-
-#: modules/promotions/conversion-banner.php:238
-msgid "Upgrade your workflow with more capabilities for less. Offer ends June 17."
-msgstr "より多くの機能を低価格で利用して、ワークフローをアップグレードしましょう。キャンペーンは6月17日までです。"
-
-#: core/admin/admin.php:377
-msgid "Sale! Upgrade Now"
-msgstr "セール ! 今すぐアップグレード"
 
 #: modules/mcp/abilities/update-settings-ability.php:89
 msgid "Could not save document settings."
@@ -104,23 +106,23 @@ msgstr "設定オブジェクト (settings object) が必要です。"
 msgid "Update Elementor Page Settings"
 msgstr "Elementor ページ設定の更新"
 
-#: modules/mcp/abilities/get-structure-ability.php:355
+#: modules/mcp/abilities/get-structure-ability.php:375
 #: modules/mcp/abilities/update-settings-ability.php:83
 msgid "Sorry, you are not allowed to edit this document."
 msgstr "このドキュメントを編集する権限がありません。"
 
-#: modules/mcp/abilities/get-structure-ability.php:317
+#: modules/mcp/abilities/get-structure-ability.php:337
 #: modules/mcp/abilities/publish-document-ability.php:67
 #: modules/mcp/abilities/update-settings-ability.php:69
 msgid "A valid post_id is required."
 msgstr "有効な post_id が必要です。"
 
 #: modules/mcp/abilities/create-preview-link-ability.php:125
-#: modules/mcp/abilities/get-structure-ability.php:347
+#: modules/mcp/abilities/get-structure-ability.php:367
 msgid "This post is not built with Elementor."
 msgstr "この投稿は Elementor で構築されていません。"
 
-#: modules/mcp/abilities/get-structure-ability.php:325
+#: modules/mcp/abilities/get-structure-ability.php:345
 msgid "Sorry, you are not allowed to access this document."
 msgstr "このドキュメントにアクセスする権限がありません。"
 
@@ -128,7 +130,7 @@ msgstr "このドキュメントにアクセスする権限がありません。
 msgid "Recalculate"
 msgstr "再計算"
 
-#: modules/mcp/module.php:78
+#: modules/mcp/module.php:170
 msgid "Elementor page builder data, global classes, and variables."
 msgstr "Elementor ページビルダーのデータ、グローバルクラス、および変数。"
 
@@ -136,7 +138,7 @@ msgstr "Elementor ページビルダーのデータ、グローバルクラス�
 msgid "Updates Elementor document-level settings for a post (for example page layout, title visibility, or custom page settings). Pass only the keys you want to change. Ask the user for the URL or post ID. Use get-page-structure when you also need the element tree. Requires permission to edit the target post."
 msgstr "投稿の Elementor ドキュメントレベルの設定 (ページレイアウト、タイトルの表示 / 非表示、カスタムページ設定など) を更新します。変更したいキーのみを渡してください。ユーザーに URL または投稿IDの入力を求めてください。要素ツリーも必要な場合は、`get-page-structure` を使用してください。対象の投稿を編集する権限が必要です。"
 
-#: modules/mcp/abilities/get-structure-ability.php:39
+#: modules/mcp/abilities/get-structure-ability.php:40
 msgid "Get Elementor Page Structure"
 msgstr "Elementor ページ構造の取得"
 
@@ -630,11 +632,11 @@ msgstr "実現したいビジョンに必要な機能を選択"
 msgid " Elevate your website with additional features."
 msgstr " 追加機能でサイトをさらに強化。"
 
-#: core/admin/admin.php:771
+#: core/admin/admin.php:780
 msgid "Unable to create or access Site Settings page."
 msgstr "サイト設定ページを作成または表示できません。"
 
-#: core/admin/admin-notices.php:605 core/admin/admin.php:1138
+#: core/admin/admin-notices.php:605 core/admin/admin.php:1147
 msgid "Automatically optimize images to improve site speed and performance. Included with your ONE subscription."
 msgstr "画像を自動的に最適化して、サイトの速度とパフォーマンスを向上させます。ONE サブスクリプションに含まれています。"
 
@@ -646,11 +648,11 @@ msgstr "サイトにアクセシビリティ声明ページがあることを確
 msgid "Your ONE subscription includes Web Accessibility. Activate it to place an accessibility widget on your site."
 msgstr "ONE サブスクリプションには Web Accessibility が含まれています。有効化して、サイトにアクセシビリティウィジェットを設置しましょう。"
 
-#: core/admin/admin.php:1142 includes/controls/gallery.php:163
+#: core/admin/admin.php:1151 includes/controls/gallery.php:163
 msgid "Image Optimization is installed and included in your ONE subscription. Activate it to optimize images and improve site performance."
 msgstr "Image Optimization はインストール済みで、ONE サブスクリプションに含まれています。有効化して画像を最適化し、サイトのパフォーマンスを向上させましょう。"
 
-#: core/admin/admin-notices.php:650 core/admin/admin.php:1159
+#: core/admin/admin-notices.php:650 core/admin/admin.php:1168
 msgid "Speed up your website with Image Optimization"
 msgstr "Image Optimization でサイトを高速化"
 
@@ -766,7 +768,7 @@ msgstr "元に戻せるインポートセッションはありません。"
 msgid "Unexpected error"
 msgstr "予期しないエラー"
 
-#: modules/atomic-widgets/elements/div-block/div-block.php:44
+#: modules/atomic-widgets/elements/div-block/div-block.php:46
 msgid "Div block"
 msgstr "Div ブロック"
 
@@ -798,31 +800,23 @@ msgstr "順序は負でない整数でなければなりません"
 msgid "Google no longer supports the FAQ schema; however, it may still hold secondary value for AI and LLMs."
 msgstr "Google は FAQ スキーマのサポートを終了しましたが、AI と LLM にとっては依然として二次的な価値がある可能性があります。"
 
-#: modules/promotions/pointers/black-friday.php:31
-msgid "Save big on Elementor Pro and unlock the tools to design without limits."
-msgstr "Elementor Proをお得に購入し、制限のないデザインツールを手に入れましょう。"
-
-#: modules/promotions/pointers/black-friday.php:30
-msgid "Black Friday Is On!"
-msgstr "ブラックフライデー開催 !"
-
 #: includes/settings/settings.php:374
 msgid "Load Google fonts locally to benefit from faster performance and ensure GDPR compliance. Fonts will be served from your own server instead of Google’s. Only the very first load (in the editor and on the front end) may take slightly longer."
 msgstr "Googleフォントをローカルに保存することで、パフォーマンスの向上と GDPR への対応が可能になります。フォントは Google のサーバーではなく、あなたのサーバーから配信されるようになります。ただし、初回読み込み時 (エディター画面とフロントエンド画面) のみ、少し時間がかかる場合があります。"
 
-#: modules/pro-install/connect-page-renderer.php:141
+#: modules/pro-install/connect-page-renderer.php:140
 msgid "Pro Upgrade"
 msgstr "プロ版へアップグレード"
 
-#: modules/pro-install/connect-page-renderer.php:81
+#: modules/pro-install/connect-page-renderer.php:84
 msgid "My Account"
 msgstr "私のアカウント"
 
-#: modules/pro-install/connect-page-renderer.php:78
+#: modules/pro-install/connect-page-renderer.php:81
 msgid "Connected"
 msgstr "連携済み"
 
-#: core/admin/admin.php:763 core/admin/admin.php:794
+#: core/admin/admin.php:772 core/admin/admin.php:803
 #: modules/pro-install/module.php:54
 msgid "You do not have sufficient permissions to access this page."
 msgstr "このページにアクセスするための十分な権限がありません。"
@@ -842,17 +836,17 @@ msgstr "コンポーネント"
 msgid "pro-install"
 msgstr "pro-install"
 
-#: modules/pro-install/connect-page-renderer.php:31
+#: modules/pro-install/connect-page-renderer.php:34
 #: modules/pro-install/editor-one-connect-account-menu-item.php:40
 #: modules/pro-install/pro-install-menu-item.php:25
 msgid "Connect Settings"
 msgstr "接続設定"
 
-#: modules/pro-install/connect-page-renderer.php:53
+#: modules/pro-install/connect-page-renderer.php:56
 msgid "Connect your Elementor Account"
 msgstr "Elementor アカウントに接続"
 
-#: modules/pro-install/connect-page-renderer.php:168
+#: modules/pro-install/connect-page-renderer.php:191
 msgid "Activate Elementor Pro"
 msgstr "Elementor Pro を有効化"
 
@@ -869,28 +863,28 @@ msgstr "操作配列は空にできません"
 msgid "Invalid operation structure at index %d"
 msgstr "インデックス %d の操作構造が無効です"
 
-#: modules/pro-install/connect-page-renderer.php:167
+#: modules/pro-install/connect-page-renderer.php:190
 msgid "Enjoy full access to powerful design tools, advanced widgets, and everything you need to create next-level websites."
 msgstr "パワフルなデザインツールや高度なウィジェットなど、ワンランク上のサイト制作に必要なすべての機能をご利用いただけます。"
 
-#: modules/pro-install/connect-page-renderer.php:153
+#: modules/pro-install/connect-page-renderer.php:176
 msgid "You've got Elementor Pro"
 msgstr "Elementor Proをお持ちですか"
 
-#: modules/pro-install/connect-page-renderer.php:133
+#: modules/pro-install/connect-page-renderer.php:136
 msgid "Build custom headers, footers, forms, popups, and WooCommerce stores."
 msgstr "カスタム ヘッダー、フッター、フォーム、ポップアップ、WooCommerce ストアを構築します。"
 
-#: modules/pro-install/connect-page-renderer.php:132
+#: modules/pro-install/connect-page-renderer.php:135
 msgid "Upgrade to Pro to unlock powerful design tools and advanced features."
 msgstr "Pro にアップグレードすると、強力なデザイン ツールと高度な機能が利用できるようになります。"
 
 #. translators: %s: Connected user.
-#: modules/pro-install/connect-page-renderer.php:94
+#: modules/pro-install/connect-page-renderer.php:97
 msgid "You're connected as %s."
 msgstr "%s として接続されています。"
 
-#: modules/pro-install/connect-page-renderer.php:103
+#: modules/pro-install/connect-page-renderer.php:106
 msgid "Want to disconnect for any reason?"
 msgstr "何らかの理由で接続を切断したいですか ?"
 
@@ -900,7 +894,7 @@ msgstr "何らかの理由で接続を切断したいですか ?"
 msgid "There are no available subscriptions at the moment."
 msgstr "現在利用可能なサブスクリプションはありません。"
 
-#: modules/pro-install/connect-page-renderer.php:56
+#: modules/pro-install/connect-page-renderer.php:59
 msgid "Gain access to dozens of professionally designed templates, and connect your site to your My Elementor Dashboard."
 msgstr "プロがデザインした数10種類のテンプレートにアクセスし、サイトを My Elementor ダッシュボードに接続します。"
 
@@ -1067,7 +1061,7 @@ msgstr "サイトテンプレートを適用"
 #: modules/atomic-widgets/elements/atomic-tabs/atomic-tabs-menu/atomic-tabs-menu.php:79
 #: modules/atomic-widgets/elements/atomic-tabs/atomic-tabs/atomic-tabs.php:102
 #: modules/atomic-widgets/elements/atomic-youtube/atomic-youtube.php:110
-#: modules/atomic-widgets/elements/div-block/div-block.php:144
+#: modules/atomic-widgets/elements/div-block/div-block.php:146
 #: modules/atomic-widgets/elements/flexbox/flexbox.php:148
 #: modules/atomic-widgets/elements/grid/grid.php:142
 msgid "ID"
@@ -1086,7 +1080,7 @@ msgid "Diamond"
 msgstr "ダイヤモンド"
 
 #: modules/atomic-widgets/elements/atomic-youtube/atomic-youtube.php:90
-#: assets/js/packages/editor-controls/editor-controls.js:14676
+#: assets/js/packages/editor-controls/editor-controls.js:14678
 #: assets/js/packages/editor-controls/editor-controls.strings.js:243
 msgid "End time"
 msgstr "終了時刻"
@@ -1104,7 +1098,7 @@ msgid "Heptagon"
 msgstr "七角形"
 
 #: modules/atomic-widgets/elements/atomic-youtube/atomic-youtube.php:89
-#: assets/js/packages/editor-controls/editor-controls.js:14675
+#: assets/js/packages/editor-controls/editor-controls.js:14677
 #: assets/js/packages/editor-controls/editor-controls.strings.js:242
 msgid "Start time"
 msgstr "開始時間"
@@ -1113,7 +1107,7 @@ msgstr "開始時間"
 msgid "YouTube URL"
 msgstr "YouTube URL"
 
-#: modules/mcp/abilities/manage-variable-ability.php:170
+#: modules/mcp/abilities/manage-variable-ability.php:171
 #: modules/variables/classes/rest-api.php:461
 msgid "Unexpected server error"
 msgstr "予期しないサーバー エラー"
@@ -1417,7 +1411,7 @@ msgstr "クラウドテンプレート"
 #: modules/atomic-widgets/elements/atomic-paragraph/atomic-paragraph.php:113
 #: modules/atomic-widgets/elements/atomic-svg/atomic-svg.php:89
 #: modules/atomic-widgets/elements/atomic-youtube/atomic-youtube.php:86
-#: modules/atomic-widgets/elements/div-block/div-block.php:138
+#: modules/atomic-widgets/elements/div-block/div-block.php:140
 #: modules/atomic-widgets/elements/flexbox/flexbox.php:142
 #: modules/atomic-widgets/elements/grid/grid.php:136
 msgid "Type or paste your URL"
@@ -1429,7 +1423,7 @@ msgid "Upgrade to get more storage space or delete old templates to make room."
 msgstr "アップグレードしてストレージ容量を増やすか、古いテンプレートを削除してスペースを確保します。"
 
 #: modules/promotions/pointers/birthday.php:35
-#: modules/promotions/pointers/black-friday.php:35
+#: modules/promotions/pointers/promotional-pointer.php:49
 msgid "View Deals"
 msgstr "お得な情報を表示"
 
@@ -1938,7 +1932,7 @@ msgid "Enable atomic widgets."
 msgstr "Atomic ウィジェットを有効化します。"
 
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:285
-#: assets/js/packages/editor-controls/editor-controls.js:35638
+#: assets/js/packages/editor-controls/editor-controls.js:35640
 #: assets/js/packages/editor-controls/editor-controls.strings.js:33
 msgid "Add item"
 msgstr "項目を追加"
@@ -2204,7 +2198,7 @@ msgid "SMS"
 msgstr "SMS"
 
 #: modules/floating-buttons/base/widget-contact-button-base.php:1799
-#: assets/js/packages/editor-controls/editor-controls.js:35363
+#: assets/js/packages/editor-controls/editor-controls.js:35365
 #: assets/js/packages/editor-controls/editor-controls.strings.js:134
 msgid "Time"
 msgstr "時刻"
@@ -2404,7 +2398,7 @@ msgstr "電話"
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:476
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:716
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:718
-#: assets/js/packages/editor-controls/editor-controls.js:35318
+#: assets/js/packages/editor-controls/editor-controls.js:35320
 #: assets/js/packages/editor-controls/editor-controls.strings.js:118
 msgid "Message"
 msgstr "本文"
@@ -2722,7 +2716,7 @@ msgstr "ライトモード"
 msgid "Display mode"
 msgstr "表示モード"
 
-#: core/experiments/manager.php:381
+#: core/experiments/manager.php:399
 msgid "Optimized Markup"
 msgstr "最適化されたマークアップ"
 
@@ -2746,7 +2740,7 @@ msgstr "クイック編集オプションを表示"
 msgid "Set light or dark mode, or auto-detect to sync with your operating system settings."
 msgstr "ライトモードまたはダークモードを設定するか、OS の設定に合わせて自動検出します。"
 
-#: core/experiments/manager.php:383
+#: core/experiments/manager.php:401
 msgid "Reduce the DOM size by eliminating HTML tags in various elements and widgets. This experiment includes markup changes so it might require updating custom CSS/JS code and cause compatibility issues with third party plugins."
 msgstr "様々な要素やウィジェット内の HTML タグを削除することで、DOM サイズを削減します。この実験にはマークアップの変更が含まれるため、カスタム CSS / JS コードの更新が必要になる可能性があり、サードパーティ製プラグインとの互換性の問題が発生する可能性があります。"
 
@@ -2754,14 +2748,10 @@ msgstr "様々な要素やウィジェット内の HTML タグを削除するこ
 msgid "Show hidden elements"
 msgstr "非表示のエレメントを表示"
 
-#: core/admin/admin.php:1147 includes/controls/gallery.php:169
+#: core/admin/admin.php:1156 includes/controls/gallery.php:169
 #: includes/controls/media.php:363
 msgid "Optimize your images to enhance site performance by using Image Optimization."
 msgstr "Image Optimization を使用して画像を最適化し、サイトのパフォーマンスを向上させます。"
-
-#: modules/promotions/admin-menu-items/go-pro-promotion-item.php:33
-msgid "Upgrade Sale Now"
-msgstr "アップグレードセール開催中"
 
 #: core/admin/admin-notices.php:626
 msgid "Automatically compress and optimize images, resize larger files, or convert to WebP. Optimize images individually, in bulk, or on upload."
@@ -2809,7 +2799,7 @@ msgstr "バージョン %s に更新して、制作を再開しましょう !"
 msgid "Elementor isn’t running because PHP is outdated."
 msgstr "PHP のバージョンが古いため、Elementor は実行されていません。"
 
-#: core/files/uploads-manager.php:659
+#: core/files/uploads-manager.php:661
 msgid "You do not have permission to upload JSON files."
 msgstr "JSON ファイルをアップロードする権限がありません。"
 
@@ -2975,8 +2965,8 @@ msgstr "John Doe"
 
 #: core/admin/admin-notices.php:451 core/admin/admin-notices.php:475
 #: core/admin/admin-notices.php:551 core/admin/admin-notices.php:606
-#: core/admin/admin-notices.php:629 core/admin/admin.php:1139
-#: core/admin/admin.php:1149 core/utils/hints.php:481
+#: core/admin/admin-notices.php:629 core/admin/admin.php:1148
+#: core/admin/admin.php:1158 core/utils/hints.php:481
 #: includes/controls/gallery.php:159 includes/controls/gallery.php:171
 #: includes/controls/media.php:353 includes/controls/media.php:365
 #: includes/widgets/heading.php:510 includes/widgets/heading.php:532
@@ -2987,9 +2977,9 @@ msgstr "今すぐインストール"
 msgid "Generate Variations"
 msgstr "バリエーションを生成"
 
-#: includes/managers/controls.php:1270 modules/promotions/module.php:262
+#: includes/managers/controls.php:1270 modules/promotions/module.php:283
 #: assets/js/editor.js:37588
-#: assets/js/packages/editor-controls/editor-controls.js:35476
+#: assets/js/packages/editor-controls/editor-controls.js:35478
 #: assets/js/packages/editor-controls/editor-controls.strings.js:32
 msgid "Display Conditions"
 msgstr "表示条件"
@@ -3051,8 +3041,8 @@ msgstr "グラデーションがさまざまな画面サイズに適応するよ
 
 #: core/admin/admin-notices.php:461 core/admin/admin-notices.php:484
 #: core/admin/admin-notices.php:548 core/admin/admin-notices.php:616
-#: core/admin/admin-notices.php:638 core/admin/admin.php:1143
-#: core/admin/admin.php:1152 core/utils/hints.php:482
+#: core/admin/admin-notices.php:638 core/admin/admin.php:1152
+#: core/admin/admin.php:1161 core/utils/hints.php:482
 #: includes/controls/gallery.php:164 includes/controls/gallery.php:175
 #: includes/controls/media.php:358 includes/controls/media.php:369
 #: includes/widgets/heading.php:520 includes/widgets/heading.php:535
@@ -3074,7 +3064,7 @@ msgstr "JSON ファイルのアップロードを広く許可すると、悪意�
 msgid "Enable the option to upload JSON files"
 msgstr "JSON ファイルのアップロードを許可するオプションを有効化"
 
-#: core/files/uploads-manager.php:360
+#: core/files/uploads-manager.php:362
 msgid "Invalid file name."
 msgstr "無効なファイル名です。"
 
@@ -3151,7 +3141,7 @@ msgstr "テンプレートが見つかりません"
 msgid "This result includes the Elementor Pro %s widget. Upgrade now to unlock it and grow your web creation toolkit."
 msgstr "この結果には Elementor Pro の %s ウィジェットが含まれています。今すぐアップグレードしてロックを解除し、Web 制作ツールを拡張しましょう。"
 
-#: core/experiments/manager.php:373
+#: core/experiments/manager.php:391
 msgid "Container-based content will be hidden from your site and may not be recoverable in all cases."
 msgstr "コンテナベースのコンテンツはサイト上で非表示になり、場合によっては復元できない可能性があります。"
 
@@ -3190,6 +3180,7 @@ msgstr "VideoPress"
 #: includes/editor-templates/templates.php:580
 #: includes/editor-templates/templates.php:687
 #: modules/promotions/conversion-banner.php:223
+#: modules/promotions/conversion-banner.php:240
 #: modules/promotions/widgets/atomic-form-widget-promotion.php:85
 #: modules/promotions/widgets/collection-loop-widget-promotion.php:57
 #: assets/js/ai-admin.js:1623 assets/js/ai-admin.js:1670
@@ -3262,7 +3253,7 @@ msgstr "%2$s のうち %1$s と評価しました"
 
 #: includes/controls/groups/image-size.php:380
 #: modules/atomic-widgets/utils/image/image-sizes.php:39
-#: assets/js/packages/editor-controls/editor-controls.js:12145
+#: assets/js/packages/editor-controls/editor-controls.js:12147
 #: assets/js/packages/editor-controls/editor-controls.strings.js:94
 msgid "Full"
 msgstr "全体"
@@ -3579,7 +3570,7 @@ msgstr "注: これらのコントロールは非推奨となっており、以�
 msgid "Changes will be reflected only after %1$s saving %3$s and %2$s reloading %3$s preview."
 msgstr "変更は、%1$s 保存 %3$s および %2$s プレビューの再読み込み %3$s 後に反映されます。"
 
-#: core/admin/admin.php:661
+#: core/admin/admin.php:670
 msgid "Build Smart with AI"
 msgstr "AIを活用したスマートな構築"
 
@@ -3612,7 +3603,7 @@ msgstr "項目 #3"
 #: includes/controls/groups/background.php:99 assets/js/ai-admin.js:5326
 #: assets/js/ai-gutenberg.js:5389 assets/js/ai-media-library.js:5332
 #: assets/js/ai-unify-product-images.js:5348 assets/js/ai.js:5443
-#: assets/js/packages/editor-controls/editor-controls.js:12183
+#: assets/js/packages/editor-controls/editor-controls.js:12185
 #: assets/js/packages/editor-controls/editor-controls.strings.js:98
 msgid "Gradient"
 msgstr "グラデーション"
@@ -3696,7 +3687,7 @@ msgstr "現在、旧バージョンのトグルウィジェットを編集中で
 msgid "Invalid template type."
 msgstr "無効なテンプレートタイプです。"
 
-#: core/admin/admin.php:375
+#: core/admin/admin.php:382 core/admin/admin.php:385
 msgid "Get Elementor Pro"
 msgstr "Elementor Pro を入手"
 
@@ -3713,7 +3704,7 @@ msgstr "AI"
 
 #: includes/controls/gaps.php:58
 #: includes/controls/groups/grid-container.php:118
-#: assets/js/packages/editor-controls/editor-controls.js:11268
+#: assets/js/packages/editor-controls/editor-controls.js:11270
 #: assets/js/packages/editor-controls/editor-controls.strings.js:172
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:3800
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:4090
@@ -3824,8 +3815,8 @@ msgstr "タブレット横レイアウト"
 msgid "Tablet Portrait"
 msgstr "タブレット縦レイアウト"
 
-#: core/admin/admin-notices.php:706 core/admin/admin.php:1175
-#: modules/promotions/conversion-banner.php:186
+#: core/admin/admin-notices.php:706 core/admin/admin.php:1184
+#: modules/promotions/conversion-banner.php:187
 msgid "Dismiss this notice."
 msgstr "この通知を非表示にする。"
 
@@ -3841,7 +3832,7 @@ msgstr "水平方向の配置"
 msgid "Adjust Vertical Position"
 msgstr "垂直位置を調整"
 
-#: core/experiments/manager.php:561
+#: core/experiments/manager.php:579
 msgid "Activate All"
 msgstr "すべてを有効化"
 
@@ -3853,7 +3844,7 @@ msgstr "アクセントカラー"
 msgid "Generator Tag"
 msgstr "ジェネレータのタグ"
 
-#: core/experiments/manager.php:562
+#: core/experiments/manager.php:580
 msgid "Deactivate All"
 msgstr "すべてを無効化"
 
@@ -3868,11 +3859,11 @@ msgid_plural "%d database rows affected."
 msgstr[0] "%d件のデータベース行が影響を受けました。"
 
 #. translators: %1$s Link open tag, %2$s: Link close tag.
-#: core/experiments/manager.php:544
+#: core/experiments/manager.php:562
 msgid "Personalize your Elementor experience by controlling which features and experiments are active on your site. Help make Elementor better by %1$ssharing your experience and feedback with us%2$s."
 msgstr "有効にする機能や実験を管理して、Elementor の使用体験をカスタマイズできます。%1$s体験やフィードバックを共有%2$sして、Elementor の改善にご協力ください。"
 
-#: core/experiments/manager.php:538
+#: core/experiments/manager.php:556
 msgid "Experiments and Features"
 msgstr "実験と機能"
 
@@ -3901,7 +3892,7 @@ msgstr "タブ #%d"
 
 #: includes/widgets/video.php:599
 #: modules/atomic-widgets/elements/atomic-self-hosted-video/atomic-self-hosted-video.php:41
-#: assets/js/packages/editor-controls/editor-controls.js:35357
+#: assets/js/packages/editor-controls/editor-controls.js:35359
 #: assets/js/packages/editor-controls/editor-controls.strings.js:132
 msgid "Metadata"
 msgstr "メタデータ"
@@ -3968,7 +3959,7 @@ msgstr "背景画像の遅延読み込み"
 msgid "Activate"
 msgstr "有効化"
 
-#: core/experiments/manager.php:634
+#: core/experiments/manager.php:652
 msgid "Requires"
 msgstr "必須"
 
@@ -4071,8 +4062,8 @@ msgid "Dismiss Icon"
 msgstr "閉じるアイコン"
 
 #: core/common/modules/finder/categories/settings.php:64
-#: core/experiments/manager.php:326 core/experiments/manager.php:382
-#: core/experiments/manager.php:395 includes/settings/settings.php:296
+#: core/experiments/manager.php:344 core/experiments/manager.php:400
+#: core/experiments/manager.php:413 includes/settings/settings.php:296
 #: includes/settings/settings.php:299
 #: assets/js/packages/editor-audits/editor-audits.js:106
 #: assets/js/packages/editor-audits/editor-audits.strings.js:197
@@ -4138,7 +4129,7 @@ msgstr "Elementor の機能と Web 制作ツールの力を最大限に引き出
 msgid "Notes"
 msgstr "メモ"
 
-#: core/admin/admin.php:665 core/role-manager/role-manager.php:237
+#: core/admin/admin.php:674 core/role-manager/role-manager.php:237
 #: includes/editor-templates/panel-elements.php:39
 #: includes/editor-templates/panel-elements.php:65
 #: includes/editor-templates/panel.php:267
@@ -4148,7 +4139,7 @@ msgstr "メモ"
 #: includes/widgets/heading.php:158 includes/widgets/image-carousel.php:127
 #: includes/widgets/image-gallery.php:107 includes/widgets/testimonial.php:113
 #: includes/widgets/video.php:128
-#: modules/promotions/admin-menu-items/go-pro-promotion-item.php:30
+#: modules/promotions/admin-menu-items/go-pro-promotion-item.php:36
 #: modules/promotions/promotion-data.php:64
 #: modules/promotions/promotion-data.php:81
 #: modules/promotions/promotion-data.php:98
@@ -4164,9 +4155,11 @@ msgstr "メモ"
 #: assets/js/ai-unify-product-images.js:4980 assets/js/ai.js:1723
 #: assets/js/ai.js:4799 assets/js/ai.js:5075 assets/js/app-packages.js:5205
 #: assets/js/app.js:17288 assets/js/app.js:22520 assets/js/app.js:23038
-#: assets/js/app.js:48947 assets/js/e-react-promotions.js:43179
-#: assets/js/editor.js:1736 assets/js/notes.js:239 assets/js/notes.strings.js:5
-#: assets/js/styleguide.js:1024
+#: assets/js/app.js:48947 assets/js/e-react-promotions.js:43175
+#: assets/js/editor.js:1736 assets/js/mcp-analytics-registrar.strings.js:6
+#: assets/js/mcp-promotion-registrar.js:89
+#: assets/js/mcp-promotion-registrar.strings.js:6 assets/js/notes.js:239
+#: assets/js/notes.strings.js:5 assets/js/styleguide.js:1024
 msgid "Upgrade"
 msgstr "アップグレード"
 
@@ -4186,7 +4179,7 @@ msgstr "アップグレード"
 #: modules/promotions/admin-menu-items/base-promotion-item.php:32
 #: modules/promotions/admin-menu-items/base-promotion-template.php:37
 #: modules/promotions/admin-menu-items/editor-one-popups-menu.php:25
-#: modules/promotions/module.php:137 modules/promotions/promotion-data.php:71
+#: modules/promotions/promotion-data.php:71
 #: modules/promotions/promotion-data.php:88
 #: modules/promotions/promotion-data.php:105
 #: modules/promotions/promotion-data.php:122
@@ -4214,12 +4207,12 @@ msgid "Sorry, you are not allowed to perform this action."
 msgstr "この操作を実行することは許可されていません。"
 
 #: includes/controls/groups/typography.php:153
-#: assets/js/packages/editor-controls/editor-controls.js:35002
+#: assets/js/packages/editor-controls/editor-controls.js:35004
 #: assets/js/packages/editor-controls/editor-controls.strings.js:20
 msgid "Bold"
 msgstr "太字"
 
-#: core/experiments/manager.php:355 includes/elements/container.php:72
+#: core/experiments/manager.php:373 includes/elements/container.php:72
 #: includes/elements/container.php:359
 #: modules/library/documents/container.php:52 assets/js/editor.js:6927
 #: assets/js/editor.js:7211 assets/js/editor.js:17755 assets/js/editor.js:45991
@@ -4359,35 +4352,35 @@ msgid "Privacy Policy"
 msgstr "プライバシーポリシー"
 
 #: includes/base/element-base.php:972
-#: assets/js/packages/editor-controls/editor-controls.js:12867
+#: assets/js/packages/editor-controls/editor-controls.js:12869
 #: assets/js/packages/editor-controls/editor-controls.strings.js:247
 msgid "Rotate X"
 msgstr "回転 X"
 
 #: includes/base/element-base.php:995
-#: assets/js/packages/editor-controls/editor-controls.js:12872
+#: assets/js/packages/editor-controls/editor-controls.js:12874
 #: assets/js/packages/editor-controls/editor-controls.strings.js:248
 msgid "Rotate Y"
 msgstr "回転 Y"
 
 #: includes/base/element-base.php:1198
-#: assets/js/packages/editor-controls/editor-controls.js:13101
-#: assets/js/packages/editor-controls/editor-controls.js:13163
+#: assets/js/packages/editor-controls/editor-controls.js:13103
+#: assets/js/packages/editor-controls/editor-controls.js:13165
 #: assets/js/packages/editor-controls/editor-controls.strings.js:267
 #: assets/js/packages/editor-controls/editor-controls.strings.js:271
 msgid "Skew"
 msgstr "傾斜"
 
 #: includes/base/element-base.php:1210
-#: assets/js/packages/editor-controls/editor-controls.js:12967
+#: assets/js/packages/editor-controls/editor-controls.js:12969
 #: assets/js/packages/editor-controls/editor-controls.strings.js:253
 msgid "Skew X"
 msgstr "スキュー X"
 
 #: includes/base/element-base.php:892
-#: assets/js/packages/editor-controls/editor-controls.js:13090
-#: assets/js/packages/editor-controls/editor-controls.js:13265
-#: assets/js/packages/editor-controls/editor-controls.js:13364
+#: assets/js/packages/editor-controls/editor-controls.js:13092
+#: assets/js/packages/editor-controls/editor-controls.js:13267
+#: assets/js/packages/editor-controls/editor-controls.js:13366
 #: assets/js/packages/editor-controls/editor-controls.strings.js:262
 #: assets/js/packages/editor-controls/editor-controls.strings.js:263
 #: assets/js/packages/editor-controls/editor-controls.strings.js:273
@@ -4405,19 +4398,19 @@ msgid "Y Anchor Point"
 msgstr "Y アンカーポイント"
 
 #: includes/base/element-base.php:1232
-#: assets/js/packages/editor-controls/editor-controls.js:12971
+#: assets/js/packages/editor-controls/editor-controls.js:12973
 #: assets/js/packages/editor-controls/editor-controls.strings.js:254
 msgid "Skew Y"
 msgstr "垂直方向の傾斜"
 
 #: includes/base/element-base.php:1152
-#: assets/js/packages/editor-controls/editor-controls.js:12932
+#: assets/js/packages/editor-controls/editor-controls.js:12934
 #: assets/js/packages/editor-controls/editor-controls.strings.js:250
 msgid "Scale X"
 msgstr "スケール X"
 
 #: includes/base/element-base.php:1174
-#: assets/js/packages/editor-controls/editor-controls.js:12937
+#: assets/js/packages/editor-controls/editor-controls.js:12939
 #: assets/js/packages/editor-controls/editor-controls.strings.js:251
 msgid "Scale Y"
 msgstr "スケール Y"
@@ -4440,7 +4433,7 @@ msgid "Custom Code"
 msgstr "カスタムコード"
 
 #: includes/base/element-base.php:1018
-#: assets/js/packages/editor-controls/editor-controls.js:13182
+#: assets/js/packages/editor-controls/editor-controls.js:13184
 #: assets/js/packages/editor-controls/editor-controls.strings.js:255
 msgid "Perspective"
 msgstr "遠近法"
@@ -4453,7 +4446,7 @@ msgstr "3D 回転"
 msgid "Stroke Color"
 msgstr "線の色"
 
-#: core/experiments/manager.php:524
+#: core/experiments/manager.php:542
 msgid "Stable Features"
 msgstr "安定した機能"
 
@@ -4471,12 +4464,12 @@ msgstr "利用規約"
 msgid "Keep Proportions"
 msgstr "比率を維持する"
 
-#: core/experiments/manager.php:567
+#: core/experiments/manager.php:585
 msgid "Ongoing Experiments"
 msgstr "進行中の実験"
 
-#: core/editor/promotion.php:31 assets/js/e-react-promotions.js:42544
-#: assets/js/e-react-promotions.js:43179
+#: core/editor/promotion.php:31 assets/js/e-react-promotions.js:42540
+#: assets/js/e-react-promotions.js:43175
 #: assets/js/e-react-promotions.strings.js:1 assets/js/editor.js:1736
 #: assets/js/notes.js:239 assets/js/notes.strings.js:4
 #: assets/js/styleguide.js:1024
@@ -4506,11 +4499,11 @@ msgstr "無効なタイトル"
 msgid "Elementor Experiments"
 msgstr "Elementor の実験"
 
-#: core/experiments/manager.php:325
+#: core/experiments/manager.php:343
 msgid "Inline Font Icons"
 msgstr "インラインフォントアイコン"
 
-#: core/experiments/manager.php:329
+#: core/experiments/manager.php:347
 msgid "The “Inline Font Icons” will render the icons as inline SVG without loading the Font-Awesome and the eicons libraries and its related CSS files and fonts."
 msgstr "「インラインフォントアイコン」は、Font Awesome や eicons ライブラリ、および関連する CSS やフォントを読み込まずに、アイコンをインライン SVG として表示します。"
 
@@ -4552,7 +4545,7 @@ msgstr "比較（暗）"
 
 #: includes/elements/column.php:453 includes/elements/container.php:866
 #: includes/elements/section.php:721 includes/widgets/heading.php:335
-#: assets/js/packages/editor-controls/editor-controls.js:12158
+#: assets/js/packages/editor-controls/editor-controls.js:12160
 #: assets/js/packages/editor-controls/editor-controls.strings.js:95
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:3251
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:101
@@ -4583,7 +4576,7 @@ msgstr "乗算"
 msgid "Color Dodge"
 msgstr "覆い焼きカラー (Color Dodge)"
 
-#: core/experiments/manager.php:345
+#: core/experiments/manager.php:363
 msgid "Get pixel-perfect design for every screen size. You can now add up to 6 customizable breakpoints beyond the default desktop setting: mobile, mobile extra, tablet, tablet extra, laptop, and widescreen."
 msgstr "あらゆる画面サイズでピクセルパーフェクトなデザインを実現。デフォルトのデスクトップ設定に加え、モバイル、モバイルエクストラ、タブレット、タブレットエクストラ、ラップトップ、ワイドスクリーンの6つのカスタマイズ可能なブレークポイントを追加できるようになりました。"
 
@@ -4632,7 +4625,7 @@ msgstr "テンプレートで %1$s効率的に作業%2$s できます"
 msgid "In order for Theme Style to affect all relevant Elementor elements, please disable Default Colors and Fonts from the %1$sSettings Page%2$s."
 msgstr "テーマスタイルをすべての関連する Elementor 要素に適用するには、%1$s設定ページ%2$s で「デフォルトのカラー」と「デフォルトのフォント」を無効化してください。"
 
-#: core/experiments/manager.php:342
+#: core/experiments/manager.php:360
 msgid "Additional Custom Breakpoints"
 msgstr "追加のカスタムブレークポイント"
 
@@ -4669,7 +4662,7 @@ msgid "Favorites"
 msgstr "お気に入り"
 
 #: core/common/modules/finder/categories/settings.php:74
-#: core/experiments/manager.php:501 assets/js/app.js:21205
+#: core/experiments/manager.php:519 assets/js/app.js:21205
 msgid "Features"
 msgstr "機能"
 
@@ -4803,7 +4796,7 @@ msgstr "互換性は指定されていません"
 
 #: includes/controls/groups/background.php:463
 #: includes/widgets/common-base.php:1285
-#: assets/js/packages/editor-controls/editor-controls.js:11954
+#: assets/js/packages/editor-controls/editor-controls.js:11956
 #: assets/js/packages/editor-controls/editor-controls.strings.js:84
 msgid "No-repeat"
 msgstr "繰り返しなし"
@@ -4833,8 +4826,8 @@ msgstr "円形"
 
 #: includes/controls/groups/background.php:464
 #: includes/widgets/common-base.php:1282 includes/widgets/common-base.php:1286
-#: assets/js/packages/editor-controls/editor-controls.js:11936
-#: assets/js/packages/editor-controls/editor-controls.js:11963
+#: assets/js/packages/editor-controls/editor-controls.js:11938
+#: assets/js/packages/editor-controls/editor-controls.js:11965
 #: assets/js/packages/editor-controls/editor-controls.strings.js:81
 #: assets/js/packages/editor-controls/editor-controls.strings.js:85
 #: assets/js/packages/editor-interactions/editor-interactions.js:792
@@ -4942,22 +4935,22 @@ msgstr "中央右"
 
 #: includes/controls/groups/background.php:465
 #: includes/widgets/common-base.php:1287
-#: assets/js/packages/editor-controls/editor-controls.js:11942
+#: assets/js/packages/editor-controls/editor-controls.js:11944
 #: assets/js/packages/editor-controls/editor-controls.strings.js:82
 msgid "Repeat-x"
 msgstr "横方向に繰り返し"
 
 #: includes/controls/groups/background.php:466
 #: includes/widgets/common-base.php:1288
-#: assets/js/packages/editor-controls/editor-controls.js:11948
+#: assets/js/packages/editor-controls/editor-controls.js:11950
 #: assets/js/packages/editor-controls/editor-controls.strings.js:83
 msgid "Repeat-y"
 msgstr "縦方向に繰り返し"
 
 #: includes/base/element-base.php:1107 includes/base/element-base.php:1130
 #: includes/widgets/common-base.php:1153
-#: assets/js/packages/editor-controls/editor-controls.js:13095
-#: assets/js/packages/editor-controls/editor-controls.js:13155
+#: assets/js/packages/editor-controls/editor-controls.js:13097
+#: assets/js/packages/editor-controls/editor-controls.js:13157
 #: assets/js/packages/editor-controls/editor-controls.strings.js:265
 #: assets/js/packages/editor-controls/editor-controls.strings.js:269
 #: assets/js/packages/editor-interactions/editor-interactions.js:1432
@@ -5163,9 +5156,9 @@ msgstr "新規ユーザー「%s」を作成できませんでした。現在の�
 
 #: app/modules/import-export-customization/module.php:214
 #: app/modules/import-export/module.php:207 core/admin/admin-notices.php:283
-#: core/admin/admin-notices.php:506 core/experiments/manager.php:330
-#: core/experiments/manager.php:346 core/experiments/manager.php:374
-#: core/experiments/manager.php:555 includes/controls/url.php:78
+#: core/admin/admin-notices.php:506 core/experiments/manager.php:348
+#: core/experiments/manager.php:364 core/experiments/manager.php:392
+#: core/experiments/manager.php:573 includes/controls/url.php:78
 #: includes/editor-templates/templates.php:841
 #: includes/elements/section.php:473 includes/settings/settings-page.php:400
 #: includes/widgets/video.php:606 modules/checklist/steps/step-base.php:102
@@ -5229,11 +5222,11 @@ msgstr "ここにカーブテキストを追加"
 msgid "Privacy mode"
 msgstr "プライバシーモード"
 
-#: core/experiments/manager.php:426
+#: core/experiments/manager.php:444
 msgid "Alpha"
 msgstr "アルファ版"
 
-#: core/experiments/manager.php:427 assets/js/ai-admin.js:3227
+#: core/experiments/manager.php:445 assets/js/ai-admin.js:3227
 #: assets/js/ai-admin.js:28114 assets/js/ai-gutenberg.js:3401
 #: assets/js/ai-gutenberg.js:28163 assets/js/ai-layout.js:3073
 #: assets/js/ai-layout.js:3267 assets/js/ai-media-library.js:3233
@@ -5245,7 +5238,7 @@ msgstr "アルファ版"
 msgid "Beta"
 msgstr "ベータ版"
 
-#: modules/pro-install/connect-page-renderer.php:168
+#: modules/pro-install/connect-page-renderer.php:191
 msgid "Install & Activate"
 msgstr "インストールと有効化"
 
@@ -5253,16 +5246,16 @@ msgstr "インストールと有効化"
 msgid "Experiments"
 msgstr "実験中"
 
-#: core/experiments/manager.php:425
+#: core/experiments/manager.php:443
 msgid "Development"
 msgstr "開発版"
 
-#: core/experiments/manager.php:428
+#: core/experiments/manager.php:446
 msgid "Stable"
 msgstr "安定版"
 
 #. translators: %s Release status.
-#: core/experiments/manager.php:586
+#: core/experiments/manager.php:604
 msgid "Status: %s"
 msgstr "ステータス: %s"
 
@@ -5275,23 +5268,23 @@ msgstr "ステータス: %s"
 msgid "Save Changes"
 msgstr "変更を保存"
 
-#: core/experiments/manager.php:486
+#: core/experiments/manager.php:504
 msgid "No available experiments"
 msgstr "利用可能な実験はありません"
 
-#: core/experiments/manager.php:703
+#: core/experiments/manager.php:721
 msgid "Inactive by default"
 msgstr "デフォルトで無効"
 
-#: core/experiments/manager.php:702
+#: core/experiments/manager.php:720
 msgid "Active by default"
 msgstr "デフォルトで有効"
 
-#: core/experiments/manager.php:554
+#: core/experiments/manager.php:572
 msgid "To use an experiment or feature on your site, simply click on the dropdown next to it and switch to Active. You can always deactivate them at any time."
 msgstr "実験機能や新機能をサイトで使用するには、横のドロップダウンをクリックして「有効」に切り替えるだけです。いつでも無効化できます。"
 
-#: core/experiments/manager.php:489
+#: core/experiments/manager.php:507
 msgid "The current version of Elementor doesn't have any experimental features . if you're feeling curious make sure to come back in future versions."
 msgstr "現在の Elementor バージョンには実験機能はありません。今後のバージョンでぜひ再度ご確認ください。"
 
@@ -5481,7 +5474,7 @@ msgstr "サイト名"
 msgid "Site Favicon"
 msgstr "サイトのファビコン"
 
-#: core/admin/admin.php:970
+#: core/admin/admin.php:979
 msgid "Heads up, Please backup before upgrade!"
 msgstr "アップグレード前にバックアップしてください。"
 
@@ -5559,7 +5552,7 @@ msgid "Changes will be reflected in the preview only after the page reloads."
 msgstr "変更はページが再読み込みされた後にのみプレビューに反映されます。"
 
 #. translators: %1$s Link open tag, %2$s: Link close tag.
-#: core/admin/admin.php:976
+#: core/admin/admin.php:985
 msgid "The latest update includes some substantial changes across different areas of the plugin. We highly recommend you %1$sbackup your site before upgrading%2$s, and make sure you first update in a staging environment"
 msgstr "最新のアップデートでは、プラグインの様々な領域に大幅な変更が加えられています。アップグレード前に%1$sサイトのバックアップを%2$s作成し、ステージング環境でアップデートを実施することを強くおすすめします"
 
@@ -5598,13 +5591,13 @@ msgstr "ボタン"
 msgid "Label"
 msgstr "ラベル"
 
-#: includes/managers/controls.php:1204 modules/promotions/module.php:256
-#: assets/js/packages/editor-controls/editor-controls.js:35515
+#: includes/managers/controls.php:1204 modules/promotions/module.php:277
+#: assets/js/packages/editor-controls/editor-controls.js:35517
 #: assets/js/packages/editor-controls/editor-controls.strings.js:31
 msgid "Attributes"
 msgstr "属性"
 
-#: core/experiments/manager.php:104 includes/editor-templates/global.php:27
+#: core/experiments/manager.php:106 includes/editor-templates/global.php:27
 #: includes/editor-templates/templates.php:259 assets/js/ai-admin.js:4926
 #: assets/js/ai-gutenberg.js:4989 assets/js/ai-media-library.js:4932
 #: assets/js/ai-unify-product-images.js:4948 assets/js/ai.js:5043
@@ -5780,7 +5773,7 @@ msgstr "設定"
 #: includes/widgets/image-box.php:412 includes/widgets/image.php:389
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:923
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:978
-#: assets/js/packages/editor-controls/editor-controls.js:11984
+#: assets/js/packages/editor-controls/editor-controls.js:11986
 #: assets/js/packages/editor-controls/editor-controls.strings.js:87
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:4821
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:236
@@ -5793,8 +5786,8 @@ msgstr "カバー"
 #: includes/elements/container.php:565 includes/widgets/social-icons.php:299
 #: includes/widgets/video.php:600
 #: modules/atomic-widgets/elements/atomic-self-hosted-video/atomic-self-hosted-video.php:40
-#: assets/js/packages/editor-controls/editor-controls.js:11296
-#: assets/js/packages/editor-controls/editor-controls.js:11978
+#: assets/js/packages/editor-controls/editor-controls.js:11298
+#: assets/js/packages/editor-controls/editor-controls.js:11980
 #: assets/js/packages/editor-controls/editor-controls.strings.js:55
 #: assets/js/packages/editor-controls/editor-controls.strings.js:86
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:4862
@@ -5806,7 +5799,7 @@ msgstr "自動"
 #: includes/controls/groups/background.php:486
 #: includes/controls/groups/background.php:691
 #: includes/widgets/image-box.php:413 includes/widgets/image.php:390
-#: assets/js/packages/editor-controls/editor-controls.js:11990
+#: assets/js/packages/editor-controls/editor-controls.js:11992
 #: assets/js/packages/editor-controls/editor-controls.strings.js:88
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:4825
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:237
@@ -5838,7 +5831,7 @@ msgid "Clear Log"
 msgstr "ログを消去"
 
 #: includes/controls/groups/background.php:645
-#: assets/js/packages/editor-controls/editor-controls.js:13961
+#: assets/js/packages/editor-controls/editor-controls.js:13963
 #: assets/js/packages/editor-controls/editor-controls.strings.js:337
 #: assets/js/packages/editor-interactions/editor-interactions.js:798
 #: assets/js/packages/editor-interactions/editor-interactions.strings.js:61
@@ -6026,8 +6019,8 @@ msgstr "ファイルパス: %s"
 #: includes/controls/media.php:302 includes/controls/media.php:304
 #: assets/js/editor.js:21118
 #: assets/js/packages/editor-controls/editor-controls.js:416
-#: assets/js/packages/editor-controls/editor-controls.js:11631
-#: assets/js/packages/editor-controls/editor-controls.js:11710
+#: assets/js/packages/editor-controls/editor-controls.js:11633
+#: assets/js/packages/editor-controls/editor-controls.js:11712
 #: assets/js/packages/editor-controls/editor-controls.strings.js:183
 #: assets/js/packages/editor-controls/editor-controls.strings.js:239
 #: assets/js/packages/editor-controls/editor-controls.strings.js:350
@@ -6050,7 +6043,7 @@ msgstr "関連するセキュリティリスクを理解している場合のみ
 msgid "Template not exist."
 msgstr "テンプレートが存在しません。"
 
-#: core/experiments/manager.php:683 includes/base/widget-base.php:1055
+#: core/experiments/manager.php:701 includes/base/widget-base.php:1055
 msgid "Deprecated"
 msgstr "非推奨"
 
@@ -6109,7 +6102,7 @@ msgid "All Icons"
 msgstr "アイコン一覧"
 
 #: core/editor/editor.php:204
-#: modules/mcp/abilities/get-structure-ability.php:339
+#: modules/mcp/abilities/get-structure-ability.php:359
 #: modules/mcp/abilities/publish-document-ability.php:85
 #: modules/mcp/abilities/update-settings-ability.php:79
 msgid "Document not found."
@@ -6164,7 +6157,7 @@ msgstr "登録"
 msgid "Play Once"
 msgstr "一回再生"
 
-#: core/files/file-types/svg.php:73 core/files/uploads-manager.php:660
+#: core/files/file-types/svg.php:73 core/files/uploads-manager.php:662
 msgid "This file is not allowed for security reasons."
 msgstr "このファイルはセキュリティ上の理由のため許可されていません。"
 
@@ -6219,7 +6212,7 @@ msgid "Vertical Orientation"
 msgstr "垂直方向"
 
 #: includes/elements/container.php:1540 includes/widgets/common-base.php:560
-#: assets/js/packages/editor-controls/editor-controls.js:11800
+#: assets/js/packages/editor-controls/editor-controls.js:11802
 #: assets/js/packages/editor-controls/editor-controls.strings.js:67
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:4716
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:224
@@ -6392,7 +6385,7 @@ msgstr "ポップアップビルダーでは、Elementor の素晴らしい機�
 msgid "Every %d minutes"
 msgstr "%d分毎"
 
-#: core/upgrade/manager.php:51
+#: core/upgrade/manager.php:53
 msgid "Elementor Data Updater"
 msgstr "Elementor データ更新ツール"
 
@@ -6519,7 +6512,7 @@ msgid "Undo"
 msgstr "元に戻す"
 
 #: core/common/modules/connect/apps/base-app.php:87
-#: modules/pro-install/connect-page-renderer.php:105
+#: modules/pro-install/connect-page-renderer.php:108
 msgid "Disconnect"
 msgstr "接続解除"
 
@@ -6540,7 +6533,7 @@ msgstr "スター評価"
 msgid "Go To"
 msgstr "移動"
 
-#: core/base/document.php:2038
+#: core/base/document.php:2045
 msgid "Future"
 msgstr "将来"
 
@@ -6604,7 +6597,7 @@ msgstr "入力して Elementor 内を全検索"
 msgid "Create"
 msgstr "生成"
 
-#: modules/pro-install/connect-page-renderer.php:61
+#: modules/pro-install/connect-page-renderer.php:64
 #: assets/js/packages/editor-app-bar/editor-app-bar.js:697
 #: assets/js/packages/editor-app-bar/editor-app-bar.strings.js:10
 msgid "Connect to Elementor"
@@ -6862,7 +6855,7 @@ msgstr "新規%sを追加"
 #: includes/widgets/image.php:446 includes/widgets/image.php:480
 #: modules/floating-buttons/base/widget-floating-bars-base.php:1010
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:1502
-#: assets/js/packages/editor-controls/editor-controls.js:13741
+#: assets/js/packages/editor-controls/editor-controls.js:13743
 #: assets/js/packages/editor-controls/editor-controls.strings.js:333
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:3312
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:119
@@ -6894,8 +6887,8 @@ msgstr "新規テンプレート"
 #: modules/nested-accordion/widgets/nested-accordion.php:222
 #: modules/nested-tabs/widgets/nested-tabs.php:862
 #: assets/js/packages/editor-controls/editor-controls.js:8731
-#: assets/js/packages/editor-controls/editor-controls.js:11890
-#: assets/js/packages/editor-controls/editor-controls.js:13618
+#: assets/js/packages/editor-controls/editor-controls.js:11892
+#: assets/js/packages/editor-controls/editor-controls.js:13620
 #: assets/js/packages/editor-controls/editor-controls.strings.js:80
 #: assets/js/packages/editor-controls/editor-controls.strings.js:104
 #: assets/js/packages/editor-controls/editor-controls.strings.js:307
@@ -6909,7 +6902,7 @@ msgid "Position"
 msgstr "位置"
 
 #. translators: 1: Elementor, 2: Link to plugin review
-#: core/admin/admin.php:441
+#: core/admin/admin.php:450
 msgid "Enjoyed %1$s? Please leave us a %2$s rating. We really appreciate your support!"
 msgstr "%1$s を気に入っていただけましたか ? %2$s 評価をしていただけませんか。応援してもらえるとうれしいです。"
 
@@ -7101,7 +7094,7 @@ msgstr "新規追加"
 msgid "Set how many slides are scrolled per swipe."
 msgstr "スワイプごとにスクロールされるスライドの数を設定してください。"
 
-#: core/admin/admin.php:510
+#: core/admin/admin.php:519
 msgid "Create New Post"
 msgstr "新規投稿を作成"
 
@@ -7121,7 +7114,7 @@ msgstr "お気に入り"
 msgid "Search Widget:"
 msgstr "ウィジェットを検索:"
 
-#: core/admin/admin.php:461
+#: core/admin/admin.php:470
 msgid "Elementor Overview"
 msgstr "Elementor 概要"
 
@@ -7185,7 +7178,7 @@ msgstr "作成者"
 #: assets/js/packages/editor-components/editor-components.strings.js:1
 #: assets/js/packages/editor-controls/editor-controls.js:10352
 #: assets/js/packages/editor-controls/editor-controls.js:10715
-#: assets/js/packages/editor-controls/editor-controls.js:11000
+#: assets/js/packages/editor-controls/editor-controls.js:11002
 #: assets/js/packages/editor-controls/editor-controls.strings.js:27
 #: assets/js/packages/editor-controls/editor-controls.strings.js:224
 #: assets/js/packages/editor-controls/editor-controls.strings.js:225
@@ -7213,7 +7206,7 @@ msgctxt "Typography Control"
 msgid "Decoration"
 msgstr "装飾"
 
-#: core/admin/admin.php:507
+#: core/admin/admin.php:516
 msgid "Create New Page"
 msgstr "新規ページを作成"
 
@@ -7223,11 +7216,11 @@ msgstr "新規ページを作成"
 msgid "Publish"
 msgstr "公開"
 
-#: core/admin/admin.php:650
+#: core/admin/admin.php:659
 msgid "Blog"
 msgstr "ブログ"
 
-#: core/admin/admin.php:598
+#: core/admin/admin.php:607
 msgid "News & Updates"
 msgstr "ニュースと更新情報"
 
@@ -7244,7 +7237,7 @@ msgstr "パネルを非表示"
 #: includes/editor-templates/repeater.php:18 assets/js/editor.js:4360
 #: assets/js/editor.js:9569
 #: assets/js/packages/editor-controls/editor-controls.js:8574
-#: assets/js/packages/editor-controls/editor-controls.js:35697
+#: assets/js/packages/editor-controls/editor-controls.js:35699
 #: assets/js/packages/editor-controls/editor-controls.strings.js:3
 #: assets/js/packages/editor-controls/editor-controls.strings.js:34
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:837
@@ -7289,7 +7282,7 @@ msgstr "公開済み"
 #: assets/js/ai-unify-product-images.js:28817 assets/js/ai.js:12358
 #: assets/js/ai.js:28897 assets/js/app.js:21341
 #: assets/js/packages/editor-controls/editor-controls.js:8600
-#: assets/js/packages/editor-controls/editor-controls.js:35699
+#: assets/js/packages/editor-controls/editor-controls.js:35701
 #: assets/js/packages/editor-controls/editor-controls.strings.js:4
 #: assets/js/packages/editor-controls/editor-controls.strings.js:37
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:1049
@@ -7339,16 +7332,16 @@ msgstr "トレンド"
 msgid "Unlinked values"
 msgstr "リンクされていない値"
 
-#: core/admin/admin.php:630
+#: core/admin/admin.php:639
 msgid "(opens in a new window)"
 msgstr "(新しいウィンドウで開きます)"
 
-#: core/admin/admin.php:565
+#: core/admin/admin.php:574
 msgctxt "Dashboard Overview Widget Recently Date"
 msgid "M jS"
 msgstr "n月j日"
 
-#: core/admin/admin.php:557
+#: core/admin/admin.php:566
 msgid "Recently Edited"
 msgstr "最近の編集"
 
@@ -7375,7 +7368,7 @@ msgstr "M j, H:i"
 msgid "Excerpt"
 msgstr "抜粋"
 
-#: core/experiments/manager.php:563 includes/controls/popover-toggle.php:71
+#: core/experiments/manager.php:581 includes/controls/popover-toggle.php:71
 #: includes/controls/popover-toggle.php:73
 msgid "Back to default"
 msgstr "デフォルトに戻す"
@@ -7743,8 +7736,8 @@ msgstr "内部埋め込み"
 msgid "CSS Print Method"
 msgstr "CSS 印刷設定"
 
-#: core/base/document.php:2044 modules/ai/preferences.php:67
-#: modules/pro-install/connect-page-renderer.php:77
+#: core/base/document.php:2051 modules/ai/preferences.php:67
+#: modules/pro-install/connect-page-renderer.php:80
 #: assets/js/element-manager-admin.js:1955
 #: assets/js/element-manager-admin.js:2261
 #: assets/js/element-manager-admin.js:2383
@@ -7781,7 +7774,7 @@ msgstr "無効化"
 #: assets/js/ai.js:7160 assets/js/app-packages.js:4735 assets/js/app.js:9965
 #: assets/js/common.js:4627 assets/js/editor.js:22368
 #: assets/js/editor.strings.js:12
-#: assets/js/packages/editor-controls/editor-controls.js:11477
+#: assets/js/packages/editor-controls/editor-controls.js:11479
 #: assets/js/packages/editor-controls/editor-controls.strings.js:18
 msgid "Enable"
 msgstr "有効化"
@@ -8093,11 +8086,11 @@ msgctxt "Background Control"
 msgid "Location"
 msgstr "場所"
 
-#: core/admin/admin.php:406
+#: core/admin/admin.php:415
 msgid "View Elementor Video Tutorials"
 msgstr "Elementor の動画チュートリアルを表示"
 
-#: core/admin/admin.php:405
+#: core/admin/admin.php:414
 msgid "Docs & FAQs"
 msgstr "ドキュメントとよくある質問"
 
@@ -8109,11 +8102,11 @@ msgstr "このチェックボックスをオンにすると、Elementor のデ�
 msgid "Checking this box will disable Elementor's Default Colors, and make Elementor inherit the colors from your theme."
 msgstr "このチェックボックスをオンにすると、Elementor のデフォルト色が無効化され、テーマの色を継承します。"
 
-#: core/admin/admin.php:405
+#: core/admin/admin.php:414
 msgid "View Elementor Documentation"
 msgstr "Elementor ドキュメントの表示"
 
-#: core/admin/admin.php:406
+#: core/admin/admin.php:415
 msgid "Video Tutorials"
 msgstr "動画チュートリアル"
 
@@ -8648,7 +8641,7 @@ msgstr "拡張"
 #: includes/elements/section.php:644
 #: modules/floating-buttons/base/widget-floating-bars-base.php:981
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:1483
-#: assets/js/packages/editor-controls/editor-controls.js:12178
+#: assets/js/packages/editor-controls/editor-controls.js:12180
 #: assets/js/packages/editor-controls/editor-controls.strings.js:96
 msgid "Background Overlay"
 msgstr "背景オーバーレイ"
@@ -8731,7 +8724,7 @@ msgstr "カスタム URL"
 #: assets/js/ai-admin.js:5322 assets/js/ai-gutenberg.js:5385
 #: assets/js/ai-media-library.js:5328 assets/js/ai-unify-product-images.js:5344
 #: assets/js/ai.js:5439
-#: assets/js/packages/editor-controls/editor-controls.js:13690
+#: assets/js/packages/editor-controls/editor-controls.js:13692
 #: assets/js/packages/editor-controls/editor-controls.strings.js:323
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:2982
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:5457
@@ -8958,14 +8951,14 @@ msgstr "フォーム"
 #: assets/js/editor.js:51813
 #: assets/js/packages/editor-app-bar/editor-app-bar.js:1234
 #: assets/js/packages/editor-app-bar/editor-app-bar.strings.js:42
-#: assets/js/packages/editor-canvas/editor-canvas.js:9525
+#: assets/js/packages/editor-canvas/editor-canvas.js:9533
 #: assets/js/packages/editor-canvas/editor-canvas.strings.js:12
 #: assets/js/packages/editor-interactions/editor-interactions.js:1172
 #: assets/js/packages/editor-interactions/editor-interactions.strings.js:1
 msgid "Elements"
 msgstr "要素"
 
-#: core/admin/admin.php:371
+#: core/admin/admin.php:375
 #: core/common/modules/finder/categories/settings.php:29
 #: core/dynamic-tags/base-tag.php:176 includes/managers/controls.php:339
 #: includes/settings/admin-menu-items/editor-one-settings-menu.php:33
@@ -8999,7 +8992,7 @@ msgstr "要素"
 #: modules/atomic-widgets/elements/atomic-tabs/atomic-tabs-menu/atomic-tabs-menu.php:75
 #: modules/atomic-widgets/elements/atomic-tabs/atomic-tabs/atomic-tabs.php:98
 #: modules/atomic-widgets/elements/atomic-youtube/atomic-youtube.php:101
-#: modules/atomic-widgets/elements/div-block/div-block.php:95
+#: modules/atomic-widgets/elements/div-block/div-block.php:97
 #: modules/atomic-widgets/elements/flexbox/flexbox.php:99
 #: modules/atomic-widgets/elements/grid/grid.php:101
 #: modules/usage/settings-reporter.php:13 assets/js/editor.js:25374
@@ -9084,7 +9077,7 @@ msgctxt "Background Control"
 msgid "Scroll"
 msgstr "スクロール"
 
-#: core/experiments/manager.php:411
+#: core/experiments/manager.php:429
 #: core/kits/documents/tabs/settings-background.php:78
 #: includes/base/widget-base.php:298 includes/controls/animation.php:154
 #: includes/controls/font.php:66 includes/controls/groups/background.php:319
@@ -9136,7 +9129,7 @@ msgstr "スクロール"
 #: modules/page-templates/module.php:299
 #: modules/shapes/widgets/text-path.php:203 assets/js/editor.js:28600
 #: assets/js/editor.js:28606
-#: assets/js/packages/editor-controls/editor-controls.js:13486
+#: assets/js/packages/editor-controls/editor-controls.js:13488
 #: assets/js/packages/editor-controls/editor-controls.strings.js:277
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:6436
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:321
@@ -9154,7 +9147,7 @@ msgstr "デフォルト"
 #: modules/floating-buttons/base/widget-contact-button-base.php:2994
 #: modules/floating-buttons/base/widget-floating-bars-base.php:1437
 #: assets/js/packages/editor-controls/editor-controls.js:10286
-#: assets/js/packages/editor-controls/editor-controls.js:13622
+#: assets/js/packages/editor-controls/editor-controls.js:13624
 #: assets/js/packages/editor-controls/editor-controls.strings.js:195
 #: assets/js/packages/editor-controls/editor-controls.strings.js:308
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:3159
@@ -9180,8 +9173,8 @@ msgstr "上"
 #: modules/shapes/widgets/text-path.php:185
 #: assets/js/packages/editor-controls/editor-controls.js:10291
 #: assets/js/packages/editor-controls/editor-controls.js:10301
-#: assets/js/packages/editor-controls/editor-controls.js:13627
-#: assets/js/packages/editor-controls/editor-controls.js:13632
+#: assets/js/packages/editor-controls/editor-controls.js:13629
+#: assets/js/packages/editor-controls/editor-controls.js:13634
 #: assets/js/packages/editor-controls/editor-controls.strings.js:199
 #: assets/js/packages/editor-controls/editor-controls.strings.js:207
 #: assets/js/packages/editor-controls/editor-controls.strings.js:309
@@ -9225,7 +9218,7 @@ msgstr "メニュー"
 #: modules/floating-buttons/base/widget-contact-button-base.php:3002
 #: modules/floating-buttons/base/widget-floating-bars-base.php:1441
 #: assets/js/packages/editor-controls/editor-controls.js:10296
-#: assets/js/packages/editor-controls/editor-controls.js:13637
+#: assets/js/packages/editor-controls/editor-controls.js:13639
 #: assets/js/packages/editor-controls/editor-controls.strings.js:204
 #: assets/js/packages/editor-controls/editor-controls.strings.js:313
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:3171
@@ -9251,8 +9244,8 @@ msgstr "下"
 #: modules/shapes/widgets/text-path.php:177
 #: assets/js/packages/editor-controls/editor-controls.js:10291
 #: assets/js/packages/editor-controls/editor-controls.js:10301
-#: assets/js/packages/editor-controls/editor-controls.js:13627
-#: assets/js/packages/editor-controls/editor-controls.js:13632
+#: assets/js/packages/editor-controls/editor-controls.js:13629
+#: assets/js/packages/editor-controls/editor-controls.js:13634
 #: assets/js/packages/editor-controls/editor-controls.strings.js:198
 #: assets/js/packages/editor-controls/editor-controls.strings.js:208
 #: assets/js/packages/editor-controls/editor-controls.strings.js:310
@@ -9284,7 +9277,7 @@ msgstr "左"
 #: modules/atomic-widgets/elements/atomic-image/atomic-image.php:95
 #: modules/atomic-widgets/elements/atomic-paragraph/atomic-paragraph.php:114
 #: modules/atomic-widgets/elements/atomic-svg/atomic-svg.php:90
-#: modules/atomic-widgets/elements/div-block/div-block.php:139
+#: modules/atomic-widgets/elements/div-block/div-block.php:141
 #: modules/atomic-widgets/elements/flexbox/flexbox.php:143
 #: modules/atomic-widgets/elements/grid/grid.php:137
 #: modules/floating-buttons/base/widget-contact-button-base.php:418
@@ -9299,7 +9292,7 @@ msgstr "左"
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:1099
 #: modules/shapes/widgets/text-path.php:158
 #: assets/js/packages/editor-controls/editor-controls.js:10788
-#: assets/js/packages/editor-controls/editor-controls.js:35050
+#: assets/js/packages/editor-controls/editor-controls.js:35052
 #: assets/js/packages/editor-controls/editor-controls.strings.js:26
 #: assets/js/packages/editor-controls/editor-controls.strings.js:188
 msgid "Link"
@@ -9366,10 +9359,10 @@ msgstr "モバイル横向き"
 #: modules/floating-buttons/base/widget-contact-button-base.php:2687
 #: modules/floating-buttons/base/widget-contact-button-base.php:2818
 #: modules/shapes/module.php:52 assets/js/editor.js:28605
-#: assets/js/packages/editor-controls/editor-controls.js:11396
-#: assets/js/packages/editor-controls/editor-controls.js:11864
-#: assets/js/packages/editor-controls/editor-controls.js:11996
-#: assets/js/packages/editor-controls/editor-controls.js:12619
+#: assets/js/packages/editor-controls/editor-controls.js:11398
+#: assets/js/packages/editor-controls/editor-controls.js:11866
+#: assets/js/packages/editor-controls/editor-controls.js:11998
+#: assets/js/packages/editor-controls/editor-controls.js:12621
 #: assets/js/packages/editor-controls/editor-controls.strings.js:56
 #: assets/js/packages/editor-controls/editor-controls.strings.js:79
 #: assets/js/packages/editor-controls/editor-controls.strings.js:89
@@ -9410,7 +9403,7 @@ msgstr "削除"
 msgid "Mobile Portrait"
 msgstr "モバイル縦向き"
 
-#: core/admin/admin.php:654
+#: core/admin/admin.php:663
 msgid "Help"
 msgstr "ヘルプ"
 
@@ -9541,7 +9534,7 @@ msgstr "メニューアンカー"
 #: assets/js/kit-elements-defaults-editor.strings.js:11
 #: assets/js/packages/editor-audits/editor-audits.js:617
 #: assets/js/packages/editor-audits/editor-audits.strings.js:153
-#: assets/js/packages/editor-controls/editor-controls.js:11471
+#: assets/js/packages/editor-controls/editor-controls.js:11473
 #: assets/js/packages/editor-controls/editor-controls.strings.js:17
 #: assets/js/packages/editor-design-system/editor-design-system.js:447
 #: assets/js/packages/editor-design-system/editor-design-system.strings.js:38
@@ -9641,7 +9634,7 @@ msgid "Icon Color"
 msgstr "アイコン色"
 
 #: includes/widgets/html.php:42
-#: assets/js/packages/editor-controls/editor-controls.js:35384
+#: assets/js/packages/editor-controls/editor-controls.js:35386
 #: assets/js/packages/editor-controls/editor-controls.strings.js:139
 msgid "HTML"
 msgstr "HTML"
@@ -9683,10 +9676,10 @@ msgstr "タイトルを入力"
 #: includes/elements/section.php:498 includes/widgets/divider.php:538
 #: includes/widgets/heading.php:234
 #: modules/atomic-widgets/elements/atomic-background-video/atomic-background-video.php:198
-#: modules/atomic-widgets/elements/div-block/div-block.php:136
+#: modules/atomic-widgets/elements/div-block/div-block.php:138
 #: modules/atomic-widgets/elements/flexbox/flexbox.php:137
 #: modules/atomic-widgets/elements/grid/grid.php:131
-#: assets/js/packages/editor-controls/editor-controls.js:10921
+#: assets/js/packages/editor-controls/editor-controls.js:10923
 #: assets/js/packages/editor-controls/editor-controls.strings.js:174
 msgid "HTML Tag"
 msgstr "HTML タグ"
@@ -9732,7 +9725,7 @@ msgstr "自動再生"
 #: modules/atomic-widgets/elements/atomic-image/atomic-image.php:82
 #: modules/atomic-widgets/elements/atomic-self-hosted-video/atomic-self-hosted-video.php:166
 #: assets/js/packages/editor-controls/editor-controls.js:494
-#: assets/js/packages/editor-controls/editor-controls.js:12180
+#: assets/js/packages/editor-controls/editor-controls.js:12182
 #: assets/js/packages/editor-controls/editor-controls.strings.js:97
 #: assets/js/packages/editor-controls/editor-controls.strings.js:180
 msgid "Image"
@@ -9824,8 +9817,8 @@ msgstr "大"
 #: modules/nested-accordion/widgets/nested-accordion.php:612
 #: modules/nested-tabs/widgets/nested-tabs.php:900
 #: modules/shapes/widgets/text-path.php:251
-#: assets/js/packages/editor-controls/editor-controls.js:12022
-#: assets/js/packages/editor-controls/editor-controls.js:13582
+#: assets/js/packages/editor-controls/editor-controls.js:12024
+#: assets/js/packages/editor-controls/editor-controls.js:13584
 #: assets/js/packages/editor-controls/editor-controls.strings.js:90
 #: assets/js/packages/editor-controls/editor-controls.strings.js:300
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:5410
@@ -9910,13 +9903,13 @@ msgstr "アイコン"
 #: assets/js/element-manager-admin.js:1772
 #: assets/js/element-manager-admin.strings.js:38
 #: assets/js/packages/editor-controls/editor-controls.js:8551
-#: assets/js/packages/editor-controls/editor-controls.js:35698
+#: assets/js/packages/editor-controls/editor-controls.js:35700
 #: assets/js/packages/editor-controls/editor-controls.strings.js:1
 #: assets/js/packages/editor-controls/editor-controls.strings.js:35
 msgid "Show"
 msgstr "表示"
 
-#: core/base/document.php:2022
+#: core/base/document.php:2029
 #: core/kits/documents/tabs/settings-lightbox.php:96
 #: core/kits/documents/tabs/settings-lightbox.php:100
 #: core/kits/documents/tabs/settings-lightbox.php:117
@@ -10120,7 +10113,7 @@ msgstr "すき間なし"
 #: includes/widgets/google-maps.php:192 includes/widgets/icon-list.php:367
 #: includes/widgets/image-box.php:395 includes/widgets/image.php:359
 #: includes/widgets/progress.php:331
-#: assets/js/packages/editor-controls/editor-controls.js:13591
+#: assets/js/packages/editor-controls/editor-controls.js:13593
 #: assets/js/packages/editor-controls/editor-controls.strings.js:302
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:4882
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:245
@@ -10135,8 +10128,8 @@ msgstr "高さ"
 #: modules/floating-buttons/base/widget-floating-bars-base.php:563
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:1094
 #: assets/js/editor.js:42885
-#: assets/js/packages/editor-controls/editor-controls.js:11118
-#: assets/js/packages/editor-controls/editor-controls.js:13960
+#: assets/js/packages/editor-controls/editor-controls.js:11120
+#: assets/js/packages/editor-controls/editor-controls.js:13962
 #: assets/js/packages/editor-controls/editor-controls.strings.js:229
 #: assets/js/packages/editor-controls/editor-controls.strings.js:336
 #: assets/js/packages/editor-interactions/editor-interactions.js:785
@@ -10184,7 +10177,7 @@ msgstr "ストレッチ"
 msgid "Middle"
 msgstr "中央"
 
-#: core/base/document.php:2014
+#: core/base/document.php:2021
 #: core/common/modules/finder/categories/settings.php:49
 msgid "General Settings"
 msgstr "一般設定"
@@ -10336,8 +10329,8 @@ msgstr "配置"
 #: assets/js/editor.js:27850
 #: assets/js/packages/editor-controls/editor-controls.js:8728
 #: assets/js/packages/editor-controls/editor-controls.js:8959
-#: assets/js/packages/editor-controls/editor-controls.js:12186
-#: assets/js/packages/editor-controls/editor-controls.js:12321
+#: assets/js/packages/editor-controls/editor-controls.js:12188
+#: assets/js/packages/editor-controls/editor-controls.js:12323
 #: assets/js/packages/editor-controls/editor-controls.strings.js:65
 #: assets/js/packages/editor-controls/editor-controls.strings.js:99
 #: assets/js/packages/editor-controls/editor-controls.strings.js:103
@@ -10383,7 +10376,7 @@ msgstr "クールな番号"
 msgid "Dashed"
 msgstr "破線"
 
-#: core/admin/admin.php:251 core/admin/admin.php:259 core/base/document.php:664
+#: core/admin/admin.php:255 core/admin/admin.php:263 core/base/document.php:664
 #: modules/admin-bar/module.php:124 modules/gutenberg/module.php:104
 #: modules/gutenberg/module.php:115 modules/gutenberg/module.php:137
 #: assets/js/e-wc-product-editor.js:147
@@ -10454,11 +10447,11 @@ msgid "Center"
 msgstr "中央"
 
 #. Plugin Name of the plugin
-#: elementor.php app/view.php:23 core/admin/admin.php:320
-#: core/admin/admin.php:442 core/admin/admin.php:520
+#: elementor.php app/view.php:23 core/admin/admin.php:324
+#: core/admin/admin.php:451 core/admin/admin.php:529
 #: core/admin/menu/main.php:13 core/admin/menu/main.php:14
 #: core/documents-manager.php:384 core/upgrade/custom-tasks-manager.php:29
-#: core/upgrade/manager.php:47 includes/editor-templates/navigator.php:94
+#: core/upgrade/manager.php:49 includes/editor-templates/navigator.php:94
 #: includes/editor-templates/panel-elements.php:127
 #: includes/editor-templates/panel.php:147
 #: includes/editor-templates/templates.php:247 includes/plugin.php:831
@@ -10466,7 +10459,7 @@ msgstr "中央"
 #: includes/settings/settings.php:395 modules/compatibility-tag/module.php:36
 #: modules/history/views/history-panel-template.php:23
 #: modules/history/views/revisions-panel-template.php:38
-#: modules/mcp/module.php:77 assets/js/app-packages.js:3828
+#: modules/mcp/module.php:169 assets/js/app-packages.js:3828
 #: assets/js/app.js:2783 assets/js/packages/editor-audits/editor-audits.js:673
 #: assets/js/packages/editor-audits/editor-audits.strings.js:177
 msgid "Elementor"
@@ -10525,7 +10518,7 @@ msgstr "ロンドン・アイ、ロンドン (イギリス)"
 #: core/document-types/page-base.php:132 includes/elements/column.php:777
 #: includes/elements/container.php:1380 includes/elements/section.php:1232
 #: includes/widgets/common-base.php:310
-#: assets/js/packages/editor-controls/editor-controls.js:13494
+#: assets/js/packages/editor-controls/editor-controls.js:13496
 #: assets/js/packages/editor-controls/editor-controls.strings.js:279
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:4956
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:252
@@ -10620,7 +10613,7 @@ msgstr "番号"
 #: modules/nested-accordion/widgets/nested-accordion.php:547
 #: modules/nested-tabs/widgets/nested-tabs.php:706
 #: modules/nested-tabs/widgets/nested-tabs.php:1056
-#: assets/js/packages/editor-controls/editor-controls.js:13525
+#: assets/js/packages/editor-controls/editor-controls.js:13527
 #: assets/js/packages/editor-controls/editor-controls.strings.js:287
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:4957
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:253
@@ -10680,7 +10673,7 @@ msgstr "コンテンツを切り替え"
 #: modules/shapes/widgets/text-path.php:304 assets/js/ai-admin.js:4972
 #: assets/js/ai-gutenberg.js:5035 assets/js/ai-media-library.js:4978
 #: assets/js/ai-unify-product-images.js:4994 assets/js/ai.js:5089
-#: assets/js/packages/editor-controls/editor-controls.js:12317
+#: assets/js/packages/editor-controls/editor-controls.js:12319
 #: assets/js/packages/editor-controls/editor-controls.strings.js:64
 msgid "Text"
 msgstr "テキスト"
@@ -10726,7 +10719,7 @@ msgstr "ウィジェットパネル"
 #: modules/nested-tabs/widgets/nested-tabs.php:317
 #: modules/shapes/widgets/text-path.php:540
 #: modules/shapes/widgets/text-path.php:611
-#: assets/js/packages/editor-controls/editor-controls.js:13586
+#: assets/js/packages/editor-controls/editor-controls.js:13588
 #: assets/js/packages/editor-controls/editor-controls.strings.js:301
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:4879
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:244
@@ -10841,7 +10834,7 @@ msgstr "警告"
 #: modules/floating-buttons/base/widget-floating-bars-base.php:231
 #: modules/floating-buttons/base/widget-floating-bars-base.php:298
 #: assets/js/packages/editor-controls/editor-controls.js:8551
-#: assets/js/packages/editor-controls/editor-controls.js:35698
+#: assets/js/packages/editor-controls/editor-controls.js:35700
 #: assets/js/packages/editor-controls/editor-controls.strings.js:2
 #: assets/js/packages/editor-controls/editor-controls.strings.js:36
 msgid "Hide"
@@ -10897,7 +10890,7 @@ msgstr "更新前"
 #: includes/elements/column.php:547 includes/elements/container.php:995
 #: includes/elements/section.php:831 includes/widgets/common-base.php:966
 #: modules/floating-buttons/base/widget-floating-bars-base.php:761
-#: assets/js/packages/editor-controls/editor-controls.js:13711
+#: assets/js/packages/editor-controls/editor-controls.js:13713
 #: assets/js/packages/editor-controls/editor-controls.strings.js:327
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:5463
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:51
@@ -10912,7 +10905,7 @@ msgstr "画像の位置"
 msgid "Themes"
 msgstr "テーマ"
 
-#: core/admin/admin.php:270
+#: core/admin/admin.php:274
 #: core/editor/loader/templates/editor-body-view.php:23
 #: includes/editor-templates/templates.php:66 modules/gutenberg/module.php:126
 #: assets/js/ai-admin.js:12895 assets/js/ai-gutenberg.js:12955
@@ -10965,7 +10958,7 @@ msgstr "太字"
 #: includes/controls/groups/typography.php:436 includes/elements/column.php:674
 #: includes/elements/section.php:1131 assets/js/editor-modules.js:696
 #: assets/js/editor.js:27144
-#: assets/js/packages/editor-controls/editor-controls.js:13649
+#: assets/js/packages/editor-controls/editor-controls.js:13651
 #: assets/js/packages/editor-controls/editor-controls.strings.js:315
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:5436
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.strings.js:49
@@ -11083,7 +11076,7 @@ msgstr "枠線の丸み"
 #: includes/controls/gaps.php:57
 #: includes/controls/groups/grid-container.php:119
 #: includes/elements/column.php:61
-#: assets/js/packages/editor-controls/editor-controls.js:11252
+#: assets/js/packages/editor-controls/editor-controls.js:11254
 #: assets/js/packages/editor-controls/editor-controls.strings.js:170
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:3809
 #: assets/js/packages/editor-editing-panel/editor-editing-panel.js:4095
@@ -11099,8 +11092,8 @@ msgstr "カラムギャップ"
 #: includes/base/element-base.php:921 includes/base/element-base.php:933
 #: includes/widgets/divider.php:981 includes/widgets/icon-box.php:585
 #: includes/widgets/icon.php:376 modules/shapes/widgets/text-path.php:283
-#: assets/js/packages/editor-controls/editor-controls.js:13098
-#: assets/js/packages/editor-controls/editor-controls.js:13159
+#: assets/js/packages/editor-controls/editor-controls.js:13100
+#: assets/js/packages/editor-controls/editor-controls.js:13161
 #: assets/js/packages/editor-controls/editor-controls.strings.js:266
 #: assets/js/packages/editor-controls/editor-controls.strings.js:270
 msgid "Rotate"
@@ -11190,7 +11183,7 @@ msgstr "コンテンツ"
 msgid "XXL"
 msgstr "XXL"
 
-#: core/experiments/manager.php:412 core/experiments/manager.php:705
+#: core/experiments/manager.php:430 core/experiments/manager.php:723
 #: modules/element-cache/module.php:107
 #: modules/floating-buttons/base/widget-contact-button-base.php:1312
 #: modules/nested-accordion/widgets/nested-accordion.php:676
@@ -11245,7 +11238,7 @@ msgstr "点線"
 msgid "Icon Spacing"
 msgstr "アイコン間隔"
 
-#: core/experiments/manager.php:413 core/experiments/manager.php:706
+#: core/experiments/manager.php:431 core/experiments/manager.php:724
 #: modules/element-cache/module.php:106 assets/js/editor.js:53358
 #: assets/js/element-manager-admin.js:1956
 #: assets/js/element-manager-admin.strings.js:32
