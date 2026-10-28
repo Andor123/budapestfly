@@ -330,7 +330,7 @@ export default function Inspector({ attributes, setAttributes }) {
 						<>
 							{__('Pro Features', 'social-icons-widget-by-wpzoom')}
 							<span className="wpzoom-pro-badge" style={{
-								background: '#2271b1',
+								background: 'var(--wp-admin-theme-color, #2271b1)',
 								color: '#fff',
 								fontSize: '9px',
 								padding: '2px 5px',
@@ -436,7 +436,7 @@ export default function Inspector({ attributes, setAttributes }) {
 
 						<Button
 							variant="primary"
-							href="https://www.wpzoom.com/plugins/social-share/?utm_source=wpadmin&utm_medium=plugin&utm_campaign=social-icons-free&utm_content=block-inspector"
+							href="https://www.wpzoom.com/plugins/social-share/upgrade/?utm_source=wpadmin&utm_medium=plugin&utm_campaign=social-icons-free&utm_content=block-inspector#pro"
 							target="_blank"
 							style={{ width: '100%', justifyContent: 'center' }}
 						>
@@ -567,7 +567,7 @@ export default function Inspector({ attributes, setAttributes }) {
 										<input type="checkbox" disabled style={{ margin: 0 }} />
 										<span>{__('Like Button', 'social-icons-widget-by-wpzoom')}</span>
 										<span style={{
-											background: '#2271b1',
+											background: 'var(--wp-admin-theme-color, #2271b1)',
 											color: '#fff',
 											fontSize: '9px',
 											padding: '1px 4px',
@@ -609,7 +609,7 @@ export default function Inspector({ attributes, setAttributes }) {
 										<input type="checkbox" disabled style={{ margin: 0 }} />
 										<span>{__('ChatGPT', 'social-icons-widget-by-wpzoom')}</span>
 										<span style={{
-											background: '#2271b1',
+											background: 'var(--wp-admin-theme-color, #2271b1)',
 											color: '#fff',
 											fontSize: '9px',
 											padding: '1px 4px',
@@ -651,7 +651,7 @@ export default function Inspector({ attributes, setAttributes }) {
 										<input type="checkbox" disabled style={{ margin: 0 }} />
 										<span>{__('Claude', 'social-icons-widget-by-wpzoom')}</span>
 										<span style={{
-											background: '#2271b1',
+											background: 'var(--wp-admin-theme-color, #2271b1)',
 											color: '#fff',
 											fontSize: '9px',
 											padding: '1px 4px',
@@ -693,7 +693,7 @@ export default function Inspector({ attributes, setAttributes }) {
 										<input type="checkbox" disabled style={{ margin: 0 }} />
 										<span>{__('Perplexity', 'social-icons-widget-by-wpzoom')}</span>
 										<span style={{
-											background: '#2271b1',
+											background: 'var(--wp-admin-theme-color, #2271b1)',
 											color: '#fff',
 											fontSize: '9px',
 											padding: '1px 4px',
@@ -708,7 +708,7 @@ export default function Inspector({ attributes, setAttributes }) {
 
 						<Button
 							variant="link"
-							href="https://www.wpzoom.com/plugins/social-share/?utm_source=wpadmin&utm_medium=plugin&utm_campaign=social-icons-free&utm_content=sharing-networks"
+							href="https://www.wpzoom.com/plugins/social-share/upgrade/?utm_source=wpadmin&utm_medium=plugin&utm_campaign=social-icons-free&utm_content=sharing-networks#pro"
 							target="_blank"
 							style={{ marginTop: '8px', fontSize: '12px' }}
 						>

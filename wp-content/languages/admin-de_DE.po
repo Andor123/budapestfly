@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 7.1.x - Development - Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-10-24 18:10:53+0000\n"
+"PO-Revision-Date: 2026-10-27 21:47:59+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1226,7 +1226,7 @@ msgstr "Erkläre in wenigen Worten, worum es auf dieser Website geht. Beispiel: 
 
 #: wp-admin/install.php:195
 msgid "Note: Discouraging search engines does not block access to your site &mdash; it is up to search engines to honor your request."
-msgstr "Hinweis: Suchmaschinen von der Website auszuschließen bedeutet nicht, dass der Zugriff auf deine Website blockiert wird – es liegt an den Suchmaschinen, deine Anfrage zu berücksichtigen."
+msgstr "Hinweis: Suchmaschinen von der Indexierung abzuraten, blockiert nicht den Zugriff auf deine Website – es liegt an den Suchmaschinen, deiner Bitte nachzukommen."
 
 #: wp-admin/includes/template.php:764
 msgid "New custom field name"
@@ -1935,7 +1935,7 @@ msgstr "Du solltest einen persistenten Objekt-Cache verwenden"
 #. translators: Available object caching services.
 #: wp-admin/includes/class-wp-site-health.php:2612
 msgid "Your host appears to support the following object caching services: %s."
-msgstr "Dein Webhosting scheint die folgenden Dienste für das Cachen von Objekten zu unterstützen: %s."
+msgstr "Dein Hosting-Anbieter scheint die folgenden Dienste für das Zwischenspeichern von Objekten zu unterstützen: %s."
 
 #: wp-admin/includes/class-wp-site-health.php:2607
 msgid "Your hosting provider can tell you if a persistent object cache can be enabled on your site."
@@ -2023,7 +2023,7 @@ msgstr "Mehr über den Seiten-Cache erfahren (engl.)"
 
 #: wp-admin/includes/class-wp-site-health.php:2448
 msgid "Page cache is detected by looking for an active page cache plugin as well as making three requests to the homepage and looking for one or more of the following HTTP client caching response headers:"
-msgstr "Seiten-Cache wird erkannt, indem nach einem aktiven Seiten-Cache-Plugin gesucht wird, drei Anfragen an die Homepage gestellt werden und nach einem oder mehreren der folgenden HTTP-Client-Cache-Antwort-Header gesucht wird:"
+msgstr "Der Seiten-Cache wird erkannt, indem nach einem aktiven Seiten-Cache-Plugin gesucht wird, drei Anfragen an die Homepage gestellt werden und nach einem oder mehreren der folgenden HTTP-Client-Cache-Antwort-Header gesucht wird:"
 
 #: wp-admin/includes/class-wp-site-health.php:2447
 msgid "Page cache enhances the speed and performance of your site by saving and serving static pages instead of calling for a page every time a user visits."
@@ -3628,7 +3628,7 @@ msgstr "Automatische Aktualisierungen können für die Hauptversionen von WordPr
 #. updating WordPress.
 #: wp-admin/update-core.php:260
 msgid "<strong>Important:</strong> Before updating, please <a href=\"%1$s\">back up your database and files</a>. For help with updates, visit the <a href=\"%2$s\">Updating WordPress</a> documentation page."
-msgstr "<strong>Wichtig:</strong> Vor der Aktualisierung bitte deine <a href=\"%1$s\">Datenbank und Dateien sichern (engl.)</a>. Hilfe bei Aktualisierungen erhältst du auf der Dokumentationsseite <a href=\"%2$s\">WordPress aktualisieren (engl.)</a>."
+msgstr "<strong>Wichtig:</strong> Bitte sichere vor der Aktualisierung deine <a href=\"%1$s\">Datenbank und Dateien (engl.)</a>. Hilfe bei Aktualisierungen erhältst du auf der Dokumentationsseite <a href=\"%2$s\">WordPress aktualisieren (engl.)</a>."
 
 #: wp-admin/customize.php:205 wp-admin/theme-install.php:435
 #: wp-admin/theme-install.php:497 wp-admin/themes.php:648
@@ -4881,7 +4881,7 @@ msgstr "Die Rückruffunktion für die Löschfunktion ist ungültig: %s."
 #. translators: %s: Eraser friendly name.
 #: wp-admin/includes/ajax-actions.php:5275
 msgid "Eraser does not include a callback: %s."
-msgstr "Die Löschfunktion beinhaltet keine Rückruffunktion: %s."
+msgstr "Die Löschfunktion enthält keine Rückruffunktion: %s."
 
 #: wp-admin/includes/ajax-actions.php:4997
 #: wp-admin/includes/ajax-actions.php:5188
@@ -6723,7 +6723,7 @@ msgstr "Bericht erstellt für"
 #. translators: %s: Exporter array index.
 #: wp-admin/includes/ajax-actions.php:5081
 msgid "Exporter array at index %s does not include a friendly name."
-msgstr "Der Funktion zum Datenexport im Index %s des Arrays fehlt ein Anzeigename."
+msgstr "Der Exportfunktion bei Index %s des Arrays fehlt ein Anzeigename."
 
 #: wp-admin/erase-personal-data.php:13
 msgid "Sorry, you are not allowed to erase personal data on this site."
@@ -6735,58 +6735,58 @@ msgstr "Du bist leider nicht berechtigt, personenbezogene Daten auf dieser Websi
 
 #: wp-admin/includes/ajax-actions.php:5248
 msgid "Eraser index is out of range."
-msgstr "Index der Löschfunktion ist außerhalb des Bereichs."
+msgstr "Der Index der Löschfunktion liegt außerhalb des Bereichs."
 
 #: wp-admin/includes/ajax-actions.php:5207
 msgid "Missing eraser index."
-msgstr "Index der Löschfunktion fehlt."
+msgstr "Der Index der Löschfunktion fehlt."
 
 #. translators: %s: Exporter friendly name.
 #: wp-admin/includes/ajax-actions.php:5132
 msgid "Expected done (boolean) in response array from exporter: %s."
-msgstr "Erwartetes done (boolesch) im Antwort-Array der Funktion zum Datenexport: %s."
+msgstr "Erwartet wurde „done“ (boolesch) im Antwort-Array der Exportfunktion: %s."
 
 #. translators: %s: Exporter friendly name.
 #: wp-admin/includes/ajax-actions.php:5125
 msgid "Expected data array in response array from exporter: %s."
-msgstr "Erwartet wurde ein Daten-Array im Antwort-Array der Funktion zum Datenexport: %s."
+msgstr "Erwartet wurde ein Daten-Array im Antwort-Array der Exportfunktion: %s."
 
 #. translators: %s: Exporter friendly name.
 #: wp-admin/includes/ajax-actions.php:5118
 msgid "Expected data in response array from exporter: %s."
-msgstr "Erwartete Daten im Antwort-Array der Funktion zum Datenexport: %s."
+msgstr "Erwartet wurden Daten im Antwort-Array der Exportfunktion: %s."
 
 #. translators: %s: Exporter friendly name.
 #: wp-admin/includes/ajax-actions.php:5111
 msgid "Expected response as an array from exporter: %s."
-msgstr "Erwartet wurde ein Array als Antwort der Funktion zum Datenexport: %s."
+msgstr "Erwartet wurde ein Array als Antwort der Exportfunktion: %s."
 
 #. translators: %s: Exporter friendly name.
 #: wp-admin/includes/ajax-actions.php:5097
 msgid "Exporter callback is not a valid callback: %s."
-msgstr "Die Rückruffunktion für den Datenexport ist ungültig: %s."
+msgstr "Die Rückruffunktion für die Exportfunktion ist ungültig: %s."
 
 #. translators: %s: Exporter friendly name.
 #: wp-admin/includes/ajax-actions.php:5090
 msgid "Exporter does not include a callback: %s."
-msgstr "Funktion zum Datenexport enthält keine gültige Rückruffunktion: %s."
+msgstr "Die Exportfunktion enthält keine Rückruffunktion: %s."
 
 #. translators: %s: Exporter array index.
 #: wp-admin/includes/ajax-actions.php:5074
 msgid "Expected an array describing the exporter at index %s."
-msgstr "Erwartet wurde ein Array zur Beschreibung der Funktion zum Datenexport im Index %s."
+msgstr "Erwartet wurde ein Array zur Beschreibung der Exportfunktion bei Index %s."
 
 #: wp-admin/includes/ajax-actions.php:5060
 msgid "Exporter index is out of range."
-msgstr "Der Exporter-Index ist außerhalb des Bereichs."
+msgstr "Der Index der Exportfunktion liegt außerhalb des Bereichs."
 
 #: wp-admin/includes/ajax-actions.php:5056
 msgid "Exporter index cannot be negative."
-msgstr "Index der Funktion zum Datenexport kann nicht negativ sein."
+msgstr "Der Index der Exportfunktion darf nicht negativ sein."
 
 #: wp-admin/includes/ajax-actions.php:5050
 msgid "An exporter has improperly used the registration filter."
-msgstr "Eine Funktion zum Datenexport hat den Registrierungs-Filter unzulässig benutzt."
+msgstr "Eine Exportfunktion hat den Registrierungsfilter nicht ordnungsgemäß verwendet."
 
 #: wp-admin/includes/ajax-actions.php:5021
 #: wp-admin/includes/ajax-actions.php:5213
@@ -6795,7 +6795,7 @@ msgstr "Fehlender Seiten-Index."
 
 #: wp-admin/includes/ajax-actions.php:5015
 msgid "Missing exporter index."
-msgstr "Index der Funktion zum Export fehlt."
+msgstr "Der Index der Exportfunktion fehlt."
 
 #: wp-admin/includes/ajax-actions.php:5006
 #: wp-admin/includes/ajax-actions.php:5197
@@ -6996,42 +6996,42 @@ msgstr "Die Anfrage-ID ist ungültig."
 #. translators: 1: Eraser friendly name, 2: Eraser array index.
 #: wp-admin/includes/ajax-actions.php:5357
 msgid "Expected done flag in response array from %1$s eraser (index %2$d)."
-msgstr "Es wird ein done-Flag im Antwort-Array der Funktion zur Datenlöschung %1$s (Index %2$d) erwartet."
+msgstr "Erwartet wurde das Flag „done“ im Antwort-Array der Löschfunktion %1$s (Index %2$d)."
 
 #. translators: 1: Eraser friendly name, 2: Eraser array index.
 #: wp-admin/includes/ajax-actions.php:5346
 msgid "Expected messages key to reference an array in response array from %1$s eraser (index %2$d)."
-msgstr "Erwarteter messages-Schlüssel in Antwort-Array der Funktion zur Datenlöschung %1$s (Index %2$d)."
+msgstr "Erwartet wurde, dass der Schlüssel „messages“ im Antwort-Array der Löschfunktion %1$s (Index %2$d) auf ein Array verweist."
 
 #. translators: 1: Eraser friendly name, 2: Eraser array index.
 #: wp-admin/includes/ajax-actions.php:5335
 msgid "Expected messages key in response array from %1$s eraser (index %2$d)."
-msgstr "Erwarteter messages-Schlüssel in Antwort-Array der Funktion zur Datenlöschung %1$s (Index %2$d)."
+msgstr "Erwartet wurde der Schlüssel „messages“ im Antwort-Array der Löschfunktion %1$s (Index %2$d)."
 
 #. translators: 1: Eraser friendly name, 2: Eraser array index.
 #: wp-admin/includes/ajax-actions.php:5324
 msgid "Expected items_retained key in response array from %1$s eraser (index %2$d)."
-msgstr "Erwarteter items_retained-Schlüssel in Antwort-Array der Funktion zur Datenlöschung %1$s (Index %2$d)."
+msgstr "Erwartet wurde der Schlüssel „items_retained“ im Antwort-Array der Löschfunktion %1$s (Index %2$d)."
 
 #. translators: 1: Eraser friendly name, 2: Eraser array index.
 #: wp-admin/includes/ajax-actions.php:5313
 msgid "Expected items_removed key in response array from %1$s eraser (index %2$d)."
-msgstr "Erwarteter items_removed-Schlüssel in Antwort-Array der Funktion zur Datenlöschung %1$s (Index %2$d)."
+msgstr "Erwartet wurde der Schlüssel „items_removed“ im Antwort-Array der Löschfunktion %1$s (Index %2$d)."
 
 #. translators: 1: Eraser friendly name, 2: Eraser array index.
 #: wp-admin/includes/ajax-actions.php:5302
 msgid "Did not receive array from %1$s eraser (index %2$d)."
-msgstr "Kein Array der Datenlöschungs-Funktion %1$s (Index %2$d) erhalten."
+msgstr "Es wurde kein Array von der Löschfunktion %1$s (Index %2$d) empfangen."
 
 #. translators: %d: Eraser array index.
 #: wp-admin/includes/ajax-actions.php:5266
 msgid "Eraser array at index %d does not include a friendly name."
-msgstr "Der Funktion zur Datenlöschung im Index %d des Arrays fehlt ein Anzeigename."
+msgstr "Der Löschfunktion bei Index %d des Arrays fehlt ein Anzeigename."
 
 #. translators: %d: Eraser array index.
 #: wp-admin/includes/ajax-actions.php:5261
 msgid "Expected an array describing the eraser at index %d."
-msgstr "Erwartet wurde ein Array, das die Funktion zur Datenlöschung im Index %d beschreibt."
+msgstr "Erwartet wurde ein Array zur Beschreibung der Löschfunktion bei Index %d."
 
 #: wp-admin/includes/ajax-actions.php:5064
 #: wp-admin/includes/ajax-actions.php:5252
@@ -7040,7 +7040,7 @@ msgstr "Seiten-Index kann nicht kleiner als 1 sein."
 
 #: wp-admin/includes/ajax-actions.php:5244
 msgid "Eraser index cannot be less than one."
-msgstr "Index der Funktion zur Datenlöschung kann nicht kleiner als 1 sein."
+msgstr "Der Index der Löschfunktion darf nicht kleiner als 1 sein."
 
 #: wp-admin/includes/ajax-actions.php:5203
 msgid "Invalid email address in request."

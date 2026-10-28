@@ -97,6 +97,11 @@ function wpzoom_social_icons_block_enqueue_assets() {
 			'sharingConfigId'          => $sharing_config_id,
 			'sharingConfigUrl'         => $sharing_config_url,
 			'isEditingSharingConfig'   => $is_editing_sharing_config,
+			'preferredSource'          => WPZOOM_Preferred_Source::editor_data(),
+			'svgIcons'                 => WPZOOM_Social_Icons_SVG::editor_data(),
+			// The Social Profiles block offers its PRO layouts on PRO only.
+			'isPro'                    => class_exists( 'WPZOOM_Connect_Overview' ) && WPZOOM_Connect_Overview::is_pro(),
+			'upgradeUrl'               => class_exists( 'WPZOOM_Connect_Overview' ) ? WPZOOM_Connect_Overview::upgrade_url( 'block-social-profiles' ) : '',
 		)
 	);
 
@@ -155,6 +160,83 @@ function wpzoom_social_icons_block_enqueue_assets() {
 					),
 				),
 				'render_callback' => 'wpzoom_social_sharing_block_render_callback',
+			)
+		);
+	}
+
+	/**
+	 * Register the Social Profiles block, drawn on the server
+	 * (WPZOOM_Social_Profiles::render()), so nothing but its attributes is
+	 * saved in the post.
+	 */
+	if ( class_exists( 'WPZOOM_Social_Profiles' ) && ! WP_Block_Type_Registry::get_instance()->is_registered( 'wpzoom-blocks/social-profiles' ) ) {
+		register_block_type(
+			'wpzoom-blocks/social-profiles',
+			array(
+				'style'           => 'wpzoom-social-icons-block-style',
+				'editor_script'   => 'wpzoom-social-icons-block-js',
+				'editor_style'    => 'wpzoom-social-icons-block-editor',
+				'attributes'      => WPZOOM_Social_Profiles::attributes(),
+				'supports'        => array(
+					'html'       => false,
+					'align'      => array( 'wide', 'full' ),
+					'spacing'    => array(
+						'margin' => true,
+					),
+					'typography' => array(
+						'fontSize'   => true,
+						'lineHeight' => true,
+					),
+				),
+				'render_callback' => array( 'WPZOOM_Social_Profiles', 'render' ),
+			)
+		);
+	}
+
+	/**
+	 * Register the Preferred Source block. Rendered on the server, so the
+	 * link follows the site address when the site moves to another domain.
+	 */
+	if ( ! WP_Block_Type_Registry::get_instance()->is_registered( 'wpzoom-blocks/preferred-source' ) ) {
+		register_block_type(
+			'wpzoom-blocks/preferred-source',
+			array(
+				'style'           => WPZOOM_Preferred_Source::STYLE_HANDLE,
+				'editor_script'   => 'wpzoom-social-icons-block-js',
+				'editor_style'    => 'wpzoom-social-icons-block-editor',
+				'attributes'      => array(
+					'label'        => array(
+						'type'    => 'string',
+						'default' => '',
+					),
+					'theme'        => array(
+						'type'    => 'string',
+						'default' => 'light',
+					),
+					'size'         => array(
+						'type'    => 'string',
+						'default' => 'medium',
+					),
+					'textAlign'    => array(
+						'type'    => 'string',
+						'default' => '',
+					),
+					'domain'       => array(
+						'type'    => 'string',
+						'default' => '',
+					),
+					'openInNewTab' => array(
+						'type'    => 'boolean',
+						'default' => true,
+					),
+				),
+				'supports'        => array(
+					'html'    => false,
+					'spacing' => array(
+						'margin' => true,
+					),
+				),
+				'render_callback' => array( 'WPZOOM_Preferred_Source', 'render_block' ),
 			)
 		);
 	}
@@ -690,13 +772,20 @@ function wpzoom_has_reusable_block( $block_name, $id = 0 ) {
  * Enqueue css and js files.
  */
 function wpzoom_social_icons_block_enqueue_secondary_assets() {
+	// Icon fonts are for the Social Icons block only: Sharing Buttons draw
+	// their icons as inline SVG on the front end.
 	if ( wpzoom_has_reusable_block( 'wpzoom-blocks/social-icons' ) ||
-		 wpzoom_has_reusable_block( 'wpzoom-blocks/social-sharing' ) ||
 		 has_block( 'wpzoom-blocks/social-icons' ) ||
-		 has_block( 'wpzoom-blocks/social-sharing' ) ||
 		 wpzoom_has_block_in_widget_area( 'wpzoom-blocks/social-icons' ) ||
-		 wpzoom_has_block_in_widget_area( 'wpzoom-blocks/social-sharing' ) ||
 		 is_admin() ) {
+		// The icons are inline SVG, on the front end and in the editor: one
+		// small stylesheet instead of the icon fonts (an icon without an SVG
+		// still gets its font on the front end).
+		if ( WPZOOM_Social_Icons_SVG::use_svg() ) {
+			WPZOOM_Social_Icons_SVG::enqueue_style();
+			return;
+		}
+
 		$disable_css_loading_socicons    = WPZOOM_Social_Icons_Settings::get_option_key( 'disable-css-loading-for-socicons' );
 		$disable_css_loading_genericons  = WPZOOM_Social_Icons_Settings::get_option_key( 'disable-css-loading-for-genericons' );
 		$disable_css_loading_academicons = WPZOOM_Social_Icons_Settings::get_option_key( 'disable-css-loading-for-academicons' );

@@ -259,7 +259,10 @@ class WPZOOM_Forms_REST {
 			$schema = WPZOOM_Forms_Migration::build_from_post_content( $id );
 			WPZOOM_Forms_Schema::save_for_form( $id, $schema );
 		} else {
-			WPZOOM_Forms_Schema::save_for_form( $id, WPZOOM_Forms_Schema::defaults() );
+			// Blank form: keep the default settings but start with an empty canvas.
+			$schema           = WPZOOM_Forms_Schema::defaults();
+			$schema['fields'] = array();
+			WPZOOM_Forms_Schema::save_for_form( $id, $schema );
 		}
 
 		update_post_meta( $id, '_form_method', 'combined' );

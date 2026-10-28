@@ -1,66 +1,65 @@
-=== WPZOOM Connect: AI Chat, Click to Chat, Social Icons & Share Buttons ===
+=== WPZOOM Connect: Social Icons Widget & Block, Share Buttons & Click to Chat ===
 Contributors: WPZOOM, ciorici
 Donate link: https://www.wpzoom.com/
-Tags: ai chatbot, live chat, click to chat, whatsapp, social icons
+Tags: social icons, social media icons, share buttons, click to chat, whatsapp
 Requires at least: 6.5
 Requires PHP: 7.4
 Tested up to: 7.1
-Stable tag: 4.7.4
+Stable tag: 5.0.0
 License: GNU General Public License v2.0 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-AI chat that answers visitors from your own pages, Click to Chat for WhatsApp & Telegram, social icons & share buttons — one floating button.
+Social media icons and share buttons: 2,400+ icons, block, widget & Elementor. Plus a Click to Chat button for WhatsApp, Telegram & Messenger.
 
 == Description ==
 
-= The contact launcher for WordPress =
+= Social icons, share buttons and a chat button, in one plugin =
 
-**One floating button, every channel.** WPZOOM Connect gives your site a chat button that can answer visitors itself — an **AI chat** that replies from your own pages in seconds and hands off to a human when needed — alongside **Click to Chat** for WhatsApp, Telegram, Messenger and Viber, **social icons** linking to your profiles, and **share buttons** for your content. 400+ icons, Gutenberg blocks, a widget and Elementor support, all in one plugin.
+**WPZOOM Connect** (formerly *Social Icons Widget & Block*) adds **social media icons** linking to your profiles, **share buttons** for your content, and a floating **Click to Chat** button for WhatsApp, Telegram, Messenger and Viber. Everything works as a Gutenberg block, a classic widget, a shortcode or an Elementor widget, so it fits block themes and classic themes alike.
 
-= NEW: AI Chat — your chat button answers questions itself =
-
-Turn the floating Click to Chat button into a support agent. AI Chat reads your pages and docs and answers visitors' questions instantly — pricing, how-to, shipping, compatibility — 24/7, in your visitors' language, and hands the conversation to you (or to WhatsApp) when a human is needed.
-
-* **See it before you switch it on.** The built-in *Support Readiness Scan* reads a few of your pages right from wp-admin and shows the questions your visitors are likely to ask, answered from your content — and the ones your site doesn't answer yet. Nothing is installed or sent until you click.
-* **One-click connect.** No API keys, no code: click *Turn on AI Chat*, create a free account (or sign in) and the chat is live on your site. Indexing starts automatically.
-* **Human handoff.** Visitors can ask for a person; you reply from the Yamidoo dashboard, by email, or point them to WhatsApp.
-* **Knows your customers.** Running Easy Digital Downloads or WooCommerce? Your team sees a customer's orders, licenses and subscriptions next to their conversation. Optionally, the AI can answer logged-in customers' account questions ("when does my license expire?") — a separate switch in the dashboard, off by default. Only your own workspace can request it, one customer at a time, when needed — nothing is uploaded or stored.
-* **Knows your logged-in users.** Optionally passes the logged-in user's name and email so your team knows who is chatting.
-* **Free plan included** — no card needed to start.
-
-AI Chat is powered by **[Yamidoo](https://yamidoo.ai/)**, a WPZOOM product. Everything you already use — social icons, share buttons, Click to Chat — keeps working exactly as before; AI Chat is optional and off until you connect.
-
-> Did you find this plugin helpful? Please consider [leaving a 5-star review](http://wordpress.org/support/view/plugin-reviews/social-icons-widget-by-wpzoom).
+* **2,400+ icons** from WPZOOM Icons, Font Awesome, Academicons, Dashicons and Genericons — every network, plus general icons for phone, email, location and more. Browse them all in Settings → Icon library.
+* **Paste a link, get the icon.** The icon, its brand color and label are picked from the URL.
+* **Inline SVG, no icon fonts.** Pages load only the icons they show: no 130 KB of font CSS, no clash with your theme's Font Awesome.
+* **Icons with or without links.** Leave the link empty for a plain icon, or use the *Icon by WPZOOM* block for a single icon: a feature, a decoration, a phone number.
+* **Social Profiles block** — your profiles as a tidy list with handles (@yourname) and follower counts. Pick your networks, paste each link, and the icon, name and handle come from it.
+* **Share buttons** for Facebook, X, Threads, LinkedIn, Pinterest, Reddit, Telegram, WhatsApp, Bluesky, Email, Copy Link and Print, placed with a block or added to your posts automatically.
+* **Google Preferred Sources button** — readers who add your site see more of it in Google's Top Stories and AI results.
+* **Click to Chat** — one floating button that opens WhatsApp, Telegram, Messenger or Viber in a tap.
 
 **[Social Icons Block Demo](https://demo.wpzoom.com/social-icons/)**
 **[Sharing Buttons Demo](https://demo.wpzoom.com/social-icons/2016/04/21/sharing-buttons/)**
-
-**Social Icons & Sharing Buttons** helps you to add social media icons and sharing buttons to your website. The plugin includes several icon sets, which gives you the possibility to use the widget for more than just linking to your social media profiles. You can use generic icons to add links to anything you want, and enable sharing buttons to let visitors share your content across social networks.
-
-It also includes a **Click to Chat** floating contact button so visitors can message you instantly on **WhatsApp**, **Telegram**, **Facebook Messenger**, and **Viber** with a single tap — perfect for turning visitors into customers. Add a WhatsApp chat button, a click-to-chat launcher, or a floating contact widget without writing any code.
 
 > With the help of WPZOOM's excellent Social Icons Widget plugin, you can link to all your social network profiles and add sharing buttons in no time, letting your visitors easily get in touch with you on all social media channels and share your content.
 > ⭐️⭐️⭐️⭐️⭐️
 > WPKlik
 
-= What's new in 4.7.0 =
-* **NEW: AI Chat** — the floating button can now answer visitors from your own pages (powered by Yamidoo)
-* **NEW: Support Readiness Scan** — see what your visitors would ask, from wp-admin, before turning anything on
+> Did you find this plugin helpful? Please consider [leaving a 5-star review](http://wordpress.org/support/view/plugin-reviews/social-icons-widget-by-wpzoom).
 
-= What's new in 4.6.0 =
-* **NEW: Click to Chat Floating Buttons**
-* **NEW: Connect visitors instantly via WhatsApp, Telegram, Messenger & Viber**
+= Optional: AI Chat =
 
-= What's new in 4.5.0 =
-* **NEW: Social Sharing Buttons Block**
-* **NEW: Add Social Sharing Buttons in posts and pages**
+The Click to Chat button can also answer visitors itself. **AI Chat** reads your pages and docs and replies to questions — pricing, how-to, shipping — in your visitors' language, and hands the conversation to you (or to WhatsApp) when a person is needed. It is off until you connect it, and it is powered by **[Yamidoo](https://yamidoo.ai/)**, a WPZOOM product with a free plan.
 
-= What's new in 4.4.0 =
-* **NEW: Add SVG Icons in the Social Icons Block**
+* **See it before you switch it on.** The *Support Readiness Scan* reads a few of your pages from wp-admin and shows the questions your visitors are likely to ask, answered from your content. Nothing is sent until you click.
+* **One-click connect.** No API keys: create a free account (or sign in) and the chat is live.
+* **Human handoff.** Visitors can ask for a person; you reply from the Yamidoo dashboard, by email, or point them to WhatsApp.
+* **Knows your customers.** With Easy Digital Downloads or WooCommerce, your team sees a customer's orders, licenses and subscriptions next to the conversation. Optionally the AI answers logged-in customers' account questions — a separate switch, off by default.
 
-= What's new in 4.0.0 =
-* **NEW: Gutenberg Block**
-* New icon styles in the new Social Icons Block
+= What's new in 5.0 =
+* **New dashboard** under *Social Icons*: one Overview for icons, share buttons and chat
+* **Icons as SVG** instead of icon fonts — faster pages, no font conflicts
+* **2,400+ icons** and an icon library to browse them; 41 new networks and 148 Font Awesome 7 brands
+* **Icons without links** and the new *Icon by WPZOOM* block
+* **Social Profiles block**: your profiles as a list with handles and follower counts
+* **Google Preferred Sources** button
+
+= What's new in 4.7 =
+* **AI Chat** — the floating button can answer visitors from your own pages (optional, powered by Yamidoo)
+
+= What's new in 4.6 =
+* **Click to Chat floating button** for WhatsApp, Telegram, Messenger & Viber
+
+= What's new in 4.5 =
+* **Social Sharing Buttons block**
 
 = Where I can view a Demo? =
 
@@ -73,8 +72,8 @@ You can view the plugin live in all our themes at [WPZOOM](https://www.wpzoom.co
 = Features: =
 
 **Social Icons Block:**
-* SVG Icons Support - Upload custom SVG icons
-* 400+ Custom Icons from 5 Icon Sets
+* Icons with or without links; a single-icon *Icon by WPZOOM* block
+* 2,400+ icons from 5 icon sets, drawn as SVG
 * Gutenberg Block with Live Preview
 * Drag & Drop Icons with Sortable Arrows
 * Color Picker for Each Icon
@@ -83,7 +82,17 @@ You can view the plugin live in all our themes at [WPZOOM](https://www.wpzoom.co
 * Multiple Styles: Icon Shape and Icon with Background
 * 3 Background Styles: Rounded Corners, Round, Square
 * Icon Sets + Shortcodes
+* Icon library in Settings to browse every icon
 * Elementor Widget Integration
+
+**Social Profiles Block:**
+* Your social profiles as a list: each with its icon, its handle (@yourname) or short link, and an optional follower count
+* Start by picking from 10 popular networks, then paste each link; any other network works too
+* Handles come from the link: x.com/yourname shows @yourname, reddit.com/r/WordPress shows r/WordPress
+* Follower counts typed by you (12.4K), labelled per network: followers, subscribers, members
+* Brand colors or one color for all; corner radius, border, padding, spacing and icon size in the Styles tab
+* Drawn on the server, so it never shows "unexpected or invalid content"
+* Cards and Buttons layouts in PRO
 
 **Social Sharing Buttons Block:**
 * 12+ Sharing Platforms: Facebook, X, Threads, LinkedIn, Pinterest, Reddit, Telegram, WhatsApp, Bluesky, Email, Copy Link, and Print
@@ -93,6 +102,10 @@ You can view the plugin live in all our themes at [WPZOOM](https://www.wpzoom.co
 * Print Button to Trigger Browser Print Dialog
 * Copy Link Button with Visual Feedback
 * X/Twitter Username Integration (via parameter)
+* Automatic display above or below your posts
+
+**Google Preferred Sources button:**
+* A one-click button that adds your site to a reader's Google Preferred Sources, on posts, pages or any post type
 
 **Click to Chat Floating Buttons:**
 * Floating contact launcher that connects visitors to WhatsApp, Telegram, Messenger & Viber
@@ -101,9 +114,10 @@ You can view the plugin live in all our themes at [WPZOOM](https://www.wpzoom.co
 
 = PRO Features =
 
-Upgrade to [Social Icons Widget PRO](https://www.wpzoom.com/plugins/social-share/) to unlock powerful features:
+Upgrade to [WPZOOM Connect Pro](https://www.wpzoom.com/plugins/social-share/) to unlock powerful features:
 
 * **Floating Buttons** - Display social sharing icons as a fixed floating bar on the side of your website (NEW!)
+* **Social Profiles: Cards and Buttons layouts** - Brand-colored cards with follower counts, or "Follow on Instagram" buttons (NEW!)
 * **Share Analytics Dashboard** - Track how visitors share your content with detailed analytics
 * **Like Button** - Add a like button to let visitors engage with your posts
 * **AI Share Buttons** - Share to ChatGPT, Claude, and Perplexity AI platforms
@@ -117,9 +131,7 @@ Upgrade to [Social Icons Widget PRO](https://www.wpzoom.com/plugins/social-share
 [Learn more about PRO →](https://www.wpzoom.com/plugins/social-share/)
 
 **General Features:**
-* 100+ Sites/Social Networks Supported
-* FontAwesome Integration
-* Academicons Integration: 38 Academia Icons for Academics
+* 2,400+ icons: 250+ networks in WPZOOM Icons, Font Awesome 5 and 7 brands, 118 Academicons for academics, Dashicons, Genericons
 * Supports Email Addresses (mailto:email@example.com)
 * Supports Telephone Numbers (tel:12345)
 * Supports Viber (viber://add?number=123456)
@@ -127,13 +139,20 @@ Upgrade to [Social Icons Widget PRO](https://www.wpzoom.com/plugins/social-share
 
 = Icons =
 
-Twitter, X, Facebook, Instagram, Pinterest, Snapchat, Threads, Yelp, LinkedIn, Bloglovin', Lookbook, Feedly, Periscope, SoundCloud, Spotify, Last.fm, YouTube, Vimeo, Flickr, 500px, Tumblr, Blogger, Reddit, Dribbble, Envato, Behance, DeviantArt, GitHub, RSS, Disqus, Stackoverflow, Komoot, Tiktok, Mailchimp, Podcasts, Telegram, TripAdvisor, AirBnb, Baidu, ebay, Medium, Periscope, Snapchat, Bandcamp, Eyem, Viber, Quora, Etsy, Meetup, Linode, IMDB, Overwatch, Strava, Tidal, Deezer, Unsplash, Codered, Udemy, CrunchBase, Angie's List, App Store, Nextdoor, WhatsApp, ResearchGate, Slack, Songkick, ReverbNation, Bluesky
+Twitter, X, Facebook, Instagram, Pinterest, Snapchat, Threads, Yelp, LinkedIn, Bloglovin', Lookbook, Feedly, SoundCloud, Spotify, Last.fm, YouTube, Vimeo, Flickr, 500px, Tumblr, Blogger, Reddit, Dribbble, Envato, Behance, DeviantArt, GitHub, RSS, Disqus, Stackoverflow, Komoot, Tiktok, Mailchimp, Podcasts, Telegram, TripAdvisor, AirBnb, Baidu, ebay, Medium, Bandcamp, Eyem, Viber, Quora, Etsy, Meetup, Linode, IMDB, Overwatch, Strava, Tidal, Deezer, Unsplash, Codered, Udemy, CrunchBase, App Store, Nextdoor, WhatsApp, ResearchGate, Slack, Songkick, ReverbNation, Bluesky
 
-= Credits =
+= Third-party resources =
 
-Some Social Icons are provided by the Socicon icon font.
+The icons are bundled with the plugin as SVG. Each set keeps the license of its source; the full notices are in `includes/icon-library/LICENSES.md`.
 
-[Academicons](https://jpswalsh.github.io/academicons/) are provided by James Walsh.
+* **WPZOOM Icons**: based on the Socicon icon font, extended and maintained by WPZOOM. License: SIL Open Font License 1.1. Newer networks are added from [Simple Icons](https://simpleicons.org) (CC0 1.0, public domain).
+* **Font Awesome Free 5 and 7** by Fonticons, Inc. ([fontawesome.com](https://fontawesome.com/license/free)). Icons: CC BY 4.0; fonts: SIL OFL 1.1; code: MIT.
+* **Font Awesome 4.7** by Dave Gandy. Font: SIL OFL 1.1; CSS: MIT.
+* **[Academicons](https://jpswalsh.github.io/academicons/)** by James Walsh and Katja Bercic. Font: SIL OFL 1.1; CSS: MIT.
+* **Genericons** by Joen Asmussen. License: GPLv2 or later.
+* **Dashicons**, the WordPress icon font. License: GPLv2 or later.
+
+All brand names and logos are trademarks of their respective owners and are shown only to link to the matching profiles.
 
 = External services (AI Chat) =
 
@@ -148,7 +167,7 @@ The optional **AI Chat** feature connects your site to **Yamidoo** (https://yami
 
 = GDPR COMPLIANCE =
 
-Social Icons & Sharing Buttons does not collect any information from your visitors, therefore it's **100% GDPR compliant**.
+Social icons, share buttons and Click to Chat collect no information from your visitors and load nothing from other sites until a visitor clicks. Only the optional AI Chat sends data to Yamidoo, as described above.
 
 
 = Get Involved =
@@ -188,6 +207,18 @@ Yes! The Social Sharing Buttons Block offers multiple style presets (Circle, Squ
 
 The plugin supports 12+ sharing platforms: Facebook, X (Twitter), Threads, LinkedIn, Pinterest, Reddit, Telegram, WhatsApp, Bluesky, Email, Copy Link, and Print.
 
+= How do I add a Click to Chat button for WhatsApp? =
+
+Go to **Social Icons → Click to Chat** in your WordPress admin, enable the feature, and add your WhatsApp number. A floating Click to Chat button appears on your site so visitors can message you on WhatsApp with one tap. You can enable Telegram, Facebook Messenger, and Viber from the same screen.
+
+= Which chat apps does the Click to Chat button support? =
+
+The floating Click to Chat button supports WhatsApp, Telegram, Facebook Messenger, and Viber. You can enable any combination, reorder the platforms, and customize the launcher color, position, open/close icons, and size. You can also choose whether the floating contact button shows on mobile devices.
+
+= Is the Click to Chat / WhatsApp button free? =
+
+Yes. The Click to Chat floating contact button is included free in Social Icons & Sharing Buttons by WPZOOM, with support for WhatsApp, Telegram, Messenger, and Viber chat buttons.
+
 = What is AI Chat and does it cost anything? =
 
 AI Chat turns the floating chat button into an assistant that answers visitors from your own pages, and hands off to you when needed. It's powered by Yamidoo (a WPZOOM product) and needs a Yamidoo account; the free plan needs no card. It's off until you connect — nothing changes on your site otherwise.
@@ -200,17 +231,11 @@ If you run Easy Digital Downloads or WooCommerce, yes — turn on *Show customer
 
 By default, yes: while AI Chat is on, the WhatsApp/Telegram/Messenger/Viber launcher is hidden so there's one floating button, not two. You can keep both from the AI Chat settings.
 
-= How do I add a Click to Chat button for WhatsApp? =
+= How do I add an "Add to Preferred Sources" button for Google? =
 
-Go to **Social Icons → Click to Chat** in your WordPress admin, enable the feature, and add your WhatsApp number. A floating Click to Chat button appears on your site so visitors can message you on WhatsApp with one tap. You can enable Telegram, Facebook Messenger, and Viber from the same screen.
+Readers who add your site as a preferred source on Google see more of your articles in Top Stories and in AI Mode / AI Overviews. To show the button on all your posts (or pages, or any post type), open **AI Chat → Settings → Google Preferred Sources** in your WordPress admin, turn on *Show automatically*, and pick the post types, position (above or below the content), theme, size and alignment. Posts that already contain the button are skipped. To place it anywhere else, use the **Google Preferred Source** block or the `[wpzoom_preferred_source]` shortcode (options: `theme="light|dark|auto"`, `size="small|medium|large"`, `align="left|center|right"`, `label`, `domain`).
 
-= Which chat apps does the Click to Chat button support? =
-
-The floating Click to Chat button supports WhatsApp, Telegram, Facebook Messenger, and Viber. You can enable any combination, reorder the platforms, and customize the launcher color, position, open/close icons, and size. You can also choose whether the floating contact button shows on mobile devices.
-
-= Is the Click to Chat / WhatsApp button free? =
-
-Yes. The Click to Chat floating contact button is included free in Social Icons & Sharing Buttons by WPZOOM, with support for WhatsApp, Telegram, Messenger, and Viber chat buttons.
+The button is a plain link to Google: no Google script is loaded. Google only offers sites it lists, and only whole domains or subdomains (not a site in a subfolder). Use *Check your site on Google* in the block or the settings box to see if your site is listed. The button doesn't change your rankings for other readers, and it doesn't guarantee a Top Stories spot.
 
 = How does the Print button work? =
 
@@ -234,7 +259,7 @@ Yes! Social Icons & Sharing Buttons does not collect any information from your v
 
 = What features are available in the PRO version? =
 
-[Social Icons Widget PRO](https://www.wpzoom.com/plugins/social-share/) includes these additional features:
+[WPZOOM Connect Pro](https://www.wpzoom.com/plugins/social-share/) includes these additional features:
 
 * **Floating Buttons** - Display sharing icons as a fixed floating bar on the side of your website
 * **Share Analytics** - Track shares across all platforms with a beautiful analytics dashboard
@@ -251,22 +276,44 @@ Floating Buttons is a PRO feature that displays your social sharing icons as a f
 
 == Screenshots ==
 
-1. One floating button for every channel: AI Chat, WhatsApp, Telegram, Messenger and Viber
-2. AI Chat answers visitors from your own pages and links the page the answer came from
-3. Turn on AI Chat in one click, after a free scan of what your site already answers
-4. Click to Chat settings: channels, launcher position, size, colors and icons
-5. Social Icons & Sharing Buttons Preview
-6. Sharing Buttons in Posts & Pages
-7. Social Icons Block
-8. Social Sharing Block
-9. Custom SVG Icons
-10. Customizing Sharing Buttons
+1. Social Icons block: paste a profile link and the icon, name and brand color are picked for you
+2. Social Icons & Sharing Buttons Preview
+3. Social Sharing Block
+4. Sharing Buttons in Posts & Pages
+5. Customizing Sharing Buttons
+6. The WPZOOM Connect dashboard: social icons, share buttons and chat at a glance
+7. One floating button for every channel: AI Chat, WhatsApp, Telegram, Messenger and Viber
+8. AI Chat answers visitors from your own pages and links the page the answer came from
+9. Click to Chat settings: channels, launcher style, position, size, colors and icons
+10. Custom SVG Icons
+11. Social Profiles block: your profiles as a list with handles and follower counts
+12. Icon library: browse and search 2,400+ icons
 
 == Changelog ==
 
-= 4.7.4 =
-* SECURITY: the AI Chat identity signature printed for logged-in users is now domain-separated from the signature that authenticates customer-data lookups. Before, an account registered with a crafted email address could reuse its own signature to read another customer's orders and licenses through the lookup endpoint. Reported by Wordfence.
-* IMPROVED: AI Chat customer data now lists up to 25 licenses (active ones first) and 15 orders and subscriptions, and reports the total count when there are more
+= 5.0.0 =
+* MAJOR: Social Icons Widget is now WPZOOM Connect 5.0: a new dashboard under “Social Icons”, icons drawn as SVG instead of icon fonts, 2,400+ icons with an icon library to browse, icons without links and an “Icon by WPZOOM” block, a Social Profiles block, and the Google Preferred Sources button. Sites that update get a short “What’s new” tour on the Overview
+* NEW: Social Profiles block — your profiles as a list with each network's icon, a handle taken from the link (@yourname, r/WordPress) or the short link, and optional follower counts you type in (labelled followers, subscribers or members per network). Start by picking from 10 popular networks; style the rows, border, corners and icons in the Styles tab. Drawn on the server, so it can't show "unexpected or invalid content". Cards and Buttons layouts in PRO
+* IMPROVED: Social Icons block — Detect Icon now looks in Socicons first and falls back to the other enabled icon kits (it used to take the last kit with a match, often Font Awesome)
+* NEW: the icon's URL field shows the matching icon as you type
+* NEW: visual style picker for the Social Icons block — each style shows your own icons, so you see the result before choosing. Style names are shorter and easier to tell apart
+* NEW: "Add to Preferred Sources" button for Google — readers who add your site see more of it in Top Stories and AI results. Show it on all posts, pages or other post types from Settings → Google Preferred Sources, or place it with the new Google Preferred Source block or the [wpzoom_preferred_source] shortcode. Light, dark and auto themes; no Google script is loaded
+* IMPROVED: redesigned Settings page — on/off switches, sample icons and icon counts for each icon set, clearer descriptions, and the "Misc." tab is now "Modules"
+* NEW: search in the "Select Icon" dialog covers every enabled icon kit, grouped by kit
+* IMPROVED: "Select Icon" dialog — the URL is no longer rewritten while you type, typing a URL picks its icon from any kit, a custom label or color is kept when you pick another icon, the list no longer jumps while you type, and Search, Delete and Save stay visible on shorter screens
+* Updated the Reddit icon to Reddit's current logo and brand color (#FF4500)
+* Sharing Buttons no longer load the icon font stylesheets, which they never used (their icons are SVG)
+* The older Font Awesome set is now correctly labelled Font Awesome 4 in Settings
+* Updated brand colors for GitHub, Instagram and Nextdoor
+* IMPROVED: the Social Icons block and widget now draw their icons as inline SVG on your site instead of loading icon fonts. Pages no longer download up to 130 KB of icon CSS and 330 KB of font files, and icons appear instantly. Icons look exactly as before, and saved content is unchanged (developers can switch back with the `wpzoom_social_icons_use_svg` filter)
+* Fixed 15 Font Awesome 5 icons (LinkedIn, Vimeo, Facebook F, Calendar and others) showing a different icon on the site when the Font Awesome 4 set was also enabled
+* The block editor draws icons as SVG too, so the editor and the Settings page no longer load icon fonts
+* Icons of networks that have shut down (Google+, Skype, Vine, StumbleUpon, Periscope, Pocket and others) are no longer offered in the icon pickers. Icons already on your site keep working, and pasting such a link no longer picks them
+* Settings: the Optimization tab is gone (icons are SVG, so there are no fonts to preload; it comes back if a site turns SVG off). New Custom Icons and Pinterest tabs show what PRO adds: your own SVG icons, and a Pinterest Save button on images
+* NEW: 41 more networks in WPZOOM Icons: Twitch, Kick, Rumble, Linktree, Buy Me a Coffee, Cash App, Signal, Threema, KakaoTalk, Weibo, Quora, Farcaster, BeReal, Pixelfed, Zoom, Calendly, Notion, Product Hunt, Upwork, GitLab, Bitbucket, DEV, Hashnode, Apple Music, YouTube Music, Audiomack, Pandora, Audible, Google Play, itch.io, Epic Games, Claude and more, plus a Website icon. Pasting one of their links picks the icon
+* NEW: 148 brand icons from Font Awesome 7 in the Font Awesome Brands set, including X, Threads, Bluesky, TikTok, Signal, Linktree and Substack
+* NEW: Overview screen, the first item under Social Icons: one card each for Social Icons, Share Buttons and Chat, showing what is set up and where to change it
+* The Blocks and Social Icons widget switches are gone. Icons are SVG and load only where they are used, so turning them off saved nothing, and turning blocks off broke the automatic share buttons and the Preferred Sources button. A widget switched off before stays off
 
 = 4.7.3 =
 * Minor fixes
@@ -380,3 +427,8 @@ Floating Buttons is a PRO feature that displays your social sharing icons as a f
 * New icons: Threads, Venmo, Wise, Revolut, Gutenberg, Gravatar, OpenAI, Midjourney, WeChat, Roblox, OnlyFans, Figma, Elementor, Shopify, Woo, Gumroad, Artgram, Cubebrush, Aristree, OpenSea
 
 [See changelog for all versions](https://plugins.svn.wordpress.org/social-icons-widget-by-wpzoom/trunk/changelog.txt).
+
+== Upgrade Notice ==
+
+= 5.0.0 =
+Big update: the plugin is now WPZOOM Connect, with a new dashboard under “Social Icons”. Icons are drawn as SVG instead of icon fonts; if you styled icons with custom CSS that targets the icon font, check them after updating.

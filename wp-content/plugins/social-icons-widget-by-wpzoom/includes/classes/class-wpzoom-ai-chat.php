@@ -30,6 +30,8 @@ class WPZOOM_AI_Chat {
 	const NOTICE_DISMISSED = 'wpzoom_ai_chat_notice_dismissed';
 	const HANDLE           = 'yamidoo-widget';
 	const PAGE_SLUG        = 'wpzoom-click-to-chat';
+	/** wp-cron event that tells Yamidoo about a WPZOOM Connect Pro license. */
+	/** Set for a day after each sync, so it runs at most daily. */
 
 	private static $instance = null;
 
@@ -371,6 +373,7 @@ class WPZOOM_AI_Chat {
 		self::save_settings( $s );
 		// The one-time notice has done its job.
 		update_option( self::NOTICE_DISMISSED, 1 );
+		// A new connect token: tell Yamidoo about a Pro license now, not tomorrow.
 
 		wp_safe_redirect( add_query_arg( 'ai_chat', 'connected', $clean ) );
 		exit;
@@ -494,7 +497,8 @@ class WPZOOM_AI_Chat {
 				<span class="wpzoom-ai-chat-logo" aria-hidden="true"><?php echo self::logo_svg( 24 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static SVG. ?></span>
 				<div class="wpzoom-ai-chat-title">
 					<h2>
-						<?php esc_html_e( 'AI Chat', 'social-icons-widget-by-wpzoom' ); ?>
+						<?php /* The page head already says AI Chat; the card is the product behind it. */ ?>
+						<?php esc_html_e( 'Yamidoo AI', 'social-icons-widget-by-wpzoom' ); ?>
 						<?php if ( $connected ) : ?>
 							<span class="wpzoom-ai-chat-badge"><?php esc_html_e( 'Connected', 'social-icons-widget-by-wpzoom' ); ?></span>
 						<?php endif; ?>
@@ -538,14 +542,12 @@ class WPZOOM_AI_Chat {
 					</div>
 				</div>
 				<div id="wpzoom-ai-chat-scan-result" class="wpzoom-ai-chat-scan" hidden></div>
-				<p class="wpzoom-ai-chat-offer">
-					<span class="dashicons dashicons-tag"></span>
-					<span>
-						<?php esc_html_e( 'WordPress founding offer: 50% off any Yamidoo plan for your first year, applied automatically when you connect from here. The free plan needs no card.', 'social-icons-widget-by-wpzoom' ); ?>
-						<a href="<?php echo esc_url( self::site_link( 'ai-chat-offer' ) ); ?>" target="_blank" rel="noopener"><?php esc_html_e( 'See how Yamidoo works and what it costs ↗', 'social-icons-widget-by-wpzoom' ); ?></a>
-					</span>
+				<p class="wpzoom-ai-chat-note">
+					<?php esc_html_e( 'The free plan needs no card.', 'social-icons-widget-by-wpzoom' ); ?>
+					<a href="<?php echo esc_url( self::site_link( 'ai-chat-pricing' ) ); ?>" target="_blank" rel="noopener"><?php esc_html_e( 'See how Yamidoo works and what it costs ↗', 'social-icons-widget-by-wpzoom' ); ?></a>
 				</p>
 
+				<?php $this->render_video(); ?>
 				<?php $this->render_why(); ?>
 			<?php else : ?>
 				<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" class="wpzoom-ai-chat-settings">
@@ -621,6 +623,20 @@ class WPZOOM_AI_Chat {
 					</form>
 				</div>
 			<?php endif; ?>
+		</div>
+		<?php
+	}
+
+	/** The 50-second launch video, embedded so YouTube's own poster shows. */
+	private function render_video() {
+		$id = 'AmrVHXW-daw';
+		?>
+		<div class="wpzoom-ai-chat-video">
+			<h3><?php esc_html_e( 'See it in 50 seconds', 'social-icons-widget-by-wpzoom' ); ?></h3>
+			<iframe src="<?php echo esc_url( 'https://www.youtube-nocookie.com/embed/' . $id . '?rel=0' ); ?>" title="<?php esc_attr_e( 'Yamidoo AI launch video', 'social-icons-widget-by-wpzoom' ); ?>" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>
+			<p class="wpzoom-ai-chat-video-note">
+				<a href="<?php echo esc_url( 'https://www.youtube.com/watch?v=' . $id ); ?>" target="_blank" rel="noopener"><?php esc_html_e( 'Watch on YouTube ↗', 'social-icons-widget-by-wpzoom' ); ?></a>
+			</p>
 		</div>
 		<?php
 	}
@@ -804,7 +820,8 @@ class WPZOOM_AI_Chat {
 		if ( ! is_array( $notices ) ) {
 			$notices = array();
 		}
-		if ( self::is_connected() || self::standalone_plugin_active() ) {
+		// The 5.0 / Pro 3.0 notice mentions AI Chat; one notice at a time.
+		if ( self::is_connected() || self::standalone_plugin_active() || ( class_exists( 'WPZOOM_Connect_Whats_New' ) && WPZOOM_Connect_Whats_New::active() ) ) {
 			return $notices;
 		}
 		$notices[] = array(
@@ -812,7 +829,7 @@ class WPZOOM_AI_Chat {
 			'heading'        => __( 'Your chat button can now answer questions itself', 'social-icons-widget-by-wpzoom' ),
 			'content'        => '<p>' . sprintf(
 				/* translators: %s: link to yamidoo.ai */
-				esc_html__( 'AI Chat answers visitors from your own pages in seconds and hands off to you when needed — powered by %s, a WPZOOM product. Scan your site first to see what it would say, then turn it on with one click. Free plan, plus 50%% off your first year on any paid plan.', 'social-icons-widget-by-wpzoom' ),
+				esc_html__( 'AI Chat answers visitors from your own pages in seconds and hands off to you when needed — powered by %s, a WPZOOM product. Scan your site first to see what it would say, then turn it on with one click. There’s a free plan.', 'social-icons-widget-by-wpzoom' ),
 				'<a href="' . esc_url( self::site_link( 'notice-center' ) ) . '" target="_blank" rel="noopener">Yamidoo.ai</a>'
 			) . '</p>',
 			'icon'           => array(
@@ -844,7 +861,7 @@ class WPZOOM_AI_Chat {
 		if ( ! current_user_can( 'manage_options' ) || self::is_connected() || self::standalone_plugin_active() ) {
 			return false;
 		}
-		if ( class_exists( 'WPZOOM_Notice_Center' ) ) {
+		if ( class_exists( 'WPZOOM_Notice_Center' ) || ( class_exists( 'WPZOOM_Connect_Whats_New' ) && WPZOOM_Connect_Whats_New::active() ) ) {
 			return false;
 		}
 		return ! get_option( self::NOTICE_DISMISSED );
