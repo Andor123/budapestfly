@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 7.1.x - Development package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-11-01 08:57:18+0000\n"
+"PO-Revision-Date: 2026-11-02 17:23:57+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -26,7 +26,7 @@ msgstr "Noto Serif:400,400i,700,700i"
 #, gp-priority: high
 msgctxt "Comment number declension: on or off"
 msgid "off"
-msgstr "on"
+msgstr "off"
 
 #. translators: Translate this to the correct language tag for your locale, see
 #. https://www.w3.org/International/articles/language-tags/ for reference. Do
@@ -306,6 +306,21 @@ msgctxt "Dimension size name"
 msgid "25%"
 msgstr "25%"
 
+#: wp-includes/blocks/tabs/block.json
+msgctxt "block title"
+msgid "Tabs"
+msgstr "Fülek"
+
+#: wp-includes/blocks/playlist/block.json
+msgctxt "block title"
+msgid "Playlist"
+msgstr "Lejátszási lista"
+
+#: wp-includes/js/dist/script-modules/content-types/index.js:37245
+#: wp-admin/includes/class-wp-screen.php:764
+msgid "Items list"
+msgstr "Elemek listája"
+
 #: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1882
 msgid "Whether to use progressive/interlaced encoding when saving this image."
 msgstr "Hogy progresszív/váltott-soros kódolást használjon-e a kép elmentésekor."
@@ -337,6 +352,14 @@ msgstr "Hogy a képesség végezhet-e romboló módosításokat a környezetén.
 #: wp-includes/rest-api/endpoints/class-wp-rest-abilities-v1-list-controller.php:374
 msgid "Whether the ability does not modify its environment."
 msgstr "Hogy a képesség végezhet-e módosításokat a környezetén."
+
+#: wp-includes/comment.php:2738 wp-admin/includes/ajax-actions.php:2124
+msgid "Someone"
+msgstr "Valaki"
+
+#: wp-includes/abilities.php:202
+msgid "Personal website URL."
+msgstr "Személyes webhely URL."
 
 #. translators: 1: 'module_dependencies', 2: Script handle, 3: 'in_footer', 4:
 #. 'strategy', 5: 'defer'.
@@ -749,6 +772,10 @@ msgstr "A(z) \"%s\" csatlakozóhoz egy nem üres \"name\" karakterlánc szüksé
 msgid "Connector \"%s\" is already registered."
 msgstr "A(z) \"%s\" csatlakozó már regisztrálva van."
 
+#: wp-includes/class-wp-connector-registry.php:153
+msgid "Connector ID must contain only lowercase alphanumeric characters, hyphens, and underscores."
+msgstr "Csatlakozó azonosító (ID) csak kisbetűket, számokat, kötőjeleket és aláhúzásokat tartalmazhat."
+
 #. translators: %1$s is the feed URL, %2$s is the error message.
 #: wp-includes/feed.php:880
 msgid "Error fetching feed %1$s: %2$s"
@@ -772,7 +799,7 @@ msgstr "A(z) \"%1$s\" azonosítójú stílust olyan függőségekkel helyezték 
 #. translators: 1: Script module ID, 2: List of missing dependency IDs.
 #: wp-includes/class-wp-script-modules.php:920
 msgid "The script module with the ID \"%1$s\" was enqueued with dependencies that are not registered: %2$s."
-msgstr "A(z) \"%1$s\" azonosítójú szkriptmodul regisztrálatlan függőségekkel lett sorba állítva: %2$s."
+msgstr "A(z) \"%1$s\" azonosítójú (ID) szkriptmodul regisztrálatlan függőségekkel lett sorba állítva: %2$s."
 
 #: wp-includes/blocks/terms-query/block.json
 msgctxt "block keyword"
@@ -1001,10 +1028,6 @@ msgstr "Képesség kategória nem található."
 msgid "Unique identifier for the ability category."
 msgstr "A képesség kategória egyedi azonosítója."
 
-#: wp-includes/post.php:3839
-msgid "The post ID must be greater than 0."
-msgstr "A post ID-nek nagyobbnak kell lennie 0-nál."
-
 #: wp-includes/rest-api/endpoints/class-wp-rest-abilities-v1-run-controller.php:364
 msgid "The result of the ability execution."
 msgstr "A képesség végrehajtásának eredménye."
@@ -1016,10 +1039,6 @@ msgstr "A képesség végrehajtásához szükséges bemeneti paraméterek."
 #: wp-includes/rest-api/endpoints/class-wp-rest-abilities-v1-run-controller.php:180
 msgid "Sorry, you are not allowed to execute this ability."
 msgstr "Sajnos, nincs jogosultság ennek a képességnek a használatához."
-
-#: wp-includes/rest-api/endpoints/class-wp-rest-abilities-v1-list-controller.php:353
-msgid "Limit results to abilities in specific ability category."
-msgstr "Korlátozzuk az eredményeket az adott képességkategóriába tartozó képességekre."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-abilities-v1-list-controller.php:293
 msgid "Meta information about the ability."
@@ -1067,11 +1086,6 @@ msgstr "A frissítéseket végző képességek POST hívást igényelnek."
 msgid "Abilities that perform destructive actions require DELETE method."
 msgstr "A pusztító műveleteket végrehajtó képességek DELETE hívást igényelnek."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:153
-#: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:2151
-msgid "Sorry, this post type does not support notes."
-msgstr "Sajnáljuk, ez a bejegyzés típus nem támogatja a megjegyzéseket."
-
 #: wp-includes/user.php:2365
 msgid "Cannot create a user with an empty nicename."
 msgstr "Üres névvel nem lehet felhasználót létrehozni."
@@ -1083,6 +1097,19 @@ msgstr "Hogy történjen-e függőleges irányú tükrözés."
 #: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:2314
 msgid "Whether to flip in the horizontal direction."
 msgstr "Hogy történjen-e vízszintes irányú tükrözés."
+
+#: wp-includes/post.php:3839
+msgid "The post ID must be greater than 0."
+msgstr "A post azonosítónak (ID) nagyobbnak kell lennie 0-nál."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-abilities-v1-list-controller.php:353
+msgid "Limit results to abilities in specific ability category."
+msgstr "Korlátozzuk az eredményeket az konkrét képességkategóriába tartozó képességekre."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:153
+#: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:2151
+msgid "Sorry, this post type does not support notes."
+msgstr "Sajnáljuk, ez a bejegyzéstípus nem támogatja a jegyzeteket."
 
 #. translators: Note notification email subject. 1: Site title, 2: Post title.
 #: wp-includes/pluggable.php:1918
@@ -1528,11 +1555,6 @@ msgstr[1] "%s karakter"
 msgid "Returns site information configured in WordPress. By default returns all fields, or optionally a filtered subset."
 msgstr "Visszaadja a WordPressben beállított webhelyadatokat. Alapértelmezés szerint az összes mezőt, de opcionálisan szűrt részhalmazt is."
 
-#: wp-includes/abilities.php:105 wp-includes/abilities.php:222
-#: wp-includes/abilities.php:309
-msgid "Optional: Limit response to specific fields. If omitted, all fields are returned."
-msgstr "Opcionális: A válasz kizárólag bizonyos mezőkre vonatkozzon. Ha ezt elhagyjuk, akkor az összes mező megjelenik."
-
 #. translators: %s post title
 #: wp-includes/blocks/post-comments-link.php:43
 msgid "No comments<span class=\"screen-reader-text\"> on %s</span>"
@@ -1551,6 +1573,11 @@ msgstr[1] "%1$s hozzászólás<span class=\"screen-reader-text\"> itt: %2$s</spa
 msgctxt "Range of minutes to read"
 msgid "%1$s–%2$s minutes"
 msgstr "%1$s–%2$s perc"
+
+#: wp-includes/abilities.php:105 wp-includes/abilities.php:222
+#: wp-includes/abilities.php:309
+msgid "Optional: Limit response to specific fields. If omitted, all fields are returned."
+msgstr "Opcionális: A válasz kizárólag konkrét mezőkre vonatkozzon. Ha ezt elhagyjuk, akkor az összes mező megjelenik."
 
 #. translators: %s: Ability name.
 #: wp-includes/abilities-api/class-wp-abilities-registry.php:101
@@ -1953,16 +1980,6 @@ msgstr "Hiba történt a hozzászólás feldolgozása során. Ellenőrizzük, ho
 msgid "SMTP code: "
 msgstr "SMTP kód: "
 
-#. translators: %s: invalid ID value
-#: wp-includes/class-wp-speculation-rules.php:92
-msgid "The value \"%s\" is not a valid ID for a speculation rule."
-msgstr "A \"%s\" érték nem egy spekulációs szabály érvényes azonosítója."
-
-#. translators: %s: invalid ID value
-#: wp-includes/class-wp-speculation-rules.php:105
-msgid "A speculation rule with ID \"%s\" already exists."
-msgstr "A \"%s\" azonosítóval már létezik spekulációs szabály."
-
 #. translators: There is a space after the colon.
 #: wp-includes/class-wp-phpmailer.php:75
 msgid "SMTP Error: The following recipients failed: "
@@ -2072,6 +2089,16 @@ msgstr "A \"%s\" érték nem érvényes buzgóság egy spekulációs szabályhoz
 msgid "A speculation rule of source \"%1$s\" must not include a \"%2$s\" key."
 msgstr "A \"%1$s\" forrású spekulációs szabály nem tartalmazhat \"%2$s\" kulcsot."
 
+#. translators: %s: invalid ID value
+#: wp-includes/class-wp-speculation-rules.php:105
+msgid "A speculation rule with ID \"%s\" already exists."
+msgstr "A \"%s\" azonosítóval (ID) már létezik spekulációs szabály."
+
+#. translators: %s: invalid ID value
+#: wp-includes/class-wp-speculation-rules.php:92
+msgid "The value \"%s\" is not a valid ID for a speculation rule."
+msgstr "A \"%s\" érték nem egy spekulációs szabály érvényes azonosítója (ID)."
+
 #: wp-includes/blocks/image.php:253
 msgid "Enlarge"
 msgstr "Nagyítás"
@@ -2170,11 +2197,6 @@ msgctxt "block description"
 msgid "A cloud of popular keywords, each sized by how often it appears."
 msgstr "Népszerű kulcsszavak felhője, mindegyik a megjelenés gyakorisága szerint méretezett."
 
-#: wp-includes/blocks/list/block.json
-msgctxt "block description"
-msgid "An organized collection of items displayed in a specific order."
-msgstr "Egy meghatározott sorrendben megjelenített tételek szervezett gyűjteménye."
-
 #: wp-includes/blocks/categories/block.json
 #: wp-includes/blocks/terms-query/block.json
 msgctxt "block keyword"
@@ -2195,6 +2217,11 @@ msgstr "Kifejezés lista"
 msgctxt "block description"
 msgid "An individual item within a list."
 msgstr "Egy önálló elem egy listán belül."
+
+#: wp-includes/blocks/list/block.json
+msgctxt "block description"
+msgid "An organized collection of items displayed in a specific order."
+msgstr "Egy konkrét sorrendben megjelenített tételek szervezett gyűjteménye."
 
 #: wp-includes/view-config.php:156
 #: wp-includes/js/dist/script-modules/content-types/index.js:37111
@@ -2606,10 +2633,6 @@ msgstr "A változat nem tartozik a megadott \"%d\" azonosítóval rendelkező sz
 msgid "Unique identifier for the global styles revision."
 msgstr "A globális stílus változat egyedi azonosítója."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-global-styles-revisions-controller.php:98
-msgid "The ID for the parent of the global styles revision."
-msgstr "A globális stílus változat szülőjének azonosítója."
-
 #: wp-includes/rest-api/endpoints/class-wp-rest-font-families-controller.php:440
 msgid "font-family declaration in theme.json format, encoded as a string."
 msgstr "font-family deklaráció theme.json formátumban, karakterláncként kódolva."
@@ -2755,10 +2778,6 @@ msgstr "A betűtípuscsalád előnézeti képének URL-je."
 msgid "font-face definition in theme.json format."
 msgstr "font-face meghatározása theme.json formátumban."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-font-families-controller.php:315
-msgid "The IDs of the child font faces in the font family."
-msgstr "A betűtípuscsalád gyermekbetűlapjainak azonosítói."
-
 #. translators: %s: Font family slug.
 #: wp-includes/rest-api/endpoints/class-wp-rest-font-families-controller.php:198
 msgid "A font family with slug \"%s\" already exists."
@@ -2818,12 +2837,6 @@ msgstr "A(z) %1$s fájlt használni kell itt: %2$s."
 msgid "%1$s value \"%2$s\" must be a valid URL or file reference."
 msgstr "%1$s \"%2$s\" értékének érvényes URL-nek vagy fájlhivatkozásnak kell lennie."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-font-faces-controller.php:45
-#: wp-includes/rest-api/endpoints/class-wp-rest-font-faces-controller.php:72
-#: wp-includes/rest-api/endpoints/class-wp-rest-font-faces-controller.php:527
-msgid "The ID for the parent font family of the font face."
-msgstr "A betűtípus szülőbetűtípus-családjának azonosítója."
-
 #: wp-includes/rest-api/endpoints/class-wp-rest-font-collections-controller.php:273
 msgid "The font families for the font collection."
 msgstr "A betűtípus-gyűjtemény betűtípuscsaládjai."
@@ -2871,6 +2884,20 @@ msgstr "Sajnáljuk, de nincs jogosultság ezekhez a betűtípusokhoz."
 #: wp-includes/rest-api/endpoints/class-wp-rest-font-faces-controller.php:580
 msgid "Paths or URLs to the font files."
 msgstr "A betűtípusfájlok elérési útvonala vagy URL címe."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-global-styles-revisions-controller.php:98
+msgid "The ID for the parent of the global styles revision."
+msgstr "A globális stílus változat szülőjének azonosítója (ID)."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-font-families-controller.php:315
+msgid "The IDs of the child font faces in the font family."
+msgstr "A betűtípuscsalád gyermekbetűlapjainak azonosítói (ID)."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-font-faces-controller.php:45
+#: wp-includes/rest-api/endpoints/class-wp-rest-font-faces-controller.php:72
+#: wp-includes/rest-api/endpoints/class-wp-rest-font-faces-controller.php:527
+msgid "The ID for the parent font family of the font face."
+msgstr "A betűtípus szülőbetűtípus-családjának azonosítója (ID)."
 
 #. translators: %s: Block bindings source name.
 #: wp-includes/class-wp-block-bindings-registry.php:195
@@ -3002,10 +3029,6 @@ msgstr "Az %1$s szolgáltatáshoz %2$s szükséges"
 msgid "The \"get_value_callback\" parameter must be a valid callback."
 msgstr "A \"get_value_callback\" paraméternek érvényes visszahívásnak kell lennie."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-block-types-controller.php:601
-msgid "Public facing script module IDs."
-msgstr "Nyilvános szkriptmodul-azonosítók."
-
 #: wp-includes/fonts/class-wp-font-collection.php:196
 msgid "Error decoding the font collection data from the HTTP response JSON."
 msgstr "Hiba a HTTP-válasz JSON-ból származó betűkészlet-gyűjtemény adatainak dekódolása során."
@@ -3092,6 +3115,10 @@ msgstr "Ez a webhely nem támogatja %s MIME-típusú csatolmányoknál a bejegyz
 #: wp-includes/fonts/class-wp-font-collection.php:228
 msgid "Font collection \"%1$s\" has missing or empty property: \"%2$s\"."
 msgstr "A(z) \"%1$s\" betűkészletben hiányzik vagy üres a következő tulajdonság: \"%2$s\"."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-block-types-controller.php:601
+msgid "Public facing script module IDs."
+msgstr "Nyilvános szkriptmodul-azonosítók (ID)."
 
 #: wp-includes/block-patterns.php:211
 msgctxt "Block pattern category"
@@ -3324,10 +3351,6 @@ msgstr "Az src betűtípusnak nem üres karakterláncnak vagy karakterláncok t�
 msgid "a second"
 msgstr "egy másodperc"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-template-revisions-controller.php:172
-msgid "Invalid template parent ID."
-msgstr "Érvénytelen sablon szülő azonosító."
-
 #: wp-includes/rest-api/endpoints/class-wp-rest-template-autosaves-controller.php:223
 msgid "There is no autosave revision for this template."
 msgstr "Ehhez a sablonhoz nincs automatikusan mentett változat."
@@ -3347,6 +3370,10 @@ msgstr "Adjunk át egy lekérdezési tömböt ennek a függvénynek."
 #: wp-includes/fonts/class-wp-font-face.php:143
 msgid "Font font-family must be a non-empty string."
 msgstr "Betűkészlet font-family nem üres karakterláncnak kell lennie."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-template-revisions-controller.php:172
+msgid "Invalid template parent ID."
+msgstr "Érvénytelen sablon szülő azonosító (ID)."
 
 #: wp-includes/blocks/search.php:175
 msgid "Submit Search"
@@ -3638,11 +3665,6 @@ msgstr "Nem sikerült a klasszikus menüt blokká alakítani."
 msgid "No Classic Menus found."
 msgstr "Nem találhatók klasszikus menük."
 
-#. translators: %s: The type of the given object ID.
-#: wp-includes/functions.php:7463
-msgid "Object ID must be an integer, %s given."
-msgstr "Az Object ID szám kell, hogy legyen, %s lett megadva."
-
 #: wp-includes/media-template.php:386
 msgid "The Edit Media screen is deprecated as of WordPress 6.3. Please use the Media Library instead."
 msgstr "A Média szerkesztése elavult a WordPress 6.3-tól. Használjuk helyette a Médiatárat."
@@ -3709,6 +3731,11 @@ msgstr "Egyéni CSS kiválasztók."
 #: wp-includes/class-wp-duotone.php:912
 msgid "The duotone id \"%1$s\" is not registered in %2$s settings"
 msgstr "A(z) \"%1$s\" duotone azonosító nincs regisztrálva a %2$s beállításaiban"
+
+#. translators: %s: The type of the given object ID.
+#: wp-includes/functions.php:7463
+msgid "Object ID must be an integer, %s given."
+msgstr "Objektum azonosítónak (ID) egész számnak kell lennie, %s lett megadva."
 
 #: wp-includes/block-template-utils.php:95
 msgctxt "template part area"
@@ -3813,14 +3840,6 @@ msgstr "Megjelenik, amikor a látogató keresést végez a webhelyen."
 msgid "Displays your site's Privacy Policy page."
 msgstr "Megjeleníti webhelyünk Adatvédelmi nyilatkozat oldalát."
 
-#: wp-includes/block-template-utils.php:197
-msgid "Displays a post archive when a specific date is visited (e.g., example.com/2023/)."
-msgstr "Bejegyzés archívumot jelenít meg egy adott dátum meglátogatásakor (pl. pelda.hu/2023/)."
-
-#: wp-includes/block-template-utils.php:193
-msgid "Displays a custom taxonomy archive. Like categories and tags, taxonomies have terms which you use to classify things. For example: a taxonomy named \"Art\" can have multiple terms, such as \"Modern\" and \"18th Century.\" This template will serve as a fallback when a more specific template (e.g. Taxonomy: Art) cannot be found."
-msgstr "Egyéni taxonómia archívumot jelenít meg. A kategóriákhoz és a címkékhez hasonlóan a taxonómiáknak is vannak kifejezései, amelyeket a dolgok osztályozására használunk. Például: a „Művészet” elnevezésű taxonómiában több kifejezés is szerepelhet, például „modern” és „XVIII. század”. Ez a mintasablon tartalékként szolgál, ha nem található specifikusabb (pl. Taxonómia: Művészet)."
-
 #: wp-includes/block-template-utils.php:201
 msgid "Displays a post tag archive. This template will serve as a fallback when a more specific template (e.g. Tag: Pizza) cannot be found."
 msgstr "Egy címke archívumát jeleníti meg. Ez a mintasablon tartalékként szolgál, ha nem található konkrétabb (pl. Címke: Pizza)."
@@ -3829,17 +3848,13 @@ msgstr "Egy címke archívumát jeleníti meg. Ez a mintasablon tartalékként s
 msgid "Displays when a visitor views the dedicated page that exists for any media attachment."
 msgstr "Akkor jelenik meg, amikor a látogató megtekinti a médiacsatolmányhoz tartozó oldalt."
 
-#: wp-includes/block-template-utils.php:185
-msgid "Displays a single author's post archive. This template will serve as a fallback when a more specific template (e.g. Author: Admin) cannot be found."
-msgstr "Egy szerző bejegyzésarchívumát jeleníti meg. Ez a mintasablon tartalékként szolgál, ha nem található konkrétabb (pl. Szerző: Admin)."
+#: wp-includes/block-template-utils.php:197
+msgid "Displays a post archive when a specific date is visited (e.g., example.com/2023/)."
+msgstr "Bejegyzés archívumot jelenít meg egy konkrét dátum meglátogatásakor (pl. pelda.hu/2023/)."
 
-#: wp-includes/block-template-utils.php:181
-msgid "Displays any archive, including posts by a single author, category, tag, taxonomy, custom post type, and date. This template will serve as a fallback when more specific templates (e.g. Category or Tag) cannot be found."
-msgstr "Bármilyen archívumot megjelenít, beleértve egy szerző bejegyzéseit, kategóriát, címkét, taxonómiát, egyéni bejegyzéstípust és dátumot. Ez a mintasablon tartalékként szolgál, ha nem található konkrétabb (például kategória vagy címke)."
-
-#: wp-includes/block-template-utils.php:189
-msgid "Displays a post category archive. This template will serve as a fallback when a more specific template (e.g. Category: Recipes) cannot be found."
-msgstr "Egy kategória archívumát jeleníti meg. Ez a mintasablon tartalékként szolgál, ha nem található konkrétabb (pl. Kategória: Válaszok)."
+#: wp-includes/block-template-utils.php:193
+msgid "Displays a custom taxonomy archive. Like categories and tags, taxonomies have terms which you use to classify things. For example: a taxonomy named \"Art\" can have multiple terms, such as \"Modern\" and \"18th Century.\" This template will serve as a fallback when a more specific template (e.g. Taxonomy: Art) cannot be found."
+msgstr "Egyéni taxonómia archívumot jelenít meg. A kategóriákhoz és a címkékhez hasonlóan a taxonómiáknak is vannak kifejezései, amelyeket a dolgok osztályozására használunk. Például: a „Művészet” elnevezésű taxonómiában több kifejezés is szerepelhet, például „modern” és „XVIII. század”. Ez a mintasablon tartalékként szolgál, ha nem található konkrétabb sablon (pl. Taxonómia: Művészet)."
 
 #: wp-includes/block-template-utils.php:177
 msgid "Displays a static page unless a custom template has been applied to that page or a dedicated template exists."
@@ -3849,9 +3864,17 @@ msgstr "Egy statikus oldal megjelenítése, kivéve, ha egyéni mintasablont has
 msgid "Displays a single post on your website unless a custom template has been applied to that post or a dedicated template exists."
 msgstr "Egyedi bejegyzést jelenít meg a webhelyünkön, kivéve, ha egyéni mintasablont alkalmazunk az adott bejegyzéshez, vagy ha létezik erre a célra szolgáló mintasablon."
 
-#: wp-includes/block-template-utils.php:157
-msgid "Used as a fallback template for all pages when a more specific template is not defined."
-msgstr "Tartalék mintasablonként használjuk minden oldalhoz, ha nincs megadva konkrétabb."
+#: wp-includes/block-template-utils.php:189
+msgid "Displays a post category archive. This template will serve as a fallback when a more specific template (e.g. Category: Recipes) cannot be found."
+msgstr "Egy kategória archívumát jeleníti meg. Ez a mintasablon tartalékként szolgál, ha nem található konkrétabb sablon (pl. Kategória: Válaszok)."
+
+#: wp-includes/block-template-utils.php:185
+msgid "Displays a single author's post archive. This template will serve as a fallback when a more specific template (e.g. Author: Admin) cannot be found."
+msgstr "Egy szerző bejegyzésarchívumát jeleníti meg. Ez a mintasablon tartalékként szolgál, ha nem található konkrétabb sablon (pl. Szerző: Admin)."
+
+#: wp-includes/block-template-utils.php:181
+msgid "Displays any archive, including posts by a single author, category, tag, taxonomy, custom post type, and date. This template will serve as a fallback when more specific templates (e.g. Category or Tag) cannot be found."
+msgstr "Bármilyen archívumot megjelenít, beleértve egy szerző bejegyzéseit, kategóriát, címkét, taxonómiát, egyéni bejegyzéstípust és dátumot. Ez a mintasablon tartalékként szolgál, ha nem található konkrétabb sablon (pl. Kategória vagy Címke)."
 
 #: wp-includes/block-template-utils.php:165
 msgid "Displays your site's homepage, whether it is set to display latest posts or a static page. The Front Page template takes precedence over all templates."
@@ -3863,7 +3886,11 @@ msgstr "A legfrissebb bejegyzéseket a webhely kezdőlapjaként vagy a „Bejegy
 
 #: wp-includes/block-template-utils.php:169
 msgid "Displays any single entry, such as a post or a page. This template will serve as a fallback when a more specific template (e.g. Single Post, Page, or Attachment) cannot be found."
-msgstr "Egyetlen bejegyzést jelenít meg, például bejegyzést vagy oldalt. Ez a sablon tartalékként szolgál, ha nem található konkrétabb sablon (pl. Egyetlen bejegyzés, oldal vagy Csatolmány)."
+msgstr "Egyetlen bejegyzést jelenít meg, például bejegyzést vagy oldalt. Ez a sablon tartalékként szolgál, ha nem található konkrétabb sablon (pl. Egyetlen bejegyzés, Oldal vagy Csatolmány)."
+
+#: wp-includes/block-template-utils.php:157
+msgid "Used as a fallback template for all pages when a more specific template is not defined."
+msgstr "Tartalék mintasablonként használjuk minden oldalhoz, ha nincs megadva konkrétabb sablon."
 
 #: wp-includes/block-patterns.php:176
 msgctxt "Block pattern category"
@@ -4112,10 +4139,6 @@ msgstr "Ossza meg véleményét és visszajelzését márkájáról/vállalkozá
 msgid "A variety of designs to display your team members."
 msgstr "Különféle minták a csapattagok megjelenítéséhez."
 
-#: wp-includes/block-patterns.php:142
-msgid "Sections whose purpose is to trigger a specific action."
-msgstr "Olyan szakaszok, amelyek célja egy adott művelet elindítása."
-
 #: wp-includes/block-patterns.php:128 wp-includes/block-patterns.php:219
 msgid "Display your latest posts in lists, grids or other layouts."
 msgstr "Jelenítse meg legújabb bejegyzéseit listákban, rácsokban vagy más elrendezésekben."
@@ -4132,6 +4155,10 @@ msgstr "Gombokat és cselekvésre ösztönző minták."
 msgctxt "Block pattern category"
 msgid "Call to action"
 msgstr "Cselekvésre ösztönzés"
+
+#: wp-includes/block-patterns.php:142
+msgid "Sections whose purpose is to trigger a specific action."
+msgstr "Olyan szakaszok, amelyek célja egy konkrét művelet elindítása."
 
 #. translators: %s: plugins_loaded
 #: wp-includes/class-wp-user-query.php:790
@@ -4229,10 +4256,6 @@ msgstr "A beállítások frissítésének dátuma és időpontja."
 msgid "Revisions not enabled."
 msgstr "A változatok nincsenek engedélyezve."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-post-types-controller.php:424
-msgid "The icon for the post type."
-msgstr "Ikon a bejegyzés típushoz."
-
 #: wp-includes/style-engine/class-wp-style-engine-processor.php:46
 msgid "$store must be an instance of WP_Style_Engine_CSS_Rules_Store"
 msgstr "$store a WP_Style_Engine_CSS_Rules_Store egy példánya kell, hogy legyen."
@@ -4280,6 +4303,10 @@ msgstr "A sablon csigája, amelyhez a tartalékot kapja"
 #: wp-includes/rest-api/endpoints/class-wp-rest-block-types-controller.php:782
 msgid "Editor script handle. DEPRECATED: Use `editor_script_handles` instead."
 msgstr "Szerkesztő szkript handle. ELAVULT: Használja helyette az `editor_script_handles`-t."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-post-types-controller.php:424
+msgid "The icon for the post type."
+msgstr "Ikon a bejegyzéstípushoz."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-block-patterns-controller.php:272
 msgid "An array of post types that the pattern is restricted to be used with."
@@ -4337,16 +4364,6 @@ msgstr "Gyorsítótár kulcs nem lehet üres szöveg."
 msgid "Cache key must be an integer or a non-empty string, %s given."
 msgstr "Gyorsítótár kulcsnak egy egész számnak, vagy egy nem üres szövegnek kell lennie, %s lett megadva."
 
-#. translators: %s: Capability name.
-#: wp-includes/capabilities.php:447 wp-includes/capabilities.php:713
-msgid "When checking for the %s capability, you must always check it against a specific term."
-msgstr "A %s képesség ellenőrzésekor mindig ellenőriznie kell egy adott kifejezéssel."
-
-#. translators: %s: Capability name.
-#: wp-includes/capabilities.php:444 wp-includes/capabilities.php:557
-msgid "When checking for the %s capability, you must always check it against a specific comment."
-msgstr "A %s képesség ellenőrzésekor mindig ellenőriznie kell egy adott megjegyzéshez képest."
-
 #. translators: 1: theme.json, 2: Value name, 3: Value path, 4: Another value
 #. name.
 #: wp-includes/class-wp-theme-json.php:3173
@@ -4360,7 +4377,17 @@ msgstr "Kritikus hiba történt ezen a webhelyen. További segítségért fordul
 #. translators: %s: Capability name.
 #: wp-includes/capabilities.php:450
 msgid "When checking for the %s capability, you must always check it against a specific user."
-msgstr "A %s képesség ellenőrzésekor mindig ellenőriznie kell egy adott felhasználóval."
+msgstr "A %s képesség ellenőrzésekor mindig ellenőriznie kell egy konkrét felhasználóval."
+
+#. translators: %s: Capability name.
+#: wp-includes/capabilities.php:447 wp-includes/capabilities.php:713
+msgid "When checking for the %s capability, you must always check it against a specific term."
+msgstr "A %s képesség ellenőrzésekor mindig ellenőriznie kell egy konkrét kifejezéssel."
+
+#. translators: %s: Capability name.
+#: wp-includes/capabilities.php:444 wp-includes/capabilities.php:557
+msgid "When checking for the %s capability, you must always check it against a specific comment."
+msgstr "A %s képesség ellenőrzésekor mindig ellenőriznie kell egy konkrét megjegyzéssel."
 
 #. translators: Custom template title in the Site Editor, referencing a deleted
 #. author. %s: Author nicename.
@@ -4387,19 +4414,6 @@ msgstr "Sablonminta %s számára"
 msgid "Not found: %1$s (%2$s)"
 msgstr "Nem található: %1$s (%2$s)"
 
-#. translators: %s: Capability name.
-#: wp-includes/capabilities.php:89 wp-includes/capabilities.php:196
-#: wp-includes/capabilities.php:295
-msgid "When checking for the %s capability, you must always check it against a specific page."
-msgstr "A %s képesség ellenőrzésekor mindig ellenőriznie kell egy adott oldallal."
-
-#. translators: %s: Capability name.
-#: wp-includes/capabilities.php:86 wp-includes/capabilities.php:193
-#: wp-includes/capabilities.php:292 wp-includes/capabilities.php:385
-#: wp-includes/capabilities.php:441
-msgid "When checking for the %s capability, you must always check it against a specific post."
-msgstr "A %s képesség ellenőrzésekor mindig ellenőriznie kell egy adott oldallal."
-
 #: wp-includes/cache-compat.php:176
 msgid "Your object cache implementation does not support flushing individual groups."
 msgstr "Az objektum-gyorsítótár megvalósítása nem támogatja az egyes csoportok kiürítését."
@@ -4407,6 +4421,19 @@ msgstr "Az objektum-gyorsítótár megvalósítása nem támogatja az egyes csop
 #: wp-includes/cache-compat.php:144
 msgid "Your object cache implementation does not support flushing the in-memory runtime cache."
 msgstr "Az objektum-gyorsítótár megvalósítása nem támogatja a memórián belüli futásidejű gyorsítótár kiürítését."
+
+#. translators: %s: Capability name.
+#: wp-includes/capabilities.php:89 wp-includes/capabilities.php:196
+#: wp-includes/capabilities.php:295
+msgid "When checking for the %s capability, you must always check it against a specific page."
+msgstr "A %s képesség ellenőrzésekor mindig ellenőriznie kell egy konkrét oldallal."
+
+#. translators: %s: Capability name.
+#: wp-includes/capabilities.php:86 wp-includes/capabilities.php:193
+#: wp-includes/capabilities.php:292 wp-includes/capabilities.php:385
+#: wp-includes/capabilities.php:441
+msgid "When checking for the %s capability, you must always check it against a specific post."
+msgstr "A %s képesség ellenőrzésekor mindig ellenőriznie kell egy konkrét oldallal."
 
 #: wp-includes/block-patterns.php:225
 msgctxt "Block pattern category"
@@ -5142,7 +5169,7 @@ msgstr "Az eredmény korlátozása azokra a felhasználókra, akiknek vannak kö
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1635
 msgid "Limit result set to users matching at least one specific capability provided. Accepts csv list or single capability."
-msgstr "Korlátozza az eredménykészletet azokra a felhasználókra, akik megfelelnek legalább egy adott adott képességnek. Elfogadja a csv listát vagy egyetlen képességet."
+msgstr "Korlátozza az eredménykészletet azokra a felhasználókra, akik megfelelnek legalább egy konkrét képességnek. Elfogadja a csv listát vagy egyetlen képességet."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-url-details-controller.php:46
 msgid "The URL to process."
@@ -5188,10 +5215,6 @@ msgstr "A %s elem tartalma az URL-ből."
 msgid "The contents of the %s element from the URL."
 msgstr "A %s elem tartalma az URL-ből."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:1165
-msgid "The ID for the author of the template."
-msgstr "A sablonrész szerzőjének azonosítója (ID)."
-
 #: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:1085
 msgid "Type of template."
 msgstr "Sablonrész típusa."
@@ -5207,10 +5230,6 @@ msgstr "Korlátozzuk a megadott sablonrész területére."
 #: wp-includes/rest-api/endpoints/class-wp-rest-taxonomies-controller.php:400
 msgid "REST namespace route for the taxonomy."
 msgstr "Az osztályozás REST útvonali névtere."
-
-#: wp-includes/rest-api/endpoints/class-wp-rest-post-types-controller.php:418
-msgid "Whether to make the post type available for selection in navigation menus."
-msgstr "A bejegyzés típus kiválasztható-e a navigációs menükben."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:1127
 msgid "Title for the template, as it exists in the database."
@@ -5240,17 +5259,13 @@ msgstr "Hogy a sablon egyéni-e."
 msgid "Source of a customized template"
 msgstr "Egyéni sablon forrása"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-post-types-controller.php:408
-msgid "The visibility settings for the post type."
-msgstr "A bejegyzés típus láthatósági beállításai."
+#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:1165
+msgid "The ID for the author of the template."
+msgstr "A sablon szerzőjének azonosítója (ID)."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-post-types-controller.php:402
-msgid "REST route's namespace for the post type."
-msgstr "A bejegyzés típus REST útvonali névtere."
-
-#: wp-includes/rest-api/endpoints/class-wp-rest-post-types-controller.php:414
-msgid "Whether to generate a default UI for managing this post type."
-msgstr "Az alapértelmezett felhasználói felület létrehozása a bejegyzés típus kezeléséhez."
+#: wp-includes/rest-api/endpoints/class-wp-rest-post-types-controller.php:418
+msgid "Whether to make the post type available for selection in navigation menus."
+msgstr "Hogy a bejegyzéstípus kiválasztható-e a navigációs menükben."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-menus-controller.php:392
 msgid "The menu cannot be deleted."
@@ -5265,10 +5280,6 @@ msgstr "A menü elhelyezkedésének neve."
 #: wp-includes/rest-api/endpoints/class-wp-rest-menus-controller.php:560
 msgid "Invalid menu location."
 msgstr "A menü helye érvénytelen."
-
-#: wp-includes/rest-api/endpoints/class-wp-rest-menu-locations-controller.php:291
-msgid "The ID of the assigned menu."
-msgstr "A hozzárendelt menü azonosítója."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-menus-controller.php:540
 msgid "The locations assigned to the menu."
@@ -5304,6 +5315,22 @@ msgstr "Sajnáljuk, a menük megtekintéséhez nincs megfelelő jogosultság."
 msgid "Menus do not support trashing. Set '%s' to delete."
 msgstr "Menük számára a lomtárba helyezés nem támogatott. Állítsuk be a '%s' elemet a törléshez."
 
+#: wp-includes/rest-api/endpoints/class-wp-rest-menu-locations-controller.php:291
+msgid "The ID of the assigned menu."
+msgstr "A hozzárendelt menü azonosítója (ID)."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-post-types-controller.php:414
+msgid "Whether to generate a default UI for managing this post type."
+msgstr "Hogy generálódjon-e alapértelmezett felhasználói felület a bejegyzéstípus kezeléséhez."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-post-types-controller.php:408
+msgid "The visibility settings for the post type."
+msgstr "A bejegyzéstípus láthatósági beállításai."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-post-types-controller.php:402
+msgid "REST route's namespace for the post type."
+msgstr "A bejegyzéstípus REST útvonali névtere."
+
 #: wp-includes/rest-api/endpoints/class-wp-rest-menu-items-controller.php:867
 msgid "The URL to which this menu item points."
 msgstr "Az URL, amelyre ez a menüpont mutat."
@@ -5324,13 +5351,13 @@ msgstr "Az ilyen típusú menüelemek leírására használt egyedi címke."
 msgid "The target attribute of the link element for this menu item."
 msgstr "A hivatkozáselem célattribútuma ehhez a menüponthoz."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-menu-items-controller.php:849
-msgid "The database ID of the original object this menu item represents, for example the ID for posts or the term_id for categories."
-msgstr "Az eredeti objektum adatbázis-azonosítója, amelyet ez a menüpont képvisel, például a bejegyzések azonosítója vagy a kategóriák esetében a term_id."
-
 #: wp-includes/rest-api/endpoints/class-wp-rest-menu-items-controller.php:840
 msgid "The type of object originally represented, such as \"category\", \"post\", or \"attachment\"."
 msgstr "Az eredetileg ábrázolt objektum típusa, például \"kategória\", \"bejegyzés\" vagy \"csatolmány\"."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-menu-items-controller.php:849
+msgid "The database ID of the original object this menu item represents, for example the ID for posts or the term_id for categories."
+msgstr "Az eredeti objektum adatbázis-azonosítója (ID), amelyet ez a menüpont képvisel, például a bejegyzések azonosítója (ID) vagy a kategóriák esetében a term_id."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-menu-items-controller.php:823
 msgid "The description of this menu item."
@@ -5348,17 +5375,17 @@ msgstr "Szöveg az ehhez a menüponthoz tartozó hivatkozás-elem cím attribút
 msgid "A named status for the object."
 msgstr "Az objektum megnevezett állapota."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-menu-items-controller.php:832
-msgid "The DB ID of the nav_menu_item that is this item's menu parent, if any, otherwise 0."
-msgstr "A nav_menu_item DB azonosítója, amely az elem menü szülője, ha van, egyébként 0."
-
-#: wp-includes/rest-api/endpoints/class-wp-rest-menu-items-controller.php:792
-msgid "The ID for the parent of the object."
-msgstr "Az objektum szülőjének azonosítója."
-
 #: wp-includes/rest-api/endpoints/class-wp-rest-menu-items-controller.php:776
 msgid "The family of objects originally represented, such as \"post_type\" or \"taxonomy\"."
 msgstr "Az eredetileg ábrázolt objektumok családja, például \"post_type\" vagy \"taxonomy\"."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-menu-items-controller.php:832
+msgid "The DB ID of the nav_menu_item that is this item's menu parent, if any, otherwise 0."
+msgstr "A nav_menu_item DB azonosítója (ID), amely az elem menü szülője, ha van, egyébként 0."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-menu-items-controller.php:792
+msgid "The ID for the parent of the object."
+msgstr "A szülő-objektum azonosítója (ID)."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-menu-items-controller.php:751
 msgid "HTML title for the object, transformed for display."
@@ -5423,15 +5450,6 @@ msgstr "A globális stílusváltozat címe, ahogy az az adatbázisban létezik."
 msgid "Title of the global styles variation."
 msgstr "A globális stílusváltozat címe."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-global-styles-controller.php:99
-#: wp-includes/rest-api/endpoints/class-wp-rest-global-styles-controller.php:472
-msgid "ID of global styles config."
-msgstr "A globális stílusok konfigurációjának azonosítója."
-
-#: wp-includes/rest-api/endpoints/class-wp-rest-global-styles-controller.php:141
-msgid "No global styles config exists with that ID."
-msgstr "Ezzel az azonosítóval nem létezik globális stíluskonfiguráció."
-
 #: wp-includes/rest-api/endpoints/class-wp-rest-block-types-controller.php:621
 msgid "Public facing and editor style handles."
 msgstr "Nyilvános és szerkesztő stílusú fogantyúk."
@@ -5443,6 +5461,15 @@ msgstr "Nyilvános és szerkesztői szkript fogantyúk."
 #: wp-includes/rest-api/endpoints/class-wp-rest-block-directory-controller.php:282
 msgid "The date when the block was last updated."
 msgstr "A blokk utolsó frissítésének dátuma."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-global-styles-controller.php:99
+#: wp-includes/rest-api/endpoints/class-wp-rest-global-styles-controller.php:472
+msgid "ID of global styles config."
+msgstr "A globális stílusok konfigurációjának azonosítója (ID)."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-global-styles-controller.php:141
+msgid "No global styles config exists with that ID."
+msgstr "Ezzel az azonosítóval (ID) nem létezik globális stíluskonfiguráció."
 
 #: wp-includes/post.php:551
 msgid "Parent Navigation Menu:"
@@ -5774,7 +5801,7 @@ msgstr "A Fejléc-sablon egy oldalterületet határoz meg, amely jellemzően cí
 
 #: wp-includes/block-template-utils.php:78
 msgid "General templates often perform a specific role like displaying post content, and are not tied to any particular area."
-msgstr "Az általános sablonok gyakran bizonyos szerepet töltenek be, például a bejegyzések tartalmát jelenítik meg, és nem kötődnek egyetlen területhez sem."
+msgstr "Az általános sablonok gyakran konkrét szerepet töltenek be, például a bejegyzések tartalmát jelenítik meg, és nem kötődnek egyetlen területhez sem."
 
 #: wp-includes/theme.json
 msgctxt "Duotone name"
@@ -6033,12 +6060,12 @@ msgstr "A hozzászólás HTML tartalma, megjelenítéshez átalakítva."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:1619
 msgid "The ID for the parent of the comment."
-msgstr "A szülő hozzászólás azonosítója ID."
+msgstr "A szülő hozzászólás azonosítója (ID)."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-autosaves-controller.php:94
 #: wp-includes/rest-api/endpoints/class-wp-rest-autosaves-controller.php:120
 msgid "The ID for the parent of the autosave."
-msgstr "Az automatikus mentés szülőjének azonosítója."
+msgstr "Az automatikus mentés szülőjének azonosítója (ID)."
 
 #: wp-includes/blocks/verse/block.json
 msgctxt "block keyword"
@@ -6637,6 +6664,18 @@ msgstr "Megjelenés elől"
 msgid "Page on front"
 msgstr "Főoldal"
 
+#: wp-includes/js/dist/block-editor.js:83111
+#: wp-includes/js/dist/block-editor.js:83641
+#: wp-includes/js/dist/block-editor.js:83711
+#: wp-includes/js/dist/edit-site.js:34179 wp-includes/js/dist/editor.js:4473
+#: wp-includes/js/dist/editor.js:42368 wp-includes/js/dist/editor.js:56863
+#: wp-includes/js/dist/editor.js:72300 wp-includes/js/dist/media-utils.js:22752
+#: wp-includes/js/dist/script-modules/content-types/index.js:29110
+#: wp-admin/includes/class-wp-screen.php:1214 wp-admin/includes/theme.php:351
+#: wp-admin/includes/theme.php:387 wp-admin/index.php:70
+msgid "Layout"
+msgstr "Elrendezés"
+
 #. translators: %s: taxonomy's singular name
 #. translators: Hidden accessibility text. %s: Link name.
 #. translators: Hidden accessibility text. %s: Attachment title.
@@ -6663,18 +6702,6 @@ msgstr "Főoldal"
 #: wp-admin/includes/class-wp-ms-users-list-table.php:243
 msgid "Select %s"
 msgstr "%s kiválasztása"
-
-#: wp-includes/js/dist/block-editor.js:83111
-#: wp-includes/js/dist/block-editor.js:83641
-#: wp-includes/js/dist/block-editor.js:83711
-#: wp-includes/js/dist/edit-site.js:34179 wp-includes/js/dist/editor.js:4473
-#: wp-includes/js/dist/editor.js:42368 wp-includes/js/dist/editor.js:56863
-#: wp-includes/js/dist/editor.js:72300 wp-includes/js/dist/media-utils.js:22752
-#: wp-includes/js/dist/script-modules/content-types/index.js:29110
-#: wp-admin/includes/class-wp-screen.php:1214 wp-admin/includes/theme.php:351
-#: wp-admin/includes/theme.php:387 wp-admin/index.php:70
-msgid "Layout"
-msgstr "Elrendezés"
 
 #: wp-includes/post.php:320 wp-includes/js/dist/block-editor.js:59938
 #: wp-includes/js/dist/block-editor.js:64633
@@ -6810,17 +6837,9 @@ msgstr "Widget beállítások, ha támogatott."
 msgid "HTML representation of the widget."
 msgstr "A widget HTML megjelenése."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:1153
-msgid "Post ID."
-msgstr "Bejegyzés azonosító."
-
 #: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:1159
 msgid "Theme file exists."
 msgstr "A sablon fájl létezik."
-
-#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:1066
-msgid "ID of template."
-msgstr "Sablon azonosítója."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:1033
 msgid "Limit to the specified post id."
@@ -6902,10 +6921,6 @@ msgstr "Egymásba ágyazott widgetek."
 #: wp-includes/rest-api/endpoints/class-wp-rest-sidebars-controller.php:452
 msgid "Unique name identifying the sidebar."
 msgstr "Egyedi név az oldalsávhoz."
-
-#: wp-includes/rest-api/endpoints/class-wp-rest-sidebars-controller.php:446
-msgid "ID of sidebar."
-msgstr "Oldalsáv azonosítója."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-sidebars-controller.php:276
 #: wp-includes/rest-api/endpoints/class-wp-rest-widget-types-controller.php:195
@@ -7008,11 +7023,19 @@ msgstr "Egyedi keresőbarát cím, ami azonosítja a widget típusát."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-widgets-controller.php:824
 msgid "The type of the widget. Corresponds to ID in widget-types endpoint."
-msgstr "A widget típusa. Megfelel a widget-típusok végponton az azonosítónak."
+msgstr "A widget típusa. Megfelel a widget-típusok végponton az azonosítónak (ID)."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:831
-msgid "The ID for the author of the revision."
-msgstr "A változat szerzőjének azonosítója."
+#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:1153
+msgid "Post ID."
+msgstr "Bejegyzés azonosító (ID)."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:1066
+msgid "ID of template."
+msgstr "Sablon azonosítója (ID)."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-sidebars-controller.php:446
+msgid "ID of sidebar."
+msgstr "Oldalsáv azonosítója (ID)."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:113
 #: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:853
@@ -7033,6 +7056,10 @@ msgstr "A bejegyzés sorrendje más bejegyzésekhez viszonyítva."
 msgid "Whether items must be assigned all or any of the specified terms."
 msgstr "Hogy az kifejezésekhez hozzá kell-e rendelni a megadott feltételek mindegyikét vagy valamelyikét."
 
+#: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:831
+msgid "The ID for the author of the revision."
+msgstr "A változat szerzőjének azonosítója (ID)."
+
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2492
 msgid "Type of post."
 msgstr "Bejegyzés típusa."
@@ -7048,14 +7075,6 @@ msgstr "A bejegyzés címe."
 msgid "Unique identifier for the post."
 msgstr "A bejegyzés egyedi azonosítója."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-pattern-directory-controller.php:320
-msgid "Limit results to those matching a category ID."
-msgstr "Eredmények szűkítése kategória azonosító szerint."
-
-#: wp-includes/rest-api/endpoints/class-wp-rest-pattern-directory-controller.php:326
-msgid "Limit results to those matching a keyword ID."
-msgstr "Eredmények szűkítése kulcsszó azonosító szerint."
-
 #: wp-includes/rest-api/endpoints/class-wp-rest-pattern-directory-controller.php:279
 msgid "A description of the pattern."
 msgstr "A minta leírása."
@@ -7064,10 +7083,6 @@ msgstr "A minta leírása."
 #: wp-includes/rest-api/endpoints/class-wp-rest-pattern-directory-controller.php:256
 msgid "The pattern content."
 msgstr "A minta tartalma."
-
-#: wp-includes/rest-api/endpoints/class-wp-rest-pattern-directory-controller.php:242
-msgid "The pattern ID."
-msgstr "A minta azonosító."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2454
 msgid "URL to the post."
@@ -7102,6 +7117,18 @@ msgstr "A szülőkategória keresőbarát elnevezése."
 msgid "The preferred width of the viewport when previewing a pattern, in pixels."
 msgstr "A nézetablak előnyben részesített szélessége a minta előnézetekor, képpontokban."
 
+#: wp-includes/rest-api/endpoints/class-wp-rest-pattern-directory-controller.php:326
+msgid "Limit results to those matching a keyword ID."
+msgstr "Eredmények szűkítése kulcsszó azonosító (ID) szerint."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-pattern-directory-controller.php:320
+msgid "Limit results to those matching a category ID."
+msgstr "Eredmények szűkítése kategória azonosító (ID) szerint."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-pattern-directory-controller.php:242
+msgid "The pattern ID."
+msgstr "A minta azonosító (ID)."
+
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:1612
 msgid "URL to the comment."
 msgstr "URL a kommenthez."
@@ -7113,11 +7140,6 @@ msgstr "Blokk variációk."
 #: wp-includes/rest-api/endpoints/class-wp-rest-block-types-controller.php:699
 msgid "The initial values for attributes."
 msgstr "A kezdeti értékek a tulajdonságokhoz."
-
-#: wp-includes/rest-api/endpoints/class-wp-rest-autosaves-controller.php:124
-#: wp-includes/rest-api/endpoints/class-wp-rest-template-autosaves-controller.php:148
-msgid "The ID for the autosave."
-msgstr "Az ID  az automatikus mentéshez."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:74
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:1529
@@ -7143,6 +7165,11 @@ msgstr "Ember által olvasható változatcím."
 #: wp-includes/rest-api/endpoints/class-wp-rest-block-types-controller.php:705
 msgid "The list of scopes where the variation is applicable. When not provided, it assumes all available scopes."
 msgstr "Azon hatókörök listája, ahol a módosítás alkalmazható. Ha nincs megadva, akkor az összes elérhető hatókört feltételezi."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-autosaves-controller.php:124
+#: wp-includes/rest-api/endpoints/class-wp-rest-template-autosaves-controller.php:148
+msgid "The ID for the autosave."
+msgstr "Az azonosító (ID) az automatikus mentéshez."
 
 #: wp-includes/post.php:383
 msgid "Template archives"
@@ -7766,11 +7793,6 @@ msgstr "Sajnáljuk, nem engedélyezett az alkalmazás jelszavának törlése enn
 msgid "Sorry, you are not allowed to edit this application password."
 msgstr "Sajnáljuk, nem engedélyezett az alkalmazás jelszavának módosítása."
 
-#. translators: %s: Taxonomy name.
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3363
-msgid "Limit result set to items with specific terms assigned in the %s taxonomy."
-msgstr "Az eredményhalmaz korlátozása a %s kategóriához társított kifejezésekkel."
-
 #: wp-includes/rest-api/endpoints/class-wp-rest-application-passwords-controller.php:219
 msgid "Sorry, you are not allowed to create application passwords for this user."
 msgstr "Sajnáljuk, nem engedélyezett jelszó megadása ennek a felhasználónak."
@@ -7782,6 +7804,11 @@ msgstr "Sajnáljuk, nem engedélyezett az alkalmazás jelszavának megjeleníté
 #: wp-includes/rest-api/endpoints/class-wp-rest-application-passwords-controller.php:122
 msgid "Sorry, you are not allowed to list application passwords for this user."
 msgstr "Sajnáljuk, nem törölheti az alkalmazás jelszavát ennél a felhasználónál."
+
+#. translators: %s: Taxonomy name.
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3363
+msgid "Limit result set to items with specific terms assigned in the %s taxonomy."
+msgstr "Az eredményhalmaz korlátozása a %s kategóriához társított konkrét kifejezésekkel."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-global-styles-controller.php:568
 #: wp-includes/rest-api/endpoints/class-wp-rest-global-styles-controller.php:637
@@ -7800,10 +7827,6 @@ msgstr "Jelszó generálása"
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3338
 msgid "Perform an advanced term query."
 msgstr "Lekérdezés egy összetett kifejezéssel. "
-
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3337
-msgid "Term ID Taxonomy Query"
-msgstr "Kategória azonosító lekérdezés - ID "
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3017
 msgid "Limit response to posts modified before a given ISO8601 compliant date."
@@ -7828,18 +7851,6 @@ msgstr "A válasz korlátozása a megadott ISO8601 dátum után módosított pos
 msgid "Whether to include child terms in the terms limiting the result set."
 msgstr "A gyermekkifejezések betöltése az eredménynhalmazt szűrő kifejezésekbe."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3329
-msgid "Term ID List"
-msgstr "Kifejezés ID Lista"
-
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3330
-msgid "Match terms with the listed IDs."
-msgstr "Kifejezések egyezése a listában felsorolt ID-kkel."
-
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3342
-msgid "Term IDs."
-msgstr "Kifejezés ID-k."
-
 #: wp-includes/rest-api/endpoints/class-wp-rest-themes-controller.php:162
 msgid "Sorry, you are not allowed to view the active theme."
 msgstr "Sajnáljuk, nincs jogosultságunk megtekinteni a bekapcsolt sablont."
@@ -7847,6 +7858,22 @@ msgstr "Sajnáljuk, nincs jogosultságunk megtekinteni a bekapcsolt sablont."
 #: wp-login.php:1017
 msgid "Enter your new password below or generate one."
 msgstr "Adjuk meg az új jelszót, vagy generáljunk egyet."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3342
+msgid "Term IDs."
+msgstr "Kifejezés azonosítók (ID)."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3337
+msgid "Term ID Taxonomy Query"
+msgstr "Kategória azonosító (ID) lekérdezés"
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3330
+msgid "Match terms with the listed IDs."
+msgstr "Kifejezések egyezése a listában felsorolt azonosítókkal (ID)."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3329
+msgid "Term ID List"
+msgstr "Kifejezés azonosító (ID) lista"
 
 #: wp-includes/class-wp-feed-cache.php:15
 msgid "This file is only loaded for backward compatibility with SimplePie 1.2.x. Please consider switching to a recent SimplePie version."
@@ -8076,10 +8103,6 @@ msgstr "A kért útvonal nem támogatja a csoportos műveleteket."
 msgid "The handler for the route is invalid."
 msgstr "Az útvonal kezelője érvénytelen."
 
-#: wp-includes/theme.php:2735
-msgid "You need to pass an array of post formats."
-msgstr "Egy tömböt kell átadni a bejegyzés típusokkal."
-
 #. translators: %s: IP address of password reset requester.
 #: wp-includes/user.php:3402
 msgid "This password reset request originated from the IP address %s."
@@ -8088,6 +8111,10 @@ msgstr "A jelszó visszaállítási kérés erről az IP címről érkezett: %s.
 #: wp-includes/rest-api/endpoints/class-wp-rest-block-types-controller.php:485
 msgid "Version of block API."
 msgstr "A Blokk API verziója."
+
+#: wp-includes/theme.php:2735
+msgid "You need to pass an array of post formats."
+msgstr "Egy tömböt kell átadni a bejegyzés formátumokkal."
 
 #: wp-includes/class-wp-xmlrpc-server.php:3998
 #: wp-includes/class-wp-xmlrpc-server.php:4005
@@ -8751,17 +8778,9 @@ msgstr "A bővítmény nyers leírása."
 msgid "The plugin description."
 msgstr "A bővítmény leírás."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-plugins-controller.php:921
-msgid "Plugin author's website address."
-msgstr "A bővítmény szerzőjének webcíme."
-
 #: wp-includes/rest-api/endpoints/class-wp-rest-plugins-controller.php:915
 msgid "The plugin author."
 msgstr "A bővítmény szerzője."
-
-#: wp-includes/rest-api/endpoints/class-wp-rest-plugins-controller.php:908
-msgid "The plugin's website address."
-msgstr "A bővítmény webcíme."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-plugins-controller.php:889
 msgid "The plugin file."
@@ -8810,6 +8829,14 @@ msgstr "A fájlrendszer jelenleg bővítmények kezelésének céljából nem é
 msgid "WordPress.org plugin directory slug."
 msgstr "WordPress.org bővítmény mappa keresőbarát neve."
 
+#: wp-includes/rest-api/endpoints/class-wp-rest-plugins-controller.php:921
+msgid "Plugin author's website address."
+msgstr "A bővítmény szerzőjének webhelycíme."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-plugins-controller.php:908
+msgid "The plugin's website address."
+msgstr "A bővítmény webhelycíme."
+
 #: wp-includes/rest-api/endpoints/class-wp-rest-themes-controller.php:640
 msgid "The theme's current version."
 msgstr "A sablon aktuális verzió száma."
@@ -8842,21 +8869,9 @@ msgstr "A sablon szerzője."
 msgid "The theme author's name, as found in the theme header."
 msgstr "A sablon szerzője, ahogy a fejlécben található."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-themes-controller.php:531
-msgid "The website of the theme author, as found in the theme header."
-msgstr "A sablon szerzőjének weboldala, ahogy a fejlécben található."
-
-#: wp-includes/rest-api/endpoints/class-wp-rest-themes-controller.php:526
-msgid "The website of the theme author."
-msgstr "A sablon szerzőjének weboldala."
-
 #: wp-includes/rest-api/endpoints/class-wp-rest-themes-controller.php:520
 msgid "HTML for the theme author, transformed for display."
 msgstr "A sablon szerző HTML kódja, megjelenítéshez átalakítva."
-
-#: wp-includes/rest-api/endpoints/class-wp-rest-themes-controller.php:536
-msgid "The website of the theme author, transformed for display."
-msgstr "A sablon szerzőjének weboldala, megjelenítéshez átalakítva."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-themes-controller.php:612
 msgid "The theme's text domain."
@@ -8905,6 +8920,18 @@ msgstr "A sablon cimkéi, megjelenítéshez átalakítva."
 #: wp-includes/rest-api/endpoints/class-wp-rest-themes-controller.php:500
 msgid "The theme's template. If this is a child theme, this refers to the parent theme, otherwise this is the same as the theme's stylesheet."
 msgstr "A sablon mintasablonja. Ha ez egy gyermek sablon, ez a szülő sablonra mutat, különben ez megegyezik a sablon stíluslapjával."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-themes-controller.php:536
+msgid "The website of the theme author, transformed for display."
+msgstr "A sablon szerzőjének webhelye, megjelenítéshez átalakítva."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-themes-controller.php:531
+msgid "The website of the theme author, as found in the theme header."
+msgstr "A sablon szerzőjének webhelye, ahogyan a sablon fejlécben található."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-themes-controller.php:526
+msgid "The website of the theme author."
+msgstr "A sablon szerzőjének webhelye."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-themes-controller.php:63
 #: wp-includes/rest-api/endpoints/class-wp-rest-themes-controller.php:489
@@ -9050,7 +9077,7 @@ msgstr "RSS hírcsatorna"
 
 #: wp-includes/theme.php:4320
 msgid "The post types that support thumbnails or true if all post types are supported."
-msgstr "Bejegyzés típusok, amik támogatják az előnézeti képet vagy igaz, ha minden bejegyzés típus támogatott."
+msgstr "Bejegyzéstípusok, amik támogatják az előnézeti képet, vagy igaz, ha minden bejegyzéstípus támogatott."
 
 #: wp-includes/theme.php:3352
 msgid "When registering an \"object\" feature, the feature's schema must include the \"properties\" keyword."
@@ -9540,10 +9567,6 @@ msgstr "Súlyos hiba történt a webhelyünkön."
 msgid "Block style name must be a string."
 msgstr "A blokk stílus nevének karakterláncnak kell lennie."
 
-#: wp-includes/class-wp-fatal-error-handler.php:188
-msgid "There has been a critical error on this website, putting it in recovery mode. Please check the Themes and Plugins screens for more details. If you just installed or updated a theme or plugin, check the relevant page for that first."
-msgstr "Kritikus hibát észleltünk a weboldalon, ezért a helyreállítási üzemmódba helyeztük. A további részletekért a sablonok és a bővítmények képernyőit kell felkeresni. Ha nemrégen telepítettünk vagy frissítettünk egy sablont, vagy egy bővítményt, akkor először a releváns oldalakat ellenőrizzük."
-
 #. translators: 1: Block name, 2: Block style name.
 #: wp-includes/class-wp-block-styles-registry.php:125
 msgid "Block \"%1$s\" does not contain a style named \"%2$s\"."
@@ -9552,6 +9575,10 @@ msgstr "\"%1$s\" nevű blokk nem tartalmazza a(z) \"%2$s\" blokkstílus nevet."
 #: wp-includes/class-wp-icons-registry.php:67
 msgid "Icon name must be a string."
 msgstr "Az ikon nevének karakterláncnak kell lennie."
+
+#: wp-includes/class-wp-fatal-error-handler.php:188
+msgid "There has been a critical error on this website, putting it in recovery mode. Please check the Themes and Plugins screens for more details. If you just installed or updated a theme or plugin, check the relevant page for that first."
+msgstr "Kritikus hibát észleltünk a webhelyen, ezért a helyreállítási üzemmódba helyeztük. A további részletekért a sablonok és a bővítmények képernyőit kell felkeresni. Ha nemrégen telepítettünk vagy frissítettünk egy sablont, vagy egy bővítményt, akkor először a releváns oldalakat ellenőrizzük."
 
 #: wp-includes/user.php:4159
 msgid "User&#8217;s profile data."
@@ -9693,10 +9720,6 @@ msgstr "Ez az e-mail cím különbözhet a személyes használatú e-mail címt�
 msgid "Current administration email: %s"
 msgstr "A jelenleg használatos adminisztrátori e-mail cím: %s"
 
-#: wp-login.php:688
-msgid "Please verify that the <strong>administration email</strong> for this website is still correct."
-msgstr "Ellenőrizzük, hogy a weboldalhoz tartozó <strong>adminisztrátori e-mail cím</strong> valóban helyes-e."
-
 #: wp-login.php:685
 msgid "Administration email verification"
 msgstr "Adminisztrátori e-mail cím ellenőrzése"
@@ -9709,6 +9732,10 @@ msgstr "Adminisztrátori e-mail cím visszaigazolás"
 #: wp-login.php:692
 msgid "https://wordpress.org/documentation/article/settings-general-screen/#email-address"
 msgstr "https://wordpress.org/documentation/article/settings-general-screen/#email-address"
+
+#: wp-login.php:688
+msgid "Please verify that the <strong>administration email</strong> for this website is still correct."
+msgstr "Ellenőrizzük, hogy a webhelyhez tartozó <strong>adminisztrátori e-mail cím</strong> valóban helyes-e."
 
 #. translators: Maximum number of words used in a post excerpt.
 #: wp-includes/formatting.php:4072
@@ -9844,7 +9871,7 @@ msgstr ""
 "\n"
 "A WordPress rendelkezik egy beépített szolgáltatással, amelyik érzékeli, ha egy bővítmény vagy sablon végzetes hibát okoz a weboldalon, és erről a hibáról automatikusan e-mailben értesíti a weboldal üzemeltetőjét.\n"
 "###CAUSE###\n"
-"Először keressük fel az érintett weboldalt (###SITEURL###), és ellenőrizzük az összes látható problémát. Ezután keressük fel a hibás oldalt (###PAGEURL###), és keressük meg a problémát.\n"
+"Először látogassuk meg az érintett webhelyet (###SITEURL###), és ellenőrizzük az összes látható problémát. Ezután keressük fel a hibás oldalt (###PAGEURL###), és keressük meg a problémát.\n"
 "\n"
 "###SUPPORT###\n"
 "\n"
@@ -10067,11 +10094,6 @@ msgstr "Kilépés a helyreállítási módból"
 msgid "Missing confirm key."
 msgstr "Hiányzó megerősítő kulcs."
 
-#: wp-login.php:1242 wp-admin/includes/ajax-actions.php:4987
-#: wp-admin/includes/ajax-actions.php:5177
-msgid "Missing request ID."
-msgstr "Hiányzó kérésazonosító."
-
 #: wp-includes/class-wp-recovery-mode-cookie-service.php:109
 msgid "Invalid cookie."
 msgstr "Hibás süti."
@@ -10141,6 +10163,11 @@ msgstr "A widget beállításokat megtartva mozgatás a kikapcsolt widgetek köz
 msgid "An error of type %1$s was caused in line %2$s of the file %3$s. Error message: %4$s"
 msgstr "A(z) %3$s fájl %2$s sora egy %1$s típusú hibát okoz. Hibaüzenet: %4$s"
 
+#: wp-login.php:1242 wp-admin/includes/ajax-actions.php:4987
+#: wp-admin/includes/ajax-actions.php:5177
+msgid "Missing request ID."
+msgstr "Hiányzó kérésazonosító (ID)."
+
 #: wp-includes/functions.php:8795
 msgid "Update PHP"
 msgstr "PHP frissítés"
@@ -10205,11 +10232,6 @@ msgstr "Az oldalt nem sikerült frissíteni az adatbázisban."
 msgid "Site does not exist."
 msgstr "Nem létező oldal."
 
-#: wp-includes/ms-site.php:163 wp-includes/ms-site.php:216
-#: wp-includes/ms-site.php:657 wp-includes/ms-site.php:788
-msgid "Site ID must not be empty."
-msgstr "Az oldalhoz tartozó azonosító (ID) nem maradhat üresen."
-
 #: wp-includes/ms-site.php:69
 msgid "Could not insert site into the database."
 msgstr "Az oldalt nem sikerült beilleszteni az adatbázisba."
@@ -10238,6 +10260,11 @@ msgstr "A regisztráció és a legutóbbi frissítés dátumát is meg kell adni
 #: wp-includes/ms-site.php:606
 msgid "Both registration and last updated dates must be valid dates."
 msgstr "A regisztráció és a legutóbbi frissítés dátumainak érvényes dátumoknak kell lenniük."
+
+#: wp-includes/ms-site.php:163 wp-includes/ms-site.php:216
+#: wp-includes/ms-site.php:657 wp-includes/ms-site.php:788
+msgid "Site ID must not be empty."
+msgstr "Oldal azonosító (ID) nem lehet üres."
 
 #: wp-includes/class-wp-theme.php:522
 msgid "This theme failed to load properly and was paused within the admin backend."
@@ -10535,10 +10562,6 @@ msgstr "Érvénytelen blokk."
 msgid "Sorry, you are not allowed to read blocks as this user."
 msgstr "Elnézést, ezen felhasználó számára nem engedélyezett a blokkok olvasása."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-block-renderer-controller.php:91
-msgid "ID of the post context."
-msgstr "A bejegyzés kontextus azonosítója."
-
 #: wp-includes/rest-api/endpoints/class-wp-rest-block-renderer-controller.php:54
 msgid "Attributes for the block."
 msgstr "Blokk tulajdonságai."
@@ -10550,6 +10573,10 @@ msgstr "Elnézést, a bejegyzés blokkjainak olvasásához nincs megfelelő jogo
 #: wp-includes/rest-api/endpoints/class-wp-rest-block-renderer-controller.php:43
 msgid "Unique registered name for the block."
 msgstr "Egyedi regisztrált név a blokknak."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-block-renderer-controller.php:91
+msgid "ID of the post context."
+msgstr "A bejegyzés kontextus azonosítója (ID)."
 
 #: wp-includes/theme.php:4334
 msgid "Whether the theme supports responsive embedded content."
@@ -10696,14 +10723,14 @@ msgstr "Nincs megjeleníthető bejegyzés."
 msgid "%1$s on %2$s"
 msgstr "%2$s szerzője %1$s"
 
-#. translators: %s: Block name.
-#: wp-includes/class-wp-block-type-registry.php:80
-msgid "Block type names must contain a namespace prefix. Example: my-plugin/my-custom-block-type. \"%s\" was given."
-msgstr "A blokktípus neveknek tartalmaznia kell a namespace prefixet. Pl.: my-plugin/my-custom-block-type. \"%s\" megadva."
-
 #: wp-includes/class-wp-icons-registry.php:89
 msgid "Icon names must not contain uppercase characters."
 msgstr "Az ikonneveknek nem tartalmazhatnak nagybetűket."
+
+#. translators: %s: Block name.
+#: wp-includes/class-wp-block-type-registry.php:80
+msgid "Block type names must contain a namespace prefix. Example: my-plugin/my-custom-block-type. \"%s\" was given."
+msgstr "A blokktípus neveknek tartalmaznia kell a namespace prefixet. Pl. my-plugin/my-custom-block-type. \"%s\" megadva."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-global-styles-revisions-controller.php:229
 #: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:349
@@ -10874,7 +10901,7 @@ msgstr "Személyes adat törlése"
 
 #: wp-includes/comment-template.php:2587
 msgid "Save my name, email, and website in this browser for the next time I comment."
-msgstr "A nevem, e-mail címem, és weboldalcímem mentése a böngészőben a következő hozzászólásomhoz."
+msgstr "A nevem, e-mail címem, és a webhely mentése a böngészőben a következő hozzászólásomhoz."
 
 #: wp-includes/user.php:4076
 msgid "User Description"
@@ -10908,10 +10935,6 @@ msgstr "Felhasználó URL"
 msgid "User Login Name"
 msgstr "Felhasználó belépési neve"
 
-#: wp-includes/abilities.php:148 wp-includes/user.php:4066
-msgid "User ID"
-msgstr "Felhasználói azonosító (ID)"
-
 #: wp-includes/user.php:4027
 msgid "WordPress User"
 msgstr "WordPress felhasználó"
@@ -10923,6 +10946,10 @@ msgstr "Felhasználó használt beceneve"
 #: wp-includes/user.php:4069
 msgid "User Email"
 msgstr "Felhasználó e-mail címe"
+
+#: wp-includes/abilities.php:148 wp-includes/user.php:4066
+msgid "User ID"
+msgstr "Felhasználó azonosító (ID)"
 
 #: wp-includes/media.php:5772
 msgid "WordPress Media"
@@ -11097,7 +11124,7 @@ msgstr "Saját"
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-post-types-controller.php:351
 msgid "Whether or not the post type can be viewed."
-msgstr "A bejegyzés típusa megtekinthető legyen-e."
+msgstr "Hogy a bejegyzés típusa megtekinthető legyen-e."
 
 #: wp-includes/class-wp-customize-manager.php:525
 #: wp-includes/script-loader.php:1327 wp-admin/customize.php:17
@@ -11718,13 +11745,6 @@ msgstr "Olyan böngésző van használatban, amelyben nincs engedélyezve vagy t
 msgid "Author: %1$s (IP address: %2$s, %3$s)"
 msgstr "Szerző: %1$s (IP cím: %2$s, %3$s)"
 
-#. translators: 1: Trackback/pingback website name, 2: Website IP address, 3:
-#. Website hostname.
-#: wp-includes/pluggable.php:1883 wp-includes/pluggable.php:1897
-#: wp-includes/pluggable.php:2090 wp-includes/pluggable.php:2102
-msgid "Website: %1$s (IP address: %2$s, %3$s)"
-msgstr "Honlap: %1$s (IP cím: %2$s, %3$s)"
-
 #: wp-includes/post.php:270
 msgid "oEmbed Responses"
 msgstr "oEmbed válaszok"
@@ -11743,6 +11763,13 @@ msgstr "%s:"
 #: wp-includes/rest-api/endpoints/class-wp-rest-controller.php:53
 msgid "Method '%s' must be overridden."
 msgstr "A \"%s\" metódust kell felülírni."
+
+#. translators: 1: Trackback/pingback website name, 2: Website IP address, 3:
+#. Website hostname.
+#: wp-includes/pluggable.php:1883 wp-includes/pluggable.php:1897
+#: wp-includes/pluggable.php:2090 wp-includes/pluggable.php:2102
+msgid "Website: %1$s (IP address: %2$s, %3$s)"
+msgstr "Webhely: %1$s (IP cím: %2$s, %3$s)"
 
 #. translators: Do not translate OLD_EMAIL, NEW_EMAIL, SITENAME, SITEURL: those
 #. are placeholders.
@@ -12336,10 +12363,6 @@ msgstr "Csere"
 msgid "To change or disable registration go to your <a href=\"%s\">Options page</a>."
 msgstr "A regisztráció kikapcsolható, vagy módosítható a <a href=\"%s\">Beállítások oldalon</a>."
 
-#: wp-includes/widgets/class-wp-widget-media.php:146
-msgid "Attachment post ID"
-msgstr "Csatolmány bejegyzés azonosítója"
-
 #: wp-includes/widgets/class-wp-widget-media.php:498
 msgid "No media selected"
 msgstr "Nincs kijelölt média"
@@ -12347,6 +12370,10 @@ msgstr "Nincs kijelölt média"
 #: wp-includes/widgets/class-wp-widget-media.php:511
 msgid "Looks like this is not the correct kind of file. Please link to an appropriate file instead."
 msgstr "Úgy tűnik, ez nem a helyes típusú fájl. Helyette célszerű lenne megadni egy megfelelő fájltípus hivatkozását."
+
+#: wp-includes/widgets/class-wp-widget-media.php:146
+msgid "Attachment post ID"
+msgstr "Csatolmány bejegyzés azonosítója (ID)"
 
 #: wp-includes/widgets/class-wp-widget-media-video.php:30
 msgid "Displays a video from the media library or from YouTube, Vimeo, or another provider."
@@ -12479,13 +12506,13 @@ msgstr "Minden támogatott funkció a bejegyzéshez."
 msgid "You need to define an include parameter to order by include."
 msgstr "Meg kell határozni az include paramétert, mielőtt aszerint rendezni tudnánk."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:1207
-msgid "Limit result set to terms with one or more specific slugs."
-msgstr "Korlátozzuk az eredménykészletet olyan kifejezésekre, amelyek egy vagy több meghatározott keresőbarát névvel rendelkeznek."
-
 #: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1619
 msgid "Limit result set to users with one or more specific slugs."
-msgstr "Korlátozzuk az eredményt felhasználókra egy vagy több meghatározott keresőbarát névvel."
+msgstr "Korlátozzuk az eredményt felhasználókra egy vagy több konkrét keresőbarát névvel."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:1207
+msgid "Limit result set to terms with one or more specific slugs."
+msgstr "Korlátozzuk az eredménykészletet olyan kifejezésekre, amelyek egy vagy több konkrét keresőbarát névvel rendelkeznek."
 
 #: wp-includes/class-wp-post-type.php:1007
 msgctxt "page"
@@ -12674,27 +12701,6 @@ msgstr "A kifejezés egyedi azonosítója."
 msgid "An alphanumeric identifier for the taxonomy."
 msgstr "Az osztályozás betűkből és számokból álló azonosítója."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-post-types-controller.php:58
-#: wp-includes/rest-api/endpoints/class-wp-rest-post-types-controller.php:369
-msgid "An alphanumeric identifier for the post type."
-msgstr "A bejegyzés típus betűkből és számokból álló azonosítója."
-
-#: wp-includes/rest-api/endpoints/class-wp-rest-post-types-controller.php:333
-msgid "All capabilities used by the post type."
-msgstr "Az összes képesség a bejegyzés típushoz lesz használva."
-
-#: wp-includes/rest-api/endpoints/class-wp-rest-post-types-controller.php:357
-msgid "Human-readable labels for the post type for various contexts."
-msgstr "Egyszerűsített címkék a bejegyzés típusokhoz, különféle helyzetekhez."
-
-#: wp-includes/rest-api/endpoints/class-wp-rest-post-types-controller.php:396
-msgid "REST base route for the post type."
-msgstr "REST kiindulási útvonal a bejegyzés típushoz."
-
-#: wp-includes/rest-api/endpoints/class-wp-rest-post-types-controller.php:339
-msgid "A human-readable description of the post type."
-msgstr "Egyszerű leírás a bejegyzés típusokhoz."
-
 #: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:133
 #: wp-includes/rest-api/endpoints/class-wp-rest-template-revisions-controller.php:149
 msgid "Required to be true, as revisions do not support trashing."
@@ -12707,6 +12713,27 @@ msgstr "Igaznak (true) kell lennie, mert a kifejezéseket nem lehet lomtárba he
 #: wp-includes/rest-api/endpoints/class-wp-rest-post-types-controller.php:345
 msgid "Whether or not the post type should have children."
 msgstr "A bejegyzéstípusnak \"gyermeke\" lehessen-e."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-post-types-controller.php:396
+msgid "REST base route for the post type."
+msgstr "REST kiindulási útvonal a bejegyzéstípushoz."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-post-types-controller.php:58
+#: wp-includes/rest-api/endpoints/class-wp-rest-post-types-controller.php:369
+msgid "An alphanumeric identifier for the post type."
+msgstr "A bejegyzéstípus betűkből és számokból álló azonosítója."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-post-types-controller.php:357
+msgid "Human-readable labels for the post type for various contexts."
+msgstr "Egyszerűsített címkék a bejegyzéstípusokhoz, különféle helyzetekhez."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-post-types-controller.php:339
+msgid "A human-readable description of the post type."
+msgstr "Egyszerű leírás a bejegyzéstípushoz."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-post-types-controller.php:333
+msgid "All capabilities used by the post type."
+msgstr "A bejegyzéstípus által használt összes képesség."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-post-statuses-controller.php:58
 #: wp-includes/rest-api/endpoints/class-wp-rest-post-statuses-controller.php:342
@@ -12776,7 +12803,7 @@ msgstr "Hiba a felhasználó létrehozásakor."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:1110
 msgid "The parent term ID."
-msgstr "A szülő kifejezés azonosítója."
+msgstr "A szülő kifejezés azonosítója (ID)."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:1080
 msgid "HTML title for the term."
@@ -12813,15 +12840,15 @@ msgstr "Taxonómia címe."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-taxonomies-controller.php:385
 msgid "Types associated with the taxonomy."
-msgstr "A besoroláshoz társított bejegyzés típusok."
+msgstr "Az osztályozáshoz társított típusok."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-post-types-controller.php:363
 msgid "The title for the post type."
-msgstr "A bejegyzés típus címe."
+msgstr "A bejegyzéstípus címe."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-post-types-controller.php:154
 msgid "Cannot view post type."
-msgstr "A bejegyzés típus nem tekinthető meg."
+msgstr "A bejegyzéstípus nem tekinthető meg."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-post-statuses-controller.php:306
 msgid "The title for the status."
@@ -13102,7 +13129,7 @@ msgstr "Sajnáljuk, de nem jogosult a megadott kifejezések hozzárendelésére.
 #: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:113
 #: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:154
 msgid "Reassign the deleted user's posts and links to this user ID."
-msgstr "Hozzárendeljük a törölt felhasználó hivatkozásait és bejegyzéseit az alábbi felhasználóhoz."
+msgstr "Hozzárendeljük a törölt felhasználó hivatkozásait és bejegyzéseit az alábbi felhasználó azonosítóhoz (ID)."
 
 #: wp-includes/script-loader.php:1343
 msgid "This theme does not support video headers on this page. Navigate to the front page or another page that supports video headers."
@@ -13333,11 +13360,11 @@ msgstr "Korlátozza az eredmény készletet az egy vagy több állapothoz rendel
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-post-types-controller.php:387
 msgid "Taxonomies associated with post type."
-msgstr "Osztályokhoz társított bejegyzés típusok."
+msgstr "Osztályozásokhoz társított bejegyzéstípusok."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3119
 msgid "Limit result set to posts with one or more specific slugs."
-msgstr "Korlátozza az eredmény készletet az egy vagy több meghatározott keresőbarát névvel rendelkező bejegyzésekre."
+msgstr "Korlátozza az eredmény készletet az egy vagy több konkrét keresőbarát névvel rendelkező bejegyzésekre."
 
 #: wp-includes/class-wp-xmlrpc-server.php:4055
 msgid "Comment is required."
@@ -13351,16 +13378,16 @@ msgstr "Üres cím."
 msgid "Sorry, trackbacks are closed for this item."
 msgstr "Elnézést, ehhez a tételhez a visszakövetés nincs bekapcsolva."
 
-#: wp-trackback.php:99
-msgid "I really need an ID for this to work."
-msgstr "A működéséhez tényleg szükségem lenne egy azonosítóra."
-
 #: wp-includes/class-wp-customize-manager.php:5692
 #: wp-includes/js/dist/block-library.js:47617
 #: wp-includes/js/dist/editor.js:8774 wp-includes/js/dist/editor.js:79622
 #: wp-admin/includes/file.php:39
 msgid "Homepage"
 msgstr "Kezdőoldal"
+
+#: wp-trackback.php:99
+msgid "I really need an ID for this to work."
+msgstr "A működéséhez tényleg szükségem lenne egy azonosítóra (ID)."
 
 #. translators: 1: Parameter, 2: Minimum number, 3: Maximum number.
 #: wp-includes/rest-api.php:2702
@@ -13415,7 +13442,7 @@ msgstr "Minden további lehetőséget engedélyeztünk a felhasználónak."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1627
 msgid "Limit result set to users matching at least one specific role provided. Accepts csv list or single role."
-msgstr "Korlátozza az eredményhalmazt a legalább egy meghatározott szerepkörhöz tartozó felhasználókra. CSV listát vagy egyetlen szerepet fogad el."
+msgstr "Korlátozza az eredményhalmazt a legalább egy konkrét szerepkörhöz tartozó felhasználókra. CSV listát vagy egyetlen szerepet fogad el."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1506
 msgid "Password for the user (never included)."
@@ -13433,10 +13460,6 @@ msgstr "Minden lehetőséget engedélyeztünk a felhasználónak."
 msgid "The email address for the user."
 msgstr "Felhasználó e-mail címe."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:952
-msgid "Invalid user ID for reassignment."
-msgstr "Érvénytelen felhasználó azonosító az engedélyezéshez."
-
 #. translators: %s: Role key.
 #: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1266
 msgid "The role %s does not exist."
@@ -13449,6 +13472,10 @@ msgstr "Elnézést, nincs megfelelő jogosultság a felhasználó törléséhez.
 #: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:788
 msgid "Username is not editable."
 msgstr "A felhasználónév nem szerkeszthető."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:952
+msgid "Invalid user ID for reassignment."
+msgstr "Érvénytelen felhasználó azonosító (ID) a hozzárendeléshez."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:585
 msgid "Cannot create existing user."
@@ -13467,10 +13494,6 @@ msgstr "Elnézést, nincs megfelelő jogosultság a felhasználó szerepköréne
 #: wp-includes/rest-api/endpoints/class-wp-rest-template-revisions-controller.php:259
 msgid "Sorry, you are not allowed to delete this revision."
 msgstr "Elnézést, a változat törléséhez nincs megfelelő jogosultság."
-
-#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:1201
-msgid "Limit result set to terms assigned to a specific post."
-msgstr "Eredmények korlátozása az adott kifejezésekhez társított bejegyzésekre."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:1097
 msgid "Type attribution for the term."
@@ -13494,11 +13517,15 @@ msgstr "Rejtsünk-e el olyan kifejezéseket, amelyek nincsenek bejegyzésekhez r
 #: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:870
 #: wp-includes/rest-api/endpoints/class-wp-rest-template-revisions-controller.php:303
 msgid "The ID for the parent of the revision."
-msgstr "A változat szülőjéne az azonosítója."
+msgstr "A változat szülőjének azonosítója (ID)."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:1201
+msgid "Limit result set to terms assigned to a specific post."
+msgstr "Eredmények korlátozása az adott kifejezésekhez társított konkrét bejegyzésekre."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:1195
 msgid "Limit result set to terms assigned to a specific parent."
-msgstr "Korlátozza az eredményhalmazt az adott szülőhöz rendelt kifejezésekhez."
+msgstr "Korlátozza az eredményhalmazt a konkrét szülőhöz rendelt kifejezésekhez."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:1068
 msgid "HTML description of the term."
@@ -13518,11 +13545,6 @@ msgstr "A felhasználó egyedi azonosítója."
 msgid "The template cannot be deleted."
 msgstr "A  sablon nem törölhető."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:208
-#: wp-includes/js/dist/editor.js:78693
-msgid "Invalid revision ID."
-msgstr "Hibás verzió ID azonosító."
-
 #: wp-includes/class-wp-customize-nav-menus.php:967
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3215
 msgid "Status is forbidden."
@@ -13541,10 +13563,6 @@ msgstr "True értéknek kell lennie, mert a felhasználókat nem lehet Lomtárba
 msgid "The %s property has an invalid stored value, and cannot be updated to null."
 msgstr "%s tulajdonság érvénytelen tárolt értéket tartalmaz, és nem frissíthető null-ra."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-taxonomies-controller.php:457
-msgid "Limit results to taxonomies associated with a specific post type."
-msgstr "Korlátozzuk az eredményhalmazt egy meghatározott bejegyzés típushoz társított osztályozáshoz."
-
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3141
 msgid "Limit result set to items that are sticky."
 msgstr "Határozzuk meg a maximálisan megjelenített kiemelt elemek számát."
@@ -13553,6 +13571,38 @@ msgstr "Határozzuk meg a maximálisan megjelenített kiemelt elemek számát."
 msgid "Whether or not the term cloud should be displayed."
 msgstr "A kifejezésfelhő legyen-e megjelenítve."
 
+#: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:208
+#: wp-includes/js/dist/editor.js:78693
+msgid "Invalid revision ID."
+msgstr "Hibás verzió azonosító (ID)."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-taxonomies-controller.php:457
+msgid "Limit results to taxonomies associated with a specific post type."
+msgstr "Korlátozzuk az eredményhalmazt egy konkrét bejegyzéstípushoz társított osztályozáshoz."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-menu-items-controller.php:954
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3042
+msgid "Limit result set to posts with a specific menu_order value."
+msgstr "Korlátozza az eredményhalmazt meghatározott menu_order értékkel rendelkező bejegyzésekre."
+
+#. translators: %s: Taxonomy name.
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2784
+msgid "The terms assigned to the post in the %s taxonomy."
+msgstr "A bejegyzéshez rendelt kifejezések a %s osztályozásban."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3099
+msgid "Limit result set to all items except those of a particular parent ID."
+msgstr "Korlátozza az eredményhalmazt minden elemre, kivéve egy adott szülő azonosítóhoz (ID) tartozó elemeket."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3091
+msgid "Limit result set to items with particular parent IDs."
+msgstr "Korlátozzuk az eredménykészletet meghatározott szülő azonosítókkal (ID) rendelkező elemekre."
+
+#. translators: %s: Taxonomy name.
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3378
+msgid "Limit result set to items except those with specific terms assigned in the %s taxonomy."
+msgstr "Korlátozzuk az eredményhalmazt az összes olyan elemre, amely rendelkezik %s taxonómiához társított konkrét kifejezéssel."
+
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:1745
 #: wp-includes/rest-api/endpoints/class-wp-rest-pattern-directory-controller.php:337
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3054
@@ -13560,38 +13610,15 @@ msgstr "A kifejezésfelhő legyen-e megjelenítve."
 #: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:1156
 #: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1591
 msgid "Offset the result set by a specific number of items."
-msgstr "Az eredmény eltolása egy megadott számú elemmel."
-
-#: wp-includes/rest-api/endpoints/class-wp-rest-menu-items-controller.php:954
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3042
-msgid "Limit result set to posts with a specific menu_order value."
-msgstr "Korlátozza az eredményhalmazt meghatározott menu_order értékkel rendelkező bejegyzésekre."
+msgstr "Az eredmény eltolása egy konkrét számú elemmel."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3001
 msgid "Ensure result set excludes posts assigned to specific authors."
-msgstr "Biztosítsuk, hogy az eredménykészletben nem szerepelnek bizonyos szerzőktől származó bejegyzések."
-
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3091
-msgid "Limit result set to items with particular parent IDs."
-msgstr "Korlátozzuk az eredménykészletet meghatározott szülőkkel rendelkező elemekre."
+msgstr "Biztosítsuk, hogy az eredménykészletben nem szerepelnek konkrét szerzőktől származó bejegyzések."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2993
 msgid "Limit result set to posts assigned to specific authors."
-msgstr "Korlátozzuk az eredménykészletet bizonyos szerzőkhöz rendelt bejegyzésekre."
-
-#. translators: %s: Taxonomy name.
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3378
-msgid "Limit result set to items except those with specific terms assigned in the %s taxonomy."
-msgstr "Korlátozzuk az eredményhalmazt az összes olyan elemre, amely rendelkezik %s taxonómiához társított kifejezéssel."
-
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3099
-msgid "Limit result set to all items except those of a particular parent ID."
-msgstr "Korlátozza az eredményhalmazt minden elemre, kivéve egy adott szülő azonosítóhoz tartozó elemeket."
-
-#. translators: %s: Taxonomy name.
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2784
-msgid "The terms assigned to the post in the %s taxonomy."
-msgstr "A bejegyzéshez rendelt kifejezések a %s osztályozásban."
+msgstr "Korlátozzuk az eredménykészletet konkrét szerzőkhöz rendelt bejegyzésekre."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2498
 msgid "A password to protect access to the content and excerpt."
@@ -13667,17 +13694,6 @@ msgstr "A bejegyzés elnevezett állapota."
 msgid "HTML title for the post, transformed for display."
 msgstr "A bejegyzés HTML címe, megjelenítéshez átalakítva."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-autosaves-controller.php:285
-#: wp-includes/rest-api/endpoints/class-wp-rest-font-faces-controller.php:774
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1456
-#: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:153
-msgid "Invalid post parent ID."
-msgstr "Érvénytelen bejegyzés szülő ID."
-
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1623
-msgid "Invalid featured media ID."
-msgstr "Érvénytelen kiemelt média ID."
-
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1440
 msgid "A password protected post can not be set to sticky."
 msgstr "Egy jelszóval védett bejegyzést nem állíthatunk be kiemeltnek."
@@ -13713,6 +13729,17 @@ msgstr "A változat GUID-ja, ahogyan az adatbázisban szerepel."
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2440
 msgid "GUID for the post, transformed for display."
 msgstr "A bejegyzés GUID-ja, megjelenítéshez átalakítva."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1623
+msgid "Invalid featured media ID."
+msgstr "Érvénytelen kiemelt média azonosító (ID)."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-autosaves-controller.php:285
+#: wp-includes/rest-api/endpoints/class-wp-rest-font-faces-controller.php:774
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1456
+#: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:153
+msgid "Invalid post parent ID."
+msgstr "Érvénytelen szülő bejegyzés azonosító (ID)."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1161
 msgid "The post has already been deleted."
@@ -13781,10 +13808,6 @@ msgstr "Minden szerepkör, amit az osztályozás (taxonomy) használ."
 msgid "Human-readable labels for the taxonomy for various contexts."
 msgstr "Ember által olvasható címkék a taxonómia számára különböző kontextusokban."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-post-statuses-controller.php:336
-msgid "Whether to include posts in the edit listing for their post type."
-msgstr "Megjelenítjük-e a bejegyzéseket a bejegyzés típus szerkesztési listájában, vagy sem."
-
 #: wp-includes/rest-api/endpoints/class-wp-rest-post-statuses-controller.php:330
 msgid "Whether posts with this status should be publicly-queryable."
 msgstr "Az ilyen állapotú bejegyzések nyilvánosan lekérdezhetőek legyenek-e vagy sem."
@@ -13797,15 +13820,15 @@ msgstr "Elnézést, a bejegyzések állapotának kezeléséhez nincs megfelelő 
 msgid "Whether or not the taxonomy should have children."
 msgstr "Az osztályozás támogassa-e a gyermek elemeket."
 
+#: wp-includes/rest-api/endpoints/class-wp-rest-post-statuses-controller.php:336
+msgid "Whether to include posts in the edit listing for their post type."
+msgstr "Hogy megjelenítjük-e a bejegyzéseket a bejegyzéstípus szerkesztési listájában."
+
 #: wp-includes/rest-api/endpoints/class-wp-rest-abilities-v1-categories-controller.php:279
 #: wp-includes/rest-api/endpoints/class-wp-rest-abilities-v1-list-controller.php:340
 #: wp-includes/rest-api/endpoints/class-wp-rest-controller.php:345
 msgid "Current page of the collection."
 msgstr "A gyűjtemény aktuális oldala."
-
-#: wp-includes/rest-api/endpoints/class-wp-rest-post-statuses-controller.php:312
-msgid "Whether posts with this status should be private."
-msgstr "Legyenek-e privátok azok a bejegyzések, amik ilyen állapotúak."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-abilities-v1-categories-controller.php:285
 #: wp-includes/rest-api/endpoints/class-wp-rest-abilities-v1-list-controller.php:346
@@ -13837,6 +13860,10 @@ msgstr "A terjedelem amelyre az elküldött kérés vonatkozik; a válaszban kü
 msgid "Limit results to those matching a string."
 msgstr "Eredmények szűkítése a karakterláncot tartalmazókra."
 
+#: wp-includes/rest-api/endpoints/class-wp-rest-post-statuses-controller.php:312
+msgid "Whether posts with this status should be private."
+msgstr "Hogy ezek az állapotú bejegyzések magánjellegűek legyenek-e."
+
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:1750
 #: wp-includes/rest-api/endpoints/class-wp-rest-menu-items-controller.php:959
 #: wp-includes/rest-api/endpoints/class-wp-rest-pattern-directory-controller.php:342
@@ -13852,57 +13879,31 @@ msgstr "Rendezd a tulajdonságokat csökkenő vagy növekvő sorrendbe."
 msgid "Sort collection by object attribute."
 msgstr "Gyűjtemény rendezése objektum tulajdonság szerint."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:1785
-msgid "Ensure result set excludes specific parent IDs."
-msgstr "Biztosítsuk, hogy az eredménykészletben nem szerepelnek bizonyos szülő azonosítók."
-
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:1803
 msgid "Limit result set to comments assigned a specific status. Requires authorization."
 msgstr "Korlátozzuk az eredményhalmazt a megadott állapothoz tartozó hozzászólásokra. Bejelentkezést igényel."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:1811
-msgid "Limit result set to comments assigned a specific type. Requires authorization."
-msgstr "Korlátozza az eredményhalmazt az adott típushoz rendelt megjegyzésekre. Bejelentkezést igényel."
-
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:1794
 msgid "Limit result set to comments assigned to specific post IDs."
-msgstr "Korlátozza az eredményhalmazt konkrét bejegyzés azonosítókhoz rendelt megjegyzésekre."
+msgstr "Korlátozza az eredményhalmazt konkrét bejegyzés azonosítókhoz (ID) rendelt megjegyzésekre."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:1776
 msgid "Limit result set to comments of specific parent IDs."
-msgstr "Korlátozza az eredményhalmazt konkrét szülő azonosítókhoz tartozó megjegyzésekre."
+msgstr "Korlátozza az eredményhalmazt konkrét szülő azonosítókhoz (ID) tartozó megjegyzésekre."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:1785
+msgid "Ensure result set excludes specific parent IDs."
+msgstr "Biztosítsuk, hogy az eredménykészletben nem szerepelnek konkrét szülő azonosítók (ID)."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:1811
+msgid "Limit result set to comments assigned a specific type. Requires authorization."
+msgstr "Korlátozza az eredményhalmazt a konkrét típushoz rendelt megjegyzésekre. Bejelentkezést igényel."
 
 #. translators: %d: Avatar image size in pixels.
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:1656
 #: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1537
 msgid "Avatar URL with image size of %d pixels."
 msgstr "Avatar URL %d pixel méretben."
-
-#: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:1736
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3032
-#: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:931
-#: wp-includes/rest-api/endpoints/class-wp-rest-search-controller.php:348
-#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:1146
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1582
-msgid "Limit result set to specific IDs."
-msgstr "Eredmények szűrése speciális azonosítókkal (ID)."
-
-#: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:1727
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3023
-#: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:922
-#: wp-includes/rest-api/endpoints/class-wp-rest-search-controller.php:339
-#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:1137
-#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1573
-msgid "Ensure result set excludes specific IDs."
-msgstr "Biztosítsa, hogy az eredményhalmaz kizár konkrét egyedi azonosítókat."
-
-#: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:1706
-msgid "Ensure result set excludes comments assigned to specific user IDs. Requires authorization."
-msgstr "Győződjön meg arról, hogy az eredményhalmaz nem tartalmazz konkrét felhasználói azonosítóhoz rendelt megjegyzéseket. Bejelentkezést igényel."
-
-#: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:1698
-msgid "Limit result set to comments assigned to specific user IDs. Requires authorization."
-msgstr "Korlátozza az eredményhalmazt az egyes felhasználói azonosítókhoz rendelt megjegyzésekre. Bejelentkezést igényel."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3011
 msgid "Limit response to posts published before a given ISO8601 compliant date."
@@ -13916,9 +13917,35 @@ msgstr "Hozzászólások korlátozása a megadott ISO8601 formátumú dátum ut�
 msgid "Avatar URLs for the comment author."
 msgstr "A hozzászólás szerzőjének avatar URL-jei."
 
+#: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:1736
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3032
+#: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:931
+#: wp-includes/rest-api/endpoints/class-wp-rest-search-controller.php:348
+#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:1146
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1582
+msgid "Limit result set to specific IDs."
+msgstr "Eredmények szűrése konkrét azonosítókra (ID)."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:1727
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:3023
+#: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:922
+#: wp-includes/rest-api/endpoints/class-wp-rest-search-controller.php:339
+#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:1137
+#: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1573
+msgid "Ensure result set excludes specific IDs."
+msgstr "Biztosítsa, hogy az eredményhalmaz kizár konkrét egyedi azonosítókat (ID)."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:1706
+msgid "Ensure result set excludes comments assigned to specific user IDs. Requires authorization."
+msgstr "Győződjön meg arról, hogy az eredményhalmaz nem tartalmazz konkrét felhasználói azonosítóhoz (ID) rendelt megjegyzéseket. Bejelentkezést igényel."
+
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:1715
 msgid "Limit result set to that from a specific author email. Requires authorization."
-msgstr "Korlátozza az eredményhalmazt egy adott szerzői e-mail címre. Bejelentkezést igényel."
+msgstr "Korlátozza az eredményhalmazt egy konkrét szerzői e-mail címre. Bejelentkezést igényel."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:1698
+msgid "Limit result set to comments assigned to specific user IDs. Requires authorization."
+msgstr "Korlátozza az eredményhalmazt a konkrét felhasználói azonosítókhoz (ID) rendelt megjegyzésekre. Bejelentkezést igényel."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-search-controller.php:269
 msgid "URL to the object."
@@ -13956,10 +13983,6 @@ msgstr "Az bejegyzés publikálásának időpontja GMT szerinti."
 msgid "The comment has already been trashed."
 msgstr "A hozzászólás már a lomtárba került."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:1452
-msgid "Invalid comment author ID."
-msgstr "A hozzászólás írójának téves az azonosítója."
-
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:1124
 msgid "The comment cannot be deleted."
 msgstr "Nem törölhető a hozzászólás."
@@ -13968,10 +13991,6 @@ msgstr "Nem törölhető a hozzászólás."
 #: wp-includes/rest-api/endpoints/class-wp-rest-search-controller.php:257
 msgid "Unique identifier for the object."
 msgstr "Az objektum egyedi azonosítója."
-
-#: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:1535
-msgid "The ID of the user object, if author was a user."
-msgstr "A felhasználói objektum azonosítója, ha a szerző egy felhasználó."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:1564
 msgid "URL for the comment author."
@@ -13992,6 +14011,14 @@ msgstr "A hozzászólás szerzőjének User agent mezője."
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:1540
 msgid "Email address for the comment author."
 msgstr "A hozzászólás szerzőjének e-mail címe."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:1535
+msgid "The ID of the user object, if author was a user."
+msgstr "A felhasználói objektum azonosítója (ID), ha a szerző egy felhasználó volt."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:1452
+msgid "Invalid comment author ID."
+msgstr "Érvénytelen hozzászólás író azonosító (ID)."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:992
 msgid "Updating comment failed."
@@ -14061,7 +14088,7 @@ msgstr "Nincsenek megadott adatok."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:1803
 msgid "The ID for the associated post of the attachment."
-msgstr "A csatolmányhoz kapcsolódó bejegyzés azonosítója."
+msgstr "A csatolmányhoz kapcsolódó bejegyzés azonosítója (ID)."
 
 #: wp-includes/class-wp-post-type.php:1001 wp-admin/edit-form-advanced.php:412
 msgid "Page Attributes"
@@ -15029,7 +15056,7 @@ msgstr "Használjuk helyette az %s kifejezést."
 
 #: wp-includes/class-wp-term.php:160
 msgid "Term ID is shared between multiple taxonomies"
-msgstr "A kifejezés azonosítók az osztályozások között meg vannak osztva"
+msgstr "A kifejezés azonosító (ID) az osztályozások között meg van osztva"
 
 #. translators: Month name, genitive.
 #: wp-includes/class-wp-locale.php:194
@@ -15157,7 +15184,7 @@ msgstr "A keresett %s honlap nem található."
 #. translators: %s: A link to the embedded site.
 #: wp-includes/theme-compat/embed-404.php:21
 msgid "It looks like nothing was found at this location. Maybe try visiting %s directly?"
-msgstr "Úgy tűnik, ezen a helyen nem található semmi érdemleges. Keressük fel a %s hivatkozást közvetlenül?"
+msgstr "Úgy tűnik, ezen a helyen nem található semmi érdemleges. Meglátogassuk a %s hivatkozást közvetlenül?"
 
 #. translators: %s: Post title.
 #: wp-includes/embed.php:1020 wp-includes/post-template.php:303
@@ -15212,7 +15239,7 @@ msgstr "Ez azt jelenti, hogy a kapcsolat megszakadt a(z) %s adatbázis kiszolgá
 #: wp-includes/class-wpdb.php:2026 wp-includes/class-wpdb.php:2187
 #: wp-includes/load.php:218
 msgid "If you are unsure what these terms mean you should probably contact your host. If you still need help you can always visit the <a href=\"%s\">WordPress support forums</a>."
-msgstr "Ha bizonytalanok vagyunk abban, hogy mit jelentenek ezek a kifejezések, lépjünk kapcsolatba a tárhelyszolgáltatónkkal. Segítségért bármikor felkereshetjük a <a href=\"%s\">WordPress támogatói fórum</a> oldalát."
+msgstr "Ha bizonytalanok vagyunk abban, hogy mit jelentenek ezek a kifejezések, lépjünk kapcsolatba a tárhelyszolgáltatónkkal. Segítségért bármikor meglátogathatjuk a <a href=\"%s\">WordPress támogatói fórum</a> oldalát."
 
 #: wp-includes/class-wpdb.php:2019
 msgid "Are you sure you have the correct username and password?"
@@ -15740,7 +15767,7 @@ msgstr "A felhasználónév ne haladja meg a 60 karakternyi hosszúságot."
 
 #: wp-includes/pluggable.php:2381
 msgid "To set your password, visit the following address:"
-msgstr "A jelszó megadásához a következő címet kell felkeresni:"
+msgstr "A jelszó megadásához a következő címet kell meglátogatni:"
 
 #: wp-includes/class-wp-customize-nav-menus.php:546
 #: wp-includes/customize/class-wp-customize-nav-menu-control.php:55
@@ -17487,10 +17514,6 @@ msgstr "Vágjuk ki a képet"
 msgid "There are no associated subtitles."
 msgstr "Nincsenek hozzárendelt feliratok."
 
-#: wp-includes/nav-menu.php:430
-msgid "Invalid menu ID."
-msgstr "Hibás menü azonosító."
-
 #: wp-includes/media.php:5260
 msgid "Drag and drop to reorder videos."
 msgstr "A videók sorrendje megváltoztatható, csak meg kell fogni, és az új helyre kell húzni."
@@ -17517,9 +17540,13 @@ msgstr "Kijelölése és levágás"
 msgid "&#8592; Cancel video playlist"
 msgstr "&#8592; Videó lejátszási lista megszakítása"
 
+#: wp-includes/nav-menu.php:430
+msgid "Invalid menu ID."
+msgstr "Hibás menü azonosító (ID)."
+
 #: wp-includes/user.php:3080
 msgid "Hint: The password should be at least twelve characters long. To make it stronger, use upper and lower case letters, numbers, and symbols like ! \" ? $ % ^ &amp; )."
-msgstr "Tanács: A jelszó legalább 12 karakter hosszúságú legyen. A nehezebb kitalálhatóság érdekében tartalmazzon kis és nagy betűket, számokat és különféle különleges karaktereket, mint pl.:  ! \" ? $ % ^ &amp; )."
+msgstr "Tanács: A jelszó legalább 12 karakter hosszúságú legyen. A nehezebb kitalálhatóság érdekében tartalmazzon kis és nagy betűket, számokat és különféle különleges karaktereket, mint pl. ! \" ? $ % ^ &amp; )."
 
 #: wp-includes/class-wp-editor.php:1231 wp-includes/js/dist/components.js:33518
 #: wp-includes/js/dist/editor.js:90338
@@ -18213,7 +18240,7 @@ msgstr "Honlap cím (URL)"
 #: wp-includes/user.php:2750 wp-admin/user-edit.php:28
 #: wp-admin/user-edit.php:30
 msgid "Invalid user ID."
-msgstr "Hibás felhasználói azonosító (ID)."
+msgstr "Hibás felhasználó azonosító (ID)."
 
 #: wp-includes/media-template.php:994
 msgid "Random Order"
@@ -18707,7 +18734,7 @@ msgstr "Elégtelen számú paraméter került átadásra ennek az XML-RPC metód
 
 #: wp-includes/class-wp-xmlrpc-server.php:1402
 msgid "Sorry, you cannot stick a private post."
-msgstr "Elnézést, egy magánbejegyzést nem lehet ragadóssá tenni."
+msgstr "Elnézést, magánjellegű bejegyzést nem lehet ragadóssá tenni."
 
 #: wp-includes/class-wp-xmlrpc-server.php:6012
 msgid "Sorry, you are not allowed to publish this page."
@@ -18827,6 +18854,11 @@ msgstr "Eltávolítás"
 msgid "Allowed Files"
 msgstr "Engedélyezett fájlok"
 
+#: wp-includes/class-wp-xmlrpc-server.php:2157
+#: wp-includes/class-wp-xmlrpc-server.php:2276
+msgid "The term name cannot be empty."
+msgstr "A kifejezés neve nem lehet üres."
+
 #: wp-includes/class-wp-tax-query.php:549
 #: wp-includes/class-wp-tax-query.php:556 wp-includes/class-wp-term.php:173
 #: wp-includes/class-wp-xmlrpc-server.php:2141
@@ -18846,11 +18878,6 @@ msgstr "Engedélyezett fájlok"
 msgid "Invalid taxonomy."
 msgstr "Érvénytelen rendszertan."
 
-#: wp-includes/class-wp-xmlrpc-server.php:2157
-#: wp-includes/class-wp-xmlrpc-server.php:2276
-msgid "The term name cannot be empty."
-msgstr "A kifejezés neve nem lehet üres."
-
 #: wp-includes/class-wp-xmlrpc-server.php:2173
 #: wp-includes/class-wp-xmlrpc-server.php:2293
 #: wp-includes/rest-api/endpoints/class-wp-rest-menus-controller.php:213
@@ -18864,15 +18891,6 @@ msgstr "Szülő kifejezés nem érhető el."
 #: wp-includes/class-wp-xmlrpc-server.php:2162
 msgid "This taxonomy is not hierarchical."
 msgstr "Ez az osztályozás nem támogatja az alá- és fölérendelést."
-
-#: wp-includes/class-wp-xmlrpc-server.php:1631
-#: wp-includes/class-wp-xmlrpc-server.php:2265
-#: wp-includes/class-wp-xmlrpc-server.php:2375
-#: wp-includes/class-wp-xmlrpc-server.php:2455
-#: wp-includes/rest-api/endpoints/class-wp-rest-menu-items-controller.php:437
-#: wp-includes/taxonomy.php:2482
-msgid "Invalid term ID."
-msgstr "Érvénytelen kifejezés ID."
 
 #: wp-includes/class-wp-xmlrpc-server.php:2147
 #: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:511
@@ -18904,6 +18922,15 @@ msgstr "Bocsánat, ebben a taxonómiában nem lehetséges kifejezések hozzáren
 msgid "Sorry, you are not allowed to manage terms in this taxonomy."
 msgstr "Sajnáljuk, nincs megfelelő jogosultság a kifejezés kezeléséhez ebben az osztályozásban."
 
+#: wp-includes/class-wp-xmlrpc-server.php:1631
+#: wp-includes/class-wp-xmlrpc-server.php:2265
+#: wp-includes/class-wp-xmlrpc-server.php:2375
+#: wp-includes/class-wp-xmlrpc-server.php:2455
+#: wp-includes/rest-api/endpoints/class-wp-rest-menu-items-controller.php:437
+#: wp-includes/taxonomy.php:2482
+msgid "Invalid term ID."
+msgstr "Érvénytelen kifejezés azonosító (ID)."
+
 #: wp-includes/widgets/class-wp-widget-links.php:147
 msgid "Select Link Category:"
 msgstr "Hivatkozás-kategória kijelölése:"
@@ -18932,13 +18959,13 @@ msgstr "Hivatkozás címe"
 msgid "Link rating"
 msgstr "Hivatkozás értékelése"
 
-#: wp-includes/widgets/class-wp-widget-links.php:160
-msgid "Link ID"
-msgstr "Hivatkozás URL"
-
 #: wp-includes/widgets/class-wp-widget-links.php:183
 msgid "Number of links to show:"
 msgstr "Mutatott hivatkozások száma:"
+
+#: wp-includes/widgets/class-wp-widget-links.php:160
+msgid "Link ID"
+msgstr "Hivatkozás azonosító (ID)"
 
 #: wp-includes/class-wp-theme.php:333
 msgid "Stylesheet is not readable."
@@ -19036,31 +19063,11 @@ msgctxt "tag delimiter"
 msgid ","
 msgstr ","
 
-#: wp-includes/class-wp-xmlrpc-server.php:1545
-#: wp-includes/class-wp-xmlrpc-server.php:5522
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1404
-#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:651
-msgid "Invalid author ID."
-msgstr "Érvénytelen szerző ID."
-
 #: wp-includes/rest-api/endpoints/class-wp-rest-menu-items-controller.php:309
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1178
 #: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:540
 msgid "The post cannot be deleted."
 msgstr "A bejegyzés nem törölhető."
-
-#: wp-includes/class-wp-xmlrpc-server.php:1678
-msgid "Ambiguous term name used in a hierarchical taxonomy. Please use term ID instead."
-msgstr "Kétértelmű kifejezés nevet használtunk az osztályozási szerkezetben. Adjuk meg inkább a kifejezés azonosító számát."
-
-#: wp-includes/class-wp-xmlrpc-server.php:1533
-msgid "Sorry, you are not allowed to create password protected posts in this post type."
-msgstr "Elnézést, de nincs megfelelő jogosultság létrehozni jelszóval védett bejegyzéseket ebben a bejegyzés típusban."
-
-#: wp-includes/class-wp-xmlrpc-server.php:1516
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1579
-msgid "Sorry, you are not allowed to create private posts in this post type."
-msgstr "Elnézést, ebben a bejegyzéstípusban nincs megfelelő jogosultság magánbejegyzést létrehozni."
 
 #: wp-includes/class-wp-xmlrpc-server.php:3550
 msgid "Sorry, you are not allowed to delete this category."
@@ -19102,6 +19109,26 @@ msgstr "Sajnáljuk, nincs jogosultságod megtekinteni ezt az elemet."
 #: wp-admin/edit.php:22 wp-admin/edit.php:47 wp-admin/post.php:147
 msgid "Sorry, you are not allowed to edit posts in this post type."
 msgstr "Sajnáljuk, nincs megfelelő jogosultság a bejegyzés szerkesztéséhez ebben a bejegyzéstípusban."
+
+#: wp-includes/class-wp-xmlrpc-server.php:1516
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1579
+msgid "Sorry, you are not allowed to create private posts in this post type."
+msgstr "Elnézést, ebben a bejegyzéstípusban nincs megfelelő jogosultság magánjellegű bejegyzéseket létrehozni."
+
+#: wp-includes/class-wp-xmlrpc-server.php:1678
+msgid "Ambiguous term name used in a hierarchical taxonomy. Please use term ID instead."
+msgstr "Kétértelmű kifejezés nevet használtunk az osztályozási szerkezetben. Adjuk meg inkább a kifejezés azonosítóját (ID)."
+
+#: wp-includes/class-wp-xmlrpc-server.php:1545
+#: wp-includes/class-wp-xmlrpc-server.php:5522
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1404
+#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:651
+msgid "Invalid author ID."
+msgstr "Érvénytelen szerző azonosító (ID)."
+
+#: wp-includes/class-wp-xmlrpc-server.php:1533
+msgid "Sorry, you are not allowed to create password protected posts in this post type."
+msgstr "Elnézést, de nincs megfelelő jogosultság létrehozni jelszóval védett bejegyzéseket ebben a bejegyzéstípusban."
 
 #. translators: See https://www.php.net/manual/datetime.format.php
 #: wp-includes/general-template.php:1475 wp-includes/general-template.php:1971
@@ -19212,7 +19239,7 @@ msgstr "&#8212;"
 
 #: wp-includes/class-wp-admin-bar.php:140
 msgid "The menu ID should not be empty."
-msgstr "A menü ID nem lehet üres."
+msgstr "A menü azonosító (ID) nem lehet üres."
 
 #. translators: Hidden accessibility text.
 #: wp-includes/admin-bar.php:141 wp-includes/admin-bar.php:145
@@ -19294,7 +19321,7 @@ msgstr "%1$s, %2$s, vagy %3$s hurkok futásáig a szkripteket és stíluslapokat
 #. translators: 1: Home URL, 2: Admin URL.
 #: wp-includes/ms-functions.php:2270
 msgid "You have been added to this site. Please visit the <a href=\"%1$s\">homepage</a> or <a href=\"%2$s\">log in</a> using your username and password."
-msgstr "A honlaphoz hozzáadva. <a href=\"%1$s\">Kezdőlap</a> megtekintése, vagy a megadott felhasználónévvel és jelszóval <a href=\"%2$s\">Bejelentkezés</a>."
+msgstr "Hozzá lettünk adva a honlaphoz. <a href=\"%1$s\">Kezdőlap</a> meglátogatása, vagy a megadott felhasználónévvel és jelszóval <a href=\"%2$s\">Bejelentkezés</a>."
 
 #: wp-includes/script-loader.php:1020
 msgid "Memory exceeded. Please try another smaller file."
@@ -19595,7 +19622,7 @@ msgstr "Rövidített URL"
 #: wp-includes/class-wp-xmlrpc-server.php:5690
 #: wp-includes/class-wp-xmlrpc-server.php:6109
 msgid "Invalid attachment ID."
-msgstr "Érvénytelen csatolmány azonosító."
+msgstr "Érvénytelen csatolmány azonosító (ID)."
 
 #: wp-includes/registration-functions.php:9 wp-includes/registration.php:9
 msgid "This file no longer needs to be included."
@@ -19654,10 +19681,6 @@ msgstr "Új jelszó"
 msgid "Confirm new password"
 msgstr "Az új jelszó megerősítése"
 
-#: wp-includes/user.php:3386
-msgid "To reset your password, visit the following address:"
-msgstr "Az új jelszó megadásához a következő címre kell ellátogatni:"
-
 #: wp-login.php:1015
 msgid "Reset Password"
 msgstr "Új jelszó létrehozása"
@@ -19669,6 +19692,10 @@ msgstr "Amennyiben ezen e-mail címzettje nem érintett a kérdésben, úgy eln�
 #: wp-login.php:998 wp-admin/user-edit.php:745
 msgid "Password Reset"
 msgstr "Jelszó visszaállítás"
+
+#: wp-includes/user.php:3386
+msgid "To reset your password, visit the following address:"
+msgstr "Az új jelszó megadásához a következő címet kell meglátogatni:"
 
 #: wp-includes/admin-bar.php:767
 msgid "Manage Comments"
@@ -19990,6 +20017,10 @@ msgstr "Elnézést, nincs megfelelő jogosultság ezen honlap részleteihez tör
 msgid "The site is already active."
 msgstr "Ez a honlap már be van kapcsolva."
 
+#: wp-includes/class-wp-customize-nav-menus.php:1255
+msgid "Please enter an item title"
+msgstr "Adjunk meg egy elemcímet"
+
 #. translators: New site notification email. 1: Activation URL, 2: New site
 #. URL.
 #: wp-includes/ms-functions.php:1010
@@ -20010,13 +20041,9 @@ msgstr ""
 "\n"
 "Az aktiválást követően érkezik *egy újabb e-mail* a felhasználói adatokkal.\n"
 "\n"
-"Az aktiválást követően a honlap ezen a címen tekinthető meg:\n"
+"Az aktiválást követően a honlap ezen a címen látogatható meg:\n"
 "\n"
 "%2$s"
-
-#: wp-includes/class-wp-customize-nav-menus.php:1255
-msgid "Please enter an item title"
-msgstr "Adjunk meg egy elemcímet"
 
 #: wp-includes/ms-load.php:122
 msgid "This site has been archived or suspended."
@@ -20028,7 +20055,7 @@ msgstr "A keresett honlap nincs telepítve. Értesíteni kellene a rendszeradmin
 
 #: wp-includes/nav-menu.php:424
 msgid "The given object ID is not that of a menu item."
-msgstr "A megadott azonosító nem menü elem."
+msgstr "A megadott azonosító (ID) nem menü elem."
 
 #: wp-includes/formatting.php:5070
 msgid "The Site address you entered did not appear to be a valid URL. Please enter a valid URL."
@@ -20286,15 +20313,6 @@ msgstr "Időzóna"
 msgid "Failed to delete the page."
 msgstr "Az oldal törlése nem sikerült."
 
-#: wp-includes/class-wp-xmlrpc-server.php:3654
-#: wp-includes/class-wp-xmlrpc-server.php:3789
-#: wp-includes/class-wp-xmlrpc-server.php:3857 wp-includes/comment.php:2877
-#: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:397
-#: wp-admin/comment.php:81 wp-admin/comment.php:293
-#: wp-admin/edit-comments.php:297
-msgid "Invalid comment ID."
-msgstr "Érvénytelen hozzászólás azonosító."
-
 #: wp-includes/class-wp-xmlrpc-server.php:3711
 #: wp-includes/class-wp-xmlrpc-server.php:3875
 msgid "Invalid comment status."
@@ -20315,51 +20333,6 @@ msgstr "A megadott URL nem létezik."
 #: wp-includes/load.php:208
 msgid "Your PHP installation appears to be missing the MySQL extension which is required by WordPress."
 msgstr "Úgy tűnik, hogy hiányzik a MySQL kiterjesztés a PHP telepítéséből, pedig arra a WordPressnek szüksége van."
-
-#: wp-includes/class-wp-xmlrpc-server.php:1496
-#: wp-includes/class-wp-xmlrpc-server.php:1799
-#: wp-includes/class-wp-xmlrpc-server.php:1881
-#: wp-includes/class-wp-xmlrpc-server.php:1983
-#: wp-includes/class-wp-xmlrpc-server.php:3030
-#: wp-includes/class-wp-xmlrpc-server.php:3982
-#: wp-includes/class-wp-xmlrpc-server.php:3986
-#: wp-includes/class-wp-xmlrpc-server.php:4147
-#: wp-includes/class-wp-xmlrpc-server.php:4750
-#: wp-includes/class-wp-xmlrpc-server.php:4824
-#: wp-includes/class-wp-xmlrpc-server.php:4828
-#: wp-includes/class-wp-xmlrpc-server.php:4833
-#: wp-includes/class-wp-xmlrpc-server.php:5017
-#: wp-includes/class-wp-xmlrpc-server.php:5824
-#: wp-includes/class-wp-xmlrpc-server.php:6167
-#: wp-includes/class-wp-xmlrpc-server.php:6755
-#: wp-includes/class-wp-xmlrpc-server.php:6813
-#: wp-includes/class-wp-xmlrpc-server.php:6938 wp-includes/comment.php:2886
-#: wp-includes/post.php:4648 wp-includes/post.php:5339
-#: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:417
-#: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:945
-#: wp-includes/rest-api/endpoints/class-wp-rest-menu-items-controller.php:445
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:556
-#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:205
-#: wp-includes/revision.php:362
-msgid "Invalid post ID."
-msgstr "Hibás bejegyzés ID."
-
-#: wp-includes/class-wp-customize-nav-menus.php:961
-#: wp-includes/class-wp-xmlrpc-server.php:1462
-#: wp-includes/class-wp-xmlrpc-server.php:2046
-#: wp-includes/class-wp-xmlrpc-server.php:3723
-#: wp-includes/class-wp-xmlrpc-server.php:4621
-#: wp-includes/class-wp-xmlrpc-server.php:5448
-#: wp-includes/class-wp-xmlrpc-server.php:5518
-#: wp-includes/class-wp-xmlrpc-server.php:5833
-#: wp-includes/class-wp-xmlrpc-server.php:5906 wp-includes/post.php:1929
-#: wp-includes/rest-api/endpoints/class-wp-rest-menu-items-controller.php:457
-#: wp-includes/rest-api/endpoints/class-wp-rest-post-types-controller.php:146
-#: wp-admin/async-upload.php:43 wp-admin/edit.php:18 wp-admin/edit.php:41
-#: wp-admin/post-new.php:24 wp-admin/post.php:143 wp-admin/post.php:258
-#: wp-admin/post.php:295 wp-admin/post.php:324 wp-admin/site-editor.php:170
-msgid "Invalid post type."
-msgstr "Hibás bejegyzés típus."
 
 #: wp-includes/class-wp-xmlrpc-server.php:627
 msgid "Allow new users to sign up"
@@ -20446,6 +20419,60 @@ msgstr "Valós e-mail cím megadása szükséges."
 msgid "Comment author name and email are required."
 msgstr "A hozzászólás írójának meg kell adnia a nevét és e-mail címét."
 
+#: wp-includes/class-wp-xmlrpc-server.php:1496
+#: wp-includes/class-wp-xmlrpc-server.php:1799
+#: wp-includes/class-wp-xmlrpc-server.php:1881
+#: wp-includes/class-wp-xmlrpc-server.php:1983
+#: wp-includes/class-wp-xmlrpc-server.php:3030
+#: wp-includes/class-wp-xmlrpc-server.php:3982
+#: wp-includes/class-wp-xmlrpc-server.php:3986
+#: wp-includes/class-wp-xmlrpc-server.php:4147
+#: wp-includes/class-wp-xmlrpc-server.php:4750
+#: wp-includes/class-wp-xmlrpc-server.php:4824
+#: wp-includes/class-wp-xmlrpc-server.php:4828
+#: wp-includes/class-wp-xmlrpc-server.php:4833
+#: wp-includes/class-wp-xmlrpc-server.php:5017
+#: wp-includes/class-wp-xmlrpc-server.php:5824
+#: wp-includes/class-wp-xmlrpc-server.php:6167
+#: wp-includes/class-wp-xmlrpc-server.php:6755
+#: wp-includes/class-wp-xmlrpc-server.php:6813
+#: wp-includes/class-wp-xmlrpc-server.php:6938 wp-includes/comment.php:2886
+#: wp-includes/post.php:4648 wp-includes/post.php:5339
+#: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:417
+#: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:945
+#: wp-includes/rest-api/endpoints/class-wp-rest-menu-items-controller.php:445
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:556
+#: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:205
+#: wp-includes/revision.php:362
+msgid "Invalid post ID."
+msgstr "Érvénytelen bejegyzés azonosító (ID)."
+
+#: wp-includes/class-wp-xmlrpc-server.php:3654
+#: wp-includes/class-wp-xmlrpc-server.php:3789
+#: wp-includes/class-wp-xmlrpc-server.php:3857 wp-includes/comment.php:2877
+#: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:397
+#: wp-admin/comment.php:81 wp-admin/comment.php:293
+#: wp-admin/edit-comments.php:297
+msgid "Invalid comment ID."
+msgstr "Érvénytelen hozzászólás azonosító (ID)."
+
+#: wp-includes/class-wp-customize-nav-menus.php:961
+#: wp-includes/class-wp-xmlrpc-server.php:1462
+#: wp-includes/class-wp-xmlrpc-server.php:2046
+#: wp-includes/class-wp-xmlrpc-server.php:3723
+#: wp-includes/class-wp-xmlrpc-server.php:4621
+#: wp-includes/class-wp-xmlrpc-server.php:5448
+#: wp-includes/class-wp-xmlrpc-server.php:5518
+#: wp-includes/class-wp-xmlrpc-server.php:5833
+#: wp-includes/class-wp-xmlrpc-server.php:5906 wp-includes/post.php:1929
+#: wp-includes/rest-api/endpoints/class-wp-rest-menu-items-controller.php:457
+#: wp-includes/rest-api/endpoints/class-wp-rest-post-types-controller.php:146
+#: wp-admin/async-upload.php:43 wp-admin/edit.php:18 wp-admin/edit.php:41
+#: wp-admin/post-new.php:24 wp-admin/post.php:143 wp-admin/post.php:258
+#: wp-admin/post.php:295 wp-admin/post.php:324 wp-admin/site-editor.php:170
+msgid "Invalid post type."
+msgstr "Érvénytelen bejegyzéstípus."
+
 #: wp-includes/class-wp-theme.php:1082
 msgid "Gray"
 msgstr "Szürke"
@@ -20485,10 +20512,6 @@ msgstr[1] "Lomtárban <span class=\"count\">(%s)</span>"
 msgid "General"
 msgstr "Általános"
 
-#: wp-includes/cron.php:1137
-msgid "Once Hourly"
-msgstr "Óránként"
-
 #: wp-includes/cron.php:1141
 msgid "Twice Daily"
 msgstr "Naponta kétszer"
@@ -20510,15 +20533,58 @@ msgstr "Oldal cím"
 msgid "Page order"
 msgstr "Oldal sorrend"
 
-#: wp-includes/widgets/class-wp-widget-pages.php:173
-msgid "Page ID"
-msgstr "Oldal ID"
-
 #: wp-includes/widgets/class-wp-widget-calendar.php:38
 #: wp-includes/js/dist/block-library.js:14183
 #: wp-includes/js/dist/components.js:41843
 msgid "Calendar"
 msgstr "Naptár"
+
+#: wp-includes/widgets/class-wp-widget-categories.php:218
+#: wp-includes/js/dist/block-library.js:14608
+#: wp-includes/js/dist/block-library.js:14614
+msgid "Show hierarchy"
+msgstr "Hierarchia mutatása"
+
+#: wp-includes/widgets/class-wp-widget-recent-posts.php:31
+#: wp-includes/widgets/class-wp-widget-recent-posts.php:49
+#: wp-admin/includes/upgrade.php:426
+msgid "Recent Posts"
+msgstr "Legutóbbi bejegyzések"
+
+#: wp-includes/widgets.php:1745
+msgid "Give the feed a title (optional):"
+msgstr "Hírcsatorna neve (opcionális):"
+
+#: wp-includes/widgets.php:1760
+msgid "Display item content?"
+msgstr "Mutassuk az elem tartalmát?"
+
+#: wp-includes/widgets.php:1766
+msgid "Display item date?"
+msgstr "Dátum megjelenítése?"
+
+#: wp-includes/widgets/class-wp-widget-tag-cloud.php:30
+msgid "Tag Cloud"
+msgstr "Címkefelhő"
+
+#. translators: Used between list items, there is a space after the comma.
+#: wp-includes/class-wp-locale.php:241 wp-includes/l10n.php:2046
+#: wp-includes/js/dist/editor.js:4594
+msgid ", "
+msgstr ", "
+
+#. translators: %s: Option name.
+#: wp-includes/option.php:570
+msgid "%s is a protected WP option and may not be modified"
+msgstr "%s egy védett WP beállítás, nem nagyon módosítható"
+
+#: wp-includes/functions.php:2930
+msgid "Empty filename"
+msgstr "Üres fájlnév"
+
+#: wp-includes/functions.php:3937
+msgid "&laquo; Back"
+msgstr "&laquo; Vissza"
 
 #: wp-includes/widgets/class-wp-widget-text.php:43
 #: wp-includes/build/routes/font-list/content.js:24466
@@ -20541,62 +20607,6 @@ msgstr "Naptár"
 #: wp-includes/js/dist/format-library.js:5207
 msgid "Text"
 msgstr "Szöveg"
-
-#: wp-includes/widgets/class-wp-widget-categories.php:218
-#: wp-includes/js/dist/block-library.js:14608
-#: wp-includes/js/dist/block-library.js:14614
-msgid "Show hierarchy"
-msgstr "Hierarchia mutatása"
-
-#: wp-includes/widgets/class-wp-widget-recent-posts.php:31
-#: wp-includes/widgets/class-wp-widget-recent-posts.php:49
-#: wp-admin/includes/upgrade.php:426
-msgid "Recent Posts"
-msgstr "Legutóbbi bejegyzések"
-
-#: wp-includes/widgets/class-wp-widget-recent-posts.php:174
-msgid "Number of posts to show:"
-msgstr "Mutatott bejegyzések száma:"
-
-#: wp-includes/widgets.php:1745
-msgid "Give the feed a title (optional):"
-msgstr "Hírcsatorna neve (opcionális):"
-
-#: wp-includes/widgets.php:1760
-msgid "Display item content?"
-msgstr "Mutassuk az elem tartalmát?"
-
-#: wp-includes/widgets.php:1766
-msgid "Display item date?"
-msgstr "Dátum megjelenítése?"
-
-#: wp-includes/widgets/class-wp-widget-tag-cloud.php:30
-msgid "Tag Cloud"
-msgstr "Címkefelhő"
-
-#. translators: Comments feed title. 1: Site title, 2: Search query.
-#: wp-includes/feed-atom-comments.php:37 wp-includes/feed-rss2-comments.php:42
-msgid "Comments for %1$s searching on %2$s"
-msgstr "%1$s hozzászólás a %2$s kifejezésre"
-
-#. translators: Used between list items, there is a space after the comma.
-#: wp-includes/class-wp-locale.php:241 wp-includes/l10n.php:2046
-#: wp-includes/js/dist/editor.js:4594
-msgid ", "
-msgstr ", "
-
-#. translators: %s: Option name.
-#: wp-includes/option.php:570
-msgid "%s is a protected WP option and may not be modified"
-msgstr "%s egy védett WP beállítás, nem nagyon módosítható"
-
-#: wp-includes/functions.php:2930
-msgid "Empty filename"
-msgstr "Üres fájlnév"
-
-#: wp-includes/functions.php:3937
-msgid "&laquo; Back"
-msgstr "&laquo; Vissza"
 
 #: wp-includes/functions.php:4413
 #: wp-includes/sitemaps/class-wp-sitemaps-renderer.php:266 wp-load.php:104
@@ -20638,11 +20648,6 @@ msgstr "%1$s %2$s hozzászólás hírcsatorna"
 #: wp-includes/general-template.php:3553
 msgid "%1$s %2$s %3$s Comments Feed"
 msgstr "%1$s %2$s %3$s hozzászólás hírcsatorna"
-
-#. translators: 1: Site name, 2: Separator (raquo), 3: Search query.
-#: wp-includes/general-template.php:3563
-msgid "%1$s %2$s Search Results for &#8220;%3$s&#8221; Feed"
-msgstr "%1$s %2$s Keresés eredménye a(z) &quot;%3$s&quot; feed-ben"
 
 #: wp-includes/general-template.php:4941
 msgid "&laquo; Previous"
@@ -20706,14 +20711,6 @@ msgstr "Cella tulajdonságai"
 msgid "Table properties"
 msgstr "Táblázat tulajdonságai"
 
-#: wp-includes/class-wp-editor.php:1325
-msgid "Paste table row before"
-msgstr "Táblázat beszúrása elé"
-
-#: wp-includes/class-wp-editor.php:1326
-msgid "Paste table row after"
-msgstr "Táblázat beszúrása mögé"
-
 #: wp-includes/class-wp-editor.php:1329
 msgid "Cut table row"
 msgstr "Táblázat sorának kivágása"
@@ -20773,12 +20770,6 @@ msgstr "Dőlt"
 #: wp-includes/js/dist/format-library.js:5151
 msgid "Underline"
 msgstr "Aláhúzás"
-
-#: wp-includes/class-wp-editor.php:1162
-#: wp-includes/js/dist/block-editor.js:66642
-#: wp-includes/js/dist/format-library.js:5111
-msgid "Strikethrough"
-msgstr "Áthúzott"
 
 #: wp-includes/class-wp-editor.php:1163
 #: wp-includes/js/dist/format-library.js:5442
@@ -21200,13 +21191,6 @@ msgstr "A regisztráció jelenleg nem elérhető."
 msgid "User registration has been disabled."
 msgstr "Felhasználók regisztrációja jelenleg nem lehetséges."
 
-#. translators: Comment moderation. %s: Number of comments awaiting approval.
-#: wp-includes/pluggable.php:2146
-msgid "Currently %s comment is waiting for approval. Please visit the moderation panel:"
-msgid_plural "Currently %s comments are waiting for approval. Please visit the moderation panel:"
-msgstr[0] "Pillanatnyilag %s hozzászólás várakozik elfogadásra. A moderációs lista megtekintése:"
-msgstr[1] "Pillanatnyilag %s hozzászólás várakozik elfogadásra. A moderációs lista megtekintése:"
-
 #. translators: 1: Site name, 2: Separator (raquo), 3: Category name.
 #: wp-includes/general-template.php:3555
 msgid "%1$s %2$s %3$s Category Feed"
@@ -21309,10 +21293,6 @@ msgstr "Ez a paraméter tömbbé módosult, hogy hasonlóan működjön, mint m�
 #: wp-includes/widgets/class-wp-widget-pages.php:178
 msgid "Exclude:"
 msgstr "Kizárás:"
-
-#: wp-includes/widgets/class-wp-widget-pages.php:181
-msgid "Page IDs, separated by commas."
-msgstr "Oldal ID-k, vesszővel elválasztva."
 
 #: wp-includes/widgets/class-wp-widget-links.php:26
 msgid "Your blogroll"
@@ -21457,11 +21437,6 @@ msgstr "%2$s hozzászólása (%1$s)"
 msgid "Page not found"
 msgstr "Oldal nem található"
 
-#: wp-includes/class-wp-editor.php:1262 wp-includes/class-wp-editor.php:1882
-#: wp-includes/script-loader.php:1275
-msgid "Insert/edit link"
-msgstr "Hivatkozás beillesztés/szerkesztés"
-
 #: wp-includes/class-wp-editor.php:1154 wp-includes/script-loader.php:813
 msgid "Blockquote"
 msgstr "Hosszabb idézet"
@@ -21521,18 +21496,6 @@ msgstr "Hivatkozás eltávolítása"
 msgid "What do I do now?"
 msgstr "Mi legyen a következő lépés?"
 
-#. translators: %s: Private post title.
-#: wp-includes/post-template.php:147
-msgid "Private: %s"
-msgstr "Magán: %s"
-
-#. translators: %s: Number of private posts.
-#: wp-includes/post.php:725
-msgid "Private <span class=\"count\">(%s)</span>"
-msgid_plural "Private <span class=\"count\">(%s)</span>"
-msgstr[0] "Magán <span class=\"count\">(%s)</span>"
-msgstr[1] "Magán <span class=\"count\">(%s)</span>"
-
 #. translators: %s: Revision date.
 #. translators: %s: Revision date with author avatar.
 #: wp-includes/post-template.php:1943 wp-includes/post-template.php:2004
@@ -21562,14 +21525,6 @@ msgstr "A fájl túl nagy! A fájl méretének kisebbnek kell lennie %s KB-nál.
 #: wp-signup.php:714
 msgid "%s is your new username"
 msgstr "Az új felhasználónév: %s"
-
-#: wp-includes/rest-api/endpoints/class-wp-rest-autosaves-controller.php:195
-msgid "Invalid item ID."
-msgstr "Érvénytelen tétel ID."
-
-#: wp-includes/taxonomy.php:4947
-msgid "Invalid object ID."
-msgstr "Hibás objektum ID."
 
 #: wp-includes/script-loader.php:999
 msgid "Next &gt;"
@@ -21702,16 +21657,6 @@ msgid "%s hour"
 msgid_plural "%s hours"
 msgstr[0] "%s óra"
 msgstr[1] "%s óra"
-
-#. translators: Comments feed title. %s: Post title.
-#: wp-includes/feed-rss2-comments.php:39
-msgid "Comments on: %s"
-msgstr "Hozzászólások ehhez: %s"
-
-#. translators: Comments feed title. %s: Site title.
-#: wp-includes/feed-atom-comments.php:40 wp-includes/feed-rss2-comments.php:45
-msgid "Comments for %s"
-msgstr "Hozzászólások ehhez: %s"
 
 #: wp-includes/user.php:3184 wp-includes/user.php:3188
 #: wp-includes/user.php:3194 wp-includes/user.php:3215
@@ -21942,25 +21887,91 @@ msgstr "E-mail&nbsp;cím"
 msgid "Missing Attachment"
 msgstr "Hiányzó csatolmány"
 
+#. translators: %s: Number of private posts.
+#: wp-includes/post.php:725
+msgid "Private <span class=\"count\">(%s)</span>"
+msgid_plural "Private <span class=\"count\">(%s)</span>"
+msgstr[0] "Magánjellegű <span class=\"count\">(%s)</span>"
+msgstr[1] "Magánjellegű <span class=\"count\">(%s)</span>"
+
+#. translators: %s: Private post title.
+#: wp-includes/post-template.php:147
+msgid "Private: %s"
+msgstr "Magánjellegű: %s"
+
+#. translators: Comment moderation. %s: Number of comments awaiting approval.
+#: wp-includes/pluggable.php:2146
+msgid "Currently %s comment is waiting for approval. Please visit the moderation panel:"
+msgid_plural "Currently %s comments are waiting for approval. Please visit the moderation panel:"
+msgstr[0] "Pillanatnyilag %s hozzászólás várakozik elfogadásra. A moderációs lista meglátogatása:"
+msgstr[1] "Pillanatnyilag %s hozzászólás várakozik elfogadásra. A moderációs lista meglátogatása:"
+
+#: wp-includes/cron.php:1137
+msgid "Once Hourly"
+msgstr "Óránként egyszer"
+
+#: wp-includes/taxonomy.php:4947
+msgid "Invalid object ID."
+msgstr "Érvénytelen objektum azonosító (ID)."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-autosaves-controller.php:195
+msgid "Invalid item ID."
+msgstr "Érvénytelen elem azonosító (ID)."
+
+#: wp-includes/widgets/class-wp-widget-pages.php:181
+msgid "Page IDs, separated by commas."
+msgstr "Oldal azonosítók (ID), vesszővel elválasztva."
+
+#: wp-includes/widgets/class-wp-widget-pages.php:173
+msgid "Page ID"
+msgstr "Oldal azonosító (ID)"
+
+#: wp-includes/widgets/class-wp-widget-recent-posts.php:174
+msgid "Number of posts to show:"
+msgstr "Megjelenítendő bejegyzések száma:"
+
+#. translators: Comments feed title. %s: Site title.
+#: wp-includes/feed-atom-comments.php:40 wp-includes/feed-rss2-comments.php:45
+msgid "Comments for %s"
+msgstr "%s hozzászólásai"
+
+#. translators: Comments feed title. %s: Post title.
+#: wp-includes/feed-rss2-comments.php:39
+msgid "Comments on: %s"
+msgstr "%s hozzászólásai"
+
+#. translators: Comments feed title. 1: Site title, 2: Search query.
+#: wp-includes/feed-atom-comments.php:37 wp-includes/feed-rss2-comments.php:42
+msgid "Comments for %1$s searching on %2$s"
+msgstr "%2$s kifejezésre történt keresés hozzászólásai (%1$s)"
+
+#. translators: 1: Site name, 2: Separator (raquo), 3: Search query.
+#: wp-includes/general-template.php:3563
+msgid "%1$s %2$s Search Results for &#8220;%3$s&#8221; Feed"
+msgstr "%1$s %2$s Keresés eredménye a(z) &quot;%3$s&quot; feedben"
+
+#: wp-includes/class-wp-editor.php:1262 wp-includes/class-wp-editor.php:1882
+#: wp-includes/script-loader.php:1275
+msgid "Insert/edit link"
+msgstr "Hivatkozás beszúrása/szerkesztése"
+
+#: wp-includes/class-wp-editor.php:1325
+msgid "Paste table row before"
+msgstr "Táblázat sor beszúrása elé"
+
+#: wp-includes/class-wp-editor.php:1326
+msgid "Paste table row after"
+msgstr "Táblázat sor beszúrása mögé"
+
+#: wp-includes/class-wp-editor.php:1162
+#: wp-includes/js/dist/block-editor.js:66642
+#: wp-includes/js/dist/format-library.js:5111
+msgid "Strikethrough"
+msgstr "Áthúzás"
+
 #: wp-includes/class-wp-theme.php:1080
 msgid "Blue"
 msgstr "Kék"
-
-#: wp-includes/class-wp-customize-nav-menus.php:346
-#: wp-includes/script-loader.php:1279
-#: wp-includes/js/dist/block-directory.js:9880
-#: wp-includes/js/dist/block-editor.js:49181
-#: wp-includes/js/dist/block-editor.js:51568
-#: wp-includes/js/dist/block-library.js:18409
-#: wp-includes/js/dist/block-library.js:34270
-#: wp-includes/js/dist/block-library.js:60790
-#: wp-includes/js/dist/block-library.js:77154
-#: wp-includes/js/dist/commands.js:3190
-#: wp-includes/js/dist/script-modules/workflow/index.js:2750
-#: wp-admin/includes/nav-menu.php:737 wp-admin/includes/nav-menu.php:1113
-#: wp-admin/js/nav-menu.js:1784 wp-admin/js/tags-suggest.js:141
-msgid "No results found."
-msgstr "Nincs ilyen adat."
 
 #. translators: Hidden accessibility text.
 #: wp-includes/class-wp-customize-panel.php:394
@@ -22010,6 +22021,19 @@ msgstr "Ezüst"
 msgid "Yellow"
 msgstr "Sárga"
 
+#. translators: Network menu item.
+#: wp-includes/admin-bar.php:449 wp-includes/admin-bar.php:616
+#: wp-includes/admin-bar.php:736 wp-includes/deprecated.php:2827
+#: wp-includes/deprecated.php:2829
+#: wp-includes/js/dist/script-modules/boot/index.js:10336 wp-admin/index.php:33
+#: wp-admin/menu.php:29 wp-admin/my-sites.php:142 wp-admin/user/menu.php:15
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:772
+#: wp-admin/network/index.php:21 wp-admin/network/menu.php:16
+#: wp-admin/network/site-info.php:146 wp-admin/network/site-settings.php:95
+#: wp-admin/network/site-themes.php:181 wp-admin/network/site-users.php:246
+msgid "Dashboard"
+msgstr "Vezérlőpult"
+
 #. translators: Hidden accessibility text.
 #: wp-includes/class-wp-editor.php:1335 wp-includes/media-template.php:1226
 #: wp-includes/widgets/class-wp-widget-media-image.php:78
@@ -22030,19 +22054,6 @@ msgstr "Sárga"
 #: wp-admin/includes/image-edit.php:154 wp-admin/options-media.php:63
 msgid "Width"
 msgstr "Szélesség"
-
-#. translators: Network menu item.
-#: wp-includes/admin-bar.php:449 wp-includes/admin-bar.php:616
-#: wp-includes/admin-bar.php:736 wp-includes/deprecated.php:2827
-#: wp-includes/deprecated.php:2829
-#: wp-includes/js/dist/script-modules/boot/index.js:10336 wp-admin/index.php:33
-#: wp-admin/menu.php:29 wp-admin/my-sites.php:142 wp-admin/user/menu.php:15
-#: wp-admin/includes/class-wp-ms-sites-list-table.php:772
-#: wp-admin/network/index.php:21 wp-admin/network/menu.php:16
-#: wp-admin/network/site-info.php:146 wp-admin/network/site-settings.php:95
-#: wp-admin/network/site-themes.php:181 wp-admin/network/site-users.php:246
-msgid "Dashboard"
-msgstr "Vezérlőpult"
 
 #: wp-includes/general-template.php:763 wp-login.php:45 wp-login.php:1491
 #: wp-login.php:1568 wp-admin/install.php:221 wp-admin/install.php:465
@@ -22160,6 +22171,27 @@ msgstr "Beállítások"
 msgid "Height"
 msgstr "Magasság"
 
+#: wp-includes/embed.php:1215 wp-includes/js/dist/block-library.js:33942
+msgid "HTML"
+msgstr "HTML"
+
+#: wp-login.php:1041
+msgid "Strength indicator"
+msgstr "Jelszóerősség mérő"
+
+#: wp-includes/admin-bar.php:1183
+#: wp-includes/class-wp-customize-widgets.php:419
+#: wp-includes/class-wp-customize-widgets.php:925
+#: wp-includes/functions.php:5561 wp-includes/js/dist/blocks.js:2150
+#: wp-includes/js/dist/core-data.js:15884
+#: wp-includes/js/dist/customize-widgets.js:2473
+#: wp-includes/js/dist/edit-widgets.js:4104
+#: wp-includes/js/dist/edit-widgets.js:4110
+#: wp-includes/js/dist/edit-widgets.js:4413 wp-includes/js/dist/editor.js:79778
+#: wp-includes/js/dist/editor.js:79796 wp-admin/widgets.php:28
+msgid "Widgets"
+msgstr "Widgetek"
+
 #: wp-includes/class-wp-customize-manager.php:5262
 #: wp-includes/customize/class-wp-customize-color-control.php:54
 #: wp-includes/customize/class-wp-customize-media-control.php:230
@@ -22195,18 +22227,6 @@ msgstr "Magasság"
 msgid "Default"
 msgstr "Alapértelmezett"
 
-#: wp-includes/js/dist/edit-site.js:56038
-#: wp-includes/js/dist/script-modules/content-types/index.js:35867
-#: wp-includes/js/dist/script-modules/content-types/index.js:37879
-#: wp-admin/includes/class-wp-plugins-list-table.php:982
-#: wp-admin/includes/class-wp-plugins-list-table.php:999
-msgid "Deactivate"
-msgstr "Kikapcsol"
-
-#: wp-includes/embed.php:1215 wp-includes/js/dist/block-library.js:33942
-msgid "HTML"
-msgstr "HTML"
-
 #: wp-includes/widgets/class-wp-nav-menu-widget.php:185
 #: wp-includes/widgets/class-wp-widget-archives.php:235
 #: wp-includes/widgets/class-wp-widget-calendar.php:100
@@ -22223,33 +22243,6 @@ msgstr "HTML"
 #: wp-includes/widgets/class-wp-widget-text.php:533
 msgid "Title:"
 msgstr "Cím:"
-
-#: wp-includes/abilities.php:201 wp-includes/comment-template.php:2566
-#: wp-admin/user-edit.php:608 wp-admin/user-new.php:560
-msgid "Website"
-msgstr "Honlap"
-
-#: wp-login.php:1041
-msgid "Strength indicator"
-msgstr "Jelszóerősség mérő"
-
-#: wp-includes/admin-bar.php:1183
-#: wp-includes/class-wp-customize-widgets.php:419
-#: wp-includes/class-wp-customize-widgets.php:925
-#: wp-includes/functions.php:5561 wp-includes/js/dist/blocks.js:2150
-#: wp-includes/js/dist/core-data.js:15884
-#: wp-includes/js/dist/customize-widgets.js:2473
-#: wp-includes/js/dist/edit-widgets.js:4104
-#: wp-includes/js/dist/edit-widgets.js:4110
-#: wp-includes/js/dist/edit-widgets.js:4413 wp-includes/js/dist/editor.js:79778
-#: wp-includes/js/dist/editor.js:79796 wp-admin/widgets.php:28
-msgid "Widgets"
-msgstr "Widgetek"
-
-#. translators: Comments feed title. %s: Post title.
-#: wp-includes/feed-atom-comments.php:34
-msgid "Comments on %s"
-msgstr "Hozzászólások: %s"
 
 #: wp-includes/comment-template.php:998
 msgid "1 Comment"
@@ -22319,16 +22312,6 @@ msgstr "Honlapjaim"
 msgid "All"
 msgstr "Összes"
 
-#. translators: %s: Author's display name.
-#: wp-includes/author-template.php:249
-msgid "Visit %s&#8217;s website"
-msgstr "%s honlapjának megtekintése"
-
-#. translators: %s: Author's display name.
-#: wp-includes/author-template.php:337
-msgid "Posts by %s"
-msgstr "%s bejegyzése"
-
 #. translators: %s: Date and time of last update.
 #: wp-includes/bookmark-template.php:90
 msgid "Last updated: %s"
@@ -22359,11 +22342,6 @@ msgstr "Meta"
 msgid "Theme"
 msgstr "Sablon"
 
-#. translators: %s: Category name.
-#: wp-includes/class-walker-category.php:171
-msgid "Feed for all posts filed under %s"
-msgstr "%s kategória összes bejegyzésének hírcsatornája"
-
 #: wp-includes/link-template.php:2581 wp-includes/link-template.php:2735
 msgid "Next Page &raquo;"
 msgstr "Következő oldal &raquo;"
@@ -22386,29 +22364,10 @@ msgstr "Hozzászólás küldéséhez <a href=\"%s\">be kell jelentkezni</a>."
 msgid "Edit Category"
 msgstr "Kategória szerkesztése"
 
-#: wp-includes/category-template.php:557 wp-includes/class-wp-taxonomy.php:633
-msgid "No categories"
-msgstr "Nincs kategória"
-
 #: wp-includes/comment-template.php:2117 wp-includes/comment-template.php:2657
 #: wp-includes/js/dist/block-library.js:16559
 msgid "Leave a Reply"
 msgstr "Vélemény, hozzászólás?"
-
-#: wp-includes/theme-compat/comments.php:72
-msgid "Comments are closed."
-msgstr "Hozzászólás jelenleg nem lehetséges."
-
-#: wp-includes/class-wp-xmlrpc-server.php:3990 wp-includes/comment.php:4022
-#: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:636
-msgid "Sorry, comments are closed for this item."
-msgstr "Elnézést, ehhez a bejegyzéshez jelenleg nem lehet hozzászólni."
-
-#: wp-includes/blocks/comment-content.php:44
-#: wp-includes/class-walker-comment.php:312
-#: wp-includes/class-walker-comment.php:416
-msgid "Your comment is awaiting moderation."
-msgstr "A hozzászólás rendszer-moderációra várakozik."
 
 #: wp-includes/comment-template.php:2552 wp-login.php:1167
 #: wp-includes/js/dist/block-library.js:26989
@@ -22421,10 +22380,6 @@ msgstr "A hozzászólás rendszer-moderációra várakozik."
 #: wp-admin/network/site-users.php:382 wp-admin/network/user-new.php:145
 msgid "Email"
 msgstr "E-mail cím"
-
-#: wp-includes/comment-template.php:1684
-msgid "Enter your password to view comments."
-msgstr "A hozzászólások megtekintéséhez meg kell adni a jelszót."
 
 #: wp-includes/class-wp-taxonomy.php:629
 #: wp-includes/js/dist/script-modules/content-types/index.js:38742
@@ -22442,10 +22397,6 @@ msgstr[1] "Jóváhagyott <span class=\"count\">(%s)</span>"
 #: wp-includes/block-template.php:395 wp-includes/deprecated.php:6234
 msgid "Skip to content"
 msgstr "Ugrás a tartalomhoz"
-
-#: wp-includes/user.php:3564 wp-admin/includes/user.php:158
-msgid "<strong>Error:</strong> Please enter a username."
-msgstr "<strong>Hiba:</strong> Meg kell adni a felhasználónevet."
 
 #: wp-includes/comment-template.php:1997
 msgid "Click here to cancel reply."
@@ -22486,6 +22437,82 @@ msgstr "Bekapcsolás"
 #: wp-admin/themes.php:1250
 msgid "Tags:"
 msgstr "Címkék:"
+
+#: wp-includes/user.php:3564 wp-admin/includes/user.php:158
+msgid "<strong>Error:</strong> Please enter a username."
+msgstr "<strong>Hiba:</strong> Meg kell adni egy felhasználónevet."
+
+#: wp-includes/js/dist/edit-site.js:56038
+#: wp-includes/js/dist/script-modules/content-types/index.js:35867
+#: wp-includes/js/dist/script-modules/content-types/index.js:37879
+#: wp-admin/includes/class-wp-plugins-list-table.php:982
+#: wp-admin/includes/class-wp-plugins-list-table.php:999
+msgid "Deactivate"
+msgstr "Kikapcsolás"
+
+#. translators: %s: Author's display name.
+#: wp-includes/author-template.php:249
+msgid "Visit %s&#8217;s website"
+msgstr "%s webhelyének meglátogatása"
+
+#: wp-includes/abilities.php:201 wp-includes/comment-template.php:2566
+#: wp-admin/user-edit.php:608 wp-admin/user-new.php:560
+msgid "Website"
+msgstr "Webhely"
+
+#: wp-includes/class-wp-xmlrpc-server.php:3990 wp-includes/comment.php:4022
+#: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:636
+msgid "Sorry, comments are closed for this item."
+msgstr "Elnézést, ehhez az elemhez nem lehet hozzászólni."
+
+#: wp-includes/class-wp-customize-nav-menus.php:346
+#: wp-includes/script-loader.php:1279
+#: wp-includes/js/dist/block-directory.js:9880
+#: wp-includes/js/dist/block-editor.js:49181
+#: wp-includes/js/dist/block-editor.js:51568
+#: wp-includes/js/dist/block-library.js:18409
+#: wp-includes/js/dist/block-library.js:34270
+#: wp-includes/js/dist/block-library.js:60790
+#: wp-includes/js/dist/block-library.js:77154
+#: wp-includes/js/dist/commands.js:3190
+#: wp-includes/js/dist/script-modules/workflow/index.js:2750
+#: wp-admin/includes/nav-menu.php:737 wp-admin/includes/nav-menu.php:1113
+#: wp-admin/js/nav-menu.js:1784 wp-admin/js/tags-suggest.js:141
+msgid "No results found."
+msgstr "Nincs találat."
+
+#. translators: Comments feed title. %s: Post title.
+#: wp-includes/feed-atom-comments.php:34
+msgid "Comments on %s"
+msgstr "%s hozzászólásai"
+
+#: wp-includes/comment-template.php:1684
+msgid "Enter your password to view comments."
+msgstr "Hozzászólások megtekintéséhez jelszó megadása szükséges."
+
+#: wp-includes/theme-compat/comments.php:72
+msgid "Comments are closed."
+msgstr "Hozzászólás nem lehetséges."
+
+#: wp-includes/blocks/comment-content.php:44
+#: wp-includes/class-walker-comment.php:312
+#: wp-includes/class-walker-comment.php:416
+msgid "Your comment is awaiting moderation."
+msgstr "A hozzászólás moderációra várakozik."
+
+#. translators: %s: Author's display name.
+#: wp-includes/author-template.php:337
+msgid "Posts by %s"
+msgstr "%s bejegyzései"
+
+#: wp-includes/category-template.php:557 wp-includes/class-wp-taxonomy.php:633
+msgid "No categories"
+msgstr "Nincsenek kategóriák"
+
+#. translators: %s: Category name.
+#: wp-includes/class-walker-category.php:171
+msgid "Feed for all posts filed under %s"
+msgstr "%s alatti összes bejegyzés hírcsatornája"
 
 #: wp-includes/class-wp-customize-widgets.php:803
 #: wp-includes/class-wp-editor.php:1396 wp-includes/media.php:5185
@@ -22557,6 +22584,18 @@ msgstr "Hozzászólás"
 #: wp-admin/includes/class-wp-links-list-table.php:276
 msgid "No"
 msgstr "Nem"
+
+#. translators: accessibility text for the publish landmark region.
+#: wp-includes/class-wp-customize-manager.php:4875
+#: wp-includes/script-loader.php:1310 wp-includes/js/dist/block-editor.js:84428
+#: wp-includes/js/dist/block-library.js:47194
+#: wp-includes/js/dist/edit-widgets.js:1862 wp-includes/js/dist/editor.js:49666
+#: wp-includes/js/dist/editor.js:86061 wp-includes/js/dist/editor.js:86069
+#: wp-includes/js/dist/editor.js:88285 wp-admin/customize.php:199
+#: wp-admin/includes/meta-boxes.php:388 wp-admin/includes/meta-boxes.php:389
+#: wp-admin/includes/meta-boxes.php:1571 wp-admin/js/post.js:799
+msgid "Publish"
+msgstr "Közzététel"
 
 #. translators: Hidden accessibility text.
 #: wp-includes/class-wp-editor.php:1219 wp-includes/theme-compat/sidebar.php:29
@@ -22632,18 +22671,6 @@ msgstr "URL"
 msgid "Comments"
 msgstr "Hozzászólások"
 
-#. translators: accessibility text for the publish landmark region.
-#: wp-includes/class-wp-customize-manager.php:4875
-#: wp-includes/script-loader.php:1310 wp-includes/js/dist/block-editor.js:84428
-#: wp-includes/js/dist/block-library.js:47194
-#: wp-includes/js/dist/edit-widgets.js:1862 wp-includes/js/dist/editor.js:49666
-#: wp-includes/js/dist/editor.js:86061 wp-includes/js/dist/editor.js:86069
-#: wp-includes/js/dist/editor.js:88285 wp-admin/customize.php:199
-#: wp-admin/includes/meta-boxes.php:388 wp-admin/includes/meta-boxes.php:389
-#: wp-admin/includes/meta-boxes.php:1571 wp-admin/js/post.js:799
-msgid "Publish"
-msgstr "Közzététel"
-
 #. translators: Hidden accessibility text.
 #: wp-includes/revision.php:34 wp-includes/js/dist/block-library.js:38691
 #: wp-includes/js/dist/block-library.js:39242
@@ -22654,6 +22681,28 @@ msgstr "Közzététel"
 #: wp-admin/options-reading.php:195
 msgid "Excerpt"
 msgstr "Kivonat"
+
+#: wp-includes/class-wp-editor.php:1257
+#: wp-includes/js/dist/block-editor.js:58257
+#: wp-includes/js/dist/block-library.js:14822
+#: wp-includes/js/dist/block-library.js:57385
+#: wp-includes/js/dist/edit-site.js:16836
+#: wp-includes/js/dist/edit-site.js:53784 wp-includes/js/dist/editor.js:27565
+#: wp-includes/js/dist/editor.js:27808 wp-includes/js/dist/editor.js:55523
+#: wp-includes/js/dist/editor.js:71946 wp-includes/js/dist/editor.js:73365
+#: wp-includes/js/dist/editor.js:82391 wp-includes/js/dist/editor.js:86064
+#: wp-includes/js/dist/editor.js:88201 wp-includes/js/dist/patterns.js:1497
+#: wp-includes/js/dist/patterns.js:1903
+#: wp-includes/js/dist/script-modules/connectors/index.js:274
+#: wp-includes/js/dist/script-modules/content-types/index.js:37792
+#: wp-includes/js/dist/script-modules/content-types/index.js:39439
+#: wp-includes/js/dist/widgets.js:377 wp-admin/edit-form-comment.php:105
+#: wp-admin/edit-link-form.php:30 wp-admin/includes/meta-boxes.php:44
+#: wp-admin/includes/meta-boxes.php:428 wp-admin/includes/meta-boxes.php:1108
+#: wp-admin/includes/meta-boxes.php:1564 wp-admin/includes/widgets.php:303
+#: wp-admin/js/widgets.js:134
+msgid "Save"
+msgstr "Mentés"
 
 #: wp-includes/class-wp-editor.php:1268 wp-admin/edit-link-form.php:32
 #: wp-admin/includes/meta-boxes.php:1231
@@ -22690,34 +22739,6 @@ msgstr "Kész"
 msgid "RSS"
 msgstr "RSS"
 
-#: wp-includes/widgets/class-wp-widget-recent-comments.php:31
-#: wp-includes/widgets/class-wp-widget-recent-comments.php:81
-#: wp-admin/includes/dashboard.php:1124 wp-admin/includes/upgrade.php:427
-msgid "Recent Comments"
-msgstr "Legutóbbi hozzászólások"
-
-#: wp-includes/class-wp-editor.php:1257
-#: wp-includes/js/dist/block-editor.js:58257
-#: wp-includes/js/dist/block-library.js:14822
-#: wp-includes/js/dist/block-library.js:57385
-#: wp-includes/js/dist/edit-site.js:16836
-#: wp-includes/js/dist/edit-site.js:53784 wp-includes/js/dist/editor.js:27565
-#: wp-includes/js/dist/editor.js:27808 wp-includes/js/dist/editor.js:55523
-#: wp-includes/js/dist/editor.js:71946 wp-includes/js/dist/editor.js:73365
-#: wp-includes/js/dist/editor.js:82391 wp-includes/js/dist/editor.js:86064
-#: wp-includes/js/dist/editor.js:88201 wp-includes/js/dist/patterns.js:1497
-#: wp-includes/js/dist/patterns.js:1903
-#: wp-includes/js/dist/script-modules/connectors/index.js:274
-#: wp-includes/js/dist/script-modules/content-types/index.js:37792
-#: wp-includes/js/dist/script-modules/content-types/index.js:39439
-#: wp-includes/js/dist/widgets.js:377 wp-admin/edit-form-comment.php:105
-#: wp-admin/edit-link-form.php:30 wp-admin/includes/meta-boxes.php:44
-#: wp-admin/includes/meta-boxes.php:428 wp-admin/includes/meta-boxes.php:1108
-#: wp-admin/includes/meta-boxes.php:1564 wp-admin/includes/widgets.php:303
-#: wp-admin/js/widgets.js:134
-msgid "Save"
-msgstr "Mentés"
-
 #: wp-includes/comment-template.php:2539
 #: wp-includes/js/dist/block-editor.js:58230
 #: wp-includes/js/dist/block-library.js:26981
@@ -22745,6 +22766,12 @@ msgstr "Mentés"
 #: wp-admin/includes/class-wp-ms-users-list-table.php:216
 msgid "Name"
 msgstr "Név"
+
+#: wp-includes/widgets/class-wp-widget-recent-comments.php:31
+#: wp-includes/widgets/class-wp-widget-recent-comments.php:81
+#: wp-admin/includes/dashboard.php:1124 wp-admin/includes/upgrade.php:427
+msgid "Recent Comments"
+msgstr "Legutóbbi hozzászólások"
 
 #. translators: accessibility text for the content landmark region.
 #: wp-includes/revision.php:33 wp-includes/js/dist/block-editor.js:75061
@@ -22955,6 +22982,10 @@ msgstr "Címke hozzáadása, vagy eltávolítása"
 msgid "Version"
 msgstr "Verzió"
 
+#: wp-includes/post.php:3605 wp-includes/js/dist/editor.js:56201
+msgid "Images"
+msgstr "Képek"
+
 #. translators: Hidden accessibility text.
 #: wp-includes/admin-bar.php:1279 wp-includes/admin-bar.php:1281
 #: wp-includes/blocks/search.php:25 wp-includes/blocks/search.php:26
@@ -22994,10 +23025,6 @@ msgstr "Verzió"
 #: wp-admin/includes/theme-install.php:139
 msgid "Search"
 msgstr "Keresés"
-
-#: wp-includes/post.php:3605 wp-includes/js/dist/editor.js:56201
-msgid "Images"
-msgstr "Képek"
 
 #: wp-includes/class-wp-post-type.php:993
 #: wp-includes/js/dist/script-modules/content-types/index.js:37130
@@ -23071,10 +23098,6 @@ msgstr "(nincs cím)"
 msgid "Edit Post"
 msgstr "Bejegyzés szerkesztése"
 
-#: wp-includes/widgets/class-wp-widget-recent-comments.php:197
-msgid "Number of comments to show:"
-msgstr "Mutatott hozzászólások száma:"
-
 #: wp-includes/media-template.php:432 wp-includes/media-template.php:741
 #: wp-admin/includes/media.php:1703 wp-admin/includes/media.php:3164
 msgid "Edit Image"
@@ -23087,29 +23110,6 @@ msgstr "Kép szerkesztése"
 #: wp-admin/includes/media.php:1224
 msgid "Full Size"
 msgstr "Teljes méret"
-
-#: wp-includes/js/dist/editor.js:28570 wp-includes/js/dist/editor.js:94249
-#: wp-admin/includes/class-wp-comments-list-table.php:397
-#: wp-admin/includes/class-wp-comments-list-table.php:829
-#: wp-admin/includes/class-wp-media-list-table.php:208
-#: wp-admin/includes/class-wp-media-list-table.php:822
-#: wp-admin/includes/class-wp-posts-list-table.php:438
-#: wp-admin/includes/class-wp-posts-list-table.php:1620
-msgid "Restore"
-msgstr "Visszaállítás"
-
-#: wp-includes/js/dist/block-library.js:33641
-#: wp-includes/js/dist/block-library.js:47940
-#: wp-includes/js/dist/commands.js:2919 wp-includes/js/dist/editor.js:89945
-#: wp-includes/js/dist/editor.js:89947 wp-includes/js/dist/editor.js:91687
-#: wp-admin/includes/class-wp-media-list-table.php:859
-#: wp-admin/includes/class-wp-posts-list-table.php:1661
-#: wp-admin/includes/class-wp-terms-list-table.php:529
-#: wp-admin/includes/class-wp-users-list-table.php:498
-#: wp-admin/includes/dashboard.php:815
-#: wp-admin/includes/class-wp-ms-users-list-table.php:427
-msgid "View"
-msgstr "Megtekintés"
 
 #: wp-includes/class-wp-editor.php:1184
 #: wp-includes/js/dist/block-editor.js:68767
@@ -23174,6 +23174,29 @@ msgstr "Visszavonás"
 msgid "Edit"
 msgstr "Szerkesztés"
 
+#: wp-includes/js/dist/editor.js:28570 wp-includes/js/dist/editor.js:94249
+#: wp-admin/includes/class-wp-comments-list-table.php:397
+#: wp-admin/includes/class-wp-comments-list-table.php:829
+#: wp-admin/includes/class-wp-media-list-table.php:208
+#: wp-admin/includes/class-wp-media-list-table.php:822
+#: wp-admin/includes/class-wp-posts-list-table.php:438
+#: wp-admin/includes/class-wp-posts-list-table.php:1620
+msgid "Restore"
+msgstr "Visszaállítás"
+
+#: wp-includes/js/dist/block-library.js:33641
+#: wp-includes/js/dist/block-library.js:47940
+#: wp-includes/js/dist/commands.js:2919 wp-includes/js/dist/editor.js:89945
+#: wp-includes/js/dist/editor.js:89947 wp-includes/js/dist/editor.js:91687
+#: wp-admin/includes/class-wp-media-list-table.php:859
+#: wp-admin/includes/class-wp-posts-list-table.php:1661
+#: wp-admin/includes/class-wp-terms-list-table.php:529
+#: wp-admin/includes/class-wp-users-list-table.php:498
+#: wp-admin/includes/dashboard.php:815
+#: wp-admin/includes/class-wp-ms-users-list-table.php:427
+msgid "View"
+msgstr "Megtekintés"
+
 #: wp-includes/admin-bar.php:463 wp-includes/admin-bar.php:659
 #: wp-includes/js/dist/block-editor.js:97779
 #: wp-includes/js/dist/core-data.js:15968 wp-admin/plugins.php:634
@@ -23186,23 +23209,6 @@ msgstr "Bővítmények"
 #: wp-admin/includes/dashboard.php:1294
 msgid "Unknown Feed"
 msgstr "Ismeretlen csatorna"
-
-#: wp-includes/class-wp-editor.php:1185
-#: wp-includes/js/dist/customize-widgets.js:1575
-#: wp-includes/js/dist/edit-widgets.js:3499 wp-includes/js/dist/editor.js:55005
-#: wp-includes/js/dist/editor.js:55475 wp-includes/js/dist/editor.js:81998
-#: wp-admin/includes/image-edit.php:99
-msgid "Redo"
-msgstr "Ismét"
-
-#: wp-includes/block-editor.php:171 wp-includes/media-template.php:930
-#: wp-includes/media-template.php:1010 wp-includes/media-template.php:1201
-#: wp-includes/media.php:4752 wp-includes/js/dist/block-editor.js:7814
-#: wp-includes/js/dist/media-utils.js:28070
-#: wp-admin/includes/class-custom-background.php:634
-#: wp-admin/includes/image-edit.php:315 wp-admin/includes/media.php:1221
-msgid "Thumbnail"
-msgstr "Bélyegkép"
 
 #: wp-includes/media.php:5146 wp-includes/script-loader.php:1276
 #: wp-login.php:732 wp-includes/build/routes/font-list/content.js:13574
@@ -23263,12 +23269,22 @@ msgstr "Frissítés"
 msgid "Delete"
 msgstr "Törlés"
 
-#: wp-includes/class-wp-editor.php:1337 wp-includes/media-template.php:844
-#: wp-includes/js/dist/block-editor.js:19240
-#: wp-includes/js/dist/block-editor.js:19421 wp-admin/includes/media.php:1508
-#: wp-admin/includes/media.php:3009
-msgid "Alignment"
-msgstr "Illesztés"
+#: wp-includes/class-wp-editor.php:1185
+#: wp-includes/js/dist/customize-widgets.js:1575
+#: wp-includes/js/dist/edit-widgets.js:3499 wp-includes/js/dist/editor.js:55005
+#: wp-includes/js/dist/editor.js:55475 wp-includes/js/dist/editor.js:81998
+#: wp-admin/includes/image-edit.php:99
+msgid "Redo"
+msgstr "Ismét"
+
+#: wp-includes/block-editor.php:171 wp-includes/media-template.php:930
+#: wp-includes/media-template.php:1010 wp-includes/media-template.php:1201
+#: wp-includes/media.php:4752 wp-includes/js/dist/block-editor.js:7814
+#: wp-includes/js/dist/media-utils.js:28070
+#: wp-admin/includes/class-custom-background.php:634
+#: wp-admin/includes/image-edit.php:315 wp-admin/includes/media.php:1221
+msgid "Thumbnail"
+msgstr "Bélyegkép"
 
 #: wp-includes/class-wp-customize-control.php:650
 #: wp-includes/class-wp-customize-nav-menus.php:1253
@@ -23449,17 +23465,6 @@ msgstr "Kategória keresése"
 msgid "Search Results for &#8220;%s&#8221;"
 msgstr "&#8220;%s&#8221; kifejezésre történő keresés eredménye"
 
-#: wp-includes/post.php:1364 wp-includes/post.php:1384
-#: wp-includes/view-config.php:277 wp-includes/js/dist/block-library.js:47646
-#: wp-includes/js/dist/editor.js:26672 wp-includes/js/dist/editor.js:86229
-#: wp-includes/js/dist/editor.js:87920 wp-includes/js/dist/editor.js:87936
-#: wp-admin/includes/class-wp-posts-list-table.php:1894
-#: wp-admin/includes/class-wp-posts-list-table.php:2099
-#: wp-admin/includes/meta-boxes.php:180 wp-admin/includes/meta-boxes.php:220
-#: wp-admin/js/post.js:910
-msgid "Private"
-msgstr "Magán"
-
 #. translators: %s: Note author email.
 #. translators: %s: Comment author email.
 #. translators: %s: User email address.
@@ -23617,6 +23622,28 @@ msgstr "Mégsem"
 msgid "Select"
 msgstr "Kiválasztás"
 
+#: wp-includes/widgets/class-wp-widget-recent-comments.php:197
+msgid "Number of comments to show:"
+msgstr "Megjelenítendő hozzászólások száma:"
+
+#: wp-includes/class-wp-editor.php:1337 wp-includes/media-template.php:844
+#: wp-includes/js/dist/block-editor.js:19240
+#: wp-includes/js/dist/block-editor.js:19421 wp-admin/includes/media.php:1508
+#: wp-admin/includes/media.php:3009
+msgid "Alignment"
+msgstr "Igazítás"
+
+#: wp-includes/post.php:1364 wp-includes/post.php:1384
+#: wp-includes/view-config.php:277 wp-includes/js/dist/block-library.js:47646
+#: wp-includes/js/dist/editor.js:26672 wp-includes/js/dist/editor.js:86229
+#: wp-includes/js/dist/editor.js:87920 wp-includes/js/dist/editor.js:87936
+#: wp-admin/includes/class-wp-posts-list-table.php:1894
+#: wp-admin/includes/class-wp-posts-list-table.php:2099
+#: wp-admin/includes/meta-boxes.php:180 wp-admin/includes/meta-boxes.php:220
+#: wp-admin/js/post.js:910
+msgid "Private"
+msgstr "Magánjellegű"
+
 #: wp-includes/class-wp-post-type.php:996
 #: wp-includes/js/dist/block-library.js:39593
 #: wp-includes/js/dist/script-modules/content-types/index.js:37146
@@ -23685,10 +23712,6 @@ msgstr "Jelszó:"
 msgid "Pending Review"
 msgstr "Függőben lévő"
 
-#: wp-activate.php:128
-msgid "Activation Key Required"
-msgstr "Az aktiváló kulcs megadása kötelező"
-
 #: wp-activate.php:145 wp-activate.php:182
 msgid "Your account is now active!"
 msgstr "A felhasználói fiók aktiválva!"
@@ -23696,11 +23719,6 @@ msgstr "A felhasználói fiók aktiválva!"
 #: wp-activate.php:185
 msgid "Username:"
 msgstr "Felhasználónév:"
-
-#: wp-includes/admin-bar.php:428 wp-includes/admin-bar.php:777
-#: wp-includes/deprecated.php:2825
-msgid "Visit Site"
-msgstr "A honlap megtekintése"
 
 #: wp-activate.php:131
 msgid "Activation Key:"
@@ -23723,6 +23741,15 @@ msgstr "Hiba történt az aktiváló folyamat során"
 msgid "Activate"
 msgstr "Bekapcsolás"
 
+#: wp-activate.php:128
+msgid "Activation Key Required"
+msgstr "Aktiváló kulcs megadása kötelező"
+
+#: wp-includes/admin-bar.php:428 wp-includes/admin-bar.php:777
+#: wp-includes/deprecated.php:2825
+msgid "Visit Site"
+msgstr "Honlap meglátogatása"
+
 #. translators: Comment date format. See
 #. https://www.php.net/manual/datetime.format.php
 #. translators: Date format in table columns, see
@@ -23741,4 +23768,4 @@ msgstr "Bekapcsolás"
 #: wp-admin/includes/class-wp-ms-sites-list-table.php:549
 #: wp-admin/includes/class-wp-ms-users-list-table.php:344
 msgid "Y/m/d"
-msgstr "Y/m/d"
+msgstr "Y.m.d."
