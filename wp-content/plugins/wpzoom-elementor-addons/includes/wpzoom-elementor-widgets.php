@@ -101,6 +101,16 @@ class WPZOOM_Elementor_Widgets {
 				}
 			}
 		}
+
+		// The Inspiro and Reel portfolio widgets stand in for each other after a theme
+		// switch (same widget name, the active theme's implementation). Registered last
+		// so they replace the native class of the other theme under that name.
+		require_once __DIR__ . '/portfolio-widget-aliases.php';
+		if ( self::is_supported_theme( 'reel' ) && class_exists( '\WPZOOMElementorWidgets\Portfolio_Reel_For_Showcase' ) ) {
+			Plugin::instance()->widgets_manager->register( new Portfolio_Reel_For_Showcase() );
+		} elseif ( self::is_supported_theme( 'inspiro' ) && class_exists( '\WPZOOMElementorWidgets\Portfolio_Showcase_For_Reel' ) ) {
+			Plugin::instance()->widgets_manager->register( new Portfolio_Showcase_For_Reel() );
+		}
 	}
 
 	/**
@@ -188,6 +198,19 @@ class WPZOOM_Elementor_Widgets {
 	 * @access private
 	 * @return bool
 	 */
+
+	/**
+	 * Whether self-hosted videos in the widgets' lightboxes use the WordPress
+	 * MediaElement player (which the theme skins) instead of the browser's own.
+	 *
+	 * Opt-in per theme with add_theme_support( 'wpzoom-video-player' ) — Inspiro
+	 * does — so other themes keep the native player.
+	 *
+	 * @return bool
+	 */
+	public static function use_mediaelement_player() {
+		return (bool) apply_filters( 'wpzoom_elementor_addons_mediaelement_player', current_theme_supports( 'wpzoom-video-player' ) );
+	}
 
 	public static function is_supported_theme( $theme = 'inspiro' ) {
 
