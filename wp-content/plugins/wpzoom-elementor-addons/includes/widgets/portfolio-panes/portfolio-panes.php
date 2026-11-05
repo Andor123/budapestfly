@@ -262,9 +262,20 @@ class Portfolio_Panes extends Widget_Base {
 		$this->add_control(
 			'play_label',
 			array(
-				'label'   => esc_html__( 'Button Label', 'wpzoom-elementor-addons' ),
-				'type'    => Controls_Manager::TEXT,
-				'default' => esc_html__( 'Play film', 'wpzoom-elementor-addons' ),
+				'label'       => esc_html__( 'Button Label', 'wpzoom-elementor-addons' ),
+				'description' => esc_html__( 'A small label under the credits, e.g. "Play film". The whole title block is clickable either way; leave empty for none.', 'wpzoom-elementor-addons' ),
+				'type'        => Controls_Manager::TEXT,
+				'default'     => '',
+			)
+		);
+		$this->add_control(
+			'more_label',
+			array(
+				'label'       => esc_html__( 'Project Link Label', 'wpzoom-elementor-addons' ),
+				'description' => esc_html__( 'Shown next to the close button while a film plays in the pane, linking to the project page. Leave empty for none.', 'wpzoom-elementor-addons' ),
+				'type'        => Controls_Manager::TEXT,
+				'default'     => esc_html__( 'View project', 'wpzoom-elementor-addons' ),
+				'condition'   => array( 'click_action' => 'inline' ),
 			)
 		);
 		$this->add_control(
@@ -280,9 +291,9 @@ class Portfolio_Panes extends Widget_Base {
 			'cue_text',
 			array(
 				'label'       => esc_html__( 'Scroll Cue', 'wpzoom-elementor-addons' ),
-				'description' => esc_html__( 'Shown at the bottom of the first pane. Leave empty to hide.', 'wpzoom-elementor-addons' ),
+				'description' => esc_html__( 'A word shown at the bottom of the first pane, e.g. "Scroll". Leave empty for none.', 'wpzoom-elementor-addons' ),
 				'type'        => Controls_Manager::TEXT,
-				'default'     => esc_html__( 'Scroll', 'wpzoom-elementor-addons' ),
+				'default'     => '',
 			)
 		);
 		$this->end_controls_section();
@@ -689,6 +700,10 @@ class Portfolio_Panes extends Widget_Base {
 					$text, // Built from escaped parts above.
 					$player // Escaped in get_player() / by WP_Embed.
 				);
+				// While the film plays the pane would otherwise be a dead end (only the close button): offer the project page too.
+				if ( ! empty( $settings['more_label'] ) ) {
+					$trigger .= sprintf( '<a class="wpz-pane__more" href="%s">%s</a>', esc_url( $link ), esc_html( $settings['more_label'] ) );
+				}
 			} else {
 				$trigger = sprintf( '<a class="wpz-pane__text wpz-pane__trigger" href="%s">%s</a>', esc_url( $link ), $text );
 			}

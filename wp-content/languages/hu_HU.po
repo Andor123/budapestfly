@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 7.1.x - Development package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-11-04 12:45:56+0000\n"
+"PO-Revision-Date: 2026-11-04 20:59:26+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -383,16 +383,21 @@ msgstr "Hogy a képesség végezhet-e módosításokat a környezetén."
 msgid "Someone"
 msgstr "Valaki"
 
-#. translators: %s: Connector name.
-#: wp-includes/connectors.php:817
-msgid "Application password credentials for the %s connector."
-msgstr "Alkalmazásjelszó hitelesítő adatok a(z) %s csatlakozóhoz."
-
 #. translators: %s: the configuration key.
 #: wp-includes/class-wp-view-config-data.php:283
 #: wp-includes/class-wp-view-config-data.php:427
 msgid "\"%s\" is not a documented view configuration key."
 msgstr "\"%s\" nem egy dokumentált nézetbeállítási kulcs."
+
+#. translators: %s: PHP constant name.
+#: wp-includes/connectors.php:561
+msgid "The %s constant must contain application password credentials in \"username:password\" format."
+msgstr "%s konstansnak alkalmazásjelszó-hitelesítő adatokat kell tartalmaznia „felhasználónév:jelszó” formátumban."
+
+#. translators: %s: Connector name.
+#: wp-includes/connectors.php:817
+msgid "Application password credentials for the %s connector."
+msgstr "%s csatlakozóhoz tartozó alkalmazásjelszó hitelesítő adatok."
 
 #. translators: %s: Connector ID.
 #: wp-includes/class-wp-connector-registry.php:206
@@ -457,7 +462,7 @@ msgstr "\"%s\" csatlakozó is_active bővítményének hívhatónak kell lennie.
 #. translators: %s: wp_ai_client_default_request_timeout
 #: wp-includes/ai-client/class-wp-ai-client-prompt-builder.php:210
 msgid "The %s filter must return a non-negative number."
-msgstr "A(z) %s szűrőnek nem negatív számot kell visszaadnia."
+msgstr "%s szűrőnek nem negatív számot kell visszaadnia."
 
 #: wp-includes/script-loader.php:2036
 msgctxt "datepicker: navigate to next month"
@@ -468,11 +473,6 @@ msgstr "Következő"
 msgctxt "datepicker: navigate to previous month"
 msgid "Previous"
 msgstr "Előző"
-
-#. translators: %s: Connector name.
-#: wp-includes/connectors.php:796
-msgid "API key for the %s connector."
-msgstr "%s csatlakozóhoz tartozó API kulcs."
 
 #. translators: %s: Connector ID.
 #: wp-includes/class-wp-connector-registry.php:269
@@ -488,6 +488,11 @@ msgstr "\"%s\" csatlakozó hitelesítési constant_name értéke nem lehet üres
 #: wp-includes/class-wp-connector-registry.php:242
 msgid "Connector \"%s\" authentication setting_name must be a non-empty string."
 msgstr "\"%s\" csatlakozó hitelesítési setting_name értéke nem lehet üres."
+
+#. translators: %s: Connector name.
+#: wp-includes/connectors.php:796
+msgid "API key for the %s connector."
+msgstr "%s csatlakozóhoz tartozó API-kulcs."
 
 #: wp-includes/blocks/verse/block.json
 msgctxt "block keyword"
@@ -633,12 +638,12 @@ msgstr "A hitelesítés folytatásához kérjük, jelentkezzen be ide: %s."
 #. translators: 1: Website name, 2: Application name.
 #: wp-login.php:1458
 msgid "Please log in to %1$s to authorize %2$s to connect to your account."
-msgstr "Kérjük, jelentkezzen be ide: %1$s, hogy engedélyezze a(z) %2$s csatlakozását a fiókjához."
+msgstr "Jelentkezzünk be ide: %1$s, hogy engedélyezzük a(z) %2$s csatlakozását a fiókjához."
 
 #. translators: 1: 'path', 2: filesystem path, 3: style handle
 #: wp-includes/script-loader.php:3125 wp-includes/script-loader.php:3174
 msgid "Unable to read the \"%1$s\" key with value \"%2$s\" for stylesheet \"%3$s\"."
-msgstr "Nem sikerült beolvasni a(z) \"%1$s\" kulcsot \"%2$s\" értékkel a(z) \"%3$s\" stíluslaphoz."
+msgstr "\"%1$s\" kulcs beolvasása nem sikerült \"%2$s\" értékkel \"%3$s\" stíluslaphoz."
 
 #: wp-includes/connectors.php:292
 msgid "Text generation with Claude."
@@ -681,21 +686,10 @@ msgstr "EXIF tájolási érték. Az 1-8 közötti értékek az EXIF specifikáci
 msgid "Navigation Menu updated."
 msgstr "Navigációs menü frissítve."
 
-#. translators: 1: $args, 2: List of unrecognized keys, 3: List of supported
-#. keys.
-#: wp-includes/functions.wp-scripts.php:102
-msgid "Unrecognized key(s) in the %1$s param: %2$s. Supported keys: %3$s"
-msgstr "Ismeretlen kulcs(ok) a(z) %1$s paraméterben: %2$s. Támogatott kulcsok: %3$s"
-
 #. translators: %s: Connector name.
 #: wp-includes/connectors.php:791
 msgid "%s API Key"
 msgstr "%s API-kulcs"
-
-#. translators: %s: AI provider ID.
-#: wp-includes/connectors.php:600
-msgid "The provider \"%s\" is not registered in the AI client registry."
-msgstr "A(z) \"%s\" szolgáltató nincs regisztrálva az AI kliensregiszterben."
 
 #: wp-includes/class-wp-xmlrpc-server.php:277
 msgid "Invalid arguments passed to this XML-RPC method. Requires two integers."
@@ -704,22 +698,6 @@ msgstr "Érvénytelen argumentumok lettek átadva ennek az XML-RPC metódusnak. 
 #: wp-includes/connectors.php:200
 msgid "Provider logo path must be located within the plugins or must-use plugins directory."
 msgstr "A szolgáltató logójának útvonala a bővítmények (plugins) vagy a kötelezően használt bővítmények könyvtárában kell, hogy legyen."
-
-#. translators: 1: Script handle, 2: 'module_dependencies'
-#: wp-includes/class-wp-scripts.php:964
-msgid "The script handle \"%1$s\" has one or more of its script module dependencies (\"%2$s\") which are invalid."
-msgstr "A(z) \"%1$s\" azonosítójú szkript egy vagy több szkriptmodul-függősége (\"%2$s\") érvénytelen."
-
-#. translators: 1: 'module_dependencies', 2: Script handle.
-#: wp-includes/class-wp-scripts.php:937
-msgid "The value for \"%1$s\" must be an array for the \"%2$s\" script."
-msgstr "A(z) \"%1$s\" értékének tömbnek kell lennie a(z) \"%2$s\" szkriptnél."
-
-#. translators: 1: Script handle, 2: 'module_dependencies', 3: List of missing
-#. dependency IDs.
-#: wp-includes/class-wp-script-modules.php:692
-msgid "The script with the handle \"%1$s\" was enqueued with script module dependencies (\"%2$s\") that are not registered: %3$s."
-msgstr "A(z) \"%1$s\" azonosítójú szkript olyan szkriptmodul-függőségekkel (\"%2$s\") lett sorba állítva, amelyek nincsenek regisztrálva: %3$s"
 
 #: wp-includes/class-wp-icons-registry.php:168
 #: wp-includes/class-wp-icons-registry.php:300
@@ -766,6 +744,33 @@ msgstr "Érvénytelen ikontulajdonság: \"%s\"."
 #: wp-includes/rest-api/endpoints/class-wp-rest-icons-controller.php:119
 msgid "Sorry, you are not allowed to view the registered icons."
 msgstr "Sajnáljuk, nem engedélyezett a regisztrált ikonok megtekintése."
+
+#. translators: 1: $args, 2: List of unrecognized keys, 3: List of supported
+#. keys.
+#: wp-includes/functions.wp-scripts.php:102
+msgid "Unrecognized key(s) in the %1$s param: %2$s. Supported keys: %3$s"
+msgstr "%1$s paraméterben ismeretlen kulcs(ok): %2$s. Támogatott kulcsok: %3$s"
+
+#. translators: %s: AI provider ID.
+#: wp-includes/connectors.php:600
+msgid "The provider \"%s\" is not registered in the AI client registry."
+msgstr "\"%s\" szolgáltató nincs regisztrálva az AI kliensregiszterben."
+
+#. translators: 1: Script handle, 2: 'module_dependencies'
+#: wp-includes/class-wp-scripts.php:964
+msgid "The script handle \"%1$s\" has one or more of its script module dependencies (\"%2$s\") which are invalid."
+msgstr "\"%1$s\" azonosítójú szkript egy vagy több szkriptmodul-függősége (\"%2$s\") érvénytelen."
+
+#. translators: 1: 'module_dependencies', 2: Script handle.
+#: wp-includes/class-wp-scripts.php:937
+msgid "The value for \"%1$s\" must be an array for the \"%2$s\" script."
+msgstr "\"%1$s\" értékének tömbnek kell lennie a(z) \"%2$s\" szkriptnél."
+
+#. translators: 1: Script handle, 2: 'module_dependencies', 3: List of missing
+#. dependency IDs.
+#: wp-includes/class-wp-script-modules.php:692
+msgid "The script with the handle \"%1$s\" was enqueued with script module dependencies (\"%2$s\") that are not registered: %3$s."
+msgstr "\"%1$s\" azonosítójú szkript olyan szkriptmodul-függőségekkel (\"%2$s\") lett sorba állítva, amelyek nincsenek regisztrálva: %3$s."
 
 #: wp-includes/icons.php:129
 msgid "Core icon collection manifest must provide a valid \"filePath\" for each icon."
@@ -4043,11 +4048,6 @@ msgstr "Hibás attribútum név."
 msgid "Unknown bookmark name."
 msgstr "Ismeretlen könyvjelző név."
 
-#. translators: 1: CUSTOM_TAGS, 2: Global variable names.
-#: wp-includes/kses.php:928
-msgid "When using the %1$s constant, make sure to set these globals to an array: %2$s."
-msgstr "A %1$s konstans használatakor ügyeljen arra, hogy ezeket a globálisokat egy tömbbe állítsa be: %2$s."
-
 #: wp-includes/html-api/class-wp-html-tag-processor.php:5004
 msgid "The query argument must be an array or a tag name."
 msgstr "A lekérdezési argumentumnak tömbnek vagy címkenévnek kell lennie."
@@ -4070,6 +4070,11 @@ msgstr "Figyelmeztetés: %1$s azt várja, hogy a %2$s (%3$s) paraméter %4$s, %5
 #: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1661
 msgid "Array of column names to be searched."
 msgstr "A keresendő oszlopnevek tömbje."
+
+#. translators: 1: CUSTOM_TAGS, 2: Global variable names.
+#: wp-includes/kses.php:928
+msgid "When using the %1$s constant, make sure to set these globals to an array: %2$s."
+msgstr "%1$s konstans használatakor ügyeljünk arra, hogy ezeket a globális változókat egy tömbbe állítsuk be: %2$s."
 
 #: wp-includes/customize/class-wp-customize-nav-menu-locations-control.php:53
 msgid "https://wordpress.org/documentation/article/manage-wordpress-widgets/"
@@ -4375,7 +4380,7 @@ msgstr "*"
 #. translators: 1: VHOST, 2: SUBDOMAIN_INSTALL
 #: wp-includes/ms-default-constants.php:154
 msgid "<strong>Conflicting values for the constants %1$s and %2$s.</strong> The value of %2$s will be assumed to be your subdomain configuration setting."
-msgstr "<strong>A %1$s és a %2$s konstansok ütköző értékei.</strong> A rendszer a %2$s értékét az aldomain konfigurációs beállításának tekinti."
+msgstr "<strong>A %1$s és a %2$s konstansok értékei ütköznek.</strong> A rendszer a %2$s értékét az aldomain konfigurációs beállításának tekinti."
 
 #. translators: 1: User name, 2: Edit user link, 3: Logout URL.
 #: wp-includes/comment-template.php:2632
@@ -6710,6 +6715,18 @@ msgstr "Megjelenés elől"
 msgid "Page on front"
 msgstr "Főoldal"
 
+#: wp-includes/js/dist/block-editor.js:83111
+#: wp-includes/js/dist/block-editor.js:83641
+#: wp-includes/js/dist/block-editor.js:83711
+#: wp-includes/js/dist/edit-site.js:34179 wp-includes/js/dist/editor.js:4473
+#: wp-includes/js/dist/editor.js:42368 wp-includes/js/dist/editor.js:56863
+#: wp-includes/js/dist/editor.js:72300 wp-includes/js/dist/media-utils.js:22752
+#: wp-includes/js/dist/script-modules/content-types/index.js:29110
+#: wp-admin/includes/class-wp-screen.php:1214 wp-admin/includes/theme.php:351
+#: wp-admin/includes/theme.php:387 wp-admin/index.php:70
+msgid "Layout"
+msgstr "Elrendezés"
+
 #. translators: %s: taxonomy's singular name
 #. translators: Hidden accessibility text. %s: Link name.
 #. translators: Hidden accessibility text. %s: Attachment title.
@@ -6736,18 +6753,6 @@ msgstr "Főoldal"
 #: wp-admin/includes/class-wp-ms-users-list-table.php:243
 msgid "Select %s"
 msgstr "%s kiválasztása"
-
-#: wp-includes/js/dist/block-editor.js:83111
-#: wp-includes/js/dist/block-editor.js:83641
-#: wp-includes/js/dist/block-editor.js:83711
-#: wp-includes/js/dist/edit-site.js:34179 wp-includes/js/dist/editor.js:4473
-#: wp-includes/js/dist/editor.js:42368 wp-includes/js/dist/editor.js:56863
-#: wp-includes/js/dist/editor.js:72300 wp-includes/js/dist/media-utils.js:22752
-#: wp-includes/js/dist/script-modules/content-types/index.js:29110
-#: wp-admin/includes/class-wp-screen.php:1214 wp-admin/includes/theme.php:351
-#: wp-admin/includes/theme.php:387 wp-admin/index.php:70
-msgid "Layout"
-msgstr "Elrendezés"
 
 #: wp-includes/post.php:320 wp-includes/js/dist/block-editor.js:59938
 #: wp-includes/js/dist/block-editor.js:64633
@@ -8170,7 +8175,7 @@ msgstr "Sajnáljuk, nem engedélyezett hozzászólás ezen bejegyzéshez."
 #. translators: %s: WP_ENVIRONMENT_TYPES
 #: wp-includes/load.php:268
 msgid "The %s constant is no longer supported."
-msgstr "A(z) %s konstans már nem támogatott."
+msgstr "%s konstans már nem támogatott."
 
 #. translators: %s: Theme name.
 #: wp-includes/customize/class-wp-customize-theme-control.php:161
@@ -10438,7 +10443,7 @@ msgstr "Létrehozás"
 #: wp-includes/blocks/quote/block.json
 msgctxt "block description"
 msgid "Give quoted text visual emphasis. \"In quoting others, we cite ourselves.\" — Julio Cortázar"
-msgstr "Adjunk az idézett szövegnek vizuális hangsúlyt. \"Ha másoknak idézünk, idézzük magunkat.\" - Julio Cortázar"
+msgstr "Adjunk az idézett szövegnek vizuális hangsúlyt. \"Amikor másokat idézünk, önmagunkat idézzük.\" – Julio Cortázar"
 
 #: wp-includes/blocks/query-pagination.php:26
 #: wp-includes/js/dist/editor.js:72831
@@ -14854,7 +14859,7 @@ msgstr "&#8220;%1$s&#8221; &#8212; %2$s"
 #. is_subdomain_install()
 #: wp-includes/ms-default-constants.php:142
 msgid "The constant %1$s <strong>is deprecated</strong>. Use the boolean constant %2$s in %3$s to enable a subdomain configuration. Use %4$s to check whether a subdomain configuration is enabled."
-msgstr "A %1$s állandó <strong>elavult</strong>. Használjuk a %3$s fájlban lévő %2$s logikai állandót az aldomain konfiguráció bekapcsolásához. Használjuk az %4$s függvényt annak ellenőrzéséhez, hogy az aldomain konfiguráció be van-e kapcsolva."
+msgstr "%1$s konstans <strong>elavult</strong>. Használjuk a %3$s fájlban lévő %2$s logikai konstanst az aldomain konfiguráció bekapcsolásához. Használjuk az %4$s függvényt annak ellenőrzéséhez, hogy az aldomain konfiguráció be van-e kapcsolva."
 
 #. translators: 1: Panel ID, 2: Link to 'customize_loaded_components' filter
 #. reference.
