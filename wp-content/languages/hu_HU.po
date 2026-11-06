@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 7.1.x - Development package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-11-04 20:59:26+0000\n"
+"PO-Revision-Date: 2026-11-05 16:23:41+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -399,10 +399,28 @@ msgstr "%s konstansnak alkalmazásjelszó-hitelesítő adatokat kell tartalmazni
 msgid "Application password credentials for the %s connector."
 msgstr "%s csatlakozóhoz tartozó alkalmazásjelszó hitelesítő adatok."
 
+#. translators: %s: Icon name.
+#: wp-includes/class-wp-icons-registry.php:216
+msgid "Icon \"%s\" is not registered."
+msgstr "\"%s\" ikon nem regisztrált."
+
+#: wp-includes/class-wp-icons-registry.php:182
+msgid "Icon is already registered."
+msgstr "Ikon már regisztrálva van."
+
 #. translators: %s: Connector ID.
 #: wp-includes/class-wp-connector-registry.php:206
 msgid "Connector \"%s\" authentication method must be \"api_key\", \"application_password\", or \"none\"."
 msgstr "\"%s\" csatlakozó hitelesítési módja csak \"api_key\", \"application_password\" vagy \"none\" lehet."
+
+#. translators: %s: Icon collection slug.
+#: wp-includes/class-wp-icons-registry.php:125
+msgid "Icon collection \"%s\" is not registered."
+msgstr "\"%s\" ikon kollekció nem regisztrált."
+
+#: wp-includes/class-wp-icon-collections-registry.php:72
+msgid "Icon collection is already registered."
+msgstr "Ikon készlet már regisztrálva van."
 
 #: wp-includes/abilities.php:202
 msgid "Personal website URL."
@@ -412,7 +430,7 @@ msgstr "Személyes webhely URL."
 #. 'strategy', 5: 'defer'.
 #: wp-includes/functions.wp-scripts.php:138
 msgid "When the %1$s arg is provided, the \"%2$s\" script must either be printed in the footer (%3$s set to true) or use a deferred loading %4$s (%5$s) so that the import map is printed before the script is evaluated."
-msgstr "Ha a %1$s argumentum meg van adva, akkor a(z) \"%2$s\" szkriptet vagy a láblécben kell megjeleníteni (%3$s értéke true), vagy halasztott betöltést kell használni %4$s (%5$s), hogy az importtérkép a szkript kiértékelése előtt kerüljön kiírásra."
+msgstr "\"%2$s\" szkriptet - megadott %1$s argumentum esetén - vagy a láblécben kell megjeleníteni (%3$s értéke true), vagy halasztott betöltést kell használni %4$s (%5$s), hogy az importtérkép a szkript kiértékelése előtt kerüljön kiírásra."
 
 #: wp-includes/class-wp-customize-manager.php:4348
 #: wp-includes/class-wp-editor.php:1255
@@ -635,15 +653,15 @@ msgstr "Nem elérhető"
 msgid "Please log in to %s to proceed with authorization."
 msgstr "A hitelesítés folytatásához kérjük, jelentkezzen be ide: %s."
 
-#. translators: 1: Website name, 2: Application name.
-#: wp-login.php:1458
-msgid "Please log in to %1$s to authorize %2$s to connect to your account."
-msgstr "Jelentkezzünk be ide: %1$s, hogy engedélyezzük a(z) %2$s csatlakozását a fiókjához."
-
 #. translators: 1: 'path', 2: filesystem path, 3: style handle
 #: wp-includes/script-loader.php:3125 wp-includes/script-loader.php:3174
 msgid "Unable to read the \"%1$s\" key with value \"%2$s\" for stylesheet \"%3$s\"."
 msgstr "\"%1$s\" kulcs beolvasása nem sikerült \"%2$s\" értékkel \"%3$s\" stíluslaphoz."
+
+#. translators: 1: Website name, 2: Application name.
+#: wp-login.php:1458
+msgid "Please log in to %1$s to authorize %2$s to connect to your account."
+msgstr "Jelentkezzünk be ide: %1$s, hogy engedélyezzük %2$s csatlakozását a fiókjához."
 
 #: wp-includes/connectors.php:292
 msgid "Text generation with Claude."
@@ -751,11 +769,6 @@ msgstr "Sajnáljuk, nem engedélyezett a regisztrált ikonok megtekintése."
 msgid "Unrecognized key(s) in the %1$s param: %2$s. Supported keys: %3$s"
 msgstr "%1$s paraméterben ismeretlen kulcs(ok): %2$s. Támogatott kulcsok: %3$s"
 
-#. translators: %s: AI provider ID.
-#: wp-includes/connectors.php:600
-msgid "The provider \"%s\" is not registered in the AI client registry."
-msgstr "\"%s\" szolgáltató nincs regisztrálva az AI kliensregiszterben."
-
 #. translators: 1: Script handle, 2: 'module_dependencies'
 #: wp-includes/class-wp-scripts.php:964
 msgid "The script handle \"%1$s\" has one or more of its script module dependencies (\"%2$s\") which are invalid."
@@ -766,11 +779,16 @@ msgstr "\"%1$s\" azonosítójú szkript egy vagy több szkriptmodul-függősége
 msgid "The value for \"%1$s\" must be an array for the \"%2$s\" script."
 msgstr "\"%1$s\" értékének tömbnek kell lennie a(z) \"%2$s\" szkriptnél."
 
+#. translators: %s: AI provider ID.
+#: wp-includes/connectors.php:600
+msgid "The provider \"%s\" is not registered in the AI client registry."
+msgstr "\"%s\" szolgáltató nem regisztrált az AI kliensregiszterben."
+
 #. translators: 1: Script handle, 2: 'module_dependencies', 3: List of missing
 #. dependency IDs.
 #: wp-includes/class-wp-script-modules.php:692
 msgid "The script with the handle \"%1$s\" was enqueued with script module dependencies (\"%2$s\") that are not registered: %3$s."
-msgstr "\"%1$s\" azonosítójú szkript olyan szkriptmodul-függőségekkel (\"%2$s\") lett sorba állítva, amelyek nincsenek regisztrálva: %3$s."
+msgstr "\"%1$s\" azonosítójú szkript nem regisztrált szkriptmodul-függőségekkel (\"%2$s\") lett sorba állítva: %3$s."
 
 #: wp-includes/icons.php:129
 msgid "Core icon collection manifest must provide a valid \"filePath\" for each icon."
@@ -832,25 +850,25 @@ msgstr "Sajnáljuk, nem engedélyezett a jegyzetek hozzáadása ezen bejegyzésh
 msgid "Error fetching feed %1$s: %2$s"
 msgstr "Hiba a hírcsatorna lekérésekor %1$s: %2$s"
 
-#. translators: 1: Script handle, 2: List of missing dependency handles.
-#: wp-includes/class-wp-scripts.php:1245
-msgid "The script with the handle \"%1$s\" was enqueued with dependencies that are not registered: %2$s."
-msgstr "A(z) \"%1$s\" azonosítójú szkript olyan függőségekkel lett sorba állítva, amelyek nincsenek regisztrálva: %2$s."
-
-#. translators: 1: Handle, 2: List of missing dependency handles.
-#: wp-includes/class-wp-dependencies.php:573
-msgid "The handle \"%1$s\" was enqueued with dependencies that are not registered: %2$s."
-msgstr "A(z) \"%1$s\" azonosítót olyan függőségekkel helyezték sorba, amelyek nincsenek regisztrálva: %2$s."
-
 #. translators: 1: Style handle, 2: List of missing dependency handles.
 #: wp-includes/class-wp-styles.php:505
 msgid "The style with the handle \"%1$s\" was enqueued with dependencies that are not registered: %2$s."
-msgstr "A(z) \"%1$s\" azonosítójú stílust olyan függőségekkel helyezték sorba, amelyek nincsenek regisztrálva: %2$s."
+msgstr "\"%1$s\" azonosítójú stílus nem regisztrált függőségekkel lett sorba állítva: %2$s."
+
+#. translators: 1: Script handle, 2: List of missing dependency handles.
+#: wp-includes/class-wp-scripts.php:1245
+msgid "The script with the handle \"%1$s\" was enqueued with dependencies that are not registered: %2$s."
+msgstr "\"%1$s\" azonosítójú szkript nem regisztrált függőségekkel lett sorba állítva: %2$s."
 
 #. translators: 1: Script module ID, 2: List of missing dependency IDs.
 #: wp-includes/class-wp-script-modules.php:920
 msgid "The script module with the ID \"%1$s\" was enqueued with dependencies that are not registered: %2$s."
-msgstr "A(z) \"%1$s\" azonosítójú (ID) szkriptmodul regisztrálatlan függőségekkel lett sorba állítva: %2$s."
+msgstr "\"%1$s\" azonosítójú (ID) szkriptmodul nem regisztrált függőségekkel lett sorba állítva: %2$s."
+
+#. translators: 1: Handle, 2: List of missing dependency handles.
+#: wp-includes/class-wp-dependencies.php:573
+msgid "The handle \"%1$s\" was enqueued with dependencies that are not registered: %2$s."
+msgstr "\"%1$s\" azonosítót nem regisztrált függőségekkel lett sorba állítva: %2$s."
 
 #: wp-includes/blocks/terms-query/block.json
 msgctxt "block keyword"
@@ -1630,11 +1648,6 @@ msgstr "%1$s–%2$s perc"
 msgid "Optional: Limit response to specific fields. If omitted, all fields are returned."
 msgstr "Opcionális: A válasz kizárólag konkrét mezőkre vonatkozzon. Ha ezt elhagyjuk, akkor az összes mező megjelenik."
 
-#. translators: %s: Ability name.
-#: wp-includes/abilities-api/class-wp-abilities-registry.php:101
-msgid "Ability \"%s\" is already registered."
-msgstr "A \"%s\" képesség már regisztrálva van."
-
 #: wp-includes/abilities-api/class-wp-abilities-registry.php:89
 msgid "Ability name must be a string containing a namespace prefix, i.e. \"my-plugin/my-ability\". It can only contain lowercase alphanumeric characters, dashes and the forward slash."
 msgstr "A képesség nevének egy névtér-előtagot tartalmazó karakterláncnak kell lennie, pl. \"bovitmenyem/kepesseg\". Ami csak kisbetűs alfanumerikus karaktereket, kötőjeleket vagy perjelet tartalmazhat."
@@ -1672,11 +1685,6 @@ msgstr "A \"%s\" képesség kategória nem található."
 #: wp-includes/abilities-api/class-wp-ability-categories-registry.php:71
 msgid "Ability category slug must contain only lowercase alphanumeric characters and dashes."
 msgstr "A képesség kategória slug csak kisbetűs alfanumerikus karaktereket és kötőjeleket tartalmazhat."
-
-#. translators: %s: Ability category slug.
-#: wp-includes/abilities-api/class-wp-ability-categories-registry.php:62
-msgid "Ability category \"%s\" is already registered."
-msgstr "A \"%s\" képesség kategória már regisztrálva van."
 
 #. translators: %s: init action.
 #: wp-includes/abilities-api/class-wp-abilities-registry.php:288
@@ -1749,17 +1757,27 @@ msgstr "A képesség kategória slug nem lehet üres."
 #. translators: %1$s: ability category slug, %2$s: ability name
 #: wp-includes/abilities-api/class-wp-abilities-registry.php:148
 msgid "Ability category \"%1$s\" is not registered. Please register the ability category before assigning it to ability \"%2$s\"."
-msgstr "A \"%1$s\" képesség kategória nincs regisztrálva. Kérjük, regisztrálja a képességkategóriát, mielőtt hozzárendelné a \"%2$s\" képességhez."
+msgstr "A \"%1$s\" képesség kategória nem regisztrált. Regisztráljuk a képességkategóriát, mielőtt hozzárendelnénk a \"%2$s\" képességhez."
 
 #. translators: 1: wp_abilities_api_categories_init, 2: ability category slug.
 #: wp-includes/abilities-api.php:651
 msgid "Ability categories must be registered on the %1$s action. The ability category %2$s was not registered."
-msgstr "A képesség kategóriákat a %1$s műveletre kell regisztrálni. A %2$s képesség kategória nem lett regisztrálva."
+msgstr "A képesség kategóriákat a %1$s műveletre kell regisztrálni. A %2$s képesség kategória nem regisztrált."
 
 #. translators: 1: wp_abilities_api_init, 2: string value of the ability name.
 #: wp-includes/abilities-api.php:296
 msgid "Abilities must be registered on the %1$s action. The ability %2$s was not registered."
-msgstr "A képességeket a %1$s műveletre kell regisztrálni. A %2$s képességet nem regisztrálták."
+msgstr "A képességeket a %1$s műveletre kell regisztrálni. A %2$s képesség nem regisztrált."
+
+#. translators: %s: Ability category slug.
+#: wp-includes/abilities-api/class-wp-ability-categories-registry.php:62
+msgid "Ability category \"%s\" is already registered."
+msgstr "\"%s\" képesség kategória már regisztrálva van."
+
+#. translators: %s: Ability name.
+#: wp-includes/abilities-api/class-wp-abilities-registry.php:101
+msgid "Ability \"%s\" is already registered."
+msgstr "\"%s\" képesség már regisztrálva van."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:223
 #: wp-admin/users.php:247
@@ -2046,11 +2064,6 @@ msgctxt "Name for the Code editor tab (formerly Text)"
 msgid "Code"
 msgstr "Kód"
 
-#. translators: 1: mail.add_x_header. 2: php.ini
-#: wp-includes/class-wp-phpmailer.php:44
-msgid "Your version of PHP is affected by a bug that may result in corrupted messages. To fix it, switch to sending using SMTP, disable the %1$s option in your %2$s, or switch to MacOS or Linux, or upgrade your PHP version."
-msgstr "A használt PHP verzió olyan hibát tartalmaz, amely sérült üzeneteket eredményezhet. A hiba kijavításához váltsunk SMTP küldésre, tiltsuk le a %1$s opciót a %2$s-ban, vagy váltsunk MacOS-re vagy Linuxra, vagy frissítsünk PHP verziót."
-
 #. translators: There is a space at the beginning.
 #: wp-includes/class-wp-phpmailer.php:72
 msgid " mailer is not supported."
@@ -2149,6 +2162,11 @@ msgstr "A \"%s\" azonosítóval (ID) már létezik spekulációs szabály."
 #: wp-includes/class-wp-speculation-rules.php:92
 msgid "The value \"%s\" is not a valid ID for a speculation rule."
 msgstr "A \"%s\" érték nem egy spekulációs szabály érvényes azonosítója (ID)."
+
+#. translators: 1: mail.add_x_header. 2: php.ini
+#: wp-includes/class-wp-phpmailer.php:44
+msgid "Your version of PHP is affected by a bug that may result in corrupted messages. To fix it, switch to sending using SMTP, disable the %1$s option in your %2$s, or switch to MacOS or Linux, or upgrade your PHP version."
+msgstr "A PHP verziónk olyan hibát tartalmaz, amely sérült üzeneteket eredményezhet. A hiba kijavításához váltsunk SMTP küldésre, kapcsoljuk ki a %1$s opciót a %2$s-ben, váltsunk MacOSre, Linuxra, vagy frissítsünk PHP verziót."
 
 #: wp-includes/blocks/image.php:253
 msgid "Enlarge"
@@ -2292,12 +2310,6 @@ msgstr "Bővítmény, ami regisztrálta a sablont."
 msgid "Limit result set to items assigned one or more given formats."
 msgstr "Az eredménykészlet korlátozása az egy vagy több megadott formátumhoz rendelt elemre."
 
-#. translators: 1: rest_api_init, 2: string value of the route, 3: string value
-#. of the namespace.
-#: wp-includes/rest-api.php:86
-msgid "REST API routes must be registered on the %1$s action. Instead route '%2$s' with namespace '%3$s' was not registered on this action."
-msgstr "A REST API útvonalakat regisztrálni kell a %1$s műveletnél. Ehelyett '%2$s' útvonal '%3$s' névtérrel nem lett regisztrálva ehhez a művelethez."
-
 #. translators: 1: string value of the namespace, 2: string value of the route.
 #: wp-includes/rest-api.php:73
 msgid "Namespace must not start or end with a slash. Instead namespace '%1$s' for route '%2$s' seems to contain a slash."
@@ -2313,28 +2325,19 @@ msgstr "Az útvonalat meg kell adni. Ehelyett '%1$s' névtérben egy üres '%2$s
 msgid "Routes must be namespaced with plugin or theme name and version. Instead there seems to be an empty namespace '%1$s' for route '%2$s'."
 msgstr "Az útvonalaknak a bővítmény vagy a sablon nevével és verziójával kell rendelkezniük. Ehelyett úgy tűnik, hogy egy üres '%1$s' névtér van '%2$s' útvonalhoz."
 
+#. translators: 1: rest_api_init, 2: string value of the route, 3: string value
+#. of the namespace.
+#: wp-includes/rest-api.php:86
+msgid "REST API routes must be registered on the %1$s action. Instead route '%2$s' with namespace '%3$s' was not registered on this action."
+msgstr "A REST API útvonalakat regisztrálni kell a %1$s műveletnél. Ehelyett '%2$s' útvonal '%3$s' névtérrel nem regisztrált ezen művelethez."
+
 #: wp-includes/media-template.php:1570
 msgid "As an app icon and a browser icon."
 msgstr "Alkalmazásikonként és böngészőikonként."
 
-#. translators: 1: The text domain. 2: 'init'.
-#: wp-includes/l10n.php:1449
-msgid "Translation loading for the %1$s domain was triggered too early. This is usually an indicator for some code in the plugin or theme running too early. Translations should be loaded at the %2$s action or later."
-msgstr "A(z) %1$s domain fordításának betöltése túl korán indult el. Ez általában azt jelzi, hogy a beépülő modulban vagy témában lévő kódok túl korán futnak le. A fordításokat a %2$s műveletnél vagy később kell betölteni."
-
 #: wp-includes/interactivity-api/class-wp-interactivity-api.php:378
 msgid "The element can only be read during directive processing."
 msgstr "Az elem csak az irányelv feldolgozása során olvasható."
-
-#. translators: %s: Template name.
-#: wp-includes/class-wp-block-templates-registry.php:222
-msgid "Template \"%s\" is not registered."
-msgstr "A \"%s\" sablon nincs regisztrálva."
-
-#. translators: %s: Template name.
-#: wp-includes/class-wp-block-templates-registry.php:58
-msgid "Template \"%s\" is already registered."
-msgstr "A \"%s\" sablon már regisztrálva van."
 
 #: wp-includes/class-wp-block-templates-registry.php:54
 msgid "Template names must contain a namespace prefix. Example: my-plugin//my-custom-template"
@@ -2370,6 +2373,21 @@ msgstr "A sablonnév nem tartalmazhatnak nagybetűket."
 msgctxt "noun"
 msgid "Site Icon Preview"
 msgstr "Webhelyikon előnézete"
+
+#. translators: 1: The text domain. 2: 'init'.
+#: wp-includes/l10n.php:1449
+msgid "Translation loading for the %1$s domain was triggered too early. This is usually an indicator for some code in the plugin or theme running too early. Translations should be loaded at the %2$s action or later."
+msgstr "%1$s domain fordításának betöltése túl korán indult el. Ez általában azt jelzi, hogy a beépülő modulban vagy témában lévő kódok túl korán futnak le. A fordításokat az %2$s műveletnél vagy később kell betölteni."
+
+#. translators: %s: Template name.
+#: wp-includes/class-wp-block-templates-registry.php:222
+msgid "Template \"%s\" is not registered."
+msgstr "\"%s\" sablon nem regisztrált."
+
+#. translators: %s: Template name.
+#: wp-includes/class-wp-block-templates-registry.php:58
+msgid "Template \"%s\" is already registered."
+msgstr "\"%s\" sablon már regisztrálva van."
 
 #: wp-includes/blocks/widget-group/block.json
 msgctxt "block title"
@@ -2597,15 +2615,15 @@ msgstr "Nem észlelt hiba a \"%1$s\" elérési út és a \"%2$s\" névtér szár
 #. translators: 1: SVG or MATH HTML tag, 2: Namespace of the interactive block.
 #: wp-includes/interactivity-api/class-wp-interactivity-api.php:518
 msgid "Interactivity directives were detected on an incompatible %1$s tag when processing \"%2$s\". These directives will be ignored in the server side render."
-msgstr "Interaktivitási utasításokat észleltünk egy inkompatibilis %1$s címkén a(z) \"%2$s\" feldolgozása során. Ezeket az utasításokat a rendszer figyelmen kívül hagyja a szerveroldali megjelenítésben."
-
-#: wp-includes/block-supports/typography.php:583
-msgid "`boolean` type for second argument `$settings` is deprecated. Use `array()` instead."
-msgstr "A `$settings` második argumentum `boolean` típusa elavult. Helyette `array()` használatos."
+msgstr "\"%2$s\" feldolgozása során interaktivitási utasításokat észleltünk egy inkompatibilis %1$s címkén. Ezeket az utasításokat a rendszer figyelmen kívül hagyja a szerveroldali megjelenítésben."
 
 #: wp-includes/block-supports/elements.php:150
 msgid "Use as a `pre_render_block` filter is deprecated. Use with `render_block_data` instead."
 msgstr "A `pre_render_block` szűrőként való használat elavult. Helyette `render_block_data` használatos."
+
+#: wp-includes/block-supports/typography.php:583
+msgid "`boolean` type for second argument `$settings` is deprecated. Use `array()` instead."
+msgstr "A `$settings` második argumentumának `boolean` típusa elavult. Helyette `array()` használatos."
 
 #: wp-includes/blocks/footnotes/block.json
 msgctxt "block description"
@@ -2749,10 +2767,6 @@ msgstr "Nem található betűkészlet."
 msgid "The name for the font collection."
 msgstr "A betűkészlet neve."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-font-faces-controller.php:555
-msgid "List of available font weights, separated by a space."
-msgstr "A rendelkezésre álló betűsúlyok listája, szóközzel elválasztva."
-
 #. translators: %s: force=true
 #: wp-includes/rest-api/endpoints/class-wp-rest-font-faces-controller.php:435
 #: wp-includes/rest-api/endpoints/class-wp-rest-font-families-controller.php:222
@@ -2868,12 +2882,6 @@ msgstr "A beállításoknak megfelelő betűtípus már létezik."
 msgid "The font face does not belong to the specified font family with id of \"%d\"."
 msgstr "A betűtípus nem tartozik a megadott \"%d\" azonosítójú betűtípuscsaládhoz."
 
-#. translators: 1: File key (e.g. "file-0") in the request data, 2: Font face
-#. source parameter name: "font_face_settings[src]".
-#: wp-includes/rest-api/endpoints/class-wp-rest-font-faces-controller.php:237
-msgid "File %1$s must be used in %2$s."
-msgstr "A(z) %1$s fájlt használni kell itt: %2$s."
-
 #. translators: 1: Font face source parameter name: "font_face_settings[src]",
 #. 2: The invalid src value.
 #: wp-includes/rest-api/endpoints/class-wp-rest-font-faces-controller.php:225
@@ -2949,6 +2957,16 @@ msgstr "Sajnáljuk, nem engedélyezett a hozzáférés ezen betűtípus-családh
 #: wp-includes/rest-api/endpoints/class-wp-rest-font-faces-controller.php:146
 msgid "Sorry, you are not allowed to access this font face."
 msgstr "Sajnáljuk, nem engedélyezett a hozzáférés ezen betűtípushoz."
+
+#. translators: 1: File key (e.g. "file-0") in the request data, 2: Font face
+#. source parameter name: "font_face_settings[src]".
+#: wp-includes/rest-api/endpoints/class-wp-rest-font-faces-controller.php:237
+msgid "File %1$s must be used in %2$s."
+msgstr "%1$s fájlt itt kell használni: %2$s."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-font-faces-controller.php:555
+msgid "List of available font weights, separated by a space."
+msgstr "A rendelkezésre álló betűvastagságok listája, szóközzel elválasztva."
 
 #. translators: %s: Block bindings source name.
 #: wp-includes/class-wp-block-bindings-registry.php:195
@@ -3036,10 +3054,6 @@ msgstr "<a href=\"%s\">Bővítmények kezelése</a>."
 #: wp-includes/class-wp-duotone.php:682
 msgid "\"%1$s\" in %2$s %3$s is not a hex or rgb string."
 msgstr "\"%1$s\" in %2$s %3$s nem hex vagy rgb összetevő."
-
-#: wp-includes/class-wp-block-bindings-registry.php:166
-msgid "The $source_properties array contains invalid properties."
-msgstr "A(z) $source_properties tömb érvénytelen tulajdonságot tartalmaz."
 
 #: wp-includes/class-wp-block-bindings-registry.php:157
 msgid "The \"uses_context\" parameter must be an array."
@@ -3145,21 +3159,10 @@ msgstr "További információért forduljunk a bővítmény szerzőihez."
 msgid "Font collection \"%s\" not found."
 msgstr "\"%s\" betűkészlet nem található."
 
-#. translators: %s: Font collection slug.
-#: wp-includes/fonts/class-wp-font-library.php:52
-msgid "Font collection with slug: \"%s\" is already registered."
-msgstr "Már regisztrálva van betűkészlet a következő sluggal: \"%s\""
-
 #. translators: %s: attachment mime type
 #: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:956
 msgid "This site does not support post thumbnails on attachments with MIME type %s."
 msgstr "Ez a webhely nem támogatja %s MIME-típusú csatolmányoknál a bejegyzés bélyegképeket."
-
-#. translators: 1: Font collection slug, 2: Missing property name, e.g.
-#. "font_families".
-#: wp-includes/fonts/class-wp-font-collection.php:228
-msgid "Font collection \"%1$s\" has missing or empty property: \"%2$s\"."
-msgstr "A(z) \"%1$s\" betűkészletben hiányzik vagy üres a következő tulajdonság: \"%2$s\"."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-block-types-controller.php:601
 msgid "Public facing script module IDs."
@@ -3170,6 +3173,21 @@ msgstr "Nyilvános szkriptmodul-azonosítók (ID)."
 #: wp-admin/options-general.php:215
 msgid "The Site Icon is what you see in browser tabs, bookmark bars, and within the WordPress mobile apps. It should be square and at least <strong>%1$s by %2$s</strong> pixels."
 msgstr "A Webhelyikon az, amit a böngésző lapjain, a könyvjelzősávokon és a WordPress mobilalkalmazásokon belül látunk. Négyzet alakúnak és legalább <strong>%1$s x %2$s</strong> pixel nagyságúnak kell lennie."
+
+#. translators: 1: Font collection slug, 2: Missing property name, e.g.
+#. "font_families".
+#: wp-includes/fonts/class-wp-font-collection.php:228
+msgid "Font collection \"%1$s\" has missing or empty property: \"%2$s\"."
+msgstr "\"%1$s\" betűkészletben hiányzik vagy üres a következő tulajdonság: \"%2$s\"."
+
+#: wp-includes/class-wp-block-bindings-registry.php:166
+msgid "The $source_properties array contains invalid properties."
+msgstr "$source_properties tömb érvénytelen tulajdonságot tartalmaz."
+
+#. translators: %s: Font collection slug.
+#: wp-includes/fonts/class-wp-font-library.php:52
+msgid "Font collection with slug: \"%s\" is already registered."
+msgstr "\"%s\" keresőbarát kifejezéssel betűkészlet már regisztrálva van."
 
 #: wp-includes/block-patterns.php:211
 msgctxt "Block pattern category"
@@ -3228,7 +3246,7 @@ msgstr "[blokk megjelenítése megállt \"%s\" mintánál]"
 #. translators: %s: Block bindings source name.
 #: wp-includes/class-wp-block-bindings-registry.php:117
 msgid "Block bindings source \"%s\" already registered."
-msgstr "A \"%s\" blokkkötés-forrás már regisztrálva."
+msgstr "\"%s\" blokkkötés-forrás már regisztrálva van."
 
 #: wp-includes/blocks/post-date/block.json
 msgctxt "block title"
@@ -3373,17 +3391,6 @@ msgstr "Hívja meg a %s -t, hogy HTML-processzort hozzon létre a konstruktor k�
 msgid "The %s key must be a string without spaces."
 msgstr "A %s kulcsnak szóközök nélküli karakterláncnak kell lennie."
 
-#. translators: 1: PHP class name, 2: Version number.
-#: wp-includes/functions.php:5839
-msgid "Class %1$s is <strong>deprecated</strong> since version %2$s with no alternative available."
-msgstr "A %1$s osztály a %2$s verzió óta <strong>deprecated</strong>, és nincs más lehetőség."
-
-#. translators: 1: PHP class name, 2: Version number, 3: Alternative class or
-#. function name.
-#: wp-includes/functions.php:5831
-msgid "Class %1$s is <strong>deprecated</strong> since version %2$s! Use %3$s instead."
-msgstr "A %1$s osztály a %2$s verzió óta <strong>elavult</strong>! Használja helyette a %3$s-t."
-
 #: wp-includes/fonts/class-wp-font-face.php:178
 msgid "Font font-weight must be a properly formatted string or integer."
 msgstr "A betűtípus súlyának megfelelően formázott karakterláncnak vagy egész számnak kell lennie."
@@ -3425,6 +3432,17 @@ msgstr "Betűkészlet font-family nem üres karakterláncnak kell lennie."
 #: wp-includes/rest-api/endpoints/class-wp-rest-template-revisions-controller.php:172
 msgid "Invalid template parent ID."
 msgstr "Érvénytelen sablon szülő azonosító (ID)."
+
+#. translators: 1: PHP class name, 2: Version number, 3: Alternative class or
+#. function name.
+#: wp-includes/functions.php:5831
+msgid "Class %1$s is <strong>deprecated</strong> since version %2$s! Use %3$s instead."
+msgstr "%1$s osztály %2$s verzió óta <strong>elavult</strong>! Helyette %3$s használatos."
+
+#. translators: 1: PHP class name, 2: Version number.
+#: wp-includes/functions.php:5839
+msgid "Class %1$s is <strong>deprecated</strong> since version %2$s with no alternative available."
+msgstr "%1$s osztály %2$s verzió óta <strong>elavult</strong> és nincs elérhető alternatívája."
 
 #: wp-includes/blocks/search.php:175
 msgid "Submit Search"
@@ -3766,11 +3784,6 @@ msgstr "A `%1$s` stratégia érvénytelen a `%2$s` számára a szkript regisztr�
 msgid "Custom CSS selectors."
 msgstr "Egyéni CSS kiválasztók."
 
-#. translators: 1: Duotone filter ID, 2: theme.json
-#: wp-includes/class-wp-duotone.php:912
-msgid "The duotone id \"%1$s\" is not registered in %2$s settings"
-msgstr "A(z) \"%1$s\" duotone azonosító nincs regisztrálva a %2$s beállításaiban"
-
 #. translators: %s: The type of the given object ID.
 #: wp-includes/functions.php:7463
 msgid "Object ID must be an integer, %s given."
@@ -3784,9 +3797,14 @@ msgstr "Sajnáljuk, nem engedélyezett a Navigációs menü szerkesztése ezen f
 msgid "Sorry, you are not allowed to create Navigation Menus as this user."
 msgstr "Sajnáljuk, nem engedélyezett a Navigációs menük létrehozása ezen felhasználónak."
 
+#. translators: 1: Duotone filter ID, 2: theme.json
+#: wp-includes/class-wp-duotone.php:912
+msgid "The duotone id \"%1$s\" is not registered in %2$s settings"
+msgstr "\"%1$s\" duotone azonosító (id) nem regisztrált a %2$s beállításaiban"
+
 #: wp-includes/media-template.php:386
 msgid "The Edit Media screen is deprecated as of WordPress 6.3. Please use the Media Library instead."
-msgstr "A Média szerkesztése elavult a WordPress 6.3 óta. Használjuk helyette a Médiatárat."
+msgstr "A Média szerkesztése képernyő elavult a WordPress 6.3 óta. Használjuk helyette a Médiatárat."
 
 #: wp-includes/block-template-utils.php:77
 msgctxt "template part area"
@@ -4323,22 +4341,6 @@ msgstr "A téma letiltja-e a generált elrendezési stílusokat."
 msgid "If the value is a string, the value will be used as the archive slug. If the value is false the post type has no archive."
 msgstr "Ha az érték egy karakterlánc, akkor az érték lesz az archívum. Ha az érték hamis, a bejegyzés típusának nincs archívuma."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-block-types-controller.php:810
-msgid "Public facing and editor style handle. DEPRECATED: Use `style_handles` instead."
-msgstr "Nyilvános és szerkesztő stílusú fogantyú. ELVÉGZETT: Használja helyette a \"style_handles\" paramétert."
-
-#: wp-includes/rest-api/endpoints/class-wp-rest-block-types-controller.php:803
-msgid "Editor style handle. DEPRECATED: Use `editor_style_handles` instead."
-msgstr "Szerkesztő stílus fogantyú. ELVÉGZETT: Használja helyette az `editor_style_handles' paramétert."
-
-#: wp-includes/rest-api/endpoints/class-wp-rest-block-types-controller.php:796
-msgid "Public facing script handle. DEPRECATED: Use `view_script_handles` instead."
-msgstr "Nyilvános forgatókönyv-fogó. ELVÉGZETT: Használja helyette a \"view_script_handles\" paramétert."
-
-#: wp-includes/rest-api/endpoints/class-wp-rest-block-types-controller.php:789
-msgid "Public facing and editor script handle. DEPRECATED: Use `script_handles` instead."
-msgstr "Nyilvános és szerkesztői szkript fogantyúja. ELVÉGZETT: Használja helyette a \"script_handles\" paramétert."
-
 #: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:89
 msgid "The template prefix for the created template. This is used to extract the main template type, e.g. in `taxonomy-books` extracts the `taxonomy`"
 msgstr "A létrehozott sablon sablon előtagja. Ez a fő sablontípus kinyerésére szolgál, pl. a \"taxonómia-könyvekben\" kivonatolja a \"taxonómiát\"."
@@ -4351,13 +4353,29 @@ msgstr "Azt jelzi, hogy egy sablon egyéni vagy a sablonhierarchia része"
 msgid "The slug of the template to get the fallback for"
 msgstr "A sablon csigája, amelyhez a tartalékot kapja"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-block-types-controller.php:782
-msgid "Editor script handle. DEPRECATED: Use `editor_script_handles` instead."
-msgstr "Szerkesztő szkript handle. ELAVULT: Használja helyette az `editor_script_handles`-t."
-
 #: wp-includes/rest-api/endpoints/class-wp-rest-post-types-controller.php:424
 msgid "The icon for the post type."
 msgstr "Ikon a bejegyzéstípushoz."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-block-types-controller.php:810
+msgid "Public facing and editor style handle. DEPRECATED: Use `style_handles` instead."
+msgstr "Nyilvános és szerkesztői stílusazonosító (style handle). ELAVULT: Helyette `style_handles` használatos."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-block-types-controller.php:803
+msgid "Editor style handle. DEPRECATED: Use `editor_style_handles` instead."
+msgstr "Szerkesztői stílusazonosító (style handle). ELAVULT: Helyette `editor_style_handles' használatos."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-block-types-controller.php:796
+msgid "Public facing script handle. DEPRECATED: Use `view_script_handles` instead."
+msgstr "Nyilvános szkriptazonosító (script handle). ELAVULT: Helyette `view_script_handles` használatos."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-block-types-controller.php:789
+msgid "Public facing and editor script handle. DEPRECATED: Use `script_handles` instead."
+msgstr "Nyilvános és szerkesztői szkriptazonosító (script handle). ELAVULT: Helyette `script_handles` használatos."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-block-types-controller.php:782
+msgid "Editor script handle. DEPRECATED: Use `editor_script_handles` instead."
+msgstr "Szerkesztői szkriptazonosító (script handle). ELAVULT: Helyette `editor_script_handles` használatos."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-block-patterns-controller.php:272
 msgid "An array of post types that the pattern is restricted to be used with."
@@ -4415,12 +4433,6 @@ msgstr "Gyorsítótár kulcs nem lehet üres szöveg."
 msgid "Cache key must be an integer or a non-empty string, %s given."
 msgstr "Gyorsítótár kulcsnak egy egész számnak, vagy egy nem üres szövegnek kell lennie, %s lett megadva."
 
-#. translators: 1: theme.json, 2: Value name, 3: Value path, 4: Another value
-#. name.
-#: wp-includes/class-wp-theme-json.php:3173
-msgid "Your %1$s file uses a dynamic value (%2$s) for the path at %3$s. However, the value at %3$s is also a dynamic value (pointing to %4$s) and pointing to another dynamic value is not supported. Please update %3$s to point directly to %4$s."
-msgstr "A(z) %1$s fájl dinamikus értéket (%2$s) használ a(z) %3$s elérési úthoz. Azonban a %3$s érték szintén dinamikus érték (%4$s-ra mutat), és egy másik dinamikus értékre mutatás nem támogatott. Kérjük, frissítse a %3$s-t, hogy közvetlenül a következőre mutasson: %4$s."
-
 #: wp-includes/class-wp-fatal-error-handler.php:191
 msgid "There has been a critical error on this website. Please reach out to your site administrator, and inform them of this error for further assistance."
 msgstr "Kritikus hiba történt ezen a webhelyen. További segítségért forduljon a webhely rendszergazdájához, és tájékoztassa a hibáról."
@@ -4439,6 +4451,12 @@ msgstr "A %s képesség ellenőrzésekor mindig ellenőriznie kell egy konkrét 
 #: wp-includes/capabilities.php:444 wp-includes/capabilities.php:557
 msgid "When checking for the %s capability, you must always check it against a specific comment."
 msgstr "A %s képesség ellenőrzésekor mindig ellenőriznie kell egy konkrét megjegyzéssel."
+
+#. translators: 1: theme.json, 2: Value name, 3: Value path, 4: Another value
+#. name.
+#: wp-includes/class-wp-theme-json.php:3173
+msgid "Your %1$s file uses a dynamic value (%2$s) for the path at %3$s. However, the value at %3$s is also a dynamic value (pointing to %4$s) and pointing to another dynamic value is not supported. Please update %3$s to point directly to %4$s."
+msgstr "%1$s fájlunk dinamikus értéket (%2$s) használ %3$s elérési úthoz. %3$s érték azonban szintén dinamikus érték (%4$s értékre mutat), és egy másik dinamikus értékre mutatás nem támogatott. Frissítsük %3$s értékét, hogy közvetlenül a következőre mutasson: %4$s."
 
 #. translators: Custom template title in the Site Editor, referencing a deleted
 #. author. %s: Author nicename.
@@ -4520,23 +4538,23 @@ msgstr "Annak az oldalnak az azonosítója (ID), amelyen a legfrissebb bejegyzé
 #. translators: 1: PHP file name, 2: Version number.
 #: wp-includes/functions.php:5921
 msgid "File %1$s is <strong>deprecated</strong> since version %2$s with no alternative available."
-msgstr "%1$s használata <strong>nem ajánlott</strong> %2$s verziótól kezdődően. Nincs helyettesítő javaslat."
-
-#. translators: 1: PHP file name, 2: Version number, 3: Alternative file name.
-#: wp-includes/functions.php:5913
-msgid "File %1$s is <strong>deprecated</strong> since version %2$s! Use %3$s instead."
-msgstr "%1$s használata <strong>nem ajánlott</strong> %2$s verziótól kezdődően. %3$s használata javasolt helyette."
+msgstr "%1$s fájl %2$s verzió óta <strong>elavult</strong> és nincs elérhető alternatívája."
 
 #. translators: 1: PHP function name, 2: Version number.
 #: wp-includes/functions.php:5676
 msgid "Function %1$s is <strong>deprecated</strong> since version %2$s with no alternative available."
-msgstr "%1$s funkció használata <strong>nem ajánlott</strong> %2$s verziótól kezdődően. Nincs helyettesítő javaslat."
+msgstr "%1$s függvény %2$s verzió óta <strong>elavult</strong> és nincs elérhető alternatívája."
+
+#. translators: 1: PHP file name, 2: Version number, 3: Alternative file name.
+#: wp-includes/functions.php:5913
+msgid "File %1$s is <strong>deprecated</strong> since version %2$s! Use %3$s instead."
+msgstr "%1$s fájl %2$s verzió óta <strong>elavult</strong>! Helyette %3$s használatos."
 
 #. translators: 1: PHP function name, 2: Version number, 3: Alternative
 #. function name.
 #: wp-includes/functions.php:5668
 msgid "Function %1$s is <strong>deprecated</strong> since version %2$s! Use %3$s instead."
-msgstr "%1$s funkció használata <strong>nem ajánlott</strong> %2$s verziótól kezdődően. %3$s használata javasolt helyette."
+msgstr "%1$s függvény %2$s verzió óta <strong>elavult</strong>! Helyette %3$s használatos."
 
 #: wp-includes/blocks/read-more/block.json
 msgctxt "block description"
@@ -4779,21 +4797,21 @@ msgstr "A felhasználó URL ne haladja meg a 100 karakterhosszt."
 msgid "Unable to pass %s if not using multisite."
 msgstr "Nem lehet átadni %s-t, ha nem használ több webhelyet."
 
+#: wp-includes/deprecated.php:5587
+msgid "Webfont font weight must be a properly formatted string or integer."
+msgstr "Webfont betűvastagságának megfelelően formázott karakterláncnak vagy egész számnak kell lennie."
+
 #: wp-includes/deprecated.php:5579
 msgid "Each webfont src must be a non-empty string."
-msgstr "A webfont src tulajdonsága mindenképpen egy nem-üres szöveg."
+msgstr "Minden webfont src tulajdonságnak egy nem-üres szövegnek kell lennie."
 
 #: wp-includes/deprecated.php:5571
 msgid "Webfont src must be a non-empty string or an array of strings."
-msgstr "A webfont src tulajdonságnak vagy egy nem-üres szövegnek vagy egy szövegekből álló tömbnek kell lennei."
+msgstr "Webfont src tulajdonságnak vagy egy nem-üres szövegnek, vagy egy szövegekből álló tömbnek kell lennie."
 
 #: wp-includes/deprecated.php:5564
 msgid "Webfont font family must be a non-empty string."
-msgstr "A webfont betütcsaládnak (font family) minenképpen egy nem-üres szövegnek kell lennie."
-
-#: wp-includes/deprecated.php:5587
-msgid "Webfont font weight must be a properly formatted string or integer."
-msgstr "A webfont betűméretének megfelelően formázott karakterláncnak vagy egész számnak kell lennie."
+msgstr "Webfont betűcsaládnak (font family) egy nem-üres szövegnek kell lennie."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-block-types-controller.php:740
 msgid "Ancestor blocks."
@@ -6715,18 +6733,6 @@ msgstr "Megjelenés elől"
 msgid "Page on front"
 msgstr "Főoldal"
 
-#: wp-includes/js/dist/block-editor.js:83111
-#: wp-includes/js/dist/block-editor.js:83641
-#: wp-includes/js/dist/block-editor.js:83711
-#: wp-includes/js/dist/edit-site.js:34179 wp-includes/js/dist/editor.js:4473
-#: wp-includes/js/dist/editor.js:42368 wp-includes/js/dist/editor.js:56863
-#: wp-includes/js/dist/editor.js:72300 wp-includes/js/dist/media-utils.js:22752
-#: wp-includes/js/dist/script-modules/content-types/index.js:29110
-#: wp-admin/includes/class-wp-screen.php:1214 wp-admin/includes/theme.php:351
-#: wp-admin/includes/theme.php:387 wp-admin/index.php:70
-msgid "Layout"
-msgstr "Elrendezés"
-
 #. translators: %s: taxonomy's singular name
 #. translators: Hidden accessibility text. %s: Link name.
 #. translators: Hidden accessibility text. %s: Attachment title.
@@ -6753,6 +6759,18 @@ msgstr "Elrendezés"
 #: wp-admin/includes/class-wp-ms-users-list-table.php:243
 msgid "Select %s"
 msgstr "%s kiválasztása"
+
+#: wp-includes/js/dist/block-editor.js:83111
+#: wp-includes/js/dist/block-editor.js:83641
+#: wp-includes/js/dist/block-editor.js:83711
+#: wp-includes/js/dist/edit-site.js:34179 wp-includes/js/dist/editor.js:4473
+#: wp-includes/js/dist/editor.js:42368 wp-includes/js/dist/editor.js:56863
+#: wp-includes/js/dist/editor.js:72300 wp-includes/js/dist/media-utils.js:22752
+#: wp-includes/js/dist/script-modules/content-types/index.js:29110
+#: wp-admin/includes/class-wp-screen.php:1214 wp-admin/includes/theme.php:351
+#: wp-admin/includes/theme.php:387 wp-admin/index.php:70
+msgid "Layout"
+msgstr "Elrendezés"
 
 #: wp-includes/post.php:320 wp-includes/js/dist/block-editor.js:59938
 #: wp-includes/js/dist/block-editor.js:64633
@@ -6833,7 +6851,7 @@ msgstr "URL-kódolt űrlapadatok a widget adminisztrátori űrlapjáról. Olyan 
 #. translators: %s: User name.
 #: wp-includes/user.php:188
 msgid "<strong>Error:</strong> The username <strong>%s</strong> is not registered on this site. If you are unsure of your username, try your email address instead."
-msgstr "<strong>Hiba:</strong> A felhasználónév <strong>%s</strong> nincs az oldalon regisztrálva. Ha felhasználónévben nem vagyunk biztosak, próbáljunk helyette e-mail címet használni."
+msgstr "<strong>Hiba:</strong> A felhasználónév <strong>%s</strong> nem regisztrált a webhelyen. Ha felhasználónévben nem vagyunk biztosak, próbáljunk helyette e-mail címet használni."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-widgets-controller.php:680
 msgid "The requested widget is invalid."
@@ -7748,18 +7766,6 @@ msgstr "Egy bővítmény megakadályozta az esemény ütemezését."
 msgid "Event timestamp must be a valid Unix timestamp."
 msgstr "Az esemény időbélyegének érvényes Unix időbélyegynek kell lennie."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:2406
-msgid "As a percentage of the image, the y position to start the crop from. DEPRECATED: Use `modifiers` instead."
-msgstr "A kivágás y poziciójának kezdete a kép százalékában. ELAVULT: Használja inkább a 'módositásokat'!"
-
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:2418
-msgid "As a percentage of the image, the height to crop the image to. DEPRECATED: Use `modifiers` instead."
-msgstr "A kivágás magassága a kép százalékában. ELAVULT: Használja inkább a 'módosításokat'!"
-
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:2412
-msgid "As a percentage of the image, the width to crop the image to. DEPRECATED: Use `modifiers` instead."
-msgstr " A kivágás szélessége a kép százalékában. ELAVULT: Használja inkább a 'módosításokat'!"
-
 #: wp-includes/cron.php:435
 msgid "A plugin prevented the event from being rescheduled."
 msgstr "Egy bővítmény megakadályozta az esemény újraütemezését."
@@ -7767,6 +7773,18 @@ msgstr "Egy bővítmény megakadályozta az esemény újraütemezését."
 #: wp-includes/cron.php:526
 msgid "A plugin prevented the event from being unscheduled."
 msgstr "Egy bővítmény megakadályozta az esemény ütemezésének törlését."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:2418
+msgid "As a percentage of the image, the height to crop the image to. DEPRECATED: Use `modifiers` instead."
+msgstr "A kivágás magassága a kép százalékában. ELAVULT: Helyette `modifiers` használatos."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:2412
+msgid "As a percentage of the image, the width to crop the image to. DEPRECATED: Use `modifiers` instead."
+msgstr "A kivágás szélessége a kép százalékában. ELAVULT: Helyette `modifiers` használatos."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:2406
+msgid "As a percentage of the image, the y position to start the crop from. DEPRECATED: Use `modifiers` instead."
+msgstr "A kivágás y pozíciójának kezdete a kép százalékában. ELAVULT: Helyette `modifiers` használatos."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:2373
 msgid "Vertical position from the top to begin the crop as a percentage of the image height."
@@ -7780,13 +7798,13 @@ msgstr "A kivágás szélessége a képszélesség százalékában."
 msgid "Height of the crop as a percentage of the image height."
 msgstr "A kivágás magassága a képmagasság százalékában. "
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:2392
-msgid "The amount to rotate the image clockwise in degrees. DEPRECATED: Use `modifiers` instead."
-msgstr "Képforgatás jobbra (fok).  ELAVULT: használja inkább a 'módosításokat',"
-
 #: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:2400
 msgid "As a percentage of the image, the x position to start the crop from. DEPRECATED: Use `modifiers` instead."
-msgstr "A kivágás kezdetének poziciója a kép százalékában. ELAVULT: Használja inkább a 'módosításokat'."
+msgstr "A kivágás x pozíciójának kezdete a kép százalékában. ELAVULT: Helyette `modifiers` használatos."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:2392
+msgid "The amount to rotate the image clockwise in degrees. DEPRECATED: Use `modifiers` instead."
+msgstr "A képforgatás mértéke óramutató járásával egyezően fokokban.  ELAVULT: Helyette `modifiers` használatos."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:2354
 msgid "Crop type."
@@ -8300,7 +8318,7 @@ msgstr "Nincs jogosultság. Távolítsuk el a %s paramétert az előnézet megte
 #: wp-includes/option.php:104 wp-includes/option.php:872
 #: wp-includes/option.php:1099
 msgid "The \"%1$s\" option key has been renamed to \"%2$s\"."
-msgstr "A(z) \"%1$s\" opció átnevezésre került, és az új neve \"%2$s\" lett."
+msgstr "\"%1$s\" opció kulcs átnevezésre került, és az új neve \"%2$s\" lett."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-plugins-controller.php:700
 msgid "Sorry, you are not allowed to manage network plugins."
@@ -8542,13 +8560,13 @@ msgstr "%1$s %2$s"
 msgid "Pattern \"%s\" not found."
 msgstr "\"%s\" mintázat nem található."
 
-#: wp-includes/ms-deprecated.php:418
-msgid "<strong>Error:</strong> There was a problem creating site entry."
-msgstr "<strong>Hiba:</strong> Nem sikerült bejegyzést létrehozni."
-
 #: wp-includes/ms-deprecated.php:409
 msgid "<strong>Error:</strong> Site URL you&#8217;ve entered is already taken."
 msgstr "<strong>Hiba:</strong> a megadott Webhely URL már foglalt."
+
+#: wp-includes/ms-deprecated.php:418
+msgid "<strong>Error:</strong> There was a problem creating site entry."
+msgstr "<strong>Hiba:</strong> Nem sikerült webhely bejegyzést létrehozni."
 
 #: wp-includes/media.php:5199
 msgid "Attachment details"
@@ -9306,7 +9324,7 @@ msgstr "Kicsi"
 #. translators: 1: Post status, 2: Capability name.
 #: wp-includes/capabilities.php:353
 msgid "The post status %1$s is not registered, so it may not be reliable to check the capability %2$s against a post with that status."
-msgstr "%1$s nevű bejegyzés állapot nincs regisztrálva, vagyis nem feltétlen megbízható a(z) %2$s képesség ellenőrzése erre a bejegyzés állapotra."
+msgstr "%1$s nevű bejegyzés állapot nem regisztrált, vagyis nem feltétlen megbízható a(z) %2$s képesség ellenőrzése erre a bejegyzés állapotra."
 
 #: wp-includes/general-template.php:2792
 msgid "Previous and next months"
@@ -9373,7 +9391,7 @@ msgstr "Közösségi esemény helyszínek"
 #. translators: %s: wp_privacy_additional_user_profile_data
 #: wp-includes/user.php:4144
 msgid "Filter %s returned items with reserved names."
-msgstr "A(z) %s szűrő olyan elemeket adott vissza, melyek neve ütközik a rendszer belső használatára fenntartott nevekkel."
+msgstr "%s szűrő olyan elemeket adott vissza, melyek neve ütközik a fenntartott nevekkel."
 
 #: wp-includes/media-template.php:485 wp-includes/media-template.php:735
 #: wp-admin/includes/media.php:3537
@@ -9403,7 +9421,7 @@ msgstr "Az eredménykészlet korlátozása a több taxonómiás kapcsolatokban"
 #. or 'name', 3: The conflicting value.
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2773
 msgid "The \"%1$s\" taxonomy \"%2$s\" property (%3$s) conflicts with an existing property on the REST API Posts Controller. Specify a custom \"rest_base\" when registering the taxonomy to avoid this error."
-msgstr "A(z) \"%1$s\" taxonómia \"%2$s\" tulajdonsága (%3$s) ütközik a REST API Bejegyzés kezelő egy meglevő tulajdonsága nevéve. Saját \"rest_base\" értéket kell megadni a taxonómia regisztrálásakor, hogy elkerüljük ezt a hibát. "
+msgstr "\"%1$s\" taxonómia \"%2$s\" tulajdonsága (%3$s) ütközik a REST API Bejegyzés kezelő egy meglevő tulajdonságával. Egyéni \"rest_base\" értéket kell megadni a taxonómia regisztrálásakor, hogy elkerüljük ezt a hibát."
 
 #: wp-includes/theme.php:4341
 msgid "Whether the theme can manage the document title tag."
@@ -9618,11 +9636,6 @@ msgstr "Súlyos hiba történt a webhelyünkön."
 msgid "Block style name must be a string."
 msgstr "A blokk stílus nevének karakterláncnak kell lennie."
 
-#. translators: 1: Block name, 2: Block style name.
-#: wp-includes/class-wp-block-styles-registry.php:125
-msgid "Block \"%1$s\" does not contain a style named \"%2$s\"."
-msgstr "\"%1$s\" nevű blokk nem tartalmazza a(z) \"%2$s\" blokkstílus nevet."
-
 #: wp-includes/class-wp-icons-registry.php:67
 msgid "Icon name must be a string."
 msgstr "Az ikon nevének karakterláncnak kell lennie."
@@ -9630,6 +9643,11 @@ msgstr "Az ikon nevének karakterláncnak kell lennie."
 #: wp-includes/class-wp-fatal-error-handler.php:188
 msgid "There has been a critical error on this website, putting it in recovery mode. Please check the Themes and Plugins screens for more details. If you just installed or updated a theme or plugin, check the relevant page for that first."
 msgstr "Kritikus hibát észleltünk a webhelyen, ezért a helyreállítási üzemmódba helyeztük. A további részletekért a sablonok és a bővítmények képernyőit kell felkeresni. Ha nemrégen telepítettünk vagy frissítettünk egy sablont, vagy egy bővítményt, akkor először a releváns oldalakat ellenőrizzük."
+
+#. translators: 1: Block name, 2: Block style name.
+#: wp-includes/class-wp-block-styles-registry.php:125
+msgid "Block \"%1$s\" does not contain a style named \"%2$s\"."
+msgstr "\"%1$s\" nevű blokk nem tartalmaz \"%2$s\" stílus nevet."
 
 #: wp-includes/user.php:4159
 msgid "User&#8217;s profile data."
@@ -10248,7 +10266,7 @@ msgstr "A hozzászólás rendszer-moderációra várakozik. Ez egy előnézet, a
 #. translators: %s: Database table name.
 #: wp-includes/ms-site.php:1336
 msgid "The %s table is not installed. Please run the network database upgrade."
-msgstr "%s nevű tábla nincs telepítve. Futtassuk a hálózati adatbázis frissítőjét."
+msgstr "%s nevű tábla nincs telepítve. Futtassuk a hálózati adatbázis frissítőt."
 
 #. translators: %d: Site ID.
 #: wp-includes/ms-site.php:679
@@ -10708,16 +10726,6 @@ msgstr "A keresőbarát név (slug) a bejegyzés címéből automatikusan gener�
 msgid "Permalink template for the post."
 msgstr "Közvetlen hivatkozás sablon a bejegyzés számára."
 
-#. translators: %s: Block name.
-#: wp-includes/class-wp-block-type-registry.php:123
-msgid "Block type \"%s\" is not registered."
-msgstr "A(z) \"%s\" blokk típus ismeretlen."
-
-#. translators: %s: Block name.
-#: wp-includes/class-wp-block-type-registry.php:90
-msgid "Block type \"%s\" is already registered."
-msgstr "A(z) \"%s\" blokk típus már létezik."
-
 #: wp-includes/class-wp-post-type.php:1017 wp-admin/edit-form-advanced.php:190
 #: wp-admin/edit-form-advanced.php:193
 msgid "Page updated."
@@ -10783,6 +10791,16 @@ msgstr "Az ikonneveknek nem tartalmazhatnak nagybetűket."
 msgid "Block type names must contain a namespace prefix. Example: my-plugin/my-custom-block-type. \"%s\" was given."
 msgstr "A blokktípus neveknek tartalmaznia kell a namespace prefixet. Pl. my-plugin/my-custom-block-type. \"%s\" megadva."
 
+#. translators: %s: Block name.
+#: wp-includes/class-wp-block-type-registry.php:123
+msgid "Block type \"%s\" is not registered."
+msgstr "\"%s\" blokktípus nem regisztrált."
+
+#. translators: %s: Block name.
+#: wp-includes/class-wp-block-type-registry.php:90
+msgid "Block type \"%s\" is already registered."
+msgstr "\"%s\" blokk típus már regisztrálva van."
+
 #: wp-includes/rest-api/endpoints/class-wp-rest-global-styles-revisions-controller.php:229
 #: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:349
 msgid "The offset number requested is larger than or equal to the number of available revisions."
@@ -10807,11 +10825,6 @@ msgstr "Az aktuális felhasználó hozzárendelheti a kifejezéseket a %s taxon�
 msgid "The current user can change the author on this post."
 msgstr "A jelenlegi felhasználó megváltoztathatja a bejegyzés szerzőjét."
 
-#. translators: %s: Taxonomy name.
-#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2925
-msgid "The current user can create terms in the %s taxonomy."
-msgstr "A jelenlegi felhasználó kifejezéseket hozhat létre a(z) %s taxonómiában."
-
 #: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:2253
 #: wp-admin/includes/ms.php:45
 msgid "You have used your space quota. Please delete files before uploading."
@@ -10830,6 +10843,11 @@ msgstr "[%1$s] művelet megerősítve: %2$s"
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2888
 msgid "The current user can sticky this post."
 msgstr "Ezt a bejegyzést a jelenlegi felhasználó ragadóssá teheti."
+
+#. translators: %s: Taxonomy name.
+#: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2925
+msgid "The current user can create terms in the %s taxonomy."
+msgstr "%s taxonómiában a jelenlegi felhasználó kifejezéseket hozhat létre."
 
 #: wp-includes/user.php:4769
 msgid "Thanks for confirming your erasure request."
@@ -10865,13 +10883,13 @@ msgid ""
 msgstr ""
 "Üdv!\n"
 "\n"
-"A személyes adatok törlésére vonatkozó kérés a(z)  ###SITENAME### weboldalon teljesítésre került.\n"
+"###SITENAME### weboldalon a személyes adataink törlésére vonatkozó kérés teljesítésre került.\n"
 "\n"
-"Amennyiben további kérdések, vagy aggályok merülnnéek fel, kapcsolatba kell lépni a weboldal üzemeltetőjével.\n"
+"Amennyiben további kérdések, vagy aggályok merülnének fel, lépjünk kapcsolatba a webhely üzemeltetőjével.\n"
 "\n"
 "További információ az adatkezelési tájékoztatónkban található:: ###PRIVACY_POLICY_URL###\n"
 "\n"
-"Köszönettel:\n"
+"Üdvözlettel:\n"
 "###SITENAME###\n"
 "###SITEURL###"
 
@@ -10890,11 +10908,11 @@ msgid ""
 msgstr ""
 "Üdv!\n"
 "\n"
-"A személyes adatainak törlésére vonatkozó kérése a(z)  ###SITENAME### weboldalon teljesítésre került.\n"
+"###SITENAME### webhelyen a személyes adataink törlésére vonatkozó kérés teljesítésre került.\n"
 "\n"
-"Amennyiben további kérdések lennének, vagy aggályok merülnének fel, célszerű a weboldal üzemeltetőjével felvenni a kapcsolatot.\n"
+"Amennyiben további kérdések, vagy aggályok merülnének fel, lépjünk kapcsolatba a webhely üzemeltetőjével.\n"
 "\n"
-"Köszönettel:\n"
+"Üdvözlettel:\n"
 "###SITENAME###\n"
 "###SITEURL###"
 
@@ -10934,7 +10952,7 @@ msgstr ""
 "\n"
 "###MANAGE_URL###\n"
 "\n"
-"Köszönettel:\n"
+"Üdvözlettel:\n"
 "###SITENAME###\n"
 "###SITEURL###"
 
@@ -11091,7 +11109,7 @@ msgstr ""
 "Amennyiben úgy véljük, hogy más kezdeményezte a műveletet, vagy meggondoltuk magunkat,\n"
 "akkor ezt az üzenetet nyugodtan figyelmen kívül lehet hagyni, és törölni.\n"
 "\n"
-"Köszönettel:\n"
+"Üdvözlettel:\n"
 "###SITENAME###\n"
 "###SITEURL###"
 
@@ -11443,11 +11461,6 @@ msgstr "Egyéni HTML Widget"
 msgid "No images selected"
 msgstr "Nincs kijelölt kép"
 
-#. translators: %s: New email address.
-#: wp-includes/user.php:3994
-msgid "Your email address has not been updated yet. Please check your inbox at %s for a confirmation email."
-msgstr "Az e-mail cím még nem került módosításra. Kérjük, a(z) %s címre küldött hivatkozásra kattintani, amennyiben a szándék valóban megerősítésre került."
-
 #. translators: Do not translate USERNAME, ADMIN_URL, EMAIL, SITENAME, SITEURL:
 #. those are placeholders.
 #: wp-includes/user.php:3922
@@ -11482,6 +11495,11 @@ msgstr ""
 "Üdvözlettel:\n"
 "###SITENAME###\n"
 "###SITEURL###"
+
+#. translators: %s: New email address.
+#: wp-includes/user.php:3994
+msgid "Your email address has not been updated yet. Please check your inbox at %s for a confirmation email."
+msgstr "Az e-mail címünk még nem került módosításra. %s címre küldött hivatkozásra kell kattintani a szándék megerősítésére."
 
 #: wp-includes/user.php:3901
 msgid "<strong>Error:</strong> The email address is already used."
@@ -11839,7 +11857,7 @@ msgid ""
 msgstr ""
 "Üdvözlet!\n"
 "\n"
-"Megerősítjük, hogy a(z) ###SITENAME### hálózati adminisztrátor e-mail cím megváltozott.\n"
+"Ez az értesítés megerősíti, hogy a(z) ###SITENAME### hálózati adminisztrátor e-mail cím megváltozott.\n"
 "\n"
 "Az új hálózati adminisztrátor e-mail cím: ###NEW_EMAIL###.\n"
 "\n"
@@ -11911,7 +11929,7 @@ msgid ""
 msgstr ""
 "Üdvözlet!\n"
 "\n"
-"Megerősítjük, hogy a(z) ###SITENAME### adminisztrátor e-mail cím megváltozott\n"
+"Ez az értesítés megerősíti, hogy a(z) ###SITENAME### adminisztrátor e-mail cím megváltozott\n"
 "\n"
 "Az új adminisztrátor e-mail cím: ###NEW_EMAIL###.\n"
 "\n"
@@ -12089,7 +12107,7 @@ msgstr "Dátum"
 
 #: wp-includes/class-wp-user.php:789
 msgid "Usage of user levels is deprecated. Use capabilities instead."
-msgstr "A felhasználói szintek már elavultak. Helyette a képességek használatosak."
+msgstr "A felhasználói szintek már elavultak. Helyette képességek használatosak."
 
 #: wp-includes/class-wp-customize-manager.php:5781
 msgid "CSS code"
@@ -12610,7 +12628,7 @@ msgstr "Kiemelt kép beállítása"
 #. translators: 1: $sanitize_callback, 2: register_setting()
 #: wp-includes/option.php:3158
 msgid "%1$s is deprecated. The callback from %2$s is used instead."
-msgstr "%1$s elavult. Helyette a %2$s visszahívása használatos."
+msgstr "%1$s elavult. Helyette %2$s visszahívás használatos."
 
 #. translators: 1: Suggested width number, 2: Suggested height number.
 #: wp-includes/media-template.php:313 wp-includes/media.php:5232
@@ -13156,13 +13174,6 @@ msgctxt "Theme starter content"
 msgid "This may be a good place to introduce yourself and your site or include some credits."
 msgstr "Ez akár jó hely ahhoz, hogy bemutassuk magunkat és a webhelyünket, vagy köszönetet mondjunk valamiért."
 
-#. translators: %s: Custom field key.
-#: wp-includes/rest-api/fields/class-wp-rest-meta-fields.php:239
-#: wp-includes/rest-api/fields/class-wp-rest-meta-fields.php:286
-#: wp-includes/rest-api/fields/class-wp-rest-meta-fields.php:396
-msgid "Sorry, you are not allowed to edit the %s custom field."
-msgstr "Sajnáljuk, nem engedélyezett a(z) %s egyéni mező szerkesztése."
-
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:725
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:928
 msgid "Sorry, you are not allowed to assign the provided terms."
@@ -13173,6 +13184,13 @@ msgstr "Sajnáljuk, nem engedélyezett a megadott kifejezések hozzárendelése.
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:920
 msgid "Sorry, you are not allowed to make posts sticky."
 msgstr "Sajnáljuk, nem engedélyezett a bejegyzés ragadóssá tétele."
+
+#. translators: %s: Custom field key.
+#: wp-includes/rest-api/fields/class-wp-rest-meta-fields.php:239
+#: wp-includes/rest-api/fields/class-wp-rest-meta-fields.php:286
+#: wp-includes/rest-api/fields/class-wp-rest-meta-fields.php:396
+msgid "Sorry, you are not allowed to edit the %s custom field."
+msgstr "Sajnáljuk, %s egyéni mező szerkesztése nem engedélyezett."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:113
 #: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:154
@@ -13308,7 +13326,7 @@ msgstr "Érvénytelen felhasználói karakter(ek)."
 #. translators: %s: The '\' character.
 #: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:1377
 msgid "Passwords cannot contain the \"%s\" character."
-msgstr "A jelszó nem tartalmazhatja a(z) \"%s\" karaktert."
+msgstr "\"%s\" karaktert tartalmazó jelszavak nem engedélyezettek."
 
 #: wp-includes/script-loader.php:1332
 msgctxt "label for hide controls button without length constraints"
@@ -13666,7 +13684,7 @@ msgstr "Korlátozzuk az eredménykészletet konkrét szerzőkhöz rendelt bejegy
 #. translators: %s: Taxonomy name.
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2784
 msgid "The terms assigned to the post in the %s taxonomy."
-msgstr "A bejegyzéshez rendelt kifejezések a(z) %s taxonómiában."
+msgstr "%s taxonómiába tartozó kifejezések a bejegyzéshez rendelve."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2498
 msgid "A password to protect access to the content and excerpt."
@@ -13884,6 +13902,18 @@ msgstr "A gyűjtemény aktuális oldala."
 msgid "Maximum number of items to be returned in result set."
 msgstr "Maximum tételek száma az eredménynél."
 
+#: wp-includes/rest-api/endpoints/class-wp-rest-controller.php:382
+msgid "Scope under which the request is made; determines fields present in response."
+msgstr "A terjedelem amelyre az elküldött kérés vonatkozik; a válaszban küldött mezőket határozza meg."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-controller.php:362
+msgid "Limit results to those matching a string."
+msgstr "Eredmények szűkítése a karakterláncot tartalmazókra."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-post-statuses-controller.php:312
+msgid "Whether posts with this status should be private."
+msgstr "Hogy ezek az állapotú bejegyzések magánjellegűek legyenek-e."
+
 #. translators: %s: Method name.
 #: wp-includes/rest-api/endpoints/class-wp-rest-controller.php:70
 #: wp-includes/rest-api/endpoints/class-wp-rest-controller.php:87
@@ -13898,19 +13928,7 @@ msgstr "Maximum tételek száma az eredménynél."
 #: wp-includes/rest-api/endpoints/class-wp-rest-controller.php:240
 #: wp-includes/rest-api/endpoints/class-wp-rest-controller.php:258
 msgid "Method '%s' not implemented. Must be overridden in subclass."
-msgstr "A(z) '%s' nincs végrehajtva. Alosztályból szükséges felülírni."
-
-#: wp-includes/rest-api/endpoints/class-wp-rest-controller.php:382
-msgid "Scope under which the request is made; determines fields present in response."
-msgstr "A terjedelem amelyre az elküldött kérés vonatkozik; a válaszban küldött mezőket határozza meg."
-
-#: wp-includes/rest-api/endpoints/class-wp-rest-controller.php:362
-msgid "Limit results to those matching a string."
-msgstr "Eredmények szűkítése a karakterláncot tartalmazókra."
-
-#: wp-includes/rest-api/endpoints/class-wp-rest-post-statuses-controller.php:312
-msgid "Whether posts with this status should be private."
-msgstr "Hogy ezek az állapotú bejegyzések magánjellegűek legyenek-e."
+msgstr "\"%s\" metódus nincs implementálva. Felül kell írni az alosztályban."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:1750
 #: wp-includes/rest-api/endpoints/class-wp-rest-menu-items-controller.php:959
@@ -14243,7 +14261,7 @@ msgstr "%1$s %2$s, eltelt idő: %3$s (%4$s)"
 #: wp-admin/includes/template.php:1654 wp-admin/includes/template.php:1667
 #: wp-admin/includes/template.php:1721 wp-admin/includes/template.php:1734
 msgid "The \"%s\" options group has been removed. Use another settings group."
-msgstr "A(z) \"%s\" beállítás csoport eltávolításra került, használjunk helyette egy másik csoportot."
+msgstr "\"%s\" beállításcsoport eltávolításra került. Helyette egy másik beállításcsoport használatos."
 
 #: wp-includes/option.php:2854
 msgid "WordPress locale code."
@@ -14506,11 +14524,6 @@ msgctxt "Background Preset"
 msgid "Preset"
 msgstr "Előre beállított"
 
-#. translators: 1: .mp4, 2: Header height in pixels.
-#: wp-includes/class-wp-customize-manager.php:5373
-msgid "Upload your video in %1$s format and minimize its file size for best results. Your theme recommends a height of %2$s pixels."
-msgstr "%1$s formátumban töltsük fel a videónkat, és minimalizáljuk a méretét a legjobb eredmény elérése érdekében. A sablon a magassághoz a(z) %2$s pixel méretet ajánlja."
-
 #. translators: 1: .mp4, 2: Header width in pixels.
 #: wp-includes/class-wp-customize-manager.php:5366
 msgid "Upload your video in %1$s format and minimize its file size for best results. Your theme recommends a width of %2$s pixels."
@@ -14519,6 +14532,11 @@ msgstr "A videófájlt %1$s formátumban kell feltölteni, a lehető legkisebb m
 #: wp-includes/class-wp-customize-manager.php:5451
 msgid "Header Video"
 msgstr "Fejléc videó"
+
+#. translators: 1: .mp4, 2: Header height in pixels.
+#: wp-includes/class-wp-customize-manager.php:5373
+msgid "Upload your video in %1$s format and minimize its file size for best results. Your theme recommends a height of %2$s pixels."
+msgstr "%1$s formátumban töltsük fel a videónkat, és minimalizáljuk a méretét a legjobb eredmény elérése érdekében. A sablon %2$s pixel magasságot javasol."
 
 #: wp-includes/class-wp-customize-manager.php:5352
 msgid "If you add a video, the image will be used as a fallback while the video loads."
@@ -14593,7 +14611,7 @@ msgstr "Kijelölt menü szerkesztése"
 #: wp-includes/class-wp-editor.php:1418
 #: wp-includes/js/dist/format-library.js:4827
 msgid "Warning: the link has been inserted but may have errors. Please test it."
-msgstr "Figyelem! A hivatkozás beillesztve, de lehet, hogy hibás. Teszteljük le a hivatkozás helyességét."
+msgstr "Figyelmeztetés: a hivatkozás beillesztve, de lehet, hogy hibás. Teszteljük le azt."
 
 #: wp-includes/blocks/query-title.php:46
 #: wp-includes/js/dist/block-library.js:66774
@@ -14859,13 +14877,13 @@ msgstr "&#8220;%1$s&#8221; &#8212; %2$s"
 #. is_subdomain_install()
 #: wp-includes/ms-default-constants.php:142
 msgid "The constant %1$s <strong>is deprecated</strong>. Use the boolean constant %2$s in %3$s to enable a subdomain configuration. Use %4$s to check whether a subdomain configuration is enabled."
-msgstr "%1$s konstans <strong>elavult</strong>. Használjuk a %3$s fájlban lévő %2$s logikai konstanst az aldomain konfiguráció bekapcsolásához. Használjuk az %4$s függvényt annak ellenőrzéséhez, hogy az aldomain konfiguráció be van-e kapcsolva."
+msgstr "%1$s konstans <strong>elavult</strong>. Helyette %3$s fájlban lévő %2$s logikai konstans használatos az aldomain konfiguráció bekapcsolásához. Használjuk az %4$s függvényt az aldomain konfiguráció bekapcsolásának ellenőrzéséhez."
 
 #. translators: 1: Panel ID, 2: Link to 'customize_loaded_components' filter
 #. reference.
 #: wp-includes/class-wp-customize-manager.php:3954
 msgid "Removing %1$s manually will cause PHP warnings. Use the %2$s filter instead."
-msgstr "%1$s kézzel történő eltávolítása PHP hibát okozhat, használjuk helyette a %2$s szűrőt."
+msgstr "%1$s manuális eltávolítása PHP figyelmeztetéseket okozhat. Helyette %2$s szűrő használatos."
 
 #: wp-includes/class-wp-editor.php:1426
 msgid "The next group of formatting shortcuts are applied as you type or when you insert them around plain text in the same paragraph. Press Escape or the Undo button to undo."
@@ -14881,14 +14899,14 @@ msgstr "%1$s (%2$s)"
 msgid "<strong>Error:</strong> The email field is empty."
 msgstr "<strong>Hiba:</strong> Az e-mail cím mező üres."
 
-#. translators: %s: Email address.
-#: wp-includes/user.php:298
-msgid "<strong>Error:</strong> The password you entered for the email address %s is incorrect."
-msgstr "<strong>Hiba:</strong> A(z) %s e-mail címhez megadott jelszó nem megfelelő."
-
 #: wp-login.php:1435
 msgid "Your session has expired. Please log in to continue where you left off."
 msgstr "Lejárt a munkamenetünk. A folytatáshoz be kell jelentkezni."
+
+#. translators: %s: Email address.
+#: wp-includes/user.php:298
+msgid "<strong>Error:</strong> The password you entered for the email address %s is incorrect."
+msgstr "<strong>Hiba:</strong> %s e-mail címhez megadott jelszó nem megfelelő."
 
 #: wp-includes/taxonomy.php:616
 msgid "Unregistering a built-in taxonomy is not allowed."
@@ -14970,7 +14988,7 @@ msgstr "Nincs kijelölt logó"
 #. 4: __construct() method.
 #: wp-includes/functions.php:5750
 msgid "The called constructor method for %1$s class in %2$s is <strong>deprecated</strong> since version %3$s! Use %4$s instead."
-msgstr "A meghívott %1$s osztály felépítő metódusa a(z) %2$s osztályban <strong>elavult</strong> %3$s verzió óta! Használjuk inkább a(z) %4$s hívást."
+msgstr "A meghívott %1$s osztály konstruktora %2$s osztályban %3$s verzió óta <strong>elavult</strong>! Helyette %4$s használatos."
 
 #. translators: %s: document.write()
 #: wp-includes/customize/class-wp-customize-selective-refresh.php:179
@@ -15222,7 +15240,7 @@ msgstr "A webhely még nincs aktiválva. Amennyiben az aktiválás során valami
 #. translators: %s: Menu name.
 #: wp-includes/nav-menu.php:337 wp-includes/nav-menu.php:352
 msgid "The menu name %s conflicts with another menu name. Please try another."
-msgstr "A(z) %s menü neve egy másik menü nevével egyezik; próbálkozzunk egy másikkal."
+msgstr "%s menü neve egy másik menü nevével ütközik. Próbálkozzunk egy másikkal."
 
 #. translators: %s: Site address.
 #: wp-signup.php:1042
@@ -15369,15 +15387,15 @@ msgstr "Nem megfelelő rövidkód név: nincs megadva a név."
 msgid "Invalid shortcode name: %1$s. Do not use spaces or reserved characters: %2$s"
 msgstr "Érvénytelen rövidkód név: %1$s. A névben ne használjunk üres szóközt, vagy a foglalt karaktereket: %2$s"
 
+#: wp-includes/rest-api/class-wp-rest-server.php:1548
+msgid "The specified namespace could not be found."
+msgstr "A megadott névtér nem található."
+
 #. translators: 1: Function name, 2: WordPress version number, 3: New function
 #. name.
 #: wp-includes/rest-api.php:737
 msgid "%1$s (since %2$s; use %3$s instead)"
-msgstr "%1$s (a WordPress %2$s; verziója óta használjuk helyette a(z) %3$s funkciót)"
-
-#: wp-includes/rest-api/class-wp-rest-server.php:1548
-msgid "The specified namespace could not be found."
-msgstr "A megadott névtér nem található."
+msgstr "%1$s (a WordPress %2$s verziója óta; helyette %3$s függvény használatos)"
 
 #: wp-includes/rest-api/class-wp-rest-server.php:1221
 msgid "No route was found matching the URL and request method."
@@ -15398,15 +15416,15 @@ msgstr "Hibás paraméter(ek): %s"
 msgid "Invalid parameter(s): %s"
 msgstr "Nem megfelelő paraméter(ek): %s"
 
+#: wp-includes/rest-api/class-wp-rest-server.php:362
+msgid "JSONP support is disabled on this site."
+msgstr "Ezen a webhelyen a JSONP támogatás ki van kapcsolva."
+
 #. translators: 1: pre_get_posts, 2: WP_Query->is_main_query(), 3:
 #. is_main_query(), 4: Documentation URL.
 #: wp-includes/query.php:935
 msgid "In %1$s, use the %2$s method, not the %3$s function. See %4$s."
-msgstr "A8z) %1$s funkcióban használjuk a(z) %2$s metódust, a(z) %3$s funkció helyett. Bővebben: %4$s."
-
-#: wp-includes/rest-api/class-wp-rest-server.php:362
-msgid "JSONP support is disabled on this site."
-msgstr "Ezen a webhelyen a JSONP támogatás ki van kapcsolva."
+msgstr "%1$s függvényben használjunk %2$s metódust, %3$s függvény helyett. Bővebben: %4$s."
 
 #: wp-includes/class-wp-post-type.php:1010
 msgid "Pages list navigation"
@@ -15673,12 +15691,6 @@ msgstr "A kért sablon nem létezik."
 msgid "Sorry, you are not allowed to edit theme options on this site."
 msgstr "Sajnáljuk, nem engedélyezett a sablonbeállítások szerkesztése ezen a webhelyen."
 
-#. translators: 1: Post type, 2: Capability name.
-#: wp-includes/capabilities.php:123 wp-includes/capabilities.php:226
-#: wp-includes/capabilities.php:325 wp-includes/capabilities.php:406
-msgid "The post type %1$s is not registered, so it may not be reliable to check the capability %2$s against a post of that type."
-msgstr "%1$s nevű bejegyzéstípus nincs regisztrálva, vagyis nem feltétlen megbízható a(z) %2$s képesség ellenőrzése erre a bejegyzéstípusra."
-
 #. translators: 1: "type => link", 2: "taxonomy => link_category"
 #. translators: 1: caller_get_posts, 2: ignore_sticky_posts
 #. translators: 1: who, 2: capability
@@ -15686,6 +15698,12 @@ msgstr "%1$s nevű bejegyzéstípus nincs regisztrálva, vagyis nem feltétlen m
 #: wp-includes/class-wp-query.php:1964 wp-includes/class-wp-user-query.php:405
 msgid "%1$s is deprecated. Use %2$s instead."
 msgstr "%1$s elavult. Helyette %2$s használatos."
+
+#. translators: 1: Post type, 2: Capability name.
+#: wp-includes/capabilities.php:123 wp-includes/capabilities.php:226
+#: wp-includes/capabilities.php:325 wp-includes/capabilities.php:406
+msgid "The post type %1$s is not registered, so it may not be reliable to check the capability %2$s against a post of that type."
+msgstr "%1$s nevű bejegyzéstípus nem regisztrált, vagyis nem feltétlen megbízható %2$s képesség ellenőrzése erre a bejegyzéstípusra."
 
 #. translators: Hidden accessibility text.
 #: wp-includes/class-wp-customize-nav-menus.php:1193
@@ -15881,7 +15899,7 @@ msgstr "A menük a használt sablon által meghatározott helye(ke)n jeleníthet
 #. translators: 1: PHP class name, 2: Version number, 3: __construct() method.
 #: wp-includes/functions.php:5759
 msgid "The called constructor method for %1$s class is <strong>deprecated</strong> since version %2$s! Use %3$s instead."
-msgstr "A meghívott %1$s osztály felépítő metódusa <strong>elavult</strong> %2$s verzió óta! Használjuk inkább a(z) %3$s hívást."
+msgstr "A meghívott %1$s osztály konstruktora %2$s verzió óta <strong>elavult</strong>! Helyette %3$s használatos."
 
 #. translators: Do not translate USERNAME, ADMIN_EMAIL, NEW_EMAIL, EMAIL,
 #. SITENAME, SITEURL: those are placeholders.
@@ -15902,14 +15920,14 @@ msgid ""
 msgstr ""
 "Kedves ###USERNAME###!\n"
 "\n"
-"Ezzel az emlékeztetővel is felhívjuk a figyelmét arra, hogy a(z) ###SITENAME### webhelyen az e-mail címünk, a kérésének megfelelően, módosításra került (###NEW_EMAIL###)\n"
+"Ez az értesítés megerősíti, hogy a(z) ###SITENAME### webhelyen e-mail címünk - kérésünknek megfelelően - módosításra került (###NEW_EMAIL###)\n"
 "\n"
-"Amennyiben nem szerette volna a módosítást, a(z)\n"
-"###ADMIN_EMAIL### címen lépjen kapcsolatba a webhely üzemeltetőjével!\n"
+"Amennyiben nem szerettük volna a módosítást, a(z)\n"
+"###ADMIN_EMAIL### címen lépjünk kapcsolatba a webhely üzemeltetőjével!\n"
 "\n"
 "Jelen e-mail címzettje: ###EMAIL###\n"
 "\n"
-"Köszönettel:\n"
+"Üdvözlettel:\n"
 "###SITENAME###\n"
 "###SITEURL###"
 
@@ -15932,14 +15950,14 @@ msgid ""
 msgstr ""
 "Kedves ###USERNAME###!\n"
 "\n"
-"Ezzel az emlékeztetővel is felhívjuk a figyelmét arra, hogy a(z) ###SITENAME### webhelyen a jelszó, a kérésének megfelelően, módosításra került.\n"
+"Ez az értesítés megerősíti, hogy a(z) ###SITENAME### webhelyen a jelszó - kérésünknek megfelelően - módosításra került.\n"
 "\n"
-"Amennyiben nem szerette volna a módosítást, a(z)\n"
-"###ADMIN_EMAIL### címen lépjen kapcsolatba a webhely üzemeltetőjével!\n"
+"Amennyiben nem szerettük volna a módosítást, a(z)\n"
+"###ADMIN_EMAIL### címen lépjünk kapcsolatba a webhely üzemeltetőjével!\n"
 "\n"
 "Jelen e-mail címzettje: ###EMAIL###\n"
 "\n"
-"Köszönettel:\n"
+"Üdvözlettel:\n"
 "###SITENAME###\n"
 "###SITEURL###"
 
@@ -16322,8 +16340,8 @@ msgstr "Váltás"
 #: wp-includes/theme-compat/comments.php:44
 msgid "%1$s response to %2$s"
 msgid_plural "%1$s responses to %2$s"
-msgstr[0] "%1$s hozzászólás a(z) %2$s bejegyzéshez"
-msgstr[1] "%1$s hozzászólás a(z) %2$s bejegyzéshez"
+msgstr[0] "%1$s hozzászólás %2$s bejegyzéshez"
+msgstr[1] "%1$s hozzászólás %2$s bejegyzéshez"
 
 #: wp-includes/theme.php:3754
 msgid "Customizer"
@@ -16353,11 +16371,6 @@ msgstr "Leválasztás"
 #: wp-includes/post.php:1868 wp-includes/post.php:1869
 msgid "Post type names must be between 1 and 20 characters in length."
 msgstr "A bejegyzés típusának névhossza 1 és 20 karakter közötti hosszúságúnak kell, hogy legyen."
-
-#. translators: 1: Site URL, 2: Table name, 3: Database name.
-#: wp-includes/ms-load.php:494
-msgid "<strong>Could not find site %1$s.</strong> Searched for table %2$s in database %3$s. Is that right?"
-msgstr "<strong>%1$s weboldal nem található</strong> a(z) %3$s nevű adatbázisban, a(z) %2$s nevű táblában. Rendben van ez így?"
 
 #: wp-includes/media.php:5156
 msgid "Drag and drop to reorder media files."
@@ -16447,6 +16460,11 @@ msgstr ""
 "\n"
 "--SITE_NAME csapata"
 
+#. translators: 1: Site URL, 2: Table name, 3: Database name.
+#: wp-includes/ms-load.php:494
+msgid "<strong>Could not find site %1$s.</strong> Searched for table %2$s in database %3$s. Is that right?"
+msgstr "<strong>%1$s webhely nem található.</strong> %3$s nevű adatbázisban %2$s nevű táblát kerestünk. Rendben van ez így?"
+
 #. translators: 1: Number of comments, 2: Post title.
 #: wp-includes/comment-template.php:1661
 msgid "%1$s Comment<span class=\"screen-reader-text\"> on %2$s</span>"
@@ -16461,19 +16479,9 @@ msgid "Link Text"
 msgstr "Hivatkozás szövege"
 
 #. translators: %s: Post title.
-#: wp-includes/comment-template.php:1651
-msgid "No Comments<span class=\"screen-reader-text\"> on %s</span>"
-msgstr "Nincs hozzászólás<span class=\"screen-reader-text\"> a(z) %s bejegyzéshez</span>"
-
-#. translators: %s: Post title.
 #: wp-includes/comment-template.php:1671
 msgid "Comments Off<span class=\"screen-reader-text\"> on %s</span>"
 msgstr "<span class=\"screen-reader-text\"> %s bejegyzéshez</span> a hozzászólások lehetősége kikapcsolva"
-
-#. translators: %s: Post title.
-#: wp-includes/comment-template.php:1656
-msgid "1 Comment<span class=\"screen-reader-text\"> on %s</span>"
-msgstr "1 hozzászólás a(z)<span class=\"screen-reader-text\"> %s</span> bejegyzéshez"
 
 #: wp-includes/blocks/archives.php:62
 #: wp-includes/widgets/class-wp-widget-archives.php:100
@@ -16495,17 +16503,27 @@ msgstr "Nap kijelölése"
 msgid "Select Year"
 msgstr "Év kijelölése"
 
-#. translators: 1: 'siteurl'/'home' argument, 2: bloginfo() function name, 3:
-#. 'url' argument.
-#: wp-includes/general-template.php:1055
-msgid "The %1$s option is deprecated for the family of %2$s functions. Use the %3$s option instead."
-msgstr "%1$s beállítás elavult a %2$s függvény használatához. Helyette %3$s beállítás használatos."
+#. translators: %s: Post title.
+#: wp-includes/comment-template.php:1656
+msgid "1 Comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr "1 hozzászólás<span class=\"screen-reader-text\"> %s</span> bejegyzéshez"
+
+#. translators: %s: Post title.
+#: wp-includes/comment-template.php:1651
+msgid "No Comments<span class=\"screen-reader-text\"> on %s</span>"
+msgstr "Nincs hozzászólás<span class=\"screen-reader-text\"> %s</span> bejegyzéshez"
 
 #. translators: 1: 'text_direction' argument, 2: bloginfo() function name, 3:
 #. is_rtl() function name.
 #: wp-includes/general-template.php:1136
 msgid "The %1$s option is deprecated for the family of %2$s functions. Use the %3$s function instead."
-msgstr "%1$s beállítás elavult a %2$s függvény használatához. Helyette %3$s függvény használatos."
+msgstr "%1$s lehetőség elavult a %2$s függvények családjában. Helyette %3$s függvény használatos."
+
+#. translators: 1: 'siteurl'/'home' argument, 2: bloginfo() function name, 3:
+#. 'url' argument.
+#: wp-includes/general-template.php:1055
+msgid "The %1$s option is deprecated for the family of %2$s functions. Use the %3$s option instead."
+msgstr "%1$s lehetőség elavult a %2$s függvények családjában. Helyette %3$s lehetőség használatos."
 
 #: wp-includes/customize/class-wp-customize-theme-control.php:83
 #: wp-includes/customize/class-wp-customize-themes-section.php:78
@@ -18588,13 +18606,13 @@ msgstr "Galéria frissítése"
 msgid "The requested user does not exist."
 msgstr "A kért felhasználó nem létezik."
 
-#: wp-includes/user.php:3569 wp-admin/includes/user.php:201
-msgid "<strong>Error:</strong> This username is already registered. Please choose another one."
-msgstr "<strong>Hiba:</strong> Ezzel a felhasználónév már foglalt. Válasszunk másikat."
-
 #: wp-includes/ms-functions.php:507 wp-admin/user-new.php:377
 msgid "Please enter a valid email address."
 msgstr "Adjunk meg egy valós e-mail címet."
+
+#: wp-includes/user.php:3569 wp-admin/includes/user.php:201
+msgid "<strong>Error:</strong> This username is already registered. Please choose another one."
+msgstr "<strong>Hiba:</strong> Ez a felhasználónév már regisztrálva van. Válasszunk másikat."
 
 #: wp-includes/class-wp-image-editor-gd.php:122
 #: wp-includes/class-wp-image-editor-imagick.php:186
@@ -19226,17 +19244,17 @@ msgstr "A %s fájl létrehozható egy webes felületen keresztül is, de ez nem 
 msgid "%1$s is your new site. <a href=\"%2$s\">Log in</a> as &#8220;%3$s&#8221; using your existing password."
 msgstr "%1$s az új webhelyünk. <a href=\"%2$s\">Bejelentkezés</a> &#8220;%3$s&#8221; néven, a meglévő jelszavunk használatával."
 
-#. translators: 1: Site URL, 2: Username, 3: User email address, 4: Lost
-#. password URL.
-#: wp-activate.php:162
-msgid "Your site at %1$s is active. You may now log in to your site using your chosen username of &#8220;%2$s&#8221;. Please check your email inbox at %3$s for your password and login instructions. If you do not receive an email, please check your junk or spam folder. If you still do not receive an email within an hour, you can <a href=\"%4$s\">reset your password</a>."
-msgstr "A(z) %1$s webhelyünk aktiválásra került. A webhelyre a választott &#8220;%2$s&#8221; felhasználónévvel lehet belépni. Ellenőrizzük az e-mailjeinket (%3$s), amiben a jelszót és belépési információkat találjuk. Amennyiben az e-mail nem érkezik meg, nézzük meg a levélszemét vagy spam mappát is. Ha egy órán belül sem érkezik meg az e-mail, <a href=\"%4$s\">visszaállíthatjuk a jelszavunkat</a>."
-
 #. translators: 1: Login URL, 2: Username, 3: User email address, 4: Lost
 #. password URL.
 #: wp-activate.php:151
 msgid "Your account has been activated. You may now <a href=\"%1$s\">log in</a> to the site using your chosen username of &#8220;%2$s&#8221;. Please check your email inbox at %3$s for your password and login instructions. If you do not receive an email, please check your junk or spam folder. If you still do not receive an email within an hour, you can <a href=\"%4$s\">reset your password</a>."
 msgstr "A felhasználói fiók aktiválásra került. Most már <a href=\"%1$s\">beléphetünk</a> a webhelyre a választott &#8220;%2$s&#8221; felhasználónévvel. Ellenőrizzük az e-mailjeinket (%3$s), amiben a jelszót és belépési információkat találjuk. Amennyiben az e-mail nem érkezik meg, nézzük meg a levélszemét vagy spam mappát is. Ha egy órán belül sem érkezik meg az e-mail, <a href=\"%4$s\">visszaállíthatjuk a jelszavunkat</a>."
+
+#. translators: 1: Site URL, 2: Username, 3: User email address, 4: Lost
+#. password URL.
+#: wp-activate.php:162
+msgid "Your site at %1$s is active. You may now log in to your site using your chosen username of &#8220;%2$s&#8221;. Please check your email inbox at %3$s for your password and login instructions. If you do not receive an email, please check your junk or spam folder. If you still do not receive an email within an hour, you can <a href=\"%4$s\">reset your password</a>."
+msgstr "%1$s webhelyünk aktív. A webhelyre a választott &#8220;%2$s&#8221; felhasználónevünkkel lehet belépni. Ellenőrizzük az e-mailjeinket (%3$s), a jelszó és belépési információkért. Amennyiben az e-mail nem érkezik meg, nézzük meg a levélszemét vagy spam mappát is. Ha egy órán belül sem érkezik meg az e-mail, <a href=\"%4$s\">visszaállíthatjuk a jelszavunkat</a>."
 
 #. translators: %s: Database repair URL.
 #: wp-includes/functions.php:1851
@@ -20318,12 +20336,6 @@ msgstr "Amennyiben nem jelenik meg a webhely, jelezzük a hálózat üzemeltető
 msgid "Navigation Menu"
 msgstr "Navigációs menü"
 
-#. translators: %s: Post title.
-#: wp-includes/theme-compat/comments.php:38
-#: wp-includes/js/dist/block-library.js:16664
-msgid "One response to %s"
-msgstr "Egy hozzászólás a(z) %s bejegyzéshez"
-
 #. translators: %s: search query
 #: wp-includes/blocks/breadcrumbs.php:63
 msgid "Search results for: \"%s\""
@@ -20336,6 +20348,12 @@ msgstr "Menü kiválasztása:"
 #: wp-includes/widgets/class-wp-widget-tag-cloud.php:183
 msgid "Taxonomy:"
 msgstr "Taxonómia:"
+
+#. translators: %s: Post title.
+#: wp-includes/theme-compat/comments.php:38
+#: wp-includes/js/dist/block-library.js:16664
+msgid "One response to %s"
+msgstr "Egy hozzászólás %s bejegyzéshez"
 
 #: wp-includes/admin-bar.php:1194
 #: wp-includes/class-wp-customize-nav-menus.php:685
@@ -20436,6 +20454,15 @@ msgstr "Valós e-mail cím megadása szükséges."
 msgid "Comment author name and email are required."
 msgstr "A hozzászólás írójának meg kell adnia a nevét és e-mail címét."
 
+#: wp-includes/class-wp-xmlrpc-server.php:3654
+#: wp-includes/class-wp-xmlrpc-server.php:3789
+#: wp-includes/class-wp-xmlrpc-server.php:3857 wp-includes/comment.php:2877
+#: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:397
+#: wp-admin/comment.php:81 wp-admin/comment.php:293
+#: wp-admin/edit-comments.php:297
+msgid "Invalid comment ID."
+msgstr "Érvénytelen hozzászólás azonosító (ID)."
+
 #: wp-includes/class-wp-xmlrpc-server.php:1496
 #: wp-includes/class-wp-xmlrpc-server.php:1799
 #: wp-includes/class-wp-xmlrpc-server.php:1881
@@ -20463,15 +20490,6 @@ msgstr "A hozzászólás írójának meg kell adnia a nevét és e-mail címét.
 #: wp-includes/revision.php:362
 msgid "Invalid post ID."
 msgstr "Érvénytelen bejegyzés azonosító (ID)."
-
-#: wp-includes/class-wp-xmlrpc-server.php:3654
-#: wp-includes/class-wp-xmlrpc-server.php:3789
-#: wp-includes/class-wp-xmlrpc-server.php:3857 wp-includes/comment.php:2877
-#: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:397
-#: wp-admin/comment.php:81 wp-admin/comment.php:293
-#: wp-admin/edit-comments.php:297
-msgid "Invalid comment ID."
-msgstr "Érvénytelen hozzászólás azonosító (ID)."
 
 #: wp-includes/class-wp-customize-nav-menus.php:961
 #: wp-includes/class-wp-xmlrpc-server.php:1462
@@ -21741,28 +21759,6 @@ msgstr "Ha a felhasználóneved nem aktiválod két napon belül, a regisztráci
 msgid "If you are still stuck with this message, then check that your database contains the following tables:"
 msgstr "Ha már beleakadtunk ebbe az üzenetbe, akkor ellenőrizni kell az adatbázis tartalmát a következő táblákban:"
 
-#. translators: 1: PHP function name, 2: Version number, 3: Optional message
-#. regarding the change.
-#: wp-includes/functions.php:5998
-msgid "Function %1$s was called with an argument that is <strong>deprecated</strong> since version %2$s! %3$s"
-msgstr "%1$s függvény olyan argumentummal lett hívva, melynek használata <strong>nem támogatott</strong> a(z) %2$s verzió óta! %3$s"
-
-#. translators: 1: WordPress hook name, 2: Version number, 3: Alternative hook
-#. name.
-#: wp-includes/functions.php:6079
-msgid "Hook %1$s is <strong>deprecated</strong> since version %2$s! Use %3$s instead."
-msgstr "%1$s horog használata <strong>nem támogatott</strong> a(z) %2$s verzió óta! Ezt javasoljuk helyette: %3$s."
-
-#. translators: 1: WordPress hook name, 2: Version number.
-#: wp-includes/functions.php:6087
-msgid "Hook %1$s is <strong>deprecated</strong> since version %2$s with no alternative available."
-msgstr "%1$s horog használata <strong>nem támogatott</strong> a(z) %2$s verzió óta és nincs helyette javaslatunk."
-
-#. translators: 1: PHP function name, 2: Version number.
-#: wp-includes/functions.php:6006
-msgid "Function %1$s was called with an argument that is <strong>deprecated</strong> since version %2$s with no alternative available."
-msgstr "%1$s függvény olyan argumentummal lett hívva, melynek használata <strong>nem támogatott</strong> a(z) %2$s verzió óta és nincs helyette javaslatunk."
-
 #: wp-includes/functions.php:3759 wp-includes/js/dist/upload-media.js:3733
 #: wp-includes/js/dist/upload-media.js:3742
 #: wp-includes/js/dist/upload-media.js:3752
@@ -21969,11 +21965,6 @@ msgstr "%s hozzászólásai"
 msgid "Comments for %1$s searching on %2$s"
 msgstr "%2$s kifejezésre történt keresés hozzászólásai (%1$s)"
 
-#. translators: 1: Site name, 2: Separator (raquo), 3: Search query.
-#: wp-includes/general-template.php:3563
-msgid "%1$s %2$s Search Results for &#8220;%3$s&#8221; Feed"
-msgstr "%1$s %2$s Keresés eredménye a(z) &quot;%3$s&quot; feedben"
-
 #: wp-includes/class-wp-editor.php:1262 wp-includes/class-wp-editor.php:1882
 #: wp-includes/script-loader.php:1275
 msgid "Insert/edit link"
@@ -22016,6 +22007,33 @@ msgstr "A webhely lelke a WordPress"
 #: wp-includes/general-template.php:943
 msgid "Site Admin"
 msgstr "Webhely adminisztráció"
+
+#. translators: 1: Site name, 2: Separator (raquo), 3: Search query.
+#: wp-includes/general-template.php:3563
+msgid "%1$s %2$s Search Results for &#8220;%3$s&#8221; Feed"
+msgstr "%1$s %2$s Keresés eredménye &quot;%3$s&quot; feedben"
+
+#. translators: 1: PHP function name, 2: Version number.
+#: wp-includes/functions.php:6006
+msgid "Function %1$s was called with an argument that is <strong>deprecated</strong> since version %2$s with no alternative available."
+msgstr "%1$s függvény %2$s verzió óta <strong>elavult</strong> argumentummal lett hívva és nincs elérhető alternatívája."
+
+#. translators: 1: WordPress hook name, 2: Version number.
+#: wp-includes/functions.php:6087
+msgid "Hook %1$s is <strong>deprecated</strong> since version %2$s with no alternative available."
+msgstr "%1$s horog %2$s verzió óta <strong>elavult</strong> és nincs elérhető alternatívája."
+
+#. translators: 1: PHP function name, 2: Version number, 3: Optional message
+#. regarding the change.
+#: wp-includes/functions.php:5998
+msgid "Function %1$s was called with an argument that is <strong>deprecated</strong> since version %2$s! %3$s"
+msgstr "%1$s függvény %2$s verzió óta <strong>elavult</strong> argumentummal lett hívva! %3$s"
+
+#. translators: 1: WordPress hook name, 2: Version number, 3: Alternative hook
+#. name.
+#: wp-includes/functions.php:6079
+msgid "Hook %1$s is <strong>deprecated</strong> since version %2$s! Use %3$s instead."
+msgstr "%1$s horog %2$s verzió óta <strong>elavult</strong>! Helyette %3$s használatos."
 
 #: wp-includes/class-wp-theme.php:1080
 msgid "Blue"
@@ -22350,11 +22368,6 @@ msgstr "Legutóbbi frissítés: %s"
 msgid "No Comments"
 msgstr "Nincs hozzászólás"
 
-#. translators: %s: Author of the comment being replied to.
-#: wp-includes/comment-template.php:2122 wp-includes/comment-template.php:2659
-msgid "Leave a Reply to %s"
-msgstr "Hozzászólás a(z) %s bejegyzéshez"
-
 #: wp-includes/theme-compat/sidebar.php:140
 #: wp-includes/widgets/class-wp-widget-meta.php:33
 #: wp-includes/widgets/class-wp-widget-meta.php:46
@@ -22561,6 +22574,11 @@ msgstr "Webhelyeim"
 #: wp-admin/network/sites.php:402
 msgid "Sites"
 msgstr "Webhelyek"
+
+#. translators: %s: Author of the comment being replied to.
+#: wp-includes/comment-template.php:2122 wp-includes/comment-template.php:2659
+msgid "Leave a Reply to %s"
+msgstr "Hozzászólás %s bejegyzéséhez"
 
 #: wp-includes/class-wp-customize-widgets.php:803
 #: wp-includes/class-wp-editor.php:1396 wp-includes/media.php:5185

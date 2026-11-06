@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Elementor Website Builder &#8211; more than just a page builder - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-11-04 10:36:20+0000\n"
+"PO-Revision-Date: 2026-11-05 10:57:44+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,7 +13,7 @@ msgstr ""
 
 #: modules/mcp/abilities/manage-variable-ability.php:282
 msgid "Size variables require an active Elementor Pro license, so this operation was not applied. Do not retry it — tell the user that size variables are a Pro feature."
-msgstr "サイズ変数を利用するには有効な Elementor Pro ライセンスが必要です。そのため、この操作は適用されませんでした。再試行せず、サイズ変数は Pro の機能であることをユーザーに伝えてください。"
+msgstr "サイズ変数を使用するには有効な Elementor Pro ライセンスが必要なため、この操作は適用されませんでした。再試行しないでください。サイズ変数は Pro の機能であることをユーザーに伝えてください。"
 
 #. translators: %s: XML tag name
 #: modules/mcp/abilities/build-composition/xml-parser.php:47
@@ -37,6 +37,22 @@ msgstr "選択した機能の保存中に問題が発生しました。"
 #: app/app.php:301
 msgid "New Onboarding"
 msgstr "新規オンボーディング"
+
+#: modules/promotions/conversion-banner.php:236
+msgid "Elevate your site with Elementor Pro"
+msgstr "Elementor Pro でサイトをグレードアップしましょう"
+
+#: modules/promotions/conversion-banner.php:237
+msgid "Access Elementor's Theme Builder, Dynamic Content, WooCommerce Builder, Popup Builder, 85+ Pro widgets and more when you upgrade to Pro"
+msgstr "Elementor のテーマビルダー、ダイナミックコンテンツ、WooCommerce ビルダー、ポップアップビルダー、85種類以上のプロウィジェットなどにアクセスするには、Pro にアップグレードしてください"
+
+#: modules/mcp/utils/mcp-v4-gate.php:59
+msgid "Note: needs Atomic Editor (currently off for this site)."
+msgstr "注: Atomic エディターが必要です (このサイトでは現在無効になっています)。"
+
+#: modules/mcp/utils/mcp-v4-gate.php:56
+msgid "This site needs the Atomic Editor turned on before this can be built. Turn it on in WP Admin → Elementor → Settings → Atomic Editor, then try again."
+msgstr "これを構築する前に、このサイトで Atomic エディターを有効にする必要があります。「WP 管理画面 → Elementor → 設定 → Atomic エディター」で有効化してから、もう一度お試しください。"
 
 #: modules/mcp/abilities/manage-variable-ability.php:240
 msgid "Delete requires id."
@@ -94,6 +110,16 @@ msgstr "操作を指定してください。"
 #: modules/mcp/abilities/manage-variable-ability.php:95
 msgid "operations array is required."
 msgstr "operations 配列は必須です。"
+
+#. translators: %s: XML parse error message
+#: modules/mcp/abilities/build-composition/xml-parser.php:29
+msgid "Failed to parse xml_structure: %s"
+msgstr "xml_structure の解析に失敗しました: %s"
+
+#. translators: %s: duplicate configuration-id value
+#: modules/mcp/abilities/build-composition/xml-parser.php:137
+msgid "Duplicate configuration-id \"%s\". Each element must have a unique configuration-id."
+msgstr "設定 ID「%s」が重複しています。各要素には一意の設定 ID が必要です。"
 
 #. translators: %d is the index of the email action.
 #: modules/atomic-widgets/elements/atomic-form/atomic-form.php:493

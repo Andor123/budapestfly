@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 7.1.x - Development - Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-11-04 20:50:06+0000\n"
+"PO-Revision-Date: 2026-11-05 16:21:11+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -513,7 +513,7 @@ msgstr "%s nem sikerült feltölteni."
 #. 3: The PHP extension name needed.
 #: wp-admin/upgrade.php:64
 msgid "You cannot upgrade because <a href=\"%1$s\">WordPress %2$s</a> requires the %3$s PHP extension."
-msgstr "A frissítés nem lehetséges, mert a <a href=\"%1$s\">WordPress %2$s</a> a %3$s PHP bővítményt igényel."
+msgstr "A frissítés nem lehetséges, mert a <a href=\"%1$s\">WordPress %2$s</a> %3$s PHP kiterjesztést igényel."
 
 #: wp-admin/themes.php:70
 msgid "An error occurred while deleting the theme."
@@ -1209,7 +1209,7 @@ msgstr "Kevesebb erőforrással rendelkező rendszereken az erőforrás-korláto
 
 #: wp-admin/update-core.php:1036
 msgid "This feature will create a temporary backup of a plugin or theme before it is upgraded. This backup is used to restore the plugin or theme back to its previous state if there is an error during the update process."
-msgstr "Ez a funkció létrehozza az átmeneti bővítmény és sablon biztonsági mentési könyvtárakat, még a frissítés előtt.  Ez a másolat azért kell, hogy hiba esetén vissza lehessen állítani a sablon vagy a bővítmény korábbi állapotát."
+msgstr "Ez a funkció létrehozza az átmeneti bővítmény és sablon biztonsági mentési könyvtárakat, még a frissítés előtt. Ez a másolat azért kell, hogy hiba esetén vissza lehessen állítani a sablon vagy a bővítmény korábbi állapotát."
 
 #: wp-admin/site-editor.php:335
 msgid "The site editor requires JavaScript. Please enable JavaScript in your browser settings."
@@ -1353,7 +1353,7 @@ msgstr "%s könyvtár létezik, de nem írható. Ezt a könyvtárat a bővítmé
 
 #: wp-admin/includes/class-wp-site-health.php:2044
 msgid "The upgrade directory exists but is not writable"
-msgstr "A frissítés átmeneti könyvtára létezik de nem írható"
+msgstr "A frissítés átmeneti könyvtára létezik, de nem írható"
 
 #. translators: %s: wp-content/upgrade-temp-backup
 #: wp-admin/includes/class-wp-site-health.php:2036
@@ -2526,7 +2526,7 @@ msgstr "A WordPress az elkötelezett, lelkes egyének <a href=\"%1$s\">világmé
 #. translators: %s: Name of deactivated plugin.
 #: wp-admin/includes/plugin.php:2657
 msgid "%s plugin deactivated during WordPress upgrade."
-msgstr "%s bővítmény lett kikapcsolva WordPress frissítés közben."
+msgstr "%s bővítmény ki lett kapcsolva a WordPress frissítés közben."
 
 #. translators: 1: Name of deactivated plugin, 2: Plugin version deactivated,
 #. 3: Current WP version.
@@ -2538,7 +2538,7 @@ msgstr "%1$s %2$s kikapcsolásra került, mivel a WordPress %3$s verziójával i
 #. 3: Current WP version, 4: Compatible plugin version.
 #: wp-admin/includes/plugin.php:2636
 msgid "%1$s %2$s was deactivated due to incompatibility with WordPress %3$s, please upgrade to %1$s %4$s or later."
-msgstr "%1$s %2$s kikapcsolásra került, mivel a WordPress %3$s verziójával inkompatibilis, javasoljuk a %1$s %4$s verzióra, vagy későbbi verzióra, történő frissítést."
+msgstr "%1$s %2$s ki lett kapcsolva, mivel a WordPress %3$s verziójával nem kompatibilis, kérjük %1$s %4$s, vagy későbbi verzióra történő frissítést."
 
 #: wp-admin/freedoms.php:28
 msgid "The Four Freedoms"
@@ -4615,7 +4615,7 @@ msgstr "Minden bejegyzés a listában tartalmazza"
 
 #: wp-admin/options-reading.php:165
 msgid "<strong>Warning:</strong> these pages should not be the same as your Privacy Policy page!"
-msgstr "<strong>Figyelem:</strong> ezek az oldalak nem lehetnek ugyanazok mint az Adatvédelmi Szabályzat oldala!"
+msgstr "<strong>Figyelmeztetés:</strong> ezek az oldalak nem lehetnek ugyanazok, mint az Adatvédelmi Szabályzat oldala!"
 
 #: wp-admin/options-reading.php:53
 msgid "<a href=\"https://wordpress.org/documentation/article/settings-reading-screen/\">Documentation on Reading Settings</a>"
@@ -8681,7 +8681,7 @@ msgstr "Figyelem"
 #: wp-admin/includes/network.php:456 wp-admin/includes/network.php:660
 #: wp-admin/includes/network.php:722
 msgid "Warning:"
-msgstr "Figyelem:"
+msgstr "Figyelmeztetés:"
 
 #: wp-admin/includes/ms.php:1038
 msgid "Once you hit &#8220;Confirm Deletion&#8221;, these users will be permanently removed."
@@ -10750,7 +10750,7 @@ msgstr "Válasszuk ki a szerkesztendő menüt:"
 #. translators: %s: URL to Upgrade Network screen.
 #: wp-admin/includes/ms.php:695
 msgid "Thank you for updating! Please visit the <a href=\"%s\">Upgrade Network</a> page to update all your sites."
-msgstr "Köszönjük a frissítést! Kérjük, látogasson el a <a href=\"%s\">Upgrade Network</a> oldalra, hogy frissítse az összes webhelyét."
+msgstr "Köszönjük a frissítést! Látogassunk el a <a href=\"%s\">Hálózat frissítése</a> oldalra, hogy az összes webhelyünk frissítéséhez."
 
 #: wp-admin/setup-config.php:509
 msgid "All right, sparky! You&#8217;ve made it through this part of the installation. WordPress can now communicate with your database. If you are ready, time now to&hellip;"
@@ -14263,7 +14263,7 @@ msgstr "Teljes szöveg"
 
 #: wp-admin/options-reading.php:149
 msgid "<strong>Warning:</strong> these pages should not be the same!"
-msgstr "<strong>Figyelem:</strong> ezek az oldalak nem lehetnek azonosak!"
+msgstr "<strong>Figyelmeztetés:</strong> ezek az oldalak nem lehetnek azonosak!"
 
 #. translators: %s: Select field to choose the page for posts.
 #: wp-admin/options-reading.php:130
@@ -14540,7 +14540,7 @@ msgstr "Bejegyzések/hozzászólások kezelésének beállításai"
 #: wp-admin/includes/deprecated.php:579
 #: wp-admin/includes/class-wp-ms-users-list-table.php:125
 msgid "No users found."
-msgstr "Nincs ilyen felhasználó."
+msgstr "Nem találhatók felhasználók."
 
 #: wp-admin/update-core.php:672 wp-admin/update-core.php:805
 #: wp-admin/update-core.php:1250 wp-admin/update-core.php:1255
@@ -16256,7 +16256,7 @@ msgstr "Tömeges műveletek"
 #. number of users, 3: Total number of users.
 #: wp-admin/includes/deprecated.php:614
 msgid "Displaying %1$s&#8211;%2$s of %3$s"
-msgstr "%1$s - %2$s-ig az összesen %3$s közül"
+msgstr "%1$s&#8211;%2$s, összesen %3$s"
 
 #: wp-admin/edit-comments.php:436
 msgid "Search Comments"
