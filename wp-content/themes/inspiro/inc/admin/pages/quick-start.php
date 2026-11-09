@@ -29,6 +29,125 @@
 		</div>
 	</div>
 
+	<?php
+	$inspiro_starter_sets = ( class_exists( 'Inspiro_Starter_Content_Notice' ) && Inspiro_Starter_Content_Notice::is_available() && function_exists( 'inspiro_get_starter_content_sets' ) ) ? inspiro_get_starter_content_sets() : array();
+	if ( ! empty( $inspiro_starter_sets ) ) :
+		// Only a set the user explicitly chose counts as selected; the default is just a default.
+		$inspiro_current_set = get_option( 'inspiro_starter_content_set', '' );
+		if ( ! is_string( $inspiro_current_set ) || ! isset( $inspiro_starter_sets[ $inspiro_current_set ] ) ) {
+			$inspiro_current_set = '';
+		}
+
+		// The free demo library. Premium designs only stand in, labelled, when the free feed is unavailable.
+		$inspiro_free_demos    = function_exists( 'inspiro_get_free_demos' ) ? inspiro_get_free_demos() : array();
+		$inspiro_premium_demos = function_exists( 'inspiro_get_premium_demos' ) ? inspiro_get_premium_demos() : array();
+		if ( empty( $inspiro_premium_demos ) && function_exists( 'inspiro_get_premium_demos_fallback' ) ) {
+			$inspiro_premium_demos = inspiro_get_premium_demos_fallback();
+		}
+		$inspiro_free_count    = ! empty( $inspiro_free_demos ) ? count( $inspiro_free_demos ) : (int) apply_filters( 'inspiro/free_demos_count', 25 );
+		$inspiro_premium_count = count( $inspiro_premium_demos );
+		$inspiro_library_is_premium = empty( $inspiro_free_demos );
+		$inspiro_demo_library  = $inspiro_library_is_premium ? $inspiro_premium_demos : $inspiro_free_demos;
+		$inspiro_demo_library  = array_slice( array_filter( $inspiro_demo_library, function ( $demo ) { return ! empty( $demo['thumbnail_url'] ); } ), 0, 8 );
+
+		$inspiro_plugin_status = function_exists( 'inspiro_check_plugin_status' ) ? inspiro_check_plugin_status( 'inspiro-starter-sites/inspiro-starter-sites.php' ) : 'active';
+		$inspiro_plugin_note   = '';
+		if ( 'not_installed' === $inspiro_plugin_status ) {
+			$inspiro_plugin_note = __( 'One click installs and activates the free Inspiro Starter Sites plugin.', 'inspiro' );
+		} elseif ( 'installed' === $inspiro_plugin_status ) {
+			$inspiro_plugin_note = __( 'One click activates the free Inspiro Starter Sites plugin.', 'inspiro' );
+		}
+		$inspiro_importer_url = admin_url( 'admin.php?page=inspiro-demo' );
+		?>
+	<div class="theme-info-wrap inspiro-start">
+		<h3 class="wpz-onboard_content-main-title"><?php esc_html_e( 'Start your site', 'inspiro' ); ?></h3>
+		<p class="wpz-onboard_content-main-intro"><?php esc_html_e( 'Two ways to begin. The starter pages are already on your site and take a minute to publish. The demos are complete websites you import with every page, image and plugin in place.', 'inspiro' ); ?></p>
+
+		<div class="inspiro-start__block inspiro-start__block--starters">
+			<div class="inspiro-start__heading">
+				<h4><?php esc_html_e( 'Starter pages', 'inspiro' ); ?> <span class="inspiro-start__tag"><?php esc_html_e( 'Included with the theme', 'inspiro' ); ?></span></h4>
+				<p><?php esc_html_e( 'A simple home page, a few inner pages and some posts, built from regular blocks. Pick a layout to preview it; you can switch until you publish.', 'inspiro' ); ?></p>
+			</div>
+			<div class="inspiro-start__starters">
+				<?php foreach ( $inspiro_starter_sets as $inspiro_set_id => $inspiro_set ) : ?>
+					<?php $inspiro_thumb = ! empty( $inspiro_set['thumbnail'] ) ? get_template_directory_uri() . '/' . ltrim( $inspiro_set['thumbnail'], '/' ) : ''; ?>
+					<a class="inspiro-start__starter<?php echo $inspiro_set_id === $inspiro_current_set ? ' is-current' : ''; ?>" href="<?php echo esc_url( Inspiro_Starter_Content_Notice::get_customize_url( $inspiro_set_id ) ); ?>">
+						<?php if ( $inspiro_thumb ) : ?>
+							<span class="inspiro-start__starter-thumb"><img src="<?php echo esc_url( $inspiro_thumb ); ?>" alt="" width="600" height="400" loading="lazy" /></span>
+						<?php endif; ?>
+						<span class="inspiro-start__starter-text">
+							<strong><?php echo esc_html( $inspiro_set['label'] ); ?></strong>
+							<?php if ( $inspiro_set_id === $inspiro_current_set ) : ?>
+								<em><?php esc_html_e( 'Selected', 'inspiro' ); ?></em>
+							<?php else : ?>
+								<em><?php esc_html_e( 'Preview', 'inspiro' ); ?></em>
+							<?php endif; ?>
+						</span>
+					</a>
+				<?php endforeach; ?>
+			</div>
+		</div>
+
+		<div class="inspiro-start__block inspiro-start__block--demos">
+			<div class="inspiro-start__heading">
+				<h4><?php esc_html_e( 'Ready-made demo sites', 'inspiro' ); ?> <span class="inspiro-start__tag is-plugin"><?php esc_html_e( 'Free Inspiro Starter Sites plugin', 'inspiro' ); ?></span></h4>
+				<p>
+					<?php
+					printf(
+						/* translators: %d: number of free demos. */
+						esc_html__( '%d free demos: complete websites for agencies, shops, restaurants, portfolios and more, imported in one click with all pages, images, menus and plugins set up.', 'inspiro' ),
+						(int) $inspiro_free_count
+					);
+					if ( $inspiro_premium_count ) {
+						echo ' ';
+						printf(
+							/* translators: %d: number of premium demos. */
+							esc_html__( 'Inspiro Premium adds %d more designs.', 'inspiro' ),
+							(int) $inspiro_premium_count
+						);
+					}
+					?>
+				</p>
+			</div>
+			<?php if ( ! empty( $inspiro_demo_library ) ) : ?>
+			<div class="inspiro-start__library">
+				<div class="inspiro-start__library-grid">
+					<?php foreach ( $inspiro_demo_library as $inspiro_demo ) : ?>
+						<a class="inspiro-start__demo js-inspiro-starter-sites-handle" data-plugin-status="<?php echo esc_attr( $inspiro_plugin_status ); ?>" href="<?php echo esc_url( $inspiro_importer_url ); ?>">
+							<span class="inspiro-start__demo-thumb"><img src="<?php echo esc_url( $inspiro_demo['thumbnail_url'] ); ?>" alt="" loading="lazy" /></span>
+							<span class="inspiro-start__demo-title">
+								<?php echo esc_html( $inspiro_demo['title'] ); ?>
+								<?php if ( $inspiro_library_is_premium ) : ?>
+									<span class="inspiro-start__tag"><?php esc_html_e( 'Premium', 'inspiro' ); ?></span>
+								<?php endif; ?>
+							</span>
+						</a>
+					<?php endforeach; ?>
+				</div>
+				<div class="inspiro-start__library-more">
+					<a class="button button-primary button-hero js-inspiro-starter-sites-handle" data-plugin-status="<?php echo esc_attr( $inspiro_plugin_status ); ?>" href="<?php echo esc_url( $inspiro_importer_url ); ?>">
+						<?php
+						printf(
+							/* translators: %d: number of free demos. */
+							esc_html__( 'Browse all %d free demos', 'inspiro' ),
+							(int) $inspiro_free_count
+						);
+						?>
+					</a>
+					<?php if ( $inspiro_plugin_note ) : ?>
+						<span class="inspiro-start__note"><?php echo esc_html( $inspiro_plugin_note ); ?></span>
+					<?php endif; ?>
+				</div>
+			</div>
+			<?php else : ?>
+			<p class="section_footer">
+				<a class="button button-primary js-inspiro-starter-sites-handle" data-plugin-status="<?php echo esc_attr( $inspiro_plugin_status ); ?>" href="<?php echo esc_url( $inspiro_importer_url ); ?>"><?php esc_html_e( 'Browse the free demos', 'inspiro' ); ?></a>
+			</p>
+			<?php endif; ?>
+		</div>
+	</div>
+	<?php endif; ?>
+
 	<div class="theme-info-wrap">
 		<h3 class="wpz-onboard_content-main-title"><?php esc_html_e( 'Customize & Configure', 'inspiro' ); ?></h3>
 		<div class="wpz-grid-wrap three premium-features-grid">

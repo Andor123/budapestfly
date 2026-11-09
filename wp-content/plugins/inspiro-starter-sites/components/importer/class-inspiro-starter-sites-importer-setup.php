@@ -204,6 +204,8 @@ class Inspiro_Starter_Sites_Importer_Setup {
 			'inspiro-lite-fitness'		   		 => [ 'social-icons-widget-by-wpzoom' ],
 			'inspiro-lite-insurance'		   	 => [ 'social-icons-widget-by-wpzoom', 'icon-block' ],
             'inspiro-lite-agency'                => [ 'icon-block', 'slider-block', 'wpzoom-portfolio' ],
+			'inspiro-lite-photographer'          => [ 'wpzoom-portfolio' ],
+			'inspiro-lite-landscape'             => [ 'wpzoom-portfolio' ],
 			'inspiro-lite-advisory'		   	 	 => [ 'icon-block' ]
 		];
 	}
@@ -213,7 +215,51 @@ class Inspiro_Starter_Sites_Importer_Setup {
 		$demos_preview_url = INSPIRO_STARTER_SITES_URL .'assets/images/preview-demos/';
 
 		return [
-			[	'import_id'                  => 'inspiro-lite-blocks',
+			[
+				'import_id'                  => 'inspiro-lite-agency',
+				'import_file_name'           => 'Creative Agency (Lite)',
+				'import_file_url'            => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-agency.xml',
+				'import_widget_file_url'     => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-agency.wie',
+				'import_customizer_file_url' => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-agency.dat',
+				'import_preview_image_url'   => $demos_preview_url .  'agency.png',
+				'preview_url'                => 'https://inspiro.wpzoom.com/lite-new/',
+				'is_new'                     => true,
+				'categories'                 => [ 'portfolio', 'creative', 'business', 'video' ],
+			],
+			[
+				'import_id'                  => 'inspiro-lite-video',
+				'import_file_name'           => 'Video Production (Lite)',
+				'import_file_url'            => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-video.xml',
+				'import_widget_file_url'     => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-video.wie',
+				'import_customizer_file_url' => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-video.dat',
+				'import_preview_image_url'   => $demos_preview_url .  'video.png',
+				'preview_url'                => 'https://inspiro.wpzoom.com/video/',
+				'categories'                 => [ 'video', 'creative', 'portfolio' ],
+			],
+			[
+				'import_id'                  => 'inspiro-lite-photographer',
+				'import_file_name'           => 'Photographer (Lite)',
+				'import_file_url'            => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-photographer.xml',
+				'import_widget_file_url'     => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-photographer.wie',
+				'import_customizer_file_url' => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-photographer.dat',
+				'import_preview_image_url'   => $demos_preview_url . 'photographer.png',
+				'preview_url'                => 'https://inspiro.wpzoom.com/photographer/',
+				'is_new'                     => true,
+				'categories'                 => [ 'photography', 'portfolio', 'creative' ],
+			],
+			[
+				'import_id'                  => 'inspiro-lite-landscape',
+				'import_file_name'           => 'Landscape (Lite)',
+				'import_file_url'            => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-landscape.xml',
+				'import_widget_file_url'     => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-landscape.wie',
+				'import_customizer_file_url' => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-landscape.dat',
+				'import_preview_image_url'   => $demos_preview_url . 'landscape.png',
+				'preview_url'                => 'https://inspiro.wpzoom.com/landscape/',
+				'is_new'                     => true,
+				'categories'                 => [ 'photography', 'portfolio', 'travel' ],
+			],
+			[
+				'import_id'                  => 'inspiro-lite-blocks',
 				'import_file_name'           => 'Business / Portfolio (Block Editor)',
 				'import_file_url'            => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-blocks.xml',
 				'import_widget_file_url'     => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-widgets.wie',
@@ -239,11 +285,32 @@ class Inspiro_Starter_Sites_Importer_Setup {
 				'categories'                 => [ 'business', 'portfolio' ],
 			],
 			[
+				'import_id'                  => 'inspiro-lite-woo',
+				'import_file_name'           => 'WooCommerce Shop',
+				'import_file_url'            => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-woo.xml',
+				'import_widget_file_url'     => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-woo-widgets.wie',
+				'import_customizer_file_url' => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-woo.dat',
+				'import_preview_image_url'   => $demos_preview_url .  'inspiro-lite-woo.png',
+				'preview_url'                => 'https://demo.wpzoom.com/inspiro-lite-woo/',
+				'platform'                   => 'woocommerce',
+				'categories'                 => [ 'woocommerce' ],
+			],
+			[
+				'import_id'                  => 'inspiro-lite-persona',
+				'import_file_name'           => 'Persona Lite (Dark)',
+				'import_file_url'            => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-persona.xml',
+				'import_widget_file_url'     => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-persona.wie',
+				'import_customizer_file_url' => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-persona.dat',
+				'import_preview_image_url'   => $demos_preview_url .  'persona.png',
+				'preview_url'                => 'https://demo.wpzoom.com/inspiro-lite-persona/',
+				'categories'                 => [ 'portfolio', 'creative', 'video' ],
+			],
+			[
 				'import_id'                  => 'inspiro-lite-business',
 				'import_file_name'           => 'Business (Block Editor)',
 				'import_file_url'            => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-business.xml',
-                'import_widget_file_url'     => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-business.wie',
-                'import_customizer_file_url' => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-business.dat',
+				'import_widget_file_url'     => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-business.wie',
+				'import_customizer_file_url' => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-business.dat',
 				'import_preview_image_url'   => $demos_preview_url .  'business.png',
 				'preview_url'                => 'https://inspiro.wpzoom.com/business/',
 				'type'                       => 'blocks',
@@ -256,241 +323,198 @@ class Inspiro_Starter_Sites_Importer_Setup {
 				'import_id'                  => 'inspiro-lite-business-elementor',
 				'import_file_name'           => 'Business (Elementor)',
 				'import_file_url'          	 => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-business-elementor.xml',
-                'import_widget_file_url'     => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-business-elementor.wie',
-                'import_customizer_file_url' => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-business-elementor.dat',
+				'import_widget_file_url'     => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-business-elementor.wie',
+				'import_customizer_file_url' => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-business-elementor.dat',
 				'import_preview_image_url'   => $demos_preview_url .  'business-elementor.png',
 				'preview_url'                => 'https://inspiro.wpzoom.com/business-elementor/',
-                'type'                       => 'elementor',
+				'type'                       => 'elementor',
 				'group'                      => 'business',
 				'group_label'                => 'Business',
 				'is_new'                     => true,
 				'categories'                 => [ 'business', 'portfolio' ],
 			],
-            [
-                'import_id'                  => 'inspiro-lite-agency',
-                'import_file_name'           => 'Creative Agency (Lite)',
-                'import_file_url'            => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-agency.xml',
-                'import_widget_file_url'     => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-agency.wie',
-                'import_customizer_file_url' => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-agency.dat',
-                'import_preview_image_url'   => $demos_preview_url .  'agency.png',
-                'preview_url'                => 'https://inspiro.wpzoom.com/lite-new/',
-                'is_new'                     => true,
-                'categories'                 => [ 'portfolio', 'creative', 'business', 'video' ],
-            ],
-			[	
-				'import_id'                  => 'inspiro-lite-woo',
-				'import_file_name'           => 'WooCommerce Shop',
-				'import_file_url'            => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-woo.xml',
-				'import_widget_file_url'     => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-woo-widgets.wie',
-				'import_customizer_file_url' => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-woo.dat',
-				'import_preview_image_url'   => $demos_preview_url .  'inspiro-lite-woo.png',
-				'preview_url'                => 'https://demo.wpzoom.com/inspiro-lite-woo/',
-				'platform'                   => 'woocommerce',
-				'categories'                 => [ 'woocommerce' ],
-			],
-            [
-                'import_id'                  => 'inspiro-lite-energy',
-                'import_file_name'           => 'Green Energy',
-                'import_file_url'            => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-energy.xml',
-                'import_widget_file_url'     => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-energy.wie',
-                'import_customizer_file_url' => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-energy.dat',
-                'import_preview_image_url'   => $demos_preview_url .  'energy.png',
-                'preview_url'                => 'https://inspiro.wpzoom.com/energy/',
-                'is_new'                     => true,
-                'categories'                 => [ 'business' ],
-            ],
-            [
-                'import_id'                  => 'inspiro-lite-architecture',
-                'import_file_name'           => 'Architecture (Lite)',
-                'import_file_url'            => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-architecture.xml',
-                'import_widget_file_url'     => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-architecture.wie',
-                'import_customizer_file_url' => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-architecture.dat',
-                'import_preview_image_url'   => $demos_preview_url .  'architecture.png',
-                'preview_url'                => 'https://inspiro.wpzoom.com/architecture/',
-                'type'                       => 'elementor',
-                'is_new'                     => true,
-                'categories'                 => [ 'portfolio', 'creative', 'architecture', 'construction' ],
-            ],
-            [
-                'import_id'                  => 'inspiro-lite-advisory',
-                'import_file_name'           => 'Consulting Company (Lite)',
-                'import_file_url'            => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-advisory.xml',
-                'import_widget_file_url'     => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-advisory.wie',
-                'import_customizer_file_url' => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-advisory.dat',
-                'import_preview_image_url'   => $demos_preview_url .  'advisory.png',
-                'preview_url'                => 'https://inspiro.wpzoom.com/advisory/',
-                'is_new'                     => true,
-                'categories'                 => [ 'lawyer', 'business' ],
-            ],
-            [
-                'import_id'                  => 'inspiro-lite-lawyer',
-                'import_file_name'           => 'Lawyer / Legal Firm (Lite)',
-                'import_file_url'            => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-lawyer.xml',
-                'import_widget_file_url'     => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-lawyer.wie',
-                'import_customizer_file_url' => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-lawyer.dat',
-                'import_preview_image_url'   => $demos_preview_url .  'lawyer.png',
-                'preview_url'                => 'https://inspiro.wpzoom.com/lawyer/',
-                'type'                       => 'elementor',
-                'is_new'                     => true,
-                'categories'                 => [ 'business', 'legal', 'lawyer' ],
-            ],
-            [
-                'import_id'                  => 'inspiro-lite-medical',
-                'import_file_name'           => 'Medical / Doctor (Lite)',
-                'import_file_url'            => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-medical.xml',
-                'import_widget_file_url'     => 'https://www.wpzoom.com/downloads/xml/medical.wie',
-                'import_customizer_file_url' => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-medical.dat',
-                'import_preview_image_url'   => $demos_preview_url .  'medical.png',
-                'preview_url'                => 'https://demo.wpzoom.com/inspiro-lite-medical/',
-                'categories'                 => [ 'health' ],
-            ],
-            [
-                'import_id'                  => 'inspiro-lite-finance',
-                'import_file_name'           => 'Finance / Tech (Lite)',
-                'import_file_url'            => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-finance.xml',
-                'import_widget_file_url'     => 'https://www.wpzoom.com/downloads/xml/finance.wie',
-                'import_customizer_file_url' => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-finance.dat',
-                'import_preview_image_url'   => $demos_preview_url .  'finance.png',
-                'preview_url'                => 'https://demo.wpzoom.com/inspiro-lite-finance/',
-                'categories'                 => [ 'business' ],
-            ],
-            [
-                'import_id'                  => 'inspiro-lite-insurance',
-                'import_file_name'           => 'Insurance Company (Lite)',
-                'import_file_url'            => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-insurance.xml',
-                'import_widget_file_url'     => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-insurance.wie',
-                'import_customizer_file_url' => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-insurance.dat',
-                'import_preview_image_url'   => $demos_preview_url .  'insurance.png',
-                'preview_url'                => 'https://inspiro.wpzoom.com/insurance/',
-                'is_new'                     => true,
-                'categories'                 => [ 'lawyer', 'business' ],
-            ],
 			[
-                'import_id'                  => 'inspiro-lite-recipe-blocks',
-                'import_file_name'           => 'Food Blog (Lite)',
-                'import_file_url'            => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-recipe-blocks.xml',
-                'import_widget_file_url'     => 'https://www.wpzoom.com/downloads/xml/recipe-blocks.wie',
-                'import_customizer_file_url' => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-recipe-blocks.dat',
-                'import_preview_image_url'   => $demos_preview_url .  'recipe-blocks.png',
-                'preview_url'                => 'https://demo.wpzoom.com/inspiro-lite-recipe-blocks/',
-                'categories'                 => [ 'food-restaurant' ],
-            ],
-            [
-                'import_id'                  => 'inspiro-lite-magazine',
-                'import_file_name'           => 'Magazine',
-                'import_file_url'            => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-magazine.xml',
-                'import_widget_file_url'     => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-magazine.wie',
-                'import_customizer_file_url' => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-magazine.dat',
-                'import_preview_image_url'   => $demos_preview_url .  'magazine.png',
-                'preview_url'                => 'https://demo.wpzoom.com/inspiro-lite-magazine/',
-                'categories'                 => [ 'magazine' ],
-            ],
-            [
-                'import_id'                  => 'inspiro-lite-persona',
-                'import_file_name'           => 'Persona Lite (Dark)',
-                'import_file_url'            => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-persona.xml',
-                'import_widget_file_url'     => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-persona.wie',
-                'import_customizer_file_url' => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-persona.dat',
-                'import_preview_image_url'   => $demos_preview_url .  'persona.png',
-                'preview_url'                => 'https://demo.wpzoom.com/inspiro-lite-persona/',
-                'categories'                 => [ 'portfolio', 'creative', 'video' ],
-            ],
-            [
-                'import_id'                  => 'inspiro-lite-remix',
-                'import_file_name'           => 'Remix',
-                'import_file_url'            => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-remix.xml',
-                'import_widget_file_url'     => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-remix.wie',
-                'import_customizer_file_url' => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-remix.dat',
-                'import_preview_image_url'   => $demos_preview_url .  'remix.png',
-                'preview_url'                => 'https://demo.wpzoom.com/inspiro-lite-remix/',
-                'categories'                 => [ 'portfolio', 'creative' ],
-            ],
-
-            [
-                'import_id'                  => 'inspiro-lite-video',
-                'import_file_name'           => 'Video Production (Lite)',
-                'import_file_url'            => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-video.xml',
-                'import_widget_file_url'     => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-video.wie',
-                'import_customizer_file_url' => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-video.dat',
-                'import_preview_image_url'   => $demos_preview_url .  'video.png',
-                'preview_url'                => 'https://inspiro.wpzoom.com/video/',
-                'categories'                 => [ 'video', 'creative', 'portfolio' ],
-            ],
-			[
-                'import_id'                  => 'inspiro-lite-charity',
-                'import_file_name'           => 'Charity / NGO (Lite)',
-                'import_file_url'            => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-charity.xml',
-                'import_widget_file_url'     => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-charity.wie',
-                'import_customizer_file_url' => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-charity.dat',
-                'import_preview_image_url'   => $demos_preview_url .  'charity.png',
-                'preview_url'                => 'https://inspiro.wpzoom.com/charity/',
-				'is_new'                     => true,
-				'categories'                 => [ 'non-profit' ],
-            ],
-			[
-                'import_id'                  => 'inspiro-lite-events',
-                'import_file_name'           => 'Events / Conference',
-                'import_file_url'            => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-events.xml',
-                'import_widget_file_url'     => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-events.wie',
-                'import_customizer_file_url' => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-events.dat',
-                'import_preview_image_url'   => $demos_preview_url .  'event.png',
-                'preview_url'                => 'https://inspiro.wpzoom.com/event/',
+				'import_id'                  => 'inspiro-lite-energy',
+				'import_file_name'           => 'Green Energy',
+				'import_file_url'            => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-energy.xml',
+				'import_widget_file_url'     => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-energy.wie',
+				'import_customizer_file_url' => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-energy.dat',
+				'import_preview_image_url'   => $demos_preview_url .  'energy.png',
+				'preview_url'                => 'https://inspiro.wpzoom.com/energy/',
 				'is_new'                     => true,
 				'categories'                 => [ 'business' ],
-            ],
+			],
 			[
-                'import_id'                  => 'inspiro-lite-construction',
-                'import_file_name'           => 'Construction / Building',
-                'import_file_url'            => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-construction.xml',
-                'import_widget_file_url'     => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-construction.wie',
-                'import_customizer_file_url' => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-construction.dat',
-                'import_preview_image_url'   => $demos_preview_url .  'construction.png',
-                'preview_url'                => 'https://inspiro.wpzoom.com/construction/',
+				'import_id'                  => 'inspiro-lite-recipe-blocks',
+				'import_file_name'           => 'Food Blog (Lite)',
+				'import_file_url'            => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-recipe-blocks.xml',
+				'import_widget_file_url'     => 'https://www.wpzoom.com/downloads/xml/recipe-blocks.wie',
+				'import_customizer_file_url' => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-recipe-blocks.dat',
+				'import_preview_image_url'   => $demos_preview_url .  'recipe-blocks.png',
+				'preview_url'                => 'https://demo.wpzoom.com/inspiro-lite-recipe-blocks/',
+				'categories'                 => [ 'food-restaurant' ],
+			],
+			[
+				'import_id'                  => 'inspiro-lite-magazine',
+				'import_file_name'           => 'Magazine',
+				'import_file_url'            => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-magazine.xml',
+				'import_widget_file_url'     => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-magazine.wie',
+				'import_customizer_file_url' => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-magazine.dat',
+				'import_preview_image_url'   => $demos_preview_url .  'magazine.png',
+				'preview_url'                => 'https://demo.wpzoom.com/inspiro-lite-magazine/',
+				'categories'                 => [ 'magazine' ],
+			],
+			[
+				'import_id'                  => 'inspiro-lite-remix',
+				'import_file_name'           => 'Remix',
+				'import_file_url'            => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-remix.xml',
+				'import_widget_file_url'     => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-remix.wie',
+				'import_customizer_file_url' => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-remix.dat',
+				'import_preview_image_url'   => $demos_preview_url .  'remix.png',
+				'preview_url'                => 'https://demo.wpzoom.com/inspiro-lite-remix/',
+				'categories'                 => [ 'portfolio', 'creative' ],
+			],
+			[
+				'import_id'                  => 'inspiro-lite-charity',
+				'import_file_name'           => 'Charity / NGO (Lite)',
+				'import_file_url'            => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-charity.xml',
+				'import_widget_file_url'     => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-charity.wie',
+				'import_customizer_file_url' => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-charity.dat',
+				'import_preview_image_url'   => $demos_preview_url .  'charity.png',
+				'preview_url'                => 'https://inspiro.wpzoom.com/charity/',
+				'is_new'                     => true,
+				'categories'                 => [ 'non-profit' ],
+			],
+			[
+				'import_id'                  => 'inspiro-lite-events',
+				'import_file_name'           => 'Events / Conference',
+				'import_file_url'            => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-events.xml',
+				'import_widget_file_url'     => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-events.wie',
+				'import_customizer_file_url' => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-events.dat',
+				'import_preview_image_url'   => $demos_preview_url .  'event.png',
+				'preview_url'                => 'https://inspiro.wpzoom.com/event/',
+				'is_new'                     => true,
+				'categories'                 => [ 'business' ],
+			],
+			[
+				'import_id'                  => 'inspiro-lite-construction',
+				'import_file_name'           => 'Construction / Building',
+				'import_file_url'            => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-construction.xml',
+				'import_widget_file_url'     => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-construction.wie',
+				'import_customizer_file_url' => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-construction.dat',
+				'import_preview_image_url'   => $demos_preview_url .  'construction.png',
+				'preview_url'                => 'https://inspiro.wpzoom.com/construction/',
 				'is_new'                     => true,
 				'categories'                 => [ 'construction' ],
-            ],
+			],
 			[
-                'import_id'                  => 'inspiro-lite-winery',
-                'import_file_name'           => 'Winery (Lite)',
-                'import_file_url'            => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-winery.xml',
-                'import_widget_file_url'     => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-winery.wie',
-                'import_customizer_file_url' => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-winery.dat',
-                'import_preview_image_url'   => $demos_preview_url .  'winery.png',
-                'preview_url'                => 'https://inspiro.wpzoom.com/winery/',
+				'import_id'                  => 'inspiro-lite-winery',
+				'import_file_name'           => 'Winery (Lite)',
+				'import_file_url'            => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-winery.xml',
+				'import_widget_file_url'     => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-winery.wie',
+				'import_customizer_file_url' => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-winery.dat',
+				'import_preview_image_url'   => $demos_preview_url .  'winery.png',
+				'preview_url'                => 'https://inspiro.wpzoom.com/winery/',
 				'is_new'                     => true,
 				'categories'                 => [ 'food-restaurant' ],
-            ],
+			],
 			[
-                'import_id'                  => 'inspiro-lite-fitness',
-                'import_file_name'           => 'Gym / Fitness (Lite)',
-                'import_file_url'            => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-fitness.xml',
-                'import_widget_file_url'     => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-fitness.wie',
-                'import_customizer_file_url' => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-fitness.dat',
-                'import_preview_image_url'   => $demos_preview_url .  'fitness.png',
-                'preview_url'                => 'https://inspiro.wpzoom.com/fitness/',
+				'import_id'                  => 'inspiro-lite-fitness',
+				'import_file_name'           => 'Gym / Fitness (Lite)',
+				'import_file_url'            => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-fitness.xml',
+				'import_widget_file_url'     => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-fitness.wie',
+				'import_customizer_file_url' => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-fitness.dat',
+				'import_preview_image_url'   => $demos_preview_url .  'fitness.png',
+				'preview_url'                => 'https://inspiro.wpzoom.com/fitness/',
 				'is_new'                     => true,
 				'categories'                 => [ 'sport', 'health' ],
-            ],
-            [
-                'import_id'                  => 'inspiro-lite-freelancer',
-                'import_file_name'           => 'Freelancer (One-Page)',
-                'import_file_url'            => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-freelancer.xml',
-                'import_widget_file_url'     => 'https://www.wpzoom.com/downloads/xml/freelancer.wie',
-                'import_customizer_file_url' => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-freelancer1.dat',
-                'import_preview_image_url'   => $demos_preview_url .  'freelancer.png',
-                'preview_url'                => 'https://demo.wpzoom.com/inspiro-lite-freelancer/',
-                'categories'                 => [ 'portfolio', 'creative' ],
-            ],
-            [
-                'import_id'                  => 'inspiro-lite-freelancer-grey',
-                'import_file_name'           => 'Freelancer #2 (One-Page)',
-                'import_file_url'            => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-freelancer2.xml',
-                'import_widget_file_url'     => 'https://www.wpzoom.com/downloads/xml/freelancer2.wie',
-                'import_customizer_file_url' => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-freelancer2.dat',
-                'import_preview_image_url'   => $demos_preview_url .  'freelancer2.png',
-                'preview_url'                => 'https://demo.wpzoom.com/inspiro-lite-freelancer-blocks/',
-                'categories'                 => [ 'portfolio', 'creative' ],
-            ],
+			],
+			[
+				'import_id'                  => 'inspiro-lite-freelancer',
+				'import_file_name'           => 'Freelancer (One-Page)',
+				'import_file_url'            => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-freelancer.xml',
+				'import_widget_file_url'     => 'https://www.wpzoom.com/downloads/xml/freelancer.wie',
+				'import_customizer_file_url' => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-freelancer1.dat',
+				'import_preview_image_url'   => $demos_preview_url .  'freelancer.png',
+				'preview_url'                => 'https://demo.wpzoom.com/inspiro-lite-freelancer/',
+				'categories'                 => [ 'portfolio', 'creative' ],
+			],
+			[
+				'import_id'                  => 'inspiro-lite-freelancer-grey',
+				'import_file_name'           => 'Freelancer #2 (One-Page)',
+				'import_file_url'            => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-freelancer2.xml',
+				'import_widget_file_url'     => 'https://www.wpzoom.com/downloads/xml/freelancer2.wie',
+				'import_customizer_file_url' => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-freelancer2.dat',
+				'import_preview_image_url'   => $demos_preview_url .  'freelancer2.png',
+				'preview_url'                => 'https://demo.wpzoom.com/inspiro-lite-freelancer-blocks/',
+				'categories'                 => [ 'portfolio', 'creative' ],
+			],
+			[
+				'import_id'                  => 'inspiro-lite-lawyer',
+				'import_file_name'           => 'Lawyer / Legal Firm (Lite)',
+				'import_file_url'            => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-lawyer.xml',
+				'import_widget_file_url'     => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-lawyer.wie',
+				'import_customizer_file_url' => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-lawyer.dat',
+				'import_preview_image_url'   => $demos_preview_url .  'lawyer.png',
+				'preview_url'                => 'https://inspiro.wpzoom.com/lawyer/',
+				'type'                       => 'elementor',
+				'is_new'                     => true,
+				'categories'                 => [ 'business', 'legal', 'lawyer' ],
+			],
+			[
+				'import_id'                  => 'inspiro-lite-advisory',
+				'import_file_name'           => 'Consulting Company (Lite)',
+				'import_file_url'            => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-advisory.xml',
+				'import_widget_file_url'     => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-advisory.wie',
+				'import_customizer_file_url' => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-advisory.dat',
+				'import_preview_image_url'   => $demos_preview_url .  'advisory.png',
+				'preview_url'                => 'https://inspiro.wpzoom.com/advisory/',
+				'is_new'                     => true,
+				'categories'                 => [ 'lawyer', 'business' ],
+			],
+			[
+				'import_id'                  => 'inspiro-lite-medical',
+				'import_file_name'           => 'Medical / Doctor (Lite)',
+				'import_file_url'            => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-medical.xml',
+				'import_widget_file_url'     => 'https://www.wpzoom.com/downloads/xml/medical.wie',
+				'import_customizer_file_url' => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-medical.dat',
+				'import_preview_image_url'   => $demos_preview_url .  'medical.png',
+				'preview_url'                => 'https://demo.wpzoom.com/inspiro-lite-medical/',
+				'categories'                 => [ 'health' ],
+			],
+			[
+				'import_id'                  => 'inspiro-lite-architecture',
+				'import_file_name'           => 'Architecture (Lite)',
+				'import_file_url'            => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-architecture.xml',
+				'import_widget_file_url'     => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-architecture.wie',
+				'import_customizer_file_url' => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-architecture.dat',
+				'import_preview_image_url'   => $demos_preview_url .  'architecture.png',
+				'preview_url'                => 'https://inspiro.wpzoom.com/architecture/',
+				'type'                       => 'elementor',
+				'is_new'                     => true,
+				'categories'                 => [ 'portfolio', 'creative', 'architecture', 'construction' ],
+			],
+			[
+				'import_id'                  => 'inspiro-lite-finance',
+				'import_file_name'           => 'Finance / Tech (Lite)',
+				'import_file_url'            => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-finance.xml',
+				'import_widget_file_url'     => 'https://www.wpzoom.com/downloads/xml/finance.wie',
+				'import_customizer_file_url' => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-finance.dat',
+				'import_preview_image_url'   => $demos_preview_url .  'finance.png',
+				'preview_url'                => 'https://demo.wpzoom.com/inspiro-lite-finance/',
+				'categories'                 => [ 'business' ],
+			],
+			[
+				'import_id'                  => 'inspiro-lite-insurance',
+				'import_file_name'           => 'Insurance Company (Lite)',
+				'import_file_url'            => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-insurance.xml',
+				'import_widget_file_url'     => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-insurance.wie',
+				'import_customizer_file_url' => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-insurance.dat',
+				'import_preview_image_url'   => $demos_preview_url .  'insurance.png',
+				'preview_url'                => 'https://inspiro.wpzoom.com/insurance/',
+				'is_new'                     => true,
+				'categories'                 => [ 'lawyer', 'business' ],
+			],
 
 		];
 	}
@@ -508,6 +532,7 @@ class Inspiro_Starter_Sites_Importer_Setup {
 			'woocommerce'     => __( 'WooCommerce', 'inspiro-starter-sites' ),
 			'video'           => __( 'Video', 'inspiro-starter-sites' ),
 			'photography'     => __( 'Photography', 'inspiro-starter-sites' ),
+			'travel'          => __( 'Travel', 'inspiro-starter-sites' ),
 			'food-restaurant' => __( 'Food & Restaurant', 'inspiro-starter-sites' ),
 			'health'          => __( 'Health', 'inspiro-starter-sites' ),
 			'sport'           => __( 'Sport', 'inspiro-starter-sites' ),
@@ -934,6 +959,18 @@ class Inspiro_Starter_Sites_Importer_Setup {
                 case 'inspiro-lite-energy':
                     $demo_layout = 'energy-blocks';
                     break;
+				case 'inspiro-lite-photographer':
+					$demo_layout = 'photographer';
+					self::localize_demo_links( $selected_import );
+					// The demo has no sidebar, so the header shows no menu-panel button.
+					// Park the default widgets of a fresh install in Inactive Widgets.
+					self::deactivate_sidebar_widgets( 'sidebar' );
+					break;
+				case 'inspiro-lite-landscape':
+					$demo_layout = 'landscape';
+					self::localize_demo_links( $selected_import );
+					self::deactivate_sidebar_widgets( 'sidebar' );
+					break;
 				// Add more demo mappings as needed
 			}
 			
@@ -946,6 +983,57 @@ class Inspiro_Starter_Sites_Importer_Setup {
 			\Elementor\Plugin::$instance->files_manager->clear_cache();
 		}
 
+	}
+
+	/**
+	 * Move every widget in a sidebar to Inactive Widgets, so nothing is deleted.
+	 *
+	 * @param string $sidebar_id Sidebar ID.
+	 */
+	/**
+	 * Point links that still target the live demo at the importing site.
+	 *
+	 * Block demos are built on a subsite (e.g. https://inspiro.wpzoom.com/landscape/), so their
+	 * content links either to that full URL or to its path ("/landscape/contact/"). The WXR
+	 * importer only remaps attachment URLs, so rewrite both forms of href to home_url().
+	 *
+	 * @param array $selected_import The imported demo's registry entry (needs preview_url).
+	 */
+	public static function localize_demo_links( $selected_import ) {
+		global $wpdb;
+		if ( empty( $selected_import['preview_url'] ) ) {
+			return;
+		}
+		$demo_url  = trailingslashit( $selected_import['preview_url'] );
+		$demo_path = wp_parse_url( $demo_url, PHP_URL_PATH );
+		$home      = trailingslashit( home_url() );
+		if ( $demo_url === $home ) {
+			return;
+		}
+		$pairs = array( 'href="' . $demo_url => 'href="' . $home );
+		if ( $demo_path && '/' !== $demo_path ) {
+			$pairs[ 'href="' . $demo_path ] = 'href="' . $home;
+		}
+		$ids = $wpdb->get_col( "SELECT ID FROM {$wpdb->posts} WHERE post_type IN ( 'page', 'post', 'portfolio_item', 'wp_block' ) AND post_status = 'publish'" );
+		foreach ( $ids as $id ) {
+			$content = get_post_field( 'post_content', $id, 'raw' );
+			$new     = strtr( $content, $pairs );
+			if ( $new !== $content ) {
+				$wpdb->update( $wpdb->posts, array( 'post_content' => $new ), array( 'ID' => $id ) );
+				clean_post_cache( $id );
+			}
+		}
+	}
+
+	public static function deactivate_sidebar_widgets( $sidebar_id ) {
+		$sidebars = get_option( 'sidebars_widgets', array() );
+		if ( empty( $sidebars[ $sidebar_id ] ) || ! is_array( $sidebars[ $sidebar_id ] ) ) {
+			return;
+		}
+		$inactive                        = isset( $sidebars['wp_inactive_widgets'] ) && is_array( $sidebars['wp_inactive_widgets'] ) ? $sidebars['wp_inactive_widgets'] : array();
+		$sidebars['wp_inactive_widgets'] = array_merge( $inactive, $sidebars[ $sidebar_id ] );
+		$sidebars[ $sidebar_id ]         = array();
+		update_option( 'sidebars_widgets', $sidebars );
 	}
 
 	public static function get_page_by_title( $page_title ) {
