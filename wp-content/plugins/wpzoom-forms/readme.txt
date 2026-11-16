@@ -5,7 +5,7 @@ Author URI:        https://www.wpzoom.com/
 Requires at least: 6.5
 Requires PHP:      7.4
 Tested up to:      7.1
-Stable tag:        2.0.11
+Stable tag:        2.0.12
 License:           GNU General Public License v2
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 Tags:              contact form, form builder, contact, forms, email form
@@ -223,6 +223,9 @@ Please report security bugs found in the source code of the plugin through the [
 
 
 == Changelog ==
+
+= 2.0.12 =
+* New: on the Forms list, a tip shows how to build forms by chatting with Claude or ChatGPT through the free WPZOOM AI Connect plugin, with one button to install, activate or open it. Hide it once and it stays hidden for you. Shown on WordPress 6.9 and newer
 
 = 2.0.11 =
 * Fixed: "Start Blank" in the form builder now opens an empty form instead of the default contact form template

@@ -13,7 +13,7 @@
  * Description: Simple, user-friendly contact form plugin for WordPress with a dedicated drag-and-drop builder.
  * Author:      WPZOOM
  * Author URI:  https://www.wpzoom.com
- * Version:     2.0.11
+ * Version:     2.0.12
  * License:     GPL2+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  */
@@ -2270,9 +2270,9 @@ class WPZOOM_Forms {
 						</div>
 					</div>
 					<div style="display: flex; gap: 10px;">
-						<button style="padding: 10px 20px; background: #2271b1; color: #fff; border: none; border-radius: 4px; cursor: pointer;"><?php esc_html_e( 'Export', 'wpzoom-forms' ); ?></button>
-						<button style="padding: 10px 20px; background: #2271b1; color: #fff; border: none; border-radius: 4px; cursor: pointer;"><?php esc_html_e( 'Import', 'wpzoom-forms' ); ?></button>
-						<button style="padding: 10px 20px; background: #2271b1; color: #fff; border: none; border-radius: 4px; cursor: pointer;"><?php esc_html_e( 'Export CSV', 'wpzoom-forms' ); ?></button>
+						<button style="padding: 10px 20px; background: var(--wp-admin-theme-color, #2271b1); color: #fff; border: none; border-radius: 4px; cursor: pointer;"><?php esc_html_e( 'Export', 'wpzoom-forms' ); ?></button>
+						<button style="padding: 10px 20px; background: var(--wp-admin-theme-color, #2271b1); color: #fff; border: none; border-radius: 4px; cursor: pointer;"><?php esc_html_e( 'Import', 'wpzoom-forms' ); ?></button>
+						<button style="padding: 10px 20px; background: var(--wp-admin-theme-color, #2271b1); color: #fff; border: none; border-radius: 4px; cursor: pointer;"><?php esc_html_e( 'Export CSV', 'wpzoom-forms' ); ?></button>
 					</div>
 				</div>
 			</div>
@@ -3387,6 +3387,11 @@ if( ! function_exists ( 'wpzoom_forms_load_files' ) ) {
 		require_once 'classes/class-wpzoom-forms-template-manager.php';
 		require_once 'classes/class-wpzoom-forms-settings-upsell.php';
 
+		// Tip on the forms list: build forms by chatting with AI (WPZOOM AI Connect).
+		if ( is_admin() ) {
+			require_once 'classes/class-wpzoom-forms-ai-tip.php';
+		}
+
 	}
 	add_action( 'plugin_loaded', 'wpzoom_forms_load_files' );
 }
@@ -3415,7 +3420,7 @@ if ( ! function_exists( 'wpzoom_forms_plugin_action_links' ) ) {
 		array_unshift( $links, $settings_link );
 
 		$links['go_pro'] = sprintf(
-			'<a href="%1$s" target="_blank" class="wpzoom-forms-gopro" style="color:#2271b1;font-weight:bold;">%2$s &rarr; <span class="wpzoom-premium-badge" style="background-color: #2271b1; color: #fff; margin-left: 5px; font-size: 11px; min-height: 16px; border-radius: 8px; display: inline-block; font-weight: 600; line-height: 1.6; padding: 0 8px;">%3$s</span></a>',
+			'<a href="%1$s" target="_blank" class="wpzoom-forms-gopro" style="color:var(--wp-admin-theme-color, #2271b1);font-weight:bold;">%2$s &rarr; <span class="wpzoom-premium-badge" style="background-color: var(--wp-admin-theme-color, #2271b1); color: #fff; margin-left: 5px; font-size: 11px; min-height: 16px; border-radius: 8px; display: inline-block; font-weight: 600; line-height: 1.6; padding: 0 8px;">%3$s</span></a>',
 			'https://www.wpzoom.com/plugins/wpzoom-forms/?utm_source=wpadmin&utm_medium=plugin&utm_campaign=wpzoom-forms-free&utm_content=plugins-page',
 			esc_html__( 'UPGRADE', 'wpzoom-forms' ),
 			esc_html__( 'PRO', 'wpzoom-forms' )
@@ -3574,8 +3579,8 @@ add_action( 'admin_head-edit.php', function() {
 	if ( ! $screen || $screen->post_type !== 'wpzf-form' ) return;
 	?>
 	<style>
-		.wp-heading-inline + .page-title-action { background: #2271b1; color: #fff; border-color: #2271b1; }
-		.wp-heading-inline + .page-title-action:hover { background: #135e96; }
+		.wp-heading-inline + .page-title-action { background: var(--wp-admin-theme-color, #2271b1); color: #fff; border-color: var(--wp-admin-theme-color, #2271b1); }
+		.wp-heading-inline + .page-title-action:hover { background: var(--wp-admin-theme-color-darker-10, #135e96); }
 	</style>
 	<script>
 		jQuery(function($){

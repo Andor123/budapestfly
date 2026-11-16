@@ -194,12 +194,16 @@ if ( ! function_exists( 'inspiro_entry_footer' ) ) :
 				'</div>'
 			);
 
+			// The author's Biographical Info (Users > Profile), when filled in and not switched off in the Customizer.
+			$inspiro_author_bio = inspiro_get_theme_mod( 'display_author_bio' ) ? trim( (string) get_the_author_meta( 'description' ) ) : '';
+
 			echo sprintf(
-				'<div class="post-author"><span class="section-title">%s</span>%s<span>%s</span>%s</div>',
+				'<div class="post-author"><span class="section-title">%s</span>%s<span>%s</span>%s%s</div>',
 				esc_html__( 'Post author', 'inspiro' ),
 				get_avatar( get_the_author_meta( 'ID' ), 65 ),
 				esc_html__( 'Written by', 'inspiro' ),
-				wp_kses_post( get_the_author_posts_link() )
+				wp_kses_post( get_the_author_posts_link() ),
+				$inspiro_author_bio ? '<p class="post-author__bio">' . wp_kses_post( $inspiro_author_bio ) . '</p>' : ''
 			);
 		}
 

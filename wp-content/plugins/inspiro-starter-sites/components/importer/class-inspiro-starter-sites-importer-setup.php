@@ -81,16 +81,27 @@ class Inspiro_Starter_Sites_Importer_Setup {
 			[
 				'name'     => 'Instagram Widget by WPZOOM',
 				'slug'     => 'instagram-widget-by-wpzoom',
-				'desc'     => 'Displays your Instagram feed beautifully on your WordPress site with ease.',
+				'desc'     => __( 'Displays your Instagram feed beautifully on your WordPress site with ease.', 'inspiro-starter-sites' ),
 				'required' => false,
 		  	],
 			[
 				'name'     => 'WPZOOM Forms',
 				'slug'     => 'wpzoom-forms',
-				'desc'     => 'Helps you create customizable contact forms and integrate them seamlessly into your WordPress site.',
+				'desc'     => __( 'Helps you create customizable contact forms and integrate them seamlessly into your WordPress site.', 'inspiro-starter-sites' ),
 				'required' => true,
 			],
 		];
+
+		// WPZOOM AI Connect: ticked, not required. After the import, the user's AI can turn the demo into their own site.
+		if ( class_exists( '\Inspiro\Starter_Sites\Helpers' ) && \Inspiro\Starter_Sites\Helpers::ai_connect_supported() ) {
+			$theme_plugins[] = [
+				'name'        => 'WPZOOM AI Connect',
+				'slug'        => 'wpzoom-ai-connect',
+				'desc'        => __( 'Edit this site by chatting with Claude or ChatGPT: replace the demo content with yours, change colors and layouts, add pages.', 'inspiro-starter-sites' ),
+				'required'    => false,
+				'preselected' => true,
+			];
+		}
 
 		// Check if user is on the theme recommended plugins step and a demo was selected.
 		if ( isset( $_GET['step'] ) && $_GET['step'] === 'import' && isset( $_GET['import'] ) ) {
@@ -128,51 +139,51 @@ class Inspiro_Starter_Sites_Importer_Setup {
 		return [
 			'wpzoom-video-popup-block' => [
 				'name' => 'Video Popup Block by WPZOOM',
-				'desc' => 'Enables you to embed engaging video popups on your WordPress site effortlessly.',
+				'desc' => __( 'Enables you to embed engaging video popups on your WordPress site effortlessly.', 'inspiro-starter-sites' ),
 			],
 			'wpzoom-portfolio' => [
 				'name' => 'WPZOOM Portfolio',
-				'desc' => 'Showcases your projects in a professional and visually appealing portfolio layout.',
+				'desc' => __( 'Showcases your projects in a professional and visually appealing portfolio layout.', 'inspiro-starter-sites' ),
 			],
 			'elementor' => [
 				'name' => 'Elementor',
-				'desc' => 'The most popular page builder for WordPress that allows users to design custom layouts with a drag-and-drop interface.',
+				'desc' => __( 'The most popular page builder for WordPress that allows users to design custom layouts with a drag-and-drop interface.', 'inspiro-starter-sites' ),
 			],
 			'wpzoom-elementor-addons' => [
 				'name' => 'Elementor Addons by WPZOOM',
-				'desc' => 'Enhances Elementor with additional widgets and features for expanded design functionality.',
+				'desc' => __( 'Enhances Elementor with additional widgets and features for expanded design functionality.', 'inspiro-starter-sites' ),
 			],
 			'woocommerce' => [
 				'name' => 'WooCommerce',
-				'desc' => 'The leading e-commerce plugin for WordPress, enabling users to build and manage online stores effortlessly.',
+				'desc' => __( 'The leading e-commerce plugin for WordPress, enabling users to build and manage online stores effortlessly.', 'inspiro-starter-sites' ),
 			],
 			'secondary-product-image-for-woocommerce' => [
 				'name' => 'Secondary Product Image for WooCommerce',
-				'desc' => 'Shows a second product photo when shoppers hover a product in the shop grid.',
+				'desc' => __( 'Shows a second product photo when shoppers hover a product in the shop grid.', 'inspiro-starter-sites' ),
 			],
             'carousel-block' => [
                 'name' => 'Carousel Slider Block',
-                'desc' => 'A responsive modern carousel slider for the Gutenberg block editor that lets you add any blocks to your slides.',
+                'desc' => __( 'A responsive modern carousel slider for the Gutenberg block editor that lets you add any blocks to your slides.', 'inspiro-starter-sites' ),
             ],
 			'icon-block' => [
 				'name' => 'The Icon Block',
-				'desc' => 'Easily add SVG icons and graphics to the WordPress block editor.',
+				'desc' => __( 'Easily add SVG icons and graphics to the WordPress block editor.', 'inspiro-starter-sites' ),
 			],
 			'recipe-card-blocks-by-wpzoom' => [
 				'name' => 'Recipe Card Blocks',
-				'desc' => 'Beautiful Recipe Card Blocks for Food Bloggers with Schema Markup (JSON-LD) for the new WordPress editor (Gutenberg).',
+				'desc' => __( 'Beautiful Recipe Card Blocks for Food Bloggers with Schema Markup (JSON-LD) for the new WordPress editor (Gutenberg).', 'inspiro-starter-sites' ),
 			],
 			'makeiteasy-slider' => [
 				'name' => 'Makeiteasy Slider',
-				'desc' => 'Block based slider, leverages the speed and versatility of the Swiper slider.',
+				'desc' => __( 'Block based slider, leverages the speed and versatility of the Swiper slider.', 'inspiro-starter-sites' ),
 			],
 			'slider-block' => [
 				'name' => 'Image Slider Block',
-				'desc' => 'Display Multiple Images In Beautiful Slider & Reduce Page Scroll.',
+				'desc' => __( 'Display Multiple Images In Beautiful Slider & Reduce Page Scroll.', 'inspiro-starter-sites' ),
 			],
 			'social-icons-widget-by-wpzoom' => [
 				'name' => 'Social Icons Widget & Block by WPZOOM',
-				'desc' => 'Displays social media icon links in a clean, customizable widget or block.',
+				'desc' => __( 'Displays social media icon links in a clean, customizable widget or block.', 'inspiro-starter-sites' ),
 			],
 		];
 	}
@@ -211,6 +222,10 @@ class Inspiro_Starter_Sites_Importer_Setup {
 			'inspiro-lite-photographer'          => [ 'wpzoom-portfolio' ],
 			'inspiro-lite-landscape'             => [ 'wpzoom-portfolio' ],
 			'inspiro-lite-boutique'              => [ 'woocommerce', 'secondary-product-image-for-woocommerce' ],
+			'inspiro-lite-travel'                => [ 'elementor', 'wpzoom-elementor-addons', 'social-icons-widget-by-wpzoom', 'wpzoom-forms' ],
+			'inspiro-lite-personal-blog'         => [ 'wpzoom-forms', 'social-icons-widget-by-wpzoom' ],
+			'inspiro-lite-travel-blog'           => [ 'wpzoom-forms', 'social-icons-widget-by-wpzoom' ],
+			'inspiro-lite-education'             => [ 'elementor', 'wpzoom-elementor-addons', 'wpzoom-forms', 'social-icons-widget-by-wpzoom' ],
 			'inspiro-lite-advisory'		   	 	 => [ 'icon-block' ]
 		];
 	}
@@ -274,6 +289,54 @@ class Inspiro_Starter_Sites_Importer_Setup {
 				'platform'                   => 'woocommerce',
 				'is_new'                     => true,
 				'categories'                 => [ 'woocommerce', 'creative' ],
+			],
+			[
+				'import_id'                  => 'inspiro-lite-travel',
+				'import_file_name'           => 'Travel Agency (Lite)',
+				'import_file_url'            => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-travel.xml',
+				'import_widget_file_url'     => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-travel.wie',
+				'import_customizer_file_url' => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-travel.dat',
+				'import_preview_image_url'   => $demos_preview_url . 'travel.png',
+				'preview_url'                => 'https://inspiro.wpzoom.com/travel/',
+				'type'                       => 'elementor',
+				'is_new'                     => true,
+				'categories'                 => [ 'travel', 'business', 'creative' ],
+			],
+			[
+				'import_id'                  => 'inspiro-lite-education',
+				'import_file_name'           => 'Online Courses (Lite)',
+				'import_file_url'            => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-education.xml',
+				'import_widget_file_url'     => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-education.wie',
+				'import_customizer_file_url' => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-education.dat',
+				'import_preview_image_url'   => $demos_preview_url . 'education.png',
+				'preview_url'                => 'https://inspiro.wpzoom.com/education/',
+				'type'                       => 'elementor',
+				'is_new'                     => true,
+				'categories'                 => [ 'education', 'creative', 'video' ],
+			],
+			[
+				'import_id'                  => 'inspiro-lite-personal-blog',
+				'import_file_name'           => 'Personal Blog (Lite)',
+				'import_file_url'            => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-personal-blog.xml',
+				'import_widget_file_url'     => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-personal-blog.wie',
+				'import_customizer_file_url' => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-personal-blog.dat',
+				'import_preview_image_url'   => $demos_preview_url . 'personal-blog.png',
+				'preview_url'                => 'https://inspiro.wpzoom.com/personal-blog/',
+				'type'                       => 'blocks',
+				'is_new'                     => true,
+				'categories'                 => [ 'blog', 'magazine' ],
+			],
+			[
+				'import_id'                  => 'inspiro-lite-travel-blog',
+				'import_file_name'           => 'Travel Blog (Lite)',
+				'import_file_url'            => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-travel-blog.xml',
+				'import_widget_file_url'     => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-travel-blog.wie',
+				'import_customizer_file_url' => 'https://www.wpzoom.com/downloads/xml/inspiro-lite-travel-blog.dat',
+				'import_preview_image_url'   => $demos_preview_url . 'travel-blog.png',
+				'preview_url'                => 'https://inspiro.wpzoom.com/travel-blog/',
+				'type'                       => 'blocks',
+				'is_new'                     => true,
+				'categories'                 => [ 'blog', 'travel' ],
 			],
 			[
 				'import_id'                  => 'inspiro-lite-blocks',
@@ -557,6 +620,7 @@ class Inspiro_Starter_Sites_Importer_Setup {
 			'education'       => __( 'Education', 'inspiro-starter-sites' ),
 			'construction'    => __( 'Construction', 'inspiro-starter-sites' ),
 			'real-estate'     => __( 'Real Estate & Architecture', 'inspiro-starter-sites' ),
+			'blog'            => __( 'Blog', 'inspiro-starter-sites' ),
 			'magazine'        => __( 'Magazine', 'inspiro-starter-sites' ),
             'architecture'    => __( 'Architecture', 'inspiro-starter-sites' ),
 			'automotive'      => __( 'Automotive', 'inspiro-starter-sites' ),
@@ -576,7 +640,7 @@ class Inspiro_Starter_Sites_Importer_Setup {
 		return array(
 			'inspiro-premium' => array(
 				'name'     => 'Inspiro Premium',
-				'desc'     => 'Below you can view demos available in the Inspiro Premium theme. You can get access to all of them by purchasing the Premium version of the theme.',
+				'desc'     => __( 'Below you can view demos available in the Inspiro Premium theme. You can get access to all of them by purchasing the Premium version of the theme.', 'inspiro-starter-sites' ),
 				'purchase' => 'https://www.wpzoom.com/themes/inspiro-lite/upgrade/',
 				'demos'    => $demos,
 			),
@@ -912,6 +976,9 @@ class Inspiro_Starter_Sites_Importer_Setup {
 
 
 	public function after_import_setup( $selected_import ) {
+		self::fix_menu_item_parents();
+		self::fix_elementor_media();
+
 		// Assign menus to their locations.
 		$main_menu = get_term_by( 'name', 'Main', 'nav_menu' );
 
@@ -994,6 +1061,59 @@ class Inspiro_Starter_Sites_Importer_Setup {
 					self::deactivate_sidebar_widgets( 'sidebar' );
 					self::setup_woocommerce_demo();
 					break;
+				case 'inspiro-lite-travel':
+					$demo_layout = 'travel';
+					self::localize_demo_links( $selected_import );
+					self::localize_elementor_links( $selected_import );
+					self::deactivate_sidebar_widgets( 'sidebar' );
+					// The posts page is called Journal, not Blog.
+					$journal = self::get_page_by_title( 'Journal' );
+					if ( $journal ) {
+						update_option( 'show_on_front', 'page' );
+						update_option( 'page_for_posts', $journal->ID );
+					}
+					// The booking and contact forms are embedded with [wpzf_form id="…"] in the Elementor data.
+					self::remap_form_shortcodes( array( 61 => 'booking-request', 62 => 'contact-form' ) );
+					break;
+				case 'inspiro-lite-education':
+					$demo_layout = 'education';
+					self::localize_demo_links( $selected_import );
+					self::localize_elementor_links( $selected_import );
+					self::deactivate_sidebar_widgets( 'sidebar' );
+					foreach ( array( 'blog-sidebar', 'footer_1', 'footer_2', 'footer_3', 'footer_4' ) as $sidebar_id ) {
+						self::keep_imported_widgets_only( $sidebar_id );
+					}
+					// The posts page is called Journal, not Blog.
+					$journal = self::get_page_by_title( 'Journal' );
+					if ( $journal ) {
+						update_option( 'show_on_front', 'page' );
+						update_option( 'page_for_posts', $journal->ID );
+					}
+					// The Contact page embeds the enrol form with [wpzf_form id="…"] in the Elementor data.
+					self::remap_form_shortcodes( array( 24 => 'enrol-form' ) );
+					break;
+				case 'inspiro-lite-personal-blog':
+					$demo_layout = 'personal-blog';
+					self::localize_demo_links( $selected_import );
+					self::deactivate_sidebar_widgets( 'sidebar' );
+					// A fresh install puts WordPress's default Archives and Categories widgets in the blog sidebar.
+					self::keep_imported_widgets_only( 'blog-sidebar' );
+					// The Contact and Newsletter pages embed the forms with the Form block (formId = demo post ID).
+					self::remap_form_blocks( array( 20 => 'contact-form', 21 => 'newsletter-form' ) );
+					break;
+				case 'inspiro-lite-travel-blog':
+					$demo_layout = 'travel-blog';
+					self::localize_demo_links( $selected_import );
+					self::deactivate_sidebar_widgets( 'sidebar' );
+					foreach ( array( 'blog-sidebar', 'footer_1', 'footer_2', 'footer_3', 'footer_4' ) as $sidebar_id ) {
+						self::keep_imported_widgets_only( $sidebar_id );
+					}
+					self::remap_form_blocks( array( 26 => 'contact-form' ) );
+					// The blog is the home page: the demo has no "Homepage" page.
+					update_option( 'show_on_front', 'posts' );
+					update_option( 'page_on_front', 0 );
+					update_option( 'page_for_posts', 0 );
+					break;
 				// Add more demo mappings as needed
 			}
 			
@@ -1044,6 +1164,234 @@ class Inspiro_Starter_Sites_Importer_Setup {
 			if ( $new !== $content ) {
 				$wpdb->update( $wpdb->posts, array( 'post_content' => $new ), array( 'ID' => $id ) );
 				clean_post_cache( $id );
+			}
+		}
+		// Footer text widgets link to the demo too.
+		$widgets = get_option( 'widget_text', array() );
+		$changed = false;
+		foreach ( $widgets as $k => $w ) {
+			if ( is_array( $w ) && ! empty( $w['text'] ) ) {
+				$new = strtr( $w['text'], $pairs );
+				if ( $new !== $w['text'] ) { $widgets[ $k ]['text'] = $new; $changed = true; }
+			}
+		}
+		if ( $changed ) { update_option( 'widget_text', $widgets ); }
+		// Block widgets (e.g. a sidebar "About" box with a link).
+		$blocks  = get_option( 'widget_block', array() );
+		$changed = false;
+		foreach ( $blocks as $k => $w ) {
+			if ( is_array( $w ) && ! empty( $w['content'] ) ) {
+				$new = strtr( $w['content'], $pairs );
+				if ( $new !== $w['content'] ) { $blocks[ $k ]['content'] = $new; $changed = true; }
+			}
+		}
+		if ( $changed ) { update_option( 'widget_block', $blocks ); }
+		// Images in block widgets (e.g. a sidebar "About me" photo) still point at the demo's uploads folder.
+		// The importer may rename the file (photo-scaled.jpg becomes photo-scaled-1.jpg), so each image is
+		// matched to the imported attachment by its base file name.
+		$uploads_re = '#' . preg_quote( $demo_url, '#' ) . 'wp-content/uploads/(?:sites/\\d+/)?[^"\'\\s)]+#';
+		$blocks     = get_option( 'widget_block', array() );
+		$changed    = false;
+		foreach ( $blocks as $k => $w ) {
+			if ( ! is_array( $w ) || empty( $w['content'] ) || ! preg_match( $uploads_re, $w['content'] ) ) {
+				continue;
+			}
+			$blocks[ $k ]['content'] = preg_replace_callback(
+				$uploads_re,
+				function ( $m ) use ( $wpdb ) {
+					$base = pathinfo( wp_parse_url( $m[0], PHP_URL_PATH ), PATHINFO_FILENAME );
+					$base = preg_replace( '/(-\\d+x\\d+|-scaled)+$/', '', $base );
+					$id   = (int) $wpdb->get_var( $wpdb->prepare( "SELECT post_id FROM {$wpdb->postmeta} WHERE meta_key = '_wp_attached_file' AND meta_value LIKE %s ORDER BY post_id DESC LIMIT 1", '%' . $wpdb->esc_like( '/' . $base ) . '%' ) );
+					return $id ? wp_get_attachment_url( $id ) : $m[0];
+				},
+				$w['content']
+			);
+			$changed = true;
+		}
+		if ( $changed ) { update_option( 'widget_block', $blocks ); }
+		// Theme mods (topbar text, pre-footer button URL) and custom menu links hold plain demo URLs.
+		$url_pairs = array( $demo_url => $home );
+		foreach ( (array) get_theme_mods() as $mod => $value ) {
+			if ( is_string( $value ) && false !== strpos( $value, $demo_url ) ) {
+				set_theme_mod( $mod, strtr( $value, $url_pairs ) );
+			}
+		}
+		$items = $wpdb->get_results( $wpdb->prepare( "SELECT post_id, meta_value FROM {$wpdb->postmeta} WHERE meta_key = '_menu_item_url' AND meta_value LIKE %s", $wpdb->esc_like( $demo_url ) . '%' ) );
+		foreach ( $items as $item ) {
+			update_post_meta( $item->post_id, '_menu_item_url', strtr( $item->meta_value, $url_pairs ) );
+		}
+	}
+
+	/**
+	 * Point imported menu items at their imported parents.
+	 *
+	 * The WXR importer copies _menu_item_menu_item_parent unchanged (the demo's IDs), so a nested
+	 * menu only survived when the IDs happened to line up. The importer records original => new IDs
+	 * of the menu items in a transient while it runs (InspiroStarterSitesImporter::track_post()).
+	 */
+	public static function fix_menu_item_parents() {
+		$map = get_transient( 'inspiro_starter_sites_import_menu_item_map' );
+		if ( empty( $map ) || ! is_array( $map ) ) {
+			return;
+		}
+		foreach ( $map as $new_id ) {
+			$parent = (int) get_post_meta( $new_id, '_menu_item_menu_item_parent', true );
+			if ( $parent && isset( $map[ $parent ] ) ) {
+				update_post_meta( $new_id, '_menu_item_menu_item_parent', (string) $map[ $parent ] );
+			}
+		}
+		delete_transient( 'inspiro_starter_sites_import_menu_item_map' );
+	}
+
+	/**
+	 * Point images in Elementor pages at the imported attachments.
+	 *
+	 * Elementor keeps each image as {id, url} and renders it by ID, but the WXR importer leaves
+	 * _elementor_data untouched, so on a new site the demo's IDs show other attachments or nothing.
+	 * The importer records original => new attachment IDs while it runs (track_post()); every media
+	 * value (an array with id and an uploads url) gets the new ID and its URL. Images whose attachment
+	 * was not imported keep loading from the demo.
+	 */
+	public static function fix_elementor_media() {
+		global $wpdb;
+		$map = get_transient( 'inspiro_starter_sites_import_attachment_map' );
+		if ( empty( $map ) || ! is_array( $map ) ) {
+			return;
+		}
+		$relink = function ( $node ) use ( &$relink, $map ) {
+			if ( ! is_array( $node ) ) {
+				return $node;
+			}
+			if ( isset( $node['id'], $node['url'] ) && is_scalar( $node['id'] ) && is_string( $node['url'] ) && false !== strpos( $node['url'], '/wp-content/uploads/' ) && isset( $map[ (int) $node['id'] ] ) ) {
+				$url = wp_get_attachment_url( $map[ (int) $node['id'] ] );
+				if ( $url ) {
+					$node['id']  = $map[ (int) $node['id'] ];
+					$node['url'] = $url;
+				}
+				return $node;
+			}
+			foreach ( $node as $key => $value ) {
+				$node[ $key ] = $relink( $value );
+			}
+			return $node;
+		};
+		$rows = $wpdb->get_results( "SELECT post_id, meta_value FROM {$wpdb->postmeta} WHERE meta_key = '_elementor_data'" );
+		foreach ( $rows as $row ) {
+			if ( ! get_post_meta( $row->post_id, '_inspiro_starter_sites_importer_imported_post', true ) ) {
+				continue;
+			}
+			$data = json_decode( $row->meta_value, true );
+			if ( ! is_array( $data ) ) {
+				continue;
+			}
+			$new = $relink( $data );
+			if ( $new !== $data ) {
+				update_post_meta( $row->post_id, '_elementor_data', wp_slash( wp_json_encode( $new ) ) );
+			}
+		}
+		if ( class_exists( '\\Elementor\\Plugin' ) ) {
+			\Elementor\Plugin::$instance->files_manager->clear_cache();
+		}
+	}
+
+	/**
+	 * Move every widget in a sidebar that this import did not add to Inactive Widgets (nothing is deleted).
+	 *
+	 * @param string $sidebar_id Sidebar ID.
+	 */
+	public static function keep_imported_widgets_only( $sidebar_id ) {
+		$imported = (array) get_option( 'inspiro_starter_sites_imported_widgets', array() );
+		$sidebars = get_option( 'sidebars_widgets', array() );
+		if ( empty( $imported ) || empty( $sidebars[ $sidebar_id ] ) || ! is_array( $sidebars[ $sidebar_id ] ) ) {
+			return;
+		}
+		$other = array_values( array_diff( $sidebars[ $sidebar_id ], $imported ) );
+		if ( ! $other ) {
+			return;
+		}
+		$sidebars[ $sidebar_id ]            = array_values( array_intersect( $sidebars[ $sidebar_id ], $imported ) );
+		$sidebars['wp_inactive_widgets'] = array_merge( (array) ( $sidebars['wp_inactive_widgets'] ?? array() ), $other );
+		update_option( 'sidebars_widgets', $sidebars );
+	}
+
+	/**
+	 * Point WPZOOM Forms "Form" blocks ({"formId":"…"}) in post content at the imported forms.
+	 *
+	 * @param array $map Demo form ID => post_name of the form.
+	 */
+	public static function remap_form_blocks( $map ) {
+		global $wpdb;
+		$pairs = array();
+		foreach ( $map as $old_id => $slug ) {
+			$form = get_posts( array( 'post_type' => 'wpzf-form', 'name' => $slug, 'post_status' => 'any', 'numberposts' => 1 ) );
+			if ( $form && (int) $form[0]->ID !== (int) $old_id ) {
+				$pairs[ '"formId":"' . (int) $old_id . '"' ] = '"formId":"' . (int) $form[0]->ID . '"';
+			}
+		}
+		if ( ! $pairs ) { return; }
+		$rows = $wpdb->get_results( "SELECT ID, post_content FROM {$wpdb->posts} WHERE post_type = 'page' AND post_content LIKE '%wpzoom-forms/form-block%'" );
+		foreach ( $rows as $row ) {
+			$new = strtr( $row->post_content, $pairs );
+			if ( $new !== $row->post_content ) {
+				$wpdb->update( $wpdb->posts, array( 'post_content' => $new ), array( 'ID' => $row->ID ) );
+				clean_post_cache( $row->ID );
+			}
+		}
+	}
+
+	/**
+	 * Point [wpzf_form id="…"] shortcodes in Elementor page data at the imported forms.
+	 *
+	 * The WXR importer gives the forms new IDs, so the shortcodes written on the demo site
+	 * would point at whatever post has that ID here. $map is demo form ID => form slug.
+	 *
+	 * @param array $map Demo form ID => post_name of the form.
+	 */
+	public static function remap_form_shortcodes( $map ) {
+		global $wpdb;
+		$pairs = array();
+		foreach ( $map as $old_id => $slug ) {
+			$form = get_posts( array( 'post_type' => 'wpzf-form', 'name' => $slug, 'post_status' => 'any', 'numberposts' => 1 ) );
+			if ( $form && (int) $form[0]->ID !== (int) $old_id ) {
+				$pairs[ '[wpzf_form id=\\"' . (int) $old_id . '\\"]' ] = '[wpzf_form id=\\"' . (int) $form[0]->ID . '\\"]';
+			}
+		}
+		if ( ! $pairs ) { return; }
+		$rows = $wpdb->get_results( "SELECT post_id, meta_value FROM {$wpdb->postmeta} WHERE meta_key = '_elementor_data' AND meta_value LIKE '%wpzf_form%'" );
+		foreach ( $rows as $row ) {
+			$new = strtr( $row->meta_value, $pairs );
+			if ( $new !== $row->meta_value ) {
+				$wpdb->update( $wpdb->postmeta, array( 'meta_value' => $new ), array( 'post_id' => $row->post_id, 'meta_key' => '_elementor_data' ) );
+				clean_post_cache( $row->post_id );
+			}
+		}
+	}
+
+	/**
+	 * Same as localize_demo_links() for pages built with Elementor: the links live in the
+	 * _elementor_data meta (JSON, slashes escaped). Media URLs are left alone, so images and
+	 * videos keep loading from the demo site, like the other Elementor demos.
+	 *
+	 * @param array $selected_import The demo entry (needs preview_url).
+	 */
+	public static function localize_elementor_links( $selected_import ) {
+		global $wpdb;
+		if ( empty( $selected_import['preview_url'] ) ) {
+			return;
+		}
+		$demo_url = trailingslashit( $selected_import['preview_url'] );
+		$home     = trailingslashit( home_url() );
+		if ( $demo_url === $home ) {
+			return;
+		}
+		$escaped_demo = str_replace( '/', '\\/', $demo_url );
+		$escaped_home = str_replace( '/', '\\/', $home );
+		$rows = $wpdb->get_results( "SELECT post_id, meta_value FROM {$wpdb->postmeta} WHERE meta_key = '_elementor_data'" );
+		foreach ( $rows as $row ) {
+			$new = preg_replace( '#' . preg_quote( $escaped_demo, '#' ) . '(?!wp-content\\\\/)#', $escaped_home, $row->meta_value );
+			if ( null !== $new && $new !== $row->meta_value ) {
+				$wpdb->update( $wpdb->postmeta, array( 'meta_value' => $new ), array( 'post_id' => $row->post_id, 'meta_key' => '_elementor_data' ) );
+				clean_post_cache( $row->post_id );
 			}
 		}
 	}

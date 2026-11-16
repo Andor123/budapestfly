@@ -1124,8 +1124,8 @@ class WPZOOM_Forms_Settings {
                 text-decoration: none;
             }
             .wpzf-akismet-upsell-content .button-primary:hover {
-                background: #2271b1;
-                border-color: #2271b1;
+                background: var(--wp-admin-theme-color, #2271b1);
+                border-color: var(--wp-admin-theme-color, #2271b1);
             }
         </style>
         <?php

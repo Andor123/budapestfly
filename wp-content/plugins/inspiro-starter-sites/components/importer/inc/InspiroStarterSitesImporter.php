@@ -540,6 +540,8 @@ class InspiroStarterSitesImporter {
 		delete_transient( 'inspiro_starter_sites_importer_data' );
 		delete_transient( 'inspiro_starter_sites_importer_data_failed_attachment_imports' );
 		delete_transient( 'inspiro_starter_sites_import_menu_mapping' );
+		delete_transient( 'inspiro_starter_sites_import_menu_item_map' );
+		delete_transient( 'inspiro_starter_sites_import_attachment_map' );
 		delete_transient( 'inspiro_starter_sites_import_posts_with_nav_block' );
 
 		// Display final messages (success or warning messages).
@@ -841,6 +843,15 @@ class InspiroStarterSitesImporter {
 		update_post_meta( $post_id, '_inspiro_starter_sites_importer_imported_post', true );
 		update_post_meta( $post_id, '_inspiro_starter_sites_importer_enable_for_batch', true );
 
+		// The WXR importer never maps a menu item's parent (_menu_item_menu_item_parent) to the new IDs,
+		// so nested menus come out wrong. Keep original ID => new ID for menu items; the parents are
+		// repaired after the import (Inspiro_Starter_Sites_Importer_Setup::fix_menu_item_parents()).
+		if ( isset( $data['post_type'], $data['post_id'] ) && 'nav_menu_item' === $data['post_type'] ) {
+			$menu_items                              = (array) get_transient( 'inspiro_starter_sites_import_menu_item_map' );
+			$menu_items[ (int) $data['post_id'] ] = (int) $post_id;
+			set_transient( 'inspiro_starter_sites_import_menu_item_map', array_filter( $menu_items ), HOUR_IN_SECONDS );
+		}
+
 		// Set the full width template for the pages.
 		if ( isset( $data['post_type'] ) && 'page' === $data['post_type'] ) {
 			$is_elementor_page = get_post_meta( $post_id, '_elementor_version', true );
@@ -851,6 +862,14 @@ class InspiroStarterSitesImporter {
 				update_option( 'inspiro_starter_sites_importer_elementor_pages', $this->elementor_pages, 'no' );
 			}
 		} elseif ( isset( $data['post_type'] ) && 'attachment' === $data['post_type'] ) {
+			// Elementor stores the demo's attachment IDs in _elementor_data and renders images by ID, so on a
+			// new site they point at other attachments (or none). Keep original ID => new ID; the media are
+			// relinked after the import (Inspiro_Starter_Sites_Importer_Setup::fix_elementor_media()).
+			if ( isset( $data['post_id'] ) ) {
+				$attachments                          = (array) get_transient( 'inspiro_starter_sites_import_attachment_map' );
+				$attachments[ (int) $data['post_id'] ] = (int) $post_id;
+				set_transient( 'inspiro_starter_sites_import_attachment_map', array_filter( $attachments ), HOUR_IN_SECONDS );
+			}
 			$remote_url          = isset( $data['guid'] ) ? $data['guid'] : '';
 			$attachment_hash_url = self::get_hash_image( $remote_url );
 			if ( ! empty( $attachment_hash_url ) ) {
