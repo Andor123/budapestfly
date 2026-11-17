@@ -1,4 +1,4 @@
-(function(react, react_dom, _elementor_ui, _elementor_icons, _elementor_ui_Alert, _elementor_ui_Button, _elementor_ui_Container, _elementor_ui_Divider, _elementor_ui_Stack, _wordpress_i18n, _wordpress_api_fetch, _elementor_ui_Chip, _elementor_ui_Typography, _elementor_ui_Dialog, _elementor_ui_DialogActions, _elementor_ui_DialogContent, _elementor_ui_DialogContentText, _elementor_ui_DialogTitle, _elementor_ui_DialogHeader, _elementor_ui_CloseButton, _elementor_ui_IconButton, _elementor_ui_InputAdornment, _elementor_ui_MenuItem, _elementor_ui_MenuList, _elementor_ui_Popover, _elementor_ui_TextField, _elementor_ui_Box, _elementor_ui_Switch, _elementor_ui_Avatar, _elementor_ui_Collapse, _elementor_ui_Link, _elementor_ui_Tooltip, _elementor_ui_CircularProgress, _elementor_ui_Autocomplete, _elementor_ui_Accordion, _elementor_ui_AccordionDetails, _elementor_ui_AccordionSummary, _elementor_ui_Infotip, _elementor_ui_SvgIcon, _elementor_ui_Checkbox, _elementor_ui_FormControlLabel, _elementor_ui_Select, _elementor_ui_Skeleton) {
+(function(react, react_dom, _elementor_ui, _elementor_icons, _elementor_ui_Alert, _elementor_ui_Button, _elementor_ui_Container, _elementor_ui_Divider, _elementor_ui_Stack, _wordpress_i18n, _wordpress_api_fetch, _elementor_ui_Chip, _elementor_ui_Typography, _elementor_ui_Dialog, _elementor_ui_DialogActions, _elementor_ui_DialogContent, _elementor_ui_DialogContentText, _elementor_ui_DialogTitle, _elementor_ui_DialogHeader, _elementor_ui_CloseButton, _elementor_ui_IconButton, _elementor_ui_InputAdornment, _elementor_ui_MenuItem, _elementor_ui_MenuList, _elementor_ui_Popover, _elementor_ui_TextField, _elementor_ui_Box, _elementor_ui_Switch, _elementor_ui_Avatar, _elementor_ui_Collapse, _elementor_ui_Link, _elementor_ui_Tooltip, _elementor_ui_CircularProgress, _elementor_ui_Autocomplete, _elementor_ui_Accordion, _elementor_ui_AccordionDetails, _elementor_ui_AccordionSummary, _elementor_ui_Infotip, _elementor_ui_SvgIcon, _elementor_ui_Checkbox, _elementor_ui_FormControlLabel, _elementor_ui_Select, _elementor_ui_Skeleton, _elementor_ui_AlertAction) {
 
 //#region \0rolldown/runtime.js
 	var __create = Object.create;
@@ -72,6 +72,7 @@ _elementor_ui_Checkbox = __toESM(_elementor_ui_Checkbox);
 _elementor_ui_FormControlLabel = __toESM(_elementor_ui_FormControlLabel);
 _elementor_ui_Select = __toESM(_elementor_ui_Select);
 _elementor_ui_Skeleton = __toESM(_elementor_ui_Skeleton);
+_elementor_ui_AlertAction = __toESM(_elementor_ui_AlertAction);
 
 //#region node_modules/react-dom/client.js
 	var require_client = /* @__PURE__ */ __commonJSMin(((exports) => {
@@ -1564,6 +1565,10 @@ var import_regenerator = /* @__PURE__ */ __toESM(require_regenerator());
 			return Boolean(moduleKey && (dirtyModuleKeys === null || dirtyModuleKeys === void 0 ? void 0 : dirtyModuleKeys[moduleKey]));
 		});
 	};
+	var hasAnyAgentModuleEnabled = function hasAnyAgentModuleEnabled() {
+		var moduleEnabledMap = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
+		return Object.values(moduleEnabledMap).some(Boolean);
+	};
 
 //#endregion
 //#region modules/agents/assets/js/admin/scanner/scanner-check-copy.js
@@ -1827,7 +1832,7 @@ var import_regenerator = /* @__PURE__ */ __toESM(require_regenerator());
 		clip: "rect(0 0 0 0)",
 		whiteSpace: "nowrap"
 	};
-	var SCAN_SOURCE_URL = "https://ora.ai/docs";
+	var SCAN_SOURCE_URL = "https://ora.ai/";
 	var sectionHeadingSx = {
 		fontSize: "15px",
 		fontWeight: 600,
@@ -1924,7 +1929,7 @@ var import_regenerator = /* @__PURE__ */ __toESM(require_regenerator());
 	var READINESS_SCORE_MAX = 100;
 	var getScoreTier = function getScoreTier(score) {
 		if (score <= 30) return "low";
-		if (score < 80) return "mid";
+		if (score < 81) return "mid";
 		return SCORE_TIER_HIGH;
 	};
 	var getStagePassPercent = function getStagePassPercent(stage) {
@@ -6347,7 +6352,7 @@ var import_regenerator = /* @__PURE__ */ __toESM(require_regenerator());
 		return e;
 	}
 	__name(_objectSpread$12, "_objectSpread");
-	var SPINNER_SIZE = 14;
+	var SPINNER_SIZE$1 = 14;
 	var ActivateBanner = function ActivateBanner(_ref) {
 		var isActivating = _ref.isActivating;
 		var onActivate = _ref.onActivate;
@@ -6390,7 +6395,7 @@ var import_regenerator = /* @__PURE__ */ __toESM(require_regenerator());
 			onClick: onActivate,
 			disabled: isActivating,
 			startIcon: isActivating ? /*#__PURE__*/ react.default.createElement(_elementor_ui_CircularProgress.default, {
-				size: SPINNER_SIZE,
+				size: SPINNER_SIZE$1,
 				color: "inherit"
 			}) : null,
 			sx: _objectSpread$12(_objectSpread$12({}, scannerButtonSx.activate), {}, { flexShrink: 0 })
@@ -16558,13 +16563,14 @@ arguments: record(string(), string()).optional() }).optional()
 			endIcon: /*#__PURE__*/ react.default.createElement(_elementor_icons.ArrowUpRightIcon, { fontSize: "tiny" }),
 			sx: rowActionSx
 		}, (0, _wordpress_i18n.__)("Browse SEO plugins", "elementor"));
-		if ("manual" === check.fixWith) return /*#__PURE__*/ react.default.createElement(_elementor_ui_Typography.default, {
-			variant: "body2",
-			color: "text.disabled",
-			sx: {
-				fontWeight: 500,
-				whiteSpace: "nowrap"
-			}
+		if ("manual" === check.fixWith) return /*#__PURE__*/ react.default.createElement(_elementor_ui_Button.default, {
+			variant: "text",
+			color: "inherit",
+			size: "small",
+			onClick: function onClick() {
+				return onOpen(check.id);
+			},
+			sx: rowActionSx
 		}, (0, _wordpress_i18n.__)("Manual fix", "elementor"));
 		return null;
 	};
@@ -17477,6 +17483,33 @@ arguments: record(string(), string()).optional() }).optional()
 	};
 
 //#endregion
+//#region modules/agents/assets/js/admin/scanner/components/ora-logo.js
+	var OraLogo = function OraLogo() {
+		return /*#__PURE__*/ react.default.createElement(_elementor_ui_SvgIcon.default, {
+			viewBox: "0 0 108 40",
+			sx: {
+				height: 11,
+				width: "auto",
+				flexShrink: 0,
+				color: "inherit"
+			}
+		}, /*#__PURE__*/ react.default.createElement("path", {
+			fill: "currentColor",
+			fillRule: "evenodd",
+			clipRule: "evenodd",
+			d: "M20.5666 0C33.0194 9.55852e-05 41.1324 9.43378 41.1325 19.9243C41.1325 30.5659 33.0195 39.9999 20.5666 40C8.11363 40 0 30.5659 0 19.9243C0.000105199 9.43373 8.11372 0 20.5666 0ZM20.5666 10.3021C14.9062 10.3021 11.0944 14.8304 11.0944 19.9625C11.0945 25.17 14.9062 29.6979 20.5666 29.6979C26.2268 29.6978 30.0381 25.1699 30.0382 19.9625C30.0382 14.8304 26.2269 10.3022 20.5666 10.3021Z"
+		}), /*#__PURE__*/ react.default.createElement("path", {
+			fill: "currentColor",
+			fillRule: "evenodd",
+			clipRule: "evenodd",
+			d: "M87.4204 0C91.6481 1.26513e-05 95.2983 1.00743 98.3009 2.72506C99.2021 1.23409 100.839 0.237563 102.708 0.237563C105.55 0.237581 107.854 2.54115 107.854 5.383V17.6158C107.942 18.4026 107.986 19.1986 107.986 20V33.7359C107.986 34.3755 107.874 34.9906 107.67 35.5626C107.072 37.7431 105.078 39.3459 102.708 39.3459C101.547 39.3459 100.475 38.9614 99.6144 38.3127C98.5239 37.6134 97.7063 36.538 97.3447 35.283C94.6654 38.3773 90.3257 40 85.6087 40C74.6653 39.9999 66.8538 30.7923 66.8538 19.9243C66.8539 8.79223 75.1562 0 87.4204 0ZM87.4204 10.3021C81.8354 10.3021 77.9488 14.8301 77.9488 20C77.9488 25.1699 81.8354 29.7361 87.4204 29.7361C93.0053 29.7361 96.8919 25.1698 96.8919 20C96.8919 14.8302 93.0053 10.3021 87.4204 10.3021Z"
+		}), /*#__PURE__*/ react.default.createElement("path", {
+			fill: "currentColor",
+			d: "M60.997 0.716636C65.1857 0.716636 67.375 2.71703 67.375 5.8114C67.3749 8.94335 65.1482 10.3396 61.8275 11.4339C57.9407 12.4528 55.8272 15.5094 55.8272 21.7735V33.6983C55.8271 36.7549 53.4878 39.1701 50.3935 39.1702C47.2992 39.1702 44.9592 36.7549 44.9592 33.6983V19.8111C44.9593 7.84899 52.7329 0.716801 60.997 0.716636Z"
+		}));
+	};
+
+//#endregion
 //#region modules/agents/assets/js/admin/scanner/components/passing-table.js
 	function ownKeys$3(e, r) {
 		var t = Object.keys(e);
@@ -17625,18 +17658,25 @@ arguments: record(string(), string()).optional() }).optional()
 		onToggle: import_prop_types.default.func.isRequired
 	};
 	var SourceLine = function SourceLine() {
-		return /*#__PURE__*/ react.default.createElement(_elementor_ui_Typography.default, {
+		return /*#__PURE__*/ react.default.createElement(_elementor_ui_Stack.default, {
+			direction: "row",
+			alignItems: "center",
+			gap: .5
+		}, /*#__PURE__*/ react.default.createElement(_elementor_ui_Typography.default, {
 			variant: "body2",
 			color: "text.tertiary"
-		}, (0, _wordpress_i18n.__)("Source:", "elementor"), " ", /*#__PURE__*/ react.default.createElement(_elementor_ui_Typography.default, {
+		}, (0, _wordpress_i18n.__)("Powered by", "elementor")), /*#__PURE__*/ react.default.createElement(_elementor_ui_Box.default, {
 			component: "a",
-			variant: "body2",
 			href: SCAN_SOURCE_URL,
 			target: "_blank",
 			rel: "noreferrer",
-			color: "inherit",
-			sx: { textDecoration: "underline" }
-		}, (0, _wordpress_i18n.__)("Ora API", "elementor")));
+			"aria-label": (0, _wordpress_i18n.__)("Ora", "elementor"),
+			sx: {
+				display: "inline-flex",
+				alignItems: "center",
+				color: "text.primary"
+			}
+		}, /*#__PURE__*/ react.default.createElement(OraLogo, null)));
 	};
 	var PassingTable = function PassingTable(_ref3) {
 		var checks = _ref3.checks;
@@ -17682,6 +17722,59 @@ arguments: record(string(), string()).optional() }).optional()
 		})), /*#__PURE__*/ react.default.createElement(SourceLine, null));
 	};
 	PassingTable.propTypes = { checks: import_prop_types.default.arrayOf(import_prop_types.default.object).isRequired };
+
+//#endregion
+//#region modules/agents/assets/js/admin/scanner/components/agent-access-off-banner.js
+	var SPINNER_SIZE = 14;
+	var warningAlertSx = {
+		alignItems: "center",
+		backgroundColor: SCANNER_COLORS.banner,
+		borderColor: SCANNER_COLORS.bannerBorder
+	};
+	var AgentAccessOffBanner = function AgentAccessOffBanner(_ref) {
+		var retryAt = _ref.retryAt;
+		var _ref$isBusy = _ref.isBusy;
+		var isBusy = _ref$isBusy === void 0 ? false : _ref$isBusy;
+		var _ref$isTurningOn = _ref.isTurningOn;
+		var isTurningOn = _ref$isTurningOn === void 0 ? false : _ref$isTurningOn;
+		var onRescan = _ref.onRescan;
+		var onTurnBackOn = _ref.onTurnBackOn;
+		var nextScanLabel = useNextScanLabel(retryAt);
+		var isCoolingDown = "" !== nextScanLabel;
+		var rescanLabel = isCoolingDown ? nextScanLabel : (0, _wordpress_i18n.__)("Rescan now", "elementor");
+		var isRescanDisabled = isBusy || isCoolingDown;
+		return /*#__PURE__*/ react.default.createElement(_elementor_ui_Alert.default, {
+			severity: "warning",
+			variant: "standard",
+			icon: /*#__PURE__*/ react.default.createElement(_elementor_icons.AlertTriangleFilledIcon, { sx: { color: "warning.main" } }),
+			sx: warningAlertSx,
+			action: /*#__PURE__*/ react.default.createElement(react.default.Fragment, null, /*#__PURE__*/ react.default.createElement(_elementor_ui_AlertAction.default, {
+				variant: "outlined",
+				color: "secondary",
+				size: "small",
+				onClick: onRescan,
+				disabled: isRescanDisabled,
+				startIcon: /*#__PURE__*/ react.default.createElement(_elementor_icons.ReloadIcon, null)
+			}, rescanLabel), /*#__PURE__*/ react.default.createElement(_elementor_ui_AlertAction.default, {
+				variant: "contained",
+				size: "small",
+				onClick: onTurnBackOn,
+				disabled: isTurningOn || isBusy,
+				startIcon: isTurningOn ? /*#__PURE__*/ react.default.createElement(_elementor_ui_CircularProgress.default, {
+					size: SPINNER_SIZE,
+					color: "inherit"
+				}) : null,
+				sx: scannerButtonSx.activate
+			}, isTurningOn ? (0, _wordpress_i18n.__)("Turning on", "elementor") : (0, _wordpress_i18n.__)("Turn back on", "elementor")))
+		}, (0, _wordpress_i18n.__)("You turned off agent readiness settings. Turn them back on, or rescan to see your updated score.", "elementor"));
+	};
+	AgentAccessOffBanner.propTypes = {
+		retryAt: import_prop_types.default.string,
+		isBusy: import_prop_types.default.bool,
+		isTurningOn: import_prop_types.default.bool,
+		onRescan: import_prop_types.default.func.isRequired,
+		onTurnBackOn: import_prop_types.default.func.isRequired
+	};
 
 //#endregion
 //#region modules/agents/assets/js/admin/scanner/components/score-ring.js
@@ -17897,14 +17990,18 @@ arguments: record(string(), string()).optional() }).optional()
 		var score = _ref2.score;
 		var ringDurationMs = _ref2.ringDurationMs;
 		var isDimmed = _ref2.isDimmed;
-		var isActivated = _ref2.isActivated;
+		var _ref2$isActivated = _ref2.isActivated;
+		var isActivated = _ref2$isActivated === void 0 ? false : _ref2$isActivated;
+		var isAgentAccessOn = _ref2.isAgentAccessOn;
 		var isBusy = _ref2.isBusy;
+		var isTurningOn = _ref2.isTurningOn;
 		var needsRescanForScore = _ref2.needsRescanForScore;
 		var siteDomain = _ref2.siteDomain;
 		var ranAt = _ref2.ranAt;
 		var agentAccessUrl = _ref2.agentAccessUrl;
 		var retryAt = _ref2.retryAt;
 		var onRescan = _ref2.onRescan;
+		var onTurnBackOn = _ref2.onTurnBackOn;
 		var _getScoreCopy = getScoreCopy(score);
 		var heading = _getScoreCopy.heading;
 		var description = _getScoreCopy.description;
@@ -17938,20 +18035,25 @@ arguments: record(string(), string()).optional() }).optional()
 		}, /*#__PURE__*/ react.default.createElement(_elementor_ui_Typography.default, {
 			variant: "caption",
 			color: "text.tertiary"
-		}, "".concat(siteDomain, " · ").concat(checkedAt)), /*#__PURE__*/ react.default.createElement(ScoreStandardInfotip, null)), isActivated && /*#__PURE__*/ react.default.createElement(_elementor_ui_Stack.default, {
+		}, "".concat(siteDomain, " · ").concat(checkedAt)), /*#__PURE__*/ react.default.createElement(ScoreStandardInfotip, null)), isAgentAccessOn && /*#__PURE__*/ react.default.createElement(_elementor_ui_Stack.default, {
 			direction: "row",
 			alignItems: "center",
 			spacing: .5
 		}, /*#__PURE__*/ react.default.createElement(_elementor_ui_Typography.default, {
 			variant: "body2",
 			color: "info.main"
-		}, (0, _wordpress_i18n.__)("Agent Ready is on", "elementor")), /*#__PURE__*/ react.default.createElement(_elementor_ui_Button.default, {
-			variant: "text",
-			color: "primary",
-			size: "small",
+		}, (0, _wordpress_i18n.__)("Agent Ready is on", "elementor")), /*#__PURE__*/ react.default.createElement(_elementor_ui_Typography.default, {
+			component: "a",
+			variant: "body2",
 			href: agentAccessUrl,
-			endIcon: /*#__PURE__*/ react.default.createElement(_elementor_icons.ExternalLinkIcon, { fontSize: "tiny" })
-		}, (0, _wordpress_i18n.__)("Settings", "elementor")))), /*#__PURE__*/ react.default.createElement(_elementor_ui_Stack.default, {
+			color: "primary"
+		}, (0, _wordpress_i18n.__)("Settings", "elementor"))), !isAgentAccessOn && isActivated && /*#__PURE__*/ react.default.createElement(AgentAccessOffBanner, {
+			retryAt,
+			isBusy,
+			isTurningOn,
+			onRescan,
+			onTurnBackOn
+		})), /*#__PURE__*/ react.default.createElement(_elementor_ui_Stack.default, {
 			direction: "row",
 			alignItems: "center",
 			flexShrink: 0
@@ -17968,13 +18070,16 @@ arguments: record(string(), string()).optional() }).optional()
 		ringDurationMs: import_prop_types.default.number.isRequired,
 		isDimmed: import_prop_types.default.bool,
 		isActivated: import_prop_types.default.bool,
+		isAgentAccessOn: import_prop_types.default.bool,
 		isBusy: import_prop_types.default.bool,
+		isTurningOn: import_prop_types.default.bool,
 		needsRescanForScore: import_prop_types.default.bool,
 		siteDomain: import_prop_types.default.string.isRequired,
 		ranAt: import_prop_types.default.string,
 		agentAccessUrl: import_prop_types.default.string.isRequired,
 		retryAt: import_prop_types.default.string,
-		onRescan: import_prop_types.default.func.isRequired
+		onRescan: import_prop_types.default.func.isRequired,
+		onTurnBackOn: import_prop_types.default.func.isRequired
 	};
 
 //#endregion
@@ -18186,10 +18291,12 @@ arguments: record(string(), string()).optional() }).optional()
 			score,
 			ringDurationMs: PREVIEW_RING_DURATION_MS,
 			isActivated: true,
+			isAgentAccessOn: true,
 			siteDomain,
 			ranAt: scan.ranAt,
 			agentAccessUrl,
-			onRescan: noop$1
+			onRescan: noop$1,
+			onTurnBackOn: noop$1
 		})), /*#__PURE__*/ react.default.createElement(StageBars, { stages: scan.stages }), /*#__PURE__*/ react.default.createElement(FixesSection, {
 			checks: getVisibleChecks(scan),
 			flow: PREVIEW_FLOW,
@@ -18934,6 +19041,7 @@ arguments: record(string(), string()).optional() }).optional()
 			return isAgentReadyModuleToggleDisabled(moduleKey, moduleConfigs);
 		}, [moduleConfigs]);
 		var isMountedRef = (0, react.useRef)(true);
+		var isActivatedRef = (0, react.useRef)(initialIsActivated);
 		var initialModuleEnabledRef = (0, react.useRef)(getInitialModuleEnabled({
 			llmsConfig,
 			markdownConfig,
@@ -18993,6 +19101,10 @@ arguments: record(string(), string()).optional() }).optional()
 		var _useState32 = _slicedToArray((0, react.useState)({}), 2);
 		var savingCheckIds = _useState32[0];
 		var setSavingCheckIds = _useState32[1];
+		var _useState34 = _slicedToArray((0, react.useState)(false), 2);
+		var isTurningAgentAccessOn = _useState34[0];
+		var setIsTurningAgentAccessOn = _useState34[1];
+		var isAgentAccessOn = hasAnyAgentModuleEnabled(moduleEnabled);
 		(0, react.useEffect)(function() {
 			isMountedRef.current = true;
 			return function() {
@@ -19046,8 +19158,12 @@ arguments: record(string(), string()).optional() }).optional()
 			}, _callee2);
 		})), []);
 		var retryAt = getLaterRetryAt(scan === null || scan === void 0 ? void 0 : scan.retryAt, cooldownRetryAt);
-		var startScan = (0, react.useCallback)(/*#__PURE__*/ _asyncToGenerator$1(/*#__PURE__*/ import_regenerator.default.mark(function _callee3() {
+		var runScan = (0, react.useCallback)(/*#__PURE__*/ _asyncToGenerator$1(/*#__PURE__*/ import_regenerator.default.mark(function _callee3() {
 			var _result$outsideScan;
+			var _ref5;
+			var _ref5$ignoreCooldown;
+			var ignoreCooldown;
+			var currentScan;
 			var isRescan;
 			var scanError;
 			var scanPromise;
@@ -19055,21 +19171,25 @@ arguments: record(string(), string()).optional() }).optional()
 			var _yield$Promise$all2;
 			var result;
 			var throttledRetryAt;
-			var _scan$outsideScan;
+			var _currentScan$outsideS;
 			var hasFailedOutsideScan;
 			var _scanError$reason;
 			var _scanError;
+			var _args3 = arguments;
 			return import_regenerator.default.wrap(function(_context3) {
 				while (1) switch (_context3.prev = _context3.next) {
 					case 0:
-						if (!isRetryAhead(retryAt)) {
+						_ref5 = _args3.length > 0 && _args3[0] !== void 0 ? _args3[0] : {}, _ref5$ignoreCooldown = _ref5.ignoreCooldown, ignoreCooldown = _ref5$ignoreCooldown === void 0 ? false : _ref5$ignoreCooldown;
+						if (!(!ignoreCooldown && isRetryAhead(retryAt))) {
 							_context3.next = 1;
 							break;
 						}
 						return _context3.abrupt("return");
 					case 1:
+						if (ignoreCooldown) setCooldownRetryAt(null);
+						currentScan = ignoreCooldown && scan ? _objectSpread(_objectSpread({}, scan), {}, { retryAt: null }) : scan;
 						setActionError("");
-						isRescan = Boolean(scan);
+						isRescan = Boolean(currentScan);
 						if (isRescan) setView(SCANNER_STATE_RESCANNING);
 						else {
 							setCompletedStepsCount(0);
@@ -19098,13 +19218,13 @@ arguments: record(string(), string()).optional() }).optional()
 						}
 						throttledRetryAt = getThrottledRetryAt(scanError);
 						setCooldownRetryAt(throttledRetryAt);
-						if (!scan) {
+						if (!currentScan) {
 							_context3.next = 4;
 							break;
 						}
-						hasFailedOutsideScan = OUTSIDE_SCAN_STATUS_FAILED === ((_scan$outsideScan = scan.outsideScan) === null || _scan$outsideScan === void 0 ? void 0 : _scan$outsideScan.status);
-						setScan(_objectSpread(_objectSpread({}, scan), {}, { retryAt: throttledRetryAt }));
-						setView(hasFailedOutsideScan ? SCANNER_STATE_ERROR_REPORT : getReportView(isActivated));
+						hasFailedOutsideScan = OUTSIDE_SCAN_STATUS_FAILED === ((_currentScan$outsideS = currentScan.outsideScan) === null || _currentScan$outsideS === void 0 ? void 0 : _currentScan$outsideS.status);
+						setScan(_objectSpread(_objectSpread({}, currentScan), {}, { retryAt: throttledRetryAt }));
+						setView(hasFailedOutsideScan ? SCANNER_STATE_ERROR_REPORT : getReportView(isActivatedRef.current));
 						return _context3.abrupt("return");
 					case 4:
 						setView(SCANNER_STATE_FIRST_RUN);
@@ -19114,7 +19234,7 @@ arguments: record(string(), string()).optional() }).optional()
 							_context3.next = 8;
 							break;
 						}
-						setScan(result !== null && result !== void 0 ? result : withFailedOutsideScan(scan, (_scanError$reason = (_scanError = scanError) === null || _scanError === void 0 ? void 0 : _scanError.reason) !== null && _scanError$reason !== void 0 ? _scanError$reason : null));
+						setScan(result !== null && result !== void 0 ? result : withFailedOutsideScan(currentScan, (_scanError$reason = (_scanError = scanError) === null || _scanError === void 0 ? void 0 : _scanError.reason) !== null && _scanError$reason !== void 0 ? _scanError$reason : null));
 						if (!isRescan) {
 							_context3.next = 6;
 							break;
@@ -19133,21 +19253,24 @@ arguments: record(string(), string()).optional() }).optional()
 						setDirtyModuleKeys({});
 						setOpenIds({});
 						setRingDurationMs(SCANNER_MOTION.ringArriveMs);
-						setView(getReportView(isActivated));
+						setView(getReportView(isActivatedRef.current));
 					case 9:
 					case "end": return _context3.stop();
 				}
 			}, _callee3);
 		})), [
-			isActivated,
 			playProgressStepsUntilScanGate,
 			progressSteps.length,
 			retryAt,
 			showScanFailure,
 			scan
 		]);
+		var startScan = (0, react.useCallback)(function() {
+			return runScan();
+		}, [runScan]);
 		var activate = (0, react.useCallback)(/*#__PURE__*/ _asyncToGenerator$1(/*#__PURE__*/ import_regenerator.default.mark(function _callee4() {
 			var previousView;
+			var activationMinMs;
 			var nextModuleEnabled;
 			var _t;
 			return import_regenerator.default.wrap(function(_context4) {
@@ -19157,9 +19280,10 @@ arguments: record(string(), string()).optional() }).optional()
 						setActionError("");
 						setRingDurationMs(SCANNER_MOTION.ringActivatingMs);
 						setView(SCANNER_STATE_ACTIVATING);
+						activationMinMs = "first_check" === previousView ? 0 : SCANNER_MOTION.ringActivatingMs;
 						_context4.prev = 1;
 						_context4.next = 2;
-						return Promise.all([activateAgentsReady(), wait(SCANNER_MOTION.ringActivatingMs)]);
+						return Promise.all([activateAgentsReady(), wait(activationMinMs)]);
 					case 2:
 						_context4.next = 4;
 						break;
@@ -19184,18 +19308,100 @@ arguments: record(string(), string()).optional() }).optional()
 						});
 						moduleEnabledRef.current = nextModuleEnabled;
 						setModuleEnabled(nextModuleEnabled);
+						isActivatedRef.current = true;
 						setIsActivated(true);
 						setOpenIds({});
+						if (!("first_check" === previousView)) {
+							_context4.next = 6;
+							break;
+						}
+						runScan({ ignoreCooldown: true });
+						return _context4.abrupt("return");
+					case 6:
 						setRingDurationMs(SCANNER_MOTION.ringLandMs);
 						setView(SCANNER_STATE_FIXES);
-					case 6:
+					case 7:
 					case "end": return _context4.stop();
 				}
 			}, _callee4, null, [[1, 3]]);
 		})), [
 			isModuleToggleDisabled,
 			moduleConfigs,
+			runScan,
 			view
+		]);
+		var enableAllToggleableModules = (0, react.useCallback)(function() {
+			var nextModuleEnabled = _objectSpread({}, moduleEnabledRef.current);
+			Object.keys(nextModuleEnabled).forEach(function(moduleKey) {
+				if (!isModuleToggleDisabled(moduleKey)) nextModuleEnabled[moduleKey] = true;
+			});
+			return nextModuleEnabled;
+		}, [isModuleToggleDisabled]);
+		var buildEnableAllModulesPatch = (0, react.useCallback)(function() {
+			var patch = {};
+			Object.keys(moduleEnabledRef.current).forEach(function(moduleKey) {
+				if (!isModuleToggleDisabled(moduleKey)) patch[moduleKey] = { enabled: true };
+			});
+			return patch;
+		}, [isModuleToggleDisabled]);
+		var turnAgentAccessBackOn = (0, react.useCallback)(/*#__PURE__*/ _asyncToGenerator$1(/*#__PURE__*/ import_regenerator.default.mark(function _callee5() {
+			var patch;
+			var nextModuleEnabled;
+			var _t2;
+			return import_regenerator.default.wrap(function(_context5) {
+				while (1) switch (_context5.prev = _context5.next) {
+					case 0:
+						if (isActivated) {
+							_context5.next = 2;
+							break;
+						}
+						_context5.next = 1;
+						return activate();
+					case 1: return _context5.abrupt("return");
+					case 2:
+						setActionError("");
+						setIsTurningAgentAccessOn(true);
+						patch = buildEnableAllModulesPatch();
+						_context5.prev = 3;
+						_context5.next = 4;
+						return saveAgentReadySettings(patch);
+					case 4:
+						_context5.next = 6;
+						break;
+					case 5:
+						_context5.prev = 5;
+						_t2 = _context5["catch"](3);
+						if (isMountedRef.current) setActionError(getSaveErrorMessage(_t2));
+						return _context5.abrupt("return");
+					case 6:
+						_context5.prev = 6;
+						if (isMountedRef.current) setIsTurningAgentAccessOn(false);
+						return _context5.finish(6);
+					case 7:
+						if (isMountedRef.current) {
+							_context5.next = 8;
+							break;
+						}
+						return _context5.abrupt("return");
+					case 8:
+						nextModuleEnabled = enableAllToggleableModules();
+						moduleEnabledRef.current = nextModuleEnabled;
+						setModuleEnabled(nextModuleEnabled);
+						setOpenIds({});
+					case 9:
+					case "end": return _context5.stop();
+				}
+			}, _callee5, null, [[
+				3,
+				5,
+				6,
+				7
+			]]);
+		})), [
+			activate,
+			buildEnableAllModulesPatch,
+			enableAllToggleableModules,
+			isActivated
 		]);
 		var toggleRow = (0, react.useCallback)(function(checkId) {
 			setOpenIds(function(current) {
@@ -19337,6 +19543,8 @@ arguments: record(string(), string()).optional() }).optional()
 			completedStepsCount,
 			scan,
 			isActivated,
+			isAgentAccessOn,
+			isTurningAgentAccessOn,
 			visibleChecks,
 			ringScore: getBaseScore(scan),
 			ringDurationMs,
@@ -19357,6 +19565,7 @@ arguments: record(string(), string()).optional() }).optional()
 			retryAt,
 			startScan,
 			activate,
+			turnAgentAccessBackOn,
 			toggleRow,
 			openRow,
 			openHowToFix,
@@ -19429,13 +19638,16 @@ arguments: record(string(), string()).optional() }).optional()
 				ringDurationMs: flow.ringDurationMs,
 				isDimmed: isActivating,
 				isActivated: flow.isActivated,
-				isBusy: isActivating,
+				isAgentAccessOn: flow.isAgentAccessOn,
+				isBusy: isActivating || flow.isTurningAgentAccessOn,
+				isTurningOn: flow.isTurningAgentAccessOn,
 				needsRescanForScore: flow.needsRescanForScore,
 				siteDomain,
 				ranAt: scan === null || scan === void 0 ? void 0 : scan.ranAt,
 				agentAccessUrl,
-				retryAt: scan === null || scan === void 0 ? void 0 : scan.retryAt,
-				onRescan: flow.startScan
+				retryAt: flow.retryAt,
+				onRescan: flow.startScan,
+				onTurnBackOn: flow.turnAgentAccessBackOn
 			});
 		};
 		var renderReport = function renderReport(_ref3) {
@@ -19702,5 +19914,5 @@ arguments: record(string(), string()).optional() }).optional()
 	})();
 
 //#endregion
-})(React, ReactDOM, elementorV2.ui, elementorV2.icons, elementorV2.ui['Alert'], elementorV2.ui['Button'], elementorV2.ui['Container'], elementorV2.ui['Divider'], elementorV2.ui['Stack'], wp.i18n, wp.apiFetch, elementorV2.ui['Chip'], elementorV2.ui['Typography'], elementorV2.ui['Dialog'], elementorV2.ui['DialogActions'], elementorV2.ui['DialogContent'], elementorV2.ui['DialogContentText'], elementorV2.ui['DialogTitle'], elementorV2.ui['DialogHeader'], elementorV2.ui['CloseButton'], elementorV2.ui['IconButton'], elementorV2.ui['InputAdornment'], elementorV2.ui['MenuItem'], elementorV2.ui['MenuList'], elementorV2.ui['Popover'], elementorV2.ui['TextField'], elementorV2.ui['Box'], elementorV2.ui['Switch'], elementorV2.ui['Avatar'], elementorV2.ui['Collapse'], elementorV2.ui['Link'], elementorV2.ui['Tooltip'], elementorV2.ui['CircularProgress'], elementorV2.ui['Autocomplete'], elementorV2.ui['Accordion'], elementorV2.ui['AccordionDetails'], elementorV2.ui['AccordionSummary'], elementorV2.ui['Infotip'], elementorV2.ui['SvgIcon'], elementorV2.ui['Checkbox'], elementorV2.ui['FormControlLabel'], elementorV2.ui['Select'], elementorV2.ui['Skeleton']);
+})(React, ReactDOM, elementorV2.ui, elementorV2.icons, elementorV2.ui['Alert'], elementorV2.ui['Button'], elementorV2.ui['Container'], elementorV2.ui['Divider'], elementorV2.ui['Stack'], wp.i18n, wp.apiFetch, elementorV2.ui['Chip'], elementorV2.ui['Typography'], elementorV2.ui['Dialog'], elementorV2.ui['DialogActions'], elementorV2.ui['DialogContent'], elementorV2.ui['DialogContentText'], elementorV2.ui['DialogTitle'], elementorV2.ui['DialogHeader'], elementorV2.ui['CloseButton'], elementorV2.ui['IconButton'], elementorV2.ui['InputAdornment'], elementorV2.ui['MenuItem'], elementorV2.ui['MenuList'], elementorV2.ui['Popover'], elementorV2.ui['TextField'], elementorV2.ui['Box'], elementorV2.ui['Switch'], elementorV2.ui['Avatar'], elementorV2.ui['Collapse'], elementorV2.ui['Link'], elementorV2.ui['Tooltip'], elementorV2.ui['CircularProgress'], elementorV2.ui['Autocomplete'], elementorV2.ui['Accordion'], elementorV2.ui['AccordionDetails'], elementorV2.ui['AccordionSummary'], elementorV2.ui['Infotip'], elementorV2.ui['SvgIcon'], elementorV2.ui['Checkbox'], elementorV2.ui['FormControlLabel'], elementorV2.ui['Select'], elementorV2.ui['Skeleton'], elementorV2.ui['AlertAction']);
 //# sourceMappingURL=agents-ready.js.map

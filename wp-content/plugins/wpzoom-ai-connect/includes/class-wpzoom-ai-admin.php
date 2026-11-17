@@ -110,7 +110,7 @@ class WPZOOM_AI_Admin {
 	/**
 	 * Every "WPZOOM AI Connect" application password on the site, with its user.
 	 *
-	 * @return array<int, array{user_id:int, user:string, uuid:string, created:int, last_used:int}>
+	 * @return array<int, array{user_id:int, user:string, uuid:string, created:int, last_used:int, account:string}>
 	 */
 	private static function connections(): array {
 		if ( ! class_exists( 'WP_Application_Passwords' ) ) {
@@ -133,6 +133,7 @@ class WPZOOM_AI_Admin {
 					'uuid'      => (string) $password['uuid'],
 					'created'   => (int) ( $password['created'] ?? 0 ),
 					'last_used' => (int) ( $password['last_used'] ?? 0 ),
+					'account'   => wpzoom_ai_connect_account_of( (int) $user->ID, (string) $password['uuid'] ),
 				);
 			}
 		}
@@ -409,6 +410,13 @@ class WPZOOM_AI_Admin {
 		$warnings   = array_values( array_filter( $s['diagnosis']['checks'], static function ( $c ) { return 'warn' === $c['status']; } ) );
 		$theme_name = $s['theme']->get( 'Name' );
 		$can_click  = $s['can_connect'] && $s['has_api'];
+		$account    = '';
+		foreach ( $s['connections'] as $c ) {
+			if ( '' !== $c['account'] ) {
+				$account = $c['account'];
+				break;
+			}
+		}
 
 		if ( ! $s['has_api'] ) {
 			$badge = array( 'warn', __( 'Needs WordPress 6.9', 'wpzoom-ai-connect' ) );
@@ -436,7 +444,13 @@ class WPZOOM_AI_Admin {
 					<?php
 					if ( $waiting ) {
 						self::notice( $just_done ? 'ok' : 'warn', '<strong>' . esc_html( $just_done ? __( 'Site connected. One more step:', 'wpzoom-ai-connect' ) : __( 'One more step:', 'wpzoom-ai-connect' ) ) . '</strong> '
-							. esc_html__( 'add WPZOOM to your AI app (Claude, ChatGPT or another), with the same email you signed in with. It takes a minute and you do it once; the steps are below. Until then your AI cannot reach this site.', 'wpzoom-ai-connect' )
+							. ( '' !== $account
+								? sprintf(
+									/* translators: %s: WPZOOM account email */
+									esc_html__( 'add WPZOOM to your AI app (Claude, ChatGPT or another) and, when it asks you to sign in to WPZOOM, use %s. That is the account this site is connected to; it does not have to match your Claude or ChatGPT login. It takes a minute and you do it once; the steps are below. Until then your AI cannot reach this site.', 'wpzoom-ai-connect' ),
+									'<strong>' . esc_html( $account ) . '</strong>'
+								)
+								: esc_html__( 'add WPZOOM to your AI app (Claude, ChatGPT or another), with the same email you signed in with. It takes a minute and you do it once; the steps are below. Until then your AI cannot reach this site.', 'wpzoom-ai-connect' ) )
 							. ' <a href="#wzai-guide">' . esc_html__( 'Show me how', 'wpzoom-ai-connect' ) . ' &darr;</a>' );
 					} elseif ( $just_done || ( $connected && isset( $_GET['welcome'] ) ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 						self::notice( 'ok', '<strong>' . esc_html__( 'Connected.', 'wpzoom-ai-connect' ) . '</strong> ' . esc_html__( 'Go back to your AI and say "show me my site overview" to start.', 'wpzoom-ai-connect' ) );
@@ -522,7 +536,7 @@ class WPZOOM_AI_Admin {
 									<div class="wzai-card__about">
 										<?php foreach ( array_slice( $s['connections'], 0, 3 ) as $c ) : ?>
 											<div class="wzai-conn">
-												<div><strong><?php echo esc_html( $c['user'] ); ?></strong><span><?php
+												<div><strong><?php echo esc_html( $c['user'] ); ?></strong><?php if ( '' !== $c['account'] ) : ?><span><?php echo esc_html( sprintf( /* translators: %s: WPZOOM account email */ __( 'WPZOOM account: %s', 'wpzoom-ai-connect' ), $c['account'] ) ); ?></span><?php endif; ?><span><?php
 													echo esc_html( $waiting
 														? sprintf( /* translators: %s: human time diff */ __( 'Connected %s ago, no AI has used it yet', 'wpzoom-ai-connect' ), human_time_diff( $c['created'] ) )
 														: sprintf( /* translators: %s: human time diff */ __( 'Last used %s ago', 'wpzoom-ai-connect' ), human_time_diff( max( $c['last_used'], $s['last_ai_call'] ) ) ) );
@@ -580,7 +594,9 @@ class WPZOOM_AI_Admin {
 								<ol>
 									<li><?php printf( /* translators: %s: link */ esc_html__( 'Open %s and choose "Add custom connector".', 'wpzoom-ai-connect' ), '<a href="https://claude.ai/new#customize/connectors/yours" target="_blank" rel="noopener">claude.ai → Customize → Connectors</a>' ); ?></li>
 									<li><?php esc_html_e( 'Name it WPZOOM and paste this address:', 'wpzoom-ai-connect' ); ?> <?php echo wp_kses( self::copy_field( self::CONNECTOR_URL ), self::allowed_html() ); ?></li>
-									<li><?php esc_html_e( 'Press Connect. Claude asks you to sign in with your email (we send a code).', 'wpzoom-ai-connect' ); ?></li>
+									<li><?php echo '' !== $account
+										? wp_kses( sprintf( /* translators: %s: WPZOOM account email */ __( 'Press Connect and sign in to WPZOOM with %s (we send a code). It does not have to match your Claude login.', 'wpzoom-ai-connect' ), '<strong>' . esc_html( $account ) . '</strong>' ), array( 'strong' => array() ) )
+										: esc_html__( 'Press Connect. Claude asks you to sign in with your email (we send a code).', 'wpzoom-ai-connect' ); ?></li>
 									<li><?php esc_html_e( 'Come back here and press "Connect this site".', 'wpzoom-ai-connect' ); ?></li>
 								</ol>
 							</div>
@@ -590,7 +606,9 @@ class WPZOOM_AI_Admin {
 								<ol>
 									<li><?php printf( /* translators: %s: link */ esc_html__( 'Open %s (or Plugins in the ChatGPT sidebar), press the + button and choose "Add custom MCP server".', 'wpzoom-ai-connect' ), '<a href="https://chatgpt.com/settings/plugins-settings" target="_blank" rel="noopener">ChatGPT → Settings → Plugins</a>' ); ?></li>
 									<li><?php esc_html_e( 'Name it WPZOOM. Under Connection, paste this address:', 'wpzoom-ai-connect' ); ?> <?php echo wp_kses( self::copy_field( self::CONNECTOR_URL ), self::allowed_html() ); ?></li>
-									<li><?php esc_html_e( 'Choose OAuth for authentication, tick "I understand and want to continue", then press "Create as a plugin" and sign in with your email (we send a code).', 'wpzoom-ai-connect' ); ?></li>
+									<li><?php echo '' !== $account
+										? wp_kses( sprintf( /* translators: %s: WPZOOM account email */ __( 'Choose OAuth for authentication, tick "I understand and want to continue", then press "Create as a plugin" and sign in to WPZOOM with %s (we send a code). It does not have to match your ChatGPT login.', 'wpzoom-ai-connect' ), '<strong>' . esc_html( $account ) . '</strong>' ), array( 'strong' => array() ) )
+										: esc_html__( 'Choose OAuth for authentication, tick "I understand and want to continue", then press "Create as a plugin" and sign in with your email (we send a code).', 'wpzoom-ai-connect' ); ?></li>
 									<li><?php esc_html_e( 'Come back here and press "Connect this site". In a chat, type @WPZOOM to use it.', 'wpzoom-ai-connect' ); ?></li>
 								</ol>
 							</div>

@@ -619,8 +619,8 @@ var import_debug = /* @__PURE__ */ __toESM(require_debug());
 							if (this.getCacheKey(pendingRequest.options) === this.getCacheKey(options)) {
 								pendingRequest.options.deferred.done(function(data) {
 									return options.deferred.resolve(data);
-								}).fail(function(data) {
-									return options.deferred.reject(data);
+								}).fail(function(data, code) {
+									return options.deferred.reject(data, code);
 								});
 								return options.deferred;
 							}
@@ -663,7 +663,7 @@ var import_debug = /* @__PURE__ */ __toESM(require_debug());
 								var options = requests[id].options;
 								if (options) {
 									if (response.success) options.deferred.resolve(response.data);
-									else if (!response.success) options.deferred.reject(response.data);
+									else if (!response.success) options.deferred.reject(response.data, response.code);
 								}
 							});
 						},

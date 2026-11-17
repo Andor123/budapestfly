@@ -4,7 +4,7 @@ Tags: ai, mcp, claude, chatgpt, connector
 Requires at least: 6.9
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 0.12.3
+Stable tag: 0.12.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -98,12 +98,15 @@ Any MCP client: Claude (web, desktop, Claude Code), ChatGPT, Cursor and others, 
 
 This plugin works with two WPZOOM services. Nothing is sent to either until you use the feature that needs it.
 
-* **WPZOOM connector** (mcp.wpzoom.com): the address you add in Claude, ChatGPT or another MCP app. When you press "Connect this site", WordPress asks you to approve an application password for your user, and it is sent to the connector, which stores it encrypted and uses it to call this site's abilities when your AI asks. Connecting lets the connector act on this site as your user, within the limits described in the FAQ, until you disconnect. The connector keeps your sign-in email, each connected site's address, the changes the AI made (30 days) and a request log without content (90 days).
+* **WPZOOM connector** (mcp.wpzoom.com): the address you add in Claude, ChatGPT or another MCP app. When you press "Connect this site", WordPress asks you to approve an application password for your user, and it is sent to the connector, which stores it encrypted and uses it to call this site's abilities when your AI asks. Connecting lets the connector act on this site as your user, within the limits described in the FAQ, until you disconnect. With each request it tells this site which WPZOOM account (sign-in email) the connection belongs to; the plugin saves it with your user and shows it on its screen, so you know which email to use in your AI app. The connector keeps your sign-in email, each connected site's address, the changes the AI made (30 days) and a request log without content (90 days).
 * **WPZOOM AI** (ai.wpzoom.com): AI page building and the free AI registration (your email and a 6-digit code) run through the Inspiro Starter Sites plugin's AI client, only when you ask for them. This plugin itself sends nothing there.
 
 Terms: https://www.wpzoom.com/terms-and-conditions/ · Privacy policy: https://www.wpzoom.com/privacy-policy/
 
 == Changelog ==
+
+= 0.12.4 =
+* Improved: the AI Connect screen shows which WPZOOM account (email) your site is connected to, and tells you to sign in with that email when you add WPZOOM to Claude or ChatGPT. It doesn't have to match your Claude or ChatGPT login.
 
 = 0.12.3 =
 * Improved: every message the plugin shows or sends to your AI app can now be translated: the site check, theme settings, accessibility check, updates list, recipes, SEO, Elementor, forms and starter-site messages, plus the names and descriptions of what the AI can do.

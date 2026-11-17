@@ -3858,7 +3858,7 @@ react_dom = __toESM(react_dom);
 
 //#endregion
 //#region modules/web-cli/assets/js/modules/component-base.js
-	function ownKeys$28(e, r) {
+	function ownKeys$29(e, r) {
 		var t = Object.keys(e);
 		if (Object.getOwnPropertySymbols) {
 			var o = Object.getOwnPropertySymbols(e);
@@ -3868,12 +3868,12 @@ react_dom = __toESM(react_dom);
 		}
 		return t;
 	}
-	function _objectSpread$27(e) {
+	function _objectSpread$28(e) {
 		for (var r = 1; r < arguments.length; r++) {
 			var t = null != arguments[r] ? arguments[r] : {};
-			r % 2 ? ownKeys$28(Object(t), !0).forEach(function(r) {
+			r % 2 ? ownKeys$29(Object(t), !0).forEach(function(r) {
 				_defineProperty$1(e, r, t[r]);
-			}) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys$28(Object(t)).forEach(function(r) {
+			}) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys$29(Object(t)).forEach(function(r) {
 				Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r));
 			});
 		}
@@ -3903,8 +3903,8 @@ react_dom = __toESM(react_dom);
 		import_module = /* @__PURE__ */ __toESM(require_module());
 		init_force_method_implementation();
 		init_deprecation();
-		__name(ownKeys$28, "ownKeys");
-		__name(_objectSpread$27, "_objectSpread");
+		__name(ownKeys$29, "ownKeys");
+		__name(_objectSpread$28, "_objectSpread");
 		__name(_callSuper$313, "_callSuper");
 		__name(_isNativeReflectConstruct$313, "_isNativeReflectConstruct");
 		ComponentBase$1 = /*#__PURE__*/ function(_Module) {
@@ -4178,7 +4178,7 @@ react_dom = __toESM(react_dom);
 					key: "registerState",
 					value: function registerState(id, stateConfig) {
 						id = this.getNamespace() + (id ? "/".concat(id) : "");
-						var slice = (0, _reduxjs_toolkit.createSlice)(_objectSpread$27(_objectSpread$27({}, stateConfig), {}, { name: id }));
+						var slice = (0, _reduxjs_toolkit.createSlice)(_objectSpread$28(_objectSpread$28({}, stateConfig), {}, { name: id }));
 						$e.store.register(id, slice);
 					}
 				},
@@ -5383,7 +5383,7 @@ init_component_base$1();
 	init_classCallCheck();
 	init_createClass();
 	init_defineProperty$1();
-	function ownKeys$27(e, r) {
+	function ownKeys$28(e, r) {
 		var t = Object.keys(e);
 		if (Object.getOwnPropertySymbols) {
 			var o = Object.getOwnPropertySymbols(e);
@@ -5393,19 +5393,19 @@ init_component_base$1();
 		}
 		return t;
 	}
-	__name(ownKeys$27, "ownKeys");
-	function _objectSpread$26(e) {
+	__name(ownKeys$28, "ownKeys");
+	function _objectSpread$27(e) {
 		for (var r = 1; r < arguments.length; r++) {
 			var t = null != arguments[r] ? arguments[r] : {};
-			r % 2 ? ownKeys$27(Object(t), !0).forEach(function(r) {
+			r % 2 ? ownKeys$28(Object(t), !0).forEach(function(r) {
 				_defineProperty$1(e, r, t[r]);
-			}) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys$27(Object(t)).forEach(function(r) {
+			}) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys$28(Object(t)).forEach(function(r) {
 				Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r));
 			});
 		}
 		return e;
 	}
-	__name(_objectSpread$26, "_objectSpread");
+	__name(_objectSpread$27, "_objectSpread");
 	var Heartbeat = /*#__PURE__*/ function() {
 		function Heartbeat(document) {
 			var _this = this;
@@ -5416,6 +5416,8 @@ init_component_base$1();
 			_defineProperty$1(this, "lastSyncedAt", 0);
 			_defineProperty$1(this, "pendingSyncTime", true);
 			_defineProperty$1(this, "lastStateOfDocumentChange", false);
+			_defineProperty$1(this, "lastSentUnpersisted", null);
+			_defineProperty$1(this, "isOverridingExternalChanges", false);
 			_defineProperty$1(this, "getModal", function() {
 				if (!_this.modal) _this.modal = _this.initModal();
 				return _this.modal;
@@ -5428,6 +5430,7 @@ init_component_base$1();
 			this.onTick = this.onTick.bind(this);
 			this.onRefreshNonce = this.onRefreshNonce.bind(this);
 			this.onDocumentChanged = this.onDocumentChanged.bind(this);
+			this.onSaved = this.onSaved.bind(this);
 			this.bindEvents();
 			wp.heartbeat.connectNow();
 		}
@@ -5463,6 +5466,8 @@ init_component_base$1();
 				value: function onSend(event, data) {
 					data.elementor_post_lock = { post_ID: this.document.id };
 					data.elementor_has_unsaved = this.document.editor.isChanged ? this.document.id : null;
+					data.elementor_has_unpersisted = this.document.editor.isSaved ? null : this.document.id;
+					this.lastSentUnpersisted = data.elementor_has_unpersisted;
 				}
 			},
 			{
@@ -5478,7 +5483,7 @@ init_component_base$1();
 						this.showLockMessage(response.locked_user);
 					} else this.getModal().hide();
 					var mutatedAt = (_response$elementor_m = response.elementor_mcp_mutation) === null || _response$elementor_m === void 0 ? void 0 : _response$elementor_m.mutated_at;
-					if (mutatedAt && mutatedAt > this.lastSyncedAt) this.showExternalChangeModal();
+					if (mutatedAt && mutatedAt > this.lastSyncedAt) this.onExternalChangeDetected();
 					elementorCommon.ajax.addRequestConstant("_nonce", response.elementorNonce);
 				}
 			},
@@ -5506,10 +5511,30 @@ init_component_base$1();
 				}
 			},
 			{
+				key: "getSaveSyncData",
+				value: function getSaveSyncData() {
+					var data = {
+						last_synced_at: this.lastSyncedAt,
+						ignore_external_changes: this.isOverridingExternalChanges
+					};
+					this.isOverridingExternalChanges = false;
+					return data;
+				}
+			},
+			{
 				key: "forceSave",
 				value: function forceSave() {
+					this.isOverridingExternalChanges = true;
 					this.pendingSyncTime = true;
-					$e.run("document/save/save", { document: this.document });
+					this.externalChangeModal = null;
+					return $e.run("document/save/draft", { document: this.document });
+				}
+			},
+			{
+				key: "onExternalChangeDetected",
+				value: function onExternalChangeDetected() {
+					$e.components.get("document/save").stopAutoSave(this.document);
+					this.showExternalChangeModal();
 				}
 			},
 			{
@@ -5525,7 +5550,7 @@ init_component_base$1();
 							return _this2.reloadDocument();
 						}
 					};
-					var config = isDirty ? _objectSpread$26(_objectSpread$26({}, baseConfig), {}, {
+					var config = isDirty ? _objectSpread$27(_objectSpread$27({}, baseConfig), {}, {
 						message: (0, _wordpress_i18n.__)("This page was changed externally. Save your changes or reload to get the latest version.", "elementor"),
 						strings: {
 							confirm: (0, _wordpress_i18n.__)("Force Save", "elementor"),
@@ -5537,11 +5562,11 @@ init_component_base$1();
 						onCancel: function onCancel() {
 							return _this2.reloadDocument();
 						}
-					}) : _objectSpread$26(_objectSpread$26({}, baseConfig), {}, {
+					}) : _objectSpread$27(_objectSpread$27({}, baseConfig), {}, {
 						message: (0, _wordpress_i18n.__)("This page was changed externally. Reload to get the latest version.", "elementor"),
 						strings: { confirm: (0, _wordpress_i18n.__)("Reload", "elementor") }
 					});
-					this.externalChangeModal = elementorCommon.dialogsManager.createWidget(isDirty ? "confirm" : "alert", _objectSpread$26(_objectSpread$26({}, config), {}, {
+					this.externalChangeModal = elementorCommon.dialogsManager.createWidget(isDirty ? "confirm" : "alert", _objectSpread$27(_objectSpread$27({}, config), {}, {
 						closeButton: false,
 						hide: {
 							onOutsideClick: false,
@@ -5555,10 +5580,23 @@ init_component_base$1();
 			{
 				key: "onDocumentChanged",
 				value: function onDocumentChanged() {
-					var newChangeOfDocumentState = this.document.editor.isChanged;
-					if (newChangeOfDocumentState === this.lastStateOfDocumentChange) return;
-					if (newChangeOfDocumentState) wp.heartbeat.connectNow();
-					this.lastStateOfDocumentChange = newChangeOfDocumentState;
+					var isChanged = this.document.editor.isChanged;
+					var becameChanged = isChanged && isChanged !== this.lastStateOfDocumentChange;
+					var hasUnreportedEdit = !this.document.editor.isSaved && !this.lastSentUnpersisted;
+					this.lastStateOfDocumentChange = isChanged;
+					if (becameChanged || hasUnreportedEdit) wp.heartbeat.connectNow();
+				}
+			},
+			{
+				key: "onSaved",
+				value: function onSaved(data) {
+					var _data$config;
+					var serverTime = data === null || data === void 0 || (_data$config = data.config) === null || _data$config === void 0 || (_data$config = _data$config.document) === null || _data$config === void 0 ? void 0 : _data$config.server_time;
+					if (serverTime) {
+						this.lastSyncedAt = Math.max(this.lastSyncedAt, serverTime);
+						this.pendingSyncTime = false;
+					}
+					if (this.lastSentUnpersisted && this.document.editor.isSaved) wp.heartbeat.connectNow();
 				}
 			},
 			{
@@ -5570,6 +5608,7 @@ init_component_base$1();
 						"heartbeat-tick.wp-refresh-nonces": this.onRefreshNonce
 					});
 					elementor.channels.editor.on("status:change", this.onDocumentChanged);
+					elementor.channels.editor.on("saved", this.onSaved);
 				}
 			},
 			{
@@ -5581,6 +5620,7 @@ init_component_base$1();
 						"heartbeat-tick.wp-refresh-nonces": this.onRefreshNonce
 					});
 					elementor.channels.editor.off("status:change", this.onDocumentChanged);
+					elementor.channels.editor.off("saved", this.onSaved);
 				}
 			}
 		]);
@@ -7168,7 +7208,7 @@ init_element_base();
 
 //#endregion
 //#region assets/dev/js/editor/utils/v4-flexbox-preset.js
-	function ownKeys$26(e, r) {
+	function ownKeys$27(e, r) {
 		var t = Object.keys(e);
 		if (Object.getOwnPropertySymbols) {
 			var o = Object.getOwnPropertySymbols(e);
@@ -7178,12 +7218,12 @@ init_element_base();
 		}
 		return t;
 	}
-	function _objectSpread$25(e) {
+	function _objectSpread$26(e) {
 		for (var r = 1; r < arguments.length; r++) {
 			var t = null != arguments[r] ? arguments[r] : {};
-			r % 2 ? ownKeys$26(Object(t), !0).forEach(function(r) {
+			r % 2 ? ownKeys$27(Object(t), !0).forEach(function(r) {
 				_defineProperty$1(e, r, t[r]);
-			}) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys$26(Object(t)).forEach(function(r) {
+			}) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys$27(Object(t)).forEach(function(r) {
 				Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r));
 			});
 		}
@@ -7232,8 +7272,8 @@ init_element_base();
 	var init_v4_flexbox_preset = __esmMin((() => {
 		init_defineProperty$1();
 		init_v4_preset_utils();
-		__name(ownKeys$26, "ownKeys");
-		__name(_objectSpread$25, "_objectSpread");
+		__name(ownKeys$27, "ownKeys");
+		__name(_objectSpread$26, "_objectSpread");
 		V4_ELEMENT_TYPE$1 = "e-flexbox";
 		DIRECTION_ROW$1 = "row";
 		DIRECTION_COLUMN$1 = "column";
@@ -7263,10 +7303,10 @@ init_element_base();
 		FULL_WIDTH_MOBILE = { width: sizeProp(100, "%") };
 		ROW = { "flex-direction": stringProp(DIRECTION_ROW$1) };
 		COLUMN = { "flex-direction": stringProp(DIRECTION_COLUMN$1) };
-		ROW_WRAP = _objectSpread$25(_objectSpread$25({}, ROW), {}, { "flex-wrap": stringProp("wrap") });
+		ROW_WRAP = _objectSpread$26(_objectSpread$26({}, ROW), {}, { "flex-wrap": stringProp("wrap") });
 		widthChild = function widthChild(size) {
 			return {
-				parent: _objectSpread$25(_objectSpread$25({}, COLUMN), widthPercent(size)),
+				parent: _objectSpread$26(_objectSpread$26({}, COLUMN), widthPercent(size)),
 				parentMobile: FULL_WIDTH_MOBILE,
 				children: []
 			};
@@ -7297,7 +7337,7 @@ init_element_base();
 			"c100-c50-50": {
 				parent: ROW,
 				children: [widthChild("50"), {
-					parent: _objectSpread$25(_objectSpread$25(_objectSpread$25({}, COLUMN), widthPercent("50")), {}, { padding: sizeProp(0, "px") }),
+					parent: _objectSpread$26(_objectSpread$26(_objectSpread$26({}, COLUMN), widthPercent("50")), {}, { padding: sizeProp(0, "px") }),
 					parentMobile: FULL_WIDTH_MOBILE,
 					children: [bareChild(), bareChild()]
 				}]
@@ -7347,7 +7387,7 @@ init_element_base();
 
 //#endregion
 //#region assets/dev/js/editor/utils/container-helper.js
-	function ownKeys$25(e, r) {
+	function ownKeys$26(e, r) {
 		var t = Object.keys(e);
 		if (Object.getOwnPropertySymbols) {
 			var o = Object.getOwnPropertySymbols(e);
@@ -7357,12 +7397,12 @@ init_element_base();
 		}
 		return t;
 	}
-	function _objectSpread$24(e) {
+	function _objectSpread$25(e) {
 		for (var r = 1; r < arguments.length; r++) {
 			var t = null != arguments[r] ? arguments[r] : {};
-			r % 2 ? ownKeys$25(Object(t), !0).forEach(function(r) {
+			r % 2 ? ownKeys$26(Object(t), !0).forEach(function(r) {
 				_defineProperty$1(e, r, t[r]);
-			}) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys$25(Object(t)).forEach(function(r) {
+			}) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys$26(Object(t)).forEach(function(r) {
 				Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r));
 			});
 		}
@@ -7376,8 +7416,8 @@ init_element_base();
 		init_v4_flexbox_preset();
 		init_v4_grid_preset();
 		;
-		__name(ownKeys$25, "ownKeys");
-		__name(_objectSpread$24, "_objectSpread");
+		__name(ownKeys$26, "ownKeys");
+		__name(_objectSpread$25, "_objectSpread");
 		ContainerHelper = /*#__PURE__*/ function() {
 			function ContainerHelper() {
 				_classCallCheck(this, ContainerHelper);
@@ -7409,7 +7449,7 @@ init_element_base();
 						var modelAttributes = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : {};
 						return $e.run("document/elements/create", {
 							container: target,
-							model: _objectSpread$24({
+							model: _objectSpread$25({
 								elType: "container",
 								settings
 							}, modelAttributes),
@@ -7441,7 +7481,7 @@ init_element_base();
 						var shouldWrap = sizes.reduce(function(sum, size) {
 							return sum + parseInt(size);
 						}, 0) > 100;
-						var settings = _objectSpread$24(_objectSpread$24({ flex_direction: this.DIRECTION_ROW }, shouldWrap ? { flex_wrap: "wrap" } : {}), {}, { flex_gap: {
+						var settings = _objectSpread$25(_objectSpread$25({ flex_direction: this.DIRECTION_ROW }, shouldWrap ? { flex_wrap: "wrap" } : {}), {}, { flex_gap: {
 							unit: "px",
 							size: 0,
 							column: "0",
@@ -7491,7 +7531,7 @@ init_element_base();
 								unit: "fr",
 								size: parsedStructure.rows
 							}
-						}, target, options, _objectSpread$24({
+						}, target, options, _objectSpread$25({
 							title: (0, _wordpress_i18n.__)("Grid", "elementor"),
 							custom: {
 								isPreset: true,
@@ -7547,7 +7587,7 @@ init_element_base();
 										}
 									};
 									ContainerHelper.createContainer(settings, newContainer, { edit: false });
-									var rightContainer = ContainerHelper.createContainer(_objectSpread$24(_objectSpread$24({}, settings), {}, {
+									var rightContainer = ContainerHelper.createContainer(_objectSpread$25(_objectSpread$25({}, settings), {}, {
 										padding: {
 											unit: "px",
 											top: 0,
@@ -7586,7 +7626,7 @@ init_element_base();
 					key: "createContainerFromModel",
 					value: function createContainerFromModel(model, target) {
 						var options = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {};
-						return $e.run("document/elements/create", _objectSpread$24({
+						return $e.run("document/elements/create", _objectSpread$25({
 							model,
 							container: target
 						}, options));
@@ -7606,7 +7646,7 @@ init_element_base();
 
 //#endregion
 //#region assets/dev/js/editor/utils/editor-one-events.js
-	function ownKeys$24(e, r) {
+	function ownKeys$25(e, r) {
 		var t = Object.keys(e);
 		if (Object.getOwnPropertySymbols) {
 			var o = Object.getOwnPropertySymbols(e);
@@ -7616,12 +7656,12 @@ init_element_base();
 		}
 		return t;
 	}
-	function _objectSpread$23(e) {
+	function _objectSpread$24(e) {
 		for (var r = 1; r < arguments.length; r++) {
 			var t = null != arguments[r] ? arguments[r] : {};
-			r % 2 ? ownKeys$24(Object(t), !0).forEach(function(r) {
+			r % 2 ? ownKeys$25(Object(t), !0).forEach(function(r) {
 				_defineProperty$1(e, r, t[r]);
-			}) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys$24(Object(t)).forEach(function(r) {
+			}) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys$25(Object(t)).forEach(function(r) {
 				Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r));
 			});
 		}
@@ -7632,8 +7672,8 @@ init_element_base();
 		init_defineProperty$1();
 		init_classCallCheck();
 		init_createClass();
-		__name(ownKeys$24, "ownKeys");
-		__name(_objectSpread$23, "_objectSpread");
+		__name(ownKeys$25, "ownKeys");
+		__name(_objectSpread$24, "_objectSpread");
 		ADMIN_NAV_CLICK_EVENT = "elementor/admin/nav-click";
 		EditorOneEventManager = /*#__PURE__*/ function() {
 			function EditorOneEventManager() {
@@ -7723,7 +7763,7 @@ init_element_base();
 						var _config$appTypes3;
 						var overrides = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
 						var config = this.getConfig();
-						return _objectSpread$23({ window_name: (_config$appTypes$edit = config === null || config === void 0 || (_config$appTypes3 = config.appTypes) === null || _config$appTypes3 === void 0 ? void 0 : _config$appTypes3.editor) !== null && _config$appTypes$edit !== void 0 ? _config$appTypes$edit : "editor" }, overrides);
+						return _objectSpread$24({ window_name: (_config$appTypes$edit = config === null || config === void 0 || (_config$appTypes3 = config.appTypes) === null || _config$appTypes3 === void 0 ? void 0 : _config$appTypes3.editor) !== null && _config$appTypes$edit !== void 0 ? _config$appTypes$edit : "editor" }, overrides);
 					}
 				},
 				{
@@ -8044,7 +8084,7 @@ init_element_base();
 						var _config$locations11;
 						var overrides = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
 						var config = this.getConfig();
-						return this.createBasePayload(_objectSpread$23({
+						return this.createBasePayload(_objectSpread$24({
 							window_name: (_config$appTypes$wpDa = config === null || config === void 0 || (_config$appTypes4 = config.appTypes) === null || _config$appTypes4 === void 0 ? void 0 : _config$appTypes4.wpDash) !== null && _config$appTypes$wpDa !== void 0 ? _config$appTypes$wpDa : "wpdash",
 							target_location: this.toLowerSnake(config === null || config === void 0 || (_config$locations11 = config.locations) === null || _config$locations11 === void 0 ? void 0 : _config$locations11.wpDashAdmin),
 							location_l2: ""
@@ -8452,7 +8492,7 @@ init_element_base();
 
 //#endregion
 //#region assets/dev/js/editor/views/add-section/base.js
-	function ownKeys$23(e, r) {
+	function ownKeys$24(e, r) {
 		var t = Object.keys(e);
 		if (Object.getOwnPropertySymbols) {
 			var o = Object.getOwnPropertySymbols(e);
@@ -8462,12 +8502,12 @@ init_element_base();
 		}
 		return t;
 	}
-	function _objectSpread$22(e) {
+	function _objectSpread$23(e) {
 		for (var r = 1; r < arguments.length; r++) {
 			var t = null != arguments[r] ? arguments[r] : {};
-			r % 2 ? ownKeys$23(Object(t), !0).forEach(function(r) {
+			r % 2 ? ownKeys$24(Object(t), !0).forEach(function(r) {
 				_defineProperty$1(e, r, t[r]);
-			}) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys$23(Object(t)).forEach(function(r) {
+			}) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys$24(Object(t)).forEach(function(r) {
 				Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r));
 			});
 		}
@@ -8495,8 +8535,8 @@ init_element_base();
 		init_container_helper();
 		init_environment();
 		init_editor_one_events();
-		__name(ownKeys$23, "ownKeys");
-		__name(_objectSpread$22, "_objectSpread");
+		__name(ownKeys$24, "ownKeys");
+		__name(_objectSpread$23, "_objectSpread");
 		__name(_callSuper$292, "_callSuper");
 		__name(_isNativeReflectConstruct$292, "_isNativeReflectConstruct");
 		AddSectionBase = /*#__PURE__*/ function(_Marionette$ItemView) {
@@ -8688,7 +8728,7 @@ init_element_base();
 				{
 					key: "onRender",
 					value: function onRender() {
-						this.$el.html5Droppable(_objectSpread$22({
+						this.$el.html5Droppable(_objectSpread$23({
 							axis: ["vertical"],
 							groups: ["elementor-element"],
 							placeholder: false,
@@ -9463,7 +9503,7 @@ init_element_base();
 
 //#endregion
 //#region \0@oxc-project+runtime@0.140.0/helpers/esm/objectSpread2.js
-	function ownKeys$22(e, r) {
+	function ownKeys$23(e, r) {
 		var t = Object.keys(e);
 		if (Object.getOwnPropertySymbols) {
 			var o = Object.getOwnPropertySymbols(e);
@@ -9476,9 +9516,9 @@ init_element_base();
 	function _objectSpread2(e) {
 		for (var r = 1; r < arguments.length; r++) {
 			var t = null != arguments[r] ? arguments[r] : {};
-			r % 2 ? ownKeys$22(Object(t), !0).forEach(function(r) {
+			r % 2 ? ownKeys$23(Object(t), !0).forEach(function(r) {
 				_defineProperty(e, r, t[r]);
-			}) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys$22(Object(t)).forEach(function(r) {
+			}) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys$23(Object(t)).forEach(function(r) {
 				Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r));
 			});
 		}
@@ -9486,7 +9526,7 @@ init_element_base();
 	}
 	var init_objectSpread2 = __esmMin((() => {
 		init_defineProperty();
-		__name(ownKeys$22, "ownKeys");
+		__name(ownKeys$23, "ownKeys");
 	}));
 
 //#endregion
@@ -12137,7 +12177,7 @@ init_element_base();
 
 //#endregion
 //#region assets/dev/js/editor/elements/views/behaviors/widget-resizeable.js
-	function ownKeys$21(e, r) {
+	function ownKeys$22(e, r) {
 		var t = Object.keys(e);
 		if (Object.getOwnPropertySymbols) {
 			var o = Object.getOwnPropertySymbols(e);
@@ -12147,12 +12187,12 @@ init_element_base();
 		}
 		return t;
 	}
-	function _objectSpread$21(e) {
+	function _objectSpread$22(e) {
 		for (var r = 1; r < arguments.length; r++) {
 			var t = null != arguments[r] ? arguments[r] : {};
-			r % 2 ? ownKeys$21(Object(t), !0).forEach(function(r) {
+			r % 2 ? ownKeys$22(Object(t), !0).forEach(function(r) {
 				_defineProperty$1(e, r, t[r]);
-			}) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys$21(Object(t)).forEach(function(r) {
+			}) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys$22(Object(t)).forEach(function(r) {
 				Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r));
 			});
 		}
@@ -12184,8 +12224,8 @@ init_element_base();
 		init_getPrototypeOf();
 		init_get();
 		init_inherits();
-		__name(ownKeys$21, "ownKeys");
-		__name(_objectSpread$21, "_objectSpread");
+		__name(ownKeys$22, "ownKeys");
+		__name(_objectSpread$22, "_objectSpread");
 		__name(_callSuper$282, "_callSuper");
 		__name(_isNativeReflectConstruct$282, "_isNativeReflectConstruct");
 		__name(_superPropGet$31, "_superPropGet");
@@ -12313,7 +12353,7 @@ init_element_base();
 						var widthSettingKey = this.getDeviceSetting(this.getWidthKey());
 						var unit = this.getSetting(widthSettingKey).unit;
 						var width = elementor.helpers.elementSizeToUnit(this.$el, ui.size.width, unit);
-						var settingToChange = _objectSpread$21(_objectSpread$21(_objectSpread$21({}, this.isContainerActive() ? { _flex_size: "none" } : {}), this.isContainer() ? { content_width: "full" } : {}), {}, _defineProperty$1(_defineProperty$1({}, elementWidthSettingKey, "initial"), widthSettingKey, {
+						var settingToChange = _objectSpread$22(_objectSpread$22(_objectSpread$22({}, this.isContainerActive() ? { _flex_size: "none" } : {}), this.isContainer() ? { content_width: "full" } : {}), {}, _defineProperty$1(_defineProperty$1({}, elementWidthSettingKey, "initial"), widthSettingKey, {
 							unit,
 							size: width
 						}));
@@ -13973,6 +14013,58 @@ init_element_base();
 
 //#endregion
 //#region assets/dev/js/editor/utils/omit-props-by-meta.js
+	function ownKeys$21(e, r) {
+		var t = Object.keys(e);
+		if (Object.getOwnPropertySymbols) {
+			var o = Object.getOwnPropertySymbols(e);
+			r && (o = o.filter(function(r) {
+				return Object.getOwnPropertyDescriptor(e, r).enumerable;
+			})), t.push.apply(t, o);
+		}
+		return t;
+	}
+	function _objectSpread$21(e) {
+		for (var r = 1; r < arguments.length; r++) {
+			var t = null != arguments[r] ? arguments[r] : {};
+			r % 2 ? ownKeys$21(Object(t), !0).forEach(function(r) {
+				_defineProperty$1(e, r, t[r]);
+			}) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys$21(Object(t)).forEach(function(r) {
+				Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r));
+			});
+		}
+		return e;
+	}
+	function omitPropsByMeta(elementData) {
+		if (!elementData || "object" !== _typeof$1(elementData)) return elementData;
+		var result = _objectSpread$21({}, elementData);
+		var schema = getSchema(elementData);
+		if (schema && elementData.settings && "object" === _typeof$1(elementData.settings)) result.settings = Object.fromEntries(Object.entries(elementData.settings).filter(function(_ref) {
+			var key = _slicedToArray(_ref, 1)[0];
+			return !isOmitted(schema[key]);
+		}));
+		if (Array.isArray(elementData.elements)) result.elements = elementData.elements.map(omitPropsByMeta);
+		return result;
+	}
+	var isOmitted, getSchema;
+	var init_omit_props_by_meta = __esmMin((() => {
+		init_slicedToArray();
+		init_defineProperty$1();
+		init_typeof$1();
+		__name(ownKeys$21, "ownKeys");
+		__name(_objectSpread$21, "_objectSpread");
+		isOmitted = function isOmitted(propType) {
+			var meta = propType === null || propType === void 0 ? void 0 : propType.meta;
+			return !!meta && !Array.isArray(meta) && true === meta.sensitive;
+		};
+		getSchema = function getSchema(elementData) {
+			var _window$elementor;
+			var type = elementData.widgetType || elementData.elType;
+			return (_window$elementor = window.elementor) === null || _window$elementor === void 0 || (_window$elementor = _window$elementor.widgetsCache) === null || _window$elementor === void 0 || (_window$elementor = _window$elementor[type]) === null || _window$elementor === void 0 ? void 0 : _window$elementor.atomic_props_schema;
+		};
+	}));
+
+//#endregion
+//#region assets/dev/js/editor/document/elements/commands/copy.js
 	function ownKeys$20(e, r) {
 		var t = Object.keys(e);
 		if (Object.getOwnPropertySymbols) {
@@ -13989,58 +14081,6 @@ init_element_base();
 			r % 2 ? ownKeys$20(Object(t), !0).forEach(function(r) {
 				_defineProperty$1(e, r, t[r]);
 			}) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys$20(Object(t)).forEach(function(r) {
-				Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r));
-			});
-		}
-		return e;
-	}
-	function omitPropsByMeta(elementData) {
-		if (!elementData || "object" !== _typeof$1(elementData)) return elementData;
-		var result = _objectSpread$20({}, elementData);
-		var schema = getSchema(elementData);
-		if (schema && elementData.settings && "object" === _typeof$1(elementData.settings)) result.settings = Object.fromEntries(Object.entries(elementData.settings).filter(function(_ref) {
-			var key = _slicedToArray(_ref, 1)[0];
-			return !isOmitted(schema[key]);
-		}));
-		if (Array.isArray(elementData.elements)) result.elements = elementData.elements.map(omitPropsByMeta);
-		return result;
-	}
-	var isOmitted, getSchema;
-	var init_omit_props_by_meta = __esmMin((() => {
-		init_slicedToArray();
-		init_defineProperty$1();
-		init_typeof$1();
-		__name(ownKeys$20, "ownKeys");
-		__name(_objectSpread$20, "_objectSpread");
-		isOmitted = function isOmitted(propType) {
-			var meta = propType === null || propType === void 0 ? void 0 : propType.meta;
-			return !!meta && !Array.isArray(meta) && true === meta.sensitive;
-		};
-		getSchema = function getSchema(elementData) {
-			var _window$elementor;
-			var type = elementData.widgetType || elementData.elType;
-			return (_window$elementor = window.elementor) === null || _window$elementor === void 0 || (_window$elementor = _window$elementor.widgetsCache) === null || _window$elementor === void 0 || (_window$elementor = _window$elementor[type]) === null || _window$elementor === void 0 ? void 0 : _window$elementor.atomic_props_schema;
-		};
-	}));
-
-//#endregion
-//#region assets/dev/js/editor/document/elements/commands/copy.js
-	function ownKeys$19(e, r) {
-		var t = Object.keys(e);
-		if (Object.getOwnPropertySymbols) {
-			var o = Object.getOwnPropertySymbols(e);
-			r && (o = o.filter(function(r) {
-				return Object.getOwnPropertyDescriptor(e, r).enumerable;
-			})), t.push.apply(t, o);
-		}
-		return t;
-	}
-	function _objectSpread$19(e) {
-		for (var r = 1; r < arguments.length; r++) {
-			var t = null != arguments[r] ? arguments[r] : {};
-			r % 2 ? ownKeys$19(Object(t), !0).forEach(function(r) {
-				_defineProperty$1(e, r, t[r]);
-			}) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys$19(Object(t)).forEach(function(r) {
 				Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r));
 			});
 		}
@@ -14066,8 +14106,8 @@ init_element_base();
 		init_getPrototypeOf();
 		init_inherits();
 		init_omit_props_by_meta();
-		__name(ownKeys$19, "ownKeys");
-		__name(_objectSpread$19, "_objectSpread");
+		__name(ownKeys$20, "ownKeys");
+		__name(_objectSpread$20, "_objectSpread");
 		__name(_callSuper$274, "_callSuper");
 		__name(_isNativeReflectConstruct$274, "_isNativeReflectConstruct");
 		Copy$1 = /*#__PURE__*/ function(_$e$modules$editor$Co) {
@@ -14111,7 +14151,7 @@ init_element_base();
 					};
 					elementorCommon.storage.set(storageKey, storageData);
 					var clipboard = document.createElement("textarea");
-					clipboard.value = JSON.stringify(_objectSpread$19(_objectSpread$19({}, storageData), {}, { elements: elementsData.map(omitPropsByMeta) }));
+					clipboard.value = JSON.stringify(_objectSpread$20(_objectSpread$20({}, storageData), {}, { elements: elementsData.map(omitPropsByMeta) }));
 					document.body.appendChild(clipboard);
 					clipboard.select();
 					document.execCommand("copy");
@@ -14516,7 +14556,7 @@ init_element_base();
 
 //#endregion
 //#region assets/dev/js/editor/document/elements/commands/duplicate.js
-	function ownKeys$18(e, r) {
+	function ownKeys$19(e, r) {
 		var t = Object.keys(e);
 		if (Object.getOwnPropertySymbols) {
 			var o = Object.getOwnPropertySymbols(e);
@@ -14526,12 +14566,12 @@ init_element_base();
 		}
 		return t;
 	}
-	function _objectSpread$18(e) {
+	function _objectSpread$19(e) {
 		for (var r = 1; r < arguments.length; r++) {
 			var t = null != arguments[r] ? arguments[r] : {};
-			r % 2 ? ownKeys$18(Object(t), !0).forEach(function(r) {
+			r % 2 ? ownKeys$19(Object(t), !0).forEach(function(r) {
 				_defineProperty$1(e, r, t[r]);
-			}) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys$18(Object(t)).forEach(function(r) {
+			}) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys$19(Object(t)).forEach(function(r) {
 				Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r));
 			});
 		}
@@ -14556,8 +14596,8 @@ init_element_base();
 		init_possibleConstructorReturn();
 		init_getPrototypeOf();
 		init_inherits();
-		__name(ownKeys$18, "ownKeys");
-		__name(_objectSpread$18, "_objectSpread");
+		__name(ownKeys$19, "ownKeys");
+		__name(_objectSpread$19, "_objectSpread");
 		__name(_callSuper$268, "_callSuper");
 		__name(_isNativeReflectConstruct$268, "_isNativeReflectConstruct");
 		Duplicate$2 = /*#__PURE__*/ function(_$e$modules$editor$do) {
@@ -14607,7 +14647,7 @@ init_element_base();
 							result.push($e.run("document/elements/create", {
 								container: parent,
 								model: container.model.toJSON(),
-								options: _objectSpread$18(_objectSpread$18({}, options), {}, {
+								options: _objectSpread$19(_objectSpread$19({}, options), {}, {
 									at: ++at,
 									clone: true
 								})
@@ -19581,7 +19621,7 @@ init_element_base();
 
 //#endregion
 //#region assets/dev/js/frontend/utils/filter-unknown-elements.js
-	function ownKeys$17(e, r) {
+	function ownKeys$18(e, r) {
 		var t = Object.keys(e);
 		if (Object.getOwnPropertySymbols) {
 			var o = Object.getOwnPropertySymbols(e);
@@ -19591,12 +19631,12 @@ init_element_base();
 		}
 		return t;
 	}
-	function _objectSpread$17(e) {
+	function _objectSpread$18(e) {
 		for (var r = 1; r < arguments.length; r++) {
 			var t = null != arguments[r] ? arguments[r] : {};
-			r % 2 ? ownKeys$17(Object(t), !0).forEach(function(r) {
+			r % 2 ? ownKeys$18(Object(t), !0).forEach(function(r) {
 				_defineProperty$1(e, r, t[r]);
-			}) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys$17(Object(t)).forEach(function(r) {
+			}) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys$18(Object(t)).forEach(function(r) {
 				Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r));
 			});
 		}
@@ -19608,7 +19648,7 @@ init_element_base();
 			var _element$elements;
 			if (!element) return acc;
 			if (!elementor.elementsManager.getElementTypeClass((_element$widgetType = element.widgetType) !== null && _element$widgetType !== void 0 ? _element$widgetType : element.elType)) return acc;
-			var processedElement = (_element$elements = element.elements) !== null && _element$elements !== void 0 && _element$elements.length ? _objectSpread$17(_objectSpread$17({}, element), {}, { elements: filterChildren(element.elements) }) : element;
+			var processedElement = (_element$elements = element.elements) !== null && _element$elements !== void 0 && _element$elements.length ? _objectSpread$18(_objectSpread$18({}, element), {}, { elements: filterChildren(element.elements) }) : element;
 			acc.push(processedElement);
 			return acc;
 		}, []);
@@ -19616,11 +19656,11 @@ init_element_base();
 	var filterUnknownElements;
 	var init_filter_unknown_elements = __esmMin((() => {
 		init_defineProperty$1();
-		__name(ownKeys$17, "ownKeys");
-		__name(_objectSpread$17, "_objectSpread");
+		__name(ownKeys$18, "ownKeys");
+		__name(_objectSpread$18, "_objectSpread");
 		filterUnknownElements = function filterUnknownElements(data) {
 			var _data$elements;
-			if (data !== null && data !== void 0 && (_data$elements = data.elements) !== null && _data$elements !== void 0 && _data$elements.length) return _objectSpread$17(_objectSpread$17({}, data), {}, { elements: filterChildren(data.elements) });
+			if (data !== null && data !== void 0 && (_data$elements = data.elements) !== null && _data$elements !== void 0 && _data$elements.length) return _objectSpread$18(_objectSpread$18({}, data), {}, { elements: filterChildren(data.elements) });
 			return data;
 		};
 	}));
@@ -21389,7 +21429,7 @@ init_component_modal_base();
 	init_inherits();
 	init_defineProperty$1();
 	init_react();
-	function ownKeys$16(e, r) {
+	function ownKeys$17(e, r) {
 		var t = Object.keys(e);
 		if (Object.getOwnPropertySymbols) {
 			var o = Object.getOwnPropertySymbols(e);
@@ -21399,19 +21439,19 @@ init_component_modal_base();
 		}
 		return t;
 	}
-	__name(ownKeys$16, "ownKeys");
-	function _objectSpread$16(e) {
+	__name(ownKeys$17, "ownKeys");
+	function _objectSpread$17(e) {
 		for (var r = 1; r < arguments.length; r++) {
 			var t = null != arguments[r] ? arguments[r] : {};
-			r % 2 ? ownKeys$16(Object(t), !0).forEach(function(r) {
+			r % 2 ? ownKeys$17(Object(t), !0).forEach(function(r) {
 				_defineProperty$1(e, r, t[r]);
-			}) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys$16(Object(t)).forEach(function(r) {
+			}) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys$17(Object(t)).forEach(function(r) {
 				Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r));
 			});
 		}
 		return e;
 	}
-	__name(_objectSpread$16, "_objectSpread");
+	__name(_objectSpread$17, "_objectSpread");
 	function _callSuper$191(t, o, e) {
 		return o = _getPrototypeOf(o), _possibleConstructorReturn(t, _isNativeReflectConstruct$191() ? Reflect.construct(o, e || [], _getPrototypeOf(t).constructor) : o.apply(t, e));
 	}
@@ -21448,7 +21488,7 @@ init_component_modal_base();
 				_this.props.icons.forEach(function(tabSettings) {
 					if (loaded[tabSettings.name]) return;
 					if (-1 < ["all", "recommended"].indexOf(tabSettings.name)) return;
-					elementor.iconManager.library.initIconType(_objectSpread$16({}, tabSettings), function(library) {
+					elementor.iconManager.library.initIconType(_objectSpread$17({}, tabSettings), function(library) {
 						_this.cache[library.name] = library;
 						loaded[tabSettings.name] = true;
 					});
@@ -21466,12 +21506,12 @@ init_component_modal_base();
 				}
 				if ("GoPro" === activeTab) return activeTab;
 				if (!loaded[activeTab]) return false;
-				var tabSettings = _objectSpread$16({}, icons.filter(function(tab) {
+				var tabSettings = _objectSpread$17({}, icons.filter(function(tab) {
 					return tab.name === activeTab;
 				})[0]);
-				if (loaded[activeTab]) return _objectSpread$16({}, tabSettings);
+				if (loaded[activeTab]) return _objectSpread$17({}, tabSettings);
 				if ("all" === tabSettings.name && !loaded.all) return _this.loadAllTabs();
-				elementor.iconManager.library.initIconType(_objectSpread$16({}, tabSettings), function(library) {
+				elementor.iconManager.library.initIconType(_objectSpread$17({}, tabSettings), function(library) {
 					_this.cache[library.name] = library;
 					_this.updateLoaded(library.name);
 				});
@@ -21503,7 +21543,7 @@ init_component_modal_base();
 					var librarySettings = _this.props.icons.filter(function(library) {
 						return activeTab === library.name;
 					});
-					return elementor.iconManager.library.initIconType(_objectSpread$16({}, librarySettings[0]), function(library) {
+					return elementor.iconManager.library.initIconType(_objectSpread$17({}, librarySettings[0]), function(library) {
 						_this.cache[library.name] = library;
 						_this.updateLoaded(library.name);
 					});
@@ -22528,7 +22568,7 @@ init_component_modal_base();
 	init_possibleConstructorReturn();
 	init_getPrototypeOf();
 	init_inherits();
-	function ownKeys$15(e, r) {
+	function ownKeys$16(e, r) {
 		var t = Object.keys(e);
 		if (Object.getOwnPropertySymbols) {
 			var o = Object.getOwnPropertySymbols(e);
@@ -22538,19 +22578,19 @@ init_component_modal_base();
 		}
 		return t;
 	}
-	__name(ownKeys$15, "ownKeys");
-	function _objectSpread$15(e) {
+	__name(ownKeys$16, "ownKeys");
+	function _objectSpread$16(e) {
 		for (var r = 1; r < arguments.length; r++) {
 			var t = null != arguments[r] ? arguments[r] : {};
-			r % 2 ? ownKeys$15(Object(t), !0).forEach(function(r) {
+			r % 2 ? ownKeys$16(Object(t), !0).forEach(function(r) {
 				_defineProperty$1(e, r, t[r]);
-			}) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys$15(Object(t)).forEach(function(r) {
+			}) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys$16(Object(t)).forEach(function(r) {
 				Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r));
 			});
 		}
 		return e;
 	}
-	__name(_objectSpread$15, "_objectSpread");
+	__name(_objectSpread$16, "_objectSpread");
 	function _callSuper$183(t, o, e) {
 		return o = _getPrototypeOf(o), _possibleConstructorReturn(t, _isNativeReflectConstruct$183() ? Reflect.construct(o, e || [], _getPrototypeOf(t).constructor) : o.apply(t, e));
 	}
@@ -22579,7 +22619,7 @@ init_component_modal_base();
 				var options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
 				return $e.data.run("create", "wp/media", {
 					file,
-					options: _objectSpread$15({ progress: true }, options)
+					options: _objectSpread$16({ progress: true }, options)
 				}).catch(function(result) {
 					elementor.notifications.showToast({ message: result.message });
 					return Promise.reject(result);
@@ -25773,7 +25813,7 @@ init_component_modal_base();
 	init_possibleConstructorReturn();
 	init_getPrototypeOf();
 	init_inherits();
-	function ownKeys$14(e, r) {
+	function ownKeys$15(e, r) {
 		var t = Object.keys(e);
 		if (Object.getOwnPropertySymbols) {
 			var o = Object.getOwnPropertySymbols(e);
@@ -25783,19 +25823,19 @@ init_component_modal_base();
 		}
 		return t;
 	}
-	__name(ownKeys$14, "ownKeys");
-	function _objectSpread$14(e) {
+	__name(ownKeys$15, "ownKeys");
+	function _objectSpread$15(e) {
 		for (var r = 1; r < arguments.length; r++) {
 			var t = null != arguments[r] ? arguments[r] : {};
-			r % 2 ? ownKeys$14(Object(t), !0).forEach(function(r) {
+			r % 2 ? ownKeys$15(Object(t), !0).forEach(function(r) {
 				_defineProperty$1(e, r, t[r]);
-			}) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys$14(Object(t)).forEach(function(r) {
+			}) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys$15(Object(t)).forEach(function(r) {
 				Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r));
 			});
 		}
 		return e;
 	}
-	__name(_objectSpread$14, "_objectSpread");
+	__name(_objectSpread$15, "_objectSpread");
 	function _callSuper$174(t, o, e) {
 		return o = _getPrototypeOf(o), _possibleConstructorReturn(t, _isNativeReflectConstruct$174() ? Reflect.construct(o, e || [], _getPrototypeOf(t).constructor) : o.apply(t, e));
 	}
@@ -25906,7 +25946,7 @@ init_component_modal_base();
 			type: "link",
 			link: PanelMenu$1.getExitUrl()
 		};
-		PanelMenu$1.addItem(_objectSpread$14({
+		PanelMenu$1.addItem(_objectSpread$15({
 			name: "exit",
 			icon: "eicon-exit",
 			title: (0, _wordpress_i18n.__)("Exit", "elementor")
@@ -26018,7 +26058,7 @@ init_component_modal_base();
 	init_getPrototypeOf();
 	init_inherits();
 	init_defineProperty$1();
-	function ownKeys$13(e, r) {
+	function ownKeys$14(e, r) {
 		var t = Object.keys(e);
 		if (Object.getOwnPropertySymbols) {
 			var o = Object.getOwnPropertySymbols(e);
@@ -26028,19 +26068,19 @@ init_component_modal_base();
 		}
 		return t;
 	}
-	__name(ownKeys$13, "ownKeys");
-	function _objectSpread$13(e) {
+	__name(ownKeys$14, "ownKeys");
+	function _objectSpread$14(e) {
 		for (var r = 1; r < arguments.length; r++) {
 			var t = null != arguments[r] ? arguments[r] : {};
-			r % 2 ? ownKeys$13(Object(t), !0).forEach(function(r) {
+			r % 2 ? ownKeys$14(Object(t), !0).forEach(function(r) {
 				_defineProperty$1(e, r, t[r]);
-			}) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys$13(Object(t)).forEach(function(r) {
+			}) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys$14(Object(t)).forEach(function(r) {
 				Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r));
 			});
 		}
 		return e;
 	}
-	__name(_objectSpread$13, "_objectSpread");
+	__name(_objectSpread$14, "_objectSpread");
 	function _callSuper$173(t, o, e) {
 		return o = _getPrototypeOf(o), _possibleConstructorReturn(t, _isNativeReflectConstruct$173() ? Reflect.construct(o, e || [], _getPrototypeOf(t).constructor) : o.apply(t, e));
 	}
@@ -26173,9 +26213,9 @@ init_component_modal_base();
 				key: "parseOptions",
 				value: function parseOptions() {
 					var options = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
-					return _objectSpread$13(_objectSpread$13(_objectSpread$13({}, this.defaultOptions), options), {}, {
-						position: _objectSpread$13(_objectSpread$13({}, this.defaultOptions.position), (options === null || options === void 0 ? void 0 : options.position) || {}),
-						actionButton: _objectSpread$13(_objectSpread$13({}, this.defaultOptions.actionButton), (options === null || options === void 0 ? void 0 : options.actionButton) || {})
+					return _objectSpread$14(_objectSpread$14(_objectSpread$14({}, this.defaultOptions), options), {}, {
+						position: _objectSpread$14(_objectSpread$14({}, this.defaultOptions.position), (options === null || options === void 0 ? void 0 : options.position) || {}),
+						actionButton: _objectSpread$14(_objectSpread$14({}, this.defaultOptions.actionButton), (options === null || options === void 0 ? void 0 : options.actionButton) || {})
 					});
 				}
 			},
@@ -28506,7 +28546,7 @@ var import_repeater = /* @__PURE__ */ __toESM(require_repeater());
 	init_inherits();
 	init_defineProperty$1();
 	init_component_base();
-	function ownKeys$12(e, r) {
+	function ownKeys$13(e, r) {
 		var t = Object.keys(e);
 		if (Object.getOwnPropertySymbols) {
 			var o = Object.getOwnPropertySymbols(e);
@@ -28516,19 +28556,19 @@ var import_repeater = /* @__PURE__ */ __toESM(require_repeater());
 		}
 		return t;
 	}
-	__name(ownKeys$12, "ownKeys");
-	function _objectSpread$12(e) {
+	__name(ownKeys$13, "ownKeys");
+	function _objectSpread$13(e) {
 		for (var r = 1; r < arguments.length; r++) {
 			var t = null != arguments[r] ? arguments[r] : {};
-			r % 2 ? ownKeys$12(Object(t), !0).forEach(function(r) {
+			r % 2 ? ownKeys$13(Object(t), !0).forEach(function(r) {
 				_defineProperty$1(e, r, t[r]);
-			}) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys$12(Object(t)).forEach(function(r) {
+			}) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys$13(Object(t)).forEach(function(r) {
 				Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r));
 			});
 		}
 		return e;
 	}
-	__name(_objectSpread$12, "_objectSpread");
+	__name(_objectSpread$13, "_objectSpread");
 	function _callSuper$150(t, o, e) {
 		return o = _getPrototypeOf(o), _possibleConstructorReturn(t, _isNativeReflectConstruct$150() ? Reflect.construct(o, e || [], _getPrototypeOf(t).constructor) : o.apply(t, e));
 	}
@@ -28651,7 +28691,7 @@ var import_repeater = /* @__PURE__ */ __toESM(require_repeater());
 			{
 				key: "getSiteSettingsSessionData",
 				value: function getSiteSettingsSessionData() {
-					return _objectSpread$12({}, this.siteSettingsSession);
+					return _objectSpread$13({}, this.siteSettingsSession);
 				}
 			},
 			{
@@ -29380,7 +29420,7 @@ var import_repeater = /* @__PURE__ */ __toESM(require_repeater());
 	init_inherits();
 	init_defineProperty$1();
 	var import_controls_css_parser = /* @__PURE__ */ __toESM(require_controls_css_parser());
-	function ownKeys$11(e, r) {
+	function ownKeys$12(e, r) {
 		var t = Object.keys(e);
 		if (Object.getOwnPropertySymbols) {
 			var o = Object.getOwnPropertySymbols(e);
@@ -29390,19 +29430,19 @@ var import_repeater = /* @__PURE__ */ __toESM(require_repeater());
 		}
 		return t;
 	}
-	__name(ownKeys$11, "ownKeys");
-	function _objectSpread$11(e) {
+	__name(ownKeys$12, "ownKeys");
+	function _objectSpread$12(e) {
 		for (var r = 1; r < arguments.length; r++) {
 			var t = null != arguments[r] ? arguments[r] : {};
-			r % 2 ? ownKeys$11(Object(t), !0).forEach(function(r) {
+			r % 2 ? ownKeys$12(Object(t), !0).forEach(function(r) {
 				_defineProperty$1(e, r, t[r]);
-			}) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys$11(Object(t)).forEach(function(r) {
+			}) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys$12(Object(t)).forEach(function(r) {
 				Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r));
 			});
 		}
 		return e;
 	}
-	__name(_objectSpread$11, "_objectSpread");
+	__name(_objectSpread$12, "_objectSpread");
 	function _callSuper$145(t, o, e) {
 		return o = _getPrototypeOf(o), _possibleConstructorReturn(t, _isNativeReflectConstruct$145() ? Reflect.construct(o, e || [], _getPrototypeOf(t).constructor) : o.apply(t, e));
 	}
@@ -29554,7 +29594,7 @@ var import_repeater = /* @__PURE__ */ __toESM(require_repeater());
 						if (data.typography) Object.values(data.typography).forEach(function(item) {
 							if (V4_GROUP === item.group) return;
 							var controls = elementor.config.kit_config.design_system_controls.typography;
-							var values = _objectSpread$11({ _id: item.id }, item.value);
+							var values = _objectSpread$12({ _id: item.id }, item.value);
 							if (item.value.typography_font_family) elementor.helpers.enqueueFont(item.value.typography_font_family);
 							_this3.variablesCSS.addStyleRules(controls, values, controls, ["{{WRAPPER}}"], ["body"]);
 						});
@@ -29948,7 +29988,7 @@ var import_repeater = /* @__PURE__ */ __toESM(require_repeater());
 	init_possibleConstructorReturn();
 	init_getPrototypeOf();
 	init_inherits();
-	function ownKeys$10(e, r) {
+	function ownKeys$11(e, r) {
 		var t = Object.keys(e);
 		if (Object.getOwnPropertySymbols) {
 			var o = Object.getOwnPropertySymbols(e);
@@ -29958,19 +29998,19 @@ var import_repeater = /* @__PURE__ */ __toESM(require_repeater());
 		}
 		return t;
 	}
-	__name(ownKeys$10, "ownKeys");
-	function _objectSpread$10(e) {
+	__name(ownKeys$11, "ownKeys");
+	function _objectSpread$11(e) {
 		for (var r = 1; r < arguments.length; r++) {
 			var t = null != arguments[r] ? arguments[r] : {};
-			r % 2 ? ownKeys$10(Object(t), !0).forEach(function(r) {
+			r % 2 ? ownKeys$11(Object(t), !0).forEach(function(r) {
 				_defineProperty$1(e, r, t[r]);
-			}) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys$10(Object(t)).forEach(function(r) {
+			}) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys$11(Object(t)).forEach(function(r) {
 				Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r));
 			});
 		}
 		return e;
 	}
-	__name(_objectSpread$10, "_objectSpread");
+	__name(_objectSpread$11, "_objectSpread");
 	function _callSuper$137(t, o, e) {
 		return o = _getPrototypeOf(o), _possibleConstructorReturn(t, _isNativeReflectConstruct$137() ? Reflect.construct(o, e || [], _getPrototypeOf(t).constructor) : o.apply(t, e));
 	}
@@ -30301,7 +30341,7 @@ var import_repeater = /* @__PURE__ */ __toESM(require_repeater());
 					if (!oldTitle) settingsModel.unset("_title", { silent: true });
 					if (elementor.helpers.isAtomicWidget(this.model)) {
 						var prevEditorSettings = this.model.get("editor_settings");
-						this.model.set("editor_settings", _objectSpread$10(_objectSpread$10({}, prevEditorSettings), {}, { title: newTitle }));
+						this.model.set("editor_settings", _objectSpread$11(_objectSpread$11({}, prevEditorSettings), {}, { title: newTitle }));
 					} else settingsModel.set("_title", newTitle);
 					$e.internal("document/save/set-is-modified", { status: true });
 					elementor.removeBackgroundClickListener("navigator");
@@ -32696,7 +32736,7 @@ var import_preview = /* @__PURE__ */ __toESM(require_preview$2());
 	init_possibleConstructorReturn();
 	init_getPrototypeOf();
 	init_inherits();
-	function ownKeys$9(e, r) {
+	function ownKeys$10(e, r) {
 		var t = Object.keys(e);
 		if (Object.getOwnPropertySymbols) {
 			var o = Object.getOwnPropertySymbols(e);
@@ -32706,19 +32746,19 @@ var import_preview = /* @__PURE__ */ __toESM(require_preview$2());
 		}
 		return t;
 	}
-	__name(ownKeys$9, "ownKeys");
-	function _objectSpread$9(e) {
+	__name(ownKeys$10, "ownKeys");
+	function _objectSpread$10(e) {
 		for (var r = 1; r < arguments.length; r++) {
 			var t = null != arguments[r] ? arguments[r] : {};
-			r % 2 ? ownKeys$9(Object(t), !0).forEach(function(r) {
+			r % 2 ? ownKeys$10(Object(t), !0).forEach(function(r) {
 				_defineProperty$1(e, r, t[r]);
-			}) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys$9(Object(t)).forEach(function(r) {
+			}) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys$10(Object(t)).forEach(function(r) {
 				Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r));
 			});
 		}
 		return e;
 	}
-	__name(_objectSpread$9, "_objectSpread");
+	__name(_objectSpread$10, "_objectSpread");
 	function _callSuper$120(t, o, e) {
 		return o = _getPrototypeOf(o), _possibleConstructorReturn(t, _isNativeReflectConstruct$120() ? Reflect.construct(o, e || [], _getPrototypeOf(t).constructor) : o.apply(t, e));
 	}
@@ -32746,7 +32786,7 @@ var import_preview = /* @__PURE__ */ __toESM(require_preview$2());
 			value: function apply(args) {
 				this.component.activate();
 				$e.uiStates.set("elements-color-picker/color-picking", "on");
-				this.component.currentPicker = _objectSpread$9(_objectSpread$9({}, args), {}, { initialColor: args.container.getSetting(args.control) });
+				this.component.currentPicker = _objectSpread$10(_objectSpread$10({}, args), {}, { initialColor: args.container.getSetting(args.control) });
 				this.component.currentPicker.trigger.classList.add("e-control-tool-disabled");
 				addNamespaceHandler(elementor.$previewContents[0].querySelectorAll(".elementor-element"), "click.color-picker", function(e) {
 					e.preventDefault();
@@ -32923,7 +32963,7 @@ var import_preview = /* @__PURE__ */ __toESM(require_preview$2());
 	init_possibleConstructorReturn();
 	init_getPrototypeOf();
 	init_inherits();
-	function ownKeys$8(e, r) {
+	function ownKeys$9(e, r) {
 		var t = Object.keys(e);
 		if (Object.getOwnPropertySymbols) {
 			var o = Object.getOwnPropertySymbols(e);
@@ -32933,19 +32973,19 @@ var import_preview = /* @__PURE__ */ __toESM(require_preview$2());
 		}
 		return t;
 	}
-	__name(ownKeys$8, "ownKeys");
-	function _objectSpread$8(e) {
+	__name(ownKeys$9, "ownKeys");
+	function _objectSpread$9(e) {
 		for (var r = 1; r < arguments.length; r++) {
 			var t = null != arguments[r] ? arguments[r] : {};
-			r % 2 ? ownKeys$8(Object(t), !0).forEach(function(r) {
+			r % 2 ? ownKeys$9(Object(t), !0).forEach(function(r) {
 				_defineProperty$1(e, r, t[r]);
-			}) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys$8(Object(t)).forEach(function(r) {
+			}) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys$9(Object(t)).forEach(function(r) {
 				Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r));
 			});
 		}
 		return e;
 	}
-	__name(_objectSpread$8, "_objectSpread");
+	__name(_objectSpread$9, "_objectSpread");
 	function _callSuper$117(t, o, e) {
 		return o = _getPrototypeOf(o), _possibleConstructorReturn(t, _isNativeReflectConstruct$117() ? Reflect.construct(o, e || [], _getPrototypeOf(t).constructor) : o.apply(t, e));
 	}
@@ -32990,7 +33030,7 @@ var import_preview = /* @__PURE__ */ __toESM(require_preview$2());
 				key: "getActiveBreakpointsList",
 				value: function getActiveBreakpointsList() {
 					var args = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
-					args = _objectSpread$8(_objectSpread$8({}, {
+					args = _objectSpread$9(_objectSpread$9({}, {
 						largeToSmall: false,
 						withDesktop: false
 					}), args);
@@ -35982,12 +36022,36 @@ var import_preview = /* @__PURE__ */ __toESM(require_preview$2());
 
 //#endregion
 //#region assets/dev/js/editor/document/save/commands/internal/save.js
+	init_defineProperty$1();
 	init_asyncToGenerator();
 	init_classCallCheck();
 	init_createClass();
 	init_possibleConstructorReturn();
 	init_getPrototypeOf();
 	init_inherits();
+	function ownKeys$8(e, r) {
+		var t = Object.keys(e);
+		if (Object.getOwnPropertySymbols) {
+			var o = Object.getOwnPropertySymbols(e);
+			r && (o = o.filter(function(r) {
+				return Object.getOwnPropertyDescriptor(e, r).enumerable;
+			})), t.push.apply(t, o);
+		}
+		return t;
+	}
+	__name(ownKeys$8, "ownKeys");
+	function _objectSpread$8(e) {
+		for (var r = 1; r < arguments.length; r++) {
+			var t = null != arguments[r] ? arguments[r] : {};
+			r % 2 ? ownKeys$8(Object(t), !0).forEach(function(r) {
+				_defineProperty$1(e, r, t[r]);
+			}) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys$8(Object(t)).forEach(function(r) {
+				Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r));
+			});
+		}
+		return e;
+	}
+	__name(_objectSpread$8, "_objectSpread");
 	function _callSuper$72(t, o, e) {
 		return o = _getPrototypeOf(o), _possibleConstructorReturn(t, _isNativeReflectConstruct$72() ? Reflect.construct(o, e || [], _getPrototypeOf(t).constructor) : o.apply(t, e));
 	}
@@ -36001,6 +36065,7 @@ var import_preview = /* @__PURE__ */ __toESM(require_preview$2());
 		})();
 	}
 	__name(_isNativeReflectConstruct$72, "_isNativeReflectConstruct");
+	var HTTP_CONFLICT = 409;
 	var Save$1 = /*#__PURE__*/ function(_$e$modules$CommandIn) {
 		function Save() {
 			_classCallCheck(this, Save);
@@ -36014,6 +36079,7 @@ var import_preview = /* @__PURE__ */ __toESM(require_preview$2());
 					var _apply = _asyncToGenerator(/*#__PURE__*/ import_regenerator$16.default.mark(function _callee(args) {
 						var _elementorCommon$__be;
 						var _elementorCommon;
+						var _elementor$heartbeat;
 						var _this = this;
 						var _args$status;
 						var status;
@@ -36067,13 +36133,13 @@ var import_preview = /* @__PURE__ */ __toESM(require_preview$2());
 										currentHistoryId: document.history.currentItem.get("id")
 									};
 									deferred = elementorCommon.ajax.addRequest("save_builder", {
-										data: {
+										data: _objectSpread$8({
 											status,
 											elements,
 											settings
-										},
-										error: function error(data) {
-											return _this.onSaveError(data, status, document);
+										}, (_elementor$heartbeat = elementor.heartbeat) === null || _elementor$heartbeat === void 0 ? void 0 : _elementor$heartbeat.getSaveSyncData()),
+										error: function error(data, code) {
+											return _this.onSaveError(data, status, document, code);
 										}
 									}).then(function(data) {
 										return _this.onSaveSuccess(data, successArgs, onSuccess);
@@ -36129,9 +36195,14 @@ var import_preview = /* @__PURE__ */ __toESM(require_preview$2());
 			},
 			{
 				key: "onSaveError",
-				value: function onSaveError(data, status, document) {
+				value: function onSaveError(data, status, document, code) {
 					this.onAfterAjax(document);
 					elementor.saver.trigger("after:saveError", data).trigger("after:saveError:" + status, data);
+					if (HTTP_CONFLICT === code) {
+						var _elementor$heartbeat2;
+						(_elementor$heartbeat2 = elementor.heartbeat) === null || _elementor$heartbeat2 === void 0 || _elementor$heartbeat2.onExternalChangeDetected();
+						return;
+					}
 					var message;
 					if (_.isString(data)) message = data;
 					else if (data.statusText) {

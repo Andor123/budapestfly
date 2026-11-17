@@ -3,7 +3,7 @@
  * Plugin Name: WPZOOM AI Connect – Manage Your Site with Claude & ChatGPT
  * Plugin URI: https://www.wpzoom.com/ai-connect/
  * Description: Lets AI assistants (Claude, ChatGPT, Cursor and any MCP client) understand and change your WPZOOM theme: theme settings, color palettes, design patterns and pages, through the WordPress Abilities API.
- * Version: 0.12.3
+ * Version: 0.12.4
  * Requires at least: 6.9
  * Requires PHP: 7.4
  * Author: WPZOOM
@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'WPZOOM_AI_CONNECT_VERSION', '0.12.3' );
+define( 'WPZOOM_AI_CONNECT_VERSION', '0.12.4' );
 define( 'WPZOOM_AI_CONNECT_FILE', __FILE__ );
 define( 'WPZOOM_AI_CONNECT_DIR', plugin_dir_path( __FILE__ ) );
 

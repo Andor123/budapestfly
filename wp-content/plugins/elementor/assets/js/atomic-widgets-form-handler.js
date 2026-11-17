@@ -17258,8 +17258,8 @@
 		if (!alpineId) return;
 		_alpinejs.Alpine.data(alpineId, () => ({ submit(event) {
 			return _asyncToGenerator(function* () {
-				if ((0, _utils.isEditorContext)()) return;
 				event.preventDefault();
+				if ((0, _utils.isEditorContext)()) return;
 				const respondToAgent = createAgentResponder(event);
 				if (form.dataset.atomicFormSubmitting) {
 					respondToAgent({

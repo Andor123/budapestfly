@@ -54,7 +54,7 @@ class Server_Bootstrap {
 		add_filter( 'mcp_adapter_default_server_config', [ $this, 'register_on_default_server' ] );
 		add_action( 'mcp_adapter_init', [ $this, 'register_server' ] );
 
-		McpAdapter::instance();
+		self::boot_adapter();
 
 		// Added after the adapter hooks. The ability itself is registered on
 		// `wp_abilities_api_init`, which the adapter fires from
@@ -62,6 +62,26 @@ class Server_Bootstrap {
 		// `mcp_adapter_default_server_config` and resolves the tool names, so the
 		// enable tool exists by the time the default server lists it.
 		( new Enable_Ability() )->register_hooks();
+	}
+
+	/**
+	 * Boot the adapter through its plugin entry, which defines `WP_MCP_VERSION` first.
+	 *
+	 * Adapter 0.7.0+ raises a "loaded as a bundled dependency" deprecation notice when
+	 * `McpAdapter::instance()` runs without that constant. When the canonical MCP Adapter
+	 * plugin already booted, the constant exists and `WP\MCP\Plugin::instance()` must not
+	 * run again, because it defines the constant unconditionally.
+	 *
+	 * @return void
+	 */
+	private static function boot_adapter(): void {
+		if ( ! defined( 'WP_MCP_VERSION' ) && class_exists( \WP\MCP\Plugin::class ) ) {
+			\WP\MCP\Plugin::instance();
+
+			return;
+		}
+
+		McpAdapter::instance();
 	}
 
 	/**
