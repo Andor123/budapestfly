@@ -1,14 +1,14 @@
-=== WPZOOM AI Connect – Manage Your Site with Claude & ChatGPT ===
+=== WPZOOM AI Connect – MCP Connector for Claude & ChatGPT ===
 Contributors: wpzoom
 Tags: ai, mcp, claude, chatgpt, connector
 Requires at least: 6.9
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 0.12.4
+Stable tag: 0.12.5
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Connect Claude or ChatGPT to WordPress and edit your site by chat: pages, theme settings, design sections and more.
+Connect Claude or ChatGPT to WordPress over MCP and edit your site by chat: pages, theme settings, design sections and more.
 
 == Description ==
 
@@ -104,6 +104,9 @@ This plugin works with two WPZOOM services. Nothing is sent to either until you 
 Terms: https://www.wpzoom.com/terms-and-conditions/ · Privacy policy: https://www.wpzoom.com/privacy-policy/
 
 == Changelog ==
+
+= 0.12.5 =
+* Changed: the plugin is now listed as "WPZOOM AI Connect – MCP Connector for Claude & ChatGPT", so it is easier to find when you search for MCP. Nothing changes on your site or in your connection.
 
 = 0.12.4 =
 * Improved: the AI Connect screen shows which WPZOOM account (email) your site is connected to, and tells you to sign in with that email when you add WPZOOM to Claude or ChatGPT. It doesn't have to match your Claude or ChatGPT login.
