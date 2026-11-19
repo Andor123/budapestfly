@@ -13,7 +13,7 @@
  * Description: Simple, user-friendly contact form plugin for WordPress with a dedicated drag-and-drop builder.
  * Author:      WPZOOM
  * Author URI:  https://www.wpzoom.com
- * Version:     2.0.12
+ * Version:     2.0.13
  * License:     GPL2+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  */
@@ -44,6 +44,16 @@ if ( is_admin() && ! class_exists( 'WPZOOM_Notice_Center' ) && file_exists( $wpz
 	WPZOOM_Notice_Center::get_instance()->set_assets( array(
 		'css_url' => $wpz_notice_center_url . 'assets/notice-center.css',
 		'js_url'  => $wpz_notice_center_url . 'assets/notice-center.js',
+	) );
+}
+
+add_filter( 'wpzoom_notice_center_strings', 'wpzoom_forms_notice_center_strings' );
+function wpzoom_forms_notice_center_strings( $strings ) {
+	return array_merge( (array) $strings, array(
+		'title'          => __( 'WPZOOM Notice Center', 'wpzoom-forms' ),
+		'subtitle'       => __( 'Stay updated with the latest from WPZOOM products and services!', 'wpzoom-forms' ),
+		'dismiss'        => __( 'Dismiss this notice', 'wpzoom-forms' ),
+		'dismiss_screen' => __( 'Dismiss this notice.', 'wpzoom-forms' ),
 	) );
 }
 
@@ -280,11 +290,15 @@ class WPZOOM_Forms {
 					'menu_position'       => 31,
 					'menu_icon'           => 'dashicons-email-alt2',
 					'supports'            => array( '' ),
+					// Submissions hold visitors' personal data and are stored without an
+					// owner, so core's "own posts only" list filter never applies to them.
+					// Gate the whole screen on the "others" capabilities instead, which
+					// keeps it to Editors and Administrators.
 					'capabilities'        => array(
 						'create_posts'  => 'do_not_allow',
 						'publish_posts' => 'do_not_allow',
-						'edit_posts'    => 'edit_posts',
-						'delete_posts'  => 'delete_posts'
+						'edit_posts'    => 'edit_others_posts',
+						'delete_posts'  => 'delete_others_posts'
 					),
 					'map_meta_cap'        => true
 				)
@@ -1373,7 +1387,9 @@ class WPZOOM_Forms {
 				$forms_count = $responses->post_count;
 			}
 
-			if( 0 < $forms_count )  {
+			$submission_type = get_post_type_object( 'wpzf-submission' );
+
+			if( 0 < $forms_count && $submission_type && current_user_can( $submission_type->cap->edit_posts ) )  {
 				printf( '<a href="%s">%s</a>', admin_url( 'edit.php?post_type=wpzf-submission&&form_id_filter=' . $post_id ), $forms_count );
 			} else {
 				echo $forms_count;
@@ -1392,6 +1408,11 @@ class WPZOOM_Forms {
 	 * @since  1.0.0
 	 */
 	public function post_list_custom_columns_submit( $column, $post_id ) {
+		// Never print a submission's data for someone who can't open it.
+		if ( ! current_user_can( 'edit_post', $post_id ) ) {
+			return;
+		}
+
 		$fields = get_post_meta( $post_id, '_wpzf_fields', true );
 
 		switch ( $column ) {
@@ -2459,6 +2480,12 @@ class WPZOOM_Forms {
 								),
 							)
 						);
+
+						// Submissions are limited to users who can edit others' posts.
+						$submission_type = get_post_type_object( 'wpzf-submission' );
+						if ( ! $submission_type || ! current_user_can( $submission_type->cap->edit_posts ) ) {
+							unset( $pages['edit-wpzf-submission'] );
+						}
 
 						foreach ( $pages as $id => $atts ) {
 							printf(

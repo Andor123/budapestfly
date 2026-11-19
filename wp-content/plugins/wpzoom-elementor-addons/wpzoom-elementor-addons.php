@@ -3,7 +3,7 @@
  * Plugin Name:       Elementor Addons by WPZOOM
  * Plugin URI:        https://www.wpzoom.com/plugins/wpzoom-elementor-addons/
  * Description:       A plugin that provides a collection of Elementor Templates and advanced widgets created by the WPZOOM team
- * Version:           1.4.21
+ * Version:           1.4.22
  * Author:            WPZOOM
  * Author URI:        https://www.wpzoom.com/
  * Text Domain:       wpzoom-elementor-addons
@@ -155,6 +155,7 @@ final class WPZOOM_Elementor_Addons {
 
 		include_once WPZOOM_EL_ADDONS_PATH . 'includes/wpzoom-elementor-controls.php';
 		include_once WPZOOM_EL_ADDONS_PATH . 'includes/wpzoom-elementor-widgets.php';
+		include_once WPZOOM_EL_ADDONS_PATH . 'includes/wpzoom-elementor-motion.php';
 		include_once WPZOOM_EL_ADDONS_PATH . 'includes/wpzoom-template-manager.php';
 		include_once WPZOOM_EL_ADDONS_PATH . 'includes/wpzoom-elementor-ajax-posts-grid.php';
 
