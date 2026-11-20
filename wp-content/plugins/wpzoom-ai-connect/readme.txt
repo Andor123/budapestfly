@@ -4,7 +4,7 @@ Tags: ai, mcp, claude, chatgpt, connector
 Requires at least: 6.9
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 0.12.5
+Stable tag: 0.12.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,7 +14,9 @@ Connect Claude or ChatGPT to WordPress over MCP and edit your site by chat: page
 
 Talk to your WordPress site in plain language. WPZOOM AI Connect links your site to Claude, ChatGPT or any other MCP app, so you ask for changes instead of clicking through the admin: switch the color palette, change the header layout, rewrite the About page, add a team section, create a contact form, or run a checkup. Your assistant reads what the site has, proposes the change, and makes it after you confirm.
 
-https://www.youtube.com/watch?v=agnOSWSS6yo
+**[Plugin page](https://www.wpzoom.com/ai-connect/)** | **[Documentation](https://www.wpzoom.com/documentation/ai-connect/)** | **[Add to Claude](https://claude.ai/directory/wpzoom)** | **[Add to ChatGPT](https://chatgpt.com/plugins/plugin_asdk_app_6aedb19b4eb081919d3c14e622ad8e01)**
+
+https://www.youtube.com/watch?v=sj3ZhG-rFlI
 
 **Try asking**
 
@@ -57,10 +59,12 @@ Everything in the list below is code in this plugin, running on your site. Plain
 **Connect your AI**
 
 1. Install and activate the plugin.
-2. In Claude or ChatGPT, add the WPZOOM connector and sign in.
+2. Add WPZOOM to your AI app and sign in. In Claude, add WPZOOM from [Claude's connector directory](https://claude.ai/directory/wpzoom); in ChatGPT, install the WPZOOM plugin from [ChatGPT's plugin directory](https://chatgpt.com/plugins/plugin_asdk_app_6aedb19b4eb081919d3c14e622ad8e01). The AI Connect screen has the steps for each.
 3. Ask it to pair your site. WordPress asks you to approve the connection; it is stored as an application password you can revoke any time.
 
 Already using WPVibe or Easy MCP AI? The abilities show up there too, no extra setup.
+
+Step-by-step guides and answers are in the [documentation](https://www.wpzoom.com/documentation/ai-connect/). Need help? [Contact WPZOOM support](https://www.wpzoom.com/support/).
 
 **Themes and plugins**
 
@@ -92,18 +96,21 @@ Your sign-in email, the address of each site you connect, its application passwo
 
 = Which AI assistants work? =
 
-Any MCP client: Claude (web, desktop, Claude Code), ChatGPT, Cursor and others, through the WPZOOM connector or another MCP plugin on your site.
+Any MCP client: [Claude](https://claude.ai/directory/wpzoom) (web, desktop, Claude Code), [ChatGPT](https://chatgpt.com/plugins/plugin_asdk_app_6aedb19b4eb081919d3c14e622ad8e01), Cursor and others, through the WPZOOM connector or another MCP plugin on your site. The [documentation](https://www.wpzoom.com/documentation/ai-connect/) has a guide for each.
 
 == External services ==
 
 This plugin works with two WPZOOM services. Nothing is sent to either until you use the feature that needs it.
 
-* **WPZOOM connector** (mcp.wpzoom.com): the address you add in Claude, ChatGPT or another MCP app. When you press "Connect this site", WordPress asks you to approve an application password for your user, and it is sent to the connector, which stores it encrypted and uses it to call this site's abilities when your AI asks. Connecting lets the connector act on this site as your user, within the limits described in the FAQ, until you disconnect. With each request it tells this site which WPZOOM account (sign-in email) the connection belongs to; the plugin saves it with your user and shows it on its screen, so you know which email to use in your AI app. The connector keeps your sign-in email, each connected site's address, the changes the AI made (30 days) and a request log without content (90 days).
+* **WPZOOM connector** ([mcp.wpzoom.com](https://mcp.wpzoom.com/)): the service that WPZOOM in Claude's and ChatGPT's directories connects to, and the address you add in Cursor or another MCP app. When you press "Connect this site", WordPress asks you to approve an application password for your user, and it is sent to the connector, which stores it encrypted and uses it to call this site's abilities when your AI asks. Connecting lets the connector act on this site as your user, within the limits described in the FAQ, until you disconnect. With each request it tells this site which WPZOOM account (sign-in email) the connection belongs to; the plugin saves it with your user and shows it on its screen, so you know which email to use in your AI app. The connector keeps your sign-in email, each connected site's address, the changes the AI made (30 days) and a request log without content (90 days).
 * **WPZOOM AI** (ai.wpzoom.com): AI page building and the free AI registration (your email and a 6-digit code) run through the Inspiro Starter Sites plugin's AI client, only when you ask for them. This plugin itself sends nothing there.
 
-Terms: https://www.wpzoom.com/terms-and-conditions/ · Privacy policy: https://www.wpzoom.com/privacy-policy/
+[Terms](https://www.wpzoom.com/terms-and-conditions/) · [Privacy policy](https://www.wpzoom.com/privacy-policy/)
 
 == Changelog ==
+
+= 0.12.6 =
+* Improved: WPZOOM is now in Claude's connector directory and in ChatGPT's plugin directory. The guides on the AI Connect screen have an "Add to Claude" and an "Add to ChatGPT" button, so there is no address to paste. Adding it by address is still explained under each guide.
 
 = 0.12.5 =
 * Changed: the plugin is now listed as "WPZOOM AI Connect – MCP Connector for Claude & ChatGPT", so it is easier to find when you search for MCP. Nothing changes on your site or in your connection.

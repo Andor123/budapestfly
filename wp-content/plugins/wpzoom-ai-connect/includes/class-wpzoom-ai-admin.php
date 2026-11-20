@@ -15,6 +15,9 @@ class WPZOOM_AI_Admin {
 
 	const CONNECTOR_ORIGIN = 'https://mcp.wpzoom.com';
 	const CONNECTOR_URL    = 'https://mcp.wpzoom.com/mcp';
+	/** WPZOOM in Claude's connector directory and in ChatGPT's plugin directory: the way to add it, with no address to paste. */
+	const CLAUDE_DIRECTORY_URL = 'https://claude.ai/directory/wpzoom';
+	const CHATGPT_PLUGIN_URL = 'https://chatgpt.com/plugins/plugin_asdk_app_6aedb19b4eb081919d3c14e622ad8e01';
 	/** The application-password name the connector creates; how we recognise a connection. */
 	const APP_NAME = 'WPZOOM AI Connect';
 	const PAGE     = 'wpzoom-ai-connect';
@@ -591,26 +594,49 @@ class WPZOOM_AI_Admin {
 						<div class="wzai-card wzai-card--soft wzai-guide wzai-mt-24" id="wzai-guide">
 							<div data-guide="claude">
 								<h3 class="wzai-card__title"><?php echo wp_kses( self::logo( 'claude' ), self::allowed_html() ); ?><?php esc_html_e( 'Add WPZOOM to Claude', 'wpzoom-ai-connect' ); ?></h3>
+								<p class="wzai-small wzai-mt-8"><?php esc_html_e( 'WPZOOM is in Claude\'s connector directory, so there is no address to paste.', 'wpzoom-ai-connect' ); ?></p>
+								<p class="wzai-mt-16"><a class="wzai-btn wzai-btn--primary wzai-btn--lg wzai-btn--logo" href="<?php echo esc_url( self::CLAUDE_DIRECTORY_URL ); ?>" target="_blank" rel="noopener"><?php echo wp_kses( self::logo( 'claude' ), self::allowed_html() ); ?><?php esc_html_e( 'Add to Claude', 'wpzoom-ai-connect' ); ?></a></p>
 								<ol>
-									<li><?php printf( /* translators: %s: link */ esc_html__( 'Open %s and choose "Add custom connector".', 'wpzoom-ai-connect' ), '<a href="https://claude.ai/new#customize/connectors/yours" target="_blank" rel="noopener">claude.ai → Customize → Connectors</a>' ); ?></li>
-									<li><?php esc_html_e( 'Name it WPZOOM and paste this address:', 'wpzoom-ai-connect' ); ?> <?php echo wp_kses( self::copy_field( self::CONNECTOR_URL ), self::allowed_html() ); ?></li>
+									<li><?php esc_html_e( 'Press the button. Claude opens WPZOOM in its directory: press "Connect to Claude" there.', 'wpzoom-ai-connect' ); ?></li>
 									<li><?php echo '' !== $account
-										? wp_kses( sprintf( /* translators: %s: WPZOOM account email */ __( 'Press Connect and sign in to WPZOOM with %s (we send a code). It does not have to match your Claude login.', 'wpzoom-ai-connect' ), '<strong>' . esc_html( $account ) . '</strong>' ), array( 'strong' => array() ) )
-										: esc_html__( 'Press Connect. Claude asks you to sign in with your email (we send a code).', 'wpzoom-ai-connect' ); ?></li>
+										? wp_kses( sprintf( /* translators: %s: WPZOOM account email */ __( 'When Claude asks you to sign in to WPZOOM, use %s (we send a code). It does not have to match your Claude login.', 'wpzoom-ai-connect' ), '<strong>' . esc_html( $account ) . '</strong>' ), array( 'strong' => array() ) )
+										: esc_html__( 'When Claude asks you to sign in to WPZOOM, use your email (we send a code).', 'wpzoom-ai-connect' ); ?></li>
 									<li><?php esc_html_e( 'Come back here and press "Connect this site".', 'wpzoom-ai-connect' ); ?></li>
 								</ol>
+								<details class="wzai-details wzai-details--inline">
+									<summary><?php echo wp_kses( self::icon( 'chevron' ), self::allowed_html() ); ?><?php esc_html_e( 'Add it by address instead', 'wpzoom-ai-connect' ); ?></summary>
+									<p class="wzai-small wzai-mt-8"><?php esc_html_e( 'Do this if your Claude does not show the directory listing, for example in a workspace where an admin limits which connectors can be added.', 'wpzoom-ai-connect' ); ?></p>
+									<ol>
+										<li><?php printf( /* translators: %s: link */ esc_html__( 'Open %s and choose "Add custom connector".', 'wpzoom-ai-connect' ), '<a href="https://claude.ai/new#customize/connectors/yours" target="_blank" rel="noopener">claude.ai → Customize → Connectors</a>' ); ?></li>
+										<li><?php esc_html_e( 'Name it WPZOOM and paste this address:', 'wpzoom-ai-connect' ); ?> <?php echo wp_kses( self::copy_field( self::CONNECTOR_URL ), self::allowed_html() ); ?></li>
+										<li><?php echo '' !== $account
+											? wp_kses( sprintf( /* translators: %s: WPZOOM account email */ __( 'Press Connect and sign in to WPZOOM with %s (we send a code). It does not have to match your Claude login.', 'wpzoom-ai-connect' ), '<strong>' . esc_html( $account ) . '</strong>' ), array( 'strong' => array() ) )
+											: esc_html__( 'Press Connect. Claude asks you to sign in with your email (we send a code).', 'wpzoom-ai-connect' ); ?></li>
+									</ol>
+								</details>
 							</div>
 							<div data-guide="chatgpt" hidden>
 								<h3 class="wzai-card__title"><?php echo wp_kses( self::logo( 'chatgpt' ), self::allowed_html() ); ?><?php esc_html_e( 'Add WPZOOM to ChatGPT', 'wpzoom-ai-connect' ); ?></h3>
-								<p class="wzai-small wzai-mt-8"><?php esc_html_e( 'Works on every paid ChatGPT plan. In a Business or Enterprise workspace an admin may have to allow custom MCP servers first. Free accounts cannot add one yet; use Claude, where it works on the free plan.', 'wpzoom-ai-connect' ); ?></p>
+								<p class="wzai-small wzai-mt-8"><?php esc_html_e( 'WPZOOM is in ChatGPT\'s plugin directory, so there is no address to paste. If your ChatGPT plan has no plugins, use Claude, where WPZOOM works on the free plan.', 'wpzoom-ai-connect' ); ?></p>
+								<p class="wzai-mt-16"><a class="wzai-btn wzai-btn--primary wzai-btn--lg wzai-btn--logo" href="<?php echo esc_url( self::CHATGPT_PLUGIN_URL ); ?>" target="_blank" rel="noopener"><?php echo wp_kses( self::logo( 'chatgpt' ), self::allowed_html() ); ?><?php esc_html_e( 'Add to ChatGPT', 'wpzoom-ai-connect' ); ?></a></p>
 								<ol>
-									<li><?php printf( /* translators: %s: link */ esc_html__( 'Open %s (or Plugins in the ChatGPT sidebar), press the + button and choose "Add custom MCP server".', 'wpzoom-ai-connect' ), '<a href="https://chatgpt.com/settings/plugins-settings" target="_blank" rel="noopener">ChatGPT → Settings → Plugins</a>' ); ?></li>
-									<li><?php esc_html_e( 'Name it WPZOOM. Under Connection, paste this address:', 'wpzoom-ai-connect' ); ?> <?php echo wp_kses( self::copy_field( self::CONNECTOR_URL ), self::allowed_html() ); ?></li>
+									<li><?php esc_html_e( 'Press the button. ChatGPT opens the WPZOOM plugin: press "Install plugin" there.', 'wpzoom-ai-connect' ); ?></li>
 									<li><?php echo '' !== $account
-										? wp_kses( sprintf( /* translators: %s: WPZOOM account email */ __( 'Choose OAuth for authentication, tick "I understand and want to continue", then press "Create as a plugin" and sign in to WPZOOM with %s (we send a code). It does not have to match your ChatGPT login.', 'wpzoom-ai-connect' ), '<strong>' . esc_html( $account ) . '</strong>' ), array( 'strong' => array() ) )
-										: esc_html__( 'Choose OAuth for authentication, tick "I understand and want to continue", then press "Create as a plugin" and sign in with your email (we send a code).', 'wpzoom-ai-connect' ); ?></li>
+										? wp_kses( sprintf( /* translators: %s: WPZOOM account email */ __( 'When ChatGPT asks you to sign in to WPZOOM, use %s (we send a code). It does not have to match your ChatGPT login.', 'wpzoom-ai-connect' ), '<strong>' . esc_html( $account ) . '</strong>' ), array( 'strong' => array() ) )
+										: esc_html__( 'When ChatGPT asks you to sign in to WPZOOM, use your email (we send a code).', 'wpzoom-ai-connect' ); ?></li>
 									<li><?php esc_html_e( 'Come back here and press "Connect this site". In a chat, type @WPZOOM to use it.', 'wpzoom-ai-connect' ); ?></li>
 								</ol>
+								<details class="wzai-details wzai-details--inline">
+									<summary><?php echo wp_kses( self::icon( 'chevron' ), self::allowed_html() ); ?><?php esc_html_e( 'Add it by address instead', 'wpzoom-ai-connect' ); ?></summary>
+									<p class="wzai-small wzai-mt-8"><?php esc_html_e( 'Do this when other plugins on your site give AI their own tools, as some SEO and code-snippet plugins do: the directory version has a fixed set of tools and leaves those out. It works on paid ChatGPT plans; in a Business or Enterprise workspace an admin may have to allow custom MCP servers first.', 'wpzoom-ai-connect' ); ?></p>
+									<ol>
+										<li><?php printf( /* translators: %s: link */ esc_html__( 'Open %s (or Plugins in the ChatGPT sidebar), press the + button and choose "Add custom MCP server".', 'wpzoom-ai-connect' ), '<a href="https://chatgpt.com/settings/plugins-settings" target="_blank" rel="noopener">ChatGPT → Settings → Plugins</a>' ); ?></li>
+										<li><?php esc_html_e( 'Name it WPZOOM. Under Connection, paste this address:', 'wpzoom-ai-connect' ); ?> <?php echo wp_kses( self::copy_field( self::CONNECTOR_URL ), self::allowed_html() ); ?></li>
+										<li><?php echo '' !== $account
+											? wp_kses( sprintf( /* translators: %s: WPZOOM account email */ __( 'Choose OAuth for authentication, tick "I understand and want to continue", then press "Create as a plugin" and sign in to WPZOOM with %s (we send a code). It does not have to match your ChatGPT login.', 'wpzoom-ai-connect' ), '<strong>' . esc_html( $account ) . '</strong>' ), array( 'strong' => array() ) )
+											: esc_html__( 'Choose OAuth for authentication, tick "I understand and want to continue", then press "Create as a plugin" and sign in with your email (we send a code).', 'wpzoom-ai-connect' ); ?></li>
+									</ol>
+								</details>
 							</div>
 							<div data-guide="other" hidden>
 								<h3 class="wzai-card__title"><?php echo wp_kses( self::icon( 'terminal' ), self::allowed_html() ); ?><?php esc_html_e( 'Add WPZOOM to Cursor, Claude Code or any MCP app', 'wpzoom-ai-connect' ); ?></h3>

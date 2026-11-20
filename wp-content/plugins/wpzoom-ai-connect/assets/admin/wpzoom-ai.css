@@ -101,6 +101,8 @@
 .wzai .wzai-btn--lg { padding: 9px 22px; min-height: 42px; font-size: 14px; }
 .wzai .wzai-btn--block { width: 100%; }
 .wzai .wzai-btn svg { width: 14px; height: 14px; }
+/* A button that leads with an app's logo, drawn in the button's text color. */
+.wzai .wzai-btn--logo svg { width: 18px; height: 18px; fill: currentColor; }
 .wzai .wzai-btn[disabled], .wzai .wzai-btn[aria-disabled="true"] { opacity: .45; cursor: default; pointer-events: none; }
 
 /* ---------- badges (label-badge) ---------- */
@@ -178,6 +180,9 @@
 .wzai-details summary svg { width: 16px; height: 16px; transition: transform .15s; color: var(--wzai-text-3); }
 .wzai-details[open] summary svg { transform: rotate(90deg); }
 .wzai-details summary small { font-size: 14px; font-weight: 400; color: var(--wzai-text-3); margin-left: 4px; }
+/* A fold inside a card, such as a second way to do the same step. */
+.wzai-details--inline { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--wzai-border-soft); }
+.wzai-details--inline summary { font-size: 14px; color: var(--wzai-text-2); }
 .wzai-table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 16px; }
 .wzai-table th, .wzai-table td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--wzai-border-soft); vertical-align: top; }
 .wzai-table th { color: var(--wzai-text-3); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; white-space: nowrap; }
