@@ -1,11 +1,11 @@
-=== WPZOOM Connect: Social Icons Widget & Block, Share Buttons & Click to Chat ===
+=== WPZOOM Social Icons: Widget & Block, Share Buttons & Click to Chat ===
 Contributors: WPZOOM, ciorici
 Donate link: https://www.wpzoom.com/
 Tags: social icons, social media icons, share buttons, click to chat, whatsapp
 Requires at least: 6.5
 Requires PHP: 7.4
 Tested up to: 7.1
-Stable tag: 5.0.1
+Stable tag: 5.0.2
 License: GNU General Public License v2.0 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,7 +15,7 @@ Social media icons and share buttons: 2,400+ icons, block, widget & Elementor. P
 
 = Social icons, share buttons and a chat button, in one plugin =
 
-**WPZOOM Connect** (formerly *Social Icons Widget & Block*) adds **social media icons** linking to your profiles, **share buttons** for your content, and a floating **Click to Chat** button for WhatsApp, Telegram, Messenger and Viber. Everything works as a Gutenberg block, a classic widget, a shortcode or an Elementor widget, so it fits block themes and classic themes alike.
+**WPZOOM Social Icons** (formerly *Social Icons Widget & Block*) adds **social media icons** linking to your profiles, **share buttons** for your content, and a floating **Click to Chat** button for WhatsApp, Telegram, Messenger and Viber. Everything works as a Gutenberg block, a classic widget, a shortcode or an Elementor widget, so it fits block themes and classic themes alike.
 
 * **2,400+ icons** from WPZOOM Icons, Font Awesome, Academicons, Dashicons and Genericons — every network, plus general icons for phone, email, location and more. Browse them all in Settings → Icon library.
 * **Paste a link, get the icon.** The icon, its brand color and label are picked from the URL.
@@ -114,7 +114,7 @@ You can view the plugin live in all our themes at [WPZOOM](https://www.wpzoom.co
 
 = PRO Features =
 
-Upgrade to [WPZOOM Connect Pro](https://www.wpzoom.com/plugins/social-share/) to unlock powerful features:
+Upgrade to [WPZOOM Social Icons Pro](https://www.wpzoom.com/plugins/social-share/) to unlock powerful features:
 
 * **Floating Buttons** - Display social sharing icons as a fixed floating bar on the side of your website (NEW!)
 * **Social Profiles: Cards and Buttons layouts** - Brand-colored cards with follower counts, or "Follow on Instagram" buttons (NEW!)
@@ -259,7 +259,7 @@ Yes! Social Icons & Sharing Buttons does not collect any information from your v
 
 = What features are available in the PRO version? =
 
-[WPZOOM Connect Pro](https://www.wpzoom.com/plugins/social-share/) includes these additional features:
+[WPZOOM Social Icons Pro](https://www.wpzoom.com/plugins/social-share/) includes these additional features:
 
 * **Floating Buttons** - Display sharing icons as a fixed floating bar on the side of your website
 * **Share Analytics** - Track shares across all platforms with a beautiful analytics dashboard
@@ -281,7 +281,7 @@ Floating Buttons is a PRO feature that displays your social sharing icons as a f
 3. Social Sharing Block
 4. Sharing Buttons in Posts & Pages
 5. Customizing Sharing Buttons
-6. The WPZOOM Connect dashboard: social icons, share buttons and chat at a glance
+6. The WPZOOM Social Icons dashboard: social icons, share buttons and chat at a glance
 7. One floating button for every channel: AI Chat, WhatsApp, Telegram, Messenger and Viber
 8. AI Chat answers visitors from your own pages and links the page the answer came from
 9. Click to Chat settings: channels, launcher style, position, size, colors and icons
@@ -291,11 +291,16 @@ Floating Buttons is a PRO feature that displays your social sharing icons as a f
 
 == Changelog ==
 
+= 5.0.2 =
+* Black Friday 2026 notice (Nov 25 – Dec 2) with a countdown that works in every browser
+* Notice and plugin action links are now translatable
+* Fixes & improvements
+
 = 5.0.1 =
-* NEW: "Manage with AI" in the Social Icons menu: one click installs and activates the free WPZOOM AI Connect plugin, so Claude or ChatGPT can edit your site for you. It is also offered on the Overview, and once in a dismissible notice on the Dashboard and Plugins screens. Shown on WordPress 6.9 and newer, until AI Connect is active
+* Fixes & improvements
 
 = 5.0.0 =
-* MAJOR: Social Icons Widget is now WPZOOM Connect 5.0: a new dashboard under “Social Icons”, icons drawn as SVG instead of icon fonts, 2,400+ icons with an icon library to browse, icons without links and an “Icon by WPZOOM” block, a Social Profiles block, and the Google Preferred Sources button. Sites that update get a short “What’s new” tour on the Overview
+* MAJOR: Social Icons Widget is now WPZOOM Social Icons 5.0: a new dashboard under “Social Icons”, icons drawn as SVG instead of icon fonts, 2,400+ icons with an icon library to browse, icons without links and an “Icon by WPZOOM” block, a Social Profiles block, and the Google Preferred Sources button. Sites that update get a short “What’s new” tour on the Overview
 * NEW: Social Profiles block — your profiles as a list with each network's icon, a handle taken from the link (@yourname, r/WordPress) or the short link, and optional follower counts you type in (labelled followers, subscribers or members per network). Start by picking from 10 popular networks; style the rows, border, corners and icons in the Styles tab. Drawn on the server, so it can't show "unexpected or invalid content". Cards and Buttons layouts in PRO
 * IMPROVED: Social Icons block — Detect Icon now looks in Socicons first and falls back to the other enabled icon kits (it used to take the last kit with a match, often Font Awesome)
 * NEW: the icon's URL field shows the matching icon as you type
@@ -434,4 +439,4 @@ Floating Buttons is a PRO feature that displays your social sharing icons as a f
 == Upgrade Notice ==
 
 = 5.0.0 =
-Big update: the plugin is now WPZOOM Connect, with a new dashboard under “Social Icons”. Icons are drawn as SVG instead of icon fonts; if you styled icons with custom CSS that targets the icon font, check them after updating.
+Big update: the plugin is now WPZOOM Social Icons, with a new dashboard under “Social Icons”. Icons are drawn as SVG instead of icon fonts; if you styled icons with custom CSS that targets the icon font, check them after updating.

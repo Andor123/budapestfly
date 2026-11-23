@@ -2,7 +2,7 @@
 /**
  * AI Connect → the welcome screen: pick your AI, connect this site in one click, learn what to say.
  * The plugin has no settings of its own; this page is onboarding plus status, written for site owners,
- * with the technical details folded away under "For developers".
+ * in tabs: Get started, What it can do, Site checkup, Settings and Developers.
  *
  * @package WPZOOM_AI_Connect
  */
@@ -18,6 +18,9 @@ class WPZOOM_AI_Admin {
 	/** WPZOOM in Claude's connector directory and in ChatGPT's plugin directory: the way to add it, with no address to paste. */
 	const CLAUDE_DIRECTORY_URL = 'https://claude.ai/directory/wpzoom';
 	const CHATGPT_PLUGIN_URL = 'https://chatgpt.com/plugins/plugin_asdk_app_6aedb19b4eb081919d3c14e622ad8e01';
+	/** The setup video (also on the readme and wpzoom.com/ai-connect/); change the length with it. */
+	const VIDEO_URL    = 'https://www.youtube.com/watch?v=sj3ZhG-rFlI';
+	const VIDEO_LENGTH = '1:25';
 	/** The application-password name the connector creates; how we recognise a connection. */
 	const APP_NAME = 'WPZOOM AI Connect';
 	const PAGE     = 'wpzoom-ai-connect';
@@ -25,8 +28,8 @@ class WPZOOM_AI_Admin {
 
 	/** WPZOOM AI mark, box-free, one fill: WordPress recolours it for the admin menu. */
 	const MENU_ICON = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="black" d="M53.8 590.8 L192 1024 L240.4 1024 L376.3 713 L511.5 1024 L559.9 1024 L695.8 590.8 L749.6 590.8 L749.6 513.3 L534.5 513.3 L534.5 590.8 L603.6 590.8 L526.8 856.6 L401.7 562.4 L355.6 562.4 L230.4 856.6 L148.2 590.8 L215 590.8 L215 513.3 L0 513.3 L0 590.8 Z M830 0 Q860.4 159.6 1020 190 Q860.4 220.4 830 380 Q799.6 220.4 640 190 Q799.6 159.6 830 0 Z M560 10 Q575.2 89.8 655 105 Q575.2 120.2 560 200 Q544.8 120.2 465 105 Q544.8 89.8 560 10 Z"/></svg>';
-	/** WPZOOM AI mark: dark tile, the WPZOOM W, blue sparkles. Same file as assets/admin/wpzoom-ai-icon.svg. */
-	const MARK = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-label="WPZOOM AI"><path fill="#242628" d="M128 0H896C966.7 0 1024 57.3 1024 128V896C1024 966.7 966.7 1024 896 1024H128C57.3 1024 0 966.7 0 896V128C0 57.3 57.3 0 128 0Z"/><path fill="#ffffff" d="M155 532.1 L265.6 878.6 L304.3 878.6 L413.1 629.7 L521.2 878.6 L559.9 878.6 L668.6 532.1 L711.7 532.1 L711.7 470 L539.6 470 L539.6 532.1 L594.9 532.1 L533.5 744.6 L433.3 509.3 L396.5 509.3 L296.3 744.6 L230.6 532.1 L284 532.1 L284 470 L112 470 L112 532.1 Z"/><path fill="#3496ff" d="M790 110 Q814 236 940 260 Q814 284 790 410 Q766 284 640 260 Q766 236 790 110 Z M590 109 Q600.6 164.4 656 175 Q600.6 185.6 590 241 Q579.4 185.6 524 175 Q579.4 164.4 590 109 Z"/></svg>';
+	/** WPZOOM AI Connect icon: white tile with a grey border, the WPZOOM W in blue, one sparkle. Same file as assets/admin/wpzoom-ai-icon.svg (and the wordpress.org icon). */
+	const MARK = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-label="WPZOOM AI Connect"><rect x="12" y="12" width="1000" height="1000" rx="212" fill="#ffffff" stroke="#d9dce0" stroke-width="24"/><path transform="translate(212.4 330.5) scale(8.3)" fill="#2858d1" d="M5.1 8.3H0V0.8H20.7V8.3H14.3L22.2 33.9L34.3 5.6H38.7L50.8 33.9L58.2 8.3H51.5V0.8H72.2V8.3H67L53.9 50H49.2L36.2 20L23.1 50H18.4L5.1 8.3Z"/><path transform="translate(800 228) scale(7.763) translate(-69.85 -39.5)" fill="#3496ff" stroke="#ffffff" stroke-width="3.34" stroke-linejoin="round" paint-order="stroke" d="M67.8041 54.0231C68.3961 54.4432 69.1045 54.6682 69.8304 54.6666C70.5583 54.67 71.2694 54.4425 71.8625 54.0212C72.4577 53.583 72.9084 52.9768 73.1566 52.2805L74.4709 48.2328C74.7893 47.279 75.3268 46.4111 76.0362 45.6983C76.743 44.9887 77.6064 44.4548 78.5569 44.1396L82.6733 42.8016C83.3541 42.5589 83.9421 42.1123 84.3583 41.5225C84.7758 40.9331 85 40.2286 85 39.5063C85 38.7839 84.7758 38.0794 84.3583 37.49C83.9084 36.8631 83.2698 36.398 82.5352 36.1638L78.4828 34.8494C77.5293 34.5336 76.6626 33.9996 75.9518 33.2899C75.241 32.5802 74.7056 31.7143 74.3883 30.7612L73.0487 26.6495C72.8095 25.9687 72.3646 25.3806 71.7749 24.9644C71.1807 24.5534 70.4754 24.3333 69.7529 24.3333C69.0305 24.3333 68.3252 24.5534 67.7309 24.9644C67.1244 25.3907 66.6694 25.999 66.4335 26.7017L65.0889 30.8371C64.7714 31.7624 64.2489 32.604 63.5602 33.2988C62.8716 33.9936 62.0348 34.5237 61.1123 34.8494L57.0027 36.1806C56.3152 36.4233 55.7221 36.8749 55.3042 37.4715C54.9907 37.9169 54.7855 38.4295 54.705 38.9683C54.6246 39.5071 54.6711 40.0573 54.8408 40.5749C55.0105 41.0926 55.2987 41.5635 55.6825 41.95C56.0663 42.3366 56.5351 42.6282 57.0515 42.8016L61.0972 44.1177C62.0533 44.4381 62.9216 44.977 63.6331 45.6916C64.3456 46.4019 64.8807 47.2702 65.195 48.226L66.5279 52.3226C66.766 53.0084 67.2122 53.6029 67.8041 54.0231Z"/></svg>';
 
 	public static function init(): void {
 		add_action( 'admin_menu', array( __CLASS__, 'add_page' ) );
@@ -34,6 +37,7 @@ class WPZOOM_AI_Admin {
 		add_action( 'admin_post_wpzoom_ai_disconnect', array( __CLASS__, 'handle_disconnect' ) );
 		add_action( 'admin_post_wpzoom_ai_css_setting', array( __CLASS__, 'handle_css_setting' ) );
 		add_action( 'admin_post_wpzoom_ai_post_types', array( __CLASS__, 'handle_post_types' ) );
+		add_action( 'admin_post_wpzoom_ai_access', array( __CLASS__, 'handle_access' ) );
 		add_action( 'admin_enqueue_scripts', array( __CLASS__, 'enqueue' ) );
 		add_filter( 'plugin_action_links_' . plugin_basename( WPZOOM_AI_CONNECT_FILE ), array( __CLASS__, 'action_links' ) );
 	}
@@ -42,7 +46,26 @@ class WPZOOM_AI_Admin {
 		return add_query_arg( $args, admin_url( 'admin.php?page=' . self::PAGE ) );
 	}
 
+	/** The screen's tabs, in order: id => label. */
+	public static function tabs(): array {
+		return array(
+			'start'      => __( 'Get started', 'wpzoom-ai-connect' ),
+			'can'        => __( 'What it can do', 'wpzoom-ai-connect' ),
+			'checkup'    => __( 'Site checkup', 'wpzoom-ai-connect' ),
+			'settings'   => __( 'Settings', 'wpzoom-ai-connect' ),
+			'developers' => __( 'Developers', 'wpzoom-ai-connect' ),
+		);
+	}
+
+	/** A tab's address, with an optional #anchor inside it. */
+	public static function tab_url( string $tab, string $anchor = '', array $args = array() ): string {
+		return self::url( array_merge( array( 'tab' => $tab ), $args ) ) . ( '' !== $anchor ? '#' . $anchor : '' );
+	}
+
 	public static function add_page(): void {
+		if ( ! WPZOOM_AI_Access::can_see() ) {
+			return; // another administrator chose to keep AI Connect to themselves (For developers)
+		}
 		add_menu_page(
 			__( 'AI Connect', 'wpzoom-ai-connect' ),
 			__( 'AI Connect', 'wpzoom-ai-connect' ),
@@ -67,7 +90,7 @@ class WPZOOM_AI_Admin {
 		}
 		if ( get_transient( self::TRANSIENT_ACTIVATED ) ) {
 			delete_transient( self::TRANSIENT_ACTIVATED );
-			if ( ! isset( $_GET['activate-multi'] ) && ! is_network_admin() && current_user_can( 'manage_options' ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			if ( ! isset( $_GET['activate-multi'] ) && ! is_network_admin() && WPZOOM_AI_Access::can_see() ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 				wp_safe_redirect( self::url( array( 'welcome' => 1 ) ) );
 				exit;
 			}
@@ -89,6 +112,9 @@ class WPZOOM_AI_Admin {
 	}
 
 	public static function action_links( array $links ): array {
+		if ( ! WPZOOM_AI_Access::can_see() ) {
+			return $links;
+		}
 		array_unshift( $links, '<a href="' . esc_url( self::url() ) . '">' . esc_html__( 'Get started', 'wpzoom-ai-connect' ) . '</a>' );
 		return $links;
 	}
@@ -105,6 +131,25 @@ class WPZOOM_AI_Admin {
 			'open_claude'  => __( 'Open Claude', 'wpzoom-ai-connect' ),
 			'open_chatgpt' => __( 'Open ChatGPT', 'wpzoom-ai-connect' ),
 			'open_other'   => __( 'Open your AI app', 'wpzoom-ai-connect' ),
+			'guide_url'    => self::tab_url( 'start', 'wzai-guide' ),
+			'close'        => __( 'Close', 'wpzoom-ai-connect' ),
+			'feedback'     => array(
+				'ajaxUrl' => admin_url( 'admin-ajax.php' ),
+				'nonce'   => wp_create_nonce( WPZOOM_AI_Deactivation::FEEDBACK_ACTION ),
+				'sending' => __( 'Sending…', 'wpzoom-ai-connect' ),
+				'send'    => __( 'Send feedback', 'wpzoom-ai-connect' ),
+				'soon'    => __( 'You just sent one. Please wait a minute before sending another.', 'wpzoom-ai-connect' ),
+				'failed'  => __( 'It could not be sent. Please try again in a minute, or write to us on the support forum.', 'wpzoom-ai-connect' ),
+			),
+			'tabs'         => array(
+				'wzai-start'      => self::tab_url( 'start' ),
+				'wzai-guide'      => self::tab_url( 'start', 'wzai-guide' ),
+				'wzai-can'        => self::tab_url( 'can' ),
+				'wzai-checkups'   => self::tab_url( 'checkup' ),
+				'wzai-post-types' => self::tab_url( 'settings', 'wzai-post-types' ),
+				'wzai-access'     => self::tab_url( 'settings', 'wzai-access' ),
+				'wzai-dev'        => self::tab_url( 'developers' ),
+			),
 		) );
 	}
 
@@ -115,7 +160,7 @@ class WPZOOM_AI_Admin {
 	 *
 	 * @return array<int, array{user_id:int, user:string, uuid:string, created:int, last_used:int, account:string}>
 	 */
-	private static function connections(): array {
+	public static function connections(): array {
 		if ( ! class_exists( 'WP_Application_Passwords' ) ) {
 			return array();
 		}
@@ -148,7 +193,7 @@ class WPZOOM_AI_Admin {
 		check_admin_referer( 'wpzoom_ai_disconnect' );
 		$user_id = isset( $_POST['user_id'] ) ? (int) $_POST['user_id'] : 0;
 		$uuid    = isset( $_POST['uuid'] ) ? sanitize_text_field( wp_unslash( $_POST['uuid'] ) ) : '';
-		if ( ! $user_id || ! $uuid || ! current_user_can( 'manage_options' ) || ( get_current_user_id() !== $user_id && ! current_user_can( 'edit_user', $user_id ) ) ) {
+		if ( ! $user_id || ! $uuid || ! WPZOOM_AI_Access::can_see() || ( get_current_user_id() !== $user_id && ! current_user_can( 'edit_user', $user_id ) ) ) {
 			wp_die( esc_html__( 'You are not allowed to remove this connection.', 'wpzoom-ai-connect' ) );
 		}
 		$password = WP_Application_Passwords::get_user_application_password( $user_id, $uuid );
@@ -162,23 +207,36 @@ class WPZOOM_AI_Admin {
 	/** Lets the site owner allow or stop the connection editing Additional CSS. */
 	public static function handle_css_setting(): void {
 		check_admin_referer( 'wpzoom_ai_css_setting' );
-		if ( ! current_user_can( 'manage_options' ) ) {
+		if ( ! WPZOOM_AI_Access::can_see() ) {
 			wp_die( esc_html__( 'You are not allowed to change this setting.', 'wpzoom-ai-connect' ) );
 		}
 		update_option( WPZOOM_AI_CSS::OPTION, empty( $_POST['allow_css'] ) ? '0' : '1', false );
-		wp_safe_redirect( self::url( array( 'wzai_css_saved' => 1 ) ) . '#wzai-start' );
+		wp_safe_redirect( self::tab_url( 'settings', 'wzai-css', array( 'wzai_css_saved' => 1 ) ) );
 		exit;
 	}
 
 	/** Saves which custom post types the connection may read or change. */
 	public static function handle_post_types(): void {
 		check_admin_referer( 'wpzoom_ai_post_types' );
-		if ( ! current_user_can( 'manage_options' ) ) {
+		if ( ! WPZOOM_AI_Access::can_see() ) {
 			wp_die( esc_html__( 'You are not allowed to change this setting.', 'wpzoom-ai-connect' ) );
 		}
 		$posted = isset( $_POST['post_types'] ) && is_array( $_POST['post_types'] ) ? map_deep( wp_unslash( $_POST['post_types'] ), 'sanitize_key' ) : array(); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- sanitized by map_deep; save() also checks every type and value against its own lists.
 		WPZOOM_AI_Post_Types::save( $posted );
-		wp_safe_redirect( self::url( array( 'wzai_types_saved' => 1 ) ) . '#wzai-post-types' );
+		wp_safe_redirect( self::tab_url( 'settings', 'wzai-post-types', array( 'wzai_types_saved' => 1 ) ) );
+		exit;
+	}
+
+	/** Saves who sees AI Connect: every administrator, or only the ones ticked (always including whoever saves). */
+	public static function handle_access(): void {
+		check_admin_referer( 'wpzoom_ai_access' );
+		if ( ! WPZOOM_AI_Access::can_see() || WPZOOM_AI_Access::locked() ) {
+			wp_die( esc_html__( 'You are not allowed to change this setting.', 'wpzoom-ai-connect' ) );
+		}
+		$only = isset( $_POST['access'] ) && 'chosen' === sanitize_key( wp_unslash( $_POST['access'] ) );
+		$ids  = $only && isset( $_POST['admins'] ) && is_array( $_POST['admins'] ) ? array_map( 'absint', wp_unslash( $_POST['admins'] ) ) : array();
+		WPZOOM_AI_Access::save( $only ? array_merge( $ids, array( get_current_user_id() ) ) : array() );
+		wp_safe_redirect( self::tab_url( 'settings', 'wzai-access', array( 'wzai_access_saved' => 1 ) ) );
 		exit;
 	}
 
@@ -204,7 +262,7 @@ class WPZOOM_AI_Admin {
 		return $out;
 	}
 
-	private static function is_local( string $url ): bool {
+	public static function is_local( string $url ): bool {
 		$host = (string) wp_parse_url( $url, PHP_URL_HOST );
 		return in_array( $host, array( 'localhost', '127.0.0.1', '[::1]' ), true ) || preg_match( '/\.(localhost|test|local)$/', $host );
 	}
@@ -327,8 +385,8 @@ class WPZOOM_AI_Admin {
 		);
 		$tags = wp_kses_allowed_html( 'post' );
 		$tags['svg']    = $svg;
-		$tags['path']   = array( 'd' => true, 'fill' => true );
-		$tags['rect']   = array( 'x' => true, 'y' => true, 'width' => true, 'height' => true, 'rx' => true );
+		$tags['path']   = array( 'd' => true, 'fill' => true, 'transform' => true, 'stroke' => true, 'stroke-width' => true, 'stroke-linejoin' => true, 'paint-order' => true );
+		$tags['rect']   = array( 'x' => true, 'y' => true, 'width' => true, 'height' => true, 'rx' => true, 'fill' => true, 'stroke' => true, 'stroke-width' => true );
 		$tags['circle'] = array( 'cx' => true, 'cy' => true, 'r' => true );
 		$tags['button'] = array( 'type' => true, 'class' => true, 'data-copy' => true, 'aria-label' => true );
 		return $tags;
@@ -354,6 +412,9 @@ class WPZOOM_AI_Admin {
 			'brush'    => '<path d="M14 4l6 6-8 8H6v-6z"/><path d="M4 20l2-2"/>',
 			'grid'     => '<rect x="4" y="4" width="7" height="7" rx="1"/><rect x="13" y="4" width="7" height="7" rx="1"/><rect x="4" y="13" width="7" height="7" rx="1"/><rect x="13" y="13" width="7" height="7" rx="1"/>',
 			'chevron'  => '<path d="M9 6l6 6-6 6"/>',
+			'play'     => '<path d="M8 5.5v13l11-6.5z" fill="currentColor"/>',
+			'message'  => '<path d="M4 5h16v11H9l-5 4z"/>',
+			'shield-check' => '<path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/>',
 		);
 		$bold  = in_array( $name, array( 'check', 'warn', 'info' ), true );
 		$width = $bold ? 3 : ( in_array( $name, array( 'copy', 'chevron', 'arrow', 'terminal' ), true ) ? 2 : 1.6 );
@@ -381,12 +442,23 @@ class WPZOOM_AI_Admin {
 		echo wp_kses( '<div class="wzai-notice wzai-notice--' . esc_attr( $type ) . '" role="status">' . self::icon( $icon ) . '<div>' . $html . '</div></div>', self::allowed_html() );
 	}
 
-	/** One "Customize & Configure"-style card. $actions: list of [label, url, primary?, external?]. */
-	private static function card( string $icon, string $title, string $about, array $actions = array(), string $extra_class = '', string $badge = '' ): void {
+	/** A prompt to try, with a copy button. */
+	private static function prompt_row( string $prompt ): string {
+		return '<div class="wzai-prompt"><span>' . esc_html( $prompt ) . '</span><button type="button" data-copy="' . esc_attr( $prompt ) . '" aria-label="' . esc_attr__( 'Copy', 'wpzoom-ai-connect' ) . '">' . self::icon( 'copy' ) . '</button></div>';
+	}
+
+	/**
+	 * One "Customize & Configure"-style card. $actions: list of [label, url, primary?, external?]. $prompt: an
+	 * example to say to the AI, shown with a copy button.
+	 */
+	private static function card( string $icon, string $title, string $about, array $actions = array(), string $extra_class = '', string $badge = '', string $prompt = '' ): void {
 		?>
 		<div class="wzai-card <?php echo esc_attr( $extra_class ); ?>">
 			<h3 class="wzai-card__title"><?php echo wp_kses( self::icon( $icon ), self::allowed_html() ); ?><?php echo esc_html( $title ); ?><?php echo wp_kses( $badge, self::allowed_html() ); ?></h3>
 			<p class="wzai-card__about"><?php echo esc_html( $about ); ?></p>
+			<?php if ( '' !== $prompt ) : ?>
+				<div class="wzai-card__try"><span class="wzai-card__try-label"><?php esc_html_e( 'Try:', 'wpzoom-ai-connect' ); ?></span><?php echo wp_kses( self::prompt_row( $prompt ), self::allowed_html() ); ?></div>
+			<?php endif; ?>
 			<?php if ( $actions ) : ?>
 				<div class="wzai-card__actions">
 					<?php foreach ( $actions as $action ) : ?>
@@ -398,10 +470,59 @@ class WPZOOM_AI_Admin {
 		<?php
 	}
 
+	/** "Who sees AI Connect" on the Settings tab: every administrator, or only the ones ticked. */
+	private static function render_access(): void {
+		$chosen = WPZOOM_AI_Access::chosen();
+		$me     = get_current_user_id();
+		?>
+		<div class="wzai-access" id="wzai-access">
+			<h2 class="wzai-access__title"><?php esc_html_e( 'Who sees AI Connect', 'wpzoom-ai-connect' ); ?></h2>
+			<p class="wzai-muted"><?php esc_html_e( 'Working on a client\'s site? Keep the AI Connect menu, this screen and its notices to yourself. Other administrators still see the plugin on the Plugins screen, and each connection stays listed on the connected user\'s profile, so the site owner can always remove it.', 'wpzoom-ai-connect' ); ?></p>
+			<?php if ( WPZOOM_AI_Access::locked() ) : ?>
+				<p>
+					<?php
+					echo esc_html(
+						$chosen
+							? sprintf( /* translators: 1: constant name, 2: list of user names */ __( 'Set in wp-config.php (%1$s): only %2$s.', 'wpzoom-ai-connect' ), WPZOOM_AI_Access::CONSTANT, wp_sprintf( '%l', array_map( static function ( $id ) { return get_userdata( $id )->display_name; }, $chosen ) ) )
+							: sprintf( /* translators: %s: constant name */ __( '%s is set in wp-config.php but names no administrator of this site, so every administrator sees AI Connect.', 'wpzoom-ai-connect' ), WPZOOM_AI_Access::CONSTANT )
+					);
+					?>
+				</p>
+			<?php else : ?>
+				<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
+					<?php wp_nonce_field( 'wpzoom_ai_access' ); ?>
+					<input type="hidden" name="action" value="wpzoom_ai_access">
+					<label class="wzai-access__choice"><input type="radio" name="access" value="all" <?php checked( ! $chosen ); ?>> <?php esc_html_e( 'Every administrator', 'wpzoom-ai-connect' ); ?></label>
+					<label class="wzai-access__choice"><input type="radio" name="access" value="chosen" <?php checked( (bool) $chosen ); ?>> <?php esc_html_e( 'Only these administrators:', 'wpzoom-ai-connect' ); ?></label>
+					<div class="wzai-access__users">
+						<?php foreach ( WPZOOM_AI_Access::administrators() as $admin ) : ?>
+							<?php $is_me = (int) $admin->ID === $me; ?>
+							<label class="wzai-access__user">
+								<input type="checkbox" name="admins[]" value="<?php echo (int) $admin->ID; ?>" <?php checked( $is_me || in_array( (int) $admin->ID, $chosen, true ) ); ?> <?php disabled( $is_me ); ?>>
+								<span><?php echo esc_html( $admin->display_name ); ?> <span class="wzai-muted"><?php echo esc_html( $admin->user_email ); ?><?php echo $is_me ? ' · ' . esc_html__( 'you', 'wpzoom-ai-connect' ) : ''; ?></span></span>
+							</label>
+						<?php endforeach; ?>
+					</div>
+					<button type="submit" class="wzai-btn wzai-btn--secondary wzai-btn--sm"><?php esc_html_e( 'Save', 'wpzoom-ai-connect' ); ?></button>
+					<p class="wzai-muted wzai-small">
+						<?php
+						printf(
+							/* translators: %s: example wp-config.php line */
+							esc_html__( 'Setting it up on many sites? Add %s to wp-config.php (logins, user IDs or emails).', 'wpzoom-ai-connect' ),
+							'<code>' . esc_html( "define( '" . WPZOOM_AI_Access::CONSTANT . "', 'your-login' );" ) . '</code>'
+						);
+						?>
+					</p>
+				</form>
+			<?php endif; ?>
+		</div>
+		<?php
+	}
+
 	/* ---------- the screen ---------- */
 
 	public static function render(): void {
-		if ( ! current_user_can( 'manage_options' ) ) {
+		if ( ! WPZOOM_AI_Access::can_see() ) {
 			return;
 		}
 		$s          = self::state();
@@ -438,6 +559,12 @@ class WPZOOM_AI_Admin {
 		$kinds       = array_keys( array_filter( $s['content'] ) );
 		$kind_label  = array( 'forms' => __( 'forms', 'wpzoom-ai-connect' ), 'portfolio' => __( 'portfolio items', 'wpzoom-ai-connect' ), 'recipes' => __( 'recipe cards', 'wpzoom-ai-connect' ) );
 		$post_types  = current_user_can( 'manage_options' ) ? WPZOOM_AI_Post_Types::choices() : array();
+		$tabs        = self::tabs();
+		$tab         = isset( $_GET['tab'] ) ? sanitize_key( wp_unslash( $_GET['tab'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		if ( ! isset( $tabs[ $tab ] ) ) {
+			// Setup first; once an AI has used the site, what it can do.
+			$tab = $connected && ! $waiting ? 'can' : 'start';
+		}
 		?>
 		<div class="wrap wzai" id="wzai">
 				<div class="wzai-main">
@@ -454,7 +581,7 @@ class WPZOOM_AI_Admin {
 									'<strong>' . esc_html( $account ) . '</strong>'
 								)
 								: esc_html__( 'add WPZOOM to your AI app (Claude, ChatGPT or another), with the same email you signed in with. It takes a minute and you do it once; the steps are below. Until then your AI cannot reach this site.', 'wpzoom-ai-connect' ) )
-							. ' <a href="#wzai-guide">' . esc_html__( 'Show me how', 'wpzoom-ai-connect' ) . ' &darr;</a>' );
+							. ' <a href="' . esc_url( self::tab_url( 'start', 'wzai-guide' ) ) . '">' . esc_html__( 'Show me how', 'wpzoom-ai-connect' ) . ' &darr;</a>' );
 					} elseif ( $just_done || ( $connected && isset( $_GET['welcome'] ) ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 						self::notice( 'ok', '<strong>' . esc_html__( 'Connected.', 'wpzoom-ai-connect' ) . '</strong> ' . esc_html__( 'Go back to your AI and say "show me my site overview" to start.', 'wpzoom-ai-connect' ) );
 					} elseif ( $just_gone ) {
@@ -464,6 +591,12 @@ class WPZOOM_AI_Admin {
 						self::notice( 'ok', WPZOOM_AI_CSS::allowed_for_connection()
 							? esc_html__( 'Saved. Your AI may add Additional CSS on this site.', 'wpzoom-ai-connect' )
 							: esc_html__( 'Saved. Your AI can no longer change Additional CSS on this site.', 'wpzoom-ai-connect' ) );
+					}
+					if ( isset( $_GET['wzai_access_saved'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+						$chosen = WPZOOM_AI_Access::chosen();
+						self::notice( 'ok', $chosen
+							? esc_html( sprintf( /* translators: %s: list of user names */ __( 'Saved. Only %s see AI Connect: its menu, this screen and its notices. Other administrators still see the plugin on the Plugins screen.', 'wpzoom-ai-connect' ), wp_sprintf( '%l', array_map( static function ( $id ) { $u = get_userdata( $id ); return $u ? $u->display_name : '#' . $id; }, $chosen ) ) ) )
+							: esc_html__( 'Saved. Every administrator sees AI Connect.', 'wpzoom-ai-connect' ) );
 					}
 					if ( isset( $_GET['wzai_types_saved'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 						self::notice( 'ok', esc_html__( 'Saved. Your AI now follows these choices for custom post types.', 'wpzoom-ai-connect' ) );
@@ -495,16 +628,19 @@ class WPZOOM_AI_Admin {
 						<p><?php esc_html_e( 'Talk to your site the way you would to a designer: change colors and layouts, add pages and sections, adapt a starter site, create forms. Claude, ChatGPT and other AI assistants work with it.', 'wpzoom-ai-connect' ); ?></p>
 						<div class="wzai-hero__actions">
 							<?php if ( $waiting ) : ?>
-								<a class="wzai-btn wzai-btn--primary" href="#wzai-guide"><?php esc_html_e( 'Add WPZOOM to your AI', 'wpzoom-ai-connect' ); ?> &darr;</a>
-								<a class="wzai-btn wzai-btn--secondary" href="#wzai-can"><?php esc_html_e( 'What can it do?', 'wpzoom-ai-connect' ); ?> &rarr;</a>
+								<a class="wzai-btn wzai-btn--primary" href="<?php echo esc_url( self::tab_url( 'start', 'wzai-guide' ) ); ?>"><?php esc_html_e( 'Add WPZOOM to your AI', 'wpzoom-ai-connect' ); ?></a>
+								<a class="wzai-btn wzai-btn--secondary" href="<?php echo esc_url( self::tab_url( 'can' ) ); ?>"><?php esc_html_e( 'What can it do?', 'wpzoom-ai-connect' ); ?> &rarr;</a>
 							<?php elseif ( $connected ) : ?>
 								<a class="wzai-btn wzai-btn--primary" href="https://claude.ai/new" target="_blank" rel="noopener" data-open-ai><?php esc_html_e( 'Open Claude', 'wpzoom-ai-connect' ); ?></a>
-								<a class="wzai-btn wzai-btn--secondary" href="#wzai-can"><?php esc_html_e( 'What can it do?', 'wpzoom-ai-connect' ); ?> &rarr;</a>
+								<a class="wzai-btn wzai-btn--secondary" href="<?php echo esc_url( self::tab_url( 'can' ) ); ?>"><?php esc_html_e( 'What can it do?', 'wpzoom-ai-connect' ); ?> &rarr;</a>
 							<?php elseif ( $can_click ) : ?>
 								<a class="wzai-btn wzai-btn--primary" href="<?php echo esc_url( $s['connect_url'] ); ?>"><?php esc_html_e( 'Connect this site', 'wpzoom-ai-connect' ); ?></a>
-								<a class="wzai-btn wzai-btn--secondary" href="#wzai-guide"><?php esc_html_e( 'How it works', 'wpzoom-ai-connect' ); ?> &rarr;</a>
+								<a class="wzai-btn wzai-btn--secondary" href="<?php echo esc_url( self::tab_url( 'start', 'wzai-guide' ) ); ?>"><?php esc_html_e( 'How it works', 'wpzoom-ai-connect' ); ?> &rarr;</a>
 							<?php else : ?>
-								<a class="wzai-btn wzai-btn--secondary" href="#wzai-checkups"><?php esc_html_e( 'See what to fix', 'wpzoom-ai-connect' ); ?> &rarr;</a>
+								<a class="wzai-btn wzai-btn--secondary" href="<?php echo esc_url( self::tab_url( 'checkup' ) ); ?>"><?php esc_html_e( 'See what to fix', 'wpzoom-ai-connect' ); ?> &rarr;</a>
+							<?php endif; ?>
+							<?php if ( ! $connected || $waiting ) : // the walkthrough, while setup isn't finished ?>
+								<a class="wzai-btn wzai-btn--secondary" href="<?php echo esc_url( self::VIDEO_URL ); ?>" target="_blank" rel="noopener"><?php echo wp_kses( self::icon( 'play' ), self::allowed_html() ); ?><?php esc_html_e( 'Watch the video', 'wpzoom-ai-connect' ); ?> <span class="wzai-btn__meta"><?php echo esc_html( self::VIDEO_LENGTH ); ?></span></a>
 							<?php endif; ?>
 						</div>
 					</div>
@@ -515,8 +651,16 @@ class WPZOOM_AI_Admin {
 					}
 					?>
 
+					<nav class="wzai-tabs" aria-label="<?php esc_attr_e( 'AI Connect sections', 'wpzoom-ai-connect' ); ?>">
+						<?php foreach ( $tabs as $id => $label ) : ?>
+							<a class="wzai-tabs__tab<?php echo $id === $tab ? ' is-active' : ''; ?>" href="<?php echo esc_url( self::tab_url( $id ) ); ?>"<?php echo $id === $tab ? ' aria-current="page"' : ''; ?>><?php echo esc_html( $label ); ?><?php if ( 'checkup' === $id && $warnings ) : ?> <span class="wzai-tabs__count"><?php echo (int) count( $warnings ); ?></span><?php endif; ?></a>
+						<?php endforeach; ?>
+						<button type="button" class="wzai-tabs__feedback" data-wzai-feedback-open><?php echo wp_kses( self::icon( 'message' ), self::allowed_html() ); ?><?php esc_html_e( 'Share feedback', 'wpzoom-ai-connect' ); ?></button>
+					</nav>
+
+					<?php if ( 'start' === $tab ) : ?>
 					<!-- Get started -->
-					<section class="wzai-section" id="wzai-start">
+					<section class="wzai-section wzai-section--first" id="wzai-start">
 						<div class="wzai-section__head">
 							<h2><?php esc_html_e( 'Get started in three steps', 'wpzoom-ai-connect' ); ?></h2>
 							<p><?php esc_html_e( 'About a minute. Nothing to install on your computer.', 'wpzoom-ai-connect' ); ?></p>
@@ -527,7 +671,7 @@ class WPZOOM_AI_Admin {
 								<h3 class="wzai-card__title"><span class="wzai-step__num"><?php echo wp_kses( self::icon( 'check' ), self::allowed_html() ); ?></span><?php esc_html_e( 'Pick your AI', 'wpzoom-ai-connect' ); ?></h3>
 								<div class="wzai-card__about" role="group" aria-label="<?php esc_attr_e( 'AI assistant', 'wpzoom-ai-connect' ); ?>">
 									<button type="button" class="wzai-choice" data-client="claude" aria-pressed="true"><span class="wzai-choice__icon wzai-choice__icon--logo"><?php echo wp_kses( self::logo( 'claude' ), self::allowed_html() ); ?></span><span><span class="wzai-choice__label">Claude</span><span class="wzai-choice__hint"><?php esc_html_e( 'claude.ai, desktop app, Claude Code', 'wpzoom-ai-connect' ); ?></span></span></button>
-									<button type="button" class="wzai-choice" data-client="chatgpt" aria-pressed="false"><span class="wzai-choice__icon wzai-choice__icon--logo"><?php echo wp_kses( self::logo( 'chatgpt' ), self::allowed_html() ); ?></span><span><span class="wzai-choice__label">ChatGPT</span><span class="wzai-choice__hint"><?php esc_html_e( 'Plus, Pro, Business and Enterprise', 'wpzoom-ai-connect' ); ?></span></span></button>
+									<button type="button" class="wzai-choice" data-client="chatgpt" aria-pressed="false"><span class="wzai-choice__icon wzai-choice__icon--logo"><?php echo wp_kses( self::logo( 'chatgpt' ), self::allowed_html() ); ?></span><span><span class="wzai-choice__label">ChatGPT</span><span class="wzai-choice__hint"><?php esc_html_e( 'chatgpt.com, from its plugin directory', 'wpzoom-ai-connect' ); ?></span></span></button>
 									<button type="button" class="wzai-choice" data-client="other" aria-pressed="false"><span class="wzai-choice__icon"><?php echo wp_kses( self::icon( 'terminal' ), self::allowed_html() ); ?></span><span><span class="wzai-choice__label"><?php esc_html_e( 'Cursor and others', 'wpzoom-ai-connect' ); ?></span><span class="wzai-choice__hint"><?php esc_html_e( 'any app that speaks MCP', 'wpzoom-ai-connect' ); ?></span></span></button>
 								</div>
 								<div class="wzai-card__foot"><?php esc_html_e( 'The same connection works in all of them.', 'wpzoom-ai-connect' ); ?></div>
@@ -555,20 +699,13 @@ class WPZOOM_AI_Admin {
 										<?php endforeach; ?>
 									</div>
 									<div class="wzai-card__actions"><a class="wzai-btn wzai-btn--secondary wzai-btn--block" href="<?php echo esc_url( $s['connect_url'] ); ?>"><?php esc_html_e( 'Connect another account', 'wpzoom-ai-connect' ); ?></a></div>
-									<div class="wzai-card__foot"><?php esc_html_e( 'Your AI acts as the connected user, limited to content, design settings and the abilities below. It can never install or remove plugins and themes, manage users, change Settings or add scripts.', 'wpzoom-ai-connect' ); ?></div>
-									<?php if ( current_user_can( 'manage_options' ) ) : ?>
-										<form class="wzai-card__foot" method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
-											<?php wp_nonce_field( 'wpzoom_ai_css_setting' ); ?>
-											<input type="hidden" name="action" value="wpzoom_ai_css_setting">
-											<label><input type="checkbox" name="allow_css" value="1" <?php checked( WPZOOM_AI_CSS::allowed_for_connection() ); ?> onchange="this.form.submit()"> <?php esc_html_e( 'Let your AI add Additional CSS (labelled, with a revision for every change)', 'wpzoom-ai-connect' ); ?></label>
-											<noscript><button type="submit" class="wzai-btn wzai-btn--ghost wzai-btn--sm"><?php esc_html_e( 'Save', 'wpzoom-ai-connect' ); ?></button></noscript>
-										</form>
-									<?php endif; ?>
+									<div class="wzai-card__foot"><?php esc_html_e( 'Your AI acts as the connected user, limited to content, design settings and this plugin\'s abilities. It can never install or remove plugins and themes, manage users, change Settings or add scripts.', 'wpzoom-ai-connect' ); ?></div>
 								<?php else : ?>
 									<p class="wzai-card__about"><?php esc_html_e( 'Sign in with your email, approve the connection on this site, and you are back here. Connecting lets the WPZOOM connector act on this site as you, limited to content, design settings and this plugin\'s abilities, until you disconnect.', 'wpzoom-ai-connect' ); ?></p>
 									<div class="wzai-card__actions">
 										<?php if ( $can_click ) : ?>
-											<a class="wzai-btn wzai-btn--primary wzai-btn--lg wzai-btn--block" href="<?php echo esc_url( $s['connect_url'] ); ?>"><?php echo esc_html( sprintf( /* translators: %s: site host */ __( 'Connect %s', 'wpzoom-ai-connect' ), $s['site_label'] ) ); ?></a>
+											<?php $connect_label = sprintf( /* translators: %s: site host */ __( 'Connect %s', 'wpzoom-ai-connect' ), $s['site_label'] ); ?>
+											<a class="wzai-btn wzai-btn--primary wzai-btn--lg wzai-btn--block" href="<?php echo esc_url( $s['connect_url'] ); ?>" title="<?php echo esc_attr( $connect_label ); ?>"><span class="wzai-btn__label"><?php echo esc_html( $connect_label ); ?></span></a>
 										<?php else : ?>
 											<span class="wzai-btn wzai-btn--primary wzai-btn--lg wzai-btn--block" aria-disabled="true"><?php esc_html_e( 'Connect this site', 'wpzoom-ai-connect' ); ?></span>
 										<?php endif; ?>
@@ -584,7 +721,7 @@ class WPZOOM_AI_Admin {
 										<p class="wzai-small"><?php esc_html_e( 'First add WPZOOM to your AI app (steps below). Then try:', 'wpzoom-ai-connect' ); ?></p>
 									<?php endif; ?>
 									<?php foreach ( $prompts as $prompt ) : ?>
-										<div class="wzai-prompt"><span><?php echo esc_html( $prompt ); ?></span><button type="button" data-copy="<?php echo esc_attr( $prompt ); ?>" aria-label="<?php esc_attr_e( 'Copy', 'wpzoom-ai-connect' ); ?>"><?php echo wp_kses( self::icon( 'copy' ), self::allowed_html() ); ?></button></div>
+										<?php echo wp_kses( self::prompt_row( $prompt ), self::allowed_html() ); ?>
 									<?php endforeach; ?>
 								</div>
 								<div class="wzai-card__foot"><?php esc_html_e( 'Plain language works. Your AI asks before it changes anything.', 'wpzoom-ai-connect' ); ?></div>
@@ -648,57 +785,110 @@ class WPZOOM_AI_Admin {
 							</div>
 						</div>
 					</section>
+					<?php endif; ?>
 
+					<?php if ( 'can' === $tab ) : ?>
 					<!-- What your AI can do -->
-					<section class="wzai-section" id="wzai-can">
+					<section class="wzai-section wzai-section--first" id="wzai-can">
 						<div class="wzai-section__head"><h2><?php esc_html_e( 'What your AI can do on this site', 'wpzoom-ai-connect' ); ?></h2></div>
 						<div class="wzai-grid wzai-grid--3">
 							<?php
 							if ( $s['theme_ok'] ) {
 								self::card( 'palette', __( 'Theme and design', 'wpzoom-ai-connect' ),
 									sprintf( /* translators: %d: count */ _n( '%d theme setting it can read and change: colors, palettes, fonts, header and footer layouts.', '%d theme settings it can read and change: colors, palettes, fonts, header and footer layouts.', $s['settings_total'], 'wpzoom-ai-connect' ), $s['settings_total'] ),
-									array( array( __( 'Open Customizer', 'wpzoom-ai-connect' ), admin_url( 'customize.php' ) ) ) );
+									array( array( __( 'Open Customizer', 'wpzoom-ai-connect' ), admin_url( 'customize.php' ) ) ), '', '',
+									__( 'Make the header dark and use a serif font for headings', 'wpzoom-ai-connect' ) );
 							} else {
 								self::card( 'palette', __( 'Theme and design', 'wpzoom-ai-connect' ),
 									__( 'Theme settings work with WPZOOM themes. With another theme, your AI can still build pages, forms and checkups.', 'wpzoom-ai-connect' ),
-									array( array( __( 'Browse WPZOOM themes', 'wpzoom-ai-connect' ), 'https://www.wpzoom.com/themes/', false, true ) ), 'wzai-card--soft' );
+									array( array( __( 'Browse WPZOOM themes', 'wpzoom-ai-connect' ), 'https://www.wpzoom.com/themes/', false, true ) ), 'wzai-card--soft', '',
+									__( 'What can you change on this site?', 'wpzoom-ai-connect' ) );
 							}
 							self::card( 'layout', __( 'Pages and sections', 'wpzoom-ai-connect' ),
 								$s['patterns']
 									? sprintf( /* translators: %d: count */ _n( '%d ready-made section it can drop into any page: hero, services, pricing, team, FAQ, contact.', '%d ready-made sections it can drop into any page: hero, services, pricing, team, FAQ, contact.', $s['patterns'], 'wpzoom-ai-connect' ), $s['patterns'] )
 									: __( 'It can create and edit pages, and drop 100+ ready-made design sections from the WPZOOM catalog into any page: hero, services, pricing, team, FAQ, contact.', 'wpzoom-ai-connect' ),
-								array( array( __( 'View pages', 'wpzoom-ai-connect' ), admin_url( 'edit.php?post_type=page' ) ) ) );
+								array( array( __( 'View pages', 'wpzoom-ai-connect' ), admin_url( 'edit.php?post_type=page' ) ) ), '', '',
+								__( 'Add a Services page with a hero, three services and a FAQ', 'wpzoom-ai-connect' ) );
 							if ( $s['premium_demos'] ) {
 								self::card( 'wand', __( 'Demo importer', 'wpzoom-ai-connect' ),
 									__( 'Inspiro Premium installs its demos from the theme\'s own importer. Pick one there, then ask your AI to adapt the pages to your business.', 'wpzoom-ai-connect' ),
-									array( array( __( 'Open demo importer', 'wpzoom-ai-connect' ), admin_url( 'admin.php?page=wpzoom_demo_importer' ) ) ) );
+									array( array( __( 'Open demo importer', 'wpzoom-ai-connect' ), admin_url( 'admin.php?page=wpzoom_demo_importer' ) ) ), '', '',
+									__( 'Rewrite the homepage for my bakery in Amsterdam', 'wpzoom-ai-connect' ) );
 							} elseif ( $s['starter'] ) {
 								self::card( 'wand', __( 'Starter sites', 'wpzoom-ai-connect' ),
 									$s['imported']
 										? sprintf( /* translators: %s: demo id */ __( 'You imported "%s". Ask your AI to adapt its pages to your business.', 'wpzoom-ai-connect' ), $s['imported'] )
 										: sprintf( /* translators: %d: count */ _n( '%d complete demo to import here; then ask your AI to adapt it to your business.', '%d complete demos to import here; then ask your AI to adapt one to your business.', $s['demos'], 'wpzoom-ai-connect' ), $s['demos'] ),
-									$starter_url ? array( array( __( 'Browse starter sites', 'wpzoom-ai-connect' ), $starter_url ) ) : array() );
+									$starter_url ? array( array( __( 'Browse starter sites', 'wpzoom-ai-connect' ), $starter_url ) ) : array(), '', '',
+									$s['imported'] ? __( 'Rewrite the homepage for my bakery in Amsterdam', 'wpzoom-ai-connect' ) : __( 'Which starter site fits a photography studio?', 'wpzoom-ai-connect' ) );
 							} else {
 								self::card( 'wand', __( 'Starter sites', 'wpzoom-ai-connect' ),
 									__( 'Install the free Inspiro Starter Sites plugin to import a complete demo, then ask your AI to adapt it to your business.', 'wpzoom-ai-connect' ),
-									array( array( __( 'Install plugin', 'wpzoom-ai-connect' ), admin_url( 'plugin-install.php?s=inspiro%20starter%20sites&tab=search&type=term' ) ) ), 'wzai-card--soft' );
+									array( array( __( 'Install plugin', 'wpzoom-ai-connect' ), admin_url( 'plugin-install.php?s=inspiro%20starter%20sites&tab=search&type=term' ) ) ), 'wzai-card--soft', '',
+									__( 'Rewrite my homepage for a yoga studio in Lisbon', 'wpzoom-ai-connect' ) );
 							}
 							self::card( 'form', __( 'Forms, portfolio, recipes', 'wpzoom-ai-connect' ),
 								$kinds
 									? sprintf( /* translators: %s: list of content types */ __( 'Ready on this site: %s. Describe what you need and it builds it.', 'wpzoom-ai-connect' ), implode( ', ', array_map( static function ( $k ) use ( $kind_label ) { return $kind_label[ $k ]; }, $kinds ) ) )
 									: __( 'Add WPZOOM Forms, Portfolio or Recipe Card and your AI can create them by description.', 'wpzoom-ai-connect' ),
-								array(), $kinds ? '' : 'wzai-card--soft' );
+								array(), $kinds ? '' : 'wzai-card--soft', '',
+								in_array( 'forms', $kinds, true ) ? __( 'Add a booking request form to the Contact page', 'wpzoom-ai-connect' )
+									: ( in_array( 'portfolio', $kinds, true ) ? __( 'Add a portfolio item for my latest project', 'wpzoom-ai-connect' )
+									: ( in_array( 'recipes', $kinds, true ) ? __( 'Turn my latest post into a recipe card', 'wpzoom-ai-connect' )
+									: __( 'Add a contact section to my homepage', 'wpzoom-ai-connect' ) ) ) );
 							self::card( 'shield', __( 'Checkups', 'wpzoom-ai-connect' ),
 								$s['diagnosis']['summary']['verdict'] ? $s['diagnosis']['summary']['verdict'] . ' ' . __( 'License, HTTPS, permalinks, front page, slideshow and menus are checked.', 'wpzoom-ai-connect' ) : __( 'Ask your AI for a checkup of license, HTTPS, permalinks, front page and menus.', 'wpzoom-ai-connect' ),
-								$warnings ? array( array( __( 'See what to fix', 'wpzoom-ai-connect' ), '#wzai-checkups' ) ) : array(),
+								array( array( $warnings ? __( 'See what to fix', 'wpzoom-ai-connect' ) : __( 'See the checkup', 'wpzoom-ai-connect' ), self::tab_url( 'checkup' ) ) ),
 								'wzai-card--soft',
-								$warnings ? ' <span class="wzai-badge wzai-badge--warn">' . esc_html( sprintf( /* translators: %d: count */ _n( '%d to fix', '%d to fix', count( $warnings ), 'wpzoom-ai-connect' ), count( $warnings ) ) ) . '</span>' : ' <span class="wzai-badge wzai-badge--ok">' . esc_html__( 'All good', 'wpzoom-ai-connect' ) . '</span>' );
+								$warnings ? ' <span class="wzai-badge wzai-badge--warn">' . esc_html( sprintf( /* translators: %d: count */ _n( '%d to fix', '%d to fix', count( $warnings ), 'wpzoom-ai-connect' ), count( $warnings ) ) ) . '</span>' : ' <span class="wzai-badge wzai-badge--ok">' . esc_html__( 'All good', 'wpzoom-ai-connect' ) . '</span>',
+								__( 'Run a checkup of my site and fix what you can', 'wpzoom-ai-connect' ) );
 							self::card( 'lock', __( 'Safe by design', 'wpzoom-ai-connect' ),
 								__( 'Your AI works as the WordPress user who connected, asks before changing anything, and loses access the moment you disconnect.', 'wpzoom-ai-connect' ),
-								array( array( __( 'Your WPZOOM AI account', 'wpzoom-ai-connect' ), self::CONNECTOR_ORIGIN . '/sites', false, true ) ), 'wzai-card--soft' );
+								array( array( __( 'Your WPZOOM AI account', 'wpzoom-ai-connect' ), self::CONNECTOR_ORIGIN . '/sites', false, true ) ), 'wzai-card--soft', '',
+								__( 'Show me what you changed this week and undo the last change', 'wpzoom-ai-connect' ) );
 							?>
 						</div>
 					</section>
+					<?php endif; ?>
+
+					<?php if ( 'checkup' === $tab ) : ?>
+						<?php
+						$order  = array( 'warn' => 0, 'info' => 1, 'ok' => 2 );
+						$checks = $s['diagnosis']['checks'];
+						usort( $checks, static function ( $a, $b ) use ( $order ) { return ( $order[ $a['status'] ] ?? 1 ) <=> ( $order[ $b['status'] ] ?? 1 ); } );
+						?>
+						<section class="wzai-section wzai-section--first" id="wzai-checkups">
+							<div class="wzai-section__head">
+								<h2><?php echo esc_html( $warnings ? __( 'Worth fixing', 'wpzoom-ai-connect' ) : __( 'All good', 'wpzoom-ai-connect' ) ); ?></h2>
+								<p><?php echo esc_html( $warnings ? __( 'Your AI can do most of these: say "run a checkup and fix what you can".', 'wpzoom-ai-connect' ) : __( 'Nothing to fix on this site right now. Your AI runs the same checkup when you ask for one.', 'wpzoom-ai-connect' ) ); ?></p>
+							</div>
+							<?php foreach ( $checks as $check ) : ?>
+								<?php $status = in_array( $check['status'], array( 'ok', 'warn' ), true ) ? $check['status'] : 'info'; ?>
+								<div class="wzai-check wzai-check--<?php echo esc_attr( $status ); ?>">
+									<span class="wzai-check__icon"><?php echo wp_kses( self::icon( 'ok' === $status ? 'check' : $status ), self::allowed_html() ); ?></span>
+									<div>
+										<div class="wzai-check__title"><?php echo esc_html( $check['title'] ); ?></div>
+										<?php if ( ! empty( $check['detail'] ) ) : ?><div class="wzai-check__detail"><?php echo esc_html( $check['detail'] ); ?></div><?php endif; ?>
+										<?php if ( 'warn' === $status && ! empty( $check['fix'] ) ) : ?><div class="wzai-check__fix"><?php echo esc_html( $check['fix'] ); ?></div><?php endif; ?>
+									</div>
+								</div>
+							<?php endforeach; ?>
+						</section>
+					<?php endif; ?>
+
+					<?php if ( 'settings' === $tab ) : ?>
+						<section class="wzai-section wzai-section--first" id="wzai-css">
+							<div class="wzai-section__head">
+								<h2><?php esc_html_e( 'Design', 'wpzoom-ai-connect' ); ?></h2>
+							</div>
+							<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
+								<?php wp_nonce_field( 'wpzoom_ai_css_setting' ); ?>
+								<input type="hidden" name="action" value="wpzoom_ai_css_setting">
+								<label class="wzai-setting"><input type="checkbox" name="allow_css" value="1" <?php checked( WPZOOM_AI_CSS::allowed_for_connection() ); ?> onchange="this.form.submit()"> <span><strong><?php esc_html_e( 'Let your AI add Additional CSS', 'wpzoom-ai-connect' ); ?></strong><span class="wzai-muted"><?php esc_html_e( 'For design changes the theme settings cannot make. Each change is labelled and saved as a revision you can restore in the Customizer.', 'wpzoom-ai-connect' ); ?></span></span></label>
+								<noscript><button type="submit" class="wzai-btn wzai-btn--secondary wzai-btn--sm"><?php esc_html_e( 'Save', 'wpzoom-ai-connect' ); ?></button></noscript>
+							</form>
+						</section>
 
 					<?php if ( $post_types ) : ?>
 						<section class="wzai-section" id="wzai-post-types">
@@ -732,28 +922,17 @@ class WPZOOM_AI_Admin {
 						</section>
 					<?php endif; ?>
 
-					<?php if ( $warnings ) : ?>
-						<section class="wzai-section" id="wzai-checkups">
-							<div class="wzai-section__head">
-								<h2><?php esc_html_e( 'Worth fixing', 'wpzoom-ai-connect' ); ?></h2>
-								<p><?php esc_html_e( 'Your AI can do most of these: say "run a checkup and fix what you can".', 'wpzoom-ai-connect' ); ?></p>
-							</div>
-							<?php foreach ( array_slice( $warnings, 0, 6 ) as $check ) : ?>
-								<div class="wzai-check wzai-check--warn">
-									<span class="wzai-check__icon"><?php echo wp_kses( self::icon( 'warn' ), self::allowed_html() ); ?></span>
-									<div>
-										<div class="wzai-check__title"><?php echo esc_html( $check['title'] ); ?></div>
-										<?php if ( ! empty( $check['detail'] ) ) : ?><div class="wzai-check__detail"><?php echo esc_html( $check['detail'] ); ?></div><?php endif; ?>
-										<?php if ( ! empty( $check['fix'] ) ) : ?><div class="wzai-check__fix"><?php echo esc_html( $check['fix'] ); ?></div><?php endif; ?>
-									</div>
-								</div>
-							<?php endforeach; ?>
+						<section class="wzai-section">
+							<?php self::render_access(); ?>
 						</section>
 					<?php endif; ?>
 
-					<section class="wzai-section" id="wzai-dev">
-						<details class="wzai-details">
-							<summary><?php echo wp_kses( self::icon( 'chevron' ), self::allowed_html() ); ?><?php esc_html_e( 'For developers', 'wpzoom-ai-connect' ); ?> <small><?php esc_html_e( 'endpoints, abilities and other MCP plugins', 'wpzoom-ai-connect' ); ?></small></summary>
+					<?php if ( 'developers' === $tab ) : ?>
+					<section class="wzai-section wzai-section--first" id="wzai-dev">
+							<div class="wzai-section__head">
+								<h2><?php esc_html_e( 'For developers', 'wpzoom-ai-connect' ); ?></h2>
+								<p><?php esc_html_e( 'Endpoints, the abilities this site offers your AI, and other MCP plugins.', 'wpzoom-ai-connect' ); ?></p>
+							</div>
 							<table class="wzai-table">
 								<tbody>
 								<tr><th><?php esc_html_e( 'Connector', 'wpzoom-ai-connect' ); ?></th><td><code><?php echo esc_html( self::CONNECTOR_URL ); ?></code> <span class="wzai-muted"><?php esc_html_e( 'Streamable HTTP, OAuth 2.1, hosted by WPZOOM', 'wpzoom-ai-connect' ); ?></span></td></tr>
@@ -775,10 +954,39 @@ class WPZOOM_AI_Admin {
 								<?php endforeach; ?>
 								</tbody>
 							</table>
-						</details>
 					</section>
+					<?php endif; ?>
 
 				</div>
+				<?php self::render_feedback(); ?>
+		</div>
+		<?php
+	}
+
+	/** "Share feedback": one question, anonymous unless they want a reply. */
+	private static function render_feedback(): void {
+		$email = wp_get_current_user()->user_email;
+		?>
+		<div class="wzai-modal" id="wzai-feedback" hidden>
+			<div class="wzai-modal__box" role="dialog" aria-modal="true" aria-labelledby="wzai-feedback-title">
+				<form class="wzai-modal__body" data-wzai-feedback-form>
+					<h2 id="wzai-feedback-title"><?php esc_html_e( 'What should AI Connect do next?', 'wpzoom-ai-connect' ); ?></h2>
+					<p><?php esc_html_e( 'Something your AI couldn\'t do on your site, a tool you\'re missing, or something that got in your way. A sentence or two is enough, and we read every message.', 'wpzoom-ai-connect' ); ?></p>
+					<label class="screen-reader-text" for="wzai-feedback-message"><?php esc_html_e( 'Your feedback', 'wpzoom-ai-connect' ); ?></label>
+					<textarea id="wzai-feedback-message" name="message" rows="5" maxlength="2000" placeholder="<?php esc_attr_e( 'My AI should be able to…', 'wpzoom-ai-connect' ); ?>"></textarea>
+					<label class="wzai-modal__check"><input type="checkbox" name="consent" value="1"> <?php echo wp_kses( sprintf( /* translators: %s: the current user's email */ __( 'You may reply to me at %s', 'wpzoom-ai-connect' ), '<strong>' . esc_html( $email ) . '</strong>' ), array( 'strong' => array() ) ); ?></label>
+					<p class="wzai-modal__note"><?php echo wp_kses( self::icon( 'shield-check' ), self::allowed_html() ); ?><span><?php echo esc_html( sprintf( /* translators: %s: plugin version */ __( 'Anonymous unless you tick the box: we receive your message, the plugin version (%s) and your WordPress version, not your site address or email, and we don\'t store IP addresses.', 'wpzoom-ai-connect' ), WPZOOM_AI_CONNECT_VERSION ) ); ?></span></p>
+					<p class="wzai-modal__error" role="alert" hidden></p>
+				</form>
+				<div class="wzai-modal__done" hidden>
+					<h2><?php esc_html_e( 'Thank you!', 'wpzoom-ai-connect' ); ?></h2>
+					<p><?php esc_html_e( 'Your message reached us. Ideas like yours decide what we build next.', 'wpzoom-ai-connect' ); ?></p>
+				</div>
+				<div class="wzai-modal__foot">
+					<button type="button" class="wzai-btn wzai-btn--ghost" data-wzai-feedback-close><?php esc_html_e( 'Cancel', 'wpzoom-ai-connect' ); ?></button>
+					<button type="button" class="wzai-btn wzai-btn--primary" data-wzai-feedback-send disabled><?php esc_html_e( 'Send feedback', 'wpzoom-ai-connect' ); ?></button>
+				</div>
+			</div>
 		</div>
 		<?php
 	}

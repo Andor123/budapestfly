@@ -3,7 +3,7 @@
  * Plugin Name: WPZOOM AI Connect – MCP Connector for Claude & ChatGPT
  * Plugin URI: https://www.wpzoom.com/ai-connect/
  * Description: Lets AI assistants (Claude, ChatGPT, Cursor and any MCP client) understand and change your WPZOOM theme: theme settings, color palettes, design patterns and pages, through the WordPress Abilities API.
- * Version: 0.12.6
+ * Version: 0.13.0
  * Requires at least: 6.9
  * Requires PHP: 7.4
  * Author: WPZOOM
@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'WPZOOM_AI_CONNECT_VERSION', '0.12.6' );
+define( 'WPZOOM_AI_CONNECT_VERSION', '0.13.0' );
 define( 'WPZOOM_AI_CONNECT_FILE', __FILE__ );
 define( 'WPZOOM_AI_CONNECT_DIR', plugin_dir_path( __FILE__ ) );
 
@@ -56,8 +56,13 @@ WPZOOM_AI_Starter_Sites::init();
 WPZOOM_AI_Sections::init();
 
 if ( is_admin() ) {
+	require_once WPZOOM_AI_CONNECT_DIR . 'includes/class-wpzoom-ai-access.php';
 	require_once WPZOOM_AI_CONNECT_DIR . 'includes/class-wpzoom-ai-admin.php';
 	WPZOOM_AI_Admin::init();
+	require_once WPZOOM_AI_CONNECT_DIR . 'includes/class-wpzoom-ai-notices.php';
+	WPZOOM_AI_Notices::init();
+	require_once WPZOOM_AI_CONNECT_DIR . 'includes/class-wpzoom-ai-deactivation.php';
+	WPZOOM_AI_Deactivation::init();
 }
 
 /**
@@ -69,6 +74,8 @@ function wpzoom_ai_connect_activate() {
 	if ( false === get_option( WPZOOM_AI_CONNECT_SOURCE_OPTION, false ) ) {
 		add_option( WPZOOM_AI_CONNECT_SOURCE_OPTION, wpzoom_ai_connect_install_source(), '', false );
 	}
+	add_option( 'wpzoom_ai_connect_installed', time(), '', false ); // the setup-help notice counts from here
+
 	if ( ! wp_doing_ajax() && ! wp_doing_cron() && ! ( defined( 'WP_CLI' ) && WP_CLI ) ) {
 		set_transient( 'wpzoom_ai_connect_activated', 1, 60 );
 	}

@@ -14,7 +14,7 @@
  * Author:      WPZOOM
  * Author URI:  https://www.wpzoom.com
  * Text Domain: inspiro-starter-sites
- * Version:     1.5.2
+ * Version:     1.7.0
  * Requires at least: 6.5
  * Requires PHP: 7.4
  * License:     GPLv2 or later
@@ -90,6 +90,7 @@ function inspiro_starter_sites_classes() {
 	require_once INSPIRO_STARTER_SITES_PATH . 'components/importer/inc/Ai/AiProxyClient.php';
 	require_once INSPIRO_STARTER_SITES_PATH . 'components/importer/inc/Ai/BlockComposer.php';
 	require_once INSPIRO_STARTER_SITES_PATH . 'components/importer/inc/Ai/Catalog/Catalog.php';
+	require_once INSPIRO_STARTER_SITES_PATH . 'components/importer/inc/Ai/Catalog/PatternLibrary.php';
 	require_once INSPIRO_STARTER_SITES_PATH . 'components/importer/inc/Ai/Catalog/SectionRenderer.php';
 	require_once INSPIRO_STARTER_SITES_PATH . 'components/importer/inc/Ai/AiDemoGenerator.php';
 	\Inspiro\Starter_Sites\Ai\AiDemoGenerator::get_instance();

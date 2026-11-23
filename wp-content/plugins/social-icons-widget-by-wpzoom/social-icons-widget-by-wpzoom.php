@@ -1,9 +1,9 @@
 <?php
 /**
- * Plugin Name:         WPZOOM Connect: Social Icons Widget & Block, Share Buttons & Click to Chat
+ * Plugin Name:         WPZOOM Social Icons: Widget & Block, Share Buttons & Click to Chat
  * Plugin URI:          https://www.wpzoom.com/plugins/social-share/
  * Description:         One floating button for every way visitors reach you: an AI chat that answers from your own pages (powered by Yamidoo), Click to Chat for WhatsApp, Telegram, Messenger and Viber, plus social icons and share buttons. 1000+ icons, Gutenberg block, widget and Elementor.
- * Version:             5.0.1
+ * Version:             5.0.2
  * Author:              WPZOOM
  * Author URI:          https://www.wpzoom.com/
  * Text Domain:         social-icons-widget-by-wpzoom
@@ -84,6 +84,16 @@ if ( is_admin() && ! class_exists( 'WPZOOM_Notice_Center' ) && file_exists( $wpz
 	WPZOOM_Notice_Center::get_instance()->set_assets( array(
 		'css_url' => $wpz_notice_center_url . 'assets/notice-center.css',
 		'js_url'  => $wpz_notice_center_url . 'assets/notice-center.js',
+	) );
+}
+
+add_filter( 'wpzoom_notice_center_strings', 'wpzoom_social_icons_notice_center_strings' );
+function wpzoom_social_icons_notice_center_strings( $strings ) {
+	return array_merge( (array) $strings, array(
+		'title'          => __( 'WPZOOM Notice Center', 'social-icons-widget-by-wpzoom' ),
+		'subtitle'       => __( 'Stay updated with the latest from WPZOOM products and services!', 'social-icons-widget-by-wpzoom' ),
+		'dismiss'        => __( 'Dismiss this notice', 'social-icons-widget-by-wpzoom' ),
+		'dismiss_screen' => __( 'Dismiss this notice.', 'social-icons-widget-by-wpzoom' ),
 	) );
 }
 
@@ -334,8 +344,9 @@ if ( ! function_exists( 'wpzoom_social_icons_plugin_action_links' ) ) {
 			// Add Go Pro link if the Pro plugin is not active.
 			if ( ! function_exists( 'wpzoom_social_icons_pro' ) ) {
 				$links['go_pro'] = sprintf(
-					'<a href="%1$s" target="_blank" class="wpzoom-social-icons-gopro" style="color:var(--wp-admin-theme-color, #2271b1);font-weight:bold;">UPGRADE &rarr; <span class="wpzoom-premium-badge" style="background-color: #2271b1; color: #fff; margin-left: 5px; font-size: 11px; min-height: 16px; border-radius: 8px; display: inline-block; font-weight: 600; line-height: 1.6; padding: 0 8px;">%2$s</span></a>',
+					'<a href="%1$s" target="_blank" class="wpzoom-social-icons-gopro" style="color:var(--wp-admin-theme-color, #2271b1);font-weight:bold;text-transform:uppercase;">%2$s &rarr; <span class="wpzoom-premium-badge" style="background-color: #2271b1; color: #fff; margin-left: 5px; font-size: 11px; min-height: 16px; border-radius: 8px; display: inline-block; font-weight: 600; line-height: 1.6; padding: 0 8px;">%3$s</span></a>',
 					WPZOOM_Connect_Overview::upgrade_url( 'plugins-page' ),
+					esc_html__( 'Upgrade', 'social-icons-widget-by-wpzoom' ),
 					esc_html__( 'PRO', 'social-icons-widget-by-wpzoom' )
 				);
 			}
@@ -396,7 +407,7 @@ if ( ! function_exists( 'wpzoom_social_icons_upgrade_pro_notice' ) ) {
 			</a>
 			<div class="wpz-social-icons-notice-wrap-content">
 				<div class="wpz-social-icons-notice-aside">
-					<img src="<?php echo esc_url( WPZOOM_SOCIAL_ICONS_PLUGIN_URL . '/assets/images/social-icons-pro-avatar.png' ); ?>" width="100" height="100" alt="WPZOOM Connect Pro"/>
+					<img src="<?php echo esc_url( WPZOOM_SOCIAL_ICONS_PLUGIN_URL . '/assets/images/social-icons-pro-avatar.png' ); ?>" width="100" height="100" alt="WPZOOM Social Icons Pro"/>
 				</div>
 				<div class="wpz-social-icons-notice-content">
 					<?php
@@ -410,7 +421,7 @@ if ( ! function_exists( 'wpzoom_social_icons_upgrade_pro_notice' ) ) {
 					?>
 					</p>
 					<p class="wpz-social-icons-notice-actions">
-						<a class="button-primary" href="<?php echo esc_url( WPZOOM_Connect_Overview::upgrade_url( 'admin-notice' ) ); ?>" target="_blank"><strong><?php esc_html_e( 'Get WPZOOM Connect Pro &rarr;', 'social-icons-widget-by-wpzoom' ); ?></strong></a>
+						<a class="button-primary" href="<?php echo esc_url( WPZOOM_Connect_Overview::upgrade_url( 'admin-notice' ) ); ?>" target="_blank"><strong><?php esc_html_e( 'Get WPZOOM Social Icons Pro &rarr;', 'social-icons-widget-by-wpzoom' ); ?></strong></a>
 						<?php
 						// phpcs:disable
 						/*

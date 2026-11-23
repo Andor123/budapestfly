@@ -1,0 +1,52 @@
+/* WPZOOM AI Connect: setup-help and review notices on the Dashboard, Plugins and AI Connect screens. */
+.wzai-admin-notice.notice {
+	display: flex;
+	gap: 14px;
+	align-items: flex-start;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	border-left-color: #3496ff;
+}
+
+.wzai-admin-notice__mark {
+	flex: 0 0 40px;
+	width: 40px;
+	height: 40px;
+	margin-top: 2px;
+}
+
+.wzai-admin-notice__body {
+	min-width: 0;
+	max-width: 760px;
+}
+
+.wzai-admin-notice .wzai-admin-notice__body p {
+	margin: 0 0 6px;
+	padding: 0;
+}
+
+.wzai-admin-notice .wzai-admin-notice__title {
+	font-size: 14px;
+}
+
+.wzai-admin-notice .wzai-admin-notice__actions {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 8px 12px;
+	margin: 10px 0 2px;
+}
+
+.wzai-admin-notice__actions .button {
+	margin: 0;
+}
+
+.wzai-admin-notice__help {
+	color: #646970;
+}
+
+@media screen and (max-width: 600px) {
+	.wzai-admin-notice__mark {
+		display: none;
+	}
+}

@@ -1,0 +1,143 @@
+/* WPZOOM AI Connect: the "Before you go" survey on the Plugins screen. Same look as the Inspiro theme's. */
+body.wzai-deact-open { overflow: hidden; }
+
+.wzai-deact {
+	position: fixed;
+	inset: 0;
+	z-index: 999999;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(0, 0, 0, 0.5);
+	backdrop-filter: blur(2px);
+	animation: wzai-deact-fade 0.3s ease-out;
+}
+.wzai-deact[hidden] { display: none; }
+
+.wzai-deact__modal {
+	display: flex;
+	flex-direction: column;
+	width: 90%;
+	max-width: 550px;
+	max-height: 90vh;
+	overflow: hidden;
+	background: #fff;
+	border-radius: 2px;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+	animation: wzai-deact-slide 0.3s ease-out;
+}
+
+.wzai-deact__header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 20px 24px 0;
+}
+.wzai-deact__header h2 { margin: 0; font-size: 18px; font-weight: 600; line-height: 1.4; color: #1d2327; }
+.wzai-deact__close {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 30px;
+	height: 30px;
+	padding: 0;
+	border: 0;
+	border-radius: 50%;
+	background: none;
+	color: #666;
+	font-size: 24px;
+	cursor: pointer;
+}
+.wzai-deact__close:hover { color: #1d2327; }
+
+.wzai-deact__body { flex: 1; overflow-y: auto; padding: 0 24px 24px; }
+.wzai-deact__intro { opacity: 0.8; }
+
+.wzai-deact__choice { margin-bottom: 16px; }
+.wzai-deact__label { display: flex; align-items: flex-start; gap: 10px; margin: 0; font-size: 14px; line-height: 1.5; color: #1d2327; cursor: pointer; }
+.wzai-deact__label input[type="checkbox"] { flex-shrink: 0; margin: 2px 0 0; }
+
+.wzai-deact__text {
+	display: block;
+	width: 100%;
+	min-height: 60px;
+	margin-top: 12px;
+	padding: 8px 12px;
+	border: 1px solid #8c8f94;
+	border-radius: 4px;
+	font-family: inherit;
+	font-size: 13px;
+	resize: vertical;
+}
+.wzai-deact__text[hidden], .wzai-deact__hint[hidden] { display: none; }
+.wzai-deact__text:focus { border-color: #2271b1; box-shadow: 0 0 0 1px #2271b1; outline: none; }
+.wzai-deact__hint { margin: 8px 0 0; padding: 8px 12px; border-radius: 4px; background: #f0f6fc; font-size: 13px; color: #1d2327; }
+
+.wzai-deact__nps h3 { margin: 20px 0 10px; font-size: 16px; color: #333; }
+.wzai-deact__nps p { margin: 0 0 15px; color: #555; }
+.wzai-deact__scale { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 10px; font-size: 12px; color: #666; }
+.wzai-deact__scale > span { flex: 0 0 auto; }
+.wzai-deact__scores { display: flex; gap: 8px; }
+.wzai-deact__score {
+	width: 40px;
+	height: 40px;
+	border: 1px solid #ddd;
+	border-radius: 6px;
+	background: #fff;
+	font-size: 16px;
+	font-weight: 600;
+	color: #1d2327;
+	cursor: pointer;
+	transition: all 0.2s;
+}
+.wzai-deact__score[data-score="0"]:hover, .wzai-deact__score[data-score="1"]:hover, .wzai-deact__score[data-score="2"]:hover,
+.wzai-deact__score[data-score="0"][aria-checked="true"], .wzai-deact__score[data-score="1"][aria-checked="true"], .wzai-deact__score[data-score="2"][aria-checked="true"] { background: #dc3545; border-color: #dc3545; color: #fff; }
+.wzai-deact__score[data-score="3"]:hover, .wzai-deact__score[data-score="3"][aria-checked="true"] { background: #ffc107; border-color: #ffc107; color: #fff; }
+.wzai-deact__score[data-score="4"]:hover, .wzai-deact__score[data-score="5"]:hover,
+.wzai-deact__score[data-score="4"][aria-checked="true"], .wzai-deact__score[data-score="5"][aria-checked="true"] { background: #28a745; border-color: #28a745; color: #fff; }
+
+.wzai-deact__footer { padding: 20px 24px; border-top: 1px solid #e2e4e7; background: #f8f9fa; }
+.wzai-deact__consent { margin-bottom: 16px; padding: 12px; border: 1px solid #eee; border-radius: 6px; background: #edf0f2; }
+.wzai-deact__consent label { display: flex; align-items: flex-start; gap: 10px; margin: 0; font-size: 12px; line-height: 1.5; color: #1d2327; cursor: pointer; }
+.wzai-deact__consent input[type="checkbox"] { flex-shrink: 0; margin: 2px 0 0; }
+.wzai-deact__privacy { margin: 0 0 16px; font-size: 12px; line-height: 1.4; color: #646970; }
+.wzai-deact__privacy a { color: #2271b1; text-decoration: none; }
+.wzai-deact__privacy a:hover { text-decoration: underline; }
+
+.wzai-deact__buttons { display: flex; justify-content: flex-end; gap: 12px; }
+.wzai-deact__btn {
+	min-width: 120px;
+	padding: 8px 16px;
+	border: 1px solid #c3c4c7;
+	border-radius: 2px;
+	background: #fff;
+	font-size: 13px;
+	line-height: 1.4;
+	text-align: center;
+	text-decoration: none;
+	color: #1d2327;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+.wzai-deact__btn:hover { border-color: #8c8f94; color: #1d2327; }
+.wzai-deact__btn--primary { border-color: #3958e9; background: #3958e9; color: #fff; }
+.wzai-deact__btn--primary:hover { border-color: #111; background: #111; color: #fff; }
+.wzai-deact__btn:disabled { opacity: 0.6; cursor: not-allowed; }
+.wzai-deact__btn[aria-disabled="true"] { opacity: 0.6; pointer-events: none; }
+
+@keyframes wzai-deact-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes wzai-deact-slide { from { transform: translateY(-20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+@media (max-width: 600px) {
+	.wzai-deact__modal { width: 95%; }
+	.wzai-deact__header, .wzai-deact__body, .wzai-deact__footer { padding-left: 16px; padding-right: 16px; }
+	.wzai-deact__scale { flex-wrap: wrap; }
+	.wzai-deact__scores { order: -1; width: 100%; justify-content: space-between; }
+	.wzai-deact__score { flex: 1; width: auto; }
+	.wzai-deact__buttons { flex-direction: column-reverse; gap: 8px; }
+	.wzai-deact__btn { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.wzai-deact, .wzai-deact__modal { animation: none; }
+}

@@ -4,7 +4,7 @@ Tags: ai, mcp, claude, chatgpt, connector
 Requires at least: 6.9
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 0.12.6
+Stable tag: 0.13.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -98,16 +98,31 @@ Your sign-in email, the address of each site you connect, its application passwo
 
 Any MCP client: [Claude](https://claude.ai/directory/wpzoom) (web, desktop, Claude Code), [ChatGPT](https://chatgpt.com/plugins/plugin_asdk_app_6aedb19b4eb081919d3c14e622ad8e01), Cursor and others, through the WPZOOM connector or another MCP plugin on your site. The [documentation](https://www.wpzoom.com/documentation/ai-connect/) has a guide for each.
 
+= I build sites for clients. Can I keep AI Connect to myself? =
+
+Yes. On the AI Connect screen's Settings tab, choose which administrators see AI Connect. The others don't get its menu, its screen or its notices. They still see the plugin on the Plugins screen, and each connection stays listed on the connected user's profile, so the site owner can always remove it. To set this up on many sites, add `define( 'WPZOOM_AI_CONNECT_ADMINS', 'your-login' );` to wp-config.php (logins, user IDs or emails, separated by commas).
+
 == External services ==
 
 This plugin works with two WPZOOM services. Nothing is sent to either until you use the feature that needs it.
 
 * **WPZOOM connector** ([mcp.wpzoom.com](https://mcp.wpzoom.com/)): the service that WPZOOM in Claude's and ChatGPT's directories connects to, and the address you add in Cursor or another MCP app. When you press "Connect this site", WordPress asks you to approve an application password for your user, and it is sent to the connector, which stores it encrypted and uses it to call this site's abilities when your AI asks. Connecting lets the connector act on this site as your user, within the limits described in the FAQ, until you disconnect. With each request it tells this site which WPZOOM account (sign-in email) the connection belongs to; the plugin saves it with your user and shows it on its screen, so you know which email to use in your AI app. The connector keeps your sign-in email, each connected site's address, the changes the AI made (30 days) and a request log without content (90 days).
-* **WPZOOM AI** (ai.wpzoom.com): AI page building and the free AI registration (your email and a 6-digit code) run through the Inspiro Starter Sites plugin's AI client, only when you ask for them. This plugin itself sends nothing there.
+* **WPZOOM AI** (ai.wpzoom.com): AI page building and the free AI registration (your email and a 6-digit code) run through the Inspiro Starter Sites plugin's AI client, only when you ask for them. This plugin sends two things there, each only when you press its button: when you deactivate it, a short survey asks why, and "Submit & Deactivate" sends your answers with the plugin, WordPress and PHP versions, your language, your theme, how far setup got and how long the plugin was installed ("Skip & Deactivate" sends nothing); and "Share feedback" on the AI Connect screen sends your message with the plugin and WordPress versions. Your email (and, in the survey, your site address) is included only when you tick the box that allows a reply.
 
 [Terms](https://www.wpzoom.com/terms-and-conditions/) · [Privacy policy](https://www.wpzoom.com/privacy-policy/)
 
 == Changelog ==
+
+= 0.13.0 =
+* New: the AI Connect screen is split into tabs (Get started, What it can do, Site checkup, Settings and Developers), so there is less scrolling. It opens on Get started until your AI has used the site, then on What it can do.
+* New: every card under What it can do has an example prompt you can copy.
+* New: a "Watch the video" button next to "How it works" while setup isn't finished.
+* New: Settings tab, "Who sees AI Connect": keep the menu, the screen and its notices to the administrators you choose, for example when you build a site for a client. The `WPZOOM_AI_CONNECT_ADMINS` constant in wp-config.php sets the same list by login, user ID or email.
+* New: a short notice on the Dashboard and Plugins screens two days after installing when the site isn't connected yet, saying where setup stopped and how to finish it.
+* New: once you have used AI Connect for a while, a notice asks whether you'd like to rate it on WordPress.org. "Maybe later" hides it for 30 days.
+* New: a "Share feedback" button on the AI Connect screen: tell us in a sentence what your AI should do next. Anonymous unless you ask for a reply.
+* Improved: Site checkup lists every check, not only the ones to fix.
+* Improved: the new AI Connect icon on the screen.
 
 = 0.12.6 =
 * Improved: WPZOOM is now in Claude's connector directory and in ChatGPT's plugin directory. The guides on the AI Connect screen have an "Add to Claude" and an "Add to ChatGPT" button, so there is no address to paste. Adding it by address is still explained under each guide.

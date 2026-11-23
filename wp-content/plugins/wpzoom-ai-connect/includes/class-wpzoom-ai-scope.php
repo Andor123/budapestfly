@@ -93,6 +93,9 @@ class WPZOOM_AI_Scope {
 	/** When an AI last used the connection (epoch seconds), for the AI Connect screen's "waiting for your AI" state. */
 	const LAST_AI_CALL_OPTION = 'wpzoom_ai_connect_last_ai_call';
 
+	/** On how many different days an AI used the connection, and since when; the review notice waits for real use. */
+	const AI_DAYS_OPTION = 'wpzoom_ai_connect_ai_days';
+
 	public static function init() {
 		add_filter( 'map_meta_cap', array( __CLASS__, 'map_meta_cap' ), 10, 4 );
 		add_filter( 'rest_pre_dispatch', array( __CLASS__, 'pre_dispatch' ), 10, 3 );
@@ -219,7 +222,38 @@ class WPZOOM_AI_Scope {
 		}
 		if ( time() - (int) get_option( self::LAST_AI_CALL_OPTION, 0 ) > 300 ) {
 			update_option( self::LAST_AI_CALL_OPTION, time(), false );
+			self::note_ai_day();
 		}
+	}
+
+	/** Counts the day of an AI call once (site time zone). Runs only when the last-call time is written. */
+	private static function note_ai_day(): void {
+		$today = wp_date( 'Y-m-d' );
+		$days  = self::ai_days();
+		if ( $days['last'] === $today ) {
+			return;
+		}
+		$days['last']  = $today;
+		$days['count'] = $days['count'] + 1;
+		update_option( self::AI_DAYS_OPTION, $days, false );
+	}
+
+	/**
+	 * AI use so far: the first day counted (epoch seconds), the last day counted (Y-m-d) and how many days.
+	 * Counting started with the review notice, so earlier use is not in it.
+	 *
+	 * @return array{first:int, last:string, count:int}
+	 */
+	public static function ai_days(): array {
+		$days = get_option( self::AI_DAYS_OPTION );
+		if ( ! is_array( $days ) ) {
+			return array( 'first' => time(), 'last' => '', 'count' => 0 );
+		}
+		return array(
+			'first' => (int) ( $days['first'] ?? time() ),
+			'last'  => (string) ( $days['last'] ?? '' ),
+			'count' => (int) ( $days['count'] ?? 0 ),
+		);
 	}
 
 	/**
