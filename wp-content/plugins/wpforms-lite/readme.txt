@@ -3,7 +3,7 @@ Contributors: wpforms, smub
 Tags: contact form, contact form plugin, forms, form builder, custom form
 Requires at least: 5.5
 Tested up to: 7.1
-Stable tag: 2.0.5.1
+Stable tag: 2.0.5.2
 Requires PHP: 7.2
 License: GNU General Public License v2.0 or later
 
@@ -392,6 +392,10 @@ Thank you,
 Syed Balkhi
 
 == Changelog ==
+= 2.0.5.2 =
+- Changed: Updated DOMPurify library to 3.5.0.
+- Fixed: The Elementor editor never finished loading and theme demo imports failed on sites with no published forms.
+
 = 2.0.5.1 =
 - Added: Form themes can now be edited live on any page with a form using the new front-end theme editor, for the whole form or for a single embed.
 - Added: Drip is now built into WPForms and works on every plan, including Lite.

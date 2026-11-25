@@ -425,7 +425,7 @@ class Migration {
 			return [];
 		}
 
-		return (array) $form_obj->get(
+		$form_posts = $form_obj->get(
 			'',
 			[
 				'numberposts'            => -1,
@@ -436,6 +436,8 @@ class Migration {
 				'no_found_rows'          => true,
 			]
 		);
+
+		return is_array( $form_posts ) ? $form_posts : [];
 	}
 
 	/**

@@ -338,7 +338,9 @@ class Data {
 			return false;
 		}
 
-		foreach ( (array) $form_handler->get( '' ) as $form ) {
+		$forms = $form_handler->get( '' );
+
+		foreach ( is_array( $forms ) ? $forms : [] as $form ) {
 			if ( $test( (array) wpforms_decode( $form->post_content ?? '' ) ) ) {
 				return true;
 			}

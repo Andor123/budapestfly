@@ -121,7 +121,8 @@ class Tags {
 			],
 		];
 
-		$forms = $form_obj ? (array) $form_obj->get( 0, $args ) : [];
+		$forms = $form_obj ? $form_obj->get( 0, $args ) : [];
+		$forms = is_array( $forms ) ? $forms : [];
 
 		// Remove tags from the settings of the forms.
 		foreach ( $forms as $form_id ) {

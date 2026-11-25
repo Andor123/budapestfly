@@ -3,7 +3,7 @@
         'name' => 'awesomemotive/wpforms',
         'pretty_version' => 'dev-develop',
         'version' => 'dev-develop',
-        'reference' => '6c8ca936a476d8d45645b19f1edaafefd7132aa2',
+        'reference' => '1b57b6efd345b2eaa2ef1bd3219f957f7ff825bd',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -49,7 +49,7 @@
         'awesomemotive/wpforms' => array(
             'pretty_version' => 'dev-develop',
             'version' => 'dev-develop',
-            'reference' => '6c8ca936a476d8d45645b19f1edaafefd7132aa2',
+            'reference' => '1b57b6efd345b2eaa2ef1bd3219f957f7ff825bd',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

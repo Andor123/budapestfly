@@ -14,6 +14,7 @@ use Exception;
 use WPForms\Frontend\CSSVars;
 use WPForms\Frontend\ThemesEditor;
 use WPForms\Frontend\ThemesEditor\Support;
+use WP_Post;
 
 /**
  * WPForms modern widget for Elementor page builder.
@@ -365,7 +366,13 @@ class WidgetModern extends Widget {
 			return $ids;
 		}
 
-		foreach ( (array) $form_handler->get( '', wpforms_get_viewable_forms_args() ) as $form ) {
+		$forms = $form_handler->get( '', wpforms_get_viewable_forms_args() );
+
+		foreach ( is_array( $forms ) ? $forms : [] as $form ) {
+			if ( ! $form instanceof WP_Post ) {
+				continue;
+			}
+
 			if ( $editor->get_support()->is_unstyled_lead_form_post( $form ) ) {
 				$ids['lead'][] = (string) $form->ID;
 
