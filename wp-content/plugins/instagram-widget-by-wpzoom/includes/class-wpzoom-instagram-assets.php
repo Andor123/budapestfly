@@ -102,39 +102,25 @@ if ( ! class_exists( 'WPZOOM_Instagram_Widget_Assets ' ) ) {
 			}
 
 			if( is_admin() || $load_css_js || $should_enqueue || $has_reusable_block || $is_active_widget || $has_shortcode || $has_widget_block || isset( $_GET['wpz-insta-widget-preview'] ) || $has_instagram_feed_elementor_widget ) {
-				wp_register_script(
-					'magnific-popup',
-					WPZOOM_INSTAGRAM_PLUGIN_URL . 'dist/scripts/library/magnific-popup.js',
-					array( 'jquery', 'underscore', 'wp-util' ),
-					filemtime( WPZOOM_INSTAGRAM_PLUGIN_PATH . 'dist/scripts/library/magnific-popup.js' ),
-					true
-				);
 		
 				wp_register_script(
 					'swiper-js',
 					WPZOOM_INSTAGRAM_PLUGIN_URL . 'dist/scripts/library/swiper.js',
 					array(),
-					'7.4.1'
+					'14.4.0'
 				);
 		
 				wp_register_script(
 					'wpz-insta_block-frontend-script',
 					WPZOOM_INSTAGRAM_PLUGIN_URL . 'dist/scripts/frontend/block.js',
-					array( 'jquery', 'underscore', 'magnific-popup', 'swiper-js' ),
+					array( 'jquery', 'underscore', 'swiper-js' ),
 					$script_asset_file['version']
 				);
 		
 				wp_register_style(
-					'magnific-popup',
-					WPZOOM_INSTAGRAM_PLUGIN_URL . 'dist/styles/library/magnific-popup.css',
-					array(),
-					WPZOOM_INSTAGRAM_VERSION
-				);
-
-				wp_register_style(
 					'wpz-insta_block-frontend-style',
 					WPZOOM_INSTAGRAM_PLUGIN_URL . 'dist/styles/frontend/index.css',
-					array( 'magnific-popup', 'swiper-css' ),
+					array( 'swiper-css' ),
 					$style_asset_file['version']
 				);
 			}
@@ -186,7 +172,7 @@ if ( ! class_exists( 'WPZOOM_Instagram_Widget_Assets ' ) ) {
 						'swiper-css',
 						WPZOOM_INSTAGRAM_PLUGIN_URL . 'dist/styles/library/swiper.css',
 						array(),
-						'7.4.1'
+						'14.4.0'
 					);
 				} else {
 					// Preview: don't load Swiper CSS; remove from frontend style deps so it still enqueues.
@@ -199,13 +185,6 @@ if ( ! class_exists( 'WPZOOM_Instagram_Widget_Assets ' ) ) {
 				wp_enqueue_style(
 					'wpz-insta_block-frontend-style',
 					WPZOOM_INSTAGRAM_PLUGIN_URL . 'dist/styles/frontend/index.css',
-					array(),
-					WPZOOM_INSTAGRAM_VERSION
-				);
-
-				wp_enqueue_style(
-					'magnific-popup',
-					WPZOOM_INSTAGRAM_PLUGIN_URL . 'dist/styles/library/magnific-popup.css',
 					array(),
 					WPZOOM_INSTAGRAM_VERSION
 				);
@@ -231,25 +210,17 @@ if ( ! class_exists( 'WPZOOM_Instagram_Widget_Assets ' ) ) {
 			);
 
 			wp_register_script(
-				'magnific-popup',
-				WPZOOM_INSTAGRAM_PLUGIN_URL . 'dist/scripts/library/magnific-popup.js',
-				array( 'jquery', 'underscore', 'wp-util' ),
-				filemtime( WPZOOM_INSTAGRAM_PLUGIN_PATH . 'dist/scripts/library/magnific-popup.js' ),
-				true
-			);
-
-			wp_register_script(
 				'swiper-js',
 				WPZOOM_INSTAGRAM_PLUGIN_URL . 'dist/scripts/library/swiper.js',
 				array(),
-				'7.0.0-alpha.21',
+				'14.4.0',
 				true
 			);
 
 				wp_register_script(
 				'zoom-instagram-widget',
 				WPZOOM_INSTAGRAM_PLUGIN_URL . 'dist/scripts/frontend/index.js',
-				array( 'jquery', 'underscore', 'wp-util', 'magnific-popup', 'swiper-js' ),
+				array( 'jquery', 'underscore', 'wp-util', 'swiper-js' ),
 				WPZOOM_INSTAGRAM_VERSION,
 				true
 			);
@@ -304,7 +275,6 @@ if ( ! class_exists( 'WPZOOM_Instagram_Widget_Assets ' ) ) {
 					}
 				}
 				wp_enqueue_script( 'zoom-instagram-widget-lazy-load' );
-				wp_enqueue_script( 'magnific-popup' );
 				if ( ! $is_preview ) {
 					wp_enqueue_script( 'swiper-js' );
 				}
@@ -317,9 +287,9 @@ if ( ! class_exists( 'WPZOOM_Instagram_Widget_Assets ' ) ) {
 					'nonce'   => wp_create_nonce( 'wpzinsta-ajax' )
 				) );
 
-				// PRO loads the stories viewer up front (stories row, multi-account); the free version
-				// loads it from the feed markup only when a stories ring is actually rendered.
-				if ( apply_filters( 'wpz-insta_is-pro', false ) ) {
+				// The stories viewer normally loads from the feed markup, only when a stories ring is rendered.
+				// Extensions that open stories from elsewhere can ask for it up front.
+				if ( apply_filters( 'wpz-insta_enqueue-stories-assets', false ) ) {
 					self::enqueue_stories_assets();
 				}
 			}

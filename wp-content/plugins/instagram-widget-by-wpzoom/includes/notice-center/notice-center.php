@@ -58,6 +58,26 @@ if ( ! class_exists( 'WPZOOM_Notice_Center' ) ) {
 			return $this;
 		}
 
+		/**
+		 * UI strings. The module ships untranslated English defaults; each host
+		 * plugin translates them with its own text domain by hooking
+		 * `wpzoom_notice_center_strings`. Applied at render time, after init.
+		 *
+		 * @return array
+		 */
+		private function get_strings() {
+			$defaults = array(
+				'title'          => 'WPZOOM Notice Center',
+				'subtitle'       => 'Stay updated with the latest from WPZOOM products and services!',
+				'dismiss'        => 'Dismiss this notice',
+				'dismiss_screen' => 'Dismiss this notice.',
+			);
+
+			$strings = apply_filters( 'wpzoom_notice_center_strings', $defaults );
+
+			return is_array( $strings ) ? wp_parse_args( $strings, $defaults ) : $defaults;
+		}
+
 		public function collect_notices() {
 			if ( $this->collected ) {
 				return;
@@ -151,6 +171,7 @@ if ( ! class_exists( 'WPZOOM_Notice_Center' ) ) {
 		}
 
 		private function render_single_notice( $notice ) {
+			$strings = $this->get_strings();
 			?>
 			<div class="notice wpzoom-notice-single" data-notice-id="<?php echo esc_attr( $notice['id'] ); ?>">
 				<div class="wpzoom-notice-single__inner">
@@ -166,24 +187,25 @@ if ( ! class_exists( 'WPZOOM_Notice_Center' ) ) {
 					</div>
 				</div>
 				<button type="button" class="notice-dismiss wpzoom-nc-dismiss-single" data-notice-id="<?php echo esc_attr( $notice['id'] ); ?>">
-					<span class="screen-reader-text"><?php esc_html_e( 'Dismiss this notice.', 'wpzoom-notice-center' ); ?></span>
+					<span class="screen-reader-text"><?php echo esc_html( $strings['dismiss_screen'] ); ?></span>
 				</button>
 			</div>
 			<?php
 		}
 
 		private function render_carousel( $notices ) {
-			$total = count( $notices );
+			$total   = count( $notices );
+			$strings = $this->get_strings();
 			?>
 			<div id="wpzoom-notice-center" class="notice wpzoom-notice-center" data-total="<?php echo (int) $total; ?>">
 
 				<div class="wpzoom-nc-header">
 					<div class="wpzoom-nc-header__left">
-						<span class="wpzoom-nc-header__title"><span style="color: #2b6;">•</span> <?php esc_html_e( 'WPZOOM Notice Center', 'instagram-widget-by-wpzoom' ); ?></span>
-						<span class="wpzoom-nc-header__subtitle"><?php esc_html_e( 'Stay updated with the latest from WPZOOM products and services!', 'wpzoom-notice-center' ); ?></span>
+						<span class="wpzoom-nc-header__title"><span style="color: #2b6;">•</span> <?php echo esc_html( $strings['title'] ); ?></span>
+						<span class="wpzoom-nc-header__subtitle"><?php echo esc_html( $strings['subtitle'] ); ?></span>
 					</div>
 					<div class="wpzoom-nc-header__right">
-						<button type="button" class="wpzoom-nc-dismiss-slide" title="<?php esc_attr_e( 'Dismiss this notice', 'wpzoom-notice-center' ); ?>">
+						<button type="button" class="wpzoom-nc-dismiss-slide" title="<?php echo esc_attr( $strings['dismiss'] ); ?>">
 							<span class="dashicons dashicons-no-alt"></span>
 						</button>
 					</div>

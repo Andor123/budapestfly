@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WPForms &#8211; AI Form Builder for WordPress &#8211; Contact Forms, Payment Forms, Survey Form, Quiz &amp; More - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-11-22 12:32:15+0000\n"
+"PO-Revision-Date: 2026-11-26 22:27:23+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,6 +10,103 @@ msgstr ""
 "X-Generator: GlotPress/4.1.0\n"
 "Language: es\n"
 "Project-Id-Version: Plugins - WPForms &#8211; AI Form Builder for WordPress &#8211; Contact Forms, Payment Forms, Survey Form, Quiz &amp; More - Stable (latest release)\n"
+
+#: templates/integrations/drip/builder/subscriber-unsubscribe.php:16
+msgid "Unsubscribe Subscriber"
+msgstr "Dar de baja a un suscriptor"
+
+#: templates/integrations/drip/builder/subscriber-subscribe.php:126
+msgid "Comma-separated list of tags is accepted."
+msgstr "Se acepta una lista de etiquetas separadas por comas."
+
+#: templates/integrations/drip/builder/subscriber-subscribe.php:110
+msgid "Tags To Delete"
+msgstr "Etiquetas para borrar"
+
+#: templates/integrations/drip/builder/subscriber-subscribe.php:105
+msgid "Tags To Add"
+msgstr "Etiquetas para añadir"
+
+#: templates/integrations/drip/builder/subscriber-delete.php:16
+msgid "Delete a Subscriber"
+msgstr "Borrar un suscriptor"
+
+#: templates/integrations/drip/builder/partials/campaign-select.php:31
+msgid "All Campaigns"
+msgstr "Todas las campañas"
+
+#: templates/integrations/drip/builder/partials/campaign-select.php:22
+msgid "--- Select Campaign ---"
+msgstr "--- Seleccionar una campaña ---"
+
+#: templates/integrations/drip/builder/events.php:72
+#: templates/integrations/drip/builder/subscriber-subscribe.php:77
+msgid "Mark user as a prospect"
+msgstr "Marcar al usuario como cliente potencial"
+
+#: templates/integrations/drip/builder/events.php:55
+msgid "Your new custom event name"
+msgstr "El nombre de tu nuevo evento personalizado"
+
+#: templates/integrations/drip/builder/events.php:32
+msgid "--- Select Saved Event ---"
+msgstr "--- Seleccionar un evento guardado ---"
+
+#: templates/integrations/drip/builder/events.php:24
+msgid "Select one of the existing events:"
+msgstr "Elige uno de los eventos disponibles:"
+
+#: templates/integrations/drip/builder/events.php:22
+msgid "Custom Events"
+msgstr "Eventos personalizados"
+
+#: templates/integrations/drip/builder/connection.php:69
+msgid "Record Event"
+msgstr "Registrar evento"
+
+#: templates/integrations/drip/builder/connection.php:68
+msgid "Campaign: Unsubscribe"
+msgstr "Campaña: darse de baja"
+
+#: templates/integrations/drip/builder/connection.php:67
+msgid "Campaign: Subscribe"
+msgstr "Campaña: suscribirse"
+
+#: templates/integrations/drip/builder/connection.php:66
+msgid "Subscriber: Delete"
+msgstr "Suscriptor: borrar"
+
+#: templates/integrations/drip/builder/connection.php:65
+msgid "Subscriber: Unsubscribe"
+msgstr "Suscriptor: darse de baja"
+
+#: templates/integrations/drip/builder/connection.php:64
+msgid "Subscriber: Create or Update"
+msgstr "Suscriptor: crear o actualizar"
+
+#: templates/integrations/drip/builder/connection.php:39
+msgid "--- Select Account ---"
+msgstr "--- Selecciona una cuenta ---"
+
+#: templates/integrations/drip/builder/campaigns-delete.php:30
+msgid "You have no campaigns yet. Consider creating at least one."
+msgstr "Aún no tienes ninguna campaña. Piensa en crear al menos una."
+
+#: templates/integrations/drip/builder/campaigns-delete.php:17
+msgid "Unsubscribe From Campaign(s)"
+msgstr "Darte de baja de la(s) campaña(s)"
+
+#: templates/integrations/drip/builder/campaigns-add.php:30
+msgid "Select Campaign"
+msgstr "Seleccionar campaña"
+
+#: src/Integrations/Drip/Settings/FormBuilder.php:89
+msgid "Custom Value"
+msgstr "Valor personalizado"
+
+#: src/Integrations/Drip/Account.php:84
+msgid "This account is already connected."
+msgstr "Esta cuenta ya está conectada."
 
 #: src/SmartTags/SmartTags.php:248
 msgid "Trial End Date"
@@ -7042,7 +7139,7 @@ msgstr "Darse de baja"
 msgid "Subscribe"
 msgstr "Suscribirse"
 
-#: src/Integrations/ConstantContact/V3/Migration/Migration.php:756
+#: src/Integrations/ConstantContact/V3/Migration/Migration.php:758
 msgid "Can't receive v2 lists and finish migration."
 msgstr "No se ha podido recibir las listas de v2 y finalizar la migración."
 
@@ -9294,11 +9391,11 @@ msgstr "Nombre del sitio"
 msgid "Payment Error: %s"
 msgstr "Error de pago: %s"
 
-#: src/Integrations/Elementor/WidgetModern.php:328
+#: src/Integrations/Elementor/WidgetModern.php:329
 msgid "Separate multiple classes with spaces."
 msgstr "Separa las clases con espacios."
 
-#: src/Integrations/Elementor/WidgetModern.php:326
+#: src/Integrations/Elementor/WidgetModern.php:327
 msgid "Additional Classes"
 msgstr "Clases adicionales"
 
@@ -11509,12 +11606,12 @@ msgstr "Todas las etiquetas"
 msgid "No tags to choose from"
 msgstr "No hay etiquetas para elegir"
 
-#: src/Admin/Forms/Ajax/Tags.php:226
+#: src/Admin/Forms/Ajax/Tags.php:227
 msgid "No forms selected when trying to add a tag to them."
 msgstr "No se seleccionan los formularios al intentar añadirles una etiqueta."
 
 #: src/Admin/Builder/Ajax/PanelLoader.php:129
-#: src/Admin/Forms/Ajax/Columns.php:96 src/Admin/Forms/Ajax/Tags.php:195
+#: src/Admin/Forms/Ajax/Columns.php:96 src/Admin/Forms/Ajax/Tags.php:196
 msgid "Most likely, your session expired. Please reload the page."
 msgstr "Lo más probable es que tu sesión haya expirado. Vuelve a cargar la página."
 
@@ -12492,7 +12589,7 @@ msgstr "Buscar plantillas"
 
 #: includes/admin/builder/panels/class-settings.php:391
 #: includes/fields/class-base.php:2422 src/Frontend/Themes/Schema.php:681
-#: src/Integrations/Elementor/WidgetModern.php:318
+#: src/Integrations/Elementor/WidgetModern.php:319
 #: src/Lite/Admin/Education/Builder/Notifications.php:130
 msgid "Advanced"
 msgstr "Avanzado"
@@ -13136,8 +13233,8 @@ msgstr "Algo ha salido mal al guardar el formulario."
 #: includes/admin/ajax-actions.php:28 includes/admin/ajax-actions.php:396
 #: includes/fields/class-base.php:3500
 #: src/Admin/Builder/Ajax/PanelLoader.php:134 src/Admin/FormEmbedWizard.php:290
-#: src/Admin/FormEmbedWizard.php:610 src/Admin/Forms/Ajax/Tags.php:200
-#: src/Admin/Forms/Ajax/Tags.php:240
+#: src/Admin/FormEmbedWizard.php:610 src/Admin/Forms/Ajax/Tags.php:201
+#: src/Admin/Forms/Ajax/Tags.php:241
 #: src/Admin/Payments/Views/Overview/Ajax.php:52
 #: src/Admin/Payments/Views/Overview/Ajax.php:117
 #: src/Integrations/Elementor/Elementor.php:359

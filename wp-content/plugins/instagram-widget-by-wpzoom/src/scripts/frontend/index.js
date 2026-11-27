@@ -1,3 +1,272 @@
+// Lightbox: the feed's lightbox markup (printed hidden next to the feed) is shown in a native
+// <dialog>, which provides the backdrop, Escape to close and focus handling.
+( function() {
+	const CLOSE_ICON = '<svg width="30" height="30" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve"><path fill-rule="evenodd" clip-rule="evenodd" fill="#fff" d="M11.6,10.1l5.5-5.7c0.5-0.5,0.5-1.1,0-1.6c-0.5-0.5-1.1-0.5-1.6,0 l-5.5,5.6L4.4,2.8C4,2.4,3.3,2.4,2.8,2.8S2.4,4,2.8,4.4L8.4,10l-5.5,5.6c-0.5,0.5-0.5,1.1,0,1.6c0.5,0.5,1.1,0.5,1.6,0l5.5-5.6 l5.5,5.6c0.5,0.5,1.1,0.5,1.6,0c0.5-0.5,0.5-1.1,0-1.6C17,15.6,11.6,10.1,11.6,10.1z"></path></svg>';
+
+	let dialog      = null;
+	let wrapper     = null;
+	let placeholder = null;
+
+	function getDialog() {
+		if ( dialog ) {
+			return dialog;
+		}
+
+		dialog = document.createElement( 'dialog' );
+		dialog.className = 'wpz-insta-lightbox-dialog';
+		dialog.setAttribute( 'aria-label', 'Instagram post' );
+
+		const closeButton = document.createElement( 'button' );
+		closeButton.type = 'button';
+		closeButton.className = 'wpz-insta-lightbox-dialog__close';
+		closeButton.setAttribute( 'aria-label', 'Close' );
+		closeButton.innerHTML = CLOSE_ICON;
+		closeButton.addEventListener( 'click', close );
+		dialog.appendChild( closeButton );
+
+		// A click that lands outside the post and the navigation arrows closes the lightbox.
+		dialog.addEventListener( 'click', function( event ) {
+			if ( ! event.target.closest( '.wpz-insta-lightbox, .swiper-button-next, .swiper-button-prev, .wpz-insta-lightbox-dialog__close' ) ) {
+				close();
+			}
+		} );
+
+		dialog.addEventListener( 'close', restore );
+		document.body.appendChild( dialog );
+
+		return dialog;
+	}
+
+	function slides( swiperEl ) {
+		return Array.prototype.filter.call( swiperEl.querySelectorAll( '.swiper-slide' ), function( slide ) {
+			return slide.closest( '.swiper' ) === swiperEl;
+		} );
+	}
+
+	function open( lightboxWrapper, mediaId ) {
+		if ( ! lightboxWrapper || wrapper ) {
+			return;
+		}
+
+		const box = getDialog();
+
+		wrapper     = lightboxWrapper;
+		placeholder = document.createComment( 'wpz-insta-lightbox' );
+		wrapper.parentNode.insertBefore( placeholder, wrapper );
+		box.appendChild( wrapper );
+		wrapper.classList.remove( 'mfp-hide' );
+		document.documentElement.classList.add( 'wpz-insta-lightbox-open' );
+
+		if ( typeof box.showModal === 'function' ) {
+			box.showModal();
+		} else {
+			box.setAttribute( 'open', '' );
+		}
+
+		const swiperEl = wrapper.querySelector( ':scope > .swiper' );
+
+		if ( ! swiperEl ) {
+			return;
+		}
+
+		const all    = slides( swiperEl );
+		const target = all.filter( function( slide ) {
+			return slide.getAttribute( 'data-uid' ) === String( mediaId );
+		} )[ 0 ] || all[ 0 ];
+
+		if ( swiperEl.swiper ) {
+			swiperEl.swiper.update();
+			swiperEl.swiper.slideTo( Math.max( 0, all.indexOf( target ) ), 0 );
+		}
+
+		// Album carousels were set up while hidden, so let them measure themselves now.
+		Array.prototype.forEach.call( wrapper.querySelectorAll( '.image-wrapper > .swiper' ), function( nested ) {
+			if ( nested.swiper ) {
+				nested.swiper.update();
+			}
+		} );
+
+		if ( target ) {
+			const video = target.querySelector( 'video' );
+
+			if ( video ) {
+				const played = video.play();
+
+				if ( played && typeof played.catch === 'function' ) {
+					played.catch( function() {} );
+				}
+			}
+
+			if ( window.jQuery ) {
+				window.jQuery( document ).trigger( 'wpz-insta:lightbox-slide', [ window.jQuery( target ) ] );
+			}
+		}
+	}
+
+	function close() {
+		if ( ! dialog ) {
+			return;
+		}
+
+		if ( dialog.open && typeof dialog.close === 'function' ) {
+			dialog.close();
+		} else {
+			dialog.removeAttribute( 'open' );
+			restore();
+		}
+	}
+
+	// Put the lightbox markup back next to its feed.
+	function restore() {
+		if ( ! wrapper ) {
+			return;
+		}
+
+		Array.prototype.forEach.call( wrapper.querySelectorAll( 'video' ), function( video ) {
+			video.pause();
+			video.currentTime = 0;
+		} );
+
+		wrapper.classList.add( 'mfp-hide' );
+
+		if ( placeholder && placeholder.parentNode ) {
+			placeholder.parentNode.insertBefore( wrapper, placeholder );
+			placeholder.parentNode.removeChild( placeholder );
+		}
+
+		wrapper     = null;
+		placeholder = null;
+		document.documentElement.classList.remove( 'wpz-insta-lightbox-open' );
+	}
+
+	// The lightbox markup of the feed a link belongs to.
+	function findWrapper( link ) {
+		const scopes = [ link.closest( '.widget' ), link.closest( '.zoom-instagram' ) ];
+		const items  = link.closest( '.zoom-instagram-widget__items' );
+
+		if ( items && items.parentNode && items.parentNode.parentNode ) {
+			scopes.push( items.parentNode.parentNode );
+		}
+
+		for ( let i = 0; i < scopes.length; i++ ) {
+			const found = scopes[ i ] ? scopes[ i ].querySelector( '.wpz-insta-lightbox-wrapper' ) : null;
+
+			if ( found && found.querySelector( '.swiper-slide' ) ) {
+				return found;
+			}
+		}
+
+		return null;
+	}
+
+	// One delegated handler, so posts added later (load more) open the lightbox too.
+	document.addEventListener( 'click', function( event ) {
+		if ( event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey ) {
+			return;
+		}
+
+		const link = event.target.closest ? event.target.closest( '.zoom-instagram-link' ) : null;
+
+		if ( ! link || ! link.closest( '.zoom-instagram-widget__items[data-lightbox="1"]' ) ) {
+			return;
+		}
+
+		const lightboxWrapper = findWrapper( link );
+
+		if ( ! lightboxWrapper ) {
+			return;
+		}
+
+		event.preventDefault();
+		open( lightboxWrapper, link.getAttribute( 'data-mfp-src' ) );
+	} );
+
+	window.wpzInstaLightbox = { open: open, close: close };
+} )();
+
+// Lightbox images are printed with `data-src` and loaded once they come into view:
+// when the lightbox opens, and as the visitor moves through the slides.
+( function() {
+	const selector = 'img.swiper-lazy[data-src]';
+	const seen     = new WeakSet();
+
+	function load( img ) {
+		const done = function() {
+			img.classList.add( 'swiper-lazy-loaded' );
+
+			const slide     = img.closest( '.swiper-slide' ) || img.parentNode;
+			const preloader = slide ? slide.querySelector( '.swiper-lazy-preloader' ) : null;
+
+			if ( preloader ) {
+				preloader.remove();
+			}
+		};
+
+		img.addEventListener( 'load', done, { once: true } );
+		img.addEventListener( 'error', done, { once: true } );
+		img.src = img.getAttribute( 'data-src' );
+		img.removeAttribute( 'data-src' );
+	}
+
+	const observer = 'IntersectionObserver' in window
+		? new IntersectionObserver( function( entries ) {
+			entries.forEach( function( entry ) {
+				if ( entry.isIntersecting ) {
+					observer.unobserve( entry.target );
+					load( entry.target );
+				}
+			} );
+		}, { rootMargin: '200px 100%' } )
+		: null;
+
+	function watch( root ) {
+		const images = [];
+
+		if ( root.matches && root.matches( selector ) ) {
+			images.push( root );
+		}
+
+		if ( root.querySelectorAll ) {
+			images.push.apply( images, root.querySelectorAll( selector ) );
+		}
+
+		images.forEach( function( img ) {
+			if ( seen.has( img ) ) {
+				return;
+			}
+
+			seen.add( img );
+
+			if ( observer ) {
+				observer.observe( img );
+			} else {
+				load( img );
+			}
+		} );
+	}
+
+	function start() {
+		watch( document );
+
+		// Slides added later (load more, block editor re-renders).
+		new MutationObserver( function( mutations ) {
+			mutations.forEach( function( mutation ) {
+				mutation.addedNodes.forEach( function( node ) {
+					if ( node.nodeType === 1 ) {
+						watch( node );
+					}
+				} );
+			} );
+		} ).observe( document.body, { childList: true, subtree: true } );
+	}
+
+	if ( document.readyState === 'loading' ) {
+		document.addEventListener( 'DOMContentLoaded', start );
+	} else {
+		start();
+	}
+} )();
+
 ( function( $ ) {
 	// Image loading shimmer effect - needs to run early to catch images before they load
 	function initImageLoadingShimmer() {
@@ -208,12 +477,6 @@
 										var $nestedSwiper = $(this);
 										var $imageWrapper = $nestedSwiper.closest('.image-wrapper');
 										new Swiper(this, {
-											lazy: {
-												threshold: 50
-											},
-											watchSlidesVisibility: true,
-											preloadImages: false,
-											lazy: true,
 											direction: 'horizontal',
 											loop: false,
 											spaceBetween: 20,
@@ -235,10 +498,7 @@
 											},
 											on: {
 												init: function() {
-													// Show product tags for initial slide (index 0)
-													if (typeof window.wpzInstaUpdateProductTagVisibility === 'function') {
-														window.wpzInstaUpdateProductTagVisibility($imageWrapper, 0);
-													}
+													$( document ).trigger( 'wpz-insta:lightbox-album-slide', [ $imageWrapper, 0 ] );
 												},
 												activeIndexChange: function () {
 													// Get the active slide
@@ -251,10 +511,7 @@
 														video.play();
 													}
 
-													// Update product tag visibility for album carousels
-													if (typeof window.wpzInstaUpdateProductTagVisibility === 'function') {
-														window.wpzInstaUpdateProductTagVisibility($imageWrapper, this.activeIndex);
-													}
+													$( document ).trigger( 'wpz-insta:lightbox-album-slide', [ $imageWrapper, this.activeIndex ] );
 												},
 											},
 										});
@@ -267,40 +524,7 @@
 								
 								if ($newLinks.length > 0) {
 									
-									$newLinks.magnificPopup({
-										items: {
-											type: 'inline',
-											src: $lightboxWrapper.closest('.wpz-insta-lightbox-wrapper')
-										},
-										closeBtnInside: false,
-										mainClass: 'wpzoom-lightbox',
-										midClick: true,
-										callbacks: {
-											open: function() {
-												const magnificPopup = $.magnificPopup.instance,
-												currentElement = magnificPopup.st.el,
-												$thisSwiper = this.content.find('> .swiper').get(0).swiper;
-												
-												
-												if (this.content.find('> .swiper > .swiper-wrapper > .swiper-slide[data-uid="' + currentElement.data('mfp-src') + '"] video')) {
-													this.content.find('> .swiper > .swiper-wrapper > .swiper-slide[data-uid="' + currentElement.data('mfp-src') + '"] video').trigger('play');
-												}
-												if (typeof $thisSwiper === 'object') {
-													const targetSlideIndex = this.content.find('> .swiper > .swiper-wrapper > .swiper-slide[data-uid="' + currentElement.data('mfp-src') + '"]').index();
-													$thisSwiper.slideTo(targetSlideIndex);
-												}
-											},
-											afterClose: function() {
-												// Destroy swiper videos
-												$swiperContainer.find('video').each(function() {
-													this.pause();
-													this.currentTime = 0;
-												});
-											}
-										}
-									});
 									
-									$newLinks.addClass('magnific-active');
 								}
 							} else {
 								$itemsContainer.zoomLightbox();
@@ -405,12 +629,6 @@
 					const $nested   = $swipe_el.find( '.image-wrapper > .swiper' );
 
 					const swiper = new Swiper( $swipe_el.get(0), {
-						lazy:{
-							threshold: 50
-						},
-						watchSlidesVisibility: true,
-                        preloadImages: false,
-                        lazy: true,
 						direction: 'horizontal',
 						loop: false,
 						spaceBetween: 20,
@@ -437,10 +655,7 @@
 									video.play();
 								}
 
-								// Initialize product carousel in the active slide
-								if ( typeof window.wpzInstaInitProductCarousel === 'function' ) {
-									window.wpzInstaInitProductCarousel( $activeSlide );
-								}
+								$( document ).trigger( 'wpz-insta:lightbox-slide', [ $activeSlide ] );
 	
 							},
 						},
@@ -450,12 +665,6 @@
 						var $nestedSwiper = $( this );
 						var $imageWrapper = $nestedSwiper.closest( '.image-wrapper' );
 						new Swiper( $nestedSwiper.get(0), {
-							lazy:{
-								threshold: 50
-							},
-							watchSlidesVisibility: true,
-                            preloadImages: false,
-                            lazy: true,
 							direction: 'horizontal',
 							loop: false,
 							spaceBetween: 20,
@@ -477,8 +686,7 @@
 							},
 							on: {
 								init: function() {
-									// Show tags for initial slide (index 0)
-									updateProductTagVisibility( $imageWrapper, 0 );
+									$( document ).trigger( 'wpz-insta:lightbox-album-slide', [ $imageWrapper, 0 ] );
 								},
 								activeIndexChange: function () {
 	
@@ -492,34 +700,11 @@
 										video.play();
 									}
 
-									// Update product tag visibility for album carousels
-									updateProductTagVisibility( $imageWrapper, this.activeIndex );
+									$( document ).trigger( 'wpz-insta:lightbox-album-slide', [ $imageWrapper, this.activeIndex ] );
 								},
 							},	
 						} );
 					} );
-
-					// Function to update product tag visibility based on album slide index
-					// Exposed globally so Load More nested swipers can reuse it.
-					window.wpzInstaUpdateProductTagVisibility = updateProductTagVisibility;
-					function updateProductTagVisibility( $imageWrapper, activeIndex ) {
-						var $tagsContainer = $imageWrapper.find( '.wpz-insta-lightbox-tags' );
-						if ( $tagsContainer.length === 0 ) return;
-
-						$tagsContainer.find( '.wpz-insta-lightbox-tag' ).each( function() {
-							var $tag = $( this );
-							var albumIndex = parseInt( $tag.attr( 'data-album-index' ), 10 );
-							
-							// Show tag if:
-							// - albumIndex is -1 (not album-specific, i.e., single image)
-							// - albumIndex matches the active slide index
-							if ( albumIndex === -1 || albumIndex === activeIndex ) {
-								$tag.addClass( 'wpz-insta-lightbox-tag--visible' );
-							} else {
-								$tag.removeClass( 'wpz-insta-lightbox-tag--visible' );
-							}
-						} );
-					}
 
 					// Find the gallery trigger using the same strategy as swiper element
 					let galleryTrigger = $( this ).closest( '.widget' ).find( '.zoom-instagram-widget__items' );
@@ -534,132 +719,9 @@
 						galleryTrigger = $( this );
 					}
 					
-					// Use the same approach as block.js - call magnificPopup directly on the links
-					galleryTrigger.find( '.zoom-instagram-link' ).magnificPopup( {
-						items: {
-							type: 'inline',
-							src: $swipe_el.closest( '.wpz-insta-lightbox-wrapper' )
-						},
-						closeBtnInside: false,
-						mainClass: 'wpzoom-lightbox',
-						midClick: true,
-						callbacks: {
-							open: function () {
-								const magnificPopup = $.magnificPopup.instance,
-								currentElement = magnificPopup.st.el,
-								$thisSwiper = this.content.find( '> .swiper' ).get(0).swiper;
-								
-								if( this.content.find( '> .swiper > .swiper-wrapper > .swiper-slide[data-uid="' + currentElement.data( 'mfp-src' ) + '"] video' ) ) {
-									this.content.find( '> .swiper > .swiper-wrapper > .swiper-slide[data-uid="' + currentElement.data( 'mfp-src' ) + '"] video' ).trigger('play');
-								}
-								if ( typeof $thisSwiper === 'object' ) {
-									$thisSwiper.slideTo(
-										this.content.find( '> .swiper > .swiper-wrapper > .swiper-slide[data-uid="' + currentElement.data( 'mfp-src' ) + '"]' ).index()
-									);
-								}
-								
-								// Initialize product carousel in the current slide
-								const $currentSlide = this.content.find( '> .swiper > .swiper-wrapper > .swiper-slide[data-uid="' + currentElement.data( 'mfp-src' ) + '"]' );
-								if ( typeof window.wpzInstaInitProductCarousel === 'function' ) {
-									window.wpzInstaInitProductCarousel( $currentSlide );
-								}
-							},
-							afterClose: function () {
-								// Destroy swiper videos
-								$swipe_el.find( 'video' ).each( function () {
-									this.pause();
-									this.currentTime = 0;
-								} );
-							}
-						}
-					} );
-					galleryTrigger.find( '.zoom-instagram-link' ).addClass( 'magnific-active' );
 				}
 			} );
 		};
-
-		// Initialize product card carousel in lightbox
-		function initProductCarousel( $container ) {
-			const $carousels = $container.find( '.wpz-insta-lightbox-product--carousel' );
-			
-			$carousels.each( function() {
-				const $carousel = $( this );
-				
-				// Skip if already initialized
-				if ( $carousel.data( 'carousel-initialized' ) ) {
-					return;
-				}
-				
-				const $inner = $carousel.find( '.wpz-insta-lightbox-product__carousel-inner' );
-				const $cards = $inner.find( '.wpz-insta-lightbox-product__card' );
-				const $prevBtn = $carousel.find( '.wpz-insta-lightbox-product__carousel-prev' );
-				const $nextBtn = $carousel.find( '.wpz-insta-lightbox-product__carousel-next' );
-				const $dotsContainer = $carousel.find( '.wpz-insta-lightbox-product__carousel-dots' );
-				
-				if ( $cards.length <= 1 ) {
-					$prevBtn.hide();
-					$nextBtn.hide();
-					$dotsContainer.hide();
-					return;
-				}
-				
-				let currentIndex = 0;
-				const totalSlides = $cards.length;
-				
-				// Create dots
-				$dotsContainer.empty();
-				for ( let i = 0; i < totalSlides; i++ ) {
-					const $dot = $( '<span class="wpz-insta-lightbox-product__carousel-dot"></span>' );
-					if ( i === 0 ) {
-						$dot.addClass( 'active' );
-					}
-					$dot.on( 'click', function() {
-						goToSlide( i );
-					} );
-					$dotsContainer.append( $dot );
-				}
-				
-				function updateCarousel() {
-					$inner.css( 'transform', 'translateX(-' + ( currentIndex * 100 ) + '%)' );
-					
-					// Update dots
-					$dotsContainer.find( '.wpz-insta-lightbox-product__carousel-dot' )
-						.removeClass( 'active' )
-						.eq( currentIndex )
-						.addClass( 'active' );
-					
-					// Update buttons
-					$prevBtn.prop( 'disabled', currentIndex === 0 );
-					$nextBtn.prop( 'disabled', currentIndex === totalSlides - 1 );
-				}
-				
-				function goToSlide( index ) {
-					if ( index >= 0 && index < totalSlides ) {
-						currentIndex = index;
-						updateCarousel();
-					}
-				}
-				
-				$prevBtn.on( 'click', function() {
-					if ( currentIndex > 0 ) {
-						goToSlide( currentIndex - 1 );
-					}
-				} );
-				
-				$nextBtn.on( 'click', function() {
-					if ( currentIndex < totalSlides - 1 ) {
-						goToSlide( currentIndex + 1 );
-					}
-				} );
-				
-				// Initialize
-				updateCarousel();
-				$carousel.data( 'carousel-initialized', true );
-			} );
-		}
-		
-		// Expose globally for use in lightbox callbacks
-		window.wpzInstaInitProductCarousel = initProductCarousel;
 
 		$.fn.zoomInstagramWidget = function (options) {
 			return $(this).each(function () {
@@ -812,6 +874,70 @@
 			});
 		});
 
+		// Carousel layout: one Swiper per feed. Marked `carousel-active` so it is only set up once.
+		function initCarousels() {
+			if ( typeof Swiper === 'undefined' ) {
+				return;
+			}
+
+			const $editorCanvas = $( 'iframe.edit-site-visual-editor__editor-canvas' ),
+			      selector      = '.zoom-instagram.layout-carousel:not(.carousel-active) > .swiper',
+			      $carousels    = $editorCanvas.length > 0 ? $editorCanvas.contents().find( selector ) : $( selector );
+
+			$carousels.each( function () {
+				const $carousel     = $( this ),
+				      $wrapper      = $carousel.find( '> .swiper-wrapper' ),
+				      perPage       = parseInt( $wrapper.data( 'perpage' ) ),
+				      perPageTablet = parseInt( $wrapper.data( 'perpage-tablet' ) ),
+				      perPageMobile = parseInt( $wrapper.data( 'perpage-mobile' ) ),
+				      spacing       = parseFloat( $wrapper.data( 'spacing' ) ),
+				      slides        = perPage > -1 ? perPage : 3,
+				      gap           = spacing > -1 ? spacing : 20;
+
+				new Swiper( this, {
+					direction: 'horizontal',
+					loop: false,
+					slidesPerView: slides,
+					spaceBetween: gap,
+					breakpoints: {
+						320: { slidesPerView: perPageMobile > -1 ? perPageMobile : slides, spaceBetween: gap },
+						480: { slidesPerView: perPageTablet > -1 ? perPageTablet : slides, spaceBetween: gap },
+						769: { slidesPerView: slides, spaceBetween: gap }
+					},
+					autoHeight: true,
+					watchOverflow: true,
+					navigation: {
+						nextEl: $carousel.find( '> .swiper-button-next' ).get( 0 ),
+						prevEl: $carousel.find( '> .swiper-button-prev' ).get( 0 )
+					},
+					keyboard: {
+						enabled: true,
+						onlyInViewport: true
+					}
+				} );
+
+				$carousel.closest( '.zoom-instagram' ).addClass( 'carousel-active' );
+			} );
+		}
+
+		// Masonry layout: flag feeds whose grid is handled by the Masonry script, so the
+		// CSS-columns fallback used in editor previews steps aside.
+		function markActiveMasonry() {
+			if ( typeof $.fn.masonry !== 'function' ) {
+				return;
+			}
+
+			$( '.zoom-instagram.layout-masonry:not(.masonry-active)' ).addClass( 'masonry-active' );
+		}
+
+		initCarousels();
+		markActiveMasonry();
+
+		$( window ).on( 'wpzInstaServerSideRenderDone', function () {
+			initCarousels();
+			markActiveMasonry();
+		} );
+
 		var siteOriginInit = function () {
 			var $widgets = $('.zoom-instagram-widget__items');
 			if ($widgets.length) {
@@ -856,6 +982,7 @@
 				elementorFrontend.hooks.addAction('frontend/element_ready/widget', function ($scope) {
 
 					if ($scope.data('widget_type') == "wpzoom-elementor-instagram-widget.default") {
+						initCarousels();
 						// Handle both masonry and regular layouts for Elementor
 						$scope.find('.zoom-instagram-widget__items').each(function() {
 							const $container = $(this);
@@ -879,6 +1006,7 @@
 								$container.zoomInstagramWidget();
 							}
 						});
+						markActiveMasonry();
 					}
 
 				});
@@ -888,42 +1016,3 @@
 	} );
 
 } )( jQuery );
-
-// WooCommerce Product Link: notify parent when "Link to a product" is clicked (we're inside iframe)
-document.body.addEventListener( 'click', function( event ) {
-	var btn = event.target.closest( '.wpz-insta-link-product-btn' );
-
-	if ( ! btn ) {
-		return;
-	}
-	event.preventDefault();
-	event.stopPropagation();
-	if ( typeof window.parent.postMessage === 'function' ) {
-		// Find the parent item to get media type and image URL
-		var item = btn.closest( '.zoom-instagram-widget__item' );
-		var mediaType = item ? ( item.getAttribute( 'data-media-type' ) || 'image' ) : 'image';
-		var imageUrl = '';
-		var albumImages = [];
-
-		// Get image URL for tagging
-		var img = item ? item.querySelector( 'img.zoom-instagram-link' ) : null;
-		if ( img ) {
-			imageUrl = img.getAttribute( 'src' ) || img.getAttribute( 'data-src' ) || '';
-		}
-
-		// For carousel albums, collect all children images from the lightbox data if available
-		if ( mediaType === 'carousel_album' ) {
-			// Album children data will be fetched via AJAX when tagging view opens
-			// This is more reliable than trying to parse from DOM
-		}
-
-		window.parent.postMessage( {
-			action: 'wpz-insta-open-product-link',
-			mediaId: btn.getAttribute( 'data-media-id' ) || '',
-			feedId: btn.getAttribute( 'data-feed-id' ) || '',
-			productId: btn.getAttribute( 'data-product-id' ) || '',
-			mediaType: mediaType,
-			imageUrl: imageUrl
-		}, '*' );
-	}
-}, true );
